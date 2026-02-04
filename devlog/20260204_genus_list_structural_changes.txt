@@ -1,0 +1,355 @@
+=== 1. 합쳐진 GENERA 분리 (56건) ===
+
+줄 137:
+  원본: Albansia HOWELL, 1937 [pusilla] St Albans Sh, Ver­mont, USA; SOLENOPLEURIDAE; MCAM. Albertella WALCOTT, 1908 [helena] Gordon Sh, Montana, USA; ZACANTHOIDIDAE; MCAM.
+  분리 위치: "MCAM. Albertella WA"
+
+줄 300:
+  원본: of Charchaqia, fide BAO & JAGO, 2000]. Apocalymene CHATTERTON & CAMPBELL, 1980 [coppinsensis] Walker Volcs, Australian Capital Territory, Australia; CALYMENIDAE; LSIL. Apolichas KOBAYASHI & HAMADA, 1974 [trunc­atus] Yokokura-yama, Shikoku, Japan; LICH­IDAE; USIL [j.s.s. of Lichas, fide THOMAS & HOLLOWAY, 1988]. Apollonaspis PETRUNINA in REPINA et al., 1975 [lauta] Beshtorsk Fm, Turkestan-Alai Mtns, Kazakhstan; CHEIRURIDAE; UORD. Apomodocia HU, 1971 [conica] Cedaria Zone, Wasatch Mtns, Utah, USA; PARABOLINOID­IDAE; UCAM. Aponileus HU, 1963 [latus] El Paso Fm, Texas; BA­THYURIDAE; LORD [j.s.s. of Psephos­thenaspis, fide ADRAIN, herein]. Apoplanias LOCHMAN, 1964a [rejectus] Deadwood Fm, Montana, USA; OLENIDAE; UCAM.
+  분리 위치: "herein]. Apoplanias LO"
+
+줄 389:
+  원본: Asturiaspis SDZUY, 1967 [inopinatus] E Asturia, Spain; ACROCEPHALITIDAE; MCAM. Astyages ANGELIN, 1854 [preocc., replaced by
+  분리 위치: "MCAM. Astyages AN"
+
+줄 464:
+  원본: Bandalaspis IVSHIN, 1962[serguni] Seletinsk Horizon, Kazakhstan; EUREKIIDAE; UCAM. Baniaspis DESTOMBES, 1972[globosa] Ktaoua Fm, Morocco; ACASTIDAE; UORD.
+  분리 위치: "UCAM. Baniaspis DE"
+
+줄 468:
+  원본: Baoshanaspis LUO, 1983 [conica] Liushui Fm, Yunnan, China; LEIOSTEGIIDAE; UCAM. Bapingaspis YUAN, 1988 [bapingensis] Daihua Fm,
+  분리 위치: "UCAM. Bapingaspis YU"
+
+줄 473:
+  원본: Barrandia McCOY, 1849 [Ogygia (Barrandia) cordai] Llandeilo Series, N Wales; NILEIDAE; MORD. Barrandia HALL, 1860 [preocc., replaced by Olen-ellus].
+  분리 위치: "MORD. Barrandia HA"
+
+줄 577:
+  원본: Blainia WALCOTT, 1916b [gregarius] Conasauga Fm, Alabama, USA; ASAPHISCIDAE; MCAM. Blainiopsis POULSEN, 1946 [holtedahli] Cape Wood Fm, Greenland; ASAPHISCIDAE; MCAM.
+  분리 위치: "MCAM. Blainiopsis PO"
+
+줄 619:
+  원본: Bondarevites LAZARENKO, 1989 [venustus] Novaya Zemlya; OLENIDAE; UCAM. Bondonella HUPE, 1953a [typica] Issafen Fm, Morocco; NELTNERIIDAE; LCAM.
+  분리 위치: "UCAM. Bondonella HU"
+
+줄 668:
+  원본: Breizhops MORZADEC, 1983 [lanceolatus] Fret Fm, Brittany, France; ACASTIDAE; LDEV. Breviagnostus LIU, 1982[brachyaxonus] Huaqiao Fm, Hunan, China; PERONOPSIDAE; MCAM
+  분리 위치: "LDEV. Breviagnostus LI"
+
+줄 726:
+  원본: Bynumia WALCOTT, 1924b [eumus] Sullivan Fm, Alberta, Canada; KINGSTONIIDAE; UCAM. Bynumiella RESSER, 1942b [typicalis] Lyell Fm, Alberta, Canada; KINGSTONIIDAE; UCAM
+  분리 위치: "UCAM. Bynumiella RE"
+
+줄 727:
+  원본: [j.s.s. of Clelandia, fide PALMER, 1965]. Bynumina RESSER, 1942b [caelata] Davis Fm, Missouri, USA; KINGSTONIIDAE; UCAM. Bythicheilus RESSER, 1939a [typicum] Spence Sh, Idaho, USA; ALOKISTOCARIDAE; MCAM.
+  분리 위치: "UCAM. Bythicheilus RE"
+
+줄 838:
+  원본: Ceraurus GREEN, 1832[pleurexanthemus] Trenton Group, New York, USA; CHEIRURIDAE; UORD. Cermataspis OPIK, 1967 [abundans] Mungerebar Lst, Queensland, Australia; ACROCEPHALITIDAE; MUCAM.
+  분리 위치: "UORD. Cermataspis OP"
+
+줄 877:
+  원본: Chelediscus RUSHTON, 1966 [acifer] Purley Sh, England; CALODISCIDAE; LCAM. Chelidonocephalus KING, 1937 [alifrons] Chal-i-Sheh, Iran; PROASAPHISCIDAE; MCAM.
+  분리 위치: "LCAM. Chelidonocephalus KI"
+
+줄 914:
+  원본: Chuangina KOBAYASHI, 1967 [fossula] Kuh-I-Namak, Iran; LEIOSTEGIIDAE; UCAM. Chuangioides ZHU, 1959 [punctatus] Kushan Fm, Shanxi, China; LEIOSTEGIIDAE; UCAM.
+  분리 위치: "UCAM. Chuangioides ZH"
+
+줄 994:
+  원본: Conophrys CALLAWAY, 1877 [salopiensis] Shineton Sh Fm, England; SHUMARDIIDAE; LORD. Conopolus ROBISON, 1988 [granulus] Holm Dal Fm, NWGreenland; PTYCHOPARIIDAE; MCAM.
+  분리 위치: "LORD. Conopolus RO"
+
+줄 1075:
+  원본: N. Ireland; PROETIDAE; MISS. Curiaspis SDZUY, 1955 [notabilis] Leimitz Schiefer, Bavaria, Germany; UNCERTAIN; LORD. Curriella LAMONT, 1978 [newlandensis] Newlands Fm, Scotland; ENCRINURIDAE; LSIL. Curuyella ELDREDGE & BRANI°A, 1980 [Schizo-
+  분리 위치: "MISS. Curiaspis SD"
+
+줄 1251:
+  원본: [j.s.s. of Oedicybele, fide FORTEY, 1997]. Dinesus ETHERIDGE, 1896 [ida] Knowsley East Fm, Victoria, Australia; DINESIDAE; MCAM. Dingxiangaspis Q.Z. ZHANG in QIU et al., 1983 [longispina] Qingkang Fm, Anhui, China; PTEROCEPHALIIDAE; UCAM. Dione BARRANDE, 1846a [preocc., replaced by Dionide]. Dionide BARRANDE, 1847 [Dione formosa BARRANDE, 1846a] Vinice Fm, Czech Republic; DIONIDIDAE; UORD [replacement name for Dione]. Dionideina .NAJDR, 1981a [Dionide prima KLOU!EK, 1916] .arka Fm, Czech Republic; DIONIDIDAE; MORD. Dionidella PRANTL & PIBYL, 1949c [incisa] .arka Fm, Czech Republic; DIONIDIDAE; MORD. Dionidepyga .NAJDR, 1981a [Dionide jubata RAYMOND, 1925] Dobrotiva Fm, Czech
+  분리 위치: "UCAM. Dione BA"
+
+줄 1327:
+  원본: Duplora SHERGOLD, 1972[clara] Gola Beds, Queensland, Australia; ?EULOMIDAE; UCAM. Durinia ROBISON, 1988 [granulosa] Holm Dal Fm, Greenland; LONCHOCEPHALIDAE; MCAM.
+  분리 위치: "UCAM. Durinia RO"
+
+줄 1332:
+  원본: Dytremacephalus PALMER, 1955 [granulosus] Riley Fm, Texas, USA; ELVINIIDAE; UCAM. Ebenzeria MARCOU, 1888 [unnecessary replacement name for and thus j.o.s. of Elliptocephala].
+  분리 위치: "UCAM. Ebenzeria MA"
+
+줄 1346:
+  원본: [j.o.s. of Trinucleus]. Edithiella KURTZ, 1975 [missouriensis] Davis Fm, Missouri, USA; ?ASAPHISCIDAE; UCAM. Edmundsonia COOPER, 1953 [typa] Athens Sh, Virginia, USA; RAPHIOPHORIDAE; UORD.
+  분리 위치: "UCAM. Edmundsonia CO"
+
+줄 1401:
+  원본: Elviniella PALMER, 1960 [laevis] Dunderberg Fm, Nevada, USA; ELVINIIDAE; UCAM. Elvinoides IVSHIN, 1962[elviniformis] Seletinsky Horizon, Kazakhstan; ELVINIIDAE; UCAM. Elviraspis IVSHIN, 1962[elviri] Seletinsky Horizon, Kazakhstan; IDAHOIIDAE; UCAM. Elyaspis KURTZ, 1975 [missouriensis] Davis Fm, Missouri, USA; ELVINIIDAE; UCAM.
+  분리 위치: "UCAM. Elvinoides IV"
+
+줄 1604:
+  원본: Ferenepea OPIK, 1967 [hispida] O’Hara Sh, Que­ensland, Australia; NEPEIDAE; MCAM. Ferralsia COBBOLD, 1935b [blayaci] Herault,
+  분리 위치: "MCAM. Ferralsia CO"
+
+줄 1605:
+  원본: France; PALAEOLENIDAE; LCAM. Feruminops HAAS, 1968 [crepida] Dede Fm, Turkey; ACASTIDAE; LDEV. Fialoides HADDING, 1913a [antiquatus] Sweden; TELEPHINIDAE; MORD.
+  분리 위치: "LCAM. Feruminops HA"
+
+줄 1690:
+  원본: [j.s.s. of Ellipsocephalus, fide GEYER, 1990]. Ghwaiella KIM, 1980 [yemjenriensis] Chonjuri Fm, North Korea; DINESIDAE; MCAM. Gibbocephalus PILLET, 1965a [j.o.s. of Crotalo­cephalina]. Gibscherella REPINA, 1979a [sibirica] Sinersky Fm, S Siberia, Russia; JAKUTIDAE; LCAM. Gigantopygus HUPE, 1953a [papillatus] Issafen Fm, Morocco; GIGANTOPYGIDAE; LCAM.
+  분리 위치: "MCAM. Gibbocephalus PI"
+
+줄 1870:
+  원본: Hazarania WOLFART, 1970 [levis] Sukh Bum, Afghanistan; ASAPHIDAE; UCAM. Hebediscina RASETTI, 1972[sardoa] Nebida Fm, Sardinia, Italy; YUKONIIDAE; LCAM.
+  분리 위치: "UCAM. Hebediscina RA"
+
+줄 1880:
+  원본: Helepagetia JELL, 1975 [bitruncula] Currant Bush Lst, Queensland, Australia; EODISCIDAE; MCAM. Helieranella BALDIS et al., 1984 [negritoensis] Negritos Fm, Colombia; OLENIDAE; LORD.
+  분리 위치: "MCAM. Helieranella BA"
+
+줄 1896:
+  원본: [j.s.s. of Sphaerocoryphe, fide LANE, 1971]. Henadoparia OPIK, 1967 [integra] O’Hara Sh, Que­ensland, Australia; CEDARIIDAE; MUCAM. Hentigia HAAS et al., 1980 [bulbops] Artinskian, Afghanistan; PROETIDAE; LPERM.
+  분리 위치: "MUCAM. Hentigia HA"
+
+줄 2021:
+  원본: [j.s.s. of Tsunyidiscus, fide JELL, 1997]. Hupeolenus GEYER, 1990 [hupei] Asrir Fm, Morocco; ELLIPSOCEPHALIDAE; LCAM. Hupetina SDZUY, 1978 [antiqua] Igoudine Fm, Morocco; BIGOTINIDAE; LCAM. Huzhuia ZHU, 1965 [typica] Qinghai, China; SOLENOPLEURIDAE; MCAM.
+  분리 위치: "LCAM. Hupetina SD"
+
+줄 2258:
+  원본: Kerpenella BASSE, 2002 [Dechenella klapperi STRUVE, 1992] Kerpen Fm, Rhenish Massif, Germany; PROETIDAE; MDEV. Kettneraspis PRANTL & PIBYL, 1949a [Acidaspis pigra BARRANDE, 1872] Acanthopyge Lst, Czech Republic; ODONTOPLEURIDAE; MDEV.
+  분리 위치: "MDEV. Kettneraspis PR"
+
+줄 2542:
+  원본: Liushuicephalus LUO, 1983 [shidianensis] Liushui Fm, Yunnan, China; ASAPHIDAE; UCAM. Livia LENDZION, 1975 [preocc., replaced by Liwia].
+  분리 위치: "UCAM. Livia LE"
+
+줄 2652:
+  원본: Magnomma LU & QIAN, 1983b [latilimbata] Sandu Fm, SE Guizhou, China; OLENIDAE; UCAM. Mahaiella YIN, 1983 [eleganta] Baizou Fm, Guangxi, China; PROETIDAE; MISS.
+  분리 위치: "UCAM. Mahaiella YI"
+
+줄 2659:
+  원본: Maladia WALCOTT, 1924b [americana] Ovid Fm, Idaho, USA; EUREKIIDAE; UCAM. Maladioidella ENDO, 1937 [splendens] Daizan Fm, Liaoning, China; IDAHOIIDAE; UCAM.
+  분리 위치: "UCAM. Maladioidella EN"
+
+줄 2734:
+  원본: [j.s.s. of Megistaspis, fide NIELSEN, 1995]. Megistaspis JAANUSSON, 1956 [Trilobites limbatus BOECK, 1838] Huk Fm, Norway; ASAPHIDAE; MORD [replacement name for Megalaspis]. Meisteraspis OGIENKO, 1991 [entis] Udachninsk Fm, SE Siberia, Russia; CONOKEPHALIN­IDAE; MCAM. Meisterella IVSHIN, 1953 [meisteri] Boshchekul Fm, Kazakhstan; CONOKEPHALINIDAE; MCAM. Meitanella LIN & YIN in YIN & LI, 1978 [hastata] Mingxinsi Fm, Guizhou, China; YINITIDAE; LCAM. Meitania YUAN in YIN & LI, 1978 [transversa] Kao­tai Fm, Guizhou, China; PTYCHOPARIIDAE; MCAM. Meitanillaenus W. ZHANG, 1974 [binodosus] Lung-maxi Fm, Guizhou, China; STYGINIDAE; LSIL. Meitanopsis LU, 1975 [angulata] Meitan Fm, Guizhou, China; HUNGAIIDAE; LORD. Mekynophrys HARRINGTON, 1938 [nanna] Tumbaya Dept, Jujuy, Argentina; ASAPHIDAE; LORD. [j.s.s. of Basilicus, fide ZHOU & FORTEY, 1986]. Melopetasus SCHALLREUTER, 1979 [name given to indeterminate ?asaphoid trilobite protaspis]. Memmatella W. ZHANG in W. ZHANG et al., 1995 [tuberculata] Changhia Fm, Henan, China; PROASAPHISCIDAE; MCAM.
+  분리 위치: "MCAM. Meisterella IV"
+
+줄 2847:
+  원본: [j.s.s. of Hedstroemia, fide ADRAIN, 1997]. Milesia CHAPMAN, 1929 [preocc., replaced by Xystridura]. Millardia WALCOTT, 1916a [preocc. replaced by Densonella]. Mimana KOBAYASHI, 1935c [eurycephala] Dictya Zone, South Korea; ?KAOLISHANIIDAE; UCAM. Mimocryphaeus GANDL, 1972[altecostatus] Bad-enas-Schichten, Fombeuna, NE Spain; ACAST­IDAE; USIL. Mindycrusta OPIK, 1967 [mindycrusta] Georgina Lst, Queensland, Australia; ASAPHISCIDAE: MUCAM. Minicephalus LOCHMAN & HU, 1960 [primus]
+  분리 위치: "UCAM. Mimocryphaeus GA"
+
+줄 2928:
+  원본: Namiolenoides RUSCONI, 1952[asperoensis] Men­doza, Argentina; DORYPYGIDAE; MCAM. Namuraspis GANDL, 1980 [ovedensis] Mere, Oviedo, Spain; PROETIDAE; PENN.
+  분리 위치: "MCAM. Namuraspis GA"
+
+줄 2975:
+  원본: [j.s.s. of Olenoides, fide KOBAYASHI, 1935c]. Neolichas CURTIS & LANE, 1998 [Lichas norvegicus ANGELIN, 1854] Solvik Fm, Norway; LICH­IDAE; LSIL. Neometacanthus RICHTER & RICHTER, 1948 [Phacops stellifer BURMEISTER, 1843] Eifel, Germany; ACASTIDAE; MDEV [replacement name for Metacanthus HAWLE & CORDA]. Neoolenus LIU, 1982[minor] Qiangongping Fm, Hunan, China; OLENIDAE; LORD. Neopagetina POKROVSKAYA in CHERNYSHEVA, 1960a [Pagetina rjonsnitzkii LERMONTOVA, 1940] Kutorgina Fm, Siberia, Russia; HEBE­DISCIDAE; LCAM [replacement name for Pagetina]. Neoparabolina NIKOLAISEN & HENNINGS­MOEN, 1985 [Olenus frequens BARRANDE, 1868] Leimitz Schiefer, Bavaria, Germany; OLENIDAE; LORD. Neopeltis Q.Z. ZHANG in QIU et al., 1983 [elongata] Shinianpan Fm, Anhui, China; ASAPHIDAE; LORD. Neophillipsia GHEYSELINCK, 1937 [Phillipsia (Neophillipsia) decurtata] Wichita, Kansas, USA; PROETIDAE; PERM [j.s.s. of Ditomopyge, fide OWENS, 1983]. Neopoliellina REPINA in REPINA et al., 1964 [latiforma] Sanashtykgol Horizon, Kuznetsk Alatau, Russia; DOLICHOMETOPIDAE; LCAM. Neoprobolium STRUVE, 1958c [Asaphus nasutus CONRAD, 1841] Schoharie Fm, New York, USA; DALMANITIDAE; LDEV [replacement name for Probolium]. Neoprodamesella YUAN & YIN, 2000 [spinosa] Chefu Fm, Guizhou, China; UNCERTAIN; MUCAM [j.s.s. of Prodamesella, fide PENG et al., 2001a]. Neoproetus TESCH, 1923 [Proetus (Neoproetus) indicus] Bitauni, Timor, Indonesia; PROET­IDAE; UPERM. Neopsilocephalina YIN in YIN & LI, 1978 [zunyi­
+  분리 위치: "LSIL. Neometacanthus RI"
+
+줄 3071:
+  원본: Odontopleura EMMRICH, 1839 [ovata] glacial erratic, Poland; ODONTOPLEURIDAE; LUSIL. Odontopyge HAWLE & CORDA, 1847 [preocc., replaced by Parabolina].
+  분리 위치: "LUSIL. Odontopyge HA"
+
+줄 3122:
+  원본: Oncholichas SCHMIDT, 1885 [j.o.s. of Arctinurus]. Onchometopus SCHMIDT, 1898 [volborthi] Billingen to Vaana Substages, St Petersburg, Russia; ASAPHIDAE; LMORD. Onchonotellus LERMONTOVA, 1951a [Solenopleura subcincta LERMONTOVA, 1951a] Lejopyge laevigata Zone, Boshche-Kulya, NE Kazakhstan; CATILLICEPHALIDAE; MUCAM. Onchonotina LU in WANG, 1964 [vigilans] Zhejiang, China; CATILLICEPHALIDAE; UCAM [j.s.s. of Onchonotellus, fide PENG, 1992].
+  분리 위치: "LMORD. Onchonotellus LE"
+
+줄 3205:
+  원본: Paedeumias WALCOTT, 1910 [transitans] Parker Sh, Vermont, USA; OLENELLIDAE; LCAM. Paenebeltella ROSS, 1951 [vultulata] Garden City Fm, Idaho, USA; HYSTRICURIDAE; LORD.
+  분리 위치: "LCAM. Paenebeltella RO"
+
+줄 3224:
+  원본: Palaeophillipsia SUGIYAMA & OKANO, 1944 [japonica] Japan; PROETIDAE; UDEV. Palella HOWELL, 1937 [paradoxa] St Albans Sh, Vermont, USA; ANOMOCARIDAE; MCAM. Palemansuyia YUAN & YIN, 1998 [prima] Chefu Fm, Guizhou, China; KAOLISHANIIDAE; UCAM.
+  분리 위치: "UDEV. Palella HO"
+
+줄 3259:
+  원본: Parabolinella BROGGER, 1882[limitis] Ceratopyge Sh, Oslo, Norway; OLENIDAE; LORD. Parabolinina LAZARENKO, 1966 [edita] Irvingella Zone, N Siberia, Russia; OLENIDAE; UCAM.
+  분리 위치: "LORD. Parabolinina LA"
+
+줄 3466:
+  원본: Pearylandia ROBISON, 1988 [parva] Holm Dal Fm, NW Greenland; MARJUMIIDAE; MCAM. Peculicephalina QIAN, 1985a [jinxianensis] Tangcun Fm, Anhui, China; UNCERTAIN; UCAM.
+  분리 위치: "MCAM. Peculicephalina QI"
+
+줄 3679:
+  원본: Pokrovskiella KOROBOV, 1989 [mongolica] Akbash­insky Fm, W Mongolia; DINESIDAE; LCAM. Poletaevia ROZOVA, 1960a [shorica] Gorny Shoria, S Siberia, Russia; REMOPLEURIDIDAE; LORD.
+  분리 위치: "LCAM. Poletaevia RO"
+
+줄 3914:
+  원본: Pseudolevinia RUSCONI, 1951b [macropyge] Mendoza, Argentina; INDET; CAM. Pseudoliostracina KOBAYASHI, 1938b [j.o.s. of Lioparia].
+  분리 위치: "CAM. Pseudoliostracina KO"
+
+줄 4198:
+  원본: Sagavia KOROLEVA, 1967 [felix] Middle Ordov­ician, Kazakhstan; CYCLOPYGIDAE; MORD. Sagitaspis IVSHIN, 1962[akmolensis] Seletinsky Horizon, Kazakhstan; PAGODIIDAE; UCAM. Sagitoides IVSHIN, 1962[sagiti] Seletinsky Horizon, Kazakhstan; PAGODIIDAE; UCAM.
+  분리 위치: "MORD. Sagitaspis IV"
+
+줄 4230:
+  원본: Sardoredlichia RASETTI, 1972[praespinosa] Nebida Fm, Sardinia, Italy; REDLICHIIDAE; LCAM. Sarkia KLOU!EK, 1916 [[bohemica] Dobrotiva Fm, Czech Republic; SARKIIDAE; MORD.
+  분리 위치: "LCAM. Sarkia KL"
+
+줄 4277:
+  원본: Scottia WOLFART, 1994 [preocc., replaced by Ganovexopyge]. Sculptaspis NIKOLAISEN, 1983 [cordata] Arnestad Fm, Norway; REMOPLEURIDIDAE;UORD. Sculptella NIKOLAISEN, 1983 [scripta] Vollen Fm, Norway; REMOPLEURIDIDAE; UORD.
+  분리 위치: "UORD. Sculptella NI"
+
+줄 4305:
+  원본: Seriaspis KOROBOV, 1989 [parvula] Burgasutaisky Fm, W Mongolia; PTYCHOPARIIDAE; LCAM. Serrania LINAN, 1978 [verae] Pedroche Fm, Cordoba, Spain; BIGOTINIDAE; LCAM.
+  분리 위치: "LCAM. Serrania LI"
+
+줄 4429:
+  원본: Spineuloma LU & LIN, 1984 [spinosum] Yinchapu Fm, Zhejiang, China; EULOMIDAE; LORD. Spinibole CHLUPAC, 1966 [olgae] Brezina Sh, Czech
+  분리 위치: "LORD. Spinibole CH"
+
+줄 4616:
+  원본: Teichertops STRUVE, 1992[bardenheueri] Cuerten Fm, Eifel, Germany; PHACOPIDAE; MDEV. Teinistion MONKE, 1903 [lansi] Kushan Fm, Shandong, China; DAMESELLIDAE; UCAM.
+  분리 위치: "MDEV. Teinistion MO"
+
+줄 4657:
+  원본: Thomastus OPIK, 1953 [thomastus] Wapentake Fm, Victoria, Australia; STYGINIDAE; LSIL. Thomondia HARPER, 1942[globosa] Ballyvorgal Group, Ireland; SHUMARDIIDAE; UORD.
+  분리 위치: "LSIL. Thomondia HA"
+
+줄 4744:
+  원본: Trigonocerca ROSS, 1951 [typica] Garden City Fm, Idaho, USA; ASAPHIDAE; LORD. Trigonocercella HINTZE, 1953 [acuta] Wahwah Fm, Utah, USA; ASAPHIDAE; LORD. Trigonoproetus APOLLONOV, 1974 [triquetrus] Kazakhstan; RORRINGTONIIDAE; UORD
+  분리 위치: "LORD. Trigonocercella HI"
+
+줄 4754:
+  원본: [j.s.s. of Penarosa, fide JELL, 1977a]. Trinia POLETAEVA in CHERNYSHEVA et al., 1956 [bella] Salair, W Siberia, Russia; CORYNEX­OCHIDAE; MCAM. Trinodus McCOY, 1846 [agnostiformis] Caradoc Series, Wexford, Ireland; METAGNOSTIDAE; UORD. Trinucleoides RAYMOND, 1917 [Trinucleus reussiBARRANDE, 1856] .arka Fm, Czech Republic; DIONIDIDAE; MORD. Trinucleus MURCHISON, 1839 [fimbriatus] Llan­deilo Series near Builth, Wales; TRINUCLE­IDAE; LORD. Triplacephalus LU & QIAN in ZHOU et al., 1977 [sanduensis] Sandu, Guizhou, China; EULOM­IDAE?; LORD [j.s.s. of Amzasskiella, fide PENG, 1984]. Triplagnostus HOWELL, 1935c [Agnostus gibbus LINNARSSON, 1869] Exsulans Lst, Vaster­gotland, Sweden; PTYCHAGNOSTIDAE; MCAM [j.s.s. of Ptychagnostus, fide PENG & ROBISON, 2000]. Trippia LAMONT, 1978 [penkillensis] Wether Law Linn Fm, Scotland; ENCRINURIDAE; LSIL [see NOTE 4]. Triproetus KOBAYASHI & HAMADA, 1979 [Neo­proetus (Triproetus) subovalis] Rat Buri Lst, S Thailand; PROETIDAE; LPERM. Tririmagnostus QIU in QIU et al., 1983 [Pseudagn­
+  분리 위치: "UORD. Trinucleoides RA"
+
+줄 4932:
+  원본: Wilcoxaspis WESTROP, 1986a [bulbosa] Mistaya Fm, Alberta, Canada; PTYCHASPIDIDAE; UCAM. Williamsina POULSEN, 1960 [cortesi] Bolaspidella Zone, Argentina; ASAPHISCIDAE; MCAM
+  분리 위치: "UCAM. Williamsina PO"
+
+줄 4965:
+  원본: Xenocheilos WILSON, 1949 [minutum] Wilberns Fm, Texas, USA; NORWOODIIDAE; UCAM. Xenocybe OWENS, 1973a [micrommata] Husbergøya
+  분리 위치: "UCAM. Xenocybe OW"
+
+줄 4966:
+  원본: Fm, Norway; PROETIDAE; UORD. Xenocyclopyge LU in WANG, 1962[radiata] Pagoda Fm, Shaanxi, China; CYCLOPYGIDAE; UORD.
+  분리 위치: "UORD. Xenocyclopyge LU"
+
+
+=== 2. CONTINUATION 줄 병합 (106건) ===
+
+줄 50: [j.s.s. of Ptychagnostus, fide PENG & ROBISON, 2000].
+줄 64: [j.s.s. of Hungaia, fide JELL, herein].
+줄 111: [j.s.s. of Ptychoparia, fide .NAJDR, 1958a].
+줄 299: [j.s.s.
+줄 304: [j.s.s.
+줄 427: [j.s.s. of Changqingia, fide ZAN, 1992].
+줄 451: [j.s.s. of Anchiopella, fide COOPER, 1982]. Bajanaspis IVSHIN, 1979 [sevrugini] Edreisk Fm, Kazakhstan; PARADOXIDIDAE; LCAM.
+줄 480: [j.s.s. of Thysanopyge, fide HARRINGTON & LEANZA, 1957] ]. Basilicoides MA, 1938 [preocc., replaced by Dolerobasilicus].
+줄 493: [j.s.s. of Jeffersonia, fide FORTEY, 1986].
+줄 530: [j.s.s. of Ptychoparopsis, fide GEYER, 1990]. Bergamia WHITTARD, 1955 [rhodesi] Shelve Fm,
+줄 597: [j.s.s. of Bergamia, fide SHAW, 1995].
+줄 636: [j.s.s. of Poliella, fide RESSER, 1935].
+줄 663: [j.s.s. of Bergamia, fide SHAW, 1995].
+줄 669: [j.s.s. of Hypagnostus, fide SHERGOLD et al. 1990].
+줄 724: [j.s.s. of Komaspidella, fide GOGIN & PEGEL, 1987].
+줄 727: [j.s.s. of Clelandia, fide PALMER, 1965]. Bynumina RESSER, 1942b [caelata] Davis Fm, Missouri, USA; KINGSTONIIDAE; UCAM. Bythicheilus RESSER, 1939a [typicum] Spence Sh, Idaho, USA; ALOKISTOCARIDAE; MCAM.
+줄 737: [j.o.s. of Cephalacanthus LAPWORTH in WALCOTT, 1890b and thus j.s.s. of Callavia, fide LAKE, 1937].
+줄 761: [j.s.s. of Camaraspis, fide GRANT, 1965].
+줄 925: [j.s.s. of Leiagnostus, fide NIELSEN, 1997]. Cilia PENG, 1992[plectrifera] Shenjiawan Fm, Hunan, China; PTEROCEPHALIIDAE; UCAM.
+줄 932: [j.s.s. of Ehmaniella, fide HOWELL in MOORE, 1959].
+줄 952: [j.s.s. of Bergamia, fide MORRIS, 1988].
+줄 954: [j.s.s. of Elrathiella, fide HOWELL in MOORE, 1959].
+줄 964: [j.s.s. of Myopsolenus, fide GEYER, 1990].
+줄 1012: [j.s.s. of Dindymene, fide FORTEY & OWENS, 1987].
+줄 1071: [j.s.s. of Clavagnostus, fide SHERGOLD et al., 1990].
+줄 1157: [j.s.s. of Bolaspidella, fide ROBISON, 1964].
+줄 1202: [j.s.s. of Proetus, fide ADRAIN, 1997]. Diabole GRONING, 1985 [Liobole (Diabole) pala] Harz Mts, Germany; PROETIDAE; MISS.
+줄 1251: [j.s.s. of Oedicybele, fide FORTEY, 1997]. Dinesus ETHERIDGE, 1896 [ida] Knowsley East Fm, Victoria, Australia; DINESIDAE; MCAM. Dingxiangaspis Q.Z. ZHANG in QIU et al., 1983 [longispina] Qingkang Fm, Anhui, China; PTEROCEPHALIIDAE; UCAM. Dione BARRANDE, 1846a [preocc., replaced by Dionide]. Dionide BARRANDE, 1847 [Dione formosa BARRANDE, 1846a] Vinice Fm, Czech Republic; DIONIDIDAE; UORD [replacement name for Dione]. Dionideina .NAJDR, 1981a [Dionide prima KLOU!EK, 1916] .arka Fm, Czech Republic; DIONIDIDAE; MORD. Dionidella PRANTL & PIBYL, 1949c [incisa] .arka Fm, Czech Republic; DIONIDIDAE; MORD. Dionidepyga .NAJDR, 1981a [Dionide jubata RAYMOND, 1925] Dobrotiva Fm, Czech
+줄 1346: [j.o.s. of Trinucleus]. Edithiella KURTZ, 1975 [missouriensis] Davis Fm, Missouri, USA; ?ASAPHISCIDAE; UCAM. Edmundsonia COOPER, 1953 [typa] Athens Sh, Virginia, USA; RAPHIOPHORIDAE; UORD.
+줄 1406: [j.s.s. of Tsunyidiscus, fide JELL, 1997].
+줄 1428: [j.s.s. of Plethometopus, fide LOCHMAN, 1953a].
+줄 1491: [j.s.s. of Ptychoparella, fide BLAKER & PEEL, 1997].
+줄 1511: [j.s.s. of Daguinaspis, fide GEYER, 1996]. Epumeria RUSCONI, 1958b [lata] El Totoral, Mendoza, Argentina; INDET; MCAM.
+줄 1618: [j.s.s. of Proetus, fide OWENS, 1973b].
+줄 1660: [j.s.s. of Girvanopyge, fide FORTEY & OWENS, 1987].
+줄 1690: [j.s.s. of Ellipsocephalus, fide GEYER, 1990]. Ghwaiella KIM, 1980 [yemjenriensis] Chonjuri Fm, North Korea; DINESIDAE; MCAM. Gibbocephalus PILLET, 1965a [j.o.s. of Crotalo­cephalina]. Gibscherella REPINA, 1979a [sibirica] Sinersky Fm, S Siberia, Russia; JAKUTIDAE; LCAM. Gigantopygus HUPE, 1953a [papillatus] Issafen Fm, Morocco; GIGANTOPYGIDAE; LCAM.
+줄 1717: [j.s.s. of Elrathiella, fide HOWELL in MOORE, 1959].
+줄 1830: [j.s.s. of Ovalocephalus, fide ZHOU & DEAN, 1986].
+줄 1896: [j.s.s. of Sphaerocoryphe, fide LANE, 1971]. Henadoparia OPIK, 1967 [integra] O’Hara Sh, Que­ensland, Australia; CEDARIIDAE; MUCAM. Hentigia HAAS et al., 1980 [bulbops] Artinskian, Afghanistan; PROETIDAE; LPERM.
+줄 1907: [j.s.s. of Selenoptychus, fide MAREK, 1961 by synonymising the type species of these two genera].
+줄 1949: [j.s.s. of Bonneterrina, fide LOCHMAN in MOORE, 1959].
+줄 1963: [j.s.s. of Bronteopsis, fide MOORE, 1959]
+줄 1968: [j.s.s. of Grandioculus, fide W. ZHANG & JELL, 1987].
+줄 1981: [j.s.s. of Bolaspidella, fide LOCHMAN, 1953b].
+줄 2021: [j.s.s. of Tsunyidiscus, fide JELL, 1997]. Hupeolenus GEYER, 1990 [hupei] Asrir Fm, Morocco; ELLIPSOCEPHALIDAE; LCAM. Hupetina SDZUY, 1978 [antiqua] Igoudine Fm, Morocco; BIGOTINIDAE; LCAM. Huzhuia ZHU, 1965 [typica] Qinghai, China; SOLENOPLEURIDAE; MCAM.
+줄 2046: [j.s.s. of Parayoungia, fide ADRAIN, 1998].
+줄 2120: [j.s.s. of Peronopsis, fide ROBISON, 1988]. Itcheriella OGIENKO, 1969 [lata] Ichersk Fm, Siberia, Russia; PROASAPHISCIDAE; MCAM.
+줄 2185: [j.s.s. of Knechtelia, fide MELZAK & WEST­ROP, 1994].
+줄 2255: [j.s.s. of Sukhanaspis, fide GOGIN & PEGEL, 1997].
+줄 2260: [j.s.s. of Kujandaspis, fide LAZARENKO & NIKIFOROV, 1968].
+줄 2353: [j.s.s. of Maladioidella, fide PENG, 1992].
+줄 2362: [j.s.s. of Aphelaspis, fide PALMER, 1965].
+줄 2467: [j.s.s. of Platycoryphe, fide THOMAS, 1977].
+줄 2476: [j.s.s. of Lioparia, fide W. ZHANG, 1985]. Libertella HU, 1971 [corona] Edinburg Fm, Virginia, USA; ENCRINURIDAE; UORD.
+줄 2534: [j.s.s. of Pseudagnostus, fide PENG & ROB­ISON, 2000].
+줄 2643: [j.s.s. of Metopolichas, fide THOMAS & HOLLOWAY, 1988].
+줄 2655: [j.s.s. of Meitania, fide YUAN et al., 1999].
+줄 2713: [j.s.s. of Parasphaerexochus, fide ADRAIN, herein].
+줄 2715: [j.s.s. of Parehmania, fide HOWELL in MOORE, 1959].
+줄 2734: [j.s.s. of Megistaspis, fide NIELSEN, 1995]. Megistaspis JAANUSSON, 1956 [Trilobites limbatus BOECK, 1838] Huk Fm, Norway; ASAPHIDAE; MORD [replacement name for Megalaspis]. Meisteraspis OGIENKO, 1991 [entis] Udachninsk Fm, SE Siberia, Russia; CONOKEPHALIN­IDAE; MCAM. Meisterella IVSHIN, 1953 [meisteri] Boshchekul Fm, Kazakhstan; CONOKEPHALINIDAE; MCAM. Meitanella LIN & YIN in YIN & LI, 1978 [hastata] Mingxinsi Fm, Guizhou, China; YINITIDAE; LCAM. Meitania YUAN in YIN & LI, 1978 [transversa] Kao­tai Fm, Guizhou, China; PTYCHOPARIIDAE; MCAM. Meitanillaenus W. ZHANG, 1974 [binodosus] Lung-maxi Fm, Guizhou, China; STYGINIDAE; LSIL. Meitanopsis LU, 1975 [angulata] Meitan Fm, Guizhou, China; HUNGAIIDAE; LORD. Mekynophrys HARRINGTON, 1938 [nanna] Tumbaya Dept, Jujuy, Argentina; ASAPHIDAE; LORD. [j.s.s. of Basilicus, fide ZHOU & FORTEY, 1986]. Melopetasus SCHALLREUTER, 1979 [name given to indeterminate ?asaphoid trilobite protaspis]. Memmatella W. ZHANG in W. ZHANG et al., 1995 [tuberculata] Changhia Fm, Henan, China; PROASAPHISCIDAE; MCAM.
+줄 2786: [j.s.s. of Hypagnostus, fide SHERGOLD et al., 1990].
+줄 2847: [j.s.s. of Hedstroemia, fide ADRAIN, 1997]. Milesia CHAPMAN, 1929 [preocc., replaced by Xystridura]. Millardia WALCOTT, 1916a [preocc. replaced by Densonella]. Mimana KOBAYASHI, 1935c [eurycephala] Dictya Zone, South Korea; ?KAOLISHANIIDAE; UCAM. Mimocryphaeus GANDL, 1972[altecostatus] Bad-enas-Schichten, Fombeuna, NE Spain; ACAST­IDAE; USIL. Mindycrusta OPIK, 1967 [mindycrusta] Georgina Lst, Queensland, Australia; ASAPHISCIDAE: MUCAM. Minicephalus LOCHMAN & HU, 1960 [primus]
+줄 2859: [j.s.s. of Cybelurus, fide BURSKII, 1970].
+줄 2867: [j.s.s. of Parakoldinioidia, fide FORTEY, 1983]. Misszhouia CHEN et al., 1997 [Naraoia longicaudata
+줄 2888: [j.s.s. of Elvinia, fide PALMER, 1965].
+줄 2904: [j.s.s. of Neoasaphus, fide NIELSEN, 1995].
+줄 2956: [j.s.s. of Terechtaspis, fide W. ZHANG et al., 1997].
+줄 2975: [j.s.s. of Olenoides, fide KOBAYASHI, 1935c]. Neolichas CURTIS & LANE, 1998 [Lichas norvegicus ANGELIN, 1854] Solvik Fm, Norway; LICH­IDAE; LSIL. Neometacanthus RICHTER & RICHTER, 1948 [Phacops stellifer BURMEISTER, 1843] Eifel, Germany; ACASTIDAE; MDEV [replacement name for Metacanthus HAWLE & CORDA]. Neoolenus LIU, 1982[minor] Qiangongping Fm, Hunan, China; OLENIDAE; LORD. Neopagetina POKROVSKAYA in CHERNYSHEVA, 1960a [Pagetina rjonsnitzkii LERMONTOVA, 1940] Kutorgina Fm, Siberia, Russia; HEBE­DISCIDAE; LCAM [replacement name for Pagetina]. Neoparabolina NIKOLAISEN & HENNINGS­MOEN, 1985 [Olenus frequens BARRANDE, 1868] Leimitz Schiefer, Bavaria, Germany; OLENIDAE; LORD. Neopeltis Q.Z. ZHANG in QIU et al., 1983 [elongata] Shinianpan Fm, Anhui, China; ASAPHIDAE; LORD. Neophillipsia GHEYSELINCK, 1937 [Phillipsia (Neophillipsia) decurtata] Wichita, Kansas, USA; PROETIDAE; PERM [j.s.s. of Ditomopyge, fide OWENS, 1983]. Neopoliellina REPINA in REPINA et al., 1964 [latiforma] Sanashtykgol Horizon, Kuznetsk Alatau, Russia; DOLICHOMETOPIDAE; LCAM. Neoprobolium STRUVE, 1958c [Asaphus nasutus CONRAD, 1841] Schoharie Fm, New York, USA; DALMANITIDAE; LDEV [replacement name for Probolium]. Neoprodamesella YUAN & YIN, 2000 [spinosa] Chefu Fm, Guizhou, China; UNCERTAIN; MUCAM [j.s.s. of Prodamesella, fide PENG et al., 2001a]. Neoproetus TESCH, 1923 [Proetus (Neoproetus) indicus] Bitauni, Timor, Indonesia; PROET­IDAE; UPERM. Neopsilocephalina YIN in YIN & LI, 1978 [zunyi­
+줄 3068: [j.s.s. of Benthamaspis, fide FORTEY, 1979].
+줄 3080: [j.s.s. of Decoroproetus, fide OWENS, 1970]. Ogygia BRONGNIART in DESMAREST, 1817 [suppressed by ICZN Opinion 1259].
+줄 3118: [j.s.s. of Ceratocephala, fide WHITTINGTON & EVITT, 1954].
+줄 3130: [j.s.s. of Sphaerexochus, fide ADRAIN, herein] Onychaspis RAYMOND, 1925 [misspelling of Onchaspis].
+줄 3193: [j.s.s. of Warburgella, fide ADRAIN, herein].
+줄 3195: [j.s.s. of Acmarhachis, fide PENG & ROBISON, 2000].
+줄 3256: [j.s.s. of Bathycheilus, fide RABANO, 1990]. Parabellefontia HINTZE, 1953 [concinna] House Fm, Utah, USA; ASAPHIDAE; LORD.
+줄 3294: [j.s.s. of Damesops, fide JELL & HUGHES, 1997].
+줄 3313: [j.s.s. of Proagnostus, fide SHERGOLD et al., 1990]. Paragnostus JAEKEL, 1909 [j.o.s. of Condylopyge]. Paragraulos LU, 1941 [kunmingensis] Tsanglangpu Fm, Yunnan, China; AGRAULIDAE; LCAM.
+줄 3345: [j.s.s. of Monkaspis, fide W. ZHANG & JELL, 1987]. Paralichas REED, 1902[replacement name for Platymetopus; preocc., replaced by Amphilichas].
+줄 3367: [j.s.s. of Bainella, fide CARVALHO & EDGECOMBE, 1991].
+줄 3424: [j.s.s. of Brevitermierella, fide GEYER, 1990].
+줄 3512: [j.s.s. of Ditomopyge, fide OWENS, 1983].
+줄 3544: [j.s.s. of Prionocheilus, fide MAREK in HORNY & BASTL, 1970].
+줄 3558: [j.s.s. of Hydrocephalus, fide DEAN & RUSH­TON, 1997].
+줄 3560: [j.s.s. of Leiagnostus, fide SHERGOLD et al., 1990].
+줄 3652: [j.s.s. of Pseudagnostus, fide PENG & ROBISON, 2000].
+줄 3741: [j.s.s. of Protemnites, fide SHERGOLD, 1982]. Proagnostus BUTTS, 1926 [bulbus] Nolichucky Fm, Alabama, USA; AMMAGNOSTIDAE; UCAM.
+줄 3871: [j.o.s. of Rokycania].
+줄 3878: [j.s.s. of Madygenia, fide ADRAIN, herein].
+줄 4000: [j.s.s. of Ptychoparia, fide .NAJDR, 1958a].
+줄 4056: [j.s.s. of Glaphyraspis, fide PALMER, 1965].
+줄 4084: [j.s.s. of Dicranopeltis, fide TRIPP, 1957].
+줄 4425: [j.s.s. of Westergaardia, fide POULSEN in MOORE, 1959].
+줄 4453: [j.s.s. of Spencia, fide RASETTI, 1951].
+줄 4521: [j.s.s. of Cheiropyge, fide HAHN & HAHN, 1985].
+줄 4532: [j.s.s. of Symphysurina, fide HINTZE, 1953].
+줄 4693: [j.s.s. of Sinodiscus, fide JELL, 1997].
+줄 4710: [j.s.s. of Prohedinia, fide W. ZHANG et al., 1995].
+줄 4745: [j.s.s. of Rorringtonia, fide FORTEY, 1997].
+줄 4754: [j.s.s. of Penarosa, fide JELL, 1977a]. Trinia POLETAEVA in CHERNYSHEVA et al., 1956 [bella] Salair, W Siberia, Russia; CORYNEX­OCHIDAE; MCAM. Trinodus McCOY, 1846 [agnostiformis] Caradoc Series, Wexford, Ireland; METAGNOSTIDAE; UORD. Trinucleoides RAYMOND, 1917 [Trinucleus reussiBARRANDE, 1856] .arka Fm, Czech Republic; DIONIDIDAE; MORD. Trinucleus MURCHISON, 1839 [fimbriatus] Llan­deilo Series near Builth, Wales; TRINUCLE­IDAE; LORD. Triplacephalus LU & QIAN in ZHOU et al., 1977 [sanduensis] Sandu, Guizhou, China; EULOM­IDAE?; LORD [j.s.s. of Amzasskiella, fide PENG, 1984]. Triplagnostus HOWELL, 1935c [Agnostus gibbus LINNARSSON, 1869] Exsulans Lst, Vaster­gotland, Sweden; PTYCHAGNOSTIDAE; MCAM [j.s.s. of Ptychagnostus, fide PENG & ROBISON, 2000]. Trippia LAMONT, 1978 [penkillensis] Wether Law Linn Fm, Scotland; ENCRINURIDAE; LSIL [see NOTE 4]. Triproetus KOBAYASHI & HAMADA, 1979 [Neo­proetus (Triproetus) subovalis] Rat Buri Lst, S Thailand; PROETIDAE; LPERM. Tririmagnostus QIU in QIU et al., 1983 [Pseudagn­
+줄 4756: [j.s.s. of Trisulcagnostus, fide SHERGOLD et al., 1990].
+줄 4773: [j.s.s. of Dicranopeltis, fide THOMAS, 1981]. Tugurellum SUN, 1990 [cameratum] Fengshan Fm, Hebei, China; KAOLISHANIIDAE; UCAM.
+줄 4926: [j.s.s. of Norwoodia, fide RESSER, 1938c].
+줄 4933: [j.s.s. of Canotiana, fide RUSCONI, 1962].
+줄 4991: [j.s.s. of Taklamakania, fide W. ZHANG, 1985].
+줄 5028: [j.s.s. of Tarimella, fide W. ZHANG, 1985].
+줄 5033: [j.s.s. of Hanchungolithus, fide ZHOU & HUGHES, 1989].
+
+
+=== 3. 삭제된 빈 줄/깨진 줄 (16건) ===
+
+줄 70: (빈 줄)
+줄 71: (빈 줄)
+줄 72: (빈 줄)
+줄 76: (빈 줄)
+줄 301: (빈 줄)
+줄 303: (빈 줄)
+줄 306: (빈 줄)
+줄 307: (빈 줄)
+줄 858: (빈 줄)
+줄 1745: (빈 줄)
+줄 2633: (빈 줄)
+줄 3021: (빈 줄)
+줄 3022: (빈 줄)
+줄 3023: (빈 줄)
+줄 3526: (빈 줄)
+줄 4414: (빈 줄)
