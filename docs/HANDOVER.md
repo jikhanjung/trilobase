@@ -34,6 +34,12 @@
   - Location/Formation 파싱 개선
   - formations, countries 테이블 생성
 
+- **Phase 6 완료**: Family 정규화
+  - Family 파일 파싱 (181개 families)
+  - families 테이블 생성
+  - taxa-family 연결 (97.7%)
+  - Family 오타 수정 (DORYPGIDAE, CHENGKOUASPIDIDAE)
+
 ### 데이터베이스 현황
 
 | 항목 | 값 | 비율 |
@@ -47,6 +53,8 @@
 | Country 연결됨 | 4,841 | 99.9% |
 | **Formation** | 4,854 | 95.0% |
 | Formation 연결됨 | 4,854 | 100% |
+| **Family** | 181 | |
+| Family 연결됨 | 4,660 | 97.7% |
 
 ### 파일 구조
 
@@ -62,29 +70,32 @@ trilobase/
 │   ├── normalize_lines.py            # 줄 정규화 스크립트
 │   ├── create_database.py            # DB 생성 스크립트
 │   ├── normalize_database.py         # DB 정규화 스크립트
-│   └── fix_synonyms.py               # Synonym 파싱 개선 스크립트
+│   ├── fix_synonyms.py               # Synonym 파싱 개선 스크립트
+│   └── normalize_families.py         # Family 정규화 스크립트
 ├── devlog/
 │   ├── 20260204_P01_data_cleaning_plan.md
 │   ├── 20260204_001_phase1_line_normalization.md
 │   ├── 20260204_002_phase2_character_fixes.md
 │   ├── 20260204_003_phase3_data_validation_summary.md
 │   ├── 20260204_004_phase4_database_creation.md
-│   └── 20260204_005_phase5_normalization.md
+│   ├── 20260204_005_phase5_normalization.md
+│   └── 20260204_006_phase6_family_normalization.md
 ├── docs/
 │   └── HANDOVER.md
 └── CLAUDE.md
 ```
 
-## 다음 작업 (Phase 6: 상위 분류군 통합)
+## 다음 작업 (Phase 7: Order 통합)
 
 ### 작업 대상
-1. **Family 테이블 생성**: 186개 Family 정규화
-2. **Order 데이터 추가**: Family를 Order로 그룹화
+1. **Order 데이터 추가**: Family를 Order로 그룹화
+2. **orders 테이블 생성**: id, name, families_count
 3. **계층 구조 완성**: taxa → Family → Order 관계
 
 ### 미해결 항목
 - Synonym 미연결 4건 (원본에 senior taxa 없음)
 - Location/Formation 없는 taxa는 모두 무효 taxa (정상)
+- Family 미연결 111건 (INDET 29, UNCERTAIN 74, NEKTASPIDA 8)
 
 ## 전체 계획
 
@@ -93,7 +104,8 @@ trilobase/
 3. ~~Phase 3: 데이터 검증~~ ✅
 4. ~~Phase 4: DB 스키마 설계 및 데이터 임포트~~ ✅
 5. ~~Phase 5: 정규화 (Formation, Location, Synonym)~~ ✅
-6. Phase 6: 상위 분류군 통합 (Family, Order)
+6. ~~Phase 6: Family 정규화~~ ✅
+7. Phase 7: Order 통합
 
 ## DB 스키마
 
@@ -102,7 +114,7 @@ trilobase/
 taxa (id, name, author, year, year_suffix, type_species,
       type_species_author, formation, location, family,
       temporal_code, is_valid, notes, raw_entry, created_at,
-      country_id, formation_id)
+      country_id, formation_id, family_id)
 
 -- synonyms: 1,055 records
 synonyms (id, junior_taxon_id, senior_taxon_name, senior_taxon_id,
@@ -117,6 +129,9 @@ countries (id, name, code, taxa_count)
 
 -- temporal_ranges: 28 records
 temporal_ranges (id, code, name, period, epoch, start_mya, end_mya)
+
+-- families: 181 records
+families (id, name, name_normalized, author, year, genera_count, taxa_count)
 ```
 
 ## DB 사용법
