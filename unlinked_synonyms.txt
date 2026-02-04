@@ -1,0 +1,4 @@
+Actinopeltis	Grinellaspis	preocc.	Actinopeltis POULSEN, 1946 [preocc., replaced by Grinellaspis].
+Liocephalus	Bailliella	j.s.s.	Liocephalus GRONWALL, 1902[Conocoryphe impressa LINNARSSON, 1879] Exsulans Lst, Sweden; CONOCORYPHIDAE; MCAM [j.s.s. of Bailliella, fide POULSEN in MOORE, 1959].
+Macroculites	Parakoldinoidia	j.s.s.	Macroculites KOBAYASHI, 1955b [enigmaticus] McKay Group, British Columbia, Canada; MISSISQUOIIDAE; LORD [j.s.s. of Missisquoia (=Parakoldinoidia), fide DEAN, 1977].
+Schmidtella	Tschernyschewella	preocc.	Schmidtella TSCHERNYSCHEW, 1893 [preocc., replaced by Tschernyschewella].
