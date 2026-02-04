@@ -74,11 +74,6 @@ def find_genus_split_points(line):
     #                 MISS, PENN, LPERM, PERM, UPERM, CAM, ORD, SIL, DEV
     # Also: herein (for "fide AUTHOR, herein")
 
-    # Pattern: temporal_code/herein followed by ]. or . then space and GenusName AUTHOR
-    # GenusName = Capital + lowercase (at least 2)
-    # AUTHOR = ALLCAPS (may have & , in, et al.)
-    # Pattern captures: [temporal]. GenusName AUTHOR (rest doesn't matter for split point)
-
     pattern = r'(?:L?M?U?(?:CAM|ORD|SIL|DEV|PERM)|MISS|PENN|herein)\]?\.\s+([A-Z][a-z]{2,}\s+[A-Z][A-Z])'
 
     for match in re.finditer(pattern, line):
@@ -99,7 +94,7 @@ def find_genus_split_points(line):
 
     return sorted(splits)
 
-def normalize_lines(input_file, output_file):
+def normalize_lines_main(input_file, output_file):
     with open(input_file, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
@@ -161,12 +156,4 @@ def normalize_lines(input_file, output_file):
     print(f"Removed garbage/empty lines: {len(lines) - len(cleaned_lines) + sum(1 for l in cleaned_lines if is_garbage_line(l))}")
 
 if __name__ == '__main__':
-    input_file = 'trilobite_genus_list.txt'
-    output_file = 'trilobite_genus_list_normalized.txt'
-
-    if len(sys.argv) > 1:
-        input_file = sys.argv[1]
-    if len(sys.argv) > 2:
-        output_file = sys.argv[2]
-
-    normalize_lines(input_file, output_file)
+    normalize_lines_main('trilobite_genus_list.txt', 'trilobite_genus_list_structural_fixed.txt')
