@@ -43,18 +43,18 @@
 - 오타: **3건**
 - **총합: 404건**
 
-## 미해결 항목
+## 추가 수정 (PDF 확인 후)
 
-### 불완전한 엔트리 (원본 PDF 확인 필요)
+### 불완전한 엔트리 수정
 ```
-Actinopeltis HAWLE & CORDA, 1847 [carolialexandri] Kral
+Before: Actinopeltis HAWLE & CORDA, 1847 [carolialexandri] Kral
+After:  Actinopeltis HAWLE & CORDA, 1847 [carolialexandri] Králův Dvůr Fm, Czech Republic; CHEIRURIDAE; UORD.
 ```
-- 엔트리가 잘려있음. 원본 Jell & Adrain (2002) PDF 확인 필요.
+- 원본 PDF (actinopeltis.png) 확인하여 완전한 엔트리로 복원
 
-### 추가 검토 필요
-- `NOVAK` (19건): 체코어 `NOVÁK`로 수정 여부 검토
-  - 다른 체코어 저자명은 모두 원어 표기로 수정함
-  - 일관성을 위해 수정 권장
+### NOVÁK 수정
+- `NOVAK` → `NOVÁK`: 19건
+- 다른 체코어 저자명과 일관성 유지
 
 ## 기술 노트
 

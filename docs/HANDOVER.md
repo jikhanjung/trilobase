@@ -15,11 +15,12 @@
   - Continuation 병합 (106건)
   - 빈 줄/깨진 줄 삭제 (16건)
 
-- **Phase 2 완료**: 깨진 문자 및 오타 수정 (총 404건)
-  - 체코어 저자명 복원: ŠNAJDR(85), PŘIBYL(145), VANĚK(118), RŮŽIČKA(12), KLOUČEK(9)
-  - 체코어 지명 복원: Šárka Fm(27), Třenice(4)
+- **Phase 2 완료**: 깨진 문자 및 오타 수정 (총 424건)
+  - 체코어 저자명 복원: ŠNAJDR(85), PŘIBYL(145), VANĚK(118), RŮŽIČKA(12), KLOUČEK(9), NOVÁK(19)
+  - 체코어 지명 복원: Šárka Fm(27), Třenice(4), Králův Dvůr Fm(1)
   - Genus 이름 수정: Šnajdria(1)
   - 오타 수정: Glabrella, Natalina, Strenuella 쉼표 제거(3)
+  - 불완전 엔트리 복원: Actinopeltis(1)
 
 ### 파일 구조
 ```
@@ -58,11 +59,8 @@ trilobase/
 3. **중복 검사**
    - 동일 genus 중복 여부
 
-### 미해결 항목 (원본 PDF 확인 필요)
-- `Actinopeltis HAWLE & CORDA, 1847 [carolialexandri] Kral` - 엔트리 잘림
-
-### 추가 검토 필요
-- `NOVAK` (19건): 체코어 `NOVÁK`로 수정 여부 검토
+### 미해결 항목
+- 현재 없음
 
 ## 전체 계획 (devlog/20260204_P01_data_cleaning_plan.md 참조)
 
