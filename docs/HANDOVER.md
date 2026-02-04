@@ -15,6 +15,12 @@
   - Continuation 병합 (106건)
   - 빈 줄/깨진 줄 삭제 (16건)
 
+- **Phase 2 완료**: 깨진 문자 및 오타 수정 (총 404건)
+  - 체코어 저자명 복원: ŠNAJDR(85), PŘIBYL(145), VANĚK(118), RŮŽIČKA(12), KLOUČEK(9)
+  - 체코어 지명 복원: Šárka Fm(27), Třenice(4)
+  - Genus 이름 수정: Šnajdria(1)
+  - 오타 수정: Glabrella, Natalina, Strenuella 쉼표 제거(3)
+
 ### 파일 구조
 ```
 trilobase/
@@ -29,35 +35,39 @@ trilobase/
 ├── devlog/
 │   ├── 20260204_P01_data_cleaning_plan.md    # 전체 계획
 │   ├── 20260204_001_phase1_line_normalization.md  # Phase 1 작업 기록
+│   ├── 20260204_002_phase2_character_fixes.md    # Phase 2 작업 기록
 │   ├── 20260204_genus_list_changes_summary.txt
 │   ├── 20260204_genus_list_structural_changes.txt
 │   └── 20260204_genus_list_normalize_lines.diff
 └── CLAUDE.md
 ```
 
-## 다음 작업 (Phase 2)
+## 다음 작업 (Phase 3: 데이터 검증)
 
-### 우선순위 높음
-1. **체코어 저자명 복원**:
-   - `.NAJDR` → `ŠNAJDR` (Jiří Šnajdr)
-   - `PIBYL` → `PŘIBYL` (Alois Přibyl)
-   - `VAN˛K` → `VANĚK` (Jiří Vaněk)
+### 검증 항목
+1. **형식 일관성 검사**
+   - 각 줄이 `GENUS AUTHOR, YEAR [type]...` 형식인지 확인
+   - 대괄호/괄호 짝 맞춤 검사
+   - 세미콜론 구분자 검사
 
-2. **기타 깨진 문자 수정**
+2. **데이터 무결성 검사**
+   - 연도 범위 확인 (1700-2002)
+   - 시대 코드 유효성 (LCAM, MCAM, UCAM 등)
+   - Family 이름 유효성
 
-3. **오타 수정**:
-   - `Glabrella,` - 쉼표 오류
-   - `Natalina,` - 쉼표 오류
-   - `.najdria` → `Šnajdria`
-   - `Strenuella,` - 쉼표 오류
+3. **중복 검사**
+   - 동일 genus 중복 여부
 
-### 참고: 불완전한 엔트리
-- `Actinopeltis HAWLE & CORDA, 1847 [carolialexandri] Kral` - 원본 PDF 확인 필요
+### 미해결 항목 (원본 PDF 확인 필요)
+- `Actinopeltis HAWLE & CORDA, 1847 [carolialexandri] Kral` - 엔트리 잘림
+
+### 추가 검토 필요
+- `NOVAK` (19건): 체코어 `NOVÁK`로 수정 여부 검토
 
 ## 전체 계획 (devlog/20260204_P01_data_cleaning_plan.md 참조)
 
 1. ~~Phase 1: 줄 정리~~ ✅
-2. Phase 2: 깨진 문자 및 오타 수정
+2. ~~Phase 2: 깨진 문자 및 오타 수정~~ ✅
 3. Phase 3: 데이터 검증
 4. Phase 4: DB 스키마 설계 및 데이터 임포트
 5. Phase 5: 정규화 (Formation, Location, Temporal Range, Synonym)
