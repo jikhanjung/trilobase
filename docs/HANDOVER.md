@@ -40,6 +40,11 @@
   - taxa-family 연결 (97.7%)
   - Family 오타 수정 (DORYPGIDAE, CHENGKOUASPIDIDAE)
 
+- **Phase 7 완료**: Order 통합 및 계층 구조 구축
+  - `adrain2011.txt` 파일을 활용하여 Class, Order, Suborder, Superfamily, Family의 계층 구조를 파싱
+  - `taxonomic_ranks`라는 self-referential 테이블을 생성하여 계층 데이터 저장
+  - `trilobase.db`에 성공적으로 데이터 삽입 및 관계 검증
+
 ### 데이터베이스 현황
 
 | 항목 | 값 | 비율 |
@@ -63,6 +68,7 @@ trilobase/
 ├── trilobase.db                      # SQLite 데이터베이스
 ├── trilobite_genus_list.txt          # 정제된 genus 목록
 ├── trilobite_genus_list_original.txt # 원본 백업
+├── adrain2011.txt                    # Order 통합을 위한 suprafamilial taxa 목록
 ├── unlinked_synonyms.txt             # 미연결 synonym (4건)
 ├── unlinked_taxa_no_location.txt     # Location 없는 taxa (266건)
 ├── unlinked_taxa_no_formation.txt    # Formation 없는 taxa (259건)
@@ -71,7 +77,8 @@ trilobase/
 │   ├── create_database.py            # DB 생성 스크립트
 │   ├── normalize_database.py         # DB 정규화 스크립트
 │   ├── fix_synonyms.py               # Synonym 파싱 개선 스크립트
-│   └── normalize_families.py         # Family 정규화 스크립트
+│   ├── normalize_families.py         # Family 정규화 스크립트
+│   └── populate_taxonomic_ranks.py   # taxonomic_ranks 테이블 채우기 스크립트
 ├── devlog/
 │   ├── 20260204_P01_data_cleaning_plan.md
 │   ├── 20260204_001_phase1_line_normalization.md
@@ -85,12 +92,7 @@ trilobase/
 └── CLAUDE.md
 ```
 
-## 다음 작업 (Phase 7: Order 통합)
-
-### 작업 대상
-1. **Order 데이터 추가**: Family를 Order로 그룹화
-2. **orders 테이블 생성**: id, name, families_count
-3. **계층 구조 완성**: taxa → Family → Order 관계
+## 다음 작업 (현재 추가 작업 없음)
 
 ### 미해결 항목
 - Synonym 미연결 4건 (원본에 senior taxa 없음)
@@ -105,12 +107,13 @@ trilobase/
 4. ~~Phase 4: DB 스키마 설계 및 데이터 임포트~~ ✅
 5. ~~Phase 5: 정규화 (Formation, Location, Synonym)~~ ✅
 6. ~~Phase 6: Family 정규화~~ ✅
-7. Phase 7: Order 통합
+7. Phase 7: Order 통합 ✅
 
 ## DB 스키마
 
 ```sql
 -- taxa: 5,113 records
+-- (family_id는 향후 taxonomic_ranks.id와 연결될 예정)
 taxa (id, name, author, year, year_suffix, type_species,
       type_species_author, formation, location, family,
       temporal_code, is_valid, notes, raw_entry, created_at,
@@ -130,8 +133,18 @@ countries (id, name, code, taxa_count)
 -- temporal_ranges: 28 records
 temporal_ranges (id, code, name, period, epoch, start_mya, end_mya)
 
--- families: 181 records
-families (id, name, name_normalized, author, year, genera_count, taxa_count)
+-- taxonomic_ranks: 계층적 분류 체계 (Class, Order, Suborder, Superfamily, Family)
+-- families 테이블은 이 테이블로 대체되며, taxa 테이블의 family_id는 이 테이블과 연결될 예정
+taxonomic_ranks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    rank TEXT NOT NULL, -- Class, Order, Suborder, Superfamily, Family
+    parent_id INTEGER,
+    author TEXT,
+    notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (parent_id) REFERENCES taxonomic_ranks(id)
+)
 ```
 
 ## DB 사용법
