@@ -1,0 +1,266 @@
+Acanthaloma	CONRAD	1840	0	Acanthaloma CONRAD, 1840 [suppressed by decision of ICZN, for discussion see WHITTINGTON, 1952c] [j.s.s. of Leonaspis, fide WHITTINGTON, 1952c].
+Acastina	REED	1927	0	Acastina REED, 1927 [unnecessary replacement and thus j.o.s. of Acaste].
+Acheilus	RAYMOND	1924	0	Acheilus RAYMOND, 1924 [preocc., replaced by Peracheilus].
+Acrectopyge	HAWLE & CORDA	1847	0	Acrectopyge HAWLE & CORDA, 1847 in VOGDES, 1925 [error for Acanthopyge].
+Actinobolus	EICHWALD	1858	0	Actinobolus EICHWALD, 1858 [misspelling of Actinolobus].
+Actinolobus	EICHWALD	1858	0	Actinolobus EICHWALD, 1858 [preocc., not replaced] [j.s.s. of Illaenus, fide JAANUSSON, 1954].
+Actinopeltis	POULSEN	1946	0	Actinopeltis POULSEN, 1946 [preocc., replaced by Grinellaspis].
+Aeglina	BARRANDE	1850	0	Aeglina BARRANDE, 1850 [replacement name for Egle] [j.o.s. of Cyclopyge].
+Aeonia	BURMEISTER	1843	0	Aeonia BURMEISTER, 1843 [j.o.s. of Proetus].
+Agnostoglossa	OPIK	1967	0	Agnostoglossa OPIK, 1967 [bassa] Mungerebar Lst; AMMAGNOSTIDAE; UCAM. [j.s.s. of Ammagnostus, fide SHERGOLD et al., 1990]
+Agnostonymus	OPIK	1979	0	Agnostonymus OPIK, 1979 [Onymagnostus (Agnostonymus) semiermis] Currant Bush Lst, Queensland, Australia; PTYCHAGNOSTIDAE, MCAM [j.s.s. of Onymagnostus, fide SHERGOLD et al., 1990].
+Alemtejoia	KOBAYASHI	1943	0	Alemtejoia KOBAYASHI, 1943a [Microdiscus souzai DELGADO, 1904] Spain; HEBEDISCIDAE, LCAM [j.s.s. of Delgadella, fide JELL, 1997].
+Aliger	HOWELL	1937	0	Aliger HOWELL, 1937 [preocc. replaced by Aligerites].
+Alloctops	RAFINESQUE	1832	0	Alloctops RAFINESQUE, 1832[see NOTE 2].
+Ambonslium	KOBAYASHI	1941	0	Ambonslium KOBAYASHI, 1941 [misspelling of Ambonolium].
+Amphion	PANDER	1830	0	Amphion PANDER, 1830 [preocc., replaced by Pliomera].
+Anderssonia	SUN	1924	0	Anderssonia SUN, 1924 [preocc. replaced by Anderssonella]
+Aneuacanthus	BARRANDE	1856	0	Aneuacanthus BARRANDE, 1856 [unnecessary emendation of Aneucanthus and thus j.o.s. of Acontheus]
+Aneucanthus	ANGELIN	1854	0	Aneucanthus ANGELIN, 1854 [unnecessary replacement of Acontheus and thus j.o.s. of Acontheus].
+Anginouyia	SAVITSKY et al.	1974	0	Anginouyia SAVITSKY et al., 1974 [quoted in NOMENCLATOR ZOOLOGICUS vol. 8; misspelling of Amginouyia].
+Anisonotus	RAYMOND	1920	0	Anisonotus RAYMOND, 1920 [preocc., replaced by Anisonotella].
+Anorina	WHITEHOUSE	1936	0	Anorina WHITEHOUSE, 1936 [j.o.s. of Eoasaphus].
+Anthes	GOLDFUSS	1843	0	Anthes GOLDFUSS, 1843 [j.o.s. of Peltura].
+Arctaspis	LERMONTOVA	1940	0	Arctaspis LERMONTOVA, 1940 [preocc., replaced by Paracrocephalites].
+Arethusa	BARRANDE	1846	0	Arethusa BARRANDE, 1846a [preocc., replaced by Arethusina].
+Arethusina	BARRANDE	1852	0	Arethusina BARRANDE, 1852[replacement name for Arethusa] [j.o.s. of Aulacopleura].
+Arges	GOLDFUSS	1839	0	Arges GOLDFUSS, 1839 [preocc., replaced by Ceratarges].
+Arion	BARRANDE	1846	0	Arion BARRANDE, 1846a [preocc., replaced by Agraulos]
+Arionellus	BARRANDE	1852	0	Arionellus BARRANDE, 1852[replacement name for Arionides] [j.o.s. of Agraulos]
+Arionides	BARRANDE	1847	0	Arionides BARRANDE, 1847 [replacement name for Arion] [j.o.s. of Agraulos]
+Asteraspis	KOBAYASHI	1935	0	Asteraspis KOBAYASHI, 1935c [j.o.s. of Deiracephalus].
+Astyages	ANGELIN	1854	0	Astyages ANGELIN, 1854 [preocc., replaced by Isocolus].
+Aulacodiscus	WESTERGARD	1946	0	Aulacodiscus WESTERGARD, 1946 [preocc. replaced by Opsidiscus].
+Australurus	RAMSKOLD	1986	0	Australurus RAMSKOLD, 1986a [preocc., replaced by Pacificurus].
+Barrandia	HALL	1860	0	Barrandia HALL, 1860 [preocc., replaced by Olen-ellus].
+Basilicoides	MA	1938	0	Basilicoides MA, 1938 [preocc., replaced by Dolerobasilicus].
+Battus	DALMAN	1827	0	Battus DALMAN, 1827 [j.o.s. of Agnostus].
+Bergeronia	MATTHEW	1895	0	Bergeronia MATTHEW, 1895 [j.o.s. of Protolenus].
+Bettonia	WHITTARD	1956	0	Bettonia WHITTARD, 1956 [preocc., replaced by Bettonolithus].
+Blountiana	[misspelling of Blountina in SHAW	1952	0	Blountiana [misspelling of Blountina in SHAW, 1952].
+Boeckia	BROGGER	1882	0	Boeckia BROGGER, 1882[preocc., replaced by Boeckaspis].
+Boeckia	PILLET	1965	0	Boeckia PILLET, 1965a [preocc., replaced by Pilletopeltis].
+Borthaspis	STUBBLEFIELD	1951	0	Borthaspis STUBBLEFIELD, 1951b [j.o.s. of Psilocephalinella].
+Brachyampyx	FORBES	1849	0	Brachyampyx FORBES, 1849 [j.o.s. of Ampyx].
+Brachyaspis	MILLER	1936	0	Brachyaspis MILLER, 1936a [preocc., replaced by Brachyaspidion].
+Brachymetopina	REED	1903	0	Brachymetopina REED, 1903 [j.o.s. of Brachymetopus].
+Branisella	PŘIBYL & VANĚK	1981	0	Branisella PŘIBYL & VANĚK, 1981a [preocc., not replaced; j.s.s. of Maurotarion, fide ADRAIN & EDGECOMBE, 1996].
+Briania	EDGECOMBE	1994	0	Briania EDGECOMBE, 1994 [preocc., replaced by Brianurus].
+Broeggeria	BANCROFT	1933	0	Broeggeria BANCROFT, 1933 [preocc., replaced by Broeggerolithus].
+Brongniartia	SALTER	1865	0	Brongniartia SALTER, 1865 [preocc., replaced by Eohomalonotus].
+Brontes	GOLDFUSS	1839	0	Brontes GOLDFUSS, 1839 [preocc., replaced by Bronteus and by Goldius].
+Burnetia	WALCOTT	1924	0	Burnetia WALCOTT, 1924b [preocc. replaced by Burnetiella].
+Calymena	DESMAREST	1817	0	Calymena DESMAREST, 1817 [suppressed in favour of Calymene, by ICZN Opinion 1433].
+Calyptomma	RESSER	1942	0	Calyptomma RESSER, 1942b [preocc. replaced by Princetonella].
+Cephalocoelia	RAYMOND	1937	0	Cephalocoelia RAYMOND, 1937 [preocc., replaced by Catillicephala].
+Ciceragnostus	KOBAYASHI	1937	0	Ciceragnostus KOBAYASHI, 1937b [Agnostus barlowii BELT, 1868] Dolgellau, N Wales; AGNOSTINA FAMILY UNCERTAIN; LORD [j.s.s. of Leiagnostus, fide NIELSEN, 1997].
+Cobboldia	LERMONTOVA	1940	0	Cobboldia LERMONTOVA, 1940 [preocc. replaced by Neocobboldia].
+Colymbus	HADDING	1913	0	Colymbus HADDING, 1913a [preocc., replaced by Paryfenus].
+Conocephalites	BARRANDE	1852	0	Conocephalites BARRANDE, 1852[j.o.s. of Conocoryphe].
+Crepicocephalus	BIGSBY	1868	0	Crepicocephalus BIGSBY, 1868 misspelling of Crepicephalus.
+Cryphaeus	GREEN	1837	0	Cryphaeus GREEN, 1837 [preocc., replaced by Greenops].
+Cryptonymus	EICHWALD	1840	0	Cryptonymus EICHWALD, 1840 [suppressed in favour of Illaenus by ICZN opinion 508].
+Culipagnostus	RUSCONI	1952	0	Culipagnostus RUSCONI, 1952[chipiquensis] Argentina; CLAVAGNOSTIDAE; MUCAM [j.s.s. of Clavagnostus, fide SHERGOLD et al., 1990].
+Cyamops	OWENS	1979	0	Cyamops OWENS, 1979 [preocc., replaced by Cyamella].
+Cyclognathus	LINNARSSON	1875	0	Cyclognathus LINNARSSON, 1875 [preocc., replaced by Acerocarina].
+Cylindraspis	SANDBERGER in SANDBERGER & SANDBERGER	1850	0	Cylindraspis SANDBERGER in SANDBERGER & SANDBERGER, 1850 [preocc., not replaced; j.s.s. of Archegonus, fide MOORE, 1959].
+Cylindrocephalus	TRENKNER	1868	0	Cylindrocephalus TRENKNER, 1868 [angustus] [preocc., never replaced].
+Dahungshania			0	Dahungshania LI et al. 1975 [misspelling of Taihungshania].
+Dalmania	EMMRICH	1844	0	Dalmania EMMRICH, 1844 [preocc., replaced by Dalmanites].
+Dalmaniopsis	GEINITZ	1862	0	Dalmaniopsis GEINITZ, 1862[not a trilobite, fide RICHTER & RICHTER, 1955, Senckenbergiana Lethaea 36: 294].
+Deiocoryphe	misspelling of Leiocoryphe in MOORE	1959	0	Deiocoryphe misspelling of Leiocoryphe in MOORE, 1959.
+Delamarella	EDDY & McCOLLUM	1998	0	Delamarella EDDY & McCOLLUM, 1998 [preocc., replaced by Delamarina].
+Denckmannia	WEDEKIND	1911	0	Denckmannia WEDEKIND, 1911 [preocc., replaced by Denckmannites].
+Denisia	CLARK	1924	0	Denisia CLARK, 1924 [preocc., replaced by Theodenisia].
+Diandongaspis	LU & ZHANG in W. ZHANG et al.	1980	0	Diandongaspis LU & ZHANG in W. ZHANG et al., 1980a [preocc. replaced by Diandongaspidella].
+Dichagnostus	JAEKEL	1909	0	Dichagnostus JAEKEL,1909 [j.o.s. of Pleuroctenium].
+Dictya	KOBAYASHI	1933	0	Dictya KOBAYASHI, 1933a [preocc. replaced by Dictyites].
+Dione	BARRANDE	1846	0	Dione BARRANDE, 1846a [preocc., replaced by Dionide].
+Diplopsites	RAFINESQUE	1832	0	Diplopsites RAFINESQUE, 1832[levis] [see NOTE 2].
+Ebenzeria	MARCOU	1888	0	Ebenzeria MARCOU, 1888 [unnecessary replacement name for and thus j.o.s. of Elliptocephala].
+Edgellia	SHAW in SHAW & STUBBLEFIELD	1950	0	Edgellia SHAW in SHAW & STUBBLEFIELD, 1950 [j.o.s. of Trinucleus].
+Egle	BARRANDE	1846	0	Egle BARRANDE, 1846a [preocc., replaced by Cyclopyge].
+Embolimus	ROMINGER	1887	0	Embolimus ROMINGER, 1887 [preocc., replaced by Zacanthoides].
+Endymion	BILLINGS	1862	0	Endymion BILLINGS, 1862[preocc., replaced by Endymionia].
+Entomolithus	LINNAEUS	1745	0	Entomolithus LINNAEUS, 1745 [suppressed in favour of Paradoxides].
+Entomostracites	WAHLENBERG	1821	0	Entomostracites WAHLENBERG, 1821 [suppressed in favour of Paradoxides].
+Eoasaphiscus	LU & YUAN in LI	1978	0	Eoasaphiscus LU & YUAN in LI, 1978 [preocc., replaced by Eoasaphiscellus].
+Eocorycephalus	REED	1925	0	Eocorycephalus REED, 1925 [j.o.s. of Synphoria].
+Erinnys	SALTER in HICKS	1872	0	Erinnys SALTER in HICKS, 1872[preocc., replaced by Salteria, then Menevia, then Meneviella].
+Eryx	ANGELIN	1851	0	Eryx ANGELIN, 1851 [preocc. replaced by Elyx].
+Eskaspis	CLARKSON et al.	1977	0	Eskaspis CLARKSON et al., 1977 [Eophacops sufferta LAMONT, 1948b] PHACOPIDAE; LSIL [j.s.s. of Acernaspis, fide HOWELLS, 1982].
+Eudechenella	RICHTER	1912	0	Eudechenella RICHTER, 1912[j.o.s. of Dechenella].
+Euproetus	RICHTER	1913	0	Euproetus RICHTER, 1913 [j.o.s. of Proetus].
+Eutrimerocephalus	GORTANI	1907	0	Eutrimerocephalus GORTANI, 1907 [j.o.s. of Trimerocephalus].
+Fimbriomarrolithus	WILLIAMS	1948	0	Fimbriomarrolithus WILLIAMS, 1948 [j.o.s. of Telaeomarrolithus].
+Georgiellus	MOBERG	1899	0	Georgiellus MOBERG, 1899 [j.o.s. of Elliptocephala].
+Gibbocephalus	PILLET	1965	0	Gibbocephalus PILLET, 1965a [j.o.s. of Crotalocephalina].
+Girvanagnostus	KOBAYASHI	1939	0	Girvanagnostus KOBAYASHI, 1939a [Agnostus girvanensis REED, 1903] Scotland; METAGNOSTIDAE; ORD [j.s.s. of Arthrorhachis, fide SHERGOLD et al., 1990].
+Glockeria	WEDEKIND	1914	0	Glockeria WEDEKIND, 1914 [j.o.s. of Phacopidella].
+Glomerites	RAFINESQUE	1817	0	Glomerites RAFINESQUE, 1817 [see NOTE 2].
+Gloria	EGOROVA & SAVITSKY	1968	0	Gloria EGOROVA & SAVITSKY, 1968 [preocc., replaced by Gloriagloria].
+Goldfussius	BARRANDE	1852	0	Goldfussius BARRANDE, 1852[unnecessary emendation and thus j.o.s. of Goldfussia].
+Goniodiscus	RAYMOND	1913	0	Goniodiscus RAYMOND, 1913c [preocc., replaced by Calodiscus].
+Goniurus	RAYMOND	1913	0	Goniurus RAYMOND, 1913a [preocc., replaced by Goniotelus].
+Gortania	COSSMAN	1909	0	Gortania COSSMAN, 1909 [s.o.s. of Cryphops, rejected by ICZN Opinion 2006; replacement name for Microphthalmus].
+Granularia	POLETAEVA in LERMONTOVA	1951	0	Granularia POLETAEVA in LERMONTOVA, 1951b [preocc., replaced by Granularaspis].
+Hadrorakos	DELO	1940	0	Hadrorakos DELO, 1940 [unnecessary emendation of and thus j.o.s. of Hadrorachus].
+Haploconus	RAYMOND	1913	0	Haploconus RAYMOND, 1913a [preocc., replaced by Dimeropyge].
+Harpesoides	KOROLEVA	1978	0	Harpesoides KOROLEVA, 1978a [karamolensis] Kazakhstan; HARPETIDAE; UORD [j.s.s. of Paraharpes (=Hibbertia), fide PŘIBYL & VANĚK, 1986].
+Harpina	NOVÁK	1885	0	Harpina NOVÁK, 1885 [preocc., replaced by Eoharpes].
+Harrisia	CLELAND	1900	0	Harrisia CLELAND, 1900 [preocc., replaced by Clelandia].
+Hausmannia	HALL & CLARK	1888	0	Hausmannia HALL & CLARK, 1888 [unnecessary replacement and thus j.o.s. of Odontochile].
+Hausmannia	ETHERIDGE & MITCHELL	1895	0	Hausmannia ETHERIDGE & MITCHELL, 1895 [preocc., not replaced, j.s.s. of Dalmanites, fide MITCHELL, 1919].
+Hawkinsia	RASETTI	1965	0	Hawkinsia RASETTI, 1965a [preocc., replaced by Hawkinsaspis].
+Hectoria	LU	1975	0	Hectoria LU, 1975 [preocc., replaced by Ruapyge; j.s.s. of Hysterolenus, fide PENG, 1990].
+Hedinia	TROEDSSON	1937	0	Hedinia TROEDSSON, 1937 [preocc., replaced by Hedinaspis].
+Helioharpes	PŘIBYL & VANĚK	1981	0	Helioharpes PŘIBYL & VANĚK, 1981b [Harpes perradiatus RICHTER & RICHTER, 1943] Morocco; HARPETIDAE; MDEV [j.s.s. of Harpes, fide EBACH & McNAMARA, 2002].
+Hoeferia	REDLICH	1899	0	Hoeferia REDLICH, 1899 [preocc., replaced by Redlichia].
+Holometopus	ANGELIN	1854	0	Holometopus ANGELIN, 1854 [preocc., replaced by Warburgella].
+Holubia	KLOUČEK	1931	0	Holubia KLOUČEK, 1931 [preocc., replaced by Holubaspis].
+Huntonia	CAMPBELL	1977	0	Huntonia CAMPBELL, 1977 [preocc., replaced by Huntoniatonia].
+Irania	KING	1937	0	Irania KING, 1937 [preocc., replaced by Iranoleesia].
+Isoctomesa	RAFINESQUE	1821	0	Isoctomesa RAFINESQUE, 1821 [Trilobites emarginatus] [see NOTE 2].
+Jeholaspis	KOBAYASHI	1953	0	Jeholaspis KOBAYASHI, 1953b [j.o.s. of Saukioides].
+Jixiania	W. ZHANG in W. ZHANG et al.	1995	0	Jixiania W. ZHANG in W. ZHANG et al., 1995 [preocc. replaced by Jixianella].
+Kaufmannia	SDZUY	1961	0	Kaufmannia SDZUY, 1961 [preocc., replaced by Kaufmannella].
+Kendallia	RAASCH in BERG	1953	0	Kendallia RAASCH in BERG, 1953 [preocc., replaced by Kendallina].
+Koenigia	SALTER	1865	0	Koenigia SALTER, 1865 [j.o.s. of Homalonotus].
+Koreaspis	RICHTER	1942	0	Koreaspis RICHTER, 1942[inappropriate emendation of Koraipsis].
+Lalax	HOLLOWAY & LANE	1998	0	Lalax HOLLOWAY & LANE, 1998 [preocc., replaced by Liolalax].
+Lepidocephaloides	REPINA in REPINA et al.	1964	0	Lepidocephaloides REPINA in REPINA et al., 1964 [typographical error for Compsocephalus on p. 307 . hand corrected by author in copy held by A.R. Palmer . borne out by assignment of type species on p. 308].
+Leptoplastoides	[misspelling of Leptoplastides in MOORE	1959	0	Leptoplastoides [misspelling of Leptoplastides in MOORE, 1959:111-142].
+Liostracus	ANGELIN	1854	0	Liostracus ANGELIN, 1854 [preocc., replaced by Andrarina].
+Liparges	GURICH	1901	0	Liparges GURICH, 1901 [j.o.s. of Dicranogmus; see THOMAS & HOLLOWAY, 1988].
+Livia	LENDZION	1975	0	Livia LENDZION, 1975 [preocc., replaced by Liwia].
+Lobocephalus	RŮŽIČKA	1940	0	Lobocephalus RŮŽIČKA, 1940 [preocc., replaced by Ruzickaia]
+Lorentzia	COSSMAN	1908	0	Lorentzia COSSMAN, 1908 [inappropriate proposal as replacement name for Lioparia thought to be preoccupied by Loparia].
+Luaspis	PENG et al.	1995	0	Luaspis PENG et al., 1995[preocc., replaced by Luyanhaoaspis].
+Maja	LOMOVITSKAYA	1955	0	Maja LOMOVITSKAYA, 1955 [preocc., replaced by Erdelia].
+Malvernia	DELO	1935	0	Malvernia DELO, 1935 [preocc., replaced by Heliocephalus].
+Megalaspis	ANGELIN	1851	0	Megalaspis ANGELIN, 1851 [preocc., replaced by Megistaspis].
+Megalophthalmus	LORENZ	1906	0	Megalophthalmus LORENZ, 1906 [preocc., replaced by Grandioculus].
+Menevia	LAKE	1938	0	Menevia LAKE, 1938 [replacement name for Salteria] [preocc., replaced by Meneviella].
+Mesagnostus	JAEKEL	1909	0	Mesagnostus JAEKEL, 1909 [j.o.s. of Peronopsis].
+Metacanthus	HAWLE & CORDA	1847	0	Metacanthus HAWLE & CORDA, 1847 [preocc., replaced by Neometacanthus].
+Metopias	EICHWALD	1842	0	Metopias EICHWALD, 1842[preocc., replaced by Metopolichas].
+Miagnostus	JAEKEL	1909	0	Miagnostus JAEKEL, 1909 [j.o.s. of Lejopyge].
+Microphthalmus	GORTANI	1907	0	Microphthalmus GORTANI, 1907 [preocc., replaced by Gortania].
+Milesia	CHAPMAN	1929	0	Milesia CHAPMAN, 1929 [preocc., replaced by Xystridura].
+Millardia	WALCOTT	1916	0	Millardia WALCOTT, 1916a [preocc. replaced by Densonella].
+Minusella	REPINA	1966	0	Minusella REPINA, 1966 [incorrect spelling of Minusinella].
+Mitchellia	VOGDES	1917	0	Mitchellia VOGDES, 1917 [preocc., replaced by Mitchellaspis].
+Monadella	BARRANDE	1847	0	Monadella BARRANDE, 1847 [unnecessary emendation of Monadina].
+Monaxagnostus	LIU	1982	0	Monaxagnostus LIU, 1982[yongshunensis] Yong-shun, Hunan, China; AGNOSTINA FAMILY UNCERTAIN; MCAM [j.s.s. of Peratagnostus (=Phaldagnostus), fide PENG & ROBISON, 2000].
+Monorachus	CLARKE	1897	0	Monorachus CLARKE, 1897 [unjustified emendation of Monorakos].
+Monorhachis	VOGDES	1925	0	Monorhachis VOGDES, 1925 [unjustified emendation of Monorakos].
+Myoproetus	MAKSIMOVA	1978	0	Myoproetus MAKSIMOVA, 1978a [j.o.s. of Myoproetus, ŠNAJDR].
+Neosynphoria	PILLET	1954	0	Neosynphoria PILLET, 1954 [j.o.s. of Synphoria].
+Nitidocare	PŘIBYL et al.	1985	0	Nitidocare PŘIBYL et al., 1985a [Arethusa nitida BARRANDE, 1846a] Lite.  
+Octoillaenus	BIGSBY	1868	0	Octoillaenus BIGSBY, 1868 [misspelling of Octillaenus].
+Odontopyge	HAWLE & CORDA	1847	0	Odontopyge HAWLE & CORDA, 1847 [preocc., replaced by Parabolina].
+Oehlertia	PILLET	1973	0	Oehlertia PILLET, 1973a [preocc., replaced by Oehlertaspis].
+Ogygia	BRONGNIART in DESMAREST	1817	0	Ogygia BRONGNIART in DESMAREST, 1817 [suppressed by ICZN Opinion 1259].
+Olenopsis	BORNEMANN	1891	0	Olenopsis BORNEMANN, 1891 [preocc., replaced by Dolerolenus].
+Oncholichas	SCHMIDT	1885	0	Oncholichas SCHMIDT, 1885 [j.o.s. of Arctinurus].
+Onychaspis	RAYMOND	1925	0	Onychaspis RAYMOND, 1925 [misspelling of Onchaspis].
+Orimops	RAFINESQUE	1832	0	Orimops RAFINESQUE, 1832[see NOTE 2].
+Otarionella	KOROLEVA	1977	0	Otarionella KOROLEVA, 1977 [preocc., replaced by Otarionellina].
+Pagetina	LERMONTOVA	1940	0	Pagetina LERMONTOVA, 1940 [preocc., replaced by Neopagetina].
+Palaeocrepicephalus	KOBAYASHI	1935	0	Palaeocrepicephalus KOBAYASHI, 1935c [j.o.s. of Kochaspis].
+Pamirites	BALASHOVA	1966	0	Pamirites BALASHOVA, 1966b [preocc., replaced by Pamirotellus].
+Paracalymene	LIU	1982	0	Paracalymene LIU, 1982[preocc., replaced by Paracalymenemene].
+Paracrepicephalus	LOCHMAN	1936	0	Paracrepicephalus LOCHMAN, 1936 [j.o.s. of Tricrepicephalus].
+Paragnostus	JAEKEL	1909	0	Paragnostus JAEKEL, 1909 [j.o.s. of Condylopyge].
+Paralichas	REED	1902	0	Paralichas REED, 1902[replacement name for Platymetopus; preocc., replaced by Amphilichas].
+Paralorenzella	Q.Z ZHANG in QIU et al.	1983	0	Paralorenzella Q.Z ZHANG in QIU et al., 1983 [preocc., replaced by Paralorenzangella].
+Paramansuyia	ENDO	1939	0	Paramansuyia ENDO, 1939 [misspelling of Paramansuyella].
+Paranileus	HINTZE	1953	0	Paranileus HINTZE, 1953 [preocc., replaced by Presbynileus].
+Paraproetus	KOBAYASHI & HAMADA	1979	0	Paraproetus KOBAYASHI & HAMADA, 1979 [preocc., replaced by Siciliproetus].
+Parasolenopleura	POLETAEVA in EGOROVA et al.	1955	0	Parasolenopleura POLETAEVA in EGOROVA et al., 1955 [preocc., replaced by Parasolopleurena].
+Paratollaspis	KOBAYASHI	1943	0	Paratollaspis KOBAYASHI, 1943b [j.o.s. of Erbia].
+Paraulacopleura	MAKSIMOVA	1968	0	Paraulacopleura MAKSIMOVA, 1968 [misspelling of Paraaulacopleura].
+Peratagnostus	OPIK	1967	0	Peratagnostus OPIK, 1967 [nobilis] Pomegranate Lst, Queensland, Australia; AGNOSTINA FAMILY UNCERTAIN; UCAM [j.s.s. of Phaldagnostus, fide SHERGOLD, 1982].
+Perneria	RŮŽIČKA	1940	0	Perneria RŮŽIČKA, 1940 [preocc., replaced by Perneraspis].
+Phaeton	BARRANDE	1946	0	Phaeton BARRANDE, 1946a [preocc., replaced by Phaetonides].
+Phaetonides	BARRANDE	1947	0	Phaetonides BARRANDE, 1947 [j.o.s. of Prionopeltis].
+Phillibolina	GANDL	1968	0	Phillibolina GANDL, 1968 [preocc., replaced by Philliboloides].
+Phillipsella	OEHLERT	1886	0	Phillipsella OEHLERT, 1886 [suppressed by ICZN opinion 476 in favour of Phillipsinella].
+Phlysacium	HAWLE & CORDA	1847	0	Phlysacium HAWLE & CORDA, 1847 [paradoxum] Czech Republic; PARADOXIDIDAE; MCAM [j.s.s. of Hydrocephalus, fide DEAN & RUSHTON, 1997].
+Phoidagnostoides	PILLET in CAPERA et al.	1978	0	Phoidagnostoides PILLET in CAPERA et al., 1978 [Leiagnostus miqueli SDZUY, 1958b] Horizon C, Combes de Barrroubio, Montagne Noire, France; AGNOSTINA FAMILY UNCERTAIN; LORD [j.s.s. of Leiagnostus, fide SHERGOLD et al., 1990].
+Pilgrimia	DUNCAN in LOCHMAN & DUNCAN	1944	0	Pilgrimia DUNCAN in LOCHMAN & DUNCAN, 1944 [preocc. replaced by Paracedaria].
+Plagiops	KEGEL	1932	0	Plagiops KEGEL, 1932[preocc., replaced by Plagiolaria].
+Platycolpus	RAYMOND	1913	0	Platycolpus RAYMOND, 1913a [preocc. replaced by Rasettia].
+Platyharpes	WHITTINGTON	1950	0	Platyharpes WHITTINGTON, 1950b [j.o.s. of Hibbertia].
+Platymetopus	ANGELIN	1854	0	Platymetopus ANGELIN, 1854 [preocc., replaced by Paralichas].
+Platynotus	CONRAD	1838	0	Platynotus CONRAD, 1838 [preocc., replaced by Arctinurus].
+Platypeltis	CALLAWAY	1877	0	Platypeltis CALLAWAY, 1877 [preocc., replaced by Platypeltoides].
+Pleuracanthus	MILNE-EDWARDS	1840	0	Pleuracanthus MILNE-EDWARDS, 1840 [preocc., replaced by Asteropyge].
+Pliomeraspis	HARRINGTON	1957	0	Pliomeraspis HARRINGTON, 1957 [j.o.s. of Pliomerina].
+Plutonia	HICKS	1871	0	Plutonia HICKS, 1871 [preocc., replaced by Pluton-ides].
+Podolites	BALASHOVA	1968	0	Podolites BALASHOVA, 1968 [preocc., replaced by Rugulites].
+Polytomurus	HAWLE & CORDA	1847	0	Polytomurus HAWLE & CORDA, 1847 [suppressed in favour of Dionide, fide WHITTINGTON, 1952b].
+Prionopyge	HARRINGTON & LEANZA	1942	0	Prionopyge HARRINGTON & LEANZA, 1942 [unnecessary replacement name for, and thus j.o.s. of Onychopyge].
+Prionurus	HAWLE & CORDA	1847	0	Prionurus HAWLE & CORDA, 1847 [typographical error for Prionopeltis].
+Probolium	OEHLERT	1889	0	Probolium OEHLERT, 1889 [preocc., replaced by Neoprobolium].
+Proboloides	CLARKE	1913	0	Proboloides CLARKE, 1913 [preocc., replaced by Paracalmonia].
+Promenites	RAFINESQUE	1832	0	Promenites RAFINESQUE, 1832[see NOTE 2].
+Pseudoacrocephalites	ROZOVA	1968	0	Pseudoacrocephalites ROZOVA, 1968 [preocc., replaced by Rosovaspis].
+Pseudobarrandia	COURTESSOLE & PILLET	1976	0	Pseudobarrandia COURTESSOLE & PILLET, 1976 [j.o.s. of Rokycania].
+Pseudoliostracina	KOBAYASHI	1938	0	Pseudoliostracina KOBAYASHI, 1938b [j.o.s. of Lioparia].
+Pseudomonaspis	RICHTER & RICHTER	1917	0	Pseudomonaspis RICHTER & RICHTER, 1917 [j.o.s. of Acidaspis].
+Pseudonileus	KOBAYASHI	1951	0	Pseudonileus KOBAYASHI, 1951b [j.o.s. of Hemibarrandia].
+Pseudonileus	HINTZE	1953	0	Pseudonileus HINTZE, 1953 [preocc., replaced by Protopresbynileus].
+Pseudoptychoparia	TING in LU	1940	0	Pseudoptychoparia TING in LU, 1940 [j.o.s. of Yunnanocephalus].
+Pseudosaukia	KOBAYASHI	1951	0	Pseudosaukia KOBAYASHI, 1951 [preocc., replaced by Saukioides].
+Psilocephalina	STUBBLEFIELD	1951	0	Psilocephalina STUBBLEFIELD, 1951a [replacement name for Psilocephalus] [preocc., replaced by Psilocephalinella].
+Psilocephalus	SALTER	1866	0	Psilocephalus SALTER, 1866a [preocc., replaced by Psilocephalina STUBBLEFIELD, 1951a also preocc., replaced by Psilocephalinella].
+Pterocephalops	LIN & ZHANG in ZHU et al.	1979	0	Pterocephalops LIN & ZHANG in ZHU et al., 1979 [preocc., replaced by Pterocephalopsinus].
+Pterocephalus	HALL & WHITFIELD	1877	0	Pterocephalus HALL & WHITFIELD, 1877 [invalid spelling emendation of Pterocephalia].
+Pterolichas	GURICH	1901	0	Pterolichas GURICH, 1901 [j.o.s. of Arctinurus].
+Pterygometopidella	WEDEKIND	1911	0	Pterygometopidella WEDEKIND, 1911 [suppressed in favour of Eophacops].
+Ptychocheilus	NOVÁK	1884	0	Ptychocheilus NOVÁK, 1884 [preocc., replaced by Bohemopyge].
+Ptychopleura	KOBAYASHI	1936	0	Ptychopleura KOBAYASHI, 1936a [preocc. replaced by Ptychopleurites].
+Qingshuiheella	LU & QIAN	1983	0	Qingshuiheella LU & QIAN, 1983a [preocc., replaced by Paraqingshuiheella].
+Qinlingia	YANG in YANG et al.	1991	0	Qinlingia YANG in YANG et al., 1991 [preocc., replaced by Qinlingialingia].
+Raracephalus	REPINA in REPINA et al.	1964	0	Raracephalus REPINA in REPINA et al., 1964 [typographical error for Araeocephalus].
+Raymondia	KOBAYASHI	1935	0	Raymondia KOBAYASHI, 1935c [misspelling of Raymondina].
+Reedaspis	PRANTL & PŘIBYL	1949	0	Reedaspis PRANTL & PŘIBYL, 1949c [proposed as an unnecessary replacement name for, and hence j.o.s. of Raymondella, see SINCLAIR, 1949b].
+Reedia	WEDEKIND	1911	0	Reedia WEDEKIND, 1911 [preocc., replaced by Reedops].
+Retusites	RAFINESQUE	1832	0	Retusites RAFINESQUE, 1832[levis] [see NOTE 2].
+Reussia	MAKSIMOVA	1972	0	Reussia MAKSIMOVA, 1972[preocc., replaced by Reussiana].
+Rhax	LANE & THOMAS	1978	0	Rhax LANE & THOMAS, 1978 [preocc., replaced by Rhaxeros].
+Rhinaspis	REMELE	1885	0	Rhinaspis REMELE, 1885 [erratica] glacial eratic, glauconitic Vaginatenkalk, Eberswalde, Germany; ASAPHIDAE?; MORD [preocc., not replaced; s.s.s. of Megistaspis, fide MOORE, 1959]
+Rhodope	ANGELIN	1854	0	Rhodope ANGELIN, 1854 [preocc., replaced by Panderia].
+Rosovaspis	COURTESSOLE & PILLET	1976	0	Rosovaspis COURTESSOLE & PILLET, 1976 [replacement name for Pseudoacrocephalites ROSOVA; j.o.s. of Dolgeuloma].
+Rudagnostus	LERMONTOVA	1951	0	Rudagnostus LERMONTOVA, 1951a [Agnostus princeps var. rudis SALTER, 1864b] N Wales; AGNOSTIDAE; UCAM [j.s.s. of Trilobagnostus, fide SHERGOLD et al., 1990].
+Salteria	WALCOTT	1884	0	Salteria WALCOTT, 1884b [replacement name for Erinnys] [preocc., replaced by Menevia, then Meneviella].
+Schizopyge	CLARKE	1913	0	Schizopyge CLARKE, 1913 [preocc., replaced by Tibagya].
+Schmidtella	TSCHERNYSCHEW	1893	0	Schmidtella TSCHERNYSCHEW, 1893 [preocc., replaced by Tschernyschewella].
+Schmidtia	MARCOU	1890	0	Schmidtia MARCOU, 1890 [preocc. replaced by Schmidtiellus].
+Scottia	WOLFART	1994	0	Scottia WOLFART, 1994 [preocc., replaced by Ganovexopyge].
+Shumardella	PŘIBYL & VANĚK	1980	0	Shumardella PŘIBYL & VANĚK, 1980 [preocc., replaced by Shumardoella].
+Solenopleurina	RŮŽIČKA	1938	0	Solenopleurina RŮŽIČKA, 1938 [j.o.s. of Herse].
+Sphaerometopus	ANGELIN	1854	0	Sphaerometopus ANGELIN, 1854 [alternate spelling of Sphaerexochus used by ANGELIN, 1854 and suppressed as a nomen nudum by ICZN Opinion 614].
+Stoermeria	PRANTL & PŘIBYL	1947	0	Stoermeria PRANTL & PŘIBYL, 1947a [preocc., replaced by Stoermeraspis].
+Sunina	STRAND	1943	0	Sunina STRAND, 1943 [j.o.s. of Anderssonella].
+Taihangshania	J. ZHANG & WANG	1985	0	Taihangshania J. ZHANG & WANG, 1985 [preocc., replaced by Taihangshaniashania].
+Telephus	BARRANDE	1852	0	Telephus BARRANDE, 1852[preocc., replaced by Telephina].
+Telesiops	RAFINESQUE	1832	0	Telesiops RAFINESQUE, 1832[leiocephalus] [see NOTE 2].
+Tetralichas	PHLEGER	1936	0	Tetralichas PHLEGER, 1936 [Lichas laevis EICHWALD, 1857] Baltic Russia; LICHIDAE; MORD [j.s.s. of Amphilichas, fide WARBURG, 1939].
+Tomoligus	RAFINESQUE	1832	0	Tomoligus RAFINESQUE, 1832[levis] [see NOTE 2].
+Toragnostus	ROBISON	1988	0	Toragnostus ROBISON, 1988 [Agnostus bituberculatus ANGELIN, 1851] Andrarum Lst, Sweden; AGNOSTINA FAMILY UNCERTAIN; MCAM [j.s.s. of Glaberagnostus, fide PENG & ROBISON, 2000].
+Trachylichas	GURICH	1901	0	Trachylichas GURICH, 1901 [j.o.s. of Dicranopeltis].
+Trapelocera	HAWLE & CORDA	1847	0	Trapelocera HAWLE & CORDA, 1847 [j.o.s. of Ceratocephala].
+Trigonaspis	YANG in YANG et al.	1991	0	Trigonaspis YANG in YANG et al., 1991 [preocc., replaced by Trigonyangaspis].
+Trigonoproetus	APOLLONOV	1974	0	Trigonoproetus APOLLONOV, 1974 [triquetrus] Kazakhstan; RORRINGTONIIDAE; UORD [j.s.s. of Rorringtonia, fide FORTEY, 1997].
+Triplacephalus	LU & QIAN in ZHOU et al.	1977	0	Triplacephalus LU & QIAN in ZHOU et al., 1977 [sanduensis] Sandu, Guizhou, China; EULOMIDAE?; LORD [j.s.s. of Amzasskiella, fide PENG, 1984].
+Varvaspis	TJERNVIK in TJERNVIK & JOHANSSON	1980	0	Varvaspis TJERNVIK in TJERNVIK & JOHANSSON, 1980 [j.o.s. of Paramegistaspis].
+Vicinopeltis	PŘIBYL	1967	0	Vicinopeltis PŘIBYL, 1967 [j.o.s. of Vicinoproetus].
+Warburgella	RAYMOND	1937	0	Warburgella RAYMOND, 1937 [preocc., replaced by Raymondaspis].
+Wedekindia	SUN	1935	0	Wedekindia SUN, 1935 [preocc. replaced by Wedekindiaspis].
+Wutingia	ENDO	1935	0	Wutingia ENDO, 1935 [preocc., replaced by Endoaspis].
+Yanshania	J. ZHANG & WANG	1985	0	Yanshania J. ZHANG & WANG, 1985 [preocc., replaced by Yanshaniashania].
+Ybexaspis	PŘIBYL & VANĚKinPŘIBYL et al.	1985	0	Ybexaspis PŘIBYL & VANĚKinPŘIBYL et al., 1985 [misspelling of Ibexaspis].
+Zhenania	LUO	1983	0	Zhenania LUO, 1983 [preocc., replaced by Zhenanianania].
+Zhifangia	T. ZHANG	1983	0	Zhifangia T. ZHANG, 1983 [preocc., replaced by Zhifangiafangia].
