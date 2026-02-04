@@ -33,6 +33,13 @@
   - Synonym 레코드: 899
   - 고유 Family: 186
 
+- **Phase 5 완료**: 데이터베이스 정규화
+  - formations 테이블 생성 (1,987 records)
+  - countries 테이블 생성 (151 records)
+  - Synonym 관계 연결 (814/899 = 90.5%)
+  - Taxa-country 연결 (4,733/5,113 = 92.6%)
+  - Taxa-formation 연결 (4,781/5,113 = 93.5%)
+
 ### 파일 구조
 ```
 trilobase/
@@ -45,23 +52,24 @@ trilobase/
 ├── Jell_and_Adrain_2002_Literature_Cited.txt  # 참고문헌
 ├── scripts/
 │   ├── normalize_lines.py            # 줄 정규화 스크립트
-│   └── create_database.py            # DB 생성 스크립트
+│   ├── create_database.py            # DB 생성 스크립트
+│   └── normalize_database.py         # DB 정규화 스크립트
 ├── devlog/
 │   ├── 20260204_P01_data_cleaning_plan.md
 │   ├── 20260204_001_phase1_line_normalization.md
 │   ├── 20260204_002_phase2_character_fixes.md
 │   ├── 20260204_003_phase3_data_validation_summary.md
-│   └── 20260204_004_phase4_database_creation.md
+│   ├── 20260204_004_phase4_database_creation.md
+│   └── 20260204_005_phase5_normalization.md
 └── CLAUDE.md
 ```
 
-## 다음 작업 (Phase 5: 정규화)
+## 다음 작업 (Phase 6: 상위 분류군 통합)
 
-### 정규화 대상
-1. **Formation 정규화**: 동일 지층의 다양한 표기 통합
-2. **Location 정규화**: 국가/지역 표준화
-3. **Temporal Range 상세화**: 복합 시대 코드 처리
-4. **Synonym 관계 완성**: senior taxon ID 연결
+### 작업 대상
+1. **Family 테이블 생성**: 186개 Family 정규화
+2. **Order 데이터 추가**: Family를 Order로 그룹화
+3. **계층 구조 완성**: taxa → Family → Order 관계
 
 ### 미해결 항목
 - 현재 없음
@@ -72,7 +80,7 @@ trilobase/
 2. ~~Phase 2: 깨진 문자 및 오타 수정~~ ✅
 3. ~~Phase 3: 데이터 검증~~ ✅
 4. ~~Phase 4: DB 스키마 설계 및 데이터 임포트~~ ✅
-5. Phase 5: 정규화 (Formation, Location, Temporal Range, Synonym)
+5. ~~Phase 5: 정규화 (Formation, Location, Synonym)~~ ✅
 6. Phase 6: 상위 분류군 통합 (Family, Order)
 
 ## DB 스키마 (구현됨)
@@ -81,11 +89,19 @@ trilobase/
 -- taxa: 5,113 records
 taxa (id, name, author, year, year_suffix, type_species,
       type_species_author, formation, location, family,
-      temporal_code, is_valid, notes, raw_entry, created_at)
+      temporal_code, is_valid, notes, raw_entry, created_at,
+      country_id, formation_id)
 
--- synonyms: 899 records
-synonyms (id, junior_taxon_id, senior_taxon_name,
+-- synonyms: 899 records (814 linked)
+synonyms (id, junior_taxon_id, senior_taxon_name, senior_taxon_id,
           synonym_type, fide_author, fide_year, notes)
+
+-- formations: 1,987 records
+formations (id, name, normalized_name, formation_type,
+            country, region, period, taxa_count)
+
+-- countries: 151 records
+countries (id, name, code, taxa_count)
 
 -- temporal_ranges: 28 records
 temporal_ranges (id, code, name, period, epoch, start_mya, end_mya)
