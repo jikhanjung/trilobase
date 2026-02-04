@@ -22,9 +22,21 @@
   - 오타 수정: Glabrella, Natalina, Strenuella 쉼표 제거(3)
   - 불완전 엔트리 복원: Actinopeltis(1)
 
+- **Phase 3 완료**: 데이터 검증
+  - 형식 일관성 검사 완료 (괄호/대괄호 짝 맞춤, 세미콜론 구분자)
+  - 데이터 무결성 검사 완료 (연도 범위, 시대 코드, Family 이름 유효성)
+  - 중복 genus 확인 완료 (명명법적 복잡성 이해)
+
+- **Phase 4 완료**: DB 스키마 설계 및 데이터 임포트
+  - SQLite 데이터베이스 생성 (`trilobase.db`)
+  - 총 taxa: 5,113 / 유효 taxa: 4,457
+  - Synonym 레코드: 899
+  - 고유 Family: 186
+
 ### 파일 구조
 ```
 trilobase/
+├── trilobase.db                      # SQLite 데이터베이스
 ├── trilobite_genus_list.txt          # 최신 버전 (항상 이 파일 수정)
 ├── trilobite_genus_list_original.txt # 원본 백업
 ├── trilobite_genus_list_structure_fixed.txt  # Phase 1 완료 시점
@@ -32,65 +44,64 @@ trilobase/
 ├── trilobite_nomina_nuda.txt         # Nomina nuda (미처리)
 ├── Jell_and_Adrain_2002_Literature_Cited.txt  # 참고문헌
 ├── scripts/
-│   └── normalize_lines.py            # 줄 정규화 스크립트
+│   ├── normalize_lines.py            # 줄 정규화 스크립트
+│   └── create_database.py            # DB 생성 스크립트
 ├── devlog/
-│   ├── 20260204_P01_data_cleaning_plan.md    # 전체 계획
-│   ├── 20260204_001_phase1_line_normalization.md  # Phase 1 작업 기록
-│   ├── 20260204_002_phase2_character_fixes.md    # Phase 2 작업 기록
-│   ├── 20260204_genus_list_changes_summary.txt
-│   ├── 20260204_genus_list_structural_changes.txt
-│   └── 20260204_genus_list_normalize_lines.diff
+│   ├── 20260204_P01_data_cleaning_plan.md
+│   ├── 20260204_001_phase1_line_normalization.md
+│   ├── 20260204_002_phase2_character_fixes.md
+│   ├── 20260204_003_phase3_data_validation_summary.md
+│   └── 20260204_004_phase4_database_creation.md
 └── CLAUDE.md
 ```
 
-## 다음 작업 (Phase 3: 데이터 검증)
+## 다음 작업 (Phase 5: 정규화)
 
-### 검증 항목
-1. **형식 일관성 검사**
-   - 각 줄이 `GENUS AUTHOR, YEAR [type]...` 형식인지 확인
-   - 대괄호/괄호 짝 맞춤 검사
-   - 세미콜론 구분자 검사
-
-2. **데이터 무결성 검사**
-   - 연도 범위 확인 (1700-2002)
-   - 시대 코드 유효성 (LCAM, MCAM, UCAM 등)
-   - Family 이름 유효성
-
-3. **중복 검사**
-   - 동일 genus 중복 여부
+### 정규화 대상
+1. **Formation 정규화**: 동일 지층의 다양한 표기 통합
+2. **Location 정규화**: 국가/지역 표준화
+3. **Temporal Range 상세화**: 복합 시대 코드 처리
+4. **Synonym 관계 완성**: senior taxon ID 연결
 
 ### 미해결 항목
 - 현재 없음
 
-## 전체 계획 (devlog/20260204_P01_data_cleaning_plan.md 참조)
+## 전체 계획
 
 1. ~~Phase 1: 줄 정리~~ ✅
 2. ~~Phase 2: 깨진 문자 및 오타 수정~~ ✅
-3. Phase 3: 데이터 검증
-4. Phase 4: DB 스키마 설계 및 데이터 임포트
+3. ~~Phase 3: 데이터 검증~~ ✅
+4. ~~Phase 4: DB 스키마 설계 및 데이터 임포트~~ ✅
 5. Phase 5: 정규화 (Formation, Location, Temporal Range, Synonym)
 6. Phase 6: 상위 분류군 통합 (Family, Order)
 
-## DB 스키마 (계획)
+## DB 스키마 (구현됨)
 
+```sql
+-- taxa: 5,113 records
+taxa (id, name, author, year, year_suffix, type_species,
+      type_species_author, formation, location, family,
+      temporal_code, is_valid, notes, raw_entry, created_at)
+
+-- synonyms: 899 records
+synonyms (id, junior_taxon_id, senior_taxon_name,
+          synonym_type, fide_author, fide_year, notes)
+
+-- temporal_ranges: 28 records
+temporal_ranges (id, code, name, period, epoch, start_mya, end_mya)
 ```
-taxa
-├── id, name, rank, parent_id, is_valid
-├── author, year, type_specimen
-├── formation_id, location
-├── temporal_range_start, temporal_range_end
-├── notes, created_at, updated_at
 
-synonyms
-├── id, junior_id, senior_id
-├── type (subjective, objective, replacement, preoccupied, suppressed, nomen_oblitum)
-├── fide_author, fide_year, notes
+## DB 사용법
 
-formations
-├── id, name, normalized_name, country, region
+```bash
+# 기본 쿼리
+sqlite3 trilobase.db "SELECT * FROM taxa LIMIT 10;"
 
-temporal_ranges
-├── id, code, name, start_mya, end_mya
+# Family별 통계
+sqlite3 trilobase.db "SELECT family, COUNT(*) FROM taxa GROUP BY family ORDER BY 2 DESC;"
+
+# 특정 속 검색
+sqlite3 trilobase.db "SELECT * FROM taxa WHERE name LIKE 'Asaph%';"
 ```
 
 ## 주의사항
