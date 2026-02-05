@@ -6,6 +6,8 @@
 // State
 let selectedFamilyId = null;
 let genusModal = null;
+let currentGenera = [];  // Store current genera for filtering
+let showOnlyValid = true;  // Filter state
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -140,9 +142,17 @@ async function selectFamily(familyId, familyName) {
 
     selectedFamilyId = familyId;
 
-    // Update header
+    // Update header with filter checkbox
     const header = document.getElementById('list-header');
-    header.innerHTML = `<h5><i class="bi bi-folder-fill"></i> ${familyName}</h5>`;
+    header.innerHTML = `
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="bi bi-folder-fill"></i> ${familyName}</h5>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="validOnlyCheck"
+                       ${showOnlyValid ? 'checked' : ''} onchange="toggleValidFilter()">
+                <label class="form-check-label" for="validOnlyCheck">Valid only</label>
+            </div>
+        </div>`;
 
     // Load genera
     const container = document.getElementById('list-container');
@@ -152,47 +162,79 @@ async function selectFamily(familyId, familyName) {
         const response = await fetch(`/api/family/${familyId}/genera`);
         const data = await response.json();
 
-        if (data.genera.length === 0) {
-            container.innerHTML = `
-                <div class="empty-state">
-                    <i class="bi bi-inbox"></i>
-                    <p>No genera found in this family</p>
-                </div>`;
-            return;
-        }
-
-        // Build table
-        let html = `
-            <table class="genus-table">
-                <thead>
-                    <tr>
-                        <th>Genus</th>
-                        <th>Author</th>
-                        <th>Year</th>
-                        <th>Type Species</th>
-                        <th>Location</th>
-                    </tr>
-                </thead>
-                <tbody>`;
-
-        data.genera.forEach(g => {
-            const rowClass = g.is_valid ? '' : 'invalid';
-            html += `
-                <tr class="${rowClass}" onclick="showGenusDetail(${g.id})">
-                    <td class="genus-name"><i>${g.name}</i></td>
-                    <td>${g.author || ''}</td>
-                    <td>${g.year || ''}</td>
-                    <td>${truncate(g.type_species, 40)}</td>
-                    <td>${truncate(g.location, 30)}</td>
-                </tr>`;
-        });
-
-        html += '</tbody></table>';
-        container.innerHTML = html;
+        currentGenera = data.genera;  // Store for filtering
+        renderGeneraTable();
 
     } catch (error) {
         container.innerHTML = `<div class="text-danger">Error loading genera: ${error.message}</div>`;
     }
+}
+
+/**
+ * Toggle valid-only filter
+ */
+function toggleValidFilter() {
+    showOnlyValid = document.getElementById('validOnlyCheck').checked;
+    renderGeneraTable();
+}
+
+/**
+ * Render genera table with current filter
+ */
+function renderGeneraTable() {
+    const container = document.getElementById('list-container');
+
+    const genera = showOnlyValid
+        ? currentGenera.filter(g => g.is_valid)
+        : currentGenera;
+
+    if (genera.length === 0) {
+        const message = showOnlyValid && currentGenera.length > 0
+            ? `No valid genera (${currentGenera.length} invalid)`
+            : 'No genera found in this family';
+        container.innerHTML = `
+            <div class="empty-state">
+                <i class="bi bi-inbox"></i>
+                <p>${message}</p>
+            </div>`;
+        return;
+    }
+
+    // Count stats
+    const validCount = currentGenera.filter(g => g.is_valid).length;
+    const invalidCount = currentGenera.length - validCount;
+    const statsText = showOnlyValid
+        ? `Showing ${validCount} valid genera` + (invalidCount > 0 ? ` (${invalidCount} invalid hidden)` : '')
+        : `Showing all ${currentGenera.length} genera (${validCount} valid, ${invalidCount} invalid)`;
+
+    let html = `<div class="genera-stats text-muted mb-2">${statsText}</div>`;
+    html += `
+        <table class="genus-table">
+            <thead>
+                <tr>
+                    <th>Genus</th>
+                    <th>Author</th>
+                    <th>Year</th>
+                    <th>Type Species</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>`;
+
+    genera.forEach(g => {
+        const rowClass = g.is_valid ? '' : 'invalid';
+        html += `
+            <tr class="${rowClass}" onclick="showGenusDetail(${g.id})">
+                <td class="genus-name"><i>${g.name}</i></td>
+                <td>${g.author || ''}</td>
+                <td>${g.year || ''}</td>
+                <td>${truncate(g.type_species, 40)}</td>
+                <td>${truncate(g.location, 30)}</td>
+            </tr>`;
+    });
+
+    html += '</tbody></table>';
+    container.innerHTML = html;
 }
 
 /**
@@ -287,10 +329,13 @@ async function showGenusDetail(genusId) {
                     <h6>Synonymy</h6>
                     <ul class="list-unstyled">`;
             g.synonyms.forEach(s => {
+                const seniorLink = s.senior_taxon_id
+                    ? `<a href="#" class="synonym-link" onclick="showGenusDetail(${s.senior_taxon_id}); return false;"><i>${s.senior_name}</i></a>`
+                    : `<i>${s.senior_name}</i>`;
                 html += `
                     <li>
                         <span class="badge bg-secondary badge-synonym">${s.synonym_type}</span>
-                        <i>${s.senior_name}</i>
+                        ${seniorLink}
                         ${s.fide_author ? `<small class="text-muted">fide ${s.fide_author}${s.fide_year ? ', ' + s.fide_year : ''}</small>` : ''}
                     </li>`;
             });
@@ -417,6 +462,30 @@ async function showRankDetail(rankId, rankName, rankType) {
     } catch (error) {
         modalBody.innerHTML = `<div class="text-danger">Error loading details: ${error.message}</div>`;
     }
+}
+
+/**
+ * Expand all tree nodes
+ */
+function expandAll() {
+    document.querySelectorAll('.tree-children.collapsed').forEach(el => {
+        el.classList.remove('collapsed');
+    });
+    document.querySelectorAll('.tree-toggle i').forEach(el => {
+        el.className = 'bi bi-chevron-down';
+    });
+}
+
+/**
+ * Collapse all tree nodes
+ */
+function collapseAll() {
+    document.querySelectorAll('.tree-children').forEach(el => {
+        el.classList.add('collapsed');
+    });
+    document.querySelectorAll('.tree-toggle i').forEach(el => {
+        el.className = 'bi bi-chevron-right';
+    });
 }
 
 /**

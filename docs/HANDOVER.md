@@ -36,6 +36,9 @@
   - Author 필드 정리 (쉼표, 연도 뒤 각주 번호)
   - nov. 처리 → Adrain, 2011
   - genera_count 재계산 (실제 하위 Genus 수)
+  - Genus 목록 유효성 필터 (Valid only 체크박스)
+  - 트리뷰 Expand/Collapse All 버튼
+  - Synonymy에서 senior taxon으로 이동 링크
 
 ### 데이터베이스 현황
 

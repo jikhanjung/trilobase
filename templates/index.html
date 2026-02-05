@@ -26,8 +26,16 @@
         <div class="row h-100">
             <!-- Left Panel: Tree View -->
             <div class="col-md-4 col-lg-3 tree-panel">
-                <div class="panel-header">
-                    <h5><i class="bi bi-folder-tree"></i> Taxonomy</h5>
+                <div class="panel-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="bi bi-folder-tree"></i> Taxonomy</h5>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-outline-secondary" onclick="expandAll()" title="Expand All">
+                            <i class="bi bi-chevron-expand"></i>
+                        </button>
+                        <button class="btn btn-outline-secondary" onclick="collapseAll()" title="Collapse All">
+                            <i class="bi bi-chevron-contract"></i>
+                        </button>
+                    </div>
                 </div>
                 <div class="tree-container" id="tree-container">
                     <div class="loading">Loading...</div>

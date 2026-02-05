@@ -252,6 +252,7 @@ def api_genus_detail(genus_id):
         'raw_entry': genus['raw_entry'],
         'synonyms': [{
             'id': s['id'],
+            'senior_taxon_id': s['senior_taxon_id'],
             'senior_name': s['senior_name'] or s['senior_taxon_name'],
             'synonym_type': s['synonym_type'],
             'fide_author': s['fide_author'],
