@@ -19,10 +19,11 @@
 - **Phase 7 완료**: Order 통합 및 계층 구조 구축
 - **Phase 8 완료**: taxonomic_ranks와 families 테이블 통합
 - **Phase 9 완료**: taxa와 taxonomic_ranks 테이블 통합
-  - taxa 테이블을 taxonomic_ranks로 마이그레이션
-  - synonyms 테이블 ID 참조 업데이트
-  - taxa 테이블 삭제 후 뷰로 대체 (하위 호환성)
-  - 전체 계층 구조 단일 테이블로 관리
+- **Phase 10 완료**: Formation/Location Relation 테이블
+  - genus_formations 테이블 생성 (4,854건)
+  - genus_locations 테이블 생성 (4,841건)
+  - 다대다 관계 지원
+  - 원본 텍스트 필드 보존
 
 ### 데이터베이스 현황
 
@@ -54,6 +55,8 @@
 |-----------|----------|------|
 | taxonomic_ranks | 5,338 | 통합 분류 체계 (Class~Genus) |
 | synonyms | 1,055 | 동의어 관계 |
+| genus_formations | 4,854 | Genus-Formation 다대다 관계 |
+| genus_locations | 4,841 | Genus-Country 다대다 관계 |
 | formations | 2,009 | 지층 정보 |
 | countries | 151 | 국가 정보 |
 | temporal_ranges | 28 | 지질시대 코드 |
@@ -64,8 +67,6 @@
 ```
 trilobase/
 ├── trilobase.db                      # SQLite 데이터베이스
-├── trilobase_backup_20260205.db      # Phase 8 작업 전 백업
-├── trilobase_backup_phase9.db        # Phase 9 작업 전 백업
 ├── trilobite_genus_list.txt          # 정제된 genus 목록
 ├── trilobite_genus_list_original.txt # 원본 백업
 ├── adrain2011.txt                    # Order 통합을 위한 suprafamilial taxa 목록
@@ -78,27 +79,19 @@ trilobase/
 │   └── populate_taxonomic_ranks.py
 ├── devlog/
 │   ├── 20260204_P01_data_cleaning_plan.md
-│   ├── 20260204_001_phase1_line_normalization.md
-│   ├── 20260204_002_phase2_character_fixes.md
-│   ├── 20260204_003_phase3_data_validation_summary.md
-│   ├── 20260204_004_phase4_database_creation.md
-│   ├── 20260204_005_phase5_normalization.md
-│   ├── 20260204_006_phase6_family_normalization.md
+│   ├── 20260204_001~006_*.md         # Phase 1-6 로그
 │   ├── 20260205_P02_taxonomy_table_consolidation.md
 │   ├── 20260205_008_phase8_taxonomy_consolidation_complete.md
 │   ├── 20260205_P03_taxa_taxonomic_ranks_consolidation.md
-│   └── 20260205_009_phase9_taxa_consolidation_complete.md
+│   ├── 20260205_009_phase9_taxa_consolidation_complete.md
+│   ├── 20260205_P04_formation_location_relations.md
+│   └── 20260205_010_phase10_formation_location_relations_complete.md
 ├── docs/
 │   └── HANDOVER.md
 └── CLAUDE.md
 ```
 
-## 다음 작업
-
-### Phase 10 예정: Formation/Location Relation 테이블
-- `formation`, `location` 필드를 synonym처럼 별도의 relation 테이블로 분리
-- 현재는 taxonomic_ranks에 텍스트로 저장되어 있음
-- 다대다 관계 지원 (하나의 genus가 여러 formation/location에서 발견될 수 있음)
+## 다음 작업 (현재 추가 작업 없음)
 
 ### 미해결 항목
 - Synonym 미연결 4건 (원본에 senior taxa 없음)
@@ -116,89 +109,70 @@ trilobase/
 7. ~~Phase 7: Order 통합~~ ✅
 8. ~~Phase 8: Taxonomy Table Consolidation~~ ✅
 9. ~~Phase 9: Taxa와 Taxonomic_ranks 통합~~ ✅
-10. Phase 10: Formation/Location Relation 테이블 (예정)
+10. ~~Phase 10: Formation/Location Relation 테이블~~ ✅
 
 ## DB 스키마
 
 ```sql
 -- taxonomic_ranks: 5,338 records - 통합 분류 체계 (Class~Genus)
 taxonomic_ranks (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    rank TEXT NOT NULL,  -- Class, Order, Suborder, Superfamily, Family, Genus
-    parent_id INTEGER,   -- FK → taxonomic_ranks.id (self-referential)
-    author TEXT,
-    year TEXT,
-    year_suffix TEXT,
-    genera_count INTEGER DEFAULT 0,  -- Family 이상
-    taxa_count INTEGER DEFAULT 0,    -- Family 이상
-    notes TEXT,
-    created_at TIMESTAMP,
-
+    id, name, rank, parent_id, author, year, year_suffix,
+    genera_count, taxa_count, notes, created_at,
     -- Genus 전용 필드
-    type_species TEXT,
-    type_species_author TEXT,
-    formation TEXT,
-    location TEXT,
-    family TEXT,
-    temporal_code TEXT,
-    is_valid INTEGER DEFAULT 1,
-    raw_entry TEXT,
-    country_id INTEGER,
-    formation_id INTEGER,
-
-    FOREIGN KEY (parent_id) REFERENCES taxonomic_ranks(id)
+    type_species, type_species_author, formation, location, family,
+    temporal_code, is_valid, raw_entry, country_id, formation_id
 )
 
--- taxa: 뷰 (하위 호환성)
-CREATE VIEW taxa AS
-SELECT id, name, rank, parent_id as family_id, author, year, year_suffix,
-       type_species, type_species_author, formation, location, family,
-       temporal_code, is_valid, notes, raw_entry, created_at,
-       country_id, formation_id
-FROM taxonomic_ranks WHERE rank = 'Genus';
-
--- synonyms: 1,055 records
+-- synonyms: 1,055 records - 동의어 관계
 synonyms (id, junior_taxon_id, senior_taxon_name, senior_taxon_id,
           synonym_type, fide_author, fide_year, notes)
 
+-- genus_formations: 4,854 records - Genus-Formation 다대다 관계
+genus_formations (id, genus_id, formation_id, is_type_locality, notes)
+
+-- genus_locations: 4,841 records - Genus-Country 다대다 관계
+genus_locations (id, genus_id, country_id, region, is_type_locality, notes)
+
 -- formations: 2,009 records
-formations (id, name, normalized_name, formation_type,
-            country, region, period, taxa_count)
+formations (id, name, normalized_name, formation_type, country, region, period, taxa_count)
 
 -- countries: 151 records
 countries (id, name, code, taxa_count)
 
 -- temporal_ranges: 28 records
 temporal_ranges (id, code, name, period, epoch, start_mya, end_mya)
+
+-- taxa: 뷰 (하위 호환성)
+CREATE VIEW taxa AS SELECT ... FROM taxonomic_ranks WHERE rank = 'Genus';
 ```
 
 ## DB 사용법
 
 ```bash
-# 기본 쿼리 (taxa 뷰 사용 - 하위 호환)
+# 기본 쿼리 (taxa 뷰 사용)
 sqlite3 trilobase.db "SELECT * FROM taxa LIMIT 10;"
 
-# 유효 genus만 조회
-sqlite3 trilobase.db "SELECT * FROM taxa WHERE is_valid = 1;"
-
-# rank별 조회
-sqlite3 trilobase.db "SELECT * FROM taxonomic_ranks WHERE rank = 'Family';"
-
-# 전체 계층 구조 조회 (Genus → Family → Superfamily → Order)
-sqlite3 trilobase.db "SELECT g.name as genus, f.name as family, sf.name as superfamily, o.name as 'order'
+# 전체 계층 구조 조회
+sqlite3 trilobase.db "SELECT g.name, f.name as family, o.name as 'order'
 FROM taxonomic_ranks g
 LEFT JOIN taxonomic_ranks f ON g.parent_id = f.id
 LEFT JOIN taxonomic_ranks sf ON f.parent_id = sf.id
 LEFT JOIN taxonomic_ranks o ON sf.parent_id = o.id
 WHERE g.rank = 'Genus' AND g.is_valid = 1 LIMIT 10;"
 
-# Synonym 관계 조회
-sqlite3 trilobase.db "SELECT tr1.name as junior, tr2.name as senior, s.synonym_type
-FROM synonyms s
-JOIN taxonomic_ranks tr1 ON s.junior_taxon_id = tr1.id
-LEFT JOIN taxonomic_ranks tr2 ON s.senior_taxon_id = tr2.id
-LIMIT 10;"
+# Genus의 Formation 조회 (relation 테이블 사용)
+sqlite3 trilobase.db "SELECT g.name, f.name as formation
+FROM taxonomic_ranks g
+JOIN genus_formations gf ON g.id = gf.genus_id
+JOIN formations f ON gf.formation_id = f.id
+WHERE g.name = 'Paradoxides';"
+
+# 특정 국가의 Genus 조회 (relation 테이블 사용)
+sqlite3 trilobase.db "SELECT g.name, gl.region
+FROM taxonomic_ranks g
+JOIN genus_locations gl ON g.id = gl.genus_id
+JOIN countries c ON gl.country_id = c.id
+WHERE c.name = 'China' LIMIT 10;"
 ```
 
 ## 주의사항
