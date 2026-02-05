@@ -81,6 +81,17 @@ function createTreeNode(node) {
         content.appendChild(count);
     }
 
+    // Info icon
+    const infoBtn = document.createElement('span');
+    infoBtn.className = 'tree-info';
+    infoBtn.innerHTML = '<i class="bi bi-info-circle"></i>';
+    infoBtn.title = 'View details';
+    infoBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showRankDetail(node.id, node.name, node.rank);
+    });
+    content.appendChild(infoBtn);
+
     // Click handler
     content.addEventListener('click', (e) => {
         if (hasChildren) {
@@ -308,6 +319,103 @@ async function showGenusDetail(genusId) {
 
     } catch (error) {
         modalBody.innerHTML = `<div class="text-danger">Error loading genus: ${error.message}</div>`;
+    }
+}
+
+/**
+ * Show rank detail modal (Class, Order, Suborder, Superfamily, Family)
+ */
+async function showRankDetail(rankId, rankName, rankType) {
+    const modalBody = document.getElementById('genusModalBody');
+    const modalTitle = document.getElementById('genusModalTitle');
+
+    modalBody.innerHTML = '<div class="loading">Loading...</div>';
+    genusModal.show();
+
+    try {
+        const response = await fetch(`/api/rank/${rankId}`);
+        const r = await response.json();
+
+        modalTitle.innerHTML = `<span class="badge bg-secondary me-2">${r.rank}</span> ${r.name}`;
+
+        let html = '';
+
+        // Basic Info
+        html += `
+            <div class="detail-section">
+                <h6>Basic Information</h6>
+                <div class="detail-grid">
+                    <span class="detail-label">Name:</span>
+                    <span class="detail-value">${r.name}</span>
+
+                    <span class="detail-label">Rank:</span>
+                    <span class="detail-value">${r.rank}</span>
+
+                    <span class="detail-label">Author:</span>
+                    <span class="detail-value">${r.author || '-'}</span>
+
+                    <span class="detail-label">Year:</span>
+                    <span class="detail-value">${r.year || '-'}</span>
+
+                    <span class="detail-label">Parent:</span>
+                    <span class="detail-value">${r.parent_name ? r.parent_name + ' (' + r.parent_rank + ')' : '-'}</span>
+                </div>
+            </div>`;
+
+        // Statistics
+        if (r.genera_count || r.children_counts.length > 0) {
+            html += `
+                <div class="detail-section">
+                    <h6>Statistics</h6>
+                    <div class="detail-grid">`;
+
+            if (r.genera_count) {
+                html += `
+                    <span class="detail-label">Genera:</span>
+                    <span class="detail-value">${r.genera_count}</span>`;
+            }
+
+            r.children_counts.forEach(c => {
+                html += `
+                    <span class="detail-label">${c.rank}:</span>
+                    <span class="detail-value">${c.count}</span>`;
+            });
+
+            html += '</div></div>';
+        }
+
+        // Children list
+        if (r.children && r.children.length > 0) {
+            html += `
+                <div class="detail-section">
+                    <h6>Children (${r.children.length}${r.children.length >= 20 ? '+' : ''})</h6>
+                    <ul class="list-unstyled children-list">`;
+
+            r.children.forEach(c => {
+                html += `
+                    <li>
+                        <span class="badge bg-light text-dark me-1">${c.rank}</span>
+                        <strong>${c.name}</strong>
+                        ${c.author ? '<small class="text-muted">' + c.author + '</small>' : ''}
+                    </li>`;
+            });
+
+            html += '</ul></div>';
+        }
+
+        // Notes
+        if (r.notes) {
+            html += `
+                <div class="detail-section">
+                    <h6>Notes</h6>
+                    <p>${r.notes}</p>
+                </div>`;
+        }
+
+        modalBody.innerHTML = html;
+
+    } catch (error) {
+        modalBody.innerHTML = `<div class="text-danger">Error loading details: ${error.message}</div>`;
     }
 }
 

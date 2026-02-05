@@ -27,14 +27,14 @@ def build_tree(parent_id=None):
     if parent_id is None:
         # Start with Class (root)
         cursor.execute("""
-            SELECT id, name, rank, author, genera_count, taxa_count
+            SELECT id, name, rank, author, genera_count
             FROM taxonomic_ranks
             WHERE rank = 'Class'
         """)
     else:
         # Get children of parent
         cursor.execute("""
-            SELECT id, name, rank, author, genera_count, taxa_count
+            SELECT id, name, rank, author, genera_count
             FROM taxonomic_ranks
             WHERE parent_id = ? AND rank != 'Genus'
             ORDER BY name
@@ -50,7 +50,6 @@ def build_tree(parent_id=None):
             'rank': row['rank'],
             'author': row['author'],
             'genera_count': row['genera_count'] or 0,
-            'taxa_count': row['taxa_count'] or 0,
             'children': build_tree(row['id'])
         }
         result.append(node)
@@ -80,7 +79,7 @@ def api_family_genera(family_id):
 
     # Get family info
     cursor.execute("""
-        SELECT id, name, author, genera_count, taxa_count
+        SELECT id, name, author, genera_count
         FROM taxonomic_ranks
         WHERE id = ? AND rank = 'Family'
     """, (family_id,))
@@ -106,8 +105,7 @@ def api_family_genera(family_id):
             'id': family['id'],
             'name': family['name'],
             'author': family['author'],
-            'genera_count': family['genera_count'],
-            'taxa_count': family['taxa_count']
+            'genera_count': family['genera_count']
         },
         'genera': [{
             'id': g['id'],
@@ -118,6 +116,71 @@ def api_family_genera(family_id):
             'location': g['location'],
             'is_valid': g['is_valid']
         } for g in genera]
+    })
+
+
+@app.route('/api/rank/<int:rank_id>')
+def api_rank_detail(rank_id):
+    """Get detailed info for a taxonomic rank (Class, Order, etc.)"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Get rank info
+    cursor.execute("""
+        SELECT tr.*,
+               parent.name as parent_name,
+               parent.rank as parent_rank
+        FROM taxonomic_ranks tr
+        LEFT JOIN taxonomic_ranks parent ON tr.parent_id = parent.id
+        WHERE tr.id = ?
+    """, (rank_id,))
+    rank = cursor.fetchone()
+
+    if not rank:
+        conn.close()
+        return jsonify({'error': 'Rank not found'}), 404
+
+    # Get children counts by rank
+    cursor.execute("""
+        SELECT rank, COUNT(*) as count
+        FROM taxonomic_ranks
+        WHERE parent_id = ?
+        GROUP BY rank
+    """, (rank_id,))
+    children_counts = cursor.fetchall()
+
+    # Get direct children list (limit 20)
+    cursor.execute("""
+        SELECT id, name, rank, author, genera_count
+        FROM taxonomic_ranks
+        WHERE parent_id = ?
+        ORDER BY name
+        LIMIT 20
+    """, (rank_id,))
+    children = cursor.fetchall()
+
+    conn.close()
+
+    return jsonify({
+        'id': rank['id'],
+        'name': rank['name'],
+        'rank': rank['rank'],
+        'author': rank['author'],
+        'year': rank['year'],
+        'genera_count': rank['genera_count'],
+        'notes': rank['notes'],
+        'parent_name': rank['parent_name'],
+        'parent_rank': rank['parent_rank'],
+        'children_counts': [{
+            'rank': c['rank'],
+            'count': c['count']
+        } for c in children_counts],
+        'children': [{
+            'id': c['id'],
+            'name': c['name'],
+            'rank': c['rank'],
+            'author': c['author']
+        } for c in children]
     })
 
 
@@ -210,4 +273,4 @@ def api_genus_detail(genus_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=8080)

@@ -126,6 +126,41 @@ html, body {
     display: none;
 }
 
+/* Info icon */
+.tree-info {
+    margin-left: 8px;
+    color: #6c757d;
+    opacity: 0;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.tree-node-content:hover .tree-info {
+    opacity: 1;
+}
+
+.tree-info:hover {
+    color: #0d6efd;
+}
+
+.tree-node-content.selected .tree-info {
+    color: rgba(255,255,255,0.7);
+}
+
+.tree-node-content.selected .tree-info:hover {
+    color: #fff;
+}
+
+/* Children list in modal */
+.children-list li {
+    padding: 4px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.children-list li:last-child {
+    border-bottom: none;
+}
+
 /* Rank Colors */
 .rank-Class .tree-icon { color: #dc3545; }
 .rank-Order .tree-icon { color: #fd7e14; }

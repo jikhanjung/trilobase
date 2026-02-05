@@ -31,6 +31,12 @@
   - Genus List (Family 선택 시 표시)
   - Genus Detail Modal (상세정보)
 
+- **Phase 11 후속**: 데이터 정리 및 UI 개선
+  - 트리뷰 각 노드에 상세정보 아이콘 추가
+  - Author 필드 정리 (쉼표, 연도 뒤 각주 번호)
+  - nov. 처리 → Adrain, 2011
+  - genera_count 재계산 (실제 하위 Genus 수)
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -132,7 +138,7 @@ trilobase/
 -- taxonomic_ranks: 5,338 records - 통합 분류 체계 (Class~Genus)
 taxonomic_ranks (
     id, name, rank, parent_id, author, year, year_suffix,
-    genera_count, taxa_count, notes, created_at,
+    genera_count, notes, created_at,
     -- Genus 전용 필드
     type_species, type_species_author, formation, location, family,
     temporal_code, is_valid, raw_entry, country_id, formation_id
