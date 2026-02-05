@@ -1,43 +1,61 @@
 # Trilobase
 
-삼엽충(Trilobite) 분류학 데이터베이스 프로젝트
+**Trilobase**는 삼엽충(Trilobita) 속(genus) 수준의 분류학 정보를
+문헌 기반으로 정제·정규화하여 구축한 **연구용 관계형 데이터베이스**입니다.
 
-## 개요
+본 프로젝트는 기존 분류학 문헌에 흩어져 있는 속명, 동의어, 상위 분류군,
+산지 및 지층 정보를 **기계가 질의 가능한 형태(SQLite)**로 구조화하는 것을
+목표로 합니다.
 
-Trilobase는 Jell & Adrain (2002) "Available Generic Names for Trilobites"를 기반으로 구축한 삼엽충 속(genus) 수준의 분류학 데이터베이스입니다. 원본 PDF에서 추출한 데이터를 정제, 정규화하여 SQLite 데이터베이스로 구축하고, Flask 기반 웹 인터페이스를 통해 탐색할 수 있습니다.
+---
 
-### 데이터 출처
+## Overview
 
-- **Jell, P.A. & Adrain, J.M. (2002)**. Available Generic Names for Trilobites. *Memoirs of the Queensland Museum* 48(2): 331-553.
-- **Adrain, J.M. (2011)**. Class Trilobita Walch, 1771. In: Zhang, Z.-Q. (Ed.) Animal biodiversity: An outline of higher-level classification and survey of taxonomic richness. *Zootaxa* 3148: 104-109.
+Trilobase는 다음 두 핵심 문헌을 기반으로 구축되었습니다.
 
-## 데이터베이스 통계
+- **Jell, P.A. & Adrain, J.M. (2002)**
+  *Available Generic Names for Trilobites*
+  Memoirs of the Queensland Museum 48(2): 331–553.
 
-| 분류 계급 | 개수 |
-|-----------|------|
-| Class | 1 |
-| Order | 12 |
-| Suborder | 8 |
-| Superfamily | 13 |
-| Family | 191 |
-| Genus | 5,113 |
-| **총계** | **5,338** |
+- **Adrain, J.M. (2011)**
+  *Class Trilobita Walch, 1771*
+  In: Zhang, Z.-Q. (Ed.), *Animal biodiversity* (Zootaxa 3148): 104–109.
 
-### Genus 상세
+원본 PDF에서 추출한 데이터를 수작업 검토 및 정규화 과정을 거쳐
+SQLite 데이터베이스로 구축하였으며,
+Flask 기반 웹 인터페이스를 통해 탐색할 수 있습니다.
 
-- 유효(Valid) Genus: 4,258개 (83.3%)
-- 무효(Invalid) Genus: 855개 (16.7%)
-- 동의어(Synonym) 관계: 1,055건
-- 참고문헌: 2,130건
+---
 
-## 설치 및 실행
+## Database Statistics
 
-### 요구사항
+| Taxonomic Rank | Count |
+|---------------|-------|
+| Class         | 1     |
+| Order         | 12    |
+| Suborder      | 8     |
+| Superfamily   | 13    |
+| Family        | 191   |
+| Genus         | 5,113 |
+| **Total**     | **5,338** |
+
+### Genus Details
+
+- **Valid genera**: 4,258 (83.3%)
+- **Invalid genera**: 855 (16.7%)
+- **Synonym relationships**: 1,055
+- **Bibliographic references**: 2,130
+
+---
+
+## Installation & Usage
+
+### Requirements
 
 - Python 3.8+
 - Flask
 
-### 설치
+### Installation
 
 ```bash
 git clone https://github.com/yourusername/trilobase.git
@@ -45,117 +63,136 @@ cd trilobase
 pip install flask
 ```
 
-### 웹 서버 실행
+### Run Web Server
 
 ```bash
 python app.py
 ```
 
-브라우저에서 http://localhost:8080 접속
+Open your browser and navigate to:
+http://localhost:8080
 
-## 웹 인터페이스 기능
+---
 
-- **Tree View**: Class → Order → Suborder → Superfamily → Family 계층 구조 탐색
-- **Genus List**: Family 선택 시 해당 속 목록 표시
-- **Genus Detail**: 각 속의 상세 정보 (저자, 연도, 모식종, 산지, 지층, 동의어 등)
-- **필터링**: 유효 분류군만 표시 옵션
-- **Expand/Collapse**: 트리 전체 펼치기/접기
+## Web Interface Features
 
-## 데이터베이스 스키마
+- **Tree View**
+  Class → Order → Suborder → Superfamily → Family hierarchy
 
-### 주요 테이블
+- **Genus List**
+  Display genera within a selected family
 
+- **Genus Detail View**
+  Author, year, type species, formation, locality, synonymy
+
+- **Filtering**
+  Option to display only valid taxa
+
+- **Expand / Collapse**
+  Global tree control
+
+---
+
+## Database Schema
+
+### Core Tables
+
+**taxonomic_ranks**
+Unified taxonomic hierarchy (Class–Genus, 5,338 records)
+
+- id, name, rank, parent_id
+- author, year, year_suffix
+- genera_count, notes
+- (Genus only) type_species, formation, location, is_valid, …
+
+**synonyms**
+Synonym relationships (1,055 records)
+
+- junior_taxon_id
+- senior_taxon_id
+- synonym_type
+- fide_author, fide_year
+
+**Other tables**
+
+- genus_formations (4,854)
+- genus_locations (4,841)
+- formations (2,009)
+- countries (151)
+- temporal_ranges (28)
+- bibliography (2,130)
+
+---
+
+## Example Queries
+
+```sql
+-- Valid genera
+SELECT name, author, year
+FROM taxonomic_ranks
+WHERE rank='Genus' AND is_valid=1
+LIMIT 10;
 ```
-taxonomic_ranks     # 통합 분류 체계 (Class~Genus) - 5,338건
-├── id, name, rank, parent_id
-├── author, year, year_suffix
-├── genera_count, notes
-└── (Genus 전용) type_species, formation, location, is_valid, ...
 
-synonyms            # 동의어 관계 - 1,055건
-├── junior_taxon_id, senior_taxon_id
-└── synonym_type, fide_author, fide_year
-
-genus_formations    # Genus-Formation 관계 - 4,854건
-genus_locations     # Genus-Country 관계 - 4,841건
-formations          # 지층 정보 - 2,009건
-countries           # 국가 정보 - 151건
-temporal_ranges     # 지질시대 코드 - 28건
-bibliography        # 참고문헌 - 2,130건
-```
-
-### 예제 쿼리
-
-```bash
-# 유효 Genus 목록
-sqlite3 trilobase.db "SELECT name, author, year FROM taxonomic_ranks
-                      WHERE rank='Genus' AND is_valid=1 LIMIT 10;"
-
-# 특정 Genus의 전체 분류 계층
-sqlite3 trilobase.db "
-SELECT g.name as genus, f.name as family, o.name as 'order'
+```sql
+-- Full taxonomic hierarchy of a genus
+SELECT g.name AS genus, f.name AS family, o.name AS "order"
 FROM taxonomic_ranks g
 LEFT JOIN taxonomic_ranks f ON g.parent_id = f.id
 LEFT JOIN taxonomic_ranks sf ON f.parent_id = sf.id
 LEFT JOIN taxonomic_ranks o ON sf.parent_id = o.id
-WHERE g.name = 'Paradoxides';"
+WHERE g.name = 'Paradoxides';
+```
 
-# 특정 국가의 Genus 조회
-sqlite3 trilobase.db "
+```sql
+-- Genera reported from a specific country
 SELECT g.name, gl.region
 FROM taxonomic_ranks g
 JOIN genus_locations gl ON g.id = gl.genus_id
 JOIN countries c ON gl.country_id = c.id
-WHERE c.name = 'China' LIMIT 10;"
+WHERE c.name = 'China'
+LIMIT 10;
 ```
 
-## 프로젝트 구조
+---
 
-```
-trilobase/
-├── trilobase.db                  # SQLite 데이터베이스
-├── app.py                        # Flask 웹 애플리케이션
-├── templates/
-│   └── index.html                # 메인 페이지
-├── static/
-│   ├── css/style.css
-│   └── js/app.js
-├── scripts/                      # 데이터 처리 스크립트
-│   ├── normalize_lines.py
-│   ├── create_database.py
-│   ├── normalize_database.py
-│   └── ...
-├── trilobite_genus_list.txt      # 정제된 원본 데이터
-├── trilobite_genus_list_original.txt  # 원본 백업
-├── devlog/                       # 작업 로그
-└── docs/
-    └── HANDOVER.md               # 인수인계 문서
-```
+## Temporal Range Codes
 
-## 데이터 형식
+| Code | Meaning |
+|-----|--------|
+| LCAM / MCAM / UCAM | Lower / Middle / Upper Cambrian |
+| LORD / MORD / UORD | Lower / Middle / Upper Ordovician |
+| LSIL / USIL | Lower / Upper Silurian |
+| LDEV / MDEV / UDEV | Lower / Middle / Upper Devonian |
+| MISS / PENN | Mississippian / Pennsylvanian |
+| LPERM / PERM / UPERM | Lower / Middle / Upper Permian |
 
-### 지질시대 코드
+---
 
-| 코드 | 의미 |
-|------|------|
-| LCAM/MCAM/UCAM | Lower/Middle/Upper Cambrian |
-| LORD/MORD/UORD | Lower/Middle/Upper Ordovician |
-| LSIL/USIL | Lower/Upper Silurian |
-| LDEV/MDEV/UDEV | Lower/Middle/Upper Devonian |
-| MISS/PENN | Mississippian/Pennsylvanian |
-| LPERM/PERM/UPERM | Lower/Middle/Upper Permian |
+## Synonym Types
 
-### 동의어 유형
+- **j.s.s.** – junior subjective synonym
+- **j.o.s.** – junior objective synonym
+- **preocc.** – preoccupied name
 
-- `j.s.s.` - junior subjective synonym (주관적 후행 이명)
-- `j.o.s.` - junior objective synonym (객관적 후행 이명)
-- `preocc.` - preoccupied (선취명)
+---
 
-## 라이선스
+## Intended Use & Scope
 
-이 프로젝트는 학술 연구 목적으로 제작되었습니다. 원본 데이터의 저작권은 해당 저자에게 있습니다.
+- Research, data exploration, and methodological development
+- Not intended for nomenclatural acts
+- Does not replace expert taxonomic judgment or official registries
 
-## 참고
+---
+
+## License
+
+This project is provided for academic research purposes.
+Copyright of the original taxonomic data remains with the respective authors.
+
+---
+
+## References
 
 - [Treatise on Invertebrate Paleontology](https://www.biodiversitylibrary.org/)
 - [Paleobiology Database](https://paleobiodb.org/)
