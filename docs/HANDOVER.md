@@ -40,6 +40,11 @@
   - 트리뷰 Expand/Collapse All 버튼
   - Synonymy에서 senior taxon으로 이동 링크
 
+- **Phase 12 완료**: Bibliography 테이블
+  - Literature Cited 파싱 (2,130건)
+  - article/book/chapter/cross_ref 분류
+  - 연도 범위: 1745-2003
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -75,6 +80,7 @@
 | formations | 2,009 | 지층 정보 |
 | countries | 151 | 국가 정보 |
 | temporal_ranges | 28 | 지질시대 코드 |
+| bibliography | 2,130 | 참고문헌 (Literature Cited) |
 | taxa (뷰) | 5,113 | 하위 호환성 뷰 |
 
 ### 파일 구조
@@ -134,6 +140,7 @@ trilobase/
 9. ~~Phase 9: Taxa와 Taxonomic_ranks 통합~~ ✅
 10. ~~Phase 10: Formation/Location Relation 테이블~~ ✅
 11. ~~Phase 11: Web Interface~~ ✅
+12. ~~Phase 12: Bibliography 테이블~~ ✅
 
 ## DB 스키마
 
@@ -165,6 +172,10 @@ countries (id, name, code, taxa_count)
 
 -- temporal_ranges: 28 records
 temporal_ranges (id, code, name, period, epoch, start_mya, end_mya)
+
+-- bibliography: 2,130 records - 참고문헌
+bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
+              publisher, city, editors, book_title, reference_type, raw_entry)
 
 -- taxa: 뷰 (하위 호환성)
 CREATE VIEW taxa AS SELECT ... FROM taxonomic_ranks WHERE rank = 'Genus';
