@@ -11,64 +11,22 @@
 ### 완료된 작업
 
 - **Phase 1 완료**: 줄 정리 (한 genus = 한 줄)
-  - Soft hyphen 제거 (1,357건)
-  - 합쳐진 genera 분리 (56건)
-  - Continuation 병합 (106건)
-  - 빈 줄/깨진 줄 삭제 (16건)
-
 - **Phase 2 완료**: 깨진 문자 및 오타 수정 (총 424건)
-  - 체코어 저자명 복원: ŠNAJDR, PŘIBYL, VANĚK, RŮŽIČKA, KLOUČEK, NOVÁK
-  - 체코어 지명 복원: Šárka Fm, Třenice, Králův Dvůr Fm
-  - Genus 이름 수정, 오타 수정
-
 - **Phase 3 완료**: 데이터 검증
-  - 형식 일관성 검사 (괄호/대괄호 짝 맞춤)
-  - 데이터 무결성 검사 (연도 범위, 시대 코드)
-
 - **Phase 4 완료**: DB 스키마 설계 및 데이터 임포트
-  - SQLite 데이터베이스 생성 (`trilobase.db`)
-
-- **Phase 5 완료**: 데이터베이스 정규화
-  - Synonym 파싱 개선 (97.7% 연결)
-  - is_valid 분류 개선
-  - Location/Formation 파싱 개선
-  - formations, countries 테이블 생성
-
-- **Phase 6 완료**: Family 정규화
-  - Family 파일 파싱 (181개 families)
-  - families 테이블 생성
-  - taxa-family 연결 (97.7%)
-  - Family 오타 수정 (DORYPGIDAE, CHENGKOUASPIDIDAE)
-
+- **Phase 5 완료**: 데이터베이스 정규화 (Synonym, Formation, Location)
+- **Phase 6 완료**: Family 정규화 (181개)
 - **Phase 7 완료**: Order 통합 및 계층 구조 구축
-  - `adrain2011.txt` 파일을 활용하여 Class, Order, Suborder, Superfamily, Family의 계층 구조를 파싱
-  - `taxonomic_ranks`라는 self-referential 테이블을 생성하여 계층 데이터 저장
-  - `trilobase.db`에 성공적으로 데이터 삽입 및 관계 검증
-
-- **Phase 8 완료**: Taxonomy Table Consolidation
-  - `taxonomic_ranks`와 `families` 테이블 통합
-  - taxonomic_ranks에 genera_count, taxa_count, year 컬럼 추가
-  - 5개 Family 이름 오류 수정, 22개 누락 Family 추가
-  - taxa.family_id가 taxonomic_ranks를 참조하도록 업데이트
-  - 특수 케이스 처리 (INDET, UNCERTAIN, NEKTASPIDA)
-  - families 테이블 삭제
+- **Phase 8 완료**: taxonomic_ranks와 families 테이블 통합
+- **Phase 9 완료**: taxa와 taxonomic_ranks 테이블 통합
+  - taxa 테이블을 taxonomic_ranks로 마이그레이션
+  - synonyms 테이블 ID 참조 업데이트
+  - taxa 테이블 삭제 후 뷰로 대체 (하위 호환성)
+  - 전체 계층 구조 단일 테이블로 관리
 
 ### 데이터베이스 현황
 
-| 항목 | 값 | 비율 |
-|------|-----|------|
-| **총 Taxa** | 5,113 | 100% |
-| 유효 Taxa | 4,258 | 83.3% |
-| 무효 Taxa | 855 | 16.7% |
-| **Synonym** | 1,055 | |
-| Synonym 연결됨 | 1,031 | 97.7% |
-| **Location** | 4,847 | 94.8% |
-| Country 연결됨 | 4,841 | 99.9% |
-| **Formation** | 4,854 | 95.0% |
-| Formation 연결됨 | 4,854 | 100% |
-| **Family 연결됨** | 4,771 | 93.3% |
-
-### taxonomic_ranks 현황
+#### taxonomic_ranks (통합 테이블)
 
 | Rank | 개수 |
 |------|------|
@@ -77,7 +35,29 @@
 | Suborder | 8 |
 | Superfamily | 13 |
 | Family | 191 |
-| **총계** | **225** |
+| Genus | 5,113 |
+| **총계** | **5,338** |
+
+#### Genus 통계
+
+| 항목 | 값 | 비율 |
+|------|-----|------|
+| 유효 Genus | 4,258 | 83.3% |
+| 무효 Genus | 855 | 16.7% |
+| Synonym 연결됨 | 1,031 | 97.7% |
+| Country 연결됨 | 4,841 | 99.9% |
+| Formation 연결됨 | 4,854 | 100% |
+
+#### 테이블 목록
+
+| 테이블/뷰 | 레코드 수 | 설명 |
+|-----------|----------|------|
+| taxonomic_ranks | 5,338 | 통합 분류 체계 (Class~Genus) |
+| synonyms | 1,055 | 동의어 관계 |
+| formations | 2,009 | 지층 정보 |
+| countries | 151 | 국가 정보 |
+| temporal_ranges | 28 | 지질시대 코드 |
+| taxa (뷰) | 5,113 | 하위 호환성 뷰 |
 
 ### 파일 구조
 
@@ -85,19 +65,17 @@
 trilobase/
 ├── trilobase.db                      # SQLite 데이터베이스
 ├── trilobase_backup_20260205.db      # Phase 8 작업 전 백업
+├── trilobase_backup_phase9.db        # Phase 9 작업 전 백업
 ├── trilobite_genus_list.txt          # 정제된 genus 목록
 ├── trilobite_genus_list_original.txt # 원본 백업
 ├── adrain2011.txt                    # Order 통합을 위한 suprafamilial taxa 목록
-├── unlinked_synonyms.txt             # 미연결 synonym (4건)
-├── unlinked_taxa_no_location.txt     # Location 없는 taxa (266건)
-├── unlinked_taxa_no_formation.txt    # Formation 없는 taxa (259건)
 ├── scripts/
-│   ├── normalize_lines.py            # 줄 정규화 스크립트
-│   ├── create_database.py            # DB 생성 스크립트
-│   ├── normalize_database.py         # DB 정규화 스크립트
-│   ├── fix_synonyms.py               # Synonym 파싱 개선 스크립트
-│   ├── normalize_families.py         # Family 정규화 스크립트
-│   └── populate_taxonomic_ranks.py   # taxonomic_ranks 테이블 채우기 스크립트
+│   ├── normalize_lines.py
+│   ├── create_database.py
+│   ├── normalize_database.py
+│   ├── fix_synonyms.py
+│   ├── normalize_families.py
+│   └── populate_taxonomic_ranks.py
 ├── devlog/
 │   ├── 20260204_P01_data_cleaning_plan.md
 │   ├── 20260204_001_phase1_line_normalization.md
@@ -106,19 +84,26 @@ trilobase/
 │   ├── 20260204_004_phase4_database_creation.md
 │   ├── 20260204_005_phase5_normalization.md
 │   ├── 20260204_006_phase6_family_normalization.md
-│   ├── 20260205_P02_taxonomy_table_consolidation.md  # Phase 8 계획
-│   └── 20260205_008_phase8_taxonomy_consolidation_complete.md  # Phase 8 완료
+│   ├── 20260205_P02_taxonomy_table_consolidation.md
+│   ├── 20260205_008_phase8_taxonomy_consolidation_complete.md
+│   ├── 20260205_P03_taxa_taxonomic_ranks_consolidation.md
+│   └── 20260205_009_phase9_taxa_consolidation_complete.md
 ├── docs/
 │   └── HANDOVER.md
 └── CLAUDE.md
 ```
 
-## 다음 작업 (현재 추가 작업 없음)
+## 다음 작업
+
+### Phase 10 예정: Formation/Location Relation 테이블
+- `formation`, `location` 필드를 synonym처럼 별도의 relation 테이블로 분리
+- 현재는 taxonomic_ranks에 텍스트로 저장되어 있음
+- 다대다 관계 지원 (하나의 genus가 여러 formation/location에서 발견될 수 있음)
 
 ### 미해결 항목
 - Synonym 미연결 4건 (원본에 senior taxa 없음)
 - Location/Formation 없는 taxa는 모두 무효 taxa (정상)
-- Family 미연결 342건 (family 필드 자체가 NULL인 무효 taxa)
+- parent_id NULL인 Genus 342건 (family 필드 자체가 NULL인 무효 taxa)
 
 ## 전체 계획
 
@@ -130,16 +115,48 @@ trilobase/
 6. ~~Phase 6: Family 정규화~~ ✅
 7. ~~Phase 7: Order 통합~~ ✅
 8. ~~Phase 8: Taxonomy Table Consolidation~~ ✅
+9. ~~Phase 9: Taxa와 Taxonomic_ranks 통합~~ ✅
+10. Phase 10: Formation/Location Relation 테이블 (예정)
 
 ## DB 스키마
 
 ```sql
--- taxa: 5,113 records
-taxa (id, name, author, year, year_suffix, type_species,
-      type_species_author, formation, location, family,
-      temporal_code, is_valid, notes, raw_entry, created_at,
-      country_id, formation_id, family_id)
--- family_id → taxonomic_ranks.id (rank='Family')
+-- taxonomic_ranks: 5,338 records - 통합 분류 체계 (Class~Genus)
+taxonomic_ranks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    rank TEXT NOT NULL,  -- Class, Order, Suborder, Superfamily, Family, Genus
+    parent_id INTEGER,   -- FK → taxonomic_ranks.id (self-referential)
+    author TEXT,
+    year TEXT,
+    year_suffix TEXT,
+    genera_count INTEGER DEFAULT 0,  -- Family 이상
+    taxa_count INTEGER DEFAULT 0,    -- Family 이상
+    notes TEXT,
+    created_at TIMESTAMP,
+
+    -- Genus 전용 필드
+    type_species TEXT,
+    type_species_author TEXT,
+    formation TEXT,
+    location TEXT,
+    family TEXT,
+    temporal_code TEXT,
+    is_valid INTEGER DEFAULT 1,
+    raw_entry TEXT,
+    country_id INTEGER,
+    formation_id INTEGER,
+
+    FOREIGN KEY (parent_id) REFERENCES taxonomic_ranks(id)
+)
+
+-- taxa: 뷰 (하위 호환성)
+CREATE VIEW taxa AS
+SELECT id, name, rank, parent_id as family_id, author, year, year_suffix,
+       type_species, type_species_author, formation, location, family,
+       temporal_code, is_valid, notes, raw_entry, created_at,
+       country_id, formation_id
+FROM taxonomic_ranks WHERE rank = 'Genus';
 
 -- synonyms: 1,055 records
 synonyms (id, junior_taxon_id, senior_taxon_name, senior_taxon_id,
@@ -154,55 +171,34 @@ countries (id, name, code, taxa_count)
 
 -- temporal_ranges: 28 records
 temporal_ranges (id, code, name, period, epoch, start_mya, end_mya)
-
--- taxonomic_ranks: 225 records - 계층적 분류 체계
-taxonomic_ranks (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    rank TEXT NOT NULL,  -- Class, Order, Suborder, Superfamily, Family
-    parent_id INTEGER,   -- FK → taxonomic_ranks.id (self-referential)
-    author TEXT,
-    year TEXT,
-    genera_count INTEGER DEFAULT 0,
-    taxa_count INTEGER DEFAULT 0,
-    notes TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (parent_id) REFERENCES taxonomic_ranks(id)
-)
 ```
 
 ## DB 사용법
 
 ```bash
-# 기본 쿼리
+# 기본 쿼리 (taxa 뷰 사용 - 하위 호환)
 sqlite3 trilobase.db "SELECT * FROM taxa LIMIT 10;"
 
-# 유효 taxa만 조회
+# 유효 genus만 조회
 sqlite3 trilobase.db "SELECT * FROM taxa WHERE is_valid = 1;"
 
-# Family별 통계 (taxonomic_ranks 사용)
-sqlite3 trilobase.db "SELECT tr.name, COUNT(*) FROM taxa t JOIN taxonomic_ranks tr ON t.family_id = tr.id GROUP BY tr.name ORDER BY 2 DESC LIMIT 10;"
+# rank별 조회
+sqlite3 trilobase.db "SELECT * FROM taxonomic_ranks WHERE rank = 'Family';"
 
-# 국가별 통계
-sqlite3 trilobase.db "SELECT c.name, c.taxa_count FROM countries c ORDER BY taxa_count DESC LIMIT 10;"
-
-# 특정 속과 원본 텍스트 확인
-sqlite3 trilobase.db "SELECT name, raw_entry FROM taxa WHERE name LIKE 'Asaph%';"
+# 전체 계층 구조 조회 (Genus → Family → Superfamily → Order)
+sqlite3 trilobase.db "SELECT g.name as genus, f.name as family, sf.name as superfamily, o.name as 'order'
+FROM taxonomic_ranks g
+LEFT JOIN taxonomic_ranks f ON g.parent_id = f.id
+LEFT JOIN taxonomic_ranks sf ON f.parent_id = sf.id
+LEFT JOIN taxonomic_ranks o ON sf.parent_id = o.id
+WHERE g.rank = 'Genus' AND g.is_valid = 1 LIMIT 10;"
 
 # Synonym 관계 조회
-sqlite3 trilobase.db "SELECT t1.name as junior, t2.name as senior, s.synonym_type
+sqlite3 trilobase.db "SELECT tr1.name as junior, tr2.name as senior, s.synonym_type
 FROM synonyms s
-JOIN taxa t1 ON s.junior_taxon_id = t1.id
-JOIN taxa t2 ON s.senior_taxon_id = t2.id
+JOIN taxonomic_ranks tr1 ON s.junior_taxon_id = tr1.id
+LEFT JOIN taxonomic_ranks tr2 ON s.senior_taxon_id = tr2.id
 LIMIT 10;"
-
-# 계층 구조 조회 (Family → Superfamily → Suborder → Order → Class)
-sqlite3 trilobase.db "SELECT f.name as family, sf.name as superfamily, o.name as 'order'
-FROM taxonomic_ranks f
-LEFT JOIN taxonomic_ranks sf ON f.parent_id = sf.id
-LEFT JOIN taxonomic_ranks so ON sf.parent_id = so.id
-LEFT JOIN taxonomic_ranks o ON so.parent_id = o.id
-WHERE f.rank = 'Family' LIMIT 10;"
 ```
 
 ## 주의사항
