@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-04
+**마지막 업데이트:** 2026-02-05
 
 ## 프로젝트 개요
 
@@ -45,6 +45,14 @@
   - `taxonomic_ranks`라는 self-referential 테이블을 생성하여 계층 데이터 저장
   - `trilobase.db`에 성공적으로 데이터 삽입 및 관계 검증
 
+- **Phase 8 완료**: Taxonomy Table Consolidation
+  - `taxonomic_ranks`와 `families` 테이블 통합
+  - taxonomic_ranks에 genera_count, taxa_count, year 컬럼 추가
+  - 5개 Family 이름 오류 수정, 22개 누락 Family 추가
+  - taxa.family_id가 taxonomic_ranks를 참조하도록 업데이트
+  - 특수 케이스 처리 (INDET, UNCERTAIN, NEKTASPIDA)
+  - families 테이블 삭제
+
 ### 데이터베이스 현황
 
 | 항목 | 값 | 비율 |
@@ -58,14 +66,25 @@
 | Country 연결됨 | 4,841 | 99.9% |
 | **Formation** | 4,854 | 95.0% |
 | Formation 연결됨 | 4,854 | 100% |
-| **Family** | 181 | |
-| Family 연결됨 | 4,660 | 97.7% |
+| **Family 연결됨** | 4,771 | 93.3% |
+
+### taxonomic_ranks 현황
+
+| Rank | 개수 |
+|------|------|
+| Class | 1 |
+| Order | 12 |
+| Suborder | 8 |
+| Superfamily | 13 |
+| Family | 191 |
+| **총계** | **225** |
 
 ### 파일 구조
 
 ```
 trilobase/
 ├── trilobase.db                      # SQLite 데이터베이스
+├── trilobase_backup_20260205.db      # Phase 8 작업 전 백업
 ├── trilobite_genus_list.txt          # 정제된 genus 목록
 ├── trilobite_genus_list_original.txt # 원본 백업
 ├── adrain2011.txt                    # Order 통합을 위한 suprafamilial taxa 목록
@@ -86,7 +105,9 @@ trilobase/
 │   ├── 20260204_003_phase3_data_validation_summary.md
 │   ├── 20260204_004_phase4_database_creation.md
 │   ├── 20260204_005_phase5_normalization.md
-│   └── 20260204_006_phase6_family_normalization.md
+│   ├── 20260204_006_phase6_family_normalization.md
+│   ├── 20260205_P02_taxonomy_table_consolidation.md  # Phase 8 계획
+│   └── 20260205_008_phase8_taxonomy_consolidation_complete.md  # Phase 8 완료
 ├── docs/
 │   └── HANDOVER.md
 └── CLAUDE.md
@@ -97,7 +118,7 @@ trilobase/
 ### 미해결 항목
 - Synonym 미연결 4건 (원본에 senior taxa 없음)
 - Location/Formation 없는 taxa는 모두 무효 taxa (정상)
-- Family 미연결 111건 (INDET 29, UNCERTAIN 74, NEKTASPIDA 8)
+- Family 미연결 342건 (family 필드 자체가 NULL인 무효 taxa)
 
 ## 전체 계획
 
@@ -107,23 +128,24 @@ trilobase/
 4. ~~Phase 4: DB 스키마 설계 및 데이터 임포트~~ ✅
 5. ~~Phase 5: 정규화 (Formation, Location, Synonym)~~ ✅
 6. ~~Phase 6: Family 정규화~~ ✅
-7. Phase 7: Order 통합 ✅
+7. ~~Phase 7: Order 통합~~ ✅
+8. ~~Phase 8: Taxonomy Table Consolidation~~ ✅
 
 ## DB 스키마
 
 ```sql
 -- taxa: 5,113 records
--- (family_id는 향후 taxonomic_ranks.id와 연결될 예정)
 taxa (id, name, author, year, year_suffix, type_species,
       type_species_author, formation, location, family,
       temporal_code, is_valid, notes, raw_entry, created_at,
       country_id, formation_id, family_id)
+-- family_id → taxonomic_ranks.id (rank='Family')
 
 -- synonyms: 1,055 records
 synonyms (id, junior_taxon_id, senior_taxon_name, senior_taxon_id,
           synonym_type, fide_author, fide_year, notes)
 
--- formations: 1,987+ records
+-- formations: 2,009 records
 formations (id, name, normalized_name, formation_type,
             country, region, period, taxa_count)
 
@@ -133,14 +155,16 @@ countries (id, name, code, taxa_count)
 -- temporal_ranges: 28 records
 temporal_ranges (id, code, name, period, epoch, start_mya, end_mya)
 
--- taxonomic_ranks: 계층적 분류 체계 (Class, Order, Suborder, Superfamily, Family)
--- families 테이블은 이 테이블로 대체되며, taxa 테이블의 family_id는 이 테이블과 연결될 예정
+-- taxonomic_ranks: 225 records - 계층적 분류 체계
 taxonomic_ranks (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
-    rank TEXT NOT NULL, -- Class, Order, Suborder, Superfamily, Family
-    parent_id INTEGER,
+    rank TEXT NOT NULL,  -- Class, Order, Suborder, Superfamily, Family
+    parent_id INTEGER,   -- FK → taxonomic_ranks.id (self-referential)
     author TEXT,
+    year TEXT,
+    genera_count INTEGER DEFAULT 0,
+    taxa_count INTEGER DEFAULT 0,
     notes TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (parent_id) REFERENCES taxonomic_ranks(id)
@@ -156,8 +180,8 @@ sqlite3 trilobase.db "SELECT * FROM taxa LIMIT 10;"
 # 유효 taxa만 조회
 sqlite3 trilobase.db "SELECT * FROM taxa WHERE is_valid = 1;"
 
-# Family별 통계
-sqlite3 trilobase.db "SELECT family, COUNT(*) FROM taxa WHERE is_valid=1 GROUP BY family ORDER BY 2 DESC;"
+# Family별 통계 (taxonomic_ranks 사용)
+sqlite3 trilobase.db "SELECT tr.name, COUNT(*) FROM taxa t JOIN taxonomic_ranks tr ON t.family_id = tr.id GROUP BY tr.name ORDER BY 2 DESC LIMIT 10;"
 
 # 국가별 통계
 sqlite3 trilobase.db "SELECT c.name, c.taxa_count FROM countries c ORDER BY taxa_count DESC LIMIT 10;"
@@ -171,6 +195,14 @@ FROM synonyms s
 JOIN taxa t1 ON s.junior_taxon_id = t1.id
 JOIN taxa t2 ON s.senior_taxon_id = t2.id
 LIMIT 10;"
+
+# 계층 구조 조회 (Family → Superfamily → Suborder → Order → Class)
+sqlite3 trilobase.db "SELECT f.name as family, sf.name as superfamily, o.name as 'order'
+FROM taxonomic_ranks f
+LEFT JOIN taxonomic_ranks sf ON f.parent_id = sf.id
+LEFT JOIN taxonomic_ranks so ON sf.parent_id = so.id
+LEFT JOIN taxonomic_ranks o ON so.parent_id = o.id
+WHERE f.rank = 'Family' LIMIT 10;"
 ```
 
 ## 주의사항
