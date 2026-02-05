@@ -25,6 +25,12 @@
   - 다대다 관계 지원
   - 원본 텍스트 필드 보존
 
+- **Phase 11 완료**: Web Interface
+  - Flask 기반 웹 애플리케이션
+  - Tree View (Class~Family 계층 구조)
+  - Genus List (Family 선택 시 표시)
+  - Genus Detail Modal (상세정보)
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -70,6 +76,12 @@ trilobase/
 ├── trilobite_genus_list.txt          # 정제된 genus 목록
 ├── trilobite_genus_list_original.txt # 원본 백업
 ├── adrain2011.txt                    # Order 통합을 위한 suprafamilial taxa 목록
+├── app.py                            # Flask 웹 앱
+├── templates/
+│   └── index.html                    # 메인 페이지
+├── static/
+│   ├── css/style.css                 # 스타일
+│   └── js/app.js                     # 프론트엔드 로직
 ├── scripts/
 │   ├── normalize_lines.py
 │   ├── create_database.py
@@ -85,7 +97,9 @@ trilobase/
 │   ├── 20260205_P03_taxa_taxonomic_ranks_consolidation.md
 │   ├── 20260205_009_phase9_taxa_consolidation_complete.md
 │   ├── 20260205_P04_formation_location_relations.md
-│   └── 20260205_010_phase10_formation_location_relations_complete.md
+│   ├── 20260205_010_phase10_formation_location_relations_complete.md
+│   ├── 20260205_P05_web_interface.md
+│   └── 20260205_011_phase11_web_interface_complete.md
 ├── docs/
 │   └── HANDOVER.md
 └── CLAUDE.md
@@ -110,6 +124,7 @@ trilobase/
 8. ~~Phase 8: Taxonomy Table Consolidation~~ ✅
 9. ~~Phase 9: Taxa와 Taxonomic_ranks 통합~~ ✅
 10. ~~Phase 10: Formation/Location Relation 테이블~~ ✅
+11. ~~Phase 11: Web Interface~~ ✅
 
 ## DB 스키마
 

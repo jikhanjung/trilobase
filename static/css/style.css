@@ -1,0 +1,264 @@
+/* Trilobase Web Interface Styles */
+
+:root {
+    --tree-indent: 20px;
+    --panel-bg: #f8f9fa;
+    --border-color: #dee2e6;
+    --hover-bg: #e9ecef;
+    --selected-bg: #0d6efd;
+    --selected-color: #fff;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.main-content {
+    height: calc(100vh - 56px);
+    padding: 0;
+}
+
+.main-content > .row {
+    height: 100%;
+    margin: 0;
+}
+
+/* Panel Styles */
+.tree-panel, .list-panel {
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.tree-panel {
+    background: var(--panel-bg);
+    border-right: 1px solid var(--border-color);
+}
+
+.panel-header {
+    padding: 10px 15px;
+    background: #fff;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.panel-header h5 {
+    margin: 0;
+    font-size: 1rem;
+    color: #495057;
+}
+
+/* Tree Container */
+.tree-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+/* Tree Node Styles */
+.tree-node {
+    user-select: none;
+}
+
+.tree-node-content {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.tree-node-content:hover {
+    background: var(--hover-bg);
+}
+
+.tree-node-content.selected {
+    background: var(--selected-bg);
+    color: var(--selected-color);
+}
+
+.tree-toggle {
+    width: 20px;
+    text-align: center;
+    color: #6c757d;
+}
+
+.tree-toggle:empty::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+}
+
+.tree-icon {
+    margin-right: 6px;
+    color: #ffc107;
+}
+
+.tree-node-content.selected .tree-icon {
+    color: #fff;
+}
+
+.tree-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tree-count {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-left: 8px;
+}
+
+.tree-node-content.selected .tree-count {
+    color: rgba(255,255,255,0.8);
+}
+
+.tree-children {
+    margin-left: var(--tree-indent);
+}
+
+.tree-children.collapsed {
+    display: none;
+}
+
+/* Rank Colors */
+.rank-Class .tree-icon { color: #dc3545; }
+.rank-Order .tree-icon { color: #fd7e14; }
+.rank-Suborder .tree-icon { color: #ffc107; }
+.rank-Superfamily .tree-icon { color: #20c997; }
+.rank-Family .tree-icon { color: #0dcaf0; }
+
+/* List Container */
+.list-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.empty-state {
+    text-align: center;
+    color: #6c757d;
+    padding: 50px 20px;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* Genus Table */
+.genus-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.genus-table th {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    border-bottom: 2px solid var(--border-color);
+    padding: 10px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.genus-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.genus-table tr {
+    cursor: pointer;
+}
+
+.genus-table tr:hover {
+    background: var(--hover-bg);
+}
+
+.genus-table tr.invalid {
+    color: #6c757d;
+    font-style: italic;
+}
+
+.genus-name {
+    font-weight: 500;
+}
+
+.genus-name i {
+    font-style: italic;
+}
+
+/* Modal Styles */
+.detail-section {
+    margin-bottom: 20px;
+}
+
+.detail-section h6 {
+    color: #495057;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 8px;
+}
+
+.detail-label {
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.detail-value {
+    color: #212529;
+}
+
+.detail-value.invalid {
+    color: #dc3545;
+}
+
+.badge-synonym {
+    font-size: 0.75rem;
+    margin-right: 5px;
+}
+
+.raw-entry {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+}
+
+/* Scrollbar */
+.tree-container::-webkit-scrollbar,
+.list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tree-container::-webkit-scrollbar-thumb,
+.list-container::-webkit-scrollbar-thumb {
+    background: #ced4da;
+    border-radius: 4px;
+}
+
+.tree-container::-webkit-scrollbar-thumb:hover,
+.list-container::-webkit-scrollbar-thumb:hover {
+    background: #adb5bd;
+}
