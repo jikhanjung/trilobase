@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-05
+**마지막 업데이트:** 2026-02-06
 
 ## 프로젝트 개요
 
@@ -44,6 +44,10 @@
   - Literature Cited 파싱 (2,130건)
   - article/book/chapter/cross_ref 분류
   - 연도 범위: 1745-2003
+
+- **2026-02-06 UI 개선**
+  - Rank 상세정보 Statistics 중복 표시 수정 (Genera/Genus)
+  - Children 목록 클릭 네비게이션 (트리 펼침 + 상세정보 표시)
 
 ### 데이터베이스 현황
 

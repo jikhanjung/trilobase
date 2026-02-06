@@ -421,6 +421,8 @@ async function showRankDetail(rankId, rankName, rankType) {
             }
 
             r.children_counts.forEach(c => {
+                // Skip Genus count if genera_count already shown
+                if (c.rank === 'Genus' && r.genera_count) return;
                 html += `
                     <span class="detail-label">${c.rank}:</span>
                     <span class="detail-value">${c.count}</span>`;
@@ -437,12 +439,21 @@ async function showRankDetail(rankId, rankName, rankType) {
                     <ul class="list-unstyled children-list">`;
 
             r.children.forEach(c => {
-                html += `
-                    <li>
+                if (c.rank === 'Genus') {
+                    html += `
+                    <li class="clickable" onclick="navigateToGenus(${c.id}, ${r.id}, '${r.name.replace(/'/g, "\\'")}')">
+                        <span class="badge bg-light text-dark me-1">${c.rank}</span>
+                        <strong><i>${c.name}</i></strong>
+                        ${c.author ? '<small class="text-muted">' + c.author + '</small>' : ''}
+                    </li>`;
+                } else {
+                    html += `
+                    <li class="clickable" onclick="navigateToRank(${c.id}, '${c.name.replace(/'/g, "\\'")}', '${c.rank}')">
                         <span class="badge bg-light text-dark me-1">${c.rank}</span>
                         <strong>${c.name}</strong>
                         ${c.author ? '<small class="text-muted">' + c.author + '</small>' : ''}
                     </li>`;
+                }
             });
 
             html += '</ul></div>';
@@ -462,6 +473,55 @@ async function showRankDetail(rankId, rankName, rankType) {
     } catch (error) {
         modalBody.innerHTML = `<div class="text-danger">Error loading details: ${error.message}</div>`;
     }
+}
+
+/**
+ * Expand tree path to a specific node and highlight it
+ */
+function expandTreeToNode(nodeId) {
+    const nodeContent = document.querySelector(`.tree-node-content[data-id="${nodeId}"]`);
+    if (!nodeContent) return;
+
+    // Walk up DOM to expand all collapsed parent containers
+    let element = nodeContent.parentElement;
+    while (element) {
+        if (element.classList && element.classList.contains('tree-children') && element.classList.contains('collapsed')) {
+            element.classList.remove('collapsed');
+            const parentContent = element.previousElementSibling;
+            if (parentContent) {
+                const chevron = parentContent.querySelector('.tree-toggle i');
+                if (chevron) chevron.className = 'bi bi-chevron-down';
+            }
+        }
+        element = element.parentElement;
+    }
+
+    // Highlight the node
+    document.querySelectorAll('.tree-node-content.selected').forEach(el => {
+        el.classList.remove('selected');
+    });
+    nodeContent.classList.add('selected');
+    nodeContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+/**
+ * Navigate to a non-Genus rank from children list
+ */
+function navigateToRank(rankId, rankName, rankType) {
+    expandTreeToNode(rankId);
+    if (rankType === 'Family') {
+        selectFamily(rankId, rankName);
+    }
+    showRankDetail(rankId, rankName, rankType);
+}
+
+/**
+ * Navigate to a Genus from children list
+ */
+function navigateToGenus(genusId, familyId, familyName) {
+    expandTreeToNode(familyId);
+    selectFamily(familyId, familyName);
+    showGenusDetail(genusId);
 }
 
 /**

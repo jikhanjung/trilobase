@@ -166,6 +166,16 @@ html, body {
     border-bottom: none;
 }
 
+.children-list li.clickable {
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+
+.children-list li.clickable:hover {
+    background-color: var(--hover-bg);
+}
+
 /* Rank Colors */
 .rank-Class .tree-icon { color: #dc3545; }
 .rank-Order .tree-icon { color: #fd7e14; }
