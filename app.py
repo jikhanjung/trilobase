@@ -273,5 +273,70 @@ def api_genus_detail(genus_id):
     })
 
 
+@app.route('/api/metadata')
+def api_metadata():
+    """Get SCODA artifact metadata and database statistics"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Get metadata key-value pairs
+    cursor.execute("SELECT key, value FROM artifact_metadata")
+    metadata = {row['key']: row['value'] for row in cursor.fetchall()}
+
+    # Get database statistics
+    stats = {}
+    for rank in ['Class', 'Order', 'Suborder', 'Superfamily', 'Family', 'Genus']:
+        cursor.execute(
+            "SELECT COUNT(*) as count FROM taxonomic_ranks WHERE rank = ?",
+            (rank,))
+        stats[rank.lower()] = cursor.fetchone()['count']
+
+    cursor.execute(
+        "SELECT COUNT(*) as count FROM taxonomic_ranks WHERE rank = 'Genus' AND is_valid = 1")
+    stats['valid_genera'] = cursor.fetchone()['count']
+
+    cursor.execute("SELECT COUNT(*) as count FROM synonyms")
+    stats['synonyms'] = cursor.fetchone()['count']
+
+    cursor.execute("SELECT COUNT(*) as count FROM bibliography")
+    stats['bibliography'] = cursor.fetchone()['count']
+
+    cursor.execute("SELECT COUNT(*) as count FROM formations")
+    stats['formations'] = cursor.fetchone()['count']
+
+    cursor.execute("SELECT COUNT(*) as count FROM countries")
+    stats['countries'] = cursor.fetchone()['count']
+
+    conn.close()
+
+    metadata['statistics'] = stats
+    return jsonify(metadata)
+
+
+@app.route('/api/provenance')
+def api_provenance():
+    """Get data provenance information"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT id, source_type, citation, description, year, url
+        FROM provenance
+        ORDER BY id
+    """)
+    sources = cursor.fetchall()
+
+    conn.close()
+
+    return jsonify([{
+        'id': s['id'],
+        'source_type': s['source_type'],
+        'citation': s['citation'],
+        'description': s['description'],
+        'year': s['year'],
+        'url': s['url']
+    } for s in sources])
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)

@@ -102,6 +102,28 @@ def test_db(tmp_path):
 
         CREATE VIEW taxa AS
         SELECT * FROM taxonomic_ranks WHERE rank = 'Genus';
+
+        -- SCODA-Core tables
+        CREATE TABLE artifact_metadata (
+            key TEXT PRIMARY KEY,
+            value TEXT NOT NULL
+        );
+
+        CREATE TABLE provenance (
+            id INTEGER PRIMARY KEY,
+            source_type TEXT NOT NULL,
+            citation TEXT NOT NULL,
+            description TEXT,
+            year INTEGER,
+            url TEXT
+        );
+
+        CREATE TABLE schema_descriptions (
+            table_name TEXT NOT NULL,
+            column_name TEXT,
+            description TEXT NOT NULL,
+            PRIMARY KEY (table_name, column_name)
+        );
     """)
 
     # Insert sample data: Class -> Order -> Family -> Genus hierarchy
@@ -185,6 +207,61 @@ def test_db(tmp_path):
     cursor.executescript("""
         INSERT INTO genus_locations (genus_id, country_id, region) VALUES (101, 1, 'Eifel');
         INSERT INTO genus_locations (genus_id, country_id, region) VALUES (200, 2, 'Scania');
+    """)
+
+    # Bibliography (for metadata statistics)
+    cursor.execute("""
+        CREATE TABLE bibliography (
+            id INTEGER PRIMARY KEY,
+            authors TEXT NOT NULL,
+            year INTEGER,
+            year_suffix TEXT,
+            title TEXT,
+            journal TEXT,
+            volume TEXT,
+            pages TEXT,
+            publisher TEXT,
+            city TEXT,
+            editors TEXT,
+            book_title TEXT,
+            reference_type TEXT DEFAULT 'article',
+            raw_entry TEXT NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    cursor.execute("""
+        INSERT INTO bibliography (id, authors, year, title, journal, reference_type, raw_entry)
+        VALUES (1, 'Jell, P.A. & Adrain, J.M.', 2002, 'Available generic names for trilobites',
+                'Memoirs of the Queensland Museum', 'article',
+                'Jell, P.A. & Adrain, J.M. (2002) Available generic names for trilobites.')
+    """)
+
+    # SCODA metadata
+    cursor.executescript("""
+        INSERT INTO artifact_metadata (key, value) VALUES ('artifact_id', 'trilobase');
+        INSERT INTO artifact_metadata (key, value) VALUES ('name', 'Trilobase');
+        INSERT INTO artifact_metadata (key, value) VALUES ('version', '1.0.0');
+        INSERT INTO artifact_metadata (key, value) VALUES ('schema_version', '1.0');
+        INSERT INTO artifact_metadata (key, value) VALUES ('description', 'Trilobite genus-level taxonomy database');
+        INSERT INTO artifact_metadata (key, value) VALUES ('license', 'CC-BY-4.0');
+    """)
+
+    # SCODA provenance
+    cursor.executescript("""
+        INSERT INTO provenance (id, source_type, citation, description, year)
+        VALUES (1, 'primary', 'Jell & Adrain (2002)', 'Primary source for genus-level taxonomy', 2002);
+        INSERT INTO provenance (id, source_type, citation, description, year)
+        VALUES (2, 'supplementary', 'Adrain (2011)', 'Suprafamilial classification', 2011);
+    """)
+
+    # SCODA schema descriptions (sample)
+    cursor.executescript("""
+        INSERT INTO schema_descriptions (table_name, column_name, description)
+        VALUES ('taxonomic_ranks', NULL, 'Unified taxonomic hierarchy from Class to Genus');
+        INSERT INTO schema_descriptions (table_name, column_name, description)
+        VALUES ('taxonomic_ranks', 'rank', 'Taxonomic rank: Class, Order, Suborder, Superfamily, Family, or Genus');
+        INSERT INTO schema_descriptions (table_name, column_name, description)
+        VALUES ('synonyms', NULL, 'Taxonomic synonym relationships');
     """)
 
     conn.commit()
@@ -486,3 +563,87 @@ class TestApiGenusDetail:
         assert data['formations'][0]['name'] == 'Alum Sh'
         assert len(data['locations']) == 1
         assert data['locations'][0]['country'] == 'Sweden'
+
+
+# --- /api/metadata ---
+
+class TestApiMetadata:
+    def test_metadata_returns_200(self, client):
+        response = client.get('/api/metadata')
+        assert response.status_code == 200
+
+    def test_metadata_has_identity(self, client):
+        response = client.get('/api/metadata')
+        data = json.loads(response.data)
+        assert data['artifact_id'] == 'trilobase'
+        assert data['name'] == 'Trilobase'
+        assert data['version'] == '1.0.0'
+        assert data['schema_version'] == '1.0'
+
+    def test_metadata_has_license(self, client):
+        response = client.get('/api/metadata')
+        data = json.loads(response.data)
+        assert data['license'] == 'CC-BY-4.0'
+
+    def test_metadata_has_statistics(self, client):
+        response = client.get('/api/metadata')
+        data = json.loads(response.data)
+        stats = data['statistics']
+        assert 'genus' in stats
+        assert 'family' in stats
+        assert 'order' in stats
+        assert 'valid_genera' in stats
+        assert 'synonyms' in stats
+        assert 'bibliography' in stats
+        assert 'formations' in stats
+        assert 'countries' in stats
+
+    def test_metadata_statistics_values(self, client):
+        """Statistics should reflect test data counts."""
+        response = client.get('/api/metadata')
+        data = json.loads(response.data)
+        stats = data['statistics']
+        assert stats['genus'] == 4       # Phacops, Acuticryphops, Cryphops, Olenus
+        assert stats['family'] == 2      # Phacopidae, Olenidae
+        assert stats['order'] == 2       # Phacopida, Ptychopariida
+        assert stats['valid_genera'] == 3  # Phacops, Acuticryphops, Olenus
+        assert stats['synonyms'] == 1
+        assert stats['bibliography'] == 1
+        assert stats['formations'] == 2
+        assert stats['countries'] == 2
+
+
+# --- /api/provenance ---
+
+class TestApiProvenance:
+    def test_provenance_returns_200(self, client):
+        response = client.get('/api/provenance')
+        assert response.status_code == 200
+
+    def test_provenance_returns_list(self, client):
+        response = client.get('/api/provenance')
+        data = json.loads(response.data)
+        assert isinstance(data, list)
+        assert len(data) == 2
+
+    def test_provenance_has_primary_source(self, client):
+        response = client.get('/api/provenance')
+        data = json.loads(response.data)
+        primary = next(s for s in data if s['source_type'] == 'primary')
+        assert 'Jell' in primary['citation']
+        assert primary['year'] == 2002
+
+    def test_provenance_has_supplementary_source(self, client):
+        response = client.get('/api/provenance')
+        data = json.loads(response.data)
+        supp = next(s for s in data if s['source_type'] == 'supplementary')
+        assert 'Adrain' in supp['citation']
+        assert supp['year'] == 2011
+
+    def test_provenance_record_structure(self, client):
+        response = client.get('/api/provenance')
+        data = json.loads(response.data)
+        record = data[0]
+        expected_keys = ['id', 'source_type', 'citation', 'description', 'year', 'url']
+        for key in expected_keys:
+            assert key in record, f"Missing key: {key}"
