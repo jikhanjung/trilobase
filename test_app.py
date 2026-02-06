@@ -124,6 +124,25 @@ def test_db(tmp_path):
             description TEXT NOT NULL,
             PRIMARY KEY (table_name, column_name)
         );
+
+        -- SCODA UI tables (Phase 14)
+        CREATE TABLE ui_display_intent (
+            id INTEGER PRIMARY KEY,
+            entity TEXT NOT NULL,
+            default_view TEXT NOT NULL,
+            description TEXT,
+            source_query TEXT,
+            priority INTEGER DEFAULT 0
+        );
+
+        CREATE TABLE ui_queries (
+            id INTEGER PRIMARY KEY,
+            name TEXT NOT NULL UNIQUE,
+            description TEXT,
+            sql TEXT NOT NULL,
+            params_json TEXT,
+            created_at TEXT NOT NULL
+        );
     """)
 
     # Insert sample data: Class -> Order -> Family -> Genus hierarchy
@@ -262,6 +281,36 @@ def test_db(tmp_path):
         VALUES ('taxonomic_ranks', 'rank', 'Taxonomic rank: Class, Order, Suborder, Superfamily, Family, or Genus');
         INSERT INTO schema_descriptions (table_name, column_name, description)
         VALUES ('synonyms', NULL, 'Taxonomic synonym relationships');
+    """)
+
+    # SCODA display intents (Phase 14)
+    cursor.executescript("""
+        INSERT INTO ui_display_intent (id, entity, default_view, description, source_query, priority)
+        VALUES (1, 'genera', 'tree', 'Taxonomic hierarchy is primary structure', 'taxonomy_tree', 0);
+        INSERT INTO ui_display_intent (id, entity, default_view, description, source_query, priority)
+        VALUES (2, 'genera', 'table', 'Flat listing for search/filtering', 'genera_list', 1);
+        INSERT INTO ui_display_intent (id, entity, default_view, description, source_query, priority)
+        VALUES (3, 'references', 'table', 'Literature references sorted by year', 'bibliography_list', 0);
+    """)
+
+    # SCODA saved queries (Phase 14)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('genera_list', 'Flat list of all genera',
+                'SELECT id, name, author, year, family, is_valid FROM taxonomic_ranks WHERE rank = ''Genus'' ORDER BY name',
+                NULL, '2026-02-07T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('family_genera', 'Genera in a specific family',
+                'SELECT id, name, author, year, is_valid FROM taxonomic_ranks WHERE parent_id = :family_id AND rank = ''Genus'' ORDER BY name',
+                '{"family_id": "integer"}', '2026-02-07T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('taxonomy_tree', 'Tree from Class to Family',
+                'SELECT id, name, rank, parent_id, author FROM taxonomic_ranks WHERE rank != ''Genus'' ORDER BY name',
+                NULL, '2026-02-07T00:00:00')
     """)
 
     conn.commit()
@@ -647,3 +696,127 @@ class TestApiProvenance:
         expected_keys = ['id', 'source_type', 'citation', 'description', 'year', 'url']
         for key in expected_keys:
             assert key in record, f"Missing key: {key}"
+
+
+# --- /api/display-intent ---
+
+class TestApiDisplayIntent:
+    def test_display_intent_returns_200(self, client):
+        response = client.get('/api/display-intent')
+        assert response.status_code == 200
+
+    def test_display_intent_returns_list(self, client):
+        response = client.get('/api/display-intent')
+        data = json.loads(response.data)
+        assert isinstance(data, list)
+        assert len(data) == 3
+
+    def test_display_intent_primary_view(self, client):
+        """genera entity should have tree as primary (priority=0) view."""
+        response = client.get('/api/display-intent')
+        data = json.loads(response.data)
+        genera_intents = [i for i in data if i['entity'] == 'genera']
+        primary = next(i for i in genera_intents if i['priority'] == 0)
+        assert primary['default_view'] == 'tree'
+
+    def test_display_intent_secondary_view(self, client):
+        """genera entity should have table as secondary (priority=1) view."""
+        response = client.get('/api/display-intent')
+        data = json.loads(response.data)
+        genera_intents = [i for i in data if i['entity'] == 'genera']
+        secondary = next(i for i in genera_intents if i['priority'] == 1)
+        assert secondary['default_view'] == 'table'
+
+    def test_display_intent_source_query(self, client):
+        response = client.get('/api/display-intent')
+        data = json.loads(response.data)
+        tree_intent = next(i for i in data if i['default_view'] == 'tree')
+        assert tree_intent['source_query'] == 'taxonomy_tree'
+
+    def test_display_intent_record_structure(self, client):
+        response = client.get('/api/display-intent')
+        data = json.loads(response.data)
+        record = data[0]
+        expected_keys = ['id', 'entity', 'default_view', 'description',
+                         'source_query', 'priority']
+        for key in expected_keys:
+            assert key in record, f"Missing key: {key}"
+
+
+# --- /api/queries ---
+
+class TestApiQueries:
+    def test_queries_returns_200(self, client):
+        response = client.get('/api/queries')
+        assert response.status_code == 200
+
+    def test_queries_returns_list(self, client):
+        response = client.get('/api/queries')
+        data = json.loads(response.data)
+        assert isinstance(data, list)
+        assert len(data) == 3  # genera_list, family_genera, taxonomy_tree
+
+    def test_queries_record_structure(self, client):
+        response = client.get('/api/queries')
+        data = json.loads(response.data)
+        record = data[0]
+        expected_keys = ['id', 'name', 'description', 'params', 'created_at']
+        for key in expected_keys:
+            assert key in record, f"Missing key: {key}"
+
+    def test_queries_sorted_by_name(self, client):
+        response = client.get('/api/queries')
+        data = json.loads(response.data)
+        names = [q['name'] for q in data]
+        assert names == sorted(names)
+
+
+# --- /api/queries/<name>/execute ---
+
+class TestApiQueryExecute:
+    def test_execute_no_params(self, client):
+        """Execute genera_list query (no parameters needed)."""
+        response = client.get('/api/queries/genera_list/execute')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['query'] == 'genera_list'
+        assert data['row_count'] == 4  # 4 genera in test data
+        assert 'columns' in data
+        assert 'rows' in data
+
+    def test_execute_with_params(self, client):
+        """Execute family_genera query with family_id parameter."""
+        response = client.get('/api/queries/family_genera/execute?family_id=10')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['row_count'] == 3  # Phacops, Acuticryphops, Cryphops
+        names = [r['name'] for r in data['rows']]
+        assert 'Phacops' in names
+
+    def test_execute_results_sorted(self, client):
+        """genera_list results should be sorted by name."""
+        response = client.get('/api/queries/genera_list/execute')
+        data = json.loads(response.data)
+        names = [r['name'] for r in data['rows']]
+        assert names == sorted(names)
+
+    def test_execute_not_found(self, client):
+        response = client.get('/api/queries/nonexistent/execute')
+        assert response.status_code == 404
+        data = json.loads(response.data)
+        assert 'error' in data
+
+    def test_execute_columns_present(self, client):
+        """Result should include column names."""
+        response = client.get('/api/queries/genera_list/execute')
+        data = json.loads(response.data)
+        assert 'name' in data['columns']
+        assert 'is_valid' in data['columns']
+
+    def test_execute_row_is_dict(self, client):
+        """Each row should be a dictionary with column keys."""
+        response = client.get('/api/queries/genera_list/execute')
+        data = json.loads(response.data)
+        row = data['rows'][0]
+        assert isinstance(row, dict)
+        assert 'name' in row

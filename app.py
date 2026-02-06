@@ -3,7 +3,7 @@ Trilobase Web Interface
 Flask application for browsing trilobite taxonomy database
 """
 
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 import sqlite3
 import os
 
@@ -336,6 +336,90 @@ def api_provenance():
         'year': s['year'],
         'url': s['url']
     } for s in sources])
+
+
+@app.route('/api/display-intent')
+def api_display_intent():
+    """Get display intent hints for SCODA viewers"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT id, entity, default_view, description, source_query, priority
+        FROM ui_display_intent
+        ORDER BY entity, priority
+    """)
+    intents = cursor.fetchall()
+    conn.close()
+
+    return jsonify([{
+        'id': i['id'],
+        'entity': i['entity'],
+        'default_view': i['default_view'],
+        'description': i['description'],
+        'source_query': i['source_query'],
+        'priority': i['priority']
+    } for i in intents])
+
+
+@app.route('/api/queries')
+def api_queries():
+    """Get list of available named queries"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT id, name, description, params_json, created_at
+        FROM ui_queries
+        ORDER BY name
+    """)
+    queries = cursor.fetchall()
+    conn.close()
+
+    return jsonify([{
+        'id': q['id'],
+        'name': q['name'],
+        'description': q['description'],
+        'params': q['params_json'],
+        'created_at': q['created_at']
+    } for q in queries])
+
+
+@app.route('/api/queries/<name>/execute')
+def api_query_execute(name):
+    """Execute a named query with optional parameters"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Look up the query
+    cursor.execute("SELECT sql, params_json FROM ui_queries WHERE name = ?", (name,))
+    query = cursor.fetchone()
+
+    if not query:
+        conn.close()
+        return jsonify({'error': f'Query not found: {name}'}), 404
+
+    # Build parameters from query string
+    params = {}
+    for key, value in request.args.items():
+        params[key] = value
+
+    # Execute the query
+    try:
+        cursor.execute(query['sql'], params)
+        columns = [desc[0] for desc in cursor.description]
+        rows = cursor.fetchall()
+        conn.close()
+
+        return jsonify({
+            'query': name,
+            'columns': columns,
+            'row_count': len(rows),
+            'rows': [dict(row) for row in rows]
+        })
+    except Exception as e:
+        conn.close()
+        return jsonify({'error': str(e)}), 400
 
 
 if __name__ == '__main__':

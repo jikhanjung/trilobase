@@ -54,7 +54,12 @@
   - provenance 테이블 (3건: Jell & Adrain 2002, Adrain 2011, build pipeline)
   - schema_descriptions 테이블 (90건: 모든 테이블/컬럼 설명)
   - API: `GET /api/metadata`, `GET /api/provenance`
-  - 테스트: 47개 (기존 37 + 신규 10)
+
+- **Phase 14 완료**: Display Intent + Saved Queries
+  - ui_display_intent 테이블 (6건: genera→tree/table, references→table 등)
+  - ui_queries 테이블 (14건: taxonomy_tree, family_genera, genera_list 등)
+  - API: `GET /api/display-intent`, `GET /api/queries`, `GET /api/queries/<name>/execute`
+  - 테스트: 63개 (기존 47 + 신규 16)
 
 ### 데이터베이스 현황
 
@@ -95,7 +100,9 @@
 | taxa (뷰) | 5,113 | 하위 호환성 뷰 |
 | artifact_metadata | 7 | SCODA 아티팩트 메타데이터 |
 | provenance | 3 | 데이터 출처 |
-| schema_descriptions | 90 | 테이블/컬럼 설명 |
+| schema_descriptions | 102 | 테이블/컬럼 설명 |
+| ui_display_intent | 6 | SCODA 뷰 타입 힌트 |
+| ui_queries | 14 | Named SQL 쿼리 |
 
 ### 파일 구조
 
@@ -120,7 +127,8 @@ trilobase/
 │   ├── fix_synonyms.py
 │   ├── normalize_families.py
 │   ├── populate_taxonomic_ranks.py
-│   └── add_scoda_tables.py          # SCODA 테이블 마이그레이션
+│   ├── add_scoda_tables.py          # Phase 13: SCODA-Core 마이그레이션
+│   └── add_scoda_ui_tables.py      # Phase 14: Display Intent/Queries 마이그레이션
 ├── devlog/
 │   ├── 20260204_P01_data_cleaning_plan.md
 │   ├── 20260204_001~006_*.md         # Phase 1-6 로그
@@ -145,7 +153,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환 중.
 | Phase | 내용 | 상태 |
 |-------|------|------|
 | Phase 13 | SCODA-Core 메타데이터 (Identity, Provenance, Semantics) | ✅ 완료 |
-| Phase 14 | Display Intent + Saved Queries | 예정 |
+| Phase 14 | Display Intent + Saved Queries | ✅ 완료 |
 | Phase 15 | UI Manifest (선언적 뷰 정의) | 예정 |
 | Phase 16 | 릴리스 메커니즘 (버전 태깅, 패키징) | 예정 |
 | Phase 17 | Local Overlay (사용자 주석) | 예정 |
@@ -171,7 +179,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환 중.
 11. ~~Phase 11: Web Interface~~ ✅
 12. ~~Phase 12: Bibliography 테이블~~ ✅
 13. ~~Phase 13: SCODA-Core 메타데이터~~ ✅ (브랜치: `feature/scoda-implementation`)
-14. Phase 14: Display Intent + Saved Queries
+14. ~~Phase 14: Display Intent + Saved Queries~~ ✅
 15. Phase 15: UI Manifest
 16. Phase 16: 릴리스 메커니즘
 17. Phase 17: Local Overlay
@@ -218,6 +226,10 @@ CREATE VIEW taxa AS SELECT ... FROM taxonomic_ranks WHERE rank = 'Genus';
 artifact_metadata (key, value)                    -- 아티팩트 메타데이터 (key-value)
 provenance (id, source_type, citation, description, year, url)  -- 데이터 출처
 schema_descriptions (table_name, column_name, description)      -- 스키마 설명
+
+-- SCODA UI 테이블
+ui_display_intent (id, entity, default_view, description, source_query, priority)  -- 뷰 힌트
+ui_queries (id, name, description, sql, params_json, created_at)                   -- Named Query
 ```
 
 ## DB 사용법
