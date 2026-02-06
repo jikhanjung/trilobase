@@ -177,6 +177,29 @@ LIMIT 10;
 
 ---
 
+## SCODA (Self-Contained Data Artifact)
+
+Trilobase는 **SCODA** 프레임워크의 참조 구현입니다.
+
+SCODA는 데이터를 서비스가 아닌 **자기완결적 지식 객체**로 다루는 접근법입니다.
+`trilobase.db` 파일 하나가 데이터뿐 아니라 자신의 신원(identity), 출처(provenance),
+스키마 설명(semantics)을 내장하고 있어, 외부 문서 없이도 스스로를 설명합니다.
+
+```sql
+-- 아티팩트 정보 확인
+SELECT * FROM artifact_metadata;
+
+-- 데이터 출처 확인
+SELECT source_type, citation, year FROM provenance;
+
+-- 테이블/컬럼 설명 조회
+SELECT * FROM schema_descriptions WHERE table_name = 'taxonomic_ranks';
+```
+
+자세한 내용은 `Trilobase_as_SCODA.md`와 `devlog/20260207_P07_scoda_implementation.md`를 참조하세요.
+
+---
+
 ## Intended Use & Scope
 
 - Research, data exploration, and methodological development

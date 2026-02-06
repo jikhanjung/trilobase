@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-06
+**마지막 업데이트:** 2026-02-07
 
 ## 프로젝트 개요
 
@@ -49,6 +49,13 @@
   - Rank 상세정보 Statistics 중복 표시 수정 (Genera/Genus)
   - Children 목록 클릭 네비게이션 (트리 펼침 + 상세정보 표시)
 
+- **Phase 13 완료**: SCODA-Core 메타데이터 (**브랜치: `feature/scoda-implementation`**)
+  - artifact_metadata 테이블 (7건: identity, version, license 등)
+  - provenance 테이블 (3건: Jell & Adrain 2002, Adrain 2011, build pipeline)
+  - schema_descriptions 테이블 (90건: 모든 테이블/컬럼 설명)
+  - API: `GET /api/metadata`, `GET /api/provenance`
+  - 테스트: 47개 (기존 37 + 신규 10)
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -86,6 +93,9 @@
 | temporal_ranges | 28 | 지질시대 코드 |
 | bibliography | 2,130 | 참고문헌 (Literature Cited) |
 | taxa (뷰) | 5,113 | 하위 호환성 뷰 |
+| artifact_metadata | 7 | SCODA 아티팩트 메타데이터 |
+| provenance | 3 | 데이터 출처 |
+| schema_descriptions | 90 | 테이블/컬럼 설명 |
 
 ### 파일 구조
 
@@ -101,13 +111,16 @@ trilobase/
 ├── static/
 │   ├── css/style.css                 # 스타일
 │   └── js/app.js                     # 프론트엔드 로직
+├── test_app.py                      # pytest 테스트 (47개)
+├── Trilobase_as_SCODA.md            # SCODA 개념 문서
 ├── scripts/
 │   ├── normalize_lines.py
 │   ├── create_database.py
 │   ├── normalize_database.py
 │   ├── fix_synonyms.py
 │   ├── normalize_families.py
-│   └── populate_taxonomic_ranks.py
+│   ├── populate_taxonomic_ranks.py
+│   └── add_scoda_tables.py          # SCODA 테이블 마이그레이션
 ├── devlog/
 │   ├── 20260204_P01_data_cleaning_plan.md
 │   ├── 20260204_001~006_*.md         # Phase 1-6 로그
@@ -124,9 +137,21 @@ trilobase/
 └── CLAUDE.md
 ```
 
-## 다음 작업 (현재 추가 작업 없음)
+## 현재 진행 중: SCODA 구현 (브랜치: `feature/scoda-implementation`)
 
-### 미해결 항목
+Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환 중.
+상세 계획: `devlog/20260207_P07_scoda_implementation.md`
+
+| Phase | 내용 | 상태 |
+|-------|------|------|
+| Phase 13 | SCODA-Core 메타데이터 (Identity, Provenance, Semantics) | ✅ 완료 |
+| Phase 14 | Display Intent + Saved Queries | 예정 |
+| Phase 15 | UI Manifest (선언적 뷰 정의) | 예정 |
+| Phase 16 | 릴리스 메커니즘 (버전 태깅, 패키징) | 예정 |
+| Phase 17 | Local Overlay (사용자 주석) | 예정 |
+
+## 미해결 항목
+
 - Synonym 미연결 4건 (원본에 senior taxa 없음)
 - Location/Formation 없는 taxa는 모두 무효 taxa (정상)
 - parent_id NULL인 Genus 342건 (family 필드 자체가 NULL인 무효 taxa)
@@ -145,6 +170,11 @@ trilobase/
 10. ~~Phase 10: Formation/Location Relation 테이블~~ ✅
 11. ~~Phase 11: Web Interface~~ ✅
 12. ~~Phase 12: Bibliography 테이블~~ ✅
+13. ~~Phase 13: SCODA-Core 메타데이터~~ ✅ (브랜치: `feature/scoda-implementation`)
+14. Phase 14: Display Intent + Saved Queries
+15. Phase 15: UI Manifest
+16. Phase 16: 릴리스 메커니즘
+17. Phase 17: Local Overlay
 
 ## DB 스키마
 
@@ -183,6 +213,11 @@ bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
 
 -- taxa: 뷰 (하위 호환성)
 CREATE VIEW taxa AS SELECT ... FROM taxonomic_ranks WHERE rank = 'Genus';
+
+-- SCODA-Core 테이블
+artifact_metadata (key, value)                    -- 아티팩트 메타데이터 (key-value)
+provenance (id, source_type, citation, description, year, url)  -- 데이터 출처
+schema_descriptions (table_name, column_name, description)      -- 스키마 설명
 ```
 
 ## DB 사용법
