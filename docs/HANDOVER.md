@@ -68,6 +68,13 @@
   - 프론트엔드: 뷰 탭 바, 범용 테이블 렌더러 (정렬/검색), tree↔table 뷰 전환
   - 테스트: 79개 (기존 63 + 신규 16)
 
+- **Phase 16 완료**: 릴리스 메커니즘
+  - `scripts/release.py`: 릴리스 패키징 스크립트 (SHA-256 + metadata.json + README)
+  - SCODA 불변성 원칙: 기존 릴리스 덮어쓰기 불가
+  - `--dry-run` 모드 지원
+  - `releases/` 디렉토리 `.gitignore`에 추가
+  - 테스트: 91개 (기존 79 + 신규 12)
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -126,7 +133,7 @@ trilobase/
 ├── static/
 │   ├── css/style.css                 # 스타일
 │   └── js/app.js                     # 프론트엔드 로직
-├── test_app.py                      # pytest 테스트 (79개)
+├── test_app.py                      # pytest 테스트 (91개)
 ├── Trilobase_as_SCODA.md            # SCODA 개념 문서
 ├── scripts/
 │   ├── normalize_lines.py
@@ -137,7 +144,8 @@ trilobase/
 │   ├── populate_taxonomic_ranks.py
 │   ├── add_scoda_tables.py          # Phase 13: SCODA-Core 마이그레이션
 │   ├── add_scoda_ui_tables.py      # Phase 14: Display Intent/Queries 마이그레이션
-│   └── add_scoda_manifest.py       # Phase 15: UI Manifest 마이그레이션
+│   ├── add_scoda_manifest.py       # Phase 15: UI Manifest 마이그레이션
+│   └── release.py                 # Phase 16: 릴리스 패키징 스크립트
 ├── devlog/
 │   ├── 20260204_P01_data_cleaning_plan.md
 │   ├── 20260204_001~006_*.md         # Phase 1-6 로그
@@ -164,7 +172,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환 중.
 | Phase 13 | SCODA-Core 메타데이터 (Identity, Provenance, Semantics) | ✅ 완료 |
 | Phase 14 | Display Intent + Saved Queries | ✅ 완료 |
 | Phase 15 | UI Manifest (선언적 뷰 정의) | ✅ 완료 |
-| Phase 16 | 릴리스 메커니즘 (버전 태깅, 패키징) | 예정 |
+| Phase 16 | 릴리스 메커니즘 (버전 태깅, 패키징) | ✅ 완료 |
 | Phase 17 | Local Overlay (사용자 주석) | 예정 |
 
 ## 미해결 항목
@@ -190,7 +198,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환 중.
 13. ~~Phase 13: SCODA-Core 메타데이터~~ ✅ (브랜치: `feature/scoda-implementation`)
 14. ~~Phase 14: Display Intent + Saved Queries~~ ✅
 15. ~~Phase 15: UI Manifest~~ ✅
-16. Phase 16: 릴리스 메커니즘
+16. ~~Phase 16: 릴리스 메커니즘~~ ✅
 17. Phase 17: Local Overlay
 
 ## DB 스키마

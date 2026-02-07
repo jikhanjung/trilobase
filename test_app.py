@@ -5,11 +5,20 @@ Tests for Trilobase Flask application (app.py)
 import json
 import sqlite3
 import os
+import stat
+import sys
 import tempfile
 
 import pytest
 
 from app import app, get_db
+
+# Import release script functions
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'scripts'))
+from release import (
+    get_version, calculate_sha256, store_sha256, get_statistics,
+    get_provenance, build_metadata_json, generate_readme, create_release
+)
 
 
 @pytest.fixture
@@ -1024,3 +1033,154 @@ class TestApiManifest:
         expected_keys = ['name', 'description', 'manifest', 'created_at']
         for key in expected_keys:
             assert key in data, f"Missing key: {key}"
+
+
+# --- Release Mechanism (Phase 16) ---
+
+class TestRelease:
+    def test_get_version(self, test_db):
+        """get_version should return '1.0.0' from test DB."""
+        assert get_version(test_db) == '1.0.0'
+
+    def test_get_version_missing(self, tmp_path):
+        """get_version should raise SystemExit when no version key exists."""
+        db_path = str(tmp_path / "empty.db")
+        conn = sqlite3.connect(db_path)
+        conn.execute("CREATE TABLE artifact_metadata (key TEXT PRIMARY KEY, value TEXT)")
+        conn.commit()
+        conn.close()
+        with pytest.raises(SystemExit):
+            get_version(db_path)
+
+    def test_calculate_sha256(self, test_db):
+        """calculate_sha256 should return a 64-char hex string."""
+        h = calculate_sha256(test_db)
+        assert len(h) == 64
+        assert all(c in '0123456789abcdef' for c in h)
+
+    def test_calculate_sha256_deterministic(self, test_db):
+        """Same file should always produce the same hash."""
+        h1 = calculate_sha256(test_db)
+        h2 = calculate_sha256(test_db)
+        assert h1 == h2
+
+    def test_calculate_sha256_changes(self, test_db):
+        """Modifying the DB should change the hash."""
+        h_before = calculate_sha256(test_db)
+        conn = sqlite3.connect(test_db)
+        conn.execute("INSERT INTO artifact_metadata (key, value) VALUES ('test_key', 'test_value')")
+        conn.commit()
+        conn.close()
+        h_after = calculate_sha256(test_db)
+        assert h_before != h_after
+
+    def test_store_sha256(self, test_db):
+        """store_sha256 should insert/update sha256 key in artifact_metadata."""
+        store_sha256(test_db, 'abc123def456')
+        conn = sqlite3.connect(test_db)
+        conn.row_factory = sqlite3.Row
+        row = conn.execute(
+            "SELECT value FROM artifact_metadata WHERE key = 'sha256'"
+        ).fetchone()
+        conn.close()
+        assert row['value'] == 'abc123def456'
+
+    def test_get_statistics(self, test_db):
+        """get_statistics should return correct counts for test data."""
+        stats = get_statistics(test_db)
+        assert stats['genera'] == 4         # Phacops, Acuticryphops, Cryphops, Olenus
+        assert stats['valid_genera'] == 3   # Phacops, Acuticryphops, Olenus
+        assert stats['family'] == 2         # Phacopidae, Olenidae
+        assert stats['order'] == 2          # Phacopida, Ptychopariida
+        assert stats['synonyms'] == 1
+        assert stats['bibliography'] == 1
+        assert stats['formations'] == 2
+        assert stats['countries'] == 2
+
+    def test_get_provenance(self, test_db):
+        """get_provenance should return 2 records with correct structure."""
+        prov = get_provenance(test_db)
+        assert len(prov) == 2
+        assert prov[0]['source_type'] == 'primary'
+        assert 'Jell' in prov[0]['citation']
+        assert prov[1]['source_type'] == 'supplementary'
+        for record in prov:
+            assert 'id' in record
+            assert 'citation' in record
+            assert 'description' in record
+            assert 'year' in record
+
+    def test_build_metadata_json(self, test_db):
+        """build_metadata_json should include all required keys."""
+        meta = build_metadata_json(test_db, 'fakehash123')
+        assert meta['artifact_id'] == 'trilobase'
+        assert meta['version'] == '1.0.0'
+        assert meta['sha256'] == 'fakehash123'
+        assert 'released_at' in meta
+        assert 'provenance' in meta
+        assert isinstance(meta['provenance'], list)
+        assert len(meta['provenance']) == 2
+        assert 'statistics' in meta
+        assert isinstance(meta['statistics'], dict)
+        assert meta['statistics']['genera'] == 4
+
+    def test_generate_readme(self, test_db):
+        """generate_readme should include version, hash, and statistics."""
+        stats = get_statistics(test_db)
+        readme = generate_readme('1.0.0', 'abc123hash', stats)
+        assert '1.0.0' in readme
+        assert 'abc123hash' in readme
+        assert 'Genera: 4' in readme
+        assert 'Valid genera: 3' in readme
+        assert 'sha256sum --check' in readme
+
+    def test_create_release(self, test_db, tmp_path):
+        """Integration: create_release should produce directory with 4 files."""
+        output_dir = str(tmp_path / "releases")
+        release_dir = create_release(test_db, output_dir)
+
+        # Directory exists
+        assert os.path.isdir(release_dir)
+        assert 'trilobase-v1.0.0' in release_dir
+
+        # 4 files exist
+        assert os.path.isfile(os.path.join(release_dir, 'trilobase.db'))
+        assert os.path.isfile(os.path.join(release_dir, 'metadata.json'))
+        assert os.path.isfile(os.path.join(release_dir, 'checksums.sha256'))
+        assert os.path.isfile(os.path.join(release_dir, 'README.md'))
+
+        # DB is read-only
+        db_stat = os.stat(os.path.join(release_dir, 'trilobase.db'))
+        assert not (db_stat.st_mode & stat.S_IWUSR)
+        assert not (db_stat.st_mode & stat.S_IWGRP)
+        assert not (db_stat.st_mode & stat.S_IWOTH)
+
+        # metadata.json is valid JSON with required keys
+        with open(os.path.join(release_dir, 'metadata.json')) as f:
+            meta = json.load(f)
+        assert meta['version'] == '1.0.0'
+        assert meta['artifact_id'] == 'trilobase'
+        assert len(meta['sha256']) == 64
+
+        # checksums.sha256 matches actual DB hash
+        with open(os.path.join(release_dir, 'checksums.sha256')) as f:
+            checksum_line = f.read().strip()
+        recorded_hash = checksum_line.split('  ')[0]
+        actual_hash = calculate_sha256(os.path.join(release_dir, 'trilobase.db'))
+        assert recorded_hash == actual_hash
+
+        # sha256 stored in source DB
+        conn = sqlite3.connect(test_db)
+        conn.row_factory = sqlite3.Row
+        row = conn.execute(
+            "SELECT value FROM artifact_metadata WHERE key = 'sha256'"
+        ).fetchone()
+        conn.close()
+        assert row['value'] == actual_hash
+
+    def test_create_release_already_exists(self, test_db, tmp_path):
+        """Attempting to create a duplicate release should fail."""
+        output_dir = str(tmp_path / "releases")
+        create_release(test_db, output_dir)
+        with pytest.raises(SystemExit):
+            create_release(test_db, output_dir)
