@@ -5,3 +5,8 @@ venv/
 env/
 instance/
 releases/
+
+# PyInstaller
+build/
+dist/
+*.spec

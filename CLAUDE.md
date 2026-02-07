@@ -21,7 +21,9 @@ trilobase/
 ├── trilobite_nomina_nuda.txt         # Nomina nuda
 ├── scripts/                          # 데이터 처리 스크립트
 ├── devlog/                           # 작업 기록
-│   └── YYYYMMDD_NNN_*.md            # 일별 작업 로그
+│   ├── YYYYMMDD_NNN_*.md            # 작업 로그 (숫자 일련번호)
+│   ├── YYYYMMDD_PNN_*.md            # 계획(Plan) 문서
+│   └── YYYYMMDD_RNN_*.md            # 리뷰(Review) 문서
 └── docs/
     └── HANDOVER.md                   # 인수인계 문서 (필독)
 ```
@@ -50,7 +52,10 @@ Standard paleontological format: `AUTHOR, YEAR` (e.g., `LIEBERMAN, 1994`)
 - `trilobite_genus_list.txt`가 항상 최신 버전
 - 각 Phase 완료 시 반드시 git commit
 - 중간 과정 파일은 `_단계명.txt` 접미사로 보존
-- 작업 기록은 `devlog/YYYYMMDD_NNN_제목.md` 형식
+- 작업 기록은 `devlog/YYYYMMDD_일련번호_제목.md` 형식
+  - 작업 로그: 숫자 일련번호 (`001`, `002`, ...)
+  - 계획(Plan) 문서: `P00` 형식 (`P01`, `P02`, ...)
+  - 리뷰(Review) 문서: `R00` 형식 (`R01`, `R02`, ...)
 
 ## Phase 완료 시 필수 작업
 
