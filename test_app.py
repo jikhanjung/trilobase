@@ -312,6 +312,95 @@ def test_db(tmp_path):
                 'SELECT id, name, rank, parent_id, author FROM taxonomic_ranks WHERE rank != ''Genus'' ORDER BY name',
                 NULL, '2026-02-07T00:00:00')
     """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('bibliography_list', 'All literature references',
+                'SELECT id, authors, year, title, journal, reference_type FROM bibliography ORDER BY authors',
+                NULL, '2026-02-07T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('genus_detail', 'Full detail for a single genus',
+                'SELECT tr.*, parent.name as family_name FROM taxonomic_ranks tr LEFT JOIN taxonomic_ranks parent ON tr.parent_id = parent.id WHERE tr.id = :genus_id AND tr.rank = ''Genus''',
+                '{"genus_id": "integer"}', '2026-02-07T00:00:00')
+    """)
+
+    # SCODA UI Manifest (Phase 15)
+    cursor.execute("""
+        CREATE TABLE ui_manifest (
+            name TEXT PRIMARY KEY,
+            description TEXT,
+            manifest_json TEXT NOT NULL,
+            created_at TEXT NOT NULL
+        )
+    """)
+
+    import json as _json
+    test_manifest = {
+        "default_view": "taxonomy_tree",
+        "views": {
+            "taxonomy_tree": {
+                "type": "tree",
+                "title": "Taxonomy Tree",
+                "description": "Hierarchical classification from Class to Family",
+                "source_query": "taxonomy_tree",
+                "icon": "bi-diagram-3",
+                "options": {
+                    "root_rank": "Class",
+                    "leaf_rank": "Family",
+                    "show_genera_count": True
+                }
+            },
+            "genera_table": {
+                "type": "table",
+                "title": "All Genera",
+                "description": "Flat list of all trilobite genera",
+                "source_query": "genera_list",
+                "icon": "bi-table",
+                "columns": [
+                    {"key": "name", "label": "Genus", "sortable": True, "searchable": True, "italic": True},
+                    {"key": "author", "label": "Author", "sortable": True, "searchable": True},
+                    {"key": "year", "label": "Year", "sortable": True, "searchable": False},
+                    {"key": "family", "label": "Family", "sortable": True, "searchable": True},
+                    {"key": "is_valid", "label": "Valid", "sortable": True, "searchable": False, "type": "boolean"}
+                ],
+                "default_sort": {"key": "name", "direction": "asc"},
+                "searchable": True
+            },
+            "genus_detail": {
+                "type": "detail",
+                "title": "Genus Detail",
+                "description": "Detailed information for a single genus",
+                "source_query": "genus_detail",
+                "sections": [
+                    {
+                        "title": "Basic Information",
+                        "fields": [
+                            {"key": "name", "label": "Name"}
+                        ]
+                    }
+                ]
+            },
+            "references_table": {
+                "type": "table",
+                "title": "Bibliography",
+                "description": "Literature references",
+                "source_query": "bibliography_list",
+                "icon": "bi-book",
+                "columns": [
+                    {"key": "authors", "label": "Authors", "sortable": True, "searchable": True},
+                    {"key": "year", "label": "Year", "sortable": True, "searchable": False},
+                    {"key": "title", "label": "Title", "sortable": False, "searchable": True}
+                ],
+                "default_sort": {"key": "authors", "direction": "asc"},
+                "searchable": True
+            }
+        }
+    }
+    cursor.execute(
+        "INSERT INTO ui_manifest (name, description, manifest_json, created_at) VALUES (?, ?, ?, ?)",
+        ('default', 'Test manifest', _json.dumps(test_manifest), '2026-02-07T00:00:00')
+    )
 
     conn.commit()
     conn.close()
@@ -754,7 +843,7 @@ class TestApiQueries:
         response = client.get('/api/queries')
         data = json.loads(response.data)
         assert isinstance(data, list)
-        assert len(data) == 3  # genera_list, family_genera, taxonomy_tree
+        assert len(data) == 5  # genera_list, family_genera, taxonomy_tree, bibliography_list, genus_detail
 
     def test_queries_record_structure(self, client):
         response = client.get('/api/queries')
@@ -820,3 +909,118 @@ class TestApiQueryExecute:
         row = data['rows'][0]
         assert isinstance(row, dict)
         assert 'name' in row
+
+
+# --- /api/manifest ---
+
+class TestApiManifest:
+    def test_manifest_returns_200(self, client):
+        response = client.get('/api/manifest')
+        assert response.status_code == 200
+
+    def test_manifest_returns_json(self, client):
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        assert isinstance(data, dict)
+
+    def test_manifest_has_name(self, client):
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        assert data['name'] == 'default'
+
+    def test_manifest_has_description(self, client):
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        assert data['description'] == 'Test manifest'
+
+    def test_manifest_has_created_at(self, client):
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        assert 'created_at' in data
+        assert data['created_at'] == '2026-02-07T00:00:00'
+
+    def test_manifest_has_manifest_object(self, client):
+        """manifest_json should be parsed as an object, not returned as string."""
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        assert 'manifest' in data
+        assert isinstance(data['manifest'], dict)
+
+    def test_manifest_has_default_view(self, client):
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        assert data['manifest']['default_view'] == 'taxonomy_tree'
+
+    def test_manifest_has_views(self, client):
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        assert 'views' in data['manifest']
+        assert isinstance(data['manifest']['views'], dict)
+
+    def test_manifest_view_count(self, client):
+        """Test manifest should have 4 views."""
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        assert len(data['manifest']['views']) == 4
+
+    def test_manifest_tree_view(self, client):
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        tree = data['manifest']['views']['taxonomy_tree']
+        assert tree['type'] == 'tree'
+        assert tree['source_query'] == 'taxonomy_tree'
+
+    def test_manifest_table_view(self, client):
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        table = data['manifest']['views']['genera_table']
+        assert table['type'] == 'table'
+        assert table['source_query'] == 'genera_list'
+
+    def test_manifest_detail_view(self, client):
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        detail = data['manifest']['views']['genus_detail']
+        assert detail['type'] == 'detail'
+
+    def test_manifest_table_columns(self, client):
+        """Table views should have column definitions."""
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        table = data['manifest']['views']['genera_table']
+        assert 'columns' in table
+        assert isinstance(table['columns'], list)
+        assert len(table['columns']) > 0
+        col = table['columns'][0]
+        assert 'key' in col
+        assert 'label' in col
+
+    def test_manifest_table_default_sort(self, client):
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        table = data['manifest']['views']['genera_table']
+        assert 'default_sort' in table
+        assert table['default_sort']['key'] == 'name'
+        assert table['default_sort']['direction'] == 'asc'
+
+    def test_manifest_source_query_exists(self, client):
+        """source_query references should point to actual ui_queries entries."""
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+
+        queries_response = client.get('/api/queries')
+        queries_data = json.loads(queries_response.data)
+        query_names = {q['name'] for q in queries_data}
+
+        for key, view in data['manifest']['views'].items():
+            sq = view.get('source_query')
+            if sq:
+                assert sq in query_names, f"View '{key}' references query '{sq}' which doesn't exist"
+
+    def test_manifest_response_structure(self, client):
+        """Top-level response should have exactly these keys."""
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        expected_keys = ['name', 'description', 'manifest', 'created_at']
+        for key in expected_keys:
+            assert key in data, f"Missing key: {key}"

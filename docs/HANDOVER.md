@@ -61,6 +61,13 @@
   - API: `GET /api/display-intent`, `GET /api/queries`, `GET /api/queries/<name>/execute`
   - 테스트: 63개 (기존 47 + 신규 16)
 
+- **Phase 15 완료**: UI Manifest (선언적 뷰 정의)
+  - ui_manifest 테이블 (1건: default 매니페스트)
+  - 6개 뷰 정의: taxonomy_tree, genera_table, genus_detail, references_table, formations_table, countries_table
+  - API: `GET /api/manifest`
+  - 프론트엔드: 뷰 탭 바, 범용 테이블 렌더러 (정렬/검색), tree↔table 뷰 전환
+  - 테스트: 79개 (기존 63 + 신규 16)
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -100,9 +107,10 @@
 | taxa (뷰) | 5,113 | 하위 호환성 뷰 |
 | artifact_metadata | 7 | SCODA 아티팩트 메타데이터 |
 | provenance | 3 | 데이터 출처 |
-| schema_descriptions | 102 | 테이블/컬럼 설명 |
+| schema_descriptions | 107 | 테이블/컬럼 설명 |
 | ui_display_intent | 6 | SCODA 뷰 타입 힌트 |
 | ui_queries | 14 | Named SQL 쿼리 |
+| ui_manifest | 1 | 선언적 뷰 정의 (JSON) |
 
 ### 파일 구조
 
@@ -118,7 +126,7 @@ trilobase/
 ├── static/
 │   ├── css/style.css                 # 스타일
 │   └── js/app.js                     # 프론트엔드 로직
-├── test_app.py                      # pytest 테스트 (47개)
+├── test_app.py                      # pytest 테스트 (79개)
 ├── Trilobase_as_SCODA.md            # SCODA 개념 문서
 ├── scripts/
 │   ├── normalize_lines.py
@@ -128,7 +136,8 @@ trilobase/
 │   ├── normalize_families.py
 │   ├── populate_taxonomic_ranks.py
 │   ├── add_scoda_tables.py          # Phase 13: SCODA-Core 마이그레이션
-│   └── add_scoda_ui_tables.py      # Phase 14: Display Intent/Queries 마이그레이션
+│   ├── add_scoda_ui_tables.py      # Phase 14: Display Intent/Queries 마이그레이션
+│   └── add_scoda_manifest.py       # Phase 15: UI Manifest 마이그레이션
 ├── devlog/
 │   ├── 20260204_P01_data_cleaning_plan.md
 │   ├── 20260204_001~006_*.md         # Phase 1-6 로그
@@ -154,7 +163,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환 중.
 |-------|------|------|
 | Phase 13 | SCODA-Core 메타데이터 (Identity, Provenance, Semantics) | ✅ 완료 |
 | Phase 14 | Display Intent + Saved Queries | ✅ 완료 |
-| Phase 15 | UI Manifest (선언적 뷰 정의) | 예정 |
+| Phase 15 | UI Manifest (선언적 뷰 정의) | ✅ 완료 |
 | Phase 16 | 릴리스 메커니즘 (버전 태깅, 패키징) | 예정 |
 | Phase 17 | Local Overlay (사용자 주석) | 예정 |
 
@@ -180,7 +189,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환 중.
 12. ~~Phase 12: Bibliography 테이블~~ ✅
 13. ~~Phase 13: SCODA-Core 메타데이터~~ ✅ (브랜치: `feature/scoda-implementation`)
 14. ~~Phase 14: Display Intent + Saved Queries~~ ✅
-15. Phase 15: UI Manifest
+15. ~~Phase 15: UI Manifest~~ ✅
 16. Phase 16: 릴리스 메커니즘
 17. Phase 17: Local Overlay
 
@@ -230,6 +239,7 @@ schema_descriptions (table_name, column_name, description)      -- 스키마 설
 -- SCODA UI 테이블
 ui_display_intent (id, entity, default_view, description, source_query, priority)  -- 뷰 힌트
 ui_queries (id, name, description, sql, params_json, created_at)                   -- Named Query
+ui_manifest (name, description, manifest_json, created_at)                         -- 선언적 뷰 정의 (JSON)
 ```
 
 ## DB 사용법

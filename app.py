@@ -4,6 +4,7 @@ Flask application for browsing trilobite taxonomy database
 """
 
 from flask import Flask, render_template, jsonify, request
+import json
 import sqlite3
 import os
 
@@ -383,6 +384,31 @@ def api_queries():
         'params': q['params_json'],
         'created_at': q['created_at']
     } for q in queries])
+
+
+@app.route('/api/manifest')
+def api_manifest():
+    """Get UI manifest with declarative view definitions"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT name, description, manifest_json, created_at
+        FROM ui_manifest
+        WHERE name = 'default'
+    """)
+    row = cursor.fetchone()
+    conn.close()
+
+    if not row:
+        return jsonify({'error': 'No manifest found'}), 404
+
+    return jsonify({
+        'name': row['name'],
+        'description': row['description'],
+        'manifest': json.loads(row['manifest_json']),
+        'created_at': row['created_at']
+    })
 
 
 @app.route('/api/queries/<name>/execute')

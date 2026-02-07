@@ -21,38 +21,54 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container-fluid main-content">
-        <div class="row h-100">
-            <!-- Left Panel: Tree View -->
-            <div class="col-md-4 col-lg-3 tree-panel">
-                <div class="panel-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0"><i class="bi bi-folder-tree"></i> Taxonomy</h5>
-                    <div class="btn-group btn-group-sm">
-                        <button class="btn btn-outline-secondary" onclick="expandAll()" title="Expand All">
-                            <i class="bi bi-chevron-expand"></i>
-                        </button>
-                        <button class="btn btn-outline-secondary" onclick="collapseAll()" title="Collapse All">
-                            <i class="bi bi-chevron-contract"></i>
-                        </button>
+    <!-- View Tabs -->
+    <div class="view-tabs" id="view-tabs"></div>
+
+    <!-- View: Tree (default, existing layout) -->
+    <div class="view-container" id="view-tree">
+        <div class="container-fluid main-content">
+            <div class="row h-100">
+                <!-- Left Panel: Tree View -->
+                <div class="col-md-4 col-lg-3 tree-panel">
+                    <div class="panel-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="bi bi-folder-tree"></i> Taxonomy</h5>
+                        <div class="btn-group btn-group-sm">
+                            <button class="btn btn-outline-secondary" onclick="expandAll()" title="Expand All">
+                                <i class="bi bi-chevron-expand"></i>
+                            </button>
+                            <button class="btn btn-outline-secondary" onclick="collapseAll()" title="Collapse All">
+                                <i class="bi bi-chevron-contract"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tree-container" id="tree-container">
+                        <div class="loading">Loading...</div>
                     </div>
                 </div>
-                <div class="tree-container" id="tree-container">
-                    <div class="loading">Loading...</div>
+
+                <!-- Right Panel: Genus List -->
+                <div class="col-md-8 col-lg-9 list-panel">
+                    <div class="panel-header" id="list-header">
+                        <h5><i class="bi bi-list-ul"></i> Select a Family</h5>
+                    </div>
+                    <div class="list-container" id="list-container">
+                        <div class="empty-state">
+                            <i class="bi bi-arrow-left-circle"></i>
+                            <p>Select a Family from the tree to view genera</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Right Panel: Genus List -->
-            <div class="col-md-8 col-lg-9 list-panel">
-                <div class="panel-header" id="list-header">
-                    <h5><i class="bi bi-list-ul"></i> Select a Family</h5>
-                </div>
-                <div class="list-container" id="list-container">
-                    <div class="empty-state">
-                        <i class="bi bi-arrow-left-circle"></i>
-                        <p>Select a Family from the tree to view genera</p>
-                    </div>
-                </div>
+    <!-- View: Table (for manifest-driven table views) -->
+    <div class="view-container" id="view-table" style="display: none;">
+        <div class="container-fluid table-view-content">
+            <div class="table-view-header" id="table-view-header"></div>
+            <div class="table-view-toolbar" id="table-view-toolbar"></div>
+            <div class="table-view-body" id="table-view-body">
+                <div class="loading">Loading...</div>
             </div>
         </div>
     </div>
