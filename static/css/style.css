@@ -456,6 +456,34 @@ html, body {
     word-break: break-word;
 }
 
+/* Annotation Section (My Notes) */
+.annotation-section {
+    background: #fffde7;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 8px;
+}
+
+.annotation-section h6 {
+    color: #795548;
+    border-bottom: 1px solid #f0e68c;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.annotation-item {
+    border-bottom: 1px solid #f0e68c;
+    padding: 8px 0;
+}
+
+.annotation-item:last-child {
+    border-bottom: none;
+}
+
+.annotation-form textarea {
+    width: 100%;
+}
+
 /* Loading */
 .loading {
     text-align: center;

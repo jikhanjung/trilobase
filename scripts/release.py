@@ -100,6 +100,9 @@ def get_statistics(db_path):
     cursor.execute("SELECT COUNT(*) as count FROM countries")
     stats['countries'] = cursor.fetchone()['count']
 
+    cursor.execute("SELECT COUNT(*) as count FROM user_annotations")
+    stats['annotations'] = cursor.fetchone()['count']
+
     conn.close()
     return stats
 

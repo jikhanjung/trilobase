@@ -448,5 +448,105 @@ def api_query_execute(name):
         return jsonify({'error': str(e)}), 400
 
 
+VALID_ENTITY_TYPES = {'genus', 'family', 'order', 'suborder', 'superfamily', 'class'}
+VALID_ANNOTATION_TYPES = {'note', 'correction', 'alternative', 'link'}
+
+
+@app.route('/api/annotations/<entity_type>/<int:entity_id>')
+def api_get_annotations(entity_type, entity_id):
+    """Get annotations for a specific entity"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT id, entity_type, entity_id, annotation_type, content, author, created_at
+        FROM user_annotations
+        WHERE entity_type = ? AND entity_id = ?
+        ORDER BY created_at DESC, id DESC
+    """, (entity_type, entity_id))
+    annotations = cursor.fetchall()
+    conn.close()
+
+    return jsonify([{
+        'id': a['id'],
+        'entity_type': a['entity_type'],
+        'entity_id': a['entity_id'],
+        'annotation_type': a['annotation_type'],
+        'content': a['content'],
+        'author': a['author'],
+        'created_at': a['created_at']
+    } for a in annotations])
+
+
+@app.route('/api/annotations', methods=['POST'])
+def api_create_annotation():
+    """Create a new annotation"""
+    data = request.get_json()
+
+    if not data:
+        return jsonify({'error': 'JSON body required'}), 400
+
+    entity_type = data.get('entity_type')
+    entity_id = data.get('entity_id')
+    annotation_type = data.get('annotation_type')
+    content = data.get('content')
+    author = data.get('author')
+
+    if not content:
+        return jsonify({'error': 'content is required'}), 400
+
+    if entity_type not in VALID_ENTITY_TYPES:
+        return jsonify({'error': f'Invalid entity_type. Must be one of: {", ".join(sorted(VALID_ENTITY_TYPES))}'}), 400
+
+    if annotation_type not in VALID_ANNOTATION_TYPES:
+        return jsonify({'error': f'Invalid annotation_type. Must be one of: {", ".join(sorted(VALID_ANNOTATION_TYPES))}'}), 400
+
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        INSERT INTO user_annotations (entity_type, entity_id, annotation_type, content, author)
+        VALUES (?, ?, ?, ?, ?)
+    """, (entity_type, entity_id, annotation_type, content, author))
+    conn.commit()
+
+    annotation_id = cursor.lastrowid
+
+    cursor.execute("""
+        SELECT id, entity_type, entity_id, annotation_type, content, author, created_at
+        FROM user_annotations WHERE id = ?
+    """, (annotation_id,))
+    annotation = cursor.fetchone()
+    conn.close()
+
+    return jsonify({
+        'id': annotation['id'],
+        'entity_type': annotation['entity_type'],
+        'entity_id': annotation['entity_id'],
+        'annotation_type': annotation['annotation_type'],
+        'content': annotation['content'],
+        'author': annotation['author'],
+        'created_at': annotation['created_at']
+    }), 201
+
+
+@app.route('/api/annotations/<int:annotation_id>', methods=['DELETE'])
+def api_delete_annotation(annotation_id):
+    """Delete an annotation"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT id FROM user_annotations WHERE id = ?", (annotation_id,))
+    if not cursor.fetchone():
+        conn.close()
+        return jsonify({'error': 'Annotation not found'}), 404
+
+    cursor.execute("DELETE FROM user_annotations WHERE id = ?", (annotation_id,))
+    conn.commit()
+    conn.close()
+
+    return jsonify({'message': 'Annotation deleted', 'id': annotation_id})
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)

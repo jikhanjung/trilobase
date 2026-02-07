@@ -586,7 +586,13 @@ async function showGenusDetail(genusId) {
                 </div>`;
         }
 
+        // My Notes section
+        html += buildAnnotationSectionHTML('genus', g.id);
+
         modalBody.innerHTML = html;
+
+        // Load annotations after DOM is ready
+        loadAnnotations('genus', g.id);
 
     } catch (error) {
         modalBody.innerHTML = `<div class="text-danger">Error loading genus: ${error.message}</div>`;
@@ -694,7 +700,14 @@ async function showRankDetail(rankId, rankName, rankType) {
                 </div>`;
         }
 
+        // My Notes section
+        const entityType = r.rank.toLowerCase();
+        html += buildAnnotationSectionHTML(entityType, r.id);
+
         modalBody.innerHTML = html;
+
+        // Load annotations after DOM is ready
+        loadAnnotations(entityType, r.id);
 
     } catch (error) {
         modalBody.innerHTML = `<div class="text-danger">Error loading details: ${error.message}</div>`;
@@ -780,4 +793,135 @@ function collapseAll() {
 function truncate(text, maxLength) {
     if (!text) return '';
     return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+}
+
+/**
+ * Build the static HTML for the annotation section (form + placeholder for list)
+ */
+function buildAnnotationSectionHTML(entityType, entityId) {
+    return `
+        <div class="annotation-section" id="annotation-section-${entityType}-${entityId}">
+            <h6>My Notes</h6>
+            <div id="annotation-list-${entityType}-${entityId}">
+                <div class="loading">Loading notes...</div>
+            </div>
+            <div class="annotation-form mt-2">
+                <div class="mb-2">
+                    <select class="form-select form-select-sm" id="annotation-type-${entityType}-${entityId}">
+                        <option value="note">Note</option>
+                        <option value="correction">Correction</option>
+                        <option value="alternative">Alternative</option>
+                        <option value="link">Link</option>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <textarea class="form-control form-control-sm" id="annotation-content-${entityType}-${entityId}"
+                              rows="2" placeholder="Add a note..."></textarea>
+                </div>
+                <div class="d-flex gap-2">
+                    <input type="text" class="form-control form-control-sm" id="annotation-author-${entityType}-${entityId}"
+                           placeholder="Author (optional)" style="max-width: 200px;">
+                    <button class="btn btn-sm btn-outline-primary"
+                            onclick="addAnnotation('${entityType}', ${entityId})">Add</button>
+                </div>
+            </div>
+        </div>`;
+}
+
+/**
+ * Load annotations for an entity and render them
+ */
+async function loadAnnotations(entityType, entityId) {
+    const listContainer = document.getElementById(`annotation-list-${entityType}-${entityId}`);
+    if (!listContainer) return;
+
+    try {
+        const response = await fetch(`/api/annotations/${entityType}/${entityId}`);
+        const annotations = await response.json();
+
+        if (annotations.length === 0) {
+            listContainer.innerHTML = '<p class="text-muted mb-0" style="font-size:0.85rem;">No notes yet.</p>';
+            return;
+        }
+
+        let html = '';
+        annotations.forEach(a => {
+            const typeBadge = {
+                'note': 'bg-info',
+                'correction': 'bg-warning text-dark',
+                'alternative': 'bg-success',
+                'link': 'bg-primary'
+            }[a.annotation_type] || 'bg-secondary';
+
+            html += `
+                <div class="annotation-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <span class="badge ${typeBadge}" style="font-size:0.7rem;">${a.annotation_type}</span>
+                            ${a.author ? `<small class="text-muted ms-1">${a.author}</small>` : ''}
+                            <small class="text-muted ms-1">${a.created_at}</small>
+                        </div>
+                        <button class="btn btn-sm btn-outline-danger" style="padding:0 4px; font-size:0.7rem;"
+                                onclick="deleteAnnotation(${a.id}, '${entityType}', ${entityId})">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+                    <div style="margin-top:4px; font-size:0.9rem;">${a.content}</div>
+                </div>`;
+        });
+
+        listContainer.innerHTML = html;
+    } catch (error) {
+        listContainer.innerHTML = `<div class="text-danger" style="font-size:0.85rem;">Error loading notes.</div>`;
+    }
+}
+
+/**
+ * Add a new annotation
+ */
+async function addAnnotation(entityType, entityId) {
+    const contentEl = document.getElementById(`annotation-content-${entityType}-${entityId}`);
+    const typeEl = document.getElementById(`annotation-type-${entityType}-${entityId}`);
+    const authorEl = document.getElementById(`annotation-author-${entityType}-${entityId}`);
+
+    const content = contentEl.value.trim();
+    if (!content) return;
+
+    try {
+        const response = await fetch('/api/annotations', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                entity_type: entityType,
+                entity_id: entityId,
+                annotation_type: typeEl.value,
+                content: content,
+                author: authorEl.value.trim() || null
+            })
+        });
+
+        if (response.ok) {
+            contentEl.value = '';
+            loadAnnotations(entityType, entityId);
+        }
+    } catch (error) {
+        // Silent fail
+    }
+}
+
+/**
+ * Delete an annotation
+ */
+async function deleteAnnotation(annotationId, entityType, entityId) {
+    try {
+        const response = await fetch(`/api/annotations/${annotationId}`, {
+            method: 'DELETE'
+        });
+
+        if (response.ok) {
+            loadAnnotations(entityType, entityId);
+        }
+    } catch (error) {
+        // Silent fail
+    }
 }

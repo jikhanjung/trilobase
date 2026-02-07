@@ -134,6 +134,19 @@ def test_db(tmp_path):
             PRIMARY KEY (table_name, column_name)
         );
 
+        -- User annotations (Phase 17)
+        CREATE TABLE user_annotations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            entity_type TEXT NOT NULL,
+            entity_id INTEGER NOT NULL,
+            annotation_type TEXT NOT NULL,
+            content TEXT NOT NULL,
+            author TEXT,
+            created_at TEXT NOT NULL DEFAULT (datetime('now'))
+        );
+        CREATE INDEX IF NOT EXISTS idx_annotations_entity
+            ON user_annotations(entity_type, entity_id);
+
         -- SCODA UI tables (Phase 14)
         CREATE TABLE ui_display_intent (
             id INTEGER PRIMARY KEY,
@@ -1184,3 +1197,165 @@ class TestRelease:
         create_release(test_db, output_dir)
         with pytest.raises(SystemExit):
             create_release(test_db, output_dir)
+
+
+# --- /api/annotations --- (Phase 17)
+
+class TestAnnotations:
+    def test_get_annotations_empty(self, client):
+        """Entity with no annotations should return empty list."""
+        response = client.get('/api/annotations/genus/100')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data == []
+
+    def test_create_annotation(self, client):
+        """POST should create annotation and return 201."""
+        response = client.post('/api/annotations',
+            data=json.dumps({
+                'entity_type': 'genus',
+                'entity_id': 100,
+                'annotation_type': 'note',
+                'content': 'This genus needs revision.',
+                'author': 'Test User'
+            }),
+            content_type='application/json')
+        assert response.status_code == 201
+        data = json.loads(response.data)
+        assert data['entity_type'] == 'genus'
+        assert data['entity_id'] == 100
+        assert data['annotation_type'] == 'note'
+        assert data['content'] == 'This genus needs revision.'
+        assert data['author'] == 'Test User'
+
+    def test_create_annotation_missing_content(self, client):
+        """POST without content should return 400."""
+        response = client.post('/api/annotations',
+            data=json.dumps({
+                'entity_type': 'genus',
+                'entity_id': 100,
+                'annotation_type': 'note'
+            }),
+            content_type='application/json')
+        assert response.status_code == 400
+        data = json.loads(response.data)
+        assert 'error' in data
+
+    def test_create_annotation_invalid_type(self, client):
+        """POST with invalid annotation_type should return 400."""
+        response = client.post('/api/annotations',
+            data=json.dumps({
+                'entity_type': 'genus',
+                'entity_id': 100,
+                'annotation_type': 'invalid_type',
+                'content': 'Test'
+            }),
+            content_type='application/json')
+        assert response.status_code == 400
+        data = json.loads(response.data)
+        assert 'error' in data
+
+    def test_create_annotation_invalid_entity(self, client):
+        """POST with invalid entity_type should return 400."""
+        response = client.post('/api/annotations',
+            data=json.dumps({
+                'entity_type': 'invalid_entity',
+                'entity_id': 100,
+                'annotation_type': 'note',
+                'content': 'Test'
+            }),
+            content_type='application/json')
+        assert response.status_code == 400
+        data = json.loads(response.data)
+        assert 'error' in data
+
+    def test_get_annotations_after_create(self, client):
+        """GET after POST should return the created annotation."""
+        client.post('/api/annotations',
+            data=json.dumps({
+                'entity_type': 'genus',
+                'entity_id': 100,
+                'annotation_type': 'note',
+                'content': 'Test note'
+            }),
+            content_type='application/json')
+
+        response = client.get('/api/annotations/genus/100')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert len(data) == 1
+        assert data[0]['content'] == 'Test note'
+
+    def test_delete_annotation(self, client):
+        """DELETE should remove annotation and return 200."""
+        create_resp = client.post('/api/annotations',
+            data=json.dumps({
+                'entity_type': 'genus',
+                'entity_id': 100,
+                'annotation_type': 'note',
+                'content': 'To be deleted'
+            }),
+            content_type='application/json')
+        annotation_id = json.loads(create_resp.data)['id']
+
+        response = client.delete(f'/api/annotations/{annotation_id}')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['id'] == annotation_id
+
+        # Verify it's gone
+        get_resp = client.get('/api/annotations/genus/100')
+        assert json.loads(get_resp.data) == []
+
+    def test_delete_annotation_not_found(self, client):
+        """DELETE for non-existent ID should return 404."""
+        response = client.delete('/api/annotations/99999')
+        assert response.status_code == 404
+        data = json.loads(response.data)
+        assert 'error' in data
+
+    def test_annotations_ordered_by_date(self, client):
+        """Annotations should be returned newest first."""
+        client.post('/api/annotations',
+            data=json.dumps({
+                'entity_type': 'genus',
+                'entity_id': 100,
+                'annotation_type': 'note',
+                'content': 'First note'
+            }),
+            content_type='application/json')
+        client.post('/api/annotations',
+            data=json.dumps({
+                'entity_type': 'genus',
+                'entity_id': 100,
+                'annotation_type': 'correction',
+                'content': 'Second note'
+            }),
+            content_type='application/json')
+
+        response = client.get('/api/annotations/genus/100')
+        data = json.loads(response.data)
+        assert len(data) == 2
+        # Most recent first (both created in same second, so check by id desc)
+        assert data[0]['content'] == 'Second note'
+        assert data[1]['content'] == 'First note'
+
+    def test_annotation_response_structure(self, client):
+        """Annotation response should have all required keys."""
+        client.post('/api/annotations',
+            data=json.dumps({
+                'entity_type': 'family',
+                'entity_id': 10,
+                'annotation_type': 'alternative',
+                'content': 'May belong to different order',
+                'author': 'Reviewer'
+            }),
+            content_type='application/json')
+
+        response = client.get('/api/annotations/family/10')
+        data = json.loads(response.data)
+        record = data[0]
+        expected_keys = ['id', 'entity_type', 'entity_id', 'annotation_type',
+                         'content', 'author', 'created_at']
+        for key in expected_keys:
+            assert key in record, f"Missing key: {key}"
