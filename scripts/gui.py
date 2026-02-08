@@ -24,7 +24,10 @@ class TrilobaseGUI:
         self.root.minsize(600, 400)
 
         # Server state
-        self.server_process = None
+        self.server_process = None  # For subprocess mode
+        self.server_thread = None   # For threaded mode (frozen)
+        self.flask_app = None       # For threaded mode
+        self.log_capture = None     # For threaded mode log capture
         self.log_reader_thread = None
         self.server_running = False
         self.port = 8080
@@ -188,7 +191,7 @@ class TrilobaseGUI:
         self.log_text.tag_config("SUCCESS", foreground="green")
 
     def start_server(self):
-        """Start Flask server as subprocess."""
+        """Start Flask server."""
         if self.server_running:
             return
 
@@ -200,60 +203,136 @@ class TrilobaseGUI:
             return
 
         try:
-            # Get Python executable and app.py path
-            python_exe = sys.executable
-            app_py = os.path.join(self.base_path, 'app.py')
-
-            if not os.path.exists(app_py):
-                raise FileNotFoundError(f"app.py not found at {app_py}")
-
-            self._append_log(f"Starting Flask server: {python_exe} {app_py}", "INFO")
-
-            # Start Flask as subprocess
-            self.server_process = subprocess.Popen(
-                [python_exe, app_py],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                universal_newlines=True,
-                bufsize=1,
-                cwd=self.base_path
-            )
+            # In frozen mode (PyInstaller), run Flask in thread with stdout redirect
+            # In dev mode, run as subprocess for better log capture
+            if getattr(sys, 'frozen', False):
+                self._start_server_threaded()
+            else:
+                self._start_server_subprocess()
 
             self.server_running = True
-
-            # Start log reader thread
-            self.log_reader_thread = threading.Thread(
-                target=self._read_server_logs,
-                daemon=True
-            )
-            self.log_reader_thread.start()
+            self._update_status()
 
             # Auto-open browser after 1.5 seconds
             self.root.after(1500, self.open_browser)
 
-            self._update_status()
-
-        except FileNotFoundError as e:
-            self._append_log(f"ERROR: {e}", "ERROR")
-            messagebox.showerror("File Error", str(e))
-            return
         except Exception as e:
             self._append_log(f"ERROR: Failed to start server: {e}", "ERROR")
             messagebox.showerror("Server Error", f"Could not start server:\n{e}")
             return
+
+    def _start_server_threaded(self):
+        """Start Flask server in thread (for frozen/PyInstaller mode)."""
+        self._append_log("Starting Flask server (threaded mode)...", "INFO")
+
+        # Import Flask app
+        try:
+            from app import app
+            self.flask_app = app
+        except ImportError as e:
+            raise Exception(f"Could not import Flask app: {e}")
+
+        # Redirect stdout/stderr to capture logs
+        import io
+        self.log_capture = io.StringIO()
+
+        # Start Flask in thread
+        self.server_thread = threading.Thread(target=self._run_flask_app, daemon=True)
+        self.server_thread.start()
+
+        # Start log capture thread
+        self.log_reader_thread = threading.Thread(target=self._capture_flask_logs, daemon=True)
+        self.log_reader_thread.start()
+
+        self._append_log("Flask server started in thread", "INFO")
+
+    def _start_server_subprocess(self):
+        """Start Flask server as subprocess (for development mode)."""
+        python_exe = sys.executable
+        app_py = os.path.join(self.base_path, 'app.py')
+
+        if not os.path.exists(app_py):
+            raise FileNotFoundError(f"app.py not found at {app_py}")
+
+        self._append_log(f"Starting Flask server (subprocess mode): {python_exe}", "INFO")
+
+        # Start Flask as subprocess
+        self.server_process = subprocess.Popen(
+            [python_exe, app_py],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            universal_newlines=True,
+            bufsize=1,
+            cwd=self.base_path
+        )
+
+        # Start log reader thread
+        self.log_reader_thread = threading.Thread(
+            target=self._read_server_logs,
+            daemon=True
+        )
+        self.log_reader_thread.start()
+
+    def _run_flask_app(self):
+        """Run Flask app (called in thread for frozen mode)."""
+        try:
+            # Capture werkzeug logs
+            import logging
+            log = logging.getLogger('werkzeug')
+            log.setLevel(logging.INFO)
+
+            # Add handler to capture to our log
+            handler = logging.StreamHandler(self.log_capture)
+            handler.setLevel(logging.INFO)
+            log.addHandler(handler)
+
+            self.root.after(0, self._append_log, "* Running on http://127.0.0.1:8080", "INFO")
+            self.flask_app.run(debug=False, host='127.0.0.1', port=self.port, use_reloader=False)
+        except OSError as e:
+            if "Address already in use" in str(e):
+                self.root.after(0, self._append_log, f"ERROR: Port {self.port} already in use", "ERROR")
+                self.root.after(0, lambda: messagebox.showerror(
+                    "Port Error",
+                    f"Port {self.port} is already in use.\nPlease close other applications."
+                ))
+            else:
+                self.root.after(0, self._append_log, f"ERROR: {e}", "ERROR")
+            self.server_running = False
+            self.root.after(0, self._update_status)
+        except Exception as e:
+            self.root.after(0, self._append_log, f"ERROR: {e}", "ERROR")
+            self.server_running = False
+            self.root.after(0, self._update_status)
+
+    def _capture_flask_logs(self):
+        """Capture logs from Flask thread (for frozen mode)."""
+        import time
+        last_pos = 0
+        while self.server_running:
+            time.sleep(0.5)
+            try:
+                self.log_capture.seek(last_pos)
+                new_logs = self.log_capture.read()
+                if new_logs:
+                    for line in new_logs.strip().split('\n'):
+                        if line:
+                            self.root.after(0, self._append_log, line.strip())
+                    last_pos = self.log_capture.tell()
+            except Exception:
+                pass
 
     def stop_server(self):
         """Stop Flask server."""
         if not self.server_running:
             return
 
+        self._append_log("Stopping Flask server...", "INFO")
         self.server_running = False
 
-        # Terminate server process
+        # Terminate server process (subprocess mode)
         if self.server_process:
-            self._append_log("Stopping Flask server...", "INFO")
-            self.server_process.terminate()
             try:
+                self.server_process.terminate()
                 self.server_process.wait(timeout=3)
                 self._append_log("Server stopped successfully", "INFO")
             except subprocess.TimeoutExpired:
@@ -261,7 +340,15 @@ class TrilobaseGUI:
                 self.server_process.kill()
                 self.server_process.wait()
                 self._append_log("Server forcefully stopped", "WARNING")
-            self.server_process = None
+            except Exception as e:
+                self._append_log(f"WARNING: Error stopping server: {e}", "WARNING")
+            finally:
+                self.server_process = None
+
+        # Thread mode (frozen) - cannot cleanly stop Flask in thread
+        elif self.server_thread:
+            self._append_log("Server marked as stopped (thread mode)", "WARNING")
+            self._append_log("Note: Flask thread may still be active. Restart app to fully stop.", "WARNING")
 
         self._update_status()
 
@@ -357,16 +444,19 @@ class TrilobaseGUI:
             if not result:
                 return
 
-            # Stop server before quitting
-            self.stop_server()
+            # Mark as stopped (don't call stop_server to avoid delays)
+            self.server_running = False
 
-        # Clean up server process if still running
+        # Clean up server process if still running (subprocess mode)
         if self.server_process:
             try:
                 self.server_process.terminate()
                 self.server_process.wait(timeout=2)
             except:
-                pass
+                try:
+                    self.server_process.kill()
+                except:
+                    pass
 
         self.root.quit()
         self.root.destroy()
