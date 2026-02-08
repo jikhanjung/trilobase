@@ -50,12 +50,30 @@ Flask 기반 웹 인터페이스를 통해 탐색할 수 있습니다.
 
 ## Installation & Usage
 
-### Requirements
+### Option 1: Standalone Executable (Recommended for End Users)
+
+**Windows / Linux 사용자를 위한 간편한 실행 방법:**
+
+1. 릴리스 페이지에서 `trilobase.exe` (Windows) 또는 `trilobase` (Linux) 다운로드
+2. 실행 파일을 더블클릭 또는 터미널에서 실행
+3. GUI 컨트롤 패널에서 "▶ Start Server" 클릭
+4. 웹 브라우저가 자동으로 열리며 http://localhost:8080 표시
+
+**특징:**
+- Python 설치 불필요
+- 모든 데이터와 웹 서버가 단일 실행 파일에 포함
+- 사용자 주석은 별도 파일(`trilobase_overlay.db`)에 저장되어 영구 보존
+
+### Option 2: Python Development Mode
+
+**개발자 또는 소스 코드 수정이 필요한 사용자:**
+
+#### Requirements
 
 - Python 3.8+
 - Flask
 
-### Installation
+#### Installation
 
 ```bash
 git clone https://github.com/yourusername/trilobase.git
@@ -63,7 +81,7 @@ cd trilobase
 pip install flask
 ```
 
-### Run Web Server
+#### Run Web Server
 
 ```bash
 python app.py

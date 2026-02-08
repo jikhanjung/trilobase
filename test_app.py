@@ -23,12 +23,15 @@ from release import (
 
 @pytest.fixture
 def test_db(tmp_path):
-    """Create a temporary test database with sample data."""
-    db_path = str(tmp_path / "test_trilobase.db")
-    conn = sqlite3.connect(db_path)
+    """Create temporary test databases (canonical + overlay) with sample data."""
+    canonical_db_path = str(tmp_path / "test_trilobase.db")
+    overlay_db_path = str(tmp_path / "test_overlay.db")
+
+    # Create CANONICAL database
+    conn = sqlite3.connect(canonical_db_path)
     cursor = conn.cursor()
 
-    # Create tables
+    # Create tables (canonical only - NO user_annotations)
     cursor.executescript("""
         CREATE TABLE taxonomic_ranks (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -133,19 +136,6 @@ def test_db(tmp_path):
             description TEXT NOT NULL,
             PRIMARY KEY (table_name, column_name)
         );
-
-        -- User annotations (Phase 17)
-        CREATE TABLE user_annotations (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            entity_type TEXT NOT NULL,
-            entity_id INTEGER NOT NULL,
-            annotation_type TEXT NOT NULL,
-            content TEXT NOT NULL,
-            author TEXT,
-            created_at TEXT NOT NULL DEFAULT (datetime('now'))
-        );
-        CREATE INDEX IF NOT EXISTS idx_annotations_entity
-            ON user_annotations(entity_type, entity_id);
 
         -- SCODA UI tables (Phase 14)
         CREATE TABLE ui_display_intent (
@@ -426,14 +416,21 @@ def test_db(tmp_path):
 
     conn.commit()
     conn.close()
-    return db_path
+
+    # Create OVERLAY database using init_overlay_db script
+    from init_overlay_db import create_overlay_db
+    create_overlay_db(overlay_db_path, canonical_version='1.0.0')
+
+    return canonical_db_path, overlay_db_path
 
 
 @pytest.fixture
 def client(test_db, monkeypatch):
-    """Create Flask test client with test database."""
+    """Create Flask test client with test databases (canonical + overlay)."""
+    canonical_db_path, overlay_db_path = test_db
     import app as app_module
-    monkeypatch.setattr(app_module, 'DATABASE', test_db)
+    monkeypatch.setattr(app_module, 'CANONICAL_DB', canonical_db_path)
+    monkeypatch.setattr(app_module, 'OVERLAY_DB', overlay_db_path)
     app.config['TESTING'] = True
     with app.test_client() as client:
         yield client
@@ -1053,7 +1050,8 @@ class TestApiManifest:
 class TestRelease:
     def test_get_version(self, test_db):
         """get_version should return '1.0.0' from test DB."""
-        assert get_version(test_db) == '1.0.0'
+        canonical_db, _ = test_db
+        assert get_version(canonical_db) == '1.0.0'
 
     def test_get_version_missing(self, tmp_path):
         """get_version should raise SystemExit when no version key exists."""
@@ -1067,30 +1065,34 @@ class TestRelease:
 
     def test_calculate_sha256(self, test_db):
         """calculate_sha256 should return a 64-char hex string."""
-        h = calculate_sha256(test_db)
+        canonical_db, _ = test_db
+        h = calculate_sha256(canonical_db)
         assert len(h) == 64
         assert all(c in '0123456789abcdef' for c in h)
 
     def test_calculate_sha256_deterministic(self, test_db):
         """Same file should always produce the same hash."""
-        h1 = calculate_sha256(test_db)
-        h2 = calculate_sha256(test_db)
+        canonical_db, _ = test_db
+        h1 = calculate_sha256(canonical_db)
+        h2 = calculate_sha256(canonical_db)
         assert h1 == h2
 
     def test_calculate_sha256_changes(self, test_db):
         """Modifying the DB should change the hash."""
-        h_before = calculate_sha256(test_db)
-        conn = sqlite3.connect(test_db)
+        canonical_db, _ = test_db
+        h_before = calculate_sha256(canonical_db)
+        conn = sqlite3.connect(canonical_db)
         conn.execute("INSERT INTO artifact_metadata (key, value) VALUES ('test_key', 'test_value')")
         conn.commit()
         conn.close()
-        h_after = calculate_sha256(test_db)
+        h_after = calculate_sha256(canonical_db)
         assert h_before != h_after
 
     def test_store_sha256(self, test_db):
         """store_sha256 should insert/update sha256 key in artifact_metadata."""
-        store_sha256(test_db, 'abc123def456')
-        conn = sqlite3.connect(test_db)
+        canonical_db, _ = test_db
+        store_sha256(canonical_db, 'abc123def456')
+        conn = sqlite3.connect(canonical_db)
         conn.row_factory = sqlite3.Row
         row = conn.execute(
             "SELECT value FROM artifact_metadata WHERE key = 'sha256'"
@@ -1100,7 +1102,8 @@ class TestRelease:
 
     def test_get_statistics(self, test_db):
         """get_statistics should return correct counts for test data."""
-        stats = get_statistics(test_db)
+        canonical_db, _ = test_db
+        stats = get_statistics(canonical_db)
         assert stats['genera'] == 4         # Phacops, Acuticryphops, Cryphops, Olenus
         assert stats['valid_genera'] == 3   # Phacops, Acuticryphops, Olenus
         assert stats['family'] == 2         # Phacopidae, Olenidae
@@ -1112,7 +1115,8 @@ class TestRelease:
 
     def test_get_provenance(self, test_db):
         """get_provenance should return 2 records with correct structure."""
-        prov = get_provenance(test_db)
+        canonical_db, _ = test_db
+        prov = get_provenance(canonical_db)
         assert len(prov) == 2
         assert prov[0]['source_type'] == 'primary'
         assert 'Jell' in prov[0]['citation']
@@ -1125,7 +1129,8 @@ class TestRelease:
 
     def test_build_metadata_json(self, test_db):
         """build_metadata_json should include all required keys."""
-        meta = build_metadata_json(test_db, 'fakehash123')
+        canonical_db, _ = test_db
+        meta = build_metadata_json(canonical_db, 'fakehash123')
         assert meta['artifact_id'] == 'trilobase'
         assert meta['version'] == '1.0.0'
         assert meta['sha256'] == 'fakehash123'
@@ -1139,7 +1144,8 @@ class TestRelease:
 
     def test_generate_readme(self, test_db):
         """generate_readme should include version, hash, and statistics."""
-        stats = get_statistics(test_db)
+        canonical_db, _ = test_db
+        stats = get_statistics(canonical_db)
         readme = generate_readme('1.0.0', 'abc123hash', stats)
         assert '1.0.0' in readme
         assert 'abc123hash' in readme
@@ -1149,8 +1155,9 @@ class TestRelease:
 
     def test_create_release(self, test_db, tmp_path):
         """Integration: create_release should produce directory with 4 files."""
+        canonical_db, _ = test_db
         output_dir = str(tmp_path / "releases")
-        release_dir = create_release(test_db, output_dir)
+        release_dir = create_release(canonical_db, output_dir)
 
         # Directory exists
         assert os.path.isdir(release_dir)
@@ -1183,7 +1190,7 @@ class TestRelease:
         assert recorded_hash == actual_hash
 
         # sha256 stored in source DB
-        conn = sqlite3.connect(test_db)
+        conn = sqlite3.connect(canonical_db)
         conn.row_factory = sqlite3.Row
         row = conn.execute(
             "SELECT value FROM artifact_metadata WHERE key = 'sha256'"
@@ -1193,10 +1200,11 @@ class TestRelease:
 
     def test_create_release_already_exists(self, test_db, tmp_path):
         """Attempting to create a duplicate release should fail."""
+        canonical_db, _ = test_db
         output_dir = str(tmp_path / "releases")
-        create_release(test_db, output_dir)
+        create_release(canonical_db, output_dir)
         with pytest.raises(SystemExit):
-            create_release(test_db, output_dir)
+            create_release(canonical_db, output_dir)
 
 
 # --- /api/annotations --- (Phase 17)

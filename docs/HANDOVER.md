@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-07
+**마지막 업데이트:** 2026-02-08
 
 ## 프로젝트 개요
 
@@ -75,13 +75,36 @@
   - `releases/` 디렉토리 `.gitignore`에 추가
   - 테스트: 91개 (기존 79 + 신규 12)
 
-- **Phase 17 완료**: Local Overlay (사용자 주석) — SCODA 구현 완성
+- **Phase 17 완료**: Local Overlay (사용자 주석)
   - `user_annotations` 테이블: 사용자 주석 저장 (note, correction, alternative, link)
   - 6개 entity_type 지원: genus, family, order, suborder, superfamily, class
   - API: `GET /api/annotations/<type>/<id>`, `POST /api/annotations`, `DELETE /api/annotations/<id>`
   - 프론트엔드: My Notes 섹션 (Genus/Rank detail 모달, 노란 배경으로 시각적 구분)
   - SCODA 원칙: canonical 데이터 불변, 사용자 의견은 별도 레이어
   - 테스트: 101개 (기존 91 + 신규 10)
+
+- **Phase 18 완료**: 독립 실행형 앱 (PyInstaller)
+  - `scripts/serve.py`: Flask 서버 런처 (브라우저 자동 오픈)
+  - `trilobase.spec`: PyInstaller 빌드 설정
+  - `scripts/build.py`: 빌드 자동화 스크립트
+  - Windows/Linux onefile 빌드 지원 (13-15MB)
+  - DB/templates/static 자동 번들링
+
+- **Phase 19 완료**: GUI 컨트롤 패널
+  - `scripts/gui.py`: tkinter 기반 GUI (420x320px)
+  - Start/Stop/Open Browser/Exit 버튼
+  - DB 경로, 서버 상태, URL 표시
+  - 서버 시작 후 자동 브라우저 오픈
+  - 콘솔 숨김 모드 (`console=False`)
+
+- **Phase 20 완료**: Overlay DB 분리 (PyInstaller read-only 문제 해결)
+  - Canonical DB: 실행 파일 내부 (read-only, 불변)
+  - Overlay DB: 실행 파일 외부 (`trilobase_overlay.db`, read/write)
+  - SQLite ATTACH로 이중 DB 연결
+  - `overlay_metadata` 테이블: canonical 버전 추적
+  - `entity_name` 컬럼 추가: 릴리스 간 annotation 매칭용
+  - GUI에 Canonical + Overlay DB 정보 표시
+  - 테스트: 101개 통과
 
 ### 데이터베이스 현황
 
@@ -109,6 +132,8 @@
 
 #### 테이블 목록
 
+**Canonical DB (trilobase.db) — Read-only, 불변:**
+
 | 테이블/뷰 | 레코드 수 | 설명 |
 |-----------|----------|------|
 | taxonomic_ranks | 5,338 | 통합 분류 체계 (Class~Genus) |
@@ -126,13 +151,20 @@
 | ui_display_intent | 6 | SCODA 뷰 타입 힌트 |
 | ui_queries | 14 | Named SQL 쿼리 |
 | ui_manifest | 1 | 선언적 뷰 정의 (JSON) |
-| user_annotations | 0 | 사용자 주석 (Local Overlay) |
+
+**Overlay DB (trilobase_overlay.db) — Read/write, 사용자 로컬 데이터:**
+
+| 테이블 | 레코드 수 | 설명 |
+|--------|----------|------|
+| overlay_metadata | 2 | Canonical DB 버전 추적 (canonical_version, created_at) |
+| user_annotations | 0 | 사용자 주석 (Local Overlay, Phase 17) |
 
 ### 파일 구조
 
 ```
 trilobase/
-├── trilobase.db                      # SQLite 데이터베이스
+├── trilobase.db                      # Canonical SQLite DB
+├── trilobase_overlay.db              # Overlay DB (사용자 주석, Phase 20)
 ├── trilobite_genus_list.txt          # 정제된 genus 목록
 ├── trilobite_genus_list_original.txt # 원본 백업
 ├── adrain2011.txt                    # Order 통합을 위한 suprafamilial taxa 목록
@@ -144,6 +176,7 @@ trilobase/
 │   └── js/app.js                     # 프론트엔드 로직
 ├── test_app.py                      # pytest 테스트 (101개)
 ├── Trilobase_as_SCODA.md            # SCODA 개념 문서
+├── trilobase.spec                   # PyInstaller 빌드 설정 (Phase 18)
 ├── scripts/
 │   ├── normalize_lines.py
 │   ├── create_database.py
@@ -152,29 +185,28 @@ trilobase/
 │   ├── normalize_families.py
 │   ├── populate_taxonomic_ranks.py
 │   ├── add_scoda_tables.py          # Phase 13: SCODA-Core 마이그레이션
-│   ├── add_scoda_ui_tables.py      # Phase 14: Display Intent/Queries 마이그레이션
-│   ├── add_scoda_manifest.py       # Phase 15: UI Manifest 마이그레이션
-│   ├── release.py                 # Phase 16: 릴리스 패키징 스크립트
-│   └── add_user_annotations.py   # Phase 17: 사용자 주석 마이그레이션
+│   ├── add_scoda_ui_tables.py       # Phase 14: Display Intent/Queries 마이그레이션
+│   ├── add_scoda_manifest.py        # Phase 15: UI Manifest 마이그레이션
+│   ├── release.py                   # Phase 16: 릴리스 패키징 스크립트
+│   ├── add_user_annotations.py      # Phase 17: 사용자 주석 마이그레이션
+│   ├── init_overlay_db.py           # Phase 20: Overlay DB 초기화
+│   ├── serve.py                     # Phase 18: Flask 서버 런처
+│   ├── gui.py                       # Phase 19: GUI 컨트롤 패널
+│   └── build.py                     # Phase 18: 빌드 자동화
 ├── devlog/
-│   ├── 20260204_P01_data_cleaning_plan.md
-│   ├── 20260204_001~006_*.md         # Phase 1-6 로그
-│   ├── 20260205_P02_taxonomy_table_consolidation.md
-│   ├── 20260205_008_phase8_taxonomy_consolidation_complete.md
-│   ├── 20260205_P03_taxa_taxonomic_ranks_consolidation.md
-│   ├── 20260205_009_phase9_taxa_consolidation_complete.md
-│   ├── 20260205_P04_formation_location_relations.md
-│   ├── 20260205_010_phase10_formation_location_relations_complete.md
-│   ├── 20260205_P05_web_interface.md
-│   └── 20260205_011_phase11_web_interface_complete.md
+│   ├── 20260204_P01~P05_*.md        # Phase 계획 문서
+│   ├── 20260204_001~011_*.md        # Phase 1-11 완료 로그
+│   ├── 20260207_P07~P12_*.md        # SCODA 계획 문서
+│   ├── 20260207_012~020_*.md        # Phase 13-20 완료 로그
+│   └── 20260207_R01~R02_*.md        # 리뷰 문서
 ├── docs/
 │   └── HANDOVER.md
 └── CLAUDE.md
 ```
 
-## SCODA 구현 완료 (브랜치: `feature/scoda-implementation`)
+## SCODA 구현 + 배포 완료 (브랜치: `feature/scoda-implementation`)
 
-Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환 완료.
+Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하고 독립 실행형 앱으로 패키징 완료.
 상세 계획: `devlog/20260207_P07_scoda_implementation.md`
 
 | Phase | 내용 | 상태 |
@@ -184,6 +216,9 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환 완�
 | Phase 15 | UI Manifest (선언적 뷰 정의) | ✅ 완료 |
 | Phase 16 | 릴리스 메커니즘 (버전 태깅, 패키징) | ✅ 완료 |
 | Phase 17 | Local Overlay (사용자 주석) | ✅ 완료 |
+| Phase 18 | 독립 실행형 앱 (PyInstaller) | ✅ 완료 |
+| Phase 19 | GUI 컨트롤 패널 (tkinter) | ✅ 완료 |
+| Phase 20 | Overlay DB 분리 (read-only 문제 해결) | ✅ 완료 |
 
 ## 미해결 항목
 
@@ -210,8 +245,13 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환 완�
 15. ~~Phase 15: UI Manifest~~ ✅
 16. ~~Phase 16: 릴리스 메커니즘~~ ✅
 17. ~~Phase 17: Local Overlay~~ ✅
+18. ~~Phase 18: 독립 실행형 앱 (PyInstaller)~~ ✅
+19. ~~Phase 19: GUI 컨트롤 패널~~ ✅
+20. ~~Phase 20: Overlay DB 분리~~ ✅
 
 ## DB 스키마
+
+### Canonical DB (trilobase.db)
 
 ```sql
 -- taxonomic_ranks: 5,338 records - 통합 분류 체계 (Class~Genus)
@@ -258,9 +298,28 @@ schema_descriptions (table_name, column_name, description)      -- 스키마 설
 ui_display_intent (id, entity, default_view, description, source_query, priority)  -- 뷰 힌트
 ui_queries (id, name, description, sql, params_json, created_at)                   -- Named Query
 ui_manifest (name, description, manifest_json, created_at)                         -- 선언적 뷰 정의 (JSON)
+```
 
--- Local Overlay 테이블
-user_annotations (id, entity_type, entity_id, annotation_type, content, author, created_at)  -- 사용자 주석
+### Overlay DB (trilobase_overlay.db) — Phase 20
+
+```sql
+-- overlay_metadata: Canonical DB 버전 추적
+overlay_metadata (key, value)  -- canonical_version, created_at
+
+-- user_annotations: 사용자 주석 (Phase 17, Phase 20에서 분리)
+user_annotations (
+    id, entity_type, entity_id, entity_name,  -- entity_name: 릴리스 간 매칭용
+    annotation_type, content, author, created_at
+)
+```
+
+**SQLite ATTACH 사용:**
+```python
+conn = sqlite3.connect('trilobase.db')  # Canonical DB
+conn.execute("ATTACH DATABASE 'trilobase_overlay.db' AS overlay")
+
+# Canonical 테이블 접근: SELECT * FROM taxonomic_ranks
+# Overlay 테이블 접근: SELECT * FROM overlay.user_annotations
 ```
 
 ## DB 사용법

@@ -7,16 +7,55 @@ from flask import Flask, render_template, jsonify, request
 import json
 import sqlite3
 import os
+import sys
 
 app = Flask(__name__)
 
-DATABASE = os.path.join(os.path.dirname(__file__), 'trilobase.db')
+# Determine DB paths based on execution mode
+if getattr(sys, 'frozen', False):
+    # Running as PyInstaller bundle
+    CANONICAL_DB = os.path.join(sys._MEIPASS, 'trilobase.db')
+    OVERLAY_DB = os.path.join(os.path.dirname(sys.executable), 'trilobase_overlay.db')
+else:
+    # Running as normal Python script
+    base_dir = os.path.dirname(__file__)
+    CANONICAL_DB = os.path.join(base_dir, 'trilobase.db')
+    OVERLAY_DB = os.path.join(base_dir, 'trilobase_overlay.db')
+
+
+def _ensure_overlay_db():
+    """Create overlay DB if it doesn't exist."""
+    if os.path.exists(OVERLAY_DB):
+        return
+
+    # Get canonical version
+    try:
+        conn = sqlite3.connect(CANONICAL_DB)
+        cursor = conn.cursor()
+        cursor.execute("SELECT value FROM artifact_metadata WHERE key = 'version'")
+        row = cursor.fetchone()
+        version = row[0] if row else '1.0.0'
+        conn.close()
+    except Exception:
+        version = '1.0.0'
+
+    # Create overlay DB
+    from scripts.init_overlay_db import create_overlay_db
+    create_overlay_db(OVERLAY_DB, version)
 
 
 def get_db():
-    """Get database connection"""
-    conn = sqlite3.connect(DATABASE)
+    """Get database connection with overlay attached."""
+    # Ensure overlay DB exists
+    _ensure_overlay_db()
+
+    # Connect to canonical DB
+    conn = sqlite3.connect(CANONICAL_DB)
     conn.row_factory = sqlite3.Row
+
+    # Attach overlay DB
+    conn.execute(f"ATTACH DATABASE '{OVERLAY_DB}' AS overlay")
+
     return conn
 
 
@@ -459,8 +498,8 @@ def api_get_annotations(entity_type, entity_id):
     cursor = conn.cursor()
 
     cursor.execute("""
-        SELECT id, entity_type, entity_id, annotation_type, content, author, created_at
-        FROM user_annotations
+        SELECT id, entity_type, entity_id, entity_name, annotation_type, content, author, created_at
+        FROM overlay.user_annotations
         WHERE entity_type = ? AND entity_id = ?
         ORDER BY created_at DESC, id DESC
     """, (entity_type, entity_id))
@@ -471,6 +510,7 @@ def api_get_annotations(entity_type, entity_id):
         'id': a['id'],
         'entity_type': a['entity_type'],
         'entity_id': a['entity_id'],
+        'entity_name': a['entity_name'],
         'annotation_type': a['annotation_type'],
         'content': a['content'],
         'author': a['author'],
@@ -504,17 +544,25 @@ def api_create_annotation():
     conn = get_db()
     cursor = conn.cursor()
 
+    # Get entity_name from canonical DB
+    try:
+        cursor.execute("SELECT name FROM taxonomic_ranks WHERE id = ?", (entity_id,))
+        row = cursor.fetchone()
+        entity_name = row['name'] if row else None
+    except Exception:
+        entity_name = None
+
     cursor.execute("""
-        INSERT INTO user_annotations (entity_type, entity_id, annotation_type, content, author)
-        VALUES (?, ?, ?, ?, ?)
-    """, (entity_type, entity_id, annotation_type, content, author))
+        INSERT INTO overlay.user_annotations (entity_type, entity_id, entity_name, annotation_type, content, author)
+        VALUES (?, ?, ?, ?, ?, ?)
+    """, (entity_type, entity_id, entity_name, annotation_type, content, author))
     conn.commit()
 
     annotation_id = cursor.lastrowid
 
     cursor.execute("""
-        SELECT id, entity_type, entity_id, annotation_type, content, author, created_at
-        FROM user_annotations WHERE id = ?
+        SELECT id, entity_type, entity_id, entity_name, annotation_type, content, author, created_at
+        FROM overlay.user_annotations WHERE id = ?
     """, (annotation_id,))
     annotation = cursor.fetchone()
     conn.close()
@@ -523,6 +571,7 @@ def api_create_annotation():
         'id': annotation['id'],
         'entity_type': annotation['entity_type'],
         'entity_id': annotation['entity_id'],
+        'entity_name': annotation['entity_name'],
         'annotation_type': annotation['annotation_type'],
         'content': annotation['content'],
         'author': annotation['author'],
@@ -536,12 +585,12 @@ def api_delete_annotation(annotation_id):
     conn = get_db()
     cursor = conn.cursor()
 
-    cursor.execute("SELECT id FROM user_annotations WHERE id = ?", (annotation_id,))
+    cursor.execute("SELECT id FROM overlay.user_annotations WHERE id = ?", (annotation_id,))
     if not cursor.fetchone():
         conn.close()
         return jsonify({'error': 'Annotation not found'}), 404
 
-    cursor.execute("DELETE FROM user_annotations WHERE id = ?", (annotation_id,))
+    cursor.execute("DELETE FROM overlay.user_annotations WHERE id = ?", (annotation_id,))
     conn.commit()
     conn.close()
 

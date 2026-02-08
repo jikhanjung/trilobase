@@ -37,9 +37,20 @@ class TrilobaseGUI:
 
         os.chdir(self.base_path)
 
-        # Check if DB exists
-        self.db_path = os.path.join(self.base_path, 'trilobase.db')
-        self.db_exists = os.path.exists(self.db_path)
+        # Determine DB paths
+        if getattr(sys, 'frozen', False):
+            # Canonical DB is inside bundle
+            self.canonical_db_path = os.path.join(sys._MEIPASS, 'trilobase.db')
+            # Overlay DB is next to executable
+            self.overlay_db_path = os.path.join(os.path.dirname(sys.executable), 'trilobase_overlay.db')
+        else:
+            # Development mode
+            self.canonical_db_path = os.path.join(self.base_path, 'trilobase.db')
+            self.overlay_db_path = os.path.join(self.base_path, 'trilobase_overlay.db')
+
+        # Check if canonical DB exists
+        self.db_path = self.canonical_db_path
+        self.db_exists = os.path.exists(self.canonical_db_path)
 
         self._create_widgets()
         self._update_status()
@@ -66,15 +77,26 @@ class TrilobaseGUI:
         info_frame = tk.LabelFrame(content, text="Information", padx=10, pady=10)
         info_frame.pack(fill="x", pady=(0, 15))
 
-        # Database
+        # Canonical Database
         db_row = tk.Frame(info_frame)
         db_row.pack(fill="x", pady=3)
-        tk.Label(db_row, text="Database:", width=12, anchor="w").pack(side="left")
-        db_name = os.path.basename(self.db_path)
+        tk.Label(db_row, text="Canonical:", width=12, anchor="w").pack(side="left")
+        db_name = os.path.basename(self.canonical_db_path)
         db_color = "blue" if self.db_exists else "red"
         db_text = db_name if self.db_exists else f"{db_name} (not found)"
         self.db_label = tk.Label(db_row, text=db_text, anchor="w", fg=db_color)
         self.db_label.pack(side="left", fill="x", expand=True)
+
+        # Overlay Database
+        overlay_row = tk.Frame(info_frame)
+        overlay_row.pack(fill="x", pady=3)
+        tk.Label(overlay_row, text="Overlay:", width=12, anchor="w").pack(side="left")
+        overlay_name = os.path.basename(self.overlay_db_path)
+        overlay_exists = os.path.exists(self.overlay_db_path)
+        overlay_text = overlay_name if overlay_exists else f"{overlay_name} (auto-created)"
+        overlay_color = "green" if overlay_exists else "gray"
+        self.overlay_label = tk.Label(overlay_row, text=overlay_text, anchor="w", fg=overlay_color)
+        self.overlay_label.pack(side="left", fill="x", expand=True)
 
         # Status
         status_row = tk.Frame(info_frame)

@@ -100,8 +100,8 @@ def get_statistics(db_path):
     cursor.execute("SELECT COUNT(*) as count FROM countries")
     stats['countries'] = cursor.fetchone()['count']
 
-    cursor.execute("SELECT COUNT(*) as count FROM user_annotations")
-    stats['annotations'] = cursor.fetchone()['count']
+    # Note: user_annotations are in overlay DB (Phase 20), not canonical DB
+    # Annotations are local overlay data and not included in canonical releases
 
     conn.close()
     return stats
