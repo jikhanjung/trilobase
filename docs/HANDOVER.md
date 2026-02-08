@@ -106,6 +106,14 @@
   - GUI에 Canonical + Overlay DB 정보 표시
   - 테스트: 101개 통과
 
+- **Phase 21 완료**: GUI 로그 뷰어
+  - GUI 크기: 800x600 (리사이즈 가능)
+  - Flask 로그 실시간 표시 (subprocess stdout/stderr 캡처)
+  - 색상별 로그 레벨: ERROR(빨강), WARNING(주황), INFO(파랑), SUCCESS(초록)
+  - Clear Log 버튼, 자동 스크롤, 1000줄 제한
+  - 에러 자동 감지 (포트 충돌, DB 없음 등)
+  - Windows 환경 디버깅 용이성 대폭 향상
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -219,6 +227,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 18 | 독립 실행형 앱 (PyInstaller) | ✅ 완료 |
 | Phase 19 | GUI 컨트롤 패널 (tkinter) | ✅ 완료 |
 | Phase 20 | Overlay DB 분리 (read-only 문제 해결) | ✅ 완료 |
+| Phase 21 | GUI 로그 뷰어 (디버깅 지원) | ✅ 완료 |
 
 ## 미해결 항목
 
@@ -248,6 +257,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 18. ~~Phase 18: 독립 실행형 앱 (PyInstaller)~~ ✅
 19. ~~Phase 19: GUI 컨트롤 패널~~ ✅
 20. ~~Phase 20: Overlay DB 분리~~ ✅
+21. ~~Phase 21: GUI 로그 뷰어~~ ✅
 
 ## DB 스키마
 

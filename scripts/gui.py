@@ -6,25 +6,27 @@ Provides a simple graphical interface to control the Flask server.
 """
 
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, scrolledtext
 import threading
 import webbrowser
 import os
 import sys
 import time
+import subprocess
 
 
 class TrilobaseGUI:
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("Trilobase SCODA Viewer")
-        self.root.geometry("420x320")
-        self.root.resizable(False, False)
+        self.root.geometry("800x600")
+        self.root.resizable(True, True)
+        self.root.minsize(600, 400)
 
         # Server state
-        self.server_thread = None
+        self.server_process = None
+        self.log_reader_thread = None
         self.server_running = False
-        self.flask_app = None
         self.port = 8080
 
         # Determine DB path
@@ -55,6 +57,13 @@ class TrilobaseGUI:
         self._create_widgets()
         self._update_status()
 
+        # Initial log messages
+        self._append_log("Trilobase SCODA Viewer initialized")
+        self._append_log(f"Canonical DB: {os.path.basename(self.canonical_db_path)}")
+        self._append_log(f"Overlay DB: {os.path.basename(self.overlay_db_path)}")
+        if not self.db_exists:
+            self._append_log("WARNING: Canonical database not found!", "WARNING")
+
         # Handle window close
         self.root.protocol("WM_DELETE_WINDOW", self.quit_app)
 
@@ -69,18 +78,18 @@ class TrilobaseGUI:
                          font=("Arial", 14, "bold"), bg="#2196F3", fg="white")
         header.pack(pady=12)
 
-        # Main content frame
-        content = tk.Frame(self.root)
-        content.pack(pady=20, padx=20, fill="both", expand=True)
+        # Top section (Info + Controls side by side)
+        top_frame = tk.Frame(self.root)
+        top_frame.pack(fill="x", padx=10, pady=10)
 
-        # Info section
-        info_frame = tk.LabelFrame(content, text="Information", padx=10, pady=10)
-        info_frame.pack(fill="x", pady=(0, 15))
+        # Left: Info section
+        info_frame = tk.LabelFrame(top_frame, text="Information", padx=10, pady=10)
+        info_frame.pack(side="left", fill="both", expand=True, padx=(0, 5))
 
         # Canonical Database
         db_row = tk.Frame(info_frame)
         db_row.pack(fill="x", pady=3)
-        tk.Label(db_row, text="Canonical:", width=12, anchor="w").pack(side="left")
+        tk.Label(db_row, text="Canonical:", width=10, anchor="w").pack(side="left")
         db_name = os.path.basename(self.canonical_db_path)
         db_color = "blue" if self.db_exists else "red"
         db_text = db_name if self.db_exists else f"{db_name} (not found)"
@@ -90,7 +99,7 @@ class TrilobaseGUI:
         # Overlay Database
         overlay_row = tk.Frame(info_frame)
         overlay_row.pack(fill="x", pady=3)
-        tk.Label(overlay_row, text="Overlay:", width=12, anchor="w").pack(side="left")
+        tk.Label(overlay_row, text="Overlay:", width=10, anchor="w").pack(side="left")
         overlay_name = os.path.basename(self.overlay_db_path)
         overlay_exists = os.path.exists(self.overlay_db_path)
         overlay_text = overlay_name if overlay_exists else f"{overlay_name} (auto-created)"
@@ -101,109 +110,232 @@ class TrilobaseGUI:
         # Status
         status_row = tk.Frame(info_frame)
         status_row.pack(fill="x", pady=3)
-        tk.Label(status_row, text="Status:", width=12, anchor="w").pack(side="left")
+        tk.Label(status_row, text="Status:", width=10, anchor="w").pack(side="left")
         self.status_label = tk.Label(status_row, text="● Stopped", anchor="w", fg="red")
         self.status_label.pack(side="left", fill="x", expand=True)
 
         # URL
         url_row = tk.Frame(info_frame)
         url_row.pack(fill="x", pady=3)
-        tk.Label(url_row, text="URL:", width=12, anchor="w").pack(side="left")
+        tk.Label(url_row, text="URL:", width=10, anchor="w").pack(side="left")
         self.url_label = tk.Label(url_row, text=f"http://localhost:{self.port}",
                                   anchor="w", fg="gray", cursor="hand2")
         self.url_label.pack(side="left", fill="x", expand=True)
         self.url_label.bind("<Button-1>", lambda e: self.open_browser())
 
-        # Control buttons
-        control_frame = tk.LabelFrame(content, text="Controls", padx=10, pady=10)
-        control_frame.pack(fill="both", expand=True)
+        # Right: Control section
+        control_frame = tk.LabelFrame(top_frame, text="Controls", padx=10, pady=10)
+        control_frame.pack(side="right", fill="both", expand=True, padx=(5, 0))
 
         # Start/Stop row
         server_row = tk.Frame(control_frame)
-        server_row.pack(pady=5)
+        server_row.pack(pady=3)
 
-        self.start_btn = tk.Button(server_row, text="▶ Start Server", width=15,
+        self.start_btn = tk.Button(server_row, text="▶ Start", width=12,
                                    command=self.start_server, bg="#4CAF50", fg="white",
                                    relief="raised", bd=2)
-        self.start_btn.pack(side="left", padx=5)
+        self.start_btn.pack(side="left", padx=2)
 
-        self.stop_btn = tk.Button(server_row, text="■ Stop Server", width=15,
+        self.stop_btn = tk.Button(server_row, text="■ Stop", width=12,
                                   command=self.stop_server, state="disabled",
                                   bg="#f44336", fg="white", relief="raised", bd=2)
-        self.stop_btn.pack(side="left", padx=5)
+        self.stop_btn.pack(side="left", padx=2)
 
         # Open browser button
-        self.browser_btn = tk.Button(control_frame, text="🌐 Open in Browser", width=32,
+        self.browser_btn = tk.Button(control_frame, text="🌐 Open Browser", width=26,
                                      command=self.open_browser, state="disabled",
                                      relief="raised", bd=2)
-        self.browser_btn.pack(pady=5)
+        self.browser_btn.pack(pady=3)
+
+        # Clear log button
+        self.clear_log_btn = tk.Button(control_frame, text="📄 Clear Log", width=26,
+                                       command=self.clear_log,
+                                       relief="raised", bd=2)
+        self.clear_log_btn.pack(pady=3)
 
         # Quit button
-        quit_btn = tk.Button(control_frame, text="Exit", width=32,
+        quit_btn = tk.Button(control_frame, text="Exit", width=26,
                             command=self.quit_app, bg="#9E9E9E", fg="white",
                             relief="raised", bd=2)
-        quit_btn.pack(pady=5)
+        quit_btn.pack(pady=3)
+
+        # Bottom: Log Viewer
+        log_frame = tk.LabelFrame(self.root, text="Server Log", padx=5, pady=5)
+        log_frame.pack(fill="both", expand=True, padx=10, pady=(0, 10))
+
+        # Scrollbar
+        scrollbar = tk.Scrollbar(log_frame)
+        scrollbar.pack(side="right", fill="y")
+
+        # Text widget (read-only)
+        self.log_text = tk.Text(
+            log_frame,
+            wrap="word",
+            yscrollcommand=scrollbar.set,
+            state="disabled",
+            height=20,
+            font=("Courier", 9),
+            bg="#f5f5f5",
+            fg="#333333"
+        )
+        self.log_text.pack(side="left", fill="both", expand=True)
+        scrollbar.config(command=self.log_text.yview)
+
+        # Color tags for log levels
+        self.log_text.tag_config("ERROR", foreground="red")
+        self.log_text.tag_config("WARNING", foreground="orange")
+        self.log_text.tag_config("INFO", foreground="blue")
+        self.log_text.tag_config("SUCCESS", foreground="green")
 
     def start_server(self):
-        """Start Flask server in background thread."""
+        """Start Flask server as subprocess."""
         if self.server_running:
             return
 
         if not self.db_exists:
+            self._append_log("ERROR: Canonical database not found!", "ERROR")
             messagebox.showerror("Database Error",
-                               f"Database file not found:\n{self.db_path}\n\n"
-                               "Please ensure trilobase.db is in the same directory as the executable.")
+                               f"Database file not found:\n{self.canonical_db_path}\n\n"
+                               "Please ensure trilobase.db is available.")
             return
 
         try:
-            # Import Flask app
-            from app import app
-            self.flask_app = app
-        except ImportError as e:
-            messagebox.showerror("Import Error",
-                               f"Could not import Flask app:\n{e}\n\n"
-                               "Please ensure app.py is available.")
+            # Get Python executable and app.py path
+            python_exe = sys.executable
+            app_py = os.path.join(self.base_path, 'app.py')
+
+            if not os.path.exists(app_py):
+                raise FileNotFoundError(f"app.py not found at {app_py}")
+
+            self._append_log(f"Starting Flask server: {python_exe} {app_py}", "INFO")
+
+            # Start Flask as subprocess
+            self.server_process = subprocess.Popen(
+                [python_exe, app_py],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                universal_newlines=True,
+                bufsize=1,
+                cwd=self.base_path
+            )
+
+            self.server_running = True
+
+            # Start log reader thread
+            self.log_reader_thread = threading.Thread(
+                target=self._read_server_logs,
+                daemon=True
+            )
+            self.log_reader_thread.start()
+
+            # Auto-open browser after 1.5 seconds
+            self.root.after(1500, self.open_browser)
+
+            self._update_status()
+
+        except FileNotFoundError as e:
+            self._append_log(f"ERROR: {e}", "ERROR")
+            messagebox.showerror("File Error", str(e))
             return
-
-        self.server_running = True
-        self.server_thread = threading.Thread(target=self._run_server, daemon=True)
-        self.server_thread.start()
-
-        # Auto-open browser after 1.5 seconds
-        self.root.after(1500, self.open_browser)
-
-        self._update_status()
+        except Exception as e:
+            self._append_log(f"ERROR: Failed to start server: {e}", "ERROR")
+            messagebox.showerror("Server Error", f"Could not start server:\n{e}")
+            return
 
     def stop_server(self):
         """Stop Flask server."""
         if not self.server_running:
             return
 
-        # Note: Flask in thread cannot be cleanly stopped
-        # We mark it as stopped and suggest restart
         self.server_running = False
+
+        # Terminate server process
+        if self.server_process:
+            self._append_log("Stopping Flask server...", "INFO")
+            self.server_process.terminate()
+            try:
+                self.server_process.wait(timeout=3)
+                self._append_log("Server stopped successfully", "INFO")
+            except subprocess.TimeoutExpired:
+                self._append_log("Server did not stop gracefully, forcing...", "WARNING")
+                self.server_process.kill()
+                self.server_process.wait()
+                self._append_log("Server forcefully stopped", "WARNING")
+            self.server_process = None
+
         self._update_status()
 
-        messagebox.showinfo("Server Stopped",
-                          "Server marked as stopped.\n\n"
-                          "Note: The server thread may still be active.\n"
-                          "Please restart the application to fully stop the server.")
+    def _read_server_logs(self):
+        """Read server logs from subprocess and display in GUI."""
+        while self.server_running and self.server_process:
+            try:
+                line = self.server_process.stdout.readline()
+                if line:
+                    # Update GUI from main thread
+                    self.root.after(0, self._append_log, line.strip())
+                else:
+                    # EOF or process terminated
+                    break
+            except Exception as e:
+                self._append_log(f"Log reader error: {e}", "ERROR")
+                break
 
-    def _run_server(self):
-        """Run Flask server (called in thread)."""
-        try:
-            self.flask_app.run(debug=False, host='127.0.0.1', port=self.port, use_reloader=False)
-        except OSError as e:
-            self.server_running = False
-            self.root.after(0, lambda: messagebox.showerror("Server Error",
-                                                           f"Could not start server:\n{e}\n\n"
-                                                           f"Port {self.port} may already be in use."))
-            self.root.after(0, self._update_status)
-        except Exception as e:
-            self.server_running = False
-            self.root.after(0, lambda: messagebox.showerror("Server Error",
-                                                           f"Server error:\n{e}"))
-            self.root.after(0, self._update_status)
+        # Check if process ended with error
+        if self.server_process:
+            returncode = self.server_process.poll()
+            if returncode is not None and returncode != 0:
+                self.root.after(0, self._append_log,
+                              f"Server process exited with code {returncode}", "ERROR")
+
+    def _append_log(self, line, tag=None):
+        """Append log line to text widget (called from main thread)."""
+        self.log_text.config(state="normal")
+
+        # Auto-detect log level if not specified
+        if tag is None:
+            if "ERROR" in line or "error" in line.lower() or "Exception" in line or "Traceback" in line:
+                tag = "ERROR"
+            elif "WARNING" in line or "warning" in line.lower():
+                tag = "WARNING"
+            elif "INFO" in line or "Running on" in line or "Serving Flask" in line:
+                tag = "INFO"
+            elif "200 GET" in line or "200 POST" in line or "GET /" in line:
+                tag = "SUCCESS"
+            elif "Address already in use" in line:
+                tag = "ERROR"
+                self.root.after(0, lambda: messagebox.showerror(
+                    "Port Error",
+                    f"Port {self.port} is already in use.\n"
+                    "Please close other applications using this port."
+                ))
+
+        # Add timestamp
+        timestamp = time.strftime("[%H:%M:%S] ")
+
+        # Insert log with tag
+        if tag:
+            self.log_text.insert("end", timestamp + line + "\n", tag)
+        else:
+            self.log_text.insert("end", timestamp + line + "\n")
+
+        # Auto-scroll to bottom
+        self.log_text.see("end")
+
+        self.log_text.config(state="disabled")
+
+        # Limit log size (keep last 1000 lines)
+        line_count = int(self.log_text.index('end-1c').split('.')[0])
+        if line_count > 1000:
+            self.log_text.config(state="normal")
+            self.log_text.delete('1.0', '500.0')
+            self.log_text.config(state="disabled")
+
+    def clear_log(self):
+        """Clear log viewer."""
+        self.log_text.config(state="normal")
+        self.log_text.delete('1.0', 'end')
+        self.log_text.config(state="disabled")
+        self._append_log("Log cleared")
 
     def open_browser(self):
         """Open default browser."""
@@ -224,6 +356,17 @@ class TrilobaseGUI:
                                         "Are you sure you want to quit?")
             if not result:
                 return
+
+            # Stop server before quitting
+            self.stop_server()
+
+        # Clean up server process if still running
+        if self.server_process:
+            try:
+                self.server_process.terminate()
+                self.server_process.wait(timeout=2)
+            except:
+                pass
 
         self.root.quit()
         self.root.destroy()
