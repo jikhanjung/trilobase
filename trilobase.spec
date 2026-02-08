@@ -8,7 +8,7 @@ Build with: pyinstaller trilobase.spec
 block_cipher = None
 
 a = Analysis(
-    ['scripts/serve.py'],
+    ['scripts/gui.py'],
     pathex=[],
     binaries=[],
     datas=[
@@ -50,7 +50,7 @@ exe = EXE(
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=True,  # Show console for server logs
+    console=False,  # GUI mode - no console window
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
