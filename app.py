@@ -39,9 +39,55 @@ def _ensure_overlay_db():
     except Exception:
         version = '1.0.0'
 
-    # Create overlay DB
-    from scripts.init_overlay_db import create_overlay_db
-    create_overlay_db(OVERLAY_DB, version)
+    # Create overlay DB (inline, no import for PyInstaller compatibility)
+    _create_overlay_db_inline(OVERLAY_DB, version)
+
+
+def _create_overlay_db_inline(db_path, canonical_version='1.0.0'):
+    """Create overlay database (inline version for PyInstaller)."""
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS overlay_metadata (
+            key TEXT PRIMARY KEY,
+            value TEXT NOT NULL
+        )
+    """)
+
+    cursor.execute(
+        "INSERT OR REPLACE INTO overlay_metadata (key, value) VALUES ('canonical_version', ?)",
+        (canonical_version,)
+    )
+    cursor.execute(
+        "INSERT OR REPLACE INTO overlay_metadata (key, value) VALUES ('created_at', datetime('now'))"
+    )
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS user_annotations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            entity_type TEXT NOT NULL,
+            entity_id INTEGER NOT NULL,
+            entity_name TEXT,
+            annotation_type TEXT NOT NULL,
+            content TEXT NOT NULL,
+            author TEXT,
+            created_at TEXT NOT NULL DEFAULT (datetime('now'))
+        )
+    """)
+
+    cursor.execute("""
+        CREATE INDEX IF NOT EXISTS idx_annotations_entity
+            ON user_annotations(entity_type, entity_id)
+    """)
+
+    cursor.execute("""
+        CREATE INDEX IF NOT EXISTS idx_annotations_name
+            ON user_annotations(entity_name)
+    """)
+
+    conn.commit()
+    conn.close()
 
 
 def get_db():
