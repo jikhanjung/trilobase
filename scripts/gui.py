@@ -367,6 +367,10 @@ class TrilobaseGUI:
 
     def _append_log(self, line, tag=None):
         """Append log line to text widget (called from main thread)."""
+        # Ensure line is string (not bytes)
+        if isinstance(line, bytes):
+            line = line.decode('utf-8', errors='replace')
+
         self.log_text.config(state="normal")
 
         # Auto-detect log level if not specified
