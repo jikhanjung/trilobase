@@ -247,10 +247,11 @@ class TrilobaseGUI:
             raise Exception(f"Could not import Flask app: {e}")
 
         # Redirect stdout/stderr to GUI
+        # Both stdout and stderr use auto-detection (tag=None) for proper color coding
         self.original_stdout = sys.stdout
         self.original_stderr = sys.stderr
         sys.stdout = LogRedirector(lambda msg: self.root.after(0, self._append_log, msg))
-        sys.stderr = LogRedirector(lambda msg: self.root.after(0, self._append_log, msg, "ERROR"))
+        sys.stderr = LogRedirector(lambda msg: self.root.after(0, self._append_log, msg))
 
         # Start Flask in thread
         self.server_thread = threading.Thread(target=self._run_flask_app, daemon=True)
