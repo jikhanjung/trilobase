@@ -214,7 +214,7 @@ SELECT source_type, citation, year FROM provenance;
 SELECT * FROM schema_descriptions WHERE table_name = 'taxonomic_ranks';
 ```
 
-자세한 내용은 `Trilobase_as_SCODA.md`와 `devlog/20260207_P07_scoda_implementation.md`를 참조하세요.
+자세한 내용은 [docs/SCODA_CONCEPT.md](docs/SCODA_CONCEPT.md)와 [devlog/20260207_P07_scoda_implementation.md](devlog/20260207_P07_scoda_implementation.md)를 참조하세요.
 
 ---
 
@@ -230,6 +230,14 @@ SELECT * FROM schema_descriptions WHERE table_name = 'taxonomic_ranks';
 
 This project is provided for academic research purposes.
 Copyright of the original taxonomic data remains with the respective authors.
+
+---
+
+## Documentation
+
+- **[Release Guide](docs/RELEASE_GUIDE.md)** — Versioning and deployment procedures for SCODA releases
+- **[Handover Document](docs/HANDOVER.md)** — Project status and development history
+- **[SCODA Concept](docs/SCODA_CONCEPT.md)** — Self-Contained Data Artifact framework
 
 ---
 

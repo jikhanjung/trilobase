@@ -189,7 +189,6 @@ trilobase/
 │   ├── css/style.css                 # 스타일
 │   └── js/app.js                     # 프론트엔드 로직
 ├── test_app.py                      # pytest 테스트 (101개)
-├── Trilobase_as_SCODA.md            # SCODA 개념 문서
 ├── trilobase.spec                   # PyInstaller 빌드 설정 (Phase 18)
 ├── scripts/
 │   ├── normalize_lines.py
@@ -216,7 +215,9 @@ trilobase/
 │   ├── 20260208_021_*.md            # Phase 21 완료 로그
 │   └── 20260207_R01~R02_*.md        # 리뷰 문서
 ├── docs/
-│   └── HANDOVER.md
+│   ├── HANDOVER.md                  # 인수인계 문서 (프로젝트 현황)
+│   ├── RELEASE_GUIDE.md             # 릴리스 및 배포 가이드 (버전 관리)
+│   └── SCODA_CONCEPT.md             # SCODA 개념 설명
 └── CLAUDE.md
 ```
 
