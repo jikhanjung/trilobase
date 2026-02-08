@@ -106,12 +106,18 @@
   - GUI에 Canonical + Overlay DB 정보 표시
   - 테스트: 101개 통과
 
-- **Phase 21 완료**: GUI 로그 뷰어
+- **Phase 21 완료**: GUI 로그 뷰어 + PyInstaller 호환성 수정
   - GUI 크기: 800x600 (리사이즈 가능)
-  - Flask 로그 실시간 표시 (subprocess stdout/stderr 캡처)
+  - Flask 로그 실시간 표시:
+    - Frozen 모드(PyInstaller): threading + sys.stdout/stderr redirect
+    - 개발 모드: subprocess로 Flask 실행
   - 색상별 로그 레벨: ERROR(빨강), WARNING(주황), INFO(파랑), SUCCESS(초록)
+  - 로그 자동 감지: 200 OK→초록, Exception→빨강, Running on→파랑
   - Clear Log 버튼, 자동 스크롤, 1000줄 제한
-  - 에러 자동 감지 (포트 충돌, DB 없음 등)
+  - PyInstaller 버그 수정:
+    - Frozen 모드 중복 프로세스 방지 (subprocess → threading)
+    - scripts 모듈 import 실패 → app.py에 overlay DB 생성 함수 inline
+    - bytes/str 처리, stderr 로그 색상 자동 감지
   - Windows 환경 디버깅 용이성 대폭 향상
 
 ### 데이터베이스 현황
@@ -206,6 +212,8 @@ trilobase/
 │   ├── 20260204_001~011_*.md        # Phase 1-11 완료 로그
 │   ├── 20260207_P07~P12_*.md        # SCODA 계획 문서
 │   ├── 20260207_012~020_*.md        # Phase 13-20 완료 로그
+│   ├── 20260208_P13_*.md            # Phase 21 계획 문서
+│   ├── 20260208_021_*.md            # Phase 21 완료 로그
 │   └── 20260207_R01~R02_*.md        # 리뷰 문서
 ├── docs/
 │   └── HANDOVER.md
