@@ -15,6 +15,19 @@ import time
 import subprocess
 
 
+class LogRedirector:
+    """Redirect stdout/stderr to GUI log viewer."""
+    def __init__(self, callback):
+        self.callback = callback
+
+    def write(self, text):
+        if text.strip():
+            self.callback(text.strip())
+
+    def flush(self):
+        pass
+
+
 class TrilobaseGUI:
     def __init__(self):
         self.root = tk.Tk()
@@ -27,7 +40,8 @@ class TrilobaseGUI:
         self.server_process = None  # For subprocess mode
         self.server_thread = None   # For threaded mode (frozen)
         self.flask_app = None       # For threaded mode
-        self.log_capture = None     # For threaded mode log capture
+        self.original_stdout = None # For restoring stdout after redirect
+        self.original_stderr = None # For restoring stderr after redirect
         self.log_reader_thread = None
         self.server_running = False
         self.port = 8080
@@ -232,17 +246,15 @@ class TrilobaseGUI:
         except ImportError as e:
             raise Exception(f"Could not import Flask app: {e}")
 
-        # Redirect stdout/stderr to capture logs
-        import io
-        self.log_capture = io.StringIO()
+        # Redirect stdout/stderr to GUI
+        self.original_stdout = sys.stdout
+        self.original_stderr = sys.stderr
+        sys.stdout = LogRedirector(lambda msg: self.root.after(0, self._append_log, msg))
+        sys.stderr = LogRedirector(lambda msg: self.root.after(0, self._append_log, msg, "ERROR"))
 
         # Start Flask in thread
         self.server_thread = threading.Thread(target=self._run_flask_app, daemon=True)
         self.server_thread.start()
-
-        # Start log capture thread
-        self.log_reader_thread = threading.Thread(target=self._capture_flask_logs, daemon=True)
-        self.log_reader_thread.start()
 
         self._append_log("Flask server started in thread", "INFO")
 
@@ -276,17 +288,7 @@ class TrilobaseGUI:
     def _run_flask_app(self):
         """Run Flask app (called in thread for frozen mode)."""
         try:
-            # Capture werkzeug logs
-            import logging
-            log = logging.getLogger('werkzeug')
-            log.setLevel(logging.INFO)
-
-            # Add handler to capture to our log
-            handler = logging.StreamHandler(self.log_capture)
-            handler.setLevel(logging.INFO)
-            log.addHandler(handler)
-
-            self.root.after(0, self._append_log, "* Running on http://127.0.0.1:8080", "INFO")
+            # Run Flask (stdout/stderr already redirected)
             self.flask_app.run(debug=False, host='127.0.0.1', port=self.port, use_reloader=False)
         except OSError as e:
             if "Address already in use" in str(e):
@@ -300,26 +302,11 @@ class TrilobaseGUI:
             self.server_running = False
             self.root.after(0, self._update_status)
         except Exception as e:
+            import traceback
             self.root.after(0, self._append_log, f"ERROR: {e}", "ERROR")
+            self.root.after(0, self._append_log, traceback.format_exc(), "ERROR")
             self.server_running = False
             self.root.after(0, self._update_status)
-
-    def _capture_flask_logs(self):
-        """Capture logs from Flask thread (for frozen mode)."""
-        import time
-        last_pos = 0
-        while self.server_running:
-            time.sleep(0.5)
-            try:
-                self.log_capture.seek(last_pos)
-                new_logs = self.log_capture.read()
-                if new_logs:
-                    for line in new_logs.strip().split('\n'):
-                        if line:
-                            self.root.after(0, self._append_log, line.strip())
-                    last_pos = self.log_capture.tell()
-            except Exception:
-                pass
 
     def stop_server(self):
         """Stop Flask server."""
@@ -347,6 +334,10 @@ class TrilobaseGUI:
 
         # Thread mode (frozen) - cannot cleanly stop Flask in thread
         elif self.server_thread:
+            # Restore stdout/stderr
+            if hasattr(self, 'original_stdout'):
+                sys.stdout = self.original_stdout
+                sys.stderr = self.original_stderr
             self._append_log("Server marked as stopped (thread mode)", "WARNING")
             self._append_log("Note: Flask thread may still be active. Restart app to fully stop.", "WARNING")
 
