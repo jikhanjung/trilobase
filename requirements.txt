@@ -1,2 +1,5 @@
 flask
 pyinstaller
+mcp>=1.0.0
+pytest
+pytest-asyncio
