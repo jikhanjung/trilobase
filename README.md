@@ -90,6 +90,87 @@ python app.py
 Open your browser and navigate to:
 http://localhost:8080
 
+### Option 3: MCP Server (For LLM Integration)
+
+**Claude/LLM이 자연어로 데이터베이스를 쿼리:**
+
+Trilobase는 **Model Context Protocol (MCP)** 서버를 내장하고 있어, Claude나 다른 LLM이 자연어로 삼엽충 데이터베이스를 탐색할 수 있습니다.
+
+#### Requirements
+
+```bash
+pip install mcp pytest pytest-asyncio
+```
+
+#### Claude Desktop Configuration
+
+**파일:** `~/.config/claude/claude_desktop_config.json` (macOS/Linux) 또는 `%APPDATA%\Claude\claude_desktop_config.json` (Windows)
+
+```json
+{
+  "mcpServers": {
+    "trilobase": {
+      "command": "python",
+      "args": ["/absolute/path/to/trilobase/mcp_server.py"],
+      "cwd": "/absolute/path/to/trilobase"
+    }
+  }
+}
+```
+
+#### Example Natural Language Queries
+
+Claude Desktop에서 다음과 같은 자연어 쿼리를 사용할 수 있습니다:
+
+- "중국에서 발견된 삼엽충 속을 보여줘"
+- "Paradoxides의 동의어를 알려줘"
+- "Family Paradoxididae에 속한 속들을 나열해줘"
+- "이 데이터베이스의 출처는?"
+- "Agnostus에 메모 추가: 'Check formation data'"
+
+#### MCP Tools (14개)
+
+| 카테고리 | 도구 | 설명 |
+|---------|------|------|
+| Taxonomy | `get_taxonomy_tree` | 전체 분류 계층 트리 |
+| | `get_rank_detail` | Rank 상세정보 |
+| | `get_family_genera` | Family 소속 Genus 목록 |
+| Search | `search_genera` | Genus 이름 검색 |
+| | `get_genera_by_country` | 국가별 Genus |
+| | `get_genera_by_formation` | 지층별 Genus |
+| Metadata | `get_metadata` | 메타데이터 + 통계 |
+| | `get_provenance` | 데이터 출처 |
+| Queries | `execute_named_query` | Named query 실행 |
+| Annotations | `get_annotations`, `add_annotation`, `delete_annotation` | 사용자 주석 관리 |
+| Detail | `get_genus_detail` | Evidence Pack (출처 추적) |
+
+#### Evidence Pack Pattern
+
+MCP 서버는 **SCODA 원칙**에 따라 모든 응답에 출처와 원본 데이터를 포함합니다:
+
+```json
+{
+  "genus": {
+    "name": "Paradoxides",
+    "author": "BRONGNIART",
+    "year": 1822,
+    "raw_entry": "원본 텍스트..."
+  },
+  "synonyms": [...],
+  "provenance": {
+    "source": "Jell & Adrain, 2002",
+    "canonical_version": "1.0.0"
+  }
+}
+```
+
+**핵심 원칙:**
+- **DB is truth**: 데이터베이스가 유일한 진실의 원천
+- **MCP is access**: MCP는 접근 수단일 뿐
+- **LLM is narration**: LLM은 증거 기반 서술만 수행
+
+자세한 내용: [devlog/20260209_022_phase22_mcp_server.md](devlog/20260209_022_phase22_mcp_server.md)
+
 ---
 
 ## Web Interface Features
