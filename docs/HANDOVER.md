@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-08
+**마지막 업데이트:** 2026-02-09
 
 ## 프로젝트 개요
 
@@ -120,6 +120,28 @@
     - bytes/str 처리, stderr 로그 색상 자동 감지
   - Windows 환경 디버깅 용이성 대폭 향상
 
+- **Phase 22 완료**: MCP Server (Model Context Protocol) (**브랜치: `feature/scoda-implementation`**)
+  - 목표: LLM이 자연어로 Trilobase 쿼리 가능하도록 MCP 서버 구현
+  - 계획 문서: `devlog/20260209_P14_phase22_mcp_wrapper.md`
+  - 완료 로그: `devlog/20260209_022_phase22_mcp_server.md`
+  - 완료:
+    - ✅ `mcp_server.py` 구현 (729 lines, 14개 도구)
+    - ✅ Evidence Pack 패턴 구현 (raw_entry, fide, provenance 필드)
+    - ✅ 버그 3개 수정 (중복 코드, fetchone 호출, bibliography 컬럼)
+    - ✅ 테스트 작성 및 통과 (test_mcp_basic.py, test_mcp.py)
+    - ✅ 의존성 추가 (`mcp>=1.0.0`, pytest, pytest-asyncio)
+  - 14개 MCP 도구:
+    - Taxonomy: get_taxonomy_tree, get_rank_detail, get_family_genera
+    - Search: search_genera, get_genera_by_country, get_genera_by_formation
+    - Metadata: get_metadata, get_provenance, list_available_queries
+    - Queries: execute_named_query
+    - Annotations: get_annotations, add_annotation, delete_annotation
+    - Detail: get_genus_detail (Evidence Pack)
+  - 주요 개념:
+    - **DB is truth, MCP is access, LLM is narration**
+    - LLM은 판단/정의 금지, 증거 기반 서술만 수행
+    - Canonical DB 불변, Overlay DB를 통한 사용자 주석만 허용
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -183,12 +205,15 @@ trilobase/
 ├── trilobite_genus_list_original.txt # 원본 백업
 ├── adrain2011.txt                    # Order 통합을 위한 suprafamilial taxa 목록
 ├── app.py                            # Flask 웹 앱
+├── mcp_server.py                     # MCP 서버 (Phase 22, 729 lines)
 ├── templates/
 │   └── index.html                    # 메인 페이지
 ├── static/
 │   ├── css/style.css                 # 스타일
 │   └── js/app.js                     # 프론트엔드 로직
 ├── test_app.py                      # pytest 테스트 (101개)
+├── test_mcp_basic.py                # MCP 기본 테스트 (Phase 22)
+├── test_mcp.py                      # MCP 포괄적 테스트 (Phase 22, 16개)
 ├── trilobase.spec                   # PyInstaller 빌드 설정 (Phase 18)
 ├── scripts/
 │   ├── normalize_lines.py
@@ -213,6 +238,8 @@ trilobase/
 │   ├── 20260207_012~020_*.md        # Phase 13-20 완료 로그
 │   ├── 20260208_P13_*.md            # Phase 21 계획 문서
 │   ├── 20260208_021_*.md            # Phase 21 완료 로그
+│   ├── 20260209_P14_*.md            # Phase 22 계획 문서
+│   ├── 20260209_022_*.md            # Phase 22 완료 로그
 │   └── 20260207_R01~R02_*.md        # 리뷰 문서
 ├── docs/
 │   ├── HANDOVER.md                  # 인수인계 문서 (프로젝트 현황)
@@ -237,6 +264,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 19 | GUI 컨트롤 패널 (tkinter) | ✅ 완료 |
 | Phase 20 | Overlay DB 분리 (read-only 문제 해결) | ✅ 완료 |
 | Phase 21 | GUI 로그 뷰어 (디버깅 지원) | ✅ 완료 |
+| Phase 22 | MCP Server (LLM 자연어 쿼리 지원) | ✅ 완료 |
 
 ## 미해결 항목
 
@@ -267,6 +295,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 19. ~~Phase 19: GUI 컨트롤 패널~~ ✅
 20. ~~Phase 20: Overlay DB 분리~~ ✅
 21. ~~Phase 21: GUI 로그 뷰어~~ ✅
+22. ~~Phase 22: MCP Server~~ ✅ (브랜치: `feature/scoda-implementation`)
 
 ## DB 스키마
 
