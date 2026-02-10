@@ -146,13 +146,6 @@ class TrilobaseGUI:
         self.status_label = tk.Label(flask_status_row, text="● Stopped", anchor="w", fg="red")
         self.status_label.pack(side="left", fill="x", expand=True)
 
-        # MCP Status
-        mcp_status_row = tk.Frame(info_frame)
-        mcp_status_row.pack(fill="x", pady=3)
-        tk.Label(mcp_status_row, text="MCP:", width=10, anchor="w").pack(side="left")
-        self.mcp_status_label = tk.Label(mcp_status_row, text="● Stopped", anchor="w", fg="red")
-        self.mcp_status_label.pack(side="left", fill="x", expand=True)
-
         # Flask URL
         url_row = tk.Frame(info_frame)
         url_row.pack(fill="x", pady=3)
@@ -161,14 +154,6 @@ class TrilobaseGUI:
                                   anchor="w", fg="gray", cursor="hand2")
         self.url_label.pack(side="left", fill="x", expand=True)
         self.url_label.bind("<Button-1>", lambda e: self.open_browser())
-
-        # MCP URL
-        mcp_url_row = tk.Frame(info_frame)
-        mcp_url_row.pack(fill="x", pady=3)
-        tk.Label(mcp_url_row, text="MCP URL:", width=10, anchor="w").pack(side="left")
-        self.mcp_url_label = tk.Label(mcp_url_row, text=f"http://localhost:{self.mcp_port}",
-                                      anchor="w", fg="gray")
-        self.mcp_url_label.pack(side="left", fill="x", expand=True)
 
         # Right: Control section
         control_frame = tk.LabelFrame(top_frame, text="Controls", padx=10, pady=10)
@@ -187,20 +172,6 @@ class TrilobaseGUI:
                                   command=self.stop_server, state="disabled",
                                   bg="#f44336", fg="white", relief="raised", bd=2)
         self.stop_btn.pack(side="left", padx=2)
-
-        # MCP SSE Start/Stop row
-        mcp_row = tk.Frame(control_frame)
-        mcp_row.pack(pady=3)
-
-        self.mcp_start_btn = tk.Button(mcp_row, text="▶ Start MCP SSE", width=12,
-                                       command=self.start_mcp, bg="#2196F3", fg="white",
-                                       relief="raised", bd=2)
-        self.mcp_start_btn.pack(side="left", padx=2)
-
-        self.mcp_stop_btn = tk.Button(mcp_row, text="■ Stop MCP SSE", width=12,
-                                      command=self.stop_mcp, state="disabled",
-                                      bg="#9C27B0", fg="white", relief="raised", bd=2)
-        self.mcp_stop_btn.pack(side="left", padx=2)
 
         # Open browser button
         self.browser_btn = tk.Button(control_frame, text="🌐 Open Browser", width=26,
@@ -660,14 +631,6 @@ class TrilobaseGUI:
             self.url_label.config(fg="gray")
             self.browser_btn.config(state="disabled")
 
-        # Update MCP status
-        if self.mcp_running:
-            self.mcp_status_label.config(text="● Running", fg="green")
-            self.mcp_url_label.config(fg="blue")
-        else:
-            self.mcp_status_label.config(text="● Stopped", fg="red")
-            self.mcp_url_label.config(fg="gray")
-
         # Update Flask buttons
         if self.server_running:
             self.start_btn.config(state="disabled", relief="sunken")
@@ -676,15 +639,6 @@ class TrilobaseGUI:
             self.start_btn.config(state="normal" if self.db_exists else "disabled",
                                  relief="raised")
             self.stop_btn.config(state="disabled", relief="sunken")
-
-        # Update MCP SSE buttons
-        if self.mcp_running:
-            self.mcp_start_btn.config(state="disabled", relief="sunken")
-            self.mcp_stop_btn.config(state="normal", relief="raised")
-        else:
-            self.mcp_start_btn.config(state="normal" if self.db_exists else "disabled",
-                                      relief="raised")
-            self.mcp_stop_btn.config(state="disabled", relief="sunken")
 
     def run(self):
         """Start GUI main loop."""
