@@ -37,7 +37,6 @@ Trilobase MCP 서버는 **Model Context Protocol**을 통해 LLM(Large Language 
 
 ### 아키텍처
 
-**Mode 1: stdio (기존)**
 ```
 ┌─────────────────┐
 │   Claude/LLM    │ (자연어 쿼리)
@@ -45,7 +44,7 @@ Trilobase MCP 서버는 **Model Context Protocol**을 통해 LLM(Large Language 
          │ JSON-RPC (stdio)
          ▼
 ┌──────────────────────────┐
-│    MCP Server            │
+│  trilobase_mcp.exe       │
 │  - 14 tools              │
 │  - Evidence Pack builder │
 │  - DB connector          │
@@ -59,135 +58,25 @@ Trilobase MCP 서버는 **Model Context Protocol**을 통해 LLM(Large Language 
 └──────────────────────────┘
 ```
 
-**Mode 2: SSE (신규, v1.1.0)**
-```
-┌─────────────────┐
-│   Claude/LLM    │ (자연어 쿼리)
-└────────┬────────┘
-         │ HTTP SSE
-         ▼
-┌──────────────────────────┐
-│  Trilobase GUI           │
-│  ├─ Flask (8080)         │
-│  └─ MCP Server (8081)    │ ← DB 연결 유지
-└────────┬─────────────────┘
-         │ Direct DB access
-         ▼
-┌──────────────────────────┐
-│  SQLite Databases        │
-│  - Canonical (read-only) │
-│  - Overlay (read/write)  │
-└──────────────────────────┘
-```
+### 두 개의 실행 파일
 
-### 단일 실행 파일, 다중 모드
+Trilobase는 역할에 따라 **두 개의 별도 실행 파일**로 배포됩니다:
 
-**중요:** `trilobase.exe`는 하나의 실행 파일이지만, **커맨드라인 옵션**에 따라 다른 모드로 실행됩니다.
+| 파일 | 용도 | 실행 방법 |
+|------|------|----------|
+| `trilobase.exe` | GUI 뷰어 (Flask 웹 서버 + 브라우저) | 더블클릭 또는 CLI |
+| `trilobase_mcp.exe` | MCP stdio 서버 (Claude Desktop 전용) | Claude Desktop이 자동 spawn |
 
-#### 실행 모드
-
-```bash
-# GUI 모드 (기본)
-trilobase.exe
-# 또는
-trilobase.exe --gui
-
-# MCP stdio 모드 (Claude Desktop용)
-trilobase.exe --mcp-stdio
-```
-
-#### 프로세스 독립성
-
-**같은 실행 파일이지만, 별개의 프로세스로 실행됩니다:**
+**핵심:**
+- `trilobase.exe`는 GUI 전용 (`console=False`) → PowerShell/cmd에서 실행해도 콘솔 블로킹 없음
+- `trilobase_mcp.exe`는 MCP stdio 전용 (`console=True`) → Claude Desktop이 인자 없이 직접 spawn
+- 두 파일이 같은 디렉토리에 있으면 `trilobase_overlay.db`를 자동 공유
 
 ```
-┌─────────────────────────────────────┐
-│     trilobase.exe (하나의 파일)      │
-└─────────────────────────────────────┘
-           │
-           ├─────────────────┬─────────────────┐
-           │                 │                 │
-      더블클릭         CLI with flag      CLI with flag
-           ↓                 ↓                 ↓
-
-[프로세스 1]        [프로세스 2]        [프로세스 3]
-trilobase.exe      trilobase.exe       trilobase.exe
-                   --mcp-stdio         --gui
-
-GUI 모드             stdio 모드          GUI 모드
-├─ Tkinter UI       ├─ stdin/stdout     ├─ Tkinter UI
-├─ Flask (8080)     ├─ JSON-RPC         ├─ Flask (8080)
-├─ MCP SSE (8081)   ├─ No HTTP          ├─ MCP SSE (8081)
-└─ 수동 실행/종료    └─ No ports         └─ 수동 실행/종료
-                    └─ Claude spawn
+dist/
+├── trilobase.exe          ← GUI 뷰어
+└── trilobase_mcp.exe      ← Claude Desktop 전용
 ```
-
-#### 동시 실행 가능
-
-**두 모드는 동시에 실행할 수 있으며, 서로 간섭하지 않습니다:**
-
-| 특성 | GUI 모드 프로세스 | stdio 모드 프로세스 |
-|------|------------------|-------------------|
-| **통신 방식** | HTTP SSE (8081) | stdin/stdout |
-| **포트 사용** | 8080, 8081 | 없음 |
-| **클라이언트** | mcp-remote (Node.js) | Claude Desktop 직접 |
-| **시작 방법** | 사용자 수동 실행 | Claude Desktop 자동 spawn |
-| **종료 방법** | 사용자 수동 종료 | Claude Desktop 자동 종료 |
-| **메모리** | 독립 메모리 공간 | 독립 메모리 공간 |
-| **DB 접근** | trilobase.db (읽기) | trilobase.db (읽기) |
-
-**충돌 없음:**
-- ✅ 다른 통신 방식 (HTTP vs stdio)
-- ✅ 포트 충돌 없음 (stdio는 포트 사용 안 함)
-- ✅ DB 동시 읽기 가능 (SQLite read-only 모드)
-
-#### 사용 시나리오
-
-**시나리오 1: stdio 모드만 (권장 - 일반 사용자)**
-```json
-{
-  "mcpServers": {
-    "trilobase": {
-      "command": "C:\\path\\to\\trilobase.exe",
-      "args": ["--mcp-stdio"]
-    }
-  }
-}
-```
-- ✅ Claude Desktop 실행 시 자동 spawn
-- ✅ GUI 불필요
-- ✅ Node.js 불필요
-- ✅ 백그라운드 실행 (보이지 않음)
-
-**시나리오 2: GUI + SSE 모드만**
-```
-1. trilobase.exe 더블클릭 (GUI)
-2. "▶ Start Flask" 클릭 (Flask 8080 시작)
-3. "▶ Start MCP SSE" 클릭 (MCP SSE 8081 시작)
-4. Claude Desktop 설정:
-   {
-     "command": "cmd",
-     "args": ["/c", "npx", "-y", "mcp-remote", "http://localhost:8081/sse"]
-   }
-```
-- ✅ GUI에서 로그 확인 가능
-- ✅ 브라우저에서 데이터 탐색 가능
-- ❌ Node.js 필요
-- ❌ GUI 수동 실행 필요
-
-**시나리오 3: 둘 다 동시 사용 (고급 사용자)**
-```
-프로세스 1: trilobase.exe (GUI)
-  → 브라우저: http://localhost:8080
-  → 직접 데이터 탐색
-
-프로세스 2: trilobase.exe --mcp-stdio (백그라운드)
-  → Claude Desktop: 자연어 쿼리
-  → 자동 실행
-```
-- ✅ GUI와 Claude Desktop 동시 사용
-- ✅ 서로 간섭 없음
-- ✅ 같은 DB 데이터 공유
 
 #### MCP stdio 모드 생명주기
 
@@ -252,18 +141,18 @@ python3 test_mcp_basic.py
 
 ### 3. Claude Desktop 설정
 
-#### 방법 1: stdio 모드 with PyInstaller 번들 (권장, v1.2.0+) ⭐
+#### 방법 1: trilobase_mcp.exe 사용 (권장, v1.3.0+) ⭐
 
 **장점:**
 - ✅ Python 설치 불필요
 - ✅ Node.js 설치 불필요
 - ✅ Claude Desktop 시작 시 자동 실행 (spawn)
-- ✅ GUI 불필요 (백그라운드 실행)
+- ✅ 인자 없이 실행 — 설정 최소화
 - ✅ 가장 단순한 설정
 
 **1단계: Trilobase 실행 파일 다운로드**
 - [릴리스 페이지](https://github.com/yourname/trilobase/releases)에서 다운로드:
-  - Windows: `trilobase.exe`
+  - Windows: `trilobase.exe` (GUI), `trilobase_mcp.exe` (MCP)
 
 **2단계: Claude Desktop 설정**
 
@@ -273,8 +162,7 @@ python3 test_mcp_basic.py
 {
   "mcpServers": {
     "trilobase": {
-      "command": "C:\\path\\to\\trilobase.exe",
-      "args": ["--mcp-stdio"]
+      "command": "C:\\path\\to\\trilobase_mcp.exe"
     }
   }
 }
@@ -282,47 +170,11 @@ python3 test_mcp_basic.py
 
 **3단계: Claude Desktop 재시작**
 
-**완료!** Claude Desktop 실행 시 trilobase.exe가 자동으로 백그라운드에서 실행됩니다.
+**완료!** Claude Desktop 실행 시 trilobase_mcp.exe가 자동으로 백그라운드에서 실행됩니다.
 
 ---
 
-#### 방법 2: SSE 모드 with GUI (GUI 사용자용, v1.1.0+)
-
-**장점:** GUI에서 데이터 탐색과 Claude Desktop 동시 사용 가능
-
-**1단계: Trilobase 실행 파일 실행**
-```
-더블클릭: trilobase.exe
-```
-
-**2단계: GUI에서 서버 시작**
-- "▶ Start Flask" 클릭 → Flask (8080) 시작
-- "▶ Start MCP SSE" 클릭 → MCP SSE (8081) 시작
-
-**3단계: Claude Desktop 설정**
-
-**파일:** `%APPDATA%\Claude\claude_desktop_config.json` (Windows)
-
-```json
-{
-  "mcpServers": {
-    "trilobase": {
-      "command": "cmd",
-      "args": ["/c", "npx", "-y", "mcp-remote", "http://localhost:8081/sse"]
-    }
-  }
-}
-```
-
-**주의:** Node.js 설치 필요 (mcp-remote 실행용). Claude Desktop은 localhost HTTP를 직접 지원하지 않음.
-
-**중요:**
-- Trilobase GUI가 실행 중이어야 MCP SSE 서버 사용 가능
-- GUI 종료 시 MCP SSE 서버도 함께 종료됨
-
----
-
-#### 방법 3: stdio 모드 with Python source (개발자용)
+#### 방법 2: stdio 모드 with Python source (개발자용)
 
 **장점:** 소스 코드 수정 가능
 
@@ -365,17 +217,17 @@ pip install mcp>=1.0.0 starlette uvicorn flask
 
 ### 4. 설정 방법 비교
 
-| 특징 | 방법 1: stdio (exe) | 방법 2: SSE + GUI (exe) | 방법 3: stdio (Python) |
-|------|---------------------|------------------------|----------------------|
-| **Python 설치** | 불필요 ✅ | 불필요 ✅ | 필요 |
-| **Node.js 설치** | 불필요 ✅ | 필요 (mcp-remote) | 불필요 ✅ |
-| **실행 방식** | Claude가 자동 spawn | GUI 수동 실행 | Claude가 자동 spawn |
-| **GUI 필요** | 불필요 ✅ | 필수 | 불필요 ✅ |
-| **백그라운드** | 자동 (Claude 종료 시 함께) | GUI 종료 시 중단 | 자동 |
-| **설정** | command + args | command + args | command + args |
-| **권장 대상** | **일반 사용자** 🏆 | GUI 병행 사용자 | 개발자 |
+| 특징 | 방법 1: trilobase_mcp.exe | 방법 2: stdio (Python) |
+|------|--------------------------|----------------------|
+| **Python 설치** | 불필요 ✅ | 필요 |
+| **Node.js 설치** | 불필요 ✅ | 불필요 ✅ |
+| **실행 방식** | Claude가 자동 spawn | Claude가 자동 spawn |
+| **GUI 필요** | 불필요 ✅ | 불필요 ✅ |
+| **백그라운드** | 자동 (Claude 종료 시 함께) | 자동 |
+| **설정** | command만 (args 불필요) | command + args + cwd |
+| **권장 대상** | **일반 사용자** 🏆 | 개발자 |
 
-**권장:** 일반 사용자는 **방법 1 (stdio exe)**을 사용하세요!
+**권장:** 일반 사용자는 **방법 1 (trilobase_mcp.exe)**을 사용하세요!
 
 ---
 
@@ -1081,42 +933,34 @@ MCP 서버가 연결되면 Claude Desktop에서 다음과 같은 자연어로 �
 
 **증상:** Claude Desktop에서 Trilobase 도구가 보이지 않음
 
-**해결 방법 (PyInstaller 번들 사용 시):**
+**해결 방법 (trilobase_mcp.exe 사용 시):**
 
-1. **Trilobase GUI 실행 확인:**
-   - GUI가 실행 중인지 확인
-   - "▶ Start All" 버튼을 눌렀는지 확인
-   - MCP 상태가 "● Running" (초록색)인지 확인
-
-2. **MCP 서버 포트 확인:**
-   ```bash
-   # Linux/macOS
-   curl http://localhost:8081/health
-
-   # Windows PowerShell
-   Invoke-WebRequest http://localhost:8081/health
-
-   # 예상 응답:
-   # {"status": "ok", "service": "trilobase-mcp", "mode": "sse"}
-   ```
-
-3. **Claude Desktop 설정 확인:**
+1. **설정 파일 경로 및 내용 확인:**
+   - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
    ```json
    {
      "mcpServers": {
        "trilobase": {
-         "url": "http://localhost:8081/sse"
+         "command": "C:\\절대경로\\trilobase_mcp.exe"
        }
      }
    }
    ```
-   **주의:** `"url"`이지 `"command"`가 아님!
+   **주의:** 상대 경로 불가, 반드시 절대 경로 사용
+
+2. **trilobase_mcp.exe 파일 존재 확인:**
+   ```powershell
+   Test-Path "C:\path\to\trilobase_mcp.exe"
+   ```
+
+3. **trilobase.db 파일 확인:**
+   - `trilobase_mcp.exe`와 같은 디렉토리에 있어야 함 (내장 번들 확인)
 
 4. **Claude Desktop 재시작**
 
 ---
 
-**해결 방법 (stdio 모드 사용 시):**
+**해결 방법 (Python source 사용 시):**
 
 1. 설정 파일 경로 확인:
    - macOS/Linux: `~/.config/claude/claude_desktop_config.json`
@@ -1176,75 +1020,11 @@ MCP 서버가 연결되면 Claude Desktop에서 다음과 같은 자연어로 �
 
 ---
 
-### 문제 4: 포트 충돌 (8081 already in use)
+### 문제 4: 응답이 느림
 
-**증상:** GUI에서 "MCP server failed to start: Address already in use" 오류
-
-**원인:** 8081 포트가 이미 사용 중
+**원인:** 대용량 쿼리
 
 **해결 방법:**
-
-1. **기존 MCP 서버 종료:**
-   ```bash
-   # Linux/macOS
-   lsof -ti:8081 | xargs kill -9
-
-   # Windows PowerShell
-   Get-Process -Id (Get-NetTCPConnection -LocalPort 8081).OwningProcess | Stop-Process -Force
-   ```
-
-2. **포트 사용 프로세스 확인:**
-   ```bash
-   # Linux/macOS
-   lsof -i:8081
-
-   # Windows
-   netstat -ano | findstr :8081
-   ```
-
-3. **Trilobase GUI 재시작**
-
----
-
-### 문제 5: GUI 로그에서 MCP 에러 확인
-
-**증상:** MCP 서버가 시작되지 않지만 원인 불명
-
-**해결 방법:**
-
-1. **GUI 로그 뷰어 확인:**
-   - Trilobase GUI 하단의 "Server Log" 섹션 확인
-   - `[MCP]` prefix가 있는 로그 라인 찾기
-   - ERROR (빨간색) 메시지 확인
-
-2. **일반적인 MCP 에러:**
-   ```
-   [MCP] ModuleNotFoundError: No module named 'mcp'
-   → 해결: pip install mcp starlette uvicorn
-
-   [MCP] ERROR: Database not found
-   → 해결: trilobase.db 파일 확인
-
-   [MCP] Address already in use
-   → 해결: 문제 4 참조 (포트 충돌)
-   ```
-
-3. **Clear Log 후 재시작:**
-   - "📄 Clear Log" 버튼 클릭
-   - "■ Stop All" 후 "▶ Start All"
-   - 새 로그 메시지 확인
-
----
-
-### 문제 6: 응답이 느림
-
-**원인:** 대용량 쿼리 또는 네트워크 지연
-
-**해결 방법:**
-
-**SSE 모드 사용 시 (권장):**
-- DB 연결이 유지되므로 stdio 모드보다 빠름
-- 첫 쿼리 이후 응답 속도가 크게 향상됨
 
 **쿼리 최적화:**
 1. `limit` 파라미터 사용:
@@ -1279,12 +1059,7 @@ pytest의 teardown ERROR는 기능에 영향 없음 (프레임워크 이슈).
 
 ### 현재 버전의 제한
 
-1. **SSE 모드 제한 (v1.1.0)**
-   - GUI 실행 중이어야 MCP 서버 사용 가능
-   - GUI 종료 시 MCP 서버도 함께 종료
-   - 해결책: stdio 모드 사용 또는 MCP 서버 별도 실행
-
-2. **검색 결과 제한**
+1. **검색 결과 제한**
    - 기본 limit=50 (성능 최적화)
 
 3. **복잡한 조인 쿼리 미지원**
@@ -1322,11 +1097,16 @@ pytest의 teardown ERROR는 기능에 영향 없음 (프레임워크 이슈).
 
 ## 버전 히스토리
 
+- **v1.3.0** (2026-02-10): EXE 두 개 분리 (P18, P19)
+  - `trilobase.exe` (`console=False`): GUI 전용, PowerShell/cmd 블로킹 없음
+  - `trilobase_mcp.exe` (`console=True`): MCP stdio 전용, 인자 없이 실행
+  - GUI에서 MCP SSE 관련 버튼 제거 (불필요)
+  - Claude Desktop 설정 단순화: `args` 항목 불필요
+
 - **v1.2.0** (2026-02-10): Single EXE stdio 모드 지원 (Phase 24, 25)
   - `trilobase.exe --mcp-stdio`: Claude Desktop이 직접 spawn (Node.js 불필요)
   - GUI MCP SSE 독립 분리: "Start MCP SSE" 버튼으로 선택적 실행
   - GUI 기본 실행 시 Flask(8080)만 시작
-  - Windows 콘솔 창 자동 숨김 (GUI 모드)
 
 - **v1.1.0** (2026-02-10): SSE 모드 추가 (Phase 23)
   - SSE (Server-Sent Events) 전송 모드 지원
@@ -1361,5 +1141,5 @@ GitHub Issues를 통해 버그를 리포트해주세요.
 
 ---
 
-**Last Updated:** 2026-02-10 (v1.2.0)
+**Last Updated:** 2026-02-10 (v1.3.0)
 **Author:** Claude Sonnet 4.5

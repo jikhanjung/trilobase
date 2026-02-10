@@ -96,42 +96,30 @@ http://localhost:8080
 
 Trilobase는 **Model Context Protocol (MCP)** 서버를 내장하고 있어, Claude나 다른 LLM이 자연어로 삼엽충 데이터베이스를 탐색할 수 있습니다.
 
-#### Requirements
+#### Method 1: trilobase_mcp.exe 사용 (권장 - 일반 사용자)
 
-```bash
-pip install mcp starlette uvicorn pytest pytest-asyncio
+**장점:** Python/Node.js 설치 불필요, 인자 없이 실행, 설정 최소화
+
+**파일:** `%APPDATA%\Claude\claude_desktop_config.json` (Windows)
+
+```json
+{
+  "mcpServers": {
+    "trilobase": {
+      "command": "C:\\path\\to\\trilobase_mcp.exe"
+    }
+  }
+}
 ```
 
-#### Method 1: SSE Mode (Recommended - GUI와 함께 사용)
+Claude Desktop 재시작 후 자동 연결.
 
-**장점:** DB 연결 유지, 빠른 응답, GUI에서 원클릭 시작
+#### Method 2: Python source (개발자용)
 
-1. Trilobase GUI 실행:
-   ```bash
-   python scripts/gui.py
-   # 또는 PyInstaller 번들: ./trilobase
-   ```
-
-2. "▶ Start All" 클릭 → Flask (8080) + MCP (8081) 동시 시작
-
-3. Claude Desktop 설정:
-   ```json
-   {
-     "mcpServers": {
-       "trilobase": {
-         "url": "http://localhost:8081/sse"
-       }
-     }
-   }
-   ```
-
-4. Claude Desktop 재시작 후 사용
-
-**주의:** GUI가 실행 중이어야 MCP 서버 사용 가능
-
-#### Method 2: stdio Mode (기존 방식)
-
-**장점:** GUI 없이 독립 실행 가능
+**Requirements:**
+```bash
+pip install mcp starlette uvicorn
+```
 
 **파일:** `~/.config/claude/claude_desktop_config.json` (macOS/Linux) 또는 `%APPDATA%\Claude\claude_desktop_config.json` (Windows)
 
@@ -140,7 +128,7 @@ pip install mcp starlette uvicorn pytest pytest-asyncio
   "mcpServers": {
     "trilobase": {
       "command": "python",
-      "args": ["/absolute/path/to/trilobase/mcp_server.py", "--mode", "stdio"],
+      "args": ["/absolute/path/to/trilobase/mcp_server.py"],
       "cwd": "/absolute/path/to/trilobase"
     }
   }

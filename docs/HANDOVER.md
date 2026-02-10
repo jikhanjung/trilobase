@@ -173,6 +173,15 @@
     - MCP SSE 종료해도 Flask 계속 실행
     - 기본 실행 시 Flask만 시작 (MCP SSE는 필요 시 수동 시작)
 
+- **2026-02-10 GUI/MCP EXE 분리** (**브랜치: `feature/scoda-implementation`**)
+  - GUI에서 MCP SSE 관련 UI 요소 제거 (Start/Stop MCP SSE 버튼, MCP 상태/URL 표시)
+  - EXE 두 개로 분리:
+    - `trilobase.exe` (`console=False`): GUI 전용, 콘솔 블로킹 없음
+    - `trilobase_mcp.exe` (`console=True`): MCP stdio 전용, 인자 없이 실행
+  - `gui.py` main() 단순화 (argparse/MCP 분기 제거)
+  - `trilobase.spec` 두 개의 독립 EXE 블록으로 분리
+  - Claude Desktop 설정: `"command": "trilobase_mcp.exe"` (args 불필요)
+
 - **Phase 25 완료**: Single EXE MCP stdio 모드 지원 (**브랜치: `feature/scoda-implementation`**)
   - 목표: `trilobase.exe --mcp-stdio`로 Claude Desktop이 직접 spawn, Node.js 불필요
   - 계획 문서: `devlog/20260210_P16_mcp_stdio_single_exe.md`
@@ -255,6 +264,8 @@
 
 ```
 trilobase/
+├── trilobase.exe                     # GUI 뷰어 (console=False, dist/ 빌드 결과)
+├── trilobase_mcp.exe                 # MCP stdio 서버 (console=True, dist/ 빌드 결과)
 ├── trilobase.db                      # Canonical SQLite DB
 ├── trilobase_overlay.db              # Overlay DB (사용자 주석, Phase 20)
 ├── trilobite_genus_list.txt          # 정제된 genus 목록
