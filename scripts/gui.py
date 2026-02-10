@@ -254,6 +254,10 @@ class TrilobaseGUI:
         """Start Flask server in thread (for frozen/PyInstaller mode)."""
         self._append_log("Starting Flask server (threaded mode)...", "INFO")
 
+        # Add base path to sys.path for imports (required in frozen/PyInstaller mode)
+        if self.base_path not in sys.path:
+            sys.path.insert(0, self.base_path)
+
         # Import Flask app
         try:
             from app import app
