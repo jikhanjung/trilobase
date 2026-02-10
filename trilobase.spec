@@ -20,6 +20,8 @@ a = Analysis(
     ],
     hiddenimports=[
         'flask',
+        'asgiref',
+        'asgiref.wsgi',
         'mcp',
         'mcp.server',
         'mcp.server.stdio',

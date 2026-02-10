@@ -404,10 +404,21 @@ class TrilobaseGUI:
                               f"MCP server process exited with code {returncode}", "ERROR")
 
     def _run_flask_app(self):
-        """Run Flask app (called in thread for frozen mode)."""
+        """Run Flask app with uvicorn (called in thread for frozen mode)."""
         try:
-            # Run Flask (stdout/stderr already redirected)
-            self.flask_app.run(debug=False, host='127.0.0.1', port=self.port, use_reloader=False)
+            from asgiref.wsgi import WsgiToAsgi
+            import uvicorn
+
+            # Convert Flask WSGI app to ASGI
+            asgi_app = WsgiToAsgi(self.flask_app)
+
+            # Run with uvicorn (production-ready, no dev server warning)
+            uvicorn.run(
+                asgi_app,
+                host='127.0.0.1',
+                port=self.port,
+                log_level='info'
+            )
         except OSError as e:
             if "Address already in use" in str(e):
                 self.root.after(0, self._append_log, f"ERROR: Port {self.port} already in use", "ERROR")
