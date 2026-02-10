@@ -27,6 +27,14 @@ class LogRedirector:
     def flush(self):
         pass
 
+    def isatty(self):
+        """Return False to indicate this is not a TTY (required by uvicorn logger)."""
+        return False
+
+    def fileno(self):
+        """Return a dummy file descriptor (required by some logging handlers)."""
+        return -1
+
 
 class TrilobaseGUI:
     def __init__(self):
