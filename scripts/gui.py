@@ -318,6 +318,8 @@ class TrilobaseGUI:
 
     def _start_mcp_server(self):
         """Start MCP server (SSE mode)."""
+        # Always use subprocess in development mode for better stability
+        # Only use threading in frozen (PyInstaller) mode
         if getattr(sys, 'frozen', False):
             self._start_mcp_threaded()
         else:
@@ -326,6 +328,10 @@ class TrilobaseGUI:
     def _start_mcp_threaded(self):
         """Start MCP server in thread (for frozen/PyInstaller mode)."""
         self._append_log("Starting MCP server (threaded mode)...", "INFO")
+
+        # Add base path to sys.path for imports
+        if self.base_path not in sys.path:
+            sys.path.insert(0, self.base_path)
 
         # Import mcp_server module
         try:
