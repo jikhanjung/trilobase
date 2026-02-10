@@ -174,19 +174,33 @@ class TrilobaseGUI:
         control_frame = tk.LabelFrame(top_frame, text="Controls", padx=10, pady=10)
         control_frame.pack(side="right", fill="both", expand=True, padx=(5, 0))
 
-        # Start/Stop row
+        # Flask Start/Stop row
         server_row = tk.Frame(control_frame)
         server_row.pack(pady=3)
 
-        self.start_btn = tk.Button(server_row, text="▶ Start All", width=12,
+        self.start_btn = tk.Button(server_row, text="▶ Start Flask", width=12,
                                    command=self.start_server, bg="#4CAF50", fg="white",
                                    relief="raised", bd=2)
         self.start_btn.pack(side="left", padx=2)
 
-        self.stop_btn = tk.Button(server_row, text="■ Stop All", width=12,
+        self.stop_btn = tk.Button(server_row, text="■ Stop Flask", width=12,
                                   command=self.stop_server, state="disabled",
                                   bg="#f44336", fg="white", relief="raised", bd=2)
         self.stop_btn.pack(side="left", padx=2)
+
+        # MCP SSE Start/Stop row
+        mcp_row = tk.Frame(control_frame)
+        mcp_row.pack(pady=3)
+
+        self.mcp_start_btn = tk.Button(mcp_row, text="▶ Start MCP SSE", width=12,
+                                       command=self.start_mcp, bg="#2196F3", fg="white",
+                                       relief="raised", bd=2)
+        self.mcp_start_btn.pack(side="left", padx=2)
+
+        self.mcp_stop_btn = tk.Button(mcp_row, text="■ Stop MCP SSE", width=12,
+                                      command=self.stop_mcp, state="disabled",
+                                      bg="#9C27B0", fg="white", relief="raised", bd=2)
+        self.mcp_stop_btn.pack(side="left", padx=2)
 
         # Open browser button
         self.browser_btn = tk.Button(control_frame, text="🌐 Open Browser", width=26,
@@ -256,14 +270,6 @@ class TrilobaseGUI:
 
             self.server_running = True
             self._update_status()
-
-            # Start MCP server
-            try:
-                self._start_mcp_server()
-                self.mcp_running = True
-                self._update_status()
-            except Exception as mcp_error:
-                self._append_log(f"WARNING: MCP server failed to start: {mcp_error}", "WARNING")
 
             # Auto-open browser after 1.5 seconds
             self.root.after(1500, self.open_browser)
@@ -445,33 +451,45 @@ class TrilobaseGUI:
             self.server_running = False
             self.root.after(0, self._update_status)
 
-    def stop_server(self):
-        """Stop Flask and MCP servers."""
-        if not self.server_running and not self.mcp_running:
+    def stop_mcp(self):
+        """Stop MCP SSE server."""
+        if not self.mcp_running:
             return
 
-        # Stop MCP server first
+        self._append_log("Stopping MCP server...", "INFO")
+        self.mcp_running = False
+
+        if self.mcp_process:
+            try:
+                self.mcp_process.terminate()
+                self.mcp_process.wait(timeout=3)
+                self._append_log("MCP server stopped successfully", "INFO")
+            except subprocess.TimeoutExpired:
+                self._append_log("MCP server did not stop gracefully, forcing...", "WARNING")
+                self.mcp_process.kill()
+                self.mcp_process.wait()
+            except Exception as e:
+                self._append_log(f"WARNING: Error stopping MCP server: {e}", "WARNING")
+            finally:
+                self.mcp_process = None
+
+        self._update_status()
+
+    def start_mcp(self):
+        """Start MCP SSE server (optional, independent of Flask)."""
         if self.mcp_running:
-            self._append_log("Stopping MCP server...", "INFO")
-            self.mcp_running = False
+            return
 
-            if self.mcp_process:
-                try:
-                    self.mcp_process.terminate()
-                    self.mcp_process.wait(timeout=3)
-                    self._append_log("MCP server stopped successfully", "INFO")
-                except subprocess.TimeoutExpired:
-                    self._append_log("MCP server did not stop gracefully, forcing...", "WARNING")
-                    self.mcp_process.kill()
-                    self.mcp_process.wait()
-                except Exception as e:
-                    self._append_log(f"WARNING: Error stopping MCP server: {e}", "WARNING")
-                finally:
-                    self.mcp_process = None
-
-        # Stop Flask server
-        if not self.server_running:
+        try:
+            self._start_mcp_server()
+            self.mcp_running = True
             self._update_status()
+        except Exception as e:
+            self._append_log(f"ERROR: Failed to start MCP server: {e}", "ERROR")
+
+    def stop_server(self):
+        """Stop Flask server (independent of MCP)."""
+        if not self.server_running:
             return
 
         self._append_log("Stopping Flask server...", "INFO")
@@ -650,15 +668,23 @@ class TrilobaseGUI:
             self.mcp_status_label.config(text="● Stopped", fg="red")
             self.mcp_url_label.config(fg="gray")
 
-        # Update buttons
-        any_running = self.server_running or self.mcp_running
-        if any_running:
+        # Update Flask buttons
+        if self.server_running:
             self.start_btn.config(state="disabled", relief="sunken")
             self.stop_btn.config(state="normal", relief="raised")
         else:
             self.start_btn.config(state="normal" if self.db_exists else "disabled",
                                  relief="raised")
             self.stop_btn.config(state="disabled", relief="sunken")
+
+        # Update MCP SSE buttons
+        if self.mcp_running:
+            self.mcp_start_btn.config(state="disabled", relief="sunken")
+            self.mcp_stop_btn.config(state="normal", relief="raised")
+        else:
+            self.mcp_start_btn.config(state="normal" if self.db_exists else "disabled",
+                                      relief="raised")
+            self.mcp_stop_btn.config(state="disabled", relief="sunken")
 
     def run(self):
         """Start GUI main loop."""
@@ -667,15 +693,63 @@ class TrilobaseGUI:
 
 def main():
     """Main entry point."""
-    try:
-        gui = TrilobaseGUI()
-        gui.run()
-    except Exception as e:
-        # Fallback error display if GUI fails
-        import traceback
-        print("GUI Error:", file=sys.stderr)
-        traceback.print_exc()
-        sys.exit(1)
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Trilobase SCODA Viewer",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  trilobase.exe              Run GUI (default)
+  trilobase.exe --mcp-stdio  Run MCP server in stdio mode (for Claude Desktop)
+        """
+    )
+    parser.add_argument(
+        '--mcp-stdio',
+        action='store_true',
+        help='Run MCP server in stdio mode (for Claude Desktop spawning)'
+    )
+
+    args = parser.parse_args()
+
+    if args.mcp_stdio:
+        # MCP stdio mode: Claude Desktop spawns this process and communicates via stdin/stdout
+        try:
+            import asyncio
+
+            # Ensure mcp_server is importable (add project root to path)
+            project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            if project_root not in sys.path:
+                sys.path.insert(0, project_root)
+
+            from mcp_server import run_stdio
+            asyncio.run(run_stdio())
+
+        except Exception as e:
+            import traceback
+            print("MCP stdio error:", file=sys.stderr)
+            traceback.print_exc()
+            sys.exit(1)
+
+    else:
+        # GUI mode: hide console window on Windows when frozen
+        if getattr(sys, 'frozen', False) and sys.platform == 'win32':
+            try:
+                import ctypes
+                ctypes.windll.user32.ShowWindow(
+                    ctypes.windll.kernel32.GetConsoleWindow(), 0  # SW_HIDE
+                )
+            except Exception:
+                pass  # Not critical if hiding fails
+
+        try:
+            gui = TrilobaseGUI()
+            gui.run()
+        except Exception as e:
+            import traceback
+            print("GUI Error:", file=sys.stderr)
+            traceback.print_exc()
+            sys.exit(1)
 
 
 if __name__ == '__main__':

@@ -157,10 +157,46 @@
     - `GET /sse`: SSE 연결 (MCP 통신)
     - `POST /messages`: 메시지 전송
     - `GET /health`: 헬스체크
-  - 주요 개선:
-    - DB 연결 유지 → 빠른 응답
-    - 원클릭 시작 ("Start All" 버튼)
-    - 통합 로그 뷰어 (Flask + MCP)
+
+- **Phase 24 완료**: GUI MCP SSE 독립 실행 분리 (**브랜치: `feature/scoda-implementation`**)
+  - 목표: GUI 기본 실행 시 Flask(8080)만 시작, MCP SSE(8081)는 별도 버튼으로 선택 실행
+  - 계획 문서: `devlog/20260210_P17_gui_mcp_sse_optional.md`
+  - 완료 로그: `devlog/20260210_024_phase24_gui_mcp_sse_optional.md`
+  - 완료:
+    - ✅ "Start All" → "Start Flask" / "Stop Flask" (Flask 전용)
+    - ✅ "Start MCP SSE" / "Stop MCP SSE" 버튼 신규 추가
+    - ✅ Flask와 MCP SSE 완전 독립 (서로 영향 없음)
+    - ✅ `start_mcp()`, `stop_mcp()` 메서드 신규 추가
+    - ✅ `_update_status()` Flask/MCP 버튼 상태 독립 관리
+  - 동작:
+    - Flask 종료해도 MCP SSE 계속 실행
+    - MCP SSE 종료해도 Flask 계속 실행
+    - 기본 실행 시 Flask만 시작 (MCP SSE는 필요 시 수동 시작)
+
+- **Phase 25 완료**: Single EXE MCP stdio 모드 지원 (**브랜치: `feature/scoda-implementation`**)
+  - 목표: `trilobase.exe --mcp-stdio`로 Claude Desktop이 직접 spawn, Node.js 불필요
+  - 계획 문서: `devlog/20260210_P16_mcp_stdio_single_exe.md`
+  - 완료 로그: `devlog/20260210_025_phase25_mcp_stdio_single_exe.md`
+  - 완료:
+    - ✅ `main()` 함수에 argparse + `--mcp-stdio` 옵션 추가
+    - ✅ stdio 모드 시 `mcp_server.run_stdio()` 직접 호출
+    - ✅ GUI 모드 시 Windows 콘솔 창 숨김 (ctypes)
+    - ✅ `trilobase.spec`: `console=True`로 변경 (stdio 필수, GUI는 코드로 숨김)
+  - 실행 방법:
+    - GUI: `trilobase.exe` (더블클릭)
+    - MCP stdio: `trilobase.exe --mcp-stdio` (Claude Desktop 자동 spawn)
+  - Claude Desktop 설정:
+    ```json
+    {
+      "mcpServers": {
+        "trilobase": {
+          "command": "C:\\path\\to\\trilobase.exe",
+          "args": ["--mcp-stdio"]
+        }
+      }
+    }
+    ```
+  - 효과: Node.js(mcp-remote) 의존성 제거 가능
 
 ### 데이터베이스 현황
 
