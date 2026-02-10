@@ -36,7 +36,7 @@ class TrilobaseGUI:
         self.root.resizable(True, True)
         self.root.minsize(600, 400)
 
-        # Server state
+        # Flask server state
         self.server_process = None  # For subprocess mode
         self.server_thread = None   # For threaded mode (frozen)
         self.flask_app = None       # For threaded mode
@@ -45,6 +45,13 @@ class TrilobaseGUI:
         self.log_reader_thread = None
         self.server_running = False
         self.port = 8080
+
+        # MCP server state
+        self.mcp_process = None     # MCP subprocess
+        self.mcp_thread = None      # MCP thread (frozen mode)
+        self.mcp_log_reader_thread = None
+        self.mcp_running = False
+        self.mcp_port = 8081
 
         # Determine DB path
         if getattr(sys, 'frozen', False):
@@ -124,21 +131,36 @@ class TrilobaseGUI:
         self.overlay_label = tk.Label(overlay_row, text=overlay_text, anchor="w", fg=overlay_color)
         self.overlay_label.pack(side="left", fill="x", expand=True)
 
-        # Status
-        status_row = tk.Frame(info_frame)
-        status_row.pack(fill="x", pady=3)
-        tk.Label(status_row, text="Status:", width=10, anchor="w").pack(side="left")
-        self.status_label = tk.Label(status_row, text="● Stopped", anchor="w", fg="red")
+        # Flask Status
+        flask_status_row = tk.Frame(info_frame)
+        flask_status_row.pack(fill="x", pady=3)
+        tk.Label(flask_status_row, text="Flask:", width=10, anchor="w").pack(side="left")
+        self.status_label = tk.Label(flask_status_row, text="● Stopped", anchor="w", fg="red")
         self.status_label.pack(side="left", fill="x", expand=True)
 
-        # URL
+        # MCP Status
+        mcp_status_row = tk.Frame(info_frame)
+        mcp_status_row.pack(fill="x", pady=3)
+        tk.Label(mcp_status_row, text="MCP:", width=10, anchor="w").pack(side="left")
+        self.mcp_status_label = tk.Label(mcp_status_row, text="● Stopped", anchor="w", fg="red")
+        self.mcp_status_label.pack(side="left", fill="x", expand=True)
+
+        # Flask URL
         url_row = tk.Frame(info_frame)
         url_row.pack(fill="x", pady=3)
-        tk.Label(url_row, text="URL:", width=10, anchor="w").pack(side="left")
+        tk.Label(url_row, text="Flask URL:", width=10, anchor="w").pack(side="left")
         self.url_label = tk.Label(url_row, text=f"http://localhost:{self.port}",
                                   anchor="w", fg="gray", cursor="hand2")
         self.url_label.pack(side="left", fill="x", expand=True)
         self.url_label.bind("<Button-1>", lambda e: self.open_browser())
+
+        # MCP URL
+        mcp_url_row = tk.Frame(info_frame)
+        mcp_url_row.pack(fill="x", pady=3)
+        tk.Label(mcp_url_row, text="MCP URL:", width=10, anchor="w").pack(side="left")
+        self.mcp_url_label = tk.Label(mcp_url_row, text=f"http://localhost:{self.mcp_port}",
+                                      anchor="w", fg="gray")
+        self.mcp_url_label.pack(side="left", fill="x", expand=True)
 
         # Right: Control section
         control_frame = tk.LabelFrame(top_frame, text="Controls", padx=10, pady=10)
@@ -148,12 +170,12 @@ class TrilobaseGUI:
         server_row = tk.Frame(control_frame)
         server_row.pack(pady=3)
 
-        self.start_btn = tk.Button(server_row, text="▶ Start", width=12,
+        self.start_btn = tk.Button(server_row, text="▶ Start All", width=12,
                                    command=self.start_server, bg="#4CAF50", fg="white",
                                    relief="raised", bd=2)
         self.start_btn.pack(side="left", padx=2)
 
-        self.stop_btn = tk.Button(server_row, text="■ Stop", width=12,
+        self.stop_btn = tk.Button(server_row, text="■ Stop All", width=12,
                                   command=self.stop_server, state="disabled",
                                   bg="#f44336", fg="white", relief="raised", bd=2)
         self.stop_btn.pack(side="left", padx=2)
@@ -227,6 +249,14 @@ class TrilobaseGUI:
             self.server_running = True
             self._update_status()
 
+            # Start MCP server
+            try:
+                self._start_mcp_server()
+                self.mcp_running = True
+                self._update_status()
+            except Exception as mcp_error:
+                self._append_log(f"WARNING: MCP server failed to start: {mcp_error}", "WARNING")
+
             # Auto-open browser after 1.5 seconds
             self.root.after(1500, self.open_browser)
 
@@ -286,6 +316,87 @@ class TrilobaseGUI:
         )
         self.log_reader_thread.start()
 
+    def _start_mcp_server(self):
+        """Start MCP server (SSE mode)."""
+        if getattr(sys, 'frozen', False):
+            self._start_mcp_threaded()
+        else:
+            self._start_mcp_subprocess()
+
+    def _start_mcp_threaded(self):
+        """Start MCP server in thread (for frozen/PyInstaller mode)."""
+        self._append_log("Starting MCP server (threaded mode)...", "INFO")
+
+        # Import mcp_server module
+        try:
+            import mcp_server
+        except ImportError as e:
+            raise Exception(f"Could not import MCP server: {e}")
+
+        # Start MCP in thread
+        def run_mcp():
+            try:
+                mcp_server.run_sse(host='localhost', port=self.mcp_port)
+            except Exception as e:
+                self.root.after(0, self._append_log, f"MCP ERROR: {e}", "ERROR")
+                self.mcp_running = False
+                self.root.after(0, self._update_status)
+
+        self.mcp_thread = threading.Thread(target=run_mcp, daemon=True)
+        self.mcp_thread.start()
+
+        self._append_log(f"MCP server started on port {self.mcp_port}", "INFO")
+
+    def _start_mcp_subprocess(self):
+        """Start MCP server as subprocess (for development mode)."""
+        python_exe = sys.executable
+        mcp_py = os.path.join(self.base_path, 'mcp_server.py')
+
+        if not os.path.exists(mcp_py):
+            raise FileNotFoundError(f"mcp_server.py not found at {mcp_py}")
+
+        self._append_log(f"Starting MCP server (subprocess mode, port {self.mcp_port})...", "INFO")
+
+        # Start MCP as subprocess
+        self.mcp_process = subprocess.Popen(
+            [python_exe, mcp_py, '--mode', 'sse', '--port', str(self.mcp_port)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            universal_newlines=True,
+            bufsize=1,
+            cwd=self.base_path
+        )
+
+        # Start MCP log reader thread
+        self.mcp_log_reader_thread = threading.Thread(
+            target=self._read_mcp_logs,
+            daemon=True
+        )
+        self.mcp_log_reader_thread.start()
+
+    def _read_mcp_logs(self):
+        """Read MCP server logs from subprocess and display in GUI."""
+        while self.mcp_running and self.mcp_process:
+            try:
+                line = self.mcp_process.stdout.readline()
+                if line:
+                    # Add MCP prefix and update GUI from main thread
+                    prefixed_line = f"[MCP] {line.strip()}"
+                    self.root.after(0, self._append_log, prefixed_line, "INFO")
+                else:
+                    # EOF or process terminated
+                    break
+            except Exception as e:
+                self._append_log(f"MCP log reader error: {e}", "ERROR")
+                break
+
+        # Check if process ended with error
+        if self.mcp_process:
+            returncode = self.mcp_process.poll()
+            if returncode is not None and returncode != 0:
+                self.root.after(0, self._append_log,
+                              f"MCP server process exited with code {returncode}", "ERROR")
+
     def _run_flask_app(self):
         """Run Flask app (called in thread for frozen mode)."""
         try:
@@ -310,8 +421,32 @@ class TrilobaseGUI:
             self.root.after(0, self._update_status)
 
     def stop_server(self):
-        """Stop Flask server."""
+        """Stop Flask and MCP servers."""
+        if not self.server_running and not self.mcp_running:
+            return
+
+        # Stop MCP server first
+        if self.mcp_running:
+            self._append_log("Stopping MCP server...", "INFO")
+            self.mcp_running = False
+
+            if self.mcp_process:
+                try:
+                    self.mcp_process.terminate()
+                    self.mcp_process.wait(timeout=3)
+                    self._append_log("MCP server stopped successfully", "INFO")
+                except subprocess.TimeoutExpired:
+                    self._append_log("MCP server did not stop gracefully, forcing...", "WARNING")
+                    self.mcp_process.kill()
+                    self.mcp_process.wait()
+                except Exception as e:
+                    self._append_log(f"WARNING: Error stopping MCP server: {e}", "WARNING")
+                finally:
+                    self.mcp_process = None
+
+        # Stop Flask server
         if not self.server_running:
+            self._update_status()
             return
 
         self._append_log("Stopping Flask server...", "INFO")
@@ -433,17 +568,29 @@ class TrilobaseGUI:
 
     def quit_app(self):
         """Quit application."""
-        if self.server_running:
+        if self.server_running or self.mcp_running:
             result = messagebox.askyesno("Quit",
-                                        "Server is still running.\n\n"
+                                        "Servers are still running.\n\n"
                                         "Are you sure you want to quit?")
             if not result:
                 return
 
             # Mark as stopped (don't call stop_server to avoid delays)
             self.server_running = False
+            self.mcp_running = False
 
-        # Clean up server process if still running (subprocess mode)
+        # Clean up MCP server process
+        if self.mcp_process:
+            try:
+                self.mcp_process.terminate()
+                self.mcp_process.wait(timeout=2)
+            except:
+                try:
+                    self.mcp_process.kill()
+                except:
+                    pass
+
+        # Clean up Flask server process
         if self.server_process:
             try:
                 self.server_process.terminate()
@@ -460,19 +607,33 @@ class TrilobaseGUI:
 
     def _update_status(self):
         """Update UI based on server status."""
+        # Update Flask status
         if self.server_running:
             self.status_label.config(text="● Running", fg="green")
-            self.start_btn.config(state="disabled", relief="sunken")
-            self.stop_btn.config(state="normal", relief="raised")
-            self.browser_btn.config(state="normal")
             self.url_label.config(fg="blue")
+            self.browser_btn.config(state="normal")
         else:
             self.status_label.config(text="● Stopped", fg="red")
+            self.url_label.config(fg="gray")
+            self.browser_btn.config(state="disabled")
+
+        # Update MCP status
+        if self.mcp_running:
+            self.mcp_status_label.config(text="● Running", fg="green")
+            self.mcp_url_label.config(fg="blue")
+        else:
+            self.mcp_status_label.config(text="● Stopped", fg="red")
+            self.mcp_url_label.config(fg="gray")
+
+        # Update buttons
+        any_running = self.server_running or self.mcp_running
+        if any_running:
+            self.start_btn.config(state="disabled", relief="sunken")
+            self.stop_btn.config(state="normal", relief="raised")
+        else:
             self.start_btn.config(state="normal" if self.db_exists else "disabled",
                                  relief="raised")
             self.stop_btn.config(state="disabled", relief="sunken")
-            self.browser_btn.config(state="disabled")
-            self.url_label.config(fg="gray")
 
     def run(self):
         """Start GUI main loop."""

@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-09
+**마지막 업데이트:** 2026-02-10
 
 ## 프로젝트 개요
 
@@ -125,7 +125,7 @@
   - 계획 문서: `devlog/20260209_P14_phase22_mcp_wrapper.md`
   - 완료 로그: `devlog/20260209_022_phase22_mcp_server.md`
   - 완료:
-    - ✅ `mcp_server.py` 구현 (729 lines, 14개 도구)
+    - ✅ `mcp_server.py` 구현 (729 lines, 14개 도구, stdio 모드)
     - ✅ Evidence Pack 패턴 구현 (raw_entry, fide, provenance 필드)
     - ✅ 버그 3개 수정 (중복 코드, fetchone 호출, bibliography 컬럼)
     - ✅ 테스트 작성 및 통과 (test_mcp_basic.py, test_mcp.py)
@@ -141,6 +141,26 @@
     - **DB is truth, MCP is access, LLM is narration**
     - LLM은 판단/정의 금지, 증거 기반 서술만 수행
     - Canonical DB 불변, Overlay DB를 통한 사용자 주석만 허용
+
+- **Phase 23 완료**: MCP Server SSE 통합 (**브랜치: `feature/scoda-implementation`**)
+  - 목표: MCP 서버를 GUI에 통합하여 Flask와 함께 SSE 모드로 자동 실행
+  - 계획 문서: `devlog/20260210_P15_phase23_mcp_sse_integration.md`
+  - 완료 로그: `devlog/20260210_023_phase23_mcp_sse_integration.md`
+  - 완료:
+    - ✅ SSE 모드 구현 (Starlette + Uvicorn, 포트 8081)
+    - ✅ GUI 통합 (Flask + MCP 동시 시작/중지)
+    - ✅ Health check 엔드포인트 (`/health`)
+    - ✅ 하위 호환성 유지 (stdio 모드 계속 사용 가능)
+    - ✅ PyInstaller spec 업데이트 (mcp_server.py 포함)
+    - ✅ 의존성 추가 (`starlette`, `uvicorn`)
+  - SSE 엔드포인트:
+    - `GET /sse`: SSE 연결 (MCP 통신)
+    - `POST /messages`: 메시지 전송
+    - `GET /health`: 헬스체크
+  - 주요 개선:
+    - DB 연결 유지 → 빠른 응답
+    - 원클릭 시작 ("Start All" 버튼)
+    - 통합 로그 뷰어 (Flask + MCP)
 
 ### 데이터베이스 현황
 
@@ -205,7 +225,7 @@ trilobase/
 ├── trilobite_genus_list_original.txt # 원본 백업
 ├── adrain2011.txt                    # Order 통합을 위한 suprafamilial taxa 목록
 ├── app.py                            # Flask 웹 앱
-├── mcp_server.py                     # MCP 서버 (Phase 22, 729 lines)
+├── mcp_server.py                     # MCP 서버 (Phase 22-23, 829 lines, stdio/SSE 모드)
 ├── templates/
 │   └── index.html                    # 메인 페이지
 ├── static/
@@ -265,6 +285,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 20 | Overlay DB 분리 (read-only 문제 해결) | ✅ 완료 |
 | Phase 21 | GUI 로그 뷰어 (디버깅 지원) | ✅ 완료 |
 | Phase 22 | MCP Server (LLM 자연어 쿼리 지원) | ✅ 완료 |
+| Phase 23 | MCP Server SSE 통합 (GUI 통합) | ✅ 완료 |
 
 ## 미해결 항목
 
@@ -296,6 +317,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 20. ~~Phase 20: Overlay DB 분리~~ ✅
 21. ~~Phase 21: GUI 로그 뷰어~~ ✅
 22. ~~Phase 22: MCP Server~~ ✅ (브랜치: `feature/scoda-implementation`)
+23. ~~Phase 23: MCP Server SSE 통합~~ ✅ (브랜치: `feature/scoda-implementation`)
 
 ## DB 스키마
 

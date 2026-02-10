@@ -99,10 +99,39 @@ Trilobase는 **Model Context Protocol (MCP)** 서버를 내장하고 있어, Cla
 #### Requirements
 
 ```bash
-pip install mcp pytest pytest-asyncio
+pip install mcp starlette uvicorn pytest pytest-asyncio
 ```
 
-#### Claude Desktop Configuration
+#### Method 1: SSE Mode (Recommended - GUI와 함께 사용)
+
+**장점:** DB 연결 유지, 빠른 응답, GUI에서 원클릭 시작
+
+1. Trilobase GUI 실행:
+   ```bash
+   python scripts/gui.py
+   # 또는 PyInstaller 번들: ./trilobase
+   ```
+
+2. "▶ Start All" 클릭 → Flask (8080) + MCP (8081) 동시 시작
+
+3. Claude Desktop 설정:
+   ```json
+   {
+     "mcpServers": {
+       "trilobase": {
+         "url": "http://localhost:8081/sse"
+       }
+     }
+   }
+   ```
+
+4. Claude Desktop 재시작 후 사용
+
+**주의:** GUI가 실행 중이어야 MCP 서버 사용 가능
+
+#### Method 2: stdio Mode (기존 방식)
+
+**장점:** GUI 없이 독립 실행 가능
 
 **파일:** `~/.config/claude/claude_desktop_config.json` (macOS/Linux) 또는 `%APPDATA%\Claude\claude_desktop_config.json` (Windows)
 
@@ -111,7 +140,7 @@ pip install mcp pytest pytest-asyncio
   "mcpServers": {
     "trilobase": {
       "command": "python",
-      "args": ["/absolute/path/to/trilobase/mcp_server.py"],
+      "args": ["/absolute/path/to/trilobase/mcp_server.py", "--mode", "stdio"],
       "cwd": "/absolute/path/to/trilobase"
     }
   }

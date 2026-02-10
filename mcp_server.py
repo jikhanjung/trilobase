@@ -1,11 +1,17 @@
 import sqlite3
 import os
 import sys
+import argparse
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
+from mcp.server.sse import SseServerTransport
 from mcp.types import Tool, TextContent
 import json
 import asyncio
+from starlette.applications import Starlette
+from starlette.routing import Route
+from starlette.responses import Response
+import uvicorn
 
 # DB path resolution (app.py와 동일)
 if getattr(sys, 'frozen', False):
@@ -720,10 +726,87 @@ async def call_tool(name: str, arguments: dict) -> list[TextContent]:
     # Fallback for unknown tools
     return [TextContent(type="text", text=json.dumps({"error": f"Tool '{name}' not implemented."}))]
 
-async def main():
+async def run_stdio():
+    """Run MCP server in stdio mode (for Claude Desktop spawning)."""
+    init_overlay_db()
     async with stdio_server() as (read_stream, write_stream):
         await app.run(read_stream, write_stream, app.create_initialization_options())
 
+def run_sse(host: str = "localhost", port: int = 8081):
+    """Run MCP server in SSE mode (HTTP server for persistent connections)."""
+    init_overlay_db()
+
+    # Create SSE transport
+    sse = SseServerTransport("/messages")
+
+    async def handle_sse(request):
+        """Handle SSE connections."""
+        async with sse.connect_sse(
+            request.scope, request.receive, request._send
+        ) as streams:
+            await app.run(
+                streams[0], streams[1], app.create_initialization_options()
+            )
+        return Response()
+
+    async def handle_messages(request):
+        """Handle message POST requests."""
+        return await sse.handle_post_message(request.scope, request.receive, request._send)
+
+    async def health_check(request):
+        """Simple health check endpoint."""
+        return Response(
+            content=json.dumps({
+                "status": "ok",
+                "service": "trilobase-mcp",
+                "mode": "sse"
+            }),
+            media_type="application/json"
+        )
+
+    # Create Starlette app
+    starlette_app = Starlette(
+        routes=[
+            Route("/sse", endpoint=handle_sse),
+            Route("/messages", endpoint=handle_messages, methods=["POST"]),
+            Route("/health", endpoint=health_check),
+        ]
+    )
+
+    print(f"🚀 Trilobase MCP Server (SSE mode) starting on http://{host}:{port}")
+    print(f"   SSE endpoint: http://{host}:{port}/sse")
+    print(f"   Health check: http://{host}:{port}/health")
+
+    uvicorn.run(starlette_app, host=host, port=port, log_level="info")
+
+def main():
+    """Main entry point - parse args and run in appropriate mode."""
+    parser = argparse.ArgumentParser(description="Trilobase MCP Server")
+    parser.add_argument(
+        "--mode",
+        choices=["stdio", "sse"],
+        default="stdio",
+        help="Server mode: stdio (for Claude Desktop) or sse (HTTP server)"
+    )
+    parser.add_argument(
+        "--host",
+        default="localhost",
+        help="Host to bind SSE server to (SSE mode only)"
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=8081,
+        help="Port for SSE server (SSE mode only)"
+    )
+
+    args = parser.parse_args()
+
+    if args.mode == "stdio":
+        asyncio.run(run_stdio())
+    else:
+        # SSE mode runs synchronously with uvicorn
+        run_sse(args.host, args.port)
+
 if __name__ == "__main__":
-    import asyncio
-    asyncio.run(main())
+    main()
