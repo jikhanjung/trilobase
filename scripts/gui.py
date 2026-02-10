@@ -663,6 +663,11 @@ Examples:
         action='store_true',
         help='Run MCP server in stdio mode (for Claude Desktop spawning)'
     )
+    parser.add_argument(
+        '--gui-detached',
+        action='store_true',
+        help=argparse.SUPPRESS  # Internal flag: prevents re-spawn loop
+    )
 
     args = parser.parse_args()
 
@@ -686,15 +691,16 @@ Examples:
             sys.exit(1)
 
     else:
-        # GUI mode: hide console window on Windows when frozen
-        if getattr(sys, 'frozen', False) and sys.platform == 'win32':
-            try:
-                import ctypes
-                ctypes.windll.user32.ShowWindow(
-                    ctypes.windll.kernel32.GetConsoleWindow(), 0  # SW_HIDE
-                )
-            except Exception:
-                pass  # Not critical if hiding fails
+        # GUI mode: re-spawn as DETACHED_PROCESS on Windows (frozen) to free the console.
+        # This allows cmd.exe to return immediately instead of waiting for the GUI to close.
+        if getattr(sys, 'frozen', False) and sys.platform == 'win32' and not args.gui_detached:
+            DETACHED_PROCESS = 0x00000008
+            subprocess.Popen(
+                [sys.executable, '--gui-detached'],
+                creationflags=DETACHED_PROCESS,
+                close_fds=True
+            )
+            sys.exit(0)
 
         try:
             gui = TrilobaseGUI()
