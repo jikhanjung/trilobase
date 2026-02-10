@@ -182,30 +182,6 @@
   - `trilobase.spec` 두 개의 독립 EXE 블록으로 분리
   - Claude Desktop 설정: `"command": "trilobase_mcp.exe"` (args 불필요)
 
-- **Phase 25 완료**: Single EXE MCP stdio 모드 지원 (**브랜치: `feature/scoda-implementation`**)
-  - 목표: `trilobase.exe --mcp-stdio`로 Claude Desktop이 직접 spawn, Node.js 불필요
-  - 계획 문서: `devlog/20260210_P16_mcp_stdio_single_exe.md`
-  - 완료 로그: `devlog/20260210_025_phase25_mcp_stdio_single_exe.md`
-  - 완료:
-    - ✅ `main()` 함수에 argparse + `--mcp-stdio` 옵션 추가
-    - ✅ stdio 모드 시 `mcp_server.run_stdio()` 직접 호출
-    - ✅ GUI 모드 시 Windows 콘솔 창 숨김 (ctypes)
-    - ✅ `trilobase.spec`: `console=True`로 변경 (stdio 필수, GUI는 코드로 숨김)
-  - 실행 방법:
-    - GUI: `trilobase.exe` (더블클릭)
-    - MCP stdio: `trilobase.exe --mcp-stdio` (Claude Desktop 자동 spawn)
-  - Claude Desktop 설정:
-    ```json
-    {
-      "mcpServers": {
-        "trilobase": {
-          "command": "C:\\path\\to\\trilobase.exe",
-          "args": ["--mcp-stdio"]
-        }
-      }
-    }
-    ```
-  - 효과: Node.js(mcp-remote) 의존성 제거 가능
 
 ### 데이터베이스 현황
 
