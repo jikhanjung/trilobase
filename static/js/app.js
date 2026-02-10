@@ -9,11 +9,237 @@ let genusModal = null;
 let currentGenera = [];  // Store current genera for filtering
 let showOnlyValid = true;  // Filter state
 
+// Manifest state
+let manifest = null;
+let currentView = 'taxonomy_tree';
+let tableViewData = [];
+let tableViewSort = null;
+let tableViewSearchTerm = '';
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     genusModal = new bootstrap.Modal(document.getElementById('genusModal'));
+    loadManifest();
     loadTree();
 });
+
+/**
+ * Load UI manifest from API (graceful degradation if unavailable)
+ */
+async function loadManifest() {
+    try {
+        const response = await fetch('/api/manifest');
+        if (!response.ok) return;
+        const data = await response.json();
+        manifest = data.manifest;
+        buildViewTabs();
+    } catch (error) {
+        // Graceful degradation: manifest unavailable, use existing UI
+    }
+}
+
+/**
+ * Build view tabs from manifest
+ */
+function buildViewTabs() {
+    if (!manifest || !manifest.views) return;
+
+    const tabsContainer = document.getElementById('view-tabs');
+    let html = '';
+
+    for (const [key, view] of Object.entries(manifest.views)) {
+        // Skip detail type views (they're not top-level tabs)
+        if (view.type === 'detail') continue;
+
+        const isActive = key === currentView;
+        const icon = view.icon || 'bi-square';
+        html += `<button class="view-tab ${isActive ? 'active' : ''}"
+                         data-view="${key}" onclick="switchToView('${key}')">
+                    <i class="bi ${icon}"></i> ${view.title}
+                 </button>`;
+    }
+
+    tabsContainer.innerHTML = html;
+}
+
+/**
+ * Switch between views
+ */
+function switchToView(viewKey) {
+    if (!manifest || !manifest.views[viewKey]) return;
+
+    currentView = viewKey;
+    const view = manifest.views[viewKey];
+
+    // Update tab active state
+    document.querySelectorAll('.view-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.view === viewKey);
+    });
+
+    // Show/hide view containers
+    const treeContainer = document.getElementById('view-tree');
+    const tableContainer = document.getElementById('view-table');
+
+    if (view.type === 'tree') {
+        treeContainer.style.display = '';
+        tableContainer.style.display = 'none';
+    } else if (view.type === 'table') {
+        treeContainer.style.display = 'none';
+        tableContainer.style.display = '';
+        tableViewSort = view.default_sort || null;
+        tableViewSearchTerm = '';
+        renderTableView(viewKey);
+    }
+}
+
+/**
+ * Render a table view using manifest definition and query execution
+ */
+async function renderTableView(viewKey) {
+    const view = manifest.views[viewKey];
+    if (!view || view.type !== 'table') return;
+
+    const header = document.getElementById('table-view-header');
+    const toolbar = document.getElementById('table-view-toolbar');
+    const body = document.getElementById('table-view-body');
+
+    // Header
+    header.innerHTML = `<h5><i class="bi ${view.icon || 'bi-table'}"></i> ${view.title}</h5>
+                        <p class="text-muted mb-0">${view.description || ''}</p>`;
+
+    // Toolbar (search)
+    if (view.searchable) {
+        toolbar.innerHTML = `<div class="table-view-search">
+            <i class="bi bi-search"></i>
+            <input type="text" class="form-control form-control-sm"
+                   placeholder="Search..." id="table-search-input"
+                   oninput="onTableSearch(this.value)" value="${tableViewSearchTerm}">
+        </div>`;
+    } else {
+        toolbar.innerHTML = '';
+    }
+
+    // Load data
+    body.innerHTML = '<div class="loading">Loading...</div>';
+
+    try {
+        const response = await fetch(`/api/queries/${view.source_query}/execute`);
+        if (!response.ok) {
+            body.innerHTML = '<div class="text-danger">Error loading data</div>';
+            return;
+        }
+        const data = await response.json();
+        tableViewData = data.rows;
+        renderTableViewRows(viewKey);
+    } catch (error) {
+        body.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
+    }
+}
+
+/**
+ * Render table rows with current sort and search applied
+ */
+function renderTableViewRows(viewKey) {
+    const view = manifest.views[viewKey];
+    if (!view || !view.columns) return;
+
+    const body = document.getElementById('table-view-body');
+    let rows = [...tableViewData];
+
+    // Apply search
+    if (tableViewSearchTerm) {
+        const term = tableViewSearchTerm.toLowerCase();
+        const searchableCols = view.columns.filter(c => c.searchable).map(c => c.key);
+        rows = rows.filter(row =>
+            searchableCols.some(key => {
+                const val = row[key];
+                return val && String(val).toLowerCase().includes(term);
+            })
+        );
+    }
+
+    // Apply sort
+    if (tableViewSort) {
+        const { key, direction } = tableViewSort;
+        rows.sort((a, b) => {
+            let va = a[key], vb = b[key];
+            if (va == null) va = '';
+            if (vb == null) vb = '';
+            if (typeof va === 'number' && typeof vb === 'number') {
+                return direction === 'asc' ? va - vb : vb - va;
+            }
+            va = String(va).toLowerCase();
+            vb = String(vb).toLowerCase();
+            if (va < vb) return direction === 'asc' ? -1 : 1;
+            if (va > vb) return direction === 'asc' ? 1 : -1;
+            return 0;
+        });
+    }
+
+    // Build table
+    let html = `<div class="table-view-stats text-muted mb-2">${rows.length} of ${tableViewData.length} records</div>`;
+    html += '<table class="manifest-table"><thead><tr>';
+
+    view.columns.forEach(col => {
+        const sortIcon = getSortIcon(col.key);
+        const sortable = col.sortable ? `onclick="onTableSort('${viewKey}', '${col.key}')"` : '';
+        const sortableClass = col.sortable ? 'sortable' : '';
+        html += `<th class="${sortableClass}" ${sortable}>${col.label} ${sortIcon}</th>`;
+    });
+    html += '</tr></thead><tbody>';
+
+    if (rows.length === 0) {
+        html += `<tr><td colspan="${view.columns.length}" class="text-center text-muted py-4">No matching records</td></tr>`;
+    } else {
+        rows.forEach(row => {
+            html += '<tr>';
+            view.columns.forEach(col => {
+                let val = row[col.key];
+                if (col.type === 'boolean') {
+                    val = val ? 'Yes' : 'No';
+                } else if (val == null) {
+                    val = '';
+                }
+                const italic = col.italic ? `<i>${val}</i>` : val;
+                html += `<td>${italic}</td>`;
+            });
+            html += '</tr>';
+        });
+    }
+
+    html += '</tbody></table>';
+    body.innerHTML = html;
+}
+
+/**
+ * Get sort indicator icon for a column
+ */
+function getSortIcon(key) {
+    if (!tableViewSort || tableViewSort.key !== key) return '';
+    return tableViewSort.direction === 'asc'
+        ? '<i class="bi bi-caret-up-fill"></i>'
+        : '<i class="bi bi-caret-down-fill"></i>';
+}
+
+/**
+ * Handle table column sort click
+ */
+function onTableSort(viewKey, key) {
+    if (tableViewSort && tableViewSort.key === key) {
+        tableViewSort.direction = tableViewSort.direction === 'asc' ? 'desc' : 'asc';
+    } else {
+        tableViewSort = { key, direction: 'asc' };
+    }
+    renderTableViewRows(viewKey);
+}
+
+/**
+ * Handle table search input
+ */
+function onTableSearch(value) {
+    tableViewSearchTerm = value;
+    renderTableViewRows(currentView);
+}
 
 /**
  * Load taxonomy tree from API
@@ -360,7 +586,13 @@ async function showGenusDetail(genusId) {
                 </div>`;
         }
 
+        // My Notes section
+        html += buildAnnotationSectionHTML('genus', g.id);
+
         modalBody.innerHTML = html;
+
+        // Load annotations after DOM is ready
+        loadAnnotations('genus', g.id);
 
     } catch (error) {
         modalBody.innerHTML = `<div class="text-danger">Error loading genus: ${error.message}</div>`;
@@ -468,7 +700,14 @@ async function showRankDetail(rankId, rankName, rankType) {
                 </div>`;
         }
 
+        // My Notes section
+        const entityType = r.rank.toLowerCase();
+        html += buildAnnotationSectionHTML(entityType, r.id);
+
         modalBody.innerHTML = html;
+
+        // Load annotations after DOM is ready
+        loadAnnotations(entityType, r.id);
 
     } catch (error) {
         modalBody.innerHTML = `<div class="text-danger">Error loading details: ${error.message}</div>`;
@@ -554,4 +793,135 @@ function collapseAll() {
 function truncate(text, maxLength) {
     if (!text) return '';
     return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+}
+
+/**
+ * Build the static HTML for the annotation section (form + placeholder for list)
+ */
+function buildAnnotationSectionHTML(entityType, entityId) {
+    return `
+        <div class="annotation-section" id="annotation-section-${entityType}-${entityId}">
+            <h6>My Notes</h6>
+            <div id="annotation-list-${entityType}-${entityId}">
+                <div class="loading">Loading notes...</div>
+            </div>
+            <div class="annotation-form mt-2">
+                <div class="mb-2">
+                    <select class="form-select form-select-sm" id="annotation-type-${entityType}-${entityId}">
+                        <option value="note">Note</option>
+                        <option value="correction">Correction</option>
+                        <option value="alternative">Alternative</option>
+                        <option value="link">Link</option>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <textarea class="form-control form-control-sm" id="annotation-content-${entityType}-${entityId}"
+                              rows="2" placeholder="Add a note..."></textarea>
+                </div>
+                <div class="d-flex gap-2">
+                    <input type="text" class="form-control form-control-sm" id="annotation-author-${entityType}-${entityId}"
+                           placeholder="Author (optional)" style="max-width: 200px;">
+                    <button class="btn btn-sm btn-outline-primary"
+                            onclick="addAnnotation('${entityType}', ${entityId})">Add</button>
+                </div>
+            </div>
+        </div>`;
+}
+
+/**
+ * Load annotations for an entity and render them
+ */
+async function loadAnnotations(entityType, entityId) {
+    const listContainer = document.getElementById(`annotation-list-${entityType}-${entityId}`);
+    if (!listContainer) return;
+
+    try {
+        const response = await fetch(`/api/annotations/${entityType}/${entityId}`);
+        const annotations = await response.json();
+
+        if (annotations.length === 0) {
+            listContainer.innerHTML = '<p class="text-muted mb-0" style="font-size:0.85rem;">No notes yet.</p>';
+            return;
+        }
+
+        let html = '';
+        annotations.forEach(a => {
+            const typeBadge = {
+                'note': 'bg-info',
+                'correction': 'bg-warning text-dark',
+                'alternative': 'bg-success',
+                'link': 'bg-primary'
+            }[a.annotation_type] || 'bg-secondary';
+
+            html += `
+                <div class="annotation-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <span class="badge ${typeBadge}" style="font-size:0.7rem;">${a.annotation_type}</span>
+                            ${a.author ? `<small class="text-muted ms-1">${a.author}</small>` : ''}
+                            <small class="text-muted ms-1">${a.created_at}</small>
+                        </div>
+                        <button class="btn btn-sm btn-outline-danger" style="padding:0 4px; font-size:0.7rem;"
+                                onclick="deleteAnnotation(${a.id}, '${entityType}', ${entityId})">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+                    <div style="margin-top:4px; font-size:0.9rem;">${a.content}</div>
+                </div>`;
+        });
+
+        listContainer.innerHTML = html;
+    } catch (error) {
+        listContainer.innerHTML = `<div class="text-danger" style="font-size:0.85rem;">Error loading notes.</div>`;
+    }
+}
+
+/**
+ * Add a new annotation
+ */
+async function addAnnotation(entityType, entityId) {
+    const contentEl = document.getElementById(`annotation-content-${entityType}-${entityId}`);
+    const typeEl = document.getElementById(`annotation-type-${entityType}-${entityId}`);
+    const authorEl = document.getElementById(`annotation-author-${entityType}-${entityId}`);
+
+    const content = contentEl.value.trim();
+    if (!content) return;
+
+    try {
+        const response = await fetch('/api/annotations', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                entity_type: entityType,
+                entity_id: entityId,
+                annotation_type: typeEl.value,
+                content: content,
+                author: authorEl.value.trim() || null
+            })
+        });
+
+        if (response.ok) {
+            contentEl.value = '';
+            loadAnnotations(entityType, entityId);
+        }
+    } catch (error) {
+        // Silent fail
+    }
+}
+
+/**
+ * Delete an annotation
+ */
+async function deleteAnnotation(annotationId, entityType, entityId) {
+    try {
+        const response = await fetch(`/api/annotations/${annotationId}`, {
+            method: 'DELETE'
+        });
+
+        if (response.ok) {
+            loadAnnotations(entityType, entityId);
+        }
+    } catch (error) {
+        // Silent fail
+    }
 }

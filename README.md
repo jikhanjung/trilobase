@@ -50,12 +50,30 @@ Flask 기반 웹 인터페이스를 통해 탐색할 수 있습니다.
 
 ## Installation & Usage
 
-### Requirements
+### Option 1: Standalone Executable (Recommended for End Users)
+
+**Windows / Linux 사용자를 위한 간편한 실행 방법:**
+
+1. 릴리스 페이지에서 `trilobase.exe` (Windows) 또는 `trilobase` (Linux) 다운로드
+2. 실행 파일을 더블클릭 또는 터미널에서 실행
+3. GUI 컨트롤 패널에서 "▶ Start Server" 클릭
+4. 웹 브라우저가 자동으로 열리며 http://localhost:8080 표시
+
+**특징:**
+- Python 설치 불필요
+- 모든 데이터와 웹 서버가 단일 실행 파일에 포함
+- 사용자 주석은 별도 파일(`trilobase_overlay.db`)에 저장되어 영구 보존
+
+### Option 2: Python Development Mode
+
+**개발자 또는 소스 코드 수정이 필요한 사용자:**
+
+#### Requirements
 
 - Python 3.8+
 - Flask
 
-### Installation
+#### Installation
 
 ```bash
 git clone https://github.com/yourusername/trilobase.git
@@ -63,7 +81,7 @@ cd trilobase
 pip install flask
 ```
 
-### Run Web Server
+#### Run Web Server
 
 ```bash
 python app.py
@@ -71,6 +89,104 @@ python app.py
 
 Open your browser and navigate to:
 http://localhost:8080
+
+### Option 3: MCP Server (For LLM Integration)
+
+**Claude/LLM이 자연어로 데이터베이스를 쿼리:**
+
+Trilobase는 **Model Context Protocol (MCP)** 서버를 내장하고 있어, Claude나 다른 LLM이 자연어로 삼엽충 데이터베이스를 탐색할 수 있습니다.
+
+#### Method 1: trilobase_mcp.exe 사용 (권장 - 일반 사용자)
+
+**장점:** Python/Node.js 설치 불필요, 인자 없이 실행, 설정 최소화
+
+**파일:** `%APPDATA%\Claude\claude_desktop_config.json` (Windows)
+
+```json
+{
+  "mcpServers": {
+    "trilobase": {
+      "command": "C:\\path\\to\\trilobase_mcp.exe"
+    }
+  }
+}
+```
+
+Claude Desktop 재시작 후 자동 연결.
+
+#### Method 2: Python source (개발자용)
+
+**Requirements:**
+```bash
+pip install mcp starlette uvicorn
+```
+
+**파일:** `~/.config/claude/claude_desktop_config.json` (macOS/Linux) 또는 `%APPDATA%\Claude\claude_desktop_config.json` (Windows)
+
+```json
+{
+  "mcpServers": {
+    "trilobase": {
+      "command": "python",
+      "args": ["/absolute/path/to/trilobase/mcp_server.py"],
+      "cwd": "/absolute/path/to/trilobase"
+    }
+  }
+}
+```
+
+#### Example Natural Language Queries
+
+Claude Desktop에서 다음과 같은 자연어 쿼리를 사용할 수 있습니다:
+
+- "중국에서 발견된 삼엽충 속을 보여줘"
+- "Paradoxides의 동의어를 알려줘"
+- "Family Paradoxididae에 속한 속들을 나열해줘"
+- "이 데이터베이스의 출처는?"
+- "Agnostus에 메모 추가: 'Check formation data'"
+
+#### MCP Tools (14개)
+
+| 카테고리 | 도구 | 설명 |
+|---------|------|------|
+| Taxonomy | `get_taxonomy_tree` | 전체 분류 계층 트리 |
+| | `get_rank_detail` | Rank 상세정보 |
+| | `get_family_genera` | Family 소속 Genus 목록 |
+| Search | `search_genera` | Genus 이름 검색 |
+| | `get_genera_by_country` | 국가별 Genus |
+| | `get_genera_by_formation` | 지층별 Genus |
+| Metadata | `get_metadata` | 메타데이터 + 통계 |
+| | `get_provenance` | 데이터 출처 |
+| Queries | `execute_named_query` | Named query 실행 |
+| Annotations | `get_annotations`, `add_annotation`, `delete_annotation` | 사용자 주석 관리 |
+| Detail | `get_genus_detail` | Evidence Pack (출처 추적) |
+
+#### Evidence Pack Pattern
+
+MCP 서버는 **SCODA 원칙**에 따라 모든 응답에 출처와 원본 데이터를 포함합니다:
+
+```json
+{
+  "genus": {
+    "name": "Paradoxides",
+    "author": "BRONGNIART",
+    "year": 1822,
+    "raw_entry": "원본 텍스트..."
+  },
+  "synonyms": [...],
+  "provenance": {
+    "source": "Jell & Adrain, 2002",
+    "canonical_version": "1.0.0"
+  }
+}
+```
+
+**핵심 원칙:**
+- **DB is truth**: 데이터베이스가 유일한 진실의 원천
+- **MCP is access**: MCP는 접근 수단일 뿐
+- **LLM is narration**: LLM은 증거 기반 서술만 수행
+
+자세한 내용: [devlog/20260209_022_phase22_mcp_server.md](devlog/20260209_022_phase22_mcp_server.md)
 
 ---
 
@@ -177,6 +293,29 @@ LIMIT 10;
 
 ---
 
+## SCODA (Self-Contained Data Artifact)
+
+Trilobase는 **SCODA** 프레임워크의 참조 구현입니다.
+
+SCODA는 데이터를 서비스가 아닌 **자기완결적 지식 객체**로 다루는 접근법입니다.
+`trilobase.db` 파일 하나가 데이터뿐 아니라 자신의 신원(identity), 출처(provenance),
+스키마 설명(semantics)을 내장하고 있어, 외부 문서 없이도 스스로를 설명합니다.
+
+```sql
+-- 아티팩트 정보 확인
+SELECT * FROM artifact_metadata;
+
+-- 데이터 출처 확인
+SELECT source_type, citation, year FROM provenance;
+
+-- 테이블/컬럼 설명 조회
+SELECT * FROM schema_descriptions WHERE table_name = 'taxonomic_ranks';
+```
+
+자세한 내용은 [docs/SCODA_CONCEPT.md](docs/SCODA_CONCEPT.md)와 [devlog/20260207_P07_scoda_implementation.md](devlog/20260207_P07_scoda_implementation.md)를 참조하세요.
+
+---
+
 ## Intended Use & Scope
 
 - Research, data exploration, and methodological development
@@ -189,6 +328,14 @@ LIMIT 10;
 
 This project is provided for academic research purposes.
 Copyright of the original taxonomic data remains with the respective authors.
+
+---
+
+## Documentation
+
+- **[Release Guide](docs/RELEASE_GUIDE.md)** — Versioning and deployment procedures for SCODA releases
+- **[Handover Document](docs/HANDOVER.md)** — Project status and development history
+- **[SCODA Concept](docs/SCODA_CONCEPT.md)** — Self-Contained Data Artifact framework
 
 ---
 

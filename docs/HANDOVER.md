@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-06
+**마지막 업데이트:** 2026-02-10
 
 ## 프로젝트 개요
 
@@ -49,6 +49,140 @@
   - Rank 상세정보 Statistics 중복 표시 수정 (Genera/Genus)
   - Children 목록 클릭 네비게이션 (트리 펼침 + 상세정보 표시)
 
+- **Phase 13 완료**: SCODA-Core 메타데이터 (**브랜치: `feature/scoda-implementation`**)
+  - artifact_metadata 테이블 (7건: identity, version, license 등)
+  - provenance 테이블 (3건: Jell & Adrain 2002, Adrain 2011, build pipeline)
+  - schema_descriptions 테이블 (90건: 모든 테이블/컬럼 설명)
+  - API: `GET /api/metadata`, `GET /api/provenance`
+
+- **Phase 14 완료**: Display Intent + Saved Queries
+  - ui_display_intent 테이블 (6건: genera→tree/table, references→table 등)
+  - ui_queries 테이블 (14건: taxonomy_tree, family_genera, genera_list 등)
+  - API: `GET /api/display-intent`, `GET /api/queries`, `GET /api/queries/<name>/execute`
+  - 테스트: 63개 (기존 47 + 신규 16)
+
+- **Phase 15 완료**: UI Manifest (선언적 뷰 정의)
+  - ui_manifest 테이블 (1건: default 매니페스트)
+  - 6개 뷰 정의: taxonomy_tree, genera_table, genus_detail, references_table, formations_table, countries_table
+  - API: `GET /api/manifest`
+  - 프론트엔드: 뷰 탭 바, 범용 테이블 렌더러 (정렬/검색), tree↔table 뷰 전환
+  - 테스트: 79개 (기존 63 + 신규 16)
+
+- **Phase 16 완료**: 릴리스 메커니즘
+  - `scripts/release.py`: 릴리스 패키징 스크립트 (SHA-256 + metadata.json + README)
+  - SCODA 불변성 원칙: 기존 릴리스 덮어쓰기 불가
+  - `--dry-run` 모드 지원
+  - `releases/` 디렉토리 `.gitignore`에 추가
+  - 테스트: 91개 (기존 79 + 신규 12)
+
+- **Phase 17 완료**: Local Overlay (사용자 주석)
+  - `user_annotations` 테이블: 사용자 주석 저장 (note, correction, alternative, link)
+  - 6개 entity_type 지원: genus, family, order, suborder, superfamily, class
+  - API: `GET /api/annotations/<type>/<id>`, `POST /api/annotations`, `DELETE /api/annotations/<id>`
+  - 프론트엔드: My Notes 섹션 (Genus/Rank detail 모달, 노란 배경으로 시각적 구분)
+  - SCODA 원칙: canonical 데이터 불변, 사용자 의견은 별도 레이어
+  - 테스트: 101개 (기존 91 + 신규 10)
+
+- **Phase 18 완료**: 독립 실행형 앱 (PyInstaller)
+  - `scripts/serve.py`: Flask 서버 런처 (브라우저 자동 오픈)
+  - `trilobase.spec`: PyInstaller 빌드 설정
+  - `scripts/build.py`: 빌드 자동화 스크립트
+  - Windows/Linux onefile 빌드 지원 (13-15MB)
+  - DB/templates/static 자동 번들링
+
+- **Phase 19 완료**: GUI 컨트롤 패널
+  - `scripts/gui.py`: tkinter 기반 GUI (420x320px)
+  - Start/Stop/Open Browser/Exit 버튼
+  - DB 경로, 서버 상태, URL 표시
+  - 서버 시작 후 자동 브라우저 오픈
+  - 콘솔 숨김 모드 (`console=False`)
+
+- **Phase 20 완료**: Overlay DB 분리 (PyInstaller read-only 문제 해결)
+  - Canonical DB: 실행 파일 내부 (read-only, 불변)
+  - Overlay DB: 실행 파일 외부 (`trilobase_overlay.db`, read/write)
+  - SQLite ATTACH로 이중 DB 연결
+  - `overlay_metadata` 테이블: canonical 버전 추적
+  - `entity_name` 컬럼 추가: 릴리스 간 annotation 매칭용
+  - GUI에 Canonical + Overlay DB 정보 표시
+  - 테스트: 101개 통과
+
+- **Phase 21 완료**: GUI 로그 뷰어 + PyInstaller 호환성 수정
+  - GUI 크기: 800x600 (리사이즈 가능)
+  - Flask 로그 실시간 표시:
+    - Frozen 모드(PyInstaller): threading + sys.stdout/stderr redirect
+    - 개발 모드: subprocess로 Flask 실행
+  - 색상별 로그 레벨: ERROR(빨강), WARNING(주황), INFO(파랑), SUCCESS(초록)
+  - 로그 자동 감지: 200 OK→초록, Exception→빨강, Running on→파랑
+  - Clear Log 버튼, 자동 스크롤, 1000줄 제한
+  - PyInstaller 버그 수정:
+    - Frozen 모드 중복 프로세스 방지 (subprocess → threading)
+    - scripts 모듈 import 실패 → app.py에 overlay DB 생성 함수 inline
+    - bytes/str 처리, stderr 로그 색상 자동 감지
+  - Windows 환경 디버깅 용이성 대폭 향상
+
+- **Phase 22 완료**: MCP Server (Model Context Protocol) (**브랜치: `feature/scoda-implementation`**)
+  - 목표: LLM이 자연어로 Trilobase 쿼리 가능하도록 MCP 서버 구현
+  - 계획 문서: `devlog/20260209_P14_phase22_mcp_wrapper.md`
+  - 완료 로그: `devlog/20260209_022_phase22_mcp_server.md`
+  - 완료:
+    - ✅ `mcp_server.py` 구현 (729 lines, 14개 도구, stdio 모드)
+    - ✅ Evidence Pack 패턴 구현 (raw_entry, fide, provenance 필드)
+    - ✅ 버그 3개 수정 (중복 코드, fetchone 호출, bibliography 컬럼)
+    - ✅ 테스트 작성 및 통과 (test_mcp_basic.py, test_mcp.py)
+    - ✅ 의존성 추가 (`mcp>=1.0.0`, pytest, pytest-asyncio)
+  - 14개 MCP 도구:
+    - Taxonomy: get_taxonomy_tree, get_rank_detail, get_family_genera
+    - Search: search_genera, get_genera_by_country, get_genera_by_formation
+    - Metadata: get_metadata, get_provenance, list_available_queries
+    - Queries: execute_named_query
+    - Annotations: get_annotations, add_annotation, delete_annotation
+    - Detail: get_genus_detail (Evidence Pack)
+  - 주요 개념:
+    - **DB is truth, MCP is access, LLM is narration**
+    - LLM은 판단/정의 금지, 증거 기반 서술만 수행
+    - Canonical DB 불변, Overlay DB를 통한 사용자 주석만 허용
+
+- **Phase 23 완료**: MCP Server SSE 통합 (**브랜치: `feature/scoda-implementation`**)
+  - 목표: MCP 서버를 GUI에 통합하여 Flask와 함께 SSE 모드로 자동 실행
+  - 계획 문서: `devlog/20260210_P15_phase23_mcp_sse_integration.md`
+  - 완료 로그: `devlog/20260210_023_phase23_mcp_sse_integration.md`
+  - 완료:
+    - ✅ SSE 모드 구현 (Starlette + Uvicorn, 포트 8081)
+    - ✅ GUI 통합 (Flask + MCP 동시 시작/중지)
+    - ✅ Health check 엔드포인트 (`/health`)
+    - ✅ 하위 호환성 유지 (stdio 모드 계속 사용 가능)
+    - ✅ PyInstaller spec 업데이트 (mcp_server.py 포함)
+    - ✅ 의존성 추가 (`starlette`, `uvicorn`)
+  - SSE 엔드포인트:
+    - `GET /sse`: SSE 연결 (MCP 통신)
+    - `POST /messages`: 메시지 전송
+    - `GET /health`: 헬스체크
+
+- **Phase 24 완료**: GUI MCP SSE 독립 실행 분리 (**브랜치: `feature/scoda-implementation`**)
+  - 목표: GUI 기본 실행 시 Flask(8080)만 시작, MCP SSE(8081)는 별도 버튼으로 선택 실행
+  - 계획 문서: `devlog/20260210_P17_gui_mcp_sse_optional.md`
+  - 완료 로그: `devlog/20260210_024_phase24_gui_mcp_sse_optional.md`
+  - 완료:
+    - ✅ "Start All" → "Start Flask" / "Stop Flask" (Flask 전용)
+    - ✅ "Start MCP SSE" / "Stop MCP SSE" 버튼 신규 추가
+    - ✅ Flask와 MCP SSE 완전 독립 (서로 영향 없음)
+    - ✅ `start_mcp()`, `stop_mcp()` 메서드 신규 추가
+    - ✅ `_update_status()` Flask/MCP 버튼 상태 독립 관리
+  - 동작:
+    - Flask 종료해도 MCP SSE 계속 실행
+    - MCP SSE 종료해도 Flask 계속 실행
+    - 기본 실행 시 Flask만 시작 (MCP SSE는 필요 시 수동 시작)
+
+- **2026-02-10 GUI/MCP EXE 분리** (**브랜치: `feature/scoda-implementation`**)
+  - GUI에서 MCP SSE 관련 UI 요소 제거 (Start/Stop MCP SSE 버튼, MCP 상태/URL 표시)
+  - EXE 두 개로 분리:
+    - `trilobase.exe` (`console=False`): GUI 전용, 콘솔 블로킹 없음
+    - `trilobase_mcp.exe` (`console=True`): MCP stdio 전용, 인자 없이 실행
+  - `gui.py` main() 단순화 (argparse/MCP 분기 제거)
+  - `trilobase.spec` 두 개의 독립 EXE 블록으로 분리
+  - Claude Desktop 설정: `"command": "trilobase_mcp.exe"` (args 불필요)
+
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -75,6 +209,8 @@
 
 #### 테이블 목록
 
+**Canonical DB (trilobase.db) — Read-only, 불변:**
+
 | 테이블/뷰 | 레코드 수 | 설명 |
 |-----------|----------|------|
 | taxonomic_ranks | 5,338 | 통합 분류 체계 (Class~Genus) |
@@ -86,47 +222,96 @@
 | temporal_ranges | 28 | 지질시대 코드 |
 | bibliography | 2,130 | 참고문헌 (Literature Cited) |
 | taxa (뷰) | 5,113 | 하위 호환성 뷰 |
+| artifact_metadata | 7 | SCODA 아티팩트 메타데이터 |
+| provenance | 3 | 데이터 출처 |
+| schema_descriptions | 107 | 테이블/컬럼 설명 |
+| ui_display_intent | 6 | SCODA 뷰 타입 힌트 |
+| ui_queries | 14 | Named SQL 쿼리 |
+| ui_manifest | 1 | 선언적 뷰 정의 (JSON) |
+
+**Overlay DB (trilobase_overlay.db) — Read/write, 사용자 로컬 데이터:**
+
+| 테이블 | 레코드 수 | 설명 |
+|--------|----------|------|
+| overlay_metadata | 2 | Canonical DB 버전 추적 (canonical_version, created_at) |
+| user_annotations | 0 | 사용자 주석 (Local Overlay, Phase 17) |
 
 ### 파일 구조
 
 ```
 trilobase/
-├── trilobase.db                      # SQLite 데이터베이스
+├── trilobase.exe                     # GUI 뷰어 (console=False, dist/ 빌드 결과)
+├── trilobase_mcp.exe                 # MCP stdio 서버 (console=True, dist/ 빌드 결과)
+├── trilobase.db                      # Canonical SQLite DB
+├── trilobase_overlay.db              # Overlay DB (사용자 주석, Phase 20)
 ├── trilobite_genus_list.txt          # 정제된 genus 목록
 ├── trilobite_genus_list_original.txt # 원본 백업
 ├── adrain2011.txt                    # Order 통합을 위한 suprafamilial taxa 목록
 ├── app.py                            # Flask 웹 앱
+├── mcp_server.py                     # MCP 서버 (Phase 22-23, 829 lines, stdio/SSE 모드)
 ├── templates/
 │   └── index.html                    # 메인 페이지
 ├── static/
 │   ├── css/style.css                 # 스타일
 │   └── js/app.js                     # 프론트엔드 로직
+├── test_app.py                      # pytest 테스트 (101개)
+├── test_mcp_basic.py                # MCP 기본 테스트 (Phase 22)
+├── test_mcp.py                      # MCP 포괄적 테스트 (Phase 22, 16개)
+├── trilobase.spec                   # PyInstaller 빌드 설정 (Phase 18)
 ├── scripts/
 │   ├── normalize_lines.py
 │   ├── create_database.py
 │   ├── normalize_database.py
 │   ├── fix_synonyms.py
 │   ├── normalize_families.py
-│   └── populate_taxonomic_ranks.py
+│   ├── populate_taxonomic_ranks.py
+│   ├── add_scoda_tables.py          # Phase 13: SCODA-Core 마이그레이션
+│   ├── add_scoda_ui_tables.py       # Phase 14: Display Intent/Queries 마이그레이션
+│   ├── add_scoda_manifest.py        # Phase 15: UI Manifest 마이그레이션
+│   ├── release.py                   # Phase 16: 릴리스 패키징 스크립트
+│   ├── add_user_annotations.py      # Phase 17: 사용자 주석 마이그레이션
+│   ├── init_overlay_db.py           # Phase 20: Overlay DB 초기화
+│   ├── serve.py                     # Phase 18: Flask 서버 런처
+│   ├── gui.py                       # Phase 19: GUI 컨트롤 패널
+│   └── build.py                     # Phase 18: 빌드 자동화
 ├── devlog/
-│   ├── 20260204_P01_data_cleaning_plan.md
-│   ├── 20260204_001~006_*.md         # Phase 1-6 로그
-│   ├── 20260205_P02_taxonomy_table_consolidation.md
-│   ├── 20260205_008_phase8_taxonomy_consolidation_complete.md
-│   ├── 20260205_P03_taxa_taxonomic_ranks_consolidation.md
-│   ├── 20260205_009_phase9_taxa_consolidation_complete.md
-│   ├── 20260205_P04_formation_location_relations.md
-│   ├── 20260205_010_phase10_formation_location_relations_complete.md
-│   ├── 20260205_P05_web_interface.md
-│   └── 20260205_011_phase11_web_interface_complete.md
+│   ├── 20260204_P01~P05_*.md        # Phase 계획 문서
+│   ├── 20260204_001~011_*.md        # Phase 1-11 완료 로그
+│   ├── 20260207_P07~P12_*.md        # SCODA 계획 문서
+│   ├── 20260207_012~020_*.md        # Phase 13-20 완료 로그
+│   ├── 20260208_P13_*.md            # Phase 21 계획 문서
+│   ├── 20260208_021_*.md            # Phase 21 완료 로그
+│   ├── 20260209_P14_*.md            # Phase 22 계획 문서
+│   ├── 20260209_022_*.md            # Phase 22 완료 로그
+│   └── 20260207_R01~R02_*.md        # 리뷰 문서
 ├── docs/
-│   └── HANDOVER.md
+│   ├── HANDOVER.md                  # 인수인계 문서 (프로젝트 현황)
+│   ├── RELEASE_GUIDE.md             # 릴리스 및 배포 가이드 (버전 관리)
+│   └── SCODA_CONCEPT.md             # SCODA 개념 설명
 └── CLAUDE.md
 ```
 
-## 다음 작업 (현재 추가 작업 없음)
+## SCODA 구현 + 배포 완료 (브랜치: `feature/scoda-implementation`)
 
-### 미해결 항목
+Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하고 독립 실행형 앱으로 패키징 완료.
+상세 계획: `devlog/20260207_P07_scoda_implementation.md`
+
+| Phase | 내용 | 상태 |
+|-------|------|------|
+| Phase 13 | SCODA-Core 메타데이터 (Identity, Provenance, Semantics) | ✅ 완료 |
+| Phase 14 | Display Intent + Saved Queries | ✅ 완료 |
+| Phase 15 | UI Manifest (선언적 뷰 정의) | ✅ 완료 |
+| Phase 16 | 릴리스 메커니즘 (버전 태깅, 패키징) | ✅ 완료 |
+| Phase 17 | Local Overlay (사용자 주석) | ✅ 완료 |
+| Phase 18 | 독립 실행형 앱 (PyInstaller) | ✅ 완료 |
+| Phase 19 | GUI 컨트롤 패널 (tkinter) | ✅ 완료 |
+| Phase 20 | Overlay DB 분리 (read-only 문제 해결) | ✅ 완료 |
+| Phase 21 | GUI 로그 뷰어 (디버깅 지원) | ✅ 완료 |
+| Phase 22 | MCP Server (LLM 자연어 쿼리 지원) | ✅ 완료 |
+| Phase 23 | MCP Server SSE 통합 (GUI 통합) | ✅ 완료 |
+
+## 미해결 항목
+
 - Synonym 미연결 4건 (원본에 senior taxa 없음)
 - Location/Formation 없는 taxa는 모두 무효 taxa (정상)
 - parent_id NULL인 Genus 342건 (family 필드 자체가 NULL인 무효 taxa)
@@ -145,8 +330,21 @@ trilobase/
 10. ~~Phase 10: Formation/Location Relation 테이블~~ ✅
 11. ~~Phase 11: Web Interface~~ ✅
 12. ~~Phase 12: Bibliography 테이블~~ ✅
+13. ~~Phase 13: SCODA-Core 메타데이터~~ ✅ (브랜치: `feature/scoda-implementation`)
+14. ~~Phase 14: Display Intent + Saved Queries~~ ✅
+15. ~~Phase 15: UI Manifest~~ ✅
+16. ~~Phase 16: 릴리스 메커니즘~~ ✅
+17. ~~Phase 17: Local Overlay~~ ✅
+18. ~~Phase 18: 독립 실행형 앱 (PyInstaller)~~ ✅
+19. ~~Phase 19: GUI 컨트롤 패널~~ ✅
+20. ~~Phase 20: Overlay DB 분리~~ ✅
+21. ~~Phase 21: GUI 로그 뷰어~~ ✅
+22. ~~Phase 22: MCP Server~~ ✅ (브랜치: `feature/scoda-implementation`)
+23. ~~Phase 23: MCP Server SSE 통합~~ ✅ (브랜치: `feature/scoda-implementation`)
 
 ## DB 스키마
+
+### Canonical DB (trilobase.db)
 
 ```sql
 -- taxonomic_ranks: 5,338 records - 통합 분류 체계 (Class~Genus)
@@ -183,6 +381,38 @@ bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
 
 -- taxa: 뷰 (하위 호환성)
 CREATE VIEW taxa AS SELECT ... FROM taxonomic_ranks WHERE rank = 'Genus';
+
+-- SCODA-Core 테이블
+artifact_metadata (key, value)                    -- 아티팩트 메타데이터 (key-value)
+provenance (id, source_type, citation, description, year, url)  -- 데이터 출처
+schema_descriptions (table_name, column_name, description)      -- 스키마 설명
+
+-- SCODA UI 테이블
+ui_display_intent (id, entity, default_view, description, source_query, priority)  -- 뷰 힌트
+ui_queries (id, name, description, sql, params_json, created_at)                   -- Named Query
+ui_manifest (name, description, manifest_json, created_at)                         -- 선언적 뷰 정의 (JSON)
+```
+
+### Overlay DB (trilobase_overlay.db) — Phase 20
+
+```sql
+-- overlay_metadata: Canonical DB 버전 추적
+overlay_metadata (key, value)  -- canonical_version, created_at
+
+-- user_annotations: 사용자 주석 (Phase 17, Phase 20에서 분리)
+user_annotations (
+    id, entity_type, entity_id, entity_name,  -- entity_name: 릴리스 간 매칭용
+    annotation_type, content, author, created_at
+)
+```
+
+**SQLite ATTACH 사용:**
+```python
+conn = sqlite3.connect('trilobase.db')  # Canonical DB
+conn.execute("ATTACH DATABASE 'trilobase_overlay.db' AS overlay")
+
+# Canonical 테이블 접근: SELECT * FROM taxonomic_ranks
+# Overlay 테이블 접근: SELECT * FROM overlay.user_annotations
 ```
 
 ## DB 사용법

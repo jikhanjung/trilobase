@@ -1,0 +1,8 @@
+flask
+asgiref
+pyinstaller
+mcp>=1.0.0
+starlette
+uvicorn
+pytest
+pytest-asyncio

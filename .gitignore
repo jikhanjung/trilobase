@@ -4,3 +4,11 @@ venv/
 .venv/
 env/
 instance/
+releases/
+
+# PyInstaller
+build/
+dist/
+
+# Local overlay database (user data, not committed)
+trilobase_overlay.db
