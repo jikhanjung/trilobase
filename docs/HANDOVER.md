@@ -173,6 +173,14 @@
     - MCP SSE 종료해도 Flask 계속 실행
     - 기본 실행 시 Flask만 시작 (MCP SSE는 필요 시 수동 시작)
 
+- **2026-02-10 DB 파싱 오류 수정 및 누락 genus 추가**
+  - taxonomic_ranks 파싱 오류 16건 수정 (`[sic]` 중첩 괄호, JELL nov. year, 인코딩 오류 등)
+  - formations 테이블 잘못된 이름 5건 수정/삭제
+  - genus_formations/genus_locations 연결 오류 수정
+  - trilobite_genus_list.txt: Kaniniella/Melopetasus 줄에서 별도 genus 분리
+  - Kanlingia (T. ZHANG, 1981), Memmatella (W. ZHANG et al., 1995) DB 추가
+  - devlog: `devlog/20260210_029_parsing_error_fixes.md`
+
 - **2026-02-10 GUI/MCP EXE 분리** (**브랜치: `feature/scoda-implementation`**)
   - GUI에서 MCP SSE 관련 UI 요소 제거 (Start/Stop MCP SSE 버튼, MCP 상태/URL 표시)
   - EXE 두 개로 분리:
@@ -194,18 +202,18 @@
 | Suborder | 8 |
 | Superfamily | 13 |
 | Family | 191 |
-| Genus | 5,113 |
-| **총계** | **5,338** |
+| Genus | 5,115 |
+| **총계** | **5,340** |
 
 #### Genus 통계
 
 | 항목 | 값 | 비율 |
 |------|-----|------|
-| 유효 Genus | 4,258 | 83.3% |
+| 유효 Genus | 4,260 | 83.3% |
 | 무효 Genus | 855 | 16.7% |
-| Synonym 연결됨 | 1,031 | 97.7% |
+| Synonym 연결됨 | 1,031 | 97.6% |
 | Country 연결됨 | 4,841 | 99.9% |
-| Formation 연결됨 | 4,854 | 100% |
+| Formation 연결됨 | 4,853 | 99.9% |
 
 #### 테이블 목록
 
@@ -213,11 +221,11 @@
 
 | 테이블/뷰 | 레코드 수 | 설명 |
 |-----------|----------|------|
-| taxonomic_ranks | 5,338 | 통합 분류 체계 (Class~Genus) |
+| taxonomic_ranks | 5,340 | 통합 분류 체계 (Class~Genus) |
 | synonyms | 1,055 | 동의어 관계 |
-| genus_formations | 4,854 | Genus-Formation 다대다 관계 |
+| genus_formations | 4,853 | Genus-Formation 다대다 관계 |
 | genus_locations | 4,841 | Genus-Country 다대다 관계 |
-| formations | 2,009 | 지층 정보 |
+| formations | 2,006 | 지층 정보 |
 | countries | 151 | 국가 정보 |
 | temporal_ranges | 28 | 지질시대 코드 |
 | bibliography | 2,130 | 참고문헌 (Literature Cited) |
