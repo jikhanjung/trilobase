@@ -2213,7 +2213,8 @@ Kaltykelina PETRUNINA, 1973 [gracilis] Eltsovsk Fm, Salair, W Siberia, Russia; C
 Kameschkoviella REPINA, 1960 [zhuravlevae] Zherzhul Fm, E Sayan, Russia; ELLIPSOCEPHALIDAE; LCAM.
 Kaninia WALCOTT & RESSER, 1925 [lata] Bessimyanni Fjord, Novaya Zemlya; ASAPHISCIDAE; UCAM.
 Kaniniella KOBAYASHI, 1938a [concinna] McKay Gp, British Columbia, Canada; ASAPHISCIDAE; UCAM.
-Kaniniella SIVOV in EGOROVA et al., 1955 [preocc., replaced by Eokaninia]. Kanlingia T. ZHANG, 1981 [kalpinensis] Saergan Fm, Xinjiang, China; RAPHIOPHORIDAE; MORD.
+Kaniniella SIVOV in EGOROVA et al., 1955 [preocc., replaced by Eokaninia].
+Kanlingia T. ZHANG, 1981 [kalpinensis] Saergan Fm, Xinjiang, China; RAPHIOPHORIDAE; MORD.
 Kannoriella KIM, 1980 [chungwhaensis] Rimchon Fm, North Korea; DOLICHOMETOPIDAE; MCAM.
 Kanoshia HARRINGTON, 1957 [Pseudomera kanoshensis HINTZE, 1953] Kanosh Fm, Utah, USA; PLIOMERIDAE; MORD.
 Kaolishania SUN, 1924 [pustulosa] Changshan Fm, Shandong, China; KAOLISHANIIDAE; UCAM.
@@ -2737,7 +2738,8 @@ Meitania YUAN in YIN & LI, 1978 [transversa] Kaotai Fm, Guizhou, China; PTYCHOPA
 Meitanillaenus W. ZHANG, 1974 [binodosus] Lung-maxi Fm, Guizhou, China; STYGINIDAE; LSIL.
 Meitanopsis LU, 1975 [angulata] Meitan Fm, Guizhou, China; HUNGAIIDAE; LORD.
 Mekynophrys HARRINGTON, 1938 [nanna] Tumbaya Dept, Jujuy, Argentina; ASAPHIDAE; LORD. [j.s.s. of Basilicus, fide ZHOU & FORTEY, 1986].
-Melopetasus SCHALLREUTER, 1979 [name given to indeterminate ?asaphoid trilobite protaspis]. Memmatella W. ZHANG in W. ZHANG et al., 1995 [tuberculata] Changhia Fm, Henan, China; PROASAPHISCIDAE; MCAM.
+Melopetasus SCHALLREUTER, 1979 [name given to indeterminate ?asaphoid trilobite protaspis].
+Memmatella W. ZHANG in W. ZHANG et al., 1995 [tuberculata] Changhia Fm, Henan, China; PROASAPHISCIDAE; MCAM.
 Mendodiscus RUSCONI, 1950b [tuberculatus] Mendoza, Argentina; INDET; MCAM.
 Mendogaspis RUSCONI, 1952[Zacanthoides trispinatus RUSCONI, 1949] Isidreana Fm, Mendoza, Argentina; ZACANTHOIDIDAE; MCAM.
 Mendolaspis RUSCONI. 1951 [salagastensis] San Juan Fm, San Juan, Argentina; RAPHIOPHORIDAE; MORD.
