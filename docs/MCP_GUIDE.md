@@ -2,7 +2,7 @@
 
 **Model Context Protocol (MCP) 서버 사용 가이드**
 
-**버전:** 1.0.0
+**버전:** 1.1.0
 **MCP SDK:** 1.26.0
 
 ---
@@ -37,6 +37,7 @@ Trilobase MCP 서버는 **Model Context Protocol**을 통해 LLM(Large Language 
 
 ### 아키텍처
 
+**Mode 1: stdio (기존)**
 ```
 ┌─────────────────┐
 │   Claude/LLM    │ (자연어 쿼리)
@@ -58,14 +59,41 @@ Trilobase MCP 서버는 **Model Context Protocol**을 통해 LLM(Large Language 
 └──────────────────────────┘
 ```
 
+**Mode 2: SSE (신규, v1.1.0)**
+```
+┌─────────────────┐
+│   Claude/LLM    │ (자연어 쿼리)
+└────────┬────────┘
+         │ HTTP SSE
+         ▼
+┌──────────────────────────┐
+│  Trilobase GUI           │
+│  ├─ Flask (8080)         │
+│  └─ MCP Server (8081)    │ ← DB 연결 유지
+└────────┬─────────────────┘
+         │ Direct DB access
+         ▼
+┌──────────────────────────┐
+│  SQLite Databases        │
+│  - Canonical (read-only) │
+│  - Overlay (read/write)  │
+└──────────────────────────┘
+```
+
 ---
 
 ## 설치 및 설정
 
 ### 1. 의존성 설치
 
+**기본 (stdio 모드):**
 ```bash
 pip install mcp>=1.0.0
+```
+
+**SSE 모드 추가 (v1.1.0+):**
+```bash
+pip install mcp>=1.0.0 starlette uvicorn
 ```
 
 ### 2. MCP 서버 테스트
@@ -83,7 +111,46 @@ python3 test_mcp_basic.py
 
 ### 3. Claude Desktop 설정
 
-#### macOS/Linux
+#### 방법 1: SSE 모드 (권장, v1.1.0+)
+
+**장점:** DB 연결 유지, 빠른 응답, GUI 통합
+
+**1단계: Trilobase GUI 실행**
+```bash
+# 개발 모드
+python scripts/gui.py
+
+# 또는 PyInstaller 번들
+./trilobase  # Linux/macOS
+trilobase.exe  # Windows
+```
+
+**2단계: "▶ Start All" 클릭**
+- Flask (8080) + MCP (8081) 동시 시작
+
+**3단계: Claude Desktop 설정**
+
+**파일:** `~/.config/claude/claude_desktop_config.json` (macOS/Linux) 또는 `%APPDATA%\Claude\claude_desktop_config.json` (Windows)
+
+```json
+{
+  "mcpServers": {
+    "trilobase": {
+      "url": "http://localhost:8081/sse"
+    }
+  }
+}
+```
+
+**주의:** Trilobase GUI가 실행 중이어야 MCP 서버 사용 가능
+
+---
+
+#### 방법 2: stdio 모드 (기존)
+
+**장점:** GUI 없이 독립 실행 가능
+
+**macOS/Linux:**
 
 **설정 파일:** `~/.config/claude/claude_desktop_config.json`
 
@@ -92,14 +159,14 @@ python3 test_mcp_basic.py
   "mcpServers": {
     "trilobase": {
       "command": "python3",
-      "args": ["/absolute/path/to/trilobase/mcp_server.py"],
+      "args": ["/absolute/path/to/trilobase/mcp_server.py", "--mode", "stdio"],
       "cwd": "/absolute/path/to/trilobase"
     }
   }
 }
 ```
 
-#### Windows
+**Windows:**
 
 **설정 파일:** `%APPDATA%\Claude\claude_desktop_config.json`
 
@@ -108,16 +175,35 @@ python3 test_mcp_basic.py
   "mcpServers": {
     "trilobase": {
       "command": "python",
-      "args": ["C:\\path\\to\\trilobase\\mcp_server.py"],
+      "args": ["C:\\path\\to\\trilobase\\mcp_server.py", "--mode", "stdio"],
       "cwd": "C:\\path\\to\\trilobase"
     }
   }
 }
 ```
 
+---
+
 ### 4. Claude Desktop 재시작
 
 설정 파일 저장 후 Claude Desktop을 재시작하면 Trilobase MCP 서버가 자동으로 연결됩니다.
+
+---
+
+### 5. MCP 서버 수동 실행 (선택사항)
+
+GUI 없이 SSE 서버를 백그라운드로 실행하려면:
+
+```bash
+# SSE 모드로 실행
+python3 mcp_server.py --mode sse --port 8081
+
+# 백그라운드 실행
+nohup python3 mcp_server.py --mode sse --port 8081 > mcp_server.log 2>&1 &
+
+# Health check
+curl http://localhost:8081/health
+```
 
 ---
 
@@ -893,17 +979,16 @@ pytest의 teardown ERROR는 기능에 영향 없음 (프레임워크 이슈).
 
 ### 현재 버전의 제한
 
-1. **stdio 전송만 지원**
-   - SSE (Server-Sent Events) 미지원
+1. **SSE 모드 제한 (v1.1.0)**
+   - GUI 실행 중이어야 MCP 서버 사용 가능
+   - GUI 종료 시 MCP 서버도 함께 종료
+   - 해결책: stdio 모드 사용 또는 MCP 서버 별도 실행
 
 2. **검색 결과 제한**
    - 기본 limit=50 (성능 최적화)
 
 3. **복잡한 조인 쿼리 미지원**
    - Named Query로 해결 가능
-
-4. **PyInstaller 번들 미포함**
-   - Phase 23에서 추가 예정
 
 ### 알려진 이슈
 
@@ -936,6 +1021,13 @@ pytest의 teardown ERROR는 기능에 영향 없음 (프레임워크 이슈).
 
 ## 버전 히스토리
 
+- **v1.1.0** (2026-02-10): SSE 모드 추가 (Phase 23)
+  - SSE (Server-Sent Events) 전송 모드 지원
+  - GUI 통합 (Flask + MCP 동시 실행)
+  - Health check 엔드포인트 (`/health`)
+  - 하위 호환성 유지 (stdio/SSE 모드 선택 가능)
+  - DB 연결 유지 → 빠른 응답
+
 - **v1.0.0** (2026-02-09): Initial MCP server release
   - 14 tools implemented
   - Evidence Pack pattern
@@ -953,13 +1045,14 @@ GitHub Issues를 통해 버그를 리포트해주세요.
 ### 기능 요청
 
 다음과 같은 기능이 향후 추가될 예정입니다:
-- [ ] SSE 전송 모드
+- [x] ~~SSE 전송 모드~~ ✅ (v1.1.0)
+- [x] ~~PyInstaller 번들 포함~~ ✅ (v1.1.0)
 - [ ] 캐싱 레이어
 - [ ] 지질시대 필터링 도구
 - [ ] Bibliography 검색 도구
-- [ ] PyInstaller 번들 포함
+- [ ] MCP 서버 독립 실행 모드 (GUI 없이 백그라운드 데몬)
 
 ---
 
-**Last Updated:** 2026-02-09
+**Last Updated:** 2026-02-10
 **Author:** Claude Sonnet 4.5
