@@ -111,24 +111,33 @@ python3 test_mcp_basic.py
 
 ### 3. Claude Desktop 설정
 
-#### 방법 1: SSE 모드 (권장, v1.1.0+)
+#### 방법 1: SSE 모드 with PyInstaller 번들 (가장 간편, v1.1.0+)
 
-**장점:** DB 연결 유지, 빠른 응답, GUI 통합
+**장점:**
+- Python 설치 불필요
+- DB 연결 유지 → 빠른 응답
+- GUI에서 원클릭 시작
+- MCP 서버가 실행 파일에 내장됨
 
-**1단계: Trilobase GUI 실행**
+**1단계: Trilobase 실행 파일 다운로드**
+- [릴리스 페이지](https://github.com/yourname/trilobase/releases)에서 OS에 맞는 파일 다운로드:
+  - Windows: `trilobase.exe`
+  - Linux: `trilobase`
+
+**2단계: 실행 파일 실행**
 ```bash
-# 개발 모드
-python scripts/gui.py
+# Linux/macOS
+./trilobase
 
-# 또는 PyInstaller 번들
-./trilobase  # Linux/macOS
-trilobase.exe  # Windows
+# Windows
+더블클릭: trilobase.exe
 ```
 
-**2단계: "▶ Start All" 클릭**
+**3단계: GUI에서 "▶ Start All" 클릭**
 - Flask (8080) + MCP (8081) 동시 시작
+- MCP 서버는 자동으로 SSE 모드로 실행됨
 
-**3단계: Claude Desktop 설정**
+**4단계: Claude Desktop 설정**
 
 **파일:** `~/.config/claude/claude_desktop_config.json` (macOS/Linux) 또는 `%APPDATA%\Claude\claude_desktop_config.json` (Windows)
 
@@ -142,7 +151,51 @@ trilobase.exe  # Windows
 }
 ```
 
-**주의:** Trilobase GUI가 실행 중이어야 MCP 서버 사용 가능
+**5단계: Claude Desktop 재시작**
+
+**완료!** 이제 Claude Desktop에서 Trilobase를 사용할 수 있습니다.
+
+**중요:**
+- Trilobase GUI가 실행 중이어야 MCP 서버 사용 가능
+- GUI를 닫으면 MCP 서버도 함께 종료됨
+- 백그라운드 실행이 필요하면 방법 3 참조
+
+---
+
+#### 방법 2: SSE 모드 with Python (개발자용, v1.1.0+)
+
+**장점:** 소스 코드 수정 가능
+
+**1단계: 의존성 설치**
+```bash
+pip install mcp>=1.0.0 starlette uvicorn flask
+```
+
+**2단계: Trilobase GUI 실행**
+```bash
+python scripts/gui.py
+```
+
+**3단계: "▶ Start All" 클릭**
+- Flask (8080) + MCP (8081) 동시 시작
+
+**4단계: Claude Desktop 설정**
+
+**파일:** `~/.config/claude/claude_desktop_config.json` (macOS/Linux) 또는 `%APPDATA%\Claude\claude_desktop_config.json` (Windows)
+
+```json
+{
+  "mcpServers": {
+    "trilobase": {
+      "url": "http://localhost:8081/sse"
+    }
+  }
+}
+```
+
+---
+
+#### 방법 3: stdio 모드 (GUI 없이 독립 실행)
 
 ---
 
@@ -184,13 +237,29 @@ trilobase.exe  # Windows
 
 ---
 
-### 4. Claude Desktop 재시작
+### 4. 설정 방법 비교
+
+| 특징 | 방법 1: PyInstaller 번들 | 방법 2: Python (SSE) | 방법 3: stdio |
+|------|-------------------------|---------------------|--------------|
+| **Python 설치** | 불필요 ✅ | 필요 | 필요 |
+| **실행 방식** | GUI 더블클릭 | `python scripts/gui.py` | Claude가 자동 spawn |
+| **DB 연결** | 유지 (빠름) ⚡ | 유지 (빠름) ⚡ | 매번 재연결 |
+| **설정** | URL 방식 | URL 방식 | command 방식 |
+| **GUI 필요** | 실행 중이어야 함 | 실행 중이어야 함 | 불필요 |
+| **백그라운드 실행** | GUI 종료 시 중단 | GUI 종료 시 중단 | 항상 가능 |
+| **권장 대상** | **일반 사용자** 🏆 | 개발자 | 고급 사용자 |
+
+**권장:** 일반 사용자는 **방법 1 (PyInstaller 번들)**을 사용하세요!
+
+---
+
+### 5. Claude Desktop 재시작
 
 설정 파일 저장 후 Claude Desktop을 재시작하면 Trilobase MCP 서버가 자동으로 연결됩니다.
 
 ---
 
-### 5. MCP 서버 수동 실행 (선택사항)
+### 6. MCP 서버 수동 실행 (고급 사용자용)
 
 GUI 없이 SSE 서버를 백그라운드로 실행하려면:
 
@@ -886,7 +955,43 @@ MCP 서버가 연결되면 Claude Desktop에서 다음과 같은 자연어로 �
 
 **증상:** Claude Desktop에서 Trilobase 도구가 보이지 않음
 
-**해결 방법:**
+**해결 방법 (PyInstaller 번들 사용 시):**
+
+1. **Trilobase GUI 실행 확인:**
+   - GUI가 실행 중인지 확인
+   - "▶ Start All" 버튼을 눌렀는지 확인
+   - MCP 상태가 "● Running" (초록색)인지 확인
+
+2. **MCP 서버 포트 확인:**
+   ```bash
+   # Linux/macOS
+   curl http://localhost:8081/health
+
+   # Windows PowerShell
+   Invoke-WebRequest http://localhost:8081/health
+
+   # 예상 응답:
+   # {"status": "ok", "service": "trilobase-mcp", "mode": "sse"}
+   ```
+
+3. **Claude Desktop 설정 확인:**
+   ```json
+   {
+     "mcpServers": {
+       "trilobase": {
+         "url": "http://localhost:8081/sse"
+       }
+     }
+   }
+   ```
+   **주의:** `"url"`이지 `"command"`가 아님!
+
+4. **Claude Desktop 재시작**
+
+---
+
+**해결 방법 (stdio 모드 사용 시):**
+
 1. 설정 파일 경로 확인:
    - macOS/Linux: `~/.config/claude/claude_desktop_config.json`
    - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
@@ -895,7 +1000,7 @@ MCP 서버가 연결되면 Claude Desktop에서 다음과 같은 자연어로 �
    ```json
    {
      "command": "python3",
-     "args": ["/absolute/path/to/mcp_server.py"]
+     "args": ["/absolute/path/to/mcp_server.py", "--mode", "stdio"]
    }
    ```
 
@@ -945,16 +1050,85 @@ MCP 서버가 연결되면 Claude Desktop에서 다음과 같은 자연어로 �
 
 ---
 
-### 문제 4: 응답이 느림
+### 문제 4: 포트 충돌 (8081 already in use)
+
+**증상:** GUI에서 "MCP server failed to start: Address already in use" 오류
+
+**원인:** 8081 포트가 이미 사용 중
+
+**해결 방법:**
+
+1. **기존 MCP 서버 종료:**
+   ```bash
+   # Linux/macOS
+   lsof -ti:8081 | xargs kill -9
+
+   # Windows PowerShell
+   Get-Process -Id (Get-NetTCPConnection -LocalPort 8081).OwningProcess | Stop-Process -Force
+   ```
+
+2. **포트 사용 프로세스 확인:**
+   ```bash
+   # Linux/macOS
+   lsof -i:8081
+
+   # Windows
+   netstat -ano | findstr :8081
+   ```
+
+3. **Trilobase GUI 재시작**
+
+---
+
+### 문제 5: GUI 로그에서 MCP 에러 확인
+
+**증상:** MCP 서버가 시작되지 않지만 원인 불명
+
+**해결 방법:**
+
+1. **GUI 로그 뷰어 확인:**
+   - Trilobase GUI 하단의 "Server Log" 섹션 확인
+   - `[MCP]` prefix가 있는 로그 라인 찾기
+   - ERROR (빨간색) 메시지 확인
+
+2. **일반적인 MCP 에러:**
+   ```
+   [MCP] ModuleNotFoundError: No module named 'mcp'
+   → 해결: pip install mcp starlette uvicorn
+
+   [MCP] ERROR: Database not found
+   → 해결: trilobase.db 파일 확인
+
+   [MCP] Address already in use
+   → 해결: 문제 4 참조 (포트 충돌)
+   ```
+
+3. **Clear Log 후 재시작:**
+   - "📄 Clear Log" 버튼 클릭
+   - "■ Stop All" 후 "▶ Start All"
+   - 새 로그 메시지 확인
+
+---
+
+### 문제 6: 응답이 느림
 
 **원인:** 대용량 쿼리 또는 네트워크 지연
 
 **해결 방법:**
+
+**SSE 모드 사용 시 (권장):**
+- DB 연결이 유지되므로 stdio 모드보다 빠름
+- 첫 쿼리 이후 응답 속도가 크게 향상됨
+
+**쿼리 최적화:**
 1. `limit` 파라미터 사용:
    - "처음 10개만 보여줘" → limit=10
 
 2. 특정 조건으로 필터링:
    - "유효한 속만" → valid_only=true
+
+3. Named Query 활용:
+   - 복잡한 쿼리는 사전 정의된 Named Query 사용
 
 ---
 
@@ -1015,7 +1189,8 @@ pytest의 teardown ERROR는 기능에 영향 없음 (프레임워크 이슈).
 - **API Reference**: [API_REFERENCE.md](API_REFERENCE.md)
 - **SCODA Concept**: [SCODA_CONCEPT.md](SCODA_CONCEPT.md)
 - **Handover**: [HANDOVER.md](HANDOVER.md)
-- **Phase 22 Log**: [../devlog/20260209_022_phase22_mcp_server.md](../devlog/20260209_022_phase22_mcp_server.md)
+- **Phase 22 Log (MCP stdio)**: [../devlog/20260209_022_phase22_mcp_server.md](../devlog/20260209_022_phase22_mcp_server.md)
+- **Phase 23 Log (MCP SSE)**: [../devlog/20260210_023_phase23_mcp_sse_integration.md](../devlog/20260210_023_phase23_mcp_sse_integration.md)
 
 ---
 
