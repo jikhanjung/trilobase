@@ -647,63 +647,14 @@ class TrilobaseGUI:
 
 def main():
     """Main entry point."""
-    import argparse
-
-    parser = argparse.ArgumentParser(
-        description="Trilobase SCODA Viewer",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-  trilobase.exe              Run GUI (default)
-  trilobase.exe --mcp-stdio  Run MCP server in stdio mode (for Claude Desktop)
-        """
-    )
-    parser.add_argument(
-        '--mcp-stdio',
-        action='store_true',
-        help='Run MCP server in stdio mode (for Claude Desktop spawning)'
-    )
-
-    args = parser.parse_args()
-
-    if args.mcp_stdio:
-        # MCP stdio mode: Claude Desktop spawns this process and communicates via stdin/stdout
-        try:
-            import asyncio
-
-            # Ensure mcp_server is importable (add project root to path)
-            project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            if project_root not in sys.path:
-                sys.path.insert(0, project_root)
-
-            from mcp_server import run_stdio
-            asyncio.run(run_stdio())
-
-        except Exception as e:
-            import traceback
-            print("MCP stdio error:", file=sys.stderr)
-            traceback.print_exc()
-            sys.exit(1)
-
-    else:
-        # GUI mode: hide console window on Windows when frozen
-        if getattr(sys, 'frozen', False) and sys.platform == 'win32':
-            try:
-                import ctypes
-                ctypes.windll.user32.ShowWindow(
-                    ctypes.windll.kernel32.GetConsoleWindow(), 0  # SW_HIDE
-                )
-            except Exception:
-                pass  # Not critical if hiding fails
-
-        try:
-            gui = TrilobaseGUI()
-            gui.run()
-        except Exception as e:
-            import traceback
-            print("GUI Error:", file=sys.stderr)
-            traceback.print_exc()
-            sys.exit(1)
+    try:
+        gui = TrilobaseGUI()
+        gui.run()
+    except Exception as e:
+        import traceback
+        print("GUI Error:", file=sys.stderr)
+        traceback.print_exc()
+        sys.exit(1)
 
 
 if __name__ == '__main__':
