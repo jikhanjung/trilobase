@@ -263,8 +263,10 @@ trilobase/
 │   ├── css/style.css                 # 스타일
 │   └── js/app.js                     # 프론트엔드 로직
 ├── test_app.py                      # pytest 테스트 (101개)
-├── test_mcp_basic.py                # MCP 기본 테스트 (Phase 22)
-├── test_mcp.py                      # MCP 포괄적 테스트 (Phase 22, 16개)
+├── test_mcp_basic.py                # MCP 기본 테스트 (1개)
+├── test_mcp.py                      # MCP 포괄적 테스트 (16개, asynccontextmanager 방식)
+├── pytest.ini                       # pytest 설정 (asyncio_mode=auto)
+├── conftest.py                      # anyio 백엔드 설정 (asyncio)
 ├── trilobase.spec                   # PyInstaller 빌드 설정 (Phase 18)
 ├── scripts/
 │   ├── normalize_lines.py
@@ -317,6 +319,26 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 21 | GUI 로그 뷰어 (디버깅 지원) | ✅ 완료 |
 | Phase 22 | MCP Server (LLM 자연어 쿼리 지원) | ✅ 완료 |
 | Phase 23 | MCP Server SSE 통합 (GUI 통합) | ✅ 완료 |
+
+## 테스트 현황
+
+| 파일 | 테스트 수 | 상태 |
+|------|---------|------|
+| `test_app.py` | 101개 | ✅ 통과 |
+| `test_mcp_basic.py` | 1개 | ✅ 통과 |
+| `test_mcp.py` | 16개 | ✅ 통과 |
+| **합계** | **118개** | **✅ 전부 통과** |
+
+**실행 방법:**
+```bash
+pytest test_app.py test_mcp_basic.py test_mcp.py
+# 의존성: pip install mcp pytest-asyncio
+```
+
+**pytest 설정 (`pytest.ini`):**
+- `asyncio_mode = auto` — async 테스트 자동 인식
+- `asyncio_default_fixture_loop_scope = function` — 독립 이벤트 루프
+- `conftest.py` — anyio 백엔드를 asyncio로 명시
 
 ## 미해결 항목
 
