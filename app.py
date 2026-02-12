@@ -510,8 +510,13 @@ def api_country_detail(country_id):
 
     # Get country from geographic_regions
     cursor.execute("""
-        SELECT id, name, level, cow_ccode, taxa_count
-        FROM pc.geographic_regions WHERE id = ? AND level = 'country'
+        SELECT gr.id, gr.name, gr.level, gr.cow_ccode,
+               COUNT(DISTINCT gl.genus_id) as taxa_count
+        FROM pc.geographic_regions gr
+        LEFT JOIN genus_locations gl ON gl.region_id = gr.id
+            OR gl.region_id IN (SELECT id FROM pc.geographic_regions WHERE parent_id = gr.id)
+        WHERE gr.id = ? AND gr.level = 'country'
+        GROUP BY gr.id
     """, (country_id,))
     country = cursor.fetchone()
 
@@ -521,10 +526,13 @@ def api_country_detail(country_id):
 
     # Get child regions
     cursor.execute("""
-        SELECT id, name, taxa_count
-        FROM pc.geographic_regions
-        WHERE parent_id = ? AND level = 'region'
-        ORDER BY taxa_count DESC, name
+        SELECT gr.id, gr.name,
+               COUNT(DISTINCT gl.genus_id) as taxa_count
+        FROM pc.geographic_regions gr
+        LEFT JOIN genus_locations gl ON gl.region_id = gr.id
+        WHERE gr.parent_id = ? AND gr.level = 'region'
+        GROUP BY gr.id
+        ORDER BY taxa_count DESC, gr.name
     """, (country_id,))
     regions = cursor.fetchall()
 
@@ -574,11 +582,14 @@ def api_region_detail(region_id):
 
     # Get region from geographic_regions
     cursor.execute("""
-        SELECT gr.id, gr.name, gr.level, gr.taxa_count,
+        SELECT gr.id, gr.name, gr.level,
+               COUNT(DISTINCT gl.genus_id) as taxa_count,
                parent.id as country_id, parent.name as country_name
         FROM pc.geographic_regions gr
         LEFT JOIN pc.geographic_regions parent ON gr.parent_id = parent.id
+        LEFT JOIN genus_locations gl ON gl.region_id = gr.id
         WHERE gr.id = ? AND gr.level = 'region'
+        GROUP BY gr.id
     """, (region_id,))
     region = cursor.fetchone()
 
@@ -715,8 +726,13 @@ def api_formation_detail(formation_id):
 
     # Get formation info
     cursor.execute("""
-        SELECT id, name, normalized_name, formation_type, country, region, period, taxa_count
-        FROM pc.formations WHERE id = ?
+        SELECT f.id, f.name, f.normalized_name, f.formation_type,
+               f.country, f.region, f.period,
+               COUNT(DISTINCT gf2.genus_id) as taxa_count
+        FROM pc.formations f
+        LEFT JOIN genus_formations gf2 ON gf2.formation_id = f.id
+        WHERE f.id = ?
+        GROUP BY f.id
     """, (formation_id,))
     formation = cursor.fetchone()
 
