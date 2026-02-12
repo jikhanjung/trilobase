@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-12
+**마지막 업데이트:** 2026-02-13
 
 ## 프로젝트 개요
 
@@ -261,6 +261,15 @@
   - 테스트: 147개 (기존 145 + 신규 2)
   - devlog: `devlog/20260212_038_phase30_ics_chart_view.md`
 
+- **PaleoCore 스키마 설계 완료** (설계 문서, 미구현)
+  - PaleoCore/Trilobase 패키지 분리 스키마 정의서 작성
+  - 20개 테이블 → PaleoCore(8), Trilobase(6), Both(6) 분류
+  - PaleoCore: 14개 테이블 CREATE TABLE SQL 정의 (8 데이터 + 6 SCODA 메타)
+  - manifest.json, SCODA 메타데이터 (artifact_metadata, provenance, schema_descriptions, ui_display_intent, ui_queries, ui_manifest) 정의
+  - Logical Foreign Key 명세 (cross-package 참조 4건)
+  - 계획 문서: `devlog/20260213_P27_paleocore_schema.md`
+  - 정의서: `docs/paleocore_schema.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -381,7 +390,8 @@ trilobase/
 ├── docs/
 │   ├── HANDOVER.md                  # 인수인계 문서 (프로젝트 현황)
 │   ├── RELEASE_GUIDE.md             # 릴리스 및 배포 가이드 (버전 관리)
-│   └── SCODA_CONCEPT.md             # SCODA 개념 설명
+│   ├── SCODA_CONCEPT.md             # SCODA 개념 설명
+│   └── paleocore_schema.md          # PaleoCore 패키지 스키마 정의서 (설계)
 └── CLAUDE.md
 ```
 
@@ -432,7 +442,10 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 
 ## 다음 작업
 
-Phase 30까지 완료. 다음 작업 미정.
+PaleoCore 스키마 설계 완료 (`docs/paleocore_schema.md`). 다음 단계:
+- PaleoCore DB 생성 스크립트 구현 (`scripts/create_paleocore.py`)
+- Trilobase DB 마이그레이션 (8개 테이블 분리, 레거시 컬럼 삭제)
+- 앱 코드 수정 (ATTACH 로직, cross-DB JOIN)
 
 ## 미해결 항목
 
