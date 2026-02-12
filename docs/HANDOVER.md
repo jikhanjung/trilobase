@@ -213,6 +213,15 @@
   - 스크립트: `scripts/import_cow.py` (`--dry-run`, `--report` 지원)
   - devlog: `devlog/20260212_032_phase26_cow_import.md`
 
+- **Phase 27 완료**: Geographic Regions 계층 구조
+  - `geographic_regions` 테이블: 계층형 지리 데이터 (60 countries + 502 regions = 562건)
+  - `genus_locations.region_id` 추가: 4,841건 100% 매핑
+  - API: `/api/country/<id>` 수정 (regions 리스트 포함), `/api/region/<id>` 신규
+  - UI: Country > Region 클릭 가능 링크, Region detail 모달
+  - Named query: `countries_list` 갱신, `regions_list` 신규
+  - 테스트: 137개 (120 + 17 MCP)
+  - devlog: `devlog/20260212_035_phase27_geographic_regions.md`
+
 - **2026-02-12 Web UI 상세 페이지 및 상호 링크**
   - Countries/Formations/Bibliography/All Genera 테이블 행 클릭 → 상세 모달
   - API 3개 추가: `/api/country/<id>`, `/api/formation/<id>`, `/api/bibliography/<id>`
@@ -258,7 +267,8 @@
 | genus_formations | 4,853 | Genus-Formation 다대다 관계 |
 | genus_locations | 4,841 | Genus-Country 다대다 관계 |
 | formations | 2,006 | 지층 정보 |
-| countries | 142 | 국가 정보 |
+| countries | 142 | 국가 정보 (원본 보존) |
+| geographic_regions | 562 | 계층형 지리 데이터 (60 countries + 502 regions) |
 | cow_states | 244 | COW 주권국가 마스터 (v2024) |
 | country_cow_mapping | 142 | countries ↔ COW 매핑 (96.5%) |
 | temporal_ranges | 28 | 지질시대 코드 |
@@ -321,7 +331,8 @@ trilobase/
 │   ├── build.py                     # Phase 18: 빌드 자동화
 │   ├── create_scoda.py              # Phase 25: .scoda 패키지 생성
 │   ├── import_cow.py               # Phase 26: COW 국가 데이터 임포트
-│   └── fix_countries_quality.py    # countries 데이터 품질 정리
+│   ├── fix_countries_quality.py    # countries 데이터 품질 정리
+│   └── create_geographic_regions.py # Phase 27: Geographic Regions 마이그레이션
 ├── devlog/
 │   ├── 20260204_P01~P05_*.md        # Phase 계획 문서
 │   ├── 20260204_001~011_*.md        # Phase 1-11 완료 로그
@@ -361,15 +372,16 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 23 | MCP Server SSE 통합 (GUI 통합) | ✅ 완료 |
 | Phase 25 | .scoda ZIP 패키지 포맷 + DB-앱 분리 | ✅ 완료 |
 | Phase 26 | COW 국가 데이터 도입 (countries ↔ COW 매핑) | ✅ 완료 |
+| Phase 27 | Geographic Regions 계층 구조 (country/region 분리) | ✅ 완료 |
 
 ## 테스트 현황
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `test_app.py` | 111개 | ✅ 통과 |
+| `test_app.py` | 120개 | ✅ 통과 |
 | `test_mcp_basic.py` | 1개 | ✅ 통과 |
 | `test_mcp.py` | 16개 | ✅ 통과 |
-| **합계** | **128개** | **✅ 전부 통과** |
+| **합계** | **137개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -384,7 +396,7 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 
 ## 다음 작업
 
-Phase 26까지 완료. 다음 작업 미정.
+Phase 27까지 완료. 다음 작업 미정.
 
 ## 미해결 항목
 
@@ -419,6 +431,7 @@ Phase 26까지 완료. 다음 작업 미정.
 23. ~~Phase 23: MCP Server SSE 통합~~ ✅ (브랜치: `feature/scoda-implementation`)
 25. ~~Phase 25: .scoda ZIP 패키지 포맷~~ ✅ (브랜치: `feature/scoda-package`)
 26. ~~Phase 26: COW 국가 데이터 도입~~ ✅
+27. ~~Phase 27: Geographic Regions 계층 구조~~ ✅
 
 ## DB 스키마
 
@@ -459,6 +472,9 @@ bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
 
 -- taxa: 뷰 (하위 호환성)
 CREATE VIEW taxa AS SELECT ... FROM taxonomic_ranks WHERE rank = 'Genus';
+
+-- Geographic Regions (Phase 27)
+geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)  -- 계층형 지리 데이터
 
 -- COW 국가 매핑 (Phase 26)
 cow_states (cow_ccode, abbrev, name, start_date, end_date, version)  -- COW 주권국가 마스터
