@@ -319,6 +319,14 @@
   - 테스트: 169개 전부 통과 (기존 164 + 신규 5)
   - devlog: `devlog/20260213_043_phase35_paleocore_scoda.md`
 
+- **Phase 36 완료**: 조합 .scoda 배포 테스트
+  - TestCombinedScodaDeployment: .scoda 자동 탐색, 3-DB ATTACH, Cross-DB JOIN, Flask API, get_scoda_info (6개)
+  - TestApiPaleocoreStatus: `/api/paleocore/status` 엔드포인트 기본 검증 (3개)
+  - `_resolve_paleocore()` .scoda 우선 탐색 / .db 폴백 검증
+  - 두 .scoda에서 추출한 DB로 genus detail API pc.formations/pc.geographic_regions JOIN 검증
+  - 테스트: 178개 전부 통과 (기존 169 + 신규 9, MCP 17개 포함)
+  - devlog: `devlog/20260213_044_phase36_combined_scoda_test.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -388,7 +396,7 @@ trilobase/
 ├── static/
 │   ├── css/style.css                 # 스타일
 │   └── js/app.js                     # 프론트엔드 로직
-├── test_app.py                      # pytest 테스트 (147개)
+├── test_app.py                      # pytest 테스트 (161개)
 ├── test_mcp_basic.py                # MCP 기본 테스트 (1개)
 ├── test_mcp.py                      # MCP 포괄적 테스트 (16개, asynccontextmanager 방식)
 ├── pytest.ini                       # pytest 설정 (asyncio_mode=auto)
@@ -467,10 +475,10 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `test_app.py` | 152개 | ✅ 통과 |
+| `test_app.py` | 161개 | ✅ 통과 |
 | `test_mcp_basic.py` | 1개 | ✅ 통과 |
 | `test_mcp.py` | 16개 | ✅ 통과 |
-| **합계** | **169개** | **✅ 전부 통과** |
+| **합계** | **178개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -485,9 +493,8 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 
 ## 다음 작업
 
-PaleoCore 분리 및 .scoda 패키징 완료 (Phase 31-35).
+PaleoCore 분리 및 .scoda 패키징 완료 (Phase 31-36).
 - PaleoCore 독립 뷰어 (paleocore.scoda를 단독으로 열어서 탐색)
-- trilobase.scoda + paleocore.scoda 조합 배포 테스트
 - PyInstaller 빌드에 paleocore.scoda 포함
 
 ## 미해결 항목

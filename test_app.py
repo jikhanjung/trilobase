@@ -2041,3 +2041,190 @@ class TestGenusDetailICSMapping:
         response = client.get('/api/genus/100')
         data = json.loads(response.data)
         assert data['temporal_ics_mapping'] == []
+
+
+# --- Combined SCODA Deployment (Phase 36) ---
+
+class TestCombinedScodaDeployment:
+    """Tests for combined trilobase.scoda + paleocore.scoda deployment."""
+
+    def _add_scoda_metadata_to_paleocore(self, paleocore_db_path):
+        """Add SCODA metadata tables to paleocore DB for .scoda packaging."""
+        conn = sqlite3.connect(paleocore_db_path)
+        cursor = conn.cursor()
+        cursor.executescript("""
+            CREATE TABLE IF NOT EXISTS artifact_metadata (
+                key TEXT PRIMARY KEY, value TEXT NOT NULL
+            );
+            INSERT OR REPLACE INTO artifact_metadata VALUES ('artifact_id', 'paleocore');
+            INSERT OR REPLACE INTO artifact_metadata VALUES ('name', 'PaleoCore');
+            INSERT OR REPLACE INTO artifact_metadata VALUES ('version', '0.3.0');
+            INSERT OR REPLACE INTO artifact_metadata VALUES ('schema_version', '1.0');
+            INSERT OR REPLACE INTO artifact_metadata VALUES ('description', 'Test PaleoCore');
+            INSERT OR REPLACE INTO artifact_metadata VALUES ('license', 'CC-BY-4.0');
+
+            CREATE TABLE IF NOT EXISTS provenance (
+                id INTEGER PRIMARY KEY, source_type TEXT NOT NULL,
+                citation TEXT NOT NULL, description TEXT, year INTEGER, url TEXT
+            );
+
+            CREATE TABLE IF NOT EXISTS schema_descriptions (
+                table_name TEXT NOT NULL, column_name TEXT,
+                description TEXT NOT NULL, PRIMARY KEY (table_name, column_name)
+            );
+        """)
+        conn.commit()
+        conn.close()
+
+    def _setup_combined_scoda(self, test_db, tmp_path):
+        """Create both .scoda packages from test DBs and set module-level paths."""
+        canonical_db, overlay_db, paleocore_db = test_db
+        self._add_scoda_metadata_to_paleocore(paleocore_db)
+
+        tri_scoda = str(tmp_path / "trilobase.scoda")
+        pc_scoda = str(tmp_path / "paleocore.scoda")
+        ScodaPackage.create(canonical_db, tri_scoda)
+        ScodaPackage.create(paleocore_db, pc_scoda)
+
+        tri_pkg = ScodaPackage(tri_scoda)
+        pc_pkg = ScodaPackage(pc_scoda)
+
+        scoda_package._canonical_db = tri_pkg.db_path
+        scoda_package._overlay_db = overlay_db
+        scoda_package._paleocore_db = pc_pkg.db_path
+        scoda_package._scoda_pkg = tri_pkg
+        scoda_package._paleocore_pkg = pc_pkg
+
+        return tri_pkg, pc_pkg
+
+    def test_resolve_paleocore_finds_scoda(self, test_db, tmp_path):
+        """_resolve_paleocore() should discover .scoda and set _paleocore_pkg."""
+        _, _, paleocore_db = test_db
+        self._add_scoda_metadata_to_paleocore(paleocore_db)
+
+        scoda_dir = str(tmp_path / "scoda_resolve_test")
+        os.makedirs(scoda_dir)
+        ScodaPackage.create(paleocore_db, os.path.join(scoda_dir, "paleocore.scoda"))
+
+        scoda_package._reset_paths()
+        scoda_package._resolve_paleocore(scoda_dir)
+
+        try:
+            assert scoda_package._paleocore_pkg is not None
+            assert scoda_package._paleocore_db is not None
+            assert os.path.exists(scoda_package._paleocore_db)
+        finally:
+            scoda_package._reset_paths()
+
+    def test_resolve_paleocore_falls_back_to_db(self, tmp_path):
+        """When no .scoda exists, _resolve_paleocore() should fall back to .db path."""
+        scoda_dir = str(tmp_path / "empty_dir")
+        os.makedirs(scoda_dir)
+
+        scoda_package._reset_paths()
+        scoda_package._resolve_paleocore(scoda_dir)
+
+        try:
+            assert scoda_package._paleocore_pkg is None
+            expected = os.path.join(scoda_dir, 'paleocore.db')
+            assert scoda_package._paleocore_db == expected
+        finally:
+            scoda_package._reset_paths()
+
+    def test_combined_scoda_get_db(self, test_db, tmp_path):
+        """Two .scoda packages should yield working 3-DB ATTACH + cross-DB JOIN."""
+        try:
+            self._setup_combined_scoda(test_db, tmp_path)
+
+            conn = get_db()
+            dbs = conn.execute("PRAGMA database_list").fetchall()
+            db_names = [row['name'] for row in dbs]
+            assert 'main' in db_names
+            assert 'overlay' in db_names
+            assert 'pc' in db_names
+
+            # Cross-DB JOIN: genus_locations ↔ pc.countries
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT COUNT(*) as cnt
+                FROM genus_locations gl
+                JOIN pc.countries c ON gl.country_id = c.id
+            """)
+            assert cursor.fetchone()['cnt'] > 0
+            conn.close()
+        finally:
+            scoda_package._reset_paths()
+
+    def test_combined_scoda_flask_api(self, test_db, tmp_path):
+        """Flask /api/paleocore/status should work with .scoda-extracted DBs."""
+        try:
+            self._setup_combined_scoda(test_db, tmp_path)
+
+            app.config['TESTING'] = True
+            with app.test_client() as client:
+                response = client.get('/api/paleocore/status')
+                assert response.status_code == 200
+                data = json.loads(response.data)
+                assert data['attached'] is True
+                assert 'tables' in data
+                assert data['cross_db_join_test']['status'] == 'OK'
+        finally:
+            scoda_package._reset_paths()
+
+    def test_combined_scoda_info(self, test_db, tmp_path):
+        """get_scoda_info() should report both sources as 'scoda'."""
+        try:
+            self._setup_combined_scoda(test_db, tmp_path)
+
+            info = scoda_package.get_scoda_info()
+            assert info['source_type'] == 'scoda'
+            assert info['paleocore_source_type'] == 'scoda'
+            assert info['canonical_exists'] is True
+            assert info['paleocore_exists'] is True
+        finally:
+            scoda_package._reset_paths()
+
+    def test_combined_scoda_genus_detail(self, test_db, tmp_path):
+        """Genus detail API should JOIN pc.formations and pc.geographic_regions from .scoda."""
+        try:
+            self._setup_combined_scoda(test_db, tmp_path)
+
+            app.config['TESTING'] = True
+            with app.test_client() as client:
+                response = client.get('/api/genus/101')  # Acuticryphops
+                assert response.status_code == 200
+                data = json.loads(response.data)
+                assert data['name'] == 'Acuticryphops'
+                # formations via pc.formations
+                assert len(data['formations']) > 0
+                # locations via pc.geographic_regions
+                assert len(data['locations']) > 0
+        finally:
+            scoda_package._reset_paths()
+
+
+# --- /api/paleocore/status (Phase 36) ---
+
+class TestApiPaleocoreStatus:
+    """Tests for /api/paleocore/status endpoint (basic, using direct .db paths)."""
+
+    def test_paleocore_status_200(self, client):
+        """Endpoint should return 200."""
+        response = client.get('/api/paleocore/status')
+        assert response.status_code == 200
+
+    def test_paleocore_status_attached(self, client):
+        """Response should show attached=True with tables dict."""
+        response = client.get('/api/paleocore/status')
+        data = json.loads(response.data)
+        assert data['attached'] is True
+        assert 'tables' in data
+        assert isinstance(data['tables'], dict)
+
+    def test_paleocore_status_cross_db_join(self, client):
+        """Cross-DB join test should report OK with matched rows."""
+        response = client.get('/api/paleocore/status')
+        data = json.loads(response.data)
+        assert 'cross_db_join_test' in data
+        assert data['cross_db_join_test']['status'] == 'OK'
+        assert data['cross_db_join_test']['matched_rows'] > 0
