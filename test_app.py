@@ -440,6 +440,58 @@ def test_db(tmp_path):
         ('default', 'Test manifest', _json.dumps(test_manifest), '2026-02-07T00:00:00')
     )
 
+    # ICS Chronostrat (Phase 28) — sample hierarchy: Phanerozoic > Paleozoic > Cambrian > Miaolingian > Wuliuan
+    cursor.executescript("""
+        CREATE TABLE ics_chronostrat (
+            id INTEGER PRIMARY KEY,
+            ics_uri TEXT UNIQUE NOT NULL,
+            name TEXT NOT NULL,
+            rank TEXT NOT NULL,
+            parent_id INTEGER,
+            start_mya REAL,
+            start_uncertainty REAL,
+            end_mya REAL,
+            end_uncertainty REAL,
+            short_code TEXT,
+            color TEXT,
+            display_order INTEGER,
+            ratified_gssp INTEGER DEFAULT 0,
+            FOREIGN KEY (parent_id) REFERENCES ics_chronostrat(id)
+        );
+        CREATE INDEX idx_ics_chrono_parent ON ics_chronostrat(parent_id);
+        CREATE INDEX idx_ics_chrono_rank ON ics_chronostrat(rank);
+
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (1, 'http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic', 'Phanerozoic', 'Eon', NULL, 538.8, 0.6, 0.0, NULL, NULL, '#9AD9DD', 170, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (2, 'http://resource.geosciml.org/classifier/ics/ischart/Paleozoic', 'Paleozoic', 'Era', 1, 538.8, 0.6, 251.9, 0.024, NULL, '#99C08D', 169, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (3, 'http://resource.geosciml.org/classifier/ics/ischart/Cambrian', 'Cambrian', 'Period', 2, 538.8, 0.6, 486.85, 1.5, 'Ep', '#7FA056', 154, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (4, 'http://resource.geosciml.org/classifier/ics/ischart/Miaolingian', 'Miaolingian', 'Epoch', 3, 506.5, NULL, 497.0, NULL, 'Ep3', '#A6CF86', 148, 0);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (5, 'http://resource.geosciml.org/classifier/ics/ischart/Wuliuan', 'Wuliuan', 'Age', 4, 506.5, NULL, 504.5, NULL, NULL, '#B6D88B', 147, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (6, 'http://resource.geosciml.org/classifier/ics/ischart/Furongian', 'Furongian', 'Epoch', 3, 497.0, NULL, 486.85, 1.5, 'Ep4', '#B3E095', 144, 1);
+
+        CREATE TABLE temporal_ics_mapping (
+            id INTEGER PRIMARY KEY,
+            temporal_code TEXT NOT NULL,
+            ics_id INTEGER NOT NULL,
+            mapping_type TEXT NOT NULL,
+            notes TEXT,
+            FOREIGN KEY (ics_id) REFERENCES ics_chronostrat(id)
+        );
+        CREATE INDEX idx_tim_code ON temporal_ics_mapping(temporal_code);
+        CREATE INDEX idx_tim_ics ON temporal_ics_mapping(ics_id);
+
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (1, 'MCAM', 4, 'exact');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (2, 'UCAM', 6, 'exact');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (3, 'CAM', 3, 'exact');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (4, 'MUCAM', 4, 'aggregate');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (5, 'MUCAM', 6, 'aggregate');
+    """)
+
     conn.commit()
     conn.close()
 
@@ -1575,3 +1627,126 @@ class TestScodaPackage:
             assert count == 0  # empty initially
         finally:
             scoda_package._reset_paths()
+
+
+# --- ICS Chronostrat (Phase 28) ---
+
+class TestICSChronostrat:
+    """Tests for ics_chronostrat and temporal_ics_mapping tables."""
+
+    def test_ics_table_exists(self, test_db):
+        """ics_chronostrat table should exist with sample data."""
+        canonical_db, _ = test_db
+        conn = sqlite3.connect(canonical_db)
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM ics_chronostrat")
+        count = cursor.fetchone()[0]
+        conn.close()
+        assert count == 6
+
+    def test_ics_hierarchy_eon_to_age(self, test_db):
+        """Hierarchy chain: Wuliuan → Miaolingian → Cambrian → Paleozoic → Phanerozoic."""
+        canonical_db, _ = test_db
+        conn = sqlite3.connect(canonical_db)
+        cursor = conn.cursor()
+        # Walk up from Wuliuan (Age) to Phanerozoic (Eon)
+        cursor.execute("""
+            SELECT a.name, e.name, p.name, er.name, eo.name
+            FROM ics_chronostrat a
+            JOIN ics_chronostrat e ON a.parent_id = e.id
+            JOIN ics_chronostrat p ON e.parent_id = p.id
+            JOIN ics_chronostrat er ON p.parent_id = er.id
+            JOIN ics_chronostrat eo ON er.parent_id = eo.id
+            WHERE a.name = 'Wuliuan'
+        """)
+        row = cursor.fetchone()
+        conn.close()
+        assert row == ('Wuliuan', 'Miaolingian', 'Cambrian', 'Paleozoic', 'Phanerozoic')
+
+    def test_ics_ranks(self, test_db):
+        """Each concept should have a valid rank."""
+        canonical_db, _ = test_db
+        conn = sqlite3.connect(canonical_db)
+        cursor = conn.cursor()
+        cursor.execute("SELECT DISTINCT rank FROM ics_chronostrat ORDER BY rank")
+        ranks = {row[0] for row in cursor.fetchall()}
+        conn.close()
+        assert ranks == {'Age', 'Eon', 'Epoch', 'Era', 'Period'}
+
+    def test_ics_cambrian_time_range(self, test_db):
+        """Cambrian should have start_mya=538.8 and end_mya=486.85."""
+        canonical_db, _ = test_db
+        conn = sqlite3.connect(canonical_db)
+        cursor = conn.cursor()
+        cursor.execute("SELECT start_mya, end_mya FROM ics_chronostrat WHERE name = 'Cambrian'")
+        row = cursor.fetchone()
+        conn.close()
+        assert row[0] == 538.8
+        assert row[1] == 486.85
+
+    def test_ics_color_and_short_code(self, test_db):
+        """Cambrian should have color #7FA056 and short code Ep."""
+        canonical_db, _ = test_db
+        conn = sqlite3.connect(canonical_db)
+        cursor = conn.cursor()
+        cursor.execute("SELECT color, short_code FROM ics_chronostrat WHERE name = 'Cambrian'")
+        row = cursor.fetchone()
+        conn.close()
+        assert row[0] == '#7FA056'
+        assert row[1] == 'Ep'
+
+    def test_ics_unique_uri(self, test_db):
+        """Each concept should have a unique URI."""
+        canonical_db, _ = test_db
+        conn = sqlite3.connect(canonical_db)
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(DISTINCT ics_uri) FROM ics_chronostrat")
+        distinct = cursor.fetchone()[0]
+        cursor.execute("SELECT COUNT(*) FROM ics_chronostrat")
+        total = cursor.fetchone()[0]
+        conn.close()
+        assert distinct == total
+
+    def test_mapping_table_exists(self, test_db):
+        """temporal_ics_mapping table should exist with sample data."""
+        canonical_db, _ = test_db
+        conn = sqlite3.connect(canonical_db)
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM temporal_ics_mapping")
+        count = cursor.fetchone()[0]
+        conn.close()
+        assert count == 5
+
+    def test_mapping_exact(self, test_db):
+        """MCAM should map exactly to Miaolingian."""
+        canonical_db, _ = test_db
+        conn = sqlite3.connect(canonical_db)
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT ic.name, m.mapping_type
+            FROM temporal_ics_mapping m
+            JOIN ics_chronostrat ic ON m.ics_id = ic.id
+            WHERE m.temporal_code = 'MCAM'
+        """)
+        row = cursor.fetchone()
+        conn.close()
+        assert row[0] == 'Miaolingian'
+        assert row[1] == 'exact'
+
+    def test_mapping_aggregate(self, test_db):
+        """MUCAM should map to both Miaolingian and Furongian as aggregate."""
+        canonical_db, _ = test_db
+        conn = sqlite3.connect(canonical_db)
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT ic.name, m.mapping_type
+            FROM temporal_ics_mapping m
+            JOIN ics_chronostrat ic ON m.ics_id = ic.id
+            WHERE m.temporal_code = 'MUCAM'
+            ORDER BY ic.name
+        """)
+        rows = cursor.fetchall()
+        conn.close()
+        assert len(rows) == 2
+        assert rows[0] == ('Furongian', 'aggregate')
+        assert rows[1] == ('Miaolingian', 'aggregate')

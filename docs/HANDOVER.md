@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-10
+**마지막 업데이트:** 2026-02-12
 
 ## 프로젝트 개요
 
@@ -222,6 +222,17 @@
   - 테스트: 137개 (120 + 17 MCP)
   - devlog: `devlog/20260212_035_phase27_geographic_regions.md`
 
+- **Phase 28 완료**: ICS Chronostratigraphic Chart 임포트 + temporal_ranges 매핑
+  - `ics_chronostrat` 테이블: ICS 지질시대 178개 concept (GTS 2020, SKOS/RDF)
+  - `temporal_ics_mapping` 테이블: temporal_ranges 28개 코드 ↔ ICS 매핑 (40행)
+  - 매핑 타입: exact(18), aggregate(17), partial(5), unmappable(1=INDET)
+  - 계층 구조: Super-Eon → Eon → Era → Period → Sub-Period → Epoch → Age
+  - provenance, schema_descriptions 갱신
+  - 스크립트: `scripts/import_ics.py` (rdflib, `--dry-run`/`--report` 지원)
+  - 원본: `vendor/ics/gts2020/chart.ttl` (CC-BY 4.0)
+  - 테스트: 146개 (129 + 17 MCP)
+  - devlog: `devlog/20260212_036_phase28_ics_import.md`
+
 - **2026-02-12 Web UI 상세 페이지 및 상호 링크**
   - Countries/Formations/Bibliography/All Genera 테이블 행 클릭 → 상세 모달
   - API 3개 추가: `/api/country/<id>`, `/api/formation/<id>`, `/api/bibliography/<id>`
@@ -272,11 +283,13 @@
 | cow_states | 244 | COW 주권국가 마스터 (v2024) |
 | country_cow_mapping | 142 | countries ↔ COW 매핑 (96.5%) |
 | temporal_ranges | 28 | 지질시대 코드 |
+| ics_chronostrat | 178 | ICS 국제 지층 연대표 (GTS 2020, 계층형) |
+| temporal_ics_mapping | 40 | temporal_ranges ↔ ICS 매핑 |
 | bibliography | 2,130 | 참고문헌 (Literature Cited) |
 | taxa (뷰) | 5,113 | 하위 호환성 뷰 |
 | artifact_metadata | 7 | SCODA 아티팩트 메타데이터 |
-| provenance | 3 | 데이터 출처 |
-| schema_descriptions | 107 | 테이블/컬럼 설명 |
+| provenance | 5 | 데이터 출처 |
+| schema_descriptions | 143 | 테이블/컬럼 설명 |
 | ui_display_intent | 6 | SCODA 뷰 타입 힌트 |
 | ui_queries | 14 | Named SQL 쿼리 |
 | ui_manifest | 1 | 선언적 뷰 정의 (JSON) |
@@ -307,7 +320,7 @@ trilobase/
 ├── static/
 │   ├── css/style.css                 # 스타일
 │   └── js/app.js                     # 프론트엔드 로직
-├── test_app.py                      # pytest 테스트 (111개)
+├── test_app.py                      # pytest 테스트 (129개)
 ├── test_mcp_basic.py                # MCP 기본 테스트 (1개)
 ├── test_mcp.py                      # MCP 포괄적 테스트 (16개, asynccontextmanager 방식)
 ├── pytest.ini                       # pytest 설정 (asyncio_mode=auto)
@@ -332,7 +345,8 @@ trilobase/
 │   ├── create_scoda.py              # Phase 25: .scoda 패키지 생성
 │   ├── import_cow.py               # Phase 26: COW 국가 데이터 임포트
 │   ├── fix_countries_quality.py    # countries 데이터 품질 정리
-│   └── create_geographic_regions.py # Phase 27: Geographic Regions 마이그레이션
+│   ├── create_geographic_regions.py # Phase 27: Geographic Regions 마이그레이션
+│   └── import_ics.py              # Phase 28: ICS 지층 연대표 임포트
 ├── devlog/
 │   ├── 20260204_P01~P05_*.md        # Phase 계획 문서
 │   ├── 20260204_001~011_*.md        # Phase 1-11 완료 로그
@@ -344,7 +358,8 @@ trilobase/
 │   ├── 20260209_022_*.md            # Phase 22 완료 로그
 │   └── 20260207_R01~R02_*.md        # 리뷰 문서
 ├── vendor/
-│   └── cow/v2024/States2024/statelist2024.csv  # COW v2024 원본 CSV
+│   ├── cow/v2024/States2024/statelist2024.csv  # COW v2024 원본 CSV
+│   └── ics/gts2020/chart.ttl                   # ICS GTS 2020 (SKOS/RDF)
 ├── docs/
 │   ├── HANDOVER.md                  # 인수인계 문서 (프로젝트 현황)
 │   ├── RELEASE_GUIDE.md             # 릴리스 및 배포 가이드 (버전 관리)
@@ -373,15 +388,16 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 25 | .scoda ZIP 패키지 포맷 + DB-앱 분리 | ✅ 완료 |
 | Phase 26 | COW 국가 데이터 도입 (countries ↔ COW 매핑) | ✅ 완료 |
 | Phase 27 | Geographic Regions 계층 구조 (country/region 분리) | ✅ 완료 |
+| Phase 28 | ICS Chronostratigraphic Chart 임포트 + temporal_ranges 매핑 | ✅ 완료 |
 
 ## 테스트 현황
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `test_app.py` | 120개 | ✅ 통과 |
+| `test_app.py` | 129개 | ✅ 통과 |
 | `test_mcp_basic.py` | 1개 | ✅ 통과 |
 | `test_mcp.py` | 16개 | ✅ 통과 |
-| **합계** | **137개** | **✅ 전부 통과** |
+| **합계** | **146개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -396,7 +412,7 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 
 ## 다음 작업
 
-Phase 27까지 완료. 다음 작업 미정.
+Phase 28까지 완료. 다음 작업 미정.
 
 ## 미해결 항목
 
@@ -432,6 +448,7 @@ Phase 27까지 완료. 다음 작업 미정.
 25. ~~Phase 25: .scoda ZIP 패키지 포맷~~ ✅ (브랜치: `feature/scoda-package`)
 26. ~~Phase 26: COW 국가 데이터 도입~~ ✅
 27. ~~Phase 27: Geographic Regions 계층 구조~~ ✅
+28. ~~Phase 28: ICS Chronostratigraphic Chart 임포트~~ ✅
 
 ## DB 스키마
 
@@ -479,6 +496,11 @@ geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)  -- 계�
 -- COW 국가 매핑 (Phase 26)
 cow_states (cow_ccode, abbrev, name, start_date, end_date, version)  -- COW 주권국가 마스터
 country_cow_mapping (country_id, cow_ccode, parent_name, notes)       -- countries ↔ COW 매핑
+
+-- ICS Chronostrat (Phase 28)
+ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty,
+                 end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+temporal_ics_mapping (id, temporal_code, ics_id, mapping_type, notes)
 
 -- SCODA-Core 테이블
 artifact_metadata (key, value)                    -- 아티팩트 메타데이터 (key-value)
