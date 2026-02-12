@@ -261,14 +261,23 @@
   - 테스트: 147개 (기존 145 + 신규 2)
   - devlog: `devlog/20260212_038_phase30_ics_chart_view.md`
 
-- **PaleoCore 스키마 설계 완료** (설계 문서, 미구현)
+- **PaleoCore 스키마 설계 완료** (설계 문서)
   - PaleoCore/Trilobase 패키지 분리 스키마 정의서 작성
   - 20개 테이블 → PaleoCore(8), Trilobase(6), Both(6) 분류
   - PaleoCore: 14개 테이블 CREATE TABLE SQL 정의 (8 데이터 + 6 SCODA 메타)
-  - manifest.json, SCODA 메타데이터 (artifact_metadata, provenance, schema_descriptions, ui_display_intent, ui_queries, ui_manifest) 정의
+  - manifest.json, SCODA 메타데이터 정의
   - Logical Foreign Key 명세 (cross-package 참조 4건)
   - 계획 문서: `devlog/20260213_P27_paleocore_schema.md`
   - 정의서: `docs/paleocore_schema.md`
+
+- **Phase 31 완료**: PaleoCore DB 생성 스크립트
+  - `scripts/create_paleocore.py`: trilobase.db → paleocore.db 추출 스크립트
+  - 8개 데이터 테이블 (3,340 레코드) + 6개 SCODA 메타데이터 테이블 (14개 총)
+  - `taxa_count` 컬럼 제거 (countries, geographic_regions, formations)
+  - SCODA 메타: artifact_metadata 7건, provenance 3건, schema_descriptions 88건, ui 13건
+  - `--dry-run`, `--source`, `--output` 옵션 지원
+  - paleocore.db: 328 KB, FK integrity 0 errors
+  - devlog: `devlog/20260213_039_paleocore_db_creation.md`
 
 ### 데이터베이스 현황
 
@@ -373,7 +382,8 @@ trilobase/
 │   ├── import_cow.py               # Phase 26: COW 국가 데이터 임포트
 │   ├── fix_countries_quality.py    # countries 데이터 품질 정리
 │   ├── create_geographic_regions.py # Phase 27: Geographic Regions 마이그레이션
-│   └── import_ics.py              # Phase 28: ICS 지층 연대표 임포트
+│   ├── import_ics.py              # Phase 28: ICS 지층 연대표 임포트
+│   └── create_paleocore.py       # Phase 31: PaleoCore DB 생성
 ├── devlog/
 │   ├── 20260204_P01~P05_*.md        # Phase 계획 문서
 │   ├── 20260204_001~011_*.md        # Phase 1-11 완료 로그
@@ -442,10 +452,10 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 
 ## 다음 작업
 
-PaleoCore 스키마 설계 완료 (`docs/paleocore_schema.md`). 다음 단계:
-- PaleoCore DB 생성 스크립트 구현 (`scripts/create_paleocore.py`)
-- Trilobase DB 마이그레이션 (8개 테이블 분리, 레거시 컬럼 삭제)
+PaleoCore DB 생성 스크립트 완료. 다음 단계:
+- Trilobase DB 마이그레이션 (`scripts/migrate_to_v2.py`) — 8개 테이블 분리, 레거시 컬럼 삭제
 - 앱 코드 수정 (ATTACH 로직, cross-DB JOIN)
+- 테스트 갱신 (dual-DB fixture)
 
 ## 미해결 항목
 
