@@ -367,7 +367,7 @@ def test_db(tmp_path):
     cursor.execute("""
         INSERT INTO ui_queries (name, description, sql, params_json, created_at)
         VALUES ('ics_chronostrat_list', 'ICS International Chronostratigraphic Chart',
-                'SELECT id, name, rank, start_mya, end_mya, color, display_order FROM ics_chronostrat ORDER BY display_order',
+                'SELECT id, name, rank, parent_id, start_mya, end_mya, color, display_order FROM ics_chronostrat ORDER BY display_order',
                 NULL, '2026-02-12T00:00:00')
     """)
 
@@ -442,7 +442,7 @@ def test_db(tmp_path):
                 "searchable": True
             },
             "chronostratigraphy_table": {
-                "type": "table",
+                "type": "chart",
                 "title": "Chronostratigraphy",
                 "description": "ICS International Chronostratigraphic Chart (GTS 2020)",
                 "source_query": "ics_chronostrat_list",
@@ -1874,6 +1874,22 @@ class TestApiChronostratDetail:
         assert response.status_code == 200
         data = json.loads(response.data)
         assert data['row_count'] == 6
+
+    def test_chronostrat_query_includes_parent_id(self, client):
+        """ics_chronostrat_list query should include parent_id column."""
+        response = client.get('/api/queries/ics_chronostrat_list/execute')
+        data = json.loads(response.data)
+        assert 'parent_id' in data['columns']
+        # Cambrian (id=3) should have parent_id=2 (Paleozoic)
+        cambrian = next(r for r in data['rows'] if r['name'] == 'Cambrian')
+        assert cambrian['parent_id'] == 2
+
+    def test_manifest_chart_type(self, client):
+        """chronostratigraphy_table should have type 'chart'."""
+        response = client.get('/api/manifest')
+        data = json.loads(response.data)
+        chrono = data['manifest']['views']['chronostratigraphy_table']
+        assert chrono['type'] == 'chart'
 
 
 # --- Genus Detail ICS Mapping (Phase 29 Web UI) ---

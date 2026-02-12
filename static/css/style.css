@@ -506,6 +506,85 @@ html, body {
     width: 100%;
 }
 
+/* Chart View (ICS Chronostratigraphic Chart) */
+.chart-view-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+}
+
+.chart-view-header {
+    padding: 12px 20px 8px;
+    flex-shrink: 0;
+}
+
+.chart-view-header h5 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    color: #495057;
+}
+
+.chart-view-header p {
+    font-size: 0.85rem;
+}
+
+.chart-view-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 20px 20px;
+}
+
+.ics-chart {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.ics-chart thead th {
+    position: sticky;
+    top: 0;
+    background-color: #495057;
+    color: #fff;
+    padding: 8px 6px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+    border: 1px solid #343a40;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.ics-chart td {
+    padding: 4px 6px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+
+.ics-chart td:hover {
+    filter: brightness(0.9);
+}
+
+.ics-chart .ics-age {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-size: 0.75rem;
+    cursor: default;
+    width: 60px;
+    text-align: right;
+    padding-right: 8px;
+}
+
+.ics-chart .ics-age:hover {
+    filter: none;
+}
+
 /* Color Chip */
 .color-chip {
     display: inline-block;
@@ -526,19 +605,22 @@ html, body {
 /* Scrollbar */
 .tree-container::-webkit-scrollbar,
 .list-container::-webkit-scrollbar,
-.table-view-body::-webkit-scrollbar {
+.table-view-body::-webkit-scrollbar,
+.chart-view-body::-webkit-scrollbar {
     width: 8px;
 }
 
 .tree-container::-webkit-scrollbar-thumb,
 .list-container::-webkit-scrollbar-thumb,
-.table-view-body::-webkit-scrollbar-thumb {
+.table-view-body::-webkit-scrollbar-thumb,
+.chart-view-body::-webkit-scrollbar-thumb {
     background: #ced4da;
     border-radius: 4px;
 }
 
 .tree-container::-webkit-scrollbar-thumb:hover,
 .list-container::-webkit-scrollbar-thumb:hover,
-.table-view-body::-webkit-scrollbar-thumb:hover {
+.table-view-body::-webkit-scrollbar-thumb:hover,
+.chart-view-body::-webkit-scrollbar-thumb:hover {
     background: #adb5bd;
 }

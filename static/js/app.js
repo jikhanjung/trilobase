@@ -79,16 +79,22 @@ function switchToView(viewKey) {
     // Show/hide view containers
     const treeContainer = document.getElementById('view-tree');
     const tableContainer = document.getElementById('view-table');
+    const chartContainer = document.getElementById('view-chart');
+
+    treeContainer.style.display = 'none';
+    tableContainer.style.display = 'none';
+    chartContainer.style.display = 'none';
 
     if (view.type === 'tree') {
         treeContainer.style.display = '';
-        tableContainer.style.display = 'none';
     } else if (view.type === 'table') {
-        treeContainer.style.display = 'none';
         tableContainer.style.display = '';
         tableViewSort = view.default_sort || null;
         tableViewSearchTerm = '';
         renderTableView(viewKey);
+    } else if (view.type === 'chart') {
+        chartContainer.style.display = '';
+        renderChronostratChart(viewKey);
     }
 }
 
@@ -253,6 +259,217 @@ function onTableSort(viewKey, key) {
 function onTableSearch(value) {
     tableViewSearchTerm = value;
     renderTableViewRows(currentView);
+}
+
+/**
+ * Render ICS Chronostratigraphic Chart as a hierarchical colored table
+ */
+async function renderChronostratChart(viewKey) {
+    const view = manifest.views[viewKey];
+    if (!view) return;
+
+    const header = document.getElementById('chart-view-header');
+    const body = document.getElementById('chart-view-body');
+
+    header.innerHTML = `<h5><i class="bi ${view.icon || 'bi-clock-history'}"></i> ${view.title}</h5>
+                        <p class="text-muted mb-0">${view.description || ''}</p>`;
+
+    body.innerHTML = '<div class="loading">Loading...</div>';
+
+    try {
+        const response = await fetch(`/api/queries/${view.source_query}/execute`);
+        if (!response.ok) {
+            body.innerHTML = '<div class="text-danger">Error loading data</div>';
+            return;
+        }
+        const data = await response.json();
+        const rows = data.rows;
+
+        // Build tree from flat data
+        const tree = buildChartTree(rows);
+        // Compute leaf counts for rowspan
+        tree.forEach(node => computeLeafCount(node));
+        // Collect leaf rows (each row = root→leaf path)
+        const leafRows = [];
+        tree.forEach(node => collectLeafRows(node, [], leafRows, 0));
+
+        // Render HTML table
+        body.innerHTML = renderChartHTML(leafRows);
+    } catch (error) {
+        body.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
+    }
+}
+
+/**
+ * Build tree structure from flat ICS data.
+ * Super-Eon children (Precambrian's children) are promoted to root level.
+ */
+function buildChartTree(rows) {
+    const byId = {};
+    rows.forEach(r => { byId[r.id] = { ...r, children: [] }; });
+
+    const roots = [];
+    rows.forEach(r => {
+        const node = byId[r.id];
+        if (r.parent_id && byId[r.parent_id]) {
+            const parent = byId[r.parent_id];
+            // Skip Super-Eon: promote its children to root
+            if (parent.rank === 'Super-Eon') {
+                roots.push(node);
+            } else {
+                parent.children.push(node);
+            }
+        } else if (!r.parent_id) {
+            // No parent — could be Super-Eon or actual root
+            if (r.rank === 'Super-Eon') {
+                // Don't add Super-Eon itself; its children will be promoted
+            } else {
+                roots.push(node);
+            }
+        }
+    });
+
+    // Sort children by display_order descending (oldest first = top)
+    function sortChildren(node) {
+        node.children.sort((a, b) => (b.display_order || 0) - (a.display_order || 0));
+        node.children.forEach(sortChildren);
+    }
+    roots.sort((a, b) => (b.display_order || 0) - (a.display_order || 0));
+    roots.forEach(sortChildren);
+
+    return roots;
+}
+
+/**
+ * Compute leaf count for each node (= rowspan).
+ * A leaf node (no children) has leafCount = 1.
+ */
+function computeLeafCount(node) {
+    if (node.children.length === 0) {
+        node.leafCount = 1;
+        return 1;
+    }
+    let count = 0;
+    node.children.forEach(c => { count += computeLeafCount(c); });
+    node.leafCount = count;
+    return count;
+}
+
+// Column assignment by rank
+const RANK_COL = {
+    'Eon': 0,
+    'Era': 1,
+    'Period': 2,
+    'Sub-Period': 3,
+    'Epoch': 4,
+    'Age': 5
+};
+const COL_COUNT = 7; // Eon, Era, Period, Sub-Period, Epoch, Age, Age(Ma)
+
+/**
+ * Check if a node has any Sub-Period descendants (for colspan calculation)
+ */
+function hasSubPeriodChild(node) {
+    return node.children.some(c => c.rank === 'Sub-Period');
+}
+
+/**
+ * Collect leaf rows via DFS. Each leaf produces one table row.
+ * path = array of { node, col, colspan, rowspan } for ancestors that start at this leaf's row.
+ * parentEndCol = the first column after the parent's span (used to detect gaps like Pridoli)
+ */
+function collectLeafRows(node, ancestorPath, leafRows, parentEndCol) {
+    let col = RANK_COL[node.rank] !== undefined ? RANK_COL[node.rank] : 5;
+
+    // For Period without Sub-Period children, we'll use colspan=2 (Period + Sub-Period cols)
+    let colspan = 1;
+    if (node.rank === 'Period' && !hasSubPeriodChild(node)) {
+        colspan = 2; // span Period + Sub-Period columns
+    }
+
+    // Adjust for parent-child column gap (e.g., Pridoli: Age directly under Period)
+    if (parentEndCol !== undefined && col > parentEndCol) {
+        const originalEndCol = col + colspan - 1;
+        col = parentEndCol;
+        colspan = originalEndCol - col + 1;
+    }
+
+    const entry = { node, col, colspan, rowspan: node.leafCount };
+    const myEndCol = col + colspan;
+
+    if (node.children.length === 0) {
+        // Leaf: extend colspan to fill remaining columns up to Age (col 5)
+        const endCol = col + colspan - 1;
+        if (endCol < 5) {
+            colspan = 5 - col + 1; // extend to col 5 inclusive
+            entry.colspan = colspan;
+        }
+
+        // Build the row: ancestor cells + this cell
+        const row = [...ancestorPath, entry];
+        leafRows.push(row);
+    } else {
+        // Non-leaf: first child inherits this node in its path, rest don't
+        node.children.forEach((child, i) => {
+            if (i === 0) {
+                collectLeafRows(child, [...ancestorPath, entry], leafRows, myEndCol);
+            } else {
+                collectLeafRows(child, [], leafRows, myEndCol);
+            }
+        });
+    }
+}
+
+/**
+ * Determine if a hex color is light (for text contrast)
+ */
+function isLightColor(hex) {
+    if (!hex) return true;
+    hex = hex.replace('#', '');
+    if (hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+    const r = parseInt(hex.substr(0, 2), 16);
+    const g = parseInt(hex.substr(2, 2), 16);
+    const b = parseInt(hex.substr(4, 2), 16);
+    // Luminance formula
+    const lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    return lum > 0.5;
+}
+
+/**
+ * Render the ICS chart as an HTML table
+ */
+function renderChartHTML(leafRows) {
+    const headers = ['Eon', 'Era', 'System / Period', 'Sub-Period', 'Series / Epoch', 'Stage / Age', 'Age (Ma)'];
+
+    let html = '<table class="ics-chart"><thead><tr>';
+    headers.forEach(h => { html += `<th>${h}</th>`; });
+    html += '</tr></thead><tbody>';
+
+    leafRows.forEach(row => {
+        html += '<tr>';
+        // Render ancestor + leaf cells
+        row.forEach(entry => {
+            const n = entry.node;
+            const bgColor = n.color || '#f8f9fa';
+            const textColor = isLightColor(bgColor) ? '#222' : '#fff';
+            const rs = entry.rowspan > 1 ? ` rowspan="${entry.rowspan}"` : '';
+            const cs = entry.colspan > 1 ? ` colspan="${entry.colspan}"` : '';
+            const title = n.start_mya != null ? `${n.name} (${n.start_mya}–${n.end_mya || 0} Ma)` : n.name;
+            html += `<td${rs}${cs} style="background-color:${bgColor}; color:${textColor};" `
+                  + `title="${title}" onclick="showChronostratDetail(${n.id})">`
+                  + `${n.name}</td>`;
+        });
+
+        // Age(Ma) column: use the leaf node's start_mya
+        const leaf = row[row.length - 1].node;
+        const ageMa = leaf.start_mya != null ? leaf.start_mya : '';
+        html += `<td class="ics-age">${ageMa}</td>`;
+
+        html += '</tr>';
+    });
+
+    html += '</tbody></table>';
+    return html;
 }
 
 /**
