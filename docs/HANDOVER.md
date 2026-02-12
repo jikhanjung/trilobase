@@ -200,6 +200,19 @@
   - 하위 호환: `.scoda` 없으면 `trilobase.db` 직접 사용 (폴백)
   - 테스트: 111개 (기존 101 + ScodaPackage 10)
 
+- **2026-02-12 countries 데이터 품질 정리**
+  - 파싱 오류 1건, 중복/오타 병합 8건, 소문자 접두어 정규화 4건
+  - 151 → 142개, devlog: `devlog/20260212_031_countries_data_quality.md`
+
+- **Phase 26 완료**: COW 국가 데이터 도입
+  - `cow_states` 테이블: COW State System Membership v2024 (244 레코드)
+  - `country_cow_mapping` 테이블: Trilobase countries ↔ COW 매핑 (142건, 매핑률 96.5%)
+  - 매핑 방법: exact(50) + manual(54) + prefix(33), unmappable(5)
+  - `provenance` 테이블에 COW 출처 추가
+  - COW CSV 원본: `vendor/cow/v2024/States2024/statelist2024.csv` (git 추적)
+  - 스크립트: `scripts/import_cow.py` (`--dry-run`, `--report` 지원)
+  - devlog: `devlog/20260212_032_phase26_cow_import.md`
+
 
 ### 데이터베이스 현황
 
@@ -236,7 +249,9 @@
 | genus_formations | 4,853 | Genus-Formation 다대다 관계 |
 | genus_locations | 4,841 | Genus-Country 다대다 관계 |
 | formations | 2,006 | 지층 정보 |
-| countries | 151 | 국가 정보 |
+| countries | 142 | 국가 정보 |
+| cow_states | 244 | COW 주권국가 마스터 (v2024) |
+| country_cow_mapping | 142 | countries ↔ COW 매핑 (96.5%) |
 | temporal_ranges | 28 | 지질시대 코드 |
 | bibliography | 2,130 | 참고문헌 (Literature Cited) |
 | taxa (뷰) | 5,113 | 하위 호환성 뷰 |
@@ -295,7 +310,9 @@ trilobase/
 │   ├── serve.py                     # Phase 18: Flask 서버 런처
 │   ├── gui.py                       # Phase 19: GUI 컨트롤 패널
 │   ├── build.py                     # Phase 18: 빌드 자동화
-│   └── create_scoda.py              # Phase 25: .scoda 패키지 생성
+│   ├── create_scoda.py              # Phase 25: .scoda 패키지 생성
+│   ├── import_cow.py               # Phase 26: COW 국가 데이터 임포트
+│   └── fix_countries_quality.py    # countries 데이터 품질 정리
 ├── devlog/
 │   ├── 20260204_P01~P05_*.md        # Phase 계획 문서
 │   ├── 20260204_001~011_*.md        # Phase 1-11 완료 로그
@@ -306,6 +323,8 @@ trilobase/
 │   ├── 20260209_P14_*.md            # Phase 22 계획 문서
 │   ├── 20260209_022_*.md            # Phase 22 완료 로그
 │   └── 20260207_R01~R02_*.md        # 리뷰 문서
+├── vendor/
+│   └── cow/v2024/States2024/statelist2024.csv  # COW v2024 원본 CSV
 ├── docs/
 │   ├── HANDOVER.md                  # 인수인계 문서 (프로젝트 현황)
 │   ├── RELEASE_GUIDE.md             # 릴리스 및 배포 가이드 (버전 관리)
@@ -332,6 +351,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 22 | MCP Server (LLM 자연어 쿼리 지원) | ✅ 완료 |
 | Phase 23 | MCP Server SSE 통합 (GUI 통합) | ✅ 완료 |
 | Phase 25 | .scoda ZIP 패키지 포맷 + DB-앱 분리 | ✅ 완료 |
+| Phase 26 | COW 국가 데이터 도입 (countries ↔ COW 매핑) | ✅ 완료 |
 
 ## 테스트 현황
 
@@ -353,33 +373,9 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 - `asyncio_default_fixture_loop_scope = function` — 독립 이벤트 루프
 - `conftest.py` — anyio 백엔드를 asyncio로 명시
 
-## 다음 작업: Phase 26 — COW 국가 데이터 도입
+## 다음 작업
 
-**계획 문서:** `devlog/20260212_P21_scoda_cow_import_plan.md`
-
-**목적:** `countries` 테이블(142개)을 COW(Correlates of War) 주권국가 코드와 매핑하여 역사적 국가명 추적 기반 구축
-
-**사전 조건:** COW State System Membership v2024 CSV 다운로드 (`vendor/cow/v2024/states2024.csv`)
-
-**구현 순서:**
-1. `vendor/cow/v2024/`에 COW CSV 데이터 확보 (`states2024.csv`)
-2. `scripts/import_cow.py` 작성 — `cow_states` 테이블 생성 및 적재
-3. `country_cow_mapping` 테이블 생성 — 자동 매핑 (완전 일치 + 방향 접두어 추출)
-4. 수동 매핑 사전 적용 (England→UK, Alaska→USA, Sichuan→China 등)
-5. 매핑률 리포트 출력, `provenance` 테이블에 COW 출처 추가
-6. 테스트, devlog 기록
-
-**주의사항:**
-- `countries` 테이블은 변경하지 않음 (원본 보존, 오버레이 매핑만 추가)
-- `N Germany`와 `Germany`는 별도 항목 유지, 둘 다 같은 cow_ccode에 매핑
-- COW 직접 매칭률 ~33%, 나머지는 방향 접두어 추출 + 수동 매핑으로 커버
-- `system2024.csv` (국가-연도)는 사용하지 않음
-
-**현재 countries 데이터 구조 요약:**
-- 142개 항목: 주권국가 ~50, 방향 접두어 ~49, 하위 지역 ~36, 매핑 불가 ~7
-- `genus_locations.region`: 4,841건 중 69%가 세부 지역 정보 보유
-- `England/Scotland/Wales`는 독립 country (UK 항목 없음)
-- 같은 genus가 `N Germany`와 `Germany` 양쪽에 동시 연결되는 일은 없음
+Phase 26까지 완료. 다음 작업 미정.
 
 ## 미해결 항목
 
@@ -413,6 +409,7 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 22. ~~Phase 22: MCP Server~~ ✅ (브랜치: `feature/scoda-implementation`)
 23. ~~Phase 23: MCP Server SSE 통합~~ ✅ (브랜치: `feature/scoda-implementation`)
 25. ~~Phase 25: .scoda ZIP 패키지 포맷~~ ✅ (브랜치: `feature/scoda-package`)
+26. ~~Phase 26: COW 국가 데이터 도입~~ ✅
 
 ## DB 스키마
 
@@ -453,6 +450,10 @@ bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
 
 -- taxa: 뷰 (하위 호환성)
 CREATE VIEW taxa AS SELECT ... FROM taxonomic_ranks WHERE rank = 'Genus';
+
+-- COW 국가 매핑 (Phase 26)
+cow_states (cow_ccode, abbrev, name, start_date, end_date, version)  -- COW 주권국가 마스터
+country_cow_mapping (country_id, cow_ccode, parent_name, notes)       -- countries ↔ COW 매핑
 
 -- SCODA-Core 테이블
 artifact_metadata (key, value)                    -- 아티팩트 메타데이터 (key-value)
