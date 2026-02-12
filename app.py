@@ -7,7 +7,7 @@ from flask import Flask, render_template, jsonify, request
 import json
 import sqlite3
 
-from scoda_package import get_db
+from scoda_package import get_db, get_paleocore_db_path
 
 app = Flask(__name__)
 
@@ -357,9 +357,14 @@ def api_metadata():
     cursor.execute("SELECT COUNT(*) as count FROM geographic_regions WHERE level = 'region'")
     stats['regions'] = cursor.fetchone()['count']
 
+    # Check PaleoCore availability
+    databases = cursor.execute("PRAGMA database_list").fetchall()
+    paleocore_attached = 'pc' in [row['name'] for row in databases]
+
     conn.close()
 
     metadata['statistics'] = stats
+    metadata['paleocore_attached'] = paleocore_attached
     return jsonify(metadata)
 
 
@@ -807,6 +812,64 @@ def api_bibliography_detail(bib_id):
             'is_valid': g['is_valid']
         } for g in genera]
     })
+
+
+@app.route('/api/paleocore/status')
+def api_paleocore_status():
+    """Get PaleoCore DB status and verify cross-DB access"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Check if pc schema is attached
+    databases = cursor.execute("PRAGMA database_list").fetchall()
+    db_names = [row['name'] for row in databases]
+    has_paleocore = 'pc' in db_names
+
+    result = {
+        'attached': has_paleocore,
+        'paleocore_path': get_paleocore_db_path(),
+    }
+
+    if has_paleocore:
+        # Get PaleoCore metadata
+        try:
+            cursor.execute("SELECT key, value FROM pc.artifact_metadata")
+            result['metadata'] = {row['key']: row['value'] for row in cursor.fetchall()}
+        except Exception:
+            result['metadata'] = None
+
+        # Count records in PaleoCore tables
+        pc_tables = {}
+        for table in ['countries', 'geographic_regions', 'cow_states',
+                       'country_cow_mapping', 'formations', 'temporal_ranges',
+                       'ics_chronostrat', 'temporal_ics_mapping']:
+            try:
+                count = cursor.execute(f"SELECT COUNT(*) FROM pc.{table}").fetchone()[0]
+                pc_tables[table] = count
+            except Exception:
+                pc_tables[table] = None
+        result['tables'] = pc_tables
+
+        # Cross-DB query test: join trilobase genus_locations with pc.countries
+        try:
+            cursor.execute("""
+                SELECT COUNT(*) as cnt
+                FROM genus_locations gl
+                JOIN pc.countries c ON gl.country_id = c.id
+            """)
+            result['cross_db_join_test'] = {
+                'query': 'genus_locations JOIN pc.countries',
+                'matched_rows': cursor.fetchone()['cnt'],
+                'status': 'OK'
+            }
+        except Exception as e:
+            result['cross_db_join_test'] = {
+                'status': 'FAIL',
+                'error': str(e)
+            }
+
+    conn.close()
+    return jsonify(result)
 
 
 VALID_ENTITY_TYPES = {'genus', 'family', 'order', 'suborder', 'superfamily', 'class'}

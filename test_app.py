@@ -54,8 +54,6 @@ def test_db(tmp_path):
             temporal_code TEXT,
             is_valid INTEGER DEFAULT 1,
             raw_entry TEXT,
-            country_id INTEGER,
-            formation_id INTEGER,
             family TEXT,
             FOREIGN KEY (parent_id) REFERENCES taxonomic_ranks(id)
         );

@@ -198,18 +198,19 @@ class ScodaPackage:
 # Module-level paths — resolved once at import time, overridable for testing
 _canonical_db = None
 _overlay_db = None
+_paleocore_db = None
 _scoda_pkg = None  # ScodaPackage instance (if using .scoda)
 
 
 def _resolve_paths():
-    """Resolve canonical DB and overlay DB paths.
+    """Resolve canonical DB, overlay DB, and paleocore DB paths.
 
     Priority:
       1. If _set_paths_for_testing() was called, use those paths.
       2. Frozen mode (PyInstaller): look for .scoda next to executable, fallback to bundled .db.
       3. Dev mode: look for .scoda in project root, fallback to .db.
     """
-    global _canonical_db, _overlay_db, _scoda_pkg
+    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg
 
     if _canonical_db is not None:
         return  # already resolved (or set by testing)
@@ -226,6 +227,7 @@ def _resolve_paths():
             # Fallback: bundled DB inside PyInstaller bundle
             _canonical_db = os.path.join(sys._MEIPASS, 'trilobase.db')
             _overlay_db = os.path.join(exe_dir, 'trilobase_overlay.db')
+        _paleocore_db = os.path.join(exe_dir, 'paleocore.db')
     else:
         # Development mode
         base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -238,23 +240,26 @@ def _resolve_paths():
             # Fallback: direct .db file
             _canonical_db = os.path.join(base_dir, 'trilobase.db')
             _overlay_db = os.path.join(base_dir, 'trilobase_overlay.db')
+        _paleocore_db = os.path.join(base_dir, 'paleocore.db')
 
 
-def _set_paths_for_testing(canonical_path, overlay_path):
+def _set_paths_for_testing(canonical_path, overlay_path, paleocore_path=None):
     """Override DB paths for testing. Call before any get_db()."""
-    global _canonical_db, _overlay_db, _scoda_pkg
+    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg
     _canonical_db = canonical_path
     _overlay_db = overlay_path
+    _paleocore_db = paleocore_path
     _scoda_pkg = None
 
 
 def _reset_paths():
     """Reset resolved paths (for testing teardown)."""
-    global _canonical_db, _overlay_db, _scoda_pkg
+    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg
     if _scoda_pkg:
         _scoda_pkg.close()
     _canonical_db = None
     _overlay_db = None
+    _paleocore_db = None
     _scoda_pkg = None
 
 
@@ -334,11 +339,21 @@ def ensure_overlay_db():
     conn.close()
 
 
+def get_paleocore_db_path():
+    """Return the resolved paleocore DB path."""
+    _resolve_paths()
+    return _paleocore_db
+
+
 def get_db():
-    """Get database connection with overlay attached.
+    """Get database connection with overlay and paleocore attached.
 
     Same signature as the old app.py/mcp_server.py get_db().
     Returns a sqlite3.Connection with row_factory=sqlite3.Row.
+
+    Attached databases:
+      - overlay: user annotations (read/write)
+      - pc: paleocore infrastructure data (read-only, optional)
     """
     _resolve_paths()
     ensure_overlay_db()
@@ -346,6 +361,10 @@ def get_db():
     conn = sqlite3.connect(_canonical_db)
     conn.row_factory = sqlite3.Row
     conn.execute(f"ATTACH DATABASE '{_overlay_db}' AS overlay")
+
+    # Attach PaleoCore DB if it exists
+    if _paleocore_db and os.path.exists(_paleocore_db):
+        conn.execute(f"ATTACH DATABASE '{_paleocore_db}' AS pc")
 
     return conn
 
@@ -362,8 +381,10 @@ def get_scoda_info():
     info = {
         'canonical_path': _canonical_db,
         'overlay_path': _overlay_db,
+        'paleocore_path': _paleocore_db,
         'canonical_exists': os.path.exists(_canonical_db),
         'overlay_exists': os.path.exists(_overlay_db),
+        'paleocore_exists': bool(_paleocore_db and os.path.exists(_paleocore_db)),
     }
 
     if _scoda_pkg:

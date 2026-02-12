@@ -279,6 +279,15 @@
   - paleocore.db: 328 KB, FK integrity 0 errors
   - devlog: `devlog/20260213_039_paleocore_db_creation.md`
 
+- **Phase 32 완료**: Dual-DB 운영 (PaleoCore ATTACH)
+  - `taxonomic_ranks`에서 레거시 컬럼 삭제 (`country_id`, `formation_id`) — 20→18 컬럼
+  - `scoda_package.py`: paleocore.db를 `pc` alias로 ATTACH (자동 탐색)
+  - `app.py`: `GET /api/paleocore/status` — cross-DB 검증 엔드포인트
+  - 3개 DB 동시 운영: main(trilobase.db) + overlay + pc(paleocore.db)
+  - Cross-DB JOIN 정상: genus_locations↔pc.countries, genus_formations↔pc.formations
+  - 테스트: 164개 전부 통과
+  - devlog: `devlog/20260213_040_phase32_dual_db.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -452,10 +461,10 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 
 ## 다음 작업
 
-PaleoCore DB 생성 스크립트 완료. 다음 단계:
-- Trilobase DB 마이그레이션 (`scripts/migrate_to_v2.py`) — 8개 테이블 분리, 레거시 컬럼 삭제
-- 앱 코드 수정 (ATTACH 로직, cross-DB JOIN)
-- 테스트 갱신 (dual-DB fixture)
+Dual-DB 운영 완료 (PaleoCore ATTACH). 다음 단계:
+- 앱 쿼리를 `pc.*` prefix로 점진적 전환 (현재는 trilobase.db 로컬 테이블 사용)
+- trilobase.db에서 PaleoCore 테이블 최종 제거 (선택적)
+- `.scoda` 패키지에 paleocore dependency 반영
 
 ## 미해결 항목
 
@@ -500,13 +509,14 @@ PaleoCore DB 생성 스크립트 완료. 다음 단계:
 ### Canonical DB (trilobase.db)
 
 ```sql
--- taxonomic_ranks: 5,338 records - 통합 분류 체계 (Class~Genus)
+-- taxonomic_ranks: 5,340 records - 통합 분류 체계 (Class~Genus)
 taxonomic_ranks (
     id, name, rank, parent_id, author, year, year_suffix,
     genera_count, notes, created_at,
     -- Genus 전용 필드
     type_species, type_species_author, formation, location, family,
-    temporal_code, is_valid, raw_entry, country_id, formation_id
+    temporal_code, is_valid, raw_entry
+    -- Phase 32: country_id, formation_id 삭제 (레거시, junction table로 대체)
 )
 
 -- synonyms: 1,055 records - 동의어 관계
@@ -571,13 +581,16 @@ user_annotations (
 )
 ```
 
-**SQLite ATTACH 사용:**
+**SQLite ATTACH 사용 (3-DB):**
 ```python
 conn = sqlite3.connect('trilobase.db')  # Canonical DB
 conn.execute("ATTACH DATABASE 'trilobase_overlay.db' AS overlay")
+conn.execute("ATTACH DATABASE 'paleocore.db' AS pc")
 
 # Canonical 테이블 접근: SELECT * FROM taxonomic_ranks
 # Overlay 테이블 접근: SELECT * FROM overlay.user_annotations
+# PaleoCore 테이블 접근: SELECT * FROM pc.countries
+# Cross-DB JOIN: SELECT ... FROM genus_locations gl JOIN pc.countries c ON gl.country_id = c.id
 ```
 
 ## DB 사용법
