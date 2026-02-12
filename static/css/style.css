@@ -401,6 +401,10 @@ html, body {
     font-size: 0.9rem;
 }
 
+.manifest-table tbody tr[onclick] {
+    cursor: pointer;
+}
+
 .manifest-table tbody tr:hover {
     background: var(--hover-bg);
 }
@@ -448,6 +452,20 @@ html, body {
 
 .synonym-link:hover {
     text-decoration: underline;
+}
+
+.detail-link {
+    color: #0d6efd;
+    cursor: pointer;
+}
+
+.detail-link:hover {
+    text-decoration: underline;
+}
+
+.genera-list {
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .raw-entry {

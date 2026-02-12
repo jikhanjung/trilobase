@@ -440,6 +440,168 @@ def api_query_execute(name):
         return jsonify({'error': str(e)}), 400
 
 
+@app.route('/api/country/<int:country_id>')
+def api_country_detail(country_id):
+    """Get detailed info for a specific country with related genera"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Get country info
+    cursor.execute("SELECT id, name, code, taxa_count FROM countries WHERE id = ?", (country_id,))
+    country = cursor.fetchone()
+
+    if not country:
+        conn.close()
+        return jsonify({'error': 'Country not found'}), 404
+
+    # Get COW mapping info
+    cursor.execute("""
+        SELECT ccm.cow_ccode, cs.name as cow_name
+        FROM country_cow_mapping ccm
+        JOIN cow_states cs ON ccm.cow_ccode = cs.cow_ccode
+        WHERE ccm.country_id = ?
+    """, (country_id,))
+    cow = cursor.fetchone()
+
+    # Get related genera
+    cursor.execute("""
+        SELECT tr.id, tr.name, tr.author, tr.year, gl.region, tr.is_valid
+        FROM genus_locations gl
+        JOIN taxonomic_ranks tr ON gl.genus_id = tr.id
+        WHERE gl.country_id = ?
+        ORDER BY tr.name
+    """, (country_id,))
+    genera = cursor.fetchall()
+
+    conn.close()
+
+    return jsonify({
+        'id': country['id'],
+        'name': country['name'],
+        'code': country['code'],
+        'taxa_count': country['taxa_count'],
+        'cow': {
+            'cow_ccode': cow['cow_ccode'],
+            'cow_name': cow['cow_name']
+        } if cow else None,
+        'genera': [{
+            'id': g['id'],
+            'name': g['name'],
+            'author': g['author'],
+            'year': g['year'],
+            'region': g['region'],
+            'is_valid': g['is_valid']
+        } for g in genera]
+    })
+
+
+@app.route('/api/formation/<int:formation_id>')
+def api_formation_detail(formation_id):
+    """Get detailed info for a specific formation with related genera"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Get formation info
+    cursor.execute("""
+        SELECT id, name, normalized_name, formation_type, country, region, period, taxa_count
+        FROM formations WHERE id = ?
+    """, (formation_id,))
+    formation = cursor.fetchone()
+
+    if not formation:
+        conn.close()
+        return jsonify({'error': 'Formation not found'}), 404
+
+    # Get related genera
+    cursor.execute("""
+        SELECT tr.id, tr.name, tr.author, tr.year, tr.is_valid
+        FROM genus_formations gf
+        JOIN taxonomic_ranks tr ON gf.genus_id = tr.id
+        WHERE gf.formation_id = ?
+        ORDER BY tr.name
+    """, (formation_id,))
+    genera = cursor.fetchall()
+
+    conn.close()
+
+    return jsonify({
+        'id': formation['id'],
+        'name': formation['name'],
+        'normalized_name': formation['normalized_name'],
+        'formation_type': formation['formation_type'],
+        'country': formation['country'],
+        'region': formation['region'],
+        'period': formation['period'],
+        'taxa_count': formation['taxa_count'],
+        'genera': [{
+            'id': g['id'],
+            'name': g['name'],
+            'author': g['author'],
+            'year': g['year'],
+            'is_valid': g['is_valid']
+        } for g in genera]
+    })
+
+
+@app.route('/api/bibliography/<int:bib_id>')
+def api_bibliography_detail(bib_id):
+    """Get detailed info for a specific bibliography entry with related genera"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Get bibliography info
+    cursor.execute("""
+        SELECT id, authors, year, year_suffix, title, journal, volume, pages,
+               publisher, city, editors, book_title, reference_type, raw_entry
+        FROM bibliography WHERE id = ?
+    """, (bib_id,))
+    bib = cursor.fetchone()
+
+    if not bib:
+        conn.close()
+        return jsonify({'error': 'Bibliography entry not found'}), 404
+
+    # Find related genera by matching author last name + year
+    genera = []
+    if bib['authors'] and bib['year']:
+        # Extract first author's last name (before comma)
+        first_author = bib['authors'].split(',')[0].strip()
+        if first_author:
+            cursor.execute("""
+                SELECT id, name, author, year, is_valid
+                FROM taxonomic_ranks
+                WHERE rank = 'Genus' AND author LIKE ? AND year = ?
+                ORDER BY name
+            """, (f'%{first_author}%', bib['year']))
+            genera = cursor.fetchall()
+
+    conn.close()
+
+    return jsonify({
+        'id': bib['id'],
+        'authors': bib['authors'],
+        'year': bib['year'],
+        'year_suffix': bib['year_suffix'],
+        'title': bib['title'],
+        'journal': bib['journal'],
+        'volume': bib['volume'],
+        'pages': bib['pages'],
+        'publisher': bib['publisher'],
+        'city': bib['city'],
+        'editors': bib['editors'],
+        'book_title': bib['book_title'],
+        'reference_type': bib['reference_type'],
+        'raw_entry': bib['raw_entry'],
+        'genera': [{
+            'id': g['id'],
+            'name': g['name'],
+            'author': g['author'],
+            'year': g['year'],
+            'is_valid': g['is_valid']
+        } for g in genera]
+    })
+
+
 VALID_ENTITY_TYPES = {'genus', 'family', 'order', 'suborder', 'superfamily', 'class'}
 VALID_ANNOTATION_TYPES = {'note', 'correction', 'alternative', 'link'}
 

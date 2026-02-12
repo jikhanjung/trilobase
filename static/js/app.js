@@ -188,11 +188,21 @@ function renderTableViewRows(viewKey) {
     });
     html += '</tr></thead><tbody>';
 
+    // Click handlers per view
+    const clickHandlers = {
+        'countries_table': (row) => `onclick="showCountryDetail(${row.id})"`,
+        'formations_table': (row) => `onclick="showFormationDetail(${row.id})"`,
+        'references_table': (row) => `onclick="showBibliographyDetail(${row.id})"`,
+        'genera_table': (row) => `onclick="showGenusDetail(${row.id})"`,
+    };
+    const getClick = clickHandlers[viewKey];
+
     if (rows.length === 0) {
         html += `<tr><td colspan="${view.columns.length}" class="text-center text-muted py-4">No matching records</td></tr>`;
     } else {
         rows.forEach(row => {
-            html += '<tr>';
+            const clickAttr = getClick ? getClick(row) : '';
+            html += `<tr ${clickAttr}>`;
             view.columns.forEach(col => {
                 let val = row[col.key];
                 if (col.type === 'boolean') {
@@ -535,14 +545,26 @@ async function showGenusDetail(genusId) {
                     <span class="detail-value">${g.location || '-'}</span>
                 </div>`;
 
-        // Locations from relation table
+        // Locations from relation table (with links)
         if (g.locations && g.locations.length > 0) {
             html += `
                 <div class="mt-2">
                     <span class="detail-label">Countries:</span>
                     <ul class="mb-0">`;
             g.locations.forEach(l => {
-                html += `<li>${l.country}${l.region ? ' (' + l.region + ')' : ''}</li>`;
+                html += `<li><a class="detail-link" onclick="showCountryDetail(${l.id})">${l.country}</a>${l.region ? ' (' + l.region + ')' : ''}</li>`;
+            });
+            html += '</ul></div>';
+        }
+
+        // Formations from relation table (with links)
+        if (g.formations && g.formations.length > 0) {
+            html += `
+                <div class="mt-2">
+                    <span class="detail-label">Formations:</span>
+                    <ul class="mb-0">`;
+            g.formations.forEach(f => {
+                html += `<li><a class="detail-link" onclick="showFormationDetail(${f.id})">${f.name}</a>${f.period ? ' (' + f.period + ')' : ''}</li>`;
             });
             html += '</ul></div>';
         }
@@ -596,6 +618,256 @@ async function showGenusDetail(genusId) {
 
     } catch (error) {
         modalBody.innerHTML = `<div class="text-danger">Error loading genus: ${error.message}</div>`;
+    }
+}
+
+/**
+ * Show country detail modal
+ */
+async function showCountryDetail(countryId) {
+    const modalBody = document.getElementById('genusModalBody');
+    const modalTitle = document.getElementById('genusModalTitle');
+
+    modalBody.innerHTML = '<div class="loading">Loading...</div>';
+    genusModal.show();
+
+    try {
+        const response = await fetch(`/api/country/${countryId}`);
+        const c = await response.json();
+
+        modalTitle.innerHTML = `<i class="bi bi-geo-alt"></i> ${c.name}`;
+
+        let html = '';
+
+        // Basic Info
+        html += `
+            <div class="detail-section">
+                <h6>Basic Information</h6>
+                <div class="detail-grid">
+                    <span class="detail-label">Name:</span>
+                    <span class="detail-value">${c.name}</span>
+
+                    <span class="detail-label">Code:</span>
+                    <span class="detail-value">${c.code || '-'}</span>
+
+                    <span class="detail-label">Taxa Count:</span>
+                    <span class="detail-value">${c.taxa_count || 0}</span>`;
+
+        if (c.cow) {
+            html += `
+                    <span class="detail-label">COW Name:</span>
+                    <span class="detail-value">${c.cow.cow_name}</span>
+
+                    <span class="detail-label">COW Code:</span>
+                    <span class="detail-value">${c.cow.cow_ccode}</span>`;
+        }
+
+        html += `</div></div>`;
+
+        // Genera list
+        if (c.genera && c.genera.length > 0) {
+            html += `
+                <div class="detail-section">
+                    <h6>Genera (${c.genera.length})</h6>
+                    <div class="genera-list">
+                        <table class="manifest-table">
+                            <thead><tr>
+                                <th>Genus</th><th>Author</th><th>Year</th><th>Region</th><th>Valid</th>
+                            </tr></thead><tbody>`;
+            c.genera.forEach(g => {
+                html += `<tr onclick="showGenusDetail(${g.id})">
+                    <td><i>${g.name}</i></td>
+                    <td>${g.author || ''}</td>
+                    <td>${g.year || ''}</td>
+                    <td>${g.region || ''}</td>
+                    <td>${g.is_valid ? 'Yes' : 'No'}</td>
+                </tr>`;
+            });
+            html += '</tbody></table></div></div>';
+        }
+
+        modalBody.innerHTML = html;
+    } catch (error) {
+        modalBody.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
+    }
+}
+
+/**
+ * Show formation detail modal
+ */
+async function showFormationDetail(formationId) {
+    const modalBody = document.getElementById('genusModalBody');
+    const modalTitle = document.getElementById('genusModalTitle');
+
+    modalBody.innerHTML = '<div class="loading">Loading...</div>';
+    genusModal.show();
+
+    try {
+        const response = await fetch(`/api/formation/${formationId}`);
+        const f = await response.json();
+
+        modalTitle.innerHTML = `<i class="bi bi-layers"></i> ${f.name}`;
+
+        let html = '';
+
+        // Basic Info
+        html += `
+            <div class="detail-section">
+                <h6>Basic Information</h6>
+                <div class="detail-grid">
+                    <span class="detail-label">Name:</span>
+                    <span class="detail-value">${f.name}</span>
+
+                    <span class="detail-label">Type:</span>
+                    <span class="detail-value">${f.formation_type || '-'}</span>
+
+                    <span class="detail-label">Country:</span>
+                    <span class="detail-value">${f.country || '-'}</span>
+
+                    <span class="detail-label">Region:</span>
+                    <span class="detail-value">${f.region || '-'}</span>
+
+                    <span class="detail-label">Period:</span>
+                    <span class="detail-value">${f.period || '-'}</span>
+
+                    <span class="detail-label">Taxa Count:</span>
+                    <span class="detail-value">${f.taxa_count || 0}</span>
+                </div>
+            </div>`;
+
+        // Genera list
+        if (f.genera && f.genera.length > 0) {
+            html += `
+                <div class="detail-section">
+                    <h6>Genera (${f.genera.length})</h6>
+                    <div class="genera-list">
+                        <table class="manifest-table">
+                            <thead><tr>
+                                <th>Genus</th><th>Author</th><th>Year</th><th>Valid</th>
+                            </tr></thead><tbody>`;
+            f.genera.forEach(g => {
+                html += `<tr onclick="showGenusDetail(${g.id})">
+                    <td><i>${g.name}</i></td>
+                    <td>${g.author || ''}</td>
+                    <td>${g.year || ''}</td>
+                    <td>${g.is_valid ? 'Yes' : 'No'}</td>
+                </tr>`;
+            });
+            html += '</tbody></table></div></div>';
+        }
+
+        modalBody.innerHTML = html;
+    } catch (error) {
+        modalBody.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
+    }
+}
+
+/**
+ * Show bibliography detail modal
+ */
+async function showBibliographyDetail(bibId) {
+    const modalBody = document.getElementById('genusModalBody');
+    const modalTitle = document.getElementById('genusModalTitle');
+
+    modalBody.innerHTML = '<div class="loading">Loading...</div>';
+    genusModal.show();
+
+    try {
+        const response = await fetch(`/api/bibliography/${bibId}`);
+        const b = await response.json();
+
+        modalTitle.innerHTML = `<i class="bi bi-book"></i> ${b.authors || 'Unknown'}, ${b.year || ''}`;
+
+        let html = '';
+
+        // Basic Info
+        html += `
+            <div class="detail-section">
+                <h6>Basic Information</h6>
+                <div class="detail-grid">
+                    <span class="detail-label">Authors:</span>
+                    <span class="detail-value">${b.authors || '-'}</span>
+
+                    <span class="detail-label">Year:</span>
+                    <span class="detail-value">${b.year || '-'}${b.year_suffix || ''}</span>
+
+                    <span class="detail-label">Title:</span>
+                    <span class="detail-value">${b.title || '-'}</span>
+
+                    <span class="detail-label">Journal:</span>
+                    <span class="detail-value">${b.journal || '-'}</span>
+
+                    <span class="detail-label">Volume:</span>
+                    <span class="detail-value">${b.volume || '-'}</span>
+
+                    <span class="detail-label">Pages:</span>
+                    <span class="detail-value">${b.pages || '-'}</span>
+
+                    <span class="detail-label">Type:</span>
+                    <span class="detail-value">${b.reference_type || '-'}</span>`;
+
+        if (b.publisher) {
+            html += `
+                    <span class="detail-label">Publisher:</span>
+                    <span class="detail-value">${b.publisher}</span>`;
+        }
+        if (b.city) {
+            html += `
+                    <span class="detail-label">City:</span>
+                    <span class="detail-value">${b.city}</span>`;
+        }
+        if (b.editors) {
+            html += `
+                    <span class="detail-label">Editors:</span>
+                    <span class="detail-value">${b.editors}</span>`;
+        }
+        if (b.book_title) {
+            html += `
+                    <span class="detail-label">Book Title:</span>
+                    <span class="detail-value">${b.book_title}</span>`;
+        }
+
+        html += '</div></div>';
+
+        // Raw Entry
+        if (b.raw_entry) {
+            html += `
+                <div class="detail-section">
+                    <h6>Original Entry</h6>
+                    <div class="raw-entry">${b.raw_entry}</div>
+                </div>`;
+        }
+
+        // Related Genera
+        if (b.genera && b.genera.length > 0) {
+            html += `
+                <div class="detail-section">
+                    <h6>Related Genera (${b.genera.length})</h6>
+                    <div class="genera-list">
+                        <table class="manifest-table">
+                            <thead><tr>
+                                <th>Genus</th><th>Author</th><th>Year</th><th>Valid</th>
+                            </tr></thead><tbody>`;
+            b.genera.forEach(g => {
+                html += `<tr onclick="showGenusDetail(${g.id})">
+                    <td><i>${g.name}</i></td>
+                    <td>${g.author || ''}</td>
+                    <td>${g.year || ''}</td>
+                    <td>${g.is_valid ? 'Yes' : 'No'}</td>
+                </tr>`;
+            });
+            html += '</tbody></table></div></div>';
+        } else {
+            html += `
+                <div class="detail-section">
+                    <h6>Related Genera</h6>
+                    <p class="text-muted">No matching genera found.</p>
+                </div>`;
+        }
+
+        modalBody.innerHTML = html;
+    } catch (error) {
+        modalBody.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
     }
 }
 
