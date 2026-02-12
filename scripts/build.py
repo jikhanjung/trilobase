@@ -90,6 +90,30 @@ def create_scoda_package():
         return False
 
 
+def create_paleocore_scoda_package():
+    """Create paleocore.scoda package in dist/ directory."""
+    db_path = Path('paleocore.db')
+    if not db_path.exists():
+        print("  Skipping paleocore.scoda creation (paleocore.db not found)")
+        return False
+
+    scoda_dest = Path('dist') / 'paleocore.scoda'
+    print(f"\nCreating paleocore.scoda package...")
+    try:
+        sys.path.insert(0, str(Path(__file__).parent.parent))
+        from scoda_package import ScodaPackage
+        metadata = {
+            "authors": ["Correlates of War Project", "International Commission on Stratigraphy"],
+        }
+        ScodaPackage.create(str(db_path), str(scoda_dest), metadata=metadata)
+        size_mb = scoda_dest.stat().st_size / (1024 * 1024)
+        print(f"✓ paleocore.scoda package created: {scoda_dest} ({size_mb:.1f} MB)")
+        return True
+    except Exception as e:
+        print(f"✗ Failed to create paleocore.scoda package: {e}", file=sys.stderr)
+        return False
+
+
 def print_results():
     """Print build results and next steps."""
     print("\n" + "=" * 60)
@@ -104,12 +128,13 @@ def print_results():
         print(f"\n✓ Executable created: {exe_path}")
         print(f"  Size: {size_mb:.1f} MB")
 
-        # Create .scoda package alongside executables
+        # Create .scoda packages alongside executable
         create_scoda_package()
+        create_paleocore_scoda_package()
 
         print("\nNext steps:")
         print(f"  1. Test: ./{exe_path}")
-        print(f"  2. Distribute: Copy dist/{exe_name} + dist/trilobase.scoda to users")
+        print(f"  2. Distribute: Copy dist/{exe_name} + dist/trilobase.scoda + dist/paleocore.scoda to users")
     else:
         print(f"\n✗ Expected executable not found: {exe_path}", file=sys.stderr)
         return False

@@ -327,6 +327,13 @@
   - 테스트: 178개 전부 통과 (기존 169 + 신규 9, MCP 17개 포함)
   - devlog: `devlog/20260213_044_phase36_combined_scoda_test.md`
 
+- **Phase 37 완료**: PyInstaller 빌드에 paleocore.scoda 포함
+  - `scripts/build.py`: `create_paleocore_scoda_package()` 함수 추가
+  - 빌드 시 `dist/trilobase.scoda` + `dist/paleocore.scoda` 동시 생성
+  - `paleocore.db` 없으면 skip (에러 아님, trilobase 독립 동작 가능)
+  - 배포 안내 메시지에 `paleocore.scoda` 포함
+  - devlog: `devlog/20260213_045_phase37_build_paleocore_scoda.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -417,7 +424,7 @@ trilobase/
 │   ├── init_overlay_db.py           # Phase 20: Overlay DB 초기화
 │   ├── serve.py                     # Phase 18: Flask 서버 런처
 │   ├── gui.py                       # Phase 19: GUI 컨트롤 패널
-│   ├── build.py                     # Phase 18: 빌드 자동화
+│   ├── build.py                     # Phase 18/37: 빌드 자동화 (trilobase.scoda + paleocore.scoda)
 │   ├── create_scoda.py              # Phase 25: .scoda 패키지 생성
 │   ├── import_cow.py               # Phase 26: COW 국가 데이터 임포트
 │   ├── fix_countries_quality.py    # countries 데이터 품질 정리
@@ -493,9 +500,8 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 
 ## 다음 작업
 
-PaleoCore 분리 및 .scoda 패키징 완료 (Phase 31-36).
+PaleoCore 분리 및 .scoda 패키징 완료 (Phase 31-37).
 - PaleoCore 독립 뷰어 (paleocore.scoda를 단독으로 열어서 탐색)
-- PyInstaller 빌드에 paleocore.scoda 포함
 
 ## 미해결 항목
 
