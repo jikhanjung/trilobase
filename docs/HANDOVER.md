@@ -334,6 +334,13 @@
   - 배포 안내 메시지에 `paleocore.scoda` 포함
   - devlog: `devlog/20260213_045_phase37_build_paleocore_scoda.md`
 
+- **Phase 38 완료**: GUI를 "SCODA Desktop"으로 리브랜딩
+  - "Trilobase SCODA Viewer" → "SCODA Desktop" (타이틀, 헤더, 로그)
+  - Information 섹션: "Packages:" + PaleoCore dependency 행 표시
+  - 시작 로그: `Loaded: trilobase.scoda` + `└ dependency: paleocore.scoda` 형식
+  - `scoda_package.py`: `get_scoda_info()`에 paleocore_version/name/record_count 추가
+  - devlog: `devlog/20260213_046_phase38_scoda_desktop_rebranding.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -501,6 +508,7 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 ## 다음 작업
 
 PaleoCore 분리 및 .scoda 패키징 완료 (Phase 31-37).
+GUI "SCODA Desktop" 리브랜딩 완료 (Phase 38).
 - PaleoCore 독립 뷰어 (paleocore.scoda를 단독으로 열어서 탐색)
 
 ## 미해결 항목

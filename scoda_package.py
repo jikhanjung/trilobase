@@ -426,6 +426,9 @@ def get_scoda_info():
     if _paleocore_pkg:
         info['paleocore_source_type'] = 'scoda'
         info['paleocore_scoda_path'] = _paleocore_pkg.scoda_path
+        info['paleocore_version'] = _paleocore_pkg.version
+        info['paleocore_name'] = _paleocore_pkg.name
+        info['paleocore_record_count'] = _paleocore_pkg.record_count
     else:
         info['paleocore_source_type'] = 'db'
 
