@@ -1,169 +1,207 @@
-# COW(State System Membership v2024) → SCODA import 계획
+# COW(State System Membership v2024) → Trilobase countries 보강 계획
 
-> 목적: SCODA 내부에서 **국가 단위 필터링/그룹핑**을 지원하기 위한 “근현대 주권국가(국제체제 회원)” 기준 국가 마스터 테이블 구축  
-> 데이터 소스: Correlates of War Project — **State System Membership (v2024)** citeturn1view0turn2view1
-
----
-
-## 1. 범위와 정의
-
-- “국가(country/state)”는 **COW가 정의한 국제체제(State System) 회원국**을 의미한다. citeturn1view0turn2view1  
-- 시간 범위: **1816년 ~ 2024-12-31** (v2024) citeturn1view0turn2view1
-- 본 모듈은 우선 **필터링/그룹핑** 목적이므로, 국경(폴리곤), 행정구역 계층, 식민지/제국의 내부 단위 등은 다루지 않는다.
+> 목적: 기존 `countries` 테이블(142개)의 국가명을 COW 주권국가 코드와 매핑하여, 명명/occurrence 보고 당시의 국가명을 정확히 추적할 수 있는 기초 데이터 구축
+> 데이터 소스: Correlates of War Project — **State System Membership (v2024)**
 
 ---
 
-## 2. SCODA 내 배치(권장)
+## 1. 배경
 
-### 2.1 SCODA 패키지 구조 (Phase B, ZIP)
+### 1.1 현재 상태
 
-```
-<dataset>.scoda (zip)
-├── manifest.json
-├── data.db
-├── assets/
-│   └── ...
-└── checksums.sha256
-```
+`countries` 테이블 142개 항목은 Jell & Adrain (2002) 원문에서 추출한 지명으로, 세 가지 유형이 혼재:
 
-### 2.2 DB 스키마(최소)
+| 유형 | 예시 | 대략 건수 |
+|------|------|----------|
+| 주권국가 | France, China, USA | ~50 |
+| 방향 접두어 + 국가/지역 | NW Mongolia, SE Morocco | ~49 |
+| 하위 행정구역/지역명 | England, Alaska, Sichuan, Yakutia | ~36 |
 
-#### (A) 국가 마스터 테이블 (필수)
-- 테이블명 예시: `core_country_cow`
-- 데이터는 “기간(tenure)” 레코드가 여러 개일 수 있음(탈퇴/재가입) citeturn2view1
+- 데이터 품질 정리 완료 (151→142건, `devlog/20260212_031_countries_data_quality.md`)
+- COW는 주권국가만 다루므로 직접 매칭률은 약 33% (50/142)
+
+### 1.2 `genus_locations.region` 필드 분석
+
+`genus_locations` 테이블 4,841건 중:
+- `region` 있음: 3,320건 (69%)
+- `region` 없음: 1,521건 (31%)
+
+**현재 구조의 특성:**
+
+- `England`, `Scotland`, `Wales`는 독립 country 항목 (UK라는 항목은 없음)
+- `N Germany`, `E Kazakhstan` 등 방향 접두어도 독립 country 항목 (`Germany`와 별도)
+- 같은 genus가 `N Germany`와 `Germany` 양쪽에 동시 연결되는 일은 없음
+- `region`은 country 내부의 더 세부적인 지역:
+
+| country | region 예시 |
+|---------|-----------|
+| Canada | Quebec, British Columbia, Alberta, Newfoundland, Ontario |
+| China | Guizhou, Liaoning, Hunan, Anhui, Jiangsu, Hubei |
+| England | Devon, Shropshire, Shelve |
+| Scotland | Fife, Lothian |
+| Wales | Dyfed, Gwynedd, Powys |
+
+### 1.3 설계 원칙
+
+- `countries` 테이블을 통합/재구조화하지 않음 — 원본 텍스트의 지명을 그대로 보존 (SCODA 원칙)
+- `country_cow_mapping`이 오버레이 형태로 매핑만 추가 → 기존 데이터에 파괴적 변경 없음
+- `N Germany`와 `Germany`는 별도 항목으로 유지하되, 둘 다 같은 `cow_ccode`(독일)에 매핑
+
+### 1.4 목적
+
+- 기존 `countries` 항목을 COW 주권국가에 매핑 (가능한 것만)
+- 하위 지역(England→UK, Alaska→USA 등)도 상위 국가에 연결
+- 매핑 불가능한 역사적 지명은 원본 보존하되 표시
+
+---
+
+## 2. DB 스키마
+
+기존 테이블 컨벤션(`countries`, `formations`, `synonyms`)에 맞춰 명명.
+
+### 2.1 `cow_states` — COW 주권국가 마스터
 
 ```sql
-CREATE TABLE IF NOT EXISTS core_country_cow (
-  cow_ccode      INTEGER NOT NULL,     -- CCode
-  cow_abbrev     TEXT    NOT NULL,     -- StateAbb
-  name_primary   TEXT    NOT NULL,     -- StateNme (Primary COW state name)
-  start_date     TEXT    NOT NULL,     -- YYYY-MM-DD (StYear/StMonth/StDay)
-  end_date       TEXT    NOT NULL,     -- YYYY-MM-DD (EndYear/EndMonth/EndDay)
-  version        INTEGER NOT NULL,     -- Version (2024)
-  PRIMARY KEY (cow_ccode, start_date, end_date)
+CREATE TABLE IF NOT EXISTS cow_states (
+    cow_ccode    INTEGER NOT NULL,     -- CCode (예: 200=UK, 2=USA)
+    abbrev       TEXT    NOT NULL,     -- StateAbb (예: UKG, USA)
+    name         TEXT    NOT NULL,     -- StateNme (예: United Kingdom)
+    start_date   TEXT    NOT NULL,     -- YYYY-MM-DD (체제 가입일)
+    end_date     TEXT    NOT NULL,     -- YYYY-MM-DD (체제 탈퇴일)
+    version      INTEGER NOT NULL DEFAULT 2024,
+    PRIMARY KEY (cow_ccode, start_date)
 );
 ```
 
-#### (B) “연도→국가” 빠른 필터링을 위한 뷰/테이블(선택)
-COW는 `system2024`로 “국가-연도” 베이스를 제공한다. citeturn2view1  
-쿼리 빈도가 높다면 이걸 그대로 적재하는 편이 편하다.
+- 탈퇴/재가입으로 같은 `cow_ccode`에 여러 tenure 레코드 가능
+- `system2024` (국가-연도 테이블)은 **적재하지 않음** — start/end 범위로 충분
+
+### 2.2 `country_cow_mapping` — Trilobase countries ↔ COW 매핑
 
 ```sql
-CREATE TABLE IF NOT EXISTS core_country_year_cow (
-  cow_ccode   INTEGER NOT NULL,
-  cow_abbrev  TEXT    NOT NULL,
-  year        INTEGER NOT NULL,
-  version     INTEGER NOT NULL,
-  PRIMARY KEY (cow_ccode, year)
+CREATE TABLE IF NOT EXISTS country_cow_mapping (
+    country_id   INTEGER NOT NULL,     -- countries.id (Trilobase 기존)
+    cow_ccode    INTEGER,              -- cow_states.cow_ccode (NULL이면 매핑 불가)
+    parent_name  TEXT,                 -- 매핑 근거 (예: "England → United Kingdom")
+    notes        TEXT,                 -- 특이사항
+    FOREIGN KEY (country_id) REFERENCES countries(id),
+    PRIMARY KEY (country_id)
 );
 ```
+
+- `cow_ccode`가 NULL인 항목: 매핑 불가능 (예: `Central Asia`, `Tien-Shan`)
+- 방향 접두어 항목(`NW Mongolia`)은 부모 국가의 cow_ccode로 매핑
 
 ---
 
 ## 3. 소스 파일 및 변수 매핑
 
-COW v2024는 `.csv` 및 `.dta` 형식을 제공하며, 대표 파일은 다음과 같다. citeturn1view0turn2view1
+COW v2024는 `.csv` 형식을 제공한다.
 
-- `states2024` : 국가 코드/약어/이름 + **국가 체제 회원 시작/종료 날짜** citeturn2view1  
-  - `StateAbb`, `CCode`, `StateNme`, `StYear`, `StMonth`, `StDay`, `EndYear`, `EndMonth`, `EndDay`, `Version` citeturn2view1
-- `system2024` : 국가-연도(country-year) 베이스 citeturn2view1  
-  - `StateAbb`, `CCode`, `Year`, `Version` citeturn2view1
+- `states2024.csv`: 국가 코드/약어/이름 + 체제 회원 시작/종료 날짜
+  - `StateAbb`, `CCode`, `StateNme`, `StYear`, `StMonth`, `StDay`, `EndYear`, `EndMonth`, `EndDay`, `Version`
+- `system2024.csv`: 국가-연도 베이스 → **사용하지 않음**
 
 ---
 
-## 4. 가져오기(Import) 파이프라인
+## 4. 구현 단계
 
-### 4.1 다운로드
-
-공식 다운로드 페이지에서 v2024 자료를 받는다. citeturn1view0
-
-- 페이지: “State System Membership (v2024)” citeturn1view0
-- 일반적으로 ZIP(예: `States2024.zip`)에 `states2024.csv`, `system2024.csv` 등이 포함된다. citeturn2view1
-
-권장(재현 가능한) 명령 예시:
+### Step 1: 원본 다운로드 및 보관
 
 ```bash
-# (1) 작업 디렉토리
-mkdir -p vendor/cow/v2024 && cd vendor/cow/v2024
-
-# (2) 다운로드 (URL은 COW 사이트에서 확인 후 고정)
-curl -L -o States2024.zip "https://correlatesofwar.org/wp-content/uploads/States2024.zip"
-
-# (3) 무결성 확보(선택): sha256 기록
+mkdir -p vendor/cow/v2024
+cd vendor/cow/v2024
+# COW 사이트에서 States2024.zip 다운로드
 sha256sum States2024.zip > States2024.zip.sha256
-
-# (4) 압축 해제
-unzip -o States2024.zip -d extracted/
+unzip -o States2024.zip
 ```
 
-> 팁: URL은 “고정값”으로 코드에 박기보다, **SCODA 빌드 스크립트에서 버전별 URL을 명시**하고, `vendor/`에 원본을 보관하는 방식을 추천.
+- `vendor/` 디렉토리를 `.gitignore`에 추가
+- 원본 CSV를 그대로 보관 (재현 가능성)
 
-### 4.2 전처리 규칙
+### Step 2: `cow_states` 테이블 생성 및 적재
 
-- 날짜 정규화: `StYear/StMonth/StDay` → `YYYY-MM-DD`  
-  - 월/일이 0 또는 누락인 경우가 있으면(케이스 존재 가능) 아래 우선순위로 정규화:
-    1) 월/일 모두 유효 → 그대로  
-    2) 월만 유효, 일 누락 → `01`로 대체  
-    3) 월/일 모두 누락 → `01-01`로 대체  
-  - 원본 값은 별도 컬럼(`start_year`, `start_month`, `start_day` …)으로 보존해도 됨(추적성).
+`scripts/import_cow.py` 스크립트 작성:
 
-- 레코드 중복: (cow_ccode, start_date, end_date) 기준으로 유니크.
+1. `states2024.csv` 읽기
+2. 날짜 정규화: `StYear/StMonth/StDay` → `YYYY-MM-DD`
+   - 월/일이 0 또는 누락 → `01`로 대체
+3. `cow_states` 테이블에 INSERT
+4. 검증:
+   - `start_date <= end_date`
+   - `cow_ccode`가 NULL/0이 아닌지
+   - Version == 2024
 
-### 4.3 적재(Load)
+### Step 3: `country_cow_mapping` 생성
 
-- `core_country_cow`: `states2024.csv` 기준으로 적재
-- `core_country_year_cow`: `system2024.csv` 기준으로 적재(선택)
+자동 매핑 + 수동 보완:
 
-### 4.4 검증(Validation)
+1. **자동 매핑**: `countries.name`과 `cow_states.name`의 완전 일치/유사 일치
+2. **방향 접두어 추출**: `NW Mongolia` → `Mongolia` → COW 매칭
+3. **지역→국가 수동 매핑**: 별도 매핑 사전 필요
 
-최소 검증 체크리스트:
+| Trilobase 지역명 | COW 매핑 |
+|------------------|----------|
+| England, Scotland, Wales, N Ireland, Devon | United Kingdom (200) |
+| Alaska, Iowa, Massachusetts, Missouri, Pennsylvania, Tennessee, Texas | USA (2) |
+| South Australia, Western Australia, Australian Capital Territory | Australia (900) |
+| New Brunswick, Ontario, NW Canada | Canada (20) |
+| Sichuan, Guangxi, Henan | China (710) |
+| Yakutia, Gorny Altay, Novaya Zemlya, Arctic Russia, NW Russian Platform | Russia (365) |
+| Gotland | Sweden (380) |
+| Bavaria, Eifel Germany | Germany (255) |
+| Sumatra, Timor | Indonesia (850) |
+| Spitsbergen | Norway (385) |
+| Kashmir | 매핑 보류 (인도/파키스탄 분쟁 지역) |
+| Montagne Noire | France (220) |
+| Central Asia, Turkestan, Tien-Shan | 매핑 불가 (cow_ccode = NULL) |
 
-1) `Version == 2024`인지 확인 citeturn2view1  
-2) `start_date <= end_date`  
-3) `cow_ccode`가 NULL/0이 아닌지  
-4) `system2024`를 적재했다면:
-   - `core_country_year_cow`의 각 `(cow_ccode, year)`가 **states tenure 범위** 안에 들어가는지 샘플링 검사
+4. **매칭률 확인 후 잔여 항목 수동 처리**
 
----
+### Step 4: provenance 기록
 
-## 5. SCODA provenance(권장)
+`provenance` 테이블에 추가:
 
-SCODA 특성상 “이 국가 목록이 어디서 왔는지”를 패키지 내부에 명확히 남긴다.
+```sql
+INSERT INTO provenance (source_type, citation, description, year, url)
+VALUES ('reference', 'Correlates of War Project. State System Membership (v2024)',
+        'Sovereign state codes for country name normalization', 2024,
+        'https://correlatesofwar.org/data-sets/state-system-membership/');
+```
 
-- `_scoda_provenance` 또는 `manifest.json`에 다음을 기록:
-  - source: `Correlates of War Project`
-  - dataset: `State System Membership`
-  - version: `v2024`
-  - temporal_coverage: `1816-01-01 .. 2024-12-31` citeturn1view0turn2view1
-  - retrieved_at: 빌드 날짜
-  - citation: COW 권장 인용문(문서 참조) citeturn2view1
+### Step 5: 검증 및 테스트
 
----
-
-## 6. 운영/업데이트 계획
-
-- 업데이트 주기: COW가 새 버전을 릴리스하면(v2025 등) `vendor/cow/vYYYY/`로 추가
-- 새 버전 도입 시:
-  1) `core_country_cow`에 `version` 컬럼으로 공존 가능하게 유지하거나,
-  2) 패키지 레벨에서 “국가 마스터는 v2024 고정” 정책을 명시(스냅샷 철학에 적합)
-
----
-
-## 7. 구현 체크리스트(바로 실행용)
-
-- [ ] `vendor/cow/v2024/` 디렉토리 생성  
-- [ ] `States2024.zip` 다운로드 및 sha256 기록  
-- [ ] `states2024.csv` / `system2024.csv` 존재 확인  
-- [ ] 날짜 정규화 로직 구현  
-- [ ] `data.db`에 `core_country_cow` 생성 및 적재  
-- [ ] (선택) `core_country_year_cow` 생성 및 적재  
-- [ ] 검증 쿼리/샘플링 테스트 추가  
-- [ ] `manifest.json` 및 `_scoda_provenance` 기록  
-- [ ] `.scoda` ZIP 패키징 + `checksums.sha256` 생성
+- `cow_states` 레코드 수 확인 (COW v2024 기준)
+- `country_cow_mapping` 매핑률 리포트: 매핑 성공 / NULL / 총 142건
+- 기존 API(`/api/metadata` 등)에 영향 없음 확인
+- 기존 111개 테스트 통과 확인
 
 ---
 
-## 8. 참고(공식 문서)
+## 5. `.gitignore` 추가
 
-- State System Membership (v2024) 다운로드/개요 citeturn1view0  
-- State System Membership List Codebook v2024 (변수 정의/버전 설명) citeturn2view1
+```
+vendor/
+```
+
+---
+
+## 6. 구현 체크리스트
+
+- [ ] `vendor/cow/v2024/` 디렉토리 생성, CSV 다운로드
+- [ ] `scripts/import_cow.py` 작성
+- [ ] `cow_states` 테이블 생성 및 적재
+- [ ] `country_cow_mapping` 테이블 생성
+- [ ] 자동 매핑 (완전 일치 + 방향 접두어 추출)
+- [ ] 수동 매핑 사전 (지역→국가)
+- [ ] 매핑률 리포트 출력
+- [ ] `provenance` 테이블에 COW 출처 추가
+- [ ] 테스트 통과 확인
+- [ ] devlog 기록
+
+---
+
+## 7. 참고
+
+- Correlates of War Project: State System Membership (v2024)
+- State System Membership List Codebook v2024
