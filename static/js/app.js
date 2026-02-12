@@ -194,6 +194,7 @@ function renderTableViewRows(viewKey) {
         'formations_table': (row) => `onclick="showFormationDetail(${row.id})"`,
         'references_table': (row) => `onclick="showBibliographyDetail(${row.id})"`,
         'genera_table': (row) => `onclick="showGenusDetail(${row.id})"`,
+        'chronostratigraphy_table': (row) => `onclick="showChronostratDetail(${row.id})"`,
     };
     const getClick = clickHandlers[viewKey];
 
@@ -205,7 +206,10 @@ function renderTableViewRows(viewKey) {
             html += `<tr ${clickAttr}>`;
             view.columns.forEach(col => {
                 let val = row[col.key];
-                if (col.type === 'boolean') {
+                if (col.type === 'color') {
+                    const color = val || '';
+                    val = color ? `<span class="color-chip" style="background-color:${color}" title="${color}"></span> ${color}` : '';
+                } else if (col.type === 'boolean') {
                     val = val ? 'Yes' : 'No';
                 } else if (val == null) {
                     val = '';
@@ -514,7 +518,7 @@ async function showGenusDetail(genusId) {
                     </span>
 
                     <span class="detail-label">Temporal Range:</span>
-                    <span class="detail-value">${g.temporal_code || '-'}</span>
+                    <span class="detail-value">${buildTemporalRangeHTML(g)}</span>
                 </div>
             </div>`;
 
@@ -702,6 +706,135 @@ async function showCountryDetail(countryId) {
                     <td>${g.author || ''}</td>
                     <td>${g.year || ''}</td>
                     <td>${regionLink}</td>
+                    <td>${g.is_valid ? 'Yes' : 'No'}</td>
+                </tr>`;
+            });
+            html += '</tbody></table></div></div>';
+        }
+
+        modalBody.innerHTML = html;
+    } catch (error) {
+        modalBody.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
+    }
+}
+
+/**
+ * Show chronostratigraphic unit detail modal
+ */
+async function showChronostratDetail(icsId) {
+    const modalBody = document.getElementById('genusModalBody');
+    const modalTitle = document.getElementById('genusModalTitle');
+
+    modalBody.innerHTML = '<div class="loading">Loading...</div>';
+    genusModal.show();
+
+    try {
+        const response = await fetch(`/api/chronostrat/${icsId}`);
+        const c = await response.json();
+
+        modalTitle.innerHTML = `<i class="bi bi-clock-history"></i> ${c.name}`;
+
+        let html = '';
+
+        // Basic Info
+        const timeRange = (c.start_mya != null && c.end_mya != null)
+            ? `${c.start_mya} — ${c.end_mya} Ma` : '-';
+        const gssp = c.ratified_gssp ? 'Yes' : 'No';
+
+        html += `
+            <div class="detail-section">
+                <h6>Basic Information</h6>
+                <div class="detail-grid">
+                    <span class="detail-label">Name:</span>
+                    <span class="detail-value">${c.name}</span>
+
+                    <span class="detail-label">Rank:</span>
+                    <span class="detail-value">${c.rank}</span>
+
+                    <span class="detail-label">Time Range:</span>
+                    <span class="detail-value">${timeRange}</span>
+
+                    <span class="detail-label">Short Code:</span>
+                    <span class="detail-value">${c.short_code || '-'}</span>
+
+                    <span class="detail-label">Color:</span>
+                    <span class="detail-value">${c.color ? `<span class="color-chip" style="background-color:${c.color}"></span> ${c.color}` : '-'}</span>
+
+                    <span class="detail-label">Ratified GSSP:</span>
+                    <span class="detail-value">${gssp}</span>
+                </div>
+            </div>`;
+
+        // Hierarchy (parent)
+        if (c.parent) {
+            html += `
+                <div class="detail-section">
+                    <h6>Hierarchy</h6>
+                    <div class="detail-grid">
+                        <span class="detail-label">Parent:</span>
+                        <span class="detail-value">
+                            <a class="detail-link" onclick="showChronostratDetail(${c.parent.id})">${c.parent.name}</a>
+                            <small class="text-muted">(${c.parent.rank})</small>
+                        </span>
+                    </div>
+                </div>`;
+        }
+
+        // Children
+        if (c.children && c.children.length > 0) {
+            html += `
+                <div class="detail-section">
+                    <h6>Children (${c.children.length})</h6>
+                    <div class="genera-list">
+                        <table class="manifest-table">
+                            <thead><tr>
+                                <th>Name</th><th>Rank</th><th>Time Range</th><th>Color</th>
+                            </tr></thead><tbody>`;
+            c.children.forEach(ch => {
+                const chRange = (ch.start_mya != null && ch.end_mya != null)
+                    ? `${ch.start_mya} — ${ch.end_mya} Ma` : '-';
+                const colorChip = ch.color ? `<span class="color-chip" style="background-color:${ch.color}"></span>` : '';
+                html += `<tr onclick="showChronostratDetail(${ch.id})">
+                    <td>${ch.name}</td>
+                    <td>${ch.rank}</td>
+                    <td>${chRange}</td>
+                    <td>${colorChip} ${ch.color || ''}</td>
+                </tr>`;
+            });
+            html += '</tbody></table></div></div>';
+        }
+
+        // Mapped Temporal Codes
+        if (c.mappings && c.mappings.length > 0) {
+            html += `
+                <div class="detail-section">
+                    <h6>Mapped Temporal Codes</h6>
+                    <ul class="list-unstyled">`;
+            c.mappings.forEach(m => {
+                html += `<li>
+                    <code>${m.temporal_code}</code>
+                    <small class="text-muted ms-1">(${m.mapping_type})</small>
+                </li>`;
+            });
+            html += '</ul></div>';
+        }
+
+        // Related Genera
+        if (c.genera && c.genera.length > 0) {
+            html += `
+                <div class="detail-section">
+                    <h6>Related Genera (${c.genera.length})</h6>
+                    <div class="genera-list">
+                        <table class="manifest-table">
+                            <thead><tr>
+                                <th>Genus</th><th>Author</th><th>Year</th><th>Temporal Code</th><th>Valid</th>
+                            </tr></thead><tbody>`;
+            c.genera.forEach(g => {
+                html += `<tr onclick="showGenusDetail(${g.id})">
+                    <td><i>${g.name}</i></td>
+                    <td>${g.author || ''}</td>
+                    <td>${g.year || ''}</td>
+                    <td><code>${g.temporal_code || ''}</code></td>
                     <td>${g.is_valid ? 'Yes' : 'No'}</td>
                 </tr>`;
             });
@@ -1140,6 +1273,22 @@ function collapseAll() {
     document.querySelectorAll('.tree-toggle i').forEach(el => {
         el.className = 'bi bi-chevron-right';
     });
+}
+
+/**
+ * Build temporal range HTML with ICS mapping links
+ */
+function buildTemporalRangeHTML(g) {
+    if (!g.temporal_code) return '-';
+    let html = `<code>${g.temporal_code}</code>`;
+    if (g.temporal_ics_mapping && g.temporal_ics_mapping.length > 0) {
+        const links = g.temporal_ics_mapping.map(m =>
+            `<a class="detail-link" onclick="showChronostratDetail(${m.id})">${m.name}</a>` +
+            (m.mapping_type !== 'exact' ? ` <small class="text-muted">(${m.mapping_type})</small>` : '')
+        ).join(', ');
+        html += ` → ${links}`;
+    }
+    return html;
 }
 
 /**

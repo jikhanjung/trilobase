@@ -247,6 +247,17 @@ def api_genus_detail(genus_id):
     """, (genus_id,))
     locations = cursor.fetchall()
 
+    # Get ICS chronostrat mappings for temporal_code
+    temporal_ics = []
+    if genus['temporal_code']:
+        cursor.execute("""
+            SELECT ic.id, ic.name, ic.rank, m.mapping_type
+            FROM temporal_ics_mapping m
+            JOIN ics_chronostrat ic ON m.ics_id = ic.id
+            WHERE m.temporal_code = ?
+        """, (genus['temporal_code'],))
+        temporal_ics = cursor.fetchall()
+
     conn.close()
 
     location_list = []
@@ -299,7 +310,13 @@ def api_genus_detail(genus_id):
             'country': f['country'],
             'period': f['period']
         } for f in formations],
-        'locations': location_list
+        'locations': location_list,
+        'temporal_ics_mapping': [{
+            'id': t['id'],
+            'name': t['name'],
+            'rank': t['rank'],
+            'mapping_type': t['mapping_type']
+        } for t in temporal_ics]
     })
 
 
@@ -590,6 +607,97 @@ def api_region_detail(region_id):
             'author': g['author'],
             'year': g['year'],
             'is_valid': g['is_valid']
+        } for g in genera]
+    })
+
+
+@app.route('/api/chronostrat/<int:ics_id>')
+def api_chronostrat_detail(ics_id):
+    """Get detailed info for an ICS chronostratigraphic unit"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Get chronostrat unit
+    cursor.execute("""
+        SELECT id, name, rank, parent_id, start_mya, start_uncertainty,
+               end_mya, end_uncertainty, short_code, color, ratified_gssp
+        FROM ics_chronostrat WHERE id = ?
+    """, (ics_id,))
+    unit = cursor.fetchone()
+
+    if not unit:
+        conn.close()
+        return jsonify({'error': 'Chronostratigraphic unit not found'}), 404
+
+    # Get parent
+    parent = None
+    if unit['parent_id']:
+        cursor.execute("""
+            SELECT id, name, rank FROM ics_chronostrat WHERE id = ?
+        """, (unit['parent_id'],))
+        p = cursor.fetchone()
+        if p:
+            parent = {'id': p['id'], 'name': p['name'], 'rank': p['rank']}
+
+    # Get children
+    cursor.execute("""
+        SELECT id, name, rank, start_mya, end_mya, color
+        FROM ics_chronostrat WHERE parent_id = ?
+        ORDER BY display_order
+    """, (ics_id,))
+    children = cursor.fetchall()
+
+    # Get mapped temporal codes
+    cursor.execute("""
+        SELECT temporal_code, mapping_type
+        FROM temporal_ics_mapping WHERE ics_id = ?
+        ORDER BY temporal_code
+    """, (ics_id,))
+    mappings = cursor.fetchall()
+
+    # Get related genera via temporal_ics_mapping
+    cursor.execute("""
+        SELECT DISTINCT tr.id, tr.name, tr.author, tr.year, tr.is_valid, tr.temporal_code
+        FROM temporal_ics_mapping tim
+        JOIN taxonomic_ranks tr ON tr.temporal_code = tim.temporal_code
+        WHERE tim.ics_id = ? AND tr.rank = 'Genus'
+        ORDER BY tr.name
+    """, (ics_id,))
+    genera = cursor.fetchall()
+
+    conn.close()
+
+    return jsonify({
+        'id': unit['id'],
+        'name': unit['name'],
+        'rank': unit['rank'],
+        'start_mya': unit['start_mya'],
+        'start_uncertainty': unit['start_uncertainty'],
+        'end_mya': unit['end_mya'],
+        'end_uncertainty': unit['end_uncertainty'],
+        'short_code': unit['short_code'],
+        'color': unit['color'],
+        'ratified_gssp': unit['ratified_gssp'],
+        'parent': parent,
+        'children': [{
+            'id': c['id'],
+            'name': c['name'],
+            'rank': c['rank'],
+            'start_mya': c['start_mya'],
+            'end_mya': c['end_mya'],
+            'color': c['color']
+        } for c in children],
+        'mappings': [{
+            'temporal_code': m['temporal_code'],
+            'mapping_type': m['mapping_type']
+        } for m in mappings],
+        'genera': [{
+            'id': g['id'],
+            'name': g['name'],
+            'author': g['author'],
+            'year': g['year'],
+            'is_valid': g['is_valid'],
+            'temporal_code': g['temporal_code']
         } for g in genera]
     })
 

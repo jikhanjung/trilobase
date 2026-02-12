@@ -363,6 +363,14 @@ def test_db(tmp_path):
                 '{"genus_id": "integer"}', '2026-02-07T00:00:00')
     """)
 
+    # ICS chronostrat list query
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('ics_chronostrat_list', 'ICS International Chronostratigraphic Chart',
+                'SELECT id, name, rank, start_mya, end_mya, color, display_order FROM ics_chronostrat ORDER BY display_order',
+                NULL, '2026-02-12T00:00:00')
+    """)
+
     # SCODA UI Manifest (Phase 15)
     cursor.execute("""
         CREATE TABLE ui_manifest (
@@ -431,6 +439,22 @@ def test_db(tmp_path):
                     {"key": "title", "label": "Title", "sortable": False, "searchable": True}
                 ],
                 "default_sort": {"key": "authors", "direction": "asc"},
+                "searchable": True
+            },
+            "chronostratigraphy_table": {
+                "type": "table",
+                "title": "Chronostratigraphy",
+                "description": "ICS International Chronostratigraphic Chart (GTS 2020)",
+                "source_query": "ics_chronostrat_list",
+                "icon": "bi-clock-history",
+                "columns": [
+                    {"key": "name", "label": "Name", "sortable": True, "searchable": True},
+                    {"key": "rank", "label": "Rank", "sortable": True, "searchable": True},
+                    {"key": "start_mya", "label": "Start (Ma)", "sortable": True, "type": "number"},
+                    {"key": "end_mya", "label": "End (Ma)", "sortable": True, "type": "number"},
+                    {"key": "color", "label": "Color", "sortable": False, "type": "color"}
+                ],
+                "default_sort": {"key": "display_order", "direction": "asc"},
                 "searchable": True
             }
         }
@@ -1002,7 +1026,7 @@ class TestApiQueries:
         response = client.get('/api/queries')
         data = json.loads(response.data)
         assert isinstance(data, list)
-        assert len(data) == 5  # genera_list, family_genera, taxonomy_tree, bibliography_list, genus_detail
+        assert len(data) == 6  # genera_list, family_genera, taxonomy_tree, bibliography_list, genus_detail, ics_chronostrat_list
 
     def test_queries_record_structure(self, client):
         response = client.get('/api/queries')
@@ -1117,10 +1141,10 @@ class TestApiManifest:
         assert isinstance(data['manifest']['views'], dict)
 
     def test_manifest_view_count(self, client):
-        """Test manifest should have 4 views."""
+        """Test manifest should have 5 views."""
         response = client.get('/api/manifest')
         data = json.loads(response.data)
-        assert len(data['manifest']['views']) == 4
+        assert len(data['manifest']['views']) == 5
 
     def test_manifest_tree_view(self, client):
         response = client.get('/api/manifest')
@@ -1750,3 +1774,138 @@ class TestICSChronostrat:
         assert len(rows) == 2
         assert rows[0] == ('Furongian', 'aggregate')
         assert rows[1] == ('Miaolingian', 'aggregate')
+
+
+# --- /api/chronostrat/<id> (Phase 29 Web UI) ---
+
+class TestApiChronostratDetail:
+    def test_chronostrat_detail_valid(self, client):
+        """Should return basic info for Cambrian."""
+        response = client.get('/api/chronostrat/3')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['name'] == 'Cambrian'
+        assert data['rank'] == 'Period'
+        assert data['start_mya'] == 538.8
+        assert data['end_mya'] == 486.85
+        assert data['color'] == '#7FA056'
+        assert data['short_code'] == 'Ep'
+
+    def test_chronostrat_detail_not_found(self, client):
+        response = client.get('/api/chronostrat/9999')
+        assert response.status_code == 404
+
+    def test_chronostrat_detail_parent(self, client):
+        """Cambrian's parent should be Paleozoic."""
+        response = client.get('/api/chronostrat/3')
+        data = json.loads(response.data)
+        assert data['parent'] is not None
+        assert data['parent']['name'] == 'Paleozoic'
+        assert data['parent']['rank'] == 'Era'
+
+    def test_chronostrat_detail_no_parent(self, client):
+        """Phanerozoic (Eon, root) should have no parent."""
+        response = client.get('/api/chronostrat/1')
+        data = json.loads(response.data)
+        assert data['parent'] is None
+
+    def test_chronostrat_detail_children(self, client):
+        """Cambrian should have Miaolingian and Furongian as children."""
+        response = client.get('/api/chronostrat/3')
+        data = json.loads(response.data)
+        child_names = [c['name'] for c in data['children']]
+        assert 'Miaolingian' in child_names
+        assert 'Furongian' in child_names
+
+    def test_chronostrat_detail_children_structure(self, client):
+        """Children should have id, name, rank, start_mya, end_mya, color."""
+        response = client.get('/api/chronostrat/3')
+        data = json.loads(response.data)
+        child = data['children'][0]
+        for key in ['id', 'name', 'rank', 'start_mya', 'end_mya', 'color']:
+            assert key in child, f"Missing key: {key}"
+
+    def test_chronostrat_detail_mappings(self, client):
+        """Miaolingian should have MCAM and MUCAM mappings."""
+        response = client.get('/api/chronostrat/4')
+        data = json.loads(response.data)
+        codes = [m['temporal_code'] for m in data['mappings']]
+        assert 'MCAM' in codes
+        assert 'MUCAM' in codes
+
+    def test_chronostrat_detail_mapping_types(self, client):
+        """MCAM should be exact, MUCAM should be aggregate."""
+        response = client.get('/api/chronostrat/4')
+        data = json.loads(response.data)
+        mapping_map = {m['temporal_code']: m['mapping_type'] for m in data['mappings']}
+        assert mapping_map['MCAM'] == 'exact'
+        assert mapping_map['MUCAM'] == 'aggregate'
+
+    def test_chronostrat_detail_genera(self, client):
+        """Furongian (UCAM mapped) should list Olenus."""
+        response = client.get('/api/chronostrat/6')
+        data = json.loads(response.data)
+        genus_names = [g['name'] for g in data['genera']]
+        assert 'Olenus' in genus_names
+
+    def test_chronostrat_detail_genera_structure(self, client):
+        """Genera should have id, name, author, year, is_valid, temporal_code."""
+        response = client.get('/api/chronostrat/6')
+        data = json.loads(response.data)
+        if data['genera']:
+            g = data['genera'][0]
+            for key in ['id', 'name', 'author', 'year', 'is_valid', 'temporal_code']:
+                assert key in g, f"Missing key: {key}"
+
+    def test_chronostrat_detail_response_structure(self, client):
+        """Full response should have all required keys."""
+        response = client.get('/api/chronostrat/3')
+        data = json.loads(response.data)
+        expected_keys = ['id', 'name', 'rank', 'start_mya', 'end_mya',
+                         'start_uncertainty', 'end_uncertainty', 'short_code',
+                         'color', 'ratified_gssp', 'parent', 'children',
+                         'mappings', 'genera']
+        for key in expected_keys:
+            assert key in data, f"Missing key: {key}"
+
+    def test_chronostrat_query_execute(self, client):
+        """ics_chronostrat_list query should return 6 rows."""
+        response = client.get('/api/queries/ics_chronostrat_list/execute')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['row_count'] == 6
+
+
+# --- Genus Detail ICS Mapping (Phase 29 Web UI) ---
+
+class TestGenusDetailICSMapping:
+    def test_genus_detail_has_temporal_ics_mapping(self, client):
+        """Genus detail should include temporal_ics_mapping field."""
+        response = client.get('/api/genus/200')
+        data = json.loads(response.data)
+        assert 'temporal_ics_mapping' in data
+
+    def test_genus_detail_ics_mapping_olenus(self, client):
+        """Olenus (UCAM) should map to Furongian."""
+        response = client.get('/api/genus/200')
+        data = json.loads(response.data)
+        assert len(data['temporal_ics_mapping']) == 1
+        m = data['temporal_ics_mapping'][0]
+        assert m['name'] == 'Furongian'
+        assert m['rank'] == 'Epoch'
+        assert m['mapping_type'] == 'exact'
+
+    def test_genus_detail_ics_mapping_structure(self, client):
+        """ICS mapping entries should have id, name, rank, mapping_type."""
+        response = client.get('/api/genus/200')
+        data = json.loads(response.data)
+        if data['temporal_ics_mapping']:
+            m = data['temporal_ics_mapping'][0]
+            for key in ['id', 'name', 'rank', 'mapping_type']:
+                assert key in m, f"Missing key: {key}"
+
+    def test_genus_detail_ics_mapping_no_match(self, client):
+        """Phacops (LDEV-UDEV) has no ICS mapping — should be empty list."""
+        response = client.get('/api/genus/100')
+        data = json.loads(response.data)
+        assert data['temporal_ics_mapping'] == []

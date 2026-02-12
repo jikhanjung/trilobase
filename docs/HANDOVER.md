@@ -242,6 +242,15 @@
   - Family 이상 분류군 author/year 필드 분리 (198건: "저자, 연도" → author/year 분리)
   - devlog: `devlog/20260212_033_web_detail_pages.md`
 
+- **Phase 29 완료**: ICS Chronostratigraphy 웹 UI
+  - Chronostratigraphy 테이블 탭 추가 (178행, color chip 렌더링)
+  - `/api/chronostrat/<id>` 신규: 계층, 연대, 색상, 자식, 관련 genera
+  - `/api/genus/<id>` 수정: `temporal_ics_mapping` 필드 추가 (temporal_code → ICS unit 링크)
+  - `ics_chronostrat_list` named query + manifest 갱신
+  - Genus detail Temporal Range: 원본 코드 유지 + ICS 매핑 링크 표시
+  - 테스트: 145개 (기존 129 + 신규 16)
+  - devlog: `devlog/20260212_037_phase29_ics_web_ui.md`
+
 
 ### 데이터베이스 현황
 
@@ -291,7 +300,7 @@
 | provenance | 5 | 데이터 출처 |
 | schema_descriptions | 143 | 테이블/컬럼 설명 |
 | ui_display_intent | 6 | SCODA 뷰 타입 힌트 |
-| ui_queries | 14 | Named SQL 쿼리 |
+| ui_queries | 15 | Named SQL 쿼리 |
 | ui_manifest | 1 | 선언적 뷰 정의 (JSON) |
 
 **Overlay DB (trilobase_overlay.db) — Read/write, 사용자 로컬 데이터:**
@@ -389,15 +398,16 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 26 | COW 국가 데이터 도입 (countries ↔ COW 매핑) | ✅ 완료 |
 | Phase 27 | Geographic Regions 계층 구조 (country/region 분리) | ✅ 완료 |
 | Phase 28 | ICS Chronostratigraphic Chart 임포트 + temporal_ranges 매핑 | ✅ 완료 |
+| Phase 29 | ICS Chronostratigraphy 웹 UI (테이블 탭 + detail 모달 + genus 링크) | ✅ 완료 |
 
 ## 테스트 현황
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `test_app.py` | 129개 | ✅ 통과 |
+| `test_app.py` | 145개 | ✅ 통과 |
 | `test_mcp_basic.py` | 1개 | ✅ 통과 |
 | `test_mcp.py` | 16개 | ✅ 통과 |
-| **합계** | **146개** | **✅ 전부 통과** |
+| **합계** | **162개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -412,7 +422,7 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 
 ## 다음 작업
 
-Phase 28까지 완료. 다음 작업 미정.
+Phase 29까지 완료. 다음 작업 미정.
 
 ## 미해결 항목
 
@@ -449,6 +459,7 @@ Phase 28까지 완료. 다음 작업 미정.
 26. ~~Phase 26: COW 국가 데이터 도입~~ ✅
 27. ~~Phase 27: Geographic Regions 계층 구조~~ ✅
 28. ~~Phase 28: ICS Chronostratigraphic Chart 임포트~~ ✅
+29. ~~Phase 29: ICS Chronostratigraphy 웹 UI~~ ✅
 
 ## DB 스키마
 

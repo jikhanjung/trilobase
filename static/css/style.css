@@ -506,6 +506,16 @@ html, body {
     width: 100%;
 }
 
+/* Color Chip */
+.color-chip {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.15);
+    vertical-align: middle;
+}
+
 /* Loading */
 .loading {
     text-align: center;
