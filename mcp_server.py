@@ -110,7 +110,7 @@ def build_genus_evidence_pack(genus_id: int) -> dict:
     cursor.execute("""
         SELECT f.name, f.country, gf.is_type_locality
         FROM genus_formations gf
-        JOIN formations f ON gf.formation_id = f.id
+        JOIN pc.formations f ON gf.formation_id = f.id
         WHERE gf.genus_id = ?
     """, (genus_id,))
     formations = [row_to_dict(row) for row in cursor.fetchall()]
@@ -119,7 +119,7 @@ def build_genus_evidence_pack(genus_id: int) -> dict:
     cursor.execute("""
         SELECT c.name as country, gl.region, gl.is_type_locality
         FROM genus_locations gl
-        JOIN countries c ON gl.country_id = c.id
+        JOIN pc.countries c ON gl.country_id = c.id
         WHERE gl.genus_id = ?
     """, (genus_id,))
     locations = [row_to_dict(row) for row in cursor.fetchall()]
@@ -192,10 +192,10 @@ def get_metadata() -> dict:
     cursor.execute("SELECT COUNT(*) as count FROM bibliography")
     stats['bibliography'] = cursor.fetchone()['count']
 
-    cursor.execute("SELECT COUNT(*) as count FROM formations")
+    cursor.execute("SELECT COUNT(*) as count FROM pc.formations")
     stats['formations'] = cursor.fetchone()['count']
 
-    cursor.execute("SELECT COUNT(*) as count FROM countries")
+    cursor.execute("SELECT COUNT(*) as count FROM pc.countries")
     stats['countries'] = cursor.fetchone()['count']
 
     conn.close()
@@ -212,7 +212,7 @@ def get_genera_by_country(country_name: str, limit: int = 50) -> list[dict]:
         SELECT DISTINCT tr.id, tr.name, tr.author, tr.year, tr.is_valid, tr.family
         FROM taxonomic_ranks tr
         JOIN genus_locations gl ON tr.id = gl.genus_id
-        JOIN countries c ON gl.country_id = c.id
+        JOIN pc.countries c ON gl.country_id = c.id
         WHERE tr.rank = 'Genus' AND c.name = ?
         ORDER BY tr.name
         LIMIT ?
@@ -231,7 +231,7 @@ def get_genera_by_formation(formation_name: str, limit: int = 50) -> list[dict]:
         SELECT DISTINCT tr.id, tr.name, tr.author, tr.year, tr.is_valid, tr.family
         FROM taxonomic_ranks tr
         JOIN genus_formations gf ON tr.id = gf.genus_id
-        JOIN formations f ON gf.formation_id = f.id
+        JOIN pc.formations f ON gf.formation_id = f.id
         WHERE tr.rank = 'Genus' AND f.name = ?
         ORDER BY tr.name
         LIMIT ?

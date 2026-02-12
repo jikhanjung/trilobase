@@ -288,6 +288,17 @@
   - 테스트: 164개 전부 통과
   - devlog: `devlog/20260213_040_phase32_dual_db.md`
 
+- **Phase 33 완료**: PaleoCore 쿼리 `pc.*` prefix 전환
+  - `app.py`: 16개 쿼리에서 PaleoCore 테이블을 `pc.*` prefix로 전환
+    - formations → pc.formations, geographic_regions → pc.geographic_regions
+    - ics_chronostrat → pc.ics_chronostrat, temporal_ics_mapping → pc.temporal_ics_mapping
+  - `mcp_server.py`: 6개 쿼리에서 PaleoCore 테이블을 `pc.*` prefix로 전환
+    - formations → pc.formations, countries → pc.countries
+  - `trilobase.db`: ui_queries의 ics_chronostrat_list SQL 업데이트
+  - `test_app.py`: test paleocore DB 생성 fixture 추가, 3-tuple 언패킹 전환
+  - 테스트: 164개 전부 통과
+  - devlog: `devlog/20260213_041_phase33_pc_prefix.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -461,9 +472,8 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 
 ## 다음 작업
 
-Dual-DB 운영 완료 (PaleoCore ATTACH). 다음 단계:
-- 앱 쿼리를 `pc.*` prefix로 점진적 전환 (현재는 trilobase.db 로컬 테이블 사용)
-- trilobase.db에서 PaleoCore 테이블 최종 제거 (선택적)
+PaleoCore `pc.*` prefix 전환 완료. 다음 단계:
+- trilobase.db에서 PaleoCore 테이블 최종 제거 (선택적, 쿼리는 이미 pc.* 사용)
 - `.scoda` 패키지에 paleocore dependency 반영
 
 ## 미해결 항목

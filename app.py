@@ -231,7 +231,7 @@ def api_genus_detail(genus_id):
     cursor.execute("""
         SELECT f.id, f.name, f.formation_type, f.country, f.period
         FROM genus_formations gf
-        JOIN formations f ON gf.formation_id = f.id
+        JOIN pc.formations f ON gf.formation_id = f.id
         WHERE gf.genus_id = ?
     """, (genus_id,))
     formations = cursor.fetchall()
@@ -241,8 +241,8 @@ def api_genus_detail(genus_id):
         SELECT gr.id as region_id, gr.name as region_name, gr.level,
                parent.id as country_id, parent.name as country_name
         FROM genus_locations gl
-        JOIN geographic_regions gr ON gl.region_id = gr.id
-        LEFT JOIN geographic_regions parent ON gr.parent_id = parent.id
+        JOIN pc.geographic_regions gr ON gl.region_id = gr.id
+        LEFT JOIN pc.geographic_regions parent ON gr.parent_id = parent.id
         WHERE gl.genus_id = ?
     """, (genus_id,))
     locations = cursor.fetchall()
@@ -252,8 +252,8 @@ def api_genus_detail(genus_id):
     if genus['temporal_code']:
         cursor.execute("""
             SELECT ic.id, ic.name, ic.rank, m.mapping_type
-            FROM temporal_ics_mapping m
-            JOIN ics_chronostrat ic ON m.ics_id = ic.id
+            FROM pc.temporal_ics_mapping m
+            JOIN pc.ics_chronostrat ic ON m.ics_id = ic.id
             WHERE m.temporal_code = ?
         """, (genus['temporal_code'],))
         temporal_ics = cursor.fetchall()
@@ -348,13 +348,13 @@ def api_metadata():
     cursor.execute("SELECT COUNT(*) as count FROM bibliography")
     stats['bibliography'] = cursor.fetchone()['count']
 
-    cursor.execute("SELECT COUNT(*) as count FROM formations")
+    cursor.execute("SELECT COUNT(*) as count FROM pc.formations")
     stats['formations'] = cursor.fetchone()['count']
 
-    cursor.execute("SELECT COUNT(*) as count FROM geographic_regions WHERE level = 'country'")
+    cursor.execute("SELECT COUNT(*) as count FROM pc.geographic_regions WHERE level = 'country'")
     stats['countries'] = cursor.fetchone()['count']
 
-    cursor.execute("SELECT COUNT(*) as count FROM geographic_regions WHERE level = 'region'")
+    cursor.execute("SELECT COUNT(*) as count FROM pc.geographic_regions WHERE level = 'region'")
     stats['regions'] = cursor.fetchone()['count']
 
     # Check PaleoCore availability
@@ -511,7 +511,7 @@ def api_country_detail(country_id):
     # Get country from geographic_regions
     cursor.execute("""
         SELECT id, name, level, cow_ccode, taxa_count
-        FROM geographic_regions WHERE id = ? AND level = 'country'
+        FROM pc.geographic_regions WHERE id = ? AND level = 'country'
     """, (country_id,))
     country = cursor.fetchone()
 
@@ -522,7 +522,7 @@ def api_country_detail(country_id):
     # Get child regions
     cursor.execute("""
         SELECT id, name, taxa_count
-        FROM geographic_regions
+        FROM pc.geographic_regions
         WHERE parent_id = ? AND level = 'region'
         ORDER BY taxa_count DESC, name
     """, (country_id,))
@@ -534,9 +534,9 @@ def api_country_detail(country_id):
                gr.name as region_name, gr.id as region_id
         FROM genus_locations gl
         JOIN taxonomic_ranks tr ON gl.genus_id = tr.id
-        JOIN geographic_regions gr ON gl.region_id = gr.id
+        JOIN pc.geographic_regions gr ON gl.region_id = gr.id
         WHERE gl.region_id = ? OR gl.region_id IN (
-            SELECT id FROM geographic_regions WHERE parent_id = ?
+            SELECT id FROM pc.geographic_regions WHERE parent_id = ?
         )
         ORDER BY tr.name
     """, (country_id, country_id))
@@ -576,8 +576,8 @@ def api_region_detail(region_id):
     cursor.execute("""
         SELECT gr.id, gr.name, gr.level, gr.taxa_count,
                parent.id as country_id, parent.name as country_name
-        FROM geographic_regions gr
-        LEFT JOIN geographic_regions parent ON gr.parent_id = parent.id
+        FROM pc.geographic_regions gr
+        LEFT JOIN pc.geographic_regions parent ON gr.parent_id = parent.id
         WHERE gr.id = ? AND gr.level = 'region'
     """, (region_id,))
     region = cursor.fetchone()
@@ -626,7 +626,7 @@ def api_chronostrat_detail(ics_id):
     cursor.execute("""
         SELECT id, name, rank, parent_id, start_mya, start_uncertainty,
                end_mya, end_uncertainty, short_code, color, ratified_gssp
-        FROM ics_chronostrat WHERE id = ?
+        FROM pc.ics_chronostrat WHERE id = ?
     """, (ics_id,))
     unit = cursor.fetchone()
 
@@ -638,7 +638,7 @@ def api_chronostrat_detail(ics_id):
     parent = None
     if unit['parent_id']:
         cursor.execute("""
-            SELECT id, name, rank FROM ics_chronostrat WHERE id = ?
+            SELECT id, name, rank FROM pc.ics_chronostrat WHERE id = ?
         """, (unit['parent_id'],))
         p = cursor.fetchone()
         if p:
@@ -647,7 +647,7 @@ def api_chronostrat_detail(ics_id):
     # Get children
     cursor.execute("""
         SELECT id, name, rank, start_mya, end_mya, color
-        FROM ics_chronostrat WHERE parent_id = ?
+        FROM pc.ics_chronostrat WHERE parent_id = ?
         ORDER BY display_order
     """, (ics_id,))
     children = cursor.fetchall()
@@ -655,7 +655,7 @@ def api_chronostrat_detail(ics_id):
     # Get mapped temporal codes
     cursor.execute("""
         SELECT temporal_code, mapping_type
-        FROM temporal_ics_mapping WHERE ics_id = ?
+        FROM pc.temporal_ics_mapping WHERE ics_id = ?
         ORDER BY temporal_code
     """, (ics_id,))
     mappings = cursor.fetchall()
@@ -663,7 +663,7 @@ def api_chronostrat_detail(ics_id):
     # Get related genera via temporal_ics_mapping
     cursor.execute("""
         SELECT DISTINCT tr.id, tr.name, tr.author, tr.year, tr.is_valid, tr.temporal_code
-        FROM temporal_ics_mapping tim
+        FROM pc.temporal_ics_mapping tim
         JOIN taxonomic_ranks tr ON tr.temporal_code = tim.temporal_code
         WHERE tim.ics_id = ? AND tr.rank = 'Genus'
         ORDER BY tr.name
@@ -716,7 +716,7 @@ def api_formation_detail(formation_id):
     # Get formation info
     cursor.execute("""
         SELECT id, name, normalized_name, formation_type, country, region, period, taxa_count
-        FROM formations WHERE id = ?
+        FROM pc.formations WHERE id = ?
     """, (formation_id,))
     formation = cursor.fetchone()
 

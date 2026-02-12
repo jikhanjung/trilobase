@@ -361,11 +361,11 @@ def test_db(tmp_path):
                 '{"genus_id": "integer"}', '2026-02-07T00:00:00')
     """)
 
-    # ICS chronostrat list query
+    # ICS chronostrat list query (uses pc.* prefix for PaleoCore table)
     cursor.execute("""
         INSERT INTO ui_queries (name, description, sql, params_json, created_at)
         VALUES ('ics_chronostrat_list', 'ICS International Chronostratigraphic Chart',
-                'SELECT id, name, rank, parent_id, start_mya, end_mya, color, display_order FROM ics_chronostrat ORDER BY display_order',
+                'SELECT id, name, rank, parent_id, start_mya, end_mya, color, display_order FROM pc.ics_chronostrat ORDER BY display_order',
                 NULL, '2026-02-12T00:00:00')
     """)
 
@@ -517,18 +517,125 @@ def test_db(tmp_path):
     conn.commit()
     conn.close()
 
+    # Create PALEOCORE database (PaleoCore tables accessed via pc.* prefix)
+    paleocore_db_path = str(tmp_path / "test_paleocore.db")
+    pc_conn = sqlite3.connect(paleocore_db_path)
+    pc_cursor = pc_conn.cursor()
+
+    pc_cursor.executescript("""
+        CREATE TABLE countries (
+            id INTEGER PRIMARY KEY,
+            name TEXT UNIQUE NOT NULL,
+            code TEXT,
+            taxa_count INTEGER DEFAULT 0
+        );
+
+        CREATE TABLE geographic_regions (
+            id INTEGER PRIMARY KEY,
+            name TEXT NOT NULL,
+            level TEXT NOT NULL,
+            parent_id INTEGER,
+            cow_ccode INTEGER,
+            taxa_count INTEGER DEFAULT 0,
+            FOREIGN KEY (parent_id) REFERENCES geographic_regions(id)
+        );
+
+        CREATE TABLE formations (
+            id INTEGER PRIMARY KEY,
+            name TEXT UNIQUE NOT NULL,
+            normalized_name TEXT,
+            formation_type TEXT,
+            country TEXT,
+            region TEXT,
+            period TEXT,
+            taxa_count INTEGER DEFAULT 0
+        );
+
+        CREATE TABLE ics_chronostrat (
+            id INTEGER PRIMARY KEY,
+            ics_uri TEXT UNIQUE NOT NULL,
+            name TEXT NOT NULL,
+            rank TEXT NOT NULL,
+            parent_id INTEGER,
+            start_mya REAL,
+            start_uncertainty REAL,
+            end_mya REAL,
+            end_uncertainty REAL,
+            short_code TEXT,
+            color TEXT,
+            display_order INTEGER,
+            ratified_gssp INTEGER DEFAULT 0,
+            FOREIGN KEY (parent_id) REFERENCES ics_chronostrat(id)
+        );
+        CREATE INDEX idx_pc_ics_chrono_parent ON ics_chronostrat(parent_id);
+        CREATE INDEX idx_pc_ics_chrono_rank ON ics_chronostrat(rank);
+
+        CREATE TABLE temporal_ics_mapping (
+            id INTEGER PRIMARY KEY,
+            temporal_code TEXT NOT NULL,
+            ics_id INTEGER NOT NULL,
+            mapping_type TEXT NOT NULL,
+            notes TEXT,
+            FOREIGN KEY (ics_id) REFERENCES ics_chronostrat(id)
+        );
+        CREATE INDEX idx_pc_tim_code ON temporal_ics_mapping(temporal_code);
+        CREATE INDEX idx_pc_tim_ics ON temporal_ics_mapping(ics_id);
+    """)
+
+    # Populate PaleoCore tables with same data as canonical
+    pc_cursor.executescript("""
+        INSERT INTO countries (id, name, code, taxa_count) VALUES (1, 'Germany', 'DE', 150);
+        INSERT INTO countries (id, name, code, taxa_count) VALUES (2, 'Sweden', 'SE', 80);
+
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
+        VALUES (1, 'Germany', 'country', NULL, 255, 150);
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
+        VALUES (2, 'Sweden', 'country', NULL, 380, 80);
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
+        VALUES (3, 'Eifel', 'region', 1, NULL, 5);
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
+        VALUES (4, 'Scania', 'region', 2, NULL, 20);
+
+        INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count)
+        VALUES (1, 'Büdesheimer Sh', 'budesheimer sh', 'Sh', 'Germany', 'Devonian', 5);
+        INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count)
+        VALUES (2, 'Alum Sh', 'alum sh', 'Sh', 'Sweden', 'Cambrian', 20);
+
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (1, 'http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic', 'Phanerozoic', 'Eon', NULL, 538.8, 0.6, 0.0, NULL, NULL, '#9AD9DD', 170, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (2, 'http://resource.geosciml.org/classifier/ics/ischart/Paleozoic', 'Paleozoic', 'Era', 1, 538.8, 0.6, 251.9, 0.024, NULL, '#99C08D', 169, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (3, 'http://resource.geosciml.org/classifier/ics/ischart/Cambrian', 'Cambrian', 'Period', 2, 538.8, 0.6, 486.85, 1.5, 'Ep', '#7FA056', 154, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (4, 'http://resource.geosciml.org/classifier/ics/ischart/Miaolingian', 'Miaolingian', 'Epoch', 3, 506.5, NULL, 497.0, NULL, 'Ep3', '#A6CF86', 148, 0);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (5, 'http://resource.geosciml.org/classifier/ics/ischart/Wuliuan', 'Wuliuan', 'Age', 4, 506.5, NULL, 504.5, NULL, NULL, '#B6D88B', 147, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (6, 'http://resource.geosciml.org/classifier/ics/ischart/Furongian', 'Furongian', 'Epoch', 3, 497.0, NULL, 486.85, 1.5, 'Ep4', '#B3E095', 144, 1);
+
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (1, 'MCAM', 4, 'exact');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (2, 'UCAM', 6, 'exact');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (3, 'CAM', 3, 'exact');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (4, 'MUCAM', 4, 'aggregate');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (5, 'MUCAM', 6, 'aggregate');
+    """)
+
+    pc_conn.commit()
+    pc_conn.close()
+
     # Create OVERLAY database using init_overlay_db script
     from init_overlay_db import create_overlay_db
     create_overlay_db(overlay_db_path, canonical_version='1.0.0')
 
-    return canonical_db_path, overlay_db_path
+    return canonical_db_path, overlay_db_path, paleocore_db_path
 
 
 @pytest.fixture
 def client(test_db):
-    """Create Flask test client with test databases (canonical + overlay)."""
-    canonical_db_path, overlay_db_path = test_db
-    scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path)
+    """Create Flask test client with test databases (canonical + overlay + paleocore)."""
+    canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+    scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
     app.config['TESTING'] = True
     with app.test_client() as client:
         yield client
@@ -1212,7 +1319,7 @@ class TestApiManifest:
 class TestRelease:
     def test_get_version(self, test_db):
         """get_version should return '1.0.0' from test DB."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         assert get_version(canonical_db) == '1.0.0'
 
     def test_get_version_missing(self, tmp_path):
@@ -1227,21 +1334,21 @@ class TestRelease:
 
     def test_calculate_sha256(self, test_db):
         """calculate_sha256 should return a 64-char hex string."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         h = calculate_sha256(canonical_db)
         assert len(h) == 64
         assert all(c in '0123456789abcdef' for c in h)
 
     def test_calculate_sha256_deterministic(self, test_db):
         """Same file should always produce the same hash."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         h1 = calculate_sha256(canonical_db)
         h2 = calculate_sha256(canonical_db)
         assert h1 == h2
 
     def test_calculate_sha256_changes(self, test_db):
         """Modifying the DB should change the hash."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         h_before = calculate_sha256(canonical_db)
         conn = sqlite3.connect(canonical_db)
         conn.execute("INSERT INTO artifact_metadata (key, value) VALUES ('test_key', 'test_value')")
@@ -1252,7 +1359,7 @@ class TestRelease:
 
     def test_store_sha256(self, test_db):
         """store_sha256 should insert/update sha256 key in artifact_metadata."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         store_sha256(canonical_db, 'abc123def456')
         conn = sqlite3.connect(canonical_db)
         conn.row_factory = sqlite3.Row
@@ -1264,7 +1371,7 @@ class TestRelease:
 
     def test_get_statistics(self, test_db):
         """get_statistics should return correct counts for test data."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         stats = get_statistics(canonical_db)
         assert stats['genera'] == 4         # Phacops, Acuticryphops, Cryphops, Olenus
         assert stats['valid_genera'] == 3   # Phacops, Acuticryphops, Olenus
@@ -1277,7 +1384,7 @@ class TestRelease:
 
     def test_get_provenance(self, test_db):
         """get_provenance should return 2 records with correct structure."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         prov = get_provenance(canonical_db)
         assert len(prov) == 2
         assert prov[0]['source_type'] == 'primary'
@@ -1291,7 +1398,7 @@ class TestRelease:
 
     def test_build_metadata_json(self, test_db):
         """build_metadata_json should include all required keys."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         meta = build_metadata_json(canonical_db, 'fakehash123')
         assert meta['artifact_id'] == 'trilobase'
         assert meta['version'] == '1.0.0'
@@ -1306,7 +1413,7 @@ class TestRelease:
 
     def test_generate_readme(self, test_db):
         """generate_readme should include version, hash, and statistics."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         stats = get_statistics(canonical_db)
         readme = generate_readme('1.0.0', 'abc123hash', stats)
         assert '1.0.0' in readme
@@ -1317,7 +1424,7 @@ class TestRelease:
 
     def test_create_release(self, test_db, tmp_path):
         """Integration: create_release should produce directory with 4 files."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         output_dir = str(tmp_path / "releases")
         release_dir = create_release(canonical_db, output_dir)
 
@@ -1362,7 +1469,7 @@ class TestRelease:
 
     def test_create_release_already_exists(self, test_db, tmp_path):
         """Attempting to create a duplicate release should fail."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         output_dir = str(tmp_path / "releases")
         create_release(canonical_db, output_dir)
         with pytest.raises(SystemExit):
@@ -1536,7 +1643,7 @@ class TestAnnotations:
 class TestScodaPackage:
     def test_create_scoda(self, test_db, tmp_path):
         """ScodaPackage.create should produce a valid .scoda ZIP."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         scoda_path = str(tmp_path / "test.scoda")
         result = ScodaPackage.create(canonical_db, scoda_path)
         assert os.path.exists(result)
@@ -1544,7 +1651,7 @@ class TestScodaPackage:
 
     def test_scoda_contains_manifest_and_db(self, test_db, tmp_path):
         """The .scoda ZIP should contain manifest.json and data.db."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         scoda_path = str(tmp_path / "test.scoda")
         ScodaPackage.create(canonical_db, scoda_path)
 
@@ -1555,7 +1662,7 @@ class TestScodaPackage:
 
     def test_scoda_manifest_fields(self, test_db, tmp_path):
         """Manifest should contain required metadata fields."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         scoda_path = str(tmp_path / "test.scoda")
         ScodaPackage.create(canonical_db, scoda_path)
 
@@ -1571,7 +1678,7 @@ class TestScodaPackage:
 
     def test_scoda_open_and_read(self, test_db, tmp_path):
         """Opening a .scoda package should extract DB and allow queries."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         scoda_path = str(tmp_path / "test.scoda")
         ScodaPackage.create(canonical_db, scoda_path)
 
@@ -1586,7 +1693,7 @@ class TestScodaPackage:
 
     def test_scoda_checksum_verification(self, test_db, tmp_path):
         """verify_checksum() should return True for unmodified package."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         scoda_path = str(tmp_path / "test.scoda")
         ScodaPackage.create(canonical_db, scoda_path)
 
@@ -1595,7 +1702,7 @@ class TestScodaPackage:
 
     def test_scoda_close_cleanup(self, test_db, tmp_path):
         """close() should remove the temp directory."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         scoda_path = str(tmp_path / "test.scoda")
         ScodaPackage.create(canonical_db, scoda_path)
 
@@ -1607,7 +1714,7 @@ class TestScodaPackage:
 
     def test_scoda_properties(self, test_db, tmp_path):
         """Package properties should match manifest."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         scoda_path = str(tmp_path / "test.scoda")
         ScodaPackage.create(canonical_db, scoda_path)
 
@@ -1623,7 +1730,7 @@ class TestScodaPackage:
 
     def test_get_db_with_testing_paths(self, test_db):
         """get_db() with _set_paths_for_testing should work correctly."""
-        canonical_db, overlay_db = test_db
+        canonical_db, overlay_db, _ = test_db
         scoda_package._set_paths_for_testing(canonical_db, overlay_db)
         try:
             conn = get_db()
@@ -1637,7 +1744,7 @@ class TestScodaPackage:
 
     def test_get_db_overlay_attached(self, test_db):
         """get_db() should have overlay DB attached."""
-        canonical_db, overlay_db = test_db
+        canonical_db, overlay_db, _ = test_db
         scoda_package._set_paths_for_testing(canonical_db, overlay_db)
         try:
             conn = get_db()
@@ -1658,7 +1765,7 @@ class TestICSChronostrat:
 
     def test_ics_table_exists(self, test_db):
         """ics_chronostrat table should exist with sample data."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         conn = sqlite3.connect(canonical_db)
         cursor = conn.cursor()
         cursor.execute("SELECT COUNT(*) FROM ics_chronostrat")
@@ -1668,7 +1775,7 @@ class TestICSChronostrat:
 
     def test_ics_hierarchy_eon_to_age(self, test_db):
         """Hierarchy chain: Wuliuan → Miaolingian → Cambrian → Paleozoic → Phanerozoic."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         conn = sqlite3.connect(canonical_db)
         cursor = conn.cursor()
         # Walk up from Wuliuan (Age) to Phanerozoic (Eon)
@@ -1687,7 +1794,7 @@ class TestICSChronostrat:
 
     def test_ics_ranks(self, test_db):
         """Each concept should have a valid rank."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         conn = sqlite3.connect(canonical_db)
         cursor = conn.cursor()
         cursor.execute("SELECT DISTINCT rank FROM ics_chronostrat ORDER BY rank")
@@ -1697,7 +1804,7 @@ class TestICSChronostrat:
 
     def test_ics_cambrian_time_range(self, test_db):
         """Cambrian should have start_mya=538.8 and end_mya=486.85."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         conn = sqlite3.connect(canonical_db)
         cursor = conn.cursor()
         cursor.execute("SELECT start_mya, end_mya FROM ics_chronostrat WHERE name = 'Cambrian'")
@@ -1708,7 +1815,7 @@ class TestICSChronostrat:
 
     def test_ics_color_and_short_code(self, test_db):
         """Cambrian should have color #7FA056 and short code Ep."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         conn = sqlite3.connect(canonical_db)
         cursor = conn.cursor()
         cursor.execute("SELECT color, short_code FROM ics_chronostrat WHERE name = 'Cambrian'")
@@ -1719,7 +1826,7 @@ class TestICSChronostrat:
 
     def test_ics_unique_uri(self, test_db):
         """Each concept should have a unique URI."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         conn = sqlite3.connect(canonical_db)
         cursor = conn.cursor()
         cursor.execute("SELECT COUNT(DISTINCT ics_uri) FROM ics_chronostrat")
@@ -1731,7 +1838,7 @@ class TestICSChronostrat:
 
     def test_mapping_table_exists(self, test_db):
         """temporal_ics_mapping table should exist with sample data."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         conn = sqlite3.connect(canonical_db)
         cursor = conn.cursor()
         cursor.execute("SELECT COUNT(*) FROM temporal_ics_mapping")
@@ -1741,7 +1848,7 @@ class TestICSChronostrat:
 
     def test_mapping_exact(self, test_db):
         """MCAM should map exactly to Miaolingian."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         conn = sqlite3.connect(canonical_db)
         cursor = conn.cursor()
         cursor.execute("""
@@ -1757,7 +1864,7 @@ class TestICSChronostrat:
 
     def test_mapping_aggregate(self, test_db):
         """MUCAM should map to both Miaolingian and Furongian as aggregate."""
-        canonical_db, _ = test_db
+        canonical_db, _, _ = test_db
         conn = sqlite3.connect(canonical_db)
         cursor = conn.cursor()
         cursor.execute("""
