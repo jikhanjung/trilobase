@@ -6,103 +6,10 @@ Flask application for browsing trilobite taxonomy database
 from flask import Flask, render_template, jsonify, request
 import json
 import sqlite3
-import os
-import sys
+
+from scoda_package import get_db
 
 app = Flask(__name__)
-
-# Determine DB paths based on execution mode
-if getattr(sys, 'frozen', False):
-    # Running as PyInstaller bundle
-    CANONICAL_DB = os.path.join(sys._MEIPASS, 'trilobase.db')
-    OVERLAY_DB = os.path.join(os.path.dirname(sys.executable), 'trilobase_overlay.db')
-else:
-    # Running as normal Python script
-    base_dir = os.path.dirname(__file__)
-    CANONICAL_DB = os.path.join(base_dir, 'trilobase.db')
-    OVERLAY_DB = os.path.join(base_dir, 'trilobase_overlay.db')
-
-
-def _ensure_overlay_db():
-    """Create overlay DB if it doesn't exist."""
-    if os.path.exists(OVERLAY_DB):
-        return
-
-    # Get canonical version
-    try:
-        conn = sqlite3.connect(CANONICAL_DB)
-        cursor = conn.cursor()
-        cursor.execute("SELECT value FROM artifact_metadata WHERE key = 'version'")
-        row = cursor.fetchone()
-        version = row[0] if row else '1.0.0'
-        conn.close()
-    except Exception:
-        version = '1.0.0'
-
-    # Create overlay DB (inline, no import for PyInstaller compatibility)
-    _create_overlay_db_inline(OVERLAY_DB, version)
-
-
-def _create_overlay_db_inline(db_path, canonical_version='1.0.0'):
-    """Create overlay database (inline version for PyInstaller)."""
-    conn = sqlite3.connect(db_path)
-    cursor = conn.cursor()
-
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS overlay_metadata (
-            key TEXT PRIMARY KEY,
-            value TEXT NOT NULL
-        )
-    """)
-
-    cursor.execute(
-        "INSERT OR REPLACE INTO overlay_metadata (key, value) VALUES ('canonical_version', ?)",
-        (canonical_version,)
-    )
-    cursor.execute(
-        "INSERT OR REPLACE INTO overlay_metadata (key, value) VALUES ('created_at', datetime('now'))"
-    )
-
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS user_annotations (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            entity_type TEXT NOT NULL,
-            entity_id INTEGER NOT NULL,
-            entity_name TEXT,
-            annotation_type TEXT NOT NULL,
-            content TEXT NOT NULL,
-            author TEXT,
-            created_at TEXT NOT NULL DEFAULT (datetime('now'))
-        )
-    """)
-
-    cursor.execute("""
-        CREATE INDEX IF NOT EXISTS idx_annotations_entity
-            ON user_annotations(entity_type, entity_id)
-    """)
-
-    cursor.execute("""
-        CREATE INDEX IF NOT EXISTS idx_annotations_name
-            ON user_annotations(entity_name)
-    """)
-
-    conn.commit()
-    conn.close()
-
-
-def get_db():
-    """Get database connection with overlay attached."""
-    # Ensure overlay DB exists
-    _ensure_overlay_db()
-
-    # Connect to canonical DB
-    conn = sqlite3.connect(CANONICAL_DB)
-    conn.row_factory = sqlite3.Row
-
-    # Attach overlay DB
-    conn.execute(f"ATTACH DATABASE '{OVERLAY_DB}' AS overlay")
-
-    return conn
 
 
 def build_tree(parent_id=None):

@@ -190,6 +190,16 @@
   - `trilobase.spec` 두 개의 독립 EXE 블록으로 분리
   - Claude Desktop 설정: `"command": "trilobase_mcp.exe"` (args 불필요)
 
+- **Phase 25 완료**: .scoda ZIP 패키지 포맷 도입 (**브랜치: `feature/scoda-package`**)
+  - `.scoda` ZIP 기반 데이터 패키지 포맷 정의 (manifest.json + data.db + assets/)
+  - `scoda_package.py`: 핵심 모듈 — ScodaPackage 클래스 + 중앙 집중 DB 접근 함수
+  - `scripts/create_scoda.py`: DB→.scoda 패키징 스크립트 (`--dry-run` 지원)
+  - DB 경로 중복 제거: 4개 파일(app.py, mcp_server.py, gui.py, serve.py) → `scoda_package.py` 한 곳
+  - PyInstaller exe에서 DB 번들링 제거 (exe 크기 감소)
+  - 배포 구조: `trilobase.exe` + `trilobase_mcp.exe` + `trilobase.scoda` (외부)
+  - 하위 호환: `.scoda` 없으면 `trilobase.db` 직접 사용 (폴백)
+  - 테스트: 111개 (기존 101 + ScodaPackage 10)
+
 
 ### 데이터베이스 현황
 
@@ -255,14 +265,15 @@ trilobase/
 ├── trilobite_genus_list.txt          # 정제된 genus 목록
 ├── trilobite_genus_list_original.txt # 원본 백업
 ├── adrain2011.txt                    # Order 통합을 위한 suprafamilial taxa 목록
+├── scoda_package.py                  # .scoda 패키지 + 중앙 DB 접근 (Phase 25)
 ├── app.py                            # Flask 웹 앱
-├── mcp_server.py                     # MCP 서버 (Phase 22-23, 829 lines, stdio/SSE 모드)
+├── mcp_server.py                     # MCP 서버 (Phase 22-23, stdio/SSE 모드)
 ├── templates/
 │   └── index.html                    # 메인 페이지
 ├── static/
 │   ├── css/style.css                 # 스타일
 │   └── js/app.js                     # 프론트엔드 로직
-├── test_app.py                      # pytest 테스트 (101개)
+├── test_app.py                      # pytest 테스트 (111개)
 ├── test_mcp_basic.py                # MCP 기본 테스트 (Phase 22)
 ├── test_mcp.py                      # MCP 포괄적 테스트 (Phase 22, 16개)
 ├── trilobase.spec                   # PyInstaller 빌드 설정 (Phase 18)
@@ -281,7 +292,8 @@ trilobase/
 │   ├── init_overlay_db.py           # Phase 20: Overlay DB 초기화
 │   ├── serve.py                     # Phase 18: Flask 서버 런처
 │   ├── gui.py                       # Phase 19: GUI 컨트롤 패널
-│   └── build.py                     # Phase 18: 빌드 자동화
+│   ├── build.py                     # Phase 18: 빌드 자동화
+│   └── create_scoda.py              # Phase 25: .scoda 패키지 생성
 ├── devlog/
 │   ├── 20260204_P01~P05_*.md        # Phase 계획 문서
 │   ├── 20260204_001~011_*.md        # Phase 1-11 완료 로그
@@ -317,6 +329,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 21 | GUI 로그 뷰어 (디버깅 지원) | ✅ 완료 |
 | Phase 22 | MCP Server (LLM 자연어 쿼리 지원) | ✅ 완료 |
 | Phase 23 | MCP Server SSE 통합 (GUI 통합) | ✅ 완료 |
+| Phase 25 | .scoda ZIP 패키지 포맷 + DB-앱 분리 | ✅ 완료 |
 
 ## 미해결 항목
 
@@ -349,6 +362,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 21. ~~Phase 21: GUI 로그 뷰어~~ ✅
 22. ~~Phase 22: MCP Server~~ ✅ (브랜치: `feature/scoda-implementation`)
 23. ~~Phase 23: MCP Server SSE 통합~~ ✅ (브랜치: `feature/scoda-implementation`)
+25. ~~Phase 25: .scoda ZIP 패키지 포맷~~ ✅ (브랜치: `feature/scoda-package`)
 
 ## DB 스키마
 
