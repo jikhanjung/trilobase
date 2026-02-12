@@ -534,41 +534,46 @@ async function showGenusDetail(genusId) {
         }
 
         // Geographic Info
-        html += `
-            <div class="detail-section">
-                <h6>Geographic Information</h6>
-                <div class="detail-grid">
-                    <span class="detail-label">Formation:</span>
-                    <span class="detail-value">${g.formation || '-'}</span>
+        {
+            let geoGridHtml = '';
 
+            // Country/Location: relation data first, raw fallback
+            if (g.locations && g.locations.length > 0) {
+                const locLinks = g.locations.map(l =>
+                    `<a class="detail-link" onclick="showCountryDetail(${l.id})">${l.country}</a>${l.region ? ' (' + l.region + ')' : ''}`
+                ).join(', ');
+                geoGridHtml += `
+                    <span class="detail-label">Country:</span>
+                    <span class="detail-value">${locLinks}</span>`;
+            } else if (g.location) {
+                geoGridHtml += `
                     <span class="detail-label">Location:</span>
-                    <span class="detail-value">${g.location || '-'}</span>
-                </div>`;
+                    <span class="detail-value">${g.location}</span>`;
+            }
 
-        // Locations from relation table (with links)
-        if (g.locations && g.locations.length > 0) {
-            html += `
-                <div class="mt-2">
-                    <span class="detail-label">Countries:</span>
-                    <ul class="mb-0">`;
-            g.locations.forEach(l => {
-                html += `<li><a class="detail-link" onclick="showCountryDetail(${l.id})">${l.country}</a>${l.region ? ' (' + l.region + ')' : ''}</li>`;
-            });
-            html += '</ul></div>';
-        }
+            // Formation: relation data first, raw fallback
+            if (g.formations && g.formations.length > 0) {
+                const fmtLinks = g.formations.map(f =>
+                    `<a class="detail-link" onclick="showFormationDetail(${f.id})">${f.name}</a>${f.period ? ' (' + f.period + ')' : ''}`
+                ).join(', ');
+                geoGridHtml += `
+                    <span class="detail-label">Formation:</span>
+                    <span class="detail-value">${fmtLinks}</span>`;
+            } else if (g.formation) {
+                geoGridHtml += `
+                    <span class="detail-label">Formation:</span>
+                    <span class="detail-value">${g.formation}</span>`;
+            }
 
-        // Formations from relation table (with links)
-        if (g.formations && g.formations.length > 0) {
-            html += `
-                <div class="mt-2">
-                    <span class="detail-label">Formations:</span>
-                    <ul class="mb-0">`;
-            g.formations.forEach(f => {
-                html += `<li><a class="detail-link" onclick="showFormationDetail(${f.id})">${f.name}</a>${f.period ? ' (' + f.period + ')' : ''}</li>`;
-            });
-            html += '</ul></div>';
+            if (geoGridHtml) {
+                html += `
+                    <div class="detail-section">
+                        <h6>Geographic Information</h6>
+                        <div class="detail-grid">${geoGridHtml}
+                        </div>
+                    </div>`;
+            }
         }
-        html += '</div>';
 
         // Synonyms
         if (g.synonyms && g.synonyms.length > 0) {
