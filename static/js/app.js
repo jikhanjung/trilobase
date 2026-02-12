@@ -329,12 +329,12 @@ function buildChartTree(rows) {
         }
     });
 
-    // Sort children by display_order descending (oldest first = top)
+    // Sort children by display_order ascending (youngest/present at top, oldest at bottom)
     function sortChildren(node) {
-        node.children.sort((a, b) => (b.display_order || 0) - (a.display_order || 0));
+        node.children.sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
         node.children.forEach(sortChildren);
     }
-    roots.sort((a, b) => (b.display_order || 0) - (a.display_order || 0));
+    roots.sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
     roots.forEach(sortChildren);
 
     return roots;
