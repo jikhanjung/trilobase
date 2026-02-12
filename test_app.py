@@ -70,24 +70,6 @@ def test_db(tmp_path):
             FOREIGN KEY (junior_taxon_id) REFERENCES taxonomic_ranks(id)
         );
 
-        CREATE TABLE formations (
-            id INTEGER PRIMARY KEY,
-            name TEXT UNIQUE NOT NULL,
-            normalized_name TEXT,
-            formation_type TEXT,
-            country TEXT,
-            region TEXT,
-            period TEXT,
-            taxa_count INTEGER DEFAULT 0
-        );
-
-        CREATE TABLE countries (
-            id INTEGER PRIMARY KEY,
-            name TEXT UNIQUE NOT NULL,
-            code TEXT,
-            taxa_count INTEGER DEFAULT 0
-        );
-
         CREATE TABLE genus_formations (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             genus_id INTEGER NOT NULL,
@@ -96,7 +78,6 @@ def test_db(tmp_path):
             notes TEXT,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (genus_id) REFERENCES taxonomic_ranks(id),
-            FOREIGN KEY (formation_id) REFERENCES formations(id),
             UNIQUE(genus_id, formation_id)
         );
 
@@ -110,18 +91,7 @@ def test_db(tmp_path):
             notes TEXT,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (genus_id) REFERENCES taxonomic_ranks(id),
-            FOREIGN KEY (country_id) REFERENCES countries(id),
             UNIQUE(genus_id, country_id, region)
-        );
-
-        CREATE TABLE geographic_regions (
-            id INTEGER PRIMARY KEY,
-            name TEXT NOT NULL,
-            level TEXT NOT NULL,
-            parent_id INTEGER,
-            cow_ccode INTEGER,
-            taxa_count INTEGER DEFAULT 0,
-            FOREIGN KEY (parent_id) REFERENCES geographic_regions(id)
         );
 
         CREATE VIEW taxa AS
@@ -225,37 +195,10 @@ def test_db(tmp_path):
         VALUES (1, 102, 'Acuticryphops', 101, 'j.s.s.', 'CLARKSON', '1969')
     """)
 
-    # Countries
-    cursor.executescript("""
-        INSERT INTO countries (id, name, code, taxa_count) VALUES (1, 'Germany', 'DE', 150);
-        INSERT INTO countries (id, name, code, taxa_count) VALUES (2, 'Sweden', 'SE', 80);
-    """)
-
-    # Formations
-    cursor.executescript("""
-        INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count)
-        VALUES (1, 'Büdesheimer Sh', 'budesheimer sh', 'Sh', 'Germany', 'Devonian', 5);
-
-        INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count)
-        VALUES (2, 'Alum Sh', 'alum sh', 'Sh', 'Sweden', 'Cambrian', 20);
-    """)
-
     # Genus-Formation relations
     cursor.executescript("""
         INSERT INTO genus_formations (genus_id, formation_id) VALUES (101, 1);
         INSERT INTO genus_formations (genus_id, formation_id) VALUES (200, 2);
-    """)
-
-    # Geographic regions
-    cursor.executescript("""
-        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
-        VALUES (1, 'Germany', 'country', NULL, 255, 150);
-        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
-        VALUES (2, 'Sweden', 'country', NULL, 380, 80);
-        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
-        VALUES (3, 'Eifel', 'region', 1, NULL, 5);
-        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
-        VALUES (4, 'Scania', 'region', 2, NULL, 20);
     """)
 
     # Genus-Location relations (with region_id)
@@ -461,58 +404,6 @@ def test_db(tmp_path):
         "INSERT INTO ui_manifest (name, description, manifest_json, created_at) VALUES (?, ?, ?, ?)",
         ('default', 'Test manifest', _json.dumps(test_manifest), '2026-02-07T00:00:00')
     )
-
-    # ICS Chronostrat (Phase 28) — sample hierarchy: Phanerozoic > Paleozoic > Cambrian > Miaolingian > Wuliuan
-    cursor.executescript("""
-        CREATE TABLE ics_chronostrat (
-            id INTEGER PRIMARY KEY,
-            ics_uri TEXT UNIQUE NOT NULL,
-            name TEXT NOT NULL,
-            rank TEXT NOT NULL,
-            parent_id INTEGER,
-            start_mya REAL,
-            start_uncertainty REAL,
-            end_mya REAL,
-            end_uncertainty REAL,
-            short_code TEXT,
-            color TEXT,
-            display_order INTEGER,
-            ratified_gssp INTEGER DEFAULT 0,
-            FOREIGN KEY (parent_id) REFERENCES ics_chronostrat(id)
-        );
-        CREATE INDEX idx_ics_chrono_parent ON ics_chronostrat(parent_id);
-        CREATE INDEX idx_ics_chrono_rank ON ics_chronostrat(rank);
-
-        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-        VALUES (1, 'http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic', 'Phanerozoic', 'Eon', NULL, 538.8, 0.6, 0.0, NULL, NULL, '#9AD9DD', 170, 1);
-        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-        VALUES (2, 'http://resource.geosciml.org/classifier/ics/ischart/Paleozoic', 'Paleozoic', 'Era', 1, 538.8, 0.6, 251.9, 0.024, NULL, '#99C08D', 169, 1);
-        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-        VALUES (3, 'http://resource.geosciml.org/classifier/ics/ischart/Cambrian', 'Cambrian', 'Period', 2, 538.8, 0.6, 486.85, 1.5, 'Ep', '#7FA056', 154, 1);
-        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-        VALUES (4, 'http://resource.geosciml.org/classifier/ics/ischart/Miaolingian', 'Miaolingian', 'Epoch', 3, 506.5, NULL, 497.0, NULL, 'Ep3', '#A6CF86', 148, 0);
-        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-        VALUES (5, 'http://resource.geosciml.org/classifier/ics/ischart/Wuliuan', 'Wuliuan', 'Age', 4, 506.5, NULL, 504.5, NULL, NULL, '#B6D88B', 147, 1);
-        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-        VALUES (6, 'http://resource.geosciml.org/classifier/ics/ischart/Furongian', 'Furongian', 'Epoch', 3, 497.0, NULL, 486.85, 1.5, 'Ep4', '#B3E095', 144, 1);
-
-        CREATE TABLE temporal_ics_mapping (
-            id INTEGER PRIMARY KEY,
-            temporal_code TEXT NOT NULL,
-            ics_id INTEGER NOT NULL,
-            mapping_type TEXT NOT NULL,
-            notes TEXT,
-            FOREIGN KEY (ics_id) REFERENCES ics_chronostrat(id)
-        );
-        CREATE INDEX idx_tim_code ON temporal_ics_mapping(temporal_code);
-        CREATE INDEX idx_tim_ics ON temporal_ics_mapping(ics_id);
-
-        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (1, 'MCAM', 4, 'exact');
-        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (2, 'UCAM', 6, 'exact');
-        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (3, 'CAM', 3, 'exact');
-        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (4, 'MUCAM', 4, 'aggregate');
-        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (5, 'MUCAM', 6, 'aggregate');
-    """)
 
     conn.commit()
     conn.close()
@@ -1021,8 +912,6 @@ class TestApiMetadata:
         assert 'valid_genera' in stats
         assert 'synonyms' in stats
         assert 'bibliography' in stats
-        assert 'formations' in stats
-        assert 'countries' in stats
 
     def test_metadata_statistics_values(self, client):
         """Statistics should reflect test data counts."""
@@ -1035,8 +924,6 @@ class TestApiMetadata:
         assert stats['valid_genera'] == 3  # Phacops, Acuticryphops, Olenus
         assert stats['synonyms'] == 1
         assert stats['bibliography'] == 1
-        assert stats['formations'] == 2
-        assert stats['countries'] == 2
 
 
 # --- /api/provenance ---
@@ -1379,8 +1266,6 @@ class TestRelease:
         assert stats['order'] == 2          # Phacopida, Ptychopariida
         assert stats['synonyms'] == 1
         assert stats['bibliography'] == 1
-        assert stats['formations'] == 2
-        assert stats['countries'] == 2
 
     def test_get_provenance(self, test_db):
         """get_provenance should return 2 records with correct structure."""
@@ -1758,15 +1643,141 @@ class TestScodaPackage:
             scoda_package._reset_paths()
 
 
+# --- PaleoCore .scoda Package (Phase 35) ---
+
+class TestPaleocoreScoda:
+    """Tests for creating and using paleocore.scoda packages."""
+
+    def _create_paleocore_db(self, tmp_path):
+        """Create a minimal paleocore DB for testing."""
+        pc_db = str(tmp_path / "pc_test.db")
+        conn = sqlite3.connect(pc_db)
+        cursor = conn.cursor()
+        cursor.executescript("""
+            CREATE TABLE artifact_metadata (
+                key TEXT PRIMARY KEY,
+                value TEXT NOT NULL
+            );
+            INSERT INTO artifact_metadata (key, value) VALUES ('artifact_id', 'paleocore');
+            INSERT INTO artifact_metadata (key, value) VALUES ('name', 'PaleoCore');
+            INSERT INTO artifact_metadata (key, value) VALUES ('version', '0.3.0');
+            INSERT INTO artifact_metadata (key, value) VALUES ('schema_version', '1.0');
+            INSERT INTO artifact_metadata (key, value) VALUES ('description', 'Test PaleoCore');
+            INSERT INTO artifact_metadata (key, value) VALUES ('license', 'CC-BY-4.0');
+
+            CREATE TABLE provenance (
+                id INTEGER PRIMARY KEY,
+                source_type TEXT NOT NULL,
+                citation TEXT NOT NULL,
+                description TEXT,
+                year INTEGER,
+                url TEXT
+            );
+
+            CREATE TABLE schema_descriptions (
+                table_name TEXT NOT NULL,
+                column_name TEXT,
+                description TEXT NOT NULL,
+                PRIMARY KEY (table_name, column_name)
+            );
+
+            CREATE TABLE countries (
+                id INTEGER PRIMARY KEY,
+                name TEXT UNIQUE NOT NULL,
+                code TEXT
+            );
+            INSERT INTO countries VALUES (1, 'Germany', 'DE');
+            INSERT INTO countries VALUES (2, 'Sweden', 'SE');
+
+            CREATE TABLE formations (
+                id INTEGER PRIMARY KEY,
+                name TEXT UNIQUE NOT NULL,
+                normalized_name TEXT,
+                formation_type TEXT,
+                country TEXT,
+                period TEXT
+            );
+            INSERT INTO formations VALUES (1, 'Alum Sh', 'alum sh', 'Sh', 'Sweden', 'Cambrian');
+        """)
+        conn.commit()
+        conn.close()
+        return pc_db
+
+    def test_create_paleocore_scoda(self, tmp_path):
+        """ScodaPackage.create should work with paleocore DB (no taxonomic_ranks)."""
+        pc_db = self._create_paleocore_db(tmp_path)
+        scoda_path = str(tmp_path / "test_paleocore.scoda")
+        result = ScodaPackage.create(pc_db, scoda_path)
+        assert os.path.exists(result)
+        assert zipfile.is_zipfile(result)
+
+    def test_paleocore_scoda_manifest(self, tmp_path):
+        """PaleoCore .scoda manifest should have correct metadata."""
+        pc_db = self._create_paleocore_db(tmp_path)
+        scoda_path = str(tmp_path / "test_paleocore.scoda")
+        ScodaPackage.create(pc_db, scoda_path)
+
+        with ScodaPackage(scoda_path) as pkg:
+            assert pkg.name == 'paleocore'
+            assert pkg.version == '0.3.0'
+            assert pkg.record_count == 3  # 2 countries + 1 formation
+            assert pkg.verify_checksum()
+
+    def test_paleocore_scoda_record_count(self, tmp_path):
+        """record_count should sum data tables, excluding SCODA metadata tables."""
+        pc_db = self._create_paleocore_db(tmp_path)
+        scoda_path = str(tmp_path / "test_paleocore.scoda")
+        ScodaPackage.create(pc_db, scoda_path)
+
+        with ScodaPackage(scoda_path) as pkg:
+            # countries(2) + formations(1) = 3
+            # artifact_metadata, provenance, schema_descriptions excluded
+            assert pkg.record_count == 3
+
+    def test_trilobase_scoda_with_dependency(self, test_db, tmp_path):
+        """trilobase.scoda can declare dependency on paleocore."""
+        canonical_db, _, _ = test_db
+        scoda_path = str(tmp_path / "trilobase_dep.scoda")
+        dep = {
+            "dependencies": [{
+                "name": "paleocore",
+                "version": "0.3.0",
+                "file": "paleocore.scoda",
+            }]
+        }
+        ScodaPackage.create(canonical_db, scoda_path, metadata=dep)
+
+        with ScodaPackage(scoda_path) as pkg:
+            assert 'dependencies' in pkg.manifest
+            assert len(pkg.manifest['dependencies']) == 1
+            assert pkg.manifest['dependencies'][0]['name'] == 'paleocore'
+
+    def test_paleocore_scoda_db_accessible(self, tmp_path):
+        """Extracted paleocore DB should be queryable."""
+        pc_db = self._create_paleocore_db(tmp_path)
+        scoda_path = str(tmp_path / "test_paleocore.scoda")
+        ScodaPackage.create(pc_db, scoda_path)
+
+        with ScodaPackage(scoda_path) as pkg:
+            conn = sqlite3.connect(pkg.db_path)
+            conn.row_factory = sqlite3.Row
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT(*) as cnt FROM countries")
+            assert cursor.fetchone()['cnt'] == 2
+            cursor.execute("SELECT COUNT(*) as cnt FROM formations")
+            assert cursor.fetchone()['cnt'] == 1
+            conn.close()
+
+
 # --- ICS Chronostrat (Phase 28) ---
 
 class TestICSChronostrat:
-    """Tests for ics_chronostrat and temporal_ics_mapping tables."""
+    """Tests for ics_chronostrat and temporal_ics_mapping tables (in paleocore.db)."""
 
     def test_ics_table_exists(self, test_db):
         """ics_chronostrat table should exist with sample data."""
-        canonical_db, _, _ = test_db
-        conn = sqlite3.connect(canonical_db)
+        _, _, paleocore_db = test_db
+        conn = sqlite3.connect(paleocore_db)
         cursor = conn.cursor()
         cursor.execute("SELECT COUNT(*) FROM ics_chronostrat")
         count = cursor.fetchone()[0]
@@ -1775,8 +1786,8 @@ class TestICSChronostrat:
 
     def test_ics_hierarchy_eon_to_age(self, test_db):
         """Hierarchy chain: Wuliuan → Miaolingian → Cambrian → Paleozoic → Phanerozoic."""
-        canonical_db, _, _ = test_db
-        conn = sqlite3.connect(canonical_db)
+        _, _, paleocore_db = test_db
+        conn = sqlite3.connect(paleocore_db)
         cursor = conn.cursor()
         # Walk up from Wuliuan (Age) to Phanerozoic (Eon)
         cursor.execute("""
@@ -1794,8 +1805,8 @@ class TestICSChronostrat:
 
     def test_ics_ranks(self, test_db):
         """Each concept should have a valid rank."""
-        canonical_db, _, _ = test_db
-        conn = sqlite3.connect(canonical_db)
+        _, _, paleocore_db = test_db
+        conn = sqlite3.connect(paleocore_db)
         cursor = conn.cursor()
         cursor.execute("SELECT DISTINCT rank FROM ics_chronostrat ORDER BY rank")
         ranks = {row[0] for row in cursor.fetchall()}
@@ -1804,8 +1815,8 @@ class TestICSChronostrat:
 
     def test_ics_cambrian_time_range(self, test_db):
         """Cambrian should have start_mya=538.8 and end_mya=486.85."""
-        canonical_db, _, _ = test_db
-        conn = sqlite3.connect(canonical_db)
+        _, _, paleocore_db = test_db
+        conn = sqlite3.connect(paleocore_db)
         cursor = conn.cursor()
         cursor.execute("SELECT start_mya, end_mya FROM ics_chronostrat WHERE name = 'Cambrian'")
         row = cursor.fetchone()
@@ -1815,8 +1826,8 @@ class TestICSChronostrat:
 
     def test_ics_color_and_short_code(self, test_db):
         """Cambrian should have color #7FA056 and short code Ep."""
-        canonical_db, _, _ = test_db
-        conn = sqlite3.connect(canonical_db)
+        _, _, paleocore_db = test_db
+        conn = sqlite3.connect(paleocore_db)
         cursor = conn.cursor()
         cursor.execute("SELECT color, short_code FROM ics_chronostrat WHERE name = 'Cambrian'")
         row = cursor.fetchone()
@@ -1826,8 +1837,8 @@ class TestICSChronostrat:
 
     def test_ics_unique_uri(self, test_db):
         """Each concept should have a unique URI."""
-        canonical_db, _, _ = test_db
-        conn = sqlite3.connect(canonical_db)
+        _, _, paleocore_db = test_db
+        conn = sqlite3.connect(paleocore_db)
         cursor = conn.cursor()
         cursor.execute("SELECT COUNT(DISTINCT ics_uri) FROM ics_chronostrat")
         distinct = cursor.fetchone()[0]
@@ -1838,8 +1849,8 @@ class TestICSChronostrat:
 
     def test_mapping_table_exists(self, test_db):
         """temporal_ics_mapping table should exist with sample data."""
-        canonical_db, _, _ = test_db
-        conn = sqlite3.connect(canonical_db)
+        _, _, paleocore_db = test_db
+        conn = sqlite3.connect(paleocore_db)
         cursor = conn.cursor()
         cursor.execute("SELECT COUNT(*) FROM temporal_ics_mapping")
         count = cursor.fetchone()[0]
@@ -1848,8 +1859,8 @@ class TestICSChronostrat:
 
     def test_mapping_exact(self, test_db):
         """MCAM should map exactly to Miaolingian."""
-        canonical_db, _, _ = test_db
-        conn = sqlite3.connect(canonical_db)
+        _, _, paleocore_db = test_db
+        conn = sqlite3.connect(paleocore_db)
         cursor = conn.cursor()
         cursor.execute("""
             SELECT ic.name, m.mapping_type
@@ -1864,8 +1875,8 @@ class TestICSChronostrat:
 
     def test_mapping_aggregate(self, test_db):
         """MUCAM should map to both Miaolingian and Furongian as aggregate."""
-        canonical_db, _, _ = test_db
-        conn = sqlite3.connect(canonical_db)
+        _, _, paleocore_db = test_db
+        conn = sqlite3.connect(paleocore_db)
         cursor = conn.cursor()
         cursor.execute("""
             SELECT ic.name, m.mapping_type

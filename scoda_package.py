@@ -152,9 +152,17 @@ class ScodaPackage:
         cursor.execute("SELECT key, value FROM artifact_metadata")
         db_meta = {row['key']: row['value'] for row in cursor.fetchall()}
 
-        # Count records
-        cursor.execute("SELECT COUNT(*) as cnt FROM taxonomic_ranks")
-        record_count = cursor.fetchone()['cnt']
+        # Count records: sum all non-SCODA-metadata tables
+        scoda_meta_tables = {'artifact_metadata', 'provenance', 'schema_descriptions',
+                             'ui_display_intent', 'ui_queries', 'ui_manifest'}
+        all_tables = cursor.execute(
+            "SELECT name FROM sqlite_master WHERE type='table'"
+        ).fetchall()
+        record_count = 0
+        for (table_name,) in all_tables:
+            if table_name not in scoda_meta_tables and not table_name.startswith('sqlite_'):
+                cnt = cursor.execute(f"SELECT COUNT(*) FROM [{table_name}]").fetchone()[0]
+                record_count += cnt
 
         conn.close()
 
@@ -200,6 +208,19 @@ _canonical_db = None
 _overlay_db = None
 _paleocore_db = None
 _scoda_pkg = None  # ScodaPackage instance (if using .scoda)
+_paleocore_pkg = None  # ScodaPackage instance for paleocore (if using .scoda)
+
+
+def _resolve_paleocore(base_dir):
+    """Resolve paleocore DB path: .scoda first, then .db fallback."""
+    global _paleocore_db, _paleocore_pkg
+
+    paleocore_scoda = os.path.join(base_dir, 'paleocore.scoda')
+    if os.path.exists(paleocore_scoda):
+        _paleocore_pkg = ScodaPackage(paleocore_scoda)
+        _paleocore_db = _paleocore_pkg.db_path
+    else:
+        _paleocore_db = os.path.join(base_dir, 'paleocore.db')
 
 
 def _resolve_paths():
@@ -227,7 +248,7 @@ def _resolve_paths():
             # Fallback: bundled DB inside PyInstaller bundle
             _canonical_db = os.path.join(sys._MEIPASS, 'trilobase.db')
             _overlay_db = os.path.join(exe_dir, 'trilobase_overlay.db')
-        _paleocore_db = os.path.join(exe_dir, 'paleocore.db')
+        _resolve_paleocore(exe_dir)
     else:
         # Development mode
         base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -240,27 +261,31 @@ def _resolve_paths():
             # Fallback: direct .db file
             _canonical_db = os.path.join(base_dir, 'trilobase.db')
             _overlay_db = os.path.join(base_dir, 'trilobase_overlay.db')
-        _paleocore_db = os.path.join(base_dir, 'paleocore.db')
+        _resolve_paleocore(base_dir)
 
 
 def _set_paths_for_testing(canonical_path, overlay_path, paleocore_path=None):
     """Override DB paths for testing. Call before any get_db()."""
-    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg
+    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg, _paleocore_pkg
     _canonical_db = canonical_path
     _overlay_db = overlay_path
     _paleocore_db = paleocore_path
     _scoda_pkg = None
+    _paleocore_pkg = None
 
 
 def _reset_paths():
     """Reset resolved paths (for testing teardown)."""
-    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg
+    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg, _paleocore_pkg
     if _scoda_pkg:
         _scoda_pkg.close()
+    if _paleocore_pkg:
+        _paleocore_pkg.close()
     _canonical_db = None
     _overlay_db = None
     _paleocore_db = None
     _scoda_pkg = None
+    _paleocore_pkg = None
 
 
 def get_canonical_db_path():
@@ -397,6 +422,12 @@ def get_scoda_info():
     else:
         info['source_type'] = 'db'
         info['scoda_path'] = None
+
+    if _paleocore_pkg:
+        info['paleocore_source_type'] = 'scoda'
+        info['paleocore_scoda_path'] = _paleocore_pkg.scoda_path
+    else:
+        info['paleocore_source_type'] = 'db'
 
     return info
 

@@ -299,6 +299,26 @@
   - 테스트: 164개 전부 통과
   - devlog: `devlog/20260213_041_phase33_pc_prefix.md`
 
+- **Phase 34 완료**: trilobase.db에서 PaleoCore 테이블 DROP
+  - trilobase.db에서 8개 PaleoCore 테이블 DROP (3,340 레코드)
+    - country_cow_mapping, cow_states, temporal_ics_mapping, ics_chronostrat
+    - geographic_regions, formations, countries, temporal_ranges
+  - ui_queries 6개 SQL `pc.*` prefix 업데이트 (genus_formations, genus_locations, formations_list, countries_list, genera_by_country, regions_list)
+  - schema_descriptions 49행 삭제 (143 → 94행)
+  - `scripts/release.py`: formations/countries 통계 제거
+  - `test_app.py`: canonical DB fixture 정리, TestICSChronostrat → paleocore_db 전환
+  - 테스트: 164개 전부 통과
+  - devlog: `devlog/20260213_042_phase34_drop_paleocore_tables.md`
+
+- **Phase 35 완료**: PaleoCore .scoda 패키지 + Dependency 반영
+  - `ScodaPackage.create()` 범용화: taxonomic_ranks 하드코딩 제거, 모든 데이터 테이블 합산
+  - `scripts/create_paleocore_scoda.py` 신규: paleocore.db → paleocore.scoda (93 KB, 3,340 records)
+  - `scripts/create_scoda.py`: trilobase.scoda manifest에 paleocore dependency 선언
+  - `scoda_package.py`: paleocore.scoda 우선 탐색 → paleocore.db 폴백
+  - `scripts/create_paleocore.py`: 소스 테이블 부재 시 경고 메시지
+  - 테스트: 169개 전부 통과 (기존 164 + 신규 5)
+  - devlog: `devlog/20260213_043_phase35_paleocore_scoda.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -333,21 +353,13 @@
 | synonyms | 1,055 | 동의어 관계 |
 | genus_formations | 4,853 | Genus-Formation 다대다 관계 |
 | genus_locations | 4,841 | Genus-Country 다대다 관계 |
-| formations | 2,006 | 지층 정보 |
-| countries | 142 | 국가 정보 (원본 보존) |
-| geographic_regions | 562 | 계층형 지리 데이터 (60 countries + 502 regions) |
-| cow_states | 244 | COW 주권국가 마스터 (v2024) |
-| country_cow_mapping | 142 | countries ↔ COW 매핑 (96.5%) |
-| temporal_ranges | 28 | 지질시대 코드 |
-| ics_chronostrat | 178 | ICS 국제 지층 연대표 (GTS 2020, 계층형) |
-| temporal_ics_mapping | 40 | temporal_ranges ↔ ICS 매핑 |
 | bibliography | 2,130 | 참고문헌 (Literature Cited) |
 | taxa (뷰) | 5,113 | 하위 호환성 뷰 |
 | artifact_metadata | 7 | SCODA 아티팩트 메타데이터 |
 | provenance | 5 | 데이터 출처 |
-| schema_descriptions | 143 | 테이블/컬럼 설명 |
+| schema_descriptions | 94 | 테이블/컬럼 설명 |
 | ui_display_intent | 6 | SCODA 뷰 타입 힌트 |
-| ui_queries | 15 | Named SQL 쿼리 |
+| ui_queries | 16 | Named SQL 쿼리 |
 | ui_manifest | 1 | 선언적 뷰 정의 (JSON) |
 
 **Overlay DB (trilobase_overlay.db) — Read/write, 사용자 로컬 데이터:**
@@ -403,7 +415,8 @@ trilobase/
 │   ├── fix_countries_quality.py    # countries 데이터 품질 정리
 │   ├── create_geographic_regions.py # Phase 27: Geographic Regions 마이그레이션
 │   ├── import_ics.py              # Phase 28: ICS 지층 연대표 임포트
-│   └── create_paleocore.py       # Phase 31: PaleoCore DB 생성
+│   ├── create_paleocore.py       # Phase 31: PaleoCore DB 생성
+│   └── create_paleocore_scoda.py # Phase 35: PaleoCore .scoda 패키지 생성
 ├── devlog/
 │   ├── 20260204_P01~P05_*.md        # Phase 계획 문서
 │   ├── 20260204_001~011_*.md        # Phase 1-11 완료 로그
@@ -454,10 +467,10 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `test_app.py` | 147개 | ✅ 통과 |
+| `test_app.py` | 152개 | ✅ 통과 |
 | `test_mcp_basic.py` | 1개 | ✅ 통과 |
 | `test_mcp.py` | 16개 | ✅ 통과 |
-| **합계** | **164개** | **✅ 전부 통과** |
+| **합계** | **169개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -472,9 +485,10 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 
 ## 다음 작업
 
-PaleoCore `pc.*` prefix 전환 완료. 다음 단계:
-- trilobase.db에서 PaleoCore 테이블 최종 제거 (선택적, 쿼리는 이미 pc.* 사용)
-- `.scoda` 패키지에 paleocore dependency 반영
+PaleoCore 분리 및 .scoda 패키징 완료 (Phase 31-35).
+- PaleoCore 독립 뷰어 (paleocore.scoda를 단독으로 열어서 탐색)
+- trilobase.scoda + paleocore.scoda 조합 배포 테스트
+- PyInstaller 빌드에 paleocore.scoda 포함
 
 ## 미해결 항목
 
@@ -526,27 +540,17 @@ taxonomic_ranks (
     -- Genus 전용 필드
     type_species, type_species_author, formation, location, family,
     temporal_code, is_valid, raw_entry
-    -- Phase 32: country_id, formation_id 삭제 (레거시, junction table로 대체)
 )
 
 -- synonyms: 1,055 records - 동의어 관계
 synonyms (id, junior_taxon_id, senior_taxon_name, senior_taxon_id,
           synonym_type, fide_author, fide_year, notes)
 
--- genus_formations: 4,854 records - Genus-Formation 다대다 관계
+-- genus_formations: 4,853 records - Genus-Formation 다대다 관계
 genus_formations (id, genus_id, formation_id, is_type_locality, notes)
 
 -- genus_locations: 4,841 records - Genus-Country 다대다 관계
 genus_locations (id, genus_id, country_id, region, is_type_locality, notes)
-
--- formations: 2,009 records
-formations (id, name, normalized_name, formation_type, country, region, period, taxa_count)
-
--- countries: 151 records
-countries (id, name, code, taxa_count)
-
--- temporal_ranges: 28 records
-temporal_ranges (id, code, name, period, epoch, start_mya, end_mya)
 
 -- bibliography: 2,130 records - 참고문헌
 bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
@@ -554,18 +558,6 @@ bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
 
 -- taxa: 뷰 (하위 호환성)
 CREATE VIEW taxa AS SELECT ... FROM taxonomic_ranks WHERE rank = 'Genus';
-
--- Geographic Regions (Phase 27)
-geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)  -- 계층형 지리 데이터
-
--- COW 국가 매핑 (Phase 26)
-cow_states (cow_ccode, abbrev, name, start_date, end_date, version)  -- COW 주권국가 마스터
-country_cow_mapping (country_id, cow_ccode, parent_name, notes)       -- countries ↔ COW 매핑
-
--- ICS Chronostrat (Phase 28)
-ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty,
-                 end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-temporal_ics_mapping (id, temporal_code, ics_id, mapping_type, notes)
 
 -- SCODA-Core 테이블
 artifact_metadata (key, value)                    -- 아티팩트 메타데이터 (key-value)
@@ -576,6 +568,10 @@ schema_descriptions (table_name, column_name, description)      -- 스키마 설
 ui_display_intent (id, entity, default_view, description, source_query, priority)  -- 뷰 힌트
 ui_queries (id, name, description, sql, params_json, created_at)                   -- Named Query
 ui_manifest (name, description, manifest_json, created_at)                         -- 선언적 뷰 정의 (JSON)
+
+-- 참고: PaleoCore 테이블 8개는 Phase 34에서 DROP됨
+-- countries, formations, geographic_regions, cow_states, country_cow_mapping,
+-- temporal_ranges, ics_chronostrat, temporal_ics_mapping → paleocore.db (pc.* prefix)
 ```
 
 ### Overlay DB (trilobase_overlay.db) — Phase 20

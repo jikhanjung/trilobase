@@ -97,14 +97,8 @@ def get_statistics(db_path):
     cursor.execute("SELECT COUNT(*) as count FROM bibliography")
     stats['bibliography'] = cursor.fetchone()['count']
 
-    cursor.execute("SELECT COUNT(*) as count FROM formations")
-    stats['formations'] = cursor.fetchone()['count']
-
-    cursor.execute("SELECT COUNT(*) as count FROM countries")
-    stats['countries'] = cursor.fetchone()['count']
-
-    # Note: user_annotations are in overlay DB (Phase 20), not canonical DB
-    # Annotations are local overlay data and not included in canonical releases
+    # Note: formations/countries are now in paleocore.db (Phase 34)
+    # user_annotations are in overlay DB (Phase 20), not canonical DB
 
     conn.close()
     return stats
@@ -182,8 +176,6 @@ def generate_readme(version, sha256_hash, stats):
         f"- Orders: {stats.get('order', 'N/A')}",
         f"- Synonyms: {stats.get('synonyms', 'N/A')}",
         f"- Bibliography: {stats.get('bibliography', 'N/A')}",
-        f"- Formations: {stats.get('formations', 'N/A')}",
-        f"- Countries: {stats.get('countries', 'N/A')}",
         "",
         "## Usage",
         "",

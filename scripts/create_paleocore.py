@@ -618,6 +618,16 @@ def insert_ui_manifest(conn):
 
 def dry_run(source_db):
     """Preview what would be created."""
+    missing = check_source_tables(source_db)
+    if missing:
+        print(f"Error: Source database is missing {len(missing)} required tables:",
+              file=sys.stderr)
+        for t in missing:
+            print(f"  - {t}", file=sys.stderr)
+        print(f"\nPhase 34 dropped PaleoCore tables from trilobase.db.", file=sys.stderr)
+        print(f"If paleocore.db already exists, use it directly.", file=sys.stderr)
+        sys.exit(1)
+
     src_conn = sqlite3.connect(source_db)
 
     print("=== DRY RUN (no file will be created) ===\n")
@@ -646,8 +656,32 @@ def dry_run(source_db):
     src_conn.close()
 
 
+def check_source_tables(source_db):
+    """Check if source DB has the required PaleoCore tables."""
+    conn = sqlite3.connect(source_db)
+    cursor = conn.cursor()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+    existing = {row[0] for row in cursor.fetchall()}
+    conn.close()
+
+    missing = [t for t in DATA_TABLES if t not in existing]
+    return missing
+
+
 def create_paleocore(source_db, output_path):
     """Create paleocore.db from source trilobase.db."""
+    # Check source tables exist
+    missing = check_source_tables(source_db)
+    if missing:
+        print(f"Error: Source database is missing {len(missing)} required tables:",
+              file=sys.stderr)
+        for t in missing:
+            print(f"  - {t}", file=sys.stderr)
+        print(f"\nPhase 34 dropped PaleoCore tables from trilobase.db.", file=sys.stderr)
+        print(f"If paleocore.db already exists, use it directly.", file=sys.stderr)
+        print(f"To recreate, restore trilobase.db from git or use a backup.", file=sys.stderr)
+        sys.exit(1)
+
     if os.path.exists(output_path):
         os.remove(output_path)
 

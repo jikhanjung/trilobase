@@ -53,8 +53,17 @@ def main():
         cursor.execute("SELECT key, value FROM artifact_metadata")
         db_meta = {row['key']: row['value'] for row in cursor.fetchall()}
 
-        cursor.execute("SELECT COUNT(*) as cnt FROM taxonomic_ranks")
-        record_count = cursor.fetchone()['cnt']
+        # Count records: sum all non-SCODA-metadata tables
+        scoda_meta_tables = {'artifact_metadata', 'provenance', 'schema_descriptions',
+                             'ui_display_intent', 'ui_queries', 'ui_manifest'}
+        all_tables = cursor.execute(
+            "SELECT name FROM sqlite_master WHERE type='table'"
+        ).fetchall()
+        record_count = 0
+        for (table_name,) in all_tables:
+            if table_name not in scoda_meta_tables and not table_name.startswith('sqlite_'):
+                cnt = cursor.execute(f"SELECT COUNT(*) FROM [{table_name}]").fetchone()[0]
+                record_count += cnt
         conn.close()
 
         checksum = _sha256_file(db_path)
@@ -72,6 +81,14 @@ def main():
             "data_file": "data.db",
             "record_count": record_count,
             "data_checksum_sha256": checksum,
+            "dependencies": [
+                {
+                    "name": "paleocore",
+                    "version": "0.3.0",
+                    "file": "paleocore.scoda",
+                    "description": "Shared paleontological infrastructure (geography, stratigraphy)"
+                }
+            ],
         }
 
         print("=== DRY RUN (no file will be created) ===")
@@ -84,8 +101,18 @@ def main():
         print(json.dumps(manifest, indent=2, ensure_ascii=False))
         return
 
-    # Create .scoda package
-    result = ScodaPackage.create(db_path, output_path)
+    # Create .scoda package with paleocore dependency
+    metadata = {
+        "dependencies": [
+            {
+                "name": "paleocore",
+                "version": "0.3.0",
+                "file": "paleocore.scoda",
+                "description": "Shared paleontological infrastructure (geography, stratigraphy)"
+            }
+        ],
+    }
+    result = ScodaPackage.create(db_path, output_path, metadata=metadata)
     size = os.path.getsize(result)
 
     print(f"Created: {result}")
