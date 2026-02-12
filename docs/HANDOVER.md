@@ -213,6 +213,13 @@
   - 스크립트: `scripts/import_cow.py` (`--dry-run`, `--report` 지원)
   - devlog: `devlog/20260212_032_phase26_cow_import.md`
 
+- **2026-02-12 Web UI 상세 페이지 및 상호 링크**
+  - Countries/Formations/Bibliography/All Genera 테이블 행 클릭 → 상세 모달
+  - API 3개 추가: `/api/country/<id>`, `/api/formation/<id>`, `/api/bibliography/<id>`
+  - 각 상세 모달에 연결된 genera 목록 (클릭 → genus detail)
+  - Genus detail에서 countries/formations 역방향 링크 추가
+  - devlog: `devlog/20260212_033_web_detail_pages.md`
+
 
 ### 데이터베이스 현황
 
