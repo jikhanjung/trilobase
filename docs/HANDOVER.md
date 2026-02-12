@@ -341,6 +341,12 @@
   - `scoda_package.py`: `get_scoda_info()`에 paleocore_version/name/record_count 추가
   - devlog: `devlog/20260213_046_phase38_scoda_desktop_rebranding.md`
 
+- **2026-02-13 Bugfix**: taxa_count 컬럼 참조 제거
+  - Phase 34 DROP 이후 `app.py` 3개 엔드포인트에서 `taxa_count` 컬럼 참조 → 500 에러
+  - `/api/country/<id>`, `/api/region/<id>`, `/api/formation/<id>` 수정
+  - `COUNT(DISTINCT)` JOIN으로 실시간 계산하도록 대체
+  - devlog: `devlog/20260213_047_fix_taxa_count_column.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
