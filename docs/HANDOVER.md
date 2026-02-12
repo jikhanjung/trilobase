@@ -218,6 +218,8 @@
   - API 3개 추가: `/api/country/<id>`, `/api/formation/<id>`, `/api/bibliography/<id>`
   - 각 상세 모달에 연결된 genera 목록 (클릭 → genus detail)
   - Genus detail에서 countries/formations 역방향 링크 추가
+  - Genus detail에 상위 분류군 전체 계층 표시 (Class→Order→...→Family, 클릭 가능)
+  - Family 이상 분류군 author/year 필드 분리 (198건: "저자, 연도" → author/year 분리)
   - devlog: `devlog/20260212_033_web_detail_pages.md`
 
 

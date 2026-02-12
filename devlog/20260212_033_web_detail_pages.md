@@ -42,6 +42,21 @@ Countries, Formations, Bibliography, All Genera 테이블 뷰에서 행 클릭 �
 - `.detail-link`: 인라인 엔티티 링크 스타일
 - `.genera-list`: max-height 400px, 스크롤
 
+## 추가 작업
+
+### Genus detail 상위 분류군 계층 표시
+
+- `/api/genus/<id>` API에 `hierarchy` 필드 추가 (parent 체인을 따라가 Class→Order→...→Family)
+- 프론트엔드: "Family" 행을 "Classification"으로 변경, 전체 계층을 클릭 가능한 링크로 표시
+- `buildHierarchyHTML()` 함수 추가
+
+### Family 이상 분류군 author/year 필드 분리 (198건)
+
+- **문제:** Class, Order, Suborder, Superfamily, Family의 `author` 필드에 "저자, 연도" 형태로 합쳐져 있고 `year`가 NULL
+- **수정:** `author`에서 마지막 `, YYYY` 부분을 분리하여 `year` 필드로 이동
+- 예: `"Hawle & Corda, 1847"` → author: `"Hawle & Corda"`, year: `1847`
+- Class(1) + Order(11) + Suborder(8) + Superfamily(12) + Family(166) = **198건**
+
 ## 테스트
 
 - 기존 111개 테스트 전부 통과
