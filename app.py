@@ -236,16 +236,36 @@ def api_genus_detail(genus_id):
     """, (genus_id,))
     formations = cursor.fetchall()
 
-    # Get locations (via relation table)
+    # Get locations (via geographic_regions hierarchy)
     cursor.execute("""
-        SELECT c.id, c.name as country, gl.region
+        SELECT gr.id as region_id, gr.name as region_name, gr.level,
+               parent.id as country_id, parent.name as country_name
         FROM genus_locations gl
-        JOIN countries c ON gl.country_id = c.id
+        JOIN geographic_regions gr ON gl.region_id = gr.id
+        LEFT JOIN geographic_regions parent ON gr.parent_id = parent.id
         WHERE gl.genus_id = ?
     """, (genus_id,))
     locations = cursor.fetchall()
 
     conn.close()
+
+    location_list = []
+    for l in locations:
+        if l['level'] == 'country':
+            # region_id가 country를 직접 가리킴 (region 없음)
+            location_list.append({
+                'region_id': None,
+                'region_name': None,
+                'country_id': l['region_id'],
+                'country_name': l['region_name']
+            })
+        else:
+            location_list.append({
+                'region_id': l['region_id'],
+                'region_name': l['region_name'],
+                'country_id': l['country_id'],
+                'country_name': l['country_name']
+            })
 
     return jsonify({
         'id': genus['id'],
@@ -279,11 +299,7 @@ def api_genus_detail(genus_id):
             'country': f['country'],
             'period': f['period']
         } for f in formations],
-        'locations': [{
-            'id': l['id'],
-            'country': l['country'],
-            'region': l['region']
-        } for l in locations]
+        'locations': location_list
     })
 
 
@@ -318,8 +334,11 @@ def api_metadata():
     cursor.execute("SELECT COUNT(*) as count FROM formations")
     stats['formations'] = cursor.fetchone()['count']
 
-    cursor.execute("SELECT COUNT(*) as count FROM countries")
+    cursor.execute("SELECT COUNT(*) as count FROM geographic_regions WHERE level = 'country'")
     stats['countries'] = cursor.fetchone()['count']
+
+    cursor.execute("SELECT COUNT(*) as count FROM geographic_regions WHERE level = 'region'")
+    stats['regions'] = cursor.fetchone()['count']
 
     conn.close()
 
@@ -463,35 +482,42 @@ def api_query_execute(name):
 
 @app.route('/api/country/<int:country_id>')
 def api_country_detail(country_id):
-    """Get detailed info for a specific country with related genera"""
+    """Get detailed info for a country (geographic_regions level='country')"""
     conn = get_db()
     cursor = conn.cursor()
 
-    # Get country info
-    cursor.execute("SELECT id, name, code, taxa_count FROM countries WHERE id = ?", (country_id,))
+    # Get country from geographic_regions
+    cursor.execute("""
+        SELECT id, name, level, cow_ccode, taxa_count
+        FROM geographic_regions WHERE id = ? AND level = 'country'
+    """, (country_id,))
     country = cursor.fetchone()
 
     if not country:
         conn.close()
         return jsonify({'error': 'Country not found'}), 404
 
-    # Get COW mapping info
+    # Get child regions
     cursor.execute("""
-        SELECT ccm.cow_ccode, cs.name as cow_name
-        FROM country_cow_mapping ccm
-        JOIN cow_states cs ON ccm.cow_ccode = cs.cow_ccode
-        WHERE ccm.country_id = ?
+        SELECT id, name, taxa_count
+        FROM geographic_regions
+        WHERE parent_id = ? AND level = 'region'
+        ORDER BY taxa_count DESC, name
     """, (country_id,))
-    cow = cursor.fetchone()
+    regions = cursor.fetchall()
 
-    # Get related genera
+    # Get related genera (country itself + all child regions)
     cursor.execute("""
-        SELECT tr.id, tr.name, tr.author, tr.year, gl.region, tr.is_valid
+        SELECT DISTINCT tr.id, tr.name, tr.author, tr.year, tr.is_valid,
+               gr.name as region_name, gr.id as region_id
         FROM genus_locations gl
         JOIN taxonomic_ranks tr ON gl.genus_id = tr.id
-        WHERE gl.country_id = ?
+        JOIN geographic_regions gr ON gl.region_id = gr.id
+        WHERE gl.region_id = ? OR gl.region_id IN (
+            SELECT id FROM geographic_regions WHERE parent_id = ?
+        )
         ORDER BY tr.name
-    """, (country_id,))
+    """, (country_id, country_id))
     genera = cursor.fetchall()
 
     conn.close()
@@ -499,18 +525,70 @@ def api_country_detail(country_id):
     return jsonify({
         'id': country['id'],
         'name': country['name'],
-        'code': country['code'],
+        'cow_ccode': country['cow_ccode'],
         'taxa_count': country['taxa_count'],
-        'cow': {
-            'cow_ccode': cow['cow_ccode'],
-            'cow_name': cow['cow_name']
-        } if cow else None,
+        'regions': [{
+            'id': r['id'],
+            'name': r['name'],
+            'taxa_count': r['taxa_count']
+        } for r in regions],
         'genera': [{
             'id': g['id'],
             'name': g['name'],
             'author': g['author'],
             'year': g['year'],
-            'region': g['region'],
+            'region': g['region_name'],
+            'region_id': g['region_id'],
+            'is_valid': g['is_valid']
+        } for g in genera]
+    })
+
+
+@app.route('/api/region/<int:region_id>')
+def api_region_detail(region_id):
+    """Get detailed info for a region (geographic_regions level='region')"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Get region from geographic_regions
+    cursor.execute("""
+        SELECT gr.id, gr.name, gr.level, gr.taxa_count,
+               parent.id as country_id, parent.name as country_name
+        FROM geographic_regions gr
+        LEFT JOIN geographic_regions parent ON gr.parent_id = parent.id
+        WHERE gr.id = ? AND gr.level = 'region'
+    """, (region_id,))
+    region = cursor.fetchone()
+
+    if not region:
+        conn.close()
+        return jsonify({'error': 'Region not found'}), 404
+
+    # Get related genera
+    cursor.execute("""
+        SELECT tr.id, tr.name, tr.author, tr.year, tr.is_valid
+        FROM genus_locations gl
+        JOIN taxonomic_ranks tr ON gl.genus_id = tr.id
+        WHERE gl.region_id = ?
+        ORDER BY tr.name
+    """, (region_id,))
+    genera = cursor.fetchall()
+
+    conn.close()
+
+    return jsonify({
+        'id': region['id'],
+        'name': region['name'],
+        'taxa_count': region['taxa_count'],
+        'parent': {
+            'id': region['country_id'],
+            'name': region['country_name']
+        },
+        'genera': [{
+            'id': g['id'],
+            'name': g['name'],
+            'author': g['author'],
+            'year': g['year'],
             'is_valid': g['is_valid']
         } for g in genera]
     })

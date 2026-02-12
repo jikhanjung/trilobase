@@ -107,12 +107,23 @@ def test_db(tmp_path):
             genus_id INTEGER NOT NULL,
             country_id INTEGER NOT NULL,
             region TEXT,
+            region_id INTEGER,
             is_type_locality INTEGER DEFAULT 0,
             notes TEXT,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (genus_id) REFERENCES taxonomic_ranks(id),
             FOREIGN KEY (country_id) REFERENCES countries(id),
             UNIQUE(genus_id, country_id, region)
+        );
+
+        CREATE TABLE geographic_regions (
+            id INTEGER PRIMARY KEY,
+            name TEXT NOT NULL,
+            level TEXT NOT NULL,
+            parent_id INTEGER,
+            cow_ccode INTEGER,
+            taxa_count INTEGER DEFAULT 0,
+            FOREIGN KEY (parent_id) REFERENCES geographic_regions(id)
         );
 
         CREATE VIEW taxa AS
@@ -237,10 +248,22 @@ def test_db(tmp_path):
         INSERT INTO genus_formations (genus_id, formation_id) VALUES (200, 2);
     """)
 
-    # Genus-Location relations
+    # Geographic regions
     cursor.executescript("""
-        INSERT INTO genus_locations (genus_id, country_id, region) VALUES (101, 1, 'Eifel');
-        INSERT INTO genus_locations (genus_id, country_id, region) VALUES (200, 2, 'Scania');
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
+        VALUES (1, 'Germany', 'country', NULL, 255, 150);
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
+        VALUES (2, 'Sweden', 'country', NULL, 380, 80);
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
+        VALUES (3, 'Eifel', 'region', 1, NULL, 5);
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
+        VALUES (4, 'Scania', 'region', 2, NULL, 20);
+    """)
+
+    # Genus-Location relations (with region_id)
+    cursor.executescript("""
+        INSERT INTO genus_locations (genus_id, country_id, region, region_id) VALUES (101, 1, 'Eifel', 3);
+        INSERT INTO genus_locations (genus_id, country_id, region, region_id) VALUES (200, 2, 'Scania', 4);
     """)
 
     # Bibliography (for metadata statistics)
@@ -672,8 +695,10 @@ class TestApiGenusDetail:
         response = client.get('/api/genus/101')
         data = json.loads(response.data)
         assert len(data['locations']) == 1
-        assert data['locations'][0]['country'] == 'Germany'
-        assert data['locations'][0]['region'] == 'Eifel'
+        assert data['locations'][0]['country_name'] == 'Germany'
+        assert data['locations'][0]['region_name'] == 'Eifel'
+        assert data['locations'][0]['country_id'] == 1
+        assert data['locations'][0]['region_id'] == 3
 
     def test_genus_detail_no_formations(self, client):
         """Genus without formation relations should return empty list."""
@@ -721,7 +746,68 @@ class TestApiGenusDetail:
         assert len(data['formations']) == 1
         assert data['formations'][0]['name'] == 'Alum Sh'
         assert len(data['locations']) == 1
-        assert data['locations'][0]['country'] == 'Sweden'
+        assert data['locations'][0]['country_name'] == 'Sweden'
+
+
+# --- /api/country/<id> ---
+
+class TestApiCountryDetail:
+    def test_country_detail_valid(self, client):
+        response = client.get('/api/country/1')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['name'] == 'Germany'
+        assert data['cow_ccode'] == 255
+
+    def test_country_detail_has_regions(self, client):
+        response = client.get('/api/country/1')
+        data = json.loads(response.data)
+        assert len(data['regions']) == 1
+        assert data['regions'][0]['name'] == 'Eifel'
+
+    def test_country_detail_has_genera(self, client):
+        response = client.get('/api/country/1')
+        data = json.loads(response.data)
+        assert len(data['genera']) >= 1
+        names = [g['name'] for g in data['genera']]
+        assert 'Acuticryphops' in names
+
+    def test_country_detail_not_found(self, client):
+        response = client.get('/api/country/9999')
+        assert response.status_code == 404
+
+    def test_country_detail_region_is_not_country(self, client):
+        """A region id should return 404 for country endpoint."""
+        response = client.get('/api/country/3')  # id 3 is Eifel (region)
+        assert response.status_code == 404
+
+
+# --- /api/region/<id> ---
+
+class TestApiRegionDetail:
+    def test_region_detail_valid(self, client):
+        response = client.get('/api/region/3')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['name'] == 'Eifel'
+        assert data['parent']['name'] == 'Germany'
+        assert data['parent']['id'] == 1
+
+    def test_region_detail_has_genera(self, client):
+        response = client.get('/api/region/3')
+        data = json.loads(response.data)
+        assert len(data['genera']) >= 1
+        names = [g['name'] for g in data['genera']]
+        assert 'Acuticryphops' in names
+
+    def test_region_detail_not_found(self, client):
+        response = client.get('/api/region/9999')
+        assert response.status_code == 404
+
+    def test_region_detail_country_is_not_region(self, client):
+        """A country id should return 404 for region endpoint."""
+        response = client.get('/api/region/1')  # id 1 is Germany (country)
+        assert response.status_code == 404
 
 
 # --- /api/metadata ---

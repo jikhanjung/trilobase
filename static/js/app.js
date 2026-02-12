@@ -539,9 +539,13 @@ async function showGenusDetail(genusId) {
 
             // Country/Location: relation data first, raw fallback
             if (g.locations && g.locations.length > 0) {
-                const locLinks = g.locations.map(l =>
-                    `<a class="detail-link" onclick="showCountryDetail(${l.id})">${l.country}</a>${l.region ? ' (' + l.region + ')' : ''}`
-                ).join(', ');
+                const locLinks = g.locations.map(l => {
+                    let link = `<a class="detail-link" onclick="showCountryDetail(${l.country_id})">${l.country_name}</a>`;
+                    if (l.region_id && l.region_name) {
+                        link += ` &gt; <a class="detail-link" onclick="showRegionDetail(${l.region_id})">${l.region_name}</a>`;
+                    }
+                    return link;
+                }).join(', ');
                 geoGridHtml += `
                     <span class="detail-label">Country:</span>
                     <span class="detail-value">${locLinks}</span>`;
@@ -652,22 +656,32 @@ async function showCountryDetail(countryId) {
                     <span class="detail-label">Name:</span>
                     <span class="detail-value">${c.name}</span>
 
-                    <span class="detail-label">Code:</span>
-                    <span class="detail-value">${c.code || '-'}</span>
+                    <span class="detail-label">COW Code:</span>
+                    <span class="detail-value">${c.cow_ccode || '-'}</span>
 
                     <span class="detail-label">Taxa Count:</span>
-                    <span class="detail-value">${c.taxa_count || 0}</span>`;
+                    <span class="detail-value">${c.taxa_count || 0}</span>
+                </div>
+            </div>`;
 
-        if (c.cow) {
+        // Regions list
+        if (c.regions && c.regions.length > 0) {
             html += `
-                    <span class="detail-label">COW Name:</span>
-                    <span class="detail-value">${c.cow.cow_name}</span>
-
-                    <span class="detail-label">COW Code:</span>
-                    <span class="detail-value">${c.cow.cow_ccode}</span>`;
+                <div class="detail-section">
+                    <h6>Regions (${c.regions.length})</h6>
+                    <div class="genera-list">
+                        <table class="manifest-table">
+                            <thead><tr>
+                                <th>Region</th><th>Taxa Count</th>
+                            </tr></thead><tbody>`;
+            c.regions.forEach(r => {
+                html += `<tr onclick="showRegionDetail(${r.id})">
+                    <td>${r.name}</td>
+                    <td>${r.taxa_count || 0}</td>
+                </tr>`;
+            });
+            html += '</tbody></table></div></div>';
         }
-
-        html += `</div></div>`;
 
         // Genera list
         if (c.genera && c.genera.length > 0) {
@@ -680,11 +694,75 @@ async function showCountryDetail(countryId) {
                                 <th>Genus</th><th>Author</th><th>Year</th><th>Region</th><th>Valid</th>
                             </tr></thead><tbody>`;
             c.genera.forEach(g => {
+                const regionLink = g.region_id
+                    ? `<a class="detail-link" onclick="event.stopPropagation(); showRegionDetail(${g.region_id})">${g.region || ''}</a>`
+                    : (g.region || '');
                 html += `<tr onclick="showGenusDetail(${g.id})">
                     <td><i>${g.name}</i></td>
                     <td>${g.author || ''}</td>
                     <td>${g.year || ''}</td>
-                    <td>${g.region || ''}</td>
+                    <td>${regionLink}</td>
+                    <td>${g.is_valid ? 'Yes' : 'No'}</td>
+                </tr>`;
+            });
+            html += '</tbody></table></div></div>';
+        }
+
+        modalBody.innerHTML = html;
+    } catch (error) {
+        modalBody.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
+    }
+}
+
+/**
+ * Show region detail modal
+ */
+async function showRegionDetail(regionId) {
+    const modalBody = document.getElementById('genusModalBody');
+    const modalTitle = document.getElementById('genusModalTitle');
+
+    modalBody.innerHTML = '<div class="loading">Loading...</div>';
+    genusModal.show();
+
+    try {
+        const response = await fetch(`/api/region/${regionId}`);
+        const r = await response.json();
+
+        modalTitle.innerHTML = `<i class="bi bi-geo-alt"></i> ${r.name}`;
+
+        let html = '';
+
+        // Basic Info
+        html += `
+            <div class="detail-section">
+                <h6>Basic Information</h6>
+                <div class="detail-grid">
+                    <span class="detail-label">Name:</span>
+                    <span class="detail-value">${r.name}</span>
+
+                    <span class="detail-label">Country:</span>
+                    <span class="detail-value"><a class="detail-link" onclick="showCountryDetail(${r.parent.id})">${r.parent.name}</a></span>
+
+                    <span class="detail-label">Taxa Count:</span>
+                    <span class="detail-value">${r.taxa_count || 0}</span>
+                </div>
+            </div>`;
+
+        // Genera list
+        if (r.genera && r.genera.length > 0) {
+            html += `
+                <div class="detail-section">
+                    <h6>Genera (${r.genera.length})</h6>
+                    <div class="genera-list">
+                        <table class="manifest-table">
+                            <thead><tr>
+                                <th>Genus</th><th>Author</th><th>Year</th><th>Valid</th>
+                            </tr></thead><tbody>`;
+            r.genera.forEach(g => {
+                html += `<tr onclick="showGenusDetail(${g.id})">
+                    <td><i>${g.name}</i></td>
+                    <td>${g.author || ''}</td>
+                    <td>${g.year || ''}</td>
                     <td>${g.is_valid ? 'Yes' : 'No'}</td>
                 </tr>`;
             });
