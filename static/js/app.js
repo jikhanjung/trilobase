@@ -505,8 +505,8 @@ async function showGenusDetail(genusId) {
                     <span class="detail-label">Year:</span>
                     <span class="detail-value">${g.year || '-'}${g.year_suffix || ''}</span>
 
-                    <span class="detail-label">Family:</span>
-                    <span class="detail-value">${g.family_name || g.family || '-'}</span>
+                    <span class="detail-label">Classification:</span>
+                    <span class="detail-value">${buildHierarchyHTML(g)}</span>
 
                     <span class="detail-label">Status:</span>
                     <span class="detail-value ${g.is_valid ? '' : 'invalid'}">
@@ -1057,6 +1057,19 @@ function collapseAll() {
     document.querySelectorAll('.tree-toggle i').forEach(el => {
         el.className = 'bi bi-chevron-right';
     });
+}
+
+/**
+ * Build hierarchy HTML for genus detail (Class → Order → ... → Family)
+ */
+function buildHierarchyHTML(g) {
+    if (g.hierarchy && g.hierarchy.length > 0) {
+        return g.hierarchy.map(h =>
+            `<a class="detail-link" onclick="showRankDetail(${h.id}, '${h.name.replace(/'/g, "\\'")}', '${h.rank}')">${h.name}</a>` +
+            ` <small class="text-muted">(${h.rank})</small>`
+        ).join(' → ');
+    }
+    return g.family_name || g.family || '-';
 }
 
 /**

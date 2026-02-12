@@ -197,6 +197,26 @@ def api_genus_detail(genus_id):
         conn.close()
         return jsonify({'error': 'Genus not found'}), 404
 
+    # Build taxonomy hierarchy (walk up parent chain)
+    hierarchy = []
+    parent_id = genus['parent_id']
+    while parent_id:
+        cursor.execute("""
+            SELECT id, name, rank, author, parent_id
+            FROM taxonomic_ranks WHERE id = ?
+        """, (parent_id,))
+        parent = cursor.fetchone()
+        if not parent:
+            break
+        hierarchy.append({
+            'id': parent['id'],
+            'name': parent['name'],
+            'rank': parent['rank'],
+            'author': parent['author']
+        })
+        parent_id = parent['parent_id']
+    hierarchy.reverse()  # Class → Order → ... → Family
+
     # Get synonyms
     cursor.execute("""
         SELECT s.*,
@@ -239,6 +259,7 @@ def api_genus_detail(genus_id):
         'location': genus['location'],
         'family': genus['family'],
         'family_name': genus['family_name'],
+        'hierarchy': hierarchy,
         'temporal_code': genus['temporal_code'],
         'is_valid': genus['is_valid'],
         'notes': genus['notes'],
