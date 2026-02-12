@@ -252,6 +252,15 @@
   - devlog: `devlog/20260212_037_phase29_ics_web_ui.md`
 
 
+- **Phase 30 완료**: ICS Chronostratigraphic Chart 뷰
+  - Chronostratigraphy 탭: 플랫 테이블 → ICS 스타일 계층형 색상 테이블
+  - 7컬럼: Eon | Era | Period | Sub-Period | Epoch | Age | Age(Ma)
+  - 117 leaf 행, rowspan/colspan 중첩, ICS 지정 색상 배경
+  - 특수 처리: Super-Eon 승격, Pridoli gap 보정, Hadean 전체 span
+  - 매니페스트 type "chart", 쿼리에 parent_id 추가
+  - 테스트: 147개 (기존 145 + 신규 2)
+  - devlog: `devlog/20260212_038_phase30_ics_chart_view.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -329,7 +338,7 @@ trilobase/
 ├── static/
 │   ├── css/style.css                 # 스타일
 │   └── js/app.js                     # 프론트엔드 로직
-├── test_app.py                      # pytest 테스트 (129개)
+├── test_app.py                      # pytest 테스트 (147개)
 ├── test_mcp_basic.py                # MCP 기본 테스트 (1개)
 ├── test_mcp.py                      # MCP 포괄적 테스트 (16개, asynccontextmanager 방식)
 ├── pytest.ini                       # pytest 설정 (asyncio_mode=auto)
@@ -399,15 +408,16 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 27 | Geographic Regions 계층 구조 (country/region 분리) | ✅ 완료 |
 | Phase 28 | ICS Chronostratigraphic Chart 임포트 + temporal_ranges 매핑 | ✅ 완료 |
 | Phase 29 | ICS Chronostratigraphy 웹 UI (테이블 탭 + detail 모달 + genus 링크) | ✅ 완료 |
+| Phase 30 | ICS Chart 뷰 (계층형 색상 코딩 테이블) | ✅ 완료 |
 
 ## 테스트 현황
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `test_app.py` | 145개 | ✅ 통과 |
+| `test_app.py` | 147개 | ✅ 통과 |
 | `test_mcp_basic.py` | 1개 | ✅ 통과 |
 | `test_mcp.py` | 16개 | ✅ 통과 |
-| **합계** | **162개** | **✅ 전부 통과** |
+| **합계** | **164개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -422,7 +432,7 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 
 ## 다음 작업
 
-Phase 29까지 완료. 다음 작업 미정.
+Phase 30까지 완료. 다음 작업 미정.
 
 ## 미해결 항목
 
@@ -460,6 +470,7 @@ Phase 29까지 완료. 다음 작업 미정.
 27. ~~Phase 27: Geographic Regions 계층 구조~~ ✅
 28. ~~Phase 28: ICS Chronostratigraphic Chart 임포트~~ ✅
 29. ~~Phase 29: ICS Chronostratigraphy 웹 UI~~ ✅
+30. ~~Phase 30: ICS Chart 뷰 (계층형 색상 코딩 테이블)~~ ✅
 
 ## DB 스키마
 
