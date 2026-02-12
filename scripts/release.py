@@ -24,6 +24,9 @@ import stat
 import sys
 from datetime import datetime, timezone
 
+# Add parent directory for scoda_package import
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from scoda_package import ScodaPackage
 
 DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
 DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'releases')
@@ -261,12 +264,16 @@ def create_release(db_path, output_dir):
     with open(readme_path, 'w', encoding='utf-8') as f:
         f.write(readme_content)
 
-    # 11. Summary
+    # 11. Create .scoda package in release directory
+    scoda_dest = os.path.join(release_dir, 'trilobase.scoda')
+    ScodaPackage.create(db_path, scoda_dest)
+
+    # 12. Summary
     print(f"Release created: {release_dir}")
     print(f"  Version:  {version}")
     print(f"  SHA-256:  {sha256_hash}")
     print(f"  Files:")
-    for fname in ['trilobase.db', 'metadata.json', 'checksums.sha256', 'README.md']:
+    for fname in ['trilobase.db', 'trilobase.scoda', 'metadata.json', 'checksums.sha256', 'README.md']:
         fpath = os.path.join(release_dir, fname)
         size = os.path.getsize(fpath)
         print(f"    {fname:20s} {size:>10,} bytes")

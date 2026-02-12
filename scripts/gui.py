@@ -14,6 +14,12 @@ import sys
 import time
 import subprocess
 
+# Ensure parent directory is in path for scoda_package import
+_parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _parent_dir not in sys.path:
+    sys.path.insert(0, _parent_dir)
+import scoda_package
+
 
 class LogRedirector:
     """Redirect stdout/stderr to GUI log viewer."""
@@ -61,40 +67,32 @@ class TrilobaseGUI:
         self.mcp_running = False
         self.mcp_port = 8081
 
-        # Determine DB path
+        # Determine base path
         if getattr(sys, 'frozen', False):
-            # Running as PyInstaller bundle
             self.base_path = sys._MEIPASS
         else:
-            # Running as normal Python script
             self.base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
         os.chdir(self.base_path)
 
-        # Determine DB paths
-        if getattr(sys, 'frozen', False):
-            # Canonical DB is inside bundle
-            self.canonical_db_path = os.path.join(sys._MEIPASS, 'trilobase.db')
-            # Overlay DB is next to executable
-            self.overlay_db_path = os.path.join(os.path.dirname(sys.executable), 'trilobase_overlay.db')
-        else:
-            # Development mode
-            self.canonical_db_path = os.path.join(self.base_path, 'trilobase.db')
-            self.overlay_db_path = os.path.join(self.base_path, 'trilobase_overlay.db')
-
-        # Check if canonical DB exists
-        self.db_path = self.canonical_db_path
-        self.db_exists = os.path.exists(self.canonical_db_path)
+        # Use scoda_package for DB path resolution
+        self.scoda_info = scoda_package.get_scoda_info()
+        self.canonical_db_path = self.scoda_info['canonical_path']
+        self.overlay_db_path = self.scoda_info['overlay_path']
+        self.db_exists = self.scoda_info['canonical_exists']
 
         self._create_widgets()
         self._update_status()
 
         # Initial log messages
         self._append_log("Trilobase SCODA Viewer initialized")
-        self._append_log(f"Canonical DB: {os.path.basename(self.canonical_db_path)}")
+        if self.scoda_info['source_type'] == 'scoda':
+            self._append_log(f"Package: {os.path.basename(self.scoda_info['scoda_path'])} (v{self.scoda_info.get('version', '?')})")
+        else:
+            self._append_log(f"Canonical DB: {os.path.basename(self.canonical_db_path)}")
         self._append_log(f"Overlay DB: {os.path.basename(self.overlay_db_path)}")
         if not self.db_exists:
-            self._append_log("WARNING: Canonical database not found!", "WARNING")
+            self._append_log("WARNING: Data source not found!", "WARNING")
 
         # Handle window close
         self.root.protocol("WM_DELETE_WINDOW", self.quit_app)
@@ -118,13 +116,19 @@ class TrilobaseGUI:
         info_frame = tk.LabelFrame(top_frame, text="Information", padx=10, pady=10)
         info_frame.pack(side="left", fill="both", expand=True, padx=(0, 5))
 
-        # Canonical Database
+        # Data source (Package or DB)
         db_row = tk.Frame(info_frame)
         db_row.pack(fill="x", pady=3)
-        tk.Label(db_row, text="Canonical:", width=10, anchor="w").pack(side="left")
-        db_name = os.path.basename(self.canonical_db_path)
-        db_color = "blue" if self.db_exists else "red"
-        db_text = db_name if self.db_exists else f"{db_name} (not found)"
+        if self.scoda_info['source_type'] == 'scoda':
+            tk.Label(db_row, text="Package:", width=10, anchor="w").pack(side="left")
+            scoda_name = os.path.basename(self.scoda_info['scoda_path'])
+            db_text = f"{scoda_name} (v{self.scoda_info.get('version', '?')})"
+            db_color = "blue" if self.db_exists else "red"
+        else:
+            tk.Label(db_row, text="Canonical:", width=10, anchor="w").pack(side="left")
+            db_name = os.path.basename(self.canonical_db_path)
+            db_color = "blue" if self.db_exists else "red"
+            db_text = db_name if self.db_exists else f"{db_name} (not found)"
         self.db_label = tk.Label(db_row, text=db_text, anchor="w", fg=db_color)
         self.db_label.pack(side="left", fill="x", expand=True)
 

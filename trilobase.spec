@@ -20,9 +20,9 @@ a = Analysis(
     binaries=[],
     datas=[
         ('app.py', '.'),
+        ('scoda_package.py', '.'),
         ('templates', 'templates'),
         ('static', 'static'),
-        ('trilobase.db', '.'),
     ],
     hiddenimports=[
         'flask',
@@ -77,7 +77,7 @@ mcp_a = Analysis(
     pathex=[],
     binaries=[],
     datas=[
-        ('trilobase.db', '.'),
+        ('scoda_package.py', '.'),
     ],
     hiddenimports=[
         'mcp',

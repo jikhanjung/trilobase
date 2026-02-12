@@ -13,56 +13,7 @@ from starlette.routing import Route
 from starlette.responses import Response
 import uvicorn
 
-# DB path resolution (app.py와 동일)
-if getattr(sys, 'frozen', False):
-    # Running in a PyInstaller bundle
-    CANONICAL_DB = os.path.join(sys._MEIPASS, 'trilobase.db')
-    # For frozen mode, ensure overlay_db can be written to in the same directory as the executable
-    OVERLAY_DB = os.path.join(os.path.dirname(sys.executable), 'trilobase_overlay.db')
-else:
-    # Running in development mode
-    base_dir = os.path.dirname(__file__)
-    CANONICAL_DB = os.path.join(base_dir, 'trilobase.db')
-    OVERLAY_DB = os.path.join(base_dir, 'trilobase_overlay.db')
-
-def get_db():
-    """Get database connection with overlay attached."""
-    conn = sqlite3.connect(CANONICAL_DB)
-    conn.row_factory = sqlite3.Row
-    # Attach overlay DB
-    conn.execute(f"ATTACH DATABASE '{OVERLAY_DB}' AS overlay")
-    return conn
-
-# Ensure overlay DB exists (it will be created if not)
-def init_overlay_db():
-    conn = None
-    try:
-        conn = sqlite3.connect(OVERLAY_DB)
-        cursor = conn.cursor()
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS overlay_metadata (
-                key TEXT PRIMARY KEY,
-                value TEXT
-            )
-        """)
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS user_annotations (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                entity_type TEXT NOT NULL,
-                entity_id INTEGER NOT NULL,
-                entity_name TEXT,
-                annotation_type TEXT NOT NULL,
-                content TEXT NOT NULL,
-                author TEXT,
-                created_at TEXT DEFAULT CURRENT_TIMESTAMP
-            )
-        """)
-        conn.commit()
-    except sqlite3.Error as e:
-        print(f"Error initializing overlay DB: {e}")
-    finally:
-        if conn:
-            conn.close()
+from scoda_package import get_db, ensure_overlay_db
 
 def row_to_dict(row):
     return dict(row)
@@ -728,13 +679,13 @@ async def call_tool(name: str, arguments: dict) -> list[TextContent]:
 
 async def run_stdio():
     """Run MCP server in stdio mode (for Claude Desktop spawning)."""
-    init_overlay_db()
+    ensure_overlay_db()
     async with stdio_server() as (read_stream, write_stream):
         await app.run(read_stream, write_stream, app.create_initialization_options())
 
 def run_sse(host: str = "localhost", port: int = 8081):
     """Run MCP server in SSE mode (HTTP server for persistent connections)."""
-    init_overlay_db()
+    ensure_overlay_db()
 
     # Create SSE transport
     sse = SseServerTransport("/messages")

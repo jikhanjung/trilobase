@@ -8,10 +8,13 @@ import os
 import stat
 import sys
 import tempfile
+import zipfile
 
 import pytest
 
-from app import app, get_db
+import scoda_package
+from app import app
+from scoda_package import get_db, ScodaPackage
 
 # Import release script functions
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'scripts'))
@@ -425,15 +428,14 @@ def test_db(tmp_path):
 
 
 @pytest.fixture
-def client(test_db, monkeypatch):
+def client(test_db):
     """Create Flask test client with test databases (canonical + overlay)."""
     canonical_db_path, overlay_db_path = test_db
-    import app as app_module
-    monkeypatch.setattr(app_module, 'CANONICAL_DB', canonical_db_path)
-    monkeypatch.setattr(app_module, 'OVERLAY_DB', overlay_db_path)
+    scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path)
     app.config['TESTING'] = True
     with app.test_client() as client:
         yield client
+    scoda_package._reset_paths()
 
 
 # --- Index page ---
@@ -1367,3 +1369,123 @@ class TestAnnotations:
                          'content', 'author', 'created_at']
         for key in expected_keys:
             assert key in record, f"Missing key: {key}"
+
+
+# --- ScodaPackage (Phase 25) ---
+
+class TestScodaPackage:
+    def test_create_scoda(self, test_db, tmp_path):
+        """ScodaPackage.create should produce a valid .scoda ZIP."""
+        canonical_db, _ = test_db
+        scoda_path = str(tmp_path / "test.scoda")
+        result = ScodaPackage.create(canonical_db, scoda_path)
+        assert os.path.exists(result)
+        assert zipfile.is_zipfile(result)
+
+    def test_scoda_contains_manifest_and_db(self, test_db, tmp_path):
+        """The .scoda ZIP should contain manifest.json and data.db."""
+        canonical_db, _ = test_db
+        scoda_path = str(tmp_path / "test.scoda")
+        ScodaPackage.create(canonical_db, scoda_path)
+
+        with zipfile.ZipFile(scoda_path, 'r') as zf:
+            names = zf.namelist()
+            assert 'manifest.json' in names
+            assert 'data.db' in names
+
+    def test_scoda_manifest_fields(self, test_db, tmp_path):
+        """Manifest should contain required metadata fields."""
+        canonical_db, _ = test_db
+        scoda_path = str(tmp_path / "test.scoda")
+        ScodaPackage.create(canonical_db, scoda_path)
+
+        with ScodaPackage(scoda_path) as pkg:
+            m = pkg.manifest
+            assert m['format'] == 'scoda'
+            assert m['format_version'] == '1.0'
+            assert m['name'] == 'trilobase'
+            assert m['version'] == '1.0.0'
+            assert m['data_file'] == 'data.db'
+            assert m['record_count'] > 0
+            assert len(m['data_checksum_sha256']) == 64
+
+    def test_scoda_open_and_read(self, test_db, tmp_path):
+        """Opening a .scoda package should extract DB and allow queries."""
+        canonical_db, _ = test_db
+        scoda_path = str(tmp_path / "test.scoda")
+        ScodaPackage.create(canonical_db, scoda_path)
+
+        with ScodaPackage(scoda_path) as pkg:
+            conn = sqlite3.connect(pkg.db_path)
+            conn.row_factory = sqlite3.Row
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT(*) as cnt FROM taxonomic_ranks")
+            count = cursor.fetchone()['cnt']
+            conn.close()
+            assert count > 0
+
+    def test_scoda_checksum_verification(self, test_db, tmp_path):
+        """verify_checksum() should return True for unmodified package."""
+        canonical_db, _ = test_db
+        scoda_path = str(tmp_path / "test.scoda")
+        ScodaPackage.create(canonical_db, scoda_path)
+
+        with ScodaPackage(scoda_path) as pkg:
+            assert pkg.verify_checksum() is True
+
+    def test_scoda_close_cleanup(self, test_db, tmp_path):
+        """close() should remove the temp directory."""
+        canonical_db, _ = test_db
+        scoda_path = str(tmp_path / "test.scoda")
+        ScodaPackage.create(canonical_db, scoda_path)
+
+        pkg = ScodaPackage(scoda_path)
+        tmp_dir = pkg._tmp_dir
+        assert os.path.exists(tmp_dir)
+        pkg.close()
+        assert not os.path.exists(tmp_dir)
+
+    def test_scoda_properties(self, test_db, tmp_path):
+        """Package properties should match manifest."""
+        canonical_db, _ = test_db
+        scoda_path = str(tmp_path / "test.scoda")
+        ScodaPackage.create(canonical_db, scoda_path)
+
+        with ScodaPackage(scoda_path) as pkg:
+            assert pkg.version == '1.0.0'
+            assert pkg.name == 'trilobase'
+            assert pkg.record_count > 0
+
+    def test_scoda_file_not_found(self, tmp_path):
+        """Opening a nonexistent .scoda should raise FileNotFoundError."""
+        with pytest.raises(FileNotFoundError):
+            ScodaPackage(str(tmp_path / "nonexistent.scoda"))
+
+    def test_get_db_with_testing_paths(self, test_db):
+        """get_db() with _set_paths_for_testing should work correctly."""
+        canonical_db, overlay_db = test_db
+        scoda_package._set_paths_for_testing(canonical_db, overlay_db)
+        try:
+            conn = get_db()
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT(*) as cnt FROM taxonomic_ranks")
+            count = cursor.fetchone()['cnt']
+            conn.close()
+            assert count > 0
+        finally:
+            scoda_package._reset_paths()
+
+    def test_get_db_overlay_attached(self, test_db):
+        """get_db() should have overlay DB attached."""
+        canonical_db, overlay_db = test_db
+        scoda_package._set_paths_for_testing(canonical_db, overlay_db)
+        try:
+            conn = get_db()
+            cursor = conn.cursor()
+            # overlay.user_annotations should be accessible
+            cursor.execute("SELECT COUNT(*) as cnt FROM overlay.user_annotations")
+            count = cursor.fetchone()['cnt']
+            conn.close()
+            assert count == 0  # empty initially
+        finally:
+            scoda_package._reset_paths()
