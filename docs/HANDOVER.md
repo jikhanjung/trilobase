@@ -353,6 +353,18 @@
   - `JOIN + COUNT(DISTINCT)`로 실시간 계산하도록 SQL 업데이트
   - devlog: `devlog/20260213_048_fix_named_query_taxa_count.md`
 
+- **Phase 39 완료**: Declarative Manifest Schema + UI Migration
+  - `ui_manifest` 확장: 6 → 13개 뷰 (tab 6 + detail 7)
+  - 7개 detail view 선언: formation, country, region, bibliography, chronostrat, genus, rank
+  - `app.js` 범용 detail 렌더러: `openDetail` → `renderDetailFromManifest` → section type dispatch
+  - 9개 section type: field_grid, linked_table, tagged_list, raw_text, annotations + built-in 4개
+  - 8개 field format: italic, boolean, link, color_chip, code, hierarchy, temporal_range, computed
+  - Table view `on_row_click`: manifest-driven 행 클릭 (hardcoded `clickHandlers` 제거)
+  - `app.js` 1,661줄 → 1,473줄 (-188줄)
+  - 계획 문서: `devlog/20260213_P33_declarative_manifest_ui_migration.md`
+  - 테스트: 192개 (기존 178 + 신규 14)
+  - devlog: `devlog/20260213_049_phase39_declarative_manifest_ui.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -501,10 +513,10 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `test_app.py` | 161개 | ✅ 통과 |
+| `test_app.py` | 175개 | ✅ 통과 |
 | `test_mcp_basic.py` | 1개 | ✅ 통과 |
 | `test_mcp.py` | 16개 | ✅ 통과 |
-| **합계** | **178개** | **✅ 전부 통과** |
+| **합계** | **192개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
