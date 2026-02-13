@@ -248,6 +248,11 @@ class PackageRegistry:
                         'overlay_path': overlay_path,
                         'deps': [],
                     }
+            # Wire up trilobase → paleocore dependency (alias 'pc')
+            if 'trilobase' in self._packages and 'paleocore' in self._packages:
+                self._packages['trilobase']['deps'] = [
+                    {'name': 'paleocore', 'alias': 'pc'}
+                ]
 
     def get_db(self, name):
         """Get DB connection for a specific package with dependencies ATTACHed.
