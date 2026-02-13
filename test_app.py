@@ -345,12 +345,25 @@ def test_db(tmp_path):
                 "description": "Hierarchical classification from Class to Family",
                 "source_query": "taxonomy_tree",
                 "icon": "bi-diagram-3",
-                "options": {
-                    "root_rank": "Class",
+                "tree_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "rank_key": "rank",
                     "leaf_rank": "Family",
-                    "show_genera_count": True,
-                    "node_info_detail": "rank_detail",
-                    "genera_row_click": {"detail_view": "genus_detail", "id_key": "id"}
+                    "count_key": "genera_count",
+                    "on_node_info": {"detail_view": "rank_detail", "id_key": "id"},
+                    "item_query": "family_genera",
+                    "item_param": "family_id",
+                    "item_columns": [
+                        {"key": "name", "label": "Genus", "italic": True},
+                        {"key": "author", "label": "Author"},
+                        {"key": "year", "label": "Year"},
+                        {"key": "type_species", "label": "Type Species", "truncate": 40},
+                        {"key": "location", "label": "Location", "truncate": 30}
+                    ],
+                    "on_item_click": {"detail_view": "genus_detail", "id_key": "id"},
+                    "item_valid_filter": {"key": "is_valid", "label": "Valid only", "default": True}
                 }
             },
             "genera_table": {
@@ -427,6 +440,22 @@ def test_db(tmp_path):
                 "default_sort": {"key": "display_order", "direction": "asc"},
                 "searchable": True,
                 "chart_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "color_key": "color",
+                    "order_key": "display_order",
+                    "rank_key": "rank",
+                    "skip_ranks": ["Super-Eon"],
+                    "rank_columns": [
+                        {"rank": "Eon", "label": "Eon"},
+                        {"rank": "Era", "label": "Era"},
+                        {"rank": "Period", "label": "System / Period"},
+                        {"rank": "Sub-Period", "label": "Sub-Period"},
+                        {"rank": "Epoch", "label": "Series / Epoch"},
+                        {"rank": "Age", "label": "Stage / Age"}
+                    ],
+                    "value_column": {"key": "start_mya", "label": "Age (Ma)"},
                     "cell_click": {"detail_view": "chronostrat_detail", "id_key": "id"}
                 }
             },
@@ -1460,6 +1489,93 @@ class TestManifestDetailSchema:
         chrono = m['views']['chronostratigraphy_table']
         assert 'chart_options' in chrono
         assert 'cell_click' in chrono['chart_options']
+
+
+# --- Manifest Tree & Chart Options (Phase 41) ---
+
+class TestManifestTreeChart:
+    """Tests for manifest tree_options and chart_options extensions (Phase 41)."""
+
+    def _get_manifest(self, client):
+        response = client.get('/api/manifest')
+        return json.loads(response.data)['manifest']
+
+    def test_tree_view_has_tree_options(self, client):
+        """taxonomy_tree should have tree_options with required keys."""
+        m = self._get_manifest(client)
+        tree = m['views']['taxonomy_tree']
+        assert 'tree_options' in tree
+        opts = tree['tree_options']
+        for key in ['id_key', 'parent_key', 'label_key', 'rank_key', 'leaf_rank', 'count_key']:
+            assert key in opts, f"tree_options missing key: {key}"
+
+    def test_tree_options_item_query_exists(self, client):
+        """tree_options.item_query should reference an existing named query."""
+        m = self._get_manifest(client)
+        opts = m['views']['taxonomy_tree']['tree_options']
+        assert 'item_query' in opts
+        assert 'item_param' in opts
+
+        queries_response = client.get('/api/queries')
+        query_names = {q['name'] for q in json.loads(queries_response.data)}
+        assert opts['item_query'] in query_names, \
+            f"item_query '{opts['item_query']}' not found in named queries"
+
+    def test_tree_options_item_columns(self, client):
+        """tree_options.item_columns should be an array of column definitions."""
+        m = self._get_manifest(client)
+        opts = m['views']['taxonomy_tree']['tree_options']
+        assert 'item_columns' in opts
+        cols = opts['item_columns']
+        assert isinstance(cols, list)
+        assert len(cols) > 0
+        for col in cols:
+            assert 'key' in col, "Each item_column must have 'key'"
+            assert 'label' in col, "Each item_column must have 'label'"
+
+    def test_tree_options_on_node_info(self, client):
+        """tree_options.on_node_info should define detail view navigation."""
+        m = self._get_manifest(client)
+        opts = m['views']['taxonomy_tree']['tree_options']
+        assert 'on_node_info' in opts
+        info = opts['on_node_info']
+        assert 'detail_view' in info
+        assert info['detail_view'] in m['views'], \
+            f"on_node_info.detail_view '{info['detail_view']}' not in manifest views"
+
+    def test_chart_options_rank_columns(self, client):
+        """chart_options.rank_columns should be an array with rank and label."""
+        m = self._get_manifest(client)
+        opts = m['views']['chronostratigraphy_table']['chart_options']
+        assert 'rank_columns' in opts
+        cols = opts['rank_columns']
+        assert isinstance(cols, list)
+        assert len(cols) >= 4  # At least Eon, Era, Period, Epoch
+        for col in cols:
+            assert 'rank' in col, "Each rank_column must have 'rank'"
+            assert 'label' in col, "Each rank_column must have 'label'"
+
+    def test_chart_options_value_column(self, client):
+        """chart_options.value_column should exist with key and label."""
+        m = self._get_manifest(client)
+        opts = m['views']['chronostratigraphy_table']['chart_options']
+        assert 'value_column' in opts
+        vc = opts['value_column']
+        assert 'key' in vc
+        assert 'label' in vc
+
+    def test_chart_options_skip_ranks(self, client):
+        """chart_options.skip_ranks should be a list."""
+        m = self._get_manifest(client)
+        opts = m['views']['chronostratigraphy_table']['chart_options']
+        assert 'skip_ranks' in opts
+        assert isinstance(opts['skip_ranks'], list)
+
+    def test_tree_options_no_legacy_options(self, client):
+        """taxonomy_tree should not have the legacy 'options' key."""
+        m = self._get_manifest(client)
+        tree = m['views']['taxonomy_tree']
+        assert 'options' not in tree, "Legacy 'options' key should be replaced by 'tree_options'"
 
 
 # --- Release Mechanism (Phase 16) ---

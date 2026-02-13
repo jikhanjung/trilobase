@@ -54,12 +54,25 @@ def insert_manifest(conn):
                 "description": "Hierarchical classification from Class to Family",
                 "source_query": "taxonomy_tree",
                 "icon": "bi-diagram-3",
-                "options": {
-                    "root_rank": "Class",
+                "tree_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "rank_key": "rank",
                     "leaf_rank": "Family",
-                    "show_genera_count": True,
-                    "node_info_detail": "rank_detail",
-                    "genera_row_click": {"detail_view": "genus_detail", "id_key": "id"}
+                    "count_key": "genera_count",
+                    "on_node_info": {"detail_view": "rank_detail", "id_key": "id"},
+                    "item_query": "family_genera",
+                    "item_param": "family_id",
+                    "item_columns": [
+                        {"key": "name", "label": "Genus", "italic": True},
+                        {"key": "author", "label": "Author"},
+                        {"key": "year", "label": "Year"},
+                        {"key": "type_species", "label": "Type Species", "truncate": 40},
+                        {"key": "location", "label": "Location", "truncate": 30}
+                    ],
+                    "on_item_click": {"detail_view": "genus_detail", "id_key": "id"},
+                    "item_valid_filter": {"key": "is_valid", "label": "Valid only", "default": True}
                 }
             },
             "genera_table": {
@@ -147,6 +160,22 @@ def insert_manifest(conn):
                 "default_sort": {"key": "display_order", "direction": "asc"},
                 "searchable": True,
                 "chart_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "color_key": "color",
+                    "order_key": "display_order",
+                    "rank_key": "rank",
+                    "skip_ranks": ["Super-Eon"],
+                    "rank_columns": [
+                        {"rank": "Eon", "label": "Eon"},
+                        {"rank": "Era", "label": "Era"},
+                        {"rank": "Period", "label": "System / Period"},
+                        {"rank": "Sub-Period", "label": "Sub-Period"},
+                        {"rank": "Epoch", "label": "Series / Epoch"},
+                        {"rank": "Age", "label": "Stage / Age"}
+                    ],
+                    "value_column": {"key": "start_mya", "label": "Age (Ma)"},
                     "cell_click": {"detail_view": "chronostrat_detail", "id_key": "id"}
                 }
             },

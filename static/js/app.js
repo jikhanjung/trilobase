@@ -17,9 +17,9 @@ let tableViewSort = null;
 let tableViewSearchTerm = '';
 
 // Initialize
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     genusModal = new bootstrap.Modal(document.getElementById('genusModal'));
-    loadManifest();
+    await loadManifest();
     loadTree();
 });
 
@@ -264,6 +264,8 @@ async function renderChronostratChart(viewKey) {
     const view = manifest.views[viewKey];
     if (!view) return;
 
+    const opts = view.chart_options || {};
+
     const header = document.getElementById('chart-view-header');
     const body = document.getElementById('chart-view-body');
 
@@ -281,56 +283,72 @@ async function renderChronostratChart(viewKey) {
         const data = await response.json();
         const rows = data.rows;
 
+        // Build rank→column mapping from manifest
+        const rankColumns = opts.rank_columns || [
+            {rank: 'Eon'}, {rank: 'Era'}, {rank: 'Period'},
+            {rank: 'Sub-Period'}, {rank: 'Epoch'}, {rank: 'Age'}
+        ];
+        const rankColMap = {};
+        rankColumns.forEach((rc, i) => { rankColMap[rc.rank] = i; });
+        const colCount = rankColumns.length + 1; // +1 for value column
+
         // Build tree from flat data
-        const tree = buildChartTree(rows);
+        const tree = buildChartTree(rows, opts);
         // Compute leaf counts for rowspan
         tree.forEach(node => computeLeafCount(node));
         // Collect leaf rows (each row = root→leaf path)
         const leafRows = [];
-        tree.forEach(node => collectLeafRows(node, [], leafRows, 0));
+        tree.forEach(node => collectLeafRows(node, [], leafRows, 0, rankColMap, opts));
 
         // Render HTML table
-        body.innerHTML = renderChartHTML(leafRows);
+        body.innerHTML = renderChartHTML(leafRows, opts);
     } catch (error) {
         body.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
     }
 }
 
 /**
- * Build tree structure from flat ICS data.
- * Super-Eon children (Precambrian's children) are promoted to root level.
+ * Build tree structure from flat ICS data (manifest-driven).
+ * Nodes with ranks in skip_ranks are skipped; their children are promoted to root level.
  */
-function buildChartTree(rows) {
+function buildChartTree(rows, opts) {
+    opts = opts || {};
+    const idKey = opts.id_key || 'id';
+    const parentKey = opts.parent_key || 'parent_id';
+    const rankKey = opts.rank_key || 'rank';
+    const orderKey = opts.order_key || 'display_order';
+    const skipRanks = opts.skip_ranks || ['Super-Eon'];
+
     const byId = {};
-    rows.forEach(r => { byId[r.id] = { ...r, children: [] }; });
+    rows.forEach(r => { byId[r[idKey]] = { ...r, children: [] }; });
 
     const roots = [];
     rows.forEach(r => {
-        const node = byId[r.id];
-        if (r.parent_id && byId[r.parent_id]) {
-            const parent = byId[r.parent_id];
-            // Skip Super-Eon: promote its children to root
-            if (parent.rank === 'Super-Eon') {
+        const node = byId[r[idKey]];
+        if (r[parentKey] && byId[r[parentKey]]) {
+            const parent = byId[r[parentKey]];
+            // Skip specified ranks: promote their children to root
+            if (skipRanks.includes(parent[rankKey])) {
                 roots.push(node);
             } else {
                 parent.children.push(node);
             }
-        } else if (!r.parent_id) {
-            // No parent — could be Super-Eon or actual root
-            if (r.rank === 'Super-Eon') {
-                // Don't add Super-Eon itself; its children will be promoted
+        } else if (!r[parentKey]) {
+            // No parent — could be a skipped rank or actual root
+            if (skipRanks.includes(r[rankKey])) {
+                // Don't add skipped rank itself; its children will be promoted
             } else {
                 roots.push(node);
             }
         }
     });
 
-    // Sort children by display_order ascending (youngest/present at top, oldest at bottom)
+    // Sort children by order_key ascending
     function sortChildren(node) {
-        node.children.sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
+        node.children.sort((a, b) => (a[orderKey] || 0) - (b[orderKey] || 0));
         node.children.forEach(sortChildren);
     }
-    roots.sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
+    roots.sort((a, b) => (a[orderKey] || 0) - (b[orderKey] || 0));
     roots.forEach(sortChildren);
 
     return roots;
@@ -351,36 +369,37 @@ function computeLeafCount(node) {
     return count;
 }
 
-// Column assignment by rank
-const RANK_COL = {
-    'Eon': 0,
-    'Era': 1,
-    'Period': 2,
-    'Sub-Period': 3,
-    'Epoch': 4,
-    'Age': 5
-};
-const COL_COUNT = 7; // Eon, Era, Period, Sub-Period, Epoch, Age, Age(Ma)
-
 /**
- * Check if a node has any Sub-Period descendants (for colspan calculation)
+ * Check if a node has a direct child at the next rank column (for colspan calculation).
+ * e.g., Period (col 2) checking if any child is Sub-Period (col 3).
  */
-function hasSubPeriodChild(node) {
-    return node.children.some(c => c.rank === 'Sub-Period');
+function hasDirectChildRank(node, parentCol, rankColMap, rankKey) {
+    return node.children.some(c => rankColMap[c[rankKey]] === parentCol + 1);
 }
 
 /**
  * Collect leaf rows via DFS. Each leaf produces one table row.
  * path = array of { node, col, colspan, rowspan } for ancestors that start at this leaf's row.
  * parentEndCol = the first column after the parent's span (used to detect gaps like Pridoli)
+ * rankColMap = rank→column index mapping from chart_options
  */
-function collectLeafRows(node, ancestorPath, leafRows, parentEndCol) {
-    let col = RANK_COL[node.rank] !== undefined ? RANK_COL[node.rank] : 5;
+function collectLeafRows(node, ancestorPath, leafRows, parentEndCol, rankColMap, opts) {
+    opts = opts || {};
+    const rankKey = opts.rank_key || 'rank';
+    const maxCol = Object.keys(rankColMap).length - 1; // last rank column index
 
-    // For Period without Sub-Period children, we'll use colspan=2 (Period + Sub-Period cols)
+    let col = rankColMap[node[rankKey]] !== undefined ? rankColMap[node[rankKey]] : maxCol;
+
+    // If node has children but no direct child at col+1, extend colspan to bridge the gap
     let colspan = 1;
-    if (node.rank === 'Period' && !hasSubPeriodChild(node)) {
-        colspan = 2; // span Period + Sub-Period columns
+    if (node.children.length > 0 && !hasDirectChildRank(node, col, rankColMap, rankKey)) {
+        const childCols = node.children.map(c => rankColMap[c[rankKey]]).filter(c => c !== undefined);
+        if (childCols.length > 0) {
+            const minChildCol = Math.min(...childCols);
+            if (minChildCol > col + 1) {
+                colspan = minChildCol - col;
+            }
+        }
     }
 
     // Adjust for parent-child column gap (e.g., Pridoli: Age directly under Period)
@@ -394,10 +413,10 @@ function collectLeafRows(node, ancestorPath, leafRows, parentEndCol) {
     const myEndCol = col + colspan;
 
     if (node.children.length === 0) {
-        // Leaf: extend colspan to fill remaining columns up to Age (col 5)
+        // Leaf: extend colspan to fill remaining columns up to last rank column
         const endCol = col + colspan - 1;
-        if (endCol < 5) {
-            colspan = 5 - col + 1; // extend to col 5 inclusive
+        if (endCol < maxCol) {
+            colspan = maxCol - col + 1; // extend to last rank col inclusive
             entry.colspan = colspan;
         }
 
@@ -408,9 +427,9 @@ function collectLeafRows(node, ancestorPath, leafRows, parentEndCol) {
         // Non-leaf: first child inherits this node in its path, rest don't
         node.children.forEach((child, i) => {
             if (i === 0) {
-                collectLeafRows(child, [...ancestorPath, entry], leafRows, myEndCol);
+                collectLeafRows(child, [...ancestorPath, entry], leafRows, myEndCol, rankColMap, opts);
             } else {
-                collectLeafRows(child, [], leafRows, myEndCol);
+                collectLeafRows(child, [], leafRows, myEndCol, rankColMap, opts);
             }
         });
     }
@@ -432,10 +451,22 @@ function isLightColor(hex) {
 }
 
 /**
- * Render the ICS chart as an HTML table
+ * Render the ICS chart as an HTML table (manifest-driven)
  */
-function renderChartHTML(leafRows) {
-    const headers = ['Eon', 'Era', 'System / Period', 'Sub-Period', 'Series / Epoch', 'Stage / Age', 'Age (Ma)'];
+function renderChartHTML(leafRows, opts) {
+    opts = opts || {};
+    const rankColumns = opts.rank_columns || [
+        {rank: 'Eon', label: 'Eon'}, {rank: 'Era', label: 'Era'},
+        {rank: 'Period', label: 'System / Period'}, {rank: 'Sub-Period', label: 'Sub-Period'},
+        {rank: 'Epoch', label: 'Series / Epoch'}, {rank: 'Age', label: 'Stage / Age'}
+    ];
+    const valueCol = opts.value_column || {key: 'start_mya', label: 'Age (Ma)'};
+    const cellClick = opts.cell_click || {detail_view: 'chronostrat_detail', id_key: 'id'};
+    const labelKey = opts.label_key || 'name';
+    const colorKey = opts.color_key || 'color';
+    const idKey = opts.id_key || 'id';
+
+    const headers = rankColumns.map(rc => rc.label).concat(valueCol.label);
 
     let html = '<table class="ics-chart"><thead><tr>';
     headers.forEach(h => { html += `<th>${h}</th>`; });
@@ -446,19 +477,20 @@ function renderChartHTML(leafRows) {
         // Render ancestor + leaf cells
         row.forEach(entry => {
             const n = entry.node;
-            const bgColor = n.color || '#f8f9fa';
+            const bgColor = n[colorKey] || '#f8f9fa';
             const textColor = isLightColor(bgColor) ? '#222' : '#fff';
             const rs = entry.rowspan > 1 ? ` rowspan="${entry.rowspan}"` : '';
             const cs = entry.colspan > 1 ? ` colspan="${entry.colspan}"` : '';
-            const title = n.start_mya != null ? `${n.name} (${n.start_mya}–${n.end_mya || 0} Ma)` : n.name;
+            const vk = valueCol.key;
+            const title = n[vk] != null ? `${n[labelKey]} (${n[vk]}–${n.end_mya || 0} Ma)` : n[labelKey];
             html += `<td${rs}${cs} style="background-color:${bgColor}; color:${textColor};" `
-                  + `title="${title}" onclick="openDetail('chronostrat_detail', ${n.id})">`
-                  + `${n.name}</td>`;
+                  + `title="${title}" onclick="openDetail('${cellClick.detail_view}', ${n[cellClick.id_key || idKey]})">`
+                  + `${n[labelKey]}</td>`;
         });
 
-        // Age(Ma) column: use the leaf node's start_mya
+        // Value column: use the leaf node's value
         const leaf = row[row.length - 1].node;
-        const ageMa = leaf.start_mya != null ? leaf.start_mya : '';
+        const ageMa = leaf[valueCol.key] != null ? leaf[valueCol.key] : '';
         html += `<td class="ics-age">${ageMa}</td>`;
 
         html += '</tr>';
@@ -469,14 +501,57 @@ function renderChartHTML(leafRows) {
 }
 
 /**
- * Load taxonomy tree from API
+ * Build nested tree from flat rows using parent_key.
+ */
+function buildTreeFromFlat(rows, opts) {
+    const idKey = opts.id_key || 'id';
+    const parentKey = opts.parent_key || 'parent_id';
+
+    const byId = {};
+    rows.forEach(r => { byId[r[idKey]] = { ...r, children: [] }; });
+
+    const roots = [];
+    rows.forEach(r => {
+        const node = byId[r[idKey]];
+        const pid = r[parentKey];
+        if (pid && byId[pid]) {
+            byId[pid].children.push(node);
+        } else if (!pid) {
+            roots.push(node);
+        }
+    });
+
+    // Sort children alphabetically by label
+    const labelKey = opts.label_key || 'name';
+    function sortChildren(node) {
+        node.children.sort((a, b) => (a[labelKey] || '').localeCompare(b[labelKey] || ''));
+        node.children.forEach(sortChildren);
+    }
+    roots.sort((a, b) => (a[labelKey] || '').localeCompare(b[labelKey] || ''));
+    roots.forEach(sortChildren);
+
+    return roots;
+}
+
+/**
+ * Load taxonomy tree from manifest source_query (flat data → client-side tree)
  */
 async function loadTree() {
     const container = document.getElementById('tree-container');
 
     try {
-        const response = await fetch('/api/tree');
-        const tree = await response.json();
+        // Use manifest source_query if available, otherwise fallback
+        let tree;
+        const viewDef = manifest && manifest.views && manifest.views['taxonomy_tree'];
+        if (viewDef && viewDef.source_query && viewDef.tree_options) {
+            const response = await fetch(`/api/queries/${viewDef.source_query}/execute`);
+            if (!response.ok) throw new Error('Failed to load tree data');
+            const data = await response.json();
+            tree = buildTreeFromFlat(data.rows, viewDef.tree_options);
+        } else {
+            const response = await fetch('/api/tree');
+            tree = await response.json();
+        }
         container.innerHTML = '';
 
         tree.forEach(node => {
@@ -488,21 +563,29 @@ async function loadTree() {
 }
 
 /**
- * Create tree node element recursively
+ * Create tree node element recursively (manifest-driven)
  */
 function createTreeNode(node) {
     const div = document.createElement('div');
     div.className = 'tree-node';
 
+    const opts = (manifest && manifest.views && manifest.views['taxonomy_tree'] &&
+                  manifest.views['taxonomy_tree'].tree_options) || {};
+    const leafRank = opts.leaf_rank || 'Family';
+    const rankKey = opts.rank_key || 'rank';
+    const labelKey = opts.label_key || 'name';
+    const countKey = opts.count_key || 'genera_count';
+    const idKey = opts.id_key || 'id';
+
     const hasChildren = node.children && node.children.length > 0;
-    const isFamily = node.rank === 'Family';
+    const isLeaf = node[rankKey] === leafRank;
 
     // Node content
     const content = document.createElement('div');
-    content.className = `tree-node-content rank-${node.rank}`;
-    content.dataset.id = node.id;
-    content.dataset.rank = node.rank;
-    content.dataset.name = node.name;
+    content.className = `tree-node-content rank-${node[rankKey]}`;
+    content.dataset.id = node[idKey];
+    content.dataset.rank = node[rankKey];
+    content.dataset.name = node[labelKey];
 
     // Toggle icon
     const toggle = document.createElement('span');
@@ -515,7 +598,7 @@ function createTreeNode(node) {
     // Folder/File icon
     const icon = document.createElement('span');
     icon.className = 'tree-icon';
-    if (isFamily) {
+    if (isLeaf) {
         icon.innerHTML = '<i class="bi bi-folder-fill"></i>';
     } else {
         icon.innerHTML = '<i class="bi bi-folder2"></i>';
@@ -525,25 +608,26 @@ function createTreeNode(node) {
     // Label
     const label = document.createElement('span');
     label.className = 'tree-label';
-    label.textContent = node.name;
+    label.textContent = node[labelKey];
     content.appendChild(label);
 
-    // Count (for families)
-    if (isFamily && node.genera_count > 0) {
+    // Count (for leaf nodes)
+    if (isLeaf && node[countKey] > 0) {
         const count = document.createElement('span');
         count.className = 'tree-count';
-        count.textContent = `(${node.genera_count})`;
+        count.textContent = `(${node[countKey]})`;
         content.appendChild(count);
     }
 
-    // Info icon
+    // Info icon — detail view from manifest
     const infoBtn = document.createElement('span');
     infoBtn.className = 'tree-info';
     infoBtn.innerHTML = '<i class="bi bi-info-circle"></i>';
     infoBtn.title = 'View details';
     infoBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        openDetail('rank_detail', node.id);
+        const infoOpts = opts.on_node_info || {};
+        openDetail(infoOpts.detail_view || 'rank_detail', node[infoOpts.id_key || idKey]);
     });
     content.appendChild(infoBtn);
 
@@ -561,8 +645,8 @@ function createTreeNode(node) {
             }
         }
 
-        if (isFamily) {
-            selectFamily(node.id, node.name);
+        if (isLeaf) {
+            selectTreeLeaf(node[idKey], node[labelKey]);
         }
     });
 
@@ -584,43 +668,63 @@ function createTreeNode(node) {
 }
 
 /**
- * Select a family and load its genera
+ * Select a tree leaf node and load its items (manifest-driven)
  */
-async function selectFamily(familyId, familyName) {
+async function selectTreeLeaf(leafId, leafName) {
     // Update selection highlight
     document.querySelectorAll('.tree-node-content.selected').forEach(el => {
         el.classList.remove('selected');
     });
-    document.querySelector(`.tree-node-content[data-id="${familyId}"]`)?.classList.add('selected');
+    document.querySelector(`.tree-node-content[data-id="${leafId}"]`)?.classList.add('selected');
 
-    selectedFamilyId = familyId;
+    selectedFamilyId = leafId;
+
+    const opts = (manifest && manifest.views && manifest.views['taxonomy_tree'] &&
+                  manifest.views['taxonomy_tree'].tree_options) || {};
+    const filterDef = opts.item_valid_filter || {};
 
     // Update header with filter checkbox
     const header = document.getElementById('list-header');
     header.innerHTML = `
         <div class="d-flex justify-content-between align-items-center">
-            <h5 class="mb-0"><i class="bi bi-folder-fill"></i> ${familyName}</h5>
+            <h5 class="mb-0"><i class="bi bi-folder-fill"></i> ${leafName}</h5>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="validOnlyCheck"
                        ${showOnlyValid ? 'checked' : ''} onchange="toggleValidFilter()">
-                <label class="form-check-label" for="validOnlyCheck">Valid only</label>
+                <label class="form-check-label" for="validOnlyCheck">${filterDef.label || 'Valid only'}</label>
             </div>
         </div>`;
 
-    // Load genera
+    // Load items via named query from manifest
     const container = document.getElementById('list-container');
     container.innerHTML = '<div class="loading">Loading genera...</div>';
 
     try {
-        const response = await fetch(`/api/family/${familyId}/genera`);
-        const data = await response.json();
+        let items;
+        if (opts.item_query && opts.item_param) {
+            const url = `/api/queries/${opts.item_query}/execute?${opts.item_param}=${leafId}`;
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('Failed to load items');
+            const data = await response.json();
+            items = data.rows;
+        } else {
+            // Fallback to legacy API
+            const response = await fetch(`/api/family/${leafId}/genera`);
+            const data = await response.json();
+            items = data.genera;
+        }
 
-        currentGenera = data.genera;  // Store for filtering
-        renderGeneraTable();
+        currentGenera = items;  // Store for filtering
+        renderTreeItemTable();
 
     } catch (error) {
         container.innerHTML = `<div class="text-danger">Error loading genera: ${error.message}</div>`;
     }
+}
+
+/** Legacy alias for backward compatibility (used by navigateToRank, navigateToGenus) */
+function selectFamily(familyId, familyName) {
+    selectTreeLeaf(familyId, familyName);
 }
 
 /**
@@ -628,17 +732,31 @@ async function selectFamily(familyId, familyName) {
  */
 function toggleValidFilter() {
     showOnlyValid = document.getElementById('validOnlyCheck').checked;
-    renderGeneraTable();
+    renderTreeItemTable();
 }
 
 /**
- * Render genera table with current filter
+ * Render tree leaf item table with current filter (manifest-driven columns)
  */
-function renderGeneraTable() {
+function renderTreeItemTable() {
     const container = document.getElementById('list-container');
 
+    const opts = (manifest && manifest.views && manifest.views['taxonomy_tree'] &&
+                  manifest.views['taxonomy_tree'].tree_options) || {};
+    const filterDef = opts.item_valid_filter || {};
+    const filterKey = filterDef.key || 'is_valid';
+    const columns = opts.item_columns || [
+        {key: 'name', label: 'Genus', italic: true},
+        {key: 'author', label: 'Author'},
+        {key: 'year', label: 'Year'},
+        {key: 'type_species', label: 'Type Species', truncate: 40},
+        {key: 'location', label: 'Location', truncate: 30}
+    ];
+    const clickDef = opts.on_item_click || {detail_view: 'genus_detail', id_key: 'id'};
+    const idKey = opts.id_key || 'id';
+
     const genera = showOnlyValid
-        ? currentGenera.filter(g => g.is_valid)
+        ? currentGenera.filter(g => g[filterKey])
         : currentGenera;
 
     if (genera.length === 0) {
@@ -654,89 +772,35 @@ function renderGeneraTable() {
     }
 
     // Count stats
-    const validCount = currentGenera.filter(g => g.is_valid).length;
+    const validCount = currentGenera.filter(g => g[filterKey]).length;
     const invalidCount = currentGenera.length - validCount;
     const statsText = showOnlyValid
         ? `Showing ${validCount} valid genera` + (invalidCount > 0 ? ` (${invalidCount} invalid hidden)` : '')
         : `Showing all ${currentGenera.length} genera (${validCount} valid, ${invalidCount} invalid)`;
 
     let html = `<div class="genera-stats text-muted mb-2">${statsText}</div>`;
-    html += `
-        <table class="genus-table">
-            <thead>
-                <tr>
-                    <th>Genus</th>
-                    <th>Author</th>
-                    <th>Year</th>
-                    <th>Type Species</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody>`;
+    html += '<table class="genus-table"><thead><tr>';
+    columns.forEach(col => { html += `<th>${col.label}</th>`; });
+    html += '</tr></thead><tbody>';
 
     genera.forEach(g => {
-        const rowClass = g.is_valid ? '' : 'invalid';
-        html += `
-            <tr class="${rowClass}" onclick="openDetail('genus_detail', ${g.id})">
-                <td class="genus-name"><i>${g.name}</i></td>
-                <td>${g.author || ''}</td>
-                <td>${g.year || ''}</td>
-                <td>${truncate(g.type_species, 40)}</td>
-                <td>${truncate(g.location, 30)}</td>
-            </tr>`;
+        const rowClass = g[filterKey] ? '' : 'invalid';
+        html += `<tr class="${rowClass}" onclick="openDetail('${clickDef.detail_view}', ${g[clickDef.id_key || idKey]})">`;
+        columns.forEach(col => {
+            let val = g[col.key];
+            if (col.truncate && val) val = truncate(val, col.truncate);
+            if (val == null) val = '';
+            if (col.italic) {
+                html += `<td class="genus-name"><i>${val}</i></td>`;
+            } else {
+                html += `<td>${val}</td>`;
+            }
+        });
+        html += '</tr>';
     });
 
     html += '</tbody></table>';
     container.innerHTML = html;
-}
-
-/**
- * Show genus detail modal
- */
-async function showGenusDetail(genusId) {
-    await renderDetailFromManifest('genus_detail', genusId);
-}
-
-/**
- * Show country detail modal
- */
-async function showCountryDetail(countryId) {
-    await renderDetailFromManifest('country_detail', countryId);
-}
-
-/**
- * Show chronostratigraphic unit detail modal
- */
-async function showChronostratDetail(icsId) {
-    await renderDetailFromManifest('chronostrat_detail', icsId);
-}
-
-/**
- * Show region detail modal
- */
-async function showRegionDetail(regionId) {
-    await renderDetailFromManifest('region_detail', regionId);
-}
-
-/**
- * Show formation detail modal
- */
-async function showFormationDetail(formationId) {
-    await renderDetailFromManifest('formation_detail', formationId);
-}
-
-/**
- * Show bibliography detail modal
- */
-async function showBibliographyDetail(bibId) {
-    await renderDetailFromManifest('bibliography_detail', bibId);
-}
-
-/**
- * Show rank detail modal (Class, Order, Suborder, Superfamily, Family)
- */
-async function showRankDetail(rankId, rankName, rankType) {
-    await renderDetailFromManifest('rank_detail', rankId);
 }
 
 /**
