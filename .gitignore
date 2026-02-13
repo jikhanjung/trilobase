@@ -15,3 +15,6 @@ trilobase_overlay.db
 
 # SCODA packages (generated from DB, not committed)
 *.scoda
+
+# Claude Code local settings
+.claude/settings.local.json
