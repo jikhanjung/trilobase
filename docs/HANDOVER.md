@@ -374,6 +374,21 @@
   - 테스트: 192개 (기존 178 + 신규 14)
   - devlog: `devlog/20260213_049_phase39_declarative_manifest_ui.md`
 
+- **Phase 41 완료**: Manifest-Driven Tree & Chart Rendering
+  - `taxonomy_tree.tree_options` 확장: client-side tree building, named query 기반 genera 로딩
+    - `buildTreeFromFlat()`: flat rows → parent_id 기반 트리 빌딩 (서버 `/api/tree` 의존 제거)
+    - `item_query`/`item_param`: named query `family_genera` 실행 (하드코딩 API 제거)
+    - `item_columns`: genera 테이블 컬럼 manifest-driven
+    - `on_node_info`, `on_item_click`, `item_valid_filter`: 클릭/필터 설정
+  - `chronostratigraphy_table.chart_options` 확장: 하드코딩 상수 제거
+    - `rank_columns`: rank→column 매핑 manifest-driven (하드코딩 `RANK_COL` 제거)
+    - `skip_ranks`: Super-Eon 등 skip 대상 manifest-driven
+    - `value_column`: Age(Ma) 컬럼 설정
+  - Dead code 제거: 7개 wrapper 함수 삭제 (`showGenusDetail` 등)
+  - 하위 호환: `/api/tree`, `/api/family/{id}/genera` 엔드포인트 유지
+  - 테스트: 202개 (기존 194 + 신규 8)
+  - devlog: `devlog/20260213_051_phase41_manifest_tree_chart.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -524,10 +539,10 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `test_app.py` | 177개 | ✅ 통과 |
+| `test_app.py` | 185개 | ✅ 통과 |
 | `test_mcp_basic.py` | 1개 | ✅ 통과 |
 | `test_mcp.py` | 16개 | ✅ 통과 |
-| **합계** | **194개** | **✅ 전부 통과** |
+| **합계** | **202개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -545,6 +560,7 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 PaleoCore 분리 및 .scoda 패키징 완료 (Phase 31-37).
 GUI "SCODA Desktop" 리브랜딩 완료 (Phase 38).
 CORS + 예제 SPA + EXE 리네이밍 완료 (Phase 40).
+Manifest-driven tree/chart 렌더링 완료 (Phase 41).
 - PaleoCore 독립 뷰어 (paleocore.scoda를 단독으로 열어서 탐색)
 
 ## 미해결 항목
