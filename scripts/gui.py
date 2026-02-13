@@ -55,6 +55,7 @@ class ScodaDesktopGUI:
         self.server_process = None  # For subprocess mode
         self.server_thread = None   # For threaded mode (frozen)
         self.flask_app = None       # For threaded mode
+        self.uvicorn_server = None  # For threaded mode (graceful shutdown)
         self.original_stdout = None # For restoring stdout after redirect
         self.original_stderr = None # For restoring stderr after redirect
         self.log_reader_thread = None
@@ -513,12 +514,14 @@ class ScodaDesktopGUI:
 
             asgi_app = WsgiToAsgi(self.flask_app)
 
-            uvicorn.run(
+            config = uvicorn.Config(
                 asgi_app,
                 host='127.0.0.1',
                 port=self.port,
                 log_level='info'
             )
+            self.uvicorn_server = uvicorn.Server(config)
+            self.uvicorn_server.run()
         except OSError as e:
             if "Address already in use" in str(e):
                 self.root.after(0, self._append_log, f"ERROR: Port {self.port} already in use", "ERROR")
@@ -597,13 +600,24 @@ class ScodaDesktopGUI:
             finally:
                 self.server_process = None
 
-        # Thread mode (frozen) - cannot cleanly stop Flask in thread
+        # Thread mode (frozen) - signal uvicorn to shut down gracefully
         elif self.server_thread:
-            if hasattr(self, 'original_stdout'):
+            if self.uvicorn_server:
+                self.uvicorn_server.should_exit = True
+                self._append_log("Shutting down uvicorn...", "INFO")
+                # Wait for thread to finish
+                self.server_thread.join(timeout=5)
+                if self.server_thread.is_alive():
+                    self._append_log("Server thread still active after timeout", "WARNING")
+                else:
+                    self._append_log("Server stopped successfully", "INFO")
+                self.uvicorn_server = None
+            if hasattr(self, 'original_stdout') and self.original_stdout:
                 sys.stdout = self.original_stdout
                 sys.stderr = self.original_stderr
-            self._append_log("Server marked as stopped (thread mode)", "WARNING")
-            self._append_log("Note: Flask thread may still be active. Restart app to fully stop.", "WARNING")
+                self.original_stdout = None
+                self.original_stderr = None
+            self.server_thread = None
 
         self._update_status()
 
