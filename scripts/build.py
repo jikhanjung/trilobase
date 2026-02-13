@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build standalone executable for Trilobase using PyInstaller
+Build standalone executable for SCODA Desktop using PyInstaller
 
 Usage:
     python scripts/build.py [--clean]
@@ -45,14 +45,14 @@ def clean_build():
 
 def build_executable():
     """Run PyInstaller to build the executable."""
-    print("\nBuilding Trilobase standalone executable...")
+    print("\nBuilding SCODA Desktop standalone executable...")
     print("-" * 60)
 
     cmd = [
         'pyinstaller',
         '--clean',
         '--noconfirm',
-        'trilobase.spec'
+        'ScodaDesktop.spec'
     ]
 
     print(f"Running: {' '.join(cmd)}\n")
@@ -120,7 +120,7 @@ def print_results():
     print("BUILD COMPLETE")
     print("=" * 60)
 
-    exe_name = 'trilobase.exe' if sys.platform == 'win32' else 'trilobase'
+    exe_name = 'ScodaDesktop.exe' if sys.platform == 'win32' else 'ScodaDesktop'
     exe_path = Path('dist') / exe_name
 
     if exe_path.exists():
@@ -144,7 +144,7 @@ def print_results():
 
 def main():
     print("=" * 60)
-    print("Trilobase Standalone Executable Builder")
+    print("SCODA Desktop Standalone Executable Builder")
     print("=" * 60)
 
     # Check command line arguments
@@ -156,9 +156,9 @@ def main():
         sys.exit(1)
 
     # Check spec file exists
-    if not os.path.exists('trilobase.spec'):
-        print("\n✗ trilobase.spec not found", file=sys.stderr)
-        print("Run this script from the trilobase root directory", file=sys.stderr)
+    if not os.path.exists('ScodaDesktop.spec'):
+        print("\n✗ ScodaDesktop.spec not found", file=sys.stderr)
+        print("Run this script from the project root directory", file=sys.stderr)
         sys.exit(1)
 
     # Build

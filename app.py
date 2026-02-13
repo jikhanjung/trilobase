@@ -12,6 +12,16 @@ from scoda_package import get_db, get_paleocore_db_path
 app = Flask(__name__)
 
 
+@app.after_request
+def add_cors_headers(response):
+    """Allow cross-origin requests for custom SPA support."""
+    origin = request.headers.get('Origin', '*')
+    response.headers['Access-Control-Allow-Origin'] = origin
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, DELETE, OPTIONS'
+    return response
+
+
 def build_tree(parent_id=None):
     """Recursively build taxonomy tree (Class to Family)"""
     conn = get_db()

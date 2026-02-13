@@ -42,7 +42,7 @@ class LogRedirector:
         return -1
 
 
-class TrilobaseGUI:
+class ScodaDesktopGUI:
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("SCODA Desktop")
@@ -673,7 +673,7 @@ class TrilobaseGUI:
 def main():
     """Main entry point."""
     try:
-        gui = TrilobaseGUI()
+        gui = ScodaDesktopGUI()
         gui.run()
     except Exception as e:
         import traceback

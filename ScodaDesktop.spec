@@ -1,18 +1,18 @@
 # -*- mode: python ; coding: utf-8 -*-
 """
-PyInstaller spec file for Trilobase standalone executables
+PyInstaller spec file for SCODA Desktop standalone executables
 
 Two executables are produced:
-  trilobase.exe     - GUI viewer (console=False, no console blocking)
-  trilobase_mcp.exe - MCP stdio server (console=True, for Claude Desktop)
+  ScodaDesktop.exe     - GUI viewer (console=False, no console blocking)
+  ScodaDesktop_mcp.exe - MCP stdio server (console=True, for Claude Desktop)
 
-Build with: pyinstaller trilobase.spec
+Build with: pyinstaller ScodaDesktop.spec
 """
 
 block_cipher = None
 
 # ---------------------------------------------------------------------------
-# trilobase.exe  (GUI viewer)
+# ScodaDesktop.exe  (GUI viewer)
 # ---------------------------------------------------------------------------
 a = Analysis(
     ['scripts/gui.py'],
@@ -53,7 +53,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='trilobase',
+    name='ScodaDesktop',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -70,7 +70,7 @@ exe = EXE(
 )
 
 # ---------------------------------------------------------------------------
-# trilobase_mcp.exe  (MCP stdio server for Claude Desktop)
+# ScodaDesktop_mcp.exe  (MCP stdio server for Claude Desktop)
 # ---------------------------------------------------------------------------
 mcp_a = Analysis(
     ['mcp_server.py'],
@@ -111,7 +111,7 @@ mcp_exe = EXE(
     mcp_a.zipfiles,
     mcp_a.datas,
     [],
-    name='trilobase_mcp',
+    name='ScodaDesktop_mcp',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

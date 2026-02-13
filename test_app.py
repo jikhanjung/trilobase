@@ -659,6 +659,25 @@ def client(test_db):
     scoda_package._reset_paths()
 
 
+# --- CORS ---
+
+class TestCORS:
+    def test_cors_headers_present(self, client):
+        """API responses should include CORS headers."""
+        response = client.get('/api/tree')
+        assert response.status_code == 200
+        assert 'Access-Control-Allow-Origin' in response.headers
+        assert 'Access-Control-Allow-Methods' in response.headers
+
+    def test_cors_preflight(self, client):
+        """OPTIONS preflight requests should return CORS headers."""
+        response = client.options('/api/tree')
+        assert 'Access-Control-Allow-Origin' in response.headers
+        assert 'Access-Control-Allow-Headers' in response.headers
+        assert 'GET' in response.headers['Access-Control-Allow-Methods']
+        assert 'POST' in response.headers['Access-Control-Allow-Methods']
+
+
 # --- Index page ---
 
 class TestIndex:
