@@ -357,6 +357,8 @@ class ScodaDesktopGUI:
             self._append_log(f"ERROR: Package '{self.selected_package}' not found!", "ERROR")
             return
 
+        self.root.config(cursor="wait")
+        self.root.update()
         try:
             # In frozen mode (PyInstaller), run Flask in thread with stdout redirect
             # In dev mode, run as subprocess for better log capture
@@ -374,7 +376,9 @@ class ScodaDesktopGUI:
         except Exception as e:
             self._append_log(f"ERROR: Failed to start server: {e}", "ERROR")
             messagebox.showerror("Server Error", f"Could not start server:\n{e}")
-            return
+        finally:
+            self.root.config(cursor="")
+            self.root.update()
 
     def _start_server_threaded(self):
         """Start Flask server in thread (for frozen/PyInstaller mode)."""
@@ -581,6 +585,8 @@ class ScodaDesktopGUI:
         if not self.server_running:
             return
 
+        self.root.config(cursor="wait")
+        self.root.update()
         self._append_log("Stopping web server...", "INFO")
         self.server_running = False
 
@@ -620,6 +626,8 @@ class ScodaDesktopGUI:
             self.server_thread = None
 
         self._update_status()
+        self.root.config(cursor="")
+        self.root.update()
 
     def _read_server_logs(self):
         """Read server logs from subprocess and display in GUI."""
