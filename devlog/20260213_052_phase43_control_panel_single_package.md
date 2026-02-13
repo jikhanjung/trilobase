@@ -82,3 +82,26 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 2. `python app.py --package paleocore` → 4개 탭 + detail 클릭 동작
 3. `python app.py` (--package 없이) → 레거시 trilobase 동작
 4. GUI: 패키지 목록 표시, 선택, Start/Stop 동작
+
+## 후속 버그픽스
+
+### Fix 1: manifest 기반 초기 뷰 선택 (`fa88f3d`)
+
+**문제**: paleocore 패키지로 Flask 기동 시 `sqlite3.OperationalError: no such table: taxonomic_ranks`
+**원인**: `DOMContentLoaded`에서 `loadTree()`를 무조건 호출. paleocore에는 `taxonomic_ranks` 테이블 없음.
+**수정**: `static/js/app.js`
+- `loadManifest()` 후 `manifest.default_view`로 초기 뷰 결정
+- trilobase → `taxonomy_tree`, paleocore → `countries_table`
+- `switchToView()`에서 tree 타입일 때 `loadTree()` 호출하도록 변경
+
+### Fix 2: registry fallback 시 paleocore dependency 연결 (`26ef552`)
+
+**문제**: `.scoda` 파일 없이 bare `.db` 파일만 있을 때 `no such table: pc.formations`
+**원인**: `PackageRegistry.scan()` fallback 경로에서 `deps: []`로 설정, paleocore ATTACH 안 됨
+**수정**: `scoda_package.py` — fallback에서 trilobase + paleocore 동시 발견 시 `deps: [{"name": "paleocore", "alias": "pc"}]` 추가
+
+### Fix 3: build.py scoda 생성 시 dependency 누락 (`b068f17`)
+
+**문제**: PyInstaller 빌드에서 genus detail 클릭 시 `no such table: pc.formations`
+**원인**: `scripts/build.py`의 `create_scoda_package()`가 `ScodaPackage.create()` 호출 시 dependency metadata 미전달 → `dist/trilobase.scoda`에 `dependencies: []`
+**수정**: `scripts/build.py` — paleocore dependency metadata 전달하도록 수정
