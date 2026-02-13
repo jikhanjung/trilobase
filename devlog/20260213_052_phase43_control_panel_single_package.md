@@ -105,3 +105,38 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 **문제**: PyInstaller 빌드에서 genus detail 클릭 시 `no such table: pc.formations`
 **원인**: `scripts/build.py`의 `create_scoda_package()`가 `ScodaPackage.create()` 호출 시 dependency metadata 미전달 → `dist/trilobase.scoda`에 `dependencies: []`
 **수정**: `scripts/build.py` — paleocore dependency metadata 전달하도록 수정
+
+## 후속 기능 추가
+
+### Feat 1: 활성 패키지명 표시 (`2797f9e`)
+
+**SPA (웹 브라우저)**:
+- `/api/manifest` 응답에 `package` 필드 추가 (`artifact_metadata`에서 name, version, description)
+- navbar에 패키지명+버전 표시 (예: `SCODA Desktop  Trilobase v1.0.0`)
+
+**GUI (Tk 컨트롤 패널)**:
+- 상단 파란 헤더에 Flask 실행 중일 때 `▶ trilobase v1.0.0` 표시, 중지 시 사라짐
+
+**변경 파일**: `app.py`, `templates/index.html`, `static/js/app.js`, `scripts/gui.py`
+
+### Feat 2: 패키지 목록 상태 표시 (`97efafe`)
+
+- GUI Listbox 각 항목에 상태 아이콘 표시: `▶ Running` / `■ Stopped`
+- Flask 시작/중지 시 자동 갱신
+
+**변경 파일**: `scripts/gui.py`
+
+### Feat 3: dependency 패키지를 자식으로 표시 (`af4c0f5`)
+
+- Flask 실행 시, 실행 중인 패키지의 dependency를 들여쓰기 자식으로 표시 (`└─ Loaded`)
+- dependency 패키지는 flat 목록에서 제거 (중복 방지)
+- 중지 시 원래 flat 목록으로 복원
+- `PackageRegistry.list_packages()` 출력에 `deps` 필드 추가
+
+**변경 파일**: `scoda_package.py`, `scripts/gui.py`
+
+**표시 예시** (trilobase 실행 중):
+```
+ ▶ Running  trilobase v1.0.0 — 18,219 records
+   └─ Loaded  paleocore v0.3.0 — 3,340 records
+```

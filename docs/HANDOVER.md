@@ -409,6 +409,10 @@
     - `app.js`: manifest 기반 초기 뷰 선택 (paleocore `taxonomic_ranks` 에러)
     - `scoda_package.py`: registry fallback 시 paleocore dependency 연결
     - `build.py`: scoda 생성 시 dependency metadata 전달
+  - 후속 기능 추가 3건:
+    - SPA navbar + GUI 헤더에 활성 패키지명/버전 표시
+    - GUI Listbox에 Running/Stopped 상태 아이콘
+    - 실행 중 dependency 패키지를 자식으로 들여쓰기 표시 (`└─ Loaded`)
   - devlog: `devlog/20260213_052_phase43_control_panel_single_package.md`
 
 ### 데이터베이스 현황
