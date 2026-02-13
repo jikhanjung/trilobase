@@ -149,9 +149,7 @@ class ScodaDesktopGUI:
         self.pkg_listbox.pack(fill="both", expand=True)
 
         # Populate listbox
-        for pkg in self.packages:
-            label = f"{pkg['name']} v{pkg['version']} \u2014 {pkg['record_count']:,} records"
-            self.pkg_listbox.insert("end", label)
+        self._refresh_pkg_listbox()
 
         # Pre-select if auto-selected
         if self.selected_package:
@@ -252,6 +250,32 @@ class ScodaDesktopGUI:
         self._update_pkg_info()
         self._update_status()
         self._append_log(f"Selected: {self.selected_package}")
+
+    def _refresh_pkg_listbox(self):
+        """Refresh listbox items with current status indicators."""
+        # Remember selection
+        sel_idx = None
+        if self.selected_package:
+            for i, pkg in enumerate(self.packages):
+                if pkg['name'] == self.selected_package:
+                    sel_idx = i
+                    break
+
+        self.pkg_listbox.config(state="normal")
+        self.pkg_listbox.delete(0, "end")
+        for pkg in self.packages:
+            is_running = self.server_running and pkg['name'] == self.selected_package
+            status = "\u25b6 Running" if is_running else "\u25a0 Stopped"
+            label = f"  {status}  {pkg['name']} v{pkg['version']} \u2014 {pkg['record_count']:,} records"
+            self.pkg_listbox.insert("end", label)
+
+        # Restore selection
+        if sel_idx is not None:
+            self.pkg_listbox.selection_set(sel_idx)
+
+        # Re-apply disabled state if running
+        if self.server_running:
+            self.pkg_listbox.config(state="disabled")
 
     def _get_selected_pkg(self):
         """Return the selected package dict or None."""
@@ -674,8 +698,6 @@ class ScodaDesktopGUI:
             self.browser_btn.config(state="normal")
             self.start_btn.config(state="disabled", relief="sunken")
             self.stop_btn.config(state="normal", relief="raised")
-            # Disable package switching while running
-            self.pkg_listbox.config(state="disabled")
             # Show running package in header
             pkg = self._get_selected_pkg()
             if pkg:
@@ -688,10 +710,11 @@ class ScodaDesktopGUI:
             self.start_btn.config(state="normal" if can_start else "disabled",
                                  relief="raised")
             self.stop_btn.config(state="disabled", relief="sunken")
-            # Re-enable package switching
-            self.pkg_listbox.config(state="normal")
             # Clear header package indicator
             self.header_pkg_label.config(text="", fg="#BBDEFB")
+
+        # Refresh listbox (handles status text + disabled state)
+        self._refresh_pkg_listbox()
 
     def run(self):
         """Start GUI main loop."""
