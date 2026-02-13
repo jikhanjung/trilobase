@@ -3,7 +3,8 @@ scoda_package.py — .scoda ZIP package support and centralized DB access
 
 This module provides:
   A. ScodaPackage class: open/create .scoda ZIP archives
-  B. Centralized DB access functions (replaces duplicated logic in app.py, mcp_server.py, gui.py, serve.py)
+  B. PackageRegistry class: discover and manage multiple .scoda packages
+  C. Centralized DB access functions (replaces duplicated logic in app.py, mcp_server.py, gui.py, serve.py)
 
 .scoda format:
   trilobase.scoda (ZIP archive)
@@ -13,6 +14,7 @@ This module provides:
 """
 
 import atexit
+import glob as glob_mod
 import hashlib
 import json
 import os
@@ -200,7 +202,217 @@ class ScodaPackage:
 
 
 # ---------------------------------------------------------------------------
-# B. Centralized DB access (replaces duplicated logic in 4 files)
+# B. PackageRegistry — discover and manage multiple .scoda packages
+# ---------------------------------------------------------------------------
+
+class PackageRegistry:
+    """Discover and manage multiple .scoda packages."""
+
+    def __init__(self):
+        self._packages = {}   # name → {pkg: ScodaPackage, db_path, overlay_path, deps: [...]}
+        self._scan_dir = None
+
+    def scan(self, directory):
+        """Scan directory for *.scoda files and register each package."""
+        directory = os.path.abspath(directory)
+        self._scan_dir = directory
+
+        # Find .scoda files
+        scoda_files = sorted(glob_mod.glob(os.path.join(directory, '*.scoda')))
+
+        for scoda_path in scoda_files:
+            try:
+                pkg = ScodaPackage(scoda_path)
+                name = pkg.name
+                overlay_path = os.path.join(directory, f'{name}_overlay.db')
+                deps = pkg.manifest.get('dependencies', [])
+                self._packages[name] = {
+                    'pkg': pkg,
+                    'db_path': pkg.db_path,
+                    'overlay_path': overlay_path,
+                    'deps': deps,
+                }
+            except (ValueError, FileNotFoundError):
+                continue  # skip invalid packages
+
+        # Fallback: if no .scoda found, look for *.db files
+        if not self._packages:
+            for db_name in ['trilobase.db', 'paleocore.db']:
+                db_path = os.path.join(directory, db_name)
+                if os.path.exists(db_path):
+                    name = os.path.splitext(db_name)[0]
+                    overlay_path = os.path.join(directory, f'{name}_overlay.db')
+                    self._packages[name] = {
+                        'pkg': None,
+                        'db_path': db_path,
+                        'overlay_path': overlay_path,
+                        'deps': [],
+                    }
+
+    def get_db(self, name):
+        """Get DB connection for a specific package with dependencies ATTACHed.
+
+        Args:
+            name: Package name (e.g., 'trilobase', 'paleocore')
+
+        Returns:
+            sqlite3.Connection with row_factory=sqlite3.Row
+
+        Raises:
+            KeyError: If package not found
+        """
+        if name not in self._packages:
+            raise KeyError(f'Package not found: {name}')
+
+        entry = self._packages[name]
+        db_path = entry['db_path']
+        overlay_path = entry['overlay_path']
+
+        # Ensure overlay DB exists
+        _ensure_overlay_for_package(db_path, overlay_path)
+
+        conn = sqlite3.connect(db_path)
+        conn.row_factory = sqlite3.Row
+        conn.execute(f"ATTACH DATABASE '{overlay_path}' AS overlay")
+
+        # Attach dependencies
+        for dep in entry['deps']:
+            dep_name = dep.get('name')
+            alias = dep.get('alias', dep_name)
+            if dep_name in self._packages:
+                dep_db_path = self._packages[dep_name]['db_path']
+                conn.execute(f"ATTACH DATABASE '{dep_db_path}' AS {alias}")
+
+        return conn
+
+    def list_packages(self):
+        """Return list of discovered package info dicts."""
+        result = []
+        for name, entry in self._packages.items():
+            pkg = entry['pkg']
+            info = {
+                'name': name,
+                'title': pkg.title if pkg else name,
+                'version': pkg.version if pkg else 'unknown',
+                'record_count': pkg.record_count if pkg else 0,
+                'description': pkg.manifest.get('description', '') if pkg else '',
+                'has_dependencies': len(entry['deps']) > 0,
+                'source_type': 'scoda' if pkg else 'db',
+            }
+            result.append(info)
+        return result
+
+    def get_package(self, name):
+        """Return package entry or raise KeyError."""
+        if name not in self._packages:
+            raise KeyError(f'Package not found: {name}')
+        entry = self._packages[name]
+        pkg = entry['pkg']
+        return {
+            'name': name,
+            'title': pkg.title if pkg else name,
+            'version': pkg.version if pkg else 'unknown',
+            'record_count': pkg.record_count if pkg else 0,
+            'description': pkg.manifest.get('description', '') if pkg else '',
+            'has_dependencies': len(entry['deps']) > 0,
+            'source_type': 'scoda' if pkg else 'db',
+            'db_path': entry['db_path'],
+            'overlay_path': entry['overlay_path'],
+            'deps': entry['deps'],
+            'manifest': pkg.manifest if pkg else None,
+        }
+
+    def close_all(self):
+        """Close all ScodaPackage instances."""
+        for entry in self._packages.values():
+            if entry['pkg']:
+                entry['pkg'].close()
+        self._packages.clear()
+
+
+def _ensure_overlay_for_package(canonical_db_path, overlay_path):
+    """Create overlay DB for a package if it doesn't exist."""
+    if os.path.exists(overlay_path):
+        return
+
+    # Get canonical version
+    try:
+        conn = sqlite3.connect(canonical_db_path)
+        cursor = conn.cursor()
+        cursor.execute("SELECT value FROM artifact_metadata WHERE key = 'version'")
+        row = cursor.fetchone()
+        version = row[0] if row else '1.0.0'
+        conn.close()
+    except Exception:
+        version = '1.0.0'
+
+    conn = sqlite3.connect(overlay_path)
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS overlay_metadata (
+            key TEXT PRIMARY KEY,
+            value TEXT NOT NULL
+        )
+    """)
+    cursor.execute(
+        "INSERT OR REPLACE INTO overlay_metadata (key, value) VALUES ('canonical_version', ?)",
+        (version,)
+    )
+    cursor.execute(
+        "INSERT OR REPLACE INTO overlay_metadata (key, value) VALUES ('created_at', datetime('now'))"
+    )
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS user_annotations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            entity_type TEXT NOT NULL,
+            entity_id INTEGER NOT NULL,
+            entity_name TEXT,
+            annotation_type TEXT NOT NULL,
+            content TEXT NOT NULL,
+            author TEXT,
+            created_at TEXT NOT NULL DEFAULT (datetime('now'))
+        )
+    """)
+    cursor.execute("""
+        CREATE INDEX IF NOT EXISTS idx_annotations_entity
+            ON user_annotations(entity_type, entity_id)
+    """)
+    cursor.execute("""
+        CREATE INDEX IF NOT EXISTS idx_annotations_name
+            ON user_annotations(entity_name)
+    """)
+    conn.commit()
+    conn.close()
+
+
+# Module-level default registry (lazy-initialized)
+_registry = None
+
+
+def get_registry():
+    """Get the default PackageRegistry (lazy-initialized)."""
+    global _registry
+    if _registry is None:
+        _registry = PackageRegistry()
+        if getattr(sys, 'frozen', False):
+            scan_dir = os.path.dirname(sys.executable)
+        else:
+            scan_dir = os.path.dirname(os.path.abspath(__file__))
+        _registry.scan(scan_dir)
+    return _registry
+
+
+def _reset_registry():
+    """Reset the default registry (for testing teardown)."""
+    global _registry
+    if _registry:
+        _registry.close_all()
+    _registry = None
+
+
+# ---------------------------------------------------------------------------
+# C. Centralized DB access (replaces duplicated logic in 4 files)
 # ---------------------------------------------------------------------------
 
 # Module-level paths — resolved once at import time, overridable for testing

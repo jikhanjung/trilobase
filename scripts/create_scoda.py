@@ -84,6 +84,7 @@ def main():
             "dependencies": [
                 {
                     "name": "paleocore",
+                    "alias": "pc",
                     "version": "0.3.0",
                     "file": "paleocore.scoda",
                     "description": "Shared paleontological infrastructure (geography, stratigraphy)"
@@ -106,6 +107,7 @@ def main():
         "dependencies": [
             {
                 "name": "paleocore",
+                    "alias": "pc",
                 "version": "0.3.0",
                 "file": "paleocore.scoda",
                 "description": "Shared paleontological infrastructure (geography, stratigraphy)"

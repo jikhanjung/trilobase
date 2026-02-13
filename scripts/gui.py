@@ -75,7 +75,11 @@ class ScodaDesktopGUI:
 
         os.chdir(self.base_path)
 
-        # Use scoda_package for DB path resolution
+        # Use PackageRegistry for package discovery
+        self.registry = scoda_package.get_registry()
+        self.packages = self.registry.list_packages()
+
+        # Legacy compat: use scoda_info for canonical/overlay paths
         self.scoda_info = scoda_package.get_scoda_info()
         self.canonical_db_path = self.scoda_info['canonical_path']
         self.overlay_db_path = self.scoda_info['overlay_path']
@@ -86,18 +90,12 @@ class ScodaDesktopGUI:
 
         # Initial log messages
         self._append_log("SCODA Desktop initialized")
-        if self.scoda_info['source_type'] == 'scoda':
-            self._append_log(f"Loaded: {os.path.basename(self.scoda_info['scoda_path'])} (v{self.scoda_info.get('version', '?')})")
+        if self.packages:
+            for pkg in self.packages:
+                src = f" ({pkg['source_type']})" if pkg['source_type'] == 'scoda' else ''
+                self._append_log(f"Loaded: {pkg['name']} v{pkg['version']}{src}, {pkg['record_count']} records")
         else:
             self._append_log(f"Loaded: {os.path.basename(self.canonical_db_path)}")
-        # Log paleocore dependency
-        if self.scoda_info.get('paleocore_exists'):
-            if self.scoda_info.get('paleocore_source_type') == 'scoda':
-                pc_name = os.path.basename(self.scoda_info.get('paleocore_scoda_path', 'paleocore.scoda'))
-                pc_ver = self.scoda_info.get('paleocore_version', '?')
-                self._append_log(f"  \u2514 dependency: {pc_name} (v{pc_ver})")
-            else:
-                self._append_log(f"  \u2514 dependency: paleocore.db")
         self._append_log(f"Overlay: {os.path.basename(self.overlay_db_path)}")
         if not self.db_exists:
             self._append_log("WARNING: Data source not found!", "WARNING")
@@ -124,34 +122,27 @@ class ScodaDesktopGUI:
         info_frame = tk.LabelFrame(top_frame, text="Information", padx=10, pady=10)
         info_frame.pack(side="left", fill="both", expand=True, padx=(0, 5))
 
-        # Data source (Package or DB)
-        db_row = tk.Frame(info_frame)
-        db_row.pack(fill="x", pady=3)
-        if self.scoda_info['source_type'] == 'scoda':
-            tk.Label(db_row, text="Packages:", width=10, anchor="w").pack(side="left")
-            scoda_name = os.path.basename(self.scoda_info['scoda_path'])
-            db_text = f"{scoda_name} (v{self.scoda_info.get('version', '?')})"
+        # Packages list (from registry)
+        pkg_label_row = tk.Frame(info_frame)
+        pkg_label_row.pack(fill="x", pady=3)
+        tk.Label(pkg_label_row, text="Packages:", width=10, anchor="w").pack(side="left")
+        if self.packages:
+            first_pkg = self.packages[0]
+            pkg_text = f"{first_pkg['name']} v{first_pkg['version']}"
             db_color = "blue" if self.db_exists else "red"
         else:
-            tk.Label(db_row, text="Canonical:", width=10, anchor="w").pack(side="left")
-            db_name = os.path.basename(self.canonical_db_path)
-            db_color = "blue" if self.db_exists else "red"
-            db_text = db_name if self.db_exists else f"{db_name} (not found)"
-        self.db_label = tk.Label(db_row, text=db_text, anchor="w", fg=db_color)
+            pkg_text = "(none found)"
+            db_color = "red"
+        self.db_label = tk.Label(pkg_label_row, text=pkg_text, anchor="w", fg=db_color)
         self.db_label.pack(side="left", fill="x", expand=True)
 
-        # PaleoCore dependency row (if loaded)
-        if self.scoda_info.get('paleocore_exists'):
-            dep_row = tk.Frame(info_frame)
-            dep_row.pack(fill="x", pady=0)
-            tk.Label(dep_row, text="", width=10, anchor="w").pack(side="left")
-            if self.scoda_info.get('paleocore_source_type') == 'scoda':
-                pc_name = os.path.basename(self.scoda_info.get('paleocore_scoda_path', 'paleocore.scoda'))
-                pc_ver = self.scoda_info.get('paleocore_version', '?')
-                dep_text = f"\u2514 {pc_name} (v{pc_ver}, dependency)"
-            else:
-                dep_text = "\u2514 paleocore.db (dependency)"
-            tk.Label(dep_row, text=dep_text, anchor="w", fg="gray").pack(side="left", fill="x", expand=True)
+        # Additional packages
+        for pkg in self.packages[1:]:
+            extra_row = tk.Frame(info_frame)
+            extra_row.pack(fill="x", pady=0)
+            tk.Label(extra_row, text="", width=10, anchor="w").pack(side="left")
+            dep_text = f"\u2514 {pkg['name']} v{pkg['version']}"
+            tk.Label(extra_row, text=dep_text, anchor="w", fg="gray").pack(side="left", fill="x", expand=True)
 
         # Overlay Database
         overlay_row = tk.Frame(info_frame)

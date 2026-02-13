@@ -667,6 +667,59 @@ def test_db(tmp_path):
         INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (5, 'MUCAM', 6, 'aggregate');
     """)
 
+    # PaleoCore SCODA metadata (needed by ScodaPackage.create)
+    pc_cursor.executescript("""
+        CREATE TABLE artifact_metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+        INSERT INTO artifact_metadata (key, value) VALUES ('artifact_id', 'paleocore');
+        INSERT INTO artifact_metadata (key, value) VALUES ('name', 'PaleoCore');
+        INSERT INTO artifact_metadata (key, value) VALUES ('version', '0.3.0');
+        INSERT INTO artifact_metadata (key, value) VALUES ('description', 'Shared paleontological infrastructure');
+        INSERT INTO artifact_metadata (key, value) VALUES ('license', 'CC-BY-4.0');
+
+        CREATE TABLE provenance (id INTEGER PRIMARY KEY, source_type TEXT NOT NULL,
+            citation TEXT NOT NULL, description TEXT, year INTEGER, url TEXT);
+        INSERT INTO provenance (id, source_type, citation, description, year)
+        VALUES (1, 'primary', 'COW v2024', 'Correlates of War state system', 2024);
+
+        CREATE TABLE schema_descriptions (table_name TEXT NOT NULL, column_name TEXT,
+            description TEXT NOT NULL, PRIMARY KEY (table_name, column_name));
+
+        CREATE TABLE ui_display_intent (id INTEGER PRIMARY KEY, entity TEXT NOT NULL,
+            default_view TEXT NOT NULL, description TEXT, source_query TEXT, priority INTEGER DEFAULT 0);
+        INSERT INTO ui_display_intent (id, entity, default_view, description, source_query, priority)
+        VALUES (1, 'countries', 'table', 'Country list', 'countries_list', 0);
+
+        CREATE TABLE ui_queries (id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE,
+            description TEXT, sql TEXT NOT NULL, params_json TEXT, created_at TEXT NOT NULL);
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('countries_list', 'All countries', 'SELECT id, name FROM countries ORDER BY name', NULL, '2026-02-13T00:00:00');
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('formations_list', 'All formations', 'SELECT id, name FROM formations ORDER BY name', NULL, '2026-02-13T00:00:00');
+
+        CREATE TABLE ui_manifest (name TEXT PRIMARY KEY, description TEXT, manifest_json TEXT NOT NULL, created_at TEXT NOT NULL);
+    """)
+
+    import json as _json
+    pc_manifest = {
+        "default_view": "countries_table",
+        "views": {
+            "countries_table": {
+                "type": "table",
+                "title": "Countries",
+                "description": "Country data",
+                "source_query": "countries_list",
+                "icon": "bi-globe",
+                "columns": [{"key": "name", "label": "Country", "sortable": True, "searchable": True}],
+                "default_sort": {"key": "name", "direction": "asc"},
+                "searchable": True
+            }
+        }
+    }
+    pc_cursor.execute(
+        "INSERT INTO ui_manifest (name, description, manifest_json, created_at) VALUES (?, ?, ?, ?)",
+        ('default', 'PaleoCore manifest', _json.dumps(pc_manifest), '2026-02-13T00:00:00')
+    )
+
     pc_conn.commit()
     pc_conn.close()
 
@@ -2605,3 +2658,354 @@ class TestApiPaleocoreStatus:
         assert 'cross_db_join_test' in data
         assert data['cross_db_join_test']['status'] == 'OK'
         assert data['cross_db_join_test']['matched_rows'] > 0
+
+
+# ---------------------------------------------------------------------------
+# PackageRegistry tests
+# ---------------------------------------------------------------------------
+
+class TestPackageRegistry:
+    """Tests for PackageRegistry class."""
+
+    def test_scan_finds_scoda_files(self, test_db, tmp_path):
+        """scan() should discover .scoda files in a directory."""
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+
+        # Create a .scoda package from the test DB
+        pkg_dir = tmp_path / "pkg_scan"
+        pkg_dir.mkdir()
+        ScodaPackage.create(canonical_db_path, str(pkg_dir / "test.scoda"))
+
+        from scoda_package import PackageRegistry
+        reg = PackageRegistry()
+        reg.scan(str(pkg_dir))
+
+        pkgs = reg.list_packages()
+        assert len(pkgs) >= 1
+        names = [p['name'] for p in pkgs]
+        assert 'trilobase' in names
+        reg.close_all()
+
+    def test_open_package_db_connection(self, test_db, tmp_path):
+        """get_db() should return a working connection for a scanned package."""
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+
+        pkg_dir = tmp_path / "pkg_open"
+        pkg_dir.mkdir()
+        ScodaPackage.create(canonical_db_path, str(pkg_dir / "test.scoda"))
+
+        from scoda_package import PackageRegistry
+        reg = PackageRegistry()
+        reg.scan(str(pkg_dir))
+
+        conn = reg.get_db('trilobase')
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) as cnt FROM taxonomic_ranks")
+        count = cursor.fetchone()['cnt']
+        assert count > 0
+        conn.close()
+        reg.close_all()
+
+    def test_list_packages_returns_info(self, test_db, tmp_path):
+        """list_packages() should return name, title, version, record_count."""
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+
+        pkg_dir = tmp_path / "pkg_list"
+        pkg_dir.mkdir()
+        ScodaPackage.create(canonical_db_path, str(pkg_dir / "test.scoda"))
+
+        from scoda_package import PackageRegistry
+        reg = PackageRegistry()
+        reg.scan(str(pkg_dir))
+
+        pkgs = reg.list_packages()
+        assert len(pkgs) >= 1
+        pkg = pkgs[0]
+        assert 'name' in pkg
+        assert 'title' in pkg
+        assert 'version' in pkg
+        assert 'record_count' in pkg
+        assert 'has_dependencies' in pkg
+        reg.close_all()
+
+    def test_dependency_resolution_with_alias(self, test_db, tmp_path):
+        """Dependencies should be ATTACHed using their alias."""
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+
+        pkg_dir = tmp_path / "pkg_deps"
+        pkg_dir.mkdir()
+
+        # Create paleocore.scoda
+        ScodaPackage.create(paleocore_db_path, str(pkg_dir / "paleocore.scoda"),
+                            metadata={"name": "paleocore"})
+
+        # Create trilobase.scoda with dependency on paleocore
+        ScodaPackage.create(canonical_db_path, str(pkg_dir / "trilobase.scoda"),
+                            metadata={"dependencies": [
+                                {"name": "paleocore", "alias": "pc"}
+                            ]})
+
+        from scoda_package import PackageRegistry
+        reg = PackageRegistry()
+        reg.scan(str(pkg_dir))
+
+        conn = reg.get_db('trilobase')
+        # Verify pc alias is attached
+        databases = conn.execute("PRAGMA database_list").fetchall()
+        db_names = [row['name'] for row in databases]
+        assert 'pc' in db_names
+
+        # Verify cross-DB query works
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) as cnt FROM pc.formations")
+        count = cursor.fetchone()['cnt']
+        assert count > 0
+        conn.close()
+        reg.close_all()
+
+    def test_package_without_deps(self, test_db, tmp_path):
+        """A package with no dependencies should work standalone."""
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+
+        pkg_dir = tmp_path / "pkg_nodeps"
+        pkg_dir.mkdir()
+
+        ScodaPackage.create(paleocore_db_path, str(pkg_dir / "paleocore.scoda"),
+                            metadata={"name": "paleocore"})
+
+        from scoda_package import PackageRegistry
+        reg = PackageRegistry()
+        reg.scan(str(pkg_dir))
+
+        conn = reg.get_db('paleocore')
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) as cnt FROM formations")
+        count = cursor.fetchone()['cnt']
+        assert count > 0
+        conn.close()
+        reg.close_all()
+
+    def test_overlay_per_package(self, test_db, tmp_path):
+        """Each package should get its own overlay DB."""
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+
+        pkg_dir = tmp_path / "pkg_overlay"
+        pkg_dir.mkdir()
+
+        ScodaPackage.create(canonical_db_path, str(pkg_dir / "trilobase.scoda"))
+        ScodaPackage.create(paleocore_db_path, str(pkg_dir / "paleocore.scoda"),
+                            metadata={"name": "paleocore"})
+
+        from scoda_package import PackageRegistry
+        reg = PackageRegistry()
+        reg.scan(str(pkg_dir))
+
+        # Open both — each creates its own overlay
+        conn1 = reg.get_db('trilobase')
+        conn2 = reg.get_db('paleocore')
+
+        assert os.path.exists(str(pkg_dir / "trilobase_overlay.db"))
+        assert os.path.exists(str(pkg_dir / "paleocore_overlay.db"))
+
+        conn1.close()
+        conn2.close()
+        reg.close_all()
+
+    def test_legacy_get_db_still_works(self, test_db):
+        """Existing get_db() function should continue to work."""
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+
+        conn = scoda_package.get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) as cnt FROM taxonomic_ranks")
+        count = cursor.fetchone()['cnt']
+        assert count > 0
+        conn.close()
+
+        scoda_package._reset_paths()
+
+    def test_unknown_package_error(self, test_db, tmp_path):
+        """get_db() for a non-existent package should raise KeyError."""
+        pkg_dir = tmp_path / "pkg_err"
+        pkg_dir.mkdir()
+
+        from scoda_package import PackageRegistry
+        reg = PackageRegistry()
+        reg.scan(str(pkg_dir))
+
+        with pytest.raises(KeyError):
+            reg.get_db('nonexistent')
+        reg.close_all()
+
+
+# ---------------------------------------------------------------------------
+# /api/packages endpoint tests
+# ---------------------------------------------------------------------------
+
+class TestPackagesEndpoint:
+    """Tests for /api/packages endpoint."""
+
+    def test_packages_list_returns_200(self, client):
+        """GET /api/packages should return 200."""
+        response = client.get('/api/packages')
+        assert response.status_code == 200
+
+    def test_packages_returns_list(self, client):
+        """GET /api/packages should return a list."""
+        response = client.get('/api/packages')
+        data = json.loads(response.data)
+        assert isinstance(data, list)
+
+    def test_packages_items_have_required_fields(self, client, test_db):
+        """Each package item should have name, title, version fields."""
+        # Set up registry with a .scoda package
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+
+        pkg_dir = os.path.dirname(canonical_db_path)
+        scoda_path = os.path.join(pkg_dir, "trilobase.scoda")
+        ScodaPackage.create(canonical_db_path, scoda_path)
+
+        from scoda_package import PackageRegistry, _reset_registry
+        import scoda_package as sp
+
+        old_registry = sp._registry
+        sp._registry = PackageRegistry()
+        sp._registry.scan(pkg_dir)
+
+        try:
+            response = client.get('/api/packages')
+            data = json.loads(response.data)
+            assert len(data) >= 1
+            pkg = data[0]
+            assert 'name' in pkg
+            assert 'title' in pkg
+            assert 'version' in pkg
+        finally:
+            sp._registry.close_all()
+            sp._registry = old_registry
+
+
+# ---------------------------------------------------------------------------
+# Namespaced API tests (/api/pkg/<name>/...)
+# ---------------------------------------------------------------------------
+
+class TestNamespacedAPI:
+    """Tests for /api/pkg/<name>/... namespaced endpoints."""
+
+    @pytest.fixture(autouse=True)
+    def setup_registry(self, test_db, tmp_path):
+        """Set up a registry with .scoda packages for namespaced API tests."""
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+        import scoda_package as sp
+        from scoda_package import PackageRegistry
+
+        pkg_dir = str(tmp_path / "ns_pkg")
+        os.makedirs(pkg_dir, exist_ok=True)
+
+        # Create both .scoda packages
+        ScodaPackage.create(canonical_db_path, os.path.join(pkg_dir, "trilobase.scoda"))
+        ScodaPackage.create(paleocore_db_path, os.path.join(pkg_dir, "paleocore.scoda"),
+                            metadata={"name": "paleocore"})
+
+        self.old_registry = sp._registry
+        sp._registry = PackageRegistry()
+        sp._registry.scan(pkg_dir)
+
+        yield
+
+        sp._registry.close_all()
+        sp._registry = self.old_registry
+
+    def test_pkg_manifest(self, client):
+        """/api/pkg/trilobase/manifest should return manifest."""
+        response = client.get('/api/pkg/trilobase/manifest')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert 'manifest' in data
+        assert 'views' in data['manifest']
+
+    def test_pkg_manifest_equals_legacy(self, client):
+        """/api/pkg/trilobase/manifest should equal /api/manifest."""
+        legacy = json.loads(client.get('/api/manifest').data)
+        namespaced = json.loads(client.get('/api/pkg/trilobase/manifest').data)
+        # Both should have same manifest structure
+        assert legacy['manifest']['views'].keys() == namespaced['manifest']['views'].keys()
+
+    def test_pkg_queries(self, client):
+        """/api/pkg/trilobase/queries should return query list."""
+        response = client.get('/api/pkg/trilobase/queries')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert isinstance(data, list)
+        assert len(data) > 0
+        names = [q['name'] for q in data]
+        assert 'genera_list' in names
+
+    def test_pkg_query_execute(self, client):
+        """/api/pkg/trilobase/queries/genera_list/execute should return data."""
+        response = client.get('/api/pkg/trilobase/queries/genera_list/execute')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert 'rows' in data
+        assert 'columns' in data
+        assert data['row_count'] > 0
+
+    def test_pkg_metadata(self, client):
+        """/api/pkg/trilobase/metadata should return metadata."""
+        response = client.get('/api/pkg/trilobase/metadata')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert 'artifact_id' in data
+        assert data['artifact_id'] == 'trilobase'
+
+    def test_pkg_provenance(self, client):
+        """/api/pkg/trilobase/provenance should return provenance list."""
+        response = client.get('/api/pkg/trilobase/provenance')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert isinstance(data, list)
+        assert len(data) > 0
+
+    def test_pkg_display_intent(self, client):
+        """/api/pkg/trilobase/display-intent should return display intents."""
+        response = client.get('/api/pkg/trilobase/display-intent')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert isinstance(data, list)
+        assert len(data) > 0
+
+    def test_pkg_annotations_crud(self, client):
+        """Namespaced annotation CRUD should work."""
+        # Create
+        response = client.post('/api/pkg/trilobase/annotations',
+                               json={
+                                   'entity_type': 'genus',
+                                   'entity_id': 100,
+                                   'annotation_type': 'note',
+                                   'content': 'Test namespaced note'
+                               },
+                               content_type='application/json')
+        assert response.status_code == 201
+        ann = json.loads(response.data)
+        ann_id = ann['id']
+
+        # Read
+        response = client.get('/api/pkg/trilobase/annotations/genus/100')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert any(a['id'] == ann_id for a in data)
+
+        # Delete
+        response = client.delete(f'/api/pkg/trilobase/annotations/{ann_id}')
+        assert response.status_code == 200
+
+    def test_pkg_not_found(self, client):
+        """/api/pkg/nonexistent/manifest should return 404."""
+        response = client.get('/api/pkg/nonexistent/manifest')
+        assert response.status_code == 404
+
+    def test_pkg_query_not_found(self, client):
+        """Non-existent query should return 404."""
+        response = client.get('/api/pkg/trilobase/queries/nonexistent/execute')
+        assert response.status_code == 404

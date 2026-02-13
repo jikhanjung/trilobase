@@ -7,9 +7,12 @@ from flask import Flask, render_template, jsonify, request
 import json
 import sqlite3
 
-from scoda_package import get_db, get_paleocore_db_path
+from scoda_package import get_db, get_paleocore_db_path, get_registry
 
 app = Flask(__name__)
+
+VALID_ENTITY_TYPES = {'genus', 'family', 'order', 'suborder', 'superfamily', 'class'}
+VALID_ANNOTATION_TYPES = {'note', 'correction', 'alternative', 'link'}
 
 
 @app.after_request
@@ -21,6 +24,315 @@ def add_cors_headers(response):
     response.headers['Access-Control-Allow-Methods'] = 'GET, POST, DELETE, OPTIONS'
     return response
 
+
+# ---------------------------------------------------------------------------
+# Core helper functions (shared by legacy and namespaced routes)
+# ---------------------------------------------------------------------------
+
+def _fetch_manifest(conn):
+    """Fetch UI manifest from a DB connection."""
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT name, description, manifest_json, created_at
+        FROM ui_manifest
+        WHERE name = 'default'
+    """)
+    row = cursor.fetchone()
+    if not row:
+        return None
+    return {
+        'name': row['name'],
+        'description': row['description'],
+        'manifest': json.loads(row['manifest_json']),
+        'created_at': row['created_at']
+    }
+
+
+def _fetch_metadata(conn):
+    """Fetch artifact metadata from a DB connection."""
+    cursor = conn.cursor()
+    cursor.execute("SELECT key, value FROM artifact_metadata")
+    return {row['key']: row['value'] for row in cursor.fetchall()}
+
+
+def _fetch_provenance(conn):
+    """Fetch provenance from a DB connection."""
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT id, source_type, citation, description, year, url
+        FROM provenance ORDER BY id
+    """)
+    return [{
+        'id': s['id'],
+        'source_type': s['source_type'],
+        'citation': s['citation'],
+        'description': s['description'],
+        'year': s['year'],
+        'url': s['url']
+    } for s in cursor.fetchall()]
+
+
+def _fetch_display_intent(conn):
+    """Fetch display intent from a DB connection."""
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT id, entity, default_view, description, source_query, priority
+        FROM ui_display_intent ORDER BY entity, priority
+    """)
+    return [{
+        'id': i['id'],
+        'entity': i['entity'],
+        'default_view': i['default_view'],
+        'description': i['description'],
+        'source_query': i['source_query'],
+        'priority': i['priority']
+    } for i in cursor.fetchall()]
+
+
+def _fetch_queries(conn):
+    """Fetch named queries list from a DB connection."""
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT id, name, description, params_json, created_at
+        FROM ui_queries ORDER BY name
+    """)
+    return [{
+        'id': q['id'],
+        'name': q['name'],
+        'description': q['description'],
+        'params': q['params_json'],
+        'created_at': q['created_at']
+    } for q in cursor.fetchall()]
+
+
+def _execute_query(conn, query_name, params):
+    """Execute a named query and return result dict or error tuple."""
+    cursor = conn.cursor()
+    cursor.execute("SELECT sql, params_json FROM ui_queries WHERE name = ?", (query_name,))
+    query = cursor.fetchone()
+    if not query:
+        return None
+    try:
+        cursor.execute(query['sql'], params)
+        columns = [desc[0] for desc in cursor.description]
+        rows = cursor.fetchall()
+        return {
+            'query': query_name,
+            'columns': columns,
+            'row_count': len(rows),
+            'rows': [dict(row) for row in rows]
+        }
+    except Exception as e:
+        return {'error': str(e)}
+
+
+def _fetch_annotations(conn, entity_type, entity_id):
+    """Fetch annotations for an entity."""
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT id, entity_type, entity_id, entity_name, annotation_type, content, author, created_at
+        FROM overlay.user_annotations
+        WHERE entity_type = ? AND entity_id = ?
+        ORDER BY created_at DESC, id DESC
+    """, (entity_type, entity_id))
+    return [{
+        'id': a['id'],
+        'entity_type': a['entity_type'],
+        'entity_id': a['entity_id'],
+        'entity_name': a['entity_name'],
+        'annotation_type': a['annotation_type'],
+        'content': a['content'],
+        'author': a['author'],
+        'created_at': a['created_at']
+    } for a in cursor.fetchall()]
+
+
+def _create_annotation(conn, data):
+    """Create an annotation. Returns (result_dict, status_code)."""
+    entity_type = data.get('entity_type')
+    entity_id = data.get('entity_id')
+    annotation_type = data.get('annotation_type')
+    content = data.get('content')
+    author = data.get('author')
+
+    if not content:
+        return {'error': 'content is required'}, 400
+    if entity_type not in VALID_ENTITY_TYPES:
+        return {'error': f'Invalid entity_type. Must be one of: {", ".join(sorted(VALID_ENTITY_TYPES))}'}, 400
+    if annotation_type not in VALID_ANNOTATION_TYPES:
+        return {'error': f'Invalid annotation_type. Must be one of: {", ".join(sorted(VALID_ANNOTATION_TYPES))}'}, 400
+
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT name FROM taxonomic_ranks WHERE id = ?", (entity_id,))
+        row = cursor.fetchone()
+        entity_name = row['name'] if row else None
+    except Exception:
+        entity_name = None
+
+    cursor.execute("""
+        INSERT INTO overlay.user_annotations (entity_type, entity_id, entity_name, annotation_type, content, author)
+        VALUES (?, ?, ?, ?, ?, ?)
+    """, (entity_type, entity_id, entity_name, annotation_type, content, author))
+    conn.commit()
+
+    annotation_id = cursor.lastrowid
+    cursor.execute("""
+        SELECT id, entity_type, entity_id, entity_name, annotation_type, content, author, created_at
+        FROM overlay.user_annotations WHERE id = ?
+    """, (annotation_id,))
+    annotation = cursor.fetchone()
+
+    return {
+        'id': annotation['id'],
+        'entity_type': annotation['entity_type'],
+        'entity_id': annotation['entity_id'],
+        'entity_name': annotation['entity_name'],
+        'annotation_type': annotation['annotation_type'],
+        'content': annotation['content'],
+        'author': annotation['author'],
+        'created_at': annotation['created_at']
+    }, 201
+
+
+def _delete_annotation(conn, annotation_id):
+    """Delete an annotation. Returns (result_dict, status_code)."""
+    cursor = conn.cursor()
+    cursor.execute("SELECT id FROM overlay.user_annotations WHERE id = ?", (annotation_id,))
+    if not cursor.fetchone():
+        return {'error': 'Annotation not found'}, 404
+
+    cursor.execute("DELETE FROM overlay.user_annotations WHERE id = ?", (annotation_id,))
+    conn.commit()
+    return {'message': 'Annotation deleted', 'id': annotation_id}, 200
+
+
+# ---------------------------------------------------------------------------
+# Packages API
+# ---------------------------------------------------------------------------
+
+@app.route('/api/packages')
+def api_packages():
+    """List all discovered .scoda packages."""
+    registry = get_registry()
+    return jsonify(registry.list_packages())
+
+
+# ---------------------------------------------------------------------------
+# Namespaced package routes: /api/pkg/<name>/...
+# ---------------------------------------------------------------------------
+
+def _get_pkg_conn(pkg_name):
+    """Get DB connection for a named package, or None."""
+    registry = get_registry()
+    try:
+        return registry.get_db(pkg_name)
+    except KeyError:
+        return None
+
+
+@app.route('/api/pkg/<pkg_name>/manifest')
+def api_pkg_manifest(pkg_name):
+    conn = _get_pkg_conn(pkg_name)
+    if conn is None:
+        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
+    result = _fetch_manifest(conn)
+    conn.close()
+    return jsonify(result) if result else (jsonify({'error': 'No manifest found'}), 404)
+
+
+@app.route('/api/pkg/<pkg_name>/metadata')
+def api_pkg_metadata(pkg_name):
+    conn = _get_pkg_conn(pkg_name)
+    if conn is None:
+        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
+    result = _fetch_metadata(conn)
+    conn.close()
+    return jsonify(result)
+
+
+@app.route('/api/pkg/<pkg_name>/provenance')
+def api_pkg_provenance(pkg_name):
+    conn = _get_pkg_conn(pkg_name)
+    if conn is None:
+        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
+    result = _fetch_provenance(conn)
+    conn.close()
+    return jsonify(result)
+
+
+@app.route('/api/pkg/<pkg_name>/display-intent')
+def api_pkg_display_intent(pkg_name):
+    conn = _get_pkg_conn(pkg_name)
+    if conn is None:
+        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
+    result = _fetch_display_intent(conn)
+    conn.close()
+    return jsonify(result)
+
+
+@app.route('/api/pkg/<pkg_name>/queries')
+def api_pkg_queries(pkg_name):
+    conn = _get_pkg_conn(pkg_name)
+    if conn is None:
+        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
+    result = _fetch_queries(conn)
+    conn.close()
+    return jsonify(result)
+
+
+@app.route('/api/pkg/<pkg_name>/queries/<query_name>/execute')
+def api_pkg_query_execute(pkg_name, query_name):
+    conn = _get_pkg_conn(pkg_name)
+    if conn is None:
+        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
+    params = {key: value for key, value in request.args.items()}
+    result = _execute_query(conn, query_name, params)
+    conn.close()
+    if result is None:
+        return jsonify({'error': f'Query not found: {query_name}'}), 404
+    if 'error' in result:
+        return jsonify(result), 400
+    return jsonify(result)
+
+
+@app.route('/api/pkg/<pkg_name>/annotations/<entity_type>/<int:entity_id>')
+def api_pkg_get_annotations(pkg_name, entity_type, entity_id):
+    conn = _get_pkg_conn(pkg_name)
+    if conn is None:
+        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
+    result = _fetch_annotations(conn, entity_type, entity_id)
+    conn.close()
+    return jsonify(result)
+
+
+@app.route('/api/pkg/<pkg_name>/annotations', methods=['POST'])
+def api_pkg_create_annotation(pkg_name):
+    conn = _get_pkg_conn(pkg_name)
+    if conn is None:
+        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
+    data = request.get_json()
+    if not data:
+        conn.close()
+        return jsonify({'error': 'JSON body required'}), 400
+    result, status = _create_annotation(conn, data)
+    conn.close()
+    return jsonify(result), status
+
+
+@app.route('/api/pkg/<pkg_name>/annotations/<int:annotation_id>', methods=['DELETE'])
+def api_pkg_delete_annotation(pkg_name, annotation_id):
+    conn = _get_pkg_conn(pkg_name)
+    if conn is None:
+        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
+    result, status = _delete_annotation(conn, annotation_id)
+    conn.close()
+    return jsonify(result), status
+
+
+# ---------------------------------------------------------------------------
+# Legacy routes (unchanged API surface, refactored internals)
+# ---------------------------------------------------------------------------
 
 def build_tree(parent_id=None):
     """Recursively build taxonomy tree (Class to Family)"""
@@ -382,134 +694,50 @@ def api_metadata():
 def api_provenance():
     """Get data provenance information"""
     conn = get_db()
-    cursor = conn.cursor()
-
-    cursor.execute("""
-        SELECT id, source_type, citation, description, year, url
-        FROM provenance
-        ORDER BY id
-    """)
-    sources = cursor.fetchall()
-
+    result = _fetch_provenance(conn)
     conn.close()
-
-    return jsonify([{
-        'id': s['id'],
-        'source_type': s['source_type'],
-        'citation': s['citation'],
-        'description': s['description'],
-        'year': s['year'],
-        'url': s['url']
-    } for s in sources])
+    return jsonify(result)
 
 
 @app.route('/api/display-intent')
 def api_display_intent():
     """Get display intent hints for SCODA viewers"""
     conn = get_db()
-    cursor = conn.cursor()
-
-    cursor.execute("""
-        SELECT id, entity, default_view, description, source_query, priority
-        FROM ui_display_intent
-        ORDER BY entity, priority
-    """)
-    intents = cursor.fetchall()
+    result = _fetch_display_intent(conn)
     conn.close()
-
-    return jsonify([{
-        'id': i['id'],
-        'entity': i['entity'],
-        'default_view': i['default_view'],
-        'description': i['description'],
-        'source_query': i['source_query'],
-        'priority': i['priority']
-    } for i in intents])
+    return jsonify(result)
 
 
 @app.route('/api/queries')
 def api_queries():
     """Get list of available named queries"""
     conn = get_db()
-    cursor = conn.cursor()
-
-    cursor.execute("""
-        SELECT id, name, description, params_json, created_at
-        FROM ui_queries
-        ORDER BY name
-    """)
-    queries = cursor.fetchall()
+    result = _fetch_queries(conn)
     conn.close()
-
-    return jsonify([{
-        'id': q['id'],
-        'name': q['name'],
-        'description': q['description'],
-        'params': q['params_json'],
-        'created_at': q['created_at']
-    } for q in queries])
+    return jsonify(result)
 
 
 @app.route('/api/manifest')
 def api_manifest():
     """Get UI manifest with declarative view definitions"""
     conn = get_db()
-    cursor = conn.cursor()
-
-    cursor.execute("""
-        SELECT name, description, manifest_json, created_at
-        FROM ui_manifest
-        WHERE name = 'default'
-    """)
-    row = cursor.fetchone()
+    result = _fetch_manifest(conn)
     conn.close()
-
-    if not row:
-        return jsonify({'error': 'No manifest found'}), 404
-
-    return jsonify({
-        'name': row['name'],
-        'description': row['description'],
-        'manifest': json.loads(row['manifest_json']),
-        'created_at': row['created_at']
-    })
+    return jsonify(result) if result else (jsonify({'error': 'No manifest found'}), 404)
 
 
 @app.route('/api/queries/<name>/execute')
 def api_query_execute(name):
     """Execute a named query with optional parameters"""
     conn = get_db()
-    cursor = conn.cursor()
-
-    # Look up the query
-    cursor.execute("SELECT sql, params_json FROM ui_queries WHERE name = ?", (name,))
-    query = cursor.fetchone()
-
-    if not query:
-        conn.close()
+    params = {key: value for key, value in request.args.items()}
+    result = _execute_query(conn, name, params)
+    conn.close()
+    if result is None:
         return jsonify({'error': f'Query not found: {name}'}), 404
-
-    # Build parameters from query string
-    params = {}
-    for key, value in request.args.items():
-        params[key] = value
-
-    # Execute the query
-    try:
-        cursor.execute(query['sql'], params)
-        columns = [desc[0] for desc in cursor.description]
-        rows = cursor.fetchall()
-        conn.close()
-
-        return jsonify({
-            'query': name,
-            'columns': columns,
-            'row_count': len(rows),
-            'rows': [dict(row) for row in rows]
-        })
-    except Exception as e:
-        conn.close()
-        return jsonify({'error': str(e)}), 400
+    if 'error' in result:
+        return jsonify(result), 400
+    return jsonify(result)
 
 
 @app.route('/api/country/<int:country_id>')
@@ -898,114 +1126,34 @@ def api_paleocore_status():
     return jsonify(result)
 
 
-VALID_ENTITY_TYPES = {'genus', 'family', 'order', 'suborder', 'superfamily', 'class'}
-VALID_ANNOTATION_TYPES = {'note', 'correction', 'alternative', 'link'}
-
-
 @app.route('/api/annotations/<entity_type>/<int:entity_id>')
 def api_get_annotations(entity_type, entity_id):
     """Get annotations for a specific entity"""
     conn = get_db()
-    cursor = conn.cursor()
-
-    cursor.execute("""
-        SELECT id, entity_type, entity_id, entity_name, annotation_type, content, author, created_at
-        FROM overlay.user_annotations
-        WHERE entity_type = ? AND entity_id = ?
-        ORDER BY created_at DESC, id DESC
-    """, (entity_type, entity_id))
-    annotations = cursor.fetchall()
+    result = _fetch_annotations(conn, entity_type, entity_id)
     conn.close()
-
-    return jsonify([{
-        'id': a['id'],
-        'entity_type': a['entity_type'],
-        'entity_id': a['entity_id'],
-        'entity_name': a['entity_name'],
-        'annotation_type': a['annotation_type'],
-        'content': a['content'],
-        'author': a['author'],
-        'created_at': a['created_at']
-    } for a in annotations])
+    return jsonify(result)
 
 
 @app.route('/api/annotations', methods=['POST'])
 def api_create_annotation():
     """Create a new annotation"""
     data = request.get_json()
-
     if not data:
         return jsonify({'error': 'JSON body required'}), 400
-
-    entity_type = data.get('entity_type')
-    entity_id = data.get('entity_id')
-    annotation_type = data.get('annotation_type')
-    content = data.get('content')
-    author = data.get('author')
-
-    if not content:
-        return jsonify({'error': 'content is required'}), 400
-
-    if entity_type not in VALID_ENTITY_TYPES:
-        return jsonify({'error': f'Invalid entity_type. Must be one of: {", ".join(sorted(VALID_ENTITY_TYPES))}'}), 400
-
-    if annotation_type not in VALID_ANNOTATION_TYPES:
-        return jsonify({'error': f'Invalid annotation_type. Must be one of: {", ".join(sorted(VALID_ANNOTATION_TYPES))}'}), 400
-
     conn = get_db()
-    cursor = conn.cursor()
-
-    # Get entity_name from canonical DB
-    try:
-        cursor.execute("SELECT name FROM taxonomic_ranks WHERE id = ?", (entity_id,))
-        row = cursor.fetchone()
-        entity_name = row['name'] if row else None
-    except Exception:
-        entity_name = None
-
-    cursor.execute("""
-        INSERT INTO overlay.user_annotations (entity_type, entity_id, entity_name, annotation_type, content, author)
-        VALUES (?, ?, ?, ?, ?, ?)
-    """, (entity_type, entity_id, entity_name, annotation_type, content, author))
-    conn.commit()
-
-    annotation_id = cursor.lastrowid
-
-    cursor.execute("""
-        SELECT id, entity_type, entity_id, entity_name, annotation_type, content, author, created_at
-        FROM overlay.user_annotations WHERE id = ?
-    """, (annotation_id,))
-    annotation = cursor.fetchone()
+    result, status = _create_annotation(conn, data)
     conn.close()
-
-    return jsonify({
-        'id': annotation['id'],
-        'entity_type': annotation['entity_type'],
-        'entity_id': annotation['entity_id'],
-        'entity_name': annotation['entity_name'],
-        'annotation_type': annotation['annotation_type'],
-        'content': annotation['content'],
-        'author': annotation['author'],
-        'created_at': annotation['created_at']
-    }), 201
+    return jsonify(result), status
 
 
 @app.route('/api/annotations/<int:annotation_id>', methods=['DELETE'])
 def api_delete_annotation(annotation_id):
     """Delete an annotation"""
     conn = get_db()
-    cursor = conn.cursor()
-
-    cursor.execute("SELECT id FROM overlay.user_annotations WHERE id = ?", (annotation_id,))
-    if not cursor.fetchone():
-        conn.close()
-        return jsonify({'error': 'Annotation not found'}), 404
-
-    cursor.execute("DELETE FROM overlay.user_annotations WHERE id = ?", (annotation_id,))
-    conn.commit()
+    result, status = _delete_annotation(conn, annotation_id)
     conn.close()
-
-    return jsonify({'message': 'Annotation deleted', 'id': annotation_id})
+    return jsonify(result), status
 
 
 if __name__ == '__main__':
