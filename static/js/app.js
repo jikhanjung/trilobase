@@ -20,7 +20,22 @@ let tableViewSearchTerm = '';
 document.addEventListener('DOMContentLoaded', async () => {
     genusModal = new bootstrap.Modal(document.getElementById('genusModal'));
     await loadManifest();
-    loadTree();
+
+    // Determine initial view from manifest (default to taxonomy_tree for legacy)
+    if (manifest && manifest.views) {
+        const viewKeys = Object.keys(manifest.views).filter(k => manifest.views[k].type !== 'detail');
+        if (manifest.default_view && manifest.views[manifest.default_view]) {
+            currentView = manifest.default_view;
+        } else if (viewKeys.length > 0 && !manifest.views['taxonomy_tree']) {
+            currentView = viewKeys[0];
+        }
+        // Rebuild tabs with correct currentView
+        buildViewTabs();
+        switchToView(currentView);
+    } else {
+        // Legacy fallback: no manifest, just load tree
+        loadTree();
+    }
 });
 
 /**
@@ -87,6 +102,7 @@ function switchToView(viewKey) {
 
     if (view.type === 'tree') {
         treeContainer.style.display = '';
+        loadTree();
     } else if (view.type === 'table') {
         tableContainer.style.display = '';
         tableViewSort = view.default_sort || null;
