@@ -176,12 +176,12 @@ class ScodaDesktopGUI:
         server_row = tk.Frame(control_frame)
         server_row.pack(pady=3)
 
-        self.start_btn = tk.Button(server_row, text="\u25b6 Start Flask", width=12,
+        self.start_btn = tk.Button(server_row, text="\u25b6 Start Server", width=12,
                                    command=self.start_server, bg="#4CAF50", fg="white",
                                    relief="raised", bd=2)
         self.start_btn.pack(side="left", padx=2)
 
-        self.stop_btn = tk.Button(server_row, text="\u25a0 Stop Flask", width=12,
+        self.stop_btn = tk.Button(server_row, text="\u25a0 Stop Server", width=12,
                                   command=self.stop_server, state="disabled",
                                   bg="#f44336", fg="white", relief="raised", bd=2)
         self.stop_btn.pack(side="left", padx=2)
@@ -235,7 +235,7 @@ class ScodaDesktopGUI:
     def _on_package_select(self, event):
         """Handle package selection change in Listbox."""
         if self.server_running:
-            self._append_log("Stop Flask before switching packages", "WARNING")
+            self._append_log("Stop server before switching packages", "WARNING")
             # Re-select the current package
             for i, pkg in enumerate(self.packages):
                 if pkg['name'] == self.selected_package:
@@ -378,7 +378,7 @@ class ScodaDesktopGUI:
 
     def _start_server_threaded(self):
         """Start Flask server in thread (for frozen/PyInstaller mode)."""
-        self._append_log(f"Starting Flask server (threaded, package={self.selected_package})...", "INFO")
+        self._append_log(f"Starting web server (package={self.selected_package})...", "INFO")
 
         # Set active package before importing app
         scoda_package.set_active_package(self.selected_package)
@@ -400,7 +400,7 @@ class ScodaDesktopGUI:
         self.server_thread = threading.Thread(target=self._run_flask_app, daemon=True)
         self.server_thread.start()
 
-        self._append_log("Flask server started in thread", "INFO")
+        self._append_log("Web server started", "INFO")
 
     def _start_server_subprocess(self):
         """Start Flask server as subprocess (for development mode)."""
@@ -410,7 +410,7 @@ class ScodaDesktopGUI:
         if not os.path.exists(app_py):
             raise FileNotFoundError(f"app.py not found at {app_py}")
 
-        self._append_log(f"Starting Flask server (subprocess, package={self.selected_package})...", "INFO")
+        self._append_log(f"Starting web server (package={self.selected_package})...", "INFO")
 
         # Start Flask as subprocess with --package arg
         self.server_process = subprocess.Popen(
@@ -581,7 +581,7 @@ class ScodaDesktopGUI:
         if not self.server_running:
             return
 
-        self._append_log("Stopping Flask server...", "INFO")
+        self._append_log("Stopping web server...", "INFO")
         self.server_running = False
 
         # Terminate server process (subprocess mode)
