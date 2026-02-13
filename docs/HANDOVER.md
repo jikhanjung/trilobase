@@ -405,14 +405,17 @@
   - `scripts/create_paleocore.py`: detail query 3개 + detail view 3개 + on_row_click
   - `scripts/serve.py`: `--package` CLI 지원
   - 테스트: 217개 (기존 202 - 13 + 7 + Phase 42 신규 21)
-  - 후속 버그픽스 3건:
+  - 후속 버그픽스 4건:
     - `app.js`: manifest 기반 초기 뷰 선택 (paleocore `taxonomic_ranks` 에러)
     - `scoda_package.py`: registry fallback 시 paleocore dependency 연결
     - `build.py`: scoda 생성 시 dependency metadata 전달
-  - 후속 기능 추가 3건:
+    - `gui.py`: uvicorn graceful shutdown (포트 재사용 에러)
+  - 후속 기능/개선 5건:
     - SPA navbar + GUI 헤더에 활성 패키지명/버전 표시
     - GUI Listbox에 Running/Stopped 상태 아이콘
     - 실행 중 dependency 패키지를 자식으로 들여쓰기 표시 (`└─ Loaded`)
+    - GUI 사용자 표현: Flask → Server/web server
+    - 서버 시작/중지 시 wait cursor 처리
   - devlog: `devlog/20260213_052_phase43_control_panel_single_package.md`
 
 ### 데이터베이스 현황

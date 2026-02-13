@@ -140,3 +140,23 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
  ▶ Running  trilobase v1.0.0 — 18,219 records
    └─ Loaded  paleocore v0.3.0 — 3,340 records
 ```
+
+### Fix 4: uvicorn graceful shutdown (`babe0e3`)
+
+**문제**: threaded 모드(PyInstaller)에서 서버 중지 후 재시작 시 `[Errno 10048] address already in use` 포트 충돌
+**원인**: `stop_server()`가 `server_running` 플래그만 변경하고 uvicorn 프로세스를 실제로 종료하지 않음
+**수정**: `scripts/gui.py`
+- `uvicorn.Server` 인스턴스를 저장하고, `should_exit = True`로 graceful shutdown 시그널
+- `thread.join(timeout=5)`로 종료 대기
+- stdout/stderr 복원 처리
+
+### Feat 4: GUI 사용자 표현 개선 (`0bd7dee`)
+
+- 버튼: `Start Flask` → `Start Server`, `Stop Flask` → `Stop Server`
+- 로그 메시지: `Flask server` → `web server`
+- 사용자에게 내부 프레임워크 노출하지 않도록 변경
+
+### Feat 5: wait cursor 처리 (`12541c1`)
+
+- 서버 시작/중지 중 마우스 커서를 모래시계(wait)로 변경
+- 완료 후 기본 커서로 복원
