@@ -353,6 +353,15 @@
   - `JOIN + COUNT(DISTINCT)`로 실시간 계산하도록 SQL 업데이트
   - devlog: `devlog/20260213_048_fix_named_query_taxa_count.md`
 
+- **Phase 40 완료**: CORS + Custom SPA Example + EXE Renaming
+  - `app.py`: CORS `after_request` 핸들러 추가 (외부 SPA 지원)
+  - `examples/genus-explorer/index.html`: 단일 파일 Genus Explorer SPA (vanilla JS, Bootstrap 5)
+  - EXE 리네이밍: `trilobase.exe` → `ScodaDesktop.exe`, `trilobase_mcp.exe` → `ScodaDesktop_mcp.exe`
+  - `trilobase.spec` → `ScodaDesktop.spec` (git mv)
+  - `scripts/build.py`, `scripts/gui.py`, `templates/index.html` 업데이트
+  - 테스트: 194개 (기존 192 + CORS 2)
+  - devlog: `devlog/20260213_050_phase40_cors_spa_rename.md`
+
 - **Phase 39 완료**: Declarative Manifest Schema + UI Migration
   - `ui_manifest` 확장: 6 → 13개 뷰 (tab 6 + detail 7)
   - 7개 detail view 선언: formation, country, region, bibliography, chronostrat, genus, rank
@@ -419,8 +428,8 @@
 
 ```
 trilobase/
-├── trilobase.exe                     # GUI 뷰어 (console=False, dist/ 빌드 결과)
-├── trilobase_mcp.exe                 # MCP stdio 서버 (console=True, dist/ 빌드 결과)
+├── ScodaDesktop.exe                  # GUI 뷰어 (console=False, dist/ 빌드 결과)
+├── ScodaDesktop_mcp.exe              # MCP stdio 서버 (console=True, dist/ 빌드 결과)
 ├── trilobase.db                      # Canonical SQLite DB
 ├── trilobase_overlay.db              # Overlay DB (사용자 주석, Phase 20)
 ├── trilobite_genus_list.txt          # 정제된 genus 목록
@@ -439,7 +448,7 @@ trilobase/
 ├── test_mcp.py                      # MCP 포괄적 테스트 (16개, asynccontextmanager 방식)
 ├── pytest.ini                       # pytest 설정 (asyncio_mode=auto)
 ├── conftest.py                      # anyio 백엔드 설정 (asyncio)
-├── trilobase.spec                   # PyInstaller 빌드 설정 (Phase 18)
+├── ScodaDesktop.spec                # PyInstaller 빌드 설정 (Phase 18, Phase 40에서 리네임)
 ├── scripts/
 │   ├── normalize_lines.py
 │   ├── create_database.py
@@ -463,6 +472,8 @@ trilobase/
 │   ├── import_ics.py              # Phase 28: ICS 지층 연대표 임포트
 │   ├── create_paleocore.py       # Phase 31: PaleoCore DB 생성
 │   └── create_paleocore_scoda.py # Phase 35: PaleoCore .scoda 패키지 생성
+├── examples/
+│   └── genus-explorer/index.html    # Phase 40: Custom SPA 예제 (vanilla JS)
 ├── devlog/
 │   ├── 20260204_P01~P05_*.md        # Phase 계획 문서
 │   ├── 20260204_001~011_*.md        # Phase 1-11 완료 로그
@@ -513,10 +524,10 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `test_app.py` | 175개 | ✅ 통과 |
+| `test_app.py` | 177개 | ✅ 통과 |
 | `test_mcp_basic.py` | 1개 | ✅ 통과 |
 | `test_mcp.py` | 16개 | ✅ 통과 |
-| **합계** | **192개** | **✅ 전부 통과** |
+| **합계** | **194개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -533,6 +544,7 @@ pytest test_app.py test_mcp_basic.py test_mcp.py
 
 PaleoCore 분리 및 .scoda 패키징 완료 (Phase 31-37).
 GUI "SCODA Desktop" 리브랜딩 완료 (Phase 38).
+CORS + 예제 SPA + EXE 리네이밍 완료 (Phase 40).
 - PaleoCore 독립 뷰어 (paleocore.scoda를 단독으로 열어서 탐색)
 
 ## 미해결 항목
