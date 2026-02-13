@@ -2,7 +2,8 @@
 """
 SCODA Desktop — GUI Control Panel
 
-Provides a simple graphical interface to control the Flask server.
+Provides a Docker Desktop-style graphical interface to select a package
+and control the Flask server.
 """
 
 import tkinter as tk
@@ -67,6 +68,9 @@ class ScodaDesktopGUI:
         self.mcp_running = False
         self.mcp_port = 8081
 
+        # Selected package
+        self.selected_package = None
+
         # Determine base path
         if getattr(sys, 'frozen', False):
             self.base_path = sys._MEIPASS
@@ -79,11 +83,9 @@ class ScodaDesktopGUI:
         self.registry = scoda_package.get_registry()
         self.packages = self.registry.list_packages()
 
-        # Legacy compat: use scoda_info for canonical/overlay paths
-        self.scoda_info = scoda_package.get_scoda_info()
-        self.canonical_db_path = self.scoda_info['canonical_path']
-        self.overlay_db_path = self.scoda_info['overlay_path']
-        self.db_exists = self.scoda_info['canonical_exists']
+        # Auto-select if only one package
+        if len(self.packages) == 1:
+            self.selected_package = self.packages[0]['name']
 
         self._create_widgets()
         self._update_status()
@@ -95,13 +97,17 @@ class ScodaDesktopGUI:
                 src = f" ({pkg['source_type']})" if pkg['source_type'] == 'scoda' else ''
                 self._append_log(f"Loaded: {pkg['name']} v{pkg['version']}{src}, {pkg['record_count']} records")
         else:
-            self._append_log(f"Loaded: {os.path.basename(self.canonical_db_path)}")
-        self._append_log(f"Overlay: {os.path.basename(self.overlay_db_path)}")
-        if not self.db_exists:
-            self._append_log("WARNING: Data source not found!", "WARNING")
+            self._append_log("WARNING: No packages found!", "WARNING")
+
+        if self.selected_package:
+            self._append_log(f"Selected: {self.selected_package}")
 
         # Handle window close
         self.root.protocol("WM_DELETE_WINDOW", self.quit_app)
+
+        # Auto-start if single package (same UX as before)
+        if len(self.packages) == 1:
+            self.root.after(500, self.start_server)
 
     def _create_widgets(self):
         """Create all GUI widgets."""
@@ -114,62 +120,47 @@ class ScodaDesktopGUI:
                          font=("Arial", 14, "bold"), bg="#2196F3", fg="white")
         header.pack(pady=12)
 
-        # Top section (Info + Controls side by side)
+        # Top section (Packages + Controls side by side)
         top_frame = tk.Frame(self.root)
         top_frame.pack(fill="x", padx=10, pady=10)
 
-        # Left: Info section
-        info_frame = tk.LabelFrame(top_frame, text="Information", padx=10, pady=10)
-        info_frame.pack(side="left", fill="both", expand=True, padx=(0, 5))
+        # Left: Package selection
+        pkg_frame = tk.LabelFrame(top_frame, text="Packages", padx=10, pady=10)
+        pkg_frame.pack(side="left", fill="both", expand=True, padx=(0, 5))
 
-        # Packages list (from registry)
-        pkg_label_row = tk.Frame(info_frame)
-        pkg_label_row.pack(fill="x", pady=3)
-        tk.Label(pkg_label_row, text="Packages:", width=10, anchor="w").pack(side="left")
-        if self.packages:
-            first_pkg = self.packages[0]
-            pkg_text = f"{first_pkg['name']} v{first_pkg['version']}"
-            db_color = "blue" if self.db_exists else "red"
-        else:
-            pkg_text = "(none found)"
-            db_color = "red"
-        self.db_label = tk.Label(pkg_label_row, text=pkg_text, anchor="w", fg=db_color)
-        self.db_label.pack(side="left", fill="x", expand=True)
+        # Package Listbox
+        listbox_frame = tk.Frame(pkg_frame)
+        listbox_frame.pack(fill="both", expand=True)
 
-        # Additional packages
-        for pkg in self.packages[1:]:
-            extra_row = tk.Frame(info_frame)
-            extra_row.pack(fill="x", pady=0)
-            tk.Label(extra_row, text="", width=10, anchor="w").pack(side="left")
-            dep_text = f"\u2514 {pkg['name']} v{pkg['version']}"
-            tk.Label(extra_row, text=dep_text, anchor="w", fg="gray").pack(side="left", fill="x", expand=True)
+        self.pkg_listbox = tk.Listbox(
+            listbox_frame,
+            height=max(3, len(self.packages)),
+            selectmode="browse",
+            font=("Courier", 9),
+            exportselection=False
+        )
+        self.pkg_listbox.pack(fill="both", expand=True)
 
-        # Overlay Database
-        overlay_row = tk.Frame(info_frame)
-        overlay_row.pack(fill="x", pady=3)
-        tk.Label(overlay_row, text="Overlay:", width=10, anchor="w").pack(side="left")
-        overlay_name = os.path.basename(self.overlay_db_path)
-        overlay_exists = os.path.exists(self.overlay_db_path)
-        overlay_text = overlay_name if overlay_exists else f"{overlay_name} (auto-created)"
-        overlay_color = "green" if overlay_exists else "gray"
-        self.overlay_label = tk.Label(overlay_row, text=overlay_text, anchor="w", fg=overlay_color)
-        self.overlay_label.pack(side="left", fill="x", expand=True)
+        # Populate listbox
+        for pkg in self.packages:
+            label = f"{pkg['name']} v{pkg['version']} \u2014 {pkg['record_count']:,} records"
+            self.pkg_listbox.insert("end", label)
 
-        # Flask Status
-        flask_status_row = tk.Frame(info_frame)
-        flask_status_row.pack(fill="x", pady=3)
-        tk.Label(flask_status_row, text="Flask:", width=10, anchor="w").pack(side="left")
-        self.status_label = tk.Label(flask_status_row, text="● Stopped", anchor="w", fg="red")
-        self.status_label.pack(side="left", fill="x", expand=True)
+        # Pre-select if auto-selected
+        if self.selected_package:
+            for i, pkg in enumerate(self.packages):
+                if pkg['name'] == self.selected_package:
+                    self.pkg_listbox.selection_set(i)
+                    break
 
-        # Flask URL
-        url_row = tk.Frame(info_frame)
-        url_row.pack(fill="x", pady=3)
-        tk.Label(url_row, text="Flask URL:", width=10, anchor="w").pack(side="left")
-        self.url_label = tk.Label(url_row, text=f"http://localhost:{self.port}",
-                                  anchor="w", fg="gray", cursor="hand2")
-        self.url_label.pack(side="left", fill="x", expand=True)
-        self.url_label.bind("<Button-1>", lambda e: self.open_browser())
+        self.pkg_listbox.bind("<<ListboxSelect>>", self._on_package_select)
+
+        # Selected package info area
+        self.pkg_info_label = tk.Label(pkg_frame, text="", anchor="w",
+                                        justify="left", fg="#555",
+                                        font=("Arial", 8), wraplength=300)
+        self.pkg_info_label.pack(fill="x", pady=(5, 0))
+        self._update_pkg_info()
 
         # Right: Control section
         control_frame = tk.LabelFrame(top_frame, text="Controls", padx=10, pady=10)
@@ -179,24 +170,24 @@ class ScodaDesktopGUI:
         server_row = tk.Frame(control_frame)
         server_row.pack(pady=3)
 
-        self.start_btn = tk.Button(server_row, text="▶ Start Flask", width=12,
+        self.start_btn = tk.Button(server_row, text="\u25b6 Start Flask", width=12,
                                    command=self.start_server, bg="#4CAF50", fg="white",
                                    relief="raised", bd=2)
         self.start_btn.pack(side="left", padx=2)
 
-        self.stop_btn = tk.Button(server_row, text="■ Stop Flask", width=12,
+        self.stop_btn = tk.Button(server_row, text="\u25a0 Stop Flask", width=12,
                                   command=self.stop_server, state="disabled",
                                   bg="#f44336", fg="white", relief="raised", bd=2)
         self.stop_btn.pack(side="left", padx=2)
 
         # Open browser button
-        self.browser_btn = tk.Button(control_frame, text="🌐 Open Browser", width=26,
+        self.browser_btn = tk.Button(control_frame, text="Open Browser", width=26,
                                      command=self.open_browser, state="disabled",
                                      relief="raised", bd=2)
         self.browser_btn.pack(pady=3)
 
         # Clear log button
-        self.clear_log_btn = tk.Button(control_frame, text="📄 Clear Log", width=26,
+        self.clear_log_btn = tk.Button(control_frame, text="Clear Log", width=26,
                                        command=self.clear_log,
                                        relief="raised", bd=2)
         self.clear_log_btn.pack(pady=3)
@@ -235,16 +226,62 @@ class ScodaDesktopGUI:
         self.log_text.tag_config("INFO", foreground="blue")
         self.log_text.tag_config("SUCCESS", foreground="green")
 
+    def _on_package_select(self, event):
+        """Handle package selection change in Listbox."""
+        if self.server_running:
+            self._append_log("Stop Flask before switching packages", "WARNING")
+            # Re-select the current package
+            for i, pkg in enumerate(self.packages):
+                if pkg['name'] == self.selected_package:
+                    self.pkg_listbox.selection_clear(0, "end")
+                    self.pkg_listbox.selection_set(i)
+                    break
+            return
+
+        idx = self.pkg_listbox.curselection()
+        if not idx:
+            return
+        self.selected_package = self.packages[idx[0]]['name']
+        self._update_pkg_info()
+        self._update_status()
+        self._append_log(f"Selected: {self.selected_package}")
+
+    def _update_pkg_info(self):
+        """Update the package info label below the Listbox."""
+        if not self.selected_package:
+            self.pkg_info_label.config(text="Select a package to start")
+            return
+
+        pkg = None
+        for p in self.packages:
+            if p['name'] == self.selected_package:
+                pkg = p
+                break
+
+        if pkg:
+            info_parts = [f"{pkg['title']}"]
+            if pkg.get('description'):
+                info_parts.append(pkg['description'])
+            if pkg.get('has_dependencies'):
+                info_parts.append("Has dependencies")
+            self.pkg_info_label.config(text="\n".join(info_parts))
+
     def start_server(self):
-        """Start Flask server."""
+        """Start Flask server for the selected package."""
         if self.server_running:
             return
 
-        if not self.db_exists:
-            self._append_log("ERROR: Canonical database not found!", "ERROR")
-            messagebox.showerror("Database Error",
-                               f"Database file not found:\n{self.canonical_db_path}\n\n"
-                               "Please ensure trilobase.db is available.")
+        if not self.selected_package:
+            self._append_log("ERROR: No package selected!", "ERROR")
+            messagebox.showerror("No Package",
+                               "Please select a package before starting the server.")
+            return
+
+        # Verify the package exists in registry
+        try:
+            self.registry.get_package(self.selected_package)
+        except KeyError:
+            self._append_log(f"ERROR: Package '{self.selected_package}' not found!", "ERROR")
             return
 
         try:
@@ -268,7 +305,10 @@ class ScodaDesktopGUI:
 
     def _start_server_threaded(self):
         """Start Flask server in thread (for frozen/PyInstaller mode)."""
-        self._append_log("Starting Flask server (threaded mode)...", "INFO")
+        self._append_log(f"Starting Flask server (threaded, package={self.selected_package})...", "INFO")
+
+        # Set active package before importing app
+        scoda_package.set_active_package(self.selected_package)
 
         # Import Flask app
         try:
@@ -278,7 +318,6 @@ class ScodaDesktopGUI:
             raise Exception(f"Could not import Flask app: {e}")
 
         # Redirect stdout/stderr to GUI
-        # Both stdout and stderr use auto-detection (tag=None) for proper color coding
         self.original_stdout = sys.stdout
         self.original_stderr = sys.stderr
         sys.stdout = LogRedirector(lambda msg: self.root.after(0, self._append_log, msg))
@@ -298,11 +337,11 @@ class ScodaDesktopGUI:
         if not os.path.exists(app_py):
             raise FileNotFoundError(f"app.py not found at {app_py}")
 
-        self._append_log(f"Starting Flask server (subprocess mode): {python_exe}", "INFO")
+        self._append_log(f"Starting Flask server (subprocess, package={self.selected_package})...", "INFO")
 
-        # Start Flask as subprocess
+        # Start Flask as subprocess with --package arg
         self.server_process = subprocess.Popen(
-            [python_exe, app_py],
+            [python_exe, app_py, '--package', self.selected_package],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             universal_newlines=True,
@@ -319,8 +358,6 @@ class ScodaDesktopGUI:
 
     def _start_mcp_server(self):
         """Start MCP server (SSE mode)."""
-        # Always use subprocess in development mode for better stability
-        # Only use threading in frozen (PyInstaller) mode
         if getattr(sys, 'frozen', False):
             self._start_mcp_threaded()
         else:
@@ -330,17 +367,14 @@ class ScodaDesktopGUI:
         """Start MCP server in thread (for frozen/PyInstaller mode)."""
         self._append_log("Starting MCP server (threaded mode)...", "INFO")
 
-        # Add base path to sys.path for imports
         if self.base_path not in sys.path:
             sys.path.insert(0, self.base_path)
 
-        # Import mcp_server module
         try:
             import mcp_server
         except ImportError as e:
             raise Exception(f"Could not import MCP server: {e}")
 
-        # Start MCP in thread
         def run_mcp():
             try:
                 mcp_server.run_sse(host='localhost', port=self.mcp_port)
@@ -364,7 +398,6 @@ class ScodaDesktopGUI:
 
         self._append_log(f"Starting MCP server (subprocess mode, port {self.mcp_port})...", "INFO")
 
-        # Start MCP as subprocess
         self.mcp_process = subprocess.Popen(
             [python_exe, mcp_py, '--mode', 'sse', '--port', str(self.mcp_port)],
             stdout=subprocess.PIPE,
@@ -374,7 +407,6 @@ class ScodaDesktopGUI:
             cwd=self.base_path
         )
 
-        # Start MCP log reader thread
         self.mcp_log_reader_thread = threading.Thread(
             target=self._read_mcp_logs,
             daemon=True
@@ -387,17 +419,14 @@ class ScodaDesktopGUI:
             try:
                 line = self.mcp_process.stdout.readline()
                 if line:
-                    # Add MCP prefix and update GUI from main thread
                     prefixed_line = f"[MCP] {line.strip()}"
                     self.root.after(0, self._append_log, prefixed_line, "INFO")
                 else:
-                    # EOF or process terminated
                     break
             except Exception as e:
                 self._append_log(f"MCP log reader error: {e}", "ERROR")
                 break
 
-        # Check if process ended with error
         if self.mcp_process:
             returncode = self.mcp_process.poll()
             if returncode is not None and returncode != 0:
@@ -410,10 +439,8 @@ class ScodaDesktopGUI:
             from asgiref.wsgi import WsgiToAsgi
             import uvicorn
 
-            # Convert Flask WSGI app to ASGI
             asgi_app = WsgiToAsgi(self.flask_app)
 
-            # Run with uvicorn (production-ready, no dev server warning)
             uvicorn.run(
                 asgi_app,
                 host='127.0.0.1',
@@ -500,7 +527,6 @@ class ScodaDesktopGUI:
 
         # Thread mode (frozen) - cannot cleanly stop Flask in thread
         elif self.server_thread:
-            # Restore stdout/stderr
             if hasattr(self, 'original_stdout'):
                 sys.stdout = self.original_stdout
                 sys.stderr = self.original_stderr
@@ -515,16 +541,13 @@ class ScodaDesktopGUI:
             try:
                 line = self.server_process.stdout.readline()
                 if line:
-                    # Update GUI from main thread
                     self.root.after(0, self._append_log, line.strip())
                 else:
-                    # EOF or process terminated
                     break
             except Exception as e:
                 self._append_log(f"Log reader error: {e}", "ERROR")
                 break
 
-        # Check if process ended with error
         if self.server_process:
             returncode = self.server_process.poll()
             if returncode is not None and returncode != 0:
@@ -533,7 +556,6 @@ class ScodaDesktopGUI:
 
     def _append_log(self, line, tag=None):
         """Append log line to text widget (called from main thread)."""
-        # Ensure line is string (not bytes)
         if isinstance(line, bytes):
             line = line.decode('utf-8', errors='replace')
 
@@ -560,13 +582,11 @@ class ScodaDesktopGUI:
         # Add timestamp
         timestamp = time.strftime("[%H:%M:%S] ")
 
-        # Insert log with tag
         if tag:
             self.log_text.insert("end", timestamp + line + "\n", tag)
         else:
             self.log_text.insert("end", timestamp + line + "\n")
 
-        # Auto-scroll to bottom
         self.log_text.see("end")
 
         self.log_text.config(state="disabled")
@@ -605,11 +625,9 @@ class ScodaDesktopGUI:
             if not result:
                 return
 
-            # Mark as stopped (don't call stop_server to avoid delays)
             self.server_running = False
             self.mcp_running = False
 
-        # Clean up MCP server process
         if self.mcp_process:
             try:
                 self.mcp_process.terminate()
@@ -620,7 +638,6 @@ class ScodaDesktopGUI:
                 except:
                     pass
 
-        # Clean up Flask server process
         if self.server_process:
             try:
                 self.server_process.terminate()
@@ -637,24 +654,21 @@ class ScodaDesktopGUI:
 
     def _update_status(self):
         """Update UI based on server status."""
-        # Update Flask status
+        # Update Flask status labels (in log area header)
         if self.server_running:
-            self.status_label.config(text="● Running", fg="green")
-            self.url_label.config(fg="blue")
             self.browser_btn.config(state="normal")
-        else:
-            self.status_label.config(text="● Stopped", fg="red")
-            self.url_label.config(fg="gray")
-            self.browser_btn.config(state="disabled")
-
-        # Update Flask buttons
-        if self.server_running:
             self.start_btn.config(state="disabled", relief="sunken")
             self.stop_btn.config(state="normal", relief="raised")
+            # Disable package switching while running
+            self.pkg_listbox.config(state="disabled")
         else:
-            self.start_btn.config(state="normal" if self.db_exists else "disabled",
+            self.browser_btn.config(state="disabled")
+            can_start = self.selected_package is not None
+            self.start_btn.config(state="normal" if can_start else "disabled",
                                  relief="raised")
             self.stop_btn.config(state="disabled", relief="sunken")
+            # Re-enable package switching
+            self.pkg_listbox.config(state="normal")
 
     def run(self):
         """Start GUI main loop."""

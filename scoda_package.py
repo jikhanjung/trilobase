@@ -421,6 +421,18 @@ _overlay_db = None
 _paleocore_db = None
 _scoda_pkg = None  # ScodaPackage instance (if using .scoda)
 _paleocore_pkg = None  # ScodaPackage instance for paleocore (if using .scoda)
+_active_package_name = None  # GUI/CLI selected package (routes get_db through registry)
+
+
+def set_active_package(name):
+    """Set the active package. GUI/CLI calls this so get_db() uses the registry."""
+    global _active_package_name
+    _active_package_name = name
+
+
+def get_active_package_name():
+    """Return the currently active package name (or None)."""
+    return _active_package_name
 
 
 def _resolve_paleocore(base_dir):
@@ -478,7 +490,8 @@ def _resolve_paths():
 
 def _set_paths_for_testing(canonical_path, overlay_path, paleocore_path=None):
     """Override DB paths for testing. Call before any get_db()."""
-    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg, _paleocore_pkg
+    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg, _paleocore_pkg, _active_package_name
+    _active_package_name = None  # tests use direct paths, not registry
     _canonical_db = canonical_path
     _overlay_db = overlay_path
     _paleocore_db = paleocore_path
@@ -488,7 +501,7 @@ def _set_paths_for_testing(canonical_path, overlay_path, paleocore_path=None):
 
 def _reset_paths():
     """Reset resolved paths (for testing teardown)."""
-    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg, _paleocore_pkg
+    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg, _paleocore_pkg, _active_package_name
     if _scoda_pkg:
         _scoda_pkg.close()
     if _paleocore_pkg:
@@ -498,6 +511,7 @@ def _reset_paths():
     _paleocore_db = None
     _scoda_pkg = None
     _paleocore_pkg = None
+    _active_package_name = None
 
 
 def get_canonical_db_path():
@@ -588,10 +602,18 @@ def get_db():
     Same signature as the old app.py/mcp_server.py get_db().
     Returns a sqlite3.Connection with row_factory=sqlite3.Row.
 
+    When _active_package_name is set (by GUI/CLI), the connection is obtained
+    from the PackageRegistry instead of the legacy path resolution.
+
     Attached databases:
       - overlay: user annotations (read/write)
       - pc: paleocore infrastructure data (read-only, optional)
     """
+    # Active package mode (GUI/CLI selected a package)
+    if _active_package_name is not None:
+        return get_registry().get_db(_active_package_name)
+
+    # Legacy mode (direct path resolution)
     _resolve_paths()
     ensure_overlay_db()
 

@@ -16,147 +16,19 @@ let tableViewData = [];
 let tableViewSort = null;
 let tableViewSearchTerm = '';
 
-// Package state
-let currentPackage = null;   // currently open package name
-let apiBase = '';             // '' (legacy) or '/api/pkg/<name>'
-
 // Initialize
 document.addEventListener('DOMContentLoaded', async () => {
     genusModal = new bootstrap.Modal(document.getElementById('genusModal'));
-    await loadPackages();
-});
-
-/**
- * Load available packages and decide: auto-open or show landing page
- */
-async function loadPackages() {
-    try {
-        const resp = await fetch('/api/packages');
-        const packages = await resp.json();
-
-        if (packages.length === 0) {
-            // No packages — fall back to legacy mode
-            await loadManifest();
-            loadTree();
-        } else if (packages.length === 1) {
-            // Single package — open directly
-            await openPackage(packages[0].name);
-        } else {
-            // Multiple packages — show landing page
-            renderLandingPage(packages);
-        }
-    } catch (error) {
-        // Fallback to legacy mode if /api/packages fails
-        await loadManifest();
-        loadTree();
-    }
-}
-
-/**
- * Open a specific package: set apiBase, load manifest, show viewer
- */
-async function openPackage(name) {
-    currentPackage = name;
-    apiBase = `/api/pkg/${name}`;
-
-    // Hide landing, show viewer
-    document.getElementById('landing-page').style.display = 'none';
-    document.getElementById('viewer-container').style.display = '';
-
-    // Update navbar
-    const pkgTitle = document.getElementById('pkg-title');
-    const pkgBack = document.getElementById('pkg-back');
-
-    // Load manifest and build UI
     await loadManifest();
-
-    // Update navbar title from manifest or package name
-    if (manifest && manifest.views) {
-        // Find the first view's description or use package name
-        pkgTitle.textContent = '';  // will be set after tree loads
-    }
-
-    // Show back button only if there might be multiple packages
-    try {
-        const resp = await fetch('/api/packages');
-        const packages = await resp.json();
-        if (packages.length > 1) {
-            pkgBack.style.display = '';
-            // Set navbar title to package name
-            const pkgInfo = packages.find(p => p.name === name);
-            if (pkgInfo) {
-                pkgTitle.textContent = ` \u2014 ${pkgInfo.title || pkgInfo.name}`;
-            }
-        } else {
-            pkgBack.style.display = 'none';
-        }
-    } catch (_) {
-        pkgBack.style.display = 'none';
-    }
-
     loadTree();
-}
-
-/**
- * Render the landing page with package cards
- */
-function renderLandingPage(packages) {
-    document.getElementById('landing-page').style.display = '';
-    document.getElementById('viewer-container').style.display = 'none';
-
-    const grid = document.getElementById('package-grid');
-    let html = '';
-
-    packages.forEach(pkg => {
-        const depBadge = pkg.has_dependencies
-            ? '<span class="badge bg-info ms-2">has deps</span>'
-            : '';
-        html += `
-            <div class="package-card" onclick="openPackage('${pkg.name}')">
-                <div class="package-card-icon">
-                    <i class="bi bi-archive"></i>
-                </div>
-                <h5>${pkg.title || pkg.name}${depBadge}</h5>
-                <p class="text-muted">${pkg.description || ''}</p>
-                <div class="package-card-meta">
-                    <span><i class="bi bi-tag"></i> v${pkg.version}</span>
-                    <span><i class="bi bi-database"></i> ${(pkg.record_count || 0).toLocaleString()} records</span>
-                </div>
-            </div>`;
-    });
-
-    grid.innerHTML = html;
-}
-
-/**
- * Show landing page (back from viewer)
- */
-async function showLandingPage() {
-    currentPackage = null;
-    apiBase = '';
-    manifest = null;
-    currentView = 'taxonomy_tree';
-
-    document.getElementById('pkg-title').textContent = '';
-
-    try {
-        const resp = await fetch('/api/packages');
-        const packages = await resp.json();
-        renderLandingPage(packages);
-    } catch (_) {
-        // If packages API fails, just show empty landing
-        document.getElementById('landing-page').style.display = '';
-        document.getElementById('viewer-container').style.display = 'none';
-    }
-}
+});
 
 /**
  * Load UI manifest from API (graceful degradation if unavailable)
  */
 async function loadManifest() {
     try {
-        const url = apiBase ? `${apiBase}/manifest` : '/api/manifest';
-        const response = await fetch(url);
+        const response = await fetch('/api/manifest');
         if (!response.ok) return;
         const data = await response.json();
         manifest = data.manifest;
@@ -257,7 +129,7 @@ async function renderTableView(viewKey) {
     body.innerHTML = '<div class="loading">Loading...</div>';
 
     try {
-        const queryUrl = apiBase ? `${apiBase}/queries/${view.source_query}/execute` : `/api/queries/${view.source_query}/execute`;
+        const queryUrl = `/api/queries/${view.source_query}/execute`;
         const response = await fetch(queryUrl);
         if (!response.ok) {
             body.innerHTML = '<div class="text-danger">Error loading data</div>';
@@ -404,7 +276,7 @@ async function renderChronostratChart(viewKey) {
     body.innerHTML = '<div class="loading">Loading...</div>';
 
     try {
-        const queryUrl = apiBase ? `${apiBase}/queries/${view.source_query}/execute` : `/api/queries/${view.source_query}/execute`;
+        const queryUrl = `/api/queries/${view.source_query}/execute`;
         const response = await fetch(queryUrl);
         if (!response.ok) {
             body.innerHTML = '<div class="text-danger">Error loading data</div>';
@@ -674,7 +546,7 @@ async function loadTree() {
         let tree;
         const viewDef = manifest && manifest.views && manifest.views['taxonomy_tree'];
         if (viewDef && viewDef.source_query && viewDef.tree_options) {
-            const queryUrl = apiBase ? `${apiBase}/queries/${viewDef.source_query}/execute` : `/api/queries/${viewDef.source_query}/execute`;
+            const queryUrl = `/api/queries/${viewDef.source_query}/execute`;
             const response = await fetch(queryUrl);
             if (!response.ok) throw new Error('Failed to load tree data');
             const data = await response.json();
@@ -833,7 +705,7 @@ async function selectTreeLeaf(leafId, leafName) {
     try {
         let items;
         if (opts.item_query && opts.item_param) {
-            const baseUrl = apiBase ? `${apiBase}/queries/${opts.item_query}/execute` : `/api/queries/${opts.item_query}/execute`;
+            const baseUrl = `/api/queries/${opts.item_query}/execute`;
             const url = `${baseUrl}?${opts.item_param}=${leafId}`;
             const response = await fetch(url);
             if (!response.ok) throw new Error('Failed to load items');
@@ -1086,7 +958,7 @@ async function loadAnnotations(entityType, entityId) {
     if (!listContainer) return;
 
     try {
-        const annUrl = apiBase ? `${apiBase}/annotations/${entityType}/${entityId}` : `/api/annotations/${entityType}/${entityId}`;
+        const annUrl = `/api/annotations/${entityType}/${entityId}`;
         const response = await fetch(annUrl);
         const annotations = await response.json();
 
@@ -1139,7 +1011,7 @@ async function addAnnotation(entityType, entityId) {
     if (!content) return;
 
     try {
-        const postUrl = apiBase ? `${apiBase}/annotations` : '/api/annotations';
+        const postUrl = '/api/annotations';
         const response = await fetch(postUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -1166,7 +1038,7 @@ async function addAnnotation(entityType, entityId) {
  */
 async function deleteAnnotation(annotationId, entityType, entityId) {
     try {
-        const delUrl = apiBase ? `${apiBase}/annotations/${annotationId}` : `/api/annotations/${annotationId}`;
+        const delUrl = `/api/annotations/${annotationId}`;
         const response = await fetch(delUrl, {
             method: 'DELETE'
         });

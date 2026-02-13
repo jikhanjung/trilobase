@@ -507,6 +507,21 @@ def insert_ui_queries(conn):
          'JOIN ics_chronostrat ic ON tim.ics_id = ic.id '
          'WHERE tim.temporal_code = :temporal_code',
          json.dumps(['temporal_code']), now),
+        (9, 'country_detail', 'Country detail with regions',
+         'SELECT c.id, c.name, c.code, '
+         '  (SELECT COUNT(*) FROM geographic_regions WHERE parent_id = c.id AND level = \'region\') as region_count '
+         'FROM countries c WHERE c.id = :id',
+         json.dumps(['id']), now),
+        (10, 'formation_detail', 'Formation detail',
+         'SELECT id, name, normalized_name, formation_type, country, region, period '
+         'FROM formations WHERE id = :id',
+         json.dumps(['id']), now),
+        (11, 'chronostrat_detail', 'Chronostratigraphy unit detail',
+         'SELECT ic.id, ic.name, ic.rank, ic.parent_id, ic.start_mya, ic.end_mya, '
+         '  ic.color, p.name as parent_name, p.rank as parent_rank '
+         'FROM ics_chronostrat ic LEFT JOIN ics_chronostrat p ON ic.parent_id = p.id '
+         'WHERE ic.id = :id',
+         json.dumps(['id']), now),
     ]
     for q in queries:
         conn.execute(
@@ -536,7 +551,8 @@ def insert_ui_manifest(conn):
                      "sortable": True, "searchable": False}
                 ],
                 "default_sort": {"key": "name", "direction": "asc"},
-                "searchable": True
+                "searchable": True,
+                "on_row_click": {"detail_view": "country_detail", "id_key": "id"}
             },
             "formations_table": {
                 "type": "table",
@@ -555,7 +571,8 @@ def insert_ui_manifest(conn):
                      "sortable": True, "searchable": True}
                 ],
                 "default_sort": {"key": "name", "direction": "asc"},
-                "searchable": True
+                "searchable": True,
+                "on_row_click": {"detail_view": "formation_detail", "id_key": "id"}
             },
             "chronostratigraphy_chart": {
                 "type": "chart",
@@ -576,7 +593,10 @@ def insert_ui_manifest(conn):
                      "sortable": False, "type": "color"}
                 ],
                 "default_sort": {"key": "display_order", "direction": "asc"},
-                "searchable": True
+                "searchable": True,
+                "chart_options": {
+                    "cell_click": {"detail_view": "chronostrat_detail", "id_key": "id"}
+                }
             },
             "temporal_ranges_table": {
                 "type": "table",
@@ -600,6 +620,56 @@ def insert_ui_manifest(conn):
                 ],
                 "default_sort": {"key": "start_mya", "direction": "desc"},
                 "searchable": True
+            },
+            "country_detail": {
+                "type": "detail",
+                "title": "Country Detail",
+                "source": "/api/detail/country_detail?id={id}",
+                "sections": [
+                    {
+                        "type": "field_grid",
+                        "fields": [
+                            {"key": "name", "label": "Country"},
+                            {"key": "code", "label": "Code"},
+                            {"key": "region_count", "label": "Regions"}
+                        ]
+                    }
+                ]
+            },
+            "formation_detail": {
+                "type": "detail",
+                "title": "Formation Detail",
+                "source": "/api/detail/formation_detail?id={id}",
+                "sections": [
+                    {
+                        "type": "field_grid",
+                        "fields": [
+                            {"key": "name", "label": "Formation"},
+                            {"key": "formation_type", "label": "Type"},
+                            {"key": "country", "label": "Country"},
+                            {"key": "region", "label": "Region"},
+                            {"key": "period", "label": "Period"}
+                        ]
+                    }
+                ]
+            },
+            "chronostrat_detail": {
+                "type": "detail",
+                "title": "Chronostratigraphy Detail",
+                "source": "/api/detail/chronostrat_detail?id={id}",
+                "sections": [
+                    {
+                        "type": "field_grid",
+                        "fields": [
+                            {"key": "name", "label": "Name"},
+                            {"key": "rank", "label": "Rank"},
+                            {"key": "start_mya", "label": "Start (Ma)"},
+                            {"key": "end_mya", "label": "End (Ma)"},
+                            {"key": "color", "label": "Color", "format": "color_chip"},
+                            {"key": "parent_name", "label": "Parent"}
+                        ]
+                    }
+                ]
             }
         }
     }

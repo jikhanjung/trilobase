@@ -17,9 +17,17 @@ def open_browser():
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--package', type=str, default=None,
+                        help='Active package name (e.g., trilobase, paleocore)')
+    args = parser.parse_args()
+
     print("=" * 60)
-    print("Trilobase SCODA Viewer")
+    print("SCODA Desktop Viewer")
     print("=" * 60)
+    if args.package:
+        print(f"Package: {args.package}")
     print("Server running at: http://localhost:8080")
     print("Press Ctrl+C to stop the server")
     print("=" * 60)
@@ -29,17 +37,17 @@ def main():
     Timer(1.5, open_browser).start()
 
     # Import and run Flask app
-    # Use relative import to work when frozen by PyInstaller
     try:
-        # Change to script directory to find app.py
         if getattr(sys, 'frozen', False):
-            # Running as PyInstaller bundle
             base_path = sys._MEIPASS
         else:
-            # Running as normal Python script
             base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
         os.chdir(base_path)
+
+        if args.package:
+            from scoda_package import set_active_package
+            set_active_package(args.package)
 
         from app import app
         app.run(debug=False, host='127.0.0.1', port=8080, use_reloader=False)

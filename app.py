@@ -7,7 +7,7 @@ from flask import Flask, render_template, jsonify, request
 import json
 import sqlite3
 
-from scoda_package import get_db, get_paleocore_db_path, get_registry
+from scoda_package import get_db, get_paleocore_db_path
 
 app = Flask(__name__)
 
@@ -208,130 +208,27 @@ def _delete_annotation(conn, annotation_id):
 
 
 # ---------------------------------------------------------------------------
-# Packages API
+# Generic detail endpoint (named query → first row as flat JSON)
 # ---------------------------------------------------------------------------
 
-@app.route('/api/packages')
-def api_packages():
-    """List all discovered .scoda packages."""
-    registry = get_registry()
-    return jsonify(registry.list_packages())
-
-
-# ---------------------------------------------------------------------------
-# Namespaced package routes: /api/pkg/<name>/...
-# ---------------------------------------------------------------------------
-
-def _get_pkg_conn(pkg_name):
-    """Get DB connection for a named package, or None."""
-    registry = get_registry()
-    try:
-        return registry.get_db(pkg_name)
-    except KeyError:
-        return None
-
-
-@app.route('/api/pkg/<pkg_name>/manifest')
-def api_pkg_manifest(pkg_name):
-    conn = _get_pkg_conn(pkg_name)
-    if conn is None:
-        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
-    result = _fetch_manifest(conn)
-    conn.close()
-    return jsonify(result) if result else (jsonify({'error': 'No manifest found'}), 404)
-
-
-@app.route('/api/pkg/<pkg_name>/metadata')
-def api_pkg_metadata(pkg_name):
-    conn = _get_pkg_conn(pkg_name)
-    if conn is None:
-        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
-    result = _fetch_metadata(conn)
-    conn.close()
-    return jsonify(result)
-
-
-@app.route('/api/pkg/<pkg_name>/provenance')
-def api_pkg_provenance(pkg_name):
-    conn = _get_pkg_conn(pkg_name)
-    if conn is None:
-        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
-    result = _fetch_provenance(conn)
-    conn.close()
-    return jsonify(result)
-
-
-@app.route('/api/pkg/<pkg_name>/display-intent')
-def api_pkg_display_intent(pkg_name):
-    conn = _get_pkg_conn(pkg_name)
-    if conn is None:
-        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
-    result = _fetch_display_intent(conn)
-    conn.close()
-    return jsonify(result)
-
-
-@app.route('/api/pkg/<pkg_name>/queries')
-def api_pkg_queries(pkg_name):
-    conn = _get_pkg_conn(pkg_name)
-    if conn is None:
-        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
-    result = _fetch_queries(conn)
-    conn.close()
-    return jsonify(result)
-
-
-@app.route('/api/pkg/<pkg_name>/queries/<query_name>/execute')
-def api_pkg_query_execute(pkg_name, query_name):
-    conn = _get_pkg_conn(pkg_name)
-    if conn is None:
-        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
-    params = {key: value for key, value in request.args.items()}
+@app.route('/api/detail/<query_name>')
+def api_generic_detail(query_name):
+    """Execute a named query and return the first row as flat JSON."""
+    conn = get_db()
+    params = {k: v for k, v in request.args.items()}
     result = _execute_query(conn, query_name, params)
     conn.close()
     if result is None:
         return jsonify({'error': f'Query not found: {query_name}'}), 404
     if 'error' in result:
         return jsonify(result), 400
-    return jsonify(result)
-
-
-@app.route('/api/pkg/<pkg_name>/annotations/<entity_type>/<int:entity_id>')
-def api_pkg_get_annotations(pkg_name, entity_type, entity_id):
-    conn = _get_pkg_conn(pkg_name)
-    if conn is None:
-        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
-    result = _fetch_annotations(conn, entity_type, entity_id)
-    conn.close()
-    return jsonify(result)
-
-
-@app.route('/api/pkg/<pkg_name>/annotations', methods=['POST'])
-def api_pkg_create_annotation(pkg_name):
-    conn = _get_pkg_conn(pkg_name)
-    if conn is None:
-        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
-    data = request.get_json()
-    if not data:
-        conn.close()
-        return jsonify({'error': 'JSON body required'}), 400
-    result, status = _create_annotation(conn, data)
-    conn.close()
-    return jsonify(result), status
-
-
-@app.route('/api/pkg/<pkg_name>/annotations/<int:annotation_id>', methods=['DELETE'])
-def api_pkg_delete_annotation(pkg_name, annotation_id):
-    conn = _get_pkg_conn(pkg_name)
-    if conn is None:
-        return jsonify({'error': f'Package not found: {pkg_name}'}), 404
-    result, status = _delete_annotation(conn, annotation_id)
-    conn.close()
-    return jsonify(result), status
+    if result['row_count'] == 0:
+        return jsonify({'error': 'Not found'}), 404
+    return jsonify(result['rows'][0])
 
 
 # ---------------------------------------------------------------------------
-# Legacy routes (unchanged API surface, refactored internals)
+# Legacy routes (unchanged API surface)
 # ---------------------------------------------------------------------------
 
 def build_tree(parent_id=None):
@@ -1157,4 +1054,12 @@ def api_delete_annotation(annotation_id):
 
 
 if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--package', type=str, default=None,
+                        help='Active package name (e.g., trilobase, paleocore)')
+    args = parser.parse_args()
+    if args.package:
+        from scoda_package import set_active_package
+        set_active_package(args.package)
     app.run(debug=True, host='0.0.0.0', port=8080)
