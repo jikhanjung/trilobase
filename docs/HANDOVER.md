@@ -347,6 +347,12 @@
   - `COUNT(DISTINCT)` JOIN으로 실시간 계산하도록 대체
   - devlog: `devlog/20260213_047_fix_taxa_count_column.md`
 
+- **2026-02-13 Bugfix**: ui_queries의 taxa_count 컬럼 참조 오류
+  - Countries/Formations 탭 "Error loading data" — Flask 로그 없음 (400 JSON 응답이라 로그 미출력)
+  - `ui_queries` 테이블의 `countries_list`, `formations_list` SQL이 제거된 `taxa_count` 컬럼 참조
+  - `JOIN + COUNT(DISTINCT)`로 실시간 계산하도록 SQL 업데이트
+  - devlog: `devlog/20260213_048_fix_named_query_taxa_count.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
