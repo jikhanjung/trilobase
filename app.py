@@ -40,11 +40,22 @@ def _fetch_manifest(conn):
     row = cursor.fetchone()
     if not row:
         return None
+
+    # Include package info from artifact_metadata
+    cursor.execute("SELECT key, value FROM artifact_metadata")
+    meta = {r['key']: r['value'] for r in cursor.fetchall()}
+
     return {
         'name': row['name'],
         'description': row['description'],
         'manifest': json.loads(row['manifest_json']),
-        'created_at': row['created_at']
+        'created_at': row['created_at'],
+        'package': {
+            'name': meta.get('name', ''),
+            'artifact_id': meta.get('artifact_id', ''),
+            'version': meta.get('version', ''),
+            'description': meta.get('description', ''),
+        }
     }
 
 

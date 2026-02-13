@@ -116,9 +116,16 @@ class ScodaDesktopGUI:
         header_frame.pack(fill="x")
         header_frame.pack_propagate(False)
 
-        header = tk.Label(header_frame, text="SCODA Desktop",
+        header_inner = tk.Frame(header_frame, bg="#2196F3")
+        header_inner.pack(pady=12)
+
+        header = tk.Label(header_inner, text="SCODA Desktop",
                          font=("Arial", 14, "bold"), bg="#2196F3", fg="white")
-        header.pack(pady=12)
+        header.pack(side="left")
+
+        self.header_pkg_label = tk.Label(header_inner, text="",
+                                          font=("Arial", 10), bg="#2196F3", fg="#BBDEFB")
+        self.header_pkg_label.pack(side="left", padx=(10, 0))
 
         # Top section (Packages + Controls side by side)
         top_frame = tk.Frame(self.root)
@@ -245,6 +252,15 @@ class ScodaDesktopGUI:
         self._update_pkg_info()
         self._update_status()
         self._append_log(f"Selected: {self.selected_package}")
+
+    def _get_selected_pkg(self):
+        """Return the selected package dict or None."""
+        if not self.selected_package:
+            return None
+        for p in self.packages:
+            if p['name'] == self.selected_package:
+                return p
+        return None
 
     def _update_pkg_info(self):
         """Update the package info label below the Listbox."""
@@ -654,13 +670,18 @@ class ScodaDesktopGUI:
 
     def _update_status(self):
         """Update UI based on server status."""
-        # Update Flask status labels (in log area header)
         if self.server_running:
             self.browser_btn.config(state="normal")
             self.start_btn.config(state="disabled", relief="sunken")
             self.stop_btn.config(state="normal", relief="raised")
             # Disable package switching while running
             self.pkg_listbox.config(state="disabled")
+            # Show running package in header
+            pkg = self._get_selected_pkg()
+            if pkg:
+                self.header_pkg_label.config(
+                    text=f"\u25b6 {pkg['name']} v{pkg['version']}",
+                    fg="white")
         else:
             self.browser_btn.config(state="disabled")
             can_start = self.selected_package is not None
@@ -669,6 +690,8 @@ class ScodaDesktopGUI:
             self.stop_btn.config(state="disabled", relief="sunken")
             # Re-enable package switching
             self.pkg_listbox.config(state="normal")
+            # Clear header package indicator
+            self.header_pkg_label.config(text="", fg="#BBDEFB")
 
     def run(self):
         """Start GUI main loop."""

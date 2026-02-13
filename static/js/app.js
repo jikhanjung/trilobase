@@ -48,6 +48,12 @@ async function loadManifest() {
         const data = await response.json();
         manifest = data.manifest;
         buildViewTabs();
+
+        // Show package name in navbar
+        if (data.package && data.package.name) {
+            const el = document.getElementById('navbar-pkg-name');
+            if (el) el.textContent = `${data.package.name} v${data.package.version}`;
+        }
     } catch (error) {
         // Graceful degradation: manifest unavailable, use existing UI
     }
