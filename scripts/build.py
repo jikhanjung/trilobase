@@ -81,7 +81,18 @@ def create_scoda_package():
         # Add parent dir for import
         sys.path.insert(0, str(Path(__file__).parent.parent))
         from scoda_package import ScodaPackage
-        ScodaPackage.create(str(db_path), str(scoda_dest))
+        metadata = {
+            "dependencies": [
+                {
+                    "name": "paleocore",
+                    "alias": "pc",
+                    "version": "0.3.0",
+                    "file": "paleocore.scoda",
+                    "description": "Shared paleontological infrastructure (geography, stratigraphy)"
+                }
+            ]
+        }
+        ScodaPackage.create(str(db_path), str(scoda_dest), metadata=metadata)
         size_mb = scoda_dest.stat().st_size / (1024 * 1024)
         print(f"✓ .scoda package created: {scoda_dest} ({size_mb:.1f} MB)")
         return True
