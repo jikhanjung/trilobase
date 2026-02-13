@@ -389,6 +389,24 @@
   - 테스트: 202개 (기존 194 + 신규 8)
   - devlog: `devlog/20260213_051_phase41_manifest_tree_chart.md`
 
+- **Phase 42 완료**: Generic SCODA Package Viewer with Namespaced API
+  - namespaced `/api/pkg/<name>/...` 엔드포인트 10개 추가
+  - SPA landing page: 패키지 선택 UI
+  - PackageRegistry 기반 멀티 패키지 지원
+  - (Phase 43에서 대체됨)
+
+- **Phase 43 완료**: Docker Desktop 스타일 컨트롤 패널 + 단일 패키지 서빙
+  - 패키지 선택 책임: SPA → GUI(Tk) Listbox로 이동
+  - Flask는 항상 하나의 패키지만 서빙 (`--package` CLI / `set_active_package()`)
+  - `scoda_package.py`: `set_active_package()`, `get_db()` registry 경유
+  - `app.py`: namespaced routes 제거, `/api/detail/<query>` 추가, `--package` CLI
+  - `gui.py`: Docker Desktop 스타일 패키지 선택 Listbox, 실행 중 전환 차단
+  - Frontend: SPA landing page/apiBase 제거, 직접 `/api/` URL 사용
+  - `scripts/create_paleocore.py`: detail query 3개 + detail view 3개 + on_row_click
+  - `scripts/serve.py`: `--package` CLI 지원
+  - 테스트: 217개 (기존 202 - 13 + 7 + Phase 42 신규 21)
+  - devlog: `devlog/20260213_052_phase43_control_panel_single_package.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -539,10 +557,10 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `test_app.py` | 185개 | ✅ 통과 |
+| `test_app.py` | 200개 | ✅ 통과 |
 | `test_mcp_basic.py` | 1개 | ✅ 통과 |
 | `test_mcp.py` | 16개 | ✅ 통과 |
-| **합계** | **202개** | **✅ 전부 통과** |
+| **합계** | **217개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -561,7 +579,8 @@ PaleoCore 분리 및 .scoda 패키징 완료 (Phase 31-37).
 GUI "SCODA Desktop" 리브랜딩 완료 (Phase 38).
 CORS + 예제 SPA + EXE 리네이밍 완료 (Phase 40).
 Manifest-driven tree/chart 렌더링 완료 (Phase 41).
-- PaleoCore 독립 뷰어 (paleocore.scoda를 단독으로 열어서 탐색)
+Docker Desktop 스타일 GUI + 단일 패키지 서빙 완료 (Phase 43).
+- PaleoCore 독립 뷰어: `python app.py --package paleocore` 또는 GUI에서 선택
 
 ## 미해결 항목
 
