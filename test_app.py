@@ -304,6 +304,19 @@ def test_db(tmp_path):
                 '{"genus_id": "integer"}', '2026-02-07T00:00:00')
     """)
 
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('countries_list', 'All countries with taxa counts',
+                'SELECT c.id, c.name, c.cow_ccode as code, COUNT(DISTINCT gl.genus_id) as taxa_count FROM pc.geographic_regions c LEFT JOIN genus_locations gl ON gl.country_id = c.id WHERE c.parent_id IS NULL GROUP BY c.id ORDER BY c.name',
+                NULL, '2026-02-12T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('formations_list', 'All formations with taxa counts',
+                'SELECT f.id, f.name, f.formation_type, f.period, COUNT(DISTINCT gf.genus_id) as taxa_count FROM pc.formations f LEFT JOIN genus_formations gf ON gf.formation_id = f.id GROUP BY f.id ORDER BY f.name',
+                NULL, '2026-02-12T00:00:00')
+    """)
+
     # ICS chronostrat list query (uses pc.* prefix for PaleoCore table)
     cursor.execute("""
         INSERT INTO ui_queries (name, description, sql, params_json, created_at)
@@ -335,7 +348,9 @@ def test_db(tmp_path):
                 "options": {
                     "root_rank": "Class",
                     "leaf_rank": "Family",
-                    "show_genera_count": True
+                    "show_genera_count": True,
+                    "node_info_detail": "rank_detail",
+                    "genera_row_click": {"detail_view": "genus_detail", "id_key": "id"}
                 }
             },
             "genera_table": {
@@ -352,21 +367,8 @@ def test_db(tmp_path):
                     {"key": "is_valid", "label": "Valid", "sortable": True, "searchable": False, "type": "boolean"}
                 ],
                 "default_sort": {"key": "name", "direction": "asc"},
-                "searchable": True
-            },
-            "genus_detail": {
-                "type": "detail",
-                "title": "Genus Detail",
-                "description": "Detailed information for a single genus",
-                "source_query": "genus_detail",
-                "sections": [
-                    {
-                        "title": "Basic Information",
-                        "fields": [
-                            {"key": "name", "label": "Name"}
-                        ]
-                    }
-                ]
+                "searchable": True,
+                "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
             },
             "references_table": {
                 "type": "table",
@@ -380,7 +382,34 @@ def test_db(tmp_path):
                     {"key": "title", "label": "Title", "sortable": False, "searchable": True}
                 ],
                 "default_sort": {"key": "authors", "direction": "asc"},
-                "searchable": True
+                "searchable": True,
+                "on_row_click": {"detail_view": "bibliography_detail", "id_key": "id"}
+            },
+            "formations_table": {
+                "type": "table",
+                "title": "Formations",
+                "description": "Geological formations",
+                "source_query": "formations_list",
+                "icon": "bi-layers",
+                "columns": [
+                    {"key": "name", "label": "Formation", "sortable": True, "searchable": True}
+                ],
+                "default_sort": {"key": "name", "direction": "asc"},
+                "searchable": True,
+                "on_row_click": {"detail_view": "formation_detail", "id_key": "id"}
+            },
+            "countries_table": {
+                "type": "table",
+                "title": "Countries",
+                "description": "Countries with trilobite occurrences",
+                "source_query": "countries_list",
+                "icon": "bi-globe",
+                "columns": [
+                    {"key": "name", "label": "Country", "sortable": True, "searchable": True}
+                ],
+                "default_sort": {"key": "name", "direction": "asc"},
+                "searchable": True,
+                "on_row_click": {"detail_view": "country_detail", "id_key": "id"}
             },
             "chronostratigraphy_table": {
                 "type": "chart",
@@ -396,7 +425,104 @@ def test_db(tmp_path):
                     {"key": "color", "label": "Color", "sortable": False, "type": "color"}
                 ],
                 "default_sort": {"key": "display_order", "direction": "asc"},
-                "searchable": True
+                "searchable": True,
+                "chart_options": {
+                    "cell_click": {"detail_view": "chronostrat_detail", "id_key": "id"}
+                }
+            },
+            "formation_detail": {
+                "type": "detail",
+                "title": "Formation Detail",
+                "source": "/api/formation/{id}",
+                "icon": "bi-layers",
+                "title_template": {"format": "{icon} {name}", "icon": "bi-layers"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [{"key": "name", "label": "Name"}]},
+                    {"title": "Genera ({count})", "type": "linked_table",
+                     "data_key": "genera",
+                     "columns": [{"key": "name", "label": "Genus", "italic": True}],
+                     "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}}
+                ]
+            },
+            "country_detail": {
+                "type": "detail",
+                "title": "Country Detail",
+                "source": "/api/country/{id}",
+                "icon": "bi-geo-alt",
+                "title_template": {"format": "{icon} {name}", "icon": "bi-geo-alt"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [{"key": "name", "label": "Name"}]}
+                ]
+            },
+            "region_detail": {
+                "type": "detail",
+                "title": "Region Detail",
+                "source": "/api/region/{id}",
+                "icon": "bi-geo-alt",
+                "title_template": {"format": "{icon} {name}", "icon": "bi-geo-alt"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [{"key": "name", "label": "Name"}]}
+                ]
+            },
+            "bibliography_detail": {
+                "type": "detail",
+                "title": "Bibliography Detail",
+                "source": "/api/bibliography/{id}",
+                "icon": "bi-book",
+                "title_template": {"format": "{icon} {authors}, {year}", "icon": "bi-book"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [{"key": "authors", "label": "Authors"}]},
+                    {"title": "Original Entry", "type": "raw_text",
+                     "data_key": "raw_entry", "condition": "raw_entry"}
+                ]
+            },
+            "chronostrat_detail": {
+                "type": "detail",
+                "title": "Chronostratigraphy Detail",
+                "source": "/api/chronostrat/{id}",
+                "icon": "bi-clock-history",
+                "title_template": {"format": "{icon} {name}", "icon": "bi-clock-history"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [{"key": "name", "label": "Name"}]}
+                ]
+            },
+            "genus_detail": {
+                "type": "detail",
+                "title": "Genus Detail",
+                "source": "/api/genus/{id}",
+                "title_template": {"format": "<i>{name}</i> {author}, {year}"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [
+                         {"key": "name", "label": "Name", "format": "italic"},
+                         {"key": "hierarchy", "label": "Classification", "format": "hierarchy"},
+                         {"key": "temporal_code", "label": "Temporal Range", "format": "temporal_range"}
+                     ]},
+                    {"title": "Type Species", "type": "field_grid", "condition": "type_species",
+                     "fields": [{"key": "type_species", "label": "Species", "format": "italic"}]},
+                    {"title": "Geographic Information", "type": "genus_geography"},
+                    {"title": "Synonymy", "type": "synonym_list", "data_key": "synonyms", "condition": "synonyms"},
+                    {"title": "Original Entry", "type": "raw_text", "data_key": "raw_entry", "condition": "raw_entry"},
+                    {"title": "My Notes", "type": "annotations", "entity_type": "genus"}
+                ]
+            },
+            "rank_detail": {
+                "type": "detail",
+                "title": "Rank Detail",
+                "source": "/api/rank/{id}",
+                "title_template": {"format": "<span class=\"badge bg-secondary me-2\">{rank}</span> {name}"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [{"key": "name", "label": "Name"}, {"key": "rank", "label": "Rank"}]},
+                    {"title": "Statistics", "type": "rank_statistics"},
+                    {"title": "Children", "type": "rank_children", "data_key": "children", "condition": "children"},
+                    {"title": "My Notes", "type": "annotations", "entity_type_from": "rank"}
+                ]
             }
         }
     }
@@ -1018,7 +1144,7 @@ class TestApiQueries:
         response = client.get('/api/queries')
         data = json.loads(response.data)
         assert isinstance(data, list)
-        assert len(data) == 6  # genera_list, family_genera, taxonomy_tree, bibliography_list, genus_detail, ics_chronostrat_list
+        assert len(data) == 8  # genera_list, family_genera, taxonomy_tree, bibliography_list, genus_detail, ics_chronostrat_list, countries_list, formations_list
 
     def test_queries_record_structure(self, client):
         response = client.get('/api/queries')
@@ -1133,10 +1259,10 @@ class TestApiManifest:
         assert isinstance(data['manifest']['views'], dict)
 
     def test_manifest_view_count(self, client):
-        """Test manifest should have 5 views."""
+        """Test manifest should have 13 views (6 tab + 7 detail)."""
         response = client.get('/api/manifest')
         data = json.loads(response.data)
-        assert len(data['manifest']['views']) == 5
+        assert len(data['manifest']['views']) == 13
 
     def test_manifest_tree_view(self, client):
         response = client.get('/api/manifest')
@@ -1199,6 +1325,122 @@ class TestApiManifest:
         expected_keys = ['name', 'description', 'manifest', 'created_at']
         for key in expected_keys:
             assert key in data, f"Missing key: {key}"
+
+
+# --- Declarative Manifest Detail Views (Phase 39) ---
+
+class TestManifestDetailSchema:
+    """Tests for manifest detail view schema (Phase 39)."""
+
+    def _get_manifest(self, client):
+        response = client.get('/api/manifest')
+        return json.loads(response.data)['manifest']
+
+    def _detail_views(self, client):
+        m = self._get_manifest(client)
+        return {k: v for k, v in m['views'].items() if v['type'] == 'detail'}
+
+    def _table_views(self, client):
+        m = self._get_manifest(client)
+        return {k: v for k, v in m['views'].items() if v['type'] == 'table'}
+
+    def test_detail_view_count(self, client):
+        """Should have 7 detail views."""
+        assert len(self._detail_views(client)) == 7
+
+    def test_detail_views_have_source(self, client):
+        """All detail views should have source with {id} placeholder."""
+        for key, view in self._detail_views(client).items():
+            assert 'source' in view, f"{key} missing source"
+            assert '{id}' in view['source'], f"{key} source missing {{id}}"
+
+    def test_detail_views_have_title_template(self, client):
+        """All detail views should have title_template."""
+        for key, view in self._detail_views(client).items():
+            assert 'title_template' in view, f"{key} missing title_template"
+            assert 'format' in view['title_template'], f"{key} title_template missing format"
+
+    def test_detail_views_have_sections(self, client):
+        """All detail views should have non-empty sections."""
+        for key, view in self._detail_views(client).items():
+            assert 'sections' in view, f"{key} missing sections"
+            assert len(view['sections']) > 0, f"{key} has empty sections"
+
+    def test_detail_sections_have_type(self, client):
+        """Every section should have a type field."""
+        for key, view in self._detail_views(client).items():
+            for i, section in enumerate(view['sections']):
+                assert 'type' in section, f"{key} section[{i}] missing type"
+
+    def test_field_grid_sections_have_fields(self, client):
+        """field_grid sections should have fields array."""
+        for key, view in self._detail_views(client).items():
+            for section in view['sections']:
+                if section['type'] == 'field_grid':
+                    assert 'fields' in section, f"{key} field_grid missing fields"
+                    assert len(section['fields']) > 0
+
+    def test_linked_table_sections_have_columns(self, client):
+        """linked_table sections should have columns and data_key."""
+        for key, view in self._detail_views(client).items():
+            for section in view['sections']:
+                if section['type'] == 'linked_table':
+                    assert 'columns' in section, f"{key} linked_table missing columns"
+                    assert 'data_key' in section, f"{key} linked_table missing data_key"
+
+    def test_table_views_have_on_row_click(self, client):
+        """All table views should have on_row_click."""
+        for key, view in self._table_views(client).items():
+            assert 'on_row_click' in view, f"{key} missing on_row_click"
+            rc = view['on_row_click']
+            assert 'detail_view' in rc, f"{key} on_row_click missing detail_view"
+            assert 'id_key' in rc, f"{key} on_row_click missing id_key"
+
+    def test_on_row_click_references_existing_detail(self, client):
+        """on_row_click detail_view should reference an existing view."""
+        m = self._get_manifest(client)
+        for key, view in self._table_views(client).items():
+            target = view['on_row_click']['detail_view']
+            assert target in m['views'], f"{key} references non-existent view {target}"
+
+    def test_genus_detail_has_all_section_types(self, client):
+        """genus_detail should cover multiple section types."""
+        m = self._get_manifest(client)
+        genus = m['views']['genus_detail']
+        types = {s['type'] for s in genus['sections']}
+        assert 'field_grid' in types
+        assert 'genus_geography' in types
+        assert 'annotations' in types
+
+    def test_rank_detail_has_rank_children(self, client):
+        """rank_detail should have rank_children section."""
+        m = self._get_manifest(client)
+        rank = m['views']['rank_detail']
+        types = {s['type'] for s in rank['sections']}
+        assert 'rank_children' in types
+        assert 'rank_statistics' in types
+
+    def test_chronostrat_detail_has_tagged_list(self, client):
+        """chronostrat_detail should have tagged_list for mapped codes."""
+        m = self._get_manifest(client)
+        chrono = m['views'].get('chronostrat_detail')
+        if chrono:
+            types = {s['type'] for s in chrono['sections']}
+            assert 'tagged_list' in types or 'field_grid' in types
+
+    def test_bibliography_detail_has_raw_text(self, client):
+        """bibliography_detail should have raw_text section."""
+        m = self._get_manifest(client)
+        bib = m['views']['bibliography_detail']
+        types = {s['type'] for s in bib['sections']}
+        assert 'raw_text' in types
+
+    def test_chart_view_has_chart_options(self, client):
+        """chronostratigraphy_table should have chart_options."""
+        m = self._get_manifest(client)
+        chrono = m['views']['chronostratigraphy_table']
+        assert 'chart_options' in chrono
+        assert 'cell_click' in chrono['chart_options']
 
 
 # --- Release Mechanism (Phase 16) ---

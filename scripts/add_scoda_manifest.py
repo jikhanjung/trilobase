@@ -1,9 +1,14 @@
 """
-Phase 15: Add SCODA UI Manifest table
+Phase 15/39: SCODA UI Manifest table
 
-Creates:
+Creates/updates:
   - ui_manifest: Declarative view definitions as JSON
-    Defines view structure (columns, sort, search) for SCODA viewers
+    Defines view structure (columns, sort, search, detail views) for SCODA viewers
+
+Phase 39 additions:
+  - Detail view definitions for all 7 entity types
+  - on_row_click for table views (manifest-driven navigation)
+  - chronostratigraphy_table (was missing from script since Phase 30)
 """
 
 import sqlite3
@@ -34,13 +39,15 @@ def create_table(conn):
 
 
 def insert_manifest(conn):
-    """Insert default manifest with 6 view definitions."""
+    """Insert default manifest with 14 view definitions (7 tab + 7 detail)."""
     cursor = conn.cursor()
     now = datetime.now().isoformat()
 
     manifest = {
         "default_view": "taxonomy_tree",
         "views": {
+            # ── Tab Views (tree, table, chart) ──────────────────────
+
             "taxonomy_tree": {
                 "type": "tree",
                 "title": "Taxonomy Tree",
@@ -50,7 +57,9 @@ def insert_manifest(conn):
                 "options": {
                     "root_rank": "Class",
                     "leaf_rank": "Family",
-                    "show_genera_count": True
+                    "show_genera_count": True,
+                    "node_info_detail": "rank_detail",
+                    "genera_row_click": {"detail_view": "genus_detail", "id_key": "id"}
                 }
             },
             "genera_table": {
@@ -68,41 +77,8 @@ def insert_manifest(conn):
                     {"key": "is_valid", "label": "Valid", "sortable": True, "searchable": False, "type": "boolean"}
                 ],
                 "default_sort": {"key": "name", "direction": "asc"},
-                "searchable": True
-            },
-            "genus_detail": {
-                "type": "detail",
-                "title": "Genus Detail",
-                "description": "Detailed information for a single genus",
-                "source_query": "genus_detail",
-                "sections": [
-                    {
-                        "title": "Basic Information",
-                        "fields": [
-                            {"key": "name", "label": "Name", "italic": True},
-                            {"key": "author", "label": "Author"},
-                            {"key": "year", "label": "Year"},
-                            {"key": "family_name", "label": "Family"},
-                            {"key": "is_valid", "label": "Status", "type": "boolean", "true_label": "Valid", "false_label": "Invalid"},
-                            {"key": "temporal_code", "label": "Temporal Range"}
-                        ]
-                    },
-                    {
-                        "title": "Type Species",
-                        "fields": [
-                            {"key": "type_species", "label": "Species", "italic": True},
-                            {"key": "type_species_author", "label": "Author"}
-                        ]
-                    },
-                    {
-                        "title": "Geography",
-                        "fields": [
-                            {"key": "formation", "label": "Formation"},
-                            {"key": "location", "label": "Location"}
-                        ],
-                        "related_queries": ["genus_formations", "genus_locations"]
-                    }
-                ]
+                "searchable": True,
+                "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
             },
             "references_table": {
                 "type": "table",
@@ -120,7 +96,8 @@ def insert_manifest(conn):
                     {"key": "reference_type", "label": "Type", "sortable": True, "searchable": False}
                 ],
                 "default_sort": {"key": "authors", "direction": "asc"},
-                "searchable": True
+                "searchable": True,
+                "on_row_click": {"detail_view": "bibliography_detail", "id_key": "id"}
             },
             "formations_table": {
                 "type": "table",
@@ -136,7 +113,8 @@ def insert_manifest(conn):
                     {"key": "taxa_count", "label": "Taxa", "sortable": True, "searchable": False, "type": "number"}
                 ],
                 "default_sort": {"key": "name", "direction": "asc"},
-                "searchable": True
+                "searchable": True,
+                "on_row_click": {"detail_view": "formation_detail", "id_key": "id"}
             },
             "countries_table": {
                 "type": "table",
@@ -150,7 +128,360 @@ def insert_manifest(conn):
                     {"key": "taxa_count", "label": "Taxa", "sortable": True, "searchable": False, "type": "number"}
                 ],
                 "default_sort": {"key": "name", "direction": "asc"},
-                "searchable": True
+                "searchable": True,
+                "on_row_click": {"detail_view": "country_detail", "id_key": "id"}
+            },
+            "chronostratigraphy_table": {
+                "type": "chart",
+                "title": "Chronostratigraphy",
+                "description": "ICS International Chronostratigraphic Chart (GTS 2020)",
+                "source_query": "ics_chronostrat_list",
+                "icon": "bi-clock-history",
+                "columns": [
+                    {"key": "name", "label": "Name", "sortable": True, "searchable": True},
+                    {"key": "rank", "label": "Rank", "sortable": True, "searchable": True},
+                    {"key": "start_mya", "label": "Start (Ma)", "sortable": True, "type": "number"},
+                    {"key": "end_mya", "label": "End (Ma)", "sortable": True, "type": "number"},
+                    {"key": "color", "label": "Color", "sortable": False, "type": "color"}
+                ],
+                "default_sort": {"key": "display_order", "direction": "asc"},
+                "searchable": True,
+                "chart_options": {
+                    "cell_click": {"detail_view": "chronostrat_detail", "id_key": "id"}
+                }
+            },
+
+            # ── Detail Views ────────────────────────────────────────
+
+            "formation_detail": {
+                "type": "detail",
+                "title": "Formation Detail",
+                "source": "/api/formation/{id}",
+                "icon": "bi-layers",
+                "title_template": {"format": "{icon} {name}", "icon": "bi-layers"},
+                "sections": [
+                    {
+                        "title": "Basic Information",
+                        "type": "field_grid",
+                        "fields": [
+                            {"key": "name", "label": "Name"},
+                            {"key": "formation_type", "label": "Type"},
+                            {"key": "country", "label": "Country"},
+                            {"key": "region", "label": "Region"},
+                            {"key": "period", "label": "Period"},
+                            {"key": "taxa_count", "label": "Taxa Count"}
+                        ]
+                    },
+                    {
+                        "title": "Genera ({count})",
+                        "type": "linked_table",
+                        "data_key": "genera",
+                        "columns": [
+                            {"key": "name", "label": "Genus", "italic": True},
+                            {"key": "author", "label": "Author"},
+                            {"key": "year", "label": "Year"},
+                            {"key": "is_valid", "label": "Valid", "format": "boolean"}
+                        ],
+                        "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
+                    }
+                ]
+            },
+            "country_detail": {
+                "type": "detail",
+                "title": "Country Detail",
+                "source": "/api/country/{id}",
+                "icon": "bi-geo-alt",
+                "title_template": {"format": "{icon} {name}", "icon": "bi-geo-alt"},
+                "sections": [
+                    {
+                        "title": "Basic Information",
+                        "type": "field_grid",
+                        "fields": [
+                            {"key": "name", "label": "Name"},
+                            {"key": "cow_ccode", "label": "COW Code"},
+                            {"key": "taxa_count", "label": "Taxa Count"}
+                        ]
+                    },
+                    {
+                        "title": "Regions ({count})",
+                        "type": "linked_table",
+                        "data_key": "regions",
+                        "condition": "regions",
+                        "columns": [
+                            {"key": "name", "label": "Region"},
+                            {"key": "taxa_count", "label": "Taxa Count"}
+                        ],
+                        "on_row_click": {"detail_view": "region_detail", "id_key": "id"}
+                    },
+                    {
+                        "title": "Genera ({count})",
+                        "type": "linked_table",
+                        "data_key": "genera",
+                        "condition": "genera",
+                        "columns": [
+                            {"key": "name", "label": "Genus", "italic": True},
+                            {"key": "author", "label": "Author"},
+                            {"key": "year", "label": "Year"},
+                            {"key": "region", "label": "Region",
+                             "link": {"detail_view": "region_detail", "id_key": "region_id"}},
+                            {"key": "is_valid", "label": "Valid", "format": "boolean"}
+                        ],
+                        "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
+                    }
+                ]
+            },
+            "region_detail": {
+                "type": "detail",
+                "title": "Region Detail",
+                "source": "/api/region/{id}",
+                "icon": "bi-geo-alt",
+                "title_template": {"format": "{icon} {name}", "icon": "bi-geo-alt"},
+                "sections": [
+                    {
+                        "title": "Basic Information",
+                        "type": "field_grid",
+                        "fields": [
+                            {"key": "name", "label": "Name"},
+                            {"key": "parent.name", "label": "Country",
+                             "format": "link",
+                             "link": {"detail_view": "country_detail", "id_path": "parent.id"}},
+                            {"key": "taxa_count", "label": "Taxa Count"}
+                        ]
+                    },
+                    {
+                        "title": "Genera ({count})",
+                        "type": "linked_table",
+                        "data_key": "genera",
+                        "condition": "genera",
+                        "columns": [
+                            {"key": "name", "label": "Genus", "italic": True},
+                            {"key": "author", "label": "Author"},
+                            {"key": "year", "label": "Year"},
+                            {"key": "is_valid", "label": "Valid", "format": "boolean"}
+                        ],
+                        "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
+                    }
+                ]
+            },
+            "bibliography_detail": {
+                "type": "detail",
+                "title": "Bibliography Detail",
+                "source": "/api/bibliography/{id}",
+                "icon": "bi-book",
+                "title_template": {"format": "{icon} {authors}, {year}", "icon": "bi-book"},
+                "sections": [
+                    {
+                        "title": "Basic Information",
+                        "type": "field_grid",
+                        "fields": [
+                            {"key": "authors", "label": "Authors"},
+                            {"key": "year", "label": "Year", "suffix_key": "year_suffix"},
+                            {"key": "title", "label": "Title"},
+                            {"key": "journal", "label": "Journal"},
+                            {"key": "volume", "label": "Volume"},
+                            {"key": "pages", "label": "Pages"},
+                            {"key": "reference_type", "label": "Type"},
+                            {"key": "publisher", "label": "Publisher", "condition": "publisher"},
+                            {"key": "city", "label": "City", "condition": "city"},
+                            {"key": "editors", "label": "Editors", "condition": "editors"},
+                            {"key": "book_title", "label": "Book Title", "condition": "book_title"}
+                        ]
+                    },
+                    {
+                        "title": "Original Entry",
+                        "type": "raw_text",
+                        "data_key": "raw_entry",
+                        "condition": "raw_entry"
+                    },
+                    {
+                        "title": "Related Genera ({count})",
+                        "type": "linked_table",
+                        "data_key": "genera",
+                        "show_empty": True,
+                        "empty_message": "No matching genera found.",
+                        "columns": [
+                            {"key": "name", "label": "Genus", "italic": True},
+                            {"key": "author", "label": "Author"},
+                            {"key": "year", "label": "Year"},
+                            {"key": "is_valid", "label": "Valid", "format": "boolean"}
+                        ],
+                        "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
+                    }
+                ]
+            },
+            "chronostrat_detail": {
+                "type": "detail",
+                "title": "Chronostratigraphy Detail",
+                "source": "/api/chronostrat/{id}",
+                "icon": "bi-clock-history",
+                "title_template": {"format": "{icon} {name}", "icon": "bi-clock-history"},
+                "sections": [
+                    {
+                        "title": "Basic Information",
+                        "type": "field_grid",
+                        "fields": [
+                            {"key": "name", "label": "Name"},
+                            {"key": "rank", "label": "Rank"},
+                            {"key": "_time_range", "label": "Time Range",
+                             "format": "computed", "compute": "time_range"},
+                            {"key": "short_code", "label": "Short Code"},
+                            {"key": "color", "label": "Color", "format": "color_chip"},
+                            {"key": "ratified_gssp", "label": "Ratified GSSP", "format": "boolean"}
+                        ]
+                    },
+                    {
+                        "title": "Hierarchy",
+                        "type": "field_grid",
+                        "condition": "parent",
+                        "fields": [
+                            {"key": "parent.name", "label": "Parent",
+                             "format": "link",
+                             "link": {"detail_view": "chronostrat_detail", "id_path": "parent.id"},
+                             "suffix_key": "parent.rank", "suffix_format": "({value})"}
+                        ]
+                    },
+                    {
+                        "title": "Children ({count})",
+                        "type": "linked_table",
+                        "data_key": "children",
+                        "condition": "children",
+                        "columns": [
+                            {"key": "name", "label": "Name"},
+                            {"key": "rank", "label": "Rank"},
+                            {"key": "_time_range", "label": "Time Range",
+                             "format": "computed", "compute": "time_range"},
+                            {"key": "color", "label": "Color", "format": "color_chip"}
+                        ],
+                        "on_row_click": {"detail_view": "chronostrat_detail", "id_key": "id"}
+                    },
+                    {
+                        "title": "Mapped Temporal Codes",
+                        "type": "tagged_list",
+                        "data_key": "mappings",
+                        "condition": "mappings",
+                        "badge_key": "temporal_code",
+                        "badge_format": "code",
+                        "text_key": "mapping_type"
+                    },
+                    {
+                        "title": "Related Genera ({count})",
+                        "type": "linked_table",
+                        "data_key": "genera",
+                        "condition": "genera",
+                        "columns": [
+                            {"key": "name", "label": "Genus", "italic": True},
+                            {"key": "author", "label": "Author"},
+                            {"key": "year", "label": "Year"},
+                            {"key": "temporal_code", "label": "Temporal Code", "format": "code"},
+                            {"key": "is_valid", "label": "Valid", "format": "boolean"}
+                        ],
+                        "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
+                    }
+                ]
+            },
+            "genus_detail": {
+                "type": "detail",
+                "title": "Genus Detail",
+                "source": "/api/genus/{id}",
+                "title_template": {"format": "<i>{name}</i> {author}, {year}"},
+                "sections": [
+                    {
+                        "title": "Basic Information",
+                        "type": "field_grid",
+                        "fields": [
+                            {"key": "name", "label": "Name", "format": "italic"},
+                            {"key": "author", "label": "Author"},
+                            {"key": "year", "label": "Year", "suffix_key": "year_suffix"},
+                            {"key": "hierarchy", "label": "Classification", "format": "hierarchy"},
+                            {"key": "is_valid", "label": "Status",
+                             "format": "boolean", "true_label": "Valid",
+                             "false_label": "Invalid", "false_class": "invalid"},
+                            {"key": "temporal_code", "label": "Temporal Range",
+                             "format": "temporal_range"}
+                        ]
+                    },
+                    {
+                        "title": "Type Species",
+                        "type": "field_grid",
+                        "condition": "type_species",
+                        "fields": [
+                            {"key": "type_species", "label": "Species", "format": "italic"},
+                            {"key": "type_species_author", "label": "Author"}
+                        ]
+                    },
+                    {
+                        "title": "Geographic Information",
+                        "type": "genus_geography"
+                    },
+                    {
+                        "title": "Synonymy",
+                        "type": "synonym_list",
+                        "data_key": "synonyms",
+                        "condition": "synonyms"
+                    },
+                    {
+                        "title": "Notes",
+                        "type": "raw_text",
+                        "data_key": "notes",
+                        "condition": "notes",
+                        "format": "paragraph"
+                    },
+                    {
+                        "title": "Original Entry",
+                        "type": "raw_text",
+                        "data_key": "raw_entry",
+                        "condition": "raw_entry"
+                    },
+                    {
+                        "title": "My Notes",
+                        "type": "annotations",
+                        "entity_type": "genus"
+                    }
+                ]
+            },
+            "rank_detail": {
+                "type": "detail",
+                "title": "Rank Detail",
+                "source": "/api/rank/{id}",
+                "title_template": {
+                    "format": "<span class=\"badge bg-secondary me-2\">{rank}</span> {name}"
+                },
+                "sections": [
+                    {
+                        "title": "Basic Information",
+                        "type": "field_grid",
+                        "fields": [
+                            {"key": "name", "label": "Name"},
+                            {"key": "rank", "label": "Rank"},
+                            {"key": "author", "label": "Author"},
+                            {"key": "year", "label": "Year"},
+                            {"key": "parent_name", "label": "Parent",
+                             "suffix_key": "parent_rank", "suffix_format": "({value})"}
+                        ]
+                    },
+                    {
+                        "title": "Statistics",
+                        "type": "rank_statistics"
+                    },
+                    {
+                        "title": "Children",
+                        "type": "rank_children",
+                        "data_key": "children",
+                        "condition": "children"
+                    },
+                    {
+                        "title": "Notes",
+                        "type": "raw_text",
+                        "data_key": "notes",
+                        "condition": "notes",
+                        "format": "paragraph"
+                    },
+                    {
+                        "title": "My Notes",
+                        "type": "annotations",
+                        "entity_type_from": "rank"
+                    }
+                ]
             }
         }
     }
@@ -158,11 +489,13 @@ def insert_manifest(conn):
     cursor.execute(
         "INSERT OR REPLACE INTO ui_manifest (name, description, manifest_json, created_at) "
         "VALUES (?, ?, ?, ?)",
-        ('default', 'Default UI manifest for Trilobase viewer', json.dumps(manifest), now)
+        ('default', 'Default UI manifest for Trilobase SCODA viewer', json.dumps(manifest), now)
     )
 
     conn.commit()
-    print(f"Inserted default manifest with {len(manifest['views'])} view definitions.")
+    tab_views = sum(1 for v in manifest['views'].values() if v['type'] != 'detail')
+    detail_views = sum(1 for v in manifest['views'].values() if v['type'] == 'detail')
+    print(f"Inserted default manifest with {len(manifest['views'])} views ({tab_views} tab + {detail_views} detail).")
 
 
 def insert_schema_descriptions(conn):

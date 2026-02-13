@@ -194,15 +194,11 @@ function renderTableViewRows(viewKey) {
     });
     html += '</tr></thead><tbody>';
 
-    // Click handlers per view
-    const clickHandlers = {
-        'countries_table': (row) => `onclick="showCountryDetail(${row.id})"`,
-        'formations_table': (row) => `onclick="showFormationDetail(${row.id})"`,
-        'references_table': (row) => `onclick="showBibliographyDetail(${row.id})"`,
-        'genera_table': (row) => `onclick="showGenusDetail(${row.id})"`,
-        'chronostratigraphy_table': (row) => `onclick="showChronostratDetail(${row.id})"`,
-    };
-    const getClick = clickHandlers[viewKey];
+    // Manifest-driven click handler
+    const rowClick = view.on_row_click;
+    const getClick = rowClick
+        ? (row) => `onclick="openDetail('${rowClick.detail_view}', ${row[rowClick.id_key]})"`
+        : null;
 
     if (rows.length === 0) {
         html += `<tr><td colspan="${view.columns.length}" class="text-center text-muted py-4">No matching records</td></tr>`;
@@ -456,7 +452,7 @@ function renderChartHTML(leafRows) {
             const cs = entry.colspan > 1 ? ` colspan="${entry.colspan}"` : '';
             const title = n.start_mya != null ? `${n.name} (${n.start_mya}–${n.end_mya || 0} Ma)` : n.name;
             html += `<td${rs}${cs} style="background-color:${bgColor}; color:${textColor};" `
-                  + `title="${title}" onclick="showChronostratDetail(${n.id})">`
+                  + `title="${title}" onclick="openDetail('chronostrat_detail', ${n.id})">`
                   + `${n.name}</td>`;
         });
 
@@ -547,7 +543,7 @@ function createTreeNode(node) {
     infoBtn.title = 'View details';
     infoBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        showRankDetail(node.id, node.name, node.rank);
+        openDetail('rank_detail', node.id);
     });
     content.appendChild(infoBtn);
 
@@ -681,7 +677,7 @@ function renderGeneraTable() {
     genera.forEach(g => {
         const rowClass = g.is_valid ? '' : 'invalid';
         html += `
-            <tr class="${rowClass}" onclick="showGenusDetail(${g.id})">
+            <tr class="${rowClass}" onclick="openDetail('genus_detail', ${g.id})">
                 <td class="genus-name"><i>${g.name}</i></td>
                 <td>${g.author || ''}</td>
                 <td>${g.year || ''}</td>
@@ -698,725 +694,49 @@ function renderGeneraTable() {
  * Show genus detail modal
  */
 async function showGenusDetail(genusId) {
-    const modalBody = document.getElementById('genusModalBody');
-    const modalTitle = document.getElementById('genusModalTitle');
-
-    modalBody.innerHTML = '<div class="loading">Loading...</div>';
-    genusModal.show();
-
-    try {
-        const response = await fetch(`/api/genus/${genusId}`);
-        const g = await response.json();
-
-        modalTitle.innerHTML = `<i>${g.name}</i> ${g.author || ''}, ${g.year || ''}`;
-
-        let html = '';
-
-        // Basic Info
-        html += `
-            <div class="detail-section">
-                <h6>Basic Information</h6>
-                <div class="detail-grid">
-                    <span class="detail-label">Name:</span>
-                    <span class="detail-value"><i>${g.name}</i></span>
-
-                    <span class="detail-label">Author:</span>
-                    <span class="detail-value">${g.author || '-'}</span>
-
-                    <span class="detail-label">Year:</span>
-                    <span class="detail-value">${g.year || '-'}${g.year_suffix || ''}</span>
-
-                    <span class="detail-label">Classification:</span>
-                    <span class="detail-value">${buildHierarchyHTML(g)}</span>
-
-                    <span class="detail-label">Status:</span>
-                    <span class="detail-value ${g.is_valid ? '' : 'invalid'}">
-                        ${g.is_valid ? 'Valid' : 'Invalid'}
-                    </span>
-
-                    <span class="detail-label">Temporal Range:</span>
-                    <span class="detail-value">${buildTemporalRangeHTML(g)}</span>
-                </div>
-            </div>`;
-
-        // Type Species
-        if (g.type_species) {
-            html += `
-                <div class="detail-section">
-                    <h6>Type Species</h6>
-                    <div class="detail-grid">
-                        <span class="detail-label">Species:</span>
-                        <span class="detail-value"><i>${g.type_species}</i></span>
-
-                        <span class="detail-label">Author:</span>
-                        <span class="detail-value">${g.type_species_author || '-'}</span>
-                    </div>
-                </div>`;
-        }
-
-        // Geographic Info
-        {
-            let geoGridHtml = '';
-
-            // Country/Location: relation data first, raw fallback
-            if (g.locations && g.locations.length > 0) {
-                const locLinks = g.locations.map(l => {
-                    let link = `<a class="detail-link" onclick="showCountryDetail(${l.country_id})">${l.country_name}</a>`;
-                    if (l.region_id && l.region_name) {
-                        link += ` &gt; <a class="detail-link" onclick="showRegionDetail(${l.region_id})">${l.region_name}</a>`;
-                    }
-                    return link;
-                }).join(', ');
-                geoGridHtml += `
-                    <span class="detail-label">Country:</span>
-                    <span class="detail-value">${locLinks}</span>`;
-            } else if (g.location) {
-                geoGridHtml += `
-                    <span class="detail-label">Location:</span>
-                    <span class="detail-value">${g.location}</span>`;
-            }
-
-            // Formation: relation data first, raw fallback
-            if (g.formations && g.formations.length > 0) {
-                const fmtLinks = g.formations.map(f =>
-                    `<a class="detail-link" onclick="showFormationDetail(${f.id})">${f.name}</a>${f.period ? ' (' + f.period + ')' : ''}`
-                ).join(', ');
-                geoGridHtml += `
-                    <span class="detail-label">Formation:</span>
-                    <span class="detail-value">${fmtLinks}</span>`;
-            } else if (g.formation) {
-                geoGridHtml += `
-                    <span class="detail-label">Formation:</span>
-                    <span class="detail-value">${g.formation}</span>`;
-            }
-
-            if (geoGridHtml) {
-                html += `
-                    <div class="detail-section">
-                        <h6>Geographic Information</h6>
-                        <div class="detail-grid">${geoGridHtml}
-                        </div>
-                    </div>`;
-            }
-        }
-
-        // Synonyms
-        if (g.synonyms && g.synonyms.length > 0) {
-            html += `
-                <div class="detail-section">
-                    <h6>Synonymy</h6>
-                    <ul class="list-unstyled">`;
-            g.synonyms.forEach(s => {
-                const seniorLink = s.senior_taxon_id
-                    ? `<a href="#" class="synonym-link" onclick="showGenusDetail(${s.senior_taxon_id}); return false;"><i>${s.senior_name}</i></a>`
-                    : `<i>${s.senior_name}</i>`;
-                html += `
-                    <li>
-                        <span class="badge bg-secondary badge-synonym">${s.synonym_type}</span>
-                        ${seniorLink}
-                        ${s.fide_author ? `<small class="text-muted">fide ${s.fide_author}${s.fide_year ? ', ' + s.fide_year : ''}</small>` : ''}
-                    </li>`;
-            });
-            html += '</ul></div>';
-        }
-
-        // Notes
-        if (g.notes) {
-            html += `
-                <div class="detail-section">
-                    <h6>Notes</h6>
-                    <p>${g.notes}</p>
-                </div>`;
-        }
-
-        // Raw Entry
-        if (g.raw_entry) {
-            html += `
-                <div class="detail-section">
-                    <h6>Original Entry</h6>
-                    <div class="raw-entry">${g.raw_entry}</div>
-                </div>`;
-        }
-
-        // My Notes section
-        html += buildAnnotationSectionHTML('genus', g.id);
-
-        modalBody.innerHTML = html;
-
-        // Load annotations after DOM is ready
-        loadAnnotations('genus', g.id);
-
-    } catch (error) {
-        modalBody.innerHTML = `<div class="text-danger">Error loading genus: ${error.message}</div>`;
-    }
+    await renderDetailFromManifest('genus_detail', genusId);
 }
 
 /**
  * Show country detail modal
  */
 async function showCountryDetail(countryId) {
-    const modalBody = document.getElementById('genusModalBody');
-    const modalTitle = document.getElementById('genusModalTitle');
-
-    modalBody.innerHTML = '<div class="loading">Loading...</div>';
-    genusModal.show();
-
-    try {
-        const response = await fetch(`/api/country/${countryId}`);
-        const c = await response.json();
-
-        modalTitle.innerHTML = `<i class="bi bi-geo-alt"></i> ${c.name}`;
-
-        let html = '';
-
-        // Basic Info
-        html += `
-            <div class="detail-section">
-                <h6>Basic Information</h6>
-                <div class="detail-grid">
-                    <span class="detail-label">Name:</span>
-                    <span class="detail-value">${c.name}</span>
-
-                    <span class="detail-label">COW Code:</span>
-                    <span class="detail-value">${c.cow_ccode || '-'}</span>
-
-                    <span class="detail-label">Taxa Count:</span>
-                    <span class="detail-value">${c.taxa_count || 0}</span>
-                </div>
-            </div>`;
-
-        // Regions list
-        if (c.regions && c.regions.length > 0) {
-            html += `
-                <div class="detail-section">
-                    <h6>Regions (${c.regions.length})</h6>
-                    <div class="genera-list">
-                        <table class="manifest-table">
-                            <thead><tr>
-                                <th>Region</th><th>Taxa Count</th>
-                            </tr></thead><tbody>`;
-            c.regions.forEach(r => {
-                html += `<tr onclick="showRegionDetail(${r.id})">
-                    <td>${r.name}</td>
-                    <td>${r.taxa_count || 0}</td>
-                </tr>`;
-            });
-            html += '</tbody></table></div></div>';
-        }
-
-        // Genera list
-        if (c.genera && c.genera.length > 0) {
-            html += `
-                <div class="detail-section">
-                    <h6>Genera (${c.genera.length})</h6>
-                    <div class="genera-list">
-                        <table class="manifest-table">
-                            <thead><tr>
-                                <th>Genus</th><th>Author</th><th>Year</th><th>Region</th><th>Valid</th>
-                            </tr></thead><tbody>`;
-            c.genera.forEach(g => {
-                const regionLink = g.region_id
-                    ? `<a class="detail-link" onclick="event.stopPropagation(); showRegionDetail(${g.region_id})">${g.region || ''}</a>`
-                    : (g.region || '');
-                html += `<tr onclick="showGenusDetail(${g.id})">
-                    <td><i>${g.name}</i></td>
-                    <td>${g.author || ''}</td>
-                    <td>${g.year || ''}</td>
-                    <td>${regionLink}</td>
-                    <td>${g.is_valid ? 'Yes' : 'No'}</td>
-                </tr>`;
-            });
-            html += '</tbody></table></div></div>';
-        }
-
-        modalBody.innerHTML = html;
-    } catch (error) {
-        modalBody.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
-    }
+    await renderDetailFromManifest('country_detail', countryId);
 }
 
 /**
  * Show chronostratigraphic unit detail modal
  */
 async function showChronostratDetail(icsId) {
-    const modalBody = document.getElementById('genusModalBody');
-    const modalTitle = document.getElementById('genusModalTitle');
-
-    modalBody.innerHTML = '<div class="loading">Loading...</div>';
-    genusModal.show();
-
-    try {
-        const response = await fetch(`/api/chronostrat/${icsId}`);
-        const c = await response.json();
-
-        modalTitle.innerHTML = `<i class="bi bi-clock-history"></i> ${c.name}`;
-
-        let html = '';
-
-        // Basic Info
-        const timeRange = (c.start_mya != null && c.end_mya != null)
-            ? `${c.start_mya} — ${c.end_mya} Ma` : '-';
-        const gssp = c.ratified_gssp ? 'Yes' : 'No';
-
-        html += `
-            <div class="detail-section">
-                <h6>Basic Information</h6>
-                <div class="detail-grid">
-                    <span class="detail-label">Name:</span>
-                    <span class="detail-value">${c.name}</span>
-
-                    <span class="detail-label">Rank:</span>
-                    <span class="detail-value">${c.rank}</span>
-
-                    <span class="detail-label">Time Range:</span>
-                    <span class="detail-value">${timeRange}</span>
-
-                    <span class="detail-label">Short Code:</span>
-                    <span class="detail-value">${c.short_code || '-'}</span>
-
-                    <span class="detail-label">Color:</span>
-                    <span class="detail-value">${c.color ? `<span class="color-chip" style="background-color:${c.color}"></span> ${c.color}` : '-'}</span>
-
-                    <span class="detail-label">Ratified GSSP:</span>
-                    <span class="detail-value">${gssp}</span>
-                </div>
-            </div>`;
-
-        // Hierarchy (parent)
-        if (c.parent) {
-            html += `
-                <div class="detail-section">
-                    <h6>Hierarchy</h6>
-                    <div class="detail-grid">
-                        <span class="detail-label">Parent:</span>
-                        <span class="detail-value">
-                            <a class="detail-link" onclick="showChronostratDetail(${c.parent.id})">${c.parent.name}</a>
-                            <small class="text-muted">(${c.parent.rank})</small>
-                        </span>
-                    </div>
-                </div>`;
-        }
-
-        // Children
-        if (c.children && c.children.length > 0) {
-            html += `
-                <div class="detail-section">
-                    <h6>Children (${c.children.length})</h6>
-                    <div class="genera-list">
-                        <table class="manifest-table">
-                            <thead><tr>
-                                <th>Name</th><th>Rank</th><th>Time Range</th><th>Color</th>
-                            </tr></thead><tbody>`;
-            c.children.forEach(ch => {
-                const chRange = (ch.start_mya != null && ch.end_mya != null)
-                    ? `${ch.start_mya} — ${ch.end_mya} Ma` : '-';
-                const colorChip = ch.color ? `<span class="color-chip" style="background-color:${ch.color}"></span>` : '';
-                html += `<tr onclick="showChronostratDetail(${ch.id})">
-                    <td>${ch.name}</td>
-                    <td>${ch.rank}</td>
-                    <td>${chRange}</td>
-                    <td>${colorChip} ${ch.color || ''}</td>
-                </tr>`;
-            });
-            html += '</tbody></table></div></div>';
-        }
-
-        // Mapped Temporal Codes
-        if (c.mappings && c.mappings.length > 0) {
-            html += `
-                <div class="detail-section">
-                    <h6>Mapped Temporal Codes</h6>
-                    <ul class="list-unstyled">`;
-            c.mappings.forEach(m => {
-                html += `<li>
-                    <code>${m.temporal_code}</code>
-                    <small class="text-muted ms-1">(${m.mapping_type})</small>
-                </li>`;
-            });
-            html += '</ul></div>';
-        }
-
-        // Related Genera
-        if (c.genera && c.genera.length > 0) {
-            html += `
-                <div class="detail-section">
-                    <h6>Related Genera (${c.genera.length})</h6>
-                    <div class="genera-list">
-                        <table class="manifest-table">
-                            <thead><tr>
-                                <th>Genus</th><th>Author</th><th>Year</th><th>Temporal Code</th><th>Valid</th>
-                            </tr></thead><tbody>`;
-            c.genera.forEach(g => {
-                html += `<tr onclick="showGenusDetail(${g.id})">
-                    <td><i>${g.name}</i></td>
-                    <td>${g.author || ''}</td>
-                    <td>${g.year || ''}</td>
-                    <td><code>${g.temporal_code || ''}</code></td>
-                    <td>${g.is_valid ? 'Yes' : 'No'}</td>
-                </tr>`;
-            });
-            html += '</tbody></table></div></div>';
-        }
-
-        modalBody.innerHTML = html;
-    } catch (error) {
-        modalBody.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
-    }
+    await renderDetailFromManifest('chronostrat_detail', icsId);
 }
 
 /**
  * Show region detail modal
  */
 async function showRegionDetail(regionId) {
-    const modalBody = document.getElementById('genusModalBody');
-    const modalTitle = document.getElementById('genusModalTitle');
-
-    modalBody.innerHTML = '<div class="loading">Loading...</div>';
-    genusModal.show();
-
-    try {
-        const response = await fetch(`/api/region/${regionId}`);
-        const r = await response.json();
-
-        modalTitle.innerHTML = `<i class="bi bi-geo-alt"></i> ${r.name}`;
-
-        let html = '';
-
-        // Basic Info
-        html += `
-            <div class="detail-section">
-                <h6>Basic Information</h6>
-                <div class="detail-grid">
-                    <span class="detail-label">Name:</span>
-                    <span class="detail-value">${r.name}</span>
-
-                    <span class="detail-label">Country:</span>
-                    <span class="detail-value"><a class="detail-link" onclick="showCountryDetail(${r.parent.id})">${r.parent.name}</a></span>
-
-                    <span class="detail-label">Taxa Count:</span>
-                    <span class="detail-value">${r.taxa_count || 0}</span>
-                </div>
-            </div>`;
-
-        // Genera list
-        if (r.genera && r.genera.length > 0) {
-            html += `
-                <div class="detail-section">
-                    <h6>Genera (${r.genera.length})</h6>
-                    <div class="genera-list">
-                        <table class="manifest-table">
-                            <thead><tr>
-                                <th>Genus</th><th>Author</th><th>Year</th><th>Valid</th>
-                            </tr></thead><tbody>`;
-            r.genera.forEach(g => {
-                html += `<tr onclick="showGenusDetail(${g.id})">
-                    <td><i>${g.name}</i></td>
-                    <td>${g.author || ''}</td>
-                    <td>${g.year || ''}</td>
-                    <td>${g.is_valid ? 'Yes' : 'No'}</td>
-                </tr>`;
-            });
-            html += '</tbody></table></div></div>';
-        }
-
-        modalBody.innerHTML = html;
-    } catch (error) {
-        modalBody.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
-    }
+    await renderDetailFromManifest('region_detail', regionId);
 }
 
 /**
  * Show formation detail modal
  */
 async function showFormationDetail(formationId) {
-    const modalBody = document.getElementById('genusModalBody');
-    const modalTitle = document.getElementById('genusModalTitle');
-
-    modalBody.innerHTML = '<div class="loading">Loading...</div>';
-    genusModal.show();
-
-    try {
-        const response = await fetch(`/api/formation/${formationId}`);
-        const f = await response.json();
-
-        modalTitle.innerHTML = `<i class="bi bi-layers"></i> ${f.name}`;
-
-        let html = '';
-
-        // Basic Info
-        html += `
-            <div class="detail-section">
-                <h6>Basic Information</h6>
-                <div class="detail-grid">
-                    <span class="detail-label">Name:</span>
-                    <span class="detail-value">${f.name}</span>
-
-                    <span class="detail-label">Type:</span>
-                    <span class="detail-value">${f.formation_type || '-'}</span>
-
-                    <span class="detail-label">Country:</span>
-                    <span class="detail-value">${f.country || '-'}</span>
-
-                    <span class="detail-label">Region:</span>
-                    <span class="detail-value">${f.region || '-'}</span>
-
-                    <span class="detail-label">Period:</span>
-                    <span class="detail-value">${f.period || '-'}</span>
-
-                    <span class="detail-label">Taxa Count:</span>
-                    <span class="detail-value">${f.taxa_count || 0}</span>
-                </div>
-            </div>`;
-
-        // Genera list
-        if (f.genera && f.genera.length > 0) {
-            html += `
-                <div class="detail-section">
-                    <h6>Genera (${f.genera.length})</h6>
-                    <div class="genera-list">
-                        <table class="manifest-table">
-                            <thead><tr>
-                                <th>Genus</th><th>Author</th><th>Year</th><th>Valid</th>
-                            </tr></thead><tbody>`;
-            f.genera.forEach(g => {
-                html += `<tr onclick="showGenusDetail(${g.id})">
-                    <td><i>${g.name}</i></td>
-                    <td>${g.author || ''}</td>
-                    <td>${g.year || ''}</td>
-                    <td>${g.is_valid ? 'Yes' : 'No'}</td>
-                </tr>`;
-            });
-            html += '</tbody></table></div></div>';
-        }
-
-        modalBody.innerHTML = html;
-    } catch (error) {
-        modalBody.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
-    }
+    await renderDetailFromManifest('formation_detail', formationId);
 }
 
 /**
  * Show bibliography detail modal
  */
 async function showBibliographyDetail(bibId) {
-    const modalBody = document.getElementById('genusModalBody');
-    const modalTitle = document.getElementById('genusModalTitle');
-
-    modalBody.innerHTML = '<div class="loading">Loading...</div>';
-    genusModal.show();
-
-    try {
-        const response = await fetch(`/api/bibliography/${bibId}`);
-        const b = await response.json();
-
-        modalTitle.innerHTML = `<i class="bi bi-book"></i> ${b.authors || 'Unknown'}, ${b.year || ''}`;
-
-        let html = '';
-
-        // Basic Info
-        html += `
-            <div class="detail-section">
-                <h6>Basic Information</h6>
-                <div class="detail-grid">
-                    <span class="detail-label">Authors:</span>
-                    <span class="detail-value">${b.authors || '-'}</span>
-
-                    <span class="detail-label">Year:</span>
-                    <span class="detail-value">${b.year || '-'}${b.year_suffix || ''}</span>
-
-                    <span class="detail-label">Title:</span>
-                    <span class="detail-value">${b.title || '-'}</span>
-
-                    <span class="detail-label">Journal:</span>
-                    <span class="detail-value">${b.journal || '-'}</span>
-
-                    <span class="detail-label">Volume:</span>
-                    <span class="detail-value">${b.volume || '-'}</span>
-
-                    <span class="detail-label">Pages:</span>
-                    <span class="detail-value">${b.pages || '-'}</span>
-
-                    <span class="detail-label">Type:</span>
-                    <span class="detail-value">${b.reference_type || '-'}</span>`;
-
-        if (b.publisher) {
-            html += `
-                    <span class="detail-label">Publisher:</span>
-                    <span class="detail-value">${b.publisher}</span>`;
-        }
-        if (b.city) {
-            html += `
-                    <span class="detail-label">City:</span>
-                    <span class="detail-value">${b.city}</span>`;
-        }
-        if (b.editors) {
-            html += `
-                    <span class="detail-label">Editors:</span>
-                    <span class="detail-value">${b.editors}</span>`;
-        }
-        if (b.book_title) {
-            html += `
-                    <span class="detail-label">Book Title:</span>
-                    <span class="detail-value">${b.book_title}</span>`;
-        }
-
-        html += '</div></div>';
-
-        // Raw Entry
-        if (b.raw_entry) {
-            html += `
-                <div class="detail-section">
-                    <h6>Original Entry</h6>
-                    <div class="raw-entry">${b.raw_entry}</div>
-                </div>`;
-        }
-
-        // Related Genera
-        if (b.genera && b.genera.length > 0) {
-            html += `
-                <div class="detail-section">
-                    <h6>Related Genera (${b.genera.length})</h6>
-                    <div class="genera-list">
-                        <table class="manifest-table">
-                            <thead><tr>
-                                <th>Genus</th><th>Author</th><th>Year</th><th>Valid</th>
-                            </tr></thead><tbody>`;
-            b.genera.forEach(g => {
-                html += `<tr onclick="showGenusDetail(${g.id})">
-                    <td><i>${g.name}</i></td>
-                    <td>${g.author || ''}</td>
-                    <td>${g.year || ''}</td>
-                    <td>${g.is_valid ? 'Yes' : 'No'}</td>
-                </tr>`;
-            });
-            html += '</tbody></table></div></div>';
-        } else {
-            html += `
-                <div class="detail-section">
-                    <h6>Related Genera</h6>
-                    <p class="text-muted">No matching genera found.</p>
-                </div>`;
-        }
-
-        modalBody.innerHTML = html;
-    } catch (error) {
-        modalBody.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
-    }
+    await renderDetailFromManifest('bibliography_detail', bibId);
 }
 
 /**
  * Show rank detail modal (Class, Order, Suborder, Superfamily, Family)
  */
 async function showRankDetail(rankId, rankName, rankType) {
-    const modalBody = document.getElementById('genusModalBody');
-    const modalTitle = document.getElementById('genusModalTitle');
-
-    modalBody.innerHTML = '<div class="loading">Loading...</div>';
-    genusModal.show();
-
-    try {
-        const response = await fetch(`/api/rank/${rankId}`);
-        const r = await response.json();
-
-        modalTitle.innerHTML = `<span class="badge bg-secondary me-2">${r.rank}</span> ${r.name}`;
-
-        let html = '';
-
-        // Basic Info
-        html += `
-            <div class="detail-section">
-                <h6>Basic Information</h6>
-                <div class="detail-grid">
-                    <span class="detail-label">Name:</span>
-                    <span class="detail-value">${r.name}</span>
-
-                    <span class="detail-label">Rank:</span>
-                    <span class="detail-value">${r.rank}</span>
-
-                    <span class="detail-label">Author:</span>
-                    <span class="detail-value">${r.author || '-'}</span>
-
-                    <span class="detail-label">Year:</span>
-                    <span class="detail-value">${r.year || '-'}</span>
-
-                    <span class="detail-label">Parent:</span>
-                    <span class="detail-value">${r.parent_name ? r.parent_name + ' (' + r.parent_rank + ')' : '-'}</span>
-                </div>
-            </div>`;
-
-        // Statistics
-        if (r.genera_count || r.children_counts.length > 0) {
-            html += `
-                <div class="detail-section">
-                    <h6>Statistics</h6>
-                    <div class="detail-grid">`;
-
-            if (r.genera_count) {
-                html += `
-                    <span class="detail-label">Genera:</span>
-                    <span class="detail-value">${r.genera_count}</span>`;
-            }
-
-            r.children_counts.forEach(c => {
-                // Skip Genus count if genera_count already shown
-                if (c.rank === 'Genus' && r.genera_count) return;
-                html += `
-                    <span class="detail-label">${c.rank}:</span>
-                    <span class="detail-value">${c.count}</span>`;
-            });
-
-            html += '</div></div>';
-        }
-
-        // Children list
-        if (r.children && r.children.length > 0) {
-            html += `
-                <div class="detail-section">
-                    <h6>Children (${r.children.length}${r.children.length >= 20 ? '+' : ''})</h6>
-                    <ul class="list-unstyled children-list">`;
-
-            r.children.forEach(c => {
-                if (c.rank === 'Genus') {
-                    html += `
-                    <li class="clickable" onclick="navigateToGenus(${c.id}, ${r.id}, '${r.name.replace(/'/g, "\\'")}')">
-                        <span class="badge bg-light text-dark me-1">${c.rank}</span>
-                        <strong><i>${c.name}</i></strong>
-                        ${c.author ? '<small class="text-muted">' + c.author + '</small>' : ''}
-                    </li>`;
-                } else {
-                    html += `
-                    <li class="clickable" onclick="navigateToRank(${c.id}, '${c.name.replace(/'/g, "\\'")}', '${c.rank}')">
-                        <span class="badge bg-light text-dark me-1">${c.rank}</span>
-                        <strong>${c.name}</strong>
-                        ${c.author ? '<small class="text-muted">' + c.author + '</small>' : ''}
-                    </li>`;
-                }
-            });
-
-            html += '</ul></div>';
-        }
-
-        // Notes
-        if (r.notes) {
-            html += `
-                <div class="detail-section">
-                    <h6>Notes</h6>
-                    <p>${r.notes}</p>
-                </div>`;
-        }
-
-        // My Notes section
-        const entityType = r.rank.toLowerCase();
-        html += buildAnnotationSectionHTML(entityType, r.id);
-
-        modalBody.innerHTML = html;
-
-        // Load annotations after DOM is ready
-        loadAnnotations(entityType, r.id);
-
-    } catch (error) {
-        modalBody.innerHTML = `<div class="text-danger">Error loading details: ${error.message}</div>`;
-    }
+    await renderDetailFromManifest('rank_detail', rankId);
 }
 
 /**
@@ -1456,7 +776,7 @@ function navigateToRank(rankId, rankName, rankType) {
     if (rankType === 'Family') {
         selectFamily(rankId, rankName);
     }
-    showRankDetail(rankId, rankName, rankType);
+    openDetail('rank_detail', rankId);
 }
 
 /**
@@ -1465,7 +785,7 @@ function navigateToRank(rankId, rankName, rankType) {
 function navigateToGenus(genusId, familyId, familyName) {
     expandTreeToNode(familyId);
     selectFamily(familyId, familyName);
-    showGenusDetail(genusId);
+    openDetail('genus_detail', genusId);
 }
 
 /**
@@ -1500,7 +820,7 @@ function buildTemporalRangeHTML(g) {
     let html = `<code>${g.temporal_code}</code>`;
     if (g.temporal_ics_mapping && g.temporal_ics_mapping.length > 0) {
         const links = g.temporal_ics_mapping.map(m =>
-            `<a class="detail-link" onclick="showChronostratDetail(${m.id})">${m.name}</a>` +
+            `<a class="detail-link" onclick="openDetail('chronostrat_detail', ${m.id})">${m.name}</a>` +
             (m.mapping_type !== 'exact' ? ` <small class="text-muted">(${m.mapping_type})</small>` : '')
         ).join(', ');
         html += ` → ${links}`;
@@ -1514,7 +834,7 @@ function buildTemporalRangeHTML(g) {
 function buildHierarchyHTML(g) {
     if (g.hierarchy && g.hierarchy.length > 0) {
         return g.hierarchy.map(h =>
-            `<a class="detail-link" onclick="showRankDetail(${h.id}, '${h.name.replace(/'/g, "\\'")}', '${h.rank}')">${h.name}</a>` +
+            `<a class="detail-link" onclick="openDetail('rank_detail', ${h.id})">${h.name}</a>` +
             ` <small class="text-muted">(${h.rank})</small>`
         ).join(' → ');
     }
@@ -1657,5 +977,497 @@ async function deleteAnnotation(annotationId, entityType, entityId) {
         }
     } catch (error) {
         // Silent fail
+    }
+}
+
+
+// ═══════════════════════════════════════════════════════════════════════
+// Generic Manifest-Driven Detail Renderer (Phase 39)
+// ═══════════════════════════════════════════════════════════════════════
+
+/**
+ * Open a detail view by manifest key. Dispatches to renderDetailFromManifest.
+ */
+async function openDetail(viewKey, entityId) {
+    if (!manifest || !manifest.views[viewKey]) return;
+    await renderDetailFromManifest(viewKey, entityId);
+}
+
+/**
+ * Resolve a dotted path (e.g., "parent.name") on a data object.
+ */
+function resolveDataPath(data, path) {
+    if (!data || !path) return undefined;
+    return path.split('.').reduce((obj, key) => (obj != null ? obj[key] : undefined), data);
+}
+
+/**
+ * Check a condition against data. Supports:
+ *  - string key: truthy check (arrays check length > 0)
+ *  - falsy/missing condition: always true
+ */
+function checkCondition(data, condition) {
+    if (!condition) return true;
+    const val = resolveDataPath(data, condition);
+    if (Array.isArray(val)) return val.length > 0;
+    return !!val;
+}
+
+/**
+ * Build the modal title from a title_template and data.
+ */
+function buildDetailTitle(template, data) {
+    if (!template || !template.format) return data.name || '';
+    let title = template.format;
+    // Replace {icon} with Bootstrap icon
+    if (template.icon) {
+        title = title.replace('{icon}', `<i class="bi ${template.icon}"></i>`);
+    } else {
+        title = title.replace('{icon}', '');
+    }
+    // Replace {field} placeholders
+    title = title.replace(/\{(\w+)\}/g, (match, key) => {
+        const val = data[key];
+        return (val != null && val !== '') ? val : '';
+    });
+    return title.trim();
+}
+
+/**
+ * Compute a derived value. Built-in compute functions.
+ */
+function computeValue(computeName, data, row) {
+    const src = row || data;
+    switch (computeName) {
+        case 'time_range':
+            if (src.start_mya != null && src.end_mya != null)
+                return `${src.start_mya} — ${src.end_mya} Ma`;
+            return '-';
+        default:
+            return '-';
+    }
+}
+
+/**
+ * Format a cell value according to field definition.
+ */
+function formatFieldValue(field, value, data) {
+    const fmt = field.format;
+
+    if (fmt === 'computed') {
+        value = computeValue(field.compute, data);
+    }
+
+    if (value == null || value === '') {
+        // For boolean, treat null/undefined as false
+        if (fmt === 'boolean') return field.false_label || 'No';
+        return '-';
+    }
+
+    switch (fmt) {
+        case 'italic':
+            return `<i>${value}</i>`;
+        case 'boolean': {
+            const cls = value ? '' : (field.false_class || '');
+            const label = value ? (field.true_label || 'Yes') : (field.false_label || 'No');
+            return cls ? `<span class="${cls}">${label}</span>` : label;
+        }
+        case 'link': {
+            const linkDef = field.link;
+            if (!linkDef) return value;
+            const linkId = resolveDataPath(data, linkDef.id_path || linkDef.id_key);
+            if (linkId == null) return value;
+            return `<a class="detail-link" onclick="openDetail('${linkDef.detail_view}', ${linkId})">${value}</a>`;
+        }
+        case 'color_chip':
+            return `<span class="color-chip" style="background-color:${value}"></span> ${value}`;
+        case 'code':
+            return `<code>${value}</code>`;
+        case 'hierarchy':
+            return buildHierarchyHTML(data);
+        case 'temporal_range':
+            return buildTemporalRangeHTML(data);
+        case 'computed':
+            return value; // already computed above
+        default:
+            return value;
+    }
+}
+
+/**
+ * Render a field_grid section.
+ */
+function renderFieldGrid(section, data) {
+    const fields = section.fields || [];
+    let gridHtml = '';
+
+    for (const field of fields) {
+        // Per-field condition check
+        if (field.condition && !checkCondition(data, field.condition)) continue;
+
+        let value = resolveDataPath(data, field.key);
+        let formatted = formatFieldValue(field, value, data);
+
+        // Suffix support (e.g., year + year_suffix)
+        if (field.suffix_key) {
+            const suffix = resolveDataPath(data, field.suffix_key);
+            if (suffix) {
+                if (field.suffix_format) {
+                    formatted += ` <small class="text-muted">${field.suffix_format.replace('{value}', suffix)}</small>`;
+                } else {
+                    formatted += suffix;
+                }
+            }
+        }
+
+        gridHtml += `
+            <span class="detail-label">${field.label}:</span>
+            <span class="detail-value">${formatted}</span>`;
+    }
+
+    if (!gridHtml) return '';
+    return `
+        <div class="detail-section">
+            <h6>${section.title}</h6>
+            <div class="detail-grid">${gridHtml}
+            </div>
+        </div>`;
+}
+
+/**
+ * Render a linked_table section.
+ */
+function renderLinkedTable(section, data) {
+    const rows = data[section.data_key] || [];
+    const columns = section.columns || [];
+    const onClick = section.on_row_click;
+    const title = section.title.replace('{count}', rows.length);
+
+    // Empty handling
+    if (rows.length === 0) {
+        if (section.show_empty) {
+            return `
+                <div class="detail-section">
+                    <h6>${title}</h6>
+                    <p class="text-muted">${section.empty_message || 'No data.'}</p>
+                </div>`;
+        }
+        return '';
+    }
+
+    // Header
+    let html = `
+        <div class="detail-section">
+            <h6>${title}</h6>
+            <div class="genera-list">
+                <table class="manifest-table">
+                    <thead><tr>`;
+    columns.forEach(col => {
+        html += `<th>${col.label}</th>`;
+    });
+    html += '</tr></thead><tbody>';
+
+    // Rows
+    rows.forEach(row => {
+        const clickAttr = onClick
+            ? ` onclick="openDetail('${onClick.detail_view}', ${row[onClick.id_key]})"`
+            : '';
+        html += `<tr${clickAttr}>`;
+
+        columns.forEach(col => {
+            let val = (col.format === 'computed')
+                ? computeValue(col.compute, data, row)
+                : row[col.key];
+
+            // Column-level link (e.g., region link within genera table)
+            if (col.link && val) {
+                const linkId = row[col.link.id_key];
+                if (linkId != null) {
+                    val = `<a class="detail-link" onclick="event.stopPropagation(); openDetail('${col.link.detail_view}', ${linkId})">${val}</a>`;
+                }
+            } else if (col.format === 'boolean') {
+                val = val ? 'Yes' : 'No';
+            } else if (col.format === 'color_chip') {
+                val = val ? `<span class="color-chip" style="background-color:${val}"></span> ${val}` : '';
+            } else if (col.format === 'code') {
+                val = val ? `<code>${val}</code>` : '';
+            } else if (col.italic) {
+                val = val ? `<i>${val}</i>` : '';
+            } else {
+                val = val != null ? val : '';
+            }
+
+            html += `<td>${val}</td>`;
+        });
+
+        html += '</tr>';
+    });
+
+    html += '</tbody></table></div></div>';
+    return html;
+}
+
+/**
+ * Render a tagged_list section (badge + text items).
+ */
+function renderTaggedList(section, data) {
+    const items = data[section.data_key] || [];
+    if (items.length === 0) return '';
+
+    let html = `
+        <div class="detail-section">
+            <h6>${section.title}</h6>
+            <ul class="list-unstyled">`;
+
+    items.forEach(item => {
+        const badge = item[section.badge_key] || '';
+        const text = item[section.text_key] || '';
+        const badgeHtml = section.badge_format === 'code'
+            ? `<code>${badge}</code>`
+            : `<span class="badge bg-secondary">${badge}</span>`;
+        html += `<li>${badgeHtml} <small class="text-muted ms-1">(${text})</small></li>`;
+    });
+
+    html += '</ul></div>';
+    return html;
+}
+
+/**
+ * Render a raw_text section (monospace or paragraph).
+ */
+function renderRawText(section, data) {
+    const value = data[section.data_key];
+    if (!value) return '';
+
+    const inner = section.format === 'paragraph'
+        ? `<p>${value}</p>`
+        : `<div class="raw-entry">${value}</div>`;
+
+    return `
+        <div class="detail-section">
+            <h6>${section.title}</h6>
+            ${inner}
+        </div>`;
+}
+
+/**
+ * Render an annotations section (My Notes with CRUD).
+ */
+function renderAnnotationsSection(section, data) {
+    let entityType;
+    if (section.entity_type) {
+        entityType = section.entity_type;
+    } else if (section.entity_type_from) {
+        entityType = (data[section.entity_type_from] || '').toLowerCase();
+    }
+    if (!entityType) return '';
+    return buildAnnotationSectionHTML(entityType, data.id);
+}
+
+/**
+ * Built-in renderer: genus geography section.
+ * Handles locations/formations with country/region links, fallback to raw text.
+ */
+function renderGenusGeography(data) {
+    let geoGridHtml = '';
+
+    if (data.locations && data.locations.length > 0) {
+        const locLinks = data.locations.map(l => {
+            let link = `<a class="detail-link" onclick="openDetail('country_detail', ${l.country_id})">${l.country_name}</a>`;
+            if (l.region_id && l.region_name) {
+                link += ` &gt; <a class="detail-link" onclick="openDetail('region_detail', ${l.region_id})">${l.region_name}</a>`;
+            }
+            return link;
+        }).join(', ');
+        geoGridHtml += `
+            <span class="detail-label">Country:</span>
+            <span class="detail-value">${locLinks}</span>`;
+    } else if (data.location) {
+        geoGridHtml += `
+            <span class="detail-label">Location:</span>
+            <span class="detail-value">${data.location}</span>`;
+    }
+
+    if (data.formations && data.formations.length > 0) {
+        const fmtLinks = data.formations.map(f =>
+            `<a class="detail-link" onclick="openDetail('formation_detail', ${f.id})">${f.name}</a>${f.period ? ' (' + f.period + ')' : ''}`
+        ).join(', ');
+        geoGridHtml += `
+            <span class="detail-label">Formation:</span>
+            <span class="detail-value">${fmtLinks}</span>`;
+    } else if (data.formation) {
+        geoGridHtml += `
+            <span class="detail-label">Formation:</span>
+            <span class="detail-value">${data.formation}</span>`;
+    }
+
+    if (!geoGridHtml) return '';
+    return `
+        <div class="detail-section">
+            <h6>Geographic Information</h6>
+            <div class="detail-grid">${geoGridHtml}
+            </div>
+        </div>`;
+}
+
+/**
+ * Built-in renderer: synonym list section.
+ */
+function renderSynonymList(section, data) {
+    const synonyms = data[section.data_key] || [];
+    if (synonyms.length === 0) return '';
+
+    let html = `
+        <div class="detail-section">
+            <h6>Synonymy</h6>
+            <ul class="list-unstyled">`;
+
+    synonyms.forEach(s => {
+        const seniorLink = s.senior_taxon_id
+            ? `<a href="#" class="synonym-link" onclick="openDetail('genus_detail', ${s.senior_taxon_id}); return false;"><i>${s.senior_name}</i></a>`
+            : `<i>${s.senior_name}</i>`;
+        html += `
+            <li>
+                <span class="badge bg-secondary badge-synonym">${s.synonym_type}</span>
+                ${seniorLink}
+                ${s.fide_author ? `<small class="text-muted">fide ${s.fide_author}${s.fide_year ? ', ' + s.fide_year : ''}</small>` : ''}
+            </li>`;
+    });
+
+    html += '</ul></div>';
+    return html;
+}
+
+/**
+ * Built-in renderer: rank statistics section.
+ */
+function renderRankStatistics(data) {
+    if (!data.genera_count && (!data.children_counts || data.children_counts.length === 0)) return '';
+
+    let html = `
+        <div class="detail-section">
+            <h6>Statistics</h6>
+            <div class="detail-grid">`;
+
+    if (data.genera_count) {
+        html += `
+            <span class="detail-label">Genera:</span>
+            <span class="detail-value">${data.genera_count}</span>`;
+    }
+
+    if (data.children_counts) {
+        data.children_counts.forEach(c => {
+            if (c.rank === 'Genus' && data.genera_count) return;
+            html += `
+                <span class="detail-label">${c.rank}:</span>
+                <span class="detail-value">${c.count}</span>`;
+        });
+    }
+
+    html += '</div></div>';
+    return html;
+}
+
+/**
+ * Built-in renderer: rank children list section.
+ */
+function renderRankChildren(section, data) {
+    const children = data[section.data_key] || [];
+    if (children.length === 0) return '';
+
+    const title = `Children (${children.length}${children.length >= 20 ? '+' : ''})`;
+    let html = `
+        <div class="detail-section">
+            <h6>${title}</h6>
+            <ul class="list-unstyled children-list">`;
+
+    children.forEach(c => {
+        if (c.rank === 'Genus') {
+            html += `
+            <li class="clickable" onclick="navigateToGenus(${c.id}, ${data.id}, '${data.name.replace(/'/g, "\\'")}')">
+                <span class="badge bg-light text-dark me-1">${c.rank}</span>
+                <strong><i>${c.name}</i></strong>
+                ${c.author ? '<small class="text-muted">' + c.author + '</small>' : ''}
+            </li>`;
+        } else {
+            html += `
+            <li class="clickable" onclick="navigateToRank(${c.id}, '${c.name.replace(/'/g, "\\'")}', '${c.rank}')">
+                <span class="badge bg-light text-dark me-1">${c.rank}</span>
+                <strong>${c.name}</strong>
+                ${c.author ? '<small class="text-muted">' + c.author + '</small>' : ''}
+            </li>`;
+        }
+    });
+
+    html += '</ul></div>';
+    return html;
+}
+
+/**
+ * Dispatch section rendering by type.
+ */
+function renderDetailSection(section, data) {
+    // Section-level condition check
+    if (section.condition && !checkCondition(data, section.condition)) return '';
+
+    switch (section.type) {
+        case 'field_grid':      return renderFieldGrid(section, data);
+        case 'linked_table':    return renderLinkedTable(section, data);
+        case 'tagged_list':     return renderTaggedList(section, data);
+        case 'raw_text':        return renderRawText(section, data);
+        case 'annotations':     return renderAnnotationsSection(section, data);
+        case 'genus_geography': return renderGenusGeography(data);
+        case 'synonym_list':    return renderSynonymList(section, data);
+        case 'rank_statistics': return renderRankStatistics(data);
+        case 'rank_children':   return renderRankChildren(section, data);
+        default:                return '';
+    }
+}
+
+/**
+ * Main entry point: render a detail view from manifest definition.
+ */
+async function renderDetailFromManifest(viewKey, entityId) {
+    const view = manifest.views[viewKey];
+    if (!view || view.type !== 'detail') return;
+
+    const modalBody = document.getElementById('genusModalBody');
+    const modalTitle = document.getElementById('genusModalTitle');
+
+    modalBody.innerHTML = '<div class="loading">Loading...</div>';
+    genusModal.show();
+
+    try {
+        const url = view.source.replace('{id}', entityId);
+        const response = await fetch(url);
+        const data = await response.json();
+
+        // Title
+        modalTitle.innerHTML = buildDetailTitle(view.title_template, data);
+
+        // Sections
+        let html = '';
+        for (const section of view.sections) {
+            html += renderDetailSection(section, data);
+        }
+        modalBody.innerHTML = html;
+
+        // Post-render: load annotations for any annotations sections
+        for (const section of view.sections) {
+            if (section.type === 'annotations') {
+                let entityType;
+                if (section.entity_type) {
+                    entityType = section.entity_type;
+                } else if (section.entity_type_from) {
+                    entityType = (data[section.entity_type_from] || '').toLowerCase();
+                }
+                if (entityType) {
+                    loadAnnotations(entityType, data.id);
+                }
+            }
+        }
+
+    } catch (error) {
+        modalBody.innerHTML = `<div class="text-danger">Error loading details: ${error.message}</div>`;
     }
 }
