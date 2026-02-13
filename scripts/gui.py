@@ -253,27 +253,59 @@ class ScodaDesktopGUI:
 
     def _refresh_pkg_listbox(self):
         """Refresh listbox items with current status indicators."""
-        # Remember selection
-        sel_idx = None
-        if self.selected_package:
-            for i, pkg in enumerate(self.packages):
-                if pkg['name'] == self.selected_package:
-                    sel_idx = i
-                    break
-
         self.pkg_listbox.config(state="normal")
         self.pkg_listbox.delete(0, "end")
+
+        # Build dep names for the running package
+        running_dep_names = set()
+        if self.server_running and self.selected_package:
+            running_pkg = self._get_selected_pkg()
+            if running_pkg:
+                for dep in running_pkg.get('deps', []):
+                    running_dep_names.add(dep.get('name'))
+
+        sel_idx = None
+        row = 0
         for pkg in self.packages:
             is_running = self.server_running and pkg['name'] == self.selected_package
-            status = "\u25b6 Running" if is_running else "\u25a0 Stopped"
-            label = f"  {status}  {pkg['name']} v{pkg['version']} \u2014 {pkg['record_count']:,} records"
+            is_loaded_dep = self.server_running and pkg['name'] in running_dep_names
+
+            # Skip deps here; they'll appear as children under the running package
+            if is_loaded_dep:
+                continue
+
+            if is_running:
+                label = f" \u25b6 Running  {pkg['name']} v{pkg['version']} \u2014 {pkg['record_count']:,} records"
+            else:
+                label = f" \u25a0 Stopped  {pkg['name']} v{pkg['version']} \u2014 {pkg['record_count']:,} records"
             self.pkg_listbox.insert("end", label)
+
+            if pkg['name'] == self.selected_package:
+                sel_idx = row
+            row += 1
+
+            # Insert dependency children under running package
+            if is_running:
+                for dep in pkg.get('deps', []):
+                    dep_name = dep.get('name')
+                    dep_pkg = None
+                    for p in self.packages:
+                        if p['name'] == dep_name:
+                            dep_pkg = p
+                            break
+                    if dep_pkg:
+                        dep_label = (f"   \u2514\u2500 Loaded  {dep_pkg['name']} v{dep_pkg['version']}"
+                                     f" \u2014 {dep_pkg['record_count']:,} records")
+                    else:
+                        dep_label = f"   \u2514\u2500 Loaded  {dep_name} (alias: {dep.get('alias', dep_name)})"
+                    self.pkg_listbox.insert("end", dep_label)
+                    row += 1
 
         # Restore selection
         if sel_idx is not None:
             self.pkg_listbox.selection_set(sel_idx)
 
-        # Re-apply disabled state if running
+        # Disable switching while running
         if self.server_running:
             self.pkg_listbox.config(state="disabled")
 

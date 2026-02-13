@@ -303,6 +303,7 @@ class PackageRegistry:
                 'description': pkg.manifest.get('description', '') if pkg else '',
                 'has_dependencies': len(entry['deps']) > 0,
                 'source_type': 'scoda' if pkg else 'db',
+                'deps': entry['deps'],
             }
             result.append(info)
         return result
