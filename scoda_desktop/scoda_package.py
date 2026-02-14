@@ -458,7 +458,7 @@ def get_registry():
         if getattr(sys, 'frozen', False):
             scan_dir = os.path.dirname(sys.executable)
         else:
-            scan_dir = os.path.dirname(os.path.abspath(__file__))
+            scan_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         _registry.scan(scan_dir)
     return _registry
 
@@ -534,8 +534,8 @@ def _resolve_paths():
             _overlay_db = os.path.join(exe_dir, 'trilobase_overlay.db')
         _resolve_paleocore(exe_dir)
     else:
-        # Development mode
-        base_dir = os.path.dirname(os.path.abspath(__file__))
+        # Development mode — project root is one level up from this package
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         scoda_path = os.path.join(base_dir, 'trilobase.scoda')
         if os.path.exists(scoda_path):
             _scoda_pkg = ScodaPackage(scoda_path)

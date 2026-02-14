@@ -2,7 +2,7 @@ import re
 
 def main():
     genus_counts = {}
-    with open('trilobite_genus_list.txt', 'r', encoding='utf-8') as f:
+    with open('data/trilobite_genus_list.txt', 'r', encoding='utf-8') as f:
         for i, line in enumerate(f):
             line = line.strip()
             if not line:

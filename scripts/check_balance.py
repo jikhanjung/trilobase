@@ -15,7 +15,7 @@ def check_balance(file_path):
     return unbalanced_lines
 
 if __name__ == '__main__':
-    file_to_check = 'trilobite_genus_list.txt'
+    file_to_check = 'data/trilobite_genus_list.txt'
     
     # Path to the current directory is passed as an argument by the tool, but for script execution,
     # it's usually relative to where the script is run. Assume it's in the same directory.

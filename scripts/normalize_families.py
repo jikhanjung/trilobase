@@ -338,7 +338,7 @@ if __name__ == '__main__':
 
     base_path = Path(__file__).parent.parent
     db_path = base_path / 'trilobase.db'
-    family_file = base_path / 'trilobite_family_list.txt'
+    family_file = base_path / 'data' / 'trilobite_family_list.txt'
 
     if not db_path.exists():
         print(f"Error: Database not found at {db_path}")

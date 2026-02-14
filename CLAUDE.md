@@ -14,18 +14,39 @@ Trilobase is a paleontological database project focused on trilobite taxonomy. T
 
 ```
 trilobase/
-├── trilobite_genus_list.txt          # 최신 버전 (항상 이 파일 수정)
-├── trilobite_genus_list_original.txt # 원본 백업
-├── trilobite_genus_list_*.txt        # 각 단계별 중간 파일
-├── trilobite_family_list.txt         # Family 목록
-├── trilobite_nomina_nuda.txt         # Nomina nuda
-├── scripts/                          # 데이터 처리 스크립트
+├── scoda_desktop/                    # SCODA Desktop runtime package
+│   ├── __init__.py
+│   ├── scoda_package.py              # Core library (DB access, .scoda packages)
+│   ├── app.py                        # Flask web server
+│   ├── mcp_server.py                 # MCP server (stdio/SSE)
+│   ├── gui.py                        # GUI control panel (tkinter)
+│   ├── serve.py                      # Server launcher
+│   ├── templates/                    # Generic viewer template
+│   └── static/                       # Generic viewer assets
+├── tests/                            # Test suite (230 tests)
+│   ├── conftest.py                   # Shared fixtures
+│   ├── test_runtime.py               # Runtime tests (105)
+│   ├── test_trilobase.py             # Trilobase domain tests (108)
+│   ├── test_mcp.py                   # MCP tests (16)
+│   └── test_mcp_basic.py             # MCP basic test (1)
+├── data/                             # Source data files
+│   ├── trilobite_genus_list.txt      # 최신 버전 (항상 이 파일 수정)
+│   ├── trilobite_genus_list_original.txt
+│   ├── trilobite_family_list.txt
+│   ├── trilobite_nomina_nuda.txt
+│   └── adrain2011.txt
+├── scripts/                          # 데이터 파이프라인 스크립트
+├── spa/                              # Reference SPA (trilobase 전용)
+├── examples/                         # Example SPAs
 ├── devlog/                           # 작업 기록
 │   ├── YYYYMMDD_NNN_*.md            # 작업 로그 (숫자 일련번호)
 │   ├── YYYYMMDD_PNN_*.md            # 계획(Plan) 문서
 │   └── YYYYMMDD_RNN_*.md            # 리뷰(Review) 문서
-└── docs/
-    └── HANDOVER.md                   # 인수인계 문서 (필독)
+├── docs/
+│   └── HANDOVER.md                   # 인수인계 문서 (필독)
+├── ScodaDesktop.spec                 # PyInstaller spec
+├── pytest.ini                        # pytest config (testpaths = tests)
+└── requirements.txt
 ```
 
 ## Data Format Conventions
@@ -49,7 +70,7 @@ Standard paleontological format: `AUTHOR, YEAR` (e.g., `LIEBERMAN, 1994`)
 
 ## Work Convention
 
-- `trilobite_genus_list.txt`가 항상 최신 버전
+- `data/trilobite_genus_list.txt`가 항상 최신 버전
 - 각 Phase 완료 시 반드시 git commit
 - 중간 과정 파일은 `_단계명.txt` 접미사로 보존
 - 작업 기록은 `devlog/YYYYMMDD_일련번호_제목.md` 형식

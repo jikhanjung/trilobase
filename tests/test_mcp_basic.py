@@ -15,7 +15,7 @@ async def test_mcp_server():
 
     server_params = StdioServerParameters(
         command="python3",
-        args=["mcp_server.py"]
+        args=["-m", "scoda_desktop.mcp_server"]
     )
 
     async with stdio_client(server_params) as (read, write):

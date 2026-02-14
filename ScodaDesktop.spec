@@ -15,17 +15,17 @@ block_cipher = None
 # ScodaDesktop.exe  (GUI viewer)
 # ---------------------------------------------------------------------------
 a = Analysis(
-    ['scripts/gui.py'],
+    ['scoda_desktop/gui.py'],
     pathex=[],
     binaries=[],
     datas=[
-        ('app.py', '.'),
-        ('scoda_package.py', '.'),
-        ('templates', 'templates'),
-        ('static', 'static'),
+        ('scoda_desktop', 'scoda_desktop'),
         ('spa', 'spa'),
     ],
     hiddenimports=[
+        'scoda_desktop',
+        'scoda_desktop.scoda_package',
+        'scoda_desktop.app',
         'flask',
         'asgiref',
         'asgiref.wsgi',
@@ -74,13 +74,16 @@ exe = EXE(
 # ScodaDesktop_mcp.exe  (MCP stdio server for Claude Desktop)
 # ---------------------------------------------------------------------------
 mcp_a = Analysis(
-    ['mcp_server.py'],
+    ['scoda_desktop/mcp_server.py'],
     pathex=[],
     binaries=[],
     datas=[
-        ('scoda_package.py', '.'),
+        ('scoda_desktop/scoda_package.py', 'scoda_desktop'),
+        ('scoda_desktop/__init__.py', 'scoda_desktop'),
     ],
     hiddenimports=[
+        'scoda_desktop',
+        'scoda_desktop.scoda_package',
         'mcp',
         'mcp.server',
         'mcp.server.stdio',

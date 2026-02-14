@@ -1,7 +1,7 @@
 import re
 
 def main():
-    with open('trilobite_genus_list_structural_fixed.txt', 'r', encoding='utf-8') as f:
+    with open('data/trilobite_genus_list_structural_fixed.txt', 'r', encoding='utf-8') as f:
         for i, line in enumerate(f):
             line = line.strip()
             if not line:

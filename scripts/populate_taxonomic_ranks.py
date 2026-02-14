@@ -168,5 +168,5 @@ def populate_database_from_ranks(file_path, db_path):
 
 if __name__ == "__main__":
     db_path = 'trilobase.db'
-    txt_file_path = 'adrain2011.txt'
+    txt_file_path = 'data/adrain2011.txt'
     populate_database_from_ranks(txt_file_path, db_path)

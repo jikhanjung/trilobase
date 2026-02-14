@@ -15,18 +15,18 @@ def main():
     cleaned_families.add('NEKTASPIDA')
 
     # Read existing families
-    with open('trilobite_family_list.txt', 'r', encoding='utf-8') as f:
+    with open('data/trilobite_family_list.txt', 'r', encoding='utf-8') as f:
         existing_families = set(line.strip() for line in f) # Strip newlines when reading existing
 
     # Find the new families to add
     new_families = sorted(list(cleaned_families - existing_families))
 
     # Append new families to the list
-    with open('trilobite_family_list.txt', 'a', encoding='utf-8') as f:
+    with open('data/trilobite_family_list.txt', 'a', encoding='utf-8') as f:
         for family in new_families:
             f.write('\n' + family) # Ensure Python writes the newline
             
-    print(f"Added {len(new_families)} new families to trilobite_family_list.txt")
+    print(f"Added {len(new_families)} new families to data/trilobite_family_list.txt")
 
 if __name__ == '__main__':
     main()

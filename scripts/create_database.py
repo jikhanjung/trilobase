@@ -301,7 +301,7 @@ def create_database(db_path, genus_file):
 if __name__ == '__main__':
     base_dir = Path(__file__).parent.parent
     db_path = base_dir / 'trilobase.db'
-    genus_file = base_dir / 'trilobite_genus_list.txt'
+    genus_file = base_dir / 'data' / 'trilobite_genus_list.txt'
 
     print(f"Creating database: {db_path}")
     print(f"Source file: {genus_file}")

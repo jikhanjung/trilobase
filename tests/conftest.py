@@ -1,0 +1,739 @@
+"""
+Shared test fixtures for Trilobase test suite.
+"""
+
+import json
+import sqlite3
+import os
+import sys
+
+import pytest
+
+import scoda_desktop.scoda_package as scoda_package
+from scoda_desktop.app import app
+from scoda_desktop.scoda_package import get_db, ScodaPackage
+
+# Import overlay DB init (used by test_db fixture)
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(__file__)), 'scripts'))
+from init_overlay_db import create_overlay_db
+
+
+@pytest.fixture
+def anyio_backend():
+    return 'asyncio'
+
+@pytest.fixture
+def test_db(tmp_path):
+    """Create temporary test databases (canonical + overlay) with sample data."""
+    canonical_db_path = str(tmp_path / "test_trilobase.db")
+    overlay_db_path = str(tmp_path / "test_overlay.db")
+
+    # Create CANONICAL database
+    conn = sqlite3.connect(canonical_db_path)
+    cursor = conn.cursor()
+
+    # Create tables (canonical only - NO user_annotations)
+    cursor.executescript("""
+        CREATE TABLE taxonomic_ranks (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            rank TEXT NOT NULL,
+            parent_id INTEGER,
+            author TEXT,
+            notes TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            genera_count INTEGER DEFAULT 0,
+            year TEXT,
+            year_suffix TEXT,
+            type_species TEXT,
+            type_species_author TEXT,
+            formation TEXT,
+            location TEXT,
+            temporal_code TEXT,
+            is_valid INTEGER DEFAULT 1,
+            raw_entry TEXT,
+            family TEXT,
+            FOREIGN KEY (parent_id) REFERENCES taxonomic_ranks(id)
+        );
+
+        CREATE TABLE synonyms (
+            id INTEGER PRIMARY KEY,
+            junior_taxon_id INTEGER,
+            senior_taxon_name TEXT,
+            synonym_type TEXT,
+            fide_author TEXT,
+            fide_year TEXT,
+            notes TEXT,
+            senior_taxon_id INTEGER,
+            FOREIGN KEY (junior_taxon_id) REFERENCES taxonomic_ranks(id)
+        );
+
+        CREATE TABLE genus_formations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            genus_id INTEGER NOT NULL,
+            formation_id INTEGER NOT NULL,
+            is_type_locality INTEGER DEFAULT 0,
+            notes TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (genus_id) REFERENCES taxonomic_ranks(id),
+            UNIQUE(genus_id, formation_id)
+        );
+
+        CREATE TABLE genus_locations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            genus_id INTEGER NOT NULL,
+            country_id INTEGER NOT NULL,
+            region TEXT,
+            region_id INTEGER,
+            is_type_locality INTEGER DEFAULT 0,
+            notes TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (genus_id) REFERENCES taxonomic_ranks(id),
+            UNIQUE(genus_id, country_id, region)
+        );
+
+        CREATE VIEW taxa AS
+        SELECT * FROM taxonomic_ranks WHERE rank = 'Genus';
+
+        -- SCODA-Core tables
+        CREATE TABLE artifact_metadata (
+            key TEXT PRIMARY KEY,
+            value TEXT NOT NULL
+        );
+
+        CREATE TABLE provenance (
+            id INTEGER PRIMARY KEY,
+            source_type TEXT NOT NULL,
+            citation TEXT NOT NULL,
+            description TEXT,
+            year INTEGER,
+            url TEXT
+        );
+
+        CREATE TABLE schema_descriptions (
+            table_name TEXT NOT NULL,
+            column_name TEXT,
+            description TEXT NOT NULL,
+            PRIMARY KEY (table_name, column_name)
+        );
+
+        -- SCODA UI tables (Phase 14)
+        CREATE TABLE ui_display_intent (
+            id INTEGER PRIMARY KEY,
+            entity TEXT NOT NULL,
+            default_view TEXT NOT NULL,
+            description TEXT,
+            source_query TEXT,
+            priority INTEGER DEFAULT 0
+        );
+
+        CREATE TABLE ui_queries (
+            id INTEGER PRIMARY KEY,
+            name TEXT NOT NULL UNIQUE,
+            description TEXT,
+            sql TEXT NOT NULL,
+            params_json TEXT,
+            created_at TEXT NOT NULL
+        );
+    """)
+
+    # Insert sample data: Class -> Order -> Family -> Genus hierarchy
+    cursor.executescript("""
+        -- Class
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count)
+        VALUES (1, 'Trilobita', 'Class', NULL, 'WALCH, 1771', 5113);
+
+        -- Orders
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count)
+        VALUES (2, 'Phacopida', 'Order', 1, 'SALTER, 1864', 500);
+
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count)
+        VALUES (3, 'Ptychopariida', 'Order', 1, 'SWINNERTON, 1915', 1200);
+
+        -- Family under Phacopida
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count)
+        VALUES (10, 'Phacopidae', 'Family', 2, 'HAWLE & CORDA, 1847', 30);
+
+        -- Family under Ptychopariida
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count)
+        VALUES (11, 'Olenidae', 'Family', 3, 'BURMEISTER, 1843', 50);
+
+        -- Genera under Phacopidae
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, year, type_species,
+            type_species_author, formation, location, temporal_code, is_valid, raw_entry, family)
+        VALUES (100, 'Phacops', 'Genus', 10, 'EMMRICH', '1839', NULL,
+            'Calymene macrophthalma BRONGNIART, 1822', 'Various', 'Worldwide',
+            'LDEV-UDEV', 1, 'Phacops EMMRICH, 1839. ...', 'Phacopidae');
+
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, year, type_species,
+            type_species_author, formation, location, temporal_code, is_valid, raw_entry, family)
+        VALUES (101, 'Acuticryphops', 'Genus', 10, 'RICHTER & RICHTER', '1926', NULL,
+            'Phacops acuticeps KAYSER, 1889', 'Büdesheimer Sh', 'Germany',
+            'UDEV', 1, 'Acuticryphops RICHTER & RICHTER, 1926. ...', 'Phacopidae');
+
+        -- An invalid genus (synonym)
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, year, type_species,
+            type_species_author, formation, location, temporal_code, is_valid, raw_entry, family)
+        VALUES (102, 'Cryphops', 'Genus', 10, 'RICHTER', '1856', NULL,
+            NULL, NULL, 'Germany', 'UDEV', 0,
+            'Cryphops RICHTER, 1856 [j.s.s. of Acuticryphops]', 'Phacopidae');
+
+        -- Genus under Olenidae
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, year, type_species,
+            type_species_author, formation, location, temporal_code, is_valid, raw_entry, family)
+        VALUES (200, 'Olenus', 'Genus', 11, 'DALMAN', '1827', NULL,
+            'Entomostracites gibbosus WAHLENBERG, 1818', 'Alum Sh', 'Sweden',
+            'UCAM', 1, 'Olenus DALMAN, 1827. ...', 'Olenidae');
+    """)
+
+    # Synonyms
+    cursor.execute("""
+        INSERT INTO synonyms (id, junior_taxon_id, senior_taxon_name, senior_taxon_id,
+            synonym_type, fide_author, fide_year)
+        VALUES (1, 102, 'Acuticryphops', 101, 'j.s.s.', 'CLARKSON', '1969')
+    """)
+
+    # Genus-Formation relations
+    cursor.executescript("""
+        INSERT INTO genus_formations (genus_id, formation_id) VALUES (101, 1);
+        INSERT INTO genus_formations (genus_id, formation_id) VALUES (200, 2);
+    """)
+
+    # Genus-Location relations (with region_id)
+    cursor.executescript("""
+        INSERT INTO genus_locations (genus_id, country_id, region, region_id) VALUES (101, 1, 'Eifel', 3);
+        INSERT INTO genus_locations (genus_id, country_id, region, region_id) VALUES (200, 2, 'Scania', 4);
+    """)
+
+    # Bibliography (for metadata statistics)
+    cursor.execute("""
+        CREATE TABLE bibliography (
+            id INTEGER PRIMARY KEY,
+            authors TEXT NOT NULL,
+            year INTEGER,
+            year_suffix TEXT,
+            title TEXT,
+            journal TEXT,
+            volume TEXT,
+            pages TEXT,
+            publisher TEXT,
+            city TEXT,
+            editors TEXT,
+            book_title TEXT,
+            reference_type TEXT DEFAULT 'article',
+            raw_entry TEXT NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    cursor.execute("""
+        INSERT INTO bibliography (id, authors, year, title, journal, reference_type, raw_entry)
+        VALUES (1, 'Jell, P.A. & Adrain, J.M.', 2002, 'Available generic names for trilobites',
+                'Memoirs of the Queensland Museum', 'article',
+                'Jell, P.A. & Adrain, J.M. (2002) Available generic names for trilobites.')
+    """)
+
+    # SCODA metadata
+    cursor.executescript("""
+        INSERT INTO artifact_metadata (key, value) VALUES ('artifact_id', 'trilobase');
+        INSERT INTO artifact_metadata (key, value) VALUES ('name', 'Trilobase');
+        INSERT INTO artifact_metadata (key, value) VALUES ('version', '1.0.0');
+        INSERT INTO artifact_metadata (key, value) VALUES ('schema_version', '1.0');
+        INSERT INTO artifact_metadata (key, value) VALUES ('description', 'Trilobite genus-level taxonomy database');
+        INSERT INTO artifact_metadata (key, value) VALUES ('license', 'CC-BY-4.0');
+    """)
+
+    # SCODA provenance
+    cursor.executescript("""
+        INSERT INTO provenance (id, source_type, citation, description, year)
+        VALUES (1, 'primary', 'Jell & Adrain (2002)', 'Primary source for genus-level taxonomy', 2002);
+        INSERT INTO provenance (id, source_type, citation, description, year)
+        VALUES (2, 'supplementary', 'Adrain (2011)', 'Suprafamilial classification', 2011);
+    """)
+
+    # SCODA schema descriptions (sample)
+    cursor.executescript("""
+        INSERT INTO schema_descriptions (table_name, column_name, description)
+        VALUES ('taxonomic_ranks', NULL, 'Unified taxonomic hierarchy from Class to Genus');
+        INSERT INTO schema_descriptions (table_name, column_name, description)
+        VALUES ('taxonomic_ranks', 'rank', 'Taxonomic rank: Class, Order, Suborder, Superfamily, Family, or Genus');
+        INSERT INTO schema_descriptions (table_name, column_name, description)
+        VALUES ('synonyms', NULL, 'Taxonomic synonym relationships');
+    """)
+
+    # SCODA display intents (Phase 14)
+    cursor.executescript("""
+        INSERT INTO ui_display_intent (id, entity, default_view, description, source_query, priority)
+        VALUES (1, 'genera', 'tree', 'Taxonomic hierarchy is primary structure', 'taxonomy_tree', 0);
+        INSERT INTO ui_display_intent (id, entity, default_view, description, source_query, priority)
+        VALUES (2, 'genera', 'table', 'Flat listing for search/filtering', 'genera_list', 1);
+        INSERT INTO ui_display_intent (id, entity, default_view, description, source_query, priority)
+        VALUES (3, 'references', 'table', 'Literature references sorted by year', 'bibliography_list', 0);
+    """)
+
+    # SCODA saved queries (Phase 14)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('genera_list', 'Flat list of all genera',
+                'SELECT id, name, author, year, family, is_valid FROM taxonomic_ranks WHERE rank = ''Genus'' ORDER BY name',
+                NULL, '2026-02-07T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('family_genera', 'Genera in a specific family',
+                'SELECT id, name, author, year, is_valid FROM taxonomic_ranks WHERE parent_id = :family_id AND rank = ''Genus'' ORDER BY name',
+                '{"family_id": "integer"}', '2026-02-07T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('taxonomy_tree', 'Tree from Class to Family',
+                'SELECT id, name, rank, parent_id, author FROM taxonomic_ranks WHERE rank != ''Genus'' ORDER BY name',
+                NULL, '2026-02-07T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('bibliography_list', 'All literature references',
+                'SELECT id, authors, year, title, journal, reference_type FROM bibliography ORDER BY authors',
+                NULL, '2026-02-07T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('genus_detail', 'Full detail for a single genus',
+                'SELECT tr.*, parent.name as family_name FROM taxonomic_ranks tr LEFT JOIN taxonomic_ranks parent ON tr.parent_id = parent.id WHERE tr.id = :genus_id AND tr.rank = ''Genus''',
+                '{"genus_id": "integer"}', '2026-02-07T00:00:00')
+    """)
+
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('countries_list', 'All countries with taxa counts',
+                'SELECT c.id, c.name, c.cow_ccode as code, COUNT(DISTINCT gl.genus_id) as taxa_count FROM pc.geographic_regions c LEFT JOIN genus_locations gl ON gl.country_id = c.id WHERE c.parent_id IS NULL GROUP BY c.id ORDER BY c.name',
+                NULL, '2026-02-12T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('formations_list', 'All formations with taxa counts',
+                'SELECT f.id, f.name, f.formation_type, f.period, COUNT(DISTINCT gf.genus_id) as taxa_count FROM pc.formations f LEFT JOIN genus_formations gf ON gf.formation_id = f.id GROUP BY f.id ORDER BY f.name',
+                NULL, '2026-02-12T00:00:00')
+    """)
+
+    # ICS chronostrat list query (uses pc.* prefix for PaleoCore table)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('ics_chronostrat_list', 'ICS International Chronostratigraphic Chart',
+                'SELECT id, name, rank, parent_id, start_mya, end_mya, color, display_order FROM pc.ics_chronostrat ORDER BY display_order',
+                NULL, '2026-02-12T00:00:00')
+    """)
+
+    # SCODA UI Manifest (Phase 15)
+    cursor.execute("""
+        CREATE TABLE ui_manifest (
+            name TEXT PRIMARY KEY,
+            description TEXT,
+            manifest_json TEXT NOT NULL,
+            created_at TEXT NOT NULL
+        )
+    """)
+
+    import json as _json
+    test_manifest = {
+        "default_view": "taxonomy_tree",
+        "views": {
+            "taxonomy_tree": {
+                "type": "tree",
+                "title": "Taxonomy Tree",
+                "description": "Hierarchical classification from Class to Family",
+                "source_query": "taxonomy_tree",
+                "icon": "bi-diagram-3",
+                "tree_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "rank_key": "rank",
+                    "leaf_rank": "Family",
+                    "count_key": "genera_count",
+                    "on_node_info": {"detail_view": "rank_detail", "id_key": "id"},
+                    "item_query": "family_genera",
+                    "item_param": "family_id",
+                    "item_columns": [
+                        {"key": "name", "label": "Genus", "italic": True},
+                        {"key": "author", "label": "Author"},
+                        {"key": "year", "label": "Year"},
+                        {"key": "type_species", "label": "Type Species", "truncate": 40},
+                        {"key": "location", "label": "Location", "truncate": 30}
+                    ],
+                    "on_item_click": {"detail_view": "genus_detail", "id_key": "id"},
+                    "item_valid_filter": {"key": "is_valid", "label": "Valid only", "default": True}
+                }
+            },
+            "genera_table": {
+                "type": "table",
+                "title": "All Genera",
+                "description": "Flat list of all trilobite genera",
+                "source_query": "genera_list",
+                "icon": "bi-table",
+                "columns": [
+                    {"key": "name", "label": "Genus", "sortable": True, "searchable": True, "italic": True},
+                    {"key": "author", "label": "Author", "sortable": True, "searchable": True},
+                    {"key": "year", "label": "Year", "sortable": True, "searchable": False},
+                    {"key": "family", "label": "Family", "sortable": True, "searchable": True},
+                    {"key": "is_valid", "label": "Valid", "sortable": True, "searchable": False, "type": "boolean"}
+                ],
+                "default_sort": {"key": "name", "direction": "asc"},
+                "searchable": True,
+                "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
+            },
+            "references_table": {
+                "type": "table",
+                "title": "Bibliography",
+                "description": "Literature references",
+                "source_query": "bibliography_list",
+                "icon": "bi-book",
+                "columns": [
+                    {"key": "authors", "label": "Authors", "sortable": True, "searchable": True},
+                    {"key": "year", "label": "Year", "sortable": True, "searchable": False},
+                    {"key": "title", "label": "Title", "sortable": False, "searchable": True}
+                ],
+                "default_sort": {"key": "authors", "direction": "asc"},
+                "searchable": True,
+                "on_row_click": {"detail_view": "bibliography_detail", "id_key": "id"}
+            },
+            "formations_table": {
+                "type": "table",
+                "title": "Formations",
+                "description": "Geological formations",
+                "source_query": "formations_list",
+                "icon": "bi-layers",
+                "columns": [
+                    {"key": "name", "label": "Formation", "sortable": True, "searchable": True}
+                ],
+                "default_sort": {"key": "name", "direction": "asc"},
+                "searchable": True,
+                "on_row_click": {"detail_view": "formation_detail", "id_key": "id"}
+            },
+            "countries_table": {
+                "type": "table",
+                "title": "Countries",
+                "description": "Countries with trilobite occurrences",
+                "source_query": "countries_list",
+                "icon": "bi-globe",
+                "columns": [
+                    {"key": "name", "label": "Country", "sortable": True, "searchable": True}
+                ],
+                "default_sort": {"key": "name", "direction": "asc"},
+                "searchable": True,
+                "on_row_click": {"detail_view": "country_detail", "id_key": "id"}
+            },
+            "chronostratigraphy_table": {
+                "type": "chart",
+                "title": "Chronostratigraphy",
+                "description": "ICS International Chronostratigraphic Chart (GTS 2020)",
+                "source_query": "ics_chronostrat_list",
+                "icon": "bi-clock-history",
+                "columns": [
+                    {"key": "name", "label": "Name", "sortable": True, "searchable": True},
+                    {"key": "rank", "label": "Rank", "sortable": True, "searchable": True},
+                    {"key": "start_mya", "label": "Start (Ma)", "sortable": True, "type": "number"},
+                    {"key": "end_mya", "label": "End (Ma)", "sortable": True, "type": "number"},
+                    {"key": "color", "label": "Color", "sortable": False, "type": "color"}
+                ],
+                "default_sort": {"key": "display_order", "direction": "asc"},
+                "searchable": True,
+                "chart_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "color_key": "color",
+                    "order_key": "display_order",
+                    "rank_key": "rank",
+                    "skip_ranks": ["Super-Eon"],
+                    "rank_columns": [
+                        {"rank": "Eon", "label": "Eon"},
+                        {"rank": "Era", "label": "Era"},
+                        {"rank": "Period", "label": "System / Period"},
+                        {"rank": "Sub-Period", "label": "Sub-Period"},
+                        {"rank": "Epoch", "label": "Series / Epoch"},
+                        {"rank": "Age", "label": "Stage / Age"}
+                    ],
+                    "value_column": {"key": "start_mya", "label": "Age (Ma)"},
+                    "cell_click": {"detail_view": "chronostrat_detail", "id_key": "id"}
+                }
+            },
+            "formation_detail": {
+                "type": "detail",
+                "title": "Formation Detail",
+                "source": "/api/formation/{id}",
+                "icon": "bi-layers",
+                "title_template": {"format": "{icon} {name}", "icon": "bi-layers"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [{"key": "name", "label": "Name"}]},
+                    {"title": "Genera ({count})", "type": "linked_table",
+                     "data_key": "genera",
+                     "columns": [{"key": "name", "label": "Genus", "italic": True}],
+                     "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}}
+                ]
+            },
+            "country_detail": {
+                "type": "detail",
+                "title": "Country Detail",
+                "source": "/api/country/{id}",
+                "icon": "bi-geo-alt",
+                "title_template": {"format": "{icon} {name}", "icon": "bi-geo-alt"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [{"key": "name", "label": "Name"}]}
+                ]
+            },
+            "region_detail": {
+                "type": "detail",
+                "title": "Region Detail",
+                "source": "/api/region/{id}",
+                "icon": "bi-geo-alt",
+                "title_template": {"format": "{icon} {name}", "icon": "bi-geo-alt"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [{"key": "name", "label": "Name"}]}
+                ]
+            },
+            "bibliography_detail": {
+                "type": "detail",
+                "title": "Bibliography Detail",
+                "source": "/api/bibliography/{id}",
+                "icon": "bi-book",
+                "title_template": {"format": "{icon} {authors}, {year}", "icon": "bi-book"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [{"key": "authors", "label": "Authors"}]},
+                    {"title": "Original Entry", "type": "raw_text",
+                     "data_key": "raw_entry", "condition": "raw_entry"}
+                ]
+            },
+            "chronostrat_detail": {
+                "type": "detail",
+                "title": "Chronostratigraphy Detail",
+                "source": "/api/chronostrat/{id}",
+                "icon": "bi-clock-history",
+                "title_template": {"format": "{icon} {name}", "icon": "bi-clock-history"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [{"key": "name", "label": "Name"}]}
+                ]
+            },
+            "genus_detail": {
+                "type": "detail",
+                "title": "Genus Detail",
+                "source": "/api/genus/{id}",
+                "title_template": {"format": "<i>{name}</i> {author}, {year}"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [
+                         {"key": "name", "label": "Name", "format": "italic"},
+                         {"key": "hierarchy", "label": "Classification", "format": "hierarchy"},
+                         {"key": "temporal_code", "label": "Temporal Range", "format": "temporal_range"}
+                     ]},
+                    {"title": "Type Species", "type": "field_grid", "condition": "type_species",
+                     "fields": [{"key": "type_species", "label": "Species", "format": "italic"}]},
+                    {"title": "Geographic Information", "type": "genus_geography"},
+                    {"title": "Synonymy", "type": "synonym_list", "data_key": "synonyms", "condition": "synonyms"},
+                    {"title": "Original Entry", "type": "raw_text", "data_key": "raw_entry", "condition": "raw_entry"},
+                    {"title": "My Notes", "type": "annotations", "entity_type": "genus"}
+                ]
+            },
+            "rank_detail": {
+                "type": "detail",
+                "title": "Rank Detail",
+                "source": "/api/rank/{id}",
+                "title_template": {"format": "<span class=\"badge bg-secondary me-2\">{rank}</span> {name}"},
+                "sections": [
+                    {"title": "Basic Information", "type": "field_grid",
+                     "fields": [{"key": "name", "label": "Name"}, {"key": "rank", "label": "Rank"}]},
+                    {"title": "Statistics", "type": "rank_statistics"},
+                    {"title": "Children", "type": "rank_children", "data_key": "children", "condition": "children"},
+                    {"title": "My Notes", "type": "annotations", "entity_type_from": "rank"}
+                ]
+            }
+        }
+    }
+    cursor.execute(
+        "INSERT INTO ui_manifest (name, description, manifest_json, created_at) VALUES (?, ?, ?, ?)",
+        ('default', 'Test manifest', _json.dumps(test_manifest), '2026-02-07T00:00:00')
+    )
+
+    conn.commit()
+    conn.close()
+
+    # Create PALEOCORE database (PaleoCore tables accessed via pc.* prefix)
+    paleocore_db_path = str(tmp_path / "test_paleocore.db")
+    pc_conn = sqlite3.connect(paleocore_db_path)
+    pc_cursor = pc_conn.cursor()
+
+    pc_cursor.executescript("""
+        CREATE TABLE countries (
+            id INTEGER PRIMARY KEY,
+            name TEXT UNIQUE NOT NULL,
+            code TEXT,
+            taxa_count INTEGER DEFAULT 0
+        );
+
+        CREATE TABLE geographic_regions (
+            id INTEGER PRIMARY KEY,
+            name TEXT NOT NULL,
+            level TEXT NOT NULL,
+            parent_id INTEGER,
+            cow_ccode INTEGER,
+            taxa_count INTEGER DEFAULT 0,
+            FOREIGN KEY (parent_id) REFERENCES geographic_regions(id)
+        );
+
+        CREATE TABLE formations (
+            id INTEGER PRIMARY KEY,
+            name TEXT UNIQUE NOT NULL,
+            normalized_name TEXT,
+            formation_type TEXT,
+            country TEXT,
+            region TEXT,
+            period TEXT,
+            taxa_count INTEGER DEFAULT 0
+        );
+
+        CREATE TABLE ics_chronostrat (
+            id INTEGER PRIMARY KEY,
+            ics_uri TEXT UNIQUE NOT NULL,
+            name TEXT NOT NULL,
+            rank TEXT NOT NULL,
+            parent_id INTEGER,
+            start_mya REAL,
+            start_uncertainty REAL,
+            end_mya REAL,
+            end_uncertainty REAL,
+            short_code TEXT,
+            color TEXT,
+            display_order INTEGER,
+            ratified_gssp INTEGER DEFAULT 0,
+            FOREIGN KEY (parent_id) REFERENCES ics_chronostrat(id)
+        );
+        CREATE INDEX idx_pc_ics_chrono_parent ON ics_chronostrat(parent_id);
+        CREATE INDEX idx_pc_ics_chrono_rank ON ics_chronostrat(rank);
+
+        CREATE TABLE temporal_ics_mapping (
+            id INTEGER PRIMARY KEY,
+            temporal_code TEXT NOT NULL,
+            ics_id INTEGER NOT NULL,
+            mapping_type TEXT NOT NULL,
+            notes TEXT,
+            FOREIGN KEY (ics_id) REFERENCES ics_chronostrat(id)
+        );
+        CREATE INDEX idx_pc_tim_code ON temporal_ics_mapping(temporal_code);
+        CREATE INDEX idx_pc_tim_ics ON temporal_ics_mapping(ics_id);
+    """)
+
+    # Populate PaleoCore tables with same data as canonical
+    pc_cursor.executescript("""
+        INSERT INTO countries (id, name, code, taxa_count) VALUES (1, 'Germany', 'DE', 150);
+        INSERT INTO countries (id, name, code, taxa_count) VALUES (2, 'Sweden', 'SE', 80);
+
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
+        VALUES (1, 'Germany', 'country', NULL, 255, 150);
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
+        VALUES (2, 'Sweden', 'country', NULL, 380, 80);
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
+        VALUES (3, 'Eifel', 'region', 1, NULL, 5);
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
+        VALUES (4, 'Scania', 'region', 2, NULL, 20);
+
+        INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count)
+        VALUES (1, 'Büdesheimer Sh', 'budesheimer sh', 'Sh', 'Germany', 'Devonian', 5);
+        INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count)
+        VALUES (2, 'Alum Sh', 'alum sh', 'Sh', 'Sweden', 'Cambrian', 20);
+
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (1, 'http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic', 'Phanerozoic', 'Eon', NULL, 538.8, 0.6, 0.0, NULL, NULL, '#9AD9DD', 170, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (2, 'http://resource.geosciml.org/classifier/ics/ischart/Paleozoic', 'Paleozoic', 'Era', 1, 538.8, 0.6, 251.9, 0.024, NULL, '#99C08D', 169, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (3, 'http://resource.geosciml.org/classifier/ics/ischart/Cambrian', 'Cambrian', 'Period', 2, 538.8, 0.6, 486.85, 1.5, 'Ep', '#7FA056', 154, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (4, 'http://resource.geosciml.org/classifier/ics/ischart/Miaolingian', 'Miaolingian', 'Epoch', 3, 506.5, NULL, 497.0, NULL, 'Ep3', '#A6CF86', 148, 0);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (5, 'http://resource.geosciml.org/classifier/ics/ischart/Wuliuan', 'Wuliuan', 'Age', 4, 506.5, NULL, 504.5, NULL, NULL, '#B6D88B', 147, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
+        VALUES (6, 'http://resource.geosciml.org/classifier/ics/ischart/Furongian', 'Furongian', 'Epoch', 3, 497.0, NULL, 486.85, 1.5, 'Ep4', '#B3E095', 144, 1);
+
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (1, 'MCAM', 4, 'exact');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (2, 'UCAM', 6, 'exact');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (3, 'CAM', 3, 'exact');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (4, 'MUCAM', 4, 'aggregate');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (5, 'MUCAM', 6, 'aggregate');
+    """)
+
+    # PaleoCore SCODA metadata (needed by ScodaPackage.create)
+    pc_cursor.executescript("""
+        CREATE TABLE artifact_metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+        INSERT INTO artifact_metadata (key, value) VALUES ('artifact_id', 'paleocore');
+        INSERT INTO artifact_metadata (key, value) VALUES ('name', 'PaleoCore');
+        INSERT INTO artifact_metadata (key, value) VALUES ('version', '0.3.0');
+        INSERT INTO artifact_metadata (key, value) VALUES ('description', 'Shared paleontological infrastructure');
+        INSERT INTO artifact_metadata (key, value) VALUES ('license', 'CC-BY-4.0');
+
+        CREATE TABLE provenance (id INTEGER PRIMARY KEY, source_type TEXT NOT NULL,
+            citation TEXT NOT NULL, description TEXT, year INTEGER, url TEXT);
+        INSERT INTO provenance (id, source_type, citation, description, year)
+        VALUES (1, 'primary', 'COW v2024', 'Correlates of War state system', 2024);
+
+        CREATE TABLE schema_descriptions (table_name TEXT NOT NULL, column_name TEXT,
+            description TEXT NOT NULL, PRIMARY KEY (table_name, column_name));
+
+        CREATE TABLE ui_display_intent (id INTEGER PRIMARY KEY, entity TEXT NOT NULL,
+            default_view TEXT NOT NULL, description TEXT, source_query TEXT, priority INTEGER DEFAULT 0);
+        INSERT INTO ui_display_intent (id, entity, default_view, description, source_query, priority)
+        VALUES (1, 'countries', 'table', 'Country list', 'countries_list', 0);
+
+        CREATE TABLE ui_queries (id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE,
+            description TEXT, sql TEXT NOT NULL, params_json TEXT, created_at TEXT NOT NULL);
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('countries_list', 'All countries', 'SELECT id, name FROM countries ORDER BY name', NULL, '2026-02-13T00:00:00');
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('formations_list', 'All formations', 'SELECT id, name FROM formations ORDER BY name', NULL, '2026-02-13T00:00:00');
+
+        CREATE TABLE ui_manifest (name TEXT PRIMARY KEY, description TEXT, manifest_json TEXT NOT NULL, created_at TEXT NOT NULL);
+    """)
+
+    import json as _json
+    pc_manifest = {
+        "default_view": "countries_table",
+        "views": {
+            "countries_table": {
+                "type": "table",
+                "title": "Countries",
+                "description": "Country data",
+                "source_query": "countries_list",
+                "icon": "bi-globe",
+                "columns": [{"key": "name", "label": "Country", "sortable": True, "searchable": True}],
+                "default_sort": {"key": "name", "direction": "asc"},
+                "searchable": True
+            }
+        }
+    }
+    pc_cursor.execute(
+        "INSERT INTO ui_manifest (name, description, manifest_json, created_at) VALUES (?, ?, ?, ?)",
+        ('default', 'PaleoCore manifest', _json.dumps(pc_manifest), '2026-02-13T00:00:00')
+    )
+
+    pc_conn.commit()
+    pc_conn.close()
+
+    # Create OVERLAY database using init_overlay_db script
+    create_overlay_db(overlay_db_path, canonical_version='1.0.0')
+
+    return canonical_db_path, overlay_db_path, paleocore_db_path
+
+
+@pytest.fixture
+def client(test_db):
+    """Create Flask test client with test databases (canonical + overlay + paleocore)."""
+    canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+    scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+    app.config['TESTING'] = True
+    with app.test_client() as client:
+        yield client
+    scoda_package._reset_paths()
+

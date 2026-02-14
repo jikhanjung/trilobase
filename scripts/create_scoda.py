@@ -15,7 +15,7 @@ import sys
 
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from scoda_package import ScodaPackage, _sha256_file
+from scoda_desktop.scoda_package import ScodaPackage, _sha256_file
 
 DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
 DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'trilobase.scoda')

@@ -156,4 +156,4 @@ def normalize_lines_main(input_file, output_file):
     print(f"Removed garbage/empty lines: {len(lines) - len(cleaned_lines) + sum(1 for l in cleaned_lines if is_garbage_line(l))}")
 
 if __name__ == '__main__':
-    normalize_lines_main('trilobite_genus_list.txt', 'trilobite_genus_list_structural_fixed.txt')
+    normalize_lines_main('data/trilobite_genus_list.txt', 'data/trilobite_genus_list_structural_fixed.txt')

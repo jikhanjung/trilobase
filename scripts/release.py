@@ -26,7 +26,7 @@ from datetime import datetime, timezone
 
 # Add parent directory for scoda_package import
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from scoda_package import ScodaPackage
+from scoda_desktop.scoda_package import ScodaPackage
 
 DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
 DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'releases')

@@ -13,7 +13,7 @@ from starlette.routing import Route
 from starlette.responses import Response
 import uvicorn
 
-from scoda_package import get_db, ensure_overlay_db
+from .scoda_package import get_db, ensure_overlay_db
 
 def row_to_dict(row):
     return dict(row)

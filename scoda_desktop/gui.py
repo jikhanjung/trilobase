@@ -15,11 +15,7 @@ import sys
 import time
 import subprocess
 
-# Ensure parent directory is in path for scoda_package import
-_parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if _parent_dir not in sys.path:
-    sys.path.insert(0, _parent_dir)
-import scoda_package
+from . import scoda_package
 
 
 class LogRedirector:
@@ -395,7 +391,7 @@ class ScodaDesktopGUI:
 
         # Import Flask app
         try:
-            from app import app
+            from .app import app
             self.flask_app = app
         except ImportError as e:
             raise Exception(f"Could not import Flask app: {e}")
@@ -415,16 +411,12 @@ class ScodaDesktopGUI:
     def _start_server_subprocess(self):
         """Start Flask server as subprocess (for development mode)."""
         python_exe = sys.executable
-        app_py = os.path.join(self.base_path, 'app.py')
-
-        if not os.path.exists(app_py):
-            raise FileNotFoundError(f"app.py not found at {app_py}")
 
         self._append_log(f"Starting web server (package={self.selected_package})...", "INFO")
 
-        # Start Flask as subprocess with --package arg
+        # Start Flask as subprocess with --package arg (using -m for package import)
         self.server_process = subprocess.Popen(
-            [python_exe, app_py, '--package', self.selected_package],
+            [python_exe, '-m', 'scoda_desktop.app', '--package', self.selected_package],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             universal_newlines=True,
@@ -450,11 +442,8 @@ class ScodaDesktopGUI:
         """Start MCP server in thread (for frozen/PyInstaller mode)."""
         self._append_log("Starting MCP server (threaded mode)...", "INFO")
 
-        if self.base_path not in sys.path:
-            sys.path.insert(0, self.base_path)
-
         try:
-            import mcp_server
+            from . import mcp_server
         except ImportError as e:
             raise Exception(f"Could not import MCP server: {e}")
 
@@ -474,15 +463,11 @@ class ScodaDesktopGUI:
     def _start_mcp_subprocess(self):
         """Start MCP server as subprocess (for development mode)."""
         python_exe = sys.executable
-        mcp_py = os.path.join(self.base_path, 'mcp_server.py')
-
-        if not os.path.exists(mcp_py):
-            raise FileNotFoundError(f"mcp_server.py not found at {mcp_py}")
 
         self._append_log(f"Starting MCP server (subprocess mode, port {self.mcp_port})...", "INFO")
 
         self.mcp_process = subprocess.Popen(
-            [python_exe, mcp_py, '--mode', 'sse', '--port', str(self.mcp_port)],
+            [python_exe, '-m', 'scoda_desktop.mcp_server', '--mode', 'sse', '--port', str(self.mcp_port)],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             universal_newlines=True,

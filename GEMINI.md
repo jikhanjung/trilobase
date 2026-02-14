@@ -14,12 +14,20 @@ Trilobase is a paleontological database project focused on trilobite taxonomy. T
 
 ```
 trilobase/
-├── trilobite_genus_list.txt          # 최신 버전 (항상 이 파일 수정)
-├── trilobite_genus_list_original.txt # 원본 백업
-├── trilobite_genus_list_*.txt        # 각 단계별 중간 파일
-├── trilobite_family_list.txt         # Family 목록
-├── trilobite_nomina_nuda.txt         # Nomina nuda
-├── scripts/                          # 데이터 처리 스크립트
+├── scoda_desktop/                    # SCODA Desktop runtime package
+│   ├── scoda_package.py              # Core library (DB access, .scoda packages)
+│   ├── app.py                        # Flask web server
+│   ├── mcp_server.py                 # MCP server (stdio/SSE)
+│   ├── gui.py                        # GUI control panel
+│   ├── serve.py, build.py            # Server launcher, PyInstaller build
+│   ├── templates/, static/           # Generic viewer
+├── tests/                            # Test suite (230 tests)
+├── data/                             # Source data files
+│   ├── trilobite_genus_list.txt      # 최신 버전 (항상 이 파일 수정)
+│   ├── trilobite_family_list.txt     # Family 목록
+│   └── adrain2011.txt                # Suprafamilial taxa
+├── scripts/                          # 데이터 파이프라인 스크립트
+├── spa/                              # Reference SPA
 ├── devlog/                           # 작업 기록
 │   └── YYYYMMDD_NNN_*.md            # 일별 작업 로그
 └── docs/
@@ -47,7 +55,7 @@ Standard paleontological format: `AUTHOR, YEAR` (e.g., `LIEBERMAN, 1994`)
 
 ## Work Convention
 
-- `trilobite_genus_list.txt`가 항상 최신 버전
+- `data/trilobite_genus_list.txt`가 항상 최신 버전
 - 각 Phase 완료 시 반드시 git commit
 - 중간 과정 파일은 `_단계명.txt` 접미사로 보존
 - 작업 기록은 `devlog/YYYYMMDD_NNN_제목.md` 형식

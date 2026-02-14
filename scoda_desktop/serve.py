@@ -46,10 +46,10 @@ def main():
         os.chdir(base_path)
 
         if args.package:
-            from scoda_package import set_active_package
+            from .scoda_package import set_active_package
             set_active_package(args.package)
 
-        from app import app
+        from .app import app
         app.run(debug=False, host='127.0.0.1', port=8080, use_reloader=False)
     except ImportError as e:
         print(f"Error: Could not import Flask app: {e}", file=sys.stderr)

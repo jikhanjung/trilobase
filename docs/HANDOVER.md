@@ -421,6 +421,7 @@
 - **Phase 44 완료**: Reference Implementation SPA
   - Trilobase 전용 프론트엔드 → `spa/` 디렉토리로 분리 (standalone SPA)
   - Built-in viewer (`static/js/app.js`) → Generic SCODA viewer로 축소
+  - Built-in viewer (`static/js/app.js`) → Generic SCODA viewer로 축소
     - Trilobase 전용 함수 6개 제거: `renderGenusGeography`, `renderSynonymList`, `renderRankStatistics`, `renderRankChildren`, `navigateToRank`, `navigateToGenus`
     - `buildHierarchyHTML()`, `buildTemporalRangeHTML()` generic 버전으로 교체
     - Rank 전용 CSS 색상 규칙 제거
@@ -432,6 +433,15 @@
   - `ScodaDesktop.spec`: `('spa', 'spa')` datas 추가
   - 테스트: 230개 (기존 217 + 신규 13)
   - devlog: `devlog/20260214_053_phase44_reference_spa.md`
+
+- **Phase 45 완료**: 디렉토리 구조 정리 — Runtime/Data 분리
+  - `scoda_desktop/` 패키지 생성: 런타임 7개 파일 이동 (app, mcp, gui, serve, scoda_package, templates, static)
+  - `tests/` 디렉토리: test_app.py → test_runtime.py (105개) + test_trilobase.py (108개) 분리
+  - `data/` 디렉토리: 13개 소스 데이터 파일 이동
+  - import 전략: 내부=상대, 외부=절대, subprocess=`-m` 플래그
+  - `build.py` 리팩토링: 중복 .scoda 생성 로직 삭제, `create_scoda.py`/`create_paleocore_scoda.py` subprocess 호출로 대체
+  - 테스트: 230개 전부 통과
+  - devlog: `devlog/20260214_054_phase45_directory_restructure.md`
 
 ### 데이터베이스 현황
 
@@ -487,75 +497,61 @@
 
 ```
 trilobase/
-├── ScodaDesktop.exe                  # GUI 뷰어 (console=False, dist/ 빌드 결과)
-├── ScodaDesktop_mcp.exe              # MCP stdio 서버 (console=True, dist/ 빌드 결과)
+├── scoda_desktop/                    # SCODA Desktop runtime package (Phase 45)
+│   ├── __init__.py                   # 패키지 init
+│   ├── scoda_package.py              # .scoda 패키지 + 중앙 DB 접근 (Phase 25)
+│   ├── app.py                        # Flask 웹 앱
+│   ├── mcp_server.py                 # MCP 서버 (Phase 22-23, stdio/SSE 모드)
+│   ├── gui.py                        # GUI 컨트롤 패널 (Phase 19)
+│   ├── serve.py                      # Flask 서버 런처 (Phase 18)
+│   ├── templates/
+│   │   └── index.html                # Generic viewer 메인 페이지
+│   └── static/
+│       ├── css/style.css             # Generic viewer 스타일
+│       └── js/app.js                 # Generic viewer 프론트엔드 로직
+├── tests/                            # 테스트 (Phase 45에서 분리)
+│   ├── conftest.py                   # 공유 fixtures + anyio 백엔드
+│   ├── test_runtime.py               # Runtime 테스트 (105개, 17 classes)
+│   ├── test_trilobase.py             # Trilobase 테스트 (108개, 14 classes)
+│   ├── test_mcp.py                   # MCP 포괄적 테스트 (16개)
+│   └── test_mcp_basic.py             # MCP 기본 테스트 (1개)
+├── data/                             # 소스 데이터 파일 (Phase 45에서 분리)
+│   ├── trilobite_genus_list.txt      # 정제된 genus 목록 (최신 버전)
+│   ├── trilobite_genus_list_original.txt
+│   ├── trilobite_family_list.txt     # Family 목록
+│   ├── trilobite_nomina_nuda.txt     # Nomina nuda
+│   ├── adrain2011.txt                # Suprafamilial taxa 목록
+│   ├── Jell_and_Adrain_2002_Literature_Cited.txt
+│   └── *.pdf                         # Reference PDFs
 ├── trilobase.db                      # Canonical SQLite DB
 ├── trilobase_overlay.db              # Overlay DB (사용자 주석, Phase 20)
-├── trilobite_genus_list.txt          # 정제된 genus 목록
-├── trilobite_genus_list_original.txt # 원본 백업
-├── adrain2011.txt                    # Order 통합을 위한 suprafamilial taxa 목록
-├── scoda_package.py                  # .scoda 패키지 + 중앙 DB 접근 (Phase 25)
-├── app.py                            # Flask 웹 앱
-├── mcp_server.py                     # MCP 서버 (Phase 22-23, stdio/SSE 모드)
 ├── spa/                              # Reference Implementation SPA (Phase 44)
-│   ├── index.html                    # Standalone HTML (Jinja2 없음, API_BASE 자동 감지)
-│   ├── app.js                        # Full-featured JS (API_BASE prefix)
-│   └── style.css                     # Full CSS (rank 색상 포함)
-├── templates/
-│   └── index.html                    # 메인 페이지
-├── static/
-│   ├── css/style.css                 # 스타일
-│   └── js/app.js                     # 프론트엔드 로직
-├── test_app.py                      # pytest 테스트 (161개)
-├── test_mcp_basic.py                # MCP 기본 테스트 (1개)
-├── test_mcp.py                      # MCP 포괄적 테스트 (16개, asynccontextmanager 방식)
-├── pytest.ini                       # pytest 설정 (asyncio_mode=auto)
-├── conftest.py                      # anyio 백엔드 설정 (asyncio)
-├── ScodaDesktop.spec                # PyInstaller 빌드 설정 (Phase 18, Phase 40에서 리네임)
-├── scripts/
-│   ├── normalize_lines.py
-│   ├── create_database.py
-│   ├── normalize_database.py
-│   ├── fix_synonyms.py
-│   ├── normalize_families.py
-│   ├── populate_taxonomic_ranks.py
-│   ├── add_scoda_tables.py          # Phase 13: SCODA-Core 마이그레이션
-│   ├── add_scoda_ui_tables.py       # Phase 14: Display Intent/Queries 마이그레이션
-│   ├── add_scoda_manifest.py        # Phase 15: UI Manifest 마이그레이션
-│   ├── release.py                   # Phase 16: 릴리스 패키징 스크립트
-│   ├── add_user_annotations.py      # Phase 17: 사용자 주석 마이그레이션
-│   ├── init_overlay_db.py           # Phase 20: Overlay DB 초기화
-│   ├── serve.py                     # Phase 18: Flask 서버 런처
-│   ├── gui.py                       # Phase 19: GUI 컨트롤 패널
-│   ├── build.py                     # Phase 18/37: 빌드 자동화 (trilobase.scoda + paleocore.scoda)
-│   ├── create_scoda.py              # Phase 25: .scoda 패키지 생성
-│   ├── import_cow.py               # Phase 26: COW 국가 데이터 임포트
-│   ├── fix_countries_quality.py    # countries 데이터 품질 정리
-│   ├── create_geographic_regions.py # Phase 27: Geographic Regions 마이그레이션
-│   ├── import_ics.py              # Phase 28: ICS 지층 연대표 임포트
-│   ├── create_paleocore.py       # Phase 31: PaleoCore DB 생성
-│   └── create_paleocore_scoda.py # Phase 35: PaleoCore .scoda 패키지 생성
+│   ├── index.html
+│   ├── app.js
+│   └── style.css
+├── scripts/                          # 데이터 파이프라인 + 빌드 스크립트 (24개)
+│   ├── build.py                      # PyInstaller exe 빌드 전용
+│   ├── create_scoda.py               # trilobase.scoda 패키지 생성
+│   ├── create_paleocore_scoda.py     # paleocore.scoda 패키지 생성
+│   ├── create_paleocore.py           # PaleoCore DB 생성
+│   ├── release.py                    # 릴리스 패키징
+│   ├── create_database.py            # DB 생성
+│   └── ... (normalize, import, etc.)
 ├── examples/
-│   └── genus-explorer/index.html    # Phase 40: Custom SPA 예제 (vanilla JS)
-├── devlog/
-│   ├── 20260204_P01~P05_*.md        # Phase 계획 문서
-│   ├── 20260204_001~011_*.md        # Phase 1-11 완료 로그
-│   ├── 20260207_P07~P12_*.md        # SCODA 계획 문서
-│   ├── 20260207_012~020_*.md        # Phase 13-20 완료 로그
-│   ├── 20260208_P13_*.md            # Phase 21 계획 문서
-│   ├── 20260208_021_*.md            # Phase 21 완료 로그
-│   ├── 20260209_P14_*.md            # Phase 22 계획 문서
-│   ├── 20260209_022_*.md            # Phase 22 완료 로그
-│   └── 20260207_R01~R02_*.md        # 리뷰 문서
+│   └── genus-explorer/index.html     # Custom SPA 예제
+├── ScodaDesktop.spec                 # PyInstaller 빌드 설정
+├── pytest.ini                        # pytest 설정 (testpaths=tests)
+├── requirements.txt
+├── CLAUDE.md
 ├── vendor/
-│   ├── cow/v2024/States2024/statelist2024.csv  # COW v2024 원본 CSV
-│   └── ics/gts2020/chart.ttl                   # ICS GTS 2020 (SKOS/RDF)
+│   ├── cow/v2024/States2024/statelist2024.csv
+│   └── ics/gts2020/chart.ttl
 ├── docs/
-│   ├── HANDOVER.md                  # 인수인계 문서 (프로젝트 현황)
-│   ├── RELEASE_GUIDE.md             # 릴리스 및 배포 가이드 (버전 관리)
-│   ├── SCODA_CONCEPT.md             # SCODA 개념 설명
-│   └── paleocore_schema.md          # PaleoCore 패키지 스키마 정의서 (설계)
-└── CLAUDE.md
+│   ├── HANDOVER.md
+│   ├── RELEASE_GUIDE.md
+│   ├── SCODA_CONCEPT.md
+│   └── paleocore_schema.md
+└── devlog/
 ```
 
 ## SCODA 구현 + 배포 완료 (브랜치: `feature/scoda-implementation`)
@@ -583,26 +579,29 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 29 | ICS Chronostratigraphy 웹 UI (테이블 탭 + detail 모달 + genus 링크) | ✅ 완료 |
 | Phase 30 | ICS Chart 뷰 (계층형 색상 코딩 테이블) | ✅ 완료 |
 | Phase 44 | Reference Implementation SPA (generic viewer + standalone SPA 분리) | ✅ 완료 |
+| Phase 45 | 디렉토리 구조 정리 — Runtime/Data 분리 | ✅ 완료 |
 
 ## 테스트 현황
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `test_app.py` | 213개 | ✅ 통과 |
-| `test_mcp_basic.py` | 1개 | ✅ 통과 |
-| `test_mcp.py` | 16개 | ✅ 통과 |
+| `tests/test_runtime.py` | 105개 | ✅ 통과 |
+| `tests/test_trilobase.py` | 108개 | ✅ 통과 |
+| `tests/test_mcp.py` | 16개 | ✅ 통과 |
+| `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
 | **합계** | **230개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
-pytest test_app.py test_mcp_basic.py test_mcp.py
+pytest tests/
 # 의존성: pip install mcp pytest-asyncio
 ```
 
 **pytest 설정 (`pytest.ini`):**
+- `testpaths = tests` — 테스트 디렉토리 지정
 - `asyncio_mode = auto` — async 테스트 자동 인식
 - `asyncio_default_fixture_loop_scope = function` — 독립 이벤트 루프
-- `conftest.py` — anyio 백엔드를 asyncio로 명시
+- `tests/conftest.py` — 공유 fixtures + anyio 백엔드
 
 ## 다음 작업
 
@@ -612,6 +611,7 @@ CORS + 예제 SPA + EXE 리네이밍 완료 (Phase 40).
 Manifest-driven tree/chart 렌더링 완료 (Phase 41).
 Docker Desktop 스타일 GUI + 단일 패키지 서빙 완료 (Phase 43).
 Reference Implementation SPA 분리 완료 (Phase 44).
+디렉토리 구조 정리 완료 (Phase 45): `scoda_desktop/`, `tests/`, `data/` 분리.
 - PaleoCore 독립 뷰어: `python app.py --package paleocore` 또는 GUI에서 선택
 
 ## 미해결 항목
@@ -652,6 +652,7 @@ Reference Implementation SPA 분리 완료 (Phase 44).
 29. ~~Phase 29: ICS Chronostratigraphy 웹 UI~~ ✅
 30. ~~Phase 30: ICS Chart 뷰 (계층형 색상 코딩 테이블)~~ ✅
 44. ~~Phase 44: Reference Implementation SPA~~ ✅
+45. ~~Phase 45: 디렉토리 구조 정리~~ ✅
 
 ## DB 스키마
 
@@ -755,7 +756,7 @@ WHERE c.name = 'China' LIMIT 10;"
 
 ## 주의사항
 
-- `trilobite_genus_list.txt`가 항상 최신 텍스트 버전
+- `data/trilobite_genus_list.txt`가 항상 최신 텍스트 버전
 - `trilobase.db`가 최신 데이터베이스
 - 각 Phase 완료 시 git commit
 - 원본 PDF 필요 시: Jell & Adrain (2002)

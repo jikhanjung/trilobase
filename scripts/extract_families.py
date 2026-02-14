@@ -20,7 +20,7 @@ def is_plausible_family(name):
 
 def main():
     families = set()
-    with open('trilobite_genus_list.txt', 'r', encoding='utf-8') as f:
+    with open('data/trilobite_genus_list.txt', 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             if not line:

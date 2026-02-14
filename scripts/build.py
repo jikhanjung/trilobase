@@ -3,10 +3,11 @@
 Build standalone executable for SCODA Desktop using PyInstaller
 
 Usage:
-    python scripts/build.py [--clean]
+    python scripts/build.py [--clean] [--no-scoda]
 
 Options:
-    --clean     Remove previous build artifacts before building
+    --clean      Remove previous build artifacts before building
+    --no-scoda   Skip .scoda package creation after build
 """
 
 import subprocess
@@ -14,6 +15,8 @@ import sys
 import shutil
 import os
 from pathlib import Path
+
+SCRIPTS_DIR = Path(__file__).parent
 
 
 def check_pyinstaller():
@@ -68,78 +71,30 @@ def build_executable():
         return False
 
 
-def create_scoda_package():
-    """Create .scoda package in dist/ directory."""
-    db_path = Path('trilobase.db')
-    if not db_path.exists():
-        print("  Skipping .scoda creation (trilobase.db not found)")
-        return False
+def create_scoda_packages():
+    """Create .scoda packages in dist/ by calling the dedicated scripts."""
+    print("\nCreating .scoda packages...")
 
-    scoda_dest = Path('dist') / 'trilobase.scoda'
-    print(f"\nCreating .scoda package...")
-    try:
-        # Add parent dir for import
-        sys.path.insert(0, str(Path(__file__).parent.parent))
-        from scoda_package import ScodaPackage
+    for script, db_name in [
+        ('create_scoda.py', 'trilobase.db'),
+        ('create_paleocore_scoda.py', 'paleocore.db'),
+    ]:
+        if not Path(db_name).exists():
+            scoda_name = db_name.replace('.db', '.scoda')
+            print(f"  Skipping {scoda_name} ({db_name} not found)")
+            continue
 
-        # Collect SPA files
-        spa_dir = Path('spa')
-        extra_assets = {}
-        if spa_dir.is_dir():
-            for fpath in spa_dir.iterdir():
-                if fpath.is_file():
-                    extra_assets[f'assets/spa/{fpath.name}'] = str(fpath)
+        scoda_output = str(Path('dist') / db_name.replace('.db', '.scoda'))
+        script_path = str(SCRIPTS_DIR / script)
+        cmd = [sys.executable, script_path, '--output', scoda_output]
 
-        metadata = {
-            "dependencies": [
-                {
-                    "name": "paleocore",
-                    "alias": "pc",
-                    "version": "0.3.0",
-                    "file": "paleocore.scoda",
-                    "description": "Shared paleontological infrastructure (geography, stratigraphy)"
-                }
-            ]
-        }
-        if extra_assets:
-            metadata["has_reference_spa"] = True
-            metadata["reference_spa_path"] = "assets/spa/"
-
-        ScodaPackage.create(str(db_path), str(scoda_dest), metadata=metadata,
-                           extra_assets=extra_assets if extra_assets else None)
-        size_mb = scoda_dest.stat().st_size / (1024 * 1024)
-        print(f"✓ .scoda package created: {scoda_dest} ({size_mb:.1f} MB)")
-        return True
-    except Exception as e:
-        print(f"✗ Failed to create .scoda package: {e}", file=sys.stderr)
-        return False
+        try:
+            subprocess.run(cmd, check=True)
+        except subprocess.CalledProcessError as e:
+            print(f"✗ {script} failed with exit code {e.returncode}", file=sys.stderr)
 
 
-def create_paleocore_scoda_package():
-    """Create paleocore.scoda package in dist/ directory."""
-    db_path = Path('paleocore.db')
-    if not db_path.exists():
-        print("  Skipping paleocore.scoda creation (paleocore.db not found)")
-        return False
-
-    scoda_dest = Path('dist') / 'paleocore.scoda'
-    print(f"\nCreating paleocore.scoda package...")
-    try:
-        sys.path.insert(0, str(Path(__file__).parent.parent))
-        from scoda_package import ScodaPackage
-        metadata = {
-            "authors": ["Correlates of War Project", "International Commission on Stratigraphy"],
-        }
-        ScodaPackage.create(str(db_path), str(scoda_dest), metadata=metadata)
-        size_mb = scoda_dest.stat().st_size / (1024 * 1024)
-        print(f"✓ paleocore.scoda package created: {scoda_dest} ({size_mb:.1f} MB)")
-        return True
-    except Exception as e:
-        print(f"✗ Failed to create paleocore.scoda package: {e}", file=sys.stderr)
-        return False
-
-
-def print_results():
+def print_results(skip_scoda):
     """Print build results and next steps."""
     print("\n" + "=" * 60)
     print("BUILD COMPLETE")
@@ -153,9 +108,8 @@ def print_results():
         print(f"\n✓ Executable created: {exe_path}")
         print(f"  Size: {size_mb:.1f} MB")
 
-        # Create .scoda packages alongside executable
-        create_scoda_package()
-        create_paleocore_scoda_package()
+        if not skip_scoda:
+            create_scoda_packages()
 
         print("\nNext steps:")
         print(f"  1. Test: ./{exe_path}")
@@ -176,6 +130,8 @@ def main():
     if '--clean' in sys.argv:
         clean_build()
 
+    skip_scoda = '--no-scoda' in sys.argv
+
     # Check PyInstaller
     if not check_pyinstaller():
         sys.exit(1)
@@ -191,7 +147,7 @@ def main():
         sys.exit(1)
 
     # Print results
-    if not print_results():
+    if not print_results(skip_scoda):
         sys.exit(1)
 
     print("\n" + "=" * 60)
