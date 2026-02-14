@@ -1542,3 +1542,294 @@ class TestGenericViewerFallback:
         """Requests for non-existent SPA files should return 404."""
         response = client.get('/nonexistent.js')
         assert response.status_code == 404
+
+
+# ---------------------------------------------------------------------------
+# Phase 46 Step 2: Dynamic MCP Tool Loading
+# ---------------------------------------------------------------------------
+
+class TestDynamicMcpTools:
+    """Tests for dynamic MCP tool loading from .scoda packages."""
+
+    # --- ScodaPackage mcp_tools property ---
+
+    def test_scoda_package_mcp_tools_property(self, scoda_with_mcp_tools):
+        """ScodaPackage.mcp_tools should return parsed dict when mcp_tools.json is present."""
+        scoda_path, _, _, _ = scoda_with_mcp_tools
+        with ScodaPackage(scoda_path) as pkg:
+            tools = pkg.mcp_tools
+            assert tools is not None
+            assert tools['format_version'] == '1.0'
+            assert len(tools['tools']) == 3
+
+    def test_scoda_package_no_mcp_tools(self, test_db, tmp_path):
+        """ScodaPackage.mcp_tools should return None when no mcp_tools.json."""
+        canonical_db_path, _, _ = test_db
+        output = str(tmp_path / "no_mcp.scoda")
+        ScodaPackage.create(canonical_db_path, output)
+        with ScodaPackage(output) as pkg:
+            assert pkg.mcp_tools is None
+
+    def test_scoda_create_with_mcp_tools(self, scoda_with_mcp_tools):
+        """ScodaPackage.create() with mcp_tools_path should include mcp_tools.json in ZIP."""
+        scoda_path, _, _, _ = scoda_with_mcp_tools
+        import zipfile
+        with zipfile.ZipFile(scoda_path, 'r') as zf:
+            assert 'mcp_tools.json' in zf.namelist()
+
+    # --- SQL validation ---
+
+    def test_validate_sql_select_allowed(self):
+        """SELECT statements should pass validation."""
+        from scoda_desktop.mcp_server import _validate_sql
+        _validate_sql("SELECT id, name FROM taxonomic_ranks")
+
+    def test_validate_sql_with_allowed(self):
+        """WITH (CTE) statements should pass validation."""
+        from scoda_desktop.mcp_server import _validate_sql
+        _validate_sql("WITH cte AS (SELECT 1) SELECT * FROM cte")
+
+    def test_validate_sql_insert_rejected(self):
+        """INSERT statements should be rejected."""
+        from scoda_desktop.mcp_server import _validate_sql
+        import pytest
+        with pytest.raises(ValueError, match="Forbidden SQL keyword"):
+            _validate_sql("SELECT 1; INSERT INTO foo VALUES (1)")
+
+    def test_validate_sql_drop_rejected(self):
+        """DROP statements should be rejected."""
+        from scoda_desktop.mcp_server import _validate_sql
+        import pytest
+        with pytest.raises(ValueError, match="Forbidden SQL keyword"):
+            _validate_sql("SELECT 1; DROP TABLE foo")
+
+    def test_validate_sql_update_rejected(self):
+        """UPDATE statements should be rejected."""
+        from scoda_desktop.mcp_server import _validate_sql
+        import pytest
+        with pytest.raises(ValueError, match="Forbidden SQL keyword"):
+            _validate_sql("SELECT 1; UPDATE foo SET x=1")
+
+    def test_validate_sql_delete_rejected(self):
+        """DELETE statements should be rejected."""
+        from scoda_desktop.mcp_server import _validate_sql
+        import pytest
+        with pytest.raises(ValueError, match="Forbidden SQL keyword"):
+            _validate_sql("SELECT 1; DELETE FROM foo")
+
+    def test_validate_sql_non_select_rejected(self):
+        """Non-SELECT/WITH starting SQL should be rejected."""
+        from scoda_desktop.mcp_server import _validate_sql
+        import pytest
+        with pytest.raises(ValueError, match="SQL must start with SELECT or WITH"):
+            _validate_sql("PRAGMA table_info(foo)")
+
+    # --- Dynamic tool execution ---
+
+    def test_dynamic_tool_single_query(self, test_db):
+        """Dynamic tool with query_type='single' should execute SQL and return results."""
+        from scoda_desktop.mcp_server import _execute_dynamic_tool
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        try:
+            tool_def = {
+                "query_type": "single",
+                "sql": "SELECT id, name FROM taxonomic_ranks WHERE name LIKE :pattern ORDER BY name LIMIT :limit",
+                "default_params": {"limit": 10}
+            }
+            result = _execute_dynamic_tool(tool_def, {"pattern": "Phacop%"})
+            assert 'rows' in result
+            assert result['row_count'] >= 1
+            names = [r['name'] for r in result['rows']]
+            assert 'Phacops' in names
+        finally:
+            scoda_package._reset_paths()
+
+    def test_dynamic_tool_named_query(self, test_db):
+        """Dynamic tool with query_type='named_query' should execute named query."""
+        from scoda_desktop.mcp_server import _execute_dynamic_tool
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        try:
+            tool_def = {
+                "query_type": "named_query",
+                "named_query": "taxonomy_tree",
+                "param_mapping": {}
+            }
+            result = _execute_dynamic_tool(tool_def, {})
+            assert 'rows' in result
+            assert result['row_count'] >= 1
+        finally:
+            scoda_package._reset_paths()
+
+    def test_dynamic_tool_named_query_with_params(self, test_db):
+        """Dynamic tool with query_type='named_query' should pass mapped params."""
+        from scoda_desktop.mcp_server import _execute_dynamic_tool
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        try:
+            tool_def = {
+                "query_type": "named_query",
+                "named_query": "family_genera",
+                "param_mapping": {"family_id": "family_id"}
+            }
+            result = _execute_dynamic_tool(tool_def, {"family_id": 10})
+            assert 'rows' in result
+            # Phacopidae has genera (Phacops, Acuticryphops, Cryphops)
+            assert result['row_count'] >= 1
+        finally:
+            scoda_package._reset_paths()
+
+    def test_dynamic_tool_composite(self, test_db):
+        """Dynamic tool with query_type='composite' should execute composite detail."""
+        from scoda_desktop.mcp_server import _execute_dynamic_tool
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        try:
+            tool_def = {
+                "query_type": "composite",
+                "view_name": "genus_detail",
+                "param_mapping": {"genus_id": "genus_id"}
+            }
+            result = _execute_dynamic_tool(tool_def, {"genus_id": 101})
+            assert 'name' in result
+            assert result['name'] == 'Acuticryphops'
+            # Composite should include sub-query results
+            assert 'synonyms' in result
+            assert 'formations' in result
+        finally:
+            scoda_package._reset_paths()
+
+    def test_dynamic_tool_default_params(self, test_db):
+        """Dynamic tool should merge default_params with provided arguments."""
+        from scoda_desktop.mcp_server import _execute_dynamic_tool
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        try:
+            tool_def = {
+                "query_type": "single",
+                "sql": "SELECT id, name FROM taxonomic_ranks WHERE rank = 'Genus' AND name LIKE :pattern LIMIT :limit",
+                "default_params": {"limit": 2}
+            }
+            result = _execute_dynamic_tool(tool_def, {"pattern": "%"})
+            assert result['row_count'] <= 2
+        finally:
+            scoda_package._reset_paths()
+
+    def test_dynamic_tool_unknown_query_type(self, test_db):
+        """Dynamic tool with unknown query_type should return error."""
+        from scoda_desktop.mcp_server import _execute_dynamic_tool
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        try:
+            tool_def = {"query_type": "unknown"}
+            result = _execute_dynamic_tool(tool_def, {})
+            assert 'error' in result
+        finally:
+            scoda_package._reset_paths()
+
+    # --- Built-in tools always present ---
+
+    def test_builtin_tools_always_present(self):
+        """Built-in tools should always be returned."""
+        from scoda_desktop.mcp_server import _get_builtin_tools, _BUILTIN_TOOL_NAMES
+        tools = _get_builtin_tools()
+        tool_names = {t.name for t in tools}
+        assert tool_names == _BUILTIN_TOOL_NAMES
+        assert len(tools) == 7
+
+    def test_dynamic_tools_from_mcp_tools_json(self, mcp_tools_data):
+        """_get_dynamic_tools should create Tool objects from mcp_tools data."""
+        from scoda_desktop.mcp_server import _get_dynamic_tools
+        from unittest.mock import patch
+
+        with patch('scoda_desktop.mcp_server.get_mcp_tools', return_value=mcp_tools_data):
+            tools = _get_dynamic_tools()
+            assert len(tools) == 3
+            names = {t.name for t in tools}
+            assert names == {'test_search', 'test_tree', 'test_genus_detail'}
+
+    def test_dynamic_tools_empty_when_no_mcp_tools(self):
+        """_get_dynamic_tools should return [] when get_mcp_tools() returns None."""
+        from scoda_desktop.mcp_server import _get_dynamic_tools
+        from unittest.mock import patch
+
+        with patch('scoda_desktop.mcp_server.get_mcp_tools', return_value=None):
+            tools = _get_dynamic_tools()
+            assert tools == []
+
+    def test_no_mcp_tools_fallback_to_legacy(self):
+        """When no mcp_tools.json, list_tools should include legacy domain tools."""
+        from scoda_desktop.mcp_server import _get_legacy_domain_tools
+        legacy = _get_legacy_domain_tools()
+        legacy_names = {t.name for t in legacy}
+        assert 'get_taxonomy_tree' in legacy_names
+        assert 'search_genera' in legacy_names
+        assert len(legacy) == 7
+
+    # --- Registry get_mcp_tools ---
+
+    def test_registry_get_mcp_tools(self, scoda_with_mcp_tools, tmp_path):
+        """PackageRegistry.get_mcp_tools should return tools from .scoda package."""
+        from scoda_desktop.scoda_package import PackageRegistry
+        scoda_path, _, _, _ = scoda_with_mcp_tools
+
+        registry = PackageRegistry()
+        # Manually register the package
+        pkg = ScodaPackage(scoda_path)
+        registry._packages[pkg.name] = {
+            'pkg': pkg,
+            'db_path': pkg.db_path,
+            'overlay_path': str(tmp_path / 'overlay.db'),
+            'deps': [],
+        }
+
+        tools = registry.get_mcp_tools(pkg.name)
+        assert tools is not None
+        assert len(tools['tools']) == 3
+        pkg.close()
+
+    def test_registry_get_mcp_tools_not_found(self):
+        """PackageRegistry.get_mcp_tools should return None for unknown package."""
+        from scoda_desktop.scoda_package import PackageRegistry
+        registry = PackageRegistry()
+        assert registry.get_mcp_tools('nonexistent') is None
+
+    # --- Module-level get_mcp_tools ---
+
+    def test_module_get_mcp_tools_with_scoda(self, scoda_with_mcp_tools, tmp_path):
+        """Module-level get_mcp_tools should work via legacy _scoda_pkg path."""
+        from scoda_desktop.scoda_package import get_mcp_tools as module_get_mcp_tools
+        scoda_path, canonical, overlay, paleocore = scoda_with_mcp_tools
+
+        # Open .scoda and set it as the module-level _scoda_pkg
+        pkg = ScodaPackage(scoda_path)
+        old_pkg = scoda_package._scoda_pkg
+        old_canonical = scoda_package._canonical_db
+        try:
+            scoda_package._scoda_pkg = pkg
+            scoda_package._canonical_db = pkg.db_path  # ensure _resolve_paths won't re-resolve
+            scoda_package._active_package_name = None
+            tools = module_get_mcp_tools()
+            assert tools is not None
+            assert len(tools['tools']) == 3
+        finally:
+            scoda_package._scoda_pkg = old_pkg
+            scoda_package._canonical_db = old_canonical
+            pkg.close()
+
+    # --- get_metadata generic ---
+
+    def test_get_metadata_generic(self, test_db):
+        """get_metadata should return only artifact_metadata, no domain statistics."""
+        from scoda_desktop.mcp_server import get_metadata
+        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        try:
+            result = get_metadata()
+            assert 'artifact_id' in result
+            assert 'version' in result
+            # Should NOT have domain statistics anymore
+            assert 'statistics' not in result
+        finally:
+            scoda_package._reset_paths()

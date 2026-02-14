@@ -912,3 +912,74 @@ def client(test_db):
         yield client
     scoda_package._reset_paths()
 
+
+@pytest.fixture
+def mcp_tools_data():
+    """Return a test mcp_tools.json dict with 3 tools (single, named_query, composite)."""
+    return {
+        "format_version": "1.0",
+        "tools": [
+            {
+                "name": "test_search",
+                "description": "Test single SQL search",
+                "input_schema": {
+                    "type": "object",
+                    "properties": {
+                        "pattern": {"type": "string"},
+                        "limit": {"type": "integer", "default": 10}
+                    },
+                    "required": ["pattern"]
+                },
+                "query_type": "single",
+                "sql": "SELECT id, name FROM taxonomic_ranks WHERE name LIKE :pattern ORDER BY name LIMIT :limit",
+                "default_params": {"limit": 10}
+            },
+            {
+                "name": "test_tree",
+                "description": "Test named query tree",
+                "input_schema": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                },
+                "query_type": "named_query",
+                "named_query": "taxonomy_tree"
+            },
+            {
+                "name": "test_genus_detail",
+                "description": "Test composite genus detail",
+                "input_schema": {
+                    "type": "object",
+                    "properties": {
+                        "genus_id": {"type": "integer"}
+                    },
+                    "required": ["genus_id"]
+                },
+                "query_type": "composite",
+                "view_name": "genus_detail",
+                "param_mapping": {"genus_id": "genus_id"}
+            }
+        ]
+    }
+
+
+@pytest.fixture
+def scoda_with_mcp_tools(test_db, mcp_tools_data, tmp_path):
+    """Create a .scoda package that includes mcp_tools.json."""
+    canonical_db_path, overlay_db_path, paleocore_db_path = test_db
+
+    # Write mcp_tools.json to a temp file
+    mcp_tools_path = str(tmp_path / "mcp_tools.json")
+    with open(mcp_tools_path, 'w') as f:
+        json.dump(mcp_tools_data, f)
+
+    # Create .scoda package
+    output_path = str(tmp_path / "test_with_mcp.scoda")
+    ScodaPackage.create(
+        canonical_db_path,
+        output_path,
+        mcp_tools_path=mcp_tools_path
+    )
+
+    return output_path, canonical_db_path, overlay_db_path, paleocore_db_path
+

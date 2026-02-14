@@ -453,6 +453,18 @@
   - 테스트: 254개 (기존 230 + 신규 24)
   - devlog: `devlog/20260214_055_phase46_step1_composite_endpoint.md`
 
+- **Phase 46 Step 2 완료**: Dynamic MCP Tool Loading from .scoda Packages
+  - `.scoda` ZIP 내 `mcp_tools.json`에서 MCP 도구를 동적 로드
+  - 3가지 query_type: `single` (SQL 직접), `named_query` (ui_queries), `composite` (manifest detail)
+  - Built-in 7개 (항상 제공) + Dynamic 7개 (패키지별) 분리
+  - `_validate_sql()`: SQL 인젝션 방지 (SELECT/WITH만 허용)
+  - `get_metadata()` generic 전환 (artifact_metadata만, 도메인 통계 제거)
+  - Backward compat: `mcp_tools.json` 없으면 legacy 하드코딩 도구 사용
+  - `data/mcp_tools_trilobase.json`: 7개 Trilobase 도메인 도구 정의
+  - `scripts/create_scoda.py`: `--mcp-tools` CLI 인자 추가
+  - 테스트: 278개 (기존 254 + 신규 24)
+  - devlog: `devlog/20260214_056_phase46_step2_dynamic_mcp_tools.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -531,6 +543,7 @@ trilobase/
 │   ├── trilobite_family_list.txt     # Family 목록
 │   ├── trilobite_nomina_nuda.txt     # Nomina nuda
 │   ├── adrain2011.txt                # Suprafamilial taxa 목록
+│   ├── mcp_tools_trilobase.json      # MCP 도구 정의 (Phase 46 Step 2)
 │   ├── Jell_and_Adrain_2002_Literature_Cited.txt
 │   └── *.pdf                         # Reference PDFs
 ├── trilobase.db                      # Canonical SQLite DB
@@ -595,11 +608,11 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_runtime.py` | 120개 | ✅ 통과 |
+| `tests/test_runtime.py` | 142개 | ✅ 통과 |
 | `tests/test_trilobase.py` | 117개 | ✅ 통과 |
 | `tests/test_mcp.py` | 16개 | ✅ 통과 |
 | `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
-| **합계** | **254개** | **✅ 전부 통과** |
+| **합계** | **278개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -663,7 +676,7 @@ Reference Implementation SPA 분리 완료 (Phase 44).
 30. ~~Phase 30: ICS Chart 뷰 (계층형 색상 코딩 테이블)~~ ✅
 44. ~~Phase 44: Reference Implementation SPA~~ ✅
 45. ~~Phase 45: 디렉토리 구조 정리~~ ✅
-46. Phase 46: Runtime Purification (도메인 코드 완전 분리) — **Step 1 완료**
+46. Phase 46: Runtime Purification (도메인 코드 완전 분리) — **Step 2 완료**
 
 ## DB 스키마
 

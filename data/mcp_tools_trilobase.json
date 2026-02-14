@@ -1,0 +1,146 @@
+{
+  "format_version": "1.0",
+  "tools": [
+    {
+      "name": "get_taxonomy_tree",
+      "description": "Retrieve the full taxonomic hierarchy tree from Class down to Family.",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "query_type": "named_query",
+      "named_query": "taxonomy_tree"
+    },
+    {
+      "name": "search_genera",
+      "description": "Search for trilobite genera by name pattern (SQL LIKE).",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "name_pattern": {
+            "type": "string",
+            "description": "A SQL LIKE pattern for the genus name (e.g., 'Paradoxides%')."
+          },
+          "valid_only": {
+            "type": "boolean",
+            "description": "If true, only return valid genera. Defaults to false.",
+            "default": false
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum number of results to return. Defaults to 50.",
+            "default": 50
+          }
+        },
+        "required": ["name_pattern"]
+      },
+      "query_type": "single",
+      "sql": "SELECT id, name, author, year, is_valid, family, temporal_code, type_species FROM taxonomic_ranks WHERE rank = 'Genus' AND name LIKE :name_pattern AND (:valid_only = 0 OR is_valid = 1) ORDER BY name LIMIT :limit",
+      "default_params": {
+        "valid_only": 0,
+        "limit": 50
+      }
+    },
+    {
+      "name": "get_genus_detail",
+      "description": "Get full detail for a trilobite genus including synonyms, formations, locations, and hierarchy. Returns a composite evidence pack.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "genus_id": {
+            "type": "integer",
+            "description": "The ID of the genus to retrieve."
+          }
+        },
+        "required": ["genus_id"]
+      },
+      "query_type": "composite",
+      "view_name": "genus_detail",
+      "param_mapping": {
+        "genus_id": "genus_id"
+      }
+    },
+    {
+      "name": "get_rank_detail",
+      "description": "Get detailed information for a specific taxonomic rank (Class, Order, Family, etc.) by its ID, including children counts and children list.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "rank_id": {
+            "type": "integer",
+            "description": "The ID of the taxonomic rank to retrieve."
+          }
+        },
+        "required": ["rank_id"]
+      },
+      "query_type": "composite",
+      "view_name": "rank_detail",
+      "param_mapping": {
+        "rank_id": "rank_id"
+      }
+    },
+    {
+      "name": "get_family_genera",
+      "description": "Get a list of all genera belonging to a specific Family ID.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "family_id": {
+            "type": "integer",
+            "description": "The ID of the family."
+          }
+        },
+        "required": ["family_id"]
+      },
+      "query_type": "named_query",
+      "named_query": "family_genera",
+      "param_mapping": {
+        "family_id": "family_id"
+      }
+    },
+    {
+      "name": "get_genera_by_country",
+      "description": "Get a list of genera found in a specific country.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "country_name": {
+            "type": "string",
+            "description": "The name of the country (e.g., 'China', 'Germany')."
+          }
+        },
+        "required": ["country_name"]
+      },
+      "query_type": "named_query",
+      "named_query": "genera_by_country",
+      "param_mapping": {
+        "country_name": "country_name"
+      }
+    },
+    {
+      "name": "get_genera_by_formation",
+      "description": "Get a list of genera found in a specific geological formation.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "formation_name": {
+            "type": "string",
+            "description": "The name of the geological formation."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum number of results to return. Defaults to 50.",
+            "default": 50
+          }
+        },
+        "required": ["formation_name"]
+      },
+      "query_type": "single",
+      "sql": "SELECT DISTINCT tr.id, tr.name, tr.author, tr.year, tr.is_valid, tr.family FROM taxonomic_ranks tr JOIN genus_formations gf ON tr.id = gf.genus_id JOIN pc.formations f ON gf.formation_id = f.id WHERE tr.rank = 'Genus' AND f.name = :formation_name ORDER BY tr.name LIMIT :limit",
+      "default_params": {
+        "limit": 50
+      }
+    }
+  ]
+}

@@ -161,10 +161,6 @@ async def test_get_genera_by_country():
 async def test_get_genera_by_formation():
     """Test formation-based genus search"""
     async with create_session() as session:
-        metadata_result = await session.call_tool("get_metadata", {})
-        metadata = json.loads(metadata_result.content[0].text)
-        assert metadata["statistics"]["formations"] > 0
-
         result = await session.call_tool("get_genera_by_formation", {
             "formation": "Jince Formation",
             "limit": 10
@@ -176,21 +172,15 @@ async def test_get_genera_by_formation():
 
 @pytest.mark.asyncio
 async def test_get_metadata():
-    """Test metadata and statistics"""
+    """Test metadata (generic — artifact_metadata only, no domain statistics)"""
     async with create_session() as session:
         result = await session.call_tool("get_metadata", {})
         metadata = json.loads(result.content[0].text)
 
         assert "name" in metadata
         assert "version" in metadata
-        assert "statistics" in metadata
-
-        stats = metadata["statistics"]
-        assert stats["class"] == 1
-        assert stats["genus"] > 5000
-        assert stats["valid_genera"] > 4000
-        assert stats["synonyms"] > 1000
-        assert stats["bibliography"] > 2000
+        # Generic get_metadata no longer includes domain statistics
+        assert "artifact_id" in metadata
 
 
 @pytest.mark.asyncio

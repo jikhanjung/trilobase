@@ -107,6 +107,15 @@ class ScodaPackage:
                 if n.startswith('assets/') and not n.endswith('/')]
 
     @property
+    def mcp_tools(self):
+        """Read mcp_tools.json from the package. Returns parsed dict or None."""
+        try:
+            data = self._zf.read('mcp_tools.json')
+            return json.loads(data)
+        except KeyError:
+            return None
+
+    @property
     def has_reference_spa(self):
         """Check if this package contains a Reference SPA."""
         return self.manifest.get('has_reference_spa', False)
@@ -178,7 +187,7 @@ class ScodaPackage:
         self.close()
 
     @staticmethod
-    def create(db_path, output_path, metadata=None, extra_assets=None):
+    def create(db_path, output_path, metadata=None, extra_assets=None, mcp_tools_path=None):
         """Create a .scoda package from a SQLite database.
 
         Args:
@@ -186,6 +195,7 @@ class ScodaPackage:
             output_path: Path for the output .scoda file.
             metadata: Optional dict to override/extend manifest fields.
             extra_assets: Optional dict of {archive_path: local_path} for additional files.
+            mcp_tools_path: Optional path to mcp_tools.json to include in the package.
 
         Returns:
             Path to the created .scoda file.
@@ -247,6 +257,9 @@ class ScodaPackage:
             zf.write(db_path, 'data.db')
             # Create empty assets/ directory entry
             zf.writestr('assets/', '')
+            # Add MCP tools definition
+            if mcp_tools_path and os.path.exists(mcp_tools_path):
+                zf.write(mcp_tools_path, 'mcp_tools.json')
             # Add extra assets (e.g., Reference SPA files)
             if extra_assets:
                 for archive_path, local_path in extra_assets.items():
@@ -382,6 +395,15 @@ class PackageRegistry:
             'manifest': pkg.manifest if pkg else None,
         }
 
+    def get_mcp_tools(self, name):
+        """Return mcp_tools.json content for a specific package, or None."""
+        if name not in self._packages:
+            return None
+        pkg = self._packages[name].get('pkg')
+        if pkg:
+            return pkg.mcp_tools
+        return None
+
     def close_all(self):
         """Close all ScodaPackage instances."""
         for entry in self._packages.values():
@@ -461,6 +483,18 @@ def get_registry():
             scan_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         _registry.scan(scan_dir)
     return _registry
+
+
+def get_mcp_tools():
+    """Get mcp_tools for the active package (or None)."""
+    name = get_active_package_name()
+    if name:
+        return get_registry().get_mcp_tools(name)
+    # Legacy mode: check if the module-level _scoda_pkg has mcp_tools
+    _resolve_paths()
+    if _scoda_pkg:
+        return _scoda_pkg.mcp_tools
+    return None
 
 
 def _reset_registry():

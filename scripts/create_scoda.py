@@ -19,6 +19,7 @@ from scoda_desktop.scoda_package import ScodaPackage, _sha256_file
 
 DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
 DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'trilobase.scoda')
+DEFAULT_MCP_TOOLS = os.path.join(os.path.dirname(__file__), '..', 'data', 'mcp_tools_trilobase.json')
 
 
 def main():
@@ -30,6 +31,9 @@ def main():
     parser.add_argument(
         '--output', default=DEFAULT_OUTPUT,
         help='Output .scoda file path (default: trilobase.scoda)')
+    parser.add_argument(
+        '--mcp-tools', default=DEFAULT_MCP_TOOLS,
+        help='Path to mcp_tools.json (default: data/mcp_tools_trilobase.json)')
     parser.add_argument(
         '--dry-run', action='store_true',
         help='Preview manifest without creating file')
@@ -127,8 +131,14 @@ def main():
         metadata["has_reference_spa"] = True
         metadata["reference_spa_path"] = "assets/spa/"
 
+    # Resolve MCP tools path
+    mcp_tools_path = os.path.abspath(args.mcp_tools)
+    if not os.path.exists(mcp_tools_path):
+        mcp_tools_path = None
+
     result = ScodaPackage.create(db_path, output_path, metadata=metadata,
-                                 extra_assets=extra_assets if extra_assets else None)
+                                 extra_assets=extra_assets if extra_assets else None,
+                                 mcp_tools_path=mcp_tools_path)
     size = os.path.getsize(result)
 
     print(f"Created: {result}")
@@ -145,6 +155,12 @@ def main():
         else:
             print(f"  Checksum: MISMATCH!", file=sys.stderr)
             sys.exit(1)
+        mcp = pkg.mcp_tools
+        if mcp:
+            tool_names = [t['name'] for t in mcp.get('tools', [])]
+            print(f"  MCP tools: {len(tool_names)} ({', '.join(tool_names)})")
+        else:
+            print(f"  MCP tools: none")
 
 
 if __name__ == '__main__':
