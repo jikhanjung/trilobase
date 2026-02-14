@@ -1,6 +1,6 @@
-# Trilobase REST API Reference
+# SCODA Desktop REST API Reference
 
-**버전:** 1.0.0
+**버전:** 2.0.0
 **Base URL:** `http://localhost:8080`
 
 ---
@@ -8,31 +8,101 @@
 ## 목차
 
 - [개요](#개요)
-- [Taxonomy API](#taxonomy-api)
-- [Search & Query API](#search--query-api)
+- [Core API](#core-api)
+- [Query API](#query-api)
+- [Composite Detail API](#composite-detail-api)
 - [Metadata API](#metadata-api)
 - [Annotations API](#annotations-api)
 - [에러 코드](#에러-코드)
+- [예제 코드](#예제-코드)
 
 ---
 
 ## 개요
 
-Trilobase REST API는 삼엽충 분류학 데이터베이스에 대한 프로그래매틱 접근을 제공합니다. 모든 응답은 JSON 형식이며, HTTP 상태 코드로 성공/실패를 나타냅니다.
+SCODA Desktop REST API는 `.scoda` 패키지에 포함된 데이터에 대한 프로그래매틱 접근을 제공합니다. 모든 응답은 JSON 형식이며, HTTP 상태 코드로 성공/실패를 나타냅니다.
 
 ### 기본 원칙
 
-- **Read-Only (Canonical DB)**: 분류학 데이터는 읽기 전용
+- **도메인 무관(Domain-Agnostic)**: 모든 엔드포인트는 범용이며, 데이터 구조는 `.scoda` 패키지의 manifest와 named queries로 정의
+- **Read-Only (Canonical DB)**: 패키지 데이터는 읽기 전용
 - **Read/Write (Overlay DB)**: 사용자 주석만 쓰기 가능
-- **CORS**: 모든 origin 허용 (로컬 개발용)
+- **CORS**: 모든 origin 허용 (외부 SPA 지원)
+
+### 엔드포인트 요약
+
+| 엔드포인트 | 메서드 | 설명 |
+|-----------|--------|------|
+| `/api/manifest` | GET | UI Manifest (뷰 정의) |
+| `/api/provenance` | GET | 데이터 출처 |
+| `/api/display-intent` | GET | Display Intent 힌트 |
+| `/api/queries` | GET | Named Query 목록 |
+| `/api/queries/<name>/execute` | GET | Named Query 실행 |
+| `/api/detail/<query_name>` | GET | 단일 레코드 조회 (첫 행) |
+| `/api/composite/<view_name>` | GET | 복합 Detail 조회 |
+| `/api/annotations/<type>/<id>` | GET | 주석 조회 |
+| `/api/annotations` | POST | 주석 생성 |
+| `/api/annotations/<id>` | DELETE | 주석 삭제 |
 
 ---
 
-## Taxonomy API
+## Core API
 
-### GET /api/tree
+### GET /api/manifest
 
-전체 분류 계층 트리를 조회합니다 (Class → Order → Suborder → Superfamily → Family).
+UI Manifest (선언적 뷰 정의)를 조회합니다. 프론트엔드가 화면을 구성하는 데 사용합니다.
+
+**Parameters:** 없음
+
+**Response:**
+```json
+{
+  "name": "default",
+  "description": "Default UI manifest",
+  "manifest": {
+    "default_view": "taxonomy_tree",
+    "views": [
+      {
+        "id": "taxonomy_tree",
+        "type": "tree",
+        "title": "Taxonomy Tree",
+        "query": "taxonomy_tree",
+        "tree_options": { ... }
+      },
+      {
+        "id": "genera_table",
+        "type": "table",
+        "title": "All Genera",
+        "query": "genera_list",
+        "columns": [ ... ],
+        "on_row_click": { "detail_view": "genus_detail", "id_column": "id" }
+      },
+      {
+        "id": "genus_detail",
+        "type": "detail",
+        "title_template": "{name}",
+        "source_query": "genus_detail_main",
+        "source_param": "id",
+        "sections": [ ... ],
+        "sub_queries": { ... }
+      }
+    ]
+  },
+  "created_at": "2026-02-05 10:00:00"
+}
+```
+
+**View Types:**
+- `tree`: 계층 트리 뷰 (tree_options 포함)
+- `table`: 테이블 뷰 (columns, on_row_click 포함)
+- `chart`: 차트 뷰 (chart_options 포함)
+- `detail`: 상세 뷰 (sections, source_query, sub_queries 포함)
+
+---
+
+### GET /api/provenance
+
+데이터 출처 정보를 조회합니다.
 
 **Parameters:** 없음
 
@@ -41,172 +111,40 @@ Trilobase REST API는 삼엽충 분류학 데이터베이스에 대한 프로그
 [
   {
     "id": 1,
-    "name": "Trilobita",
-    "rank": "Class",
-    "author": "WALCH, 1771",
-    "genera_count": 5113,
-    "children": [
-      {
-        "id": 2,
-        "name": "Agnostida",
-        "rank": "Order",
-        "author": "SALTER, 1864",
-        "genera_count": 543,
-        "children": [...]
-      }
-    ]
+    "source_type": "primary",
+    "citation": "Jell, P.A. & Adrain, J.M. 2002",
+    "description": "Available Generic Names for Trilobites",
+    "year": 2002,
+    "url": null
   }
 ]
 ```
 
-**특징:**
-- 재귀적 구조 (children 배열)
-- Genus는 포함되지 않음 (Family까지만)
-- `genera_count`: 실제 하위 Genus 개수
-
 ---
 
-### GET /api/rank/:id
+### GET /api/display-intent
 
-특정 분류 계급(Rank)의 상세 정보를 조회합니다.
+SCODA Display Intent 힌트를 조회합니다.
 
-**Parameters:**
-- `id` (path, required): taxonomic_ranks.id
+**Parameters:** 없음
 
 **Response:**
 ```json
-{
-  "id": 42,
-  "name": "Paradoxididae",
-  "rank": "Family",
-  "author": "HAWLE & CORDA, 1847",
-  "year": 1847,
-  "genera_count": 89,
-  "notes": null,
-  "parent_name": "Paradoxidoidea",
-  "parent_rank": "Superfamily",
-  "children_counts": [
-    {"rank": "Genus", "count": 89}
-  ],
-  "children": [
-    {
-      "id": 100,
-      "name": "Paradoxides",
-      "rank": "Genus",
-      "author": "BRONGNIART"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "entity": "genera",
+    "default_view": "tree",
+    "description": "Hierarchical taxonomy browser",
+    "source_query": "taxonomy_tree",
+    "priority": 1
+  }
+]
 ```
-
-**Error:**
-- `404`: Rank not found
 
 ---
 
-### GET /api/family/:family_id/genera
-
-특정 Family에 속한 Genus 목록을 조회합니다.
-
-**Parameters:**
-- `family_id` (path, required): Family의 taxonomic_ranks.id
-
-**Response:**
-```json
-{
-  "family": {
-    "id": 42,
-    "name": "Paradoxididae",
-    "author": "HAWLE & CORDA, 1847",
-    "genera_count": 89
-  },
-  "genera": [
-    {
-      "id": 100,
-      "name": "Paradoxides",
-      "author": "BRONGNIART",
-      "year": 1822,
-      "type_species": "Paradoxides paradoxissimus",
-      "location": "Czech Republic",
-      "is_valid": 1
-    }
-  ]
-}
-```
-
-**Error:**
-- `404`: Family not found
-
----
-
-### GET /api/genus/:genus_id
-
-특정 Genus의 상세 정보를 조회합니다.
-
-**Parameters:**
-- `genus_id` (path, required): Genus의 taxonomic_ranks.id
-
-**Response:**
-```json
-{
-  "id": 100,
-  "name": "Paradoxides",
-  "author": "BRONGNIART",
-  "year": 1822,
-  "year_suffix": null,
-  "type_species": "Paradoxides paradoxissimus",
-  "type_species_author": "LINNAEUS, 1758",
-  "formation": "Jince Formation",
-  "location": "Czech Republic",
-  "family": "Paradoxididae",
-  "family_name": "Paradoxididae",
-  "temporal_code": "MCAM",
-  "is_valid": 1,
-  "notes": null,
-  "raw_entry": "Paradoxides BRONGNIART, 1822...",
-  "synonyms": [
-    {
-      "id": 1,
-      "senior_taxon_id": 100,
-      "senior_name": "Paradoxides",
-      "synonym_type": "j.o.s.",
-      "fide_author": "WHITTINGTON",
-      "fide_year": 1997
-    }
-  ],
-  "formations": [
-    {
-      "id": 10,
-      "name": "Jince Formation",
-      "type": "Fm",
-      "country": "Czech Republic",
-      "period": "MCAM"
-    }
-  ],
-  "locations": [
-    {
-      "id": 5,
-      "country": "Czech Republic",
-      "region": "Bohemia"
-    }
-  ]
-}
-```
-
-**필드 설명:**
-- `is_valid`: 1=유효, 0=무효 (synonym)
-- `year_suffix`: 같은 저자/연도가 여러 개일 때 구분 (a, b, c)
-- `raw_entry`: 원본 텍스트 (추적성)
-- `synonyms`: 동의어 관계
-- `formations`: 발견 지층 (다대다)
-- `locations`: 발견 지역 (다대다)
-
-**Error:**
-- `404`: Genus not found
-
----
-
-## Search & Query API
+## Query API
 
 ### GET /api/queries
 
@@ -267,116 +205,94 @@ GET /api/queries/family_genera/execute?family_id=42
 
 ---
 
+### GET /api/detail/:query_name
+
+Named Query를 실행하고 **첫 번째 행**을 flat JSON으로 반환합니다. 단일 레코드 조회에 적합합니다.
+
+**Parameters:**
+- `query_name` (path, required): Query 이름
+- Query별 파라미터 (query string)
+
+**예시:**
+```
+GET /api/detail/genus_detail_main?id=100
+```
+
+**Response:**
+```json
+{
+  "id": 100,
+  "name": "Paradoxides",
+  "author": "BRONGNIART",
+  "year": 1822,
+  "rank": "Genus",
+  "is_valid": 1
+}
+```
+
+**Error:**
+- `404`: Query not found or no results
+
+---
+
+## Composite Detail API
+
+### GET /api/composite/:view_name
+
+Manifest에 정의된 detail view를 기반으로 **복합 쿼리**를 실행합니다. 메인 쿼리(source_query)와 하위 쿼리(sub_queries)를 병합하여 반환합니다.
+
+**Parameters:**
+- `view_name` (path, required): Manifest detail view의 ID
+- `id` (query, required): Entity ID
+
+**예시:**
+```
+GET /api/composite/genus_detail?id=100
+```
+
+**Response:**
+```json
+{
+  "id": 100,
+  "name": "Paradoxides",
+  "author": "BRONGNIART",
+  "year": 1822,
+  "rank": "Genus",
+  "is_valid": 1,
+  "family_name": "Paradoxididae",
+  "raw_entry": "Paradoxides BRONGNIART, 1822...",
+  "synonyms": [
+    {"junior_name": "Paradoxus", "synonym_type": "j.o.s.", "fide": "WHITTINGTON, 1997"}
+  ],
+  "formations": [
+    {"name": "Jince Formation", "country": "Czech Republic"}
+  ],
+  "locations": [
+    {"country": "Czech Republic", "region": "Bohemia"}
+  ],
+  "hierarchy": [
+    {"id": 1, "name": "Trilobita", "rank": "Class"}
+  ]
+}
+```
+
+**동작 원리:**
+1. Manifest에서 `view_name`에 해당하는 detail view를 찾음
+2. `source_query`를 `id` 파라미터로 실행 (메인 데이터)
+3. `sub_queries`를 순차 실행하여 결과를 메인 데이터에 병합
+4. Sub-query 파라미터는 URL(`"id"`) 또는 메인 결과 필드(`"result.field_name"`)에서 가져옴
+
+**Error:**
+- `400`: `id` 파라미터 누락
+- `404`: View not found, view가 detail 타입이 아님, source_query 없음, entity 없음
+
+---
+
 ## Metadata API
 
-### GET /api/metadata
+메타데이터는 `/api/manifest` 응답에 포함됩니다. 별도의 `/api/metadata` 엔드포인트는 없습니다.
 
-데이터베이스 메타데이터와 통계를 조회합니다.
-
-**Parameters:** 없음
-
-**Response:**
-```json
-{
-  "name": "Trilobase",
-  "version": "1.0.0",
-  "description": "A taxonomic database of trilobite genera",
-  "license": "CC-BY-4.0",
-  "created": "2026-02-04",
-  "statistics": {
-    "class": 1,
-    "order": 12,
-    "suborder": 8,
-    "superfamily": 13,
-    "family": 191,
-    "genus": 5113,
-    "valid_genera": 4258,
-    "synonyms": 1055,
-    "bibliography": 2130,
-    "formations": 2009,
-    "countries": 151
-  }
-}
-```
-
----
-
-### GET /api/provenance
-
-데이터 출처 정보를 조회합니다.
-
-**Parameters:** 없음
-
-**Response:**
-```json
-[
-  {
-    "id": 1,
-    "source_type": "primary",
-    "citation": "Jell, P.A. & Adrain, J.M. 2002",
-    "description": "Available Generic Names for Trilobites",
-    "year": 2002,
-    "url": null
-  },
-  {
-    "id": 2,
-    "source_type": "supplementary",
-    "citation": "Adrain, J.M. 2011",
-    "description": "Class Trilobita Walch, 1771",
-    "year": 2011,
-    "url": null
-  }
-]
-```
-
----
-
-### GET /api/display-intent
-
-SCODA Display Intent 힌트를 조회합니다.
-
-**Parameters:** 없음
-
-**Response:**
-```json
-[
-  {
-    "id": 1,
-    "entity": "genera",
-    "default_view": "tree",
-    "description": "Hierarchical taxonomy browser",
-    "source_query": "taxonomy_tree",
-    "priority": 1
-  }
-]
-```
-
----
-
-### GET /api/manifest
-
-UI Manifest (선언적 뷰 정의)를 조회합니다.
-
-**Parameters:** 없음
-
-**Response:**
-```json
-{
-  "name": "default",
-  "description": "Default UI manifest for Trilobase",
-  "manifest": {
-    "views": [
-      {
-        "id": "taxonomy_tree",
-        "type": "tree",
-        "title": "Taxonomy Tree",
-        "query": "taxonomy_tree"
-      }
-    ]
-  },
-  "created_at": "2026-02-05 10:00:00"
-}
-```
+Manifest 응답의 최상위 필드(`name`, `description`, `created_at`)가 패키지 메타데이터 역할을 합니다. 상세 메타데이터는 MCP `get_metadata` 도구를 통해 조회할 수 있습니다.
 
 ---
 
@@ -429,28 +345,10 @@ UI Manifest (선언적 뷰 정의)를 조회합니다.
 }
 ```
 
-**Required Fields:**
-- `entity_type`
-- `entity_id`
-- `annotation_type`
-- `content`
+**Required Fields:** `entity_type`, `entity_id`, `annotation_type`, `content`
+**Optional Fields:** `author`
 
-**Optional Fields:**
-- `author`
-
-**Response:**
-```json
-{
-  "id": 1,
-  "entity_type": "genus",
-  "entity_id": 100,
-  "entity_name": "Paradoxides",
-  "annotation_type": "note",
-  "content": "Check formation data for accuracy",
-  "author": "researcher_1",
-  "created_at": "2026-02-09 10:00:00"
-}
-```
+**Response:** 생성된 annotation 객체 (위 GET 응답과 동일 구조)
 
 **Error:**
 - `400`: Invalid entity_type or annotation_type
@@ -479,8 +377,6 @@ UI Manifest (선언적 뷰 정의)를 조회합니다.
 
 ## 에러 코드
 
-### HTTP 상태 코드
-
 | 코드 | 의미 | 설명 |
 |-----|------|------|
 | 200 | OK | 요청 성공 |
@@ -488,8 +384,7 @@ UI Manifest (선언적 뷰 정의)를 조회합니다.
 | 404 | Not Found | 리소스를 찾을 수 없음 |
 | 500 | Internal Server Error | 서버 내부 오류 |
 
-### 에러 응답 형식
-
+**에러 응답 형식:**
 ```json
 {
   "error": "Error message describing what went wrong"
@@ -505,14 +400,19 @@ UI Manifest (선언적 뷰 정의)를 조회합니다.
 ```python
 import requests
 
-# Get taxonomy tree
-response = requests.get('http://localhost:8080/api/tree')
-tree = response.json()
+BASE = 'http://localhost:8080'
 
-# Get genus detail
-response = requests.get('http://localhost:8080/api/genus/100')
-genus = response.json()
-print(f"{genus['name']} {genus['author']}, {genus['year']}")
+# Get manifest (뷰 정의 + 메타데이터)
+manifest = requests.get(f'{BASE}/api/manifest').json()
+print(f"Package: {manifest['name']}")
+
+# Execute named query
+result = requests.get(f'{BASE}/api/queries/genera_list/execute').json()
+print(f"Found {result['row_count']} genera")
+
+# Get composite detail (manifest-driven)
+detail = requests.get(f'{BASE}/api/composite/genus_detail', params={'id': 100}).json()
+print(f"{detail['name']} {detail['author']}, {detail['year']}")
 
 # Create annotation
 annotation = {
@@ -521,45 +421,54 @@ annotation = {
     "annotation_type": "note",
     "content": "Interesting specimen from Jince Formation"
 }
-response = requests.post('http://localhost:8080/api/annotations', json=annotation)
-result = response.json()
+result = requests.post(f'{BASE}/api/annotations', json=annotation).json()
 ```
 
 ### JavaScript (fetch)
 
 ```javascript
-// Get taxonomy tree
-const response = await fetch('http://localhost:8080/api/tree');
-const tree = await response.json();
+const BASE = 'http://localhost:8080';
 
-// Search genera by country (via named query)
-const response2 = await fetch(
-  'http://localhost:8080/api/queries/country_genera/execute?country=China'
-);
-const genera = await response2.json();
+// Get manifest
+const manifest = await (await fetch(`${BASE}/api/manifest`)).json();
+
+// Execute named query
+const result = await (await fetch(
+  `${BASE}/api/queries/family_genera/execute?family_id=42`
+)).json();
+
+// Get composite detail
+const detail = await (await fetch(
+  `${BASE}/api/composite/genus_detail?id=100`
+)).json();
 
 // Create annotation
-const annotation = {
-  entity_type: 'genus',
-  entity_id: 100,
-  annotation_type: 'note',
-  content: 'Check this later'
-};
-const response3 = await fetch('http://localhost:8080/api/annotations', {
+const annotation = await (await fetch(`${BASE}/api/annotations`, {
   method: 'POST',
   headers: {'Content-Type': 'application/json'},
-  body: JSON.stringify(annotation)
-});
+  body: JSON.stringify({
+    entity_type: 'genus',
+    entity_id: 100,
+    annotation_type: 'note',
+    content: 'Check this later'
+  })
+})).json();
 ```
 
 ### cURL
 
 ```bash
-# Get metadata
-curl http://localhost:8080/api/metadata
+# Get manifest
+curl http://localhost:8080/api/manifest
 
-# Get genus detail
-curl http://localhost:8080/api/genus/100
+# Execute named query
+curl 'http://localhost:8080/api/queries/genera_list/execute'
+
+# Composite detail
+curl 'http://localhost:8080/api/composite/genus_detail?id=100'
+
+# Get provenance
+curl http://localhost:8080/api/provenance
 
 # Create annotation
 curl -X POST http://localhost:8080/api/annotations \
@@ -581,28 +490,27 @@ curl -X DELETE http://localhost:8080/api/annotations/1
 
 ### SCODA 원칙
 
-- **Canonical Data는 불변**: taxonomic_ranks, synonyms, formations 등의 데이터는 읽기 전용
-- **User Annotations만 수정 가능**: Overlay DB (trilobase_overlay.db)에만 쓰기 허용
-- **원본 데이터 추적**: `raw_entry` 필드로 원본 텍스트 보존
+- **Canonical Data는 불변**: 패키지 데이터는 읽기 전용
+- **User Annotations만 수정 가능**: Overlay DB에만 쓰기 허용
+- **Manifest-Driven**: 뷰 구조, 쿼리, detail 구성 모두 manifest/named queries로 정의
 
-### 성능 최적화
+### 성능
 
-- **페이지네이션**: Genus 목록 API는 자동으로 정렬되어 반환됨
-- **인덱스**: name, rank, parent_id, is_valid 등에 인덱스 적용
-- **캐싱**: 프론트엔드에서 taxonomy tree 결과를 캐싱 권장
-
-### 데이터 일관성
-
-- `genera_count`는 실제 하위 Genus를 COUNT한 값 (denormalized)
-- `is_valid=0`인 Genus는 동의어로, `synonyms` 테이블에서 senior taxon 확인 가능
-- Formation/Location은 다대다 관계 (한 Genus가 여러 지역에서 발견 가능)
+- Named Query는 서버의 `ui_queries` 테이블에 사전 정의되어 즉시 실행
+- Composite detail은 source_query + sub_queries를 순차 실행하므로 약간의 지연 가능
+- 인덱스: name, rank, parent_id, is_valid 등에 인덱스 적용
 
 ---
 
 ## 버전 히스토리
 
-- **v1.0.0** (2026-02-09): Initial API release with Phase 22
-  - 14 API endpoints
+- **v2.0.0** (2026-02-14): Domain-agnostic API (Phase 46 Step 3)
+  - Legacy 도메인 엔드포인트 11개 제거
+  - `/api/composite/<view_name>` 추가 (manifest-driven 복합 조회)
+  - `/api/detail/<query_name>` 추가 (단일 레코드 조회)
+  - 모든 도메인 로직은 `.scoda` 패키지 내부로 이동
+- **v1.0.0** (2026-02-09): Initial API release
+  - 14 API endpoints (domain-specific)
   - SCODA metadata support
   - User annotations (Overlay DB)
 
@@ -616,4 +524,4 @@ curl -X DELETE http://localhost:8080/api/annotations/1
 
 ---
 
-**Last Updated:** 2026-02-09
+**Last Updated:** 2026-02-14
