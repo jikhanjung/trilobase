@@ -214,7 +214,7 @@ class TestApiQueries:
         response = client.get('/api/queries')
         data = json.loads(response.data)
         assert isinstance(data, list)
-        assert len(data) == 8  # genera_list, family_genera, taxonomy_tree, bibliography_list, genus_detail, ics_chronostrat_list, countries_list, formations_list
+        assert len(data) == 29  # 8 original + 21 composite detail queries
 
     def test_queries_record_structure(self, client):
         response = client.get('/api/queries')
@@ -1410,6 +1410,121 @@ class TestFlaskAutoSwitch:
 
 
 
+
+
+# --- /api/composite/<view_name> ---
+
+
+class TestCompositeDetail:
+    """Tests for /api/composite/<view_name> manifest-driven composite endpoint."""
+
+    def test_composite_requires_id(self, client):
+        """Missing id parameter should return 400."""
+        response = client.get('/api/composite/genus_detail')
+        assert response.status_code == 400
+        data = json.loads(response.data)
+        assert 'id parameter required' in data['error']
+
+    def test_composite_unknown_view_returns_404(self, client):
+        """Non-existent view name should return 404."""
+        response = client.get('/api/composite/nonexistent_view?id=1')
+        assert response.status_code == 404
+        data = json.loads(response.data)
+        assert 'Detail view not found' in data['error']
+
+    def test_composite_non_detail_view_returns_404(self, client):
+        """Table view (not detail type) should return 404."""
+        response = client.get('/api/composite/genera_table?id=1')
+        assert response.status_code == 404
+
+    def test_composite_view_without_source_query_returns_404(self, client):
+        """Detail view without source_query should still work if manifest has one.
+        Views that lack source_query return 404."""
+        # All test views now have source_query, so use a table view type
+        response = client.get('/api/composite/taxonomy_tree?id=1')
+        assert response.status_code == 404
+
+    def test_composite_entity_not_found(self, client):
+        """Non-existent entity id should return 404."""
+        response = client.get('/api/composite/genus_detail?id=999999')
+        assert response.status_code == 404
+
+    def test_composite_genus_returns_main_data(self, client):
+        """Composite genus detail should return main query fields at top level."""
+        response = client.get('/api/composite/genus_detail?id=100')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['name'] == 'Phacops'
+        assert data['family_name'] == 'Phacopidae'
+        assert data['temporal_code'] == 'LDEV-UDEV'
+
+    def test_composite_genus_has_sub_query_keys(self, client):
+        """Composite genus detail should include sub-query result arrays."""
+        response = client.get('/api/composite/genus_detail?id=100')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert 'hierarchy' in data
+        assert 'synonyms' in data
+        assert 'formations' in data
+        assert 'locations' in data
+        assert 'temporal_ics_mapping' in data
+        assert isinstance(data['hierarchy'], list)
+        assert isinstance(data['synonyms'], list)
+
+    def test_composite_genus_hierarchy(self, client):
+        """Hierarchy should walk up from genus to Class."""
+        response = client.get('/api/composite/genus_detail?id=100')
+        data = json.loads(response.data)
+        hierarchy = data['hierarchy']
+        assert len(hierarchy) >= 2  # At least Order and Class
+        # Should be ordered Class -> Order -> Family (top to bottom)
+        ranks = [h['rank'] for h in hierarchy]
+        assert ranks[0] == 'Class'
+        assert 'Family' in ranks
+
+    def test_composite_genus_synonyms_empty(self, client):
+        """Genus with no synonyms should have empty list."""
+        response = client.get('/api/composite/genus_detail?id=100')
+        data = json.loads(response.data)
+        assert data['synonyms'] == []
+
+    def test_composite_genus_formations(self, client):
+        """Genus with formations should list them."""
+        response = client.get('/api/composite/genus_detail?id=101')
+        data = json.loads(response.data)
+        assert len(data['formations']) == 1
+        assert data['formations'][0]['name'] == 'Büdesheimer Sh'
+
+    def test_composite_genus_locations(self, client):
+        """Genus with locations should list them with region/country."""
+        response = client.get('/api/composite/genus_detail?id=101')
+        data = json.loads(response.data)
+        assert len(data['locations']) == 1
+        loc = data['locations'][0]
+        assert loc['country_name'] == 'Germany'
+        assert loc['region_name'] == 'Eifel'
+
+    def test_composite_result_field_param(self, client):
+        """Sub-query using result.field should resolve from main query result."""
+        # genus_ics_mapping uses result.temporal_code
+        response = client.get('/api/composite/genus_detail?id=200')
+        data = json.loads(response.data)
+        # Olenus has temporal_code=UCAM, which maps to Furongian (ics_id=6)
+        assert 'temporal_ics_mapping' in data
+        assert isinstance(data['temporal_ics_mapping'], list)
+        if len(data['temporal_ics_mapping']) > 0:
+            assert data['temporal_ics_mapping'][0]['name'] == 'Furongian'
+
+    def test_composite_rank_detail(self, client):
+        """Composite rank detail should return main + children + counts."""
+        response = client.get('/api/composite/rank_detail?id=1')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['name'] == 'Trilobita'
+        assert 'children' in data
+        assert 'children_counts' in data
+        assert isinstance(data['children'], list)
+        assert isinstance(data['children_counts'], list)
 
 
 class TestGenericViewerFallback:

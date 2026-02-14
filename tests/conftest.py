@@ -323,6 +323,138 @@ def test_db(tmp_path):
                 NULL, '2026-02-12T00:00:00')
     """)
 
+    # --- Queries needed for composite detail endpoint (Phase 46) ---
+
+    # Existing production queries added to test fixture
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('rank_detail', 'Detail for any taxonomic rank with parent info',
+                'SELECT tr.*, parent.name as parent_name, parent.rank as parent_rank FROM taxonomic_ranks tr LEFT JOIN taxonomic_ranks parent ON tr.parent_id = parent.id WHERE tr.id = :rank_id',
+                '{"rank_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('genus_synonyms', 'Synonyms for a specific genus',
+                'SELECT s.id, s.senior_taxon_id, COALESCE(senior.name, s.senior_taxon_name) as senior_name, s.synonym_type, s.fide_author, s.fide_year FROM synonyms s LEFT JOIN taxonomic_ranks senior ON s.senior_taxon_id = senior.id WHERE s.junior_taxon_id = :genus_id',
+                '{"genus_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('genus_formations', 'Formations where a genus was found',
+                'SELECT f.id, f.name, f.formation_type as type, f.country, f.period FROM genus_formations gf JOIN pc.formations f ON gf.formation_id = f.id WHERE gf.genus_id = :genus_id',
+                '{"genus_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('genus_locations', 'Countries/regions where a genus was found',
+                'SELECT CASE WHEN gr.level = ''region'' THEN gr.id END as region_id, CASE WHEN gr.level = ''region'' THEN gr.name END as region_name, CASE WHEN gr.level = ''country'' THEN gr.id ELSE parent.id END as country_id, CASE WHEN gr.level = ''country'' THEN gr.name ELSE parent.name END as country_name FROM genus_locations gl JOIN pc.geographic_regions gr ON gl.region_id = gr.id LEFT JOIN pc.geographic_regions parent ON gr.parent_id = parent.id WHERE gl.genus_id = :genus_id',
+                '{"genus_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+
+    # New composite detail queries (Phase 46)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('genus_hierarchy', 'Taxonomy hierarchy for a genus (walk up parent chain)',
+                'WITH RECURSIVE ancestors AS (SELECT tr.id, tr.name, tr.rank, tr.author, tr.parent_id, 0 as depth FROM taxonomic_ranks tr WHERE tr.id = (SELECT parent_id FROM taxonomic_ranks WHERE id = :genus_id) UNION ALL SELECT tr.id, tr.name, tr.rank, tr.author, tr.parent_id, a.depth + 1 FROM taxonomic_ranks tr JOIN ancestors a ON tr.id = a.parent_id) SELECT id, name, rank, author FROM ancestors ORDER BY depth DESC',
+                '{"genus_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('genus_ics_mapping', 'ICS chronostrat mapping for a temporal code',
+                'SELECT ic.id, ic.name, ic.rank, m.mapping_type FROM pc.temporal_ics_mapping m JOIN pc.ics_chronostrat ic ON m.ics_id = ic.id WHERE m.temporal_code = :temporal_code',
+                '{"temporal_code": "string"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('rank_children', 'Direct children of a taxonomic rank',
+                'SELECT id, name, rank, author, genera_count FROM taxonomic_ranks WHERE parent_id = :rank_id ORDER BY rank, name LIMIT 20',
+                '{"rank_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('rank_children_counts', 'Children counts by rank for a taxonomic rank',
+                'SELECT rank, COUNT(*) as count FROM taxonomic_ranks WHERE parent_id = :rank_id GROUP BY rank',
+                '{"rank_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('country_detail', 'Country basic information with taxa count',
+                'SELECT gr.id, gr.name, gr.cow_ccode, (SELECT COUNT(DISTINCT gl.genus_id) FROM genus_locations gl WHERE gl.country_id = gr.id OR gl.region_id IN (SELECT id FROM pc.geographic_regions WHERE parent_id = gr.id)) as taxa_count FROM pc.geographic_regions gr WHERE gr.id = :country_id AND gr.parent_id IS NULL',
+                '{"country_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('country_regions', 'Child regions of a country',
+                'SELECT gr.id, gr.name, COUNT(DISTINCT gl.genus_id) as taxa_count FROM pc.geographic_regions gr LEFT JOIN genus_locations gl ON gl.region_id = gr.id WHERE gr.parent_id = :country_id AND gr.level = ''region'' GROUP BY gr.id ORDER BY taxa_count DESC, gr.name',
+                '{"country_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('country_genera', 'Genera found in a country',
+                'SELECT DISTINCT tr.id, tr.name, tr.author, tr.year, tr.is_valid, gr.name as region, gr.id as region_id FROM genus_locations gl JOIN taxonomic_ranks tr ON gl.genus_id = tr.id JOIN pc.geographic_regions gr ON gl.region_id = gr.id WHERE gl.region_id = :country_id OR gl.region_id IN (SELECT id FROM pc.geographic_regions WHERE parent_id = :country_id) ORDER BY tr.name',
+                '{"country_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('region_detail', 'Region basic information with parent and taxa count',
+                'SELECT gr.id, gr.name, gr.level, COUNT(DISTINCT gl.genus_id) as taxa_count, parent.id as country_id, parent.name as country_name FROM pc.geographic_regions gr LEFT JOIN pc.geographic_regions parent ON gr.parent_id = parent.id LEFT JOIN genus_locations gl ON gl.region_id = gr.id WHERE gr.id = :region_id AND gr.level = ''region'' GROUP BY gr.id',
+                '{"region_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('region_genera', 'Genera found in a specific region',
+                'SELECT tr.id, tr.name, tr.author, tr.year, tr.is_valid FROM genus_locations gl JOIN taxonomic_ranks tr ON gl.genus_id = tr.id WHERE gl.region_id = :region_id ORDER BY tr.name',
+                '{"region_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('formation_detail', 'Formation basic information with taxa count',
+                'SELECT f.id, f.name, f.normalized_name, f.formation_type, f.country, f.region, f.period, COUNT(DISTINCT gf.genus_id) as taxa_count FROM pc.formations f LEFT JOIN genus_formations gf ON gf.formation_id = f.id WHERE f.id = :formation_id GROUP BY f.id',
+                '{"formation_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('formation_genera', 'Genera found in a specific formation',
+                'SELECT tr.id, tr.name, tr.author, tr.year, tr.is_valid FROM genus_formations gf JOIN taxonomic_ranks tr ON gf.genus_id = tr.id WHERE gf.formation_id = :formation_id ORDER BY tr.name',
+                '{"formation_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('bibliography_detail', 'Bibliography entry detail',
+                'SELECT id, authors, year, year_suffix, title, journal, volume, pages, publisher, city, editors, book_title, reference_type, raw_entry FROM bibliography WHERE id = :bibliography_id',
+                '{"bibliography_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('bibliography_genera', 'Genera related to a bibliography entry by author name',
+                'SELECT tr.id, tr.name, tr.author, tr.year, tr.is_valid FROM taxonomic_ranks tr WHERE tr.rank = ''Genus'' AND tr.author LIKE ''%%'' || :author_name || ''%%'' ORDER BY tr.name',
+                '{"author_name": "string"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('chronostrat_detail', 'ICS chronostratigraphic unit detail with parent',
+                'SELECT ics.id, ics.name, ics.rank, ics.parent_id, ics.start_mya, ics.start_uncertainty, ics.end_mya, ics.end_uncertainty, ics.short_code, ics.color, ics.ratified_gssp, p.id as parent_detail_id, p.name as parent_name, p.rank as parent_rank FROM pc.ics_chronostrat ics LEFT JOIN pc.ics_chronostrat p ON ics.parent_id = p.id WHERE ics.id = :chronostrat_id',
+                '{"chronostrat_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('chronostrat_children', 'Children of an ICS chronostratigraphic unit',
+                'SELECT id, name, rank, start_mya, end_mya, color FROM pc.ics_chronostrat WHERE parent_id = :chronostrat_id ORDER BY display_order',
+                '{"chronostrat_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('chronostrat_mappings', 'Temporal code mappings for an ICS unit',
+                'SELECT temporal_code, mapping_type FROM pc.temporal_ics_mapping WHERE ics_id = :chronostrat_id ORDER BY temporal_code',
+                '{"chronostrat_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('chronostrat_genera', 'Genera related to an ICS chronostratigraphic unit',
+                'SELECT DISTINCT tr.id, tr.name, tr.author, tr.year, tr.is_valid, tr.temporal_code FROM pc.temporal_ics_mapping m JOIN taxonomic_ranks tr ON tr.temporal_code = m.temporal_code WHERE m.ics_id = :chronostrat_id AND tr.rank = ''Genus'' ORDER BY tr.name',
+                '{"chronostrat_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+
     # SCODA UI Manifest (Phase 15)
     cursor.execute("""
         CREATE TABLE ui_manifest (
@@ -460,7 +592,12 @@ def test_db(tmp_path):
             "formation_detail": {
                 "type": "detail",
                 "title": "Formation Detail",
-                "source": "/api/formation/{id}",
+                "source": "/api/composite/formation_detail?id={id}",
+                "source_query": "formation_detail",
+                "source_param": "formation_id",
+                "sub_queries": {
+                    "genera": {"query": "formation_genera", "params": {"formation_id": "id"}}
+                },
                 "icon": "bi-layers",
                 "title_template": {"format": "{icon} {name}", "icon": "bi-layers"},
                 "sections": [
@@ -475,7 +612,13 @@ def test_db(tmp_path):
             "country_detail": {
                 "type": "detail",
                 "title": "Country Detail",
-                "source": "/api/country/{id}",
+                "source": "/api/composite/country_detail?id={id}",
+                "source_query": "country_detail",
+                "source_param": "country_id",
+                "sub_queries": {
+                    "regions": {"query": "country_regions", "params": {"country_id": "id"}},
+                    "genera": {"query": "country_genera", "params": {"country_id": "id"}}
+                },
                 "icon": "bi-geo-alt",
                 "title_template": {"format": "{icon} {name}", "icon": "bi-geo-alt"},
                 "sections": [
@@ -486,7 +629,12 @@ def test_db(tmp_path):
             "region_detail": {
                 "type": "detail",
                 "title": "Region Detail",
-                "source": "/api/region/{id}",
+                "source": "/api/composite/region_detail?id={id}",
+                "source_query": "region_detail",
+                "source_param": "region_id",
+                "sub_queries": {
+                    "genera": {"query": "region_genera", "params": {"region_id": "id"}}
+                },
                 "icon": "bi-geo-alt",
                 "title_template": {"format": "{icon} {name}", "icon": "bi-geo-alt"},
                 "sections": [
@@ -497,7 +645,12 @@ def test_db(tmp_path):
             "bibliography_detail": {
                 "type": "detail",
                 "title": "Bibliography Detail",
-                "source": "/api/bibliography/{id}",
+                "source": "/api/composite/bibliography_detail?id={id}",
+                "source_query": "bibliography_detail",
+                "source_param": "bibliography_id",
+                "sub_queries": {
+                    "genera": {"query": "bibliography_genera", "params": {"author_name": "result.authors"}}
+                },
                 "icon": "bi-book",
                 "title_template": {"format": "{icon} {authors}, {year}", "icon": "bi-book"},
                 "sections": [
@@ -510,7 +663,14 @@ def test_db(tmp_path):
             "chronostrat_detail": {
                 "type": "detail",
                 "title": "Chronostratigraphy Detail",
-                "source": "/api/chronostrat/{id}",
+                "source": "/api/composite/chronostrat_detail?id={id}",
+                "source_query": "chronostrat_detail",
+                "source_param": "chronostrat_id",
+                "sub_queries": {
+                    "children": {"query": "chronostrat_children", "params": {"chronostrat_id": "id"}},
+                    "mappings": {"query": "chronostrat_mappings", "params": {"chronostrat_id": "id"}},
+                    "genera": {"query": "chronostrat_genera", "params": {"chronostrat_id": "id"}}
+                },
                 "icon": "bi-clock-history",
                 "title_template": {"format": "{icon} {name}", "icon": "bi-clock-history"},
                 "sections": [
@@ -521,7 +681,16 @@ def test_db(tmp_path):
             "genus_detail": {
                 "type": "detail",
                 "title": "Genus Detail",
-                "source": "/api/genus/{id}",
+                "source": "/api/composite/genus_detail?id={id}",
+                "source_query": "genus_detail",
+                "source_param": "genus_id",
+                "sub_queries": {
+                    "hierarchy": {"query": "genus_hierarchy", "params": {"genus_id": "id"}},
+                    "synonyms": {"query": "genus_synonyms", "params": {"genus_id": "id"}},
+                    "formations": {"query": "genus_formations", "params": {"genus_id": "id"}},
+                    "locations": {"query": "genus_locations", "params": {"genus_id": "id"}},
+                    "temporal_ics_mapping": {"query": "genus_ics_mapping", "params": {"temporal_code": "result.temporal_code"}}
+                },
                 "title_template": {"format": "<i>{name}</i> {author}, {year}"},
                 "sections": [
                     {"title": "Basic Information", "type": "field_grid",
@@ -541,7 +710,13 @@ def test_db(tmp_path):
             "rank_detail": {
                 "type": "detail",
                 "title": "Rank Detail",
-                "source": "/api/rank/{id}",
+                "source": "/api/composite/rank_detail?id={id}",
+                "source_query": "rank_detail",
+                "source_param": "rank_id",
+                "sub_queries": {
+                    "children_counts": {"query": "rank_children_counts", "params": {"rank_id": "id"}},
+                    "children": {"query": "rank_children", "params": {"rank_id": "id"}}
+                },
                 "title_template": {"format": "<span class=\"badge bg-secondary me-2\">{rank}</span> {name}"},
                 "sections": [
                     {"title": "Basic Information", "type": "field_grid",

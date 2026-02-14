@@ -443,6 +443,16 @@
   - 테스트: 230개 전부 통과
   - devlog: `devlog/20260214_054_phase45_directory_restructure.md`
 
+- **Phase 46 Step 1 완료**: Generic Composite Detail Endpoint
+  - `GET /api/composite/<view_name>?id=<entity_id>`: manifest-driven 복합 쿼리 엔드포인트
+  - 동작: source_query (메인) + sub_queries (하위) 실행 → 병합된 복합 JSON 반환
+  - Named query 21개 추가 (기존→conftest 4개 + 신규 17개)
+  - Manifest detail view 7개에 `source_query`, `source_param`, `sub_queries` 추가
+  - Sub-query 파라미터: `"id"` (URL), `"result.field"` (메인 결과 참조)
+  - Legacy 엔드포인트 미삭제 (Step 3에서 제거 예정)
+  - 테스트: 254개 (기존 230 + 신규 24)
+  - devlog: `devlog/20260214_055_phase46_step1_composite_endpoint.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -483,7 +493,7 @@
 | provenance | 5 | 데이터 출처 |
 | schema_descriptions | 94 | 테이블/컬럼 설명 |
 | ui_display_intent | 6 | SCODA 뷰 타입 힌트 |
-| ui_queries | 16 | Named SQL 쿼리 |
+| ui_queries | 33 | Named SQL 쿼리 (Phase 46에서 17개 추가) |
 | ui_manifest | 1 | 선언적 뷰 정의 (JSON) |
 
 **Overlay DB (trilobase_overlay.db) — Read/write, 사용자 로컬 데이터:**
@@ -585,11 +595,11 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_runtime.py` | 105개 | ✅ 통과 |
-| `tests/test_trilobase.py` | 108개 | ✅ 통과 |
+| `tests/test_runtime.py` | 120개 | ✅ 통과 |
+| `tests/test_trilobase.py` | 117개 | ✅ 통과 |
 | `tests/test_mcp.py` | 16개 | ✅ 통과 |
 | `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
-| **합계** | **230개** | **✅ 전부 통과** |
+| **합계** | **254개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -653,6 +663,7 @@ Reference Implementation SPA 분리 완료 (Phase 44).
 30. ~~Phase 30: ICS Chart 뷰 (계층형 색상 코딩 테이블)~~ ✅
 44. ~~Phase 44: Reference Implementation SPA~~ ✅
 45. ~~Phase 45: 디렉토리 구조 정리~~ ✅
+46. Phase 46: Runtime Purification (도메인 코드 완전 분리) — **Step 1 완료**
 
 ## DB 스키마
 

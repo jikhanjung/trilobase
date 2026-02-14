@@ -1215,6 +1215,125 @@ class TestApiPaleocoreStatus:
 
 
 # ---------------------------------------------------------------------------
+# Phase 46: Composite endpoint domain-specific validation
+# ---------------------------------------------------------------------------
+
+
+class TestCompositeFormationDetail:
+    """Composite formation detail via manifest-driven queries."""
+
+    def test_formation_composite(self, client):
+        """Composite formation detail should return formation info + genera."""
+        response = client.get('/api/composite/formation_detail?id=1')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['name'] == 'Büdesheimer Sh'
+        assert 'genera' in data
+        assert isinstance(data['genera'], list)
+        assert len(data['genera']) == 1
+        assert data['genera'][0]['name'] == 'Acuticryphops'
+
+    def test_formation_not_found(self, client):
+        response = client.get('/api/composite/formation_detail?id=9999')
+        assert response.status_code == 404
+
+
+class TestCompositeCountryDetail:
+    """Composite country detail via manifest-driven queries."""
+
+    def test_country_composite(self, client):
+        """Composite country detail should return country info + regions + genera."""
+        response = client.get('/api/composite/country_detail?id=1')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['name'] == 'Germany'
+        assert 'regions' in data
+        assert 'genera' in data
+        assert isinstance(data['regions'], list)
+        assert isinstance(data['genera'], list)
+
+    def test_country_has_regions(self, client):
+        response = client.get('/api/composite/country_detail?id=1')
+        data = json.loads(response.data)
+        region_names = [r['name'] for r in data['regions']]
+        assert 'Eifel' in region_names
+
+    def test_country_has_genera(self, client):
+        response = client.get('/api/composite/country_detail?id=1')
+        data = json.loads(response.data)
+        genus_names = [g['name'] for g in data['genera']]
+        assert 'Acuticryphops' in genus_names
+
+
+class TestCompositeRegionDetail:
+    """Composite region detail via manifest-driven queries."""
+
+    def test_region_composite(self, client):
+        """Composite region detail should return region info + genera."""
+        response = client.get('/api/composite/region_detail?id=3')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['name'] == 'Eifel'
+        assert data['country_name'] == 'Germany'
+        assert 'genera' in data
+        assert len(data['genera']) == 1
+        assert data['genera'][0]['name'] == 'Acuticryphops'
+
+
+class TestCompositeBibliographyDetail:
+    """Composite bibliography detail via manifest-driven queries."""
+
+    def test_bibliography_composite(self, client):
+        """Composite bibliography detail should return bib info + genera."""
+        response = client.get('/api/composite/bibliography_detail?id=1')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['authors'] == 'Jell, P.A. & Adrain, J.M.'
+        assert data['year'] == 2002
+        assert 'genera' in data
+        assert isinstance(data['genera'], list)
+
+
+class TestCompositeChronostratDetail:
+    """Composite chronostrat detail via manifest-driven queries."""
+
+    def test_chronostrat_composite(self, client):
+        """Composite chronostrat detail should return unit + children + mappings + genera."""
+        response = client.get('/api/composite/chronostrat_detail?id=3')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['name'] == 'Cambrian'
+        assert data['rank'] == 'Period'
+        assert 'children' in data
+        assert 'mappings' in data
+        assert 'genera' in data
+        assert isinstance(data['children'], list)
+
+    def test_chronostrat_has_children(self, client):
+        """Cambrian should have child epochs (Miaolingian, Furongian)."""
+        response = client.get('/api/composite/chronostrat_detail?id=3')
+        data = json.loads(response.data)
+        child_names = [c['name'] for c in data['children']]
+        assert 'Miaolingian' in child_names
+        assert 'Furongian' in child_names
+
+    def test_chronostrat_has_mappings(self, client):
+        """Cambrian should have temporal code mappings."""
+        response = client.get('/api/composite/chronostrat_detail?id=3')
+        data = json.loads(response.data)
+        codes = [m['temporal_code'] for m in data['mappings']]
+        assert 'CAM' in codes
+
+    def test_chronostrat_genera(self, client):
+        """Furongian (id=6) has UCAM mapping → should find Olenus."""
+        response = client.get('/api/composite/chronostrat_detail?id=6')
+        data = json.loads(response.data)
+        assert data['name'] == 'Furongian'
+        genus_names = [g['name'] for g in data['genera']]
+        assert 'Olenus' in genus_names
+
+
+# ---------------------------------------------------------------------------
 # PackageRegistry tests
 # ---------------------------------------------------------------------------
 

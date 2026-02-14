@@ -239,6 +239,55 @@ def api_generic_detail(query_name):
     return jsonify(result['rows'][0])
 
 
+@app.route('/api/composite/<view_name>')
+def api_composite_detail(view_name):
+    """Execute manifest-defined composite detail query."""
+    entity_id = request.args.get('id')
+    if not entity_id:
+        return jsonify({'error': 'id parameter required'}), 400
+
+    conn = get_db()
+    manifest_data = _fetch_manifest(conn)
+    if not manifest_data:
+        conn.close()
+        return jsonify({'error': 'No manifest found'}), 404
+
+    views = manifest_data['manifest'].get('views', {})
+    view = views.get(view_name)
+    if not view or view.get('type') != 'detail' or 'source_query' not in view:
+        conn.close()
+        return jsonify({'error': f'Detail view not found: {view_name}'}), 404
+
+    # Main query
+    source_param = view.get('source_param', 'id')
+    result = _execute_query(conn, view['source_query'], {source_param: entity_id})
+    if result is None or result.get('row_count', 0) == 0:
+        conn.close()
+        return jsonify({'error': 'Not found'}), 404
+    if 'error' in result:
+        conn.close()
+        return jsonify(result), 400
+
+    data = dict(result['rows'][0])
+
+    # Sub-queries
+    for key, sub_def in view.get('sub_queries', {}).items():
+        params = {}
+        for param_name, value_source in sub_def.get('params', {}).items():
+            if value_source == 'id':
+                params[param_name] = entity_id
+            elif value_source.startswith('result.'):
+                field = value_source[7:]
+                params[param_name] = data.get(field, '')
+            else:
+                params[param_name] = value_source
+        sub_result = _execute_query(conn, sub_def['query'], params)
+        data[key] = sub_result['rows'] if sub_result and 'rows' in sub_result else []
+
+    conn.close()
+    return jsonify(data)
+
+
 # ---------------------------------------------------------------------------
 # Legacy routes (unchanged API surface)
 # ---------------------------------------------------------------------------
