@@ -8,7 +8,10 @@ import json
 import os
 import sqlite3
 
-from .scoda_package import get_db, get_registry, get_active_package_name
+try:
+    from .scoda_package import get_db, get_registry, get_active_package_name
+except ImportError:
+    from scoda_package import get_db, get_registry, get_active_package_name
 
 app = Flask(__name__)
 
@@ -426,6 +429,9 @@ if __name__ == '__main__':
                         help='Active package name (e.g., trilobase, paleocore)')
     args = parser.parse_args()
     if args.package:
-        from .scoda_package import set_active_package
+        try:
+            from .scoda_package import set_active_package
+        except ImportError:
+            from scoda_package import set_active_package
         set_active_package(args.package)
     app.run(debug=True, host='0.0.0.0', port=8080)

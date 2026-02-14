@@ -15,7 +15,10 @@ import sys
 import time
 import subprocess
 
-from . import scoda_package
+try:
+    from . import scoda_package
+except ImportError:
+    import scoda_package
 
 
 class LogRedirector:
@@ -392,9 +395,9 @@ class ScodaDesktopGUI:
         # Import Flask app
         try:
             from .app import app
-            self.flask_app = app
-        except ImportError as e:
-            raise Exception(f"Could not import Flask app: {e}")
+        except ImportError:
+            from app import app
+        self.flask_app = app
 
         # Redirect stdout/stderr to GUI
         self.original_stdout = sys.stdout
@@ -444,8 +447,8 @@ class ScodaDesktopGUI:
 
         try:
             from . import mcp_server
-        except ImportError as e:
-            raise Exception(f"Could not import MCP server: {e}")
+        except ImportError:
+            import mcp_server
 
         def run_mcp():
             try:
