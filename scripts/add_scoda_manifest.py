@@ -361,12 +361,12 @@ def insert_manifest(conn):
                     {
                         "title": "Hierarchy",
                         "type": "field_grid",
-                        "condition": "parent",
+                        "condition": "parent_name",
                         "fields": [
-                            {"key": "parent.name", "label": "Parent",
+                            {"key": "parent_name", "label": "Parent",
                              "format": "link",
-                             "link": {"detail_view": "chronostrat_detail", "id_path": "parent.id"},
-                             "suffix_key": "parent.rank", "suffix_format": "({value})"}
+                             "link": {"detail_view": "chronostrat_detail", "id_path": "parent_detail_id"},
+                             "suffix_key": "parent_rank", "suffix_format": "({value})"}
                         ]
                     },
                     {
