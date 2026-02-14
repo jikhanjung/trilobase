@@ -1273,8 +1273,8 @@ class TestFlaskAutoSwitch:
             sp._registry.close_all()
             sp._registry = old_registry
 
-    def test_spa_assets_served(self, test_db, tmp_path):
-        """Extracted SPA assets (app.js, style.css) should be served."""
+    def test_spa_single_file_served(self, test_db, tmp_path):
+        """Single-file SPA (index.html with inline CSS/JS) should be served."""
         canonical_db, overlay_db, paleocore_db = test_db
         import scoda_desktop.scoda_package as sp
         from scoda_desktop.scoda_package import PackageRegistry
@@ -1284,16 +1284,10 @@ class TestFlaskAutoSwitch:
         scoda_path = os.path.join(pkg_dir, "trilobase.scoda")
 
         spa_html = tmp_path / "spa_idx.html"
-        spa_html.write_text("<html></html>")
-        spa_js = tmp_path / "spa_app.js"
-        spa_js.write_text("// SPA JS")
-        spa_css = tmp_path / "spa_style.css"
-        spa_css.write_text("body { color: red; }")
+        spa_html.write_text("<html><style>body{color:red}</style><script>// SPA JS</script></html>")
 
         extra_assets = {
             "assets/spa/index.html": str(spa_html),
-            "assets/spa/app.js": str(spa_js),
-            "assets/spa/style.css": str(spa_css),
         }
         metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
         ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
@@ -1311,13 +1305,10 @@ class TestFlaskAutoSwitch:
             sp.set_active_package('trilobase')
             app.config['TESTING'] = True
             with app.test_client() as test_client:
-                response = test_client.get('/app.js')
+                response = test_client.get('/')
                 assert response.status_code == 200
                 assert b'SPA JS' in response.data
-
-                response = test_client.get('/style.css')
-                assert response.status_code == 200
-                assert b'color: red' in response.data
+                assert b'color:red' in response.data
         finally:
             sp._active_package_name = None
             sp._registry.close_all()
