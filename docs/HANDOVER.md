@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-14
+**마지막 업데이트:** 2026-02-15
 
 ## 프로젝트 개요
 
@@ -487,6 +487,20 @@
     - 탭 전환 시 네트워크 요청 없이 캐시에서 즉시 렌더링
   - devlog: `devlog/20260214_059_spa_branding_global_search.md`
 
+- **2026-02-15 SCODA Stable UID Schema v0.2** (설계 문서)
+  - v0.1(Bibliography, Formation)에서 v0.2로 확장
+  - 5개 entity type 추가:
+    - Country (`scoda:geo:country:iso3166-1:<code>`, ISO 3166-1, 96.5%)
+    - Geographic Region (`scoda:geo:region:name:<iso>:<name>`)
+    - ICS Chronostratigraphy (`scoda:strat:ics:uri:<ics_uri>`, 100%)
+    - Temporal Range (`scoda:strat:temporal:code:<code>`, 100%)
+    - Taxonomy (`scoda:taxon:<rank>:<name>`, ICZN, 100%)
+  - Section 8: Metadata Governance (uid_confidence 레벨, same_as_uid 방향성)
+  - Section 9: Cross-Package Reference Resolution (dependency-wins 규칙, scope chain)
+  - Section 10: Entity Lifecycle and Migration (Local-only → Duplicated → Promoted → Stub)
+  - Section 11: Implementation Guidance (resolve_uid, population strategy Phase A/B/C)
+  - 문서: `docs/SCODA_Stable_UID_Schema_v0.2.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -595,6 +609,7 @@ trilobase/
 │   ├── HANDOVER.md
 │   ├── RELEASE_GUIDE.md
 │   ├── SCODA_CONCEPT.md
+│   ├── SCODA_Stable_UID_Schema_v0.2.md
 │   └── paleocore_schema.md
 └── devlog/
 ```
