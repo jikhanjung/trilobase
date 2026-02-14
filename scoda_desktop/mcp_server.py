@@ -183,204 +183,8 @@ def _execute_dynamic_tool(tool_def, arguments):
 
 
 # ---------------------------------------------------------------------------
-# Legacy domain functions (kept for backward compatibility — removed in Step 3)
+# Built-in tool handler functions
 # ---------------------------------------------------------------------------
-
-def build_tree(parent_id=None):
-    """Recursively build taxonomy tree (Class to Family)"""
-    conn = get_db()
-    cursor = conn.cursor()
-
-    if parent_id is None:
-        # Start with Class (root)
-        cursor.execute("""
-            SELECT id, name, rank, author, genera_count
-            FROM taxonomic_ranks
-            WHERE rank = 'Class'
-        """)
-    else:
-        # Get children of parent
-        cursor.execute("""
-            SELECT id, name, rank, author, genera_count
-            FROM taxonomic_ranks
-            WHERE parent_id = ? AND rank != 'Genus'
-            ORDER BY name
-        """, (parent_id,))
-
-    rows = cursor.fetchall()
-    result = []
-
-    for row in rows:
-        node = {
-            'id': row['id'],
-            'name': row['name'],
-            'rank': row['rank'],
-            'author': row['author'],
-            'genera_count': row['genera_count'] or 0,
-            'children': build_tree(row['id'])
-        }
-        result.append(node)
-
-    conn.close()
-    return result
-
-def search_genera(name_pattern: str, valid_only: bool = False, limit: int = 50) -> list[dict]:
-    """Search for genera by name pattern, optionally filtering by validity and limiting results."""
-    conn = get_db()
-    cursor = conn.cursor()
-
-    query = """
-        SELECT id, name, author, year, is_valid, family, temporal_code, type_species
-        FROM taxonomic_ranks
-        WHERE rank = 'Genus' AND name LIKE ?
-    """
-    params = [name_pattern]
-
-    if valid_only:
-        query += " AND is_valid = 1"
-
-    query += " ORDER BY name LIMIT ?"
-    params.append(limit)
-
-    cursor.execute(query, params)
-    genera = [row_to_dict(row) for row in cursor.fetchall()]
-    conn.close()
-    return genera
-
-def build_genus_evidence_pack(genus_id: int) -> dict:
-    """Build evidence pack for a genus (structured, bounded output for LLM)."""
-    conn = get_db()
-    cursor = conn.cursor()
-
-    # Get genus basic info
-    cursor.execute("""
-        SELECT tr.*, parent.name as family_name
-        FROM taxonomic_ranks tr
-        LEFT JOIN taxonomic_ranks parent ON tr.parent_id = parent.id
-        WHERE tr.id = ? AND tr.rank = 'Genus'
-    """, (genus_id,))
-    genus = cursor.fetchone()
-
-    if not genus:
-        return None
-
-    # Get synonyms
-    cursor.execute("""
-        SELECT jr.name as junior_name, s.synonym_type, s.senior_taxon_name,
-               s.fide_author, s.fide_year
-        FROM synonyms s
-        JOIN taxonomic_ranks jr ON s.junior_taxon_id = jr.id
-        WHERE jr.id = ? OR s.senior_taxon_id = ?
-    """, (genus_id, genus_id)) # Check both junior and senior side for completeness
-    synonyms = [row_to_dict(row) for row in cursor.fetchall()]
-
-    # Get formations
-    cursor.execute("""
-        SELECT f.name, f.country, gf.is_type_locality
-        FROM genus_formations gf
-        JOIN pc.formations f ON gf.formation_id = f.id
-        WHERE gf.genus_id = ?
-    """, (genus_id,))
-    formations = [row_to_dict(row) for row in cursor.fetchall()]
-
-    # Get locations
-    cursor.execute("""
-        SELECT c.name as country, gl.region, gl.is_type_locality
-        FROM genus_locations gl
-        JOIN pc.countries c ON gl.country_id = c.id
-        WHERE gl.genus_id = ?
-    """, (genus_id,))
-    locations = [row_to_dict(row) for row in cursor.fetchall()]
-
-    # Get metadata (provenance)
-    cursor.execute("SELECT value FROM artifact_metadata WHERE key = 'version'")
-    version_row = cursor.fetchone()
-    version = version_row[0] if version_row else '1.0.0'
-
-    # Get references for the genus author/year
-    references = []
-    if genus['author'] and genus['year']:
-        cursor.execute("""
-            SELECT raw_entry FROM bibliography
-            WHERE authors LIKE ? AND year = ?
-        """, (f"%{genus['author']}%", genus['year']))
-        for ref_row in cursor.fetchall():
-            references.append(ref_row['raw_entry'])
-
-
-    conn.close()
-
-    # Build Evidence Pack
-    return {
-        "genus": {
-            "id": genus["id"],
-            "name": genus["name"],
-            "author": genus["author"],
-            "year": genus["year"],
-            "is_valid": bool(genus["is_valid"]),
-            "family": genus["family_name"],
-            "type_species": genus["type_species"],
-            "raw_entry": genus["raw_entry"]
-        },
-        "synonyms": synonyms,
-        "formations": formations,
-        "localities": locations,
-        "references": references,
-        "provenance": {
-            "source": "Jell & Adrain, 2002",
-            "canonical_version": version,
-            "extraction_date": "2026-02-04" # This should be dynamic or from metadata
-        }
-    }
-
-def get_metadata() -> dict:
-    """Get SCODA artifact metadata (generic — no domain-specific statistics)."""
-    conn = get_db()
-    cursor = conn.cursor()
-
-    cursor.execute("SELECT key, value FROM artifact_metadata")
-    metadata = {row['key']: row['value'] for row in cursor.fetchall()}
-
-    conn.close()
-    return metadata
-
-def get_genera_by_country(country_name: str, limit: int = 50) -> list[dict]:
-    """Get a list of genera found in a specific country."""
-    conn = get_db()
-    cursor = conn.cursor()
-
-    query = """
-        SELECT DISTINCT tr.id, tr.name, tr.author, tr.year, tr.is_valid, tr.family
-        FROM taxonomic_ranks tr
-        JOIN genus_locations gl ON tr.id = gl.genus_id
-        JOIN pc.countries c ON gl.country_id = c.id
-        WHERE tr.rank = 'Genus' AND c.name = ?
-        ORDER BY tr.name
-        LIMIT ?
-    """
-    cursor.execute(query, (country_name, limit))
-    genera = [row_to_dict(row) for row in cursor.fetchall()]
-    conn.close()
-    return genera
-
-def get_genera_by_formation(formation_name: str, limit: int = 50) -> list[dict]:
-    """Get a list of genera found in a specific geological formation."""
-    conn = get_db()
-    cursor = conn.cursor()
-
-    query = """
-        SELECT DISTINCT tr.id, tr.name, tr.author, tr.year, tr.is_valid, tr.family
-        FROM taxonomic_ranks tr
-        JOIN genus_formations gf ON tr.id = gf.genus_id
-        JOIN pc.formations f ON gf.formation_id = f.id
-        WHERE tr.rank = 'Genus' AND f.name = ?
-        ORDER BY tr.name
-        LIMIT ?
-    """
-    cursor.execute(query, (formation_name, limit))
-    genera = [row_to_dict(row) for row in cursor.fetchall()]
-    conn.close()
-    return genera
 
 def execute_named_query(query_name: str, params: dict = None) -> list[dict] | dict:
     """Execute a predefined named SQL query from the ui_queries table."""
@@ -449,99 +253,6 @@ def delete_annotation(annotation_id: int) -> dict:
     conn.commit()
     conn.close()
     return {"message": f"Annotation with ID {annotation_id} deleted."}
-
-def get_rank_detail(rank_id: int) -> dict:
-    """Get detailed information for a specific taxonomic rank (Class, Order, Family, Genus, etc.) by its ID."""
-    conn = get_db()
-    cursor = conn.cursor()
-
-    # Get rank info
-    cursor.execute("""
-        SELECT tr.*,
-               parent.name as parent_name,
-               parent.rank as parent_rank
-        FROM taxonomic_ranks tr
-        LEFT JOIN taxonomic_ranks parent ON tr.parent_id = parent.id
-        WHERE tr.id = ?
-    """, (rank_id,))
-    rank = cursor.fetchone()
-
-    if not rank:
-        conn.close()
-        return {"error": f"Rank with ID {rank_id} not found."}
-
-    # Get children counts by rank
-    cursor.execute("""
-        SELECT rank, COUNT(*) as count
-        FROM taxonomic_ranks
-        WHERE parent_id = ?
-        GROUP BY rank
-    """, (rank_id,))
-    children_counts = [row_to_dict(row) for row in cursor.fetchall()]
-
-    # Get direct children list (limit 20)
-    cursor.execute("""
-        SELECT id, name, rank, author, genera_count
-        FROM taxonomic_ranks
-        WHERE parent_id = ?
-        ORDER BY name
-        LIMIT 20
-    """, (rank_id,))
-    children = [row_to_dict(row) for row in cursor.fetchall()]
-
-    conn.close()
-
-    return {
-        'id': rank['id'],
-        'name': rank['name'],
-        'rank': rank['rank'],
-        'author': rank['author'],
-        'year': rank['year'],
-        'genera_count': rank['genera_count'],
-        'notes': rank['notes'],
-        'parent_name': rank['parent_name'],
-        'parent_rank': rank['parent_rank'],
-        'children_counts': children_counts,
-        'children': children
-    }
-
-def get_family_genera(family_id: int) -> dict:
-    """Get genera list for a specific family."""
-    conn = get_db()
-    cursor = conn.cursor()
-
-    # Get family info
-    cursor.execute("""
-        SELECT id, name, author, genera_count
-        FROM taxonomic_ranks
-        WHERE id = ? AND rank = 'Family'
-    """, (family_id,))
-    family = cursor.fetchone()
-
-    if not family:
-        conn.close()
-        return {"error": "Family not found"}
-
-    # Get genera
-    cursor.execute("""
-        SELECT id, name, author, year, type_species, location, is_valid
-        FROM taxonomic_ranks
-        WHERE parent_id = ? AND rank = 'Genus'
-        ORDER BY name
-    """, (family_id,))
-    genera = cursor.fetchall()
-
-    conn.close()
-
-    return {
-        'family': {
-            'id': family['id'],
-            'name': family['name'],
-            'author': family['author'],
-            'genera_count': family['genera_count']
-        },
-        'genera': [row_to_dict(g) for g in genera]
-    }
 
 def get_provenance() -> list[dict]:
     """Get data provenance information."""
@@ -688,104 +399,17 @@ def _get_dynamic_tool_defs():
 
 
 # ---------------------------------------------------------------------------
-# Legacy hardcoded tool definitions (fallback when no mcp_tools.json)
-# ---------------------------------------------------------------------------
-
-def _get_legacy_domain_tools():
-    """Return the 7 legacy hardcoded domain Tool definitions.
-
-    Used as fallback when the .scoda package does not contain mcp_tools.json.
-    """
-    return [
-        Tool(
-            name="get_taxonomy_tree",
-            description="Retrieve the full taxonomic hierarchy tree from Class down to Family.",
-            inputSchema={"type": "object", "properties": {}, "required": []}
-        ),
-        Tool(
-            name="get_rank_detail",
-            description="Get detailed information for a specific taxonomic rank (Class, Order, Family, Genus, etc.) by its ID.",
-            inputSchema={
-                "type": "object",
-                "properties": {"rank_id": {"type": "integer", "description": "The ID of the taxonomic rank to retrieve."}},
-                "required": ["rank_id"]
-            }
-        ),
-        Tool(
-            name="get_family_genera",
-            description="Get a list of all genera belonging to a specific Family ID.",
-            inputSchema={
-                "type": "object",
-                "properties": {"family_id": {"type": "integer", "description": "The ID of the family."}},
-                "required": ["family_id"]
-            }
-        ),
-        Tool(
-            name="get_genus_detail",
-            description="Get detailed information for a specific genus including synonyms, formations, and locations. Returns an evidence pack with full provenance.",
-            inputSchema={
-                "type": "object",
-                "properties": {"genus_id": {"type": "integer", "description": "The ID of the genus to retrieve."}},
-                "required": ["genus_id"]
-            }
-        ),
-        Tool(
-            name="search_genera",
-            description="Search for genera by name pattern, optionally filtering by validity and limiting results.",
-            inputSchema={
-                "type": "object",
-                "properties": {
-                    "name_pattern": {"type": "string", "description": "A SQL LIKE pattern for the genus name (e.g., 'Paradoxides%')."},
-                    "valid_only": {"type": "boolean", "description": "If true, only return valid genera. Defaults to false.", "default": False},
-                    "limit": {"type": "integer", "description": "Maximum number of results to return. Defaults to 50.", "default": 50}
-                },
-                "required": ["name_pattern"]
-            }
-        ),
-        Tool(
-            name="get_genera_by_country",
-            description="Get a list of genera found in a specific country.",
-            inputSchema={
-                "type": "object",
-                "properties": {
-                    "country": {"type": "string", "description": "The name of the country."},
-                    "limit": {"type": "integer", "description": "Maximum number of results to return. Defaults to 50.", "default": 50}
-                },
-                "required": ["country"]
-            }
-        ),
-        Tool(
-            name="get_genera_by_formation",
-            description="Get a list of genera found in a specific geological formation.",
-            inputSchema={
-                "type": "object",
-                "properties": {
-                    "formation": {"type": "string", "description": "The name of the geological formation."},
-                    "limit": {"type": "integer", "description": "Maximum number of results to return. Defaults to 50.", "default": 50}
-                },
-                "required": ["formation"]
-            }
-        ),
-    ]
-
-
-# ---------------------------------------------------------------------------
 # MCP Server setup
 # ---------------------------------------------------------------------------
 
-app = Server("trilobase")
+app = Server("scoda-desktop")
 
 @app.list_tools()
 async def list_tools() -> list[Tool]:
-    """Return available MCP tools: builtin + dynamic (or legacy fallback)."""
+    """Return available MCP tools: builtin + dynamic."""
     builtin = _get_builtin_tools()
     dynamic = _get_dynamic_tools()
-
-    if dynamic:
-        return builtin + dynamic
-    else:
-        # Fallback: use legacy hardcoded domain tools
-        return builtin + _get_legacy_domain_tools()
+    return builtin + dynamic
 
 
 @app.call_tool()
@@ -799,7 +423,11 @@ async def call_tool(name: str, arguments: dict) -> list[TextContent]:
         result = execute_named_query(query_name, params)
         return [TextContent(type="text", text=json.dumps(result, indent=2))]
     elif name == "get_metadata":
-        metadata = get_metadata()
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT key, value FROM artifact_metadata")
+        metadata = {row['key']: row['value'] for row in cursor.fetchall()}
+        conn.close()
         return [TextContent(type="text", text=json.dumps(metadata, indent=2))]
     elif name == "get_provenance":
         result = get_provenance()
@@ -830,41 +458,6 @@ async def call_tool(name: str, arguments: dict) -> list[TextContent]:
     dynamic_defs = _get_dynamic_tool_defs()
     if name in dynamic_defs:
         result = _execute_dynamic_tool(dynamic_defs[name], arguments)
-        return [TextContent(type="text", text=json.dumps(result, indent=2))]
-
-    # --- Legacy hardcoded domain tools (fallback) ---
-    if name == "get_taxonomy_tree":
-        tree = build_tree()
-        return [TextContent(type="text", text=json.dumps(tree, indent=2))]
-    elif name == "search_genera":
-        name_pattern = arguments.get("name_pattern")
-        valid_only = arguments.get("valid_only", False)
-        limit = arguments.get("limit", 50)
-        genera = search_genera(name_pattern, valid_only, limit)
-        return [TextContent(type="text", text=json.dumps(genera, indent=2))]
-    elif name == "get_genus_detail":
-        genus_id = arguments.get("genus_id")
-        evidence_pack = build_genus_evidence_pack(genus_id)
-        if not evidence_pack:
-            return [TextContent(type="text", text=json.dumps({"error": f"Genus with ID {genus_id} not found."}, indent=2))]
-        return [TextContent(type="text", text=json.dumps(evidence_pack, indent=2))]
-    elif name == "get_genera_by_country":
-        country_name = arguments.get("country")
-        limit = arguments.get("limit", 50)
-        genera = get_genera_by_country(country_name, limit)
-        return [TextContent(type="text", text=json.dumps(genera, indent=2))]
-    elif name == "get_genera_by_formation":
-        formation_name = arguments.get("formation")
-        limit = arguments.get("limit", 50)
-        genera = get_genera_by_formation(formation_name, limit)
-        return [TextContent(type="text", text=json.dumps(genera, indent=2))]
-    elif name == "get_rank_detail":
-        rank_id = arguments.get("rank_id")
-        result = get_rank_detail(rank_id)
-        return [TextContent(type="text", text=json.dumps(result, indent=2))]
-    elif name == "get_family_genera":
-        family_id = arguments.get("family_id")
-        result = get_family_genera(family_id)
         return [TextContent(type="text", text=json.dumps(result, indent=2))]
 
     # Fallback for unknown tools
@@ -902,7 +495,7 @@ def run_sse(host: str = "localhost", port: int = 8081):
         return Response(
             content=json.dumps({
                 "status": "ok",
-                "service": "trilobase-mcp",
+                "service": "scoda-desktop-mcp",
                 "mode": "sse"
             }),
             media_type="application/json"
@@ -917,7 +510,7 @@ def run_sse(host: str = "localhost", port: int = 8081):
         ]
     )
 
-    print(f"🚀 Trilobase MCP Server (SSE mode) starting on http://{host}:{port}")
+    print(f"SCODA Desktop MCP Server (SSE mode) starting on http://{host}:{port}")
     print(f"   SSE endpoint: http://{host}:{port}/sse")
     print(f"   Health check: http://{host}:{port}/health")
 
@@ -925,7 +518,7 @@ def run_sse(host: str = "localhost", port: int = 8081):
 
 def main():
     """Main entry point - parse args and run in appropriate mode."""
-    parser = argparse.ArgumentParser(description="Trilobase MCP Server")
+    parser = argparse.ArgumentParser(description="SCODA Desktop MCP Server")
     parser.add_argument(
         "--mode",
         choices=["stdio", "sse"],

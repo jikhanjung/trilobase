@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Basic MCP Server Test
-Tests that all 14 tools are properly implemented and connected.
+Tests that all 7 builtin tools are properly implemented and connected.
 """
 import asyncio
 import json
@@ -11,7 +11,7 @@ from mcp.client.stdio import stdio_client, StdioServerParameters
 async def test_mcp_server():
     """Test MCP server basic functionality"""
 
-    print("🚀 Starting MCP server test...")
+    print("Starting MCP server test...")
 
     server_params = StdioServerParameters(
         command="python3",
@@ -22,26 +22,19 @@ async def test_mcp_server():
         async with ClientSession(read, write) as session:
             # Initialize session
             await session.initialize()
-            print("✅ Session initialized")
+            print("Session initialized")
 
             # List all tools
             tools_result = await session.list_tools()
             tools = tools_result.tools
             tool_names = [tool.name for tool in tools]
 
-            print(f"\n📋 Found {len(tool_names)} tools:")
+            print(f"\nFound {len(tool_names)} tools:")
             for i, name in enumerate(tool_names, 1):
                 print(f"   {i:2d}. {name}")
 
-            # Expected tools
+            # Expected builtin tools
             expected = [
-                "get_taxonomy_tree",
-                "get_rank_detail",
-                "get_family_genera",
-                "get_genus_detail",
-                "search_genera",
-                "get_genera_by_country",
-                "get_genera_by_formation",
                 "execute_named_query",
                 "get_metadata",
                 "get_provenance",
@@ -53,27 +46,24 @@ async def test_mcp_server():
 
             # Check all expected tools are present
             missing = set(expected) - set(tool_names)
-            extra = set(tool_names) - set(expected)
 
             if missing:
-                print(f"\n❌ Missing tools: {missing}")
+                print(f"\nMissing tools: {missing}")
                 return False
-            if extra:
-                print(f"\n⚠️  Extra tools: {extra}")
 
-            print("\n✅ All 14 expected tools are present")
+            print(f"\nAll {len(expected)} builtin tools are present")
 
             # Test a few basic tool calls
-            print("\n🔧 Testing tool calls...")
+            print("\nTesting tool calls...")
 
             # Test 1: get_metadata
             try:
                 result = await session.call_tool("get_metadata", {})
                 data = json.loads(result.content[0].text)
-                assert "statistics" in data
-                print("   ✅ get_metadata")
+                assert "artifact_id" in data
+                print("   get_metadata OK")
             except Exception as e:
-                print(f"   ❌ get_metadata: {e}")
+                print(f"   get_metadata FAILED: {e}")
                 return False
 
             # Test 2: get_provenance
@@ -81,9 +71,9 @@ async def test_mcp_server():
                 result = await session.call_tool("get_provenance", {})
                 data = json.loads(result.content[0].text)
                 assert isinstance(data, list)
-                print("   ✅ get_provenance")
+                print("   get_provenance OK")
             except Exception as e:
-                print(f"   ❌ get_provenance: {e}")
+                print(f"   get_provenance FAILED: {e}")
                 return False
 
             # Test 3: list_available_queries
@@ -91,37 +81,12 @@ async def test_mcp_server():
                 result = await session.call_tool("list_available_queries", {})
                 data = json.loads(result.content[0].text)
                 assert isinstance(data, list)
-                print("   ✅ list_available_queries")
+                print("   list_available_queries OK")
             except Exception as e:
-                print(f"   ❌ list_available_queries: {e}")
+                print(f"   list_available_queries FAILED: {e}")
                 return False
 
-            # Test 4: search_genera
-            try:
-                result = await session.call_tool("search_genera", {
-                    "name_pattern": "Paradoxides%",
-                    "limit": 5
-                })
-                data = json.loads(result.content[0].text)
-                assert isinstance(data, list)
-                assert len(data) > 0
-                print(f"   ✅ search_genera (found {len(data)} genera)")
-            except Exception as e:
-                print(f"   ❌ search_genera: {e}")
-                return False
-
-            # Test 5: get_taxonomy_tree
-            try:
-                result = await session.call_tool("get_taxonomy_tree", {})
-                data = json.loads(result.content[0].text)
-                assert isinstance(data, list)
-                assert len(data) > 0
-                print(f"   ✅ get_taxonomy_tree")
-            except Exception as e:
-                print(f"   ❌ get_taxonomy_tree: {e}")
-                return False
-
-            print("\n🎉 All tests passed!")
+            print("\nAll tests passed!")
             return True
 
 if __name__ == "__main__":

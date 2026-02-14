@@ -577,8 +577,7 @@ async function loadTree() {
             const data = await response.json();
             tree = buildTreeFromFlat(data.rows, viewDef.tree_options);
         } else {
-            const response = await fetch(API_BASE + '/api/tree');
-            tree = await response.json();
+            throw new Error('No manifest tree definition found');
         }
         container.innerHTML = '';
 
@@ -737,10 +736,7 @@ async function selectTreeLeaf(leafId, leafName) {
             const data = await response.json();
             items = data.rows;
         } else {
-            // Fallback to legacy API
-            const response = await fetch(API_BASE + `/api/family/${leafId}/genera`);
-            const data = await response.json();
-            items = data.genera;
+            throw new Error('No manifest item query defined');
         }
 
         currentGenera = items;  // Store for filtering

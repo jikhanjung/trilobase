@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Comprehensive MCP Server Tests
-Tests all 14 tools with realistic scenarios.
+Tests all 7 builtin tools with realistic scenarios.
+Dynamic tools (from mcp_tools.json) are tested in test_runtime.py.
 """
 import json
 import pytest
@@ -25,20 +26,13 @@ async def create_session():
 
 @pytest.mark.asyncio
 async def test_list_tools():
-    """Test that all 14 tools are exposed"""
+    """Test that all 7 builtin tools are exposed"""
     async with create_session() as session:
         result = await session.list_tools()
         tools = result.tools
         tool_names = [tool.name for tool in tools]
 
-        expected = [
-            "get_taxonomy_tree",
-            "get_rank_detail",
-            "get_family_genera",
-            "get_genus_detail",
-            "search_genera",
-            "get_genera_by_country",
-            "get_genera_by_formation",
+        builtin_expected = [
             "execute_named_query",
             "get_metadata",
             "get_provenance",
@@ -48,126 +42,10 @@ async def test_list_tools():
             "delete_annotation"
         ]
 
-        assert len(tool_names) == 14
-        assert set(tool_names) == set(expected)
-
-
-@pytest.mark.asyncio
-async def test_get_taxonomy_tree():
-    """Test taxonomy tree retrieval"""
-    async with create_session() as session:
-        result = await session.call_tool("get_taxonomy_tree", {})
-        data = json.loads(result.content[0].text)
-
-        assert isinstance(data, list)
-        assert len(data) > 0
-
-        node = data[0]
-        assert "id" in node
-        assert "name" in node
-        assert "rank" in node
-        assert "children" in node
-        assert node["rank"] == "Class"
-
-
-@pytest.mark.asyncio
-async def test_search_genera():
-    """Test genus search"""
-    async with create_session() as session:
-        result = await session.call_tool("search_genera", {
-            "name_pattern": "Paradoxides%",
-            "limit": 10
-        })
-        data = json.loads(result.content[0].text)
-
-        assert isinstance(data, list)
-        assert len(data) > 0
-        assert any(g["name"] == "Paradoxides" for g in data)
-
-        genus = data[0]
-        assert "id" in genus
-        assert "name" in genus
-        assert "author" in genus
-        assert "is_valid" in genus
-
-
-@pytest.mark.asyncio
-async def test_search_genera_valid_only():
-    """Test genus search with valid_only filter"""
-    async with create_session() as session:
-        result = await session.call_tool("search_genera", {
-            "name_pattern": "%",
-            "valid_only": True,
-            "limit": 10
-        })
-        data = json.loads(result.content[0].text)
-
-        assert isinstance(data, list)
-        assert all(g["is_valid"] == 1 for g in data)
-
-
-@pytest.mark.asyncio
-async def test_get_genus_detail_evidence_pack():
-    """Test genus detail with Evidence Pack structure"""
-    async with create_session() as session:
-        search_result = await session.call_tool("search_genera", {
-            "name_pattern": "Paradoxides",
-            "limit": 1
-        })
-        genera = json.loads(search_result.content[0].text)
-        assert len(genera) > 0
-        genus_id = genera[0]["id"]
-
-        result = await session.call_tool("get_genus_detail", {"genus_id": genus_id})
-        evidence_pack = json.loads(result.content[0].text)
-
-        assert "genus" in evidence_pack
-        assert "synonyms" in evidence_pack
-        assert "formations" in evidence_pack
-        assert "localities" in evidence_pack
-        assert "references" in evidence_pack
-        assert "provenance" in evidence_pack
-
-        genus = evidence_pack["genus"]
-        assert genus["id"] == genus_id
-        assert genus["name"] == "Paradoxides"
-        assert "raw_entry" in genus
-
-        provenance = evidence_pack["provenance"]
-        assert provenance["source"] == "Jell & Adrain, 2002"
-        assert "canonical_version" in provenance
-
-
-@pytest.mark.asyncio
-async def test_get_genera_by_country():
-    """Test country-based genus search"""
-    async with create_session() as session:
-        result = await session.call_tool("get_genera_by_country", {
-            "country": "China",
-            "limit": 10
-        })
-        data = json.loads(result.content[0].text)
-
-        assert isinstance(data, list)
-        assert len(data) > 0
-
-        genus = data[0]
-        assert "id" in genus
-        assert "name" in genus
-        assert "family" in genus
-
-
-@pytest.mark.asyncio
-async def test_get_genera_by_formation():
-    """Test formation-based genus search"""
-    async with create_session() as session:
-        result = await session.call_tool("get_genera_by_formation", {
-            "formation": "Jince Formation",
-            "limit": 10
-        })
-        data = json.loads(result.content[0].text)
-
-        assert isinstance(data, list)
+        # At minimum, all 7 builtins must be present
+        assert len(tool_names) >= 7
+        for name in builtin_expected:
+            assert name in tool_names, f"Missing builtin tool: {name}"
 
 
 @pytest.mark.asyncio
@@ -238,66 +116,36 @@ async def test_execute_named_query():
 
 
 @pytest.mark.asyncio
-async def test_get_rank_detail():
-    """Test rank detail retrieval"""
-    async with create_session() as session:
-        tree_result = await session.call_tool("get_taxonomy_tree", {})
-        tree = json.loads(tree_result.content[0].text)
-        assert len(tree) > 0
-
-        rank_id = tree[0]["id"]
-        result = await session.call_tool("get_rank_detail", {"rank_id": rank_id})
-        data = json.loads(result.content[0].text)
-
-        assert data["id"] == rank_id
-        assert data["rank"] == "Class"
-        assert "name" in data
-        assert "children_counts" in data
-        assert "children" in data
-
-
-@pytest.mark.asyncio
-async def test_get_family_genera():
-    """Test family genera list"""
-    async with create_session() as session:
-        tree_result = await session.call_tool("get_taxonomy_tree", {})
-        tree = json.loads(tree_result.content[0].text)
-
-        family_id = None
-        for node in tree[0]["children"]:
-            if node["children"]:
-                for subnode in node["children"]:
-                    if subnode["children"]:
-                        for family in subnode["children"]:
-                            if family["rank"] == "Family":
-                                family_id = family["id"]
-                                break
-                        if family_id:
-                            break
-            if family_id:
-                break
-
-        if family_id:
-            result = await session.call_tool("get_family_genera", {"family_id": family_id})
-            data = json.loads(result.content[0].text)
-
-            assert "family" in data
-            assert "genera" in data
-            assert isinstance(data["genera"], list)
-
-
-@pytest.mark.asyncio
 async def test_annotations_lifecycle():
     """Test annotation create/read/delete lifecycle"""
     async with create_session() as session:
-        search_result = await session.call_tool("search_genera", {
-            "name_pattern": "Paradoxides",
-            "limit": 1
-        })
-        genera = json.loads(search_result.content[0].text)
-        assert len(genera) > 0
-        genus_id = genera[0]["id"]
-        genus_name = genera[0]["name"]
+        # Use execute_named_query to find a genus instead of removed search_genera
+        list_result = await session.call_tool("list_available_queries", {})
+        queries = json.loads(list_result.content[0].text)
+
+        # Find a query that returns genus data
+        genus_query = None
+        for q in queries:
+            if 'genus' in q['name'].lower() or 'genera' in q['name'].lower():
+                genus_query = q['name']
+                break
+
+        if genus_query:
+            query_result = await session.call_tool("execute_named_query", {
+                "query_name": genus_query,
+                "params": {}
+            })
+            query_data = json.loads(query_result.content[0].text)
+            if query_data["rows"]:
+                row = query_data["rows"][0]
+                genus_id = row.get("id", 1)
+                genus_name = row.get("name", "TestGenus")
+            else:
+                genus_id = 1
+                genus_name = "TestGenus"
+        else:
+            genus_id = 1
+            genus_name = "TestGenus"
 
         create_result = await session.call_tool("add_annotation", {
             "entity_type": "genus",
@@ -338,16 +186,6 @@ async def test_annotations_lifecycle():
         remaining = json.loads(verify_result.content[0].text)
 
         assert not any(a["id"] == annotation_id for a in remaining)
-
-
-@pytest.mark.asyncio
-async def test_error_handling_invalid_genus():
-    """Test error handling for invalid genus ID"""
-    async with create_session() as session:
-        result = await session.call_tool("get_genus_detail", {"genus_id": 999999})
-        data = json.loads(result.content[0].text)
-
-        assert data is None or "error" in data
 
 
 @pytest.mark.asyncio

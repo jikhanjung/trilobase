@@ -465,6 +465,16 @@
   - 테스트: 278개 (기존 254 + 신규 24)
   - devlog: `devlog/20260214_056_phase46_step2_dynamic_mcp_tools.md`
 
+- **Phase 46 Step 3 완료**: Legacy Code Removal — 범용 SCODA 뷰어 완성
+  - `mcp_server.py`: Legacy 도메인 함수 7개 + `_get_legacy_domain_tools()` + fallback 삭제 (~400줄)
+  - `app.py`: Legacy 엔드포인트 11개 + `build_tree()` 삭제 (~750줄)
+  - `scoda_package.py`: 하드코딩된 문자열/DB명을 glob 기반 자동 탐색으로 전환
+  - SPA: Legacy API fallback 제거
+  - 총 ~1,200줄 legacy 코드 제거, 테스트 82개 삭제/10개 수정
+  - SCODA Desktop = 완전한 범용 뷰어 (도메인 코드 0줄)
+  - 테스트: 196개 통과
+  - devlog: `devlog/20260214_057_phase46_step3_legacy_removal.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -533,9 +543,9 @@ trilobase/
 │       └── js/app.js                 # Generic viewer 프론트엔드 로직
 ├── tests/                            # 테스트 (Phase 45에서 분리)
 │   ├── conftest.py                   # 공유 fixtures + anyio 백엔드
-│   ├── test_runtime.py               # Runtime 테스트 (105개, 17 classes)
-│   ├── test_trilobase.py             # Trilobase 테스트 (108개, 14 classes)
-│   ├── test_mcp.py                   # MCP 포괄적 테스트 (16개)
+│   ├── test_runtime.py               # Runtime 테스트 (135개)
+│   ├── test_trilobase.py             # Trilobase 도메인 테스트 (51개)
+│   ├── test_mcp.py                   # MCP 통합 테스트 (7개)
 │   └── test_mcp_basic.py             # MCP 기본 테스트 (1개)
 ├── data/                             # 소스 데이터 파일 (Phase 45에서 분리)
 │   ├── trilobite_genus_list.txt      # 정제된 genus 목록 (최신 버전)
@@ -603,16 +613,17 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 30 | ICS Chart 뷰 (계층형 색상 코딩 테이블) | ✅ 완료 |
 | Phase 44 | Reference Implementation SPA (generic viewer + standalone SPA 분리) | ✅ 완료 |
 | Phase 45 | 디렉토리 구조 정리 — Runtime/Data 분리 | ✅ 완료 |
+| Phase 46 | Runtime Purification (도메인 코드 완전 분리) | ✅ 완료 |
 
 ## 테스트 현황
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_runtime.py` | 142개 | ✅ 통과 |
-| `tests/test_trilobase.py` | 117개 | ✅ 통과 |
-| `tests/test_mcp.py` | 16개 | ✅ 통과 |
+| `tests/test_runtime.py` | 135개 | ✅ 통과 |
+| `tests/test_trilobase.py` | 51개 | ✅ 통과 |
+| `tests/test_mcp.py` | 7개 | ✅ 통과 |
 | `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
-| **합계** | **278개** | **✅ 전부 통과** |
+| **합계** | **196개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -628,14 +639,9 @@ pytest tests/
 
 ## 다음 작업
 
-PaleoCore 분리 및 .scoda 패키징 완료 (Phase 31-37).
-GUI "SCODA Desktop" 리브랜딩 완료 (Phase 38).
-CORS + 예제 SPA + EXE 리네이밍 완료 (Phase 40).
-Manifest-driven tree/chart 렌더링 완료 (Phase 41).
-Docker Desktop 스타일 GUI + 단일 패키지 서빙 완료 (Phase 43).
-Reference Implementation SPA 분리 완료 (Phase 44).
-디렉토리 구조 정리 완료 (Phase 45): `scoda_desktop/`, `tests/`, `data/` 분리.
-- PaleoCore 독립 뷰어: `python app.py --package paleocore` 또는 GUI에서 선택
+Runtime Purification 완료 (Phase 46): SCODA Desktop은 완전한 범용 뷰어.
+모든 도메인 전용 기능은 .scoda 패키지 내부 (manifest, named queries, mcp_tools.json)에만 존재.
+- PaleoCore 독립 뷰어: `python -m scoda_desktop.app --package paleocore` 또는 GUI에서 선택
 
 ## 미해결 항목
 
@@ -676,7 +682,7 @@ Reference Implementation SPA 분리 완료 (Phase 44).
 30. ~~Phase 30: ICS Chart 뷰 (계층형 색상 코딩 테이블)~~ ✅
 44. ~~Phase 44: Reference Implementation SPA~~ ✅
 45. ~~Phase 45: 디렉토리 구조 정리~~ ✅
-46. Phase 46: Runtime Purification (도메인 코드 완전 분리) — **Step 2 완료**
+46. ~~Phase 46: Runtime Purification (도메인 코드 완전 분리)~~ ✅ — **Step 3 완료**
 
 ## DB 스키마
 

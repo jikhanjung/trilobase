@@ -31,14 +31,14 @@ from release import (
 class TestCORS:
     def test_cors_headers_present(self, client):
         """API responses should include CORS headers."""
-        response = client.get('/api/tree')
+        response = client.get('/api/manifest')
         assert response.status_code == 200
         assert 'Access-Control-Allow-Origin' in response.headers
         assert 'Access-Control-Allow-Methods' in response.headers
 
     def test_cors_preflight(self, client):
         """OPTIONS preflight requests should return CORS headers."""
-        response = client.options('/api/tree')
+        response = client.options('/api/manifest')
         assert 'Access-Control-Allow-Origin' in response.headers
         assert 'Access-Control-Allow-Headers' in response.headers
         assert 'GET' in response.headers['Access-Control-Allow-Methods']
@@ -58,53 +58,6 @@ class TestIndex:
         assert response.status_code == 200
 
 
-# --- /api/tree ---
-
-
-
-
-# --- /api/metadata ---
-
-class TestApiMetadata:
-    def test_metadata_returns_200(self, client):
-        response = client.get('/api/metadata')
-        assert response.status_code == 200
-
-    def test_metadata_has_identity(self, client):
-        response = client.get('/api/metadata')
-        data = json.loads(response.data)
-        assert data['artifact_id'] == 'trilobase'
-        assert data['name'] == 'Trilobase'
-        assert data['version'] == '1.0.0'
-        assert data['schema_version'] == '1.0'
-
-    def test_metadata_has_license(self, client):
-        response = client.get('/api/metadata')
-        data = json.loads(response.data)
-        assert data['license'] == 'CC-BY-4.0'
-
-    def test_metadata_has_statistics(self, client):
-        response = client.get('/api/metadata')
-        data = json.loads(response.data)
-        stats = data['statistics']
-        assert 'genus' in stats
-        assert 'family' in stats
-        assert 'order' in stats
-        assert 'valid_genera' in stats
-        assert 'synonyms' in stats
-        assert 'bibliography' in stats
-
-    def test_metadata_statistics_values(self, client):
-        """Statistics should reflect test data counts."""
-        response = client.get('/api/metadata')
-        data = json.loads(response.data)
-        stats = data['statistics']
-        assert stats['genus'] == 4       # Phacops, Acuticryphops, Cryphops, Olenus
-        assert stats['family'] == 2      # Phacopidae, Olenidae
-        assert stats['order'] == 2       # Phacopida, Ptychopariida
-        assert stats['valid_genera'] == 3  # Phacops, Acuticryphops, Olenus
-        assert stats['synonyms'] == 1
-        assert stats['bibliography'] == 1
 
 
 # --- /api/provenance ---
@@ -1758,15 +1711,6 @@ class TestDynamicMcpTools:
             tools = _get_dynamic_tools()
             assert tools == []
 
-    def test_no_mcp_tools_fallback_to_legacy(self):
-        """When no mcp_tools.json, list_tools should include legacy domain tools."""
-        from scoda_desktop.mcp_server import _get_legacy_domain_tools
-        legacy = _get_legacy_domain_tools()
-        legacy_names = {t.name for t in legacy}
-        assert 'get_taxonomy_tree' in legacy_names
-        assert 'search_genera' in legacy_names
-        assert len(legacy) == 7
-
     # --- Registry get_mcp_tools ---
 
     def test_registry_get_mcp_tools(self, scoda_with_mcp_tools, tmp_path):
@@ -1818,18 +1762,3 @@ class TestDynamicMcpTools:
             scoda_package._canonical_db = old_canonical
             pkg.close()
 
-    # --- get_metadata generic ---
-
-    def test_get_metadata_generic(self, test_db):
-        """get_metadata should return only artifact_metadata, no domain statistics."""
-        from scoda_desktop.mcp_server import get_metadata
-        canonical_db_path, overlay_db_path, paleocore_db_path = test_db
-        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
-        try:
-            result = get_metadata()
-            assert 'artifact_id' in result
-            assert 'version' in result
-            # Should NOT have domain statistics anymore
-            assert 'statistics' not in result
-        finally:
-            scoda_package._reset_paths()

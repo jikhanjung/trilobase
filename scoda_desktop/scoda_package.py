@@ -235,13 +235,13 @@ class ScodaPackage:
         manifest = {
             "format": "scoda",
             "format_version": "1.0",
-            "name": db_meta.get('artifact_id', 'trilobase'),
+            "name": db_meta.get('artifact_id', 'unknown'),
             "version": db_meta.get('version', '1.0.0'),
-            "title": db_meta.get('name', 'Trilobase') + ' - ' + db_meta.get('description', ''),
+            "title": db_meta.get('name', 'Unknown') + ' - ' + db_meta.get('description', ''),
             "description": db_meta.get('description', ''),
             "created_at": datetime.now(timezone.utc).isoformat(),
             "license": db_meta.get('license', 'CC-BY-4.0'),
-            "authors": ["Jell, P.A.", "Adrain, J.M."],
+            "authors": [],
             "data_file": "data.db",
             "record_count": record_count,
             "data_checksum_sha256": checksum,
@@ -304,22 +304,19 @@ class PackageRegistry:
 
         # Fallback: if no .scoda found, look for *.db files
         if not self._packages:
-            for db_name in ['trilobase.db', 'paleocore.db']:
-                db_path = os.path.join(directory, db_name)
-                if os.path.exists(db_path):
-                    name = os.path.splitext(db_name)[0]
-                    overlay_path = os.path.join(directory, f'{name}_overlay.db')
-                    self._packages[name] = {
-                        'pkg': None,
-                        'db_path': db_path,
-                        'overlay_path': overlay_path,
-                        'deps': [],
-                    }
-            # Wire up trilobase → paleocore dependency (alias 'pc')
-            if 'trilobase' in self._packages and 'paleocore' in self._packages:
-                self._packages['trilobase']['deps'] = [
-                    {'name': 'paleocore', 'alias': 'pc'}
-                ]
+            for db_path in sorted(glob_mod.glob(os.path.join(directory, '*.db'))):
+                db_name = os.path.basename(db_path)
+                # Skip overlay DBs
+                if db_name.endswith('_overlay.db'):
+                    continue
+                name = os.path.splitext(db_name)[0]
+                overlay_path = os.path.join(directory, f'{name}_overlay.db')
+                self._packages[name] = {
+                    'pkg': None,
+                    'db_path': db_path,
+                    'overlay_path': overlay_path,
+                    'deps': [],
+                }
 
     def get_db(self, name):
         """Get DB connection for a specific package with dependencies ATTACHed.
@@ -555,31 +552,36 @@ def _resolve_paths():
         return  # already resolved (or set by testing)
 
     if getattr(sys, 'frozen', False):
-        # PyInstaller: .scoda should be next to the executable
-        exe_dir = os.path.dirname(sys.executable)
-        scoda_path = os.path.join(exe_dir, 'trilobase.scoda')
-        if os.path.exists(scoda_path):
-            _scoda_pkg = ScodaPackage(scoda_path)
-            _canonical_db = _scoda_pkg.db_path
-            _overlay_db = os.path.join(exe_dir, 'trilobase_overlay.db')
-        else:
-            # Fallback: bundled DB inside PyInstaller bundle
-            _canonical_db = os.path.join(sys._MEIPASS, 'trilobase.db')
-            _overlay_db = os.path.join(exe_dir, 'trilobase_overlay.db')
-        _resolve_paleocore(exe_dir)
+        base_dir = os.path.dirname(sys.executable)
     else:
         # Development mode — project root is one level up from this package
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        scoda_path = os.path.join(base_dir, 'trilobase.scoda')
-        if os.path.exists(scoda_path):
-            _scoda_pkg = ScodaPackage(scoda_path)
-            _canonical_db = _scoda_pkg.db_path
-            _overlay_db = os.path.join(base_dir, 'trilobase_overlay.db')
+
+    # Find first .scoda file
+    scoda_files = sorted(glob_mod.glob(os.path.join(base_dir, '*.scoda')))
+    if scoda_files:
+        scoda_path = scoda_files[0]
+        _scoda_pkg = ScodaPackage(scoda_path)
+        _canonical_db = _scoda_pkg.db_path
+        name = os.path.splitext(os.path.basename(scoda_path))[0]
+        _overlay_db = os.path.join(base_dir, f'{name}_overlay.db')
+    else:
+        # Fallback: find first .db file
+        db_files = sorted(glob_mod.glob(os.path.join(base_dir, '*.db')))
+        db_files = [f for f in db_files if not f.endswith('_overlay.db')]
+        if db_files:
+            _canonical_db = db_files[0]
+            name = os.path.splitext(os.path.basename(db_files[0]))[0]
+            _overlay_db = os.path.join(base_dir, f'{name}_overlay.db')
+        elif getattr(sys, 'frozen', False):
+            # Last resort: bundled DB inside PyInstaller bundle
+            _canonical_db = os.path.join(sys._MEIPASS, 'data.db')
+            _overlay_db = os.path.join(base_dir, 'data_overlay.db')
         else:
-            # Fallback: direct .db file
-            _canonical_db = os.path.join(base_dir, 'trilobase.db')
-            _overlay_db = os.path.join(base_dir, 'trilobase_overlay.db')
-        _resolve_paleocore(base_dir)
+            _canonical_db = os.path.join(base_dir, 'data.db')
+            _overlay_db = os.path.join(base_dir, 'data_overlay.db')
+
+    _resolve_paleocore(base_dir)
 
 
 def _set_paths_for_testing(canonical_path, overlay_path, paleocore_path=None):
