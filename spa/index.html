@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCODA Desktop</title>
+    <title>Trilobase</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
@@ -17,13 +17,26 @@
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1">
-                <i class="bi bi-diagram-3"></i> SCODA Desktop
+                <i class="bi bi-bug"></i> Trilobase
+                <small class="text-white-50" style="font-size: 0.55em; margin-left: 6px; font-weight: 300;">A SCODA Package</small>
                 <small id="navbar-pkg-name" class="text-white-50" style="font-size: 0.6em; margin-left: 8px;"></small>
             </span>
         </div>
     </nav>
-    <!-- View Tabs -->
-    <div class="view-tabs" id="view-tabs"></div>
+    <!-- View Tabs + Global Search -->
+    <div class="view-tabs-bar">
+        <div class="view-tabs" id="view-tabs"></div>
+        <div class="global-search-container">
+            <div class="global-search-wrapper">
+                <i class="bi bi-search"></i>
+                <input type="text" id="global-search-input"
+                       placeholder="Search genera, formations, references..."
+                       autocomplete="off">
+                <kbd class="global-search-shortcut">Ctrl+K</kbd>
+            </div>
+            <div class="global-search-results" id="global-search-results"></div>
+        </div>
+    </div>
 
     <!-- View: Tree (default, existing layout) -->
     <div class="view-container" id="view-tree">

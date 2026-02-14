@@ -19,6 +19,9 @@ let tableViewData = [];
 let tableViewSort = null;
 let tableViewSearchTerm = '';
 
+// Shared query cache — fetch once, reuse across search index + tab views
+let queryCache = {};
+
 // Initialize
 document.addEventListener('DOMContentLoaded', async () => {
     genusModal = new bootstrap.Modal(document.getElementById('genusModal'));
@@ -39,6 +42,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Legacy fallback: no manifest, just load tree
         loadTree();
     }
+
+    // Global search — preload all data into shared cache
+    initGlobalSearch();
+    preloadSearchIndex();
 });
 
 /**
@@ -60,6 +67,19 @@ async function loadManifest() {
     } catch (error) {
         // Graceful degradation: manifest unavailable, use existing UI
     }
+}
+
+/**
+ * Fetch a named query with caching. Returns cached rows if available.
+ */
+async function fetchQuery(queryName) {
+    if (queryCache[queryName]) return queryCache[queryName];
+    const url = API_BASE + `/api/queries/${queryName}/execute`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Query failed: ${queryName}`);
+    const data = await response.json();
+    queryCache[queryName] = data.rows || [];
+    return queryCache[queryName];
 }
 
 /**
@@ -150,18 +170,11 @@ async function renderTableView(viewKey) {
         toolbar.innerHTML = '';
     }
 
-    // Load data
+    // Load data (from shared cache or fetch)
     body.innerHTML = '<div class="loading">Loading...</div>';
 
     try {
-        const queryUrl = API_BASE + `/api/queries/${view.source_query}/execute`;
-        const response = await fetch(queryUrl);
-        if (!response.ok) {
-            body.innerHTML = '<div class="text-danger">Error loading data</div>';
-            return;
-        }
-        const data = await response.json();
-        tableViewData = data.rows;
+        tableViewData = await fetchQuery(view.source_query);
         renderTableViewRows(viewKey);
     } catch (error) {
         body.innerHTML = `<div class="text-danger">Error: ${error.message}</div>`;
@@ -301,14 +314,7 @@ async function renderChronostratChart(viewKey) {
     body.innerHTML = '<div class="loading">Loading...</div>';
 
     try {
-        const queryUrl = API_BASE + `/api/queries/${view.source_query}/execute`;
-        const response = await fetch(queryUrl);
-        if (!response.ok) {
-            body.innerHTML = '<div class="text-danger">Error loading data</div>';
-            return;
-        }
-        const data = await response.json();
-        const rows = data.rows;
+        const rows = await fetchQuery(view.source_query);
 
         // Build rank→column mapping from manifest
         const rankColumns = opts.rank_columns || [
@@ -571,11 +577,8 @@ async function loadTree() {
         let tree;
         const viewDef = manifest && manifest.views && manifest.views['taxonomy_tree'];
         if (viewDef && viewDef.source_query && viewDef.tree_options) {
-            const queryUrl = API_BASE + `/api/queries/${viewDef.source_query}/execute`;
-            const response = await fetch(queryUrl);
-            if (!response.ok) throw new Error('Failed to load tree data');
-            const data = await response.json();
-            tree = buildTreeFromFlat(data.rows, viewDef.tree_options);
+            const rows = await fetchQuery(viewDef.source_query);
+            tree = buildTreeFromFlat(rows, viewDef.tree_options);
         } else {
             throw new Error('No manifest tree definition found');
         }
@@ -1562,4 +1565,416 @@ async function renderDetailFromManifest(viewKey, entityId) {
     } catch (error) {
         modalBody.innerHTML = `<div class="text-danger">Error loading details: ${error.message}</div>`;
     }
+}
+
+
+// ═══════════════════════════════════════════════════════════════════════
+// Global Search
+// ═══════════════════════════════════════════════════════════════════════
+
+/**
+ * Escape HTML to prevent XSS
+ */
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+// Search state
+let searchIndex = null;  // { category: { rows, fields, ... } }
+let searchIndexLoading = false;
+let searchDebounceTimer = null;
+let searchHighlightIndex = -1;
+let searchResults = [];  // flat list of current results for keyboard nav
+let searchExpandedCategories = {};  // track expanded "+N more" categories
+
+const SEARCH_CATEGORIES = [
+    {
+        key: 'genera',
+        query: 'genera_list',
+        label: 'Genera',
+        icon: 'bi-bug',
+        fields: ['name', 'author', 'family'],
+        displayField: 'name',
+        displayItalic: true,
+        metaFields: ['author', 'family'],
+        detailView: 'genus_detail',
+        idKey: 'id',
+        defaultLimit: 6
+    },
+    {
+        key: 'taxonomy',
+        query: 'taxonomy_tree',
+        label: 'Taxonomy',
+        icon: 'bi-diagram-3',
+        fields: ['name', 'rank'],
+        displayField: 'name',
+        metaFields: ['rank'],
+        detailView: 'rank_detail',
+        idKey: 'id',
+        filterFn: row => row.rank !== 'Genus',
+        defaultLimit: 4
+    },
+    {
+        key: 'formations',
+        query: 'formations_list',
+        label: 'Formations',
+        icon: 'bi-layers',
+        fields: ['name', 'country', 'period'],
+        displayField: 'name',
+        metaFields: ['country', 'period'],
+        detailView: 'formation_detail',
+        idKey: 'id',
+        defaultLimit: 4
+    },
+    {
+        key: 'countries',
+        query: 'countries_list',
+        label: 'Countries',
+        icon: 'bi-globe',
+        fields: ['name'],
+        displayField: 'name',
+        metaFields: [],
+        detailView: 'country_detail',
+        idKey: 'id',
+        defaultLimit: 4
+    },
+    {
+        key: 'bibliography',
+        query: 'bibliography_list',
+        label: 'Bibliography',
+        icon: 'bi-book',
+        fields: ['authors', 'title'],
+        displayField: 'authors',
+        metaFields: ['title'],
+        metaTruncate: 50,
+        detailView: 'bibliography_detail',
+        idKey: 'id',
+        defaultLimit: 4
+    },
+    {
+        key: 'chronostratigraphy',
+        query: 'ics_chronostrat_list',
+        label: 'Chronostratigraphy',
+        icon: 'bi-clock-history',
+        fields: ['name'],
+        displayField: 'name',
+        metaFields: ['rank'],
+        detailView: 'chronostrat_detail',
+        idKey: 'id',
+        defaultLimit: 4
+    }
+];
+
+/**
+ * Initialize global search: event listeners, Ctrl+K shortcut, outside click
+ */
+function initGlobalSearch() {
+    const input = document.getElementById('global-search-input');
+    const resultsEl = document.getElementById('global-search-results');
+    if (!input || !resultsEl) return;
+
+    // Input event with debounce
+    input.addEventListener('input', () => {
+        clearTimeout(searchDebounceTimer);
+        searchDebounceTimer = setTimeout(() => {
+            performSearch(input.value);
+        }, 200);
+    });
+
+    // Keyboard navigation
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            moveSearchHighlight(1);
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            moveSearchHighlight(-1);
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            selectSearchHighlight();
+        } else if (e.key === 'Escape') {
+            e.preventDefault();
+            hideSearchResults();
+            input.blur();
+        }
+    });
+
+    // Ctrl+K shortcut
+    document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            input.focus();
+            input.select();
+        }
+    });
+
+    // Outside click closes dropdown
+    document.addEventListener('click', (e) => {
+        const container = document.querySelector('.global-search-container');
+        if (container && !container.contains(e.target)) {
+            hideSearchResults();
+        }
+    });
+}
+
+/**
+ * Preload search index: fetch all 6 named queries in parallel
+ */
+async function preloadSearchIndex() {
+    if (searchIndex || searchIndexLoading) return;
+    searchIndexLoading = true;
+
+    searchIndex = {};
+
+    const promises = SEARCH_CATEGORIES.map(async (cat) => {
+        try {
+            let rows = await fetchQuery(cat.query);
+
+            // Apply category filter if defined
+            if (cat.filterFn) {
+                rows = rows.filter(cat.filterFn);
+            }
+
+            // Pre-compute _searchText for fast matching
+            rows.forEach(row => {
+                row._searchText = cat.fields
+                    .map(f => (row[f] || ''))
+                    .join(' ')
+                    .toLowerCase();
+            });
+
+            searchIndex[cat.key] = rows;
+        } catch (e) {
+            searchIndex[cat.key] = [];
+        }
+    });
+
+    await Promise.all(promises);
+    searchIndexLoading = false;
+}
+
+/**
+ * Perform search across all categories
+ */
+function performSearch(query) {
+    const resultsEl = document.getElementById('global-search-results');
+    if (!resultsEl) return;
+
+    query = (query || '').trim();
+
+    if (query.length < 2) {
+        hideSearchResults();
+        return;
+    }
+
+    // Show loading if index not ready
+    if (!searchIndex) {
+        resultsEl.innerHTML = '<div class="search-status"><i class="bi bi-hourglass-split"></i> Building search index...</div>';
+        resultsEl.classList.add('visible');
+        // Retry after index loads
+        if (!searchIndexLoading) preloadSearchIndex();
+        setTimeout(() => performSearch(query), 300);
+        return;
+    }
+
+    const terms = query.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+    searchResults = [];
+    searchHighlightIndex = -1;
+    searchExpandedCategories = {};
+
+    let html = '';
+    let totalResults = 0;
+
+    SEARCH_CATEGORIES.forEach(cat => {
+        const rows = searchIndex[cat.key] || [];
+
+        // Multi-term AND matching
+        let matches = rows.filter(row =>
+            terms.every(term => row._searchText.includes(term))
+        );
+
+        if (matches.length === 0) return;
+
+        // Sort: prefix match on display field first, then alphabetical
+        const firstTerm = terms[0];
+        matches.sort((a, b) => {
+            const aName = (a[cat.displayField] || '').toLowerCase();
+            const bName = (b[cat.displayField] || '').toLowerCase();
+            const aPrefix = aName.startsWith(firstTerm) ? 0 : 1;
+            const bPrefix = bName.startsWith(firstTerm) ? 0 : 1;
+            if (aPrefix !== bPrefix) return aPrefix - bPrefix;
+            return aName.localeCompare(bName);
+        });
+
+        totalResults += matches.length;
+
+        // Category header
+        html += `<div class="search-category-header">
+            <i class="bi ${cat.icon}"></i> ${cat.label}
+            <span class="search-cat-count">${matches.length}</span>
+        </div>`;
+
+        // Show limited results
+        const limit = cat.defaultLimit;
+        const visible = matches.slice(0, limit);
+        const remaining = matches.length - limit;
+
+        visible.forEach(row => {
+            const idx = searchResults.length;
+            searchResults.push({ cat, row });
+            html += renderSearchResultItem(cat, row, terms, idx);
+        });
+
+        // "+N more" expander
+        if (remaining > 0) {
+            const catKey = cat.key;
+            html += `<div class="search-more-item" data-cat="${catKey}" onclick="expandSearchCategory('${catKey}', this)">+${remaining} more</div>`;
+            // Store hidden results for expansion
+            searchExpandedCategories[catKey] = { matches: matches.slice(limit), cat, startIdx: searchResults.length };
+        }
+    });
+
+    if (totalResults === 0) {
+        html = '<div class="search-status">No results found</div>';
+    }
+
+    resultsEl.innerHTML = html;
+    resultsEl.classList.add('visible');
+}
+
+/**
+ * Render a single search result item
+ */
+function renderSearchResultItem(cat, row, terms, idx) {
+    const displayVal = row[cat.displayField] || '';
+    const highlighted = highlightTerms(escapeHtml(displayVal), terms);
+
+    let mainHtml = cat.displayItalic
+        ? `<i>${highlighted}</i>`
+        : highlighted;
+
+    let metaHtml = '';
+    if (cat.metaFields && cat.metaFields.length > 0) {
+        const metaParts = cat.metaFields
+            .map(f => row[f] || '')
+            .filter(v => v)
+            .join(', ');
+        if (metaParts) {
+            let metaText = cat.metaTruncate ? truncate(metaParts, cat.metaTruncate) : metaParts;
+            metaHtml = `<span class="search-result-meta">${escapeHtml(metaText)}</span>`;
+        }
+    }
+
+    return `<div class="search-result-item" data-idx="${idx}"
+                 onclick="onSearchResultClick(${idx})"
+                 onmouseenter="searchHighlightIndex=${idx}; updateSearchHighlight()">
+        <span class="search-result-main">${mainHtml}</span>
+        ${metaHtml}
+    </div>`;
+}
+
+/**
+ * Highlight search terms in text using <mark> tags
+ */
+function highlightTerms(escapedText, terms) {
+    let result = escapedText;
+    terms.forEach(term => {
+        const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(`(${escaped})`, 'gi');
+        result = result.replace(regex, '<mark>$1</mark>');
+    });
+    return result;
+}
+
+/**
+ * Expand a "+N more" category to show all results
+ */
+function expandSearchCategory(catKey, el) {
+    const data = searchExpandedCategories[catKey];
+    if (!data) return;
+
+    const input = document.getElementById('global-search-input');
+    const query = (input ? input.value : '').trim();
+    const terms = query.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+
+    let html = '';
+    data.matches.forEach(row => {
+        const idx = searchResults.length;
+        searchResults.push({ cat: data.cat, row });
+        html += renderSearchResultItem(data.cat, row, terms, idx);
+    });
+
+    el.insertAdjacentHTML('afterend', html);
+    el.remove();
+    delete searchExpandedCategories[catKey];
+}
+
+/**
+ * Handle search result click
+ */
+function onSearchResultClick(idx) {
+    const item = searchResults[idx];
+    if (!item) return;
+
+    hideSearchResults();
+
+    const id = item.row[item.cat.idKey];
+    openDetail(item.cat.detailView, id);
+}
+
+/**
+ * Move highlight up/down
+ */
+function moveSearchHighlight(delta) {
+    if (searchResults.length === 0) return;
+
+    searchHighlightIndex += delta;
+    if (searchHighlightIndex < 0) searchHighlightIndex = searchResults.length - 1;
+    if (searchHighlightIndex >= searchResults.length) searchHighlightIndex = 0;
+
+    updateSearchHighlight();
+}
+
+/**
+ * Update highlight visual
+ */
+function updateSearchHighlight() {
+    const resultsEl = document.getElementById('global-search-results');
+    if (!resultsEl) return;
+
+    resultsEl.querySelectorAll('.search-result-item').forEach(el => {
+        el.classList.toggle('highlighted', parseInt(el.dataset.idx) === searchHighlightIndex);
+    });
+
+    // Scroll into view
+    const highlighted = resultsEl.querySelector('.search-result-item.highlighted');
+    if (highlighted) {
+        highlighted.scrollIntoView({ block: 'nearest' });
+    }
+}
+
+/**
+ * Select the currently highlighted result
+ */
+function selectSearchHighlight() {
+    if (searchHighlightIndex >= 0 && searchHighlightIndex < searchResults.length) {
+        onSearchResultClick(searchHighlightIndex);
+    }
+}
+
+/**
+ * Hide search results dropdown
+ */
+function hideSearchResults() {
+    const resultsEl = document.getElementById('global-search-results');
+    if (resultsEl) {
+        resultsEl.classList.remove('visible');
+    }
+    searchHighlightIndex = -1;
 }
