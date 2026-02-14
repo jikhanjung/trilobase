@@ -192,6 +192,12 @@ class ScodaDesktopGUI:
                                      relief="raised", bd=2)
         self.browser_btn.pack(pady=3)
 
+        # Extract Reference SPA button
+        self.extract_spa_btn = tk.Button(control_frame, text="Extract Reference SPA", width=26,
+                                         command=self.extract_spa, state="disabled",
+                                         relief="raised", bd=2)
+        self.extract_spa_btn.pack(pady=3)
+
         # Clear log button
         self.clear_log_btn = tk.Button(control_frame, text="Clear Log", width=26,
                                        command=self.clear_log,
@@ -692,6 +698,57 @@ class ScodaDesktopGUI:
             self.log_text.delete('1.0', '500.0')
             self.log_text.config(state="disabled")
 
+    def extract_spa(self):
+        """Extract Reference SPA from the selected package."""
+        if not self.selected_package:
+            return
+
+        # Find the ScodaPackage instance
+        entry = None
+        for p_entry in self.registry._packages.values():
+            if p_entry.get('pkg') and p_entry['pkg'].name == self.selected_package:
+                entry = p_entry
+                break
+
+        if not entry or not entry.get('pkg'):
+            self._append_log("No .scoda package found for extraction", "WARNING")
+            return
+
+        pkg = entry['pkg']
+        if not pkg.has_reference_spa:
+            self._append_log("This package does not contain a Reference SPA", "WARNING")
+            return
+
+        if pkg.is_spa_extracted():
+            spa_dir = pkg.get_spa_dir()
+            result = messagebox.askyesno(
+                "SPA Already Extracted",
+                f"Reference SPA already extracted at:\n{spa_dir}\n\n"
+                "Open in browser?")
+            if result:
+                index_path = os.path.join(spa_dir, 'index.html')
+                webbrowser.open(f'file://{index_path}')
+            return
+
+        try:
+            spa_dir = pkg.extract_spa()
+            self._append_log(f"Reference SPA extracted to: {spa_dir}", "SUCCESS")
+            self._update_status()
+
+            result = messagebox.askyesno(
+                "SPA Extracted",
+                f"Reference SPA extracted to:\n{spa_dir}\n\n"
+                "Open in browser?")
+            if result:
+                if self.server_running:
+                    webbrowser.open(f'http://localhost:{self.port}')
+                else:
+                    index_path = os.path.join(spa_dir, 'index.html')
+                    webbrowser.open(f'file://{index_path}')
+        except Exception as e:
+            self._append_log(f"ERROR extracting SPA: {e}", "ERROR")
+            messagebox.showerror("Extraction Error", f"Failed to extract SPA:\n{e}")
+
     def clear_log(self):
         """Clear log viewer."""
         self.log_text.config(state="normal")
@@ -766,6 +823,16 @@ class ScodaDesktopGUI:
             self.stop_btn.config(state="disabled", relief="sunken")
             # Clear header package indicator
             self.header_pkg_label.config(text="", fg="#BBDEFB")
+
+        # Update Extract SPA button
+        has_spa = False
+        if self.selected_package:
+            for p_entry in self.registry._packages.values():
+                pkg = p_entry.get('pkg')
+                if pkg and pkg.name == self.selected_package and pkg.has_reference_spa:
+                    has_spa = True
+                    break
+        self.extract_spa_btn.config(state="normal" if has_spa else "disabled")
 
         # Refresh listbox (handles status text + disabled state)
         self._refresh_pkg_listbox()

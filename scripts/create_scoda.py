@@ -102,19 +102,33 @@ def main():
         print(json.dumps(manifest, indent=2, ensure_ascii=False))
         return
 
-    # Create .scoda package with paleocore dependency
+    # Collect SPA files as extra_assets
+    spa_dir = os.path.join(os.path.dirname(__file__), '..', 'spa')
+    extra_assets = {}
+    if os.path.isdir(spa_dir):
+        for fname in os.listdir(spa_dir):
+            fpath = os.path.join(spa_dir, fname)
+            if os.path.isfile(fpath):
+                extra_assets[f'assets/spa/{fname}'] = fpath
+
+    # Create .scoda package with paleocore dependency + SPA
     metadata = {
         "dependencies": [
             {
                 "name": "paleocore",
-                    "alias": "pc",
+                "alias": "pc",
                 "version": "0.3.0",
                 "file": "paleocore.scoda",
                 "description": "Shared paleontological infrastructure (geography, stratigraphy)"
             }
         ],
     }
-    result = ScodaPackage.create(db_path, output_path, metadata=metadata)
+    if extra_assets:
+        metadata["has_reference_spa"] = True
+        metadata["reference_spa_path"] = "assets/spa/"
+
+    result = ScodaPackage.create(db_path, output_path, metadata=metadata,
+                                 extra_assets=extra_assets if extra_assets else None)
     size = os.path.getsize(result)
 
     print(f"Created: {result}")

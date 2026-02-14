@@ -1,7 +1,10 @@
 /**
- * Trilobase Web Interface
- * Frontend JavaScript for taxonomy tree and genus browsing
+ * Trilobase Reference SPA
+ * Full-featured frontend with API_BASE support for standalone deployment
  */
+
+// API base URL (set by index.html script tag, defaults to same-origin)
+if (typeof API_BASE === 'undefined') var API_BASE = '';
 
 // State
 let selectedFamilyId = null;
@@ -43,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
  */
 async function loadManifest() {
     try {
-        const response = await fetch('/api/manifest');
+        const response = await fetch(API_BASE + '/api/manifest');
         if (!response.ok) return;
         const data = await response.json();
         manifest = data.manifest;
@@ -151,7 +154,7 @@ async function renderTableView(viewKey) {
     body.innerHTML = '<div class="loading">Loading...</div>';
 
     try {
-        const queryUrl = `/api/queries/${view.source_query}/execute`;
+        const queryUrl = API_BASE + `/api/queries/${view.source_query}/execute`;
         const response = await fetch(queryUrl);
         if (!response.ok) {
             body.innerHTML = '<div class="text-danger">Error loading data</div>';
@@ -298,7 +301,7 @@ async function renderChronostratChart(viewKey) {
     body.innerHTML = '<div class="loading">Loading...</div>';
 
     try {
-        const queryUrl = `/api/queries/${view.source_query}/execute`;
+        const queryUrl = API_BASE + `/api/queries/${view.source_query}/execute`;
         const response = await fetch(queryUrl);
         if (!response.ok) {
             body.innerHTML = '<div class="text-danger">Error loading data</div>';
@@ -568,13 +571,13 @@ async function loadTree() {
         let tree;
         const viewDef = manifest && manifest.views && manifest.views['taxonomy_tree'];
         if (viewDef && viewDef.source_query && viewDef.tree_options) {
-            const queryUrl = `/api/queries/${viewDef.source_query}/execute`;
+            const queryUrl = API_BASE + `/api/queries/${viewDef.source_query}/execute`;
             const response = await fetch(queryUrl);
             if (!response.ok) throw new Error('Failed to load tree data');
             const data = await response.json();
             tree = buildTreeFromFlat(data.rows, viewDef.tree_options);
         } else {
-            const response = await fetch('/api/tree');
+            const response = await fetch(API_BASE + '/api/tree');
             tree = await response.json();
         }
         container.innerHTML = '';
@@ -727,7 +730,7 @@ async function selectTreeLeaf(leafId, leafName) {
     try {
         let items;
         if (opts.item_query && opts.item_param) {
-            const baseUrl = `/api/queries/${opts.item_query}/execute`;
+            const baseUrl = API_BASE + `/api/queries/${opts.item_query}/execute`;
             const url = `${baseUrl}?${opts.item_param}=${leafId}`;
             const response = await fetch(url);
             if (!response.ok) throw new Error('Failed to load items');
@@ -735,7 +738,7 @@ async function selectTreeLeaf(leafId, leafName) {
             items = data.rows;
         } else {
             // Fallback to legacy API
-            const response = await fetch(`/api/family/${leafId}/genera`);
+            const response = await fetch(API_BASE + `/api/family/${leafId}/genera`);
             const data = await response.json();
             items = data.genera;
         }
@@ -748,7 +751,7 @@ async function selectTreeLeaf(leafId, leafName) {
     }
 }
 
-/** Legacy alias for backward compatibility */
+/** Legacy alias for backward compatibility (used by navigateToRank, navigateToGenus) */
 function selectFamily(familyId, familyName) {
     selectTreeLeaf(familyId, familyName);
 }
@@ -859,6 +862,26 @@ function expandTreeToNode(nodeId) {
 }
 
 /**
+ * Navigate to a non-Genus rank from children list
+ */
+function navigateToRank(rankId, rankName, rankType) {
+    expandTreeToNode(rankId);
+    if (rankType === 'Family') {
+        selectFamily(rankId, rankName);
+    }
+    openDetail('rank_detail', rankId);
+}
+
+/**
+ * Navigate to a Genus from children list
+ */
+function navigateToGenus(genusId, familyId, familyName) {
+    expandTreeToNode(familyId);
+    selectFamily(familyId, familyName);
+    openDetail('genus_detail', genusId);
+}
+
+/**
  * Expand all tree nodes
  */
 function expandAll() {
@@ -883,21 +906,30 @@ function collapseAll() {
 }
 
 /**
- * Build temporal range HTML (generic: code tag only, no ICS links)
+ * Build temporal range HTML with ICS mapping links
  */
 function buildTemporalRangeHTML(g) {
     if (!g.temporal_code) return '-';
-    return `<code>${g.temporal_code}</code>`;
+    let html = `<code>${g.temporal_code}</code>`;
+    if (g.temporal_ics_mapping && g.temporal_ics_mapping.length > 0) {
+        const links = g.temporal_ics_mapping.map(m =>
+            `<a class="detail-link" onclick="openDetail('chronostrat_detail', ${m.id})">${m.name}</a>` +
+            (m.mapping_type !== 'exact' ? ` <small class="text-muted">(${m.mapping_type})</small>` : '')
+        ).join(', ');
+        html += ` → ${links}`;
+    }
+    return html;
 }
 
 /**
- * Build hierarchy HTML (generic: text display, no clickable links)
+ * Build hierarchy HTML for genus detail (Class → Order → ... → Family)
  */
 function buildHierarchyHTML(g) {
     if (g.hierarchy && g.hierarchy.length > 0) {
-        if (Array.isArray(g.hierarchy)) {
-            return g.hierarchy.map(h => h.name || h).join(' → ');
-        }
+        return g.hierarchy.map(h =>
+            `<a class="detail-link" onclick="openDetail('rank_detail', ${h.id})">${h.name}</a>` +
+            ` <small class="text-muted">(${h.rank})</small>`
+        ).join(' → ');
     }
     return g.family_name || g.family || '-';
 }
@@ -951,7 +983,7 @@ async function loadAnnotations(entityType, entityId) {
     if (!listContainer) return;
 
     try {
-        const annUrl = `/api/annotations/${entityType}/${entityId}`;
+        const annUrl = API_BASE + `/api/annotations/${entityType}/${entityId}`;
         const response = await fetch(annUrl);
         const annotations = await response.json();
 
@@ -1004,7 +1036,7 @@ async function addAnnotation(entityType, entityId) {
     if (!content) return;
 
     try {
-        const postUrl = '/api/annotations';
+        const postUrl = API_BASE + '/api/annotations';
         const response = await fetch(postUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -1031,7 +1063,7 @@ async function addAnnotation(entityType, entityId) {
  */
 async function deleteAnnotation(annotationId, entityType, entityId) {
     try {
-        const delUrl = `/api/annotations/${annotationId}`;
+        const delUrl = API_BASE + `/api/annotations/${annotationId}`;
         const response = await fetch(delUrl, {
             method: 'DELETE'
         });
@@ -1329,6 +1361,145 @@ function renderAnnotationsSection(section, data) {
 }
 
 /**
+ * Built-in renderer: genus geography section.
+ * Handles locations/formations with country/region links, fallback to raw text.
+ */
+function renderGenusGeography(data) {
+    let geoGridHtml = '';
+
+    if (data.locations && data.locations.length > 0) {
+        const locLinks = data.locations.map(l => {
+            let link = `<a class="detail-link" onclick="openDetail('country_detail', ${l.country_id})">${l.country_name}</a>`;
+            if (l.region_id && l.region_name) {
+                link += ` &gt; <a class="detail-link" onclick="openDetail('region_detail', ${l.region_id})">${l.region_name}</a>`;
+            }
+            return link;
+        }).join(', ');
+        geoGridHtml += `
+            <span class="detail-label">Country:</span>
+            <span class="detail-value">${locLinks}</span>`;
+    } else if (data.location) {
+        geoGridHtml += `
+            <span class="detail-label">Location:</span>
+            <span class="detail-value">${data.location}</span>`;
+    }
+
+    if (data.formations && data.formations.length > 0) {
+        const fmtLinks = data.formations.map(f =>
+            `<a class="detail-link" onclick="openDetail('formation_detail', ${f.id})">${f.name}</a>${f.period ? ' (' + f.period + ')' : ''}`
+        ).join(', ');
+        geoGridHtml += `
+            <span class="detail-label">Formation:</span>
+            <span class="detail-value">${fmtLinks}</span>`;
+    } else if (data.formation) {
+        geoGridHtml += `
+            <span class="detail-label">Formation:</span>
+            <span class="detail-value">${data.formation}</span>`;
+    }
+
+    if (!geoGridHtml) return '';
+    return `
+        <div class="detail-section">
+            <h6>Geographic Information</h6>
+            <div class="detail-grid">${geoGridHtml}
+            </div>
+        </div>`;
+}
+
+/**
+ * Built-in renderer: synonym list section.
+ */
+function renderSynonymList(section, data) {
+    const synonyms = data[section.data_key] || [];
+    if (synonyms.length === 0) return '';
+
+    let html = `
+        <div class="detail-section">
+            <h6>Synonymy</h6>
+            <ul class="list-unstyled">`;
+
+    synonyms.forEach(s => {
+        const seniorLink = s.senior_taxon_id
+            ? `<a href="#" class="synonym-link" onclick="openDetail('genus_detail', ${s.senior_taxon_id}); return false;"><i>${s.senior_name}</i></a>`
+            : `<i>${s.senior_name}</i>`;
+        html += `
+            <li>
+                <span class="badge bg-secondary badge-synonym">${s.synonym_type}</span>
+                ${seniorLink}
+                ${s.fide_author ? `<small class="text-muted">fide ${s.fide_author}${s.fide_year ? ', ' + s.fide_year : ''}</small>` : ''}
+            </li>`;
+    });
+
+    html += '</ul></div>';
+    return html;
+}
+
+/**
+ * Built-in renderer: rank statistics section.
+ */
+function renderRankStatistics(data) {
+    if (!data.genera_count && (!data.children_counts || data.children_counts.length === 0)) return '';
+
+    let html = `
+        <div class="detail-section">
+            <h6>Statistics</h6>
+            <div class="detail-grid">`;
+
+    if (data.genera_count) {
+        html += `
+            <span class="detail-label">Genera:</span>
+            <span class="detail-value">${data.genera_count}</span>`;
+    }
+
+    if (data.children_counts) {
+        data.children_counts.forEach(c => {
+            if (c.rank === 'Genus' && data.genera_count) return;
+            html += `
+                <span class="detail-label">${c.rank}:</span>
+                <span class="detail-value">${c.count}</span>`;
+        });
+    }
+
+    html += '</div></div>';
+    return html;
+}
+
+/**
+ * Built-in renderer: rank children list section.
+ */
+function renderRankChildren(section, data) {
+    const children = data[section.data_key] || [];
+    if (children.length === 0) return '';
+
+    const title = `Children (${children.length}${children.length >= 20 ? '+' : ''})`;
+    let html = `
+        <div class="detail-section">
+            <h6>${title}</h6>
+            <ul class="list-unstyled children-list">`;
+
+    children.forEach(c => {
+        if (c.rank === 'Genus') {
+            html += `
+            <li class="clickable" onclick="navigateToGenus(${c.id}, ${data.id}, '${data.name.replace(/'/g, "\\'")}')">
+                <span class="badge bg-light text-dark me-1">${c.rank}</span>
+                <strong><i>${c.name}</i></strong>
+                ${c.author ? '<small class="text-muted">' + c.author + '</small>' : ''}
+            </li>`;
+        } else {
+            html += `
+            <li class="clickable" onclick="navigateToRank(${c.id}, '${c.name.replace(/'/g, "\\'")}', '${c.rank}')">
+                <span class="badge bg-light text-dark me-1">${c.rank}</span>
+                <strong>${c.name}</strong>
+                ${c.author ? '<small class="text-muted">' + c.author + '</small>' : ''}
+            </li>`;
+        }
+    });
+
+    html += '</ul></div>';
+    return html;
+}
+
+/**
  * Dispatch section rendering by type.
  */
 function renderDetailSection(section, data) {
@@ -1341,12 +1512,11 @@ function renderDetailSection(section, data) {
         case 'tagged_list':     return renderTaggedList(section, data);
         case 'raw_text':        return renderRawText(section, data);
         case 'annotations':     return renderAnnotationsSection(section, data);
-        default:
-            // Fallback: if section has data_key and data is an array, render as linked_table
-            if (section.data_key && Array.isArray(data[section.data_key])) {
-                return renderLinkedTable(section, data);
-            }
-            return '';
+        case 'genus_geography': return renderGenusGeography(data);
+        case 'synonym_list':    return renderSynonymList(section, data);
+        case 'rank_statistics': return renderRankStatistics(data);
+        case 'rank_children':   return renderRankChildren(section, data);
+        default:                return '';
     }
 }
 
@@ -1364,7 +1534,7 @@ async function renderDetailFromManifest(viewKey, entityId) {
     genusModal.show();
 
     try {
-        const url = view.source.replace('{id}', entityId);
+        const url = API_BASE + view.source.replace('{id}', entityId);
         const response = await fetch(url);
         const data = await response.json();
 

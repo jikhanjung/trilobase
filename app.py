@@ -3,11 +3,12 @@ Trilobase Web Interface
 Flask application for browsing trilobite taxonomy database
 """
 
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, send_from_directory
 import json
+import os
 import sqlite3
 
-from scoda_package import get_db, get_paleocore_db_path
+from scoda_package import get_db, get_paleocore_db_path, get_registry, get_active_package_name
 
 app = Flask(__name__)
 
@@ -281,9 +282,42 @@ def build_tree(parent_id=None):
     return result
 
 
+def _get_reference_spa_dir():
+    """Check if a Reference SPA has been extracted for the active package.
+
+    Returns the SPA directory path if extracted, None otherwise.
+    """
+    pkg_name = get_active_package_name()
+    if not pkg_name:
+        return None
+    try:
+        registry = get_registry()
+        entry = registry.get_package(pkg_name)
+        pkg = entry.get('manifest')
+        if not pkg or not pkg.get('has_reference_spa'):
+            return None
+        # Look for <name>_spa/ directory next to the .scoda file
+        scoda_path = entry.get('db_path')
+        if not scoda_path:
+            return None
+        # The scan dir is where .scoda files live
+        scan_dir = registry._scan_dir
+        if not scan_dir:
+            return None
+        spa_dir = os.path.join(scan_dir, f'{pkg_name}_spa')
+        if os.path.isdir(spa_dir) and os.path.isfile(os.path.join(spa_dir, 'index.html')):
+            return spa_dir
+    except (KeyError, AttributeError):
+        pass
+    return None
+
+
 @app.route('/')
 def index():
-    """Main page"""
+    """Main page — serve Reference SPA if extracted, otherwise generic viewer."""
+    spa_dir = _get_reference_spa_dir()
+    if spa_dir:
+        return send_from_directory(spa_dir, 'index.html')
     return render_template('index.html')
 
 
@@ -1062,6 +1096,15 @@ def api_delete_annotation(annotation_id):
     result, status = _delete_annotation(conn, annotation_id)
     conn.close()
     return jsonify(result), status
+
+
+@app.route('/<path:filename>')
+def serve_spa_file(filename):
+    """Serve Reference SPA asset files (app.js, style.css, etc.)."""
+    spa_dir = _get_reference_spa_dir()
+    if spa_dir and os.path.isfile(os.path.join(spa_dir, filename)):
+        return send_from_directory(spa_dir, filename)
+    return '', 404
 
 
 if __name__ == '__main__':

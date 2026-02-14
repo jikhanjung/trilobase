@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-13
+**마지막 업데이트:** 2026-02-14
 
 ## 프로젝트 개요
 
@@ -418,6 +418,21 @@
     - 서버 시작/중지 시 wait cursor 처리
   - devlog: `devlog/20260213_052_phase43_control_panel_single_package.md`
 
+- **Phase 44 완료**: Reference Implementation SPA
+  - Trilobase 전용 프론트엔드 → `spa/` 디렉토리로 분리 (standalone SPA)
+  - Built-in viewer (`static/js/app.js`) → Generic SCODA viewer로 축소
+    - Trilobase 전용 함수 6개 제거: `renderGenusGeography`, `renderSynonymList`, `renderRankStatistics`, `renderRankChildren`, `navigateToRank`, `navigateToGenus`
+    - `buildHierarchyHTML()`, `buildTemporalRangeHTML()` generic 버전으로 교체
+    - Rank 전용 CSS 색상 규칙 제거
+  - SPA: `spa/index.html`, `spa/app.js`, `spa/style.css` (Jinja2 없음, `API_BASE` 자동 감지)
+  - `scoda_package.py`: `extra_assets` 파라미터, `has_reference_spa`, `extract_spa()` 등
+  - `scripts/create_scoda.py`, `scripts/build.py`: SPA 파일 `.scoda` 패키지에 포함
+  - `app.py`: SPA 추출 시 자동 전환 (`_get_reference_spa_dir()`, `serve_spa_file()`)
+  - `scripts/gui.py`: "Extract Reference SPA" 버튼
+  - `ScodaDesktop.spec`: `('spa', 'spa')` datas 추가
+  - 테스트: 230개 (기존 217 + 신규 13)
+  - devlog: `devlog/20260214_053_phase44_reference_spa.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -482,6 +497,10 @@ trilobase/
 ├── scoda_package.py                  # .scoda 패키지 + 중앙 DB 접근 (Phase 25)
 ├── app.py                            # Flask 웹 앱
 ├── mcp_server.py                     # MCP 서버 (Phase 22-23, stdio/SSE 모드)
+├── spa/                              # Reference Implementation SPA (Phase 44)
+│   ├── index.html                    # Standalone HTML (Jinja2 없음, API_BASE 자동 감지)
+│   ├── app.js                        # Full-featured JS (API_BASE prefix)
+│   └── style.css                     # Full CSS (rank 색상 포함)
 ├── templates/
 │   └── index.html                    # 메인 페이지
 ├── static/
@@ -563,15 +582,16 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | Phase 28 | ICS Chronostratigraphic Chart 임포트 + temporal_ranges 매핑 | ✅ 완료 |
 | Phase 29 | ICS Chronostratigraphy 웹 UI (테이블 탭 + detail 모달 + genus 링크) | ✅ 완료 |
 | Phase 30 | ICS Chart 뷰 (계층형 색상 코딩 테이블) | ✅ 완료 |
+| Phase 44 | Reference Implementation SPA (generic viewer + standalone SPA 분리) | ✅ 완료 |
 
 ## 테스트 현황
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `test_app.py` | 200개 | ✅ 통과 |
+| `test_app.py` | 213개 | ✅ 통과 |
 | `test_mcp_basic.py` | 1개 | ✅ 통과 |
 | `test_mcp.py` | 16개 | ✅ 통과 |
-| **합계** | **217개** | **✅ 전부 통과** |
+| **합계** | **230개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -591,6 +611,7 @@ GUI "SCODA Desktop" 리브랜딩 완료 (Phase 38).
 CORS + 예제 SPA + EXE 리네이밍 완료 (Phase 40).
 Manifest-driven tree/chart 렌더링 완료 (Phase 41).
 Docker Desktop 스타일 GUI + 단일 패키지 서빙 완료 (Phase 43).
+Reference Implementation SPA 분리 완료 (Phase 44).
 - PaleoCore 독립 뷰어: `python app.py --package paleocore` 또는 GUI에서 선택
 
 ## 미해결 항목
@@ -630,6 +651,7 @@ Docker Desktop 스타일 GUI + 단일 패키지 서빙 완료 (Phase 43).
 28. ~~Phase 28: ICS Chronostratigraphic Chart 임포트~~ ✅
 29. ~~Phase 29: ICS Chronostratigraphy 웹 UI~~ ✅
 30. ~~Phase 30: ICS Chart 뷰 (계층형 색상 코딩 테이블)~~ ✅
+44. ~~Phase 44: Reference Implementation SPA~~ ✅
 
 ## DB 스키마
 

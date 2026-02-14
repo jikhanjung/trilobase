@@ -81,6 +81,15 @@ def create_scoda_package():
         # Add parent dir for import
         sys.path.insert(0, str(Path(__file__).parent.parent))
         from scoda_package import ScodaPackage
+
+        # Collect SPA files
+        spa_dir = Path('spa')
+        extra_assets = {}
+        if spa_dir.is_dir():
+            for fpath in spa_dir.iterdir():
+                if fpath.is_file():
+                    extra_assets[f'assets/spa/{fpath.name}'] = str(fpath)
+
         metadata = {
             "dependencies": [
                 {
@@ -92,7 +101,12 @@ def create_scoda_package():
                 }
             ]
         }
-        ScodaPackage.create(str(db_path), str(scoda_dest), metadata=metadata)
+        if extra_assets:
+            metadata["has_reference_spa"] = True
+            metadata["reference_spa_path"] = "assets/spa/"
+
+        ScodaPackage.create(str(db_path), str(scoda_dest), metadata=metadata,
+                           extra_assets=extra_assets if extra_assets else None)
         size_mb = scoda_dest.stat().st_size / (1024 * 1024)
         print(f"✓ .scoda package created: {scoda_dest} ({size_mb:.1f} MB)")
         return True

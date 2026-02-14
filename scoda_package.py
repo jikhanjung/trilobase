@@ -106,6 +106,55 @@ class ScodaPackage:
         return [n for n in self._zf.namelist()
                 if n.startswith('assets/') and not n.endswith('/')]
 
+    @property
+    def has_reference_spa(self):
+        """Check if this package contains a Reference SPA."""
+        return self.manifest.get('has_reference_spa', False)
+
+    def get_spa_dir(self):
+        """Return the expected SPA extraction directory path."""
+        scoda_dir = os.path.dirname(self.scoda_path)
+        name = os.path.splitext(os.path.basename(self.scoda_path))[0]
+        return os.path.join(scoda_dir, f'{name}_spa')
+
+    def is_spa_extracted(self):
+        """Check if the Reference SPA has been extracted."""
+        spa_dir = self.get_spa_dir()
+        return os.path.isdir(spa_dir) and os.path.isfile(os.path.join(spa_dir, 'index.html'))
+
+    def extract_spa(self, output_dir=None):
+        """Extract the Reference SPA from this package.
+
+        Args:
+            output_dir: Optional output directory. Defaults to <name>_spa/ next to .scoda file.
+
+        Returns:
+            Path to the extracted SPA directory.
+
+        Raises:
+            ValueError: If this package does not contain a Reference SPA.
+        """
+        if not self.has_reference_spa:
+            raise ValueError("This package does not contain a Reference SPA")
+
+        if output_dir is None:
+            output_dir = self.get_spa_dir()
+
+        os.makedirs(output_dir, exist_ok=True)
+
+        spa_prefix = self.manifest.get('reference_spa_path', 'assets/spa/')
+        spa_files = [n for n in self._zf.namelist()
+                     if n.startswith(spa_prefix) and not n.endswith('/')]
+
+        for archive_path in spa_files:
+            filename = os.path.basename(archive_path)
+            target_path = os.path.join(output_dir, filename)
+            data = self._zf.read(archive_path)
+            with open(target_path, 'wb') as f:
+                f.write(data)
+
+        return output_dir
+
     def close(self):
         """Clean up temp files."""
         if hasattr(self, '_zf') and self._zf:
@@ -129,13 +178,14 @@ class ScodaPackage:
         self.close()
 
     @staticmethod
-    def create(db_path, output_path, metadata=None):
+    def create(db_path, output_path, metadata=None, extra_assets=None):
         """Create a .scoda package from a SQLite database.
 
         Args:
             db_path: Path to the source SQLite database.
             output_path: Path for the output .scoda file.
             metadata: Optional dict to override/extend manifest fields.
+            extra_assets: Optional dict of {archive_path: local_path} for additional files.
 
         Returns:
             Path to the created .scoda file.
@@ -197,6 +247,10 @@ class ScodaPackage:
             zf.write(db_path, 'data.db')
             # Create empty assets/ directory entry
             zf.writestr('assets/', '')
+            # Add extra assets (e.g., Reference SPA files)
+            if extra_assets:
+                for archive_path, local_path in extra_assets.items():
+                    zf.write(local_path, archive_path)
 
         return output_path
 

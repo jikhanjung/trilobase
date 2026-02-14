@@ -228,7 +228,12 @@ html, body {
     background-color: var(--hover-bg);
 }
 
-/* Rank Colors (generic) */
+/* Rank Colors */
+.rank-Class .tree-icon { color: #dc3545; }
+.rank-Order .tree-icon { color: #fd7e14; }
+.rank-Suborder .tree-icon { color: #ffc107; }
+.rank-Superfamily .tree-icon { color: #20c997; }
+.rank-Family .tree-icon { color: #0dcaf0; }
 
 /* List Container */
 .list-container {

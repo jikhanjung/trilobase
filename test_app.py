@@ -2931,3 +2931,279 @@ class TestActivePackage:
         sp._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
         assert sp._active_package_name is None
         sp._reset_paths()
+
+
+# ---------------------------------------------------------------------------
+# Phase 44: Reference SPA tests
+# ---------------------------------------------------------------------------
+
+class TestScodaPackageSPA:
+    """Tests for Reference SPA features in ScodaPackage."""
+
+    def test_create_with_spa(self, test_db, tmp_path):
+        """extra_assets should be included in .scoda ZIP."""
+        canonical_db, _, _ = test_db
+        scoda_path = str(tmp_path / "test_spa.scoda")
+
+        # Create a fake SPA file
+        spa_file = tmp_path / "test_app.js"
+        spa_file.write_text("console.log('spa');")
+
+        extra_assets = {"assets/spa/app.js": str(spa_file)}
+        ScodaPackage.create(canonical_db, scoda_path, extra_assets=extra_assets)
+
+        with zipfile.ZipFile(scoda_path, 'r') as zf:
+            names = zf.namelist()
+            assert 'assets/spa/app.js' in names
+
+    def test_has_reference_spa(self, test_db, tmp_path):
+        """has_reference_spa should reflect manifest flag."""
+        canonical_db, _, _ = test_db
+        scoda_path = str(tmp_path / "test_spa.scoda")
+
+        spa_file = tmp_path / "index.html"
+        spa_file.write_text("<html></html>")
+
+        extra_assets = {"assets/spa/index.html": str(spa_file)}
+        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
+        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
+                           extra_assets=extra_assets)
+
+        with ScodaPackage(scoda_path) as pkg:
+            assert pkg.has_reference_spa is True
+
+    def test_has_reference_spa_false_by_default(self, test_db, tmp_path):
+        """has_reference_spa should be False when not set."""
+        canonical_db, _, _ = test_db
+        scoda_path = str(tmp_path / "test_no_spa.scoda")
+        ScodaPackage.create(canonical_db, scoda_path)
+
+        with ScodaPackage(scoda_path) as pkg:
+            assert pkg.has_reference_spa is False
+
+    def test_extract_spa(self, test_db, tmp_path):
+        """extract_spa() should extract SPA files to output directory."""
+        canonical_db, _, _ = test_db
+        scoda_path = str(tmp_path / "test_spa.scoda")
+
+        # Create SPA files
+        spa_html = tmp_path / "spa_index.html"
+        spa_html.write_text("<html><body>SPA</body></html>")
+        spa_js = tmp_path / "spa_app.js"
+        spa_js.write_text("console.log('spa');")
+
+        extra_assets = {
+            "assets/spa/index.html": str(spa_html),
+            "assets/spa/app.js": str(spa_js),
+        }
+        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
+        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
+                           extra_assets=extra_assets)
+
+        with ScodaPackage(scoda_path) as pkg:
+            out_dir = str(tmp_path / "extracted_spa")
+            result = pkg.extract_spa(output_dir=out_dir)
+            assert result == out_dir
+            assert os.path.isfile(os.path.join(out_dir, 'index.html'))
+            assert os.path.isfile(os.path.join(out_dir, 'app.js'))
+
+    def test_extract_spa_default_dir(self, test_db, tmp_path):
+        """Default extraction directory should be <name>_spa/."""
+        canonical_db, _, _ = test_db
+        scoda_path = str(tmp_path / "test_spa.scoda")
+
+        spa_file = tmp_path / "spa_index.html"
+        spa_file.write_text("<html></html>")
+
+        extra_assets = {"assets/spa/index.html": str(spa_file)}
+        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
+        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
+                           extra_assets=extra_assets)
+
+        with ScodaPackage(scoda_path) as pkg:
+            expected_dir = os.path.join(str(tmp_path), 'test_spa_spa')
+            assert pkg.get_spa_dir() == expected_dir
+
+    def test_is_spa_extracted(self, test_db, tmp_path):
+        """is_spa_extracted() should return True after extraction."""
+        canonical_db, _, _ = test_db
+        scoda_path = str(tmp_path / "test_spa.scoda")
+
+        spa_file = tmp_path / "spa_index.html"
+        spa_file.write_text("<html></html>")
+
+        extra_assets = {"assets/spa/index.html": str(spa_file)}
+        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
+        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
+                           extra_assets=extra_assets)
+
+        with ScodaPackage(scoda_path) as pkg:
+            assert pkg.is_spa_extracted() is False
+            pkg.extract_spa()
+            assert pkg.is_spa_extracted() is True
+
+    def test_extract_no_spa_raises(self, test_db, tmp_path):
+        """extract_spa() on a package without SPA should raise ValueError."""
+        canonical_db, _, _ = test_db
+        scoda_path = str(tmp_path / "test_no_spa.scoda")
+        ScodaPackage.create(canonical_db, scoda_path)
+
+        with ScodaPackage(scoda_path) as pkg:
+            with pytest.raises(ValueError, match="does not contain"):
+                pkg.extract_spa()
+
+
+class TestFlaskAutoSwitch:
+    """Tests for Flask automatic SPA switching."""
+
+    def test_index_generic_without_spa(self, client):
+        """Without extracted SPA, index should serve generic viewer."""
+        response = client.get('/')
+        assert response.status_code == 200
+        html = response.data.decode()
+        assert 'SCODA Desktop' in html
+
+    def test_index_reference_spa_when_extracted(self, test_db, tmp_path):
+        """When SPA is extracted, index should serve it."""
+        canonical_db, overlay_db, paleocore_db = test_db
+        import scoda_package as sp
+        from scoda_package import PackageRegistry
+
+        # Create .scoda with SPA
+        pkg_dir = str(tmp_path / "spa_switch")
+        os.makedirs(pkg_dir, exist_ok=True)
+        scoda_path = os.path.join(pkg_dir, "trilobase.scoda")
+
+        spa_html = tmp_path / "spa_idx.html"
+        spa_html.write_text("<html><body>REFERENCE SPA CONTENT</body></html>")
+
+        extra_assets = {"assets/spa/index.html": str(spa_html)}
+        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
+        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
+                           extra_assets=extra_assets)
+
+        # Extract SPA
+        with ScodaPackage(scoda_path) as pkg:
+            pkg.extract_spa(output_dir=os.path.join(pkg_dir, "trilobase_spa"))
+
+        # Set up registry and active package
+        old_registry = sp._registry
+        sp._registry = PackageRegistry()
+        sp._registry.scan(pkg_dir)
+
+        try:
+            sp.set_active_package('trilobase')
+            app.config['TESTING'] = True
+            with app.test_client() as test_client:
+                response = test_client.get('/')
+                assert response.status_code == 200
+                assert b'REFERENCE SPA CONTENT' in response.data
+        finally:
+            sp._active_package_name = None
+            sp._registry.close_all()
+            sp._registry = old_registry
+
+    def test_spa_assets_served(self, test_db, tmp_path):
+        """Extracted SPA assets (app.js, style.css) should be served."""
+        canonical_db, overlay_db, paleocore_db = test_db
+        import scoda_package as sp
+        from scoda_package import PackageRegistry
+
+        pkg_dir = str(tmp_path / "spa_assets")
+        os.makedirs(pkg_dir, exist_ok=True)
+        scoda_path = os.path.join(pkg_dir, "trilobase.scoda")
+
+        spa_html = tmp_path / "spa_idx.html"
+        spa_html.write_text("<html></html>")
+        spa_js = tmp_path / "spa_app.js"
+        spa_js.write_text("// SPA JS")
+        spa_css = tmp_path / "spa_style.css"
+        spa_css.write_text("body { color: red; }")
+
+        extra_assets = {
+            "assets/spa/index.html": str(spa_html),
+            "assets/spa/app.js": str(spa_js),
+            "assets/spa/style.css": str(spa_css),
+        }
+        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
+        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
+                           extra_assets=extra_assets)
+
+        # Extract SPA
+        with ScodaPackage(scoda_path) as pkg:
+            pkg.extract_spa(output_dir=os.path.join(pkg_dir, "trilobase_spa"))
+
+        old_registry = sp._registry
+        sp._registry = PackageRegistry()
+        sp._registry.scan(pkg_dir)
+
+        try:
+            sp.set_active_package('trilobase')
+            app.config['TESTING'] = True
+            with app.test_client() as test_client:
+                response = test_client.get('/app.js')
+                assert response.status_code == 200
+                assert b'SPA JS' in response.data
+
+                response = test_client.get('/style.css')
+                assert response.status_code == 200
+                assert b'color: red' in response.data
+        finally:
+            sp._active_package_name = None
+            sp._registry.close_all()
+            sp._registry = old_registry
+
+    def test_api_routes_take_priority(self, test_db, tmp_path):
+        """API routes should work even when SPA is extracted."""
+        canonical_db, overlay_db, paleocore_db = test_db
+        import scoda_package as sp
+        from scoda_package import PackageRegistry
+
+        pkg_dir = str(tmp_path / "spa_api")
+        os.makedirs(pkg_dir, exist_ok=True)
+        scoda_path = os.path.join(pkg_dir, "trilobase.scoda")
+
+        spa_html = tmp_path / "spa_idx.html"
+        spa_html.write_text("<html></html>")
+
+        extra_assets = {"assets/spa/index.html": str(spa_html)}
+        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
+        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
+                           extra_assets=extra_assets)
+
+        with ScodaPackage(scoda_path) as pkg:
+            pkg.extract_spa(output_dir=os.path.join(pkg_dir, "trilobase_spa"))
+
+        old_registry = sp._registry
+        sp._registry = PackageRegistry()
+        sp._registry.scan(pkg_dir)
+
+        try:
+            sp.set_active_package('trilobase')
+            app.config['TESTING'] = True
+            with app.test_client() as test_client:
+                response = test_client.get('/api/manifest')
+                assert response.status_code == 200
+                data = json.loads(response.data)
+                assert 'manifest' in data
+        finally:
+            sp._active_package_name = None
+            sp._registry.close_all()
+            sp._registry = old_registry
+
+
+class TestGenericViewerFallback:
+    """Tests for generic viewer graceful handling of unknown section types."""
+
+    def test_index_serves_html(self, client):
+        """Generic viewer should serve valid HTML."""
+        response = client.get('/')
+        assert response.status_code == 200
+        html = response.data.decode()
+        assert '<html' in html
+        assert 'SCODA Desktop' in html
+
+    def test_spa_404_for_nonexistent_files(self, client):
+        """Requests for non-existent SPA files should return 404."""
+        response = client.get('/nonexistent.js')
+        assert response.status_code == 404

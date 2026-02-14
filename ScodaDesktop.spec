@@ -23,6 +23,7 @@ a = Analysis(
         ('scoda_package.py', '.'),
         ('templates', 'templates'),
         ('static', 'static'),
+        ('spa', 'spa'),
     ],
     hiddenimports=[
         'flask',
