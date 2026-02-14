@@ -15,10 +15,7 @@ import sys
 import time
 import subprocess
 
-try:
-    from . import scoda_package
-except ImportError:
-    import scoda_package
+from . import scoda_package
 
 
 class LogRedirector:
@@ -393,10 +390,7 @@ class ScodaDesktopGUI:
         scoda_package.set_active_package(self.selected_package)
 
         # Import Flask app
-        try:
-            from .app import app
-        except ImportError:
-            from app import app
+        from .app import app
         self.flask_app = app
 
         # Redirect stdout/stderr to GUI
@@ -445,10 +439,7 @@ class ScodaDesktopGUI:
         """Start MCP server in thread (for frozen/PyInstaller mode)."""
         self._append_log("Starting MCP server (threaded mode)...", "INFO")
 
-        try:
-            from . import mcp_server
-        except ImportError:
-            import mcp_server
+        from . import mcp_server
 
         def run_mcp():
             try:

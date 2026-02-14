@@ -14,10 +14,7 @@ from starlette.routing import Route
 from starlette.responses import Response
 import uvicorn
 
-try:
-    from .scoda_package import get_db, ensure_overlay_db, get_mcp_tools
-except ImportError:
-    from scoda_package import get_db, ensure_overlay_db, get_mcp_tools
+from .scoda_package import get_db, ensure_overlay_db, get_mcp_tools
 
 def row_to_dict(row):
     return dict(row)
