@@ -475,6 +475,18 @@
   - 테스트: 196개 통과
   - devlog: `devlog/20260214_057_phase46_step3_legacy_removal.md`
 
+- **2026-02-14 Reference SPA 브랜딩 변경 + 글로벌 검색**
+  - 브랜딩: SCODA Desktop → Trilobase (타이틀, navbar 아이콘 `bi-bug`, 부제 "A SCODA Package")
+  - 글로벌 검색: 탭 바 오른쪽에 검색 input (Ctrl+K 단축키)
+    - 6개 카테고리: Genera, Taxonomy, Formations, Countries, Bibliography, Chronostratigraphy
+    - 기존 named query 재활용, 백엔드 변경 없음
+    - 클라이언트 사이드: multi-term AND 매칭, prefix 우선 정렬, 카테고리별 결과 제한 + "+N more"
+    - 키보드 네비게이션: ArrowUp/Down, Enter, Escape
+  - 공유 쿼리 캐시: `queryCache` + `fetchQuery()` 도입
+    - 검색 인덱스와 탭 뷰가 동일 데이터 공유 (중복 fetch 제거)
+    - 탭 전환 시 네트워크 요청 없이 캐시에서 즉시 렌더링
+  - devlog: `devlog/20260214_059_spa_branding_global_search.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
