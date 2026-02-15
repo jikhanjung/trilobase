@@ -49,18 +49,26 @@ COLUMNS_TO_DROP = {
 CREATE_TABLE_SQL = {
     'countries': """
         CREATE TABLE countries (
-            id   INTEGER PRIMARY KEY,
-            name TEXT UNIQUE NOT NULL,
-            code TEXT
+            id              INTEGER PRIMARY KEY,
+            name            TEXT UNIQUE NOT NULL,
+            code            TEXT,
+            uid             TEXT,
+            uid_method      TEXT,
+            uid_confidence  TEXT,
+            same_as_uid     TEXT
         )
     """,
     'geographic_regions': """
         CREATE TABLE geographic_regions (
-            id        INTEGER PRIMARY KEY,
-            name      TEXT NOT NULL,
-            level     TEXT NOT NULL,
-            parent_id INTEGER,
-            cow_ccode INTEGER,
+            id              INTEGER PRIMARY KEY,
+            name            TEXT NOT NULL,
+            level           TEXT NOT NULL,
+            parent_id       INTEGER,
+            cow_ccode       INTEGER,
+            uid             TEXT,
+            uid_method      TEXT,
+            uid_confidence  TEXT,
+            same_as_uid     TEXT,
             FOREIGN KEY (parent_id) REFERENCES geographic_regions(id)
         )
     """,
@@ -98,13 +106,17 @@ CREATE_TABLE_SQL = {
     """,
     'temporal_ranges': """
         CREATE TABLE temporal_ranges (
-            id        INTEGER PRIMARY KEY,
-            code      TEXT UNIQUE NOT NULL,
-            name      TEXT,
-            period    TEXT,
-            epoch     TEXT,
-            start_mya REAL,
-            end_mya   REAL
+            id              INTEGER PRIMARY KEY,
+            code            TEXT UNIQUE NOT NULL,
+            name            TEXT,
+            period          TEXT,
+            epoch           TEXT,
+            start_mya       REAL,
+            end_mya         REAL,
+            uid             TEXT,
+            uid_method      TEXT,
+            uid_confidence  TEXT,
+            same_as_uid     TEXT
         )
     """,
     'ics_chronostrat': """
@@ -122,6 +134,10 @@ CREATE_TABLE_SQL = {
             color             TEXT,
             display_order     INTEGER,
             ratified_gssp     INTEGER DEFAULT 0,
+            uid               TEXT,
+            uid_method        TEXT,
+            uid_confidence    TEXT,
+            same_as_uid       TEXT,
             FOREIGN KEY (parent_id) REFERENCES ics_chronostrat(id)
         )
     """,

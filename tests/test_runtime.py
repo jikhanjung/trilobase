@@ -1753,3 +1753,178 @@ class TestDynamicMcpTools:
             scoda_package._canonical_db = old_canonical
             pkg.close()
 
+
+# --- UID Schema (Phase A) ---
+
+class TestUIDSchema:
+    """Tests for SCODA Stable UID columns and values."""
+
+    def test_taxonomic_ranks_uid_columns_exist(self, test_db):
+        """taxonomic_ranks should have uid, uid_method, uid_confidence, same_as_uid columns."""
+        canonical_db_path, _, _ = test_db
+        conn = sqlite3.connect(canonical_db_path)
+        cols = [r[1] for r in conn.execute("PRAGMA table_info(taxonomic_ranks)").fetchall()]
+        conn.close()
+        for col in ['uid', 'uid_method', 'uid_confidence', 'same_as_uid']:
+            assert col in cols, f"Missing column: {col}"
+
+    def test_paleocore_uid_columns_exist(self, test_db):
+        """PaleoCore tables should have uid columns."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        for table in ['countries', 'geographic_regions', 'ics_chronostrat', 'temporal_ranges']:
+            cols = [r[1] for r in conn.execute(f"PRAGMA table_info({table})").fetchall()]
+            for col in ['uid', 'uid_method', 'uid_confidence', 'same_as_uid']:
+                assert col in cols, f"{table} missing column: {col}"
+        conn.close()
+
+    def test_uid_unique_constraint_taxonomic_ranks(self, test_db):
+        """taxonomic_ranks.uid should have UNIQUE constraint."""
+        canonical_db_path, _, _ = test_db
+        conn = sqlite3.connect(canonical_db_path)
+        indexes = conn.execute(
+            "SELECT sql FROM sqlite_master WHERE type='index' AND tbl_name='taxonomic_ranks' AND name LIKE '%uid%'"
+        ).fetchall()
+        conn.close()
+        uid_index_sqls = [r[0] for r in indexes if r[0]]
+        assert any('UNIQUE' in sql for sql in uid_index_sqls), "No UNIQUE index on taxonomic_ranks.uid"
+
+    def test_uid_unique_constraint_paleocore(self, test_db):
+        """PaleoCore uid columns should have UNIQUE constraints."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        for table in ['countries', 'geographic_regions', 'ics_chronostrat', 'temporal_ranges']:
+            indexes = conn.execute(
+                f"SELECT sql FROM sqlite_master WHERE type='index' AND tbl_name='{table}' AND name LIKE '%uid%'"
+            ).fetchall()
+            uid_index_sqls = [r[0] for r in indexes if r[0]]
+            assert any('UNIQUE' in sql for sql in uid_index_sqls), \
+                f"No UNIQUE index on {table}.uid"
+        conn.close()
+
+    def test_uid_format_scoda_prefix(self, test_db):
+        """All UIDs should start with 'scoda:' prefix."""
+        canonical_db_path, _, pc_path = test_db
+        # Check taxonomic_ranks
+        conn = sqlite3.connect(canonical_db_path)
+        uids = conn.execute(
+            "SELECT uid FROM taxonomic_ranks WHERE uid IS NOT NULL"
+        ).fetchall()
+        conn.close()
+        for (uid,) in uids:
+            assert uid.startswith('scoda:'), f"Bad UID prefix: {uid}"
+
+        # Check PaleoCore tables
+        conn = sqlite3.connect(pc_path)
+        for table in ['countries', 'geographic_regions', 'ics_chronostrat', 'temporal_ranges']:
+            uids = conn.execute(
+                f"SELECT uid FROM {table} WHERE uid IS NOT NULL"
+            ).fetchall()
+            for (uid,) in uids:
+                assert uid.startswith('scoda:'), f"Bad UID prefix in {table}: {uid}"
+        conn.close()
+
+    def test_uid_format_taxonomic_ranks(self, test_db):
+        """taxonomic_ranks UIDs should follow scoda:taxon:<rank>:<name> format."""
+        canonical_db_path, _, _ = test_db
+        conn = sqlite3.connect(canonical_db_path)
+        rows = conn.execute(
+            "SELECT name, rank, uid FROM taxonomic_ranks WHERE uid IS NOT NULL"
+        ).fetchall()
+        conn.close()
+        for name, rank, uid in rows:
+            assert uid.startswith(f"scoda:taxon:{rank.lower()}:{name}"), \
+                f"Bad UID format: {uid} for {rank} {name}"
+
+    def test_uid_format_ics_chronostrat(self, test_db):
+        """ics_chronostrat UIDs should follow scoda:strat:ics:uri:<uri> format."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        rows = conn.execute(
+            "SELECT ics_uri, uid FROM ics_chronostrat WHERE uid IS NOT NULL"
+        ).fetchall()
+        conn.close()
+        for ics_uri, uid in rows:
+            assert uid == f"scoda:strat:ics:uri:{ics_uri}", \
+                f"Bad UID: {uid} for {ics_uri}"
+
+    def test_uid_format_temporal_ranges(self, test_db):
+        """temporal_ranges UIDs should follow scoda:strat:temporal:code:<code> format."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        rows = conn.execute(
+            "SELECT code, uid FROM temporal_ranges WHERE uid IS NOT NULL"
+        ).fetchall()
+        conn.close()
+        for code, uid in rows:
+            assert uid == f"scoda:strat:temporal:code:{code}", \
+                f"Bad UID: {uid} for {code}"
+
+    def test_uid_format_countries(self, test_db):
+        """countries UIDs should be iso3166-1 or fp_v1 format."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        rows = conn.execute(
+            "SELECT uid, uid_method FROM countries WHERE uid IS NOT NULL"
+        ).fetchall()
+        conn.close()
+        for uid, method in rows:
+            if method == 'iso3166-1':
+                assert uid.startswith('scoda:geo:country:iso3166-1:'), f"Bad ISO UID: {uid}"
+            elif method == 'fp_v1':
+                assert uid.startswith('scoda:geo:country:fp_v1:sha256:'), f"Bad FP UID: {uid}"
+
+    def test_uid_format_geographic_regions(self, test_db):
+        """geographic_regions UIDs should match expected patterns."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        rows = conn.execute(
+            "SELECT uid, uid_method, level FROM geographic_regions WHERE uid IS NOT NULL"
+        ).fetchall()
+        conn.close()
+        for uid, method, level in rows:
+            if level == 'country':
+                assert uid.startswith('scoda:geo:country:'), f"Bad country UID: {uid}"
+            elif level == 'region':
+                assert uid.startswith('scoda:geo:region:'), f"Bad region UID: {uid}"
+
+    def test_uid_no_nulls_phase_a(self, test_db):
+        """Phase A should have zero NULL UIDs in all covered tables."""
+        canonical_db_path, _, pc_path = test_db
+        # Check taxonomic_ranks
+        conn = sqlite3.connect(canonical_db_path)
+        null_count = conn.execute(
+            "SELECT COUNT(*) FROM taxonomic_ranks WHERE uid IS NULL"
+        ).fetchone()[0]
+        conn.close()
+        assert null_count == 0, f"taxonomic_ranks has {null_count} NULL UIDs"
+
+        # Check PaleoCore tables
+        conn = sqlite3.connect(pc_path)
+        for table in ['countries', 'geographic_regions', 'ics_chronostrat', 'temporal_ranges']:
+            null_count = conn.execute(
+                f"SELECT COUNT(*) FROM {table} WHERE uid IS NULL"
+            ).fetchone()[0]
+            assert null_count == 0, f"{table} has {null_count} NULL UIDs"
+        conn.close()
+
+    def test_uid_confidence_values(self, test_db):
+        """uid_confidence should only contain valid values."""
+        canonical_db_path, _, pc_path = test_db
+        valid = {'high', 'medium', 'low'}
+        conn = sqlite3.connect(canonical_db_path)
+        values = conn.execute(
+            "SELECT DISTINCT uid_confidence FROM taxonomic_ranks WHERE uid_confidence IS NOT NULL"
+        ).fetchall()
+        conn.close()
+        for (val,) in values:
+            assert val in valid, f"Invalid confidence: {val}"
+
+        conn = sqlite3.connect(pc_path)
+        for table in ['countries', 'geographic_regions', 'ics_chronostrat', 'temporal_ranges']:
+            values = conn.execute(
+                f"SELECT DISTINCT uid_confidence FROM {table} WHERE uid_confidence IS NOT NULL"
+            ).fetchall()
+            for (val,) in values:
+                assert val in valid, f"Invalid confidence in {table}: {val}"
+        conn.close()

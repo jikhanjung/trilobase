@@ -53,8 +53,13 @@ def test_db(tmp_path):
             is_valid INTEGER DEFAULT 1,
             raw_entry TEXT,
             family TEXT,
+            uid TEXT,
+            uid_method TEXT,
+            uid_confidence TEXT,
+            same_as_uid TEXT,
             FOREIGN KEY (parent_id) REFERENCES taxonomic_ranks(id)
         );
+        CREATE UNIQUE INDEX idx_taxonomic_ranks_uid ON taxonomic_ranks(uid);
 
         CREATE TABLE synonyms (
             id INTEGER PRIMARY KEY,
@@ -140,50 +145,58 @@ def test_db(tmp_path):
     # Insert sample data: Class -> Order -> Family -> Genus hierarchy
     cursor.executescript("""
         -- Class
-        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count)
-        VALUES (1, 'Trilobita', 'Class', NULL, 'WALCH, 1771', 5113);
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count, uid, uid_method, uid_confidence)
+        VALUES (1, 'Trilobita', 'Class', NULL, 'WALCH, 1771', 5113, 'scoda:taxon:class:Trilobita', 'name', 'high');
 
         -- Orders
-        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count)
-        VALUES (2, 'Phacopida', 'Order', 1, 'SALTER, 1864', 500);
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count, uid, uid_method, uid_confidence)
+        VALUES (2, 'Phacopida', 'Order', 1, 'SALTER, 1864', 500, 'scoda:taxon:order:Phacopida', 'name', 'high');
 
-        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count)
-        VALUES (3, 'Ptychopariida', 'Order', 1, 'SWINNERTON, 1915', 1200);
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count, uid, uid_method, uid_confidence)
+        VALUES (3, 'Ptychopariida', 'Order', 1, 'SWINNERTON, 1915', 1200, 'scoda:taxon:order:Ptychopariida', 'name', 'high');
 
         -- Family under Phacopida
-        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count)
-        VALUES (10, 'Phacopidae', 'Family', 2, 'HAWLE & CORDA, 1847', 30);
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count, uid, uid_method, uid_confidence)
+        VALUES (10, 'Phacopidae', 'Family', 2, 'HAWLE & CORDA, 1847', 30, 'scoda:taxon:family:Phacopidae', 'name', 'high');
 
         -- Family under Ptychopariida
-        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count)
-        VALUES (11, 'Olenidae', 'Family', 3, 'BURMEISTER, 1843', 50);
+        INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, genera_count, uid, uid_method, uid_confidence)
+        VALUES (11, 'Olenidae', 'Family', 3, 'BURMEISTER, 1843', 50, 'scoda:taxon:family:Olenidae', 'name', 'high');
 
         -- Genera under Phacopidae
         INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, year, type_species,
-            type_species_author, formation, location, temporal_code, is_valid, raw_entry, family)
+            type_species_author, formation, location, temporal_code, is_valid, raw_entry, family,
+            uid, uid_method, uid_confidence)
         VALUES (100, 'Phacops', 'Genus', 10, 'EMMRICH', '1839', NULL,
             'Calymene macrophthalma BRONGNIART, 1822', 'Various', 'Worldwide',
-            'LDEV-UDEV', 1, 'Phacops EMMRICH, 1839. ...', 'Phacopidae');
+            'LDEV-UDEV', 1, 'Phacops EMMRICH, 1839. ...', 'Phacopidae',
+            'scoda:taxon:genus:Phacops', 'name', 'high');
 
         INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, year, type_species,
-            type_species_author, formation, location, temporal_code, is_valid, raw_entry, family)
+            type_species_author, formation, location, temporal_code, is_valid, raw_entry, family,
+            uid, uid_method, uid_confidence)
         VALUES (101, 'Acuticryphops', 'Genus', 10, 'RICHTER & RICHTER', '1926', NULL,
             'Phacops acuticeps KAYSER, 1889', 'Büdesheimer Sh', 'Germany',
-            'UDEV', 1, 'Acuticryphops RICHTER & RICHTER, 1926. ...', 'Phacopidae');
+            'UDEV', 1, 'Acuticryphops RICHTER & RICHTER, 1926. ...', 'Phacopidae',
+            'scoda:taxon:genus:Acuticryphops', 'name', 'high');
 
         -- An invalid genus (synonym)
         INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, year, type_species,
-            type_species_author, formation, location, temporal_code, is_valid, raw_entry, family)
+            type_species_author, formation, location, temporal_code, is_valid, raw_entry, family,
+            uid, uid_method, uid_confidence)
         VALUES (102, 'Cryphops', 'Genus', 10, 'RICHTER', '1856', NULL,
             NULL, NULL, 'Germany', 'UDEV', 0,
-            'Cryphops RICHTER, 1856 [j.s.s. of Acuticryphops]', 'Phacopidae');
+            'Cryphops RICHTER, 1856 [j.s.s. of Acuticryphops]', 'Phacopidae',
+            'scoda:taxon:genus:Cryphops', 'name', 'high');
 
         -- Genus under Olenidae
         INSERT INTO taxonomic_ranks (id, name, rank, parent_id, author, year, type_species,
-            type_species_author, formation, location, temporal_code, is_valid, raw_entry, family)
+            type_species_author, formation, location, temporal_code, is_valid, raw_entry, family,
+            uid, uid_method, uid_confidence)
         VALUES (200, 'Olenus', 'Genus', 11, 'DALMAN', '1827', NULL,
             'Entomostracites gibbosus WAHLENBERG, 1818', 'Alum Sh', 'Sweden',
-            'UCAM', 1, 'Olenus DALMAN, 1827. ...', 'Olenidae');
+            'UCAM', 1, 'Olenus DALMAN, 1827. ...', 'Olenidae',
+            'scoda:taxon:genus:Olenus', 'name', 'high');
     """)
 
     # Synonyms
@@ -746,8 +759,13 @@ def test_db(tmp_path):
             id INTEGER PRIMARY KEY,
             name TEXT UNIQUE NOT NULL,
             code TEXT,
-            taxa_count INTEGER DEFAULT 0
+            taxa_count INTEGER DEFAULT 0,
+            uid TEXT,
+            uid_method TEXT,
+            uid_confidence TEXT,
+            same_as_uid TEXT
         );
+        CREATE UNIQUE INDEX idx_countries_uid ON countries(uid);
 
         CREATE TABLE geographic_regions (
             id INTEGER PRIMARY KEY,
@@ -756,8 +774,13 @@ def test_db(tmp_path):
             parent_id INTEGER,
             cow_ccode INTEGER,
             taxa_count INTEGER DEFAULT 0,
+            uid TEXT,
+            uid_method TEXT,
+            uid_confidence TEXT,
+            same_as_uid TEXT,
             FOREIGN KEY (parent_id) REFERENCES geographic_regions(id)
         );
+        CREATE UNIQUE INDEX idx_geographic_regions_uid ON geographic_regions(uid);
 
         CREATE TABLE formations (
             id INTEGER PRIMARY KEY,
@@ -769,6 +792,21 @@ def test_db(tmp_path):
             period TEXT,
             taxa_count INTEGER DEFAULT 0
         );
+
+        CREATE TABLE temporal_ranges (
+            id INTEGER PRIMARY KEY,
+            code TEXT UNIQUE NOT NULL,
+            name TEXT,
+            period TEXT,
+            epoch TEXT,
+            start_mya REAL,
+            end_mya REAL,
+            uid TEXT,
+            uid_method TEXT,
+            uid_confidence TEXT,
+            same_as_uid TEXT
+        );
+        CREATE UNIQUE INDEX idx_temporal_ranges_uid ON temporal_ranges(uid);
 
         CREATE TABLE ics_chronostrat (
             id INTEGER PRIMARY KEY,
@@ -784,8 +822,13 @@ def test_db(tmp_path):
             color TEXT,
             display_order INTEGER,
             ratified_gssp INTEGER DEFAULT 0,
+            uid TEXT,
+            uid_method TEXT,
+            uid_confidence TEXT,
+            same_as_uid TEXT,
             FOREIGN KEY (parent_id) REFERENCES ics_chronostrat(id)
         );
+        CREATE UNIQUE INDEX idx_ics_chronostrat_uid ON ics_chronostrat(uid);
         CREATE INDEX idx_pc_ics_chrono_parent ON ics_chronostrat(parent_id);
         CREATE INDEX idx_pc_ics_chrono_rank ON ics_chronostrat(rank);
 
@@ -803,35 +846,42 @@ def test_db(tmp_path):
 
     # Populate PaleoCore tables with same data as canonical
     pc_cursor.executescript("""
-        INSERT INTO countries (id, name, code, taxa_count) VALUES (1, 'Germany', 'DE', 150);
-        INSERT INTO countries (id, name, code, taxa_count) VALUES (2, 'Sweden', 'SE', 80);
+        INSERT INTO countries (id, name, code, taxa_count, uid, uid_method, uid_confidence)
+        VALUES (1, 'Germany', 'DE', 150, 'scoda:geo:country:iso3166-1:DE', 'iso3166-1', 'high');
+        INSERT INTO countries (id, name, code, taxa_count, uid, uid_method, uid_confidence)
+        VALUES (2, 'Sweden', 'SE', 80, 'scoda:geo:country:iso3166-1:SE', 'iso3166-1', 'high');
 
-        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
-        VALUES (1, 'Germany', 'country', NULL, 255, 150);
-        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
-        VALUES (2, 'Sweden', 'country', NULL, 380, 80);
-        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
-        VALUES (3, 'Eifel', 'region', 1, NULL, 5);
-        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count)
-        VALUES (4, 'Scania', 'region', 2, NULL, 20);
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count, uid, uid_method, uid_confidence)
+        VALUES (1, 'Germany', 'country', NULL, 255, 150, 'scoda:geo:country:iso3166-1:DE', 'iso3166-1', 'high');
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count, uid, uid_method, uid_confidence)
+        VALUES (2, 'Sweden', 'country', NULL, 380, 80, 'scoda:geo:country:iso3166-1:SE', 'iso3166-1', 'high');
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count, uid, uid_method, uid_confidence)
+        VALUES (3, 'Eifel', 'region', 1, NULL, 5, 'scoda:geo:region:name:DE:eifel', 'name', 'high');
+        INSERT INTO geographic_regions (id, name, level, parent_id, cow_ccode, taxa_count, uid, uid_method, uid_confidence)
+        VALUES (4, 'Scania', 'region', 2, NULL, 20, 'scoda:geo:region:name:SE:scania', 'name', 'high');
+
+        INSERT INTO temporal_ranges (id, code, name, period, epoch, start_mya, end_mya, uid, uid_method, uid_confidence)
+        VALUES (1, 'UCAM', 'Upper Cambrian', 'Cambrian', 'Upper', 497.0, 486.85, 'scoda:strat:temporal:code:UCAM', 'code', 'high');
+        INSERT INTO temporal_ranges (id, code, name, period, epoch, start_mya, end_mya, uid, uid_method, uid_confidence)
+        VALUES (2, 'LDEV', 'Lower Devonian', 'Devonian', 'Lower', 419.2, 393.3, 'scoda:strat:temporal:code:LDEV', 'code', 'high');
 
         INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count)
         VALUES (1, 'Büdesheimer Sh', 'budesheimer sh', 'Sh', 'Germany', 'Devonian', 5);
         INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count)
         VALUES (2, 'Alum Sh', 'alum sh', 'Sh', 'Sweden', 'Cambrian', 20);
 
-        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-        VALUES (1, 'http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic', 'Phanerozoic', 'Eon', NULL, 538.8, 0.6, 0.0, NULL, NULL, '#9AD9DD', 170, 1);
-        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-        VALUES (2, 'http://resource.geosciml.org/classifier/ics/ischart/Paleozoic', 'Paleozoic', 'Era', 1, 538.8, 0.6, 251.9, 0.024, NULL, '#99C08D', 169, 1);
-        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-        VALUES (3, 'http://resource.geosciml.org/classifier/ics/ischart/Cambrian', 'Cambrian', 'Period', 2, 538.8, 0.6, 486.85, 1.5, 'Ep', '#7FA056', 154, 1);
-        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-        VALUES (4, 'http://resource.geosciml.org/classifier/ics/ischart/Miaolingian', 'Miaolingian', 'Epoch', 3, 506.5, NULL, 497.0, NULL, 'Ep3', '#A6CF86', 148, 0);
-        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-        VALUES (5, 'http://resource.geosciml.org/classifier/ics/ischart/Wuliuan', 'Wuliuan', 'Age', 4, 506.5, NULL, 504.5, NULL, NULL, '#B6D88B', 147, 1);
-        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp)
-        VALUES (6, 'http://resource.geosciml.org/classifier/ics/ischart/Furongian', 'Furongian', 'Epoch', 3, 497.0, NULL, 486.85, 1.5, 'Ep4', '#B3E095', 144, 1);
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp, uid, uid_method, uid_confidence)
+        VALUES (1, 'http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic', 'Phanerozoic', 'Eon', NULL, 538.8, 0.6, 0.0, NULL, NULL, '#9AD9DD', 170, 1, 'scoda:strat:ics:uri:http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic', 'ics_uri', 'high');
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp, uid, uid_method, uid_confidence)
+        VALUES (2, 'http://resource.geosciml.org/classifier/ics/ischart/Paleozoic', 'Paleozoic', 'Era', 1, 538.8, 0.6, 251.9, 0.024, NULL, '#99C08D', 169, 1, 'scoda:strat:ics:uri:http://resource.geosciml.org/classifier/ics/ischart/Paleozoic', 'ics_uri', 'high');
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp, uid, uid_method, uid_confidence)
+        VALUES (3, 'http://resource.geosciml.org/classifier/ics/ischart/Cambrian', 'Cambrian', 'Period', 2, 538.8, 0.6, 486.85, 1.5, 'Ep', '#7FA056', 154, 1, 'scoda:strat:ics:uri:http://resource.geosciml.org/classifier/ics/ischart/Cambrian', 'ics_uri', 'high');
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp, uid, uid_method, uid_confidence)
+        VALUES (4, 'http://resource.geosciml.org/classifier/ics/ischart/Miaolingian', 'Miaolingian', 'Epoch', 3, 506.5, NULL, 497.0, NULL, 'Ep3', '#A6CF86', 148, 0, 'scoda:strat:ics:uri:http://resource.geosciml.org/classifier/ics/ischart/Miaolingian', 'ics_uri', 'high');
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp, uid, uid_method, uid_confidence)
+        VALUES (5, 'http://resource.geosciml.org/classifier/ics/ischart/Wuliuan', 'Wuliuan', 'Age', 4, 506.5, NULL, 504.5, NULL, NULL, '#B6D88B', 147, 1, 'scoda:strat:ics:uri:http://resource.geosciml.org/classifier/ics/ischart/Wuliuan', 'ics_uri', 'high');
+        INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp, uid, uid_method, uid_confidence)
+        VALUES (6, 'http://resource.geosciml.org/classifier/ics/ischart/Furongian', 'Furongian', 'Epoch', 3, 497.0, NULL, 486.85, 1.5, 'Ep4', '#B3E095', 144, 1, 'scoda:strat:ics:uri:http://resource.geosciml.org/classifier/ics/ischart/Furongian', 'ics_uri', 'high');
 
         INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (1, 'MCAM', 4, 'exact');
         INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (2, 'UCAM', 6, 'exact');
