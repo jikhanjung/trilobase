@@ -511,6 +511,14 @@
   - 테스트: TestUIDSchema 11개 추가 → 208개 전부 통과
   - devlog: `devlog/20260215_060_uid_population_phase_a.md`
 
+- **UID Population Phase B 완료**: 품질 수정 + same_as_uid 연결
+  - countries primary 교정: Sumatra(ID)→Indonesia, NW Korea(KP)→North Korea
+  - geographic_regions 4건 UID 불일치 해소 (countries 테이블과 100% 동기화)
+  - Alborz Mts → Alborz Mtns same_as_uid 연결
+  - 스크립트: `scripts/populate_uids_phase_b.py`
+  - 테스트: TestUIDPhaseB 4개 추가 → 212개 전부 통과
+  - devlog: `devlog/20260215_061_uid_population_phase_b.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -656,11 +664,11 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_runtime.py` | 146개 | ✅ 통과 |
+| `tests/test_runtime.py` | 150개 | ✅ 통과 |
 | `tests/test_trilobase.py` | 51개 | ✅ 통과 |
 | `tests/test_mcp.py` | 7개 | ✅ 통과 |
 | `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
-| **합계** | **208개** | **✅ 전부 통과** |
+| **합계** | **212개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -676,8 +684,7 @@ pytest tests/
 
 ## 다음 작업
 
-UID Population Phase A 완료. 다음 단계:
-- **Phase B** (P43): geographic_regions 복합 UID + countries fallback 5건 (`devlog/20260215_P43_uid_population_phase_b.md`)
+UID Population Phase A/B 완료. 다음 단계:
 - **Phase C** (P44): bibliography DOI/fp + formations lexicon/fp (`devlog/20260215_P44_uid_population_phase_c.md`)
 
 ## 미해결 항목
