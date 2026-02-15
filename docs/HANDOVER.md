@@ -519,6 +519,15 @@
   - 테스트: TestUIDPhaseB 4개 추가 → 212개 전부 통과
   - devlog: `devlog/20260215_061_uid_population_phase_b.md`
 
+- **UID Population Phase C 완료**: Bibliography + Formations fp_v1 UID
+  - bibliography: 2,130건 fp_v1 fingerprint (medium 2,115 + low 15 cross_ref)
+  - formations: 2,004건 fp_v1 fingerprint (medium 1,370 + low 634)
+  - 전체 7개 테이블 10,384건 100% UID 커버리지 달성
+  - 선택적 API 업그레이드: --crossref (DOI), --macrostrat (lexicon ID)
+  - 스크립트: `scripts/populate_uids_phase_c.py`
+  - 테스트: TestUIDPhaseC 10개 추가 → 222개 전부 통과
+  - devlog: `devlog/20260215_062_uid_population_phase_c.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -664,11 +673,11 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_runtime.py` | 150개 | ✅ 통과 |
+| `tests/test_runtime.py` | 160개 | ✅ 통과 |
 | `tests/test_trilobase.py` | 51개 | ✅ 통과 |
 | `tests/test_mcp.py` | 7개 | ✅ 통과 |
 | `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
-| **합계** | **212개** | **✅ 전부 통과** |
+| **합계** | **222개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -684,8 +693,9 @@ pytest tests/
 
 ## 다음 작업
 
-UID Population Phase A/B 완료. 다음 단계:
-- **Phase C** (P44): bibliography DOI/fp + formations lexicon/fp (`devlog/20260215_P44_uid_population_phase_c.md`)
+UID Population Phase A/B/C 완료 — 전체 7개 테이블 10,384건 100% UID 커버리지 달성.
+- 선택적: CrossRef DOI 업그레이드 (`--crossref --email`), Macrostrat lexicon 업그레이드 (`--macrostrat`)
+- **향후 로드맵** (P45): Flask→FastAPI 전환, Taxonomic Opinions, SCODA 백오피스 (`devlog/20260215_P45_future_roadmap.md`)
 
 ## 미해결 항목
 
