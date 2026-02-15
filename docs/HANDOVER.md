@@ -742,9 +742,7 @@ pytest tests/
 
 ## 다음 작업
 
-MCP+Web API 단일 프로세스 통합 완료 (포트 8080 하나로).
-- **후속 과제**: aiosqlite
-- 선택적: CrossRef DOI 업그레이드 (`--crossref --email`), Macrostrat lexicon 업그레이드 (`--macrostrat`)
+MCP+Web API 단일 프로세스 통합, Pydantic response_model 완료.
 - **향후 로드맵** (P45): Taxonomic Opinions, SCODA 백오피스 (`devlog/20260215_P45_future_roadmap.md`)
 
 ## 미해결 항목
