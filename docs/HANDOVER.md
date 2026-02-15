@@ -536,6 +536,14 @@
   - 스크립트: `scripts/populate_formation_metadata.py` (`--dry-run`, `--report` 지원)
   - devlog: `devlog/20260215_064_formation_metadata_backfill.md`
 
+- **Formation Detail 링크 추가 (Country, Period→ICS)**
+  - `formation_detail` SQL에 `geographic_regions`/`temporal_ranges` JOIN 추가 → `country_id`, `temporal_code` 반환
+  - Country 필드: `format: "link"` → `country_detail` 모달로 이동
+  - Period 필드: `format: "temporal_range"` → temporal_code + ICS chronostrat 링크 표시
+  - `temporal_ics_mapping` sub_query 추가 (기존 `genus_ics_mapping` 재사용)
+  - SPA 코드 변경 없음 — DB 쿼리 + manifest 변경만으로 구현
+  - devlog: `devlog/20260215_065_formation_detail_links.md`
+
 - **Flask → FastAPI 마이그레이션 완료**
   - Flask(WSGI) + asgiref WsgiToAsgi 이중 스택 → FastAPI 단일 ASGI 스택 전환
   - `app.py`: 12개 라우트 FastAPI 변환, CORSMiddleware, Pydantic POST 모델, Jinja2Templates
