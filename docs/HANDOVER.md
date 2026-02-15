@@ -528,6 +528,14 @@
   - 테스트: TestUIDPhaseC 10개 추가 → 222개 전부 통과
   - devlog: `devlog/20260215_062_uid_population_phase_c.md`
 
+- **Formation Country/Period 데이터 채우기**
+  - `paleocore.db` formations 2,004건 중 country 1,997건(99.65%), period 1,976건(98.6%) 채움
+  - `genus_formations` → `genus_locations.region_id` → `geographic_regions` 역추출
+  - 최다 빈도 country/period 선택 (다수 국가 40건, 다수 시대 173건)
+  - 7건 country NULL (genus_locations 미연결), 28건 period NULL (temporal_code 없음)
+  - 스크립트: `scripts/populate_formation_metadata.py` (`--dry-run`, `--report` 지원)
+  - devlog: `devlog/20260215_064_formation_metadata_backfill.md`
+
 - **Flask → FastAPI 마이그레이션 완료**
   - Flask(WSGI) + asgiref WsgiToAsgi 이중 스택 → FastAPI 단일 ASGI 스택 전환
   - `app.py`: 12개 라우트 FastAPI 변환, CORSMiddleware, Pydantic POST 모델, Jinja2Templates
