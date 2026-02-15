@@ -568,6 +568,15 @@
   - 계획 문서: `devlog/20260215_P48_mcp_web_api_merge.md`
   - devlog: `devlog/20260215_066_mcp_web_api_merge.md`
 
+- **Pydantic response_model 추가**
+  - FastAPI 엔드포인트에 Pydantic response_model 10개 추가
+  - 고정 구조 엔드포인트 5개: response_model 직접 지정 (provenance, display-intent, queries, manifest, annotations GET)
+  - 동적/에러 엔드포인트: responses 문서로 ErrorResponse 스키마 노출
+  - `/docs` (Swagger UI), `/openapi.json`에 응답 스키마 자동 표시
+  - 테스트: 229개 전부 통과 (기존 228 + 신규 1)
+  - 계획 문서: `devlog/20260215_P49_pydantic_response_model.md`
+  - devlog: `devlog/20260215_067_pydantic_response_model.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -713,11 +722,11 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_runtime.py` | 107개 | ✅ 통과 |
+| `tests/test_runtime.py` | 108개 | ✅ 통과 |
 | `tests/test_trilobase.py` | 108개 | ✅ 통과 |
 | `tests/test_mcp.py` | 12개 | ✅ 통과 |
 | `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
-| **합계** | **228개** | **✅ 전부 통과** |
+| **합계** | **229개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -734,7 +743,7 @@ pytest tests/
 ## 다음 작업
 
 MCP+Web API 단일 프로세스 통합 완료 (포트 8080 하나로).
-- **후속 과제**: Pydantic response_model, aiosqlite
+- **후속 과제**: aiosqlite
 - 선택적: CrossRef DOI 업그레이드 (`--crossref --email`), Macrostrat lexicon 업그레이드 (`--macrostrat`)
 - **향후 로드맵** (P45): Taxonomic Opinions, SCODA 백오피스 (`devlog/20260215_P45_future_roadmap.md`)
 
