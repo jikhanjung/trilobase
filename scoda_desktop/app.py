@@ -8,7 +8,7 @@ from fastapi.responses import JSONResponse, HTMLResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
-from typing import Optional
+from typing import Any, Optional
 import json
 import os
 import sqlite3
@@ -28,6 +28,70 @@ templates = Jinja2Templates(directory=os.path.join(os.path.dirname(__file__), "t
 
 VALID_ENTITY_TYPES = {'genus', 'family', 'order', 'suborder', 'superfamily', 'class'}
 VALID_ANNOTATION_TYPES = {'note', 'correction', 'alternative', 'link'}
+
+
+# ---------------------------------------------------------------------------
+# Pydantic response models
+# ---------------------------------------------------------------------------
+
+class ProvenanceItem(BaseModel):
+    id: int
+    source_type: str
+    citation: str
+    description: Optional[str] = None
+    year: Optional[int] = None
+    url: Optional[str] = None
+
+class DisplayIntentItem(BaseModel):
+    id: int
+    entity: str
+    default_view: str
+    description: Optional[str] = None
+    source_query: Optional[str] = None
+    priority: int = 0
+
+class QueryItem(BaseModel):
+    id: int
+    name: str
+    description: Optional[str] = None
+    params: Optional[str] = None
+    created_at: str
+
+class QueryResult(BaseModel):
+    query: str
+    columns: list[str]
+    row_count: int
+    rows: list[dict[str, Any]]
+
+class PackageInfo(BaseModel):
+    name: str = ""
+    artifact_id: str = ""
+    version: str = ""
+    description: str = ""
+
+class ManifestResponse(BaseModel):
+    name: str
+    description: Optional[str] = None
+    manifest: dict[str, Any]
+    created_at: str
+    package: PackageInfo
+
+class AnnotationItem(BaseModel):
+    id: int
+    entity_type: str
+    entity_id: int
+    entity_name: Optional[str] = None
+    annotation_type: str
+    content: str
+    author: Optional[str] = None
+    created_at: str
+
+class ErrorResponse(BaseModel):
+    error: str
+
+class DeleteResponse(BaseModel):
+    message: str
+    id: int
 
 
 # ---------------------------------------------------------------------------
@@ -227,7 +291,8 @@ def _delete_annotation(conn, annotation_id):
 # Generic detail endpoint (named query → first row as flat JSON)
 # ---------------------------------------------------------------------------
 
-@app.get('/api/detail/{query_name}')
+@app.get('/api/detail/{query_name}',
+         responses={404: {"model": ErrorResponse}, 400: {"model": ErrorResponse}})
 def api_generic_detail(query_name: str, request: Request):
     """Execute a named query and return the first row as flat JSON."""
     conn = get_db()
@@ -243,7 +308,8 @@ def api_generic_detail(query_name: str, request: Request):
     return result['rows'][0]
 
 
-@app.get('/api/composite/{view_name}')
+@app.get('/api/composite/{view_name}',
+         responses={400: {"model": ErrorResponse}, 404: {"model": ErrorResponse}})
 def api_composite_detail(view_name: str, request: Request):
     """Execute manifest-defined composite detail query."""
     entity_id = request.query_params.get('id')
@@ -333,7 +399,7 @@ def index(request: Request):
 
 
 
-@app.get('/api/provenance')
+@app.get('/api/provenance', response_model=list[ProvenanceItem])
 def api_provenance():
     """Get data provenance information"""
     conn = get_db()
@@ -342,7 +408,7 @@ def api_provenance():
     return result
 
 
-@app.get('/api/display-intent')
+@app.get('/api/display-intent', response_model=list[DisplayIntentItem])
 def api_display_intent():
     """Get display intent hints for SCODA viewers"""
     conn = get_db()
@@ -351,7 +417,7 @@ def api_display_intent():
     return result
 
 
-@app.get('/api/queries')
+@app.get('/api/queries', response_model=list[QueryItem])
 def api_queries():
     """Get list of available named queries"""
     conn = get_db()
@@ -360,7 +426,8 @@ def api_queries():
     return result
 
 
-@app.get('/api/manifest')
+@app.get('/api/manifest', response_model=ManifestResponse,
+         responses={404: {"model": ErrorResponse}})
 def api_manifest():
     """Get UI manifest with declarative view definitions"""
     conn = get_db()
@@ -371,7 +438,8 @@ def api_manifest():
     return JSONResponse({'error': 'No manifest found'}, status_code=404)
 
 
-@app.get('/api/queries/{name}/execute')
+@app.get('/api/queries/{name}/execute', response_model=QueryResult,
+         responses={404: {"model": ErrorResponse}, 400: {"model": ErrorResponse}})
 def api_query_execute(name: str, request: Request):
     """Execute a named query with optional parameters"""
     conn = get_db()
@@ -386,7 +454,7 @@ def api_query_execute(name: str, request: Request):
 
 
 
-@app.get('/api/annotations/{entity_type}/{entity_id}')
+@app.get('/api/annotations/{entity_type}/{entity_id}', response_model=list[AnnotationItem])
 def api_get_annotations(entity_type: str, entity_id: int):
     """Get annotations for a specific entity"""
     conn = get_db()
@@ -403,7 +471,8 @@ class AnnotationCreate(BaseModel):
     author: Optional[str] = None
 
 
-@app.post('/api/annotations')
+@app.post('/api/annotations', status_code=201,
+          responses={201: {"model": AnnotationItem}, 400: {"model": ErrorResponse}})
 def api_create_annotation(body: AnnotationCreate):
     """Create a new annotation"""
     data = body.model_dump()
@@ -413,7 +482,8 @@ def api_create_annotation(body: AnnotationCreate):
     return JSONResponse(result, status_code=status)
 
 
-@app.delete('/api/annotations/{annotation_id}')
+@app.delete('/api/annotations/{annotation_id}',
+            responses={200: {"model": DeleteResponse}, 404: {"model": ErrorResponse}})
 def api_delete_annotation(annotation_id: int):
     """Delete an annotation"""
     conn = get_db()

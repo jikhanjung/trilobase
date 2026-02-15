@@ -62,9 +62,18 @@ class TestMCPMount:
         assert resp.status_code == 405
 
 
-# --- Index page ---
+# --- OpenAPI docs ---
 
-
+class TestOpenAPIDocs:
+    def test_openapi_json_contains_schemas(self, client):
+        """OpenAPI schema should contain Pydantic response model definitions."""
+        response = client.get('/openapi.json')
+        assert response.status_code == 200
+        schema = response.json()
+        component_schemas = schema.get('components', {}).get('schemas', {})
+        for model_name in ['ProvenanceItem', 'QueryResult', 'ManifestResponse',
+                           'AnnotationItem', 'ErrorResponse']:
+            assert model_name in component_schemas, f'{model_name} missing from OpenAPI schemas'
 
 
 # --- Index page ---
