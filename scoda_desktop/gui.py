@@ -3,7 +3,7 @@
 SCODA Desktop — GUI Control Panel
 
 Provides a Docker Desktop-style graphical interface to select a package
-and control the Flask server.
+and control the web server.
 """
 
 import tkinter as tk
@@ -47,10 +47,9 @@ class ScodaDesktopGUI:
         self.root.resizable(True, True)
         self.root.minsize(600, 400)
 
-        # Flask server state
+        # Web server state
         self.server_process = None  # For subprocess mode
         self.server_thread = None   # For threaded mode (frozen)
-        self.flask_app = None       # For threaded mode
         self.uvicorn_server = None  # For threaded mode (graceful shutdown)
         self.original_stdout = None # For restoring stdout after redirect
         self.original_stderr = None # For restoring stderr after redirect
@@ -342,7 +341,7 @@ class ScodaDesktopGUI:
             self.pkg_info_label.config(text="\n".join(info_parts))
 
     def start_server(self):
-        """Start Flask server for the selected package."""
+        """Start web server for the selected package."""
         if self.server_running:
             return
 
@@ -362,7 +361,7 @@ class ScodaDesktopGUI:
         self.root.config(cursor="wait")
         self.root.update()
         try:
-            # In frozen mode (PyInstaller), run Flask in thread with stdout redirect
+            # In frozen mode (PyInstaller), run in thread with stdout redirect
             # In dev mode, run as subprocess for better log capture
             if getattr(sys, 'frozen', False):
                 self._start_server_threaded()
@@ -383,15 +382,11 @@ class ScodaDesktopGUI:
             self.root.update()
 
     def _start_server_threaded(self):
-        """Start Flask server in thread (for frozen/PyInstaller mode)."""
+        """Start web server in thread (for frozen/PyInstaller mode)."""
         self._append_log(f"Starting web server (package={self.selected_package})...", "INFO")
 
         # Set active package before importing app
         scoda_package.set_active_package(self.selected_package)
-
-        # Import Flask app
-        from .app import app
-        self.flask_app = app
 
         # Redirect stdout/stderr to GUI
         self.original_stdout = sys.stdout
@@ -399,19 +394,19 @@ class ScodaDesktopGUI:
         sys.stdout = LogRedirector(lambda msg: self.root.after(0, self._append_log, msg))
         sys.stderr = LogRedirector(lambda msg: self.root.after(0, self._append_log, msg))
 
-        # Start Flask in thread
-        self.server_thread = threading.Thread(target=self._run_flask_app, daemon=True)
+        # Start web server in thread
+        self.server_thread = threading.Thread(target=self._run_web_server, daemon=True)
         self.server_thread.start()
 
         self._append_log("Web server started", "INFO")
 
     def _start_server_subprocess(self):
-        """Start Flask server as subprocess (for development mode)."""
+        """Start web server as subprocess (for development mode)."""
         python_exe = sys.executable
 
         self._append_log(f"Starting web server (package={self.selected_package})...", "INFO")
 
-        # Start Flask as subprocess with --package arg (using -m for package import)
+        # Start server as subprocess with --package arg (using -m for package import)
         self.server_process = subprocess.Popen(
             [python_exe, '-m', 'scoda_desktop.app', '--package', self.selected_package],
             stdout=subprocess.PIPE,
@@ -495,16 +490,14 @@ class ScodaDesktopGUI:
                 self.root.after(0, self._append_log,
                               f"MCP server process exited with code {returncode}", "ERROR")
 
-    def _run_flask_app(self):
-        """Run Flask app with uvicorn (called in thread for frozen mode)."""
+    def _run_web_server(self):
+        """Run FastAPI app with uvicorn (called in thread for frozen mode)."""
         try:
-            from asgiref.wsgi import WsgiToAsgi
             import uvicorn
-
-            asgi_app = WsgiToAsgi(self.flask_app)
+            from .app import app
 
             config = uvicorn.Config(
-                asgi_app,
+                app,
                 host='127.0.0.1',
                 port=self.port,
                 log_level='info'
@@ -554,7 +547,7 @@ class ScodaDesktopGUI:
         self._update_status()
 
     def start_mcp(self):
-        """Start MCP SSE server (optional, independent of Flask)."""
+        """Start MCP SSE server (optional, independent of web server)."""
         if self.mcp_running:
             return
 
@@ -566,7 +559,7 @@ class ScodaDesktopGUI:
             self._append_log(f"ERROR: Failed to start MCP server: {e}", "ERROR")
 
     def stop_server(self):
-        """Stop Flask server (independent of MCP)."""
+        """Stop web server (independent of MCP)."""
         if not self.server_running:
             return
 
@@ -646,7 +639,7 @@ class ScodaDesktopGUI:
                 tag = "ERROR"
             elif "WARNING" in line or "warning" in line.lower():
                 tag = "WARNING"
-            elif "INFO" in line or "Running on" in line or "Serving Flask" in line:
+            elif "INFO" in line or "Running on" in line or "Uvicorn running" in line:
                 tag = "INFO"
             elif "200 GET" in line or "200 POST" in line or "GET /" in line:
                 tag = "SUCCESS"

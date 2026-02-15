@@ -2,7 +2,7 @@
 """
 Trilobase SCODA Viewer Launcher
 
-Starts the Flask web server and automatically opens the default browser.
+Starts the web server and automatically opens the default browser.
 """
 
 import webbrowser
@@ -36,8 +36,10 @@ def main():
     # Open browser after 1.5 seconds
     Timer(1.5, open_browser).start()
 
-    # Import and run Flask app
+    # Import and run FastAPI app
     try:
+        import uvicorn
+
         if getattr(sys, 'frozen', False):
             base_path = sys._MEIPASS
         else:
@@ -50,9 +52,9 @@ def main():
             set_active_package(args.package)
 
         from .app import app
-        app.run(debug=False, host='127.0.0.1', port=8080, use_reloader=False)
+        uvicorn.run(app, host='127.0.0.1', port=8080, log_level='info')
     except ImportError as e:
-        print(f"Error: Could not import Flask app: {e}", file=sys.stderr)
+        print(f"Error: Could not import app: {e}", file=sys.stderr)
         print("Make sure app.py is in the same directory.", file=sys.stderr)
         input("\nPress Enter to exit...")
         sys.exit(1)

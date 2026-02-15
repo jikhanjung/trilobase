@@ -1,5 +1,5 @@
-flask
-asgiref
+fastapi
+httpx
 pyinstaller
 mcp>=1.0.0
 starlette

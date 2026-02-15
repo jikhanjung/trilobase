@@ -1,29 +1,33 @@
 """
 SCODA Desktop Web Interface
-Flask application for browsing SCODA data packages
+FastAPI application for browsing SCODA data packages
 """
 
-from flask import Flask, render_template, jsonify, request, send_from_directory
+from fastapi import FastAPI, Request, HTTPException
+from fastapi.responses import JSONResponse, HTMLResponse, FileResponse
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.templating import Jinja2Templates
+from pydantic import BaseModel
+from typing import Optional
 import json
 import os
 import sqlite3
 
 from .scoda_package import get_db, get_registry, get_active_package_name
 
-app = Flask(__name__)
+app = FastAPI(title="SCODA Desktop")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type"],
+)
+
+templates = Jinja2Templates(directory=os.path.join(os.path.dirname(__file__), "templates"))
 
 VALID_ENTITY_TYPES = {'genus', 'family', 'order', 'suborder', 'superfamily', 'class'}
 VALID_ANNOTATION_TYPES = {'note', 'correction', 'alternative', 'link'}
-
-
-@app.after_request
-def add_cors_headers(response):
-    """Allow cross-origin requests for custom SPA support."""
-    origin = request.headers.get('Origin', '*')
-    response.headers['Access-Control-Allow-Origin'] = origin
-    response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
-    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, DELETE, OPTIONS'
-    return response
 
 
 # ---------------------------------------------------------------------------
@@ -223,50 +227,50 @@ def _delete_annotation(conn, annotation_id):
 # Generic detail endpoint (named query → first row as flat JSON)
 # ---------------------------------------------------------------------------
 
-@app.route('/api/detail/<query_name>')
-def api_generic_detail(query_name):
+@app.get('/api/detail/{query_name}')
+def api_generic_detail(query_name: str, request: Request):
     """Execute a named query and return the first row as flat JSON."""
     conn = get_db()
-    params = {k: v for k, v in request.args.items()}
+    params = dict(request.query_params)
     result = _execute_query(conn, query_name, params)
     conn.close()
     if result is None:
-        return jsonify({'error': f'Query not found: {query_name}'}), 404
+        return JSONResponse({'error': f'Query not found: {query_name}'}, status_code=404)
     if 'error' in result:
-        return jsonify(result), 400
+        return JSONResponse(result, status_code=400)
     if result['row_count'] == 0:
-        return jsonify({'error': 'Not found'}), 404
-    return jsonify(result['rows'][0])
+        return JSONResponse({'error': 'Not found'}, status_code=404)
+    return result['rows'][0]
 
 
-@app.route('/api/composite/<view_name>')
-def api_composite_detail(view_name):
+@app.get('/api/composite/{view_name}')
+def api_composite_detail(view_name: str, request: Request):
     """Execute manifest-defined composite detail query."""
-    entity_id = request.args.get('id')
+    entity_id = request.query_params.get('id')
     if not entity_id:
-        return jsonify({'error': 'id parameter required'}), 400
+        return JSONResponse({'error': 'id parameter required'}, status_code=400)
 
     conn = get_db()
     manifest_data = _fetch_manifest(conn)
     if not manifest_data:
         conn.close()
-        return jsonify({'error': 'No manifest found'}), 404
+        return JSONResponse({'error': 'No manifest found'}, status_code=404)
 
     views = manifest_data['manifest'].get('views', {})
     view = views.get(view_name)
     if not view or view.get('type') != 'detail' or 'source_query' not in view:
         conn.close()
-        return jsonify({'error': f'Detail view not found: {view_name}'}), 404
+        return JSONResponse({'error': f'Detail view not found: {view_name}'}, status_code=404)
 
     # Main query
     source_param = view.get('source_param', 'id')
     result = _execute_query(conn, view['source_query'], {source_param: entity_id})
     if result is None or result.get('row_count', 0) == 0:
         conn.close()
-        return jsonify({'error': 'Not found'}), 404
+        return JSONResponse({'error': 'Not found'}, status_code=404)
     if 'error' in result:
         conn.close()
-        return jsonify(result), 400
+        return JSONResponse(result, status_code=400)
 
     data = dict(result['rows'][0])
 
@@ -285,7 +289,7 @@ def api_composite_detail(view_name):
         data[key] = sub_result['rows'] if sub_result and 'rows' in sub_result else []
 
     conn.close()
-    return jsonify(data)
+    return data
 
 
 
@@ -319,108 +323,117 @@ def _get_reference_spa_dir():
     return None
 
 
-@app.route('/')
-def index():
+@app.get('/', response_class=HTMLResponse)
+def index(request: Request):
     """Main page — serve Reference SPA if extracted, otherwise generic viewer."""
     spa_dir = _get_reference_spa_dir()
     if spa_dir:
-        return send_from_directory(spa_dir, 'index.html')
-    return render_template('index.html')
+        return FileResponse(os.path.join(spa_dir, 'index.html'))
+    return templates.TemplateResponse(request, "index.html")
 
 
 
-@app.route('/api/provenance')
+@app.get('/api/provenance')
 def api_provenance():
     """Get data provenance information"""
     conn = get_db()
     result = _fetch_provenance(conn)
     conn.close()
-    return jsonify(result)
+    return result
 
 
-@app.route('/api/display-intent')
+@app.get('/api/display-intent')
 def api_display_intent():
     """Get display intent hints for SCODA viewers"""
     conn = get_db()
     result = _fetch_display_intent(conn)
     conn.close()
-    return jsonify(result)
+    return result
 
 
-@app.route('/api/queries')
+@app.get('/api/queries')
 def api_queries():
     """Get list of available named queries"""
     conn = get_db()
     result = _fetch_queries(conn)
     conn.close()
-    return jsonify(result)
+    return result
 
 
-@app.route('/api/manifest')
+@app.get('/api/manifest')
 def api_manifest():
     """Get UI manifest with declarative view definitions"""
     conn = get_db()
     result = _fetch_manifest(conn)
     conn.close()
-    return jsonify(result) if result else (jsonify({'error': 'No manifest found'}), 404)
+    if result:
+        return result
+    return JSONResponse({'error': 'No manifest found'}, status_code=404)
 
 
-@app.route('/api/queries/<name>/execute')
-def api_query_execute(name):
+@app.get('/api/queries/{name}/execute')
+def api_query_execute(name: str, request: Request):
     """Execute a named query with optional parameters"""
     conn = get_db()
-    params = {key: value for key, value in request.args.items()}
+    params = dict(request.query_params)
     result = _execute_query(conn, name, params)
     conn.close()
     if result is None:
-        return jsonify({'error': f'Query not found: {name}'}), 404
+        return JSONResponse({'error': f'Query not found: {name}'}, status_code=404)
     if 'error' in result:
-        return jsonify(result), 400
-    return jsonify(result)
+        return JSONResponse(result, status_code=400)
+    return result
 
 
 
-@app.route('/api/annotations/<entity_type>/<int:entity_id>')
-def api_get_annotations(entity_type, entity_id):
+@app.get('/api/annotations/{entity_type}/{entity_id}')
+def api_get_annotations(entity_type: str, entity_id: int):
     """Get annotations for a specific entity"""
     conn = get_db()
     result = _fetch_annotations(conn, entity_type, entity_id)
     conn.close()
-    return jsonify(result)
+    return result
 
 
-@app.route('/api/annotations', methods=['POST'])
-def api_create_annotation():
+class AnnotationCreate(BaseModel):
+    entity_type: Optional[str] = None
+    entity_id: Optional[int] = None
+    annotation_type: Optional[str] = None
+    content: Optional[str] = None
+    author: Optional[str] = None
+
+
+@app.post('/api/annotations')
+def api_create_annotation(body: AnnotationCreate):
     """Create a new annotation"""
-    data = request.get_json()
-    if not data:
-        return jsonify({'error': 'JSON body required'}), 400
+    data = body.model_dump()
     conn = get_db()
     result, status = _create_annotation(conn, data)
     conn.close()
-    return jsonify(result), status
+    return JSONResponse(result, status_code=status)
 
 
-@app.route('/api/annotations/<int:annotation_id>', methods=['DELETE'])
-def api_delete_annotation(annotation_id):
+@app.delete('/api/annotations/{annotation_id}')
+def api_delete_annotation(annotation_id: int):
     """Delete an annotation"""
     conn = get_db()
     result, status = _delete_annotation(conn, annotation_id)
     conn.close()
-    return jsonify(result), status
+    return JSONResponse(result, status_code=status)
 
 
-@app.route('/<path:filename>')
-def serve_spa_file(filename):
+@app.get('/{filename:path}')
+def serve_spa_file(filename: str):
     """Serve Reference SPA asset files (app.js, style.css, etc.)."""
     spa_dir = _get_reference_spa_dir()
     if spa_dir and os.path.isfile(os.path.join(spa_dir, filename)):
-        return send_from_directory(spa_dir, filename)
-    return '', 404
+        return FileResponse(os.path.join(spa_dir, filename))
+    return JSONResponse(content='', status_code=404)
 
 
 if __name__ == '__main__':
     import argparse
+    import uvicorn
     parser = argparse.ArgumentParser()
     parser.add_argument('--package', type=str, default=None,
                         help='Active package name (e.g., trilobase, paleocore)')
@@ -428,4 +441,4 @@ if __name__ == '__main__':
     if args.package:
         from .scoda_package import set_active_package
         set_active_package(args.package)
-    app.run(debug=True, host='0.0.0.0', port=8080)
+    uvicorn.run(app, host='0.0.0.0', port=8080)

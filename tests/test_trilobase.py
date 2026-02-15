@@ -29,7 +29,7 @@ class TestManifestDetailSchema:
 
     def _get_manifest(self, client):
         response = client.get('/api/manifest')
-        return json.loads(response.data)['manifest']
+        return response.json()['manifest']
 
     def _detail_views(self, client):
         m = self._get_manifest(client)
@@ -150,7 +150,7 @@ class TestManifestTreeChart:
 
     def _get_manifest(self, client):
         response = client.get('/api/manifest')
-        return json.loads(response.data)['manifest']
+        return response.json()['manifest']
 
     def test_tree_view_has_tree_options(self, client):
         """taxonomy_tree should have tree_options with required keys."""
@@ -169,7 +169,7 @@ class TestManifestTreeChart:
         assert 'item_param' in opts
 
         queries_response = client.get('/api/queries')
-        query_names = {q['name'] for q in json.loads(queries_response.data)}
+        query_names = {q['name'] for q in queries_response.json()}
         assert opts['item_query'] in query_names, \
             f"item_query '{opts['item_query']}' not found in named queries"
 
@@ -608,16 +608,16 @@ class TestCombinedScodaDeployment:
         finally:
             scoda_package._reset_paths()
 
-    def test_combined_scoda_flask_api(self, test_db, tmp_path):
-        """Flask /api/manifest should work with .scoda-extracted DBs."""
+    def test_combined_scoda_api(self, test_db, tmp_path):
+        """/api/manifest should work with .scoda-extracted DBs."""
         try:
             self._setup_combined_scoda(test_db, tmp_path)
 
-            app.config['TESTING'] = True
-            with app.test_client() as client:
+            from starlette.testclient import TestClient
+            with TestClient(app) as client:
                 response = client.get('/api/manifest')
                 assert response.status_code == 200
-                data = json.loads(response.data)
+                data = response.json()
                 assert 'manifest' in data
         finally:
             scoda_package._reset_paths()
@@ -640,11 +640,11 @@ class TestCombinedScodaDeployment:
         try:
             self._setup_combined_scoda(test_db, tmp_path)
 
-            app.config['TESTING'] = True
-            with app.test_client() as client:
+            from starlette.testclient import TestClient
+            with TestClient(app) as client:
                 response = client.get('/api/composite/genus_detail?id=101')  # Acuticryphops
                 assert response.status_code == 200
-                data = json.loads(response.data)
+                data = response.json()
                 assert data['name'] == 'Acuticryphops'
                 # formations via pc.formations
                 assert len(data['formations']) > 0
@@ -667,7 +667,7 @@ class TestCompositeFormationDetail:
         """Composite formation detail should return formation info + genera."""
         response = client.get('/api/composite/formation_detail?id=1')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert data['name'] == 'Büdesheimer Sh'
         assert 'genera' in data
         assert isinstance(data['genera'], list)
@@ -686,7 +686,7 @@ class TestCompositeCountryDetail:
         """Composite country detail should return country info + regions + genera."""
         response = client.get('/api/composite/country_detail?id=1')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert data['name'] == 'Germany'
         assert 'regions' in data
         assert 'genera' in data
@@ -695,13 +695,13 @@ class TestCompositeCountryDetail:
 
     def test_country_has_regions(self, client):
         response = client.get('/api/composite/country_detail?id=1')
-        data = json.loads(response.data)
+        data = response.json()
         region_names = [r['name'] for r in data['regions']]
         assert 'Eifel' in region_names
 
     def test_country_has_genera(self, client):
         response = client.get('/api/composite/country_detail?id=1')
-        data = json.loads(response.data)
+        data = response.json()
         genus_names = [g['name'] for g in data['genera']]
         assert 'Acuticryphops' in genus_names
 
@@ -713,7 +713,7 @@ class TestCompositeRegionDetail:
         """Composite region detail should return region info + genera."""
         response = client.get('/api/composite/region_detail?id=3')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert data['name'] == 'Eifel'
         assert data['country_name'] == 'Germany'
         assert 'genera' in data
@@ -728,7 +728,7 @@ class TestCompositeBibliographyDetail:
         """Composite bibliography detail should return bib info + genera."""
         response = client.get('/api/composite/bibliography_detail?id=1')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert data['authors'] == 'Jell, P.A. & Adrain, J.M.'
         assert data['year'] == 2002
         assert 'genera' in data
@@ -742,7 +742,7 @@ class TestCompositeChronostratDetail:
         """Composite chronostrat detail should return unit + children + mappings + genera."""
         response = client.get('/api/composite/chronostrat_detail?id=3')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert data['name'] == 'Cambrian'
         assert data['rank'] == 'Period'
         assert 'children' in data
@@ -753,7 +753,7 @@ class TestCompositeChronostratDetail:
     def test_chronostrat_has_children(self, client):
         """Cambrian should have child epochs (Miaolingian, Furongian)."""
         response = client.get('/api/composite/chronostrat_detail?id=3')
-        data = json.loads(response.data)
+        data = response.json()
         child_names = [c['name'] for c in data['children']]
         assert 'Miaolingian' in child_names
         assert 'Furongian' in child_names
@@ -761,14 +761,14 @@ class TestCompositeChronostratDetail:
     def test_chronostrat_has_mappings(self, client):
         """Cambrian should have temporal code mappings."""
         response = client.get('/api/composite/chronostrat_detail?id=3')
-        data = json.loads(response.data)
+        data = response.json()
         codes = [m['temporal_code'] for m in data['mappings']]
         assert 'CAM' in codes
 
     def test_chronostrat_genera(self, client):
         """Furongian (id=6) has UCAM mapping → should find Olenus."""
         response = client.get('/api/composite/chronostrat_detail?id=6')
-        data = json.loads(response.data)
+        data = response.json()
         assert data['name'] == 'Furongian'
         genus_names = [g['name'] for g in data['genera']]
         assert 'Olenus' in genus_names

@@ -991,11 +991,11 @@ def test_db(tmp_path):
 
 @pytest.fixture
 def client(test_db):
-    """Create Flask test client with test databases (canonical + overlay + paleocore)."""
+    """Create test client with test databases (canonical + overlay + paleocore)."""
+    from starlette.testclient import TestClient
     canonical_db_path, overlay_db_path, paleocore_db_path = test_db
     scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
-    app.config['TESTING'] = True
-    with app.test_client() as client:
+    with TestClient(app) as client:
         yield client
     scoda_package._reset_paths()
 

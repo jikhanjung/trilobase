@@ -31,18 +31,20 @@ from release import (
 class TestCORS:
     def test_cors_headers_present(self, client):
         """API responses should include CORS headers."""
-        response = client.get('/api/manifest')
+        response = client.get('/api/manifest', headers={"Origin": "http://localhost:3000"})
         assert response.status_code == 200
-        assert 'Access-Control-Allow-Origin' in response.headers
-        assert 'Access-Control-Allow-Methods' in response.headers
+        assert 'access-control-allow-origin' in response.headers
 
     def test_cors_preflight(self, client):
         """OPTIONS preflight requests should return CORS headers."""
-        response = client.options('/api/manifest')
-        assert 'Access-Control-Allow-Origin' in response.headers
-        assert 'Access-Control-Allow-Headers' in response.headers
-        assert 'GET' in response.headers['Access-Control-Allow-Methods']
-        assert 'POST' in response.headers['Access-Control-Allow-Methods']
+        response = client.options('/api/manifest', headers={
+            "Origin": "http://localhost:3000",
+            "Access-Control-Request-Method": "GET",
+        })
+        assert 'access-control-allow-origin' in response.headers
+        assert 'access-control-allow-methods' in response.headers
+        assert 'GET' in response.headers['access-control-allow-methods']
+        assert 'POST' in response.headers['access-control-allow-methods']
 
 
 # --- Index page ---
@@ -74,27 +76,27 @@ class TestApiProvenance:
 
     def test_provenance_returns_list(self, client):
         response = client.get('/api/provenance')
-        data = json.loads(response.data)
+        data = response.json()
         assert isinstance(data, list)
         assert len(data) == 2
 
     def test_provenance_has_primary_source(self, client):
         response = client.get('/api/provenance')
-        data = json.loads(response.data)
+        data = response.json()
         primary = next(s for s in data if s['source_type'] == 'primary')
         assert 'Jell' in primary['citation']
         assert primary['year'] == 2002
 
     def test_provenance_has_supplementary_source(self, client):
         response = client.get('/api/provenance')
-        data = json.loads(response.data)
+        data = response.json()
         supp = next(s for s in data if s['source_type'] == 'supplementary')
         assert 'Adrain' in supp['citation']
         assert supp['year'] == 2011
 
     def test_provenance_record_structure(self, client):
         response = client.get('/api/provenance')
-        data = json.loads(response.data)
+        data = response.json()
         record = data[0]
         expected_keys = ['id', 'source_type', 'citation', 'description', 'year', 'url']
         for key in expected_keys:
@@ -115,14 +117,14 @@ class TestApiDisplayIntent:
 
     def test_display_intent_returns_list(self, client):
         response = client.get('/api/display-intent')
-        data = json.loads(response.data)
+        data = response.json()
         assert isinstance(data, list)
         assert len(data) == 3
 
     def test_display_intent_primary_view(self, client):
         """genera entity should have tree as primary (priority=0) view."""
         response = client.get('/api/display-intent')
-        data = json.loads(response.data)
+        data = response.json()
         genera_intents = [i for i in data if i['entity'] == 'genera']
         primary = next(i for i in genera_intents if i['priority'] == 0)
         assert primary['default_view'] == 'tree'
@@ -130,20 +132,20 @@ class TestApiDisplayIntent:
     def test_display_intent_secondary_view(self, client):
         """genera entity should have table as secondary (priority=1) view."""
         response = client.get('/api/display-intent')
-        data = json.loads(response.data)
+        data = response.json()
         genera_intents = [i for i in data if i['entity'] == 'genera']
         secondary = next(i for i in genera_intents if i['priority'] == 1)
         assert secondary['default_view'] == 'table'
 
     def test_display_intent_source_query(self, client):
         response = client.get('/api/display-intent')
-        data = json.loads(response.data)
+        data = response.json()
         tree_intent = next(i for i in data if i['default_view'] == 'tree')
         assert tree_intent['source_query'] == 'taxonomy_tree'
 
     def test_display_intent_record_structure(self, client):
         response = client.get('/api/display-intent')
-        data = json.loads(response.data)
+        data = response.json()
         record = data[0]
         expected_keys = ['id', 'entity', 'default_view', 'description',
                          'source_query', 'priority']
@@ -165,13 +167,13 @@ class TestApiQueries:
 
     def test_queries_returns_list(self, client):
         response = client.get('/api/queries')
-        data = json.loads(response.data)
+        data = response.json()
         assert isinstance(data, list)
         assert len(data) == 29  # 8 original + 21 composite detail queries
 
     def test_queries_record_structure(self, client):
         response = client.get('/api/queries')
-        data = json.loads(response.data)
+        data = response.json()
         record = data[0]
         expected_keys = ['id', 'name', 'description', 'params', 'created_at']
         for key in expected_keys:
@@ -179,7 +181,7 @@ class TestApiQueries:
 
     def test_queries_sorted_by_name(self, client):
         response = client.get('/api/queries')
-        data = json.loads(response.data)
+        data = response.json()
         names = [q['name'] for q in data]
         assert names == sorted(names)
 
@@ -196,7 +198,7 @@ class TestApiQueryExecute:
         """Execute genera_list query (no parameters needed)."""
         response = client.get('/api/queries/genera_list/execute')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert data['query'] == 'genera_list'
         assert data['row_count'] == 4  # 4 genera in test data
         assert 'columns' in data
@@ -206,7 +208,7 @@ class TestApiQueryExecute:
         """Execute family_genera query with family_id parameter."""
         response = client.get('/api/queries/family_genera/execute?family_id=10')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert data['row_count'] == 3  # Phacops, Acuticryphops, Cryphops
         names = [r['name'] for r in data['rows']]
         assert 'Phacops' in names
@@ -214,27 +216,27 @@ class TestApiQueryExecute:
     def test_execute_results_sorted(self, client):
         """genera_list results should be sorted by name."""
         response = client.get('/api/queries/genera_list/execute')
-        data = json.loads(response.data)
+        data = response.json()
         names = [r['name'] for r in data['rows']]
         assert names == sorted(names)
 
     def test_execute_not_found(self, client):
         response = client.get('/api/queries/nonexistent/execute')
         assert response.status_code == 404
-        data = json.loads(response.data)
+        data = response.json()
         assert 'error' in data
 
     def test_execute_columns_present(self, client):
         """Result should include column names."""
         response = client.get('/api/queries/genera_list/execute')
-        data = json.loads(response.data)
+        data = response.json()
         assert 'name' in data['columns']
         assert 'is_valid' in data['columns']
 
     def test_execute_row_is_dict(self, client):
         """Each row should be a dictionary with column keys."""
         response = client.get('/api/queries/genera_list/execute')
-        data = json.loads(response.data)
+        data = response.json()
         row = data['rows'][0]
         assert isinstance(row, dict)
         assert 'name' in row
@@ -254,73 +256,73 @@ class TestApiManifest:
 
     def test_manifest_returns_json(self, client):
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         assert isinstance(data, dict)
 
     def test_manifest_has_name(self, client):
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         assert data['name'] == 'default'
 
     def test_manifest_has_description(self, client):
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         assert data['description'] == 'Test manifest'
 
     def test_manifest_has_created_at(self, client):
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         assert 'created_at' in data
         assert data['created_at'] == '2026-02-07T00:00:00'
 
     def test_manifest_has_manifest_object(self, client):
         """manifest_json should be parsed as an object, not returned as string."""
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         assert 'manifest' in data
         assert isinstance(data['manifest'], dict)
 
     def test_manifest_has_default_view(self, client):
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         assert data['manifest']['default_view'] == 'taxonomy_tree'
 
     def test_manifest_has_views(self, client):
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         assert 'views' in data['manifest']
         assert isinstance(data['manifest']['views'], dict)
 
     def test_manifest_view_count(self, client):
         """Test manifest should have 13 views (6 tab + 7 detail)."""
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         assert len(data['manifest']['views']) == 13
 
     def test_manifest_tree_view(self, client):
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         tree = data['manifest']['views']['taxonomy_tree']
         assert tree['type'] == 'tree'
         assert tree['source_query'] == 'taxonomy_tree'
 
     def test_manifest_table_view(self, client):
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         table = data['manifest']['views']['genera_table']
         assert table['type'] == 'table'
         assert table['source_query'] == 'genera_list'
 
     def test_manifest_detail_view(self, client):
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         detail = data['manifest']['views']['genus_detail']
         assert detail['type'] == 'detail'
 
     def test_manifest_table_columns(self, client):
         """Table views should have column definitions."""
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         table = data['manifest']['views']['genera_table']
         assert 'columns' in table
         assert isinstance(table['columns'], list)
@@ -331,7 +333,7 @@ class TestApiManifest:
 
     def test_manifest_table_default_sort(self, client):
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         table = data['manifest']['views']['genera_table']
         assert 'default_sort' in table
         assert table['default_sort']['key'] == 'name'
@@ -340,10 +342,10 @@ class TestApiManifest:
     def test_manifest_source_query_exists(self, client):
         """source_query references should point to actual ui_queries entries."""
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
 
         queries_response = client.get('/api/queries')
-        queries_data = json.loads(queries_response.data)
+        queries_data = queries_response.json()
         query_names = {q['name'] for q in queries_data}
 
         for key, view in data['manifest']['views'].items():
@@ -354,7 +356,7 @@ class TestApiManifest:
     def test_manifest_response_structure(self, client):
         """Top-level response should have exactly these keys."""
         response = client.get('/api/manifest')
-        data = json.loads(response.data)
+        data = response.json()
         expected_keys = ['name', 'description', 'manifest', 'created_at']
         for key in expected_keys:
             assert key in data, f"Missing key: {key}"
@@ -537,22 +539,21 @@ class TestAnnotations:
         """Entity with no annotations should return empty list."""
         response = client.get('/api/annotations/genus/100')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert data == []
 
     def test_create_annotation(self, client):
         """POST should create annotation and return 201."""
         response = client.post('/api/annotations',
-            data=json.dumps({
+            json={
                 'entity_type': 'genus',
                 'entity_id': 100,
                 'annotation_type': 'note',
                 'content': 'This genus needs revision.',
                 'author': 'Test User'
-            }),
-            content_type='application/json')
+            })
         assert response.status_code == 201
-        data = json.loads(response.data)
+        data = response.json()
         assert data['entity_type'] == 'genus'
         assert data['entity_id'] == 100
         assert data['annotation_type'] == 'note'
@@ -562,110 +563,103 @@ class TestAnnotations:
     def test_create_annotation_missing_content(self, client):
         """POST without content should return 400."""
         response = client.post('/api/annotations',
-            data=json.dumps({
+            json={
                 'entity_type': 'genus',
                 'entity_id': 100,
                 'annotation_type': 'note'
-            }),
-            content_type='application/json')
+            })
         assert response.status_code == 400
-        data = json.loads(response.data)
+        data = response.json()
         assert 'error' in data
 
     def test_create_annotation_invalid_type(self, client):
         """POST with invalid annotation_type should return 400."""
         response = client.post('/api/annotations',
-            data=json.dumps({
+            json={
                 'entity_type': 'genus',
                 'entity_id': 100,
                 'annotation_type': 'invalid_type',
                 'content': 'Test'
-            }),
-            content_type='application/json')
+            })
         assert response.status_code == 400
-        data = json.loads(response.data)
+        data = response.json()
         assert 'error' in data
 
     def test_create_annotation_invalid_entity(self, client):
         """POST with invalid entity_type should return 400."""
         response = client.post('/api/annotations',
-            data=json.dumps({
+            json={
                 'entity_type': 'invalid_entity',
                 'entity_id': 100,
                 'annotation_type': 'note',
                 'content': 'Test'
-            }),
-            content_type='application/json')
+            })
         assert response.status_code == 400
-        data = json.loads(response.data)
+        data = response.json()
         assert 'error' in data
 
     def test_get_annotations_after_create(self, client):
         """GET after POST should return the created annotation."""
         client.post('/api/annotations',
-            data=json.dumps({
+            json={
                 'entity_type': 'genus',
                 'entity_id': 100,
                 'annotation_type': 'note',
                 'content': 'Test note'
-            }),
-            content_type='application/json')
+            })
 
         response = client.get('/api/annotations/genus/100')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert len(data) == 1
         assert data[0]['content'] == 'Test note'
 
     def test_delete_annotation(self, client):
         """DELETE should remove annotation and return 200."""
         create_resp = client.post('/api/annotations',
-            data=json.dumps({
+            json={
                 'entity_type': 'genus',
                 'entity_id': 100,
                 'annotation_type': 'note',
                 'content': 'To be deleted'
-            }),
-            content_type='application/json')
-        annotation_id = json.loads(create_resp.data)['id']
+            })
+        annotation_id = create_resp.json()['id']
 
         response = client.delete(f'/api/annotations/{annotation_id}')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert data['id'] == annotation_id
 
         # Verify it's gone
         get_resp = client.get('/api/annotations/genus/100')
-        assert json.loads(get_resp.data) == []
+        assert get_resp.json() == []
 
     def test_delete_annotation_not_found(self, client):
         """DELETE for non-existent ID should return 404."""
         response = client.delete('/api/annotations/99999')
         assert response.status_code == 404
-        data = json.loads(response.data)
+        data = response.json()
         assert 'error' in data
 
     def test_annotations_ordered_by_date(self, client):
         """Annotations should be returned newest first."""
         client.post('/api/annotations',
-            data=json.dumps({
+            json={
                 'entity_type': 'genus',
                 'entity_id': 100,
                 'annotation_type': 'note',
                 'content': 'First note'
-            }),
-            content_type='application/json')
+            })
         client.post('/api/annotations',
-            data=json.dumps({
+            json={
                 'entity_type': 'genus',
                 'entity_id': 100,
                 'annotation_type': 'correction',
                 'content': 'Second note'
-            }),
-            content_type='application/json')
+            })
 
         response = client.get('/api/annotations/genus/100')
-        data = json.loads(response.data)
+        data = response.json()
         assert len(data) == 2
         # Most recent first (both created in same second, so check by id desc)
         assert data[0]['content'] == 'Second note'
@@ -674,17 +668,16 @@ class TestAnnotations:
     def test_annotation_response_structure(self, client):
         """Annotation response should have all required keys."""
         client.post('/api/annotations',
-            data=json.dumps({
+            json={
                 'entity_type': 'family',
                 'entity_id': 10,
                 'annotation_type': 'alternative',
                 'content': 'May belong to different order',
                 'author': 'Reviewer'
-            }),
-            content_type='application/json')
+            })
 
         response = client.get('/api/annotations/family/10')
-        data = json.loads(response.data)
+        data = response.json()
         record = data[0]
         expected_keys = ['id', 'entity_type', 'entity_id', 'annotation_type',
                          'content', 'author', 'created_at']
@@ -1011,7 +1004,7 @@ class TestGenericDetailEndpoint:
         """GET /api/detail/<query> should return first row as flat JSON."""
         response = client.get('/api/detail/genera_list')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         # Should be a flat dict (first row), not wrapped in rows/columns
         assert 'name' in data
         assert 'rows' not in data
@@ -1022,14 +1015,14 @@ class TestGenericDetailEndpoint:
         # Use genera_list which has no required params
         response = client.get('/api/detail/genera_list')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert isinstance(data, dict)
 
     def test_detail_query_not_found(self, client):
         """Non-existent query should return 404."""
         response = client.get('/api/detail/nonexistent_query')
         assert response.status_code == 404
-        data = json.loads(response.data)
+        data = response.json()
         assert 'error' in data
 
     def test_detail_no_results(self, client):
@@ -1037,7 +1030,7 @@ class TestGenericDetailEndpoint:
         # family_genera with non-existent family_id
         response = client.get('/api/detail/family_genera?family_id=999999')
         assert response.status_code == 404
-        data = json.loads(response.data)
+        data = response.json()
         assert data['error'] == 'Not found'
 
     def test_detail_sql_error(self, client):
@@ -1223,14 +1216,14 @@ class TestScodaPackageSPA:
 
 
 
-class TestFlaskAutoSwitch:
-    """Tests for Flask automatic SPA switching."""
+class TestAutoSwitch:
+    """Tests for automatic SPA switching."""
 
     def test_index_generic_without_spa(self, client):
         """Without extracted SPA, index should serve generic viewer."""
         response = client.get('/')
         assert response.status_code == 200
-        html = response.data.decode()
+        html = response.text
         assert 'SCODA Desktop' in html
 
     def test_index_reference_spa_when_extracted(self, test_db, tmp_path):
@@ -1263,11 +1256,11 @@ class TestFlaskAutoSwitch:
 
         try:
             sp.set_active_package('trilobase')
-            app.config['TESTING'] = True
-            with app.test_client() as test_client:
+            from starlette.testclient import TestClient
+            with TestClient(app) as test_client:
                 response = test_client.get('/')
                 assert response.status_code == 200
-                assert b'REFERENCE SPA CONTENT' in response.data
+                assert b'REFERENCE SPA CONTENT' in response.content
         finally:
             sp._active_package_name = None
             sp._registry.close_all()
@@ -1303,12 +1296,12 @@ class TestFlaskAutoSwitch:
 
         try:
             sp.set_active_package('trilobase')
-            app.config['TESTING'] = True
-            with app.test_client() as test_client:
+            from starlette.testclient import TestClient
+            with TestClient(app) as test_client:
                 response = test_client.get('/')
                 assert response.status_code == 200
-                assert b'SPA JS' in response.data
-                assert b'color:red' in response.data
+                assert b'SPA JS' in response.content
+                assert b'color:red' in response.content
         finally:
             sp._active_package_name = None
             sp._registry.close_all()
@@ -1341,11 +1334,11 @@ class TestFlaskAutoSwitch:
 
         try:
             sp.set_active_package('trilobase')
-            app.config['TESTING'] = True
-            with app.test_client() as test_client:
+            from starlette.testclient import TestClient
+            with TestClient(app) as test_client:
                 response = test_client.get('/api/manifest')
                 assert response.status_code == 200
-                data = json.loads(response.data)
+                data = response.json()
                 assert 'manifest' in data
         finally:
             sp._active_package_name = None
@@ -1366,14 +1359,14 @@ class TestCompositeDetail:
         """Missing id parameter should return 400."""
         response = client.get('/api/composite/genus_detail')
         assert response.status_code == 400
-        data = json.loads(response.data)
+        data = response.json()
         assert 'id parameter required' in data['error']
 
     def test_composite_unknown_view_returns_404(self, client):
         """Non-existent view name should return 404."""
         response = client.get('/api/composite/nonexistent_view?id=1')
         assert response.status_code == 404
-        data = json.loads(response.data)
+        data = response.json()
         assert 'Detail view not found' in data['error']
 
     def test_composite_non_detail_view_returns_404(self, client):
@@ -1397,7 +1390,7 @@ class TestCompositeDetail:
         """Composite genus detail should return main query fields at top level."""
         response = client.get('/api/composite/genus_detail?id=100')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert data['name'] == 'Phacops'
         assert data['family_name'] == 'Phacopidae'
         assert data['temporal_code'] == 'LDEV-UDEV'
@@ -1406,7 +1399,7 @@ class TestCompositeDetail:
         """Composite genus detail should include sub-query result arrays."""
         response = client.get('/api/composite/genus_detail?id=100')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert 'hierarchy' in data
         assert 'synonyms' in data
         assert 'formations' in data
@@ -1418,7 +1411,7 @@ class TestCompositeDetail:
     def test_composite_genus_hierarchy(self, client):
         """Hierarchy should walk up from genus to Class."""
         response = client.get('/api/composite/genus_detail?id=100')
-        data = json.loads(response.data)
+        data = response.json()
         hierarchy = data['hierarchy']
         assert len(hierarchy) >= 2  # At least Order and Class
         # Should be ordered Class -> Order -> Family (top to bottom)
@@ -1429,20 +1422,20 @@ class TestCompositeDetail:
     def test_composite_genus_synonyms_empty(self, client):
         """Genus with no synonyms should have empty list."""
         response = client.get('/api/composite/genus_detail?id=100')
-        data = json.loads(response.data)
+        data = response.json()
         assert data['synonyms'] == []
 
     def test_composite_genus_formations(self, client):
         """Genus with formations should list them."""
         response = client.get('/api/composite/genus_detail?id=101')
-        data = json.loads(response.data)
+        data = response.json()
         assert len(data['formations']) == 1
         assert data['formations'][0]['name'] == 'Büdesheimer Sh'
 
     def test_composite_genus_locations(self, client):
         """Genus with locations should list them with region/country."""
         response = client.get('/api/composite/genus_detail?id=101')
-        data = json.loads(response.data)
+        data = response.json()
         assert len(data['locations']) == 1
         loc = data['locations'][0]
         assert loc['country_name'] == 'Germany'
@@ -1452,7 +1445,7 @@ class TestCompositeDetail:
         """Sub-query using result.field should resolve from main query result."""
         # genus_ics_mapping uses result.temporal_code
         response = client.get('/api/composite/genus_detail?id=200')
-        data = json.loads(response.data)
+        data = response.json()
         # Olenus has temporal_code=UCAM, which maps to Furongian (ics_id=6)
         assert 'temporal_ics_mapping' in data
         assert isinstance(data['temporal_ics_mapping'], list)
@@ -1463,7 +1456,7 @@ class TestCompositeDetail:
         """Composite rank detail should return main + children + counts."""
         response = client.get('/api/composite/rank_detail?id=1')
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.json()
         assert data['name'] == 'Trilobita'
         assert 'children' in data
         assert 'children_counts' in data
@@ -1478,7 +1471,7 @@ class TestGenericViewerFallback:
         """Generic viewer should serve valid HTML."""
         response = client.get('/')
         assert response.status_code == 200
-        html = response.data.decode()
+        html = response.text
         assert '<html' in html
         assert 'SCODA Desktop' in html
 
