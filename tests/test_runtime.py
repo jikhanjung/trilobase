@@ -429,7 +429,7 @@ class TestRelease:
         assert stats['family'] == 2         # Phacopidae, Olenidae
         assert stats['order'] == 2          # Phacopida, Ptychopariida
         assert stats['synonyms'] == 1
-        assert stats['bibliography'] == 1
+        assert stats['bibliography'] == 2
 
     def test_get_provenance(self, test_db):
         """get_provenance should return 2 records with correct structure."""
@@ -1984,3 +1984,114 @@ class TestUIDPhaseB:
             if row:
                 assert row[0] != 'iso3166-1', f"{name} should not be iso3166-1 primary"
         conn.close()
+
+
+class TestUIDPhaseC:
+    """Phase C UID: bibliography and formations uid columns, format, coverage."""
+
+    def test_bibliography_uid_columns_exist(self, test_db):
+        """bibliography should have uid, uid_method, uid_confidence, same_as_uid columns."""
+        canonical_db_path, _, _ = test_db
+        conn = sqlite3.connect(canonical_db_path)
+        cols = [r[1] for r in conn.execute("PRAGMA table_info(bibliography)").fetchall()]
+        conn.close()
+        for col in ['uid', 'uid_method', 'uid_confidence', 'same_as_uid']:
+            assert col in cols, f"Missing column: {col}"
+
+    def test_bibliography_uid_unique_index(self, test_db):
+        """bibliography.uid should have UNIQUE constraint."""
+        canonical_db_path, _, _ = test_db
+        conn = sqlite3.connect(canonical_db_path)
+        indexes = conn.execute(
+            "SELECT sql FROM sqlite_master WHERE type='index' AND tbl_name='bibliography' AND name LIKE '%uid%'"
+        ).fetchall()
+        conn.close()
+        uid_index_sqls = [r[0] for r in indexes if r[0]]
+        assert any('UNIQUE' in sql for sql in uid_index_sqls), "No UNIQUE index on bibliography.uid"
+
+    def test_formations_uid_columns_exist(self, test_db):
+        """formations should have uid, uid_method, uid_confidence, same_as_uid columns."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        cols = [r[1] for r in conn.execute("PRAGMA table_info(formations)").fetchall()]
+        conn.close()
+        for col in ['uid', 'uid_method', 'uid_confidence', 'same_as_uid']:
+            assert col in cols, f"Missing column: {col}"
+
+    def test_formations_uid_unique_index(self, test_db):
+        """formations.uid should have UNIQUE constraint."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        indexes = conn.execute(
+            "SELECT sql FROM sqlite_master WHERE type='index' AND tbl_name='formations' AND name LIKE '%uid%'"
+        ).fetchall()
+        conn.close()
+        uid_index_sqls = [r[0] for r in indexes if r[0]]
+        assert any('UNIQUE' in sql for sql in uid_index_sqls), "No UNIQUE index on formations.uid"
+
+    def test_bibliography_uid_format(self, test_db):
+        """bibliography UIDs should start with scoda:bib: prefix."""
+        canonical_db_path, _, _ = test_db
+        conn = sqlite3.connect(canonical_db_path)
+        uids = conn.execute(
+            "SELECT uid FROM bibliography WHERE uid IS NOT NULL"
+        ).fetchall()
+        conn.close()
+        assert len(uids) > 0, "No bibliography UIDs found"
+        for (uid,) in uids:
+            assert uid.startswith('scoda:bib:'), f"Bad bibliography UID prefix: {uid}"
+
+    def test_formations_uid_format(self, test_db):
+        """formations UIDs should start with scoda:strat:formation: prefix."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        uids = conn.execute(
+            "SELECT uid FROM formations WHERE uid IS NOT NULL"
+        ).fetchall()
+        conn.close()
+        assert len(uids) > 0, "No formations UIDs found"
+        for (uid,) in uids:
+            assert uid.startswith('scoda:strat:formation:'), f"Bad formations UID prefix: {uid}"
+
+    def test_bibliography_no_null_uids(self, test_db):
+        """All bibliography records should have UIDs (100% coverage)."""
+        canonical_db_path, _, _ = test_db
+        conn = sqlite3.connect(canonical_db_path)
+        null_count = conn.execute(
+            "SELECT COUNT(*) FROM bibliography WHERE uid IS NULL"
+        ).fetchone()[0]
+        conn.close()
+        assert null_count == 0, f"bibliography has {null_count} NULL UIDs"
+
+    def test_formations_no_null_uids(self, test_db):
+        """All formations records should have UIDs (100% coverage)."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        null_count = conn.execute(
+            "SELECT COUNT(*) FROM formations WHERE uid IS NULL"
+        ).fetchone()[0]
+        conn.close()
+        assert null_count == 0, f"formations has {null_count} NULL UIDs"
+
+    def test_bibliography_confidence_values(self, test_db):
+        """bibliography uid_confidence should only be high, medium, or low."""
+        canonical_db_path, _, _ = test_db
+        conn = sqlite3.connect(canonical_db_path)
+        values = conn.execute(
+            "SELECT DISTINCT uid_confidence FROM bibliography WHERE uid_confidence IS NOT NULL"
+        ).fetchall()
+        conn.close()
+        valid = {'high', 'medium', 'low'}
+        for (val,) in values:
+            assert val in valid, f"Invalid bibliography confidence: {val}"
+
+    def test_cross_ref_low_confidence(self, test_db):
+        """cross_ref bibliography entries should have low confidence."""
+        canonical_db_path, _, _ = test_db
+        conn = sqlite3.connect(canonical_db_path)
+        rows = conn.execute(
+            "SELECT uid_confidence FROM bibliography WHERE reference_type = 'cross_ref'"
+        ).fetchall()
+        conn.close()
+        for (conf,) in rows:
+            assert conf == 'low', f"cross_ref should have low confidence, got: {conf}"

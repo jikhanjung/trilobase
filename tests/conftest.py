@@ -235,14 +235,30 @@ def test_db(tmp_path):
             book_title TEXT,
             reference_type TEXT DEFAULT 'article',
             raw_entry TEXT NOT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            uid TEXT,
+            uid_method TEXT,
+            uid_confidence TEXT,
+            same_as_uid TEXT
         )
     """)
     cursor.execute("""
-        INSERT INTO bibliography (id, authors, year, title, journal, reference_type, raw_entry)
+        CREATE UNIQUE INDEX idx_bibliography_uid ON bibliography(uid)
+    """)
+    cursor.execute("""
+        INSERT INTO bibliography (id, authors, year, title, journal, volume, pages, reference_type, raw_entry,
+            uid, uid_method, uid_confidence)
         VALUES (1, 'Jell, P.A. & Adrain, J.M.', 2002, 'Available generic names for trilobites',
-                'Memoirs of the Queensland Museum', 'article',
-                'Jell, P.A. & Adrain, J.M. (2002) Available generic names for trilobites.')
+                'Memoirs of the Queensland Museum', '48', '331-553', 'article',
+                'Jell, P.A. & Adrain, J.M. (2002) Available generic names for trilobites.',
+                'scoda:bib:fp_v1:sha256:test_jell_2002', 'fp_v1', 'medium')
+    """)
+    cursor.execute("""
+        INSERT INTO bibliography (id, authors, year, title, journal, reference_type, raw_entry,
+            uid, uid_method, uid_confidence)
+        VALUES (2, 'CHIEN see QIAN.', NULL, NULL, NULL, 'cross_ref',
+                'CHIEN see QIAN.',
+                'scoda:bib:fp_v1:sha256:test_chien_crossref', 'fp_v1', 'low')
     """)
 
     # SCODA metadata
@@ -790,8 +806,13 @@ def test_db(tmp_path):
             country TEXT,
             region TEXT,
             period TEXT,
-            taxa_count INTEGER DEFAULT 0
+            taxa_count INTEGER DEFAULT 0,
+            uid TEXT,
+            uid_method TEXT,
+            uid_confidence TEXT,
+            same_as_uid TEXT
         );
+        CREATE UNIQUE INDEX idx_formations_uid ON formations(uid);
 
         CREATE TABLE temporal_ranges (
             id INTEGER PRIMARY KEY,
@@ -865,10 +886,14 @@ def test_db(tmp_path):
         INSERT INTO temporal_ranges (id, code, name, period, epoch, start_mya, end_mya, uid, uid_method, uid_confidence)
         VALUES (2, 'LDEV', 'Lower Devonian', 'Devonian', 'Lower', 419.2, 393.3, 'scoda:strat:temporal:code:LDEV', 'code', 'high');
 
-        INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count)
-        VALUES (1, 'Büdesheimer Sh', 'budesheimer sh', 'Sh', 'Germany', 'Devonian', 5);
-        INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count)
-        VALUES (2, 'Alum Sh', 'alum sh', 'Sh', 'Sweden', 'Cambrian', 20);
+        INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count,
+            uid, uid_method, uid_confidence)
+        VALUES (1, 'Büdesheimer Sh', 'budesheimer sh', 'Sh', 'Germany', 'Devonian', 5,
+            'scoda:strat:formation:fp_v1:sha256:test_budesheimer', 'fp_v1', 'medium');
+        INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count,
+            uid, uid_method, uid_confidence)
+        VALUES (2, 'Alum Sh', 'alum sh', 'Sh', 'Sweden', 'Cambrian', 20,
+            'scoda:strat:formation:fp_v1:sha256:test_alum', 'fp_v1', 'medium');
 
         INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp, uid, uid_method, uid_confidence)
         VALUES (1, 'http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic', 'Phanerozoic', 'Eon', NULL, 538.8, 0.6, 0.0, NULL, NULL, '#9AD9DD', 170, 1, 'scoda:strat:ics:uri:http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic', 'ics_uri', 'high');

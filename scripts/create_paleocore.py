@@ -101,7 +101,11 @@ CREATE_TABLE_SQL = {
             formation_type  TEXT,
             country         TEXT,
             region          TEXT,
-            period          TEXT
+            period          TEXT,
+            uid             TEXT,
+            uid_method      TEXT,
+            uid_confidence  TEXT,
+            same_as_uid     TEXT
         )
     """,
     'temporal_ranges': """
