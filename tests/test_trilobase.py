@@ -452,7 +452,7 @@ class TestICSChronostrat:
         cursor.execute("SELECT COUNT(*) FROM temporal_ics_mapping")
         count = cursor.fetchone()[0]
         conn.close()
-        assert count == 5
+        assert count == 6
 
     def test_mapping_exact(self, test_db):
         """MCAM should map exactly to Miaolingian."""

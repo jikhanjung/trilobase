@@ -446,7 +446,7 @@ def test_db(tmp_path):
     cursor.execute("""
         INSERT INTO ui_queries (name, description, sql, params_json, created_at)
         VALUES ('formation_detail', 'Formation basic information with taxa count',
-                'SELECT f.id, f.name, f.normalized_name, f.formation_type, f.country, f.region, f.period, COUNT(DISTINCT gf.genus_id) as taxa_count FROM pc.formations f LEFT JOIN genus_formations gf ON gf.formation_id = f.id WHERE f.id = :formation_id GROUP BY f.id',
+                'SELECT f.id, f.name, f.normalized_name, f.formation_type, f.country, f.region, f.period, gr.id as country_id, tr.code as temporal_code, COUNT(DISTINCT gf.genus_id) as taxa_count FROM pc.formations f LEFT JOIN genus_formations gf ON gf.formation_id = f.id LEFT JOIN pc.geographic_regions gr ON f.country = gr.name AND gr.level = ''country'' LEFT JOIN pc.temporal_ranges tr ON f.period = tr.name WHERE f.id = :formation_id GROUP BY f.id',
                 '{"formation_id": "integer"}', '2026-02-14T00:00:00')
     """)
     cursor.execute("""
@@ -633,13 +633,22 @@ def test_db(tmp_path):
                 "source_query": "formation_detail",
                 "source_param": "formation_id",
                 "sub_queries": {
-                    "genera": {"query": "formation_genera", "params": {"formation_id": "id"}}
+                    "genera": {"query": "formation_genera", "params": {"formation_id": "id"}},
+                    "temporal_ics_mapping": {"query": "genus_ics_mapping", "params": {"temporal_code": "result.temporal_code"}}
                 },
                 "icon": "bi-layers",
                 "title_template": {"format": "{icon} {name}", "icon": "bi-layers"},
                 "sections": [
                     {"title": "Basic Information", "type": "field_grid",
-                     "fields": [{"key": "name", "label": "Name"}]},
+                     "fields": [
+                         {"key": "name", "label": "Name"},
+                         {"key": "formation_type", "label": "Type"},
+                         {"key": "country", "label": "Country", "format": "link",
+                          "link": {"detail_view": "country_detail", "id_path": "country_id"}},
+                         {"key": "region", "label": "Region"},
+                         {"key": "period", "label": "Period", "format": "temporal_range"},
+                         {"key": "taxa_count", "label": "Taxa Count"}
+                     ]},
                     {"title": "Genera ({count})", "type": "linked_table",
                      "data_key": "genera",
                      "columns": [{"key": "name", "label": "Genus", "italic": True}],
@@ -893,6 +902,10 @@ def test_db(tmp_path):
         VALUES (1, 'UCAM', 'Upper Cambrian', 'Cambrian', 'Upper', 497.0, 486.85, 'scoda:strat:temporal:code:UCAM', 'code', 'high');
         INSERT INTO temporal_ranges (id, code, name, period, epoch, start_mya, end_mya, uid, uid_method, uid_confidence)
         VALUES (2, 'LDEV', 'Lower Devonian', 'Devonian', 'Lower', 419.2, 393.3, 'scoda:strat:temporal:code:LDEV', 'code', 'high');
+        INSERT INTO temporal_ranges (id, code, name, period, epoch, start_mya, end_mya, uid, uid_method, uid_confidence)
+        VALUES (3, 'DEV', 'Devonian', 'Devonian', NULL, 419.2, 358.9, 'scoda:strat:temporal:code:DEV', 'code', 'high');
+        INSERT INTO temporal_ranges (id, code, name, period, epoch, start_mya, end_mya, uid, uid_method, uid_confidence)
+        VALUES (4, 'CAM', 'Cambrian', 'Cambrian', NULL, 538.8, 486.85, 'scoda:strat:temporal:code:CAM', 'code', 'high');
 
         INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count,
             uid, uid_method, uid_confidence)
@@ -925,6 +938,7 @@ def test_db(tmp_path):
         INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (3, 'CAM', 3, 'exact');
         INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (4, 'MUCAM', 4, 'aggregate');
         INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (5, 'MUCAM', 6, 'aggregate');
+        INSERT INTO temporal_ics_mapping (id, temporal_code, ics_id, mapping_type) VALUES (6, 'DEV', 2, 'partial');
     """)
 
     # PaleoCore SCODA metadata (needed by ScodaPackage.create)
