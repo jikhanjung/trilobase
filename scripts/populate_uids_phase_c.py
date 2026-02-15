@@ -396,6 +396,13 @@ def crossref_upgrade(conn, email, limit=None, resume=False, dry_run=False):
 
         if doi:
             new_uid = f"scoda:bib:doi:{doi}"
+            # Check if this DOI UID already exists (multiple entries → same DOI)
+            existing = conn.execute(
+                "SELECT id FROM bibliography WHERE uid = ?", (new_uid,)
+            ).fetchone()
+            if existing:
+                checkpoint['completed'][str_id] = 'duplicate_doi'
+                continue
             checkpoint['doi_found'][str_id] = doi
             found += 1
             if not dry_run:
@@ -466,6 +473,7 @@ def macrostrat_upgrade(conn, limit=None, dry_run=False):
         rows = rows[:limit]
 
     found = 0
+    skipped_dupes = 0
 
     for i, (row_id, normalized_name) in enumerate(rows):
         if not normalized_name:
@@ -475,6 +483,13 @@ def macrostrat_upgrade(conn, limit=None, dry_run=False):
 
         if strat_id:
             new_uid = f"scoda:strat:formation:lexicon:macrostrat:{strat_id}"
+            # Check if this UID already exists (multiple formations → same Macrostrat ID)
+            existing = conn.execute(
+                "SELECT id FROM formations WHERE uid = ?", (new_uid,)
+            ).fetchone()
+            if existing:
+                skipped_dupes += 1
+                continue
             found += 1
             if not dry_run:
                 conn.execute(
@@ -495,7 +510,8 @@ def macrostrat_upgrade(conn, limit=None, dry_run=False):
         conn.commit()
 
     print(f"  Macrostrat complete: {found} lexicon IDs found, "
-          f"{len(rows) - found} fp_v1 retained")
+          f"{skipped_dupes} duplicate skipped, "
+          f"{len(rows) - found - skipped_dupes} fp_v1 retained")
     return found
 
 
