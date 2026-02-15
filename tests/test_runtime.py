@@ -1928,3 +1928,59 @@ class TestUIDSchema:
             for (val,) in values:
                 assert val in valid, f"Invalid confidence in {table}: {val}"
         conn.close()
+
+
+class TestUIDPhaseB:
+    """Phase B UID quality: country-level gr ↔ countries consistency, same_as_uid."""
+
+    def test_country_level_gr_matches_countries(self, test_db):
+        """Country-level geographic_regions UIDs should match countries table UIDs."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        mismatches = conn.execute("""
+            SELECT COUNT(*) FROM geographic_regions gr
+            JOIN countries c ON gr.name = c.name
+            WHERE gr.level = 'country' AND gr.uid != c.uid
+        """).fetchone()[0]
+        conn.close()
+        assert mismatches == 0, f"Found {mismatches} country-level gr ↔ countries UID mismatches"
+
+    def test_no_collision_suffixes(self, test_db):
+        """No UIDs should have collision suffixes like -2, -3."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        for table in ['countries', 'geographic_regions']:
+            collisions = conn.execute(
+                f"SELECT COUNT(*) FROM {table} WHERE uid LIKE '%-_' AND uid_method != 'fp_v1'"
+            ).fetchone()[0]
+            assert collisions == 0, f"Found {collisions} collision suffixes in {table}"
+        conn.close()
+
+    def test_same_as_uid_references_valid_uid(self, test_db):
+        """same_as_uid should reference an existing uid in the same table."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        # Check geographic_regions same_as_uid references
+        rows = conn.execute(
+            "SELECT id, same_as_uid FROM geographic_regions WHERE same_as_uid IS NOT NULL"
+        ).fetchall()
+        for row_id, same_as in rows:
+            target = conn.execute(
+                "SELECT COUNT(*) FROM geographic_regions WHERE uid = ?", (same_as,)
+            ).fetchone()[0]
+            assert target > 0, f"geographic_regions id={row_id} same_as_uid references non-existent uid: {same_as}"
+        conn.close()
+
+    def test_iso_primary_is_actual_country(self, test_db):
+        """iso3166-1 UIDs should belong to actual country names, not sub-regions."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        # Sub-regional names that should NOT be iso3166-1 primary
+        sub_regional = ['Sumatra', 'NW Korea', 'SE Turkey']
+        for name in sub_regional:
+            row = conn.execute(
+                "SELECT uid_method FROM countries WHERE name = ?", (name,)
+            ).fetchone()
+            if row:
+                assert row[0] != 'iso3166-1', f"{name} should not be iso3166-1 primary"
+        conn.close()
