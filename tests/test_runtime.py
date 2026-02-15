@@ -429,7 +429,7 @@ class TestRelease:
         assert stats['family'] == 2         # Phacopidae, Olenidae
         assert stats['order'] == 2          # Phacopida, Ptychopariida
         assert stats['synonyms'] == 1
-        assert stats['bibliography'] == 2
+        assert stats['bibliography'] == 3
 
     def test_get_provenance(self, test_db):
         """get_provenance should return 2 records with correct structure."""
@@ -2095,3 +2095,53 @@ class TestUIDPhaseC:
         conn.close()
         for (conf,) in rows:
             assert conf == 'low', f"cross_ref should have low confidence, got: {conf}"
+
+    def test_bibliography_doi_uid_format(self, test_db):
+        """DOI-upgraded bibliography UIDs should use scoda:bib:doi: prefix with high confidence."""
+        canonical_db_path, _, _ = test_db
+        conn = sqlite3.connect(canonical_db_path)
+        rows = conn.execute(
+            "SELECT uid, uid_method, uid_confidence FROM bibliography WHERE uid_method = 'doi'"
+        ).fetchall()
+        conn.close()
+        assert len(rows) > 0, "No DOI-method bibliography records found"
+        for uid, method, conf in rows:
+            assert uid.startswith('scoda:bib:doi:'), f"DOI uid should start with scoda:bib:doi:, got: {uid}"
+            assert conf == 'high', f"DOI confidence should be high, got: {conf}"
+
+    def test_formations_lexicon_uid_format(self, test_db):
+        """Lexicon-upgraded formations UIDs should use scoda:strat:formation:lexicon: prefix with high confidence."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        rows = conn.execute(
+            "SELECT uid, uid_method, uid_confidence FROM formations WHERE uid_method = 'lexicon'"
+        ).fetchall()
+        conn.close()
+        assert len(rows) > 0, "No lexicon-method formation records found"
+        for uid, method, conf in rows:
+            assert uid.startswith('scoda:strat:formation:lexicon:'), f"Lexicon uid should start with scoda:strat:formation:lexicon:, got: {uid}"
+            assert conf == 'high', f"Lexicon confidence should be high, got: {conf}"
+
+    def test_bibliography_uid_methods_valid(self, test_db):
+        """bibliography uid_method should only be fp_v1 or doi."""
+        canonical_db_path, _, _ = test_db
+        conn = sqlite3.connect(canonical_db_path)
+        methods = conn.execute(
+            "SELECT DISTINCT uid_method FROM bibliography WHERE uid_method IS NOT NULL"
+        ).fetchall()
+        conn.close()
+        valid = {'fp_v1', 'doi'}
+        for (m,) in methods:
+            assert m in valid, f"Invalid bibliography uid_method: {m}"
+
+    def test_formations_uid_methods_valid(self, test_db):
+        """formations uid_method should only be fp_v1 or lexicon."""
+        _, _, pc_path = test_db
+        conn = sqlite3.connect(pc_path)
+        methods = conn.execute(
+            "SELECT DISTINCT uid_method FROM formations WHERE uid_method IS NOT NULL"
+        ).fetchall()
+        conn.close()
+        valid = {'fp_v1', 'lexicon'}
+        for (m,) in methods:
+            assert m in valid, f"Invalid formations uid_method: {m}"

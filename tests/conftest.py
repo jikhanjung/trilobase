@@ -260,6 +260,14 @@ def test_db(tmp_path):
                 'CHIEN see QIAN.',
                 'scoda:bib:fp_v1:sha256:test_chien_crossref', 'fp_v1', 'low')
     """)
+    cursor.execute("""
+        INSERT INTO bibliography (id, authors, year, title, journal, volume, pages, reference_type, raw_entry,
+            uid, uid_method, uid_confidence)
+        VALUES (3, 'Lieberman, B.S.', 1994, 'Evolution of the trilobite subfamily Proetinae',
+                'Bulletin of the AMNH', '223', '1-56', 'article',
+                'Lieberman, B.S. (1994) Evolution of the trilobite subfamily Proetinae.',
+                'scoda:bib:doi:10.1234/test-lieberman-1994', 'doi', 'high')
+    """)
 
     # SCODA metadata
     cursor.executescript("""
@@ -894,6 +902,10 @@ def test_db(tmp_path):
             uid, uid_method, uid_confidence)
         VALUES (2, 'Alum Sh', 'alum sh', 'Sh', 'Sweden', 'Cambrian', 20,
             'scoda:strat:formation:fp_v1:sha256:test_alum', 'fp_v1', 'medium');
+        INSERT INTO formations (id, name, normalized_name, formation_type, country, period, taxa_count,
+            uid, uid_method, uid_confidence)
+        VALUES (3, 'St. Clair Ls', 'st clair ls', 'Ls', 'United States', 'Silurian', 8,
+            'scoda:strat:formation:lexicon:macrostrat:12345', 'lexicon', 'high');
 
         INSERT INTO ics_chronostrat (id, ics_uri, name, rank, parent_id, start_mya, start_uncertainty, end_mya, end_uncertainty, short_code, color, display_order, ratified_gssp, uid, uid_method, uid_confidence)
         VALUES (1, 'http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic', 'Phanerozoic', 'Eon', NULL, 538.8, 0.6, 0.0, NULL, NULL, '#9AD9DD', 170, 1, 'scoda:strat:ics:uri:http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic', 'ics_uri', 'high');
