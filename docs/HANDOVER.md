@@ -501,6 +501,16 @@
   - Section 11: Implementation Guidance (resolve_uid, population strategy Phase A/B/C)
   - 문서: `docs/SCODA_Stable_UID_Schema_v0.2.md`
 
+- **UID Population Phase A 완료**: 확정적 UID 6,250건 생성
+  - `ics_chronostrat`: 178건 (ics_uri, high 100%)
+  - `temporal_ranges`: 28건 (code, high 100%)
+  - `countries`: 142건 (iso3166-1=56 + fp_v1=86)
+  - `geographic_regions`: 562건 (name=497 + iso3166-1=54 + fp_v1=11)
+  - `taxonomic_ranks`: 5,340건 (name=5,310 + name+disambiguation=30)
+  - 스크립트: `scripts/populate_iso_codes.py`, `scripts/populate_uids_phase_a.py`
+  - 테스트: TestUIDSchema 11개 추가 → 208개 전부 통과
+  - devlog: `devlog/20260215_060_uid_population_phase_a.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -646,11 +656,11 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_runtime.py` | 135개 | ✅ 통과 |
+| `tests/test_runtime.py` | 146개 | ✅ 통과 |
 | `tests/test_trilobase.py` | 51개 | ✅ 통과 |
 | `tests/test_mcp.py` | 7개 | ✅ 통과 |
 | `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
-| **합계** | **196개** | **✅ 전부 통과** |
+| **합계** | **208개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -666,9 +676,9 @@ pytest tests/
 
 ## 다음 작업
 
-Runtime Purification 완료 (Phase 46): SCODA Desktop은 완전한 범용 뷰어.
-모든 도메인 전용 기능은 .scoda 패키지 내부 (manifest, named queries, mcp_tools.json)에만 존재.
-- PaleoCore 독립 뷰어: `python -m scoda_desktop.app --package paleocore` 또는 GUI에서 선택
+UID Population Phase A 완료. 다음 단계:
+- **Phase B** (P43): geographic_regions 복합 UID + countries fallback 5건 (`devlog/20260215_P43_uid_population_phase_b.md`)
+- **Phase C** (P44): bibliography DOI/fp + formations lexicon/fp (`devlog/20260215_P44_uid_population_phase_c.md`)
 
 ## 미해결 항목
 
