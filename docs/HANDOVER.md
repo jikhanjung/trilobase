@@ -26,7 +26,7 @@
   - 원본 텍스트 필드 보존
 
 - **Phase 11 완료**: Web Interface
-  - Flask 기반 웹 애플리케이션
+  - 웹 애플리케이션 (현재 FastAPI)
   - Tree View (Class~Family 계층 구조)
   - Genus List (Family 선택 시 표시)
   - Genus Detail Modal (상세정보)
@@ -528,6 +528,19 @@
   - 테스트: TestUIDPhaseC 10개 추가 → 222개 전부 통과
   - devlog: `devlog/20260215_062_uid_population_phase_c.md`
 
+- **Flask → FastAPI 마이그레이션 완료**
+  - Flask(WSGI) + asgiref WsgiToAsgi 이중 스택 → FastAPI 단일 ASGI 스택 전환
+  - `app.py`: 12개 라우트 FastAPI 변환, CORSMiddleware, Pydantic POST 모델, Jinja2Templates
+  - `gui.py`: WsgiToAsgi 래핑 제거, `_run_web_server()` 직접 FastAPI 앱 사용
+  - `serve.py`: `app.run()` → `uvicorn.run(app)`
+  - `ScodaDesktop.spec`: flask/asgiref → fastapi hidden imports
+  - 테스트: Flask test_client → Starlette TestClient, 기계적 치환 ~90건
+  - 의존성: flask, asgiref 제거 → fastapi, httpx 추가
+  - MCP 서버(포트 8081)는 변경 없음 (별도 유지)
+  - 테스트: 226개 전부 통과
+  - 계획 문서: `devlog/20260215_P46_fastapi_migration.md`
+  - devlog: `devlog/20260215_063_fastapi_migration.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -585,10 +598,10 @@ trilobase/
 ├── scoda_desktop/                    # SCODA Desktop runtime package (Phase 45)
 │   ├── __init__.py                   # 패키지 init
 │   ├── scoda_package.py              # .scoda 패키지 + 중앙 DB 접근 (Phase 25)
-│   ├── app.py                        # Flask 웹 앱
+│   ├── app.py                        # FastAPI 웹 앱
 │   ├── mcp_server.py                 # MCP 서버 (Phase 22-23, stdio/SSE 모드)
 │   ├── gui.py                        # GUI 컨트롤 패널 (Phase 19)
-│   ├── serve.py                      # Flask 서버 런처 (Phase 18)
+│   ├── serve.py                      # 웹 서버 런처 (uvicorn)
 │   ├── templates/
 │   │   └── index.html                # Generic viewer 메인 페이지
 │   └── static/
@@ -673,16 +686,16 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_runtime.py` | 160개 | ✅ 통과 |
-| `tests/test_trilobase.py` | 51개 | ✅ 통과 |
-| `tests/test_mcp.py` | 7개 | ✅ 통과 |
+| `tests/test_runtime.py` | 105개 | ✅ 통과 |
+| `tests/test_trilobase.py` | 108개 | ✅ 통과 |
+| `tests/test_mcp.py` | 12개 | ✅ 통과 |
 | `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
-| **합계** | **222개** | **✅ 전부 통과** |
+| **합계** | **226개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
 pytest tests/
-# 의존성: pip install mcp pytest-asyncio
+# 의존성: pip install fastapi httpx mcp pytest-asyncio uvicorn starlette
 ```
 
 **pytest 설정 (`pytest.ini`):**
@@ -693,9 +706,10 @@ pytest tests/
 
 ## 다음 작업
 
-UID Population Phase A/B/C 완료 — 전체 7개 테이블 10,384건 100% UID 커버리지 달성.
+Flask→FastAPI 마이그레이션 완료. 단일 ASGI 스택 통합.
+- **후속 과제**: MCP+Web API 단일 프로세스 통합 (8080 하나로), Pydantic response_model, aiosqlite
 - 선택적: CrossRef DOI 업그레이드 (`--crossref --email`), Macrostrat lexicon 업그레이드 (`--macrostrat`)
-- **향후 로드맵** (P45): Flask→FastAPI 전환, Taxonomic Opinions, SCODA 백오피스 (`devlog/20260215_P45_future_roadmap.md`)
+- **향후 로드맵** (P45): Taxonomic Opinions, SCODA 백오피스 (`devlog/20260215_P45_future_roadmap.md`)
 
 ## 미해결 항목
 
