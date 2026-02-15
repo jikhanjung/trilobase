@@ -96,13 +96,17 @@ async def test_list_available_queries():
 
 @pytest.mark.asyncio
 async def test_execute_named_query():
-    """Test named query execution"""
+    """Test named query execution with a parameterless query"""
     async with create_session() as session:
         list_result = await session.call_tool("list_available_queries", {})
         queries = json.loads(list_result.content[0].text)
         assert len(queries) > 0
 
-        query_name = queries[0]["name"]
+        # Pick a query that doesn't require parameters
+        no_param_queries = [q for q in queries if not q.get("params_json")]
+        assert len(no_param_queries) > 0, "No parameterless queries available"
+        query_name = no_param_queries[0]["name"]
+
         result = await session.call_tool("execute_named_query", {
             "query_name": query_name,
             "params": {}
