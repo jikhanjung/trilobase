@@ -557,6 +557,17 @@
   - 계획 문서: `devlog/20260215_P46_fastapi_migration.md`
   - devlog: `devlog/20260215_063_fastapi_migration.md`
 
+- **MCP + Web API 단일 프로세스 통합**
+  - MCP SSE 서버(Starlette, 포트 8081)를 FastAPI(포트 8080)에 sub-app mount로 통합
+  - `mcp_server.py`: `create_mcp_app()` 팩토리 함수 추출
+  - `app.py`: `app.mount("/mcp", create_mcp_app())` — `/mcp/sse`, `/mcp/messages`, `/mcp/health`
+  - `gui.py`: MCP 프로세스 관리 코드 전면 제거 (~100줄)
+  - `ScodaDesktop.spec`: `ScodaDesktop_mcp` → `ScodaMCP` 리네이밍
+  - stdio 모드(`python -m scoda_desktop.mcp_server`) 변경 없이 유지
+  - 테스트: 228개 전부 통과 (기존 226 + 신규 2)
+  - 계획 문서: `devlog/20260215_P48_mcp_web_api_merge.md`
+  - devlog: `devlog/20260215_066_mcp_web_api_merge.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -702,11 +713,11 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_runtime.py` | 105개 | ✅ 통과 |
+| `tests/test_runtime.py` | 107개 | ✅ 통과 |
 | `tests/test_trilobase.py` | 108개 | ✅ 통과 |
 | `tests/test_mcp.py` | 12개 | ✅ 통과 |
 | `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
-| **합계** | **226개** | **✅ 전부 통과** |
+| **합계** | **228개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -722,8 +733,8 @@ pytest tests/
 
 ## 다음 작업
 
-Flask→FastAPI 마이그레이션 완료. 단일 ASGI 스택 통합.
-- **후속 과제**: MCP+Web API 단일 프로세스 통합 (8080 하나로), Pydantic response_model, aiosqlite
+MCP+Web API 단일 프로세스 통합 완료 (포트 8080 하나로).
+- **후속 과제**: Pydantic response_model, aiosqlite
 - 선택적: CrossRef DOI 업그레이드 (`--crossref --email`), Macrostrat lexicon 업그레이드 (`--macrostrat`)
 - **향후 로드맵** (P45): Taxonomic Opinions, SCODA 백오피스 (`devlog/20260215_P45_future_roadmap.md`)
 
