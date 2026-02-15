@@ -47,6 +47,21 @@ class TestCORS:
         assert 'POST' in response.headers['access-control-allow-methods']
 
 
+# --- MCP mount ---
+
+class TestMCPMount:
+    def test_mcp_health_via_mount(self, client):
+        """MCP health endpoint accessible through main app."""
+        resp = client.get("/mcp/health")
+        assert resp.status_code == 200
+        assert resp.json()["status"] == "ok"
+
+    def test_mcp_messages_rejects_get(self, client):
+        """MCP messages endpoint should reject GET (POST only)."""
+        resp = client.get("/mcp/messages")
+        assert resp.status_code == 405
+
+
 # --- Index page ---
 
 

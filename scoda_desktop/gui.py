@@ -57,13 +57,6 @@ class ScodaDesktopGUI:
         self.server_running = False
         self.port = 8080
 
-        # MCP server state
-        self.mcp_process = None     # MCP subprocess
-        self.mcp_thread = None      # MCP thread (frozen mode)
-        self.mcp_log_reader_thread = None
-        self.mcp_running = False
-        self.mcp_port = 8081
-
         # Selected package
         self.selected_package = None
 
@@ -423,73 +416,6 @@ class ScodaDesktopGUI:
         )
         self.log_reader_thread.start()
 
-    def _start_mcp_server(self):
-        """Start MCP server (SSE mode)."""
-        if getattr(sys, 'frozen', False):
-            self._start_mcp_threaded()
-        else:
-            self._start_mcp_subprocess()
-
-    def _start_mcp_threaded(self):
-        """Start MCP server in thread (for frozen/PyInstaller mode)."""
-        self._append_log("Starting MCP server (threaded mode)...", "INFO")
-
-        from . import mcp_server
-
-        def run_mcp():
-            try:
-                mcp_server.run_sse(host='localhost', port=self.mcp_port)
-            except Exception as e:
-                self.root.after(0, self._append_log, f"MCP ERROR: {e}", "ERROR")
-                self.mcp_running = False
-                self.root.after(0, self._update_status)
-
-        self.mcp_thread = threading.Thread(target=run_mcp, daemon=True)
-        self.mcp_thread.start()
-
-        self._append_log(f"MCP server started on port {self.mcp_port}", "INFO")
-
-    def _start_mcp_subprocess(self):
-        """Start MCP server as subprocess (for development mode)."""
-        python_exe = sys.executable
-
-        self._append_log(f"Starting MCP server (subprocess mode, port {self.mcp_port})...", "INFO")
-
-        self.mcp_process = subprocess.Popen(
-            [python_exe, '-m', 'scoda_desktop.mcp_server', '--mode', 'sse', '--port', str(self.mcp_port)],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            universal_newlines=True,
-            bufsize=1,
-            cwd=self.base_path
-        )
-
-        self.mcp_log_reader_thread = threading.Thread(
-            target=self._read_mcp_logs,
-            daemon=True
-        )
-        self.mcp_log_reader_thread.start()
-
-    def _read_mcp_logs(self):
-        """Read MCP server logs from subprocess and display in GUI."""
-        while self.mcp_running and self.mcp_process:
-            try:
-                line = self.mcp_process.stdout.readline()
-                if line:
-                    prefixed_line = f"[MCP] {line.strip()}"
-                    self.root.after(0, self._append_log, prefixed_line, "INFO")
-                else:
-                    break
-            except Exception as e:
-                self._append_log(f"MCP log reader error: {e}", "ERROR")
-                break
-
-        if self.mcp_process:
-            returncode = self.mcp_process.poll()
-            if returncode is not None and returncode != 0:
-                self.root.after(0, self._append_log,
-                              f"MCP server process exited with code {returncode}", "ERROR")
-
     def _run_web_server(self):
         """Run FastAPI app with uvicorn (called in thread for frozen mode)."""
         try:
@@ -521,42 +447,6 @@ class ScodaDesktopGUI:
             self.root.after(0, self._append_log, traceback.format_exc(), "ERROR")
             self.server_running = False
             self.root.after(0, self._update_status)
-
-    def stop_mcp(self):
-        """Stop MCP SSE server."""
-        if not self.mcp_running:
-            return
-
-        self._append_log("Stopping MCP server...", "INFO")
-        self.mcp_running = False
-
-        if self.mcp_process:
-            try:
-                self.mcp_process.terminate()
-                self.mcp_process.wait(timeout=3)
-                self._append_log("MCP server stopped successfully", "INFO")
-            except subprocess.TimeoutExpired:
-                self._append_log("MCP server did not stop gracefully, forcing...", "WARNING")
-                self.mcp_process.kill()
-                self.mcp_process.wait()
-            except Exception as e:
-                self._append_log(f"WARNING: Error stopping MCP server: {e}", "WARNING")
-            finally:
-                self.mcp_process = None
-
-        self._update_status()
-
-    def start_mcp(self):
-        """Start MCP SSE server (optional, independent of web server)."""
-        if self.mcp_running:
-            return
-
-        try:
-            self._start_mcp_server()
-            self.mcp_running = True
-            self._update_status()
-        except Exception as e:
-            self._append_log(f"ERROR: Failed to start MCP server: {e}", "ERROR")
 
     def stop_server(self):
         """Stop web server (independent of MCP)."""
@@ -741,25 +631,14 @@ class ScodaDesktopGUI:
 
     def quit_app(self):
         """Quit application."""
-        if self.server_running or self.mcp_running:
+        if self.server_running:
             result = messagebox.askyesno("Quit",
-                                        "Servers are still running.\n\n"
+                                        "Server is still running.\n\n"
                                         "Are you sure you want to quit?")
             if not result:
                 return
 
             self.server_running = False
-            self.mcp_running = False
-
-        if self.mcp_process:
-            try:
-                self.mcp_process.terminate()
-                self.mcp_process.wait(timeout=2)
-            except:
-                try:
-                    self.mcp_process.kill()
-                except:
-                    pass
 
         if self.server_process:
             try:

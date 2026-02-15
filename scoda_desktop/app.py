@@ -422,6 +422,11 @@ def api_delete_annotation(annotation_id: int):
     return JSONResponse(result, status_code=status)
 
 
+# Mount MCP SSE server as sub-application at /mcp
+from .mcp_server import create_mcp_app
+app.mount("/mcp", create_mcp_app())
+
+
 @app.get('/{filename:path}')
 def serve_spa_file(filename: str):
     """Serve Reference SPA asset files (app.js, style.css, etc.)."""

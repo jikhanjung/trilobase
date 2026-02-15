@@ -4,7 +4,7 @@ PyInstaller spec file for SCODA Desktop standalone executables
 
 Two executables are produced:
   ScodaDesktop.exe     - GUI viewer (console=False, no console blocking)
-  ScodaDesktop_mcp.exe - MCP stdio server (console=True, for Claude Desktop)
+  ScodaMCP.exe - MCP stdio server (console=True, for Claude Desktop)
 
 Build with: pyinstaller ScodaDesktop.spec
 """
@@ -76,7 +76,7 @@ exe = EXE(
 )
 
 # ---------------------------------------------------------------------------
-# ScodaDesktop_mcp.exe  (MCP stdio server for Claude Desktop)
+# ScodaMCP.exe  (MCP stdio server for Claude Desktop)
 # ---------------------------------------------------------------------------
 mcp_a = Analysis(
     ['launcher_mcp.py'],
@@ -121,7 +121,7 @@ mcp_exe = EXE(
     mcp_a.zipfiles,
     mcp_a.datas,
     [],
-    name='ScodaDesktop_mcp',
+    name='ScodaMCP',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

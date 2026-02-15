@@ -469,11 +469,10 @@ async def run_stdio():
     async with stdio_server() as (read_stream, write_stream):
         await app.run(read_stream, write_stream, app.create_initialization_options())
 
-def run_sse(host: str = "localhost", port: int = 8081):
-    """Run MCP server in SSE mode (HTTP server for persistent connections)."""
+def create_mcp_app() -> Starlette:
+    """Create MCP SSE Starlette app for mounting or standalone use."""
     ensure_overlay_db()
 
-    # Create SSE transport
     sse = SseServerTransport("/messages")
 
     async def handle_sse(request):
@@ -501,14 +500,18 @@ def run_sse(host: str = "localhost", port: int = 8081):
             media_type="application/json"
         )
 
-    # Create Starlette app
-    starlette_app = Starlette(
+    return Starlette(
         routes=[
             Route("/sse", endpoint=handle_sse),
             Route("/messages", endpoint=handle_messages, methods=["POST"]),
             Route("/health", endpoint=health_check),
         ]
     )
+
+
+def run_sse(host: str = "localhost", port: int = 8081):
+    """Run MCP server in SSE mode (HTTP server for persistent connections)."""
+    starlette_app = create_mcp_app()
 
     print(f"SCODA Desktop MCP Server (SSE mode) starting on http://{host}:{port}")
     print(f"   SSE endpoint: http://{host}:{port}/sse")
