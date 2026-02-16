@@ -195,7 +195,9 @@ def insert_manifest(conn):
                         "fields": [
                             {"key": "name", "label": "Name"},
                             {"key": "formation_type", "label": "Type"},
-                            {"key": "country", "label": "Country"},
+                            {"key": "country", "label": "Country",
+                             "format": "link",
+                             "link": {"detail_view": "country_detail", "id_path": "country_id"}},
                             {"key": "region", "label": "Region"},
                             {"key": "period", "label": "Period"},
                             {"key": "taxa_count", "label": "Taxa Count"}
@@ -421,12 +423,14 @@ def insert_manifest(conn):
                             {"key": "name", "label": "Name", "format": "italic"},
                             {"key": "author", "label": "Author"},
                             {"key": "year", "label": "Year", "suffix_key": "year_suffix"},
-                            {"key": "hierarchy", "label": "Classification", "format": "hierarchy"},
+                            {"key": "hierarchy", "label": "Classification", "format": "hierarchy",
+                             "data_key": "hierarchy", "link": {"detail_view": "rank_detail"}},
                             {"key": "is_valid", "label": "Status",
                              "format": "boolean", "true_label": "Valid",
                              "false_label": "Invalid", "false_class": "invalid"},
                             {"key": "temporal_code", "label": "Temporal Range",
-                             "format": "temporal_range"}
+                             "format": "temporal_range",
+                             "mapping_key": "ics_mapping", "link": {"detail_view": "chronostrat_detail"}}
                         ]
                     },
                     {
@@ -485,6 +489,8 @@ def insert_manifest(conn):
                             {"key": "author", "label": "Author"},
                             {"key": "year", "label": "Year"},
                             {"key": "parent_name", "label": "Parent",
+                             "format": "link",
+                             "link": {"detail_view": "rank_detail", "id_path": "parent_id"},
                              "suffix_key": "parent_rank", "suffix_format": "({value})"}
                         ]
                     },

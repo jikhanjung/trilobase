@@ -542,6 +542,18 @@ def insert_ui_queries(conn):
          'FROM ics_chronostrat ic LEFT JOIN ics_chronostrat p ON ic.parent_id = p.id '
          'WHERE ic.id = :id',
          json.dumps(['id']), now),
+        (12, 'temporal_range_detail', 'Temporal range detail with ICS mappings',
+         'SELECT id, code, name, period, epoch, start_mya, end_mya '
+         'FROM temporal_ranges WHERE id = :id',
+         json.dumps(['id']), now),
+        (13, 'temporal_range_ics_mappings', 'ICS mappings for a temporal range',
+         'SELECT tim.mapping_type, ic.name, ic.rank, ic.start_mya, ic.end_mya, '
+         'ic.color, ic.id as ics_id '
+         'FROM temporal_ics_mapping tim '
+         'JOIN ics_chronostrat ic ON tim.ics_id = ic.id '
+         'JOIN temporal_ranges tr ON tim.temporal_code = tr.code '
+         'WHERE tr.id = :id',
+         json.dumps(['id']), now),
     ]
     for q in queries:
         conn.execute(
@@ -639,7 +651,8 @@ def insert_ui_manifest(conn):
                      "sortable": True, "type": "number"}
                 ],
                 "default_sort": {"key": "start_mya", "direction": "desc"},
-                "searchable": True
+                "searchable": True,
+                "on_row_click": {"detail_view": "temporal_range_detail", "id_key": "id"}
             },
             "country_detail": {
                 "type": "detail",
@@ -688,6 +701,46 @@ def insert_ui_manifest(conn):
                             {"key": "color", "label": "Color", "format": "color_chip"},
                             {"key": "parent_name", "label": "Parent"}
                         ]
+                    }
+                ]
+            },
+            "temporal_range_detail": {
+                "type": "detail",
+                "title": "Temporal Range Detail",
+                "source_query": "temporal_range_detail",
+                "sub_queries": {
+                    "ics_mappings": {
+                        "query": "temporal_range_ics_mappings",
+                        "params": {"id": "id"}
+                    }
+                },
+                "sections": [
+                    {
+                        "type": "field_grid",
+                        "fields": [
+                            {"key": "code", "label": "Code"},
+                            {"key": "name", "label": "Name"},
+                            {"key": "period", "label": "Period"},
+                            {"key": "epoch", "label": "Epoch"},
+                            {"key": "start_mya", "label": "Start (Ma)"},
+                            {"key": "end_mya", "label": "End (Ma)"}
+                        ]
+                    },
+                    {
+                        "type": "linked_table",
+                        "title": "ICS Mappings ({count})",
+                        "data_key": "ics_mappings",
+                        "show_empty": True,
+                        "empty_message": "No ICS mappings found.",
+                        "columns": [
+                            {"key": "name", "label": "ICS Unit"},
+                            {"key": "rank", "label": "Rank"},
+                            {"key": "mapping_type", "label": "Mapping"},
+                            {"key": "start_mya", "label": "Start (Ma)"},
+                            {"key": "end_mya", "label": "End (Ma)"},
+                            {"key": "color", "label": "Color", "format": "color_chip"}
+                        ],
+                        "on_row_click": {"detail_view": "chronostrat_detail", "id_key": "ics_id"}
                     }
                 ]
             }

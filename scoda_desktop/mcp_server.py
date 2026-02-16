@@ -193,9 +193,6 @@ def execute_named_query(query_name: str, params: dict = None) -> list[dict] | di
     conn.close()
     return result
 
-VALID_ENTITY_TYPES = {'genus', 'family', 'order', 'suborder', 'superfamily', 'class'}
-VALID_ANNOTATION_TYPES = {'note', 'correction', 'alternative', 'link'}
-
 def get_annotations(entity_type: str, entity_id: int) -> list[dict]:
     """Retrieve user annotations for a specific entity."""
     conn = get_db()
@@ -216,11 +213,11 @@ def add_annotation(entity_type: str, entity_id: int, entity_name: str, annotatio
     conn = get_db()
     cursor = conn.cursor()
 
-    if entity_type not in VALID_ENTITY_TYPES:
-        return {"error": f"Invalid entity_type. Must be one of: {', '.join(sorted(VALID_ENTITY_TYPES))}"}
+    if not entity_type:
+        return {"error": "entity_type is required"}
 
-    if annotation_type not in VALID_ANNOTATION_TYPES:
-        return {"error": f"Invalid annotation_type. Must be one of: {', '.join(sorted(VALID_ANNOTATION_TYPES))}"}
+    if not annotation_type:
+        return {"error": "annotation_type is required"}
 
     cursor.execute("""
         INSERT INTO overlay.user_annotations (entity_type, entity_id, entity_name, annotation_type, content, author)
@@ -306,7 +303,7 @@ def _get_builtin_tools():
             inputSchema={
                 "type": "object",
                 "properties": {
-                    "query_name": {"type": "string", "description": "The name of the query to execute (e.g., 'taxonomy_tree', 'family_genera')."},
+                    "query_name": {"type": "string", "description": "The name of the query to execute (see /api/queries for available names)."},
                     "params": {"type": "object", "description": "A dictionary of parameters to pass to the query.", "additionalProperties": True, "default": {}}
                 },
                 "required": ["query_name"]

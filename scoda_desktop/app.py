@@ -4,8 +4,9 @@ FastAPI application for browsing SCODA data packages
 """
 
 from fastapi import FastAPI, Request, HTTPException
-from fastapi.responses import JSONResponse, HTMLResponse, FileResponse
+from fastapi.responses import JSONResponse, HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 from typing import Any, Optional
@@ -13,9 +14,13 @@ import json
 import os
 import sqlite3
 
-from .scoda_package import get_db, get_registry, get_active_package_name
+from .scoda_package import get_db
 
 app = FastAPI(title="SCODA Desktop")
+
+# Tables that are SCODA metadata — excluded from auto-discovery
+SCODA_META_TABLES = {'artifact_metadata', 'provenance', 'schema_descriptions',
+                     'ui_display_intent', 'ui_queries', 'ui_manifest'}
 
 app.add_middleware(
     CORSMiddleware,
@@ -25,9 +30,8 @@ app.add_middleware(
 )
 
 templates = Jinja2Templates(directory=os.path.join(os.path.dirname(__file__), "templates"))
+app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "static")), name="static")
 
-VALID_ENTITY_TYPES = {'genus', 'family', 'order', 'suborder', 'superfamily', 'class'}
-VALID_ANNOTATION_TYPES = {'note', 'correction', 'alternative', 'link'}
 
 
 # ---------------------------------------------------------------------------
@@ -98,27 +102,126 @@ class DeleteResponse(BaseModel):
 # Core helper functions (shared by legacy and namespaced routes)
 # ---------------------------------------------------------------------------
 
-def _fetch_manifest(conn):
-    """Fetch UI manifest from a DB connection."""
+def _auto_generate_manifest(conn):
+    """Generate a manifest automatically from DB schema when ui_manifest is absent."""
     cursor = conn.cursor()
-    cursor.execute("""
-        SELECT name, description, manifest_json, created_at
-        FROM ui_manifest
-        WHERE name = 'default'
-    """)
-    row = cursor.fetchone()
-    if not row:
+
+    # 1. User data tables (exclude SCODA metadata tables)
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+    tables = [r[0] for r in cursor.fetchall()
+              if r[0] not in SCODA_META_TABLES and not r[0].startswith('sqlite_')]
+    tables.sort()
+
+    if not tables:
         return None
 
-    # Include package info from artifact_metadata
-    cursor.execute("SELECT key, value FROM artifact_metadata")
-    meta = {r['key']: r['value'] for r in cursor.fetchall()}
+    # 2. Build views for each table
+    views = {}
+    for table in tables:
+        cols_info = cursor.execute(f"PRAGMA table_info([{table}])").fetchall()
+        # cols_info row: (cid, name, type, notnull, default, pk)
+        pk_col = None
+        columns = []
+        for c in cols_info:
+            col_name, col_type, is_pk = c[1], c[2], c[5]
+            if is_pk:
+                pk_col = col_name
+            columns.append({
+                "key": col_name,
+                "label": col_name.replace('_', ' ').title(),
+                "sortable": True,
+                "searchable": col_type.upper() in ('TEXT', '')
+            })
+
+        # 3. Table view
+        title = table.replace('_', ' ').title()
+        table_view_key = f"{table}_table"
+        view_def = {
+            "type": "table",
+            "title": title,
+            "source_query": f"auto__{table}_list",
+            "columns": columns,
+            "default_sort": {"key": columns[0]["key"], "direction": "asc"},
+            "searchable": True
+        }
+        if pk_col:
+            view_def["on_row_click"] = {
+                "detail_view": f"{table}_detail",
+                "id_key": pk_col
+            }
+        views[table_view_key] = view_def
+
+        # 4. Detail view (only for tables with a PK)
+        if pk_col:
+            views[f"{table}_detail"] = {
+                "type": "detail",
+                "title": f"{title} Detail",
+                "source": f"/api/auto/detail/{table}?id={{id}}",
+                "sections": [{
+                    "type": "field_grid",
+                    "fields": [{"key": c["key"], "label": c["label"]} for c in columns]
+                }]
+            }
+
+    first_view = f"{tables[0]}_table"
+    return {
+        "default_view": first_view,
+        "views": views
+    }
+
+
+def _fetch_manifest(conn):
+    """Fetch UI manifest from a DB connection.
+
+    Falls back to auto-generating a manifest from DB schema if ui_manifest
+    table is missing or has no 'default' row.
+    """
+    cursor = conn.cursor()
+
+    # Check if ui_manifest table exists
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='ui_manifest'")
+    if cursor.fetchone():
+        cursor.execute("""
+            SELECT name, description, manifest_json, created_at
+            FROM ui_manifest
+            WHERE name = 'default'
+        """)
+        row = cursor.fetchone()
+        if row:
+            # Include package info from artifact_metadata
+            cursor.execute("SELECT key, value FROM artifact_metadata")
+            meta = {r['key']: r['value'] for r in cursor.fetchall()}
+
+            return {
+                'name': row['name'],
+                'description': row['description'],
+                'manifest': json.loads(row['manifest_json']),
+                'created_at': row['created_at'],
+                'package': {
+                    'name': meta.get('name', ''),
+                    'artifact_id': meta.get('artifact_id', ''),
+                    'version': meta.get('version', ''),
+                    'description': meta.get('description', ''),
+                }
+            }
+
+    # Fallback: auto-generate manifest from DB schema
+    manifest = _auto_generate_manifest(conn)
+    if not manifest or not manifest['views']:
+        return None
+
+    # Package info from artifact_metadata (if table exists)
+    meta = {}
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='artifact_metadata'")
+    if cursor.fetchone():
+        cursor.execute("SELECT key, value FROM artifact_metadata")
+        meta = {r['key']: r['value'] for r in cursor.fetchall()}
 
     return {
-        'name': row['name'],
-        'description': row['description'],
-        'manifest': json.loads(row['manifest_json']),
-        'created_at': row['created_at'],
+        'name': 'auto-generated',
+        'description': 'Auto-generated from database schema',
+        'manifest': manifest,
+        'created_at': '',
         'package': {
             'name': meta.get('name', ''),
             'artifact_id': meta.get('artifact_id', ''),
@@ -186,8 +289,35 @@ def _fetch_queries(conn):
 
 
 def _execute_query(conn, query_name, params):
-    """Execute a named query and return result dict or error tuple."""
+    """Execute a named query and return result dict or error tuple.
+
+    Auto-generated queries (prefix ``auto__``) are handled directly
+    without looking up ``ui_queries``.
+    """
     cursor = conn.cursor()
+
+    # Auto-generated query: "auto__{table}_list"
+    if query_name.startswith('auto__') and query_name.endswith('_list'):
+        table = query_name[6:-5]  # "auto__countries_list" → "countries"
+        # Verify table exists (SQL injection prevention)
+        cursor.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name=?", (table,))
+        if not cursor.fetchone():
+            return None
+        try:
+            cursor.execute(f"SELECT * FROM [{table}]")
+            columns = [desc[0] for desc in cursor.description]
+            rows = cursor.fetchall()
+            return {
+                'query': query_name,
+                'columns': columns,
+                'row_count': len(rows),
+                'rows': [dict(r) for r in rows]
+            }
+        except Exception as e:
+            return {'error': str(e)}
+
+    # Standard named query from ui_queries
     cursor.execute("SELECT sql, params_json FROM ui_queries WHERE name = ?", (query_name,))
     query = cursor.fetchone()
     if not query:
@@ -237,18 +367,13 @@ def _create_annotation(conn, data):
 
     if not content:
         return {'error': 'content is required'}, 400
-    if entity_type not in VALID_ENTITY_TYPES:
-        return {'error': f'Invalid entity_type. Must be one of: {", ".join(sorted(VALID_ENTITY_TYPES))}'}, 400
-    if annotation_type not in VALID_ANNOTATION_TYPES:
-        return {'error': f'Invalid annotation_type. Must be one of: {", ".join(sorted(VALID_ANNOTATION_TYPES))}'}, 400
+    if not entity_type:
+        return {'error': 'entity_type is required'}, 400
+    if not annotation_type:
+        return {'error': 'annotation_type is required'}, 400
 
+    entity_name = data.get('entity_name')
     cursor = conn.cursor()
-    try:
-        cursor.execute("SELECT name FROM taxonomic_ranks WHERE id = ?", (entity_id,))
-        row = cursor.fetchone()
-        entity_name = row['name'] if row else None
-    except Exception:
-        entity_name = None
 
     cursor.execute("""
         INSERT INTO overlay.user_annotations (entity_type, entity_id, entity_name, annotation_type, content, author)
@@ -359,42 +484,44 @@ def api_composite_detail(view_name: str, request: Request):
 
 
 
-def _get_reference_spa_dir():
-    """Check if a Reference SPA has been extracted for the active package.
+@app.get('/api/auto/detail/{table_name}',
+         responses={400: {"model": ErrorResponse}, 404: {"model": ErrorResponse}})
+def api_auto_detail(table_name: str, request: Request):
+    """Auto-generated detail: SELECT * FROM table WHERE pk = :id."""
+    entity_id = request.query_params.get('id')
+    if not entity_id:
+        return JSONResponse({'error': 'id parameter required'}, status_code=400)
 
-    Returns the SPA directory path if extracted, None otherwise.
-    """
-    pkg_name = get_active_package_name()
-    if not pkg_name:
-        return None
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Verify table exists (SQL injection prevention)
+    cursor.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name=?", (table_name,))
+    if not cursor.fetchone():
+        conn.close()
+        return JSONResponse({'error': f'Table not found: {table_name}'}, status_code=404)
+
+    # Find PK column
+    cols_info = cursor.execute(f"PRAGMA table_info([{table_name}])").fetchall()
+    pk_col = next((c[1] for c in cols_info if c[5]), 'id')
+
     try:
-        registry = get_registry()
-        entry = registry.get_package(pkg_name)
-        pkg = entry.get('manifest')
-        if not pkg or not pkg.get('has_reference_spa'):
-            return None
-        # Look for <name>_spa/ directory next to the .scoda file
-        scoda_path = entry.get('db_path')
-        if not scoda_path:
-            return None
-        # The scan dir is where .scoda files live
-        scan_dir = registry._scan_dir
-        if not scan_dir:
-            return None
-        spa_dir = os.path.join(scan_dir, f'{pkg_name}_spa')
-        if os.path.isdir(spa_dir) and os.path.isfile(os.path.join(spa_dir, 'index.html')):
-            return spa_dir
-    except (KeyError, AttributeError):
-        pass
-    return None
+        cursor.execute(f"SELECT * FROM [{table_name}] WHERE [{pk_col}] = ?", (entity_id,))
+        row = cursor.fetchone()
+    except Exception as e:
+        conn.close()
+        return JSONResponse({'error': str(e)}, status_code=400)
+
+    conn.close()
+    if not row:
+        return JSONResponse({'error': 'Not found'}, status_code=404)
+    return dict(row)
 
 
 @app.get('/', response_class=HTMLResponse)
 def index(request: Request):
-    """Main page — serve Reference SPA if extracted, otherwise generic viewer."""
-    spa_dir = _get_reference_spa_dir()
-    if spa_dir:
-        return FileResponse(os.path.join(spa_dir, 'index.html'))
+    """Main page — generic viewer."""
     return templates.TemplateResponse(request, "index.html")
 
 
@@ -466,6 +593,7 @@ def api_get_annotations(entity_type: str, entity_id: int):
 class AnnotationCreate(BaseModel):
     entity_type: Optional[str] = None
     entity_id: Optional[int] = None
+    entity_name: Optional[str] = None
     annotation_type: Optional[str] = None
     content: Optional[str] = None
     author: Optional[str] = None
@@ -492,18 +620,71 @@ def api_delete_annotation(annotation_id: int):
     return JSONResponse(result, status_code=status)
 
 
+# ---------------------------------------------------------------------------
+# Entity detail endpoint — serves manifest source URLs like /api/{entity}/123
+# Runs {entity}_detail query + discovered sub-queries → composite JSON
+# MUST be registered last: catch-all /api/{name}/{id} pattern.
+# ---------------------------------------------------------------------------
+
+@app.get('/api/{entity_name}/{entity_id}',
+         responses={404: {"model": ErrorResponse}, 400: {"model": ErrorResponse}})
+def api_entity_detail(entity_name: str, entity_id: str):
+    """Resolve manifest source URLs (e.g. /api/genus/683).
+
+    Executes the ``{entity}_detail`` named query and attaches results from
+    sub-queries whose names start with ``{entity}_``.
+    """
+    detail_query = f'{entity_name}_detail'
+    param_name = f'{entity_name}_id'
+
+    conn = get_db()
+    result = _execute_query(conn, detail_query, {param_name: entity_id})
+    if result is None:
+        conn.close()
+        return JSONResponse({'error': f'Query not found: {detail_query}'}, status_code=404)
+    if 'error' in result:
+        conn.close()
+        return JSONResponse(result, status_code=400)
+    if result.get('row_count', 0) == 0:
+        conn.close()
+        return JSONResponse({'error': 'Not found'}, status_code=404)
+
+    data = dict(result['rows'][0])
+
+    # Discover sub-queries: {entity}_* (excluding _detail itself)
+    cursor = conn.cursor()
+    cursor.execute(
+        "SELECT name, params_json FROM ui_queries WHERE name LIKE ? AND name != ?",
+        (f'{entity_name}_%', detail_query))
+    sub_queries = cursor.fetchall()
+
+    for sq in sub_queries:
+        sub_name = sq['name']
+        # Derive the data key: "genus_hierarchy" → "hierarchy"
+        data_key = sub_name[len(entity_name) + 1:]
+        params_def = json.loads(sq['params_json']) if sq['params_json'] else {}
+        params = {}
+        for pn in params_def:
+            if pn == param_name:
+                params[pn] = entity_id
+            elif pn in data:
+                # param name found in main result — pass through
+                params[pn] = data[pn]
+            else:
+                params[pn] = ''
+        sub_result = _execute_query(conn, sub_name, params)
+        if sub_result and 'rows' in sub_result:
+            data[data_key] = sub_result['rows']
+
+    conn.close()
+    return data
+
+
 # Mount MCP SSE server as sub-application at /mcp
 from .mcp_server import create_mcp_app
 app.mount("/mcp", create_mcp_app())
 
 
-@app.get('/{filename:path}')
-def serve_spa_file(filename: str):
-    """Serve Reference SPA asset files (app.js, style.css, etc.)."""
-    spa_dir = _get_reference_spa_dir()
-    if spa_dir and os.path.isfile(os.path.join(spa_dir, filename)):
-        return FileResponse(os.path.join(spa_dir, filename))
-    return JSONResponse(content='', status_code=404)
 
 
 if __name__ == '__main__':
@@ -511,7 +692,7 @@ if __name__ == '__main__':
     import uvicorn
     parser = argparse.ArgumentParser()
     parser.add_argument('--package', type=str, default=None,
-                        help='Active package name (e.g., trilobase, paleocore)')
+                        help='Active package name')
     args = parser.parse_args()
     if args.package:
         from .scoda_package import set_active_package

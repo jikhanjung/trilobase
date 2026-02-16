@@ -1,40 +1,39 @@
 /**
- * Trilobase Web Interface
- * Frontend JavaScript for taxonomy tree and genus browsing
+ * SCODA Desktop — Generic Viewer
+ * Manifest-driven frontend for browsing SCODA data packages
  */
 
 // State
-let selectedFamilyId = null;
-let genusModal = null;
-let currentGenera = [];  // Store current genera for filtering
+let selectedLeafId = null;
+let detailModal = null;
+let currentItems = [];  // Store current leaf items for filtering
 let showOnlyValid = true;  // Filter state
 
 // Manifest state
 let manifest = null;
-let currentView = 'taxonomy_tree';
+let currentView = null;
+let currentTreeViewKey = null;  // Which manifest view key is the active tree view
 let tableViewData = [];
 let tableViewSort = null;
 let tableViewSearchTerm = '';
 
 // Initialize
 document.addEventListener('DOMContentLoaded', async () => {
-    genusModal = new bootstrap.Modal(document.getElementById('genusModal'));
+    detailModal = new bootstrap.Modal(document.getElementById('detailModal'));
     await loadManifest();
 
-    // Determine initial view from manifest (default to taxonomy_tree for legacy)
+    // Determine initial view from manifest
     if (manifest && manifest.views) {
         const viewKeys = Object.keys(manifest.views).filter(k => manifest.views[k].type !== 'detail');
         if (manifest.default_view && manifest.views[manifest.default_view]) {
             currentView = manifest.default_view;
-        } else if (viewKeys.length > 0 && !manifest.views['taxonomy_tree']) {
+        } else if (viewKeys.length > 0) {
             currentView = viewKeys[0];
         }
-        // Rebuild tabs with correct currentView
-        buildViewTabs();
-        switchToView(currentView);
-    } else {
-        // Legacy fallback: no manifest, just load tree
-        loadTree();
+        if (currentView) {
+            buildViewTabs();
+            switchToView(currentView);
+        }
     }
 });
 
@@ -107,6 +106,7 @@ function switchToView(viewKey) {
     chartContainer.style.display = 'none';
 
     if (view.type === 'tree') {
+        currentTreeViewKey = viewKey;
         treeContainer.style.display = '';
         loadTree();
     } else if (view.type === 'table') {
@@ -340,7 +340,7 @@ function buildChartTree(rows, opts) {
     const idKey = opts.id_key || 'id';
     const parentKey = opts.parent_key || 'parent_id';
     const rankKey = opts.rank_key || 'rank';
-    const orderKey = opts.order_key || 'display_order';
+    const orderKey = opts.order_key || 'id';
     const skipRanks = opts.skip_ranks || ['Super-Eon'];
 
     const byId = {};
@@ -485,7 +485,7 @@ function renderChartHTML(leafRows, opts) {
         {rank: 'Epoch', label: 'Series / Epoch'}, {rank: 'Age', label: 'Stage / Age'}
     ];
     const valueCol = opts.value_column || {key: 'start_mya', label: 'Age (Ma)'};
-    const cellClick = opts.cell_click || {detail_view: 'chronostrat_detail', id_key: 'id'};
+    const cellClick = opts.cell_click || {id_key: 'id'};
     const labelKey = opts.label_key || 'name';
     const colorKey = opts.color_key || 'color';
     const idKey = opts.id_key || 'id';
@@ -507,8 +507,11 @@ function renderChartHTML(leafRows, opts) {
             const cs = entry.colspan > 1 ? ` colspan="${entry.colspan}"` : '';
             const vk = valueCol.key;
             const title = n[vk] != null ? `${n[labelKey]} (${n[vk]}–${n.end_mya || 0} Ma)` : n[labelKey];
+            const clickAttr = cellClick.detail_view
+                ? `onclick="openDetail('${cellClick.detail_view}', ${n[cellClick.id_key || idKey]})"`
+                : '';
             html += `<td${rs}${cs} style="background-color:${bgColor}; color:${textColor};" `
-                  + `title="${title}" onclick="openDetail('${cellClick.detail_view}', ${n[cellClick.id_key || idKey]})">`
+                  + `title="${title}" ${clickAttr}>`
                   + `${n[labelKey]}</td>`;
         });
 
@@ -558,7 +561,7 @@ function buildTreeFromFlat(rows, opts) {
 }
 
 /**
- * Load taxonomy tree from manifest source_query (flat data → client-side tree)
+ * Load tree from manifest source_query (flat data → client-side tree)
  */
 async function loadTree() {
     const container = document.getElementById('tree-container');
@@ -566,7 +569,7 @@ async function loadTree() {
     try {
         // Use manifest source_query if available, otherwise fallback
         let tree;
-        const viewDef = manifest && manifest.views && manifest.views['taxonomy_tree'];
+        const viewDef = manifest && manifest.views && currentTreeViewKey && manifest.views[currentTreeViewKey];
         if (viewDef && viewDef.source_query && viewDef.tree_options) {
             const queryUrl = `/api/queries/${viewDef.source_query}/execute`;
             const response = await fetch(queryUrl);
@@ -593,12 +596,13 @@ function createTreeNode(node) {
     const div = document.createElement('div');
     div.className = 'tree-node';
 
-    const opts = (manifest && manifest.views && manifest.views['taxonomy_tree'] &&
-                  manifest.views['taxonomy_tree'].tree_options) || {};
-    const leafRank = opts.leaf_rank || 'Family';
+    const opts = (manifest && manifest.views && currentTreeViewKey &&
+                  manifest.views[currentTreeViewKey] &&
+                  manifest.views[currentTreeViewKey].tree_options) || {};
+    const leafRank = opts.leaf_rank || null;
     const rankKey = opts.rank_key || 'rank';
     const labelKey = opts.label_key || 'name';
-    const countKey = opts.count_key || 'genera_count';
+    const countKey = opts.count_key || null;
     const idKey = opts.id_key || 'id';
 
     const hasChildren = node.children && node.children.length > 0;
@@ -651,7 +655,9 @@ function createTreeNode(node) {
     infoBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         const infoOpts = opts.on_node_info || {};
-        openDetail(infoOpts.detail_view || 'rank_detail', node[infoOpts.id_key || idKey]);
+        if (infoOpts.detail_view) {
+            openDetail(infoOpts.detail_view, node[infoOpts.id_key || idKey]);
+        }
     });
     content.appendChild(infoBtn);
 
@@ -701,27 +707,31 @@ async function selectTreeLeaf(leafId, leafName) {
     });
     document.querySelector(`.tree-node-content[data-id="${leafId}"]`)?.classList.add('selected');
 
-    selectedFamilyId = leafId;
+    selectedLeafId = leafId;
 
-    const opts = (manifest && manifest.views && manifest.views['taxonomy_tree'] &&
-                  manifest.views['taxonomy_tree'].tree_options) || {};
+    const opts = (manifest && manifest.views && currentTreeViewKey &&
+                  manifest.views[currentTreeViewKey] &&
+                  manifest.views[currentTreeViewKey].tree_options) || {};
     const filterDef = opts.item_valid_filter || {};
+    const hasFilterDef = filterDef.key ? true : false;
 
-    // Update header with filter checkbox
+    // Update header with filter checkbox (only if filter is defined)
     const header = document.getElementById('list-header');
-    header.innerHTML = `
-        <div class="d-flex justify-content-between align-items-center">
-            <h5 class="mb-0"><i class="bi bi-folder-fill"></i> ${leafName}</h5>
+    const filterHtml = hasFilterDef ? `
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="validOnlyCheck"
                        ${showOnlyValid ? 'checked' : ''} onchange="toggleValidFilter()">
                 <label class="form-check-label" for="validOnlyCheck">${filterDef.label || 'Valid only'}</label>
-            </div>
+            </div>` : '';
+    header.innerHTML = `
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="bi bi-folder-fill"></i> ${leafName}</h5>
+            ${filterHtml}
         </div>`;
 
     // Load items via named query from manifest
     const container = document.getElementById('list-container');
-    container.innerHTML = '<div class="loading">Loading genera...</div>';
+    container.innerHTML = '<div class="loading">Loading...</div>';
 
     try {
         let items;
@@ -736,18 +746,14 @@ async function selectTreeLeaf(leafId, leafName) {
             throw new Error('No manifest item query defined');
         }
 
-        currentGenera = items;  // Store for filtering
+        currentItems = items;  // Store for filtering
         renderTreeItemTable();
 
     } catch (error) {
-        container.innerHTML = `<div class="text-danger">Error loading genera: ${error.message}</div>`;
+        container.innerHTML = `<div class="text-danger">Error loading items: ${error.message}</div>`;
     }
 }
 
-/** Legacy alias for backward compatibility */
-function selectFamily(familyId, familyName) {
-    selectTreeLeaf(familyId, familyName);
-}
 
 /**
  * Toggle valid-only filter
@@ -763,28 +769,27 @@ function toggleValidFilter() {
 function renderTreeItemTable() {
     const container = document.getElementById('list-container');
 
-    const opts = (manifest && manifest.views && manifest.views['taxonomy_tree'] &&
-                  manifest.views['taxonomy_tree'].tree_options) || {};
+    const opts = (manifest && manifest.views && currentTreeViewKey &&
+                  manifest.views[currentTreeViewKey] &&
+                  manifest.views[currentTreeViewKey].tree_options) || {};
     const filterDef = opts.item_valid_filter || {};
-    const filterKey = filterDef.key || 'is_valid';
+    const filterKey = filterDef.key || null;
     const columns = opts.item_columns || [
-        {key: 'name', label: 'Genus', italic: true},
-        {key: 'author', label: 'Author'},
-        {key: 'year', label: 'Year'},
-        {key: 'type_species', label: 'Type Species', truncate: 40},
-        {key: 'location', label: 'Location', truncate: 30}
+        {key: 'name', label: 'Name'},
+        {key: 'id', label: 'ID'}
     ];
-    const clickDef = opts.on_item_click || {detail_view: 'genus_detail', id_key: 'id'};
+    const clickDef = opts.on_item_click || {id_key: 'id'};
     const idKey = opts.id_key || 'id';
 
-    const genera = showOnlyValid
-        ? currentGenera.filter(g => g[filterKey])
-        : currentGenera;
+    const hasFilter = filterKey && currentItems.some(g => filterKey in g);
+    const items = (hasFilter && showOnlyValid)
+        ? currentItems.filter(g => g[filterKey])
+        : currentItems;
 
-    if (genera.length === 0) {
-        const message = showOnlyValid && currentGenera.length > 0
-            ? `No valid genera (${currentGenera.length} invalid)`
-            : 'No genera found in this family';
+    if (items.length === 0) {
+        const message = hasFilter && showOnlyValid && currentItems.length > 0
+            ? `No valid items (${currentItems.length} invalid)`
+            : 'No items found';
         container.innerHTML = `
             <div class="empty-state">
                 <i class="bi bi-inbox"></i>
@@ -794,26 +799,35 @@ function renderTreeItemTable() {
     }
 
     // Count stats
-    const validCount = currentGenera.filter(g => g[filterKey]).length;
-    const invalidCount = currentGenera.length - validCount;
-    const statsText = showOnlyValid
-        ? `Showing ${validCount} valid genera` + (invalidCount > 0 ? ` (${invalidCount} invalid hidden)` : '')
-        : `Showing all ${currentGenera.length} genera (${validCount} valid, ${invalidCount} invalid)`;
+    let html = '';
+    if (hasFilter) {
+        const validCount = currentItems.filter(g => g[filterKey]).length;
+        const invalidCount = currentItems.length - validCount;
+        const statsText = showOnlyValid
+            ? `Showing ${validCount} valid` + (invalidCount > 0 ? ` (${invalidCount} invalid hidden)` : '')
+            : `Showing all ${currentItems.length} (${validCount} valid, ${invalidCount} invalid)`;
+        html += `<div class="item-stats text-muted mb-2">${statsText}</div>`;
+    } else {
+        html += `<div class="item-stats text-muted mb-2">${items.length} items</div>`;
+    }
 
-    let html = `<div class="genera-stats text-muted mb-2">${statsText}</div>`;
-    html += '<table class="genus-table"><thead><tr>';
+    html += '<table class="item-table"><thead><tr>';
     columns.forEach(col => { html += `<th>${col.label}</th>`; });
     html += '</tr></thead><tbody>';
 
-    genera.forEach(g => {
-        const rowClass = g[filterKey] ? '' : 'invalid';
-        html += `<tr class="${rowClass}" onclick="openDetail('${clickDef.detail_view}', ${g[clickDef.id_key || idKey]})">`;
+    items.forEach(g => {
+        const rowClass = (hasFilter && !g[filterKey]) ? 'invalid' : '';
+        const detailView = clickDef.detail_view;
+        const clickAttr = detailView
+            ? `onclick="openDetail('${detailView}', ${g[clickDef.id_key || idKey]})"`
+            : '';
+        html += `<tr class="${rowClass}" ${clickAttr}>`;
         columns.forEach(col => {
             let val = g[col.key];
             if (col.truncate && val) val = truncate(val, col.truncate);
             if (val == null) val = '';
             if (col.italic) {
-                html += `<td class="genus-name"><i>${val}</i></td>`;
+                html += `<td class="item-name"><i>${val}</i></td>`;
             } else {
                 html += `<td>${val}</td>`;
             }
@@ -879,23 +893,47 @@ function collapseAll() {
 }
 
 /**
- * Build temporal range HTML (generic: code tag only, no ICS links)
+ * Build temporal range HTML.
+ * Reads link target from field.link.detail_view and mapping data key from
+ * field.mapping_key — all manifest-driven, no hardcoded domain knowledge.
  */
-function buildTemporalRangeHTML(g) {
-    if (!g.temporal_code) return '-';
-    return `<code>${g.temporal_code}</code>`;
+function buildTemporalRangeHTML(field, data) {
+    const code = resolveDataPath(data, field.key);
+    if (!code) return '-';
+    let html = `<code>${code}</code>`;
+    const mappingKey = field.mapping_key;
+    const detailView = field.link && field.link.detail_view;
+    if (mappingKey && detailView) {
+        const mapping = resolveDataPath(data, mappingKey);
+        if (mapping && Array.isArray(mapping) && mapping.length > 0) {
+            const links = mapping.map(m =>
+                `<a class="detail-link" onclick="openDetail('${detailView}', ${m.id})">${m.name}</a>` +
+                (m.mapping_type && m.mapping_type !== 'exact' ? ` <small class="text-muted">(${m.mapping_type})</small>` : '')
+            ).join(', ');
+            html += ` &rarr; ${links}`;
+        }
+    }
+    return html;
 }
 
 /**
- * Build hierarchy HTML (generic: text display, no clickable links)
+ * Build hierarchy HTML.
+ * Reads link target from field.link.detail_view and data key from field.data_key
+ * — all manifest-driven, no hardcoded domain knowledge.
  */
-function buildHierarchyHTML(g) {
-    if (g.hierarchy && g.hierarchy.length > 0) {
-        if (Array.isArray(g.hierarchy)) {
-            return g.hierarchy.map(h => h.name || h).join(' → ');
-        }
+function buildHierarchyHTML(field, data) {
+    const dataKey = field.data_key || field.key;
+    const arr = resolveDataPath(data, dataKey);
+    if (arr && Array.isArray(arr) && arr.length > 0) {
+        const detailView = field.link && field.link.detail_view;
+        return arr.map(h => {
+            if (detailView && h.id != null) {
+                return `<a class="detail-link" onclick="openDetail('${detailView}', ${h.id})">${h.name}</a>`;
+            }
+            return h.name || h;
+        }).join(' &rarr; ');
     }
-    return g.family_name || g.family || '-';
+    return '-';
 }
 
 /**
@@ -1144,9 +1182,9 @@ function formatFieldValue(field, value, data) {
         case 'code':
             return `<code>${value}</code>`;
         case 'hierarchy':
-            return buildHierarchyHTML(data);
+            return buildHierarchyHTML(field, data);
         case 'temporal_range':
-            return buildTemporalRangeHTML(data);
+            return buildTemporalRangeHTML(field, data);
         case 'computed':
             return value; // already computed above
         default:
@@ -1186,9 +1224,10 @@ function renderFieldGrid(section, data) {
     }
 
     if (!gridHtml) return '';
+    const titleHtml = section.title ? `<h6>${section.title}</h6>` : '';
     return `
         <div class="detail-section">
-            <h6>${section.title}</h6>
+            ${titleHtml}
             <div class="detail-grid">${gridHtml}
             </div>
         </div>`;
@@ -1201,14 +1240,15 @@ function renderLinkedTable(section, data) {
     const rows = data[section.data_key] || [];
     const columns = section.columns || [];
     const onClick = section.on_row_click;
-    const title = section.title.replace('{count}', rows.length);
+    const title = section.title ? section.title.replace('{count}', rows.length) : '';
+    const titleHtml = title ? `<h6>${title}</h6>` : '';
 
     // Empty handling
     if (rows.length === 0) {
         if (section.show_empty) {
             return `
                 <div class="detail-section">
-                    <h6>${title}</h6>
+                    ${titleHtml}
                     <p class="text-muted">${section.empty_message || 'No data.'}</p>
                 </div>`;
         }
@@ -1218,8 +1258,8 @@ function renderLinkedTable(section, data) {
     // Header
     let html = `
         <div class="detail-section">
-            <h6>${title}</h6>
-            <div class="genera-list">
+            ${titleHtml}
+            <div class="detail-list">
                 <table class="manifest-table">
                     <thead><tr>`;
     columns.forEach(col => {
@@ -1239,7 +1279,7 @@ function renderLinkedTable(section, data) {
                 ? computeValue(col.compute, data, row)
                 : row[col.key];
 
-            // Column-level link (e.g., region link within genera table)
+            // Column-level link (e.g., link within item table)
             if (col.link && val) {
                 const linkId = row[col.link.id_key];
                 if (linkId != null) {
@@ -1274,9 +1314,10 @@ function renderTaggedList(section, data) {
     const items = data[section.data_key] || [];
     if (items.length === 0) return '';
 
+    const titleHtml = section.title ? `<h6>${section.title}</h6>` : '';
     let html = `
         <div class="detail-section">
-            <h6>${section.title}</h6>
+            ${titleHtml}
             <ul class="list-unstyled">`;
 
     items.forEach(item => {
@@ -1303,9 +1344,10 @@ function renderRawText(section, data) {
         ? `<p>${value}</p>`
         : `<div class="raw-entry">${value}</div>`;
 
+    const titleHtml = section.title ? `<h6>${section.title}</h6>` : '';
     return `
         <div class="detail-section">
-            <h6>${section.title}</h6>
+            ${titleHtml}
             ${inner}
         </div>`;
 }
@@ -1353,14 +1395,16 @@ async function renderDetailFromManifest(viewKey, entityId) {
     const view = manifest.views[viewKey];
     if (!view || view.type !== 'detail') return;
 
-    const modalBody = document.getElementById('genusModalBody');
-    const modalTitle = document.getElementById('genusModalTitle');
+    const modalBody = document.getElementById('detailModalBody');
+    const modalTitle = document.getElementById('detailModalTitle');
 
     modalBody.innerHTML = '<div class="loading">Loading...</div>';
-    genusModal.show();
+    detailModal.show();
 
     try {
-        const url = view.source.replace('{id}', entityId);
+        const url = view.source
+            ? view.source.replace('{id}', entityId)
+            : `/api/composite/${viewKey}?id=${entityId}`;
         const response = await fetch(url);
         const data = await response.json();
 

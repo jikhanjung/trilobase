@@ -544,45 +544,11 @@ class TestCombinedScodaDeployment:
 
         scoda_package._canonical_db = tri_pkg.db_path
         scoda_package._overlay_db = overlay_db
-        scoda_package._paleocore_db = pc_pkg.db_path
+        scoda_package._dep_dbs = {'pc': pc_pkg.db_path}
         scoda_package._scoda_pkg = tri_pkg
-        scoda_package._paleocore_pkg = pc_pkg
+        scoda_package._dep_pkgs = [pc_pkg]
 
         return tri_pkg, pc_pkg
-
-    def test_resolve_paleocore_finds_scoda(self, test_db, tmp_path):
-        """_resolve_paleocore() should discover .scoda and set _paleocore_pkg."""
-        _, _, paleocore_db = test_db
-        self._add_scoda_metadata_to_paleocore(paleocore_db)
-
-        scoda_dir = str(tmp_path / "scoda_resolve_test")
-        os.makedirs(scoda_dir)
-        ScodaPackage.create(paleocore_db, os.path.join(scoda_dir, "paleocore.scoda"))
-
-        scoda_package._reset_paths()
-        scoda_package._resolve_paleocore(scoda_dir)
-
-        try:
-            assert scoda_package._paleocore_pkg is not None
-            assert scoda_package._paleocore_db is not None
-            assert os.path.exists(scoda_package._paleocore_db)
-        finally:
-            scoda_package._reset_paths()
-
-    def test_resolve_paleocore_falls_back_to_db(self, tmp_path):
-        """When no .scoda exists, _resolve_paleocore() should fall back to .db path."""
-        scoda_dir = str(tmp_path / "empty_dir")
-        os.makedirs(scoda_dir)
-
-        scoda_package._reset_paths()
-        scoda_package._resolve_paleocore(scoda_dir)
-
-        try:
-            assert scoda_package._paleocore_pkg is None
-            expected = os.path.join(scoda_dir, 'paleocore.db')
-            assert scoda_package._paleocore_db == expected
-        finally:
-            scoda_package._reset_paths()
 
     def test_combined_scoda_get_db(self, test_db, tmp_path):
         """Two .scoda packages should yield working 3-DB ATTACH + cross-DB JOIN."""
@@ -623,15 +589,14 @@ class TestCombinedScodaDeployment:
             scoda_package._reset_paths()
 
     def test_combined_scoda_info(self, test_db, tmp_path):
-        """get_scoda_info() should report both sources as 'scoda'."""
+        """get_scoda_info() should report scoda source and dependency databases."""
         try:
             self._setup_combined_scoda(test_db, tmp_path)
 
             info = scoda_package.get_scoda_info()
             assert info['source_type'] == 'scoda'
-            assert info['paleocore_source_type'] == 'scoda'
             assert info['canonical_exists'] is True
-            assert info['paleocore_exists'] is True
+            assert 'pc' in info['dep_dbs']
         finally:
             scoda_package._reset_paths()
 

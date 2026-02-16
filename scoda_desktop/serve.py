@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Trilobase SCODA Viewer Launcher
+SCODA Desktop Viewer Launcher
 
 Starts the web server and automatically opens the default browser.
 """
@@ -20,7 +20,7 @@ def main():
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('--package', type=str, default=None,
-                        help='Active package name (e.g., trilobase, paleocore)')
+                        help='Active package name')
     args = parser.parse_args()
 
     print("=" * 60)
@@ -69,5 +69,5 @@ if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
-        print("\n\nShutting down Trilobase...")
+        print("\n\nShutting down SCODA Desktop...")
         sys.exit(0)

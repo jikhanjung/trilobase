@@ -7,7 +7,7 @@ This module provides:
   C. Centralized DB access functions (replaces duplicated logic in app.py, mcp_server.py, gui.py, serve.py)
 
 .scoda format:
-  trilobase.scoda (ZIP archive)
+  example.scoda (ZIP archive)
   ├── manifest.json   # package metadata
   ├── data.db         # SQLite database
   └── assets/         # future images/documents (currently empty)
@@ -119,50 +119,6 @@ class ScodaPackage:
     def has_reference_spa(self):
         """Check if this package contains a Reference SPA."""
         return self.manifest.get('has_reference_spa', False)
-
-    def get_spa_dir(self):
-        """Return the expected SPA extraction directory path."""
-        scoda_dir = os.path.dirname(self.scoda_path)
-        name = os.path.splitext(os.path.basename(self.scoda_path))[0]
-        return os.path.join(scoda_dir, f'{name}_spa')
-
-    def is_spa_extracted(self):
-        """Check if the Reference SPA has been extracted."""
-        spa_dir = self.get_spa_dir()
-        return os.path.isdir(spa_dir) and os.path.isfile(os.path.join(spa_dir, 'index.html'))
-
-    def extract_spa(self, output_dir=None):
-        """Extract the Reference SPA from this package.
-
-        Args:
-            output_dir: Optional output directory. Defaults to <name>_spa/ next to .scoda file.
-
-        Returns:
-            Path to the extracted SPA directory.
-
-        Raises:
-            ValueError: If this package does not contain a Reference SPA.
-        """
-        if not self.has_reference_spa:
-            raise ValueError("This package does not contain a Reference SPA")
-
-        if output_dir is None:
-            output_dir = self.get_spa_dir()
-
-        os.makedirs(output_dir, exist_ok=True)
-
-        spa_prefix = self.manifest.get('reference_spa_path', 'assets/spa/')
-        spa_files = [n for n in self._zf.namelist()
-                     if n.startswith(spa_prefix) and not n.endswith('/')]
-
-        for archive_path in spa_files:
-            filename = os.path.basename(archive_path)
-            target_path = os.path.join(output_dir, filename)
-            data = self._zf.read(archive_path)
-            with open(target_path, 'wb') as f:
-                f.write(data)
-
-        return output_dir
 
     def close(self):
         """Clean up temp files."""
@@ -322,7 +278,7 @@ class PackageRegistry:
         """Get DB connection for a specific package with dependencies ATTACHed.
 
         Args:
-            name: Package name (e.g., 'trilobase', 'paleocore')
+            name: Package name
 
         Returns:
             sqlite3.Connection with row_factory=sqlite3.Row
@@ -509,9 +465,9 @@ def _reset_registry():
 # Module-level paths — resolved once at import time, overridable for testing
 _canonical_db = None
 _overlay_db = None
-_paleocore_db = None
+_dep_dbs = {}  # {alias: path} — dependency databases to ATTACH
 _scoda_pkg = None  # ScodaPackage instance (if using .scoda)
-_paleocore_pkg = None  # ScodaPackage instance for paleocore (if using .scoda)
+_dep_pkgs = []  # ScodaPackage instances for dependencies (to close on reset)
 _active_package_name = None  # GUI/CLI selected package (routes get_db through registry)
 
 
@@ -526,27 +482,39 @@ def get_active_package_name():
     return _active_package_name
 
 
-def _resolve_paleocore(base_dir):
-    """Resolve paleocore DB path: .scoda first, then .db fallback."""
-    global _paleocore_db, _paleocore_pkg
+def _resolve_dependencies(base_dir):
+    """Resolve dependency databases from main package manifest."""
+    global _dep_dbs, _dep_pkgs
 
-    paleocore_scoda = os.path.join(base_dir, 'paleocore.scoda')
-    if os.path.exists(paleocore_scoda):
-        _paleocore_pkg = ScodaPackage(paleocore_scoda)
-        _paleocore_db = _paleocore_pkg.db_path
-    else:
-        _paleocore_db = os.path.join(base_dir, 'paleocore.db')
+    if not _scoda_pkg:
+        return
+    deps = _scoda_pkg.manifest.get('dependencies', [])
+    for dep in deps:
+        dep_name = dep.get('name')
+        alias = dep.get('alias', dep_name)
+        if not dep_name:
+            continue
+        # Try .scoda first, then .db
+        dep_scoda = os.path.join(base_dir, f'{dep_name}.scoda')
+        if os.path.exists(dep_scoda):
+            pkg = ScodaPackage(dep_scoda)
+            _dep_pkgs.append(pkg)
+            _dep_dbs[alias] = pkg.db_path
+        else:
+            dep_db = os.path.join(base_dir, f'{dep_name}.db')
+            if os.path.exists(dep_db):
+                _dep_dbs[alias] = dep_db
 
 
 def _resolve_paths():
-    """Resolve canonical DB, overlay DB, and paleocore DB paths.
+    """Resolve canonical DB, overlay DB, and dependency DB paths.
 
     Priority:
       1. If _set_paths_for_testing() was called, use those paths.
       2. Frozen mode (PyInstaller): look for .scoda next to executable, fallback to bundled .db.
       3. Dev mode: look for .scoda in project root, fallback to .db.
     """
-    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg
+    global _canonical_db, _overlay_db, _scoda_pkg
 
     if _canonical_db is not None:
         return  # already resolved (or set by testing)
@@ -581,32 +549,38 @@ def _resolve_paths():
             _canonical_db = os.path.join(base_dir, 'data.db')
             _overlay_db = os.path.join(base_dir, 'data_overlay.db')
 
-    _resolve_paleocore(base_dir)
+    _resolve_dependencies(base_dir)
 
 
-def _set_paths_for_testing(canonical_path, overlay_path, paleocore_path=None):
-    """Override DB paths for testing. Call before any get_db()."""
-    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg, _paleocore_pkg, _active_package_name
+def _set_paths_for_testing(canonical_path, overlay_path, extra_dbs=None):
+    """Override DB paths for testing. Call before any get_db().
+
+    Args:
+        canonical_path: Path to the main database.
+        overlay_path: Path to the overlay database.
+        extra_dbs: Optional dict of {alias: path} for dependency databases.
+    """
+    global _canonical_db, _overlay_db, _dep_dbs, _scoda_pkg, _dep_pkgs, _active_package_name
     _active_package_name = None  # tests use direct paths, not registry
     _canonical_db = canonical_path
     _overlay_db = overlay_path
-    _paleocore_db = paleocore_path
+    _dep_dbs = extra_dbs or {}
     _scoda_pkg = None
-    _paleocore_pkg = None
+    _dep_pkgs = []
 
 
 def _reset_paths():
     """Reset resolved paths (for testing teardown)."""
-    global _canonical_db, _overlay_db, _paleocore_db, _scoda_pkg, _paleocore_pkg, _active_package_name
+    global _canonical_db, _overlay_db, _dep_dbs, _scoda_pkg, _dep_pkgs, _active_package_name
     if _scoda_pkg:
         _scoda_pkg.close()
-    if _paleocore_pkg:
-        _paleocore_pkg.close()
+    for pkg in _dep_pkgs:
+        pkg.close()
     _canonical_db = None
     _overlay_db = None
-    _paleocore_db = None
+    _dep_dbs = {}
     _scoda_pkg = None
-    _paleocore_pkg = None
+    _dep_pkgs = []
     _active_package_name = None
 
 
@@ -686,16 +660,9 @@ def ensure_overlay_db():
     conn.close()
 
 
-def get_paleocore_db_path():
-    """Return the resolved paleocore DB path."""
-    _resolve_paths()
-    return _paleocore_db
-
-
 def get_db():
-    """Get database connection with overlay and paleocore attached.
+    """Get database connection with overlay and dependencies attached.
 
-    Same signature as the old app.py/mcp_server.py get_db().
     Returns a sqlite3.Connection with row_factory=sqlite3.Row.
 
     When _active_package_name is set (by GUI/CLI), the connection is obtained
@@ -703,7 +670,7 @@ def get_db():
 
     Attached databases:
       - overlay: user annotations (read/write)
-      - pc: paleocore infrastructure data (read-only, optional)
+      - Dependencies defined in manifest (read-only, optional)
     """
     # Active package mode (GUI/CLI selected a package)
     if _active_package_name is not None:
@@ -717,9 +684,10 @@ def get_db():
     conn.row_factory = sqlite3.Row
     conn.execute(f"ATTACH DATABASE '{_overlay_db}' AS overlay")
 
-    # Attach PaleoCore DB if it exists
-    if _paleocore_db and os.path.exists(_paleocore_db):
-        conn.execute(f"ATTACH DATABASE '{_paleocore_db}' AS pc")
+    # Attach dependency databases
+    for alias, dep_path in _dep_dbs.items():
+        if os.path.exists(dep_path):
+            conn.execute(f"ATTACH DATABASE '{dep_path}' AS {alias}")
 
     return conn
 
@@ -729,17 +697,16 @@ def get_scoda_info():
 
     Returns:
         dict with keys: source_type ('scoda' or 'db'), canonical_path, overlay_path,
-              and optionally: version, name, record_count, checksum.
+              dep_dbs, and optionally: version, name, record_count, checksum.
     """
     _resolve_paths()
 
     info = {
         'canonical_path': _canonical_db,
         'overlay_path': _overlay_db,
-        'paleocore_path': _paleocore_db,
+        'dep_dbs': dict(_dep_dbs),
         'canonical_exists': os.path.exists(_canonical_db),
         'overlay_exists': os.path.exists(_overlay_db),
-        'paleocore_exists': bool(_paleocore_db and os.path.exists(_paleocore_db)),
     }
 
     if _scoda_pkg:
@@ -752,15 +719,6 @@ def get_scoda_info():
     else:
         info['source_type'] = 'db'
         info['scoda_path'] = None
-
-    if _paleocore_pkg:
-        info['paleocore_source_type'] = 'scoda'
-        info['paleocore_scoda_path'] = _paleocore_pkg.scoda_path
-        info['paleocore_version'] = _paleocore_pkg.version
-        info['paleocore_name'] = _paleocore_pkg.name
-        info['paleocore_record_count'] = _paleocore_pkg.record_count
-    else:
-        info['paleocore_source_type'] = 'db'
 
     return info
 

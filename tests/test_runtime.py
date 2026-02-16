@@ -596,31 +596,6 @@ class TestAnnotations:
         data = response.json()
         assert 'error' in data
 
-    def test_create_annotation_invalid_type(self, client):
-        """POST with invalid annotation_type should return 400."""
-        response = client.post('/api/annotations',
-            json={
-                'entity_type': 'genus',
-                'entity_id': 100,
-                'annotation_type': 'invalid_type',
-                'content': 'Test'
-            })
-        assert response.status_code == 400
-        data = response.json()
-        assert 'error' in data
-
-    def test_create_annotation_invalid_entity(self, client):
-        """POST with invalid entity_type should return 400."""
-        response = client.post('/api/annotations',
-            json={
-                'entity_type': 'invalid_entity',
-                'entity_id': 100,
-                'annotation_type': 'note',
-                'content': 'Test'
-            })
-        assert response.status_code == 400
-        data = response.json()
-        assert 'error' in data
 
     def test_get_annotations_after_create(self, client):
         """GET after POST should return the created annotation."""
@@ -989,7 +964,7 @@ class TestPackageRegistry:
     def test_legacy_get_db_still_works(self, test_db):
         """Existing get_db() function should continue to work."""
         canonical_db_path, overlay_db_path, paleocore_db_path = test_db
-        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, extra_dbs={'pc': paleocore_db_path})
 
         conn = scoda_package.get_db()
         cursor = conn.cursor()
@@ -1109,7 +1084,7 @@ class TestActivePackage:
         import scoda_desktop.scoda_package as sp
         sp._active_package_name = 'something'
         canonical_db_path, overlay_db_path, paleocore_db_path = test_db
-        sp._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        sp._set_paths_for_testing(canonical_db_path, overlay_db_path, extra_dbs={'pc': paleocore_db_path})
         assert sp._active_package_name is None
         sp._reset_paths()
 
@@ -1165,209 +1140,20 @@ class TestScodaPackageSPA:
         with ScodaPackage(scoda_path) as pkg:
             assert pkg.has_reference_spa is False
 
-    def test_extract_spa(self, test_db, tmp_path):
-        """extract_spa() should extract SPA files to output directory."""
-        canonical_db, _, _ = test_db
-        scoda_path = str(tmp_path / "test_spa.scoda")
-
-        # Create SPA files
-        spa_html = tmp_path / "spa_index.html"
-        spa_html.write_text("<html><body>SPA</body></html>")
-        spa_js = tmp_path / "spa_app.js"
-        spa_js.write_text("console.log('spa');")
-
-        extra_assets = {
-            "assets/spa/index.html": str(spa_html),
-            "assets/spa/app.js": str(spa_js),
-        }
-        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
-        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
-                           extra_assets=extra_assets)
-
-        with ScodaPackage(scoda_path) as pkg:
-            out_dir = str(tmp_path / "extracted_spa")
-            result = pkg.extract_spa(output_dir=out_dir)
-            assert result == out_dir
-            assert os.path.isfile(os.path.join(out_dir, 'index.html'))
-            assert os.path.isfile(os.path.join(out_dir, 'app.js'))
-
-    def test_extract_spa_default_dir(self, test_db, tmp_path):
-        """Default extraction directory should be <name>_spa/."""
-        canonical_db, _, _ = test_db
-        scoda_path = str(tmp_path / "test_spa.scoda")
-
-        spa_file = tmp_path / "spa_index.html"
-        spa_file.write_text("<html></html>")
-
-        extra_assets = {"assets/spa/index.html": str(spa_file)}
-        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
-        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
-                           extra_assets=extra_assets)
-
-        with ScodaPackage(scoda_path) as pkg:
-            expected_dir = os.path.join(str(tmp_path), 'test_spa_spa')
-            assert pkg.get_spa_dir() == expected_dir
-
-    def test_is_spa_extracted(self, test_db, tmp_path):
-        """is_spa_extracted() should return True after extraction."""
-        canonical_db, _, _ = test_db
-        scoda_path = str(tmp_path / "test_spa.scoda")
-
-        spa_file = tmp_path / "spa_index.html"
-        spa_file.write_text("<html></html>")
-
-        extra_assets = {"assets/spa/index.html": str(spa_file)}
-        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
-        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
-                           extra_assets=extra_assets)
-
-        with ScodaPackage(scoda_path) as pkg:
-            assert pkg.is_spa_extracted() is False
-            pkg.extract_spa()
-            assert pkg.is_spa_extracted() is True
-
-    def test_extract_no_spa_raises(self, test_db, tmp_path):
-        """extract_spa() on a package without SPA should raise ValueError."""
-        canonical_db, _, _ = test_db
-        scoda_path = str(tmp_path / "test_no_spa.scoda")
-        ScodaPackage.create(canonical_db, scoda_path)
-
-        with ScodaPackage(scoda_path) as pkg:
-            with pytest.raises(ValueError, match="does not contain"):
-                pkg.extract_spa()
 
 
 
 
 
-class TestAutoSwitch:
-    """Tests for automatic SPA switching."""
+class TestGenericViewer:
+    """Tests for generic viewer serving."""
 
-    def test_index_generic_without_spa(self, client):
-        """Without extracted SPA, index should serve generic viewer."""
+    def test_index_serves_generic_viewer(self, client):
+        """Index should serve generic viewer."""
         response = client.get('/')
         assert response.status_code == 200
         html = response.text
         assert 'SCODA Desktop' in html
-
-    def test_index_reference_spa_when_extracted(self, test_db, tmp_path):
-        """When SPA is extracted, index should serve it."""
-        canonical_db, overlay_db, paleocore_db = test_db
-        import scoda_desktop.scoda_package as sp
-        from scoda_desktop.scoda_package import PackageRegistry
-
-        # Create .scoda with SPA
-        pkg_dir = str(tmp_path / "spa_switch")
-        os.makedirs(pkg_dir, exist_ok=True)
-        scoda_path = os.path.join(pkg_dir, "trilobase.scoda")
-
-        spa_html = tmp_path / "spa_idx.html"
-        spa_html.write_text("<html><body>REFERENCE SPA CONTENT</body></html>")
-
-        extra_assets = {"assets/spa/index.html": str(spa_html)}
-        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
-        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
-                           extra_assets=extra_assets)
-
-        # Extract SPA
-        with ScodaPackage(scoda_path) as pkg:
-            pkg.extract_spa(output_dir=os.path.join(pkg_dir, "trilobase_spa"))
-
-        # Set up registry and active package
-        old_registry = sp._registry
-        sp._registry = PackageRegistry()
-        sp._registry.scan(pkg_dir)
-
-        try:
-            sp.set_active_package('trilobase')
-            from starlette.testclient import TestClient
-            with TestClient(app) as test_client:
-                response = test_client.get('/')
-                assert response.status_code == 200
-                assert b'REFERENCE SPA CONTENT' in response.content
-        finally:
-            sp._active_package_name = None
-            sp._registry.close_all()
-            sp._registry = old_registry
-
-    def test_spa_single_file_served(self, test_db, tmp_path):
-        """Single-file SPA (index.html with inline CSS/JS) should be served."""
-        canonical_db, overlay_db, paleocore_db = test_db
-        import scoda_desktop.scoda_package as sp
-        from scoda_desktop.scoda_package import PackageRegistry
-
-        pkg_dir = str(tmp_path / "spa_assets")
-        os.makedirs(pkg_dir, exist_ok=True)
-        scoda_path = os.path.join(pkg_dir, "trilobase.scoda")
-
-        spa_html = tmp_path / "spa_idx.html"
-        spa_html.write_text("<html><style>body{color:red}</style><script>// SPA JS</script></html>")
-
-        extra_assets = {
-            "assets/spa/index.html": str(spa_html),
-        }
-        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
-        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
-                           extra_assets=extra_assets)
-
-        # Extract SPA
-        with ScodaPackage(scoda_path) as pkg:
-            pkg.extract_spa(output_dir=os.path.join(pkg_dir, "trilobase_spa"))
-
-        old_registry = sp._registry
-        sp._registry = PackageRegistry()
-        sp._registry.scan(pkg_dir)
-
-        try:
-            sp.set_active_package('trilobase')
-            from starlette.testclient import TestClient
-            with TestClient(app) as test_client:
-                response = test_client.get('/')
-                assert response.status_code == 200
-                assert b'SPA JS' in response.content
-                assert b'color:red' in response.content
-        finally:
-            sp._active_package_name = None
-            sp._registry.close_all()
-            sp._registry = old_registry
-
-    def test_api_routes_take_priority(self, test_db, tmp_path):
-        """API routes should work even when SPA is extracted."""
-        canonical_db, overlay_db, paleocore_db = test_db
-        import scoda_desktop.scoda_package as sp
-        from scoda_desktop.scoda_package import PackageRegistry
-
-        pkg_dir = str(tmp_path / "spa_api")
-        os.makedirs(pkg_dir, exist_ok=True)
-        scoda_path = os.path.join(pkg_dir, "trilobase.scoda")
-
-        spa_html = tmp_path / "spa_idx.html"
-        spa_html.write_text("<html></html>")
-
-        extra_assets = {"assets/spa/index.html": str(spa_html)}
-        metadata = {"has_reference_spa": True, "reference_spa_path": "assets/spa/"}
-        ScodaPackage.create(canonical_db, scoda_path, metadata=metadata,
-                           extra_assets=extra_assets)
-
-        with ScodaPackage(scoda_path) as pkg:
-            pkg.extract_spa(output_dir=os.path.join(pkg_dir, "trilobase_spa"))
-
-        old_registry = sp._registry
-        sp._registry = PackageRegistry()
-        sp._registry.scan(pkg_dir)
-
-        try:
-            sp.set_active_package('trilobase')
-            from starlette.testclient import TestClient
-            with TestClient(app) as test_client:
-                response = test_client.get('/api/manifest')
-                assert response.status_code == 200
-                data = response.json()
-                assert 'manifest' in data
-        finally:
-            sp._active_package_name = None
-            sp._registry.close_all()
-            sp._registry = old_registry
 
 
 
@@ -1591,7 +1377,7 @@ class TestDynamicMcpTools:
         """Dynamic tool with query_type='single' should execute SQL and return results."""
         from scoda_desktop.mcp_server import _execute_dynamic_tool
         canonical_db_path, overlay_db_path, paleocore_db_path = test_db
-        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, extra_dbs={'pc': paleocore_db_path})
         try:
             tool_def = {
                 "query_type": "single",
@@ -1610,7 +1396,7 @@ class TestDynamicMcpTools:
         """Dynamic tool with query_type='named_query' should execute named query."""
         from scoda_desktop.mcp_server import _execute_dynamic_tool
         canonical_db_path, overlay_db_path, paleocore_db_path = test_db
-        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, extra_dbs={'pc': paleocore_db_path})
         try:
             tool_def = {
                 "query_type": "named_query",
@@ -1627,7 +1413,7 @@ class TestDynamicMcpTools:
         """Dynamic tool with query_type='named_query' should pass mapped params."""
         from scoda_desktop.mcp_server import _execute_dynamic_tool
         canonical_db_path, overlay_db_path, paleocore_db_path = test_db
-        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, extra_dbs={'pc': paleocore_db_path})
         try:
             tool_def = {
                 "query_type": "named_query",
@@ -1645,7 +1431,7 @@ class TestDynamicMcpTools:
         """Dynamic tool with query_type='composite' should execute composite detail."""
         from scoda_desktop.mcp_server import _execute_dynamic_tool
         canonical_db_path, overlay_db_path, paleocore_db_path = test_db
-        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, extra_dbs={'pc': paleocore_db_path})
         try:
             tool_def = {
                 "query_type": "composite",
@@ -1665,7 +1451,7 @@ class TestDynamicMcpTools:
         """Dynamic tool should merge default_params with provided arguments."""
         from scoda_desktop.mcp_server import _execute_dynamic_tool
         canonical_db_path, overlay_db_path, paleocore_db_path = test_db
-        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, extra_dbs={'pc': paleocore_db_path})
         try:
             tool_def = {
                 "query_type": "single",
@@ -1681,7 +1467,7 @@ class TestDynamicMcpTools:
         """Dynamic tool with unknown query_type should return error."""
         from scoda_desktop.mcp_server import _execute_dynamic_tool
         canonical_db_path, overlay_db_path, paleocore_db_path = test_db
-        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+        scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, extra_dbs={'pc': paleocore_db_path})
         try:
             tool_def = {"query_type": "unknown"}
             result = _execute_dynamic_tool(tool_def, {})
@@ -2162,3 +1948,122 @@ class TestUIDPhaseC:
         valid = {'fp_v1', 'lexicon'}
         for (m,) in methods:
             assert m in valid, f"Invalid formations uid_method: {m}"
+
+
+# --- Auto-Discovery (manifest-less DB) ---
+
+class TestAutoDiscovery:
+    """Test auto-generated manifest for databases without ui_manifest."""
+
+    def test_manifest_auto_generated(self, no_manifest_client):
+        """GET /api/manifest should return auto-generated manifest when no ui_manifest exists."""
+        resp = no_manifest_client.get('/api/manifest')
+        assert resp.status_code == 200
+        data = resp.json()
+        assert data['name'] == 'auto-generated'
+        assert 'manifest' in data
+        manifest = data['manifest']
+        assert 'views' in manifest
+        assert 'default_view' in manifest
+
+    def test_auto_manifest_contains_data_tables(self, no_manifest_client):
+        """Auto-generated manifest should include species and localities tables."""
+        resp = no_manifest_client.get('/api/manifest')
+        data = resp.json()
+        views = data['manifest']['views']
+        assert 'species_table' in views
+        assert 'localities_table' in views
+
+    def test_auto_manifest_excludes_meta_tables(self, no_manifest_client):
+        """Auto-generated manifest should not include SCODA metadata tables."""
+        resp = no_manifest_client.get('/api/manifest')
+        data = resp.json()
+        views = data['manifest']['views']
+        # No SCODA meta table should appear as a view
+        for meta_table in ('artifact_metadata', 'provenance', 'schema_descriptions',
+                           'ui_display_intent', 'ui_queries', 'ui_manifest'):
+            assert f'{meta_table}_table' not in views
+
+    def test_auto_manifest_table_view_structure(self, no_manifest_client):
+        """Auto-generated table view should have correct structure."""
+        resp = no_manifest_client.get('/api/manifest')
+        view = resp.json()['manifest']['views']['species_table']
+        assert view['type'] == 'table'
+        assert view['title'] == 'Species'
+        assert view['source_query'] == 'auto__species_list'
+        assert len(view['columns']) == 5  # id, name, genus, habitat, is_extinct
+        assert view['searchable'] is True
+        assert 'on_row_click' in view  # species has PK
+
+    def test_auto_manifest_detail_view_created(self, no_manifest_client):
+        """Auto-generated detail view should exist for tables with PK."""
+        resp = no_manifest_client.get('/api/manifest')
+        views = resp.json()['manifest']['views']
+        assert 'species_detail' in views
+        detail = views['species_detail']
+        assert detail['type'] == 'detail'
+        assert '/api/auto/detail/species' in detail['source']
+
+    def test_auto_query_execute(self, no_manifest_client):
+        """auto__{table}_list queries should return data."""
+        resp = no_manifest_client.get('/api/queries/auto__species_list/execute')
+        assert resp.status_code == 200
+        data = resp.json()
+        assert data['query'] == 'auto__species_list'
+        assert data['row_count'] == 3
+        assert len(data['rows']) == 3
+        names = [r['name'] for r in data['rows']]
+        assert 'Paradoxides davidis' in names
+
+    def test_auto_query_nonexistent_table(self, no_manifest_client):
+        """auto__ query for non-existent table should return 404."""
+        resp = no_manifest_client.get('/api/queries/auto__nonexistent_list/execute')
+        assert resp.status_code == 404
+
+    def test_auto_detail_endpoint(self, no_manifest_client):
+        """GET /api/auto/detail/{table}?id=N should return single row."""
+        resp = no_manifest_client.get('/api/auto/detail/species?id=1')
+        assert resp.status_code == 200
+        data = resp.json()
+        assert data['name'] == 'Paradoxides davidis'
+        assert data['genus'] == 'Paradoxides'
+
+    def test_auto_detail_not_found(self, no_manifest_client):
+        """Auto detail with invalid id should return 404."""
+        resp = no_manifest_client.get('/api/auto/detail/species?id=999')
+        assert resp.status_code == 404
+
+    def test_auto_detail_missing_id(self, no_manifest_client):
+        """Auto detail without id param should return 400."""
+        resp = no_manifest_client.get('/api/auto/detail/species')
+        assert resp.status_code == 400
+
+    def test_auto_detail_nonexistent_table(self, no_manifest_client):
+        """Auto detail for non-existent table should return 404."""
+        resp = no_manifest_client.get('/api/auto/detail/nonexistent?id=1')
+        assert resp.status_code == 404
+
+    def test_existing_manifest_unchanged(self, client):
+        """Databases WITH ui_manifest should still use the stored manifest."""
+        resp = client.get('/api/manifest')
+        assert resp.status_code == 200
+        data = resp.json()
+        # Should be the test fixture manifest, not auto-generated
+        assert data['name'] == 'default'
+        assert 'taxonomy_tree' in data['manifest']['views']
+
+    def test_auto_manifest_default_view(self, no_manifest_client):
+        """Default view should be the first table alphabetically."""
+        resp = no_manifest_client.get('/api/manifest')
+        data = resp.json()
+        # 'localities' < 'species' alphabetically
+        assert data['manifest']['default_view'] == 'localities_table'
+
+    def test_auto_query_localities(self, no_manifest_client):
+        """auto__localities_list should return locality data."""
+        resp = no_manifest_client.get('/api/queries/auto__localities_list/execute')
+        assert resp.status_code == 200
+        data = resp.json()
+        assert data['row_count'] == 2
+        names = [r['name'] for r in data['rows']]
+        assert 'Burgess Shale' in names

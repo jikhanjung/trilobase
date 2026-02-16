@@ -1,4 +1,4 @@
-/* Trilobase Web Interface Styles */
+/* SCODA Desktop Viewer Styles */
 
 :root {
     --tree-indent: 20px;
@@ -248,19 +248,19 @@ html, body {
     margin-bottom: 15px;
 }
 
-/* Genera Stats */
-.genera-stats {
+/* Item Stats */
+.item-stats {
     font-size: 0.85rem;
     padding: 0 5px;
 }
 
-/* Genus Table */
-.genus-table {
+/* Item Table (tree leaf items) */
+.item-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.genus-table th {
+.item-table th {
     position: sticky;
     top: 0;
     background-color: #fff;
@@ -272,29 +272,29 @@ html, body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.genus-table td {
+.item-table td {
     padding: 8px 10px;
     border-bottom: 1px solid var(--border-color);
 }
 
-.genus-table tr {
+.item-table tr[onclick] {
     cursor: pointer;
 }
 
-.genus-table tr:hover {
+.item-table tr:hover {
     background: var(--hover-bg);
 }
 
-.genus-table tr.invalid {
+.item-table tr.invalid {
     color: #6c757d;
     font-style: italic;
 }
 
-.genus-name {
+.item-name {
     font-weight: 500;
 }
 
-.genus-name i {
+.item-name i {
     font-style: italic;
 }
 
@@ -458,7 +458,7 @@ html, body {
     text-decoration: underline;
 }
 
-.genera-list {
+.detail-list {
     max-height: 400px;
     overflow-y: auto;
 }

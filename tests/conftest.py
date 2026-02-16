@@ -766,7 +766,14 @@ def test_db(tmp_path):
                 "title_template": {"format": "<span class=\"badge bg-secondary me-2\">{rank}</span> {name}"},
                 "sections": [
                     {"title": "Basic Information", "type": "field_grid",
-                     "fields": [{"key": "name", "label": "Name"}, {"key": "rank", "label": "Rank"}]},
+                     "fields": [
+                         {"key": "name", "label": "Name"},
+                         {"key": "rank", "label": "Rank"},
+                         {"key": "parent_name", "label": "Parent",
+                          "format": "link",
+                          "link": {"detail_view": "rank_detail", "id_path": "parent_id"},
+                          "suffix_key": "parent_rank", "suffix_format": "({value})"}
+                     ]},
                     {"title": "Statistics", "type": "rank_statistics"},
                     {"title": "Children", "type": "rank_children", "data_key": "children", "condition": "children"},
                     {"title": "My Notes", "type": "annotations", "entity_type_from": "rank"}
@@ -1005,10 +1012,70 @@ def test_db(tmp_path):
 
 @pytest.fixture
 def client(test_db):
-    """Create test client with test databases (canonical + overlay + paleocore)."""
+    """Create test client with test databases (canonical + overlay + dependencies)."""
     from starlette.testclient import TestClient
     canonical_db_path, overlay_db_path, paleocore_db_path = test_db
-    scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, paleocore_db_path)
+    scoda_package._set_paths_for_testing(canonical_db_path, overlay_db_path, extra_dbs={'pc': paleocore_db_path})
+    with TestClient(app) as client:
+        yield client
+    scoda_package._reset_paths()
+
+
+@pytest.fixture
+def no_manifest_db(tmp_path):
+    """Create a minimal DB with data tables but NO ui_manifest/ui_queries/SCODA metadata.
+
+    This simulates opening a plain SQLite database that has no SCODA packaging.
+    """
+    db_path = str(tmp_path / "plain.db")
+    overlay_path = str(tmp_path / "plain_overlay.db")
+
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    cursor.executescript("""
+        CREATE TABLE species (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            genus TEXT,
+            habitat TEXT,
+            is_extinct INTEGER DEFAULT 0
+        );
+        INSERT INTO species (id, name, genus, habitat, is_extinct)
+        VALUES (1, 'Paradoxides davidis', 'Paradoxides', 'Marine', 1);
+        INSERT INTO species (id, name, genus, habitat, is_extinct)
+        VALUES (2, 'Phacops rana', 'Phacops', 'Marine', 1);
+        INSERT INTO species (id, name, genus, habitat, is_extinct)
+        VALUES (3, 'Elrathia kingii', 'Elrathia', 'Marine', 1);
+
+        CREATE TABLE localities (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            country TEXT,
+            latitude REAL,
+            longitude REAL
+        );
+        INSERT INTO localities (id, name, country, latitude, longitude)
+        VALUES (1, 'Burgess Shale', 'Canada', 51.4, -116.5);
+        INSERT INTO localities (id, name, country, latitude, longitude)
+        VALUES (2, 'Wheeler Formation', 'USA', 39.3, -113.3);
+    """)
+
+    conn.commit()
+    conn.close()
+
+    # Create overlay DB
+    create_overlay_db(overlay_path, canonical_version='1.0.0')
+
+    return db_path, overlay_path
+
+
+@pytest.fixture
+def no_manifest_client(no_manifest_db):
+    """Create test client with a plain DB that has no manifest."""
+    from starlette.testclient import TestClient
+    db_path, overlay_path = no_manifest_db
+    scoda_package._set_paths_for_testing(db_path, overlay_path)
     with TestClient(app) as client:
         yield client
     scoda_package._reset_paths()

@@ -28,7 +28,7 @@
                 <!-- Left Panel: Tree View -->
                 <div class="col-md-4 col-lg-3 tree-panel">
                     <div class="panel-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0"><i class="bi bi-folder-tree"></i> Taxonomy</h5>
+                        <h5 class="mb-0"><i class="bi bi-folder-tree"></i> Tree</h5>
                         <div class="btn-group btn-group-sm">
                             <button class="btn btn-outline-secondary" onclick="expandAll()" title="Expand All">
                                 <i class="bi bi-chevron-expand"></i>
@@ -43,15 +43,15 @@
                     </div>
                 </div>
 
-                <!-- Right Panel: Genus List -->
+                <!-- Right Panel: Item List -->
                 <div class="col-md-8 col-lg-9 list-panel">
                     <div class="panel-header" id="list-header">
-                        <h5><i class="bi bi-list-ul"></i> Select a Family</h5>
+                        <h5><i class="bi bi-list-ul"></i> Select an item</h5>
                     </div>
                     <div class="list-container" id="list-container">
                         <div class="empty-state">
                             <i class="bi bi-arrow-left-circle"></i>
-                            <p>Select a Family from the tree to view genera</p>
+                            <p>Select an item from the tree to view details</p>
                         </div>
                     </div>
                 </div>
@@ -80,15 +80,15 @@
         </div>
     </div>
 
-    <!-- Genus Detail Modal -->
-    <div class="modal fade" id="genusModal" tabindex="-1">
+    <!-- Detail Modal -->
+    <div class="modal fade" id="detailModal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="genusModalTitle">Genus Detail</h5>
+                    <h5 class="modal-title" id="detailModalTitle">Detail</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body" id="genusModalBody">
+                <div class="modal-body" id="detailModalBody">
                     <div class="loading">Loading...</div>
                 </div>
             </div>

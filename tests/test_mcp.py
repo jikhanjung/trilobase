@@ -192,21 +192,5 @@ async def test_annotations_lifecycle():
         assert not any(a["id"] == annotation_id for a in remaining)
 
 
-@pytest.mark.asyncio
-async def test_error_handling_invalid_annotation_type():
-    """Test error handling for invalid annotation type"""
-    async with create_session() as session:
-        result = await session.call_tool("add_annotation", {
-            "entity_type": "genus",
-            "entity_id": 1,
-            "entity_name": "Test",
-            "annotation_type": "invalid_type",
-            "content": "Test"
-        })
-        data = json.loads(result.content[0].text)
-
-        assert "error" in data
-
-
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
