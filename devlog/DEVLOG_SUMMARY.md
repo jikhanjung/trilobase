@@ -1,8 +1,8 @@
 # Trilobase 개발 기록 요약
 
-**작성일:** 2026-02-15
-**총 문서:** 117개 (작업 로그 62개, 계획 문서 45개, 리뷰 2개, 기타 1개)
-**개발 기간:** 2026-02-04 ~ 2026-02-15 (12일)
+**최종 업데이트:** 2026-02-17
+**총 문서:** 139개 (작업 로그 79개, 계획 문서 57개, 리뷰 2개, 기타 1개)
+**개발 기간:** 2026-02-04 ~ 2026-02-17 (14일)
 
 ---
 
@@ -193,17 +193,48 @@ Trilobase 전용 코드를 분리하여 SCODA Desktop을 완전한 범용 뷰어
 
 ---
 
-### 2026-02-15 (Day 11) — UID Population + 향후 로드맵
+### 2026-02-15 (Day 11) — UID + FastAPI + MCP 통합
 
-SCODA Stable UID Schema v0.2에 따라 전체 7개 테이블 10,384건에 100% UID 커버리지 달성.
+UID 100% 커버리지 달성. Flask→FastAPI 전환 완료. MCP SSE를 FastAPI sub-app으로 통합하여 단일 프로세스화.
 
 | # | 제목 | 문서 |
 |---|------|------|
 | 060 | UID Population Phase A — 확정적 UID 6,250건 생성 | `060_uid_population_phase_a.md` |
 | 061 | UID Population Phase B — 품질 수정 + same_as_uid 연결 | `061_uid_population_phase_b.md` |
-| 062 | UID Population Phase C — Bibliography + Formations fp_v1 UID | `062_uid_population_phase_c.md` |
+| 062 | UID Population Phase C — Bibliography + Formations fp_v1 (10,384건 100%) | `062_uid_population_phase_c.md` |
+| 063 | Flask → FastAPI 마이그레이션 (단일 ASGI 스택) | `063_fastapi_migration.md` |
+| 064 | Formation country/period 데이터 채우기 (99.65%/98.6%) | `064_formation_metadata_backfill.md` |
+| 065 | Formation Detail 링크 추가 (Country, Period→ICS) | `065_formation_detail_links.md` |
+| 066 | MCP + Web API 단일 프로세스 통합 (/mcp sub-app) | `066_mcp_web_api_merge.md` |
+| 067 | Pydantic response_model 추가 (OpenAPI 자동 문서화) | `067_pydantic_response_model.md` |
 
-**계획 문서:** P42 (Phase A), P43 (Phase B), P44 (Phase C), P45 (향후 로드맵: FastAPI 전환, Taxonomic Opinions, SCODA 백오피스)
+**계획 문서:** P42-P44 (UID Phase A-C), P45 (향후 로드맵), P46 (FastAPI), P47 (Formation backfill), P48 (MCP 통합), P49 (Pydantic)
+
+---
+
+### 2026-02-16 (Day 12) — Generic Viewer 리팩토링 + 버그 수정
+
+Hierarchy View 통합, Taxonomic Opinions 설계 문서 완성, 버그 수정 2건.
+
+| # | 제목 | 문서 |
+|---|------|------|
+| 068 | Nav History Back Button (미동작, 롤백 예정) | `068_nav_history_back_button.md` |
+| 069 | Generic Viewer 도메인 독립화 + Entity Detail API | `069_generic_viewer_refactor.md` |
+| 070 | Hierarchy View 일반화 — tree + nested_table → `type: "hierarchy"` 통합 | `070_hierarchy_view_unification.md` |
+| 071 | Bugfix: PaleoCore chronostratigraphy chart 정렬 오류 (chart_options 누락) | `071_fix_paleocore_chart_options.md` |
+| 072 | Bugfix: Bibliography detail이 전체 genera 표시 (composite 미전환) | `072_fix_bibliography_genera.md` |
+
+**계획 문서:** P50-P52 (Taxonomic Opinions 설계/리뷰/최종), P53 (Assertion-Centric 모델), P54 (Auto-Discovery), P55 (Hierarchy 통합)
+
+---
+
+### 2026-02-17 (Day 13) — 로드맵 정리
+
+| 제목 | 문서 |
+|------|------|
+| 2026 Q1 로드맵 (Track A/B/C) | `P56_roadmap_2026Q1.md` |
+
+**계획 문서:** P56 (2026 Q1 로드맵)
 
 ---
 
@@ -241,13 +272,14 @@ PyInstaller 패키징, GUI, Overlay DB 분리, 로그 뷰어.
 
 ### 4. MCP Server (Phase 22-24)
 
-LLM을 위한 Model Context Protocol 서버. stdio → SSE → EXE 분리.
+LLM을 위한 Model Context Protocol 서버. stdio → SSE → EXE 분리 → FastAPI 통합.
 
 | 날짜 | Phase | 내용 |
 |------|-------|------|
 | 02-09 | 22 | MCP Server 구현 (14개 도구, stdio) |
 | 02-10 | 23-24 | SSE 통합, GUI 통합/분리, EXE 2개 분리 |
 | 02-14 | 46-2 | Dynamic MCP Tool Loading (.scoda 패키지 기반) |
+| 02-15 | — | MCP + Web API 단일 프로세스 통합 (/mcp sub-app mount) |
 
 ### 5. 외부 데이터 도입 (Phase 26-30)
 
@@ -278,7 +310,22 @@ LLM을 위한 Model Context Protocol 서버. stdio → SSE → EXE 분리.
 | 02-15 | Phase B: 품질 수정, same_as_uid 연결 |
 | 02-15 | Phase C: Bibliography + Formations fp_v1 (10,384건 100% 커버리지) |
 
-### 8. 버그 수정 및 데이터 품질
+### 8. 인프라 전환 (02-15)
+
+| 날짜 | 내용 |
+|------|------|
+| 02-15 | Flask → FastAPI 마이그레이션 (단일 ASGI 스택) |
+| 02-15 | MCP + Web API 단일 프로세스 통합 |
+| 02-15 | Pydantic response_model (OpenAPI 자동 문서화) |
+
+### 9. Generic Viewer 강화 (02-16)
+
+| 날짜 | 내용 |
+|------|------|
+| 02-16 | Generic Viewer 도메인 독립화 + Entity Detail API |
+| 02-16 | Hierarchy View 통합 (tree + nested_table → `type: "hierarchy"`) |
+
+### 10. 버그 수정 및 데이터 품질
 
 | 날짜 | 내용 | 문서 |
 |------|------|------|
@@ -290,6 +337,18 @@ LLM을 위한 Model Context Protocol 서버. stdio → SSE → EXE 분리.
 | 02-12 | Genus Detail Geographic 중복 제거 | `20260212_034_genus_detail_geo_dedup.md` |
 | 02-13 | taxa_count 컬럼 참조 에러 (API + named query) | `047`, `048` |
 | 02-14 | Reference SPA API 연동 수정 | `20260214_058_spa_api_fixes.md` |
+| 02-15 | Formation country/period 데이터 채우기 | `064_formation_metadata_backfill.md` |
+| 02-16 | PaleoCore chart_options 누락 (정렬 오류) | `071_fix_paleocore_chart_options.md` |
+| 02-16 | Bibliography detail 전체 genera 표시 | `072_fix_bibliography_genera.md` |
+
+### 11. 설계 문서 (미구현)
+
+| 날짜 | 문서 | 주제 | 상태 |
+|------|------|------|------|
+| 02-16 | P50-P52 | Taxonomic Opinions (설계→리뷰→최종) | 설계 완료, 구현 대기 |
+| 02-16 | P53 | Assertion-Centric Canonical Model (장기 비전) | 설계 완료, 조건부 |
+| 02-16 | P54 | Generic Viewer Auto-Discovery | 설계 완료, 구현 대기 |
+| 02-17 | P56 | 2026 Q1 로드맵 (Track A/B/C) | 현행 |
 
 ---
 
@@ -297,8 +356,8 @@ LLM을 위한 Model Context Protocol 서버. stdio → SSE → EXE 분리.
 
 | 유형 | 접두사 | 개수 | 설명 |
 |------|--------|------|------|
-| 작업 로그 | `NNN` (숫자) | 62 | 완료된 작업의 상세 기록 |
-| 계획 문서 | `PNN` | 45 | 작업 전 설계/계획 |
+| 작업 로그 | `NNN` (숫자) | 79 | 완료된 작업의 상세 기록 |
+| 계획 문서 | `PNN` | 57 | 작업 전 설계/계획 |
 | 리뷰 문서 | `RNN` | 2 | 아키텍처 검토 |
 | 기타 | — | 1 | SCODA MCP Wrapping Plan (초기 문서) |
 
@@ -319,3 +378,6 @@ LLM을 위한 Model Context Protocol 서버. stdio → SSE → EXE 분리.
 | 39-43 | 02-13 | Declarative Manifest, 범용 뷰어, 컨트롤 패널 |
 | 44-46 | 02-14 | Reference SPA, 디렉토리 정리, Runtime Purification |
 | UID A-C | 02-15 | Stable UID Population (10,384건) |
+| — | 02-15 | FastAPI 전환, MCP 통합, Pydantic |
+| — | 02-16 | Hierarchy 통합, 버그 수정, Taxonomic Opinions 설계 |
+| — | 02-17 | 2026 Q1 로드맵 정리 (P56) |
