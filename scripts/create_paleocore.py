@@ -627,6 +627,22 @@ def insert_ui_manifest(conn):
                 "default_sort": {"key": "display_order", "direction": "asc"},
                 "searchable": True,
                 "chart_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "color_key": "color",
+                    "order_key": "display_order",
+                    "rank_key": "rank",
+                    "skip_ranks": ["Super-Eon"],
+                    "rank_columns": [
+                        {"rank": "Eon", "label": "Eon"},
+                        {"rank": "Era", "label": "Era"},
+                        {"rank": "Period", "label": "System / Period"},
+                        {"rank": "Sub-Period", "label": "Sub-Period"},
+                        {"rank": "Epoch", "label": "Series / Epoch"},
+                        {"rank": "Age", "label": "Stage / Age"}
+                    ],
+                    "value_column": {"key": "start_mya", "label": "Age (Ma)"},
                     "cell_click": {"detail_view": "chronostrat_detail", "id_key": "id"}
                 }
             },
