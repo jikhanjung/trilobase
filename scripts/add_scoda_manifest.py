@@ -297,7 +297,12 @@ def insert_manifest(conn):
             "bibliography_detail": {
                 "type": "detail",
                 "title": "Bibliography Detail",
-                "source": "/api/bibliography/{id}",
+                "source": "/api/composite/bibliography_detail?id={id}",
+                "source_query": "bibliography_detail",
+                "source_param": "bibliography_id",
+                "sub_queries": {
+                    "genera": {"query": "bibliography_genera", "params": {"author_name": "result.authors"}}
+                },
                 "icon": "bi-book",
                 "title_template": {"format": "{icon} {authors}, {year}", "icon": "bi-book"},
                 "sections": [
