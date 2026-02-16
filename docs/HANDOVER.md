@@ -568,6 +568,15 @@
   - 계획 문서: `devlog/20260215_P48_mcp_web_api_merge.md`
   - devlog: `devlog/20260215_066_mcp_web_api_merge.md`
 
+- **Hierarchy View 일반화** (tree + nested_table 통합)
+  - `type: "tree"` + `type: "chart"` → `type: "hierarchy"` + `display: "tree" | "nested_table"` 통합
+  - `buildHierarchy(rows, opts)`: 공유 트리 빌더 (`sort_by: "label" | "order_key"`, `skip_ranks`)
+  - `normalizeViewDef()`: 기존 `tree_options`/`chart_options` → `hierarchy_options` + `tree_display`/`nested_table_display` 자동 변환
+  - `renderChronostratChart()` → `renderNestedTableView()` 리네이밍
+  - Python 백엔드/CSS/HTML 변경 없음 (정규화는 클라이언트)
+  - 테스트: 231개 전부 통과
+  - devlog: `devlog/20260216_070_hierarchy_view_unification.md`
+
 - **Pydantic response_model 추가**
   - FastAPI 엔드포인트에 Pydantic response_model 10개 추가
   - 고정 구조 엔드포인트 5개: response_model 직접 지정 (provenance, display-intent, queries, manifest, annotations GET)
