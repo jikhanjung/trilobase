@@ -46,6 +46,14 @@ async function loadManifest() {
         if (!response.ok) return;
         const data = await response.json();
         manifest = data.manifest;
+
+        // Normalize legacy view types to unified hierarchy
+        if (manifest && manifest.views) {
+            for (const key of Object.keys(manifest.views)) {
+                normalizeViewDef(manifest.views[key]);
+            }
+        }
+
         buildViewTabs();
 
         // Show package name in navbar
@@ -56,6 +64,60 @@ async function loadManifest() {
     } catch (error) {
         // Graceful degradation: manifest unavailable, use existing UI
     }
+}
+
+/**
+ * Normalize legacy view definitions to unified hierarchy type.
+ * type:"tree" + tree_options → type:"hierarchy", display:"tree", hierarchy_options + tree_display
+ * type:"chart" + chart_options → type:"hierarchy", display:"nested_table", hierarchy_options + nested_table_display
+ */
+function normalizeViewDef(viewDef) {
+    if (viewDef.type === 'tree' && viewDef.tree_options) {
+        const to = viewDef.tree_options;
+        viewDef.type = 'hierarchy';
+        viewDef.display = 'tree';
+        viewDef.hierarchy_options = {
+            id_key: to.id_key || 'id',
+            parent_key: to.parent_key || 'parent_id',
+            label_key: to.label_key || 'name',
+            rank_key: to.rank_key || 'rank',
+            sort_by: 'label',
+            order_key: to.id_key || 'id',
+            skip_ranks: []
+        };
+        viewDef.tree_display = {
+            leaf_rank: to.leaf_rank,
+            count_key: to.count_key,
+            on_node_info: to.on_node_info,
+            item_query: to.item_query,
+            item_param: to.item_param,
+            item_columns: to.item_columns,
+            on_item_click: to.on_item_click,
+            item_valid_filter: to.item_valid_filter
+        };
+        delete viewDef.tree_options;
+    } else if (viewDef.type === 'chart' && viewDef.chart_options) {
+        const co = viewDef.chart_options;
+        viewDef.type = 'hierarchy';
+        viewDef.display = 'nested_table';
+        viewDef.hierarchy_options = {
+            id_key: co.id_key || 'id',
+            parent_key: co.parent_key || 'parent_id',
+            label_key: co.label_key || 'name',
+            rank_key: co.rank_key || 'rank',
+            sort_by: 'order_key',
+            order_key: co.order_key || 'id',
+            skip_ranks: co.skip_ranks || []
+        };
+        viewDef.nested_table_display = {
+            color_key: co.color_key,
+            rank_columns: co.rank_columns,
+            value_column: co.value_column,
+            cell_click: co.cell_click
+        };
+        delete viewDef.chart_options;
+    }
+    return viewDef;
 }
 
 /**
@@ -105,18 +167,20 @@ function switchToView(viewKey) {
     tableContainer.style.display = 'none';
     chartContainer.style.display = 'none';
 
-    if (view.type === 'tree') {
-        currentTreeViewKey = viewKey;
-        treeContainer.style.display = '';
-        loadTree();
+    if (view.type === 'hierarchy') {
+        if (view.display === 'tree') {
+            currentTreeViewKey = viewKey;
+            treeContainer.style.display = '';
+            loadTree();
+        } else if (view.display === 'nested_table') {
+            chartContainer.style.display = '';
+            renderNestedTableView(viewKey);
+        }
     } else if (view.type === 'table') {
         tableContainer.style.display = '';
         tableViewSort = view.default_sort || null;
         tableViewSearchTerm = '';
         renderTableView(viewKey);
-    } else if (view.type === 'chart') {
-        chartContainer.style.display = '';
-        renderChronostratChart(viewKey);
     }
 }
 
@@ -283,11 +347,13 @@ function onTableSearch(value) {
 /**
  * Render ICS Chronostratigraphic Chart as a hierarchical colored table
  */
-async function renderChronostratChart(viewKey) {
+async function renderNestedTableView(viewKey) {
     const view = manifest.views[viewKey];
     if (!view) return;
 
-    const opts = view.chart_options || {};
+    const hOpts = view.hierarchy_options || {};
+    const ntOpts = view.nested_table_display || {};
+    const opts = { ...hOpts, ...ntOpts };
 
     const header = document.getElementById('chart-view-header');
     const body = document.getElementById('chart-view-body');
@@ -317,7 +383,7 @@ async function renderChronostratChart(viewKey) {
         const colCount = rankColumns.length + 1; // +1 for value column
 
         // Build tree from flat data
-        const tree = buildChartTree(rows, opts);
+        const tree = buildHierarchy(rows, hOpts);
         // Compute leaf counts for rowspan
         tree.forEach(node => computeLeafCount(node));
         // Collect leaf rows (each row = root→leaf path)
@@ -332,16 +398,19 @@ async function renderChronostratChart(viewKey) {
 }
 
 /**
- * Build tree structure from flat ICS data (manifest-driven).
- * Nodes with ranks in skip_ranks are skipped; their children are promoted to root level.
+ * Build tree from flat rows (unified hierarchy builder).
+ * sort_by: "label" (alphabetical) or "order_key" (numerical).
+ * skip_ranks: ranks to skip (children promoted to parent level).
  */
-function buildChartTree(rows, opts) {
+function buildHierarchy(rows, opts) {
     opts = opts || {};
     const idKey = opts.id_key || 'id';
     const parentKey = opts.parent_key || 'parent_id';
+    const labelKey = opts.label_key || 'name';
     const rankKey = opts.rank_key || 'rank';
+    const sortBy = opts.sort_by || 'label';
     const orderKey = opts.order_key || 'id';
-    const skipRanks = opts.skip_ranks || ['Super-Eon'];
+    const skipRanks = opts.skip_ranks || [];
 
     const byId = {};
     rows.forEach(r => { byId[r[idKey]] = { ...r, children: [] }; });
@@ -351,14 +420,12 @@ function buildChartTree(rows, opts) {
         const node = byId[r[idKey]];
         if (r[parentKey] && byId[r[parentKey]]) {
             const parent = byId[r[parentKey]];
-            // Skip specified ranks: promote their children to root
             if (skipRanks.includes(parent[rankKey])) {
                 roots.push(node);
             } else {
                 parent.children.push(node);
             }
         } else if (!r[parentKey]) {
-            // No parent — could be a skipped rank or actual root
             if (skipRanks.includes(r[rankKey])) {
                 // Don't add skipped rank itself; its children will be promoted
             } else {
@@ -367,12 +434,20 @@ function buildChartTree(rows, opts) {
         }
     });
 
-    // Sort children by order_key ascending
+    // Sort based on sort_by option
     function sortChildren(node) {
-        node.children.sort((a, b) => (a[orderKey] || 0) - (b[orderKey] || 0));
+        if (sortBy === 'order_key') {
+            node.children.sort((a, b) => (a[orderKey] || 0) - (b[orderKey] || 0));
+        } else {
+            node.children.sort((a, b) => (a[labelKey] || '').localeCompare(b[labelKey] || ''));
+        }
         node.children.forEach(sortChildren);
     }
-    roots.sort((a, b) => (a[orderKey] || 0) - (b[orderKey] || 0));
+    if (sortBy === 'order_key') {
+        roots.sort((a, b) => (a[orderKey] || 0) - (b[orderKey] || 0));
+    } else {
+        roots.sort((a, b) => (a[labelKey] || '').localeCompare(b[labelKey] || ''));
+    }
     roots.forEach(sortChildren);
 
     return roots;
@@ -405,7 +480,7 @@ function hasDirectChildRank(node, parentCol, rankColMap, rankKey) {
  * Collect leaf rows via DFS. Each leaf produces one table row.
  * path = array of { node, col, colspan, rowspan } for ancestors that start at this leaf's row.
  * parentEndCol = the first column after the parent's span (used to detect gaps like Pridoli)
- * rankColMap = rank→column index mapping from chart_options
+ * rankColMap = rank→column index mapping from nested_table_display
  */
 function collectLeafRows(node, ancestorPath, leafRows, parentEndCol, rankColMap, opts) {
     opts = opts || {};
@@ -528,39 +603,6 @@ function renderChartHTML(leafRows, opts) {
 }
 
 /**
- * Build nested tree from flat rows using parent_key.
- */
-function buildTreeFromFlat(rows, opts) {
-    const idKey = opts.id_key || 'id';
-    const parentKey = opts.parent_key || 'parent_id';
-
-    const byId = {};
-    rows.forEach(r => { byId[r[idKey]] = { ...r, children: [] }; });
-
-    const roots = [];
-    rows.forEach(r => {
-        const node = byId[r[idKey]];
-        const pid = r[parentKey];
-        if (pid && byId[pid]) {
-            byId[pid].children.push(node);
-        } else if (!pid) {
-            roots.push(node);
-        }
-    });
-
-    // Sort children alphabetically by label
-    const labelKey = opts.label_key || 'name';
-    function sortChildren(node) {
-        node.children.sort((a, b) => (a[labelKey] || '').localeCompare(b[labelKey] || ''));
-        node.children.forEach(sortChildren);
-    }
-    roots.sort((a, b) => (a[labelKey] || '').localeCompare(b[labelKey] || ''));
-    roots.forEach(sortChildren);
-
-    return roots;
-}
-
-/**
  * Load tree from manifest source_query (flat data → client-side tree)
  */
 async function loadTree() {
@@ -570,12 +612,12 @@ async function loadTree() {
         // Use manifest source_query if available, otherwise fallback
         let tree;
         const viewDef = manifest && manifest.views && currentTreeViewKey && manifest.views[currentTreeViewKey];
-        if (viewDef && viewDef.source_query && viewDef.tree_options) {
+        if (viewDef && viewDef.source_query && viewDef.hierarchy_options) {
             const queryUrl = `/api/queries/${viewDef.source_query}/execute`;
             const response = await fetch(queryUrl);
             if (!response.ok) throw new Error('Failed to load tree data');
             const data = await response.json();
-            tree = buildTreeFromFlat(data.rows, viewDef.tree_options);
+            tree = buildHierarchy(data.rows, viewDef.hierarchy_options);
         } else {
             throw new Error('No manifest tree definition found');
         }
@@ -596,14 +638,14 @@ function createTreeNode(node) {
     const div = document.createElement('div');
     div.className = 'tree-node';
 
-    const opts = (manifest && manifest.views && currentTreeViewKey &&
-                  manifest.views[currentTreeViewKey] &&
-                  manifest.views[currentTreeViewKey].tree_options) || {};
-    const leafRank = opts.leaf_rank || null;
-    const rankKey = opts.rank_key || 'rank';
-    const labelKey = opts.label_key || 'name';
-    const countKey = opts.count_key || null;
-    const idKey = opts.id_key || 'id';
+    const viewDef = manifest && manifest.views && currentTreeViewKey && manifest.views[currentTreeViewKey];
+    const hOpts = (viewDef && viewDef.hierarchy_options) || {};
+    const tOpts = (viewDef && viewDef.tree_display) || {};
+    const leafRank = tOpts.leaf_rank || null;
+    const rankKey = hOpts.rank_key || 'rank';
+    const labelKey = hOpts.label_key || 'name';
+    const countKey = tOpts.count_key || null;
+    const idKey = hOpts.id_key || 'id';
 
     const hasChildren = node.children && node.children.length > 0;
     const isLeaf = node[rankKey] === leafRank;
@@ -654,7 +696,7 @@ function createTreeNode(node) {
     infoBtn.title = 'View details';
     infoBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const infoOpts = opts.on_node_info || {};
+        const infoOpts = tOpts.on_node_info || {};
         if (infoOpts.detail_view) {
             openDetail(infoOpts.detail_view, node[infoOpts.id_key || idKey]);
         }
@@ -709,10 +751,9 @@ async function selectTreeLeaf(leafId, leafName) {
 
     selectedLeafId = leafId;
 
-    const opts = (manifest && manifest.views && currentTreeViewKey &&
-                  manifest.views[currentTreeViewKey] &&
-                  manifest.views[currentTreeViewKey].tree_options) || {};
-    const filterDef = opts.item_valid_filter || {};
+    const viewDef = manifest && manifest.views && currentTreeViewKey && manifest.views[currentTreeViewKey];
+    const tOpts = (viewDef && viewDef.tree_display) || {};
+    const filterDef = tOpts.item_valid_filter || {};
     const hasFilterDef = filterDef.key ? true : false;
 
     // Update header with filter checkbox (only if filter is defined)
@@ -735,9 +776,9 @@ async function selectTreeLeaf(leafId, leafName) {
 
     try {
         let items;
-        if (opts.item_query && opts.item_param) {
-            const baseUrl = `/api/queries/${opts.item_query}/execute`;
-            const url = `${baseUrl}?${opts.item_param}=${leafId}`;
+        if (tOpts.item_query && tOpts.item_param) {
+            const baseUrl = `/api/queries/${tOpts.item_query}/execute`;
+            const url = `${baseUrl}?${tOpts.item_param}=${leafId}`;
             const response = await fetch(url);
             if (!response.ok) throw new Error('Failed to load items');
             const data = await response.json();
@@ -769,17 +810,17 @@ function toggleValidFilter() {
 function renderTreeItemTable() {
     const container = document.getElementById('list-container');
 
-    const opts = (manifest && manifest.views && currentTreeViewKey &&
-                  manifest.views[currentTreeViewKey] &&
-                  manifest.views[currentTreeViewKey].tree_options) || {};
-    const filterDef = opts.item_valid_filter || {};
+    const viewDef = manifest && manifest.views && currentTreeViewKey && manifest.views[currentTreeViewKey];
+    const hOpts = (viewDef && viewDef.hierarchy_options) || {};
+    const tOpts = (viewDef && viewDef.tree_display) || {};
+    const filterDef = tOpts.item_valid_filter || {};
     const filterKey = filterDef.key || null;
-    const columns = opts.item_columns || [
+    const columns = tOpts.item_columns || [
         {key: 'name', label: 'Name'},
         {key: 'id', label: 'ID'}
     ];
-    const clickDef = opts.on_item_click || {id_key: 'id'};
-    const idKey = opts.id_key || 'id';
+    const clickDef = tOpts.on_item_click || {id_key: 'id'};
+    const idKey = hOpts.id_key || 'id';
 
     const hasFilter = filterKey && currentItems.some(g => filterKey in g);
     const items = (hasFilter && showOnlyValid)
