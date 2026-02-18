@@ -501,6 +501,11 @@ def api_auto_detail(table_name: str, request: Request):
     conn = get_db()
     cursor = conn.cursor()
 
+    # Block access to SCODA metadata tables
+    if table_name in SCODA_META_TABLES:
+        conn.close()
+        return JSONResponse({'error': 'Metadata tables not accessible'}, status_code=403)
+
     # Verify table exists (SQL injection prevention)
     cursor.execute(
         "SELECT name FROM sqlite_master WHERE type='table' AND name=?", (table_name,))

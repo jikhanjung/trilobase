@@ -2069,6 +2069,18 @@ class TestAutoDiscovery:
         names = [r['name'] for r in data['rows']]
         assert 'Burgess Shale' in names
 
+    def test_auto_detail_blocks_metadata_table(self, client):
+        """Auto detail endpoint should block access to SCODA metadata tables."""
+        for meta_table in ('artifact_metadata', 'provenance', 'schema_descriptions',
+                           'ui_display_intent', 'ui_queries', 'ui_manifest'):
+            resp = client.get(f'/api/auto/detail/{meta_table}?id=1')
+            assert resp.status_code == 403, f"{meta_table} should return 403"
+
+    def test_auto_detail_blocks_metadata_no_manifest(self, no_manifest_client):
+        """Auto detail metadata blocking works even without manifest."""
+        resp = no_manifest_client.get('/api/auto/detail/ui_queries?id=1')
+        assert resp.status_code == 403
+
 
 # --- Manifest Validator ---
 

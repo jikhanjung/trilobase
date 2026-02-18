@@ -1125,11 +1125,46 @@ async function deleteAnnotation(annotationId, entityType, entityId) {
 // ═══════════════════════════════════════════════════════════════════════
 
 /**
- * Open a detail view by manifest key. Dispatches to renderDetailFromManifest.
+ * Open a detail view by manifest key. Falls back to auto-detail if view is missing.
  */
 async function openDetail(viewKey, entityId) {
-    if (!manifest || !manifest.views[viewKey]) return;
-    await renderDetailFromManifest(viewKey, entityId);
+    if (manifest && manifest.views[viewKey]) {
+        await renderDetailFromManifest(viewKey, entityId);
+    } else if (viewKey.endsWith('_detail')) {
+        const table = viewKey.replace('_detail', '');
+        await renderAutoDetail(table, entityId);
+    }
+}
+
+/**
+ * Render an auto-generated detail modal for a table row (fallback when no manifest detail view).
+ */
+async function renderAutoDetail(table, entityId) {
+    const modalBody = document.getElementById('detailModalBody');
+    const modalTitle = document.getElementById('detailModalTitle');
+
+    modalBody.innerHTML = '<div class="loading">Loading...</div>';
+    detailModal.show();
+
+    try {
+        const response = await fetch(`/api/auto/detail/${table}?id=${entityId}`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+
+        modalTitle.textContent = data.name || data.title || data.code || `${table} #${entityId}`;
+
+        let html = '<div class="row g-2">';
+        for (const [key, value] of Object.entries(data)) {
+            if (value == null) continue;
+            const label = key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            html += `<div class="col-md-4 fw-bold text-muted">${label}</div>`;
+            html += `<div class="col-md-8">${value}</div>`;
+        }
+        html += '</div>';
+        modalBody.innerHTML = html;
+    } catch (error) {
+        modalBody.innerHTML = `<div class="text-danger">Error loading details: ${error.message}</div>`;
+    }
 }
 
 /**
