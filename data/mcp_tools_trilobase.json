@@ -141,6 +141,25 @@
       "default_params": {
         "limit": 50
       }
+    },
+    {
+      "name": "get_taxon_opinions",
+      "description": "Get taxonomic opinions for a taxon, showing alternative classification viewpoints from different literature sources. Returns accepted and alternative PLACED_IN, VALID_AS, or SYNONYM_OF opinions with bibliography references.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "taxon_id": {
+            "type": "integer",
+            "description": "The ID of the taxon to get opinions for."
+          }
+        },
+        "required": ["taxon_id"]
+      },
+      "query_type": "named_query",
+      "named_query": "taxon_opinions",
+      "param_mapping": {
+        "taxon_id": "taxon_id"
+      }
     }
   ]
 }

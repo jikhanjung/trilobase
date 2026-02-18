@@ -194,7 +194,7 @@ class TestApiQueries:
         response = client.get('/api/queries')
         data = response.json()
         assert isinstance(data, list)
-        assert len(data) == 29  # 8 original + 21 composite detail queries
+        assert len(data) == 30  # 8 original + 21 composite detail + 1 taxon_opinions
 
     def test_queries_record_structure(self, client):
         response = client.get('/api/queries')

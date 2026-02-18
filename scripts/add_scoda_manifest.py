@@ -491,6 +491,13 @@ def insert_manifest(conn):
                 "type": "detail",
                 "title": "Rank Detail",
                 "source": "/api/rank/{id}",
+                "source_query": "rank_detail",
+                "source_param": "rank_id",
+                "sub_queries": {
+                    "children_counts": {"query": "rank_children_counts", "params": {"rank_id": "id"}},
+                    "children": {"query": "rank_children", "params": {"rank_id": "id"}},
+                    "opinions": {"query": "taxon_opinions", "params": {"taxon_id": "id"}}
+                },
                 "title_template": {
                     "format": "<span class=\"badge bg-secondary me-2\">{rank}</span> {name}"
                 },
@@ -518,6 +525,21 @@ def insert_manifest(conn):
                         "type": "rank_children",
                         "data_key": "children",
                         "condition": "children"
+                    },
+                    {
+                        "title": "Taxonomic Opinions ({count})",
+                        "type": "linked_table",
+                        "data_key": "opinions",
+                        "condition": "opinions",
+                        "columns": [
+                            {"key": "related_taxon_name", "label": "Proposed Parent"},
+                            {"key": "related_taxon_rank", "label": "Rank"},
+                            {"key": "bib_authors", "label": "Author"},
+                            {"key": "bib_year", "label": "Year"},
+                            {"key": "assertion_status", "label": "Status"},
+                            {"key": "is_accepted", "label": "Accepted", "format": "boolean"}
+                        ],
+                        "on_row_click": {"detail_view": "rank_detail", "id_key": "related_taxon_id"}
                     },
                     {
                         "title": "Notes",

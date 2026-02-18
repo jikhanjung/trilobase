@@ -744,3 +744,210 @@ class TestCompositeChronostratDetail:
 # PackageRegistry tests
 # ---------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------
+# B-1: Taxonomic Opinions PoC
+# ---------------------------------------------------------------------------
+
+class TestTaxonomicOpinions:
+    """Tests for taxonomic_opinions table, triggers, constraints, and API integration."""
+
+    # --- Schema tests ---
+
+    def test_opinions_table_exists(self, test_db):
+        """taxonomic_opinions table should exist in the test DB."""
+        conn = sqlite3.connect(test_db[0])
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='taxonomic_opinions'")
+        assert cursor.fetchone()[0] == 1
+        conn.close()
+
+    def test_opinions_columns(self, test_db):
+        """taxonomic_opinions should have all expected columns."""
+        conn = sqlite3.connect(test_db[0])
+        cursor = conn.cursor()
+        cursor.execute("PRAGMA table_info(taxonomic_opinions)")
+        columns = {row[1] for row in cursor.fetchall()}
+        expected = {
+            'id', 'taxon_id', 'opinion_type', 'related_taxon_id', 'proposed_valid',
+            'bibliography_id', 'assertion_status', 'curation_confidence',
+            'is_accepted', 'notes', 'created_at'
+        }
+        assert expected.issubset(columns)
+        conn.close()
+
+    def test_is_placeholder_column(self, test_db):
+        """taxonomic_ranks should have is_placeholder column."""
+        conn = sqlite3.connect(test_db[0])
+        cursor = conn.cursor()
+        cursor.execute("PRAGMA table_info(taxonomic_ranks)")
+        columns = {row[1] for row in cursor.fetchall()}
+        assert 'is_placeholder' in columns
+        conn.close()
+
+    # --- Constraint tests ---
+
+    def test_opinion_type_check(self, test_db):
+        """Invalid opinion_type should be rejected by CHECK constraint."""
+        conn = sqlite3.connect(test_db[0])
+        with pytest.raises(sqlite3.IntegrityError):
+            conn.execute("""
+                INSERT INTO taxonomic_opinions (taxon_id, opinion_type, related_taxon_id)
+                VALUES (2, 'INVALID_TYPE', 1)
+            """)
+        conn.close()
+
+    def test_assertion_status_check(self, test_db):
+        """Invalid assertion_status should be rejected."""
+        conn = sqlite3.connect(test_db[0])
+        with pytest.raises(sqlite3.IntegrityError):
+            conn.execute("""
+                INSERT INTO taxonomic_opinions (taxon_id, opinion_type, related_taxon_id, assertion_status)
+                VALUES (2, 'PLACED_IN', 1, 'BOGUS')
+            """)
+        conn.close()
+
+    def test_curation_confidence_check(self, test_db):
+        """Invalid curation_confidence should be rejected."""
+        conn = sqlite3.connect(test_db[0])
+        with pytest.raises(sqlite3.IntegrityError):
+            conn.execute("""
+                INSERT INTO taxonomic_opinions (taxon_id, opinion_type, related_taxon_id, curation_confidence)
+                VALUES (2, 'PLACED_IN', 1, 'BOGUS')
+            """)
+        conn.close()
+
+    def test_partial_unique_accepted_non_placed(self, test_db):
+        """Partial unique index prevents two accepted for same taxon+type (non-PLACED_IN)."""
+        conn = sqlite3.connect(test_db[0])
+        # Insert first accepted VALID_AS (no trigger for VALID_AS)
+        conn.execute("""
+            INSERT INTO taxonomic_opinions (taxon_id, opinion_type, proposed_valid, is_accepted)
+            VALUES (100, 'VALID_AS', 1, 1)
+        """)
+        conn.commit()
+        # Second accepted VALID_AS for same taxon should fail (unique index, no trigger to deactivate)
+        with pytest.raises(sqlite3.IntegrityError):
+            conn.execute("""
+                INSERT INTO taxonomic_opinions (taxon_id, opinion_type, proposed_valid, is_accepted)
+                VALUES (100, 'VALID_AS', 0, 1)
+            """)
+        conn.close()
+
+    # --- Trigger tests ---
+
+    def test_trigger_insert_sync_parent(self, test_db):
+        """Inserting accepted PLACED_IN should update parent_id."""
+        conn = sqlite3.connect(test_db[0])
+        cursor = conn.cursor()
+        # Phacopidae (id=10) currently parent_id=2 (Phacopida)
+        cursor.execute("SELECT parent_id FROM taxonomic_ranks WHERE id = 10")
+        assert cursor.fetchone()[0] == 2
+
+        # Insert accepted PLACED_IN: Phacopidae → Ptychopariida (id=3)
+        cursor.execute("""
+            INSERT INTO taxonomic_opinions (taxon_id, opinion_type, related_taxon_id, is_accepted)
+            VALUES (10, 'PLACED_IN', 3, 1)
+        """)
+        conn.commit()
+
+        # parent_id should now be 3
+        cursor.execute("SELECT parent_id FROM taxonomic_ranks WHERE id = 10")
+        assert cursor.fetchone()[0] == 3
+        conn.close()
+
+    def test_trigger_update_sync_parent(self, test_db):
+        """Updating is_accepted to 1 should update parent_id."""
+        conn = sqlite3.connect(test_db[0])
+        cursor = conn.cursor()
+        # Phacopida (id=2) has accepted opinion pointing to Trilobita (id=1)
+        # and alternative pointing to Ptychopariida (id=3)
+        cursor.execute("SELECT parent_id FROM taxonomic_ranks WHERE id = 2")
+        assert cursor.fetchone()[0] == 1
+
+        # Accept the alternative opinion (id=2: Phacopida → Ptychopariida)
+        cursor.execute("UPDATE taxonomic_opinions SET is_accepted = 1 WHERE id = 2")
+        conn.commit()
+
+        # parent_id should now be 3 (Ptychopariida)
+        cursor.execute("SELECT parent_id FROM taxonomic_ranks WHERE id = 2")
+        assert cursor.fetchone()[0] == 3
+
+        # Previous accepted (id=1) should be deactivated
+        cursor.execute("SELECT is_accepted FROM taxonomic_opinions WHERE id = 1")
+        assert cursor.fetchone()[0] == 0
+        conn.close()
+
+    def test_trigger_deactivates_previous(self, test_db):
+        """New accepted opinion should deactivate previous accepted."""
+        conn = sqlite3.connect(test_db[0])
+        cursor = conn.cursor()
+        # Insert new accepted PLACED_IN for Phacopida (already has accepted id=1)
+        cursor.execute("""
+            INSERT INTO taxonomic_opinions (taxon_id, opinion_type, related_taxon_id, is_accepted)
+            VALUES (2, 'PLACED_IN', 3, 1)
+        """)
+        conn.commit()
+
+        # Old opinion (id=1) should now be is_accepted=0
+        cursor.execute("SELECT is_accepted FROM taxonomic_opinions WHERE id = 1")
+        assert cursor.fetchone()[0] == 0
+
+        # New opinion should be the only accepted
+        cursor.execute("""
+            SELECT COUNT(*) FROM taxonomic_opinions
+            WHERE taxon_id = 2 AND opinion_type = 'PLACED_IN' AND is_accepted = 1
+        """)
+        assert cursor.fetchone()[0] == 1
+        conn.close()
+
+    # --- API / Composite tests ---
+
+    def test_opinions_named_query(self, client):
+        """taxon_opinions named query should return opinions for a taxon."""
+        response = client.get('/api/queries/taxon_opinions/execute?taxon_id=2')
+        assert response.status_code == 200
+        data = response.json()
+        assert data['row_count'] == 2
+        # Accepted should come first (ORDER BY is_accepted DESC)
+        assert data['rows'][0]['is_accepted'] == 1
+        assert data['rows'][0]['related_taxon_name'] == 'Trilobita'
+
+    def test_composite_rank_detail_includes_opinions(self, client):
+        """Composite rank_detail should include opinions for taxa with opinions."""
+        response = client.get('/api/composite/rank_detail?id=2')
+        assert response.status_code == 200
+        data = response.json()
+        assert 'opinions' in data
+        assert len(data['opinions']) == 2
+        # Accepted first
+        assert data['opinions'][0]['is_accepted'] == 1
+
+    def test_composite_rank_detail_no_opinions(self, client):
+        """Taxa without opinions should have empty opinions list."""
+        # Trilobita (id=1) has no opinions
+        response = client.get('/api/composite/rank_detail?id=1')
+        assert response.status_code == 200
+        data = response.json()
+        assert 'opinions' in data
+        assert len(data['opinions']) == 0
+
+    # --- Manifest tests ---
+
+    def test_rank_detail_manifest_has_opinions_sub_query(self, client):
+        """rank_detail manifest should have opinions in sub_queries."""
+        response = client.get('/api/manifest')
+        manifest = response.json()['manifest']
+        rank_detail = manifest['views']['rank_detail']
+        assert 'opinions' in rank_detail['sub_queries']
+        assert rank_detail['sub_queries']['opinions']['query'] == 'taxon_opinions'
+
+    def test_rank_detail_manifest_has_opinions_section(self, client):
+        """rank_detail manifest should have opinions linked_table section."""
+        response = client.get('/api/manifest')
+        manifest = response.json()['manifest']
+        sections = manifest['views']['rank_detail']['sections']
+        opinion_sections = [s for s in sections if s.get('data_key') == 'opinions']
+        assert len(opinion_sections) == 1
+        assert opinion_sections[0]['type'] == 'linked_table'
+

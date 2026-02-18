@@ -57,6 +57,7 @@ def test_db(tmp_path):
             uid_method TEXT,
             uid_confidence TEXT,
             same_as_uid TEXT,
+            is_placeholder INTEGER DEFAULT 0,
             FOREIGN KEY (parent_id) REFERENCES taxonomic_ranks(id)
         );
         CREATE UNIQUE INDEX idx_taxonomic_ranks_uid ON taxonomic_ranks(uid);
@@ -99,6 +100,76 @@ def test_db(tmp_path):
 
         CREATE VIEW taxa AS
         SELECT * FROM taxonomic_ranks WHERE rank = 'Genus';
+
+        -- Taxonomic Opinions (B-1)
+        CREATE TABLE taxonomic_opinions (
+            id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+            taxon_id            INTEGER NOT NULL REFERENCES taxonomic_ranks(id),
+            opinion_type        TEXT NOT NULL
+                                CHECK(opinion_type IN ('PLACED_IN', 'VALID_AS', 'SYNONYM_OF')),
+            related_taxon_id    INTEGER REFERENCES taxonomic_ranks(id),
+            proposed_valid      INTEGER,
+            bibliography_id     INTEGER REFERENCES bibliography(id),
+            assertion_status    TEXT DEFAULT 'asserted'
+                                CHECK(assertion_status IN (
+                                    'asserted', 'incertae_sedis', 'questionable', 'indet'
+                                )),
+            curation_confidence TEXT DEFAULT 'high'
+                                CHECK(curation_confidence IN ('high', 'medium', 'low')),
+            is_accepted         INTEGER DEFAULT 0,
+            notes               TEXT,
+            created_at          TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+        CREATE INDEX idx_opinions_taxon ON taxonomic_opinions(taxon_id);
+        CREATE INDEX idx_opinions_type ON taxonomic_opinions(opinion_type);
+        CREATE UNIQUE INDEX idx_unique_accepted_opinion
+            ON taxonomic_opinions(taxon_id, opinion_type)
+            WHERE is_accepted = 1;
+
+        -- BEFORE INSERT: deactivate existing accepted (before unique index check)
+        CREATE TRIGGER trg_deactivate_before_insert
+        BEFORE INSERT ON taxonomic_opinions
+        WHEN NEW.opinion_type = 'PLACED_IN' AND NEW.is_accepted = 1
+        BEGIN
+            UPDATE taxonomic_opinions
+            SET is_accepted = 0
+            WHERE taxon_id = NEW.taxon_id
+              AND opinion_type = 'PLACED_IN'
+              AND is_accepted = 1;
+        END;
+
+        -- AFTER INSERT: sync parent_id
+        CREATE TRIGGER trg_sync_parent_insert
+        AFTER INSERT ON taxonomic_opinions
+        WHEN NEW.opinion_type = 'PLACED_IN' AND NEW.is_accepted = 1
+        BEGIN
+            UPDATE taxonomic_ranks
+            SET parent_id = NEW.related_taxon_id
+            WHERE id = NEW.taxon_id;
+        END;
+
+        -- BEFORE UPDATE: deactivate other accepted (before unique index check)
+        CREATE TRIGGER trg_deactivate_before_update
+        BEFORE UPDATE OF is_accepted ON taxonomic_opinions
+        WHEN NEW.opinion_type = 'PLACED_IN' AND NEW.is_accepted = 1 AND OLD.is_accepted = 0
+        BEGIN
+            UPDATE taxonomic_opinions
+            SET is_accepted = 0
+            WHERE taxon_id = NEW.taxon_id
+              AND opinion_type = 'PLACED_IN'
+              AND is_accepted = 1
+              AND id != NEW.id;
+        END;
+
+        -- AFTER UPDATE: sync parent_id
+        CREATE TRIGGER trg_sync_parent_update
+        AFTER UPDATE OF is_accepted ON taxonomic_opinions
+        WHEN NEW.opinion_type = 'PLACED_IN' AND NEW.is_accepted = 1 AND OLD.is_accepted = 0
+        BEGIN
+            UPDATE taxonomic_ranks
+            SET parent_id = NEW.related_taxon_id
+            WHERE id = NEW.taxon_id;
+        END;
 
         -- SCODA-Core tables
         CREATE TABLE artifact_metadata (
@@ -216,6 +287,19 @@ def test_db(tmp_path):
     cursor.executescript("""
         INSERT INTO genus_locations (genus_id, country_id, region, region_id) VALUES (101, 1, 'Eifel', 3);
         INSERT INTO genus_locations (genus_id, country_id, region, region_id) VALUES (200, 2, 'Scania', 4);
+    """)
+
+    # Taxonomic opinions test data
+    cursor.executescript("""
+        -- Accepted: Phacopida placed in Trilobita (current)
+        INSERT INTO taxonomic_opinions (id, taxon_id, opinion_type, related_taxon_id, bibliography_id,
+            assertion_status, curation_confidence, is_accepted)
+        VALUES (1, 2, 'PLACED_IN', 1, NULL, 'asserted', 'high', 1);
+
+        -- Alternative: Phacopida placed in Ptychopariida (hypothetical)
+        INSERT INTO taxonomic_opinions (id, taxon_id, opinion_type, related_taxon_id, bibliography_id,
+            assertion_status, curation_confidence, is_accepted, notes)
+        VALUES (2, 2, 'PLACED_IN', 3, NULL, 'asserted', 'medium', 0, 'Hypothetical alternative for testing');
     """)
 
     # Bibliography (for metadata statistics)
@@ -490,6 +574,14 @@ def test_db(tmp_path):
         VALUES ('chronostrat_genera', 'Genera related to an ICS chronostratigraphic unit',
                 'SELECT DISTINCT tr.id, tr.name, tr.author, tr.year, tr.is_valid, tr.temporal_code FROM pc.temporal_ics_mapping m JOIN taxonomic_ranks tr ON tr.temporal_code = m.temporal_code WHERE m.ics_id = :chronostrat_id AND tr.rank = ''Genus'' ORDER BY tr.name',
                 '{"chronostrat_id": "integer"}', '2026-02-14T00:00:00')
+    """)
+
+    # Taxon opinions query (B-1)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('taxon_opinions', 'Taxonomic opinions for a specific taxon',
+                'SELECT o.id, o.opinion_type, o.related_taxon_id, t.name as related_taxon_name, t.rank as related_taxon_rank, o.bibliography_id, b.authors as bib_authors, b.year as bib_year, o.assertion_status, o.curation_confidence, o.is_accepted, o.notes, o.created_at FROM taxonomic_opinions o LEFT JOIN taxonomic_ranks t ON o.related_taxon_id = t.id LEFT JOIN bibliography b ON o.bibliography_id = b.id WHERE o.taxon_id = :taxon_id ORDER BY o.is_accepted DESC, o.created_at',
+                '{"taxon_id": "integer"}', '2026-02-18T00:00:00')
     """)
 
     # SCODA UI Manifest (Phase 15)
@@ -771,7 +863,8 @@ def test_db(tmp_path):
                 "source_param": "rank_id",
                 "sub_queries": {
                     "children_counts": {"query": "rank_children_counts", "params": {"rank_id": "id"}},
-                    "children": {"query": "rank_children", "params": {"rank_id": "id"}}
+                    "children": {"query": "rank_children", "params": {"rank_id": "id"}},
+                    "opinions": {"query": "taxon_opinions", "params": {"taxon_id": "id"}}
                 },
                 "title_template": {"format": "<span class=\"badge bg-secondary me-2\">{rank}</span> {name}"},
                 "sections": [
@@ -786,6 +879,17 @@ def test_db(tmp_path):
                      ]},
                     {"title": "Statistics", "type": "rank_statistics"},
                     {"title": "Children", "type": "rank_children", "data_key": "children", "condition": "children"},
+                    {"title": "Taxonomic Opinions ({count})", "type": "linked_table",
+                     "data_key": "opinions", "condition": "opinions",
+                     "columns": [
+                         {"key": "related_taxon_name", "label": "Proposed Parent"},
+                         {"key": "related_taxon_rank", "label": "Rank"},
+                         {"key": "bib_authors", "label": "Author"},
+                         {"key": "bib_year", "label": "Year"},
+                         {"key": "assertion_status", "label": "Status"},
+                         {"key": "is_accepted", "label": "Accepted", "format": "boolean"}
+                     ],
+                     "on_row_click": {"detail_view": "rank_detail", "id_key": "related_taxon_id"}},
                     {"title": "My Notes", "type": "annotations", "entity_type_from": "rank"}
                 ]
             }
