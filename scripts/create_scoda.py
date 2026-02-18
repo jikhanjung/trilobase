@@ -16,6 +16,7 @@ import sys
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from scoda_desktop.scoda_package import ScodaPackage, _sha256_file
+from validate_manifest import validate_db
 
 DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
 DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'trilobase.scoda')
@@ -45,6 +46,17 @@ def main():
     if not os.path.exists(db_path):
         print(f"Error: Database not found: {db_path}", file=sys.stderr)
         sys.exit(1)
+
+    # Validate manifest before packaging
+    errors, warnings = validate_db(db_path)
+    for w in warnings:
+        print(f"  WARNING: {w}")
+    for e in errors:
+        print(f"  ERROR: {e}", file=sys.stderr)
+    if errors:
+        print(f"\nManifest validation failed: {len(errors)} error(s)", file=sys.stderr)
+        sys.exit(1)
+    print(f"Manifest validation: OK ({len(warnings)} warning(s))")
 
     if args.dry_run:
         import sqlite3

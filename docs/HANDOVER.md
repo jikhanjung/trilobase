@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-15
+**마지막 업데이트:** 2026-02-18
 
 ## 프로젝트 개요
 
@@ -568,6 +568,14 @@
   - 계획 문서: `devlog/20260215_P48_mcp_web_api_merge.md`
   - devlog: `devlog/20260215_066_mcp_web_api_merge.md`
 
+- **A-2: Manifest Validator / Linter**
+  - `scripts/validate_manifest.py`: .scoda 패키지 빌드 시 manifest JSON 검증
+  - 13개 검증 규칙 (11 ERROR + 2 WARNING)
+  - `validate_db(db_path)` → `(errors, warnings)` 공개 API
+  - `create_scoda.py`, `create_paleocore_scoda.py` 빌드 전 검증 통합
+  - 테스트: 245개 (기존 231 + 신규 14)
+  - devlog: `devlog/20260218_074_manifest_validator.md`
+
 - **Hierarchy View 일반화** (tree + nested_table 통합)
   - `type: "tree"` + `type: "chart"` → `type: "hierarchy"` + `display: "tree" | "nested_table"` 통합
   - `buildHierarchy(rows, opts)`: 공유 트리 빌더 (`sort_by: "label" | "order_key"`, `skip_ranks`)
@@ -678,6 +686,7 @@ trilobase/
 │   ├── create_scoda.py               # trilobase.scoda 패키지 생성
 │   ├── create_paleocore_scoda.py     # paleocore.scoda 패키지 생성
 │   ├── create_paleocore.py           # PaleoCore DB 생성
+│   ├── validate_manifest.py          # Manifest validator/linter (A-2)
 │   ├── release.py                    # 릴리스 패키징
 │   ├── create_database.py            # DB 생성
 │   └── ... (normalize, import, etc.)
@@ -731,11 +740,11 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_runtime.py` | 108개 | ✅ 통과 |
+| `tests/test_runtime.py` | 122개 | ✅ 통과 |
 | `tests/test_trilobase.py` | 108개 | ✅ 통과 |
-| `tests/test_mcp.py` | 12개 | ✅ 통과 |
+| `tests/test_mcp.py` | 14개 | ✅ 통과 |
 | `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
-| **합계** | **229개** | **✅ 전부 통과** |
+| **합계** | **245개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash

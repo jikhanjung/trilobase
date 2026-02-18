@@ -22,6 +22,7 @@ from release import (
     get_version, calculate_sha256, store_sha256, get_statistics,
     get_provenance, build_metadata_json, generate_readme, create_release
 )
+from validate_manifest import validate_manifest, validate_db
 
 
 
@@ -2067,3 +2068,250 @@ class TestAutoDiscovery:
         assert data['row_count'] == 2
         names = [r['name'] for r in data['rows']]
         assert 'Burgess Shale' in names
+
+
+# --- Manifest Validator ---
+
+def _make_validator_db(tmp_path, manifest, queries=None):
+    """Helper: create a minimal DB with ui_manifest + ui_queries for validation tests."""
+    db_path = str(tmp_path / "validate_test.db")
+    conn = sqlite3.connect(db_path)
+    c = conn.cursor()
+    c.execute("""CREATE TABLE ui_manifest (
+        name TEXT PRIMARY KEY, description TEXT, manifest_json TEXT NOT NULL, created_at TEXT NOT NULL)""")
+    c.execute("""CREATE TABLE ui_queries (
+        id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE, description TEXT,
+        sql TEXT NOT NULL, params_json TEXT, created_at TEXT NOT NULL)""")
+    c.execute("INSERT INTO ui_manifest (name, description, manifest_json, created_at) VALUES (?, ?, ?, ?)",
+              ('default', 'test', json.dumps(manifest), '2026-01-01'))
+    if queries:
+        for i, qname in enumerate(queries, 1):
+            c.execute("INSERT INTO ui_queries (id, name, sql, created_at) VALUES (?, ?, ?, ?)",
+                      (i, qname, 'SELECT 1', '2026-01-01'))
+    conn.commit()
+    conn.close()
+    return db_path
+
+
+class TestManifestValidator:
+    """Tests for scripts/validate_manifest.py"""
+
+    def test_valid_manifest_no_errors(self, tmp_path):
+        """A well-formed manifest should produce 0 errors."""
+        manifest = {
+            "default_view": "my_table",
+            "views": {
+                "my_table": {
+                    "type": "table",
+                    "source_query": "items_list",
+                    "columns": [{"key": "name", "label": "Name"}],
+                    "default_sort": {"key": "name", "direction": "asc"},
+                    "on_row_click": {"detail_view": "my_detail", "id_key": "id"}
+                },
+                "my_detail": {
+                    "type": "detail",
+                    "source_query": "item_detail",
+                    "source_param": "item_id",
+                    "sub_queries": {},
+                    "sections": [
+                        {"title": "Info", "type": "field_grid", "fields": [{"key": "name"}]}
+                    ]
+                }
+            }
+        }
+        db_path = _make_validator_db(tmp_path, manifest,
+                                     queries=['items_list', 'item_detail'])
+        errors, warnings = validate_db(db_path)
+        assert errors == []
+
+    def test_default_view_missing(self, tmp_path):
+        """default_view referencing non-existent view should be ERROR."""
+        manifest = {
+            "default_view": "nonexistent",
+            "views": {
+                "real_view": {"type": "table", "source_query": "q1",
+                              "columns": [], "default_sort": {"key": "x"}}
+            }
+        }
+        db_path = _make_validator_db(tmp_path, manifest, queries=['q1'])
+        errors, warnings = validate_db(db_path)
+        assert any("default_view" in e and "nonexistent" in e for e in errors)
+
+    def test_source_query_missing(self, tmp_path):
+        """source_query referencing non-existent query should be ERROR."""
+        manifest = {
+            "default_view": "t",
+            "views": {
+                "t": {"type": "table", "source_query": "deleted_query",
+                       "columns": [], "default_sort": {"key": "x"}}
+            }
+        }
+        db_path = _make_validator_db(tmp_path, manifest, queries=[])
+        errors, warnings = validate_db(db_path)
+        assert any("source_query" in e and "deleted_query" in e for e in errors)
+
+    def test_on_row_click_detail_view_missing(self, tmp_path):
+        """on_row_click.detail_view referencing non-existent view should be ERROR."""
+        manifest = {
+            "default_view": "t",
+            "views": {
+                "t": {
+                    "type": "table", "source_query": "q1",
+                    "columns": [{"key": "name"}],
+                    "default_sort": {"key": "name"},
+                    "on_row_click": {"detail_view": "ghost_detail", "id_key": "id"}
+                }
+            }
+        }
+        db_path = _make_validator_db(tmp_path, manifest, queries=['q1'])
+        errors, warnings = validate_db(db_path)
+        assert any("on_row_click" in e and "ghost_detail" in e for e in errors)
+
+    def test_default_sort_key_not_in_columns(self, tmp_path):
+        """default_sort.key not in columns should be ERROR."""
+        manifest = {
+            "default_view": "t",
+            "views": {
+                "t": {
+                    "type": "table", "source_query": "q1",
+                    "columns": [{"key": "name", "label": "Name"}],
+                    "default_sort": {"key": "nonexistent_col", "direction": "asc"},
+                    "on_row_click": {"detail_view": "d", "id_key": "id"}
+                },
+                "d": {"type": "detail", "source_query": "q2", "sections": []}
+            }
+        }
+        db_path = _make_validator_db(tmp_path, manifest, queries=['q1', 'q2'])
+        errors, warnings = validate_db(db_path)
+        assert any("default_sort.key" in e and "nonexistent_col" in e for e in errors)
+
+    def test_view_type_missing(self, tmp_path):
+        """View without 'type' should be ERROR."""
+        manifest = {
+            "default_view": "t",
+            "views": {"t": {"source_query": "q1"}}
+        }
+        db_path = _make_validator_db(tmp_path, manifest, queries=['q1'])
+        errors, warnings = validate_db(db_path)
+        assert any("missing 'type'" in e for e in errors)
+
+    def test_chart_options_missing_required_keys(self, tmp_path):
+        """chart_options missing required keys should be ERROR."""
+        manifest = {
+            "default_view": "c",
+            "views": {
+                "c": {
+                    "type": "chart", "source_query": "q1",
+                    "chart_options": {"id_key": "id"}  # missing many required keys
+                }
+            }
+        }
+        db_path = _make_validator_db(tmp_path, manifest, queries=['q1'])
+        errors, warnings = validate_db(db_path)
+        assert any("chart_options" in e and "missing required keys" in e for e in errors)
+
+    def test_tree_item_query_missing(self, tmp_path):
+        """tree_options.item_query referencing non-existent query should be ERROR."""
+        manifest = {
+            "default_view": "tree",
+            "views": {
+                "tree": {
+                    "type": "tree", "source_query": "q1",
+                    "tree_options": {
+                        "id_key": "id", "parent_key": "pid", "label_key": "name",
+                        "item_query": "deleted_query"
+                    }
+                }
+            }
+        }
+        db_path = _make_validator_db(tmp_path, manifest, queries=['q1'])
+        errors, warnings = validate_db(db_path)
+        assert any("item_query" in e and "deleted_query" in e for e in errors)
+
+    def test_linked_table_missing_data_key(self, tmp_path):
+        """linked_table section without data_key should be ERROR."""
+        manifest = {
+            "default_view": "d",
+            "views": {
+                "d": {
+                    "type": "detail", "source_query": "q1",
+                    "sections": [
+                        {"title": "Items", "type": "linked_table",
+                         "columns": [{"key": "name"}]}
+                        # missing data_key
+                    ]
+                }
+            }
+        }
+        db_path = _make_validator_db(tmp_path, manifest, queries=['q1'])
+        errors, warnings = validate_db(db_path)
+        assert any("linked_table" in e and "data_key" in e for e in errors)
+
+    def test_field_grid_missing_fields(self, tmp_path):
+        """field_grid section without 'fields' should be ERROR."""
+        manifest = {
+            "default_view": "d",
+            "views": {
+                "d": {
+                    "type": "detail", "source_query": "q1",
+                    "sections": [
+                        {"title": "Info", "type": "field_grid"}
+                        # missing fields
+                    ]
+                }
+            }
+        }
+        db_path = _make_validator_db(tmp_path, manifest, queries=['q1'])
+        errors, warnings = validate_db(db_path)
+        assert any("field_grid" in e and "fields" in e for e in errors)
+
+    def test_sub_queries_query_missing(self, tmp_path):
+        """sub_queries referencing non-existent query should be ERROR."""
+        manifest = {
+            "default_view": "d",
+            "views": {
+                "d": {
+                    "type": "detail", "source_query": "q1",
+                    "sub_queries": {
+                        "items": {"query": "ghost_query", "params": {"id": "id"}}
+                    },
+                    "sections": []
+                }
+            }
+        }
+        db_path = _make_validator_db(tmp_path, manifest, queries=['q1'])
+        errors, warnings = validate_db(db_path)
+        assert any("sub_queries" in e and "ghost_query" in e for e in errors)
+
+    def test_no_on_row_click_is_warning(self, tmp_path):
+        """Table without on_row_click should produce WARNING, not ERROR."""
+        manifest = {
+            "default_view": "t",
+            "views": {
+                "t": {
+                    "type": "table", "source_query": "q1",
+                    "columns": [{"key": "name"}],
+                    "default_sort": {"key": "name"}
+                }
+            }
+        }
+        db_path = _make_validator_db(tmp_path, manifest, queries=['q1'])
+        errors, warnings = validate_db(db_path)
+        assert errors == []
+        assert any("on_row_click" in w for w in warnings)
+
+    def test_no_ui_manifest_table(self, tmp_path):
+        """DB without ui_manifest table should return an error."""
+        db_path = str(tmp_path / "no_manifest.db")
+        conn = sqlite3.connect(db_path)
+        conn.execute("CREATE TABLE foo (id INTEGER)")
+        conn.close()
+        errors, warnings = validate_db(db_path)
+        assert len(errors) == 1
+        assert "ui_manifest" in errors[0]
+
+    def test_real_test_db_fixture(self, test_db):
+        """The test_db fixture manifest should have 0 errors."""
+        canonical_db_path, _, _ = test_db
+        errors, warnings = validate_db(canonical_db_path)
+        assert errors == [], f"Unexpected errors: {errors}"
