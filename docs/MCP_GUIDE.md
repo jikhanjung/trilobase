@@ -558,7 +558,7 @@ python scripts/create_scoda.py --mcp-tools data/mcp_tools_trilobase.json
 
 - [API Reference](API_REFERENCE.md) — REST API 레퍼런스
 - [SCODA Concept](SCODA_CONCEPT.md) — SCODA 개념 설명
-- [Handover](HANDOVER.md) — 프로젝트 현황
+- [Handoff](HANDOFF.md) — 프로젝트 현황
 
 ---
 

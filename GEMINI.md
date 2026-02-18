@@ -4,7 +4,7 @@ This file provides guidance to Gemini Code when working with code in this reposi
 
 ## Quick Start
 
-**새 세션 시작 시 반드시 `docs/HANDOVER.md`를 먼저 읽을 것.** 현재 프로젝트 상태, 진행 중인 작업, 다음 단계가 정리되어 있음.
+**새 세션 시작 시 반드시 `docs/HANDOFF.md`를 먼저 읽을 것.** 현재 프로젝트 상태, 진행 중인 작업, 다음 단계가 정리되어 있음.
 
 ## Project Overview
 
@@ -31,7 +31,7 @@ trilobase/
 ├── devlog/                           # 작업 기록
 │   └── YYYYMMDD_NNN_*.md            # 일별 작업 로그
 └── docs/
-    └── HANDOVER.md                   # 인수인계 문서 (필독)
+    └── HANDOFF.md                   # 인수인계 문서 (필독)
 ```
 
 ## Data Format Conventions

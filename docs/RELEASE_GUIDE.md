@@ -294,7 +294,7 @@ python scripts/build.py
 
 - [API_REFERENCE.md](./API_REFERENCE.md) — REST API 레퍼런스
 - [MCP_GUIDE.md](./MCP_GUIDE.md) — MCP 서버 사용 가이드
-- [HANDOVER.md](./HANDOVER.md) — 프로젝트 현황 및 인수인계
+- [HANDOFF.md](./HANDOFF.md) — 프로젝트 현황 및 인수인계
 - [SCODA_CONCEPT.md](./SCODA_CONCEPT.md) — SCODA 개념 설명
 
 ---

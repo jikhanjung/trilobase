@@ -997,7 +997,7 @@ trilobase/
 ├── test_mcp_basic.py         # MCP 기본 테스트 (1개)
 ├── test_mcp.py               # MCP 포괄적 테스트 (16개)
 └── docs/
-    ├── HANDOVER.md            # 프로젝트 현황
+    ├── HANDOFF.md            # 프로젝트 현황
     ├── RELEASE_GUIDE.md       # 릴리스 가이드
     ├── SCODA_CONCEPT.md       # SCODA 개념 문서
     └── paleocore_schema.md    # PaleoCore 스키마 정의서

@@ -334,7 +334,7 @@ Copyright of the original taxonomic data remains with the respective authors.
 ## Documentation
 
 - **[Release Guide](docs/RELEASE_GUIDE.md)** — Versioning and deployment procedures for SCODA releases
-- **[Handover Document](docs/HANDOVER.md)** — Project status and development history
+- **[Handover Document](docs/HANDOFF.md)** — Project status and development history
 - **[SCODA Concept](docs/SCODA_CONCEPT.md)** — Self-Contained Data Artifact framework
 
 ---

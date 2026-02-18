@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Quick Start
 
-**새 세션 시작 시 반드시 `docs/HANDOVER.md`를 먼저 읽을 것.** 현재 프로젝트 상태, 진행 중인 작업, 다음 단계가 정리되어 있음.
+**새 세션 시작 시 반드시 `docs/HANDOFF.md`를 먼저 읽을 것.** 현재 프로젝트 상태, 진행 중인 작업, 다음 단계가 정리되어 있음.
 
 ## Project Overview
 
@@ -43,7 +43,7 @@ trilobase/
 │   ├── YYYYMMDD_PNN_*.md            # 계획(Plan) 문서
 │   └── YYYYMMDD_RNN_*.md            # 리뷰(Review) 문서
 ├── docs/
-│   └── HANDOVER.md                   # 인수인계 문서 (필독)
+│   └── HANDOFF.md                   # 인수인계 문서 (필독)
 ├── ScodaDesktop.spec                 # PyInstaller spec
 ├── pytest.ini                        # pytest config (testpaths = tests)
 └── requirements.txt
@@ -84,7 +84,7 @@ Standard paleontological format: `AUTHOR, YEAR` (e.g., `LIEBERMAN, 1994`)
 
 1. **devlog 기록**: `devlog/YYYYMMDD_NNN_phaseNN_제목.md` 작성
    - 작업 내용, 새 테이블/API/파일, 테스트 결과 포함
-2. **HANDOVER.md 갱신**: `docs/HANDOVER.md` 업데이트
+2. **HANDOFF.md 갱신**: `docs/HANDOFF.md` 업데이트
    - 완료된 작업 목록, 테이블 목록, 파일 구조, 진행 상태 반영
 3. **README.md 갱신** (해당 시): 사용자가 알아야 할 새 기능이 있으면 반영
 

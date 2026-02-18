@@ -520,7 +520,7 @@ curl -X DELETE http://localhost:8080/api/annotations/1
 
 - [MCP Guide](MCP_GUIDE.md) - MCP 서버 사용 가이드
 - [SCODA Concept](SCODA_CONCEPT.md) - SCODA 개념 설명
-- [HANDOVER](HANDOVER.md) - 프로젝트 현황
+- [HANDOFF](HANDOFF.md) - 프로젝트 현황
 
 ---
 

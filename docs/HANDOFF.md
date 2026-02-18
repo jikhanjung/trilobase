@@ -713,7 +713,7 @@ trilobase/
 │   ├── cow/v2024/States2024/statelist2024.csv
 │   └── ics/gts2020/chart.ttl
 ├── docs/
-│   ├── HANDOVER.md
+│   ├── HANDOFF.md
 │   ├── RELEASE_GUIDE.md
 │   ├── SCODA_CONCEPT.md
 │   ├── SCODA_Stable_UID_Schema_v0.2.md
