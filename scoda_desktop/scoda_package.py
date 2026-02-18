@@ -17,6 +17,7 @@ import atexit
 import glob as glob_mod
 import hashlib
 import json
+import logging
 import os
 import shutil
 import sqlite3
@@ -24,6 +25,8 @@ import sys
 import tempfile
 import zipfile
 from datetime import datetime, timezone
+
+logger = logging.getLogger(__name__)
 
 
 # ---------------------------------------------------------------------------
@@ -43,6 +46,7 @@ class ScodaPackage:
         if not os.path.exists(self.scoda_path):
             raise FileNotFoundError(f".scoda file not found: {self.scoda_path}")
 
+        logger.info("Opening .scoda package: %s", os.path.basename(self.scoda_path))
         self._tmp_dir = tempfile.mkdtemp(prefix="scoda_")
         self._zf = zipfile.ZipFile(self.scoda_path, 'r')
 
@@ -52,6 +56,10 @@ class ScodaPackage:
         except KeyError:
             self.close()
             raise ValueError("Invalid .scoda package: missing manifest.json")
+
+        logger.debug("Manifest: name=%s version=%s records=%s",
+                      self.manifest.get('name'), self.manifest.get('version'),
+                      self.manifest.get('record_count'))
 
         # Extract data.db to temp directory
         data_file = self.manifest.get('data_file', 'data.db')
@@ -239,6 +247,7 @@ class PackageRegistry:
         """Scan directory for *.scoda files and register each package."""
         directory = os.path.abspath(directory)
         self._scan_dir = directory
+        logger.info("Scanning for packages in: %s", directory)
 
         # Find .scoda files
         scoda_files = sorted(glob_mod.glob(os.path.join(directory, '*.scoda')))
@@ -255,7 +264,9 @@ class PackageRegistry:
                     'overlay_path': overlay_path,
                     'deps': deps,
                 }
-            except (ValueError, FileNotFoundError):
+            except (ValueError, FileNotFoundError) as e:
+                logger.warning("Skipping invalid package %s: %s",
+                               os.path.basename(scoda_path), e)
                 continue  # skip invalid packages
 
         # Fallback: if no .scoda found, look for *.db files
@@ -299,6 +310,7 @@ class PackageRegistry:
         conn = sqlite3.connect(db_path)
         conn.row_factory = sqlite3.Row
         conn.execute(f"ATTACH DATABASE '{overlay_path}' AS overlay")
+        logger.debug("get_db(%s): attached overlay", name)
 
         # Attach dependencies
         for dep in entry['deps']:
@@ -307,6 +319,8 @@ class PackageRegistry:
             if dep_name in self._packages:
                 dep_db_path = self._packages[dep_name]['db_path']
                 conn.execute(f"ATTACH DATABASE '{dep_db_path}' AS {alias}")
+                logger.debug("get_db(%s): attached dependency %s as %s",
+                             name, dep_name, alias)
 
         return conn
 
@@ -369,6 +383,7 @@ def _ensure_overlay_for_package(canonical_db_path, overlay_path):
     """Create overlay DB for a package if it doesn't exist."""
     if os.path.exists(overlay_path):
         return
+    logger.info("Creating overlay DB: %s", os.path.basename(overlay_path))
 
     # Get canonical version
     try:
@@ -521,9 +536,11 @@ def _resolve_paths():
 
     if getattr(sys, 'frozen', False):
         base_dir = os.path.dirname(sys.executable)
+        logger.debug("Frozen mode, base_dir=%s", base_dir)
     else:
         # Development mode — project root is one level up from this package
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        logger.debug("Dev mode, base_dir=%s", base_dir)
 
     # Find first .scoda file
     scoda_files = sorted(glob_mod.glob(os.path.join(base_dir, '*.scoda')))
@@ -541,6 +558,7 @@ def _resolve_paths():
             _canonical_db = db_files[0]
             name = os.path.splitext(os.path.basename(db_files[0]))[0]
             _overlay_db = os.path.join(base_dir, f'{name}_overlay.db')
+            logger.debug("Fallback to .db file: %s", os.path.basename(_canonical_db))
         elif getattr(sys, 'frozen', False):
             # Last resort: bundled DB inside PyInstaller bundle
             _canonical_db = os.path.join(sys._MEIPASS, 'data.db')
@@ -549,6 +567,8 @@ def _resolve_paths():
             _canonical_db = os.path.join(base_dir, 'data.db')
             _overlay_db = os.path.join(base_dir, 'data_overlay.db')
 
+    logger.info("Resolved DB: canonical=%s, overlay=%s",
+                os.path.basename(_canonical_db), os.path.basename(_overlay_db))
     _resolve_dependencies(base_dir)
 
 
@@ -602,6 +622,7 @@ def ensure_overlay_db():
 
     if os.path.exists(_overlay_db):
         return
+    logger.info("Creating overlay DB: %s", os.path.basename(_overlay_db))
 
     # Get canonical version
     try:

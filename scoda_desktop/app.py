@@ -11,8 +11,11 @@ from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 from typing import Any, Optional
 import json
+import logging
 import os
 import sqlite3
+
+logger = logging.getLogger(__name__)
 
 from .scoda_package import get_db
 
@@ -164,6 +167,7 @@ def _auto_generate_manifest(conn):
             }
 
     first_view = f"{tables[0]}_table"
+    logger.info("Auto-generated manifest for %d tables", len(tables))
     return {
         "default_view": first_view,
         "views": views
@@ -333,6 +337,7 @@ def _execute_query(conn, query_name, params):
             'rows': [dict(row) for row in rows]
         }
     except Exception as e:
+        logger.error("Query '%s' failed: %s", query_name, e)
         return {'error': str(e)}
 
 
@@ -450,6 +455,7 @@ def api_composite_detail(view_name: str, request: Request):
     views = manifest_data['manifest'].get('views', {})
     view = views.get(view_name)
     if not view or view.get('type') != 'detail' or 'source_query' not in view:
+        logger.warning("Composite detail view not found: %s", view_name)
         conn.close()
         return JSONResponse({'error': f'Detail view not found: {view_name}'}, status_code=404)
 

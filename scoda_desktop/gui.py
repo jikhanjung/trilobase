@@ -8,6 +8,7 @@ and control the web server.
 
 import tkinter as tk
 from tkinter import messagebox, scrolledtext
+import logging
 import threading
 import webbrowser
 import os
@@ -37,6 +38,28 @@ class LogRedirector:
     def fileno(self):
         """Return a dummy file descriptor (required by some logging handlers)."""
         return -1
+
+
+class TkLogHandler(logging.Handler):
+    """Route Python logging output to the GUI log panel."""
+
+    def __init__(self, append_log_fn):
+        super().__init__()
+        self._append_log = append_log_fn
+
+    def emit(self, record):
+        try:
+            msg = self.format(record)
+            level_map = {
+                'ERROR': 'ERROR',
+                'CRITICAL': 'ERROR',
+                'WARNING': 'WARNING',
+                'INFO': 'INFO',
+            }
+            tag = level_map.get(record.levelname)
+            self._append_log(msg, tag)
+        except Exception:
+            self.handleError(record)
 
 
 class ScodaDesktopGUI:
@@ -78,6 +101,14 @@ class ScodaDesktopGUI:
 
         self._create_widgets()
         self._update_status()
+
+        # Route Python logging to GUI log panel
+        self._tk_log_handler = TkLogHandler(
+            lambda msg, tag=None: self.root.after(0, self._append_log, msg, tag)
+        )
+        self._tk_log_handler.setFormatter(logging.Formatter("%(name)s: %(message)s"))
+        logging.getLogger("scoda_desktop").setLevel(logging.DEBUG)
+        logging.getLogger("scoda_desktop").addHandler(self._tk_log_handler)
 
         # Initial log messages
         self._append_log("SCODA Desktop initialized")

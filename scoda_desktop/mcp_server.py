@@ -3,6 +3,7 @@ import os
 import sys
 import re
 import argparse
+import logging
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.server.sse import SseServerTransport
@@ -13,6 +14,8 @@ from starlette.applications import Starlette
 from starlette.routing import Route
 from starlette.responses import Response
 import uvicorn
+
+logger = logging.getLogger(__name__)
 
 from .scoda_package import get_db, ensure_overlay_db, get_mcp_tools
 
@@ -55,6 +58,7 @@ def _execute_named_query_internal(conn, query_name, params=None):
     cursor.execute("SELECT sql, params_json FROM ui_queries WHERE name = ?", (query_name,))
     query_row = cursor.fetchone()
     if not query_row:
+        logger.warning("Named query not found: %s", query_name)
         return {"error": f"Named query '{query_name}' not found."}
 
     sql_query = query_row['sql']
@@ -65,6 +69,7 @@ def _execute_named_query_internal(conn, query_name, params=None):
         cursor.execute(sql_query, merged_params)
         columns = [desc[0] for desc in cursor.description]
         rows = cursor.fetchall()
+        logger.debug("Named query '%s' returned %d rows", query_name, len(rows))
         return {
             'query': query_name,
             'columns': columns,
@@ -72,6 +77,7 @@ def _execute_named_query_internal(conn, query_name, params=None):
             'rows': [row_to_dict(row) for row in rows]
         }
     except Exception as e:
+        logger.error("Named query '%s' failed: %s", query_name, e)
         return {"error": f"Error executing named query '{query_name}': {str(e)}"}
 
 
@@ -132,6 +138,7 @@ def _execute_dynamic_tool(tool_def, arguments):
     Returns a result dict suitable for JSON serialization.
     """
     query_type = tool_def.get('query_type')
+    logger.debug("Dynamic tool: query_type=%s", query_type)
     conn = get_db()
 
     try:
@@ -412,6 +419,7 @@ async def list_tools() -> list[Tool]:
 @app.call_tool()
 async def call_tool(name: str, arguments: dict) -> list[TextContent]:
     """Handle tool calls — dispatch to builtin handler or dynamic executor."""
+    logger.info("MCP call_tool: %s(%s)", name, ", ".join(f"{k}={v!r}" for k, v in arguments.items()) if arguments else "")
 
     # --- Built-in tools ---
     if name == "execute_named_query":
@@ -458,6 +466,7 @@ async def call_tool(name: str, arguments: dict) -> list[TextContent]:
         return [TextContent(type="text", text=json.dumps(result, indent=2))]
 
     # Fallback for unknown tools
+    logger.warning("Unknown MCP tool requested: %s", name)
     return [TextContent(type="text", text=json.dumps({"error": f"Tool '{name}' not implemented."}))]
 
 async def run_stdio():
@@ -510,9 +519,9 @@ def run_sse(host: str = "localhost", port: int = 8081):
     """Run MCP server in SSE mode (HTTP server for persistent connections)."""
     starlette_app = create_mcp_app()
 
-    print(f"SCODA Desktop MCP Server (SSE mode) starting on http://{host}:{port}")
-    print(f"   SSE endpoint: http://{host}:{port}/sse")
-    print(f"   Health check: http://{host}:{port}/health")
+    logger.info("MCP Server (SSE mode) starting on http://%s:%d", host, port)
+    logger.info("   SSE endpoint: http://%s:%d/sse", host, port)
+    logger.info("   Health check: http://%s:%d/health", host, port)
 
     uvicorn.run(starlette_app, host=host, port=port, log_level="info")
 
