@@ -507,16 +507,22 @@ def test_db(tmp_path):
         "default_view": "taxonomy_tree",
         "views": {
             "taxonomy_tree": {
-                "type": "tree",
+                "type": "hierarchy",
+                "display": "tree",
                 "title": "Taxonomy Tree",
                 "description": "Hierarchical classification from Class to Family",
                 "source_query": "taxonomy_tree",
                 "icon": "bi-diagram-3",
-                "tree_options": {
+                "hierarchy_options": {
                     "id_key": "id",
                     "parent_key": "parent_id",
                     "label_key": "name",
                     "rank_key": "rank",
+                    "sort_by": "label",
+                    "order_key": "id",
+                    "skip_ranks": []
+                },
+                "tree_display": {
                     "leaf_rank": "Family",
                     "count_key": "genera_count",
                     "on_node_info": {"detail_view": "rank_detail", "id_key": "id"},
@@ -592,7 +598,8 @@ def test_db(tmp_path):
                 "on_row_click": {"detail_view": "country_detail", "id_key": "id"}
             },
             "chronostratigraphy_table": {
-                "type": "chart",
+                "type": "hierarchy",
+                "display": "nested_table",
                 "title": "Chronostratigraphy",
                 "description": "ICS International Chronostratigraphic Chart (GTS 2020)",
                 "source_query": "ics_chronostrat_list",
@@ -606,14 +613,17 @@ def test_db(tmp_path):
                 ],
                 "default_sort": {"key": "display_order", "direction": "asc"},
                 "searchable": True,
-                "chart_options": {
+                "hierarchy_options": {
                     "id_key": "id",
                     "parent_key": "parent_id",
                     "label_key": "name",
-                    "color_key": "color",
-                    "order_key": "display_order",
                     "rank_key": "rank",
-                    "skip_ranks": ["Super-Eon"],
+                    "sort_by": "order_key",
+                    "order_key": "display_order",
+                    "skip_ranks": ["Super-Eon"]
+                },
+                "nested_table_display": {
+                    "color_key": "color",
                     "rank_columns": [
                         {"rank": "Eon", "label": "Eon"},
                         {"rank": "Era", "label": "Era"},

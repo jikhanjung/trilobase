@@ -49,16 +49,22 @@ def insert_manifest(conn):
             # ── Tab Views (tree, table, chart) ──────────────────────
 
             "taxonomy_tree": {
-                "type": "tree",
+                "type": "hierarchy",
+                "display": "tree",
                 "title": "Taxonomy Tree",
                 "description": "Hierarchical classification from Class to Family",
                 "source_query": "taxonomy_tree",
                 "icon": "bi-diagram-3",
-                "tree_options": {
+                "hierarchy_options": {
                     "id_key": "id",
                     "parent_key": "parent_id",
                     "label_key": "name",
                     "rank_key": "rank",
+                    "sort_by": "label",
+                    "order_key": "id",
+                    "skip_ranks": []
+                },
+                "tree_display": {
                     "leaf_rank": "Family",
                     "count_key": "genera_count",
                     "on_node_info": {"detail_view": "rank_detail", "id_key": "id"},
@@ -145,7 +151,8 @@ def insert_manifest(conn):
                 "on_row_click": {"detail_view": "country_detail", "id_key": "id"}
             },
             "chronostratigraphy_table": {
-                "type": "chart",
+                "type": "hierarchy",
+                "display": "nested_table",
                 "title": "Chronostratigraphy",
                 "description": "ICS International Chronostratigraphic Chart (GTS 2020)",
                 "source_query": "ics_chronostrat_list",
@@ -159,14 +166,17 @@ def insert_manifest(conn):
                 ],
                 "default_sort": {"key": "display_order", "direction": "asc"},
                 "searchable": True,
-                "chart_options": {
+                "hierarchy_options": {
                     "id_key": "id",
                     "parent_key": "parent_id",
                     "label_key": "name",
-                    "color_key": "color",
-                    "order_key": "display_order",
                     "rank_key": "rank",
-                    "skip_ranks": ["Super-Eon"],
+                    "sort_by": "order_key",
+                    "order_key": "display_order",
+                    "skip_ranks": ["Super-Eon"]
+                },
+                "nested_table_display": {
+                    "color_key": "color",
                     "rank_columns": [
                         {"rank": "Eon", "label": "Eon"},
                         {"rank": "Era", "label": "Era"},
@@ -533,7 +543,7 @@ def insert_manifest(conn):
     )
 
     conn.commit()
-    tab_views = sum(1 for v in manifest['views'].values() if v['type'] != 'detail')
+    tab_views = sum(1 for v in manifest['views'].values() if v['type'] in ('table', 'hierarchy'))
     detail_views = sum(1 for v in manifest['views'].values() if v['type'] == 'detail')
     print(f"Inserted default manifest with {len(manifest['views'])} views ({tab_views} tab + {detail_views} detail).")
 

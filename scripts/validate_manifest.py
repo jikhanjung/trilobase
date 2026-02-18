@@ -164,6 +164,34 @@ def _validate_hierarchy_view(view_name, view_def, views, named_queries, errors, 
         errors.append(
             f"view '{view_name}': hierarchy_options missing required keys: {sorted(missing)}")
 
+    display = view_def.get('display')
+
+    # tree display: check item_query reference
+    if display == 'tree':
+        tree_disp = view_def.get('tree_display', {})
+        item_query = tree_disp.get('item_query')
+        if item_query and item_query not in named_queries:
+            errors.append(
+                f"view '{view_name}': tree_display.item_query '{item_query}' not in ui_queries")
+        # Check detail_view references inside tree_display
+        for ref in _collect_detail_view_refs(tree_disp):
+            if ref not in views:
+                errors.append(
+                    f"view '{view_name}': detail_view '{ref}' not in views")
+
+    # nested_table display: check required nested_table_display keys
+    elif display == 'nested_table':
+        nt_disp = view_def.get('nested_table_display', {})
+        if 'rank_columns' not in nt_disp:
+            errors.append(
+                f"view '{view_name}': nested_table_display missing 'rank_columns'")
+        cell_click = nt_disp.get('cell_click', {})
+        detail_view = cell_click.get('detail_view')
+        if detail_view and detail_view not in views:
+            errors.append(
+                f"view '{view_name}': nested_table_display.cell_click.detail_view "
+                f"'{detail_view}' not in views")
+
 
 def _validate_detail_view(view_name, view_def, views, named_queries, errors, warnings):
     """Validate a detail view."""

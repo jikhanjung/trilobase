@@ -568,6 +568,19 @@
   - 계획 문서: `devlog/20260215_P48_mcp_web_api_merge.md`
   - devlog: `devlog/20260215_066_mcp_web_api_merge.md`
 
+- **A-3: Manifest Schema 정규화 (DB 레벨)**
+  - DB의 ui_manifest를 `type: "hierarchy"` + `display` 스키마로 직접 갱신
+  - trilobase.db: taxonomy_tree (tree→hierarchy), chronostratigraphy_table (chart→hierarchy)
+  - paleocore.db: chronostratigraphy_chart (chart→hierarchy)
+  - 스크립트/테스트/validator 동기화
+  - `normalizeViewDef()`는 외부 패키지 하위 호환용으로 유지
+  - devlog: `devlog/20260218_076_manifest_schema_normalization.md`
+
+- **A-1: Auto-Discovery 보완**
+  - `/api/auto/detail` 메타데이터 테이블 접근 차단 (403)
+  - `openDetail()` fallback + `renderAutoDetail()` JS 함수 추가
+  - devlog: `devlog/20260218_075_auto_discovery_hardening.md`
+
 - **A-2: Manifest Validator / Linter**
   - `scripts/validate_manifest.py`: .scoda 패키지 빌드 시 manifest JSON 검증
   - 13개 검증 규칙 (11 ERROR + 2 WARNING)

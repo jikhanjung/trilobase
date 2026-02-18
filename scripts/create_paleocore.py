@@ -607,7 +607,8 @@ def insert_ui_manifest(conn):
                 "on_row_click": {"detail_view": "formation_detail", "id_key": "id"}
             },
             "chronostratigraphy_chart": {
-                "type": "chart",
+                "type": "hierarchy",
+                "display": "nested_table",
                 "title": "Chronostratigraphy",
                 "description": "ICS International Chronostratigraphic Chart (GTS 2020)",
                 "source_query": "ics_chronostrat_list",
@@ -626,14 +627,17 @@ def insert_ui_manifest(conn):
                 ],
                 "default_sort": {"key": "display_order", "direction": "asc"},
                 "searchable": True,
-                "chart_options": {
+                "hierarchy_options": {
                     "id_key": "id",
                     "parent_key": "parent_id",
                     "label_key": "name",
-                    "color_key": "color",
-                    "order_key": "display_order",
                     "rank_key": "rank",
-                    "skip_ranks": ["Super-Eon"],
+                    "sort_by": "order_key",
+                    "order_key": "display_order",
+                    "skip_ranks": ["Super-Eon"]
+                },
+                "nested_table_display": {
+                    "color_key": "color",
                     "rank_columns": [
                         {"rank": "Eon", "label": "Eon"},
                         {"rank": "Era", "label": "Era"},

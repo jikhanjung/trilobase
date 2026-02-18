@@ -328,7 +328,8 @@ class TestApiManifest:
         response = client.get('/api/manifest')
         data = response.json()
         tree = data['manifest']['views']['taxonomy_tree']
-        assert tree['type'] == 'tree'
+        assert tree['type'] == 'hierarchy'
+        assert tree['display'] == 'tree'
         assert tree['source_query'] == 'taxonomy_tree'
 
     def test_manifest_table_view(self, client):
