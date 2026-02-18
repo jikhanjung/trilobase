@@ -581,6 +581,18 @@
   - `openDetail()` fallback + `renderAutoDetail()` JS 함수 추가
   - devlog: `devlog/20260218_075_auto_discovery_hardening.md`
 
+- **B-1: Taxonomic Opinions PoC** (**브랜치: `feature/taxonomic-opinions`**)
+  - `taxonomic_opinions` 테이블: PLACED_IN/VALID_AS/SYNONYM_OF 의견 저장
+  - 4-trigger 패턴: BEFORE(deactivate) + AFTER(sync parent_id) — partial unique index 호환
+  - `taxonomic_ranks.is_placeholder` 컬럼: 인공 노드 표시
+  - PoC 데이터: Eurekiidae 2건 (Ptychopariida incertae sedis accepted, Asaphida alternative)
+  - `rank_detail` composite view에 opinions sub_query + linked_table 섹션
+  - `get_taxon_opinions` MCP 도구 추가 (dynamic, mcp_tools_trilobase.json)
+  - 런타임 코드(app.py, mcp_server.py, app.js) 변경 없음 — DB+manifest+query만으로 구현
+  - 마이그레이션: `scripts/add_opinions_schema.py` (~230줄, idempotent, --dry-run)
+  - 테스트: 262개 (기존 245 + 신규 17)
+  - devlog: `devlog/20260218_077_taxonomic_opinions_poc.md`
+
 - **A-2: Manifest Validator / Linter**
   - `scripts/validate_manifest.py`: .scoda 패키지 빌드 시 manifest JSON 검증
   - 13개 검증 규칙 (11 ERROR + 2 WARNING)
@@ -642,12 +654,13 @@
 | genus_formations | 4,853 | Genus-Formation 다대다 관계 |
 | genus_locations | 4,841 | Genus-Country 다대다 관계 |
 | bibliography | 2,130 | 참고문헌 (Literature Cited) |
+| taxonomic_opinions | 2 | 분류학적 의견 (B-1 PoC) |
 | taxa (뷰) | 5,113 | 하위 호환성 뷰 |
 | artifact_metadata | 7 | SCODA 아티팩트 메타데이터 |
 | provenance | 5 | 데이터 출처 |
-| schema_descriptions | 94 | 테이블/컬럼 설명 |
+| schema_descriptions | 104 | 테이블/컬럼 설명 |
 | ui_display_intent | 6 | SCODA 뷰 타입 힌트 |
-| ui_queries | 33 | Named SQL 쿼리 (Phase 46에서 17개 추가) |
+| ui_queries | 34 | Named SQL 쿼리 (Phase 46에서 17개 추가, B-1에서 1개) |
 | ui_manifest | 1 | 선언적 뷰 정의 (JSON) |
 
 **Overlay DB (trilobase_overlay.db) — Read/write, 사용자 로컬 데이터:**
@@ -700,6 +713,7 @@ trilobase/
 │   ├── create_paleocore_scoda.py     # paleocore.scoda 패키지 생성
 │   ├── create_paleocore.py           # PaleoCore DB 생성
 │   ├── validate_manifest.py          # Manifest validator/linter (A-2)
+│   ├── add_opinions_schema.py        # Taxonomic opinions 마이그레이션 (B-1)
 │   ├── release.py                    # 릴리스 패키징
 │   ├── create_database.py            # DB 생성
 │   └── ... (normalize, import, etc.)
@@ -754,10 +768,10 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
 | `tests/test_runtime.py` | 122개 | ✅ 통과 |
-| `tests/test_trilobase.py` | 108개 | ✅ 통과 |
-| `tests/test_mcp.py` | 14개 | ✅ 통과 |
+| `tests/test_trilobase.py` | 123개 | ✅ 통과 |
+| `tests/test_mcp.py` | 16개 | ✅ 통과 |
 | `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
-| **합계** | **245개** | **✅ 전부 통과** |
+| **합계** | **262개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
@@ -773,8 +787,9 @@ pytest tests/
 
 ## 다음 작업
 
-MCP+Web API 단일 프로세스 통합, Pydantic response_model 완료.
-- **향후 로드맵** (P45): Taxonomic Opinions, SCODA 백오피스 (`devlog/20260215_P45_future_roadmap.md`)
+B-1 Taxonomic Opinions PoC 완료 (`feature/taxonomic-opinions` 브랜치).
+- **향후 로드맵** (P45): SCODA 백오피스, Opinions 확장 (`devlog/20260215_P45_future_roadmap.md`)
+- B-1 후속: Opinions bulk import, SPA opinions 섹션 스타일링, 추가 PoC 데이터
 
 ## 미해결 항목
 
@@ -844,6 +859,13 @@ genus_locations (id, genus_id, country_id, region, is_type_locality, notes)
 -- bibliography: 2,130 records - 참고문헌
 bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
               publisher, city, editors, book_title, reference_type, raw_entry)
+
+-- taxonomic_opinions: 2 records - 분류학적 의견 (B-1 PoC)
+taxonomic_opinions (id, taxon_id, opinion_type, related_taxon_id, proposed_valid,
+                    bibliography_id, assertion_status, curation_confidence,
+                    is_accepted, notes, created_at)
+-- 트리거: trg_deactivate_before_insert, trg_sync_parent_insert,
+--         trg_deactivate_before_update, trg_sync_parent_update
 
 -- taxa: 뷰 (하위 호환성)
 CREATE VIEW taxa AS SELECT ... FROM taxonomic_ranks WHERE rank = 'Genus';
