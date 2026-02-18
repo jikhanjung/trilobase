@@ -796,6 +796,7 @@ B-1 Taxonomic Opinions PoC 완료 (`feature/taxonomic-opinions` 브랜치).
 - Synonym 미연결 4건 (원본에 senior taxa 없음)
 - Location/Formation 없는 taxa는 모두 무효 taxa (정상)
 - parent_id NULL인 Genus 342건 (family 필드 자체가 NULL인 무효 taxa)
+- **Generic Viewer 검색 결과 클릭 버그**: Genus 클릭은 정상 동작하나 나머지 카테고리(Formation, Country 등) 클릭 시 detail 모달에 내용이 표시되지 않음. paleocore.db가 `pc` alias로 ATTACH되지 않은 환경에서 `pc.*` 테이블 참조 쿼리 실패 가능성, 또는 `renderDetailFromManifest()`의 API 에러 응답 처리 미흡(stale title, 빈 sections) 가능성. 추가 조사 필요.
 
 ## 전체 계획
 

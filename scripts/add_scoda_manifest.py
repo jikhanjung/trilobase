@@ -490,7 +490,7 @@ def insert_manifest(conn):
             "rank_detail": {
                 "type": "detail",
                 "title": "Rank Detail",
-                "source": "/api/rank/{id}",
+                "source": "/api/composite/rank_detail?id={id}",
                 "source_query": "rank_detail",
                 "source_param": "rank_id",
                 "sub_queries": {

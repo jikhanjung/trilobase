@@ -18,8 +18,19 @@
             </span>
         </div>
     </nav>
-    <!-- View Tabs -->
-    <div class="view-tabs" id="view-tabs"></div>
+    <!-- View Tabs + Global Search -->
+    <div class="view-tabs-bar">
+        <div class="view-tabs" id="view-tabs"></div>
+        <div class="global-search-container">
+            <div class="global-search-wrapper">
+                <i class="bi bi-search"></i>
+                <input type="text" id="global-search-input"
+                       placeholder="Search..." autocomplete="off">
+                <kbd class="global-search-shortcut">Ctrl+K</kbd>
+            </div>
+            <div class="global-search-results" id="global-search-results"></div>
+        </div>
+    </div>
 
     <!-- View: Tree (default, existing layout) -->
     <div class="view-container" id="view-tree">
