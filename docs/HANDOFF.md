@@ -842,10 +842,12 @@ pytest tests/
 
 ## 미해결 항목
 
-- Synonym 미연결 1건: Szechuanella (syn 960) — preocc., not replaced (NOTE 8에 의해 정상)
+- **Synonym 미연결 1건**: Szechuanella (syn 960) — preocc., not replaced (NOTE 8에 의해 정상)
+- **parent_id NULL 325건**: invalid 257건(정상) + valid 68건(FAMILY UNCERTAIN/INDET/?FAMILY 등)
+  - ?FAMILY genera 29건: 불확실 family 배정, 원저자 의도 존중하여 보류 (T-3b)
+- **valid genus without temporal_code 85건**: 미조사 (T-3a)
+- **중국어 로마자 하이픈 ~30건**: 구 로마자 표기(Wade-Giles) 가능성 있어 보류 (T-3c)
 - Location/Formation 없는 taxa는 모두 무효 taxa (정상)
-- parent_id NULL인 Genus 325건: invalid 257건(정상) + valid 68건(FAMILY UNCERTAIN/INDET/?FAMILY 등)
-- 중국어 로마자 하이픈 ~30건: 구 로마자 표기(Wade-Giles) 가능성 있어 보류
 
 ## 전체 계획
 

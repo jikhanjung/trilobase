@@ -49,20 +49,44 @@
 
 ---
 
-## T-3. 미해결 데이터 항목
+## T-3. 데이터 품질 잔여 항목
 
-**우선순위:** 낮음 (데이터 품질 한계)
+**우선순위:** 중간
+**갱신:** 2026-02-20
 
-| 항목 | 건수 | 비고 |
-|------|------|------|
-| Synonym 미연결 | 4건 | 원본에 senior taxa 없음 |
-| parent_id NULL Genus | 342건 | family가 NULL인 무효 taxa (정상) |
+### T-3a. valid genus without temporal_code — 85건
+
+`is_valid=1`인데 `temporal_code`가 NULL인 genus. raw_entry 분석으로 일부 채울 수 있을 가능성.
+
+### T-3b. ?FAMILY genera — 29건
+
+`?CERATOPYGIDAE` 등 불확실 family 배정. 원저자가 `?`를 붙여 불확실성을 명시한 것.
+현재 parent_id NULL. 문헌 조사로 확정 가능한 건이 있을 수 있으나, 원저자 의도 존중하여 보류 중.
+T-1(Uncertain Family Opinions)과 연계하여 opinion으로 처리하는 방안도 가능.
+
+### T-3c. 중국어 로마자 하이픈 — ~30건
+
+`Chang-shan`, `Gui-zhou`, `Shan-dong`, `Mao-tian` 등. 구 로마자 표기(Wade-Giles 등)의
+정상 하이픈일 수 있어 보류 중. 원본 PDF 확인 후 판단 필요.
+
+### T-3d. 해결된 항목 (참고)
+
+| 항목 | 이전 | 현재 | 비고 |
+|------|------|------|------|
+| Synonym 미연결 | 24건 | **1건** | Szechuanella — 대체명 없는 것이 정상 (NOTE 8) |
+| parent_id NULL (total) | 342건 | **325건** | valid 68 + invalid 257 |
+| PDF 줄바꿈 하이픈 | ~200건 | **0건** (확실한 것) | 165건 수정 완료 |
+| 인코딩/공백/제어문자 | ~70건 | **0건** | BRAÑA, in/et/&, 제어문자 모두 수정 |
 
 ---
 
 ## 우선순위 정리
 
 ```
-T-1. Uncertain Family Opinions 확장  [높음, 다음 작업]
-  └── T-2. Assertion-Centric 검토    [장기, 조건부]
+T-1. Uncertain Family Opinions 확장       [높음, 다음 작업]
+  └── T-2. Assertion-Centric 검토         [장기, 조건부]
+T-3. 데이터 품질 잔여                      [중간]
+  ├── T-3a. temporal_code 없는 valid genus [85건, 조사 필요]
+  ├── T-3b. ?FAMILY genera                [29건, 문헌 조사 또는 opinion 처리]
+  └── T-3c. 중국어 로마자 하이픈           [~30건, 원본 확인 필요]
 ```
