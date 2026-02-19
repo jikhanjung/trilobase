@@ -2351,7 +2351,7 @@ Kulyumbopeltis ROZOVA, 1968 [kulyumbensis] Entsy Horizon, NW Siberia, Russia; PL
 Kunmingaspis W. ZHANG, 1964b [yunnanensis] Douposi Fm, Yunnan, China; PTYCHOPARIIDAE; LMCAM.
 Kunshanagnostus QIAN & ZHOU, 1984 [kunshanensis] Kunshan County, Jiangsu, China; AMMAGNOSTIDAE; UCAM [j.s.s. of Formosagnostus (=Hadragnostus), fide SHERGOLD et al., 1990].
 Kunshanaspis Q. ZHANG & ZHOU, 1985 [suzhouensis] Kunshan County, Jiangsu, China; ORYCTOCEPHALIDAE; LCAM.
-Kuraspis CHERNYSHEVA inKRYSKOV et al., 1960 [obscura] Markhinsk Fm, N Siberia, Russia; LONCHOCEPHALIDAE; UCAM.
+Kuraspis CHERNYSHEVA in KRYSKOV et al., 1960 [obscura] Markhinsk Fm, N Siberia, Russia; LONCHOCEPHALIDAE; UCAM.
 Kuraspoides OGIENKO & GARINA, 1999 [planus] Malykaisk Fm, E Siberia, Russia; LONCHOCEPHALIDAE; UCAM.
 Kuruktagaspis T. ZHANG, 1981 [convexa] Torsuqtagh Fm, Xinjiang, China; SHUMARDIIDAE; UCAM.
 Kuruktagella T. ZHANG, 1981 [laevigata] Torsuqtagh Fm, Xinjiang, China; IDAHOIIDAE; UCAM [j.s.s. of Maladioidella, fide PENG, 1992].
@@ -3223,7 +3223,7 @@ Pagodia WALCOTT, 1905 [lotos] Fengshan Fm, Shandong, China; PAGODIIDAE; UCAM.
 Pagodioides ZHU & WITTKE, 1989 [Pagodia (Pagodioides) pustulosa] Changshan Fm, Hebei, China; PAGODIIDAE; UCAM.
 Pagometopus HENNINGSMOEN, 1959b [gibbus] Ceratopyge Lst, Norway; ALSATASPIDIDAE; LORD.
 Pagura EMMONS, 1860 [quadratispinosus] Parker Fm, Vermont, USA; CHENGKOUASPIDIDAE; LCAM [j.s.s. of Bathynotus, fide WALCOTT, 1886].
-Paivinia ROZOVA inROZOVA et al., 1985 [paivinica] Chupinsk Fm, NW Salair, Russia; PHAROSTOMATIDAE; MORD.
+Paivinia ROZOVA in ROZOVA et al., 1985 [paivinica] Chupinsk Fm, NW Salair, Russia; PHAROSTOMATIDAE; MORD.
 Palacorona SHERGOLD, 1972[bacculata] Gola Beds, Queensland, Australia; KAOLISHANIIDAE; UCAM.
 Paladin WELLER, 1936 [Griffithides morrowensis MATHER, 1915] Morrow Group, Oklahoma, USA; PROETIDAE; PENN.
 Palaeadotes OPIK, 1967 [dissidens] Georgina Lst, Queensland, Australia; DAMESELLIDAE; MUCAM [j.s.s. of Bergeronites, fide LU & ZHU, 1980].
@@ -3391,10 +3391,10 @@ Paraojia SUN & ZHU in ZHOU et al., 1977 [megaglabellus] Guangzhuling Fm, Hubei, 
 Paraolenoides IVSHIN, 1953 [medoevi] Boshchekul Fm, Kazakhstan; DORYPYGIDAE; MCAM.
 Paraolenus LERMONTOVA, 1951a [papilionaceus] Boshche-Kulya, NE Kazakhstan; OLENIDAE; UCAM.
 Paraonychopyge PILLET, 1973b [iranicus] Shirgesht Fm, eastern Iran; LEIOSTEGIIDAE; MORD.
-Paraorlovia CHERNYSHEVA inCHERNYSHEVA et al., 1956 [sequens] River Aldan, E Yakutia, Russia; ASAPHISCIDAE; MCAM.
+Paraorlovia CHERNYSHEVA in CHERNYSHEVA et al., 1956 [sequens] River Aldan, E Yakutia, Russia; ASAPHISCIDAE; MCAM.
 Paraoryctocephalops TOMASHPOLSKAYA in KHALFIN, 1960 [plana] Batenevsky Ridge, Siberia, Russia; ORYCTOCEPHALIDAE; MCAM [j.s.s. of Lancastria, fide BLAKER & PEEL, 1997].
 Parapachyaspis QIU in QIU et al., 1983 [miniscula] Hsuchuang Fm, Shandong, China; ALOKISTOCARIDAE; MCAM.
-Parapagetia REPINA inREPINA et al., 1964 [limbata] Sanashtykgol Horizon, Gorny Altay, S Siberia, Russia; HEBEDISCIDAE; LCAM.
+Parapagetia REPINA in REPINA et al., 1964 [limbata] Sanashtykgol Horizon, Gorny Altay, S Siberia, Russia; HEBEDISCIDAE; LCAM.
 Parapalacorona AN & DUAN in GUO et al., 1982 [jilinensis] Fengshan Fm, Jilin, China; KAOLISHANIIDAE; UCAM [j.s.s. of Mansuyites, fide ZHOU & J.ZHANG, 1984].
 Parapalpebralia PILLET, 1973a [andegavensis] La Grange Lst, Bretagne, France; PROETIDAE; MDEV.
 Parapaokannia W. ZHANG & LIN in W. ZHANG et al., 1980a [sichuanensis] Yanwangbian Fm, Sichuan, China; YINITIDAE; LCAM.
@@ -3930,7 +3930,7 @@ Pseudomegalaspis JAANUSSON, 1953 [Megalaspisformosa TORNQUIST, 1884] Folkeslunda
 Pseudomera HOLLIDAY, 1942[Amphion barrandei BILLINGS, 1865] Newfoundland, Canada; PLIOMERIDAE; LORD.
 Pseudomexicella SUNDBERG, 1994 [hestia] Dome Lst, Utah, USA; ALOKISTOCARIDAE; MCAM.
 Pseudomonaspis RICHTER & RICHTER, 1917 [j.o.s. of Acidaspis].
-Pseudonericella EGOROVA inEGOROVA et al., 1982 [pendula] Ust-Maisk Fm, Siberia, Russia; PROASAPHISCIDAE; MCAM.
+Pseudonericella EGOROVA in EGOROVA et al., 1982 [pendula] Ust-Maisk Fm, Siberia, Russia; PROASAPHISCIDAE; MCAM.
 Pseudonileus KOBAYASHI, 1951b [j.o.s. of Hemibarrandia].
 Pseudonileus HINTZE, 1953 [preocc., replaced by Protopresbynileus].
 Pseudoolenoides HINTZE, 1953 [dilectus] Kanosh Fm, Utah, USA; BATHYURIDAE; MORD.
@@ -4274,7 +4274,7 @@ Schmidtops ROOMUSOKS, 1998 [Phacops (Chasmops) maxima SCHMIDT, 1881] Keila Fm, N
 Schoharia LESPERANCE, 1975 [Dalmanites emarginatus HALL, 1876] Schoharie Fm, New York, USA; DALMANITIDAE; LDEV.
 Schopfaspis PALMER & GATEHOUSE, 1972[granulosus] Mount Spann, Antarctica; ALOKISTOCARIDAE; MCAM.
 Schoriecare ROZOVA, 1964 [Schoriella lata LAZARENKO, 1960] Nganasansk Horizon, NW Siberia, Russia; ANOMOCARIDAE; UCAM.
-Schoriella SIVOV inEGOROVA et al., 1955 [schorica] Gornoshor Fm, Gorny Shoria, Russia; ANOMOCARIDAE; UCAM.
+Schoriella SIVOV in EGOROVA et al., 1955 [schorica] Gornoshor Fm, Gorny Shoria, Russia; ANOMOCARIDAE; UCAM.
 Schoriina FEDYANINA in CHERNYSHEVA, 1971 [elegans] Mundbash Horizon, Gorny Shoria, Russia; PARADOXIDIDAE; MCAM.
 Schyilaspis IVSHIN, 1962[dendiformis] Seletinsky Horizon, Kazakhstan; MARJUMIIDAE; UCAM.
 Scinocephalus ROSS, 1951 [solitecti] Garden City Fm, Idaho, USA; REMOPLEURIDIDAE; LORD.
