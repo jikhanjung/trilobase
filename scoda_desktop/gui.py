@@ -107,7 +107,7 @@ class ScodaDesktopGUI:
             lambda msg, tag=None: self.root.after(0, self._append_log, msg, tag)
         )
         self._tk_log_handler.setFormatter(logging.Formatter("%(name)s: %(message)s"))
-        logging.getLogger("scoda_desktop").setLevel(logging.DEBUG)
+        logging.getLogger("scoda_desktop").setLevel(logging.INFO)
         logging.getLogger("scoda_desktop").addHandler(self._tk_log_handler)
 
         # Initial log messages
@@ -147,13 +147,15 @@ class ScodaDesktopGUI:
                                           font=("Arial", 10), bg="#2196F3", fg="#BBDEFB")
         self.header_pkg_label.pack(side="left", padx=(10, 0))
 
-        # Top section (Packages + Controls side by side)
+        # Top section (Packages + Controls side by side, fixed 50:50 ratio)
         top_frame = tk.Frame(self.root)
         top_frame.pack(fill="x", padx=10, pady=10)
+        top_frame.columnconfigure(0, weight=1, uniform="top")
+        top_frame.columnconfigure(1, weight=1, uniform="top")
 
         # Left: Package selection
         pkg_frame = tk.LabelFrame(top_frame, text="Packages", padx=10, pady=10)
-        pkg_frame.pack(side="left", fill="both", expand=True, padx=(0, 5))
+        pkg_frame.grid(row=0, column=0, sticky="nsew", padx=(0, 5))
 
         # Package Listbox
         listbox_frame = tk.Frame(pkg_frame)
@@ -189,7 +191,7 @@ class ScodaDesktopGUI:
 
         # Right: Control section
         control_frame = tk.LabelFrame(top_frame, text="Controls", padx=10, pady=10)
-        control_frame.pack(side="right", fill="both", expand=True, padx=(5, 0))
+        control_frame.grid(row=0, column=1, sticky="nsew", padx=(5, 0))
 
         # Flask Start/Stop row
         server_row = tk.Frame(control_frame)
