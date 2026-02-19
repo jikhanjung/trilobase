@@ -7,7 +7,7 @@ Abakolia BOGNIBOVA in CHERNYSHEVA, 1971 [pauca] Abakol Suite, W Altay Sayan, Rus
 Abdulinaspis ERGALIEV, 1980 [concinnus] Trisulcagnostus trisulcus Zone, Kazakhstan; PARABOLINOIDIDAE; LORD.
 Abharella WITTKE, 1984 [magnocula] Mila Fm, Iran; ANOMOCARIDAE; MUCAM.
 Abia POLETAEVA in GONCHAROVA et al., 1972 [ritae] Salair, Russia; PTEROCEPHALIIDAE; MCAM [j.s.s of Labiostrina, fide JELL, herein].
-Acadagnostus KOBAYASHI, 1939a [Agnostus acadicus HARTT in DAWSON, 1868] Eccaparad-oxides eteminicus Zone, New Brunswick, Canada; PERONOPSIDAE; MCAM [j.s.s. of Peronopsis, fide ROBISON, 1995].
+Acadagnostus KOBAYASHI, 1939a [Agnostus acadicus HARTT in DAWSON, 1868] Eccaparadoxides eteminicus Zone, New Brunswick, Canada; PERONOPSIDAE; MCAM [j.s.s. of Peronopsis, fide ROBISON, 1995].
 Acadolenus SDZUY, 1967 [decorus] E Asturia, Spain; ELLIPSOCEPHALIDAE; MCAM.
 Acadoparadoxides ŠNAJDR,1957b [Paradoxides sacheri BARRANDE, 1852] Jince Fm, Czech Republic; PARADOXIDIDAE; MCAM.
 Acanthagnostus QIAN, 1982[longispinus] Kushan Fm, Shandong, China; CLAVAGNOSTIDAE; UCAM [j.s.s. of Clavagnostus, fide SHERGOLD et al., 1990].
@@ -25,7 +25,7 @@ Acanthopleurella GROOM, 1902[grindrodi] Bronsil Sh Fm, England; SHUMARDIIDAE; LO
 Acanthopyge HAWLE & CORDA, 1847 [leuchtenbergii] Koneprusy Lst, Czech Republic; LICHIDAE; LDEV.
 Acastava RICHTER & RICHTER, 1954 [Cryphaeus atava W.E. SCHMIDT, 1907] Middle Herrdorf Group, Siegerland, Germany; ACASTIDAE; LDEV.
 Acaste GOLDFUSS, 1843 [Calymene? downingiae MURCHISON, 1839] Much Wenlock Lst Fm, England; ACASTIDAE; LSIL.
-Acastella REED, 1925 [Phacops (Acaste) macro-centrus] Whitecliffe Fm, England; ACASTIDAE; USIL.
+Acastella REED, 1925 [Phacops (Acaste) macrocentrus] Whitecliffe Fm, England; ACASTIDAE; USIL.
 Acastellina RICHTER & RICHTER, 1954 [Acaste (Acastella) nolens RICHTER & RICHTER, 1952] Heisdorfer Fm, Eifel, Germany; ACASTIDAE; LDEV.
 Acastina REED, 1927 [unnecessary replacement and thus j.o.s. of Acaste].
 Acastocephala SHERGOLD, 1966 [Phacops (Acaste) downingiae var. macrops SALTER, 1864a] Coalbrookdale Fm, England; ACASTIDAE; LSIL.
@@ -33,7 +33,7 @@ Acastoides DELO, 1935 [Acaste henni R. RICHTER, 1909] Wetteldorf Sst, Rhenish Ma
 Acastopyge TOMCZYKOWA in TOMCZYKOWA & WITWICKA, 1974 [shergoldi] Upper Podlasie Beds, Swarzewo, Poland; ACASTIDAE; USIL.
 Acernaspis CAMPBELL, 1967 [Phacops orestes BILLINGS, 1860a] Jupiter Fm, Quebec, Canada; PHACOPIDAE; LSIL.
 Acerocare ANGELIN, 1854 [ecorne] Sandby, Sweden; OLENIDAE; UCAM.
-Acerocarina POULSEN, 1952[Cyclognathus micro-pygus LINNARSSON, 1875] Sweden; OLENIDAE; UCAM [replacement name for Cyclognathus].
+Acerocarina POULSEN, 1952[Cyclognathus micropygus LINNARSSON, 1875] Sweden; OLENIDAE; UCAM [replacement name for Cyclognathus].
 Aceroproetus KOLOBOVA, 1988 [acer] Akkans Lst, Balkhash, Kazakhstan; PROETIDAE; LSIL.
 Achatella DELO, 1935 [Dalmanites achates BILLINGS, 1860a] Cobourg Fm, Ontario; PTERYGOMETOPIDAE; UORD.
 Acheilops ULRICH in BRIDGE, 1931 [dilatus] Eminence Dol, Missouri, USA; CATILLICEPHALIDAE; UCAM.
@@ -66,7 +66,7 @@ Acropyge QIAN, 1977 [multisegmenta] Qinglong, Guizhou, China; PROETIDAE; UPERM.
 Actinobolus EICHWALD, 1858 [misspelling of Actinolobus].
 Actinolobus EICHWALD, 1858 [preocc., not replaced] [j.s.s. of Illaenus, fide JAANUSSON, 1954].
 Actinopeltis HAWLE & CORDA, 1847 [carolialexandri] Králův Dvůr Fm, Czech Republic; CHEIRURIDAE; UORD.
-Actinopeltis POULSEN, 1946 [preocc., replaced by Grinellaspis].
+Actinopeltis POULSEN, 1946 [preocc., replaced by Grinnellaspis].
 Aculeodiscus ŠNAJDR, 1950 [bohemicus] Jince Fm, Czech Republic; EODISCIDAE; MCAM. [j.s.s. of Dawsonia, fide JELL, 1997]
 Acutaspis REPINA in REPINA et al., 1976 [facilis] Shevlinsk Fm, Siberia, Russia; ELLIPSOCEPHALIDAE; LCAM [j.s.s. of Triangulaspis, JELL, 1997].
 Acutatagnostus ERGALIEV, 1980 [acutatus] Sakian, Kazakhstan; AGNOSTIDAE; UCAM [j.s.s. of Agnostus, fide ROBISON, 1988].
@@ -133,7 +133,7 @@ Alborsella KUSHAN, 1973 [stoecklini] Alborz Mtns, Iran; PTYCHASPIDIDAE; UCAM.
 Alcaldops ARBIZU, 1979 [alcaldei] Cantabrian Mtns, Spain; ACASTIDAE; MDEV [j.s.s. of Heliopyge, fide MORZADEC, 1983].
 Alceste HAWLE & CORDA, 1847 [latissima] Kraluv Dvur Fm, Czech Republic; STYGINIDAE; UORD.
 Alcymene RAMSKOLD et al., 1994 [Calymene neointermedia RICHTER & RICHTER, 1954] Hemse Fm, Gotland, Sweden; CALYMENIDAE; USIL.
-Aldanaspis LERMONTOVA, 1940 [punctata] Para-doxides forchhammeri Zone, Aldan region, Yakutia; SOLENOPLEURIDAE; MCAM.
+Aldanaspis LERMONTOVA, 1940 [punctata] Paradoxides forchhammeri Zone, Aldan region, Yakutia; SOLENOPLEURIDAE; MCAM.
 Aldonaia LERMONTOVA, 1940 [ornata] Keteme Fm, Siberia, Russia; ALDONAIIDAE; LCAM.
 Alekcinella IVSHIN, 1962[delicata] Seletinsk Horizon, Kazakhstan; DOKIMOCEPHALIDAE; UCAM.
 Alemtejoia KOBAYASHI, 1943a [Microdiscus souzai DELGADO, 1904] Spain; HEBEDISCIDAE, LCAM [j.s.s. of Delgadella, fide JELL, 1997].
@@ -145,11 +145,11 @@ Alloctops RAFINESQUE, 1832[see NOTE 2].
 Alloillaenus LIU, 1982[glaberous] Xinghuang, Hunan, China; ILLAENIDAE; LORD.
 Alloleiostegium ZHOU & ZHANG, 1978 [Leiostegium (Alloleiostegium) punctatum] Yehli Fm, Hebei, China; LEIOSTEGIIDAE; LORD [j.s.s. of Leiostegium, fide ZHOU & J.ZHANG, 1984].
 Allolichas KRUEGER, 1992[longispinus] Backstein Lst, Teschendorf, N Germany; LICHIDAE; UORD.
-Alokistocare LORENZ,1906 [Conocephalites sub-coronatus HALL & WHITFIELD, 1877] ALOKISTOCARIDAE; MCAM.
+Alokistocare LORENZ,1906 [Conocephalites subcoronatus HALL & WHITFIELD, 1877] ALOKISTOCARIDAE; MCAM.
 Alokistocarella RESSER, 1938b [typicalis] Rutledge Fm, Virginia, USA; ALOKISTOCARIDAE; MCAM.
 Alokistocaropsis REPINA in SHIRAKOVA & REPINA 1964 [elegans] Kuznetsk Alatau, Siberia, Russia; ALOKISTOCARIDAE; LCAM.
 Alomataspis OPIK, 1967 [enodis] Steamboat Sst, Queensland, Australia; PROASAPHISCIDAE; MCAM.
-Alreboaspis PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Borealaspis biformis LUDVIGSEN, 1976] Whittaker Fm, Northwest Territories, Canada; CHEIRURIDAE; UORD [j.s.s. of Borealaspis, fide HESSIN, 1989].
+Alreboaspis PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Borealaspis biformis LUDVIGSEN, 1976] Whittaker Fm, Northwest Territories, Canada; CHEIRURIDAE; UORD [j.s.s. of Borealaspis, fide HESSIN, 1989].
 Alsataspis TURNER, 1940 [bakeri] Marathon Lst, Texas, USA; ALSATASPIDIDAE; LORD [j.s.s. of Seleneceme, fide WHITTINGTON, 1952].
 Altaepeltis MAKSIMOVA, 1968 [Weberopeltis bublitchenkoi MAKSIMOVA, 1960] Kur’insk Fm, Rudny Altai, E Kazakhstan; STYGINIDAE; MDEV.
 Altaesajania MAKSIMOVA, 1978a [Phacopidella primitiva MAKSIMOVA, 1960] Altay Sayan, S Siberia, Russia; PHACOPIDAE; MDEV.
@@ -176,7 +176,7 @@ Amgaspidella CHERNYSHEVA in KHALFIN, 1960 [elongata] Amgaian, Siberia, Russia; A
 Amgaspis CHERNYSHEVA in CHERNYSHEVA et al., 1956 [medius] Amgaian, Siberia, Russia; AMGASPIDIDAE; MCAM.
 Amginia PEGEL, 1981 [expressa] Tankhaisk Fm, Siberia, Russia; ANOMOCARIDAE; MCAM.
 Amginoerbia CHERNYSHEVA in EGOROVA et al., 1976 [selecta]Elanskoe Fm, Lena River, Siberia, Russia; DINESIDAE; LCAM.
-Amginouyia CHERNYSHEVAet al., 1956 [elegans] E Yakutia, Russia; UTIIDAE; MCAM.
+Amginouyia CHERNYSHEVA et al., 1956 [elegans] E Yakutia, Russia; UTIIDAE; MCAM.
 Amiaspis LOCHMAN in LOCHMAN & DUNCAN, 1944 [erratica] Pilgrim Fm, Montana, USA; LONCHOCEPHALIDAE; UCAM.
 Amicus KOROLEVA, 1967 [montanus] central Kazakhstan; CYCLOPYGIDAE; UORD.
 Ammagnostus OPIK, 1967 [psammius] O’Hara Sh, Queensland, Australia; AMMAGNOSTIDAE; MUCAM.
@@ -184,7 +184,7 @@ Amorphella ROZOVA, 1963 [modesta] Yurakiysky Horizon, Siberia, Russia; APHELASPI
 Amphilichas RAYMOND, 1905a [Platymetopus lineatus ANGELIN, 1854] Boda Lst, Dalarne, Sweden; LICHIDAE; UORD [replacement name for Paralichas].
 Amphion PANDER, 1830 [preocc., replaced by Pliomera].
 Amphitryon HAWLE & CORDA, 1847 [murchisoni] Kraluv Dvur Fm, Czech Republic; REMOPLEURIDIDAE; UORD.
-Amphoriops HAMMANN & LEONE, 1997 [Thale-ops inflata HAMMANN, 1992] Cystoid Lst, Aragon, Spain; STYGINIDAE; UORD.
+Amphoriops HAMMANN & LEONE, 1997 [Thaleops inflata HAMMANN, 1992] Cystoid Lst, Aragon, Spain; STYGINIDAE; UORD.
 Amphoton LORENZ, 1906 [steinmanni] Changhia Fm, Shandong, China; DOLICHOMETOPIDAE; MCAM.
 Amphotonella KOBAYASHI, 1942a [Dolichometopus alceste WALCOTT, 1905] Changhia Fm, Shandong, China; DOLICHOMETOPIDAE; MCAM [j.s.s. of Amphoton, fide W. ZHANG & JELL, 1987].
 Ampullatocephalina LU & QIAN, 1983a [bifida] Changshan Fm, Liaoning, China; LEIOSTEGIIDAE; UCAM.
@@ -198,12 +198,12 @@ Ampyxoides WHITTINGTON, 1965a [Ampyx semicostatus BILLINGS, 1865] Table Cove Fm,
 Amquia RASETTI, 1946b [truncata] Levis Fm, Quebec, Canada; LLANOASPIDIDAE; UCAM.
 Amurticephalus SHAH et al., 1991 [elongatus] Nutunus Fm, Kashmir, India; AGRAULIDAE; MCAM [j.s.s. of Parachittidilla, fide JELL & HUGHES, 1997].
 Amzasskiella POLETAEVA in KHALFIN, 1960 [mirabilis] Algainsk Fm, Gorny Shoria, W Siberia, Russia; EULOMIDAE; LORD.
-Anabaraceps REPINA, 1972[kharaulachiensis] Para-micmacca Zone, NE Yakutia; PARADOXIDIDAE; MCAM.
+Anabaraceps REPINA, 1972[kharaulachiensis] Paramicmacca Zone, NE Yakutia; PARADOXIDIDAE; MCAM.
 Anabaraspis LERMONTOVA, 1951b [splendens] Keteme Fm, Siberia, Russia; PARADOXIDIDAE; MCAM.
 Anacaenaspis BRUTON, 1967 [gotlandensis] Hemse Fm, Gotland, Sweden; ODONTOPLEURIDAE; USIL.
 Anacheiruraspis NAN, 1985a [lineata] Huang-banjiashan Fm, Heilongjiang, China; PILEKIIDAE; LORD.
 Anacheirurus REED, 1896 [Cheirurus (Eccoptochile) frederici SALTER, 1864a] Tremadoc, N Wales; PILEKIIDAE; LORD.
-Anadoxides MATTHEW, 1899c [Paradoxides armatus MENEGHINI, 1881] Nebida Fm, Sardinia, Italy; METADOXIDIDAE; LCAM [j.s.s. of Meta-doxides, fide W. ZHANG et al., 1997].
+Anadoxides MATTHEW, 1899c [Paradoxides armatus MENEGHINI, 1881] Nebida Fm, Sardinia, Italy; METADOXIDIDAE; LCAM [j.s.s. of Metadoxides, fide W. ZHANG et al., 1997].
 Analocaspis OWENS, 1970 [ursina] Arnestad Fm, Norway; RORRINGTONIIDAE; UORD [j.s.s. of Rorringtonia, fide OWENS, 1981].
 Analox RASETTI, 1966 [bipunctata] Acimetopus bilobatus Faunule, New York, USA; WEYMOUTHIIDAE; LCAM.
 Anambon LANDRUM & SHERWIN, 1976 [Warburgella (Anambon) jelli] Derriwong Beds, New South Wales, Australia; PROETIDAE; LDEV.
@@ -214,14 +214,14 @@ Anataphrus WHITTINGTON, 1954 [borraeus] Baffin Island, Nunavut, Canada; ASAPHIDA
 Anaximander FORTEY, 1974b [clavatus] Valhallfonna Fm, Spitsbergen; OLENIDAE; LORD.
 Anchiopella REED, 1907b [Encrinurus cristagalli WOODWARD, 1873] Gydo Fm, South Africa; CALMONIIDAE; LDEV [see NOTE 7].
 Anchiopsis DELO, 1935 [Calymene anchiops GREEN, 1832] Schoharie Fm, New York, USA; DALMANITIDAE; LDEV [see NOTE 7].
-Ancyginaspis PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Cyrtometopus priscus TJERNVIK, 1956] Bilingen Group, Narke, Sweden; CHEIRURIDAE; LORD.
+Ancyginaspis PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Cyrtometopus priscus TJERNVIK, 1956] Bilingen Group, Narke, Sweden; CHEIRURIDAE; LORD.
 Ancyropyge CLARKE, 1892a [Acidaspis romingeri HALL & CLARKE, 1888] Gravel Point Fm, Michigan, USA; STYGINIDAE; MDEV.
 Andalusiana SDZUY, 1961 [cornuta] Guadalcanal, Spain; HOLMIIDAE; LCAM.
 Andegavia PILLET, 1973a [simplex] Angers Lst, Bretagne, France; STYGINIDAE; LDEV.
 Anderssonella KOBAYASHI, 1936b [fentienensis] Shakuotun Lst, Liaoning, China; SAUKIIDAE; UCAM. [replacement name for Anderssonia].
 Anderssonia SUN, 1924 [preocc. replaced by Anderssonella]
 Andesaspis KOBAYASHI, 1935b [argentinensis] Prairie Catamarca, Argentina; OLENIDAE; LORD [j.s.s. of Leptoplastides, fide HENNINGSMOEN, 1957].
-Andinacaste ELDREDGE & BRANI°A, 1980 [Phacopina braziliensis (CLARKE) var. chojnacotensis SWARTZ, 1925] Catavi Fm, Bolivia; CALMONIIDAE; USIL/LDEV.
+Andinacaste ELDREDGE & BRAÑA, 1980 [Phacopina braziliensis (CLARKE) var. chojnacotensis SWARTZ, 1925] Catavi Fm, Bolivia; CALMONIIDAE; USIL/LDEV.
 Andrarina RAYMOND, 1937 [Liostracus costatus ANGELIN, 1854] Andrarum Lst, Sweden; ANDRARINIDAE; MCAM [replacement name for Liostracus].
 Andreaspis STRUVE, 1962[phacopoides] Andreasteich Quartzite, Hessen, Germany; DALMANITIDAE; UORD.
 Anebolithus HUGHES & WRIGHT, 1970 [Incaia simplicior WHITTARD, 1966] Mytton Flags Fm, England; TRINUCLEIDAE; LORD.
@@ -237,7 +237,7 @@ Anglibole ARCHINAL, 1991 [“Proetus” (subg.?) anglicus RICHTER, 1913] Whitewa
 Angsiduoa ZHOU in ZHOU et al., 1996 [lajishanensis] Liudaogou Fm, Qinghai, China; MAPANIIDAE; UCAM.
 Angulophacops MAKSIMOVA, 1978c [Phacops angulatus MAKSIMOVA, 1968] Sardzhal’skii Horizon, central Kazakhstan; PHACOPIDAE; LDEV.
 Angustaeva HUPE, 1953a [Ptychoparia? annio COBBOLD, 1910] Comley Lst Fm, England; ELLIPSOCEPHALIDAE; LCAM [j.s.s. of Triangulaspis, fide SDZUY, 1961].
-Angustibole HAHN, 1965b [Archegonus (Angusti-bole) winterbergensis] Erdbach Lst, Harz Mtns, Germany; PROETIDAE; MISS.
+Angustibole HAHN, 1965b [Archegonus (Angustibole) winterbergensis] Erdbach Lst, Harz Mtns, Germany; PROETIDAE; MISS.
 Angustolenellus PALMER & REPINA, 1993 [Olenellus hamoculus COWIE & McNAMARA, 1978] NW Scotland; OLENELLIDAE; LCAM.
 Anhuiaspis QIAN & QIU in QIU et al., 1983 [gingyangensis] Wucun Fm, Anhui, China; KAOLISHANIIDAE; UCAM.
 Anisonotella WHITTINGTON, 1952b [Shumardia glacialis BILLINGS, 1865] Table Cove Fm, Newfoundland, Canada; RAPHIOPHORIDAE; MORD [replacement name for Anisonotus].
@@ -278,12 +278,12 @@ Apatokephaloides RAYMOND, 1924 [clivosus] Gorge Fm, Vermont, USA; REMOPLEURIDIDA
 Apatokephalops LU in LU et al., 1974a [undulatus] Panho Fm, Sichuan, China; REMOPLEURIDIDAE; LORD.
 Apatokephalus BROGGER, 1896 [Trilobites serratus SARS & BOECK in BOECK, 1838] Bjørkasholmen Fm, Norway; REMOPLEURIDIDAE; LORD.
 Apatolichas WHITTINGTON, 1963 [Lichas jukesi BILLINGS, 1865] Shallow Bay Fm, Newfoundland, Canada; LICHIDAE; MORD.
-Apedopyanus RAYMOND, 1937 [parkeri] Hung-erford Slate, Vermont, USA; MENOMONIIDAE; UCAM [j.s.s. of Hysteropleura, fide SHAW, 1966].
+Apedopyanus RAYMOND, 1937 [parkeri] Hungerford Slate, Vermont, USA; MENOMONIIDAE; UCAM [j.s.s. of Hysteropleura, fide SHAW, 1966].
 Aphelaspidella RASETTI, 1965a [macropyge] Nolichucky Fm, Tennessee, USA; APHELASPIDIDAE; UCAM.
 Aphelaspis RESSER, 1935 [Conocephalites depressus SHUMARD, 1861] Nolichucky Fm, Virginia, USA; APHELASPIDIDAE; UCAM.
 Apheloides IVSHIN, 1962[latemarginatus] Seletinsky Horizon, Kazakhstan; APHELASPIDIDAE; UCAM.
 Aphelotoxon PALMER, 1965 [Bynumiella? acuminata PALMER, 1960] Dunderberg Fm, Nevada, USA; PHYLACTERIDAE; UCAM.
-Apianurus WHITTINGTON, 1956a [barbatus] Edin-burg Fm, Virginia, USA; ODONTOPLEURIDAE; UORD.
+Apianurus WHITTINGTON, 1956a [barbatus] Edinburg Fm, Virginia, USA; ODONTOPLEURIDAE; UORD.
 Apiflabellum SUN, 1993 [eucallum] Fengshan Fm, Hebei, China; REMOPLEURIDIDAE; UCAM.
 Aplexura ROZOVA, 1963 [pulchella] Entsyisky Horizon, Siberia, Russia; LIOSTRACINIDAE; UCAM.
 Aplotaspis HENDERSON, 1976 [Charchaqia erugata WHITEHOUSE, 1939] Georgina Lst, Queensland, Australia; CERATOPYGIDAE; UCAM [j.s.s. of Charchaqia, fide BAO & JAGO, 2000].
@@ -297,7 +297,7 @@ Aposolenopleura RAYMOND, 1937 [dunbari] Gorge Fm, Vermont, USA; PAGODIIDAE; UCAM
 Appendicysta HAHN, HAHN & YUAN, 1989 [allodapa] Zhe Gang, Guangxi; PROETIDAE; PENN.
 Aprathia HAHN & BRAUKMANN, 1975a [Carbonocoryphe emanueli RICHTER & RICHTER, 1950] ?Bromberg Fm, Wuppertal, Rhenish Massif, Germany; PROETIDAE; MISS.
 Araeocephalus REPINA in REPINA et al., 1964 [primus] Sanashtykgol Horizon, Kuznetsk Alatau, Russia; UNCERTAIN; LCAM.
-Aragotus LINAN & GOZALO, 2001 [attacanus] Dar-oca Fm, Zaragoza, Spain; CHENGKOUASPIDAE; LCAM.
+Aragotus LINAN & GOZALO, 2001 [attacanus] Daroca Fm, Zaragoza, Spain; CHENGKOUASPIDAE; LCAM.
 Araiocaris PŘIBYL & VANĚK, 1980 [Ogygiocaris araiorhachis HARRINGTON & LEANZA, 1957] Parcha Fm, Salta, Argentina; ASAPHIDAE; LORD.
 Araiopleura HARRINGTON & LEANZA, 1957 [reticulata] Parcha Fm, Salta, Argentina; ALSATASPIDIDAE; LORD.
 Arapahoia B.M. MILLER, 1936a [typa] Depass Fm, Wyoming, USA; PLETHOPELTIDAE; UCAM.
@@ -314,9 +314,9 @@ Archikainella LIU, 1982[vomerinus] Qiangongping, Hunan, China; LICHAKEPHALIDAE; 
 Arcifimbria RASETTI, 1963b [Aposolenopleura? brevifrons RASETTI, 1944] Levis Fm, Quebec, Canada; PAGODIIDAE; UCAM.
 Arctaspis LERMONTOVA, 1940 [preocc., replaced by Paracrocephalites].
 Arcticalymene ADRAIN & EDGECOMBE, 1997 [viciousi] Cape Phillips Fm, Nunavut, Canada; CALYMENIDAE; LSIL.
-Arcticeraurinella PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Ceraurinella arctica LUDVIGSEN, 1979] Esbataottine Fm, Northwest Territories, Canada; CHEIRURIDAE; UORD.
+Arcticeraurinella PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Ceraurinella arctica LUDVIGSEN, 1979] Esbataottine Fm, Northwest Territories, Canada; CHEIRURIDAE; UORD.
 Arcticormistonia LIEBERMAN, 1994 [edgecombei] Prince of Wales Island, Nunavut, Canada; PROETIDAE; LDEV [j.s.s. of Pseudodechenella, fide ADRAIN, herein].
-Arctinuroides PHLEGER, 1936 [Arctinurus chicagoensis WELLER, 1907] Racine Dol, Illinois, USA; LICHIDAE; LSIL [j.s.s. of Pseudo-tupolichas, fide THOMAS & HOLLOWAY, 1988].
+Arctinuroides PHLEGER, 1936 [Arctinurus chicagoensis WELLER, 1907] Racine Dol, Illinois, USA; LICHIDAE; LSIL [j.s.s. of Pseudotupolichas, fide THOMAS & HOLLOWAY, 1988].
 Arctinurus CASTELNAU, 1843 [Paradoxus boltoni BIGSBY, 1825] Rochester Sh, New York, USA; LICHIDAE; LSIL [replacement name for Platynotus CONRAD, 1838].
 Arctipeltis MAKSIMOVA, 1968 [Bronteus arcticus WEBER, 1945] Novaya Zemlya, N Siberia, Russia; STYGINIDAE; MDEV.
 Arcuolenellus PALMER & REPINA, 1993 [Olenellus arcuatus PALMER in PALMER & HALLEY, 1979] Carrara Fm, California, USA; OLENELLIDAE; LCAM.
@@ -340,7 +340,7 @@ Arionellus BARRANDE, 1852[replacement name for Arionides] [j.o.s. of Agraulos]
 Arionides BARRANDE, 1847 [replacement name for Arion] [j.o.s. of Agraulos]
 Aristarius OPIK, 1979 [Triplagnostus (Aristarius) aristarius] Inca Fm, Queensland, Australia; PTYCHAGNOSTIDAE; MCAM [j.s.s. of Ptychagnostus, fide PENG & ROBISON, 2000].
 Aristobeggia LAMONT, 1978 [bargainiensis]Wether Law Linn Fm, Scotland; ENCRINURIDAE; LSIL [see NOTE 4].
-Aristoharpes WHITTINGTON, 1950b [willsi] Ty-draw Slates, Wales; HARPETIDAE; LSIL [j.s.s. of Selenoharpes (=Scotoharpes), fide WHITTINGTON, 1963].
+Aristoharpes WHITTINGTON, 1950b [willsi] Tydraw Slates, Wales; HARPETIDAE; LSIL [j.s.s. of Selenoharpes (=Scotoharpes), fide WHITTINGTON, 1963].
 Aristokainella ZHOU & ZHANG, 1978 [calvicepitis] Yehli Fm, Hebei, China; REMOPLEURIDIDAE; LORD [j.s.s. of Apatokephalops, fide PENG, 1990].
 Armagnostus HOWELL, 1937 [megalaxis] St Albans Sh, Vermont, USA; AGNOSTINA FAMILY UNCERTAIN; MCAM.
 Armonia WALCOTT, 1924b [pelops] Conasauga Fm, Alabama, USA; MARJUMIIDAE; MCAM [j.s.s. of Modocia, fide LOCHMAN-BALK & WILSON, 1958].
@@ -403,10 +403,10 @@ Aulacopleuroides ZHU & ZHANG in ZHU et al., 1979 [Aulacopleura (Aulacopleuroides
 Auricula SUN, 1993 [Richardsonella lilia GUO & DUAN in GUO et al., 1982] Yehli Fm, Hebei, China; REMOPLEURIDIDAE; LORD.
 Auritama OPIK, 1967 [aurita] Georgina Lst, Queensland, Australia; AURITAMIDAE; MUCAM.
 Austinvillia RESSER, 1938b [virginica] Shady Fm, Virginia, USA; PTYCHOPARIIDAE; LCAM.
-Australaspis PALMER & GATEHOUSE, 1972[mag-nus] Mt Spann, Antarctica; SAUKIANDIDAE; LCAM.
+Australaspis PALMER & GATEHOUSE, 1972[magnus] Mt Spann, Antarctica; SAUKIANDIDAE; LCAM.
 Australoacaste BENEDETTO & MARTEL in BALDIS et al., 1976 [palpalensis] Lipeon Fm, Jujuy, Argentina; CALMONIIDAE; LSIL.
 Australoharpes HARRINGTON & LEANZA, 1957 [depressus] Santa Rosita Fm, Salta, Argentina; HARPETIDAE; LORD [j.s.s. of Dubhglasina, fide EBACH & McNAMARA, 2002].
-Australokaskia ENGEL & MORRIS, 1994 [cor-rugata] Ararat Fm, New South Wales, Australia; PROETIDAE; MISS.
+Australokaskia ENGEL & MORRIS, 1994 [corrugata] Ararat Fm, New South Wales, Australia; PROETIDAE; MISS.
 Australomyttonia BALDIS & BALDIS, 1995 [cabalerii] Las Aguaditas Fm, San Juan, Argentina; TRINUCLEIDAE; MORD.
 Australops BALDIS, 1972[australis] Jujuy, Argentina; CALMONIIDAE; LDEV.
 Australopyge HARRINGTON & LEANZA, 1957 [acanthura] Mojotora Sh, Salta, Argentina; ASAPHIDAE; LORD.
@@ -461,7 +461,7 @@ Barklyella SHERGOLD, 1969 [expansa] Beetle Ck Fm, Queensland, Australia; ORYCTOC
 Barrandagnostus IVSHIN in KHALFIN, 1960 [barrandei] Kulbich Horizon, Gorny Altay, S Siberia, Russia; GLYPTAGNOSTIDAE; MCAM. [j.s.s. of Glyptagnostus, fide SHERGOLD et al., 1990].
 Barrandeopeltis PŘIBYL & VANĚK, 1984 [Cheirurus gibbus var. interrupta BARRANDE, 1852] Koneprusy Lst, Czech Republic; CHEIRURIDAE; LDEV.
 Barrandia McCOY, 1849 [Ogygia (Barrandia) cordai] Llandeilo Series, N Wales; NILEIDAE; MORD.
-Barrandia HALL, 1860 [preocc., replaced by Olen-ellus].
+Barrandia HALL, 1860 [preocc., replaced by Olenellus].
 Bartoninus TRIPP, 1962[dispersus] Confinis Fm, Scotland; CHEIRURIDAE; MORD [j.s.s. of Ceraurinella, fide LANE, 1971].
 Basanellus REPINA in KHALFIN, 1960 [latus] Bazaikhsk Horizon, Kuznetsk Alatau, S Siberia, Russia; DOLICHOMETOPIDAE; LCAM.
 Bashania QIU in QIU et al., 1983 [bashanensis] Hsuchuang Fm, Anhui, China; PTYCHOPARIIDAE; MCAM.
@@ -494,11 +494,11 @@ Bayfieldia CLARK, 1924 [tumifrons] Levis Fm, Quebec, Canada; EUREKIIDAE; UCAM.
 Bedicella HAHN & HAHN in HAHN, HAHN & RAMOVS, 1990 [cicatricosa] Sakmarian, Slovenia; PROETIDAE; LPERM.
 Beggaspis PŘIBYL & VANĚK, 1981a [“Otarion” tenuis KIELAN, 1960] Holy Cross Mtns, Poland; AULACOPLEURIDAE; UORD.
 Beigongia QIU in QIU et al., 1983 [bigranulata] Anhui, China; PTEROCEPHALIIDAE; UCAM.
-Beikuangaspis Q.Z. ZHANG in QIU et al., 1983 [bi-noda] Changhia Fm, Anhui, China; CREPICEPHALIDAE; MCAM.
+Beikuangaspis Q.Z. ZHANG in QIU et al., 1983 [binoda] Changhia Fm, Anhui, China; CREPICEPHALIDAE; MCAM.
 Beishanella XIANG & ZHANG, 1985 [Centropleura? beishanensis LIU & ZHANG, 1979] Shuangyingshan Fm, Gansu, China; CENTROPLEURIDAE; MCAM.
 Beldirella POKROVSKAYA in KHALFIN, 1960 [pulchra] Tuva, Russia; ALOKISTOCARIDAE; LMCAM.
-Beleckella HAHN, HAHN & BRAUCKMANN, 1992 [Phillibole? (Cystispina) nasifrons RICHTER & RICHTER, 1949] Erdbach Lst, Warstein, Sauer-land, Rhenish Massif, Germany; PROETIDAE; MISS.
-Belenops ELDREDGE & BRANI°A, 1980 [Acastoides insolitus WOLFART, 1968] Belen Fm, Bolivia; CALMONIIDAE; LDEV.
+Beleckella HAHN, HAHN & BRAUCKMANN, 1992 [Phillibole? (Cystispina) nasifrons RICHTER & RICHTER, 1949] Erdbach Lst, Warstein, Sauerland, Rhenish Massif, Germany; PROETIDAE; MISS.
+Belenops ELDREDGE & BRAÑA, 1980 [Acastoides insolitus WOLFART, 1968] Belen Fm, Bolivia; CALMONIIDAE; LDEV.
 Belenopyge PEK & VANĚK, 1991 [Lichas balliviani KOZLOWSKI, 1923] Belen Fm, Bolivia; LICHIDAE; LDEV [j.s.s. of Lobopyge, fide EBACH & AHYONG, 2001].
 Belgibole HAHN, 1963 [Cyrtosymbole (Belgibole) belgica] Pericyclus-Stufe, Kohlen Lst, Modave bei Huy, E Belgium; PROETIDAE; MISS.
 Bellacartwrightia LIEBERMAN & KLOC, 1997 [jennyae] Ludlowville Fm, New York, USA; ACASTIDAE; MDEV.
@@ -506,7 +506,7 @@ Bellaspidella RASETTI, 1945c [resseri] Levis Fm, Quebec, Canada; DOKIMOCEPHALIDA
 Bellaspis RASETTI, 1945c [billingsi] Levis Fm, Quebec, Canada; DOKIMOCEPHALIDAE; UCAM.
 Bellefontia ULRICH in WALCOTT, 1924b [Hemigyraspis collieana RAYMOND, 1910b] Stonehenge Fm, Pennsylvania, USA; ASAPHIDAE; LORD.
 Belliceps REPINA, 1966 [simplex] Bazaikh Horizon, Gorny Shoria, Russia; CHENGKOUASPIDIDAE; LCAM.
-Belovia POLETAEVAin CHERNYSHEVAet al., 1956 [calva] River Olenek, N Siberia, Russia; LICHAKEPHALIDAE; MCAM.
+Belovia POLETAEVA in CHERNYSHEVA et al., 1956 [calva] River Olenek, N Siberia, Russia; LICHAKEPHALIDAE; MCAM.
 Beltella LAKE, 1919 [Ellipsocephalus depressus SALTER, 1859] Dictyonema flabelliforme Zone, N Wales; OLENIDAE; LORD [j.s.s. of Leptoplastides, fide NIKOLAISEN & HENNINGSMOEN, 1985].
 Bemaspis FREDERICKSON, 1949 [gouldi] Honey Ck Fm, Oklahoma, USA; PARABOLINOIDIDAE; UCAM [j.s.s. of Taenicephalus, fide BELL & ELLINWOOD, 1962].
 Benedettia TORO & MONDALI, 1981 [huaquensis] Quebrada de Huaco, San Juan, Argentina; PLIOMERIDAE; LORD.
@@ -586,7 +586,7 @@ Bohemaspis HORBINGER, 1986 [hanusi] Dobrotiva Fm, Czech Republic; TRINUCLEIDAE; 
 Bohemilla BARRANDE, 1872[stupenda] Dobrotiva Fm, Czech Republic; BOHEMILLIDAE; MORD.
 Bohemiproetus PILLET, 1969a [Proetus bohemicus HAWLE & CORDA, 1847] Koneprusy Lst, Czech Republic; PROETIDAE; LDEV.
 Bohemoharpes VANĚK, 1963 [Harpes naumanni BARRANDE, 1852] Lite. Fm, Czech Republic; HARPETIDAE; LSIL.
-Bohemolichas PŘIBYL & VANĚK, 1972[Lichas inc-ola BARRANDE, 1872] Šárka Fm, Czech Republic; LICHIDAE; MORD [j.s.s. of Uralichas, fide THOMAS & HOLLOWAY, 1988].
+Bohemolichas PŘIBYL & VANĚK, 1972[Lichas incola BARRANDE, 1872] Šárka Fm, Czech Republic; LICHIDAE; MORD [j.s.s. of Uralichas, fide THOMAS & HOLLOWAY, 1988].
 Bohemopyge 1950 [Ogygia discreta BARRANDE,1872] Šárka Fm, Czech Republic; ASAPHIDAE; MORD.
 Bojocoryphe ŠNAJDR, 1976a [splendens] Dvorce-Prokop Lst, Czech Republic; TROPIDOCORYPHIDAE; LDEV.
 Bojokoralaspis ŠNAJDR, 1984b [Primaspis (Bojokoralaspis) koral] ZahoIany Fm, Czech Republic; ODONTOPLEURIDAE; UORD [j.s.s. ofEoleonaspis, fide RAMSKOLD & CHATTERTON, 1991].
@@ -600,7 +600,7 @@ Bolbocephalus WHITFIELD, 1890 [Bathyurus? seelyi WHITFIELD, 1886] Fort Cassin Fm
 Bolbochasmops McNAMARA, 1980 [Phacops (Chasmops) bucculenta var. emarginata SCHMIDT, 1881] Idavere .Keila Stages, Estonia; PTERYGOMETOPIDAE; MORD.
 Bolbolenellus PALMER & REPINA, 1993 [Olenellus euryparia PALMER in PALMER & HALLEY, 1979] Carrara Fm, California, USA; OLENELLIDAE; LCAM.
 Bolboparia RASETTI, 1966 [superba] Acimetopus bilobatus Faunule, New York, USA; WEYMOUTHIIDAE; LCAM.
-Bolivianaspis BRANI°A& VANĚK, 1973 [scutator] Gamoneda Fm, Bolivia; CALMONIIDAE; LDEV [j.s.s. of Tarijactinoides, fide ELDREDGE & BRANI°A, 1980].
+Bolivianaspis BRAÑA & VANĚK, 1973 [scutator] Gamoneda Fm, Bolivia; CALMONIIDAE; LDEV [j.s.s. of Tarijactinoides, fide ELDREDGE & BRAÑA, 1980].
 Bolivicrania KOBAYASHI & HAMADA, 1986b [Paladin yampupatensis ARELLANO, 1983] Copacabana Gp, Bolivia; PROETIDAE; PERM.
 Boliviproetus ELDREDGE & ORMISTON, 1979 [branisai] Belen Fm, Bolivia; PROETIDAE; MDEV.
 Bollandia REED, 1943a [Asaphus globiceps PHILLIPS, 1836] Carboniferous Lst, Kildare, Ireland; PROETIDAE; MISS.
@@ -622,12 +622,12 @@ Boreoscutellum PŘIBYL & VANĚK, 1971b [Scabriscutellum boreum MAKSIMOVA, 1960] 
 Borkopleura ŠNAJDR, 1984a [gorella] Lite. Fm, Czech Republic; ODONTOPLEURIDAE; LSIL.
 Bornemannaspis RASETTI, 1972[Olenellus solitarius BORNEMANN, 1891] Nebida Fm, Sardinia, Italy; GIGANTOPYGIDAE; LCAM.
 Bornemannia WALCOTT in VOGDES, 1925 [Bathyuriscus (Poliella) prima WALCOTT, 1916b] Mount Whyte Fm, British Columbia, Canada; DOLICHOMETOPIDAE; MCAM [j.s.s. of Poliella, fide RESSER, 1935].
-Bornholmaspis PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Pseudosphaerexochus (Pateraspis) inflatus POULSEN, 1965] Skelbro Lst Fm, Bornholm, Denmark; CHEIRURIDAE; LORD.
-Borogothus TJERNVIK, 1956 [Megalaspis steno-rachis ANGELIN, 1851] Bjørkasholmen Fm, Vastergotland, Sweden; ASAPHIDAE; LORD.
+Bornholmaspis PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Pseudosphaerexochus (Pateraspis) inflatus POULSEN, 1965] Skelbro Lst Fm, Bornholm, Denmark; CHEIRURIDAE; LORD.
+Borogothus TJERNVIK, 1956 [Megalaspis stenorachis ANGELIN, 1851] Bjørkasholmen Fm, Vastergotland, Sweden; ASAPHIDAE; LORD.
 Borovikovia KRASKOV, 1977 [juvenilis] Zhaisan Fm, S Kazakhstan; DOLICHOMETOPIDAE; UCAM.
 Borthaspidella RASETTI, 1954 [gaspensis] Cap des Rosieres, Gaspe, Quebec, Canada; NILEIDAE; LORD.
 Borthaspis STUBBLEFIELD, 1951b [j.o.s. of Psilocephalinella].
-Boschchekulia LERMONTOVA, 1951a [lata] Bosh-che-Kulya, NE Kazakhstan; CERATOPYGIDAE; UCAM.
+Boschchekulia LERMONTOVA, 1951a [lata] Boshche-Kulya, NE Kazakhstan; CERATOPYGIDAE; UCAM.
 Botomella SUVOROVA, 1958 [ekaterinae] Pestrotsvet Fm, Siberia, Russia; DINESIDAE; LCAM.
 Botrioides STETSON, 1927 [Trinucleus coscinorinus ANGELIN, 1854] Killerod Fm, Sweden; TRINUCLEIDAE; MORD.
 Bouleia KOZLOWSKI, 1923 [Phacops dagincourti A. ULRICH, 1892] Icla Fm, Padilla, Bolivia; CALMONIIDAE; LDEV.
@@ -654,7 +654,7 @@ Brassicicephalus LOCHMAN, 1940 [pulchellus] Bonneterre Dol, Missouri, USA; PLETH
 Braunops LIEBERMAN & KLOC, 1997 [Kayserops obsoletus GANDL, 1972] Mariposas Fm, NE Spain; ACASTIDAE; LDEV.
 Breizhops MORZADEC, 1983 [lanceolatus] Fret Fm, Brittany, France; ACASTIDAE; LDEV.
 Breviagnostus LIU, 1982[brachyaxonus] Huaqiao Fm, Hunan, China; PERONOPSIDAE; MCAM [j.s.s. of Hypagnostus, fide SHERGOLD et al. 1990].
-Brevibole ARCHINAL, 1991 [Cyrtosymbole (Macro-bole) brevispina OSMOLSKA, 1962] Pericyclus Zone, Holy Cross Mts, Poland; PROETIDAE; MISS.
+Brevibole ARCHINAL, 1991 [Cyrtosymbole (Macrobole) brevispina OSMOLSKA, 1962] Pericyclus Zone, Holy Cross Mts, Poland; PROETIDAE; MISS.
 Brevidiscus KOBAYASHI, 1943a [lunulatus] Protolenus Lst, England; CALODISCIDAE; LCAM [j.s.s. of Calodiscus, fide JELL, 1997].
 Breviphillipsia HESSLER, 1963 [Phillipsia sampsoni VOGDES, 1888] Choteau Lst, Missouri, USA; PROETIDAE; MISS.
 Breviredlichia W. ZHANG & LIN in YIN & LI, 1978 [granulosa] Chintingshan Fm, Guizhou, China; REDLICHIIDAE; LCAM.
@@ -679,7 +679,7 @@ Brontocephalus KOLOBOVA, 1977 [argutus] Chingiz Mts, Kazakhstan; STYGINIDAE; UOR
 Brunswickia HOWELL, 1937 [Conocephalites robbi HARTT in DAWSON, 1868] New Brunswick, Canada; PTYCHOPARIIDAE; MCAM.
 Brutaspis IVSHIN, 1962[tuberosa] Seletinsk Horizon, Kazakhstan; ACROCEPHALITIDAE; UCAM.
 Brutonaspis PEK & VANĚK, 1991 [bifida] Uncia-Kirusillas Fm, Bolivia; ODONTOPLEURIDAE; USIL.
-Brutonia THOMAS & HOLLOWAY, 1988 [Acidasp-ides borealis CHERNYSHEVA, 1960b] Olenek River, N Siberia, Russia; LICHAKEPHALIDAE; UCAM
+Brutonia THOMAS & HOLLOWAY, 1988 [Acidaspides borealis CHERNYSHEVA, 1960b] Olenek River, N Siberia, Russia; LICHAKEPHALIDAE; UCAM
 Bruxaspis LAMONT, 1978 [dealgach] Wether Law Linn Fm, Scotland; ODONTOPLEURIDAE; LSIL [j.s.s. of Anacaenaspis, fide CLARKSON & HOWELLS, 1981].
 Bubupeltina ŠNAJDR, 1991 [Weberopeltis matutina VANĚK, 1968] Suchomasty Lst, Czech Republic; STYGINIDAE; MDEV.
 Buchiproetus PILLET, 1969a [Proetus buchii HAWLE & CORDA, 1847] Suchomasty Lst, Czech Republic; TROPIDOCORYPHIDAE; MDEV.
@@ -696,7 +696,7 @@ Bullicephalus PŘIBYL & VANĚK, 1971a [Phacops bulliceps BARRANDE, 1846a] Kopani
 Bumastella KOBAYASHI & HAMADA, 1974 [Bumastus (Bumastella) spiculus] Shikoku, Japan; STYGINIDAE; LUSIL.
 Bumastides WEBER, 1948 [bedpakensis] Karakan Fm, Betpak-Dala, Kazakhstan; NILEIDAE; MORD.
 Bumastoides WHITTINGTON, 1954 [Illaenus milleri BILLINGS, 1859] Trenton Group, Ontario, Canada; ILLAENIDAE; UORD.
-Bumastus MURCHISON, 1839 [barriensis] Coal-brookedale Fm, England; STYGINIDAE; LSIL.
+Bumastus MURCHISON, 1839 [barriensis] Coalbrookedale Fm, England; STYGINIDAE; LSIL.
 Burgesina FEIST & TALENT, 2000b [mawsonae] Broken River Group, Queensland, Australia; PROETIDAE; MDEV.
 Burlingia WALCOTT, 1908 [hectori] Stephen Fm, British Columbia, Canada; BURLINGIIDAE; MCAM.
 Burmeisterella REED, 1918 [Homalonotus (Burmeisteria) elongatus SALTER, 1865] Meadsfoot Beds, Devon; HOMALONOTIDAE; LDEV.
@@ -731,7 +731,7 @@ Calocephalites KURTZ, 1975 [vulgaris] Davis Fm, Missouri, USA; DOKIMOCEPHALIDAE;
 Calodiscus HOWELL, 1935b [Agnostus lobatus HALL, 1847] Schodack Fm, New York, USA; CALODISCIDAE; LCAM [replacement name for Goniodiscus].
 Calvinella WALCOTT, 1914a [Dikelocephalus spiniger HALL, 1863] Jordan Fm, Wisconsin, USA; SAUKIIDAE; UCAM.
 Calvipelta WESTROP, 1986b [spinosa] Mistaya Fm, Alberta, Canada; KINGSTONIIDAE; UCAM.
-Calybole RICHTER & RICHTER, 1926 [Cyrtosym-bole calymmene RICHTER, 1913] Oberscheld, Rhenish Massif, Germany; PROETIDAE; UDEV.
+Calybole RICHTER & RICHTER, 1926 [Cyrtosymbole calymmene RICHTER, 1913] Oberscheld, Rhenish Massif, Germany; PROETIDAE; UDEV.
 Calycinoidia LU & QIAN in YIN & LI, 1978 [convexa] Sandu Fm, Guizhou, China; ALSATASPIDIDAE; UCAM.
 Calycoscutellum ARCHINAL, 1994 [Bronteus flabellifer GOLDFUSS, 1839] Junkerberg Fm, Gerolstein, Germany; STYGINIDAE; MDEV.
 Calymena DESMAREST, 1817 [suppressed in favour of Calymene, by ICZN Opinion 1433].
@@ -815,17 +815,17 @@ Ceratopeltis POULSEN, 1937 [latilimbata] Cape Weber Fm, E Greenland; BATHYURIDAE
 Ceratoproetus LUO & JIANG, 1985 [guangnanensis] Pojiao Fm, Yunnan, China; PROETIDAE; LDEV.
 Ceratopyge HAWLE & CORDA, 1847 [Olenus forficula SARS, 1835] Bjørkasholmen Fm, Norway; CERATOPYGIDAE; LORD.
 Ceraurinella COOPER, 1953 [typa] Edinburg Fm, Virginia, USA; CHEIRURIDAE; UORD.
-Ceraurinium PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Ceraurus intermedius KIELAN, 1955] Holy Cross Mts, Poland; CHEIRURIDAE; UORD.
+Ceraurinium PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Ceraurus intermedius KIELAN, 1955] Holy Cross Mts, Poland; CHEIRURIDAE; UORD.
 Ceraurinus BARTON, 1913 [marginatus] Cobourg Fm, Ontario, Canada; CHEIRURIDAE; UORD.
 Cerauroides PRANTL & PŘIBYL, 1947c [Cheirurus hawlei BARRANDE, 1852] Kopanina Fm, Czech Republic; CHEIRURIDAE; USIL. [j.s.s. of Crotalocephalus, fide PŘIBYL & VANĚK, 1980].
-Cerauromeros PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Ceraurus hydei WELLER, 1907] “Niagaran lst”, Illinois, USA; CHEIRURIDAE; LUSIL.
-Cerauropeltis PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Ceraurus ruedemanni RAYMOND, 1916] Valcour Fm, New York, USA; CHEIRURIDAE; UORD.
+Cerauromeros PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Ceraurus hydei WELLER, 1907] “Niagaran lst”, Illinois, USA; CHEIRURIDAE; LUSIL.
+Cerauropeltis PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Ceraurus ruedemanni RAYMOND, 1916] Valcour Fm, New York, USA; CHEIRURIDAE; UORD.
 Ceraurus GREEN, 1832[pleurexanthemus] Trenton Group, New York, USA; CHEIRURIDAE; UORD.
 Cermataspis OPIK, 1967 [abundans] Mungerebar Lst, Queensland, Australia; ACROCEPHALITIDAE; MUCAM.
 Cermatops SHERGOLD, 1980 [vieta] Chatsworth Lst, Queensland, Australia; CERATOPYGIDAE; UCAM.
 Cernuolimbus PALMER, 1960 [orygmatos] Dunderberg Fm, Nevada, USA; PTEROCEPHALIIDAE; UCAM.
 Ceronocare SHERGOLD, 1975 [pandum] Chatsworth Limestone, Queensland, Australia; KAOLISHANIIDAE; UCAM.
-Chacomurus BRANI°A& VANĚK, 1973 [confragosus] Belen Fm, Bolivia; DALMANITIDAE; LDEV.
+Chacomurus BRAÑA & VANĚK, 1973 [confragosus] Belen Fm, Bolivia; DALMANITIDAE; LDEV.
 Chakasskia POLETAEVA, 1936 [minussensis] Kuznetsk Alatau, Russia; DINESIDAE; CAM.
 Chakasskinella REPINA in REPINA et al., 1964 [lita] Sanashtykgol Horizon, Kuznetsk Alatau, Russia; DINESIDAE; LCAM.
 Chalfontia SHERGOLD, 1982[Prismenaspis alta HENDERSON, 1976] Georgina Lst, Queensland, Australia; DOKIMOCEPHALIDAE; UCAM.
@@ -842,7 +842,7 @@ Changshanocephalus SUN, 1935 [reedi] Changshan Fm, Shandong, China; CHANGSHANIID
 Changyangia ZHANG in LU et al., 1965 [mai] Shuijingtuo Fm, Hubei, China; CHENGKOUIIDAE; LCAM.
 Chaoaspis W. ZHANG, 1966 [ovatus] Lilaodong Fm, Sichuan, China; REDLICHIIDAE; LCAM.
 Charabaia RUSCONI, 1956 [montenegrensis] Empozada Fm, San Isidro, Mendoza, Argentina; ASAPHIDAE; LORD.
-Charaulaspis LAZARENKO, 1962[prima] Hebe-discus-Judomia Zone, N Siberia, Russia; ELLIPSOCEPHALIDAE; LCAM.
+Charaulaspis LAZARENKO, 1962[prima] Hebediscus-Judomia Zone, N Siberia, Russia; ELLIPSOCEPHALIDAE; LCAM.
 Charchaqia TROEDSSON, 1937 [norini] Torsuqtagh Fm, Xinjiang, China; CERATOPYGIDAE; UCAM.
 Chariocephalus HALL, 1863 [whitfieldi] Lone Rock Fm, Wisconsin, USA; ELVINIIDAE; UCAM.
 Charybdaspis BASSE, 1998 [comes] Ohle Fm, Sauerland, Germany; ODONTOPLEURIDAE; MDEV [j.s.s. of Radiaspis, fide SANTEL, 2001].
@@ -853,7 +853,7 @@ Chatkalagnostus HAJRULLINA & ABDULLAEV in ABDULLAEV & KHALETSKAYA, 1970 [mirus] 
 Chattiaspis STRUVE, 1958a [Dalmanitina kegeli RICHTER & RICHTER, 1927a] Andreasteich Quartzite, Rhenish Massif, Germany; DALMANITIDAE; UORD.
 Chauffouraspis PILLET, 1973a [andegavensis] Angers Lst, Bretagne, France; PROETIDAE; LDEV.
 Chaunoproetoides YUAN, 1988 [Chaunoproetus (Chaunoproetoides) typicus] Daihua Fm, Guizhou, China; PROETIDAE; UDEV.
-Chaunoproetus RICHTER, 1919 [Proetus palensis RICHTER, 1913] Hell-blaugrauer Lst, Carnic Alps, Austria; PROETIDAE; UDEV.
+Chaunoproetus RICHTER, 1919 [Proetus palensis RICHTER, 1913] Hellblaugrauer Lst, Carnic Alps, Austria; PROETIDAE; UDEV.
 Cheilocephalus BERKEY, 1898 [st.croixensis] Eau Claire Lst, Minnesota, USA; CHEILOCEPHALIDAE; UCAM.
 Cheiropyge DIENER, 1897 [himalayensis] Chitichun Lst, Himalaya, India; BRACHYMETOPIDAE; PERM.
 Cheiruroides KOBAYASHI, 1935c [orientalis] Manto Fm, Liaoning, China; ORYCTOCEPHALIDAE; MCAM.
@@ -868,7 +868,7 @@ Chengkouaspis W. ZHANG & LIN in W. ZHANG et al., 1980a [longioculus] Yingzui Fm,
 Chengkouella LU in LU & ZHANG, 1974 [spinosa] Dachao Fm, Sichuan, China; ASAPHIDAE; LORD.
 Chengkouia QIAN & YAO in LU et al., 1974a [cylindrica] Shihpai Fm, Sichuan, China; CHENGKOUIIDAE; LCAM [j.s.s. of Acanthomicmacca, fide GEYER & MALINKY, 1997].
 Chengshanaspis W. ZHANG, 1963 [Ptychoparia yohi SUN, 1924] Maochuang Fm, Hebei, China; PTYCHOPARIIDAE; MCAM.
-Chiarumanipyge BRANI°A& VANĚK, 1973 [profligata] Belen Fm, Chiarumani-Machacoyo, Bolivia; CALMONIIDAE; LDEV.
+Chiarumanipyge BRAÑA & VANĚK, 1973 [profligata] Belen Fm, Chiarumani-Machacoyo, Bolivia; CALMONIIDAE; LDEV.
 Chiawangella ZHU, 1959 [pustulosa] Kushan Fm, Jiangsu, China; DAMESELLIDAE; UCAM.
 Chichikaspis BALASHOVA, 1966b [Bronteopsis (Chichikaspis) pamiricus] W Pamir, Tadzikhistan; STYGINIDAE; MORD.
 Chienaspis SUVOROVA, 1964 [micropyge] Balang Fm, Guizhou, China; ORYCTOCEPHALIDAE; LCAM [j.s.s. of Lancastria, fide W. ZHANG, 1989].
@@ -900,7 +900,7 @@ Chuangiella KOBAYASHI, 1935c [elongata] Eoorthis Zone, Doten, South Korea; LEIOS
 Chuangina KOBAYASHI, 1967 [fossula] Kuh-I-Namak, Iran; LEIOSTEGIIDAE; UCAM.
 Chuangioides ZHU, 1959 [punctatus] Kushan Fm, Shanxi, China; LEIOSTEGIIDAE; UCAM.
 Chuangiopsis SIVOV in EGOROVA et al., 1955 [sibirica] Gornoshor Fm, Gorny Shoria, Russia; LEIOSTEGIIDAE; UCAM.
-Chuangites HOWELL, 1945 [jerseyensis] Upper Kit-tatinny Lst, New Jersey, USA; LEIOSTEGIIDAE; UCAM.
+Chuangites HOWELL, 1945 [jerseyensis] Upper Kittatinny Lst, New Jersey, USA; LEIOSTEGIIDAE; UCAM.
 Chuanqianoproetus WU, 1977 [ constrictus] Xiushan Fm, Sichuan, China; PROETIDAE; LSIL.
 Chuchiaspis ZHANG in LU et al., 1974b [granosa] Shihlungtung Fm, Sichuan, China; ZACANTHOIDIDAE; LCAM.
 Chugaevia PŘIBYL & VANĚK, 1971b [Bronteopsis? extraordinarius CHUGAEVA, 1958] Kazakhstan; STYGINIDAE; UORD.
@@ -958,7 +958,7 @@ Compsocephalus REPINA in REPINA et al., 1964 [mitis] Aldanian, Sayan Altay Fold 
 Comptonaspis BREZINSKI, 1988a [Proetus swallowi SHUMARD, 1855] Chouteau Fm, Missouri, USA; PROETIDAE; MISS.
 Comura RICHTER & RICHTER, 1926 [Cryphaeus cometa RICHTER, 1909] Eifel, Germany; ACASTIDAE; LDEV.
 Conagraulos HOWELL, 1937 [rarus] St Albans Sh, Vermont, USA; AGRAULIDAE; MCAM.
-Conaspis HALL, 1863 [Conocephalites perseus] Fran-conia Fm, Minnesota, USA; DOKIMOCEPHALIDAE; UCAM.
+Conaspis HALL, 1863 [Conocephalites perseus] Franconia Fm, Minnesota, USA; DOKIMOCEPHALIDAE; UCAM.
 Condylopyge HAWLE & CORDA, 1847 [Battus rex BARRANDE, 1846a] Jince Fm, Czech Republic; CONDYLOPYGIDAE; MCAM.
 Conicephalus YANG in YANG et al., 1991 [caigouensis] Xijiadian Fm, Henan, China; SOLENOPLEURIDAE; MCAM.
 Conimetopus HAHN & HAHN, 1985 [Phillipsia ouralica de VERNEUIL in MURCHISON et al., 1845] Ural Mts, Russia; BRACHYMETOPIDAE; MISS.
@@ -997,24 +997,24 @@ Cornucoryphe SDZUY & LINAN, 1996 [schirmi] Mansilla Fm, Spain; CONOCORYPHIDAE; M
 Cornuproetus RICHTER & RICHTER, 1919 [Gerastos cornutus GOLDFUSS, 1843] Ahrdorf Fm, Gerolstein, Eifel, Germany; TROPIDOCORYPHIDAE; MDEV.
 Cornuscutellum ŠNAJDR,1960 [Bronteus rhinoceros BARRANDE, 1872] Vinarice Lst, Czech Republic; STYGINIDAE; LDEV.
 Coronaspis WU, 1990 [Coronocephalus changningensis W. ZHANG, 1974] Xiushan Fm, Sichuan, China; ENCRINURIDAE; LSIL.
-Coronocephalina WU in ZHOU et al., 1977 [gao-luoensis] Xiushan Fm, Sichuan, China; ENCRINURIDAE; LSIL [j.s.s. of Coronocephalus, fide WU, 1990].
+Coronocephalina WU in ZHOU et al., 1977 [gaoluoensis] Xiushan Fm, Sichuan, China; ENCRINURIDAE; LSIL [j.s.s. of Coronocephalus, fide WU, 1990].
 Coronocephalus GRABAU, 1924 [Encrinurus (Coronocephalus) rex] Kaochiapien Sh, Jiangsu, China; ENCRINURIDAE; LSIL.
 Coronura HALL & CLARKE, 1888 [Asaphus aspectans CONRAD, 1841] Onondaga Fm, New York, USA; DALMANITIDAE; MDEV.
 Corrugatagnostus KOBAYASHI, 1939a [Agnostus perrugatus BARRANDE, 1872] Dobrotiva Fm, Czech Republic; METAGNOSTIDAE; MORD.
 Corycephalus HALL & CLARKE, 1888 [Dalmanites regalis HALL, 1876] Schoharie Fm, New York, USA; DALMANITIDAE; LDEV.
 Corydocephalus HAWLE & CORDA, 1847 [flabellatus] Lite. Fm, Czech Republic; LICHIDAE; LSIL [j.s.s. of Trochurus, fide TRIPP, 1958].
-Corynexochella SUVOROVA, 1964 [occulta] Maya-ian, Siberia, Russia; CORYNEXOCHIDAE; MCAM.
+Corynexochella SUVOROVA, 1964 [occulta] Mayaian, Siberia, Russia; CORYNEXOCHIDAE; MCAM.
 Corynexochides RASETTI, 1948 [gregarius] Levis Fm, Quebec, Canada; DOLICHOMETOPIDAE; MCAM.
-Corynexochina LERMONTOVA, 1940 [weberi] S Fe-rgana, central Asia, Russia; CORYNEXOCHIDAE; UCAM.
-Corynexochus ANGELIN, 1854 [spinulosus] Andrar-um Lst, Sweden; CORYNEXOCHIDAE; UCAM.
+Corynexochina LERMONTOVA, 1940 [weberi] S Fergana, central Asia, Russia; CORYNEXOCHIDAE; UCAM.
+Corynexochus ANGELIN, 1854 [spinulosus] Andrarum Lst, Sweden; CORYNEXOCHIDAE; UCAM.
 Costadiscus BABCOCK, 1994 [minutus] Henson Gletscher Fm, Greenland; WEYMOUTHIIDAE; CAM [j.s.s. of Abakolia, fide JELL, 1997].
 Costapyge HOWELL, 1937 [vermontensis] St Albans Sh, Vermont, USA; UNCERTAIN (pyg.); MCAM.
 Costonia WHITTARD, 1956 [Marrolithus ultimus BANCROFT, 1949] Costonian, England; TRINUCLEIDAE; UORD.
 Cotalagnostus WHITEHOUSE, 1936 [Agnostus lensGRONWALL, 1902] Bornholm, Denmark; PERONOPSIDAE; MCAM.
 Couloumania THORAL, 1946 [Conocoryphe heberti MUNIER-CHALMAS & BERGERON in BERGERON, 1889] Schistes Troues, Coulouma, France; CONOCORYPHIDAE; MCAM [j.s.s. of Conocoryphe, fide COTTON, 2001].
-Courtessolium PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Pseudosphaerexochus (Pateraspis) prepater COURTESSOLE & PILLET, 1975] Tremadoc erratic, Herault, France; CHEIRURIDAE; LORD.
+Courtessolium PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Pseudosphaerexochus (Pateraspis) prepater COURTESSOLE & PILLET, 1975] Tremadoc erratic, Herault, France; CHEIRURIDAE; LORD.
 Craigheadia HUPE, 1955 [Bronteus grayi REED, 1904] Craighead Lst, Scotland; STYGINIDAE; UORD.
-Craspedarges GURICH, 1901 [wilcanniae] Amphi-theatre Group, New South Wales, Australia; LICHIDAE; LDEV.
+Craspedarges GURICH, 1901 [wilcanniae] Amphitheatre Group, New South Wales, Australia; LICHIDAE; LDEV.
 Craspedops HAHN & HAHN, 2002 [Pseudosilesiops (Craspedops) themis] upper Balvian, Hoppecke-Tal, Sauerland, Germany; PROETIDAE; MISS.
 Crassibole GANDL, 1980 [Archegonus (Crassibole) crassus] Mere, Oviedo, Spain; PROETIDAE; PENN.
 Crassifimbra LOCHMAN, 1947 [Onchocephalus walcotti RESSER, 1937] Pioche Fm, Nevada, USA; ANTAGMIDAE; LCAM.
@@ -1056,7 +1056,7 @@ Cultrops STRUVE, 1995 [Phacops (Phacops) werneri STRUVE, 1970] Heisdorf Fm, Eife
 Cummingella REED, 1942[Phillipsia jonesii PORTLOCK, 1843] Carboniferous Lst, Tyrone, N. Ireland; PROETIDAE; MISS.
 Curiaspis SDZUY, 1955 [notabilis] Leimitz Schiefer, Bavaria, Germany; UNCERTAIN; LORD.
 Curriella LAMONT, 1978 [newlandensis] Newlands Fm, Scotland; ENCRINURIDAE; LSIL.
-Curuyella ELDREDGE & BRANI°A, 1980 [Schizo- stylus (Curuyella) granulata] Gamoneda Fm, Bolivia; CALMONIIDAE; LDEV.
+Curuyella ELDREDGE & BRAÑA, 1980 [Schizo- stylus (Curuyella) granulata] Gamoneda Fm, Bolivia; CALMONIIDAE; LDEV.
 Curvoryctocephalus ZHAO & YUAN in YUAN et al., 2002 [taijiangensis] Kaili Fm, Guizhou, China; ORYCTOCEPHALIDAE; MCAM.
 Cuyanaspis RUSCONI, 1954a [?Megalaspis empozadensis RUSCONI, 1953] Mendoza, Argentina; INDET; CAM.
 Cyamella OWENS in OWENS & HAMMANN, 1990 [Cyamops stensioei OWENS, 1979] Boda Lst, Sweden; RORRINGTONIIDAE; UORD [replacement name for Cyamops].
@@ -1170,9 +1170,9 @@ Deloites DESTOMBES, 1972[Eudolatites (Deloites) maederensis] Ktaoua Fm, Morocco;
 Deloops LIEBERMAN & KLOC, 1997 [Greenops haasi MORZADEC, 1983] Kergavan Fm, Brittany, France; ACASTIDAE; MDEV.
 Delops RICKARDS, 1964 [Phacops obtusicaudatus SALTER, 1849] Middle Coldwell Beds, England; DALMANITIDAE; USIL.
 Deltacare HARRINGTON & LEANZA, 1957 [prosops] Angosto Fm, Salta, NW Argentina; UNCERTAIN; LORD.
-Deltacephalaspis ELDREDGE & BRANI°A, 1980 [comis] Gamoneda Fm, Bolivia; CALMONIIDAE; LDEV.
+Deltacephalaspis ELDREDGE & BRAÑA, 1980 [comis] Gamoneda Fm, Bolivia; CALMONIIDAE; LDEV.
 Deltadechenella ORMISTON, 1967 [bathurstensis] Blue Fiord Fm, Nunavut, Canada; PROETIDAE; MDEV.
-Deltadiscus KOBAYASHI, 1943a [Microdiscus pun-ctatus precursor MATTHEW, 1886] St Martin’s, New Brunswick, Canada; EODISCIDAE; MCAM [j.s.s. of Eodiscus, fide JELL, 1997].
+Deltadiscus KOBAYASHI, 1943a [Microdiscus punctatus precursor MATTHEW, 1886] St Martin’s, New Brunswick, Canada; EODISCIDAE; MCAM [j.s.s. of Eodiscus, fide JELL, 1997].
 Deltina SUNDBERG, 1994 [limba] Trailer Lst, Utah, USA; PTYCHOPARIIDAE; MCAM.
 Deltocephalus OGIENKO, 1969 [orientalis] Ichersk Fm, S Siberia, Russia; PROASAPHISCIDAE; MCAM.
 Deltophthalmus RESSER, 1938b [halli] Maryville Fm, Tennessee, USA; MENOMONIIDAE; MCAM.
@@ -1349,7 +1349,7 @@ Edgellia SHAW in SHAW & STUBBLEFIELD, 1950 [j.o.s. of Trinucleus].
 Edithiella KURTZ, 1975 [missouriensis] Davis Fm, Missouri, USA; ?ASAPHISCIDAE; UCAM.
 Edmundsonia COOPER, 1953 [typa] Athens Sh, Virginia, USA; RAPHIOPHORIDAE; UORD.
 Effnaspis DEAN, 1972[Isbergia virginica COOPER, 1953] Effna Fm, Virginia, USA; ISOCOLIDAE; UORD.
-Effops HAHN & HAHN, 2002 [Pseudosilesiops (Ef-fops) tethys] Balvian, Effenberg near Arnsberg, Westphalia, Germany; PROETIDAE; MISS.
+Effops HAHN & HAHN, 2002 [Pseudosilesiops (Effops) tethys] Balvian, Effenberg near Arnsberg, Westphalia, Germany; PROETIDAE; MISS.
 Egle BARRANDE, 1846a [preocc., replaced by Cyclopyge].
 Egyngolia KOROBOV, 1980 [lata] Atdabanian, W Mongolia; YUKONIIDAE; LCAM.
 Ehmania RESSER, 1935 [weedi] Meagher Lst, Wyoming, USA; ALOKISTOCARIDAE; MCAM.
@@ -1362,7 +1362,7 @@ Eirelithus LAMONT, 1941 [Trinucleus thersites SALTER, 1853a] Tramore Lst, Irelan
 Ejinaspis LU, ZHOU & ZHOU, 1986 [mirabilis] Inner Mongolia, China; SOLENOPLEURIDAE; UCAM.
 Ejinoproetus ZHOU, SIVETER & OWENS, 2000 [leprosus] Yikewusu Fm, Inner Mongolia, China; PROETIDAE; MDEV.
 Ekeraspis TJERNVIK, 1956 [Megistaspis (Ekeraspis) armata] Latorp Fm, Vastergotland, Sweden; ASAPHIDAE; LORD.
-Ekwanoscutellum PŘIBYL & VANĚK, 1971b [Bront-eus ekwanaspis WHITEAVES, 1904] Attawapiskat Fm, Ontario, Canada; STYGINIDAE; LSIL.
+Ekwanoscutellum PŘIBYL & VANĚK, 1971b [Bronteus ekwanaspis WHITEAVES, 1904] Attawapiskat Fm, Ontario, Canada; STYGINIDAE; LSIL.
 Ekwipagetia FRITZ, 1973 [plicofimbria] Sekwi Fm, North West Territories, Canada; YUKONIIDAE; LCAM.
 Elandaspis EGOROVA in EGOROVA & ROMANENKO, 1982[parva] Elandinsk Horizon, Gorny Altay, Russia; ANOMOCARIDAE; MCAM.
 Elankaspis EGOROVA in EGOROVA et al., 1976 [abrosa] Elansk Fm, Siberia, Russia; AGRAULIDAE; MCAM.
@@ -1383,14 +1383,14 @@ Eleutherocentrus CLARK, 1935 [petersoni] Swan Peak Fm, Utah, USA; BATHYURIDAE; M
 Elganellus SUVOROVA, 1958 [probus] Elgyan Fm, Siberia, Russia; REDLICHIIDAE; LCAM.
 Elicicola JELL in BENGTSON et al., 1990 [calva] Parara Lst, South Australia; YUNNANOCEPHALIDAE; LCAM.
 Elimaproetus CURTIS & LANE, 1997 [diabolicus] Hughley Sh Fm, England; PROETIDAE; LSIL.
-Elkanaspis LUDVIGSEN, 1982[futile] Rabbitkettle Fm, Northwest Territories, Canada; REMOPLEURIDIDAE; UCAM [j.s.s. of Pseudo-kainella, fide JELL, 1985].
+Elkanaspis LUDVIGSEN, 1982[futile] Rabbitkettle Fm, Northwest Territories, Canada; REMOPLEURIDIDAE; UCAM [j.s.s. of Pseudokainella, fide JELL, 1985].
 Elkia WALCOTT, 1924b [Dicellocephalus nasutus WALCOTT, 1884a] Secret Canyon Sh, Nevada, USA; DIKELOCEPHALIDAE; UCAM.
 Ellesides LAMONT, 1975 [altaterra] Leny Lst, Scotland; INDET.; LCAM.
 Ellipsocephaloides KOBAYASHI, 1935c [Ellipsocephalus curtus WHITFIELD, 1878] Lone Rock Fm, Wisconsin, USA; ELLIPSOCEPHALOIDIDAE; UCAM.
 Ellipsocephalus ZENKER, 1833 [Elleipsocephalus [sic] ambiguus] Jince Fm, Czech Republic; ELLIPSOCEPHALIDAE; MCAM.
 Ellipsocoryphe LU, 1975 [elliptica] Meitan Fm, Sichuan, China; CHEIRURIDAE; MORD [j.s.s. of Hemisphaerocoryphe (=Sphaerocoryphe), fide et al., 1985b].
 Ellipsostrenua KAUTSKY, 1945 [gripi] Lappland, Sweden; ELLIPSOCEPHALIDAE; LCAM.
-Ellipsotaphrus WHITTARD, 1952[Aeglina mono-phthalmus KLOUČEK, 1916] Dobrotiva Fm, Czech Republic; CYCLOPYGIDAE; MORD.
+Ellipsotaphrus WHITTARD, 1952[Aeglina monophthalmus KLOUČEK, 1916] Dobrotiva Fm, Czech Republic; CYCLOPYGIDAE; MORD.
 Elliptocephala EMMONS, 1844 [asaphoides] Elliptocephala asaphoides Faunule, New York, USA; HOLMIIDAE; LCAM.
 Elliptophillipsia HESSLER, 1963 [Proetus ellipticus MEEK & WORTHEN, 1865] Chouteau Lst, Illinois, USA; PROETIDAE; MISS.
 Ellotia GATEHOUSE, 1968 [dimota] Tindall Lst, Northern Territory, Australia; PTYCHOPARIIDAE; MCAM [j.s.s. of Gunnia, fide KRUSE, 1990].
@@ -1412,7 +1412,7 @@ Emanuelina LAURIE in LAURIE & SHERGOLD, 1996 [Emanuelaspis (Emanuelina) peculiar
 Embolimus ROMINGER, 1887 [preocc., replaced by Zacanthoides].
 Emeidiscus LI, 1980 [planilimbatus] Chiulaotung Fm, Sichuan, China; TSUNYIDISCIDAE; LCAM [j.s.s. of Tsunyidiscus, fide JELL, 1997].
 Emmrichella WALCOTT, 1911 [Ptychoparia theano WALCOTT, 1905] Changhia Fm, Shandong, China; ASAPHISCIDAE; MCAM [j.s.s. of Lioparia, fide W. ZHANG, 1985].
-Emmrichops MAREK, 1961 [planicephalus] Dob-rotiva Fm, Czech Republic; CYCLOPYGIDAE; UORD.
+Emmrichops MAREK, 1961 [planicephalus] Dobrotiva Fm, Czech Republic; CYCLOPYGIDAE; UORD.
 Emsurella ROZOVA, 1960a [humila] Tolstochikhin Fm, Salair, Russia; CHEILOCEPHALIDAE; UCAM.
 Emsurina SIVOV in EGOROVA et al., 1955 [sibirica] Tolstochikhin Fm, Salair, Russia; PILEKIIDAE; UCAM.
 Emuella POCOCK, 1970 [polymera] White Point Cgte, South Australia; EMUELLIDAE; LCAM.
@@ -1420,7 +1420,7 @@ Enammocephalus REPINA in REPINA et al., 1964 [nodosus] Aldanian, Kuznetsk Alatau
 Enantiaspis RASETTI, 1972[Ptychoparia enantiopa BORNEMANN, 1891] Nebida Fm, Sardinia, Italy; METADOXIDIDAE; LCAM.
 Encrinuraspis WEBBY et al., 1970 [optimus] Malongulli Fm, New South Wales, Australia; ENCRINURIDAE; UORD [j.s.s. of Cromus, fide STRUSZ, 1980].
 Encrinurella REED, 1915 [Pliomera insangensis REED, 1906b] Naungkangyi Beds, Burma; PLIOMERIDAE; MORD.
-Encrinuroides REED, 1931a [Cybele sexcostata SALTER in PHILLIPS & SALTER, 1848] Shole-shook Lst, Wales; ENCRINURIDAE; UORD.
+Encrinuroides REED, 1931a [Cybele sexcostata SALTER in PHILLIPS & SALTER, 1848] Sholeshook Lst, Wales; ENCRINURIDAE; UORD.
 Encrinurus EMMRICH, 1844 [Entomostracites punctatus WAHLENBERG, 1821] Hogklint and Slite Fm, Gotland, Sweden; ENCRINURIDAE; LSIL.
 Endoaspis LOCHMAN, 1956a [Wutingia rectangulosa ENDO, 1935] Wuting Fm, Liaoning, China; LEIOSTEGIIDAE; LORD [replacement name for Wutingia; j.s.s. of Annamitella, fide ROSS & INGHAM, 1970].
 Endocrania KOBAYASHI, 1956 [Hystricurus convexus ENDO, 1935] Toufangian, Liaoning, China; LEIOSTEGIIDAE; MORD [j.s.s. of Leiostegium, fide ZHOU & FORTEY, 1986].
@@ -1428,7 +1428,7 @@ Endogramma HAWLE & CORDA, 1847 [salmii] Jince Fm, Czech Republic; SOLENOPLEURIDA
 Endops KOIZUMI, 1972[Paladin yanagisawai ENDO & MATSUMOTO, 1962] Yabeina Zone, Fukushima, Japan; PROETIDAE; UPERM.
 Endymion BILLINGS, 1862[preocc., replaced by Endymionia].
 Endymionia BILLINGS, 1865 [Endymion meeki BILLINGS, 1862] Levis Fm, Quebec, Canada; RAPHIOPHORIDAE; MORD [replacement name for Endymion].
-Enetagnostus WHITEHOUSE, 1936 [humilis] Dev-oncourt Lst, Queensland, Australia; DIPLAGNOSTIDAE; MCAM [j.s.s. of Diplagnostus, fide SHERGOLD et al., 1990].
+Enetagnostus WHITEHOUSE, 1936 [humilis] Devoncourt Lst, Queensland, Australia; DIPLAGNOSTIDAE; MCAM [j.s.s. of Diplagnostus, fide SHERGOLD et al., 1990].
 Enneacnemis HAWLE & CORDA, 1847 [lyelli] Jince Fm, Czech Republic; SOLENOPLEURIDAE; MCAM [j.s.s. of Sao, fide ŠNAJDR, 1958a].
 Enodiproetus PŘIBYL, 1970 [Proetus enodis MAKSIMOVA, 1955] Oldondo River, Siberia, Russia; PROETIDAE; LSIL [j.s.s. of Astroproetus, fide OWENS, 1973b].
 Enontioura RESSER, 1942b [typicalis] Mendha Lst, Nevada, USA; PLETHOPELTIDAE; UCAM [j.s.s. of Plethometopus, fide LOCHMAN, 1953a].
@@ -1445,9 +1445,9 @@ Eoampyx SIVOV, 1940 [nasutus] Salair Fm, Salair, Russia; UNCERTAIN; UCAM.
 Eoanomocarella J. ZHANG & WANG, 1985 [jinnanensis] Changhia Fm, Shanxi, China; ANOMOCARELLIDAE; MCAM.
 Eoapatokephalus ROZOVA, 1983 [Apatokephalus nyaicus ROZOVA, 1968] Nyaisk Horizon, NW Siberia, Russia; REMOPLEURIDIDAE; LORD.
 Eoasaphiscellus JELL, nov. [transversus] Guizhou, China; PROASAPHISCIDAE; MCAM [replacement name for Eoasaphiscus LU & YUAN in LI, 1978].
-Eoasaphiscus HAJRULLINA, 1973 [asiaticus] Maya-ian, Turkestan Ranges, Uzbekistan; ASAPHISCIDAE; MCAM.
+Eoasaphiscus HAJRULLINA, 1973 [asiaticus] Mayaian, Turkestan Ranges, Uzbekistan; ASAPHISCIDAE; MCAM.
 Eoasaphiscus LU & YUAN in LI, 1978 [preocc., replaced by Eoasaphiscellus].
-Eoasaphus KOBAYASHI, 1936d [Liostracus ? super-stes LINNARSSON, 1875] Orusia lenticularis Zone, Sweden; ASAPHIDAE; UCAM [s.o.s. of Anorina].
+Eoasaphus KOBAYASHI, 1936d [Liostracus ? superstes LINNARSSON, 1875] Orusia lenticularis Zone, Sweden; ASAPHIDAE; UCAM [s.o.s. of Anorina].
 Eobronteus REED, 1928b [Entomostracites laticauda WAHLENBERG, 1821] Boda Lst, Dalarne, Sweden; STYGINIDAE; UORD.
 Eocatuniella EGOROVA in EGOROVA & SAVITSKY, 1969 [resupina] Amgaian, Siberia, Russia; ANOMOCARIDAE; MCAM.
 Eoceraurus ESKER, 1964 [Ceraurus (Eoceraurus) trapezoidalis] Bromide Fm, Oklahoma, USA; CHEIRURIDAE; MORD [j.s.s. of Ceraurus, fide LANE, 1971].
@@ -1461,7 +1461,7 @@ Eoctenopyge HENNINGSMOEN, 1957 [Sphaerophthalmus flagellifer ANGELIN, 1854] Andr
 Eocyphinium REED, 1942[clitheroense] Worston Sh Group, England; PROETIDAE; MISS.
 Eocyrtosymbole PILLET, 1973a [magnifica] Angers Lst, Bretagne, France; PROETIDAE; LDEV.
 Eodaguinaspis HUPE, 1953 [abadiei] Amouslek Fm, Morocco; FALLOTASPIDIDAE; LCAM [j.s.s. of Daguinaspis, fide GEYER, 1996].
-Eodalmanitina HENRY, 1964 [Calymene macro-phthalma BRONGNIART, 1822] Schistes a Calymenes, Loire-Atlantique, France; DALMANITIDAE; MORD.
+Eodalmanitina HENRY, 1964 [Calymene macrophthalma BRONGNIART, 1822] Schistes a Calymenes, Loire-Atlantique, France; DALMANITIDAE; MORD.
 Eodamesella J. ZHANG & LIU, 1986 [yinshanensis] Changhia Fm, Inner Mongolia, China; DAMESELLIDAE; MCAM [j.s.s. of Damesella, fide W.T. ZHANG, pers. comm.].
 Eodindymene KIELAN, 1960 [Dindymene pulchra OLIN, 1906] Tretaspis Sh, Scania, Sweden; ENCRINURIDAE; UORD.
 Eodiscus HARTT in WALCOTT, 1884b [pulchellus] New Brunswick, Canada; EODISCIDAE; MCAM.
@@ -1541,7 +1541,7 @@ Erzishania ZHU & QIAN in ZHANG et al., 1980a [latigenata] Tienheban Fm, Sichuan,
 Eshelmania WILSON, 1951 [snoburgensis] Gatesburg Fm, Pennsylvania, USA; DOKIMOCEPHALIDAE; UCAM [j.s.s. of Dellea, fide GRANT, 1965].
 Eskaspis CLARKSON et al., 1977 [Eophacops sufferta LAMONT, 1948b] PHACOPIDAE; LSIL [j.s.s. of Acernaspis, fide HOWELLS, 1982].
 Esmeraldina RESSER & HOWELL, 1938 [Holmia rowei WALCOTT, 1910] Silver Peak Group, Nevada, USA; HOLMIIDAE; LCAM [j.s.s. of Holmia, fide GEYER & PALMER, 1995].
-Esseigania KOBAYASHI, 1943b [tolli] Esseigan River, Siberia, Russia; TSINANIIDAE: UCAM.
+Esseigania KOBAYASHI, 1943b [tolli] Esseigan River, Siberia, Russia; TSINANIIDAE; UCAM.
 Estaingia POCOCK, 1964 [bilobata] Emu Bay Sh, South Australia; ESTAINGIIDAE; LCAM [see NOTE 6].
 Estoniites BALASHOVA, 1976 [Pseudoasaphus tecticaudatus STEINHARDT var. laurssoni OPIK, 1927] Kukruse Stage, Estonia; ASAPHIDAE; UORD.
 Estoniops MANNIL, 1958a [Acaste exilis EICHWALD, 1858] Kukruse Stage, Estonia; PTERYGOMETOPIDAE; UORD.
@@ -1601,7 +1601,7 @@ Fastigaspis POULSEN, 1964 [princeps] Cape Wood Fm, Greenland; DOKIMOCEPHALIDAE; 
 Fatocephalus DUAN & AN in GUO et al.,1982[hunjiangensis] Fengshan Fm, Jilin, China; REMOPLEURIDIDAE; UCAM [j.s.s. of Pseudokainella, fide JELL, 1985].
 Feilongshania QIAN & LIN in YIN & LI, 1978 [brevica] Balang Fm, Guizhou, China; ORYCTOCEPHALIDAE; LCAM.
 Feistia EDGECOMBE & FORTEY, 2000 [energetica] El Carmen Fm, Bolivia; CALMONIIDAE; USIL.
-Fenestraspis BRANI°A& VANĚK, 1973 [amauta] Belen Fm, Chacoma, Bolivia; DALMANITIDAE; LDEV.
+Fenestraspis BRAÑA & VANĚK, 1973 [amauta] Belen Fm, Chacoma, Bolivia; DALMANITIDAE; LDEV.
 Fengduia ZHU in LU et al., 1974b [subcylindrica] Sichuan, China; DAMESELLIDAE; UCAM.
 Fenghuangella YANG in ZHOU et al., 1977 [laochatianensis] Laochatian Fm, Hunan, China; DICERATOCEPHALIDAE; UCAM.
 Fengshania SUN, 1935 [Ptychaspis ? fengshanensis SUN, 1935] Fengshan Fm, Hebei, China; PTYCHASPIDIDAE; UCAM [j.s.s. of Changia, fide SHERGOLD, 1991].
@@ -1619,25 +1619,25 @@ Fissocephalus LERMONTOVA, 1951a [expansus] Boshche-Kulya, NE Kazakhstan; HARPIDI
 Fitzroyaspis LEGG, 1976 [Priceaspis (Fitzroyaspis) guppyi] Emanuel Fm, Western Australia; ASAPHIDAE; LORD [j.s.s. of Priceaspis, fide LAURIE & SHERGOLD, 1996].
 Flabellocephalus J. ZHANG & WANG, 1983 [laevis] Changhia Fm, Shanxi, China; PTEROCEPHALIIDAE; MUCAM.
 Flectihystricurus ADRAIN et al., 2003 [Hystricurus acumennasus ROSS, 1951] Garden City Fm, Idaho, USA; HYSTRICURIDAE; LORD.
-Flexicalymene SHIRLEY, 1936 [Calymene blumenbachii var. caractaci SALTER, 1865] Marsh-brookian, England; CALYMENIDAE; UORD.
+Flexicalymene SHIRLEY, 1936 [Calymene blumenbachii var. caractaci SALTER, 1865] Marshbrookian, England; CALYMENIDAE; UORD.
 Flexidechenella ZHOU, SIVETER & OWENS, 2000 [badainjaranense] Zhusileng Fm, Inner Mongolia, China; PROETIDAE; LDEV.
 Flexiscutellum ŠNAJDR, 1960 [hanusi] Lochkov Fm, Czech Republic; STYGINIDAE; LDEV.
 Folliceps OPIK, 1970 [nans] Currant Bush Lst, Queensland, Australia; NEPEIDAE; MCAM.
 Forbesia McCOY, 1846 [latifrons] Upper Llandovery beds, Roscommon, Ireland; PROETIDAE; LSIL [j.s.s. of Proetus, fide OWENS, 1973b].
 Forchhammeria LERMONTOVA & CHERNYSHEVA in CHERNYSHEVA, 1950 [elegans] Paradoxides forchhammeri Zone, Siberia, Russia; ANOMOCARIDAE; MCAM.
-Fordaspis LOCHMAN, 1956b [Solenopleura nana FORD, 1878] Elliptocephala asaphoides Faun-ule, New York, USA; DORYPYGIDAE; LCAM.
+Fordaspis LOCHMAN, 1956b [Solenopleura nana FORD, 1878] Elliptocephala asaphoides Faunule, New York, USA; DORYPYGIDAE; LCAM.
 Forillonaria LESPERANCE, 1975 [russelli] Grand Greve Fm, Quebec, Canada; DALMANITIDAE; LDEV.
 Formonia RICHTER & RICHTER, 1927b [Drevermannia? formosa RICHTER, 1913] Oberscheld, Rhenish Massif, Germany; PROETIDAE; UDEV.
 Formosagnostus ERGALIEV, 1980 [formosus] Aryusokkanian, Kazakhstan; AMMAGNOSTIDAE; MUCAM [j.s.s. of Hadragnostus, fide PENG & ROBISON, 2000].
 Formosocephalus PEGEL in EGOROVA et al., 1982 [savitzkyi] Ust-Botomsk Fm, Lena River, Siberia, Russia; ANOMOCARIDAE; MCAM.
-Forteyops PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Kawina sexapugia ROSS, 1951] Garden City Fm, Utah, USA; CHEIRURIDAE; LORD.
-Foulonia PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Ceraurinella peregrinus DEAN, 1966] Montagne Noire, France; CHEIRURIDAE; LORD.
+Forteyops PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Kawina sexapugia ROSS, 1951] Garden City Fm, Utah, USA; CHEIRURIDAE; LORD.
+Foulonia PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Ceraurinella peregrinus DEAN, 1966] Montagne Noire, France; CHEIRURIDAE; LORD.
 Foveatella RUDOLPH, 1994 [Solenopleura bucculenta GRONWALL, 1902] Andrarum, Sweden; SOLENOPLEURIDAE; MCAM.
 Fragiscutum WHITTINGTON & CAMPBELL, 1967 [rhytium] Hardwood Mountain Fm, Maine, USA; ENCRINURIDAE; SIL.
 Frammia HOLTEDAHL, 1914 [dissimilis] Douro Fm, Nunavut, Canada; ENCRINURIDAE; USIL.
 Francenaspis ALBERTI, 1969 [Prodrevermannia? deubeli ALBERTI, 1967b] Tentaculitenknollen Lst, Ebersdorf, Oberfranken, Germany; PROETIDAE; LDEV.
 Franconicabole ALBERTI, 1976a [Proetus dillensis DREVERMANN, 1901] Cheiloceras-Stufe, Langenaubach, Rhenish Massif, Germany; PROETIDAE; UDEV.
-Francovichia BRANI°A& VANĚK, 1973 [Odontochile branisi WOLFART, 1968] Belen Fm, Bolivia; DALMANITIDAE; LDEV.
+Francovichia BRAÑA & VANĚK, 1973 [Odontochile branisi WOLFART, 1968] Belen Fm, Bolivia; DALMANITIDAE; LDEV.
 Fremontella HARRINGTON, 1956 [Wanneria halli WALCOTT, 1910] Rome Fm, Alabama, USA; OLENELLIDAE; LCAM.
 Fremontia RAW, 1936 [Olenellus fremonti WALCOTT, 1910] Pioche Fm, Nevada, USA; OLENELLIDAE; LCAM [j.s.s. of Mesonacis, PALMER & REPINA, 1997].
 Frencrinuroides LESPERANCE & DESBIENS, 1995 [Encrinuroides capitonis FREDERICKSON, 1964] Bromide Fm, Oklahoma, USA; ENCRINURIDAE; UORD.
@@ -1654,16 +1654,16 @@ Furia EGOROVA & SHABANOV, 1987 [submissa] Mayaian, Siberia, Russia; ALOKISTOCARI
 Fuscinipyge ORMISTON, 1972[yolkini] Hume Fm, Northwest Territories, Canada; PROETIDAE; MDEV.
 Fuyunia HSIANG & ZHANG in T. ZHANG, 1981 [junggarensis] Basitawu Fm, Xinjiang, China; ASAPHIDAE; UORD.
 Fuzhouwania M. ZHANG & PENG, 1998 [baijiashanensis] Changshan Fm, Shandong, China; MISSISQUOIIDAE; UCAM.
-Gabriceraurus PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Ceraurus gabrielsi LUDVIGSEN, 1979] Esbataottine Fm, Northwest Territories, Canada; CHEIRURIDAE; UORD.
+Gabriceraurus PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Ceraurus gabrielsi LUDVIGSEN, 1979] Esbataottine Fm, Northwest Territories, Canada; CHEIRURIDAE; UORD.
 Gabriellus FRITZ, 1992[lanceatus] Mural Fm, Alberta, Canada; OLENELLIDAE; LCAM.
 Galahetes OPIK, 1975a [fulcrosus] Beetle Creek Fm, Queensland, Australia; XYSTRIDURIDAE; MCAM.
 Galbagnostus WHITTINGTON, 1965a [Agnostus galba BILLINGS, 1865] Table Cove Fm, Newfoundland, Canada; METAGNOSTIDAE; MORD.
 Galeaspis IVSHIN, 1962[sphaerica] Seletinsky Horizon, Kazakhstan; CATILLICEPHALIDAE; UCAM.
-Galerosaukia SHERGOLD, 1975 [galerita] Chats-worth Lst, Queensland, Australia; SAUKIIDAE; UCAM.
+Galerosaukia SHERGOLD, 1975 [galerita] Chatsworth Lst, Queensland, Australia; SAUKIIDAE; UCAM.
 Gallagnostoides KOBAYASHI, 1939b [Aeglina boia HICKS, 1875] Whitlandian, Wales; CYCLOPYGIDAE; LORD [j.s.s. of Microparia, fide FORTEY & OWENS, 1987].
 Gallagnostus HOWELL, 1935b [geminus] Herault, France; AGNOSTINA FAMILY UNCERTAIN; MCAM.
 Galloredlichia JAGO, 1980 [noiri] Orbiel Fm, France; REDLICHIIDAE; LCAM [j.s.s. of Eoredlichia, fide W. ZHANG et al., 1997].
-Gamonedaspis BRANI°A& VANĚK, 1973 [scutata] Belen Fm, Bolivia; DALMANITIDAE; LDEV.
+Gamonedaspis BRAÑA & VANĚK, 1973 [scutata] Belen Fm, Bolivia; DALMANITIDAE; LDEV.
 Gamops ŠNAJDR, 1976b [mrazeki] Dobrotiva Fm, Czech Republic; CYCLOPYGIDAE; MORD [j.s.s. of Girvanopyge, fide FORTEY & OWENS, 1987].
 Gangdeeria ZHANG & YUAN in W. ZHANG et al., 1980b [neimengguensis] Hsuchuang Fm, Inner Mongolia, China; PROASAPHISCIDAE; MCAM.
 Ganinella ELKIN, 1967 [Dechenella batchatensis CHERNYSHEVA, 1951] Poluyakhtobsk Fm, Salair, Russia; PROETIDAE; MDEV.
@@ -1703,7 +1703,7 @@ Gigoutella HUPE, 1953a [atlasensis] Jbel Wawrmast Fm, Morocco; PALAEOLENIDAE; LC
 Giordanella BORNEMANN, 1891 [Illaenus meneghinii BORNEMANN, 1883] Nebida Fm, Sardinia, Italy; DOLEROLENIDAE; LCAM.
 Girandia KOBAYASHI, 1943b [typa] Solenoparia Zone, Kotui River, Siberia, Russia; PAGODIIDAE; UCAM.
 Girvanagnostus KOBAYASHI, 1939a [Agnostus girvanensis REED, 1903] Scotland; METAGNOSTIDAE; ORD [j.s.s. of Arthrorhachis, fide SHERGOLD et al., 1990].
-Girvanopyge KOBAYASHI, 1960a [Lichapyge? prob-lematica REED, 1906a] Whitehouse Subgroup, Scotland; CYCLOPYGIDAE; UORD.
+Girvanopyge KOBAYASHI, 1960a [Lichapyge? problematica REED, 1906a] Whitehouse Subgroup, Scotland; CYCLOPYGIDAE; UORD.
 Gitarra GANDL, 1968 [Griffithides pupuloides LEYH, 1897] Geigen Schiefer, Germany; PROETIDAE; MISS.
 Glaberagnostus ROMANENKO, 1985 [altaicus] Glyptagnostus reticulatus Zone, Gorny Altay, Russia; AGNOSTINA FAMILY UNCERTAIN; UCAM.
 Glabrella LERMONTOVA, 1940 [ventrosa] Amgaian, S Fergarna, Russia; ELLIPSOCEPHALIDAE; MCAM.
@@ -1716,7 +1716,7 @@ Glaphyraspis RESSER, 1937b [Liostracus parvus WALCOTT, 1899] Dry Creek Fm, Wyomi
 Globampyx FORTEY, 1975 [trinucleoides] Valhallfonna Fm, Spitsbergen; RAPHIOPHORIDAE; MORD.
 Globulaspis REED, 1931a [Acidaspis (Globulaspis) prominens] Newlands Fm, Scotland; ODONTOPLEURIDAE; LSIL.
 Globusia OSMOLSKA, 1973 [Cyrtosymbole(?Macrobole) differtigena OSMOLSKA, 1962] Gattendorfia Zone, Holy Cross Mts, Poland; PROETIDAE; MISS.
-Globusiella HAHN, HAHN & BRAUCKMANN, 1992[Globusia (Globusiella) akenteta] Hangen-berg Lst, Sauerland, Germany; PROETIDAE; MISS.
+Globusiella HAHN, HAHN & BRAUCKMANN, 1992[Globusia (Globusiella) akenteta] Hangenberg Lst, Sauerland, Germany; PROETIDAE; MISS.
 Globusoidea HAHN & BRAUCKMANN, 1980 [kelleri] ‘Kieselkalk’, Eulenspiegel, Sauerland, Rhenish Massif, Germany; PROETIDAE; MISS.
 Glockeria WEDEKIND, 1914 [j.o.s. of Phacopidella].
 Glomerites RAFINESQUE, 1817 [see NOTE 2].
@@ -1729,7 +1729,7 @@ Glyphanellus IVSHIN, 1953 [margoritus] Boshchekul Fm, Kazakhstan; ANOMOCARIDAE; 
 Glyphaspellus IVSHIN, 1953 [primus] Boshchekul Fm, Kazakhstan; ANOMOCARIDAE; MCAM.
 Glyphaspis POULSEN, 1927 [Asaphiscus? capella WALCOTT, 1916b] Wolsey Sh, Montana, USA; ANOMOCARELLIDAE; UCAM.
 Glyphopeltis DEISS, 1939 [primus] Saypo Quadrangle, Montana, USA; MARJUMIIDAE; MCAM.
-Glyptagnostotes LAZARENKO, 1966 [elegans] Irvingella Zone, Yakutia, Russia; DIPLAGNOSTIDAE; UCAM [j.s.s. of Pseudo-glyptagnostus, fide SHERGOLD et al., 1990].
+Glyptagnostotes LAZARENKO, 1966 [elegans] Irvingella Zone, Yakutia, Russia; DIPLAGNOSTIDAE; UCAM [j.s.s. of Pseudoglyptagnostus, fide SHERGOLD et al., 1990].
 Glyptagnostus WHITEHOUSE, 1936 [toreuma] Georgina Lst, Queensland, Australia; GLYPTAGNOSTIDAE; UCAM.
 Glyptambon HOLLOWAY, 1981 [Dalmania verrucosa HALL, 1864] Waldron Sh, Indiana, USA; DALMANITIDAE; LSIL.
 Glyptometopsis RASETTI, 1961 [tumida] Frederick Lst, Maryland, USA; DOKIMOCEPHALIDAE; UCAM.
@@ -1767,7 +1767,7 @@ Gracemerea ENGEL & MORRIS, 1989 [archeri] Mal-chi Fm, Queensland, Australia; PRO
 Graciella ROZOVA, 1963 [graciensis] Ketyisky Horizon, NW Siberia, Russia; LONCHOCEPHALIDAE; UCAM.
 Gracilocoryphe PŘIBYL & VANĚK, 1978 [Proetus gracilis BARRANDE, 1846a] Koneprusy Lst, Czech Republic; TROPIDOCORYPHIDAE; LDEV.
 Grandagnostus HOWELL, 1935a [vermontensis] St Albans, Vermont, USA; AGNOSTINA FAMILY UNCERTAIN; MCAM.
-Grandioculus COSSMAN, 1908 [Liostracus meg-alurus DAMES, 1883] Changhia Fm, Shandong, China; PROASAPHISCIDAE; MCAM [replacement name for Megalophthalmus].
+Grandioculus COSSMAN, 1908 [Liostracus megalurus DAMES, 1883] Changhia Fm, Shandong, China; PROASAPHISCIDAE; MCAM [replacement name for Megalophthalmus].
 Granitzia BUCHHOLZ, 1999 [rugiana] Peltura-Stufe, Germany; OLENIDAE; UCAM.
 Granolenus JAGO, 1980 [midi] Alternances Greso-Calcaires, France; DOLEROLENIDAE; LCAM.
 Granularaspis BABCOCK & ST JOHN, 1995 [Granularia obrutchevi POLETAEVA in LERMONTOVA, 1951b] Kuznetsk Alatau, Siberia, Russia; ?DOLICHOMETOPIDAE; LCAM [replacement name for Granularia].
@@ -1834,12 +1834,12 @@ Hallaspis RAASCH & LOCHMAN, 1943 [Amphion? matutina HALL, 1863] Eau Claire Fm, M
 Hamashania KOBAYASHI, 1942d [pulchra] N Hebei, China; SAUKIIDAE; UCAM.
 Hamatolenus HUPE, 1953a [continuus] Asrir Fm, Morocco; ELLIPSOCEPHALIDAE; LCAM.
 Hamiroproetus ŠNAJDR, 1977 [hamiro] Koneprusy Lst, Czech Republic; PROETIDAE; LDEV.
-Hammannopyge PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Acidaspis unica THOMSON, 1857] Balclatchie Fm, Scotland; CHEIRURIDAE; UORD.
+Hammannopyge PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Acidaspis unica THOMSON, 1857] Balclatchie Fm, Scotland; CHEIRURIDAE; UORD.
 Hammatocnemis KIELAN, 1960 [tetrasulcatus] Holy Cross Mts, Poland; PLIOMERIDAE; UORD. [j.s.s. of Ovalocephalus, fide ZHOU & DEAN, 1986].
 Hamptonella RESSER, 1937b [Ptychoparia fitchi WALCOTT, 1887] Schodack Fm, New York, USA; PTYCHOPARIIDAE; LCAM.
 Hanburia WALCOTT, 1916a [gloriosa] Stephen Fm, British Columbia, Canada; ?DOLICHOMETOPIDAE; MCAM.
 Hancrania KOBAYASHI, 1962[brevilimbata] Black Sh, Suang-dong, South Korea; OLENIDAE; UCAM.
-Hanchungolithus LU, 1954a [Cryptolithus multi-seriatus ENDO, 1932] Siliangssu Fm, Shaanxi, China; TRINUCLEIDAE; MORD.
+Hanchungolithus LU, 1954a [Cryptolithus multiseriatus ENDO, 1932] Siliangssu Fm, Shaanxi, China; TRINUCLEIDAE; MORD.
 Hanivella SIVOV in EGOROVA et al., 1955 [primaeva] Tolstochikhin Fm, Salair, Russia; ANOMOCARIDAE; UCAM.
 Haniwa KOBAYASHI, 1933a [sosanensis] Tsinania Zone, Korea; REMOPLEURIDIDAE; UCAM.
 Haniwapyge ROZOVA in ROZOVA et al., 1985 [maslyanini] Maslyaninsk Horizon, NW Salair, Russia; CERATOPYGIDAE; LORD [j.s.s. of Macropyge, fide PENG, 1990]
@@ -1854,11 +1854,11 @@ Hapsidocare SHERGOLD, 1975 [chydaeum] Chatsworth Lst, Queensland, Australia; KAO
 Harataspis EGOROVA & SAVITSKY, 1969 [lauta] Mayaian, N Siberia, Russia; ANOMOCARIDAE; MCAM.
 Hardyia WALCOTT, 1924b [metion] Mons Fm, Alberta, Canada; MISSISQUOIIDAE; UCAM.
 Hardyoides KOBAYASHI, 1938a [minor] Bison Ck Fm, British Columbia, Canada; NORWOODIIDAE; UCAM.
-Harpes GOLDFUSS, 1839 [macrocephalus] Junker-berg Fm (Auburg-Schichten), Gerolstein, Eifel, Germany; HARPETIDAE; MDEV.
+Harpes GOLDFUSS, 1839 [macrocephalus] Junkerberg Fm (Auburg-Schichten), Gerolstein, Eifel, Germany; HARPETIDAE; MDEV.
 Harpesoides KOROLEVA, 1978a [karamolensis] Kazakhstan; HARPETIDAE; UORD [j.s.s. of Paraharpes (=Hibbertia), fide PŘIBYL & VANĚK, 1986].
 Harpidella McCOY, 1849 [Harpes? megalops McCOY, 1846] Kilbride Fm, Galway, Ireland; AULACOPLEURIDAE; LSIL.
 Harpides BEYRICH, 1846 [hospes] Tremadoc, Czech Republic; HARPIDIDAE; LORD.
-Harpidoides PETRUNINA, APOLLONOV, & CHU-GAEVAin APOLLONOV & CHUGAEVA, 1983 [Harpides ulumandensis POLETAEVA, 1945] Kitat Fm, Kuznetsk Alatau, Russia; HARPIDIDAE; UCAM.
+Harpidoides PETRUNINA, APOLLONOV, & CHUGAEVA in APOLLONOV & CHUGAEVA, 1983 [Harpides ulumandensis POLETAEVA, 1945] Kitat Fm, Kuznetsk Alatau, Russia; HARPIDIDAE; UCAM.
 Harpillaenus WHITTINGTON, 1963 [Illaenus arcuatus BILLINGS, 1865] Shallow Bay Fm, Newfoundland, Canada; ILLAENIDAE; MORD.
 Harpina NOVÁK, 1885 [preocc., replaced by Eoharpes].
 Harringtonacaste BALDIS & BLASCO in BALDIS et al., 1976 [harringtoni] Lipeon Fm, Argentina; ACASTIDAE; USIL/LDEV.
@@ -1869,7 +1869,7 @@ Hartshillina LAKE, 1940 [Hartshillia spinata ILLING, 1916] Abbey Sh, England; CO
 Hassiabole HAHN, HAHN & MULLER, 1996 [plexaura] Erdbach Lst, Hessen, Germany; PROETIDAE; MISS.
 Hastagnostus HOWELL, 1937 [angustus] St Albans Sh, Vermont, USA; AGNOSTINA FAMILY UNCERTAIN; MCAM.
 Hastiremopleurides YIN, 1980 [Remopleurides (Hastiremopleurides) bijieensis] Chientsaokou Fm, Guizhou, China; REMOPLEURIDIDAE; UORD.
-Hatangia EGOROVA & SAVITSKY, 1968 [scita] Ma-yaian, N Siberia, Russia; PROASAPHISCIDAE; MCAM.
+Hatangia EGOROVA & SAVITSKY, 1968 [scita] Mayaian, N Siberia, Russia; PROASAPHISCIDAE; MCAM.
 Hausmannia HALL & CLARK, 1888 [unnecessary replacement and thus j.o.s. of Odontochile].
 Hausmannia ETHERIDGE & MITCHELL, 1895 [preocc., not replaced, j.s.s. of Dalmanites, fide MITCHELL, 1919].
 Hawkinsaspis RASETTI, 1968 [Hawkinsia minuta RASETTI, 1965a] Maryville Lst, Tennessee, USA; LONCHOCEPHALIDAE; UCAM [replacement name for Hawkinsia].
@@ -1893,19 +1893,19 @@ Heliomera RAYMOND, 1905c [Cheirurus sol BILLINGS, 1865] Table Cove Fm, Newfoundl
 Heliomeroides EVITT, 1951 [teres] Lincolnshire Fm, Virginia, USA; CHEIRURIDAE; UORD.
 Helioproetus RICHTER & RICHTER, 1919 [“Proetus” (sub.?) ebersdorfensis RICHTER, 1913] Dzikowiec (Ebersdorf), L Silesia, Poland; PROETIDAE; UDEV.
 Heliopyge HAAS & MENSINK, 1970 [Asteropyge (Comura) helios RICHTER & RICHTER, 1926] Manticoceras-Stufe, Rhenish Massif, Belgium; ACASTIDAE; MDEV.
-Helmutia FEIST & ORTH, 2000 [Orbitoproetus (Hel-mutia) rissanensis] Eifelian-Givetian boundary stratotype, Djebel Mech Irdane, 12km SW of Rissani, Tafilalet, Morocco; PROETIDAE; MDEV.
+Helmutia FEIST & ORTH, 2000 [Orbitoproetus (Helmutia) rissanensis] Eifelian-Givetian boundary stratotype, Djebel Mech Irdane, 12km SW of Rissani, Tafilalet, Morocco; PROETIDAE; MDEV.
 Helokybe THOMAS in THOMAS & NARBONNE, 1979 [spio] Douro Fm, Nunavut, Canada; PROETIDAE; USIL.
 Hemiarges GURICH, 1901 [Lichas (Arges) wesenbergensis SCHMIDT, 1885] Rakvere Lst, Estonia; LICHIDAE; UORD.
 Hemibarrandia PRANTL & PŘIBYL, 1949b [Nileus holoubkovensis RŮŽIČKA, 1926] Třenice Fm, Czech Republic; PANDERIIDAE; LORD.
 Hemicricometopus LU & QIAN in LU et al., 1974a [duyunensis] Guizhou, China; PTYCHOPARIIDAE; MCAM.
 Hemigyraspis RAYMOND, 1910a [Asaphus (Isotelus) affinis McCOY, 1849] Upper Tremadoc Series, Tremadog near Porthmadog, Gwynedd, Wales; ASAPHIDAE; LORD [j.s.s. of Asaphellus, fide LAKE, 1942].
 Hemikaolishania Q.Z. ZHANG in QIU et al., 1983 [xiangshanensis] Changshan Fm, Jiangsu, China; KAOLISHANIIDAE; UCAM.
-Hemirhodon RAYMOND, 1937 [schucherti] Hun-gerford Sh, Vermont, USA; DOLICHOMETOPIDAE; MCAM.
+Hemirhodon RAYMOND, 1937 [schucherti] Hungerford Sh, Vermont, USA; DOLICHOMETOPIDAE; MCAM.
 Hemisphaerocoryphe REED, 1896 [Sphaerexochus pseudohemicranium NIESZKOWSKI, 1859] Johvi Stage, Estonia; CHEIRURIDAE; UORD [j.s.s. of Sphaerocoryphe, fide LANE, 1971].
 Henadoparia OPIK, 1967 [integra] O’Hara Sh, Queensland, Australia; CEDARIIDAE; MUCAM.
 Hentigia HAAS et al., 1980 [bulbops] Artinskian, Afghanistan; PROETIDAE; LPERM.
 Heptabronteus WEBBY, 1974 [atavus] Cliefden Caves Lst, New South Wales, Australia; STYGINIDAE; UORD [j.s.s. of Kosovopeltis, fide HOWELLS, 1982].
-Heraspis WANDAS, 1984 [Megistaspis heroica BOHLIN, 1960] Valaste Substage, Inger-mannland, Norway; ASAPHIDAE; MORD.
+Heraspis WANDAS, 1984 [Megistaspis heroica BOHLIN, 1960] Valaste Substage, Ingermanland, Norway; ASAPHIDAE; MORD.
 Hercantyx OPIK, 1963 [rudis] Pomegranate Lst, Queensland, Australia; ?DAMESELLIDAE; UCAM.
 Hermosella LU & QIAN in YIN & LI, 1978 [sanduensis] Sandu Fm, Guizhou, China; ALSATASPIDIDAE; UCAM [j.s.s. of Jegorovaia, fide PENG, 1992].
 Herse HAWLE & CORDA, 1847 [neubergii] Jince Fm, Czech Republic; SOLENOPLEURIDAE; MCAM [preocc., not replaced; s.o.s. of Solenopleurina].
@@ -1952,14 +1952,14 @@ Holocephalites ZHOU in ZHOU et al., 1982[punctatus] Xiangshan Fm, Ningxia Hui, C
 Holomeris HAWLE & CORDA, 1847 [Bronteus (Holomeris) transversus] Koneprusy Lst, Czech Republic; STYGINIDAE; LDEV [s.s.s. ofBojoscutellum, fide ŠNAJDR, 1983b].
 Holometopus ANGELIN, 1854 [preocc., replaced by Warburgella].
 Holotrachelus HOLM, 1898 [Homalonotus punctillosus TORNQUIST, 1884] Boda Lst, Dalarne, Sweden; HOLOTRACHELIDAE; UORD.
-Holoubkocheilus MERGL, 1994 [Eulomina gran-ulatum RŮŽIČKA, 1926] Třenice Fm, Czech Republic; BAVARILLIDAE; LORD.
+Holoubkocheilus MERGL, 1994 [Eulomina granulatum RŮŽIČKA, 1926] Třenice Fm, Czech Republic; BAVARILLIDAE; LORD.
 Holoubkovia PŘIBYL & VANĚK, 1969 [Lichas klouceki RŮŽIČKA, 1926] Třenice Fm, Czech Republic; LICHIDAE; LORD [j.s.s. of Metopolichas, fide THOMAS & HOLLOWAY, 1988].
 Holstonia RESSER, 1938b [holstonensis] Nolichucky Fm, Virginia, USA; CEDARIIDAE; UCAM [j.s.s. of Bonneterrina, fide LOCHMAN in MOORE, 1959].
 Holteria WALCOTT, 1924b [Ogygia ? problematica WALCOTT, 1884a] Secret Canyon Sh, Nevada, USA; DORYPGIDAE; MCAM.
 Holubaspis PŘIBYL, 1950 [Holubia bohemica KLOUČEK, 1931] Milina Fm, Czech Republic; ?HYSTRICURIDAE; LORD [replacement name for Holubia].
 Holubia KLOUČEK, 1931 [preocc., replaced by Holubaspis].
 Holyoakia PALMER in PALMER & ROWELL, 1995 [granulosa] Shackelton Lst, Antarctica; EMUELLIDAE; LCAM.
-Homagnostoides KOBAYASHI, 1939a [Agnostus fer-ralsensis MUNIER-CHALMAS & BERGERON in BERGERON, 1889] Herault, France; METAGNOSTIDAE; LORD.
+Homagnostoides KOBAYASHI, 1939a [Agnostus ferralsensis MUNIER-CHALMAS & BERGERON in BERGERON, 1889] Herault, France; METAGNOSTIDAE; LORD.
 Homagnostus HOWELL, 1935c [Agnostus pisiformis var. obesus BELT, 1867] Lower Lingula Flags, N Wales; AGNOSTIDAE; UCAM.
 Homalonotus KONIG, 1825 [knightii] Ludlow Series, England; HOMALONOTIDAE; USIL.
 Homalops REMELE, 1884 [altumii] glacial erratics, Ostseekalk, Eberswelde, Germany; PTERYGOMETOPIDAE; UORD [preocc., never replaced; s.s.s. of Calyptaulax, fide MOORE, 1959].
@@ -1975,7 +1975,7 @@ Hongjunshaoia LUO in LUO et al., 1994 [kanfuqingensis] Tsanglangpu Fm, Yunnan, C
 Hongshiyanaspis W. ZHANG & LIN in W. ZHANG et al., 1980a [yiliangensis] Chiungchussu Fm, Yunnan, China; METADOXIDIDAE; LCAM.
 Hoplolichas DAMES, 1877 [Lichas tricuspidata BEYRICH, 1846] erratic boulder, Sorau, N Germany; LICHIDAE; UORD.
 Hoplolichoides PHLEGER, 1936 [Lichas conicotuberculata NIESZKOWSKI, 1859] Kukruse Stage, Estonia; LICHIDAE; UORD.
-Horbusonia SALIKOVA, 1987 [sulita] Tyuss-salinsk Fm, NE Siberia, Russia; PTYCHOPARIIDAE; MCAM.
+Horbusonia SALIKOVA, 1987 [sulita] Tyussalinsk Fm, NE Siberia, Russia; PTYCHOPARIIDAE; MCAM.
 Horonastes OPIK, 1982[eminens] Currant Bush Limestone, Northern Territory, Australia; DOLICHOMETOPIDAE; MCAM.
 Hospes STUBBLEFIELD in STUBBLEFIELD & BULMAN, 1927 [clonograpti] Shineton Sh Fm, England; UNCERTAIN; LORD.
 Houmaia J. ZHANG & WANG, 1985 [jinnanensis] Hsuchuang Fm, Shanxi, China; WUANIIDAE; MCAM.
@@ -2006,7 +2006,7 @@ Humaencrinuroides NAN, 1985b [Encrinuroides (Humaencrinuroides) pentagonalis] Wu
 Humeia ORMISTON, 1975 [Dechenella (Dechenella) retusa ORMISTON, 1967] Blue Fiord Fm, Nunavut, Canada; PROETIDAE; MDEV.
 Humilogriffithides INAI, 1936 [divinopleurus] Liaoning, China; PROETIDAE; PENN.
 Hunanaspis ZHOU in ZHOU et al., 1977 [gracilis] Huaqiao Fm, Hunan, China; ANOMOCARIDAE; UCAM.
-Hunanocephalus LI in EGOROVAet al., 1963 [ovalis] Chiungchussu Fm, Hunan, China; ORYCTOCEPHALIDAE; MCAM.
+Hunanocephalus LI in EGOROVA et al., 1963 [ovalis] Chiungchussu Fm, Hunan, China; ORYCTOCEPHALIDAE; MCAM.
 Hunanolenus LIU, 1977 [aglaos] Huaqiao Fm, Hunan, China; OLENIDAE; UCAM.
 Hunanoproetus J. YANG, 1981 [robustus] Shidengzi Fm, Hunan, China; LINGUAPROETIDAE; MISS.
 Hunanopyge PENG, 1984 [sejuncta] Shenjiawan Fm, Hunan, China; CERATOPYGIDAE; UCAM.
@@ -2032,7 +2032,7 @@ Hydrocephalus BARRANDE, 1846a [carens] Jince Fm, Czech Republic; PARADOXIDIDAE; 
 Hydrolaenus SALTER, 1867 [Illaenus conifrons BILLINGS, 1859] Mingan Islands, Quebec, Canada; STYGINIDAE; UORD [j.s.s. of Thaleops, fide JAANUSSON, 1954].
 Hypagnostus JAEKEL, 1909 [Agnostus parvifrons LINNARSSON, 1869] Vastergotland, Sweden; PERONOPSIDAE; MCAM.
 Hypaproetus WU, 1977 [guizhouensis] Guizhou, China; PROETIDAE; LSIL.
-Hyperagnostus KOBAYASHI, 1955b [binodosus] Mons Fm, British Columbia, Canada; DIPLAGNOSTIDAE; LORD [j.s.s. of Pseudo-rhaptagnostus, fide NIELSEN, 1997].
+Hyperagnostus KOBAYASHI, 1955b [binodosus] Mons Fm, British Columbia, Canada; DIPLAGNOSTIDAE; LORD [j.s.s. of Pseudorhaptagnostus, fide NIELSEN, 1997].
 Hyperbolochilus ROSS, 1951 [marginauctum] Garden City Fm, Idaho, USA; HYSTRICURIDAE; LORD.
 Hypermecaspis HARRINGTON & LEANZA, 1957 [inermis] Parcha Fm, Salta, Argentina; OLENIDAE; LORD.
 Hyperoparia Q.Z ZHANG in QIU et al., 1983 [conicata] Hsuchuang Fm, Anhui, China; SOLENOPLEURIDAE; MCAM.
@@ -2044,7 +2044,7 @@ Hysterolenus MOBERG, 1898 [toernquisti] Sandby, Sweden; CERATOPYGIDAE; LORD.
 Hysteropleura RAYMOND, 1937 [macgerriglei] Rockledge Cgte, Vermont, USA; MENOMONIIDAE; UCAM.
 Hystricurus RAYMOND, 1913a [Bathyurus conicus BILLINGS, 1859] Beauharnois Fm, Quebec, Canada; HYSTRICURIDAE; LORD.
 Iberocoryphe HAMMANN, 1977 [verneuili] Llandeilo, “Fuencaliente VIII,” Spain; HOMALONOTIDAE; MORD.
-Ibexaspis PŘIBYL & VANĚKinPŘIBYLet al., 1985b [Protopliomerops quattuor brevis YOUNG, 1973] Fillmore Fm, Utah, USA; PLIOMERIDAE; LORD.
+Ibexaspis PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Protopliomerops quattuor brevis YOUNG, 1973] Fillmore Fm, Utah, USA; PLIOMERIDAE; LORD.
 Ibexicurus ADRAIN et al., 2003 [parsonsi] House Fm, Utah, USA; HYSTRICURIDAE; LORD.
 Ichangia W. ZHANG in LU et al., 1965 [ichangensis] Tsanglangpu Fm, Hubei, China; ESTAINGIIDAE; LCAM.
 Ichangolithus LU, 1963 [ichangensis] Dawan Fm, Hubei, China; TRINUCLEIDAE; LORD [j.s.s. of Hanchungolithus, fide ZHOU & HUGHES, 1989].
@@ -2063,7 +2063,7 @@ Iglesiella RASETTI, 1972[ichnusae] Nebida Fm, Sardinia, Italy; REDLICHIIDAE; LCA
 Ignoproetus ŠNAJDR, 1977 [fortoxin] Suchomasty Fm, Czech Republic; TROPIDOCORYPHIDAE; MDEV.
 Ignotogregatus W. ZHANG & JELL, 1987 [manholi] Changhia Fm, Liaoning, China; IGNOTOGREGATIDAE; MCAM.
 Ijacephalus OGIENKO, 1974 [convexus] Ustkut Fm, S Siberia, Russia; ACROCEPHALITIDAE; LORD.
-Illaenoides WELLER, 1907 [triloba] Racine Fm, Illinois, USA; STYGINIDAE: LSIL.
+Illaenoides WELLER, 1907 [triloba] Racine Fm, Illinois, USA; STYGINIDAE; LSIL.
 Illaenopsis SALTER, 1866b [thomsoni] Hope Sh Fm, England; NILEIDAE; MORD.
 Illaenoscutellum KOBAYASHI & HAMADA, 1974 [platiceps] Yokokura-yama, Shikoku, Japan; STYGINIDAE; USIL.
 Illaenula CHLUPAC, 1977 [Ductina (Illaenula) illaenoides] Stinava-Chabicov Fm, Moravia, Czech Republic; PHACOPIDAE; MDEV.
@@ -2099,7 +2099,7 @@ Iranochuangia KOBAYASHI, 1960b [Chuangia nais var. persicum KING, 1937] Dimeh Sa
 Iranoleesia KING, 1955 [Irania pisiformis KING, 1937] Ma’dan, Iran; PROASAPHISCIDAE; MCAM [replacement name for Irania].
 Irgitkhemia CHERNYSHEVA, 1977 [insolita] Irgitkhem Fm, Tuva, Russia; REDLICHIIDAE; LCAM.
 Iriania ARCHBOLD, 1981 [jayae] Irian Jaya, Indonesia; BRACHYMETOPIDAE; PERM [j.s.s. of Brachymetopus, fide MORRIS, 1988].
-Irinia EGOROVA & SAVITSKY, 1968 [arcuata] May-aian, N Siberia, Russia; ANOMOCARIDAE; MCAM.
+Irinia EGOROVA & SAVITSKY, 1968 [arcuata] Mayaian, N Siberia, Russia; ANOMOCARIDAE; MCAM.
 Irvingella ULRICH & RESSER in WALCOTT, 1924b [major] Franconia Fm, Wisconsin, USA; ELVINIIDAE; UCAM.
 Irvingellina KOBAYASHI, 1938a [protuberans] Bison Ck Fm, British Columbia, Canada; ELVINIIDAE; UCAM [j.s.s. of Irvingella, fide PALMER, 1965].
 Irvingelloides KOBAYASHI, 1935c [Irvingella? orientalis KOBAYASHI, 1934b] Clarkella Zone, Saisho-ri, South Korea; UNCERTAIN; LORD.
@@ -2146,7 +2146,7 @@ Jasperia THOMAS & HOLLOWAY, 1988 [Acanthopyge (Mephiarges) bifida EDGELL, 1955] 
 Jeffersonia POULSEN, 1927 [exterminata] Nunatami Fm, NW Greenland; BATHYURIDAE; LORD.
 Jegorovaia LU in WANG, 1964 [expansa] Siyangshan Fm, Zhejiang, China; ALSATASPIDIDAE; UCAM.
 Jeholaspis KOBAYASHI, 1953b [j.o.s. of Saukioides].
-Jemtella THORSLUND, 1940 [clava] Lower Chas-mops Lst, Jemtland, Sweden; ENCRINURIDAE; UORD [j.s.s. of Oedicybele, fide KIELAN, 1957].
+Jemtella THORSLUND, 1940 [clava] Lower Chasmops Lst, Jemtland, Sweden; ENCRINURIDAE; UORD [j.s.s. of Oedicybele, fide KIELAN, 1957].
 Jenkinsonia ROBISON, 1971 [varga] Wheeler Sh, Utah, USA; ALOKISTOCARIDAE; MCAM.
 Jessievillia HOHENSEE in HOHENSEE & STITT, 1989 [radiatus] Collier Sh, Arkansas, USA; ELVINIIDAE; UCAM.
 Jiagouia QIU in QIU et al., 1983 [jiagouensis] Hsuchuang Fm, Jiangsu, China; SOLENOPLEURIDAE; MCAM.
@@ -2165,7 +2165,7 @@ Jimachongia YUAN & YIN, 1998 [lata] Chefu Fm, Guizhou, China; CEDARIIDAE; UCAM.
 Jimanomocare YUAN & YIN, 1998 [nanum] Chefu Fm, Guizhou, China; ANOMOCARIDAE; MCAM.
 Jimaoshania QIU in QIU et al., 1983 [conica] Mao-chuang Fm, Jiangsu, China; PTYCHOPARIIDAE; MCAM.
 Jimbokranion KOBAYASHI & HAMADA, 1984c [subovalis] Kanokura Fm, Japan; PROETIDAE; PERM.
-Jinanaspis ZHOU & ZHANG, 1984 [scabridum] Wan-liangtingia Fm, Jilin, China; LEIOSTEGIIDAE; LORD.
+Jinanaspis ZHOU & ZHANG, 1984 [scabridum] Wanliangtingia Fm, Jilin, China; LEIOSTEGIIDAE; LORD.
 Jincella ŠNAJDR, 1957b [Solenopleura prantli RŮŽIČKA, 1946] Jince Fm, Czech Republic; SOLENOPLEURIDAE; MCAM.
 Jinghediscus XIANG & ZHANG, 1985 [nummularius] Xystridura Zone, Xinjiang, China; WEYMOUTHIIDAE; MCAM [?j.s.s. of Mallagnostus, fide JELL, 1997].
 Jingheella XIANG & ZHANG, 1984 [Pseudokainella (Jingheella) jingheensis] Sayram Fm, Xinjiang, China; REMOPLEURIDIDAE; LORD.
@@ -2229,9 +2229,9 @@ Kasachstania MAKSIMOVA, 1972[Dalmanites saryarkensis MAKSIMOVA, 1960] Kokbaytel 
 Kasatchaspis IVSHIN, 1962[borukaevi] Seletinsky Horizon, Kazakhstan; CREPICEPHALIDAE; UCAM.
 Kaskia WELLER, 1936 [chesterensis S.WELLER & J.M.WELLER in WELLER, 1936] Renault Fm, Kentucky, USA; PROETIDAE; MISS.
 Kassinius IVSHIN, 1953 [kassini] Boshchekul Fm, Kazakhstan; NAMANOIIDAE; MCAM.
-Kathleenella LUDVIGSEN, 1982[subula] Rabbit-kettle Fm, Northwest Territories, Canada; PTYCHASPIDIDAE; UCAM.
+Kathleenella LUDVIGSEN, 1982[subula] Rabbitkettle Fm, Northwest Territories, Canada; PTYCHASPIDIDAE; UCAM.
 Kathrynia WESTROP, 1986b [limbata] Mistaya Fm, Alberta, Canada; HARPETIDAE; UCAM.
-Kathwaia GRANT, 1966 [capitorosa] Middle Pro-ductus Lst, Salt Range, Pakistan; PROETIDAE; UPERM.
+Kathwaia GRANT, 1966 [capitorosa] Middle Productus Lst, Salt Range, Pakistan; PROETIDAE; UPERM.
 Katunia ROMANENKO & ROMANENKO, 1962 [chachlovi] Suyark Fm, Gorny Shoria, S Siberia, Russia; ANTAGMIDAE; MCAM.
 Katunicare M. ROMANENKO in ROMANENKO & ROMANENKO, 1967 [visendum] Gorny Altay, S Siberia, Russia; ALOKISTOCARIDAE; MCAM.
 Kaufmannella SDZUY, 1979 [Kaufmannia lauta SDZUY, 1961] Leimitz Sh, Bavaria, Germany; CERATOPYGIDAE; LORD [replacement name for Kaufmannia].
@@ -2271,7 +2271,7 @@ Kilmahogia LAMONT, 1975 [jamesbeggi] Leny Lst, Scotland; INDET. LCAM.
 Kindbladia FREDERICKSON, 1948 [Berkeia wichitaensis RESSER, 1942b] Honey Ck, Lst, Oklahoma, USA; DOKIMOCEPHALIDAE; UCAM.
 Kinderlania ANTSYGIN, 1977 [tschegodaevi] Kara-kol-Mikhailovsk Horizon, S Urals, Russia; HOLOTRACHELIDAE; LORD.
 Kingaspidoides HUPE, 1953a [armatus] Jbel Wawr-mast Fm, Morocco; ELLIPSOCEPHALIDAE; LCAM.
-Kingaspis KOBAYASHI, 1935c [Anomocare camp-belli KING, 1923] Burj Lst, Israel; ELLIPSOCEPHALIDAE; LCAM.
+Kingaspis KOBAYASHI, 1935c [Anomocare campbelli KING, 1923] Burj Lst, Israel; ELLIPSOCEPHALIDAE; LCAM.
 Kingstonella ROZOVA, 1960a [Kingstonia walcotti RESSER, 1938b] Nolichucky Fm, Tennessee; KINGSTONIIDAE; UCAM [j.s.s. of Kingstonia, fide ADRAIN, herein].
 Kingstonia WALCOTT, 1924b [apion] Maryville Fm, Tennessee, USA; KINGSTONIIDAE; UCAM.
 Kingstonioides RASETTI, 1963a [laevigatus] Levis Fm, Quebec, Canada; KINGSTONIIDAE; MCAM.
@@ -2289,7 +2289,7 @@ Klimaxocephalus SUN & ZHU in ZHOU et al., 1977 [verus] Guangzhuling Fm, Hubei, C
 Klotziella RAYMOND, 1928 [Bathyuriscus ornatus WALCOTT, 1908] Stephen Fm, British Columbia, Canada; DOLICHOMETOPIDAE; MCAM.
 Kloucekia DELO, 1935 [Phacops phillipsii BARRANDE, 1846a] ZahoIany Fm, Czech Republic; ACASTIDAE; UORD.
 Knechtelia LOCHMAN, 1950 [ann] Pilgrim Fm, Montana, USA; MENOMONIIDAE; UCAM.
-Kobayashella IVSHIN, 1962[problematica] Seletin-sky Horizon, Kazakhstan; APHELASPIDIDAE; UCAM.
+Kobayashella IVSHIN, 1962[problematica] Seletinsky Horizon, Kazakhstan; APHELASPIDIDAE; UCAM.
 Kobayashia HARRINGTON, 1938 [Xenostegium taurus WALCOTT, 1925] Chushina Fm, British Columbia, Canada; ASAPHIDAE; LORD.
 Kobayashipeltis MAKSIMOVA, 1978a [Scutellum (Thysanopeltella) paucispinosa OCUBO, 1951] Japan; STYGINIDAE; MDEV.
 Kobdus KOROBOV, 1989 [trapeziformis] Akbashinsky Fm, W Mongolia; JAKUTIDAE; LCAM.
@@ -2299,13 +2299,13 @@ Kochiellina PALMER in PALMER & HALLEY, 1979 [groomensis] Carrara Fm, Nevada, USA
 Kochina RESSER, 1935 [Olenopsis americanus WALCOTT, 1912c] Gordon Fm, Montana, USA; PTYCHOPARIIDAE; MCAM.
 Kodymaspis PRANTL & PŘIBYL, 1949d [Illaenuspuer BARRANDE, 1872] Šárka Fm, Czech Republic; NILEIDAE; MORD.
 Koenigia SALTER, 1865 [j.o.s. of Homalonotus].
-Kogenium KOBAYASHI, 1935c [rotundum] Olen-oides Zone, South Korea; CERATOPYGIDAE; UCAM.
+Kogenium KOBAYASHI, 1935c [rotundum] Olenoides Zone, South Korea; CERATOPYGIDAE; UCAM.
 Koksorenus KOROLEVA, 1992[kazakhstanensis] Karamolinsk Fm, Kazakhstan; ENCRINURIDAE; UORD.
 Kokuria KOBAYASHI, 1935c [typa] Kaolishania Zone, South Korea; ANOMOCARIDAE; UCAM.
 Kolbaspis REPINA, 1979a [sajanica] Sinersky Fm, S Siberia, Russia; REDLICHINIDAE; LCAM.
 Kolbinella REPINA, 1960 [prima] Kolbinsk Fm, E Sayan, Russia; ANOMOCARIDAE; LCAM.
 Koldinia WALCOTT & RESSER, 1925 [typa] Gribovii Fjord, Novaya Zemlya, Russia; PLETHOPELTIDAE; UCAM.
-Koldiniella SIVOV in EGOROVAet al., 1955 [mitella] Salair Fm, Salair, Russia; PLETHOPELTIDAE; UCAM.
+Koldiniella SIVOV in EGOROVA et al., 1955 [mitella] Salair Fm, Salair, Russia; PLETHOPELTIDAE; UCAM.
 Koldinioidia KOBAYASHI, 1931 [typicalis] Fengshan Fm, Liaoning, China; SHUMARDIIDAE; UCAM.
 Kolihapeltis PRANTL & PŘIBYL, 1947b [Bronteus parabolinus BARRANDE, 1882] Dvorce-Prokop Lst, Czech Republic; STYGINIDAE; LDEV.
 Kollarcephalus BREZINSKI, 2000b [granatai] Caballero Fm, New Mexico, USA; PROETIDAE; MISS.
@@ -2328,13 +2328,13 @@ Koreaspis RICHTER, 1942[inappropriate emendation of Koraipsis].
 Kormagnostella E. ROMANENKO in ROMANENKO & ROMANENKO, 1967 [glabrata] Gorny Altay, S Siberia, Russia; AMMAGNOSTIDAE; UCAM [j.s.s. of Kormagnostus, fide PENG & ROBISON, 2000].
 Kormagnostus RESSER, 1938b [simplex] Nolichucky Fm, Tennessee; AMMAGNOSTIDAE; UCAM.
 Korobovia JELL in BENGTSON et al., 1990 [ocellata] Oraparinna Sh, South Australia; CALODISCIDAE; LCAM.
-Korolevium PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Sphaerexochus arenosus CHATTERTON & LUDVIGSEN, 1976] Esbataottine Fm, Northwest Territories, Canada; CHEIRURIDAE; UORD. [j.s.s. of SPHAEREXOCHUS, fide ADRAIN, herein].
+Korolevium PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Sphaerexochus arenosus CHATTERTON & LUDVIGSEN, 1976] Esbataottine Fm, Northwest Territories, Canada; CHEIRURIDAE; UORD. [j.s.s. of SPHAEREXOCHUS, fide ADRAIN, herein].
 Kosovopeltis ŠNAJDR, 1958c [svobodai] Kopanina Fm, Czech Republic; STYGINIDAE; USIL.
 Kosovoproetus ŠNAJDR, 1981b [migrenin] Kopanina Fm, Czech Republic; PROETIDAE; USIL.
 Kotuia KOBAYASHI, 1943b [anomocaroides] Solenoparia Zone, Kotui River, Siberia, Russia; ANOMOCARIDAE; MCAM.
 Kotysopeltis VANĚK et al., 1991 [kotysensis] Lochkov Fm, Czech Republic; STYGINIDAE; LDEV.
 Kounamkites LERMONTOVA in CHERNYSHEVA et al., 1956 [virgatus CHERNYSHEVA in CHERNYSHEVA et al., 1956] Amgaian, River Olenek, N Siberia, Russia; PTYCHOPARIIDAE; MCAM.
-Kozlowskiaspis BRANI°A& VANĚK, 1973 [superna] Icla Fm, Bolivia; CALMONIIDAE; LDEV.
+Kozlowskiaspis BRAÑA & VANĚK, 1973 [superna] Icla Fm, Bolivia; CALMONIIDAE; LDEV.
 Krambedrysia HAHN, HAHN & BRAUCKMANN, 1992[kretzorum] Bromberg Fm, Wuppertal, Rhenish Massif, Germany; PROETIDAE; MISS.
 Krattaspis OPIK, 1937 [viridatus] Maekula-Schichten, Estonia; CHEIRURIDAE; LORD.
 Krohbole KOBAYASHI & HAMADA, 1972[Perakaspis (Krohbole) elongata] Kroh, Malaysia; TROPIDOCORYPHIDAE; LMDEV.
@@ -2351,7 +2351,7 @@ Kulyumbopeltis ROZOVA, 1968 [kulyumbensis] Entsy Horizon, NW Siberia, Russia; PL
 Kunmingaspis W. ZHANG, 1964b [yunnanensis] Douposi Fm, Yunnan, China; PTYCHOPARIIDAE; LMCAM.
 Kunshanagnostus QIAN & ZHOU, 1984 [kunshanensis] Kunshan County, Jiangsu, China; AMMAGNOSTIDAE; UCAM [j.s.s. of Formosagnostus (=Hadragnostus), fide SHERGOLD et al., 1990].
 Kunshanaspis Q. ZHANG & ZHOU, 1985 [suzhouensis] Kunshan County, Jiangsu, China; ORYCTOCEPHALIDAE; LCAM.
-Kuraspis CHERNYSHEVAin KRYSKOV et al., 1960 [obscura] Markhinsk Fm, N Siberia, Russia; LONCHOCEPHALIDAE; UCAM.
+Kuraspis CHERNYSHEVA inKRYSKOV et al., 1960 [obscura] Markhinsk Fm, N Siberia, Russia; LONCHOCEPHALIDAE; UCAM.
 Kuraspoides OGIENKO & GARINA, 1999 [planus] Malykaisk Fm, E Siberia, Russia; LONCHOCEPHALIDAE; UCAM.
 Kuruktagaspis T. ZHANG, 1981 [convexa] Torsuqtagh Fm, Xinjiang, China; SHUMARDIIDAE; UCAM.
 Kuruktagella T. ZHANG, 1981 [laevigata] Torsuqtagh Fm, Xinjiang, China; IDAHOIIDAE; UCAM [j.s.s. of Maladioidella, fide PENG, 1992].
@@ -2360,7 +2360,7 @@ Kutsingocephalus LI & WANG, 1963 [kutsingensis] Lungwangmiao Fm, Yunnan, China; 
 Kweichowilla W. ZHANG, 1964a [minuta] Chientsaokou Fm, Guizhou, China; SHUMARDIIDAE; UORD.
 Kymagnostus HOHENSEE in HOHENSEE & STITT, 1989 [harti] Collier Sh, Arkansas, USA; AGNOSTIDAE; UCAM.
 Kymataspis GEYER, 1990 [arenosa] Jbel Wawrmast Fm, Morocco; ELLIPSOCEPHALIDAE; LCAM.
-Kyphocephalus MILLER, 1936a [bridgerensis] Gal-latin Fm, Wyoming, USA; DOKIMOCEPHALIDAE; UCAM.
+Kyphocephalus MILLER, 1936a [bridgerensis] Gallatin Fm, Wyoming, USA; DOKIMOCEPHALIDAE; UCAM.
 Labiostrella ROZOVA, 1964 [vera] Tavgiysky Horizon, NW Siberia, Russia; PTEROCEPHALIIDAE; UCAM.
 Labiostria PALMER, 1955 [conveximarginata] Riley Fm, Texas, USA; APHELASPIDIDAE; UCAM [j.s.s. of Aphelaspis, fide PALMER, 1965].
 Labiostrina POLETAEVA in GONCHAROVA et al., 1972[fortunata] Orlinogor Fm, Salair, Russia; PTEROCEPHALIIDAE; UCAM.
@@ -2369,10 +2369,10 @@ Labradorina IVSHIN, 1979 [edrejensis] Shokpaktassk Fm, central Kazakhstan; EDELS
 Lachnostoma ROSS, 1951 [latucelsum] Garden City Fm, Idaho, USA; ASAPHIDAE; LORD.
 Lacorsalina BURSKIJ, 1970 [sokoliensis] Pay Khoya, Ural Mtns, Russia; REMOPLEURIDIDAE; LORD.
 Lacunoporaspis ELKIN, 1966 [contermina] Kireevsk Fm, Gorny Altay, S Siberia, Russia; PROETIDAE; MDEV.
-Ladadiscus POKROVSKAYA, 1959 [limbatus] Shiv-eliksky Fm, Tuva, Russia; WEYMOUTHIIDAE; LCAM [j.s.s. of Mallagnostus, fide JELL, 1997].
+Ladadiscus POKROVSKAYA, 1959 [limbatus] Shiveliksky Fm, Tuva, Russia; WEYMOUTHIIDAE; LCAM [j.s.s. of Mallagnostus, fide JELL, 1997].
 Laethoprusia RAMSKOLD, 1991a [salax] Slite Fm, Gotland, Sweden; ODONTOPLEURIDAE; LSIL.
 Laevibole BRAUCKMANN, 1982[Proetus laevicauda SARRES, 1857] Bromberg Fm, Wuppertal, Rhenish Massif, Germany; PROETIDAE; MISS.
-Lajishanaspis ZHU in ZHU et al., 1979 [sub-sphaericus] Liudaogou Group, Qinghai, China; CATILLICEPHALIDAE; UCAM.
+Lajishanaspis ZHU in ZHU et al., 1979 [subsphaericus] Liudaogou Group, Qinghai, China; CATILLICEPHALIDAE; UCAM.
 Lakaspis KOBAYASHI, 1937b [Symphysurus apolinista LAKE, 1906] sst, Apolo, Caupolican, Bolivia; NILEIDAE?; LORD.
 Lakella KOBAYASHI, 1962[Conocephalus invitus SALTER, 1859] Upper Dolgelly Beds, Wales; REMOPLEURIDIDAE; UCAM [j.s.s. of Richardsonella, fide RUSHTON, 1982].
 Lalax HOLLOWAY & LANE, 1998 [preocc., replaced by Liolalax].
@@ -2382,7 +2382,7 @@ Lampropeltis OPIK, 1967 [nitens] Steamboat Sst, Queensland, Australia; PLETHOPEL
 Lamproscutellum YIN, 1980 [guizhouense] Pagoda Lst, Guizhou, China; STYGINIDAE; UORD.
 Lancastria KOBAYASHI, 1935c [Olenopsis roddyi WALCOTT, 1912c] Kinzers Sh, Pennsylvania, USA; ORYCTOCEPHALIDAE; LCAM.
 Landyia JELL, 1985 [elizabethae] Digger Is Fm, Victoria, Australia; PILEKIIDAE; LORD.
-Laneites PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Ceraurus polydorus BILLINGS, 1865] Table Cove Fm, Newfoundland, Canada; CHEIRURIDAE; MORD.
+Laneites PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Ceraurus polydorus BILLINGS, 1865] Table Cove Fm, Newfoundland, Canada; CHEIRURIDAE; MORD.
 Langgonbole KOBAYASHI & HAMADA, 1973 [vulgaris] Langgon Red Beds, Malaysia; PROETIDAE; UDEV.
 Langgonia KOBAYASHI & HAMADA, 1971a [biplicata] Setul Lst, W Malaysia; ENCRINURIDAE; LSIL.
 Langqia YIN in YIN & LI, 1978 [Kaotaia (Langqia) yongyiensis] Gaotai Fm, Guizhou, China; ALOKISTOCARIDAE; MCAM.
@@ -2392,7 +2392,7 @@ Lannacus TJERNVIK, 1956 [Megalaspides nericiensis WIMAN, 1905] Tøyen Fm, Narke,
 Laoyingshania YUAN & LI, 1999 [triangularis] Lao-yingshan Fm, Anhui, China; PTYCHOPARIIDAE; LCAM.
 Lapidaria TJERNVIK, 1956 [tenella] Tøyen Fm, Vastergotland, Sweden; ASAPHIDAE; LORD.
 Lardeuxia PILLET, 1969a [Unguliproetus andegavensis PILLET, 1965b] Angers Lst, Brittany, France; TROPIDOCORYPHIDAE; LDEV.
-Larifugula LUDVIGSEN, 1982[triangulata] Rab-bitkettle Fm, District of Mackenzie, NW Canada; KINGSTONIIDAE; UCAM.
+Larifugula LUDVIGSEN, 1982[triangulata] Rabbitkettle Fm, District of Mackenzie, NW Canada; KINGSTONIIDAE; UCAM.
 Lasaguaditas EDGECOMBE et al., 1998 [oweni] Las Aguaditas Fm, San Juan, Argentina; ENCRINURIDAE; UORD.
 Lasarchopyge CHATTERTON et al., 1998 [benedettoi] Las Aguaditas Fm, San Juan Province, Argentina; SCHARYIIDAE; UORD.
 Lashushania M. ZHANG, 1999 [lashuensis] Chang-shan Fm, Liaoning, China; SOLENOPLEURIDAE; UCAM.
@@ -2416,7 +2416,7 @@ Lavadamia ADRAIN et al., 2003 [williamsae] House Fm, Utah, USA; HYSTRICURIDAE; L
 Lawiaspis BALASHOVA, 1976 [Megalaspis gibba SCHMIDT, 1906] Obuchov Fm, St Petersburg region, Russia; ASAPHIDAE; MORD [j.s.s. of Rhinoferus, fide NIELSEN, 1995].
 Lazarenkiura ROZOVA, 1977 [Densonella sibirica LAZARENKO, 1968] Entsiy Horizon, Siberia, Russia; LONCHOCEPHALIDAE; UCAM.
 Lecanoaspis IVSHIN, 1962[limbata] Seletinsky Horizon, Kazakhstan; CHEILOCEPHALIDAE; UCAM.
-Lecanopleura RAYMOND, 1937 [interrupta] Rock-ledge Cgte, Vermont, USA; MARJUMIIDAE; UCAM.
+Lecanopleura RAYMOND, 1937 [interrupta] Rockledge Cgte, Vermont, USA; MARJUMIIDAE; UCAM.
 Lecanopyge RAYMOND, 1937 [expansa] Gorge Fm, Vermont, USA; ILLAENURIDAE; UCAM.
 Lehua BARTON, 1916 [Cheirurus vinculum BARRANDE, 1872] Dobrotiva Fm, Czech Republic; CHEIRURIDAE; MORD.
 Leiagnostus JAEKEL, 1909 [erraticus] glacial erratic lst boulder, Rixdorf, N Germany; AGNOSTINA FAMILY UNCERTAIN; LORD.
@@ -2432,7 +2432,7 @@ Leioshumardia WHITTINGTON, 1965a [minima] Table Cove Fm, Newfoundland, Canada; S
 Leiostegina KOBAYASHI, 1937b [inexpectans] green sst, W of Otavi, Bolivia; HOMALONOTIDAE; UORD.
 Leiostegioides KOBAYASHI, 1934b [raymondi] Clarkella Zone, Saisho-ri, South Korea; LEIOSTEGIIDAE; LORD [j.s.s. of Chosenia, fide ZHOU & FORTEY, 1986].
 Leiostegium RAYMOND, 1913b [Bathyurus quadratus BILLINGS, 1860b] Beekmantown Group, Quebec, Canada; LEIOSTEGIIDAE; LORD.
-Leiostrototropis RAYMOND, 1937 [phlegeri] High-gate Fm, Vermont, USA; PLIOMERIDAE?; UCAM.
+Leiostrototropis RAYMOND, 1937 [phlegeri] Highgate Fm, Vermont, USA; PLIOMERIDAE?; UCAM.
 Leitchia LAMONT, 1978 [knockgairdnerensis] Weth-er Law Linn Fm, Scotland; ENCRINURIDAE; LSIL [see NOTE 4].
 Lejopyge HAWLE & CORDA, 1847 [Battus laevigatus DALMAN, 1828] Lejopyge laevigata Zone, Sweden; PTYCHAGNOSTIDAE; MCAM.
 Lemdadella SDZUY, 1978 [spectabilis] Lemdad Fm, Morocco; REDLICHIIDAE; LCAM.
@@ -2444,7 +2444,7 @@ Lenaspis SUVOROVA, 1959 [opipara] Olekminsk Horizon, Siberia, Russia; JAKUTIDAE;
 Leningradites BALASHOVA, 1976 [longispinus] Kukruse Stage, St Petersburg region, Russia; ASAPHIDAE; UORD.
 Leocephalus IVSHIN, 1962[immitatus] Seletinsky Horizon, Kazakhstan; EUREKIIDAE; UCAM.
 Leoforteyia WAISFELD et al., 2001 [hintzei] Fillmore Fm, Utah, USA; SHUMARDIIDAE; LORD.
-Leonaspis RICHTER & RICHTER, 1917 [Odonto-pleura leonhardi BARRANDE, 1846a] Kopanina Fm, Czech Republic; ODONTOPLEURIDAE; USIL.
+Leonaspis RICHTER & RICHTER, 1917 [Odontopleura leonhardi BARRANDE, 1846a] Kopanina Fm, Czech Republic; ODONTOPLEURIDAE; USIL.
 Lepidocephaloides REPINA in REPINA et al., 1964 [typographical error for Compsocephalus on p. 307 . hand corrected by author in copy held by A.R. Palmer . borne out by assignment of type species on p. 308].
 Lepidoproetus ERBEN, 1951 [Proetus lepidus BARRANDE, 1846a] Lochkov Fm, Czech Republic; TROPIDOCORYPHIDAE; LDEV.
 Leptagnostus LU & LIN, 1989 [lanceolatus] Yang-liugang Fm, Zhejiang, China; CLAVAGNOSTIDAE; MCAM [j.s.s. of Clavagnostus, fide SHERGOLD & LAURIE, 1997].
@@ -2459,7 +2459,7 @@ Lermontovia SUVOROVA, 1956 [Protolenus dzevanovskii LERMONTOVA, 1951b] Keteme Fm
 Lermontoviella POKROVSKAYA, 1959 [shanganica] Shangansky Fm, Tuva, Russia; ANTAGMIDAE; LCAM.
 Letniites ROZOVA, 1977 [Brassicephalus jakuticus LAZARENKO, 1960] Tavgiisk Horizon, NW Siberia, Russia; LONCHOCEPHALIDAE; UCAM.
 Leurostega ROBISON & PANTOJA-ALOR, 1968 [aphelix] Tinu Fm, Oaxaca, Mexico; OLENIDAE; LORD.
-Leviceraurus HESSIN, 1988 [mammilloides] Co-bourg Fm, Ontario, Canada; CHEIRURIDAE; UORD.
+Leviceraurus HESSIN, 1988 [mammilloides] Cobourg Fm, Ontario, Canada; CHEIRURIDAE; UORD.
 Levinia RUSCONI, 1950b [brachypyge] Mendoza, Argentina; INDET; CAM.
 Levisaspis RASETTI, 1943 [typicalis] Levis Fm, Quebec, Canada; NORWOODIIDAE; LORD.
 Levisella ULRICH in BRIDGE, 1931 [Dikelocephalus oweni BILLINGS, 1860b] Levis Fm, Quebec, Canada; IDAHOIIDAE; UCAM.
@@ -2475,7 +2475,7 @@ Liaotropis SCHRANK, 1975 [tropis] Changshan Fm, Liaoning, China; KAOLISHANIIDAE;
 Liaotungia RESSER & ENDO, in KOBAYASHI, 1935c [puteata] Hsuchuang Fm, Liaoning, China; CONOCORYPHIDAE; MCAM [j.s.s. of Bailiella, fide W. ZHANG & JELL, 1987].
 Liaoyangaspis W. ZHANG, 1959 [Asaphiscus kobayashii RESSER & ENDO, 1937] Hsuchuang Fm, Liaoning, China; ASAPHISCIDAE; MCAM [j.s.s. of Lioparia, fide W. ZHANG, 1985].
 Libertella HU, 1971 [corona] Edinburg Fm, Virginia, USA; ENCRINURIDAE; UORD.
-Lichakephalus SDZUY, 1955 [erbeni] Leimitz Sch-iefer, Bavaria, Germany; LICHAKEPHALIDAE; LORD.
+Lichakephalus SDZUY, 1955 [erbeni] Leimitz Schiefer, Bavaria, Germany; LICHAKEPHALIDAE; LORD.
 Lichanocoryphe OWENS & TILSLEY, 1995 [Typhloproetus cephalispina PRENTICE, 1967] Kersdown Chert, England; PROETIDAE; MISS.
 Lichapyge CALLAWAY, 1877 [cuspidata] Shineton Sh Fm, England; CERATOPYGIDAE; LORD [s.s.s. of Macropyge, fide SHERGOLD & SDZUY, 1984].
 Lichas DALMAN, 1827 [Entomostracites laciniatus WAHLENBERG, 1821] Dalmanitina Beds, Vastergotland, Sweden; LICHIDAE; UORD.
@@ -2505,12 +2505,12 @@ Liobole RICHTER & RICHTER, 1949 [Phillipsia glabra HOLZAPFEL, 1889] Erdbach Lst,
 Liobolina RICHTER & RICHTER, 1951b [nebulosa] Hangenberg Lst, Sauerland, Germany; PROETIDAE; MISS.
 Liocalymene RAYMOND, 1916 [Hemicrypturus clintonii VANUXEM, 1842] Clinton Group, New York, USA; CALYMENIDAE; LSIL.
 Liocare SUVOROVA, 1981 [lenense] Ust-Botomsk Fm, Siberia, Russia; ANOMOCARELLIDAE; MCAM.
-Liocephalus GRONWALL, 1902[Conocoryphe impressa LINNARSSON, 1879] Exsulans Lst, Sweden; CONOCORYPHIDAE; MCAM [j.s.s. of Bailliella, fide POULSEN in MOORE, 1959].
-Liocnemis KIELAN, 1960 [Phacops recurvus LINNARSSON, 1869] Red Tretaspis Sh, Vastergot-land, Sweden; PTERYGOMETOPIDAE; UORD.
+Liocephalus GRONWALL, 1902[Conocoryphe impressa LINNARSSON, 1879] Exsulans Lst, Sweden; CONOCORYPHIDAE; MCAM [j.s.s. of Bailiella, fide POULSEN in MOORE, 1959].
+Liocnemis KIELAN, 1960 [Phacops recurvus LINNARSSON, 1869] Red Tretaspis Sh, Vastergotland, Sweden; PTERYGOMETOPIDAE; UORD.
 Lioharpes WHITTINGTON, 1950b [Harpes venulosus HAWLE & CORDA, 1847] Koneprusy Lst, Czech Republic; HARPETIDAE; LDEV.
 Liokootenia QIU in QIU et al., 1983 [obsoleta] Hsuchuang Fm, Anhui, China; DORYPYGIDAE; MCAM.
 Liolalax HOLLOWAY & LANE, 1999 [Lalax olibros HOLLOWAY & LANE, 1998] Mirrabooka Fm, New South Wales, Australia; STYGINIDAE; USIL.
-Liolophops STRUVE, 1972[Phacops (Phacops) sub-levatus STRUVE, 1970] Freilingen-Schichten, Eifel, Germany; PHACOPIDAE; MDEV.
+Liolophops STRUVE, 1972[Phacops (Phacops) sublevatus STRUVE, 1970] Freilingen-Schichten, Eifel, Germany; PHACOPIDAE; MDEV.
 Liomegalaspides LU in LU et al., 1974a [Isotelus usuii YABE in YABE & HAYASAKA, 1920] Dawan Fm, Hubei, China; ASAPHIDAE; MORD.
 Lioparella KOBAYASHI, 1937a [walcotti] Hsuchuang Fm, Shandong, China; PROASAPHISCIDAE; MCAM.
 Lioparia LORENZ, 1906 [blautoeides] Changhia Fm, Shandong, China; ASAPHISCIDAE; MCAM.
@@ -2549,11 +2549,11 @@ Lloydia VOGDES, 1890 [Bathyurus bituberculatus BILLINGS, 1860b] Beekmantown Fm, 
 Lloydolithus BANCROFT, 1933 [Trinucleus lloydii MURCHISON, 1839] Lower Llandeilo Flags, Wales; TRINUCLEIDAE; MORD.
 Lobocephalina RŮŽIČKA, 1940 [carinata] Jince Fm, Czech Republic; CONOKEPHALINIDAE;MCAM [j.s.s. of Conokephalina, fide ŠNAJDR, 1958a].
 Lobocephalus RŮŽIČKA, 1940 [preocc., replaced by Ruzickaia]
-Lobopyge PŘIBYL & ERBEN, 1952[Lichas bran-ikensis BARRANDE, 1872] Dvorce-Prokop Fm, Czech Republic; LICHIDAE; LDEV.
+Lobopyge PŘIBYL & ERBEN, 1952[Lichas branikensis BARRANDE, 1872] Dvorce-Prokop Fm, Czech Republic; LICHIDAE; LDEV.
 Lochkovella CHLUPAC, 1972[Phacops miser BARRANDE, 1852] Lochkov Fm, Czech Republic; PHACOPIDAE; LDEV.
 Lochmanaspis IVSHIN, 1962[christinae] Seletinsky Horizon, Kazakhstan; EUREKIIDAE; UCAM.
 Lochmanolenellus LIEBERMAN, 1998 [Wanneria mexicana prima LOCHMAN in COOPER et al., 1952] Puerto Blanco Fm, NW Mexico; OLENELLIDAE; LCAM.
-Lodenicia PRANTL& VANĚK in HORNYet al., 1958 [Phaetonellus dentatulus NOVÁK, 1890] Lite. Fm, Czech Republic; TROPIDOCORYPHIDAE; LSIL.
+Lodenicia PRANTL & VANĚK in HORNY et al., 1958 [Phaetonellus dentatulus NOVÁK, 1890] Lite. Fm, Czech Republic; TROPIDOCORYPHIDAE; LSIL.
 Loeipyge KOBAYASHI & HAMADA, 1979 [spinifer] Rat Buri Lst, Thailand; BRACHYMETOPIDAE; PERM.
 Loganellus DEVINE, 1863 [quebecensis (=Olenus? logani erected in same paper and referring to same species)] Levis Fm, Quebec, Canada; IDAHOIIDAE; UCAM.
 Loganopeltis RASETTI, 1943 [depressa] Levis Fm, Quebec, Canada; HARPIDIDAE; LORD.
@@ -2599,7 +2599,7 @@ Loxopeltis RASETTI, 1957 [problematica] Mt Whyte Fm, British Columbia, Canada; U
 Luaspides DUAN, 1966 [lingyuanensis] Maochuang Fm, Liaoning, China; ANTAGMIDAE; MCAM.
 Luaspis HUPE, 1953a [Pseudoptychoparia reedi LU, 1941] Chiungchussu Fm, Yunnan, China; YUNNANOCEPHALIDAE; LCAM.
 Luaspis PENG et al., 1995[preocc., replaced by Luyanhaoaspis].
-Ludvigsenella TREMBLAY & WESTROP, 1991 [el-lipsepyga] Sunblood Fm, Northwest Territories, Canada; BATHYURIDAE; MORD [j.s.s. of Psephosthenaspis, fide FORTEY & DROSER, 1996].
+Ludvigsenella TREMBLAY & WESTROP, 1991 [ellipsepyga] Sunblood Fm, Northwest Territories, Canada; BATHYURIDAE; MORD [j.s.s. of Psephosthenaspis, fide FORTEY & DROSER, 1996].
 Lugalella HAHN & WUNN-PETRY, 1983 [pi] nasutus Zone, Rhenish Massif, Germany; PROETIDAE; MISS.
 Luguoia LU & ZHU, 2001 [luguoensis] Hsuchuangian, Shandong, China; PTYCHOPARIIDAE; MCAM.
 Luhops ŠNAJDR, 1957b [Paradoxides expectans BARRANDE, 1852] Jince Fm, Czech Republic; CENTROPLEURIDAE; MCAM.
@@ -2619,7 +2619,7 @@ Luvsanodiscus KOROBOV, 1980 [gammatus] Egyngolskaya Fm, NW Mongolia; HEBEDISCIDA
 Luxella RASETTI, 1955 [Ptychoparia lux WALCOTT, 1917] Peyto Fm, British Columbia, Canada; PTYCHOPARIIDAE; LCAM.
 Luyanhaoaspis PENG et al., 2001b [decorosa] Huaqiao Fm, Hunan, China; ASAPHISCIDAE; MCAM [replacement name for Luaspis PENG et al., 1995].
 Luyanhaoia WITTKE, 1984 [cribrata] Mila Fm, Alborz Mts, Iran; EULOMIDAE; UCAM.
-Lycophron FORTEY& SHERGOLD, 1984 [rex] Nora Fm, Queensland, Australia; ASAPHIDAE; LORD.
+Lycophron FORTEY & SHERGOLD, 1984 [rex] Nora Fm, Queensland, Australia; ASAPHIDAE; LORD.
 Lydiaspis SUVOROVA, 1981 [Liostracus religiosus EGOROVA in EGOROVA & SAVITSKY, 1969] Mayaian, NW Siberia, Russia; ANOMOCARELLIDAE; MCAM.
 Lygdozoon HOLLOWAY, 1981 [collatum] St. Clair Lst, Arkansas, USA; DALMANITIDAE; LSIL.
 Lynaspis OPIK, 1967 [noakesi] Georgina Lst, Queensland, Australia; LIOSTRACINIDAE; MUCAM.
@@ -2634,8 +2634,8 @@ Macnairides LAMONT, 1975 [munitatus] Leny Lst, Scotland; UNCERTAIN; LCAM.
 Macroblepharum ALBERTI, 1964 [Cornuproetus (Macroblepharum) africanus] “Styliolinen Mergelkalk mit Anarestes lateseptatus,” SE Morocco; TROPIDOCORYPHIDAE; MDEV.
 Macrobole RICHTER & RICHTER, 1951b [Cyrtosymbole (Macrobole) drewerensis] (Gattendorfia-Stufe), Hangenberg Fm, Oberrodinghausen, Rhenish Massif, Germany; PROETIDAE; MISS.
 Macrocerca PILLET in COURTESSOLE et al., 1988 [Eccaparadoxides macrocercus COURTESSOLE, 1967] Gres schistes et calcaires, France; PARADOXIDIDAE; MCAM [j.s.s. of Eccaparadoxides, fide DEAN & RUSHTON, 1997].
-Macroculites KOBAYASHI, 1955b [enigmaticus] McKay Group, British Columbia, Canada; MISSISQUOIIDAE; LORD [j.s.s. of Missisquoia (=Parakoldinoidia), fide DEAN, 1977].
-Macrogrammus WHITTARD, 1966 [scylfense] Myt-ton Flags Fm, England; PILEKIIDAE; LORD.
+Macroculites KOBAYASHI, 1955b [enigmaticus] McKay Group, British Columbia, Canada; MISSISQUOIIDAE; LORD [j.s.s. of Missisquoia (=Parakoldinioidia), fide DEAN, 1977].
+Macrogrammus WHITTARD, 1966 [scylfense] Mytton Flags Fm, England; PILEKIIDAE; LORD.
 Macronoda LOCHMAN, 1964a [prima] Deadwood Fm, Montana, USA; PTYCHASPIDIDAE; UCAM.
 Macropyge STUBBLEFIELD in STUBBLEFIELD & BULMAN, 1927 [chermi] Shineton Sh, England; CERATOPYGIDAE; LORD.
 Macropygella ROZOVA in ROZOVA et al., 1985 [khmelevkensis] Maslyaninsk Horizon, NW Salair, Russia; CERATOPYGIDAE; LORD [j.s.s. of Macropyge, fide PENG, 1990].
@@ -2677,7 +2677,7 @@ Malykania SUVOROVA, 1958 [gribovae] Elgyan Fm, Siberia, Russia; JAKUTIDAE; LCAM.
 Manailina BOGNIBOVA in CHERNYSHEVA, 1971 [plana] Suyark Horizon, E Tannu-Ola, Russia; PTYCHOPARIIDAE; MCAM.
 Manaspis REPINA, 1960 [oblittera] Zherzhul Fm, E Sayan, Russia; JAKUTIDAE; LCAM.
 Manchuriella RESSER & ENDO in KOBAYASHI, 1935c [typa] Changhia Fm, Liaoning, China; PROASAPHISCIDAE; MCAM.
-Manchurocephalus ENDO, 1944 [Coosia deprati MANSUY, 1915] Paishan Fm, Liaoning, China; ANOMOCARIDAE; UCAM [j.s.s. of Para-coosia, fide LU et al., 1965].
+Manchurocephalus ENDO, 1944 [Coosia deprati MANSUY, 1915] Paishan Fm, Liaoning, China; ANOMOCARIDAE; UCAM [j.s.s. of Paracoosia, fide LU et al., 1965].
 Manitouella BERG & ROSS, 1959 [ulrichi] Manitou Fm, Colorado, USA; LEIOSTEGIIDAE; LORD.
 Mannopyge LUDVIGSEN, 1987 [Dechenella (Dechenella?) halli STUMM, 1953b] Onondaga Lst, New York, USA; PROETIDAE; LDEV.
 Mannschreekia STITT, 1983 [parva] McKenzie Hill Lst, Oklahoma, USA; CATILLICEPHALIDAE; LORD [j.s.s. of Theodenisia, fide ADRAIN, herein].
@@ -2710,10 +2710,10 @@ Maurotarion ALBERTI, 1969 [Harpidella maura ALBERTI, 1967b] “Ostrakoden-Kalk�
 Maustonia RAASCH in LOCHMAN, 1950 [Conocephalites nasutus HALL, 1863] Franconia Fm, Wisconsin, USA; PARABOLINOIDIDAE; UCAM [j.s.s. of Taenicephalus, fide WESTROP, 1986b].
 Maximovella PETRUNINA, 1990 [Plethopeltides (Maximovella) improvisus] Kamlak Fm, Gorny Altay, Russia; UNCERTAIN; LORD.
 Mayiella W. ZHANG, 1966 [tuberculata] Tsanglangpu Fm, Yunnan, China; MAYIELLIDAE; LCAM.
-Mayopyge ADRAIN & FORTEY, 1997 [zapata] Tour-makeady Lst, Ireland; CHEIRURIDAE; MORD [j.s.s. of Parasphaerexochus, fide ADRAIN, herein].
+Mayopyge ADRAIN & FORTEY, 1997 [zapata] Tourmakeady Lst, Ireland; CHEIRURIDAE; MORD [j.s.s. of Parasphaerexochus, fide ADRAIN, herein].
 Mcnairia DEISS, 1939 [inornata] Steamboat Lst, Montana, USA; ALOKISTOCARIDAE; MCAM [j.s.s. of Parehmania, fide HOWELL in MOORE, 1959].
 Meadowtownella PŘIBYL & VANĚK, 1965 [Primaspis whitei WHITTARD, 1961b] Meadowtown Fm, England; ODONTOPLEURIDAE; MORD.
-Mecophyrs SHERGOLD, 1982[mecophyrs] Chats-worth Lst, Queensland, Australia; CHANGSHANIIDAE; UCAM.
+Mecophyrs SHERGOLD, 1982[mecophyrs] Chatsworth Lst, Queensland, Australia; CHANGSHANIIDAE; UCAM.
 Meeria FREDERICKSON, 1949 [lirae] Honey Ck Fm, Oklahoma, USA; IDAHOIIDAE; UCAM [j.s.s. of Idahoia, fide BELL & ELLINWOOD, 1962].
 Megadunderbergia KOBAYASHI, 1938a [convexa] Bison Ck Fm, British Columbia, Canada; ELVINIIDAE; UCAM.
 Megagnostus ROBISON, 1994 [Agnostus glandiformis ANGELIN, 1851] Andrarum, Sweden; AGNOSTINA FAMILY UNCERTAIN; MCAM.
@@ -2726,7 +2726,7 @@ Megalophthalmus LORENZ, 1906 [preocc., replaced by Grandioculus].
 Megalopsis QIAN in QIU et al., 1983 [anhuiensis] Anhui, China; ANOMOCARELLIDAE; UCAM.
 Megapalaeolenus W. ZHANG, 1966 [Palaeolenus deprati MANSUY, 1912] Tsanglangpu Fm, Yunnan, China; PALAEOLENIDAE; LCAM.
 Megaproetus JELL, 1977b [cambrertus] Mundubbera Sst, Queensland, Australia; PROETIDAE; MISS.
-Megasaphus KACHA& PETR, 1996 [Asaphus ingens BARRANDE, 1846a] Letna Fm, Czech Republic; ASAPHIDAE; UORD.
+Megasaphus KACHA & PETR, 1996 [Asaphus ingens BARRANDE, 1846a] Letna Fm, Czech Republic; ASAPHIDAE; UORD.
 Megatemnoura SUN in ZHOU et al., 1977 [magna] Miaopo Fm, Hubei, China; ASAPHIDAE; UORD.
 Megistaspidella JAANUSSON, 1956 [Entomostracites extenuatus WAHLENBERG, 1821]Holen Fm, Ostergotland, Sweden; ASAPHIDAE; MORD.
 Megistaspinus BALASHOVA, 1976 [Megalaspispolyphemus BROGGER, 1882] locality unknown, Oslo, Norway; ASAPHIDAE; MORD [j.s.s. of Megistaspis, fide NIELSEN, 1995].
@@ -2754,7 +2754,7 @@ Meniscocoryphe LUDVIGSEN & WESTROP in LUDVIGSEN et al., 1989 [Leiocoryphe platyc
 Meniscuchus OPIK, 1975b [menetus] Cymbric Vale Fm, New South Wales, Australia; WEYMOUTHIIDAE; LCAM.
 Menneraspis POKROVSKAYA, 1959 [striatus] Shiveliksky Fm, Tuva, Russia; MENNERASPIDIDAE; LCAM.
 Menocephalites KOBAYASHI, 1935c [Solenopleura acantha WALCOTT, 1905] Changhia Fm, Shan-dong, China; SOLENOPLEURIDAE; MCAM.
-Menocephalus OWEN, 1852[minnesotensis] Fran-conia Fm, Minnesota, USA; INDET; UCAM [type lost in fire (fide KOBAYASHI, 1935c, p. 267)].
+Menocephalus OWEN, 1852[minnesotensis] Franconia Fm, Minnesota, USA; INDET; UCAM [type lost in fire (fide KOBAYASHI, 1935c, p. 267)].
 Menomonia WALCOTT, 1916a [Conocephaloides calymenoides WHITFIELD, 1878] Eau Claire Fm, Wisconsin, USA; MENOMONIIDAE; UCAM.
 Menoparia ROSS, 1951 [genalunata] Garden City Fm, Idaho, USA; REMOPLEURIDIDAE; LORD.
 Menorcaspis HAHN, HAHN & BRAUCKMANN, 1994 [tiedti] N coast of Menorca, Balearen, Spain; PROETIDAE; MISS.
@@ -2813,7 +2813,7 @@ Metashantungia W. ZHANG in ZHU, 1959 [Shantungia brevica WALCOTT, 1913b] Kushan 
 Metayosimuraspis QIAN, 1985a [latilimbatus] Tang-cun Fm, Anhui, China; REMOPLEURIDIDAE; UCAM [j.s.s. of Yosimuraspis, fide PENG, 1990].
 Metayuepingia LU in ZHOU et al., 1977 [angustilimbata] Jiuxi, Hunan, China; ASAPHIDAE; LORD.
 Meteoraspis RESSER, 1935 [Ptychoparia ? metra WALCOTT, 1890c] Wilberns Fm, Texas, USA; TRICREPICEPHALIDAE; UCAM.
-Metisaspina SIVOV in EGOROVAet al., 1955 [anom-ala] Salair Fm, Salair, Russia; ELVINIIDAE; UCAM.
+Metisaspina SIVOV in EGOROVA et al., 1955 [anomala] Salair Fm, Salair, Russia; ELVINIIDAE; UCAM.
 Metisaspis RASETTI, 1946b [hispida] Levis Fm, Quebec, Canada; LLANOASPIDIDAE; UCAM.
 Metisella RASETTI, 1963a [microphthalma] Levis Fm, Quebec, Canada; PTYCHOPARIIDAE; MCAM.
 Metisia RESSER, 1937b [Ptychoparia metisensis WALCOTT, 1890b] Levis Fm, Quebec, Canada; MARJUMIIDAE; LCAM [j.s.s. of Modocia, fide PALMER, 1955].
@@ -2839,7 +2839,7 @@ Micmacca MATTHEW, 1895 [matthevi] Hanford Brook Fm, New Brunswick, Canada; CHENG
 Micmaccopsis LERMONTOVA, 1940 [redlichoides] Protolenus Zone, Siberia, Russia; ZACANTHOIDIDAE; LCAM.
 Micragnostus HOWELL, 1935b [Agnostus calvus LAKE, 1906] N Wales; AGNOSTIDAE; LORD.
 Micragraulos HOWELL, 1937 [franklini] St Albans Sh, Vermont, USA; AGRAULIDAE; MCAM.
-Microdiscus EMMONS, 1855 [quadricostatus] “Tac-onic System”, New York?, USA; TRINUCLEIDAE?; ORD? [juvenile of unidentified genus, probably trinucleid, fide BARRANDE, 1861].
+Microdiscus EMMONS, 1855 [quadricostatus] “Taconic System”, New York?, USA; TRINUCLEIDAE?; ORD? [juvenile of unidentified genus, probably trinucleid, fide BARRANDE, 1861].
 Microparia HAWLE & CORDA, 1847 [speciosa] Kraluv Dvur Fm, Czech Republic; CYCLOPYGIDAE; UORD.
 Microphillipsia RUGGIERI, 1959 [tetraptera] Sosio Valley, Sicily, Italy; PROETIDAE; UPERM.
 Microphthalmus GORTANI, 1907 [preocc., replaced by Gortania].
@@ -2854,8 +2854,8 @@ Milesdavis LIEBERMAN, 1994 [eldredgei] Much Wenlock Lst Fm, England; PROETIDAE; 
 Milesia CHAPMAN, 1929 [preocc., replaced by Xystridura].
 Millardia WALCOTT, 1916a [preocc. replaced by Densonella].
 Mimana KOBAYASHI, 1935c [eurycephala] Dictya Zone, South Korea; ?KAOLISHANIIDAE; UCAM.
-Mimocryphaeus GANDL, 1972[altecostatus] Bad-enas-Schichten, Fombeuna, NE Spain; ACASTIDAE; USIL.
-Mindycrusta OPIK, 1967 [mindycrusta] Georgina Lst, Queensland, Australia; ASAPHISCIDAE: MUCAM.
+Mimocryphaeus GANDL, 1972[altecostatus] Badenas-Schichten, Fombeuna, NE Spain; ACASTIDAE; USIL.
+Mindycrusta OPIK, 1967 [mindycrusta] Georgina Lst, Queensland, Australia; ASAPHISCIDAE; MUCAM.
 Minicephalus LOCHMAN & HU, 1960 [primus] DuNoir Fm, Wyoming, USA; ILLAENURIDAE; UCAM.
 Minkella LOCHMAN & HU, 1959 [americana] St Charles Fm, Idaho, USA; PARABOLINOIDIDAE; UCAM.
 Minupeltis PALMER, 1960 [conservator] Dunderberg Fm, Nevada, USA; SOLENOPLEURIDAE; UCAM.
@@ -2869,7 +2869,7 @@ Miraculaspis E. ROMANENKO in ROMANENKO & ROMANENKO, 1967 [picta] Gorny Altay, S 
 Miracybele WHITTINGTON, 1965a [Encrinurus mirus BILLINGS, 1865] Table Cove Fm, Newfoundland, Canada; ENCRINURIDAE; MORD [j.s.s. of Cybelurus, fide BURSKII, 1970].
 Miranda EGOROVA, 1984 [lepida] Ust Maisk Fm, Aldan R., E Siberia, Russia; CONOKEPHALINIDAE; UCAM.
 Miranella POKROVSKAYA in KHALFIN, 1960 [convexa] Sanashtykgol Horizon, Tuva, Russia; CORYNEXOCHIDAE; LCAM.
-Miraspis RICHTER & RICHTER, 1917 [Odonto-pleura mira BARRANDE, 1846a] Lite. Fm, Czech Republic; ODONTOPLEURIDAE; LSIL.
+Miraspis RICHTER & RICHTER, 1917 [Odontopleura mira BARRANDE, 1846a] Lite. Fm, Czech Republic; ODONTOPLEURIDAE; LSIL.
 Miriproetus ŠNAJDR, 1977 [Cornuproetus mirificus PŘIBYL, 1965] Vinarice Lst, Czech Republic; TROPIDOCORYPHIDAE; LDEV.
 Mirops ŠNAJDR, 1987b [Ormathops mirus ŠNAJDR, 1956] Lite. Fm, Czech Republic; DALMANITIDAE; UORD [j.s.s. of Mytocephala, fide PEK &VANĚK, 1989].
 Mischynogorites BALASHOVA, 1976 [Asaphusbrachyrachis TORNQUIST, 1884] Dalarne, Sweden; ASAPHIDAE; LORD.
@@ -2888,7 +2888,7 @@ Monella BATES, 1968 [perplexa] Carmel Fm, Wales; LEIOSTEGIIDAE; LORD [j.s.s. of 
 Mongolodiscus KOROBOV, 1980 [zaicevi] Egyngolsky Fm, W Mongolia; YUKONIIDAE; LCAM [j.s.s. of Egyngolia, fide JELL, 1997].
 Monkaspis KOBAYASHI, 1935c [Anomocare daulis WALCOTT, 1905] Kushan Fm, Shandong, China; MONKASPIDIDAE; UCAM.
 Monocheilus RESSER, 1937b [Conocephalites anatinus HALL 1863] Franconia Fm, Wisconsin, USA; DIKELOCEPHALIDAE; UCAM.
-Monodechenella STUMM, 1953a [Proetus macro-cephalus HALL, 1861a] Hamilton Group, New York, USA; PROETIDAE; MDEV.
+Monodechenella STUMM, 1953a [Proetus macrocephalus HALL, 1861a] Hamilton Group, New York, USA; PROETIDAE; MDEV.
 Monorachus CLARKE, 1897 [unjustified emendation of Monorakos].
 Monorakos SCHMIDT, 1886a [Phacops (Monorakos) lopatini] Mangaziean Stage, Tunguska River, Siberia, Russia; PTERYGOMETOPIDAE; UORD.
 Monorhachis VOGDES, 1925 [unjustified emendation of Monorakos].
@@ -2896,8 +2896,8 @@ Monosulcatina ROZOVA, 1963 [laeve] Khantaisky Horizon, NW Siberia, Russia; LONCH
 Moosia WALCOTT, 1924b [grandis] Goodsir Fm, British Columbia, Canada; ELVINIIDAE; UCAM [j.s.s. of Elvinia, fide PALMER, 1965].
 Mopanshania GUO & ZAN in GUO et al., 1996 [fuxianensis] Maochuang Fm, Liaoning, China; PTYCHOPARIIDAE; MCAM.
 Moravocoryphe PŘIBYL & VANĚK, 1978 [Eodrevermannia kettneri CHLUPAC, 1965] Moravia, Czech Republic; PROETIDAE; MDEV.
-Morgatia HAMMANN, 1972[Phacopidella (Pre-phacopidella) hupei NION & HENRY, 1966] Postolonnec Fm, Brittany, France; DALMANITIDAE; MORD.
-Morocconites STRUVE in BOUCOT et al., 1989 [mal-ladoides] Erfoud, Morocco; ACASTIDAE; LMDEV.
+Morgatia HAMMANN, 1972[Phacopidella (Prephacopidella) hupei NION & HENRY, 1966] Postolonnec Fm, Brittany, France; DALMANITIDAE; MORD.
+Morocconites STRUVE in BOUCOT et al., 1989 [malladoides] Erfoud, Morocco; ACASTIDAE; LMDEV.
 Morosa PALMER, 1960 [longispina] Dunderberg Fm, Nevada, USA; PTEROCEPHALIIDAE; UCAM.
 Moschoglossis GOLDRING, 1958 [decorata] Lower Limestone Sh, England; PROETIDAE; MISS.
 Moxomia WALCOTT, 1924b [Crepicephalus (Bathyurus?) angulatus HALL & WHITFIELD, 1877] Chusina Fm, British Columbia, Canada; OLENIDAE; LORD.
@@ -3002,7 +3002,7 @@ Nepea WHITEHOUSE, 1939 [narinosa] Split Rock Fm, Queensland, Australia; NEPEIDAE
 Nephranomma ERBEN, 1952[Phacopidella (Nephranomma) drepanomma] Zorgensis limestones, Harz Mts, Germany; PHACOPIDAE; LMDEV.
 Nephranops RICHTER & RICHTER, 1926 [Phacops (Trimerocephalus) incisus ROEMER, 1866] Iberg Lst, Rubeland, Harz Mts, Germany; PHACOPIDAE; UDEV.
 Nephrolenellus PALMER & REPINA, 1993 [Olenellus multinodus PALMER in PALMER & HALLEY, 1979] Carrara Fm, Nevada, USA; OLENELLIDAE; LCAM.
-Neptunagnostella PEK, 1977 [Agnostus consors HOLUB, 1912] Klabava Fm, Czech Republic; METAGNOSTIDAE; LORD [j.s.s. of Ger-agnostus, fide SHERGOLD et al., 1990].
+Neptunagnostella PEK, 1977 [Agnostus consors HOLUB, 1912] Klabava Fm, Czech Republic; METAGNOSTIDAE; LORD [j.s.s. of Geragnostus, fide SHERGOLD et al., 1990].
 Nericella ROZOVA, 1964 [diffusa] Sakhaisk Horizon, NW Siberia, Russia; MARJUMIIDAE; MCAM.
 Nericia WESTERGARD, 1948 [quinquedentata] Lejopyge laevigata Zone, Sweden; MARJUMIIDAE; MCAM.
 Nericiaspis TJERNVIK, 1955 [Jujuyaspis? robusta TJERNVIK, 1953] Peltura Zone, Sweden; OLENIDAE; UCAM.
@@ -3019,7 +3019,7 @@ Nieszkowskia SCHMIDT, 1881 [Sphaerexochus cephaloceros NIESZKOWSKI, 1857] Kukrus
 Nilegna OPIK, 1967 [sigmata] Georgina Lst, Queensland, Australia; SOLENOPLEURIDAE; MUCAM.
 Nileoides RAYMOND, 1920 [Nileus perkinsi RAYMOND, 1910a] Upper Chazy Gp, Vermont, USA; ASAPHIDAE; UORD.
 Nileus DALMAN, 1827 [Asaphus (Nileus) armadillo] Holen Lst, Sweden; NILEIDAE; LORD.
-Ninadiscus KOROBOV, 1980 [strobulatus] Egyngol-sky Fm, NW Mongolia; WEYMOUTHIIDAE; LCAM.
+Ninadiscus KOROBOV, 1980 [strobulatus] Egyngolsky Fm, NW Mongolia; WEYMOUTHIIDAE; LCAM.
 Ninaspis IVSHIN, 1956 [tchernyshevae] Kuyandinsky Horizon, Kazakhstan; SOLENOPLEURIDAE; UCAM.
 Ningkianites LU, 1975 [ningkianensis] Siliangssu Fm, Shaanxi, China; ASAPHIDAE; LORD.
 Ningkianolithus LU, 1954a [Cryptolithus welleri ENDO, 1932] Siliangssu Fm, Sichuan, China; TRINUCLEIDAE; MORD.
@@ -3034,7 +3034,7 @@ Niobina LAKE, 1946 [davidis] Tremadoc Series, Wales; ASAPHIDAE; LORD.
 Nipponarges KANEKO, 1984 [mediosulcatus] Kitakami Mts, NE Japan; LICHIDAE; MDEV.
 Nipponaspis KOIZUMI, 1972[takaizumii] Yabeina Zone, Fukushima, Japan; PROETIDAE; UPERM.
 Nipponocalymene KANEKO, 1985 [hamadai] Kitakami Mts, NE Japan; CALYMENIDAE; MDEV.
-Nitidocare PŘIBYL et al., 1985a [Arethusa nitida BARRANDE, 1846a] Lite.  
+Nitidocare PŘIBYL et al., 1985a [Arethusa nitida BARRANDE, 1846a] Lite.  
 Nitidulopyge PŘIBYL & ERBEN, 1952[Lichas nitidulus BARRANDE, 1872] Dvorce-Prokop Lst, Czech Republic; LICHIDAE; LDEV [j.s.s. of Perunaspis, fide VANĚK, 1959].
 Niuchangella W. ZHANG, 1974 [meitanensis] Lung-machi Fm, Guizhou, China; SCHARYIIDAE; LSIL.
 Nixonella LOCHMAN in LOCHMAN & DUNCAN, 1944 [montanensis] Pilgrim Fm, Montana, USA; LLANOASPIDIDAE; UCAM [j.s.s. of Genevievella, fide PRATT, 1992].
@@ -3050,7 +3050,7 @@ Nordia ROZOVA, 1968 [lepida] Yuraki Horizon, NW Siberia, Russia; LONCHOCEPHALIDA
 Norinia TROEDSSON, 1937 [convexa] Xiangguletage Fm, Xinjiang, China; ASAPHIDAE; LORD.
 Norwoodella RESSER, 1938b [Norwoodia saffordi WALCOTT, 1916a] Nolichucky Fm, Tennessee, USA; NORWOODIIDAE; UCAM.
 Norwoodia WALCOTT, 1916a [gracilis] Conasauga Fm, Alabama, USA; NORWOODIIDAE; UCAM.
-Norwoodina LOCHMAN, 1940 [Norwoodia tenera WALCOTT, 1916a] Weeks Fm, Utah, USA; NORWOODIIDAE; UCAM [j.s.s. of Hardy-oides, fide PALMER, 1965].
+Norwoodina LOCHMAN, 1940 [Norwoodia tenera WALCOTT, 1916a] Weeks Fm, Utah, USA; NORWOODIIDAE; UCAM [j.s.s. of Hardyoides, fide PALMER, 1965].
 Notaiella OGIENKO, 1974 [plana] Ustkut Fm, S Siberia, Russia; PLETHOPELTIDAE; LORD.
 Notasaphus GREGORY, 1903 [fergusoni] Knowsley East Fm, Victoria, Australia; DORYPYGIDAE; MCAM [j.s.s. of Kootenia, fide THORSLUND, 1949].
 Notoaphelaspis JELL in POWELL et al., 1981 [orthocephalis] Cupala Creek Fm, New South Wales, Australia; APHELASPIDIDAE; UCAM.
@@ -3115,7 +3115,7 @@ Olenopsis BORNEMANN, 1891 [preocc., replaced by Dolerolenus].
 Olentella IVSHIN, 1956 [olentensis] Kuyandinsky Horizon, Kazakhstan; APHELASPIDIDAE; UCAM.
 Olenus DALMAN, 1827 [Entomostracites gibbosus WAHLENBERG, 1821] Alum Sh, Sweden; OLENIDAE; UCAM.
 Olgaspis KOROBEINIKOVA, 1966 [accepta] Poliellina-Laticephalus Zone, E Sayan, S Siberia, Russia; REDLICHIIDAE; LCAM.
-Oligometopus RESSER, 1936 [Ptychoparia (Sol-enopleura?) breviceps WALCOTT, 1884a] Secret Canyon Fm, Nevada, USA; CHEILOCEPHALIDAE; UCAM.
+Oligometopus RESSER, 1936 [Ptychoparia (Solenopleura?) breviceps WALCOTT, 1884a] Secret Canyon Fm, Nevada, USA; CHEILOCEPHALIDAE; UCAM.
 Olimus ROMANENKO in GOGIN & PEGEL, 1997 [hilarus] Glyptagnostus stolidotus Zone, Gorny Altay, Russia; DIKELOCEPHALIDAE; UCAM.
 Olinaspis SUVOROVA, 1964 [timios] Shangan Fm, Tuva, Russia; CORYNEXOCHIDAE; LCAM.
 Omegops STRUVE, 1976 [Calymene accipitrina PHILLIPS, 1841] Pilton Beds, England; PHACOPIDAE; UDEV.
@@ -3201,7 +3201,7 @@ Ouijjania HUPE, 1953a [meridionalis] Amouslek Fm, Morocco; BIGOTINIDAE; LCAM.
 Ourikaia GEYER, 1990 [calva] Jbel Wawrmast Fm, Morocco; ELLIPSOCEPHALIDAE; MCAM.
 Ovalagnostus LU in LU et al., 1974b [Oidalagnostus changi LU in WANG, 1964] Zhejiang, China; DIPLAGNOSTIDAE; MUCAM [j.s.s. of Oidalagnostus, fide SHERGOLD et al., 1990].
 Ovalocephalus KOROLEVA, 1959 [kelleri] Late Caradoc, N Kazakhstan; PLIOMERIDAE; UORD.
-Ovatoryctocara CHERNYSHEVA, 1962[ovata] Am-gaian, N Siberia, Russia; ORYCTOCEPHALIDAE; MCAM [j.s.s. of Arthricocephalus, fide BLAKER & PEEL, 1997].
+Ovatoryctocara CHERNYSHEVA, 1962[ovata] Amgaian, N Siberia, Russia; ORYCTOCEPHALIDAE; MCAM [j.s.s. of Arthricocephalus, fide BLAKER & PEEL, 1997].
 Owensella PŘIBYL & VANĚK, 1978 [Proetus (sg.?) ludlowensis ALBERTI, 1967b] Lower Leintwardine Beds, England; PROETIDAE; USIL [j.s.s. of Warburgella, fide ADRAIN, herein].
 Oxyagnostus OPIK, 1967 [apicula] Pomegranate Lst, Queensland, Australia; AGNOSTIDAE; UCAM [j.s.s. of Acmarhachis, fide PENG & ROBISON, 2000].
 Oxygonaspis Q.Z. ZHANG in QIU et al., 1983 [suxianensis] Kushan Fm, Anhui, China; DAMESELLIDAE; UCAM [j.s.s. of Pingquania, fide W.T. ZHANG, pers. comm.].
@@ -3223,7 +3223,7 @@ Pagodia WALCOTT, 1905 [lotos] Fengshan Fm, Shandong, China; PAGODIIDAE; UCAM.
 Pagodioides ZHU & WITTKE, 1989 [Pagodia (Pagodioides) pustulosa] Changshan Fm, Hebei, China; PAGODIIDAE; UCAM.
 Pagometopus HENNINGSMOEN, 1959b [gibbus] Ceratopyge Lst, Norway; ALSATASPIDIDAE; LORD.
 Pagura EMMONS, 1860 [quadratispinosus] Parker Fm, Vermont, USA; CHENGKOUASPIDIDAE; LCAM [j.s.s. of Bathynotus, fide WALCOTT, 1886].
-Paivinia ROZOVAin ROZOVA et al., 1985 [paivinica] Chupinsk Fm, NW Salair, Russia; PHAROSTOMATIDAE; MORD.
+Paivinia ROZOVA inROZOVA et al., 1985 [paivinica] Chupinsk Fm, NW Salair, Russia; PHAROSTOMATIDAE; MORD.
 Palacorona SHERGOLD, 1972[bacculata] Gola Beds, Queensland, Australia; KAOLISHANIIDAE; UCAM.
 Paladin WELLER, 1936 [Griffithides morrowensis MATHER, 1915] Morrow Group, Oklahoma, USA; PROETIDAE; PENN.
 Palaeadotes OPIK, 1967 [dissidens] Georgina Lst, Queensland, Australia; DAMESELLIDAE; MUCAM [j.s.s. of Bergeronites, fide LU & ZHU, 1980].
@@ -3264,7 +3264,7 @@ Paraaojia ROSOVA in LISOGOR et al., 1988 [compacta] Shabaktinsk Fm, Kazakhstan; 
 Paraaulacopleura CHAUBERT, 1937 [roquemaillerensis] Wenlock Series, Montagne Noire, France; AULACOPLEURIDAE; LSIL [j.s.s. of Aulacopleura, fide THOMAS & OWENS, 1978].
 Parabadiella W. ZHANG, 1966 [huoi] Guojiapa Fm, Shaanxi, China; ABADIELLIDAE; LCAM [j.s.s. of Abadiella, fide JELL in BENGTSON et al., 1990].
 Parabailiella THORAL, 1946 [languedocensis] Schistes Troues, Coulouma, France; CONOCORYPHIDAE; MCAM.
-Parabarrandia PRANTL & PŘIBYL, 1949b [Bar-randia bohemica NOVÁK, 1884] Šárka Fm, Czech Republic; NILEIDAE; MORD.
+Parabarrandia PRANTL & PŘIBYL, 1949b [Barrandia bohemica NOVÁK, 1884] Šárka Fm, Czech Republic; NILEIDAE; MORD.
 Parabasilicus KOBAYASHI, 1934a [typicalis] Chikunsan Beds, Girinkitsu, South Korea; ASAPHIDAE; UORD [j.s.s. of Basilicus, fide ZHOU & FORTEY, 1986].
 Parabathycheilus MERGL, 1984 [Bathycheilus gallica DEAN, 1965] Landeyran Fm, Montagne Noire, France; BATHYCHEILIDAE; LORD [j.s.s. of Bathycheilus, fide RABANO, 1990].
 Parabellefontia HINTZE, 1953 [concinna] House Fm, Utah, USA; ASAPHIDAE; LORD.
@@ -3280,7 +3280,7 @@ Parabriscoia KOBAYASHI, 1935a [elegans] Jones Ridge Lst, Alaska, USA; DIKELOCEPH
 Parabulbaspis T. ZHANG, 1981 [Bulbaspis (Parabulbaspis) korlaensis] SW Kuerle County, Xinjiang, China; RAPHIOPHORIDAE; MORD.
 Parabumastides JI, 1987 [dayongensis] Datianbe Fm, Hunan, China; NILEIDAE; MORD.
 Paracalgachia LAMONT, 1978 [henshawensis] Weth-er Law Linn Fm, Scotland; ENCRINURIDAE; LSIL [see NOTE 4].
-Paracalmonia STRUVE, 1958c [Probolides cusp-idatus CLARKE, 1913] Ponta Grossa Sh, Parana Basin, Brazil; CALMONIIDAE; LDEV [replacement name for Proboloides].
+Paracalmonia STRUVE, 1958c [Probolides cuspidatus CLARKE, 1913] Ponta Grossa Sh, Parana Basin, Brazil; CALMONIIDAE; LDEV [replacement name for Proboloides].
 Paracalvinella ZHOU in ZHOU & ZHENG, 1980 [semigyroides] Fengshan Fm, Ningxia Hui, China; SAUKIIDAE; UCAM.
 Paracalymene PILLET, 1968 [Calymene bureaui PENEAU, 1928] Calcaires d’Erbray, Loire-Atlantique, France; CALYMENIDAE; LDEV.
 Paracalymene LIU, 1982[preocc., replaced by Paracalymenemene].
@@ -3303,7 +3303,7 @@ Paracryphaeus GANDL, 1972[Cryphaeus jonesi OEHLERT, 1877] Brittany, France; ACAS
 Paracyamella ZHOU & XIANG, 1993 [hujiabaensis] Pagoda Lst, Shaanxi, China; RORRINGTONIIDAE; UORD [j.s.s. of Cyamella, fide FORTEY, 1997].
 Paracybantyx LUDVIGSEN & TRIPP, 1990 [asulcatus] Road River Fm, Northwest Territories, Canada; STYGINIDAE; USIL.
 Paracybeloides HUPE, 1955 [Cybele loveni girvanensis REED, 1906a] South Threave Fm, Scotland; ENCRINURIDAE; UORD.
-Paradalmanites PILLET, 1954 [Phacops acacia SCHWARZ, 1906] Bokkeveld Group, South Africa; CALMONIIDAE; LDEV [j.s.s. of Bainella, fide ELDREDGE & BRANI°A, 1980].
+Paradalmanites PILLET, 1954 [Phacops acacia SCHWARZ, 1906] Bokkeveld Group, South Africa; CALMONIIDAE; LDEV [j.s.s. of Bainella, fide ELDREDGE & BRAÑA, 1980].
 Paradamesella YANG in ZHOU et al., 1977 [typica] Baojingia Fm, Hunan, China; DAMESELLIDAE; MCAM.
 Paradamesops YANG in LU et al., 1974b [jimaensis] Guizhou, China; DAMESELLIDAE; MCAM [j.s.s. of Damesops, fide JELL & HUGHES, 1997].
 Paradechenella RICHTER, 1912[Dechenella tschernyschewi RICHTER, 1909] Ural Mts, Russia; PROETIDAE; MDEV.
@@ -3313,9 +3313,9 @@ Paradiscus KOBAYASHI, 1943a [Microdiscus speciosus FORD, 1873] Troy, New York, U
 Paradistazeris ZHU in W. ZHANG et al., 1980a [Distazeris (Paradistazeris) sichuanensis] Dashuijing Fm, Sichuan, China; CATILLICEPHALIDAE; UCAM [?j.s.s. of Agelagma, fide PRATT, 1992].
 Paradoxides BRONGNIART, 1822 [Entomostracites paradoxissimus WAHLENBERG, 1821] Vastergotland, Sweden; PARADOXIDIDAE; MCAM.
 Paradrepanuroides ZHAO, HUANG, & MAO in ZHAO et al., 1984 [robusta] Huanglianba Fm, Guizhou, China; YINITIDAE; LCAM [j.s.s. of Qingkouia, fide W. ZHANG et al., 1997].
-Paraencrinurus ANTELO, 1973 [boliviensis] Can-caniri Fm, Bolivia; ENCRINURIDAE; USIL.
+Paraencrinurus ANTELO, 1973 [boliviensis] Cancaniri Fm, Bolivia; ENCRINURIDAE; USIL.
 Paraenshia QIU in QIU et al., 1983 [divergens] Chang-shan Fm, Anhui, China; ELVINIIDAE; UCAM.
-Paraeosoptychoparia QIU in QIU et al., 1983 [dong-shanensis] Hsuchuang Fm, Anhui, China; PTYCHOPARIIDAE; MCAM.
+Paraeosoptychoparia QIU in QIU et al., 1983 [dongshanensis] Hsuchuang Fm, Anhui, China; PTYCHOPARIIDAE; MCAM.
 Paraerbia REPINA, 1958 [pusillica] Bazaikh Horizon, Kuznetsk Alatau, Russia; DINESIDAE; LCAM.
 Paraeremiproetus PILLET, 1973a [Eremiproetus (Paraeremiproetus) lagrangei] La Grange Lst, Bretagne, France; TROPIDOCORYPHIDAE; MDEV.
 Parafallotaspis FRITZ, 1972[grata] Sekwi Fm, North West Territories, Canada; FALLOTASPIDIDAE; LCAM.
@@ -3379,7 +3379,7 @@ Paramirabole YUAN in YUAN & XIANG, 1998 [Mirabole (Paramirabole) ocellata] Daihu
 Paramphoton YANG in ZHOU et al., 1977 [xiangxiensis] Baojing Fm, Hunan, China; DOLICHOMETOPIDAE; MCAM [j.s.s. of Amphoton, fide GUO et al., 1996 & W. ZHANG & JELL, 1987].
 Parampyx T. ZHANG, 1981 [Ampyx (Parampyx) granulosa] Shaergan Fm, Xinjiang, China; RAPHIOPHORIDAE; UORD.
 Paranacaste POPP, 1989 [pontagrossensis] Ponta Grossa Fm, Brasil; CALMONIIDAE; LMDEV [j.s.s. of Bainella, fide CARVALHO & EDGECOMBE, 1991].
-Paranevadella PALMER & REPINA, 1993 [Paedeumias? subgroenlandicus REPINA in KHOMENTOVSKY & REPINA, 1965] Delgadella an-abarus Zone, S Siberia, Russia; JUDOMIIDAE; LCAM.
+Paranevadella PALMER & REPINA, 1993 [Paedeumias? subgroenlandicus REPINA in KHOMENTOVSKY & REPINA, 1965] Delgadella anabarus Zone, S Siberia, Russia; JUDOMIIDAE; LCAM.
 Parangustibole YUAN & XIANG, 1998 [sinensis] Yonghsien Fm, Guangxi, China; PROETIDAE; UDEV.
 Paranileus KOBAYASHI, 1951b [Nileus pater HOLUB, 1911] Klabava Fm, Czech Republic; NILEIDAE; LORD.
 Paranileus HINTZE, 1953 [preocc., replaced by Presbynileus].
@@ -3391,10 +3391,10 @@ Paraojia SUN & ZHU in ZHOU et al., 1977 [megaglabellus] Guangzhuling Fm, Hubei, 
 Paraolenoides IVSHIN, 1953 [medoevi] Boshchekul Fm, Kazakhstan; DORYPYGIDAE; MCAM.
 Paraolenus LERMONTOVA, 1951a [papilionaceus] Boshche-Kulya, NE Kazakhstan; OLENIDAE; UCAM.
 Paraonychopyge PILLET, 1973b [iranicus] Shirgesht Fm, eastern Iran; LEIOSTEGIIDAE; MORD.
-Paraorlovia CHERNYSHEVAin CHERNYSHEVAet al., 1956 [sequens] River Aldan, E Yakutia, Russia; ASAPHISCIDAE; MCAM.
+Paraorlovia CHERNYSHEVA inCHERNYSHEVA et al., 1956 [sequens] River Aldan, E Yakutia, Russia; ASAPHISCIDAE; MCAM.
 Paraoryctocephalops TOMASHPOLSKAYA in KHALFIN, 1960 [plana] Batenevsky Ridge, Siberia, Russia; ORYCTOCEPHALIDAE; MCAM [j.s.s. of Lancastria, fide BLAKER & PEEL, 1997].
 Parapachyaspis QIU in QIU et al., 1983 [miniscula] Hsuchuang Fm, Shandong, China; ALOKISTOCARIDAE; MCAM.
-Parapagetia REPINAin REPINAet al., 1964 [limbata] Sanashtykgol Horizon, Gorny Altay, S Siberia, Russia; HEBEDISCIDAE; LCAM.
+Parapagetia REPINA inREPINA et al., 1964 [limbata] Sanashtykgol Horizon, Gorny Altay, S Siberia, Russia; HEBEDISCIDAE; LCAM.
 Parapalacorona AN & DUAN in GUO et al., 1982 [jilinensis] Fengshan Fm, Jilin, China; KAOLISHANIIDAE; UCAM [j.s.s. of Mansuyites, fide ZHOU & J.ZHANG, 1984].
 Parapalpebralia PILLET, 1973a [andegavensis] La Grange Lst, Bretagne, France; PROETIDAE; MDEV.
 Parapaokannia W. ZHANG & LIN in W. ZHANG et al., 1980a [sichuanensis] Yanwangbian Fm, Sichuan, China; YINITIDAE; LCAM.
@@ -3425,20 +3425,20 @@ Parasajanaspis CHERNYSHEVA, 1972[lauta] Pamir, Russia; REDLICHINIDAE; LCAM.
 Parashantungia ZHU, 1959 [elongata] Kushan Fm, Liaoning, China; DAMESELLIDAE; UCAM.
 Parashengia LUO, 1982[elongata] Hetaoping Fm, Yunnan, China; LISANIIDAE; UCAM.
 Parashuiyuella YUAN & ZHAO in YUAN et al., 1997 [sinensis] Kaili Fm, Guizhou, China; PTYCHOPARIIDAE; MCAM.
-Parashumardia SUN in SUN & XIANG, 1979 [sin-ensis] Baoshan Fm, Yunnan, China; SHUMARDIIDAE; UCAM.
+Parashumardia SUN in SUN & XIANG, 1979 [sinensis] Baoshan Fm, Yunnan, China; SHUMARDIIDAE; UCAM.
 Parasolenoparia LI in ZHOU et al., 1982[granuliformis] Hsuchuang Fm, Ningxia Hui, China; SOLENOPLEURIDAE; MCAM.
 Parasolenopleura POLETAEVA in EGOROVA et al., 1955 [preocc., replaced by Parasolopleurena].
 Parasolenopleura WESTERGARD, 1953 [Calymene aculeata ANGELIN, 1851] Sweden; SOLENOPLEURIDAE; MCAM [j.s.s. of Solenopleurina,fide ŠNAJDR, 1958a].
 Parasolopleurena JELL nov. [Parasolenopleura subconsocialis POLETAEVA in EGOROVA et al., 1955] Sanashtykgol Horizon, Gorny Shoria, W Siberia, Russia; SOLENOPLEURIDAE; MCAM [replacement name for Parasolenopleura POLETAEVA].
 Parasphaerexochus CHUGAEVA, 1973 [galeatus] Kolyma, Far E Siberia, Russia; CHEIRURIDAE; LORD.
 Paraszechuanella LIU in ZHOU et al., 1977 [latilimbata] Nantsinkuan Fm, Sichuan, China; LEIOSTEGIIDAE; LORD.
-Parataitzuia W. ZHANG, 1963 [Solenoparia tang-shihensis ENDO, 1944] Changhia Fm, Liaoning, China; SOLENOPLEURIDAE; MCAM [j.s.s. of Menocephalites, fide W. ZHANG & JELL, 1987].
+Parataitzuia W. ZHANG, 1963 [Solenoparia tangshihensis ENDO, 1944] Changhia Fm, Liaoning, China; SOLENOPLEURIDAE; MCAM [j.s.s. of Menocephalites, fide W. ZHANG & JELL, 1987].
 Paratamdaspis G. ERGALIEV in ERGALIEV & ERGALIEV, 2001 [longiformis] Bestogaisk Fm, Kazakhstan; ASAPHIDAE; UCAM.
 Paratermierella HUPE, 1953a [elegans] Issafen Fm, Morocco; ELLIPSOCEPHALIDAE; LCAM [j.s.s. of Brevitermierella, fide GEYER, 1990].
 Paratiresias PETRUNINA in REPINA et al., 1975 [turkestanicus] Kielanella-Tretaspis Zone, Turkestan-Alai Ridge, Tien Shan, Turkestan; ISOCOLIDAE; UORD.
 Paratollaspis KOBAYASHI, 1943b [j.o.s. of Erbia].
 Paratoernquistia CHATTERTON et al., 1998 [sanchezae] Las Aguaditas Fm, San Juan, Argentina; TOERNQUISTIIDAE; UORD [j.s.s. of Toernquistia, fide ADRAIN, herein].
-Paratretaspis DEAN, 1973b [terranovica] Summer-ford Group, Newfoundland, Canada; TRINUCLEIDAE; MORD.
+Paratretaspis DEAN, 1973b [terranovica] Summerford Group, Newfoundland, Canada; TRINUCLEIDAE; MORD.
 Paratrinucleus WHITTINGTON, 1941a [Trinucleus acervulosus RAYMOND, 1920] Athens Fm, Virginia, USA; TRINUCLEIDAE; UORD.
 Paratungusella REPINA, 1966 [triangulata] Kuznetsk Alatau, S Siberia, Russia; METADOXIDIDAE; LCAM
 Paratzuchiatocnemis WU & XIA, 1990 [dialox] Pagoda Fm, NW Hunan, China; PLIOMERIDAE; UORD [j.s.s. of Ovalocephalus, fide JELL, herein].
@@ -3467,7 +3467,7 @@ Parkesolithus CAMPBELL & DURHAM, 1970 [gradyi] Gunningbland Fm, New South Wales,
 Particeps REED, 1943a [Griffithides (Particeps) scoticus REED, 1943b] Lower Limestone Series, Fife, Scotland; PROETIDAE; MISS.
 Parvidumus KOBAYASHI & HAMADA, 1980b [densigranulatus] Japan; PROETIDAE; MISS.
 Parvigena OWENS, 1973a [Proetus parvigena WARBURG, 1925] Boda Lst, Sweden; TROPIDOCORYPHIDAE; UORD.
-Parvixochus PIBL & VANĚKinPŘIBYL et al., 1985b [Sphaerexochus parvus BILLINGS, 1863] Chazy Lst, Mingan Islands, Quebec, Canada; CHEIRURIDAE; UORD [j.s.s. of Sphaerexochus, fide ADRAIN, herein].
+Parvixochus PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Sphaerexochus parvus BILLINGS, 1863] Chazy Lst, Mingan Islands, Quebec, Canada; CHEIRURIDAE; UORD [j.s.s. of Sphaerexochus, fide ADRAIN, herein].
 Paryfenus HADDING, 1913b [Colymbus lovisae HADDING, 1913a] Sweden; PROETIDAE; MORD [replacement name for Colymbus].
 Patalolaspis QIAN in QIU et al., 1983 [striatus] Changshan Fm, Shandong, China; DIKELOCEPHALIDAE; UCAM.
 Pateraspis PRANTL & PŘIBYL, 1947c [Cheiruruspater BARRANDE, 1872] Šárka Fm, Czech Republic; CHEIRURIDAE; MORD.
@@ -3533,10 +3533,10 @@ Perthiellus LAMONT, 1975 [pringlei] Leny Lst, Scotland; INDET. LCAM.
 Perunaspis PŘIBYL, 1949 [longispinus] Trebotov Lst, Czech Republic; LICHIDAE; MDEV.
 Pesaia WALCOTT & RESSER, 1925 [exsculpta] Gribovii Fjord, Novaya Zemlya, Russia; ELVINIIDAE; UCAM.
 Pesaiella ROZOVA, 1964 [obnixa] Tavgiysk Horizon, NW Siberia, Russia; PARABOLINOIDIDAE; UCAM.
-Pesaiina POLETAEVA, 1969 [Pesaia avia SIVOV in EGOROVAet al., 1955] Salair Fm, Salair, Russia; EULOMIDAE; UCAM.
+Pesaiina POLETAEVA, 1969 [Pesaia avia SIVOV in EGOROVA et al., 1955] Salair Fm, Salair, Russia; EULOMIDAE; UCAM.
 Petalocephalus LU & QIAN, 1983a [laevis] Chang-shan Fm, Liaoning, China; PTEROCEPHALIIDAE; UCAM.
 Petigurus RAYMOND, 1913b [Bathyurus nero BILLINGS, 1865] Catoche Fm, Newfoundland, Canada; BATHYURIDAE; LORD.
-Petrbokia PŘIBYL & VANĚK, 1965 [Platypeltis? [Ni-leus] longicauda KLOUČEK, 1916] Dobrotiva Fm, Czech Republic; NILEIDAE; MORD.
+Petrbokia PŘIBYL & VANĚK, 1965 [Platypeltis? [Nileus] longicauda KLOUČEK, 1916] Dobrotiva Fm, Czech Republic; NILEIDAE; MORD.
 Petruninaspis IVSHIN, 1962[zoya] Seletinsk Horizon, Kazakhstan; MARJUMIIDAE; UCAM.
 Peziziopsis JU in QIU et al., 1983 [typica] Huang-nehkan Fm, Zhejiang, China; METAGNOSTIDAE; UORD [j.s.s. of Dividuagnostus, fide ZHOU, 1987].
 Phacopidella REED, 1905b [Phacops glockeri BARRANDE, 1846a] Lite. Fm, Czech Republic; PHACOPIDAE; LSIL.
@@ -3567,7 +3567,7 @@ Phillipsmithiana LIEBERMAN & KLOC, 1997 [hyfinkeli] Mt Issomour, Morocco; ACASTI
 Philonyx RICHTER & RICHTER, 1952[Asteropyge? (Philonyx) philonyx] Schalker Teich, Harz Mts, Germany; ACASTIDAE; MDEV.
 Phlysacium HAWLE & CORDA, 1847 [paradoxum] Czech Republic; PARADOXIDIDAE; MCAM [j.s.s. of Hydrocephalus, fide DEAN & RUSHTON, 1997].
 Phoidagnostoides PILLET in CAPERA et al., 1978 [Leiagnostus miqueli SDZUY, 1958b] Horizon C, Combes de Barrroubio, Montagne Noire, France; AGNOSTINA FAMILY UNCERTAIN; LORD [j.s.s. of Leiagnostus, fide SHERGOLD et al., 1990].
-Phoidagnostus WHITEHOUSE, 1936 [limbatus] Dev-oncourt Lst, Queensland, Australia; AGNOSTINA FAMILY UNCERTAIN; MCAM.
+Phoidagnostus WHITEHOUSE, 1936 [limbatus] Devoncourt Lst, Queensland, Australia; AGNOSTINA FAMILY UNCERTAIN; MCAM.
 Phoreotropis RAYMOND, 1924 [puteatus] Gorge Fm, Vermont, USA; PAGODIIDAE; UCAM.
 Phorocephala LU in LU et al., 1965 [typa] Siliangssu Fm, Shaanxi, China; TELEPHINIDAE; MORD.
 Phylacops COOPER & KINDLE, 1936 [vigilans] White Head Fm, Quebec, Canada; CYCLOPYGIDAE; UORD.
@@ -3609,7 +3609,7 @@ Plagiura RESSER, 1935 [Ptychoparia ? cercops WALCOTT, 1917] Mount Whyte Fm, Albe
 Plagiurella RESSER, 1937b [Ptychoparia ? cleadas WALCOTT, 1917] Mount Whyte Fm, Alberta, Canada; PTYCHOPARIIDAE; LCAM [j.s.s. of Plagiura, fide LOCHMAN, 1947].
 Plakhinella LAZARENKO, 1965 [quadrata] Lejopyge armata-Maiaspis mirabilis Zone, N Siberia, Russia; DOKIMOCEPHALIDAE; UCAM.
 Planaspis REPINA, 1960 [gelasinica] Kameshkov Horizon, Kuznetsk Alatau, Russia; ALDONAIIDAE; LCAM.
-Planilobus ENGEL& MORRIS, 1995 [Australokaskia (Planilobus) noorooensis] Wootton Beds, New South Wales, Australia; PROETIDAE; MISS.
+Planilobus ENGEL & MORRIS, 1995 [Australokaskia (Planilobus) noorooensis] Wootton Beds, New South Wales, Australia; PROETIDAE; MISS.
 Planiscutellum RICHTER & RICHTER, 1956 [Bronteus (Holomeris) planus HAWLE & CORDA, 1847] Lite. Fm, Czech Republic; STYGINIDAE; LSIL.
 Planocephalus ZADOROZKAYA in ZHURAVLEVA et al., 1967 [cultus] Obruchev Horizon, Tuva, Russia; SAUKIANDIDAE; LCAM.
 Planodiscus KOROBOV, 1980 [patulus] Egyngolskaya Fm, NW Mongolia; HEBEDISCIDAE; LCAM [j.s.s. of Parapagetia, fide JELL, 1997].
@@ -3617,13 +3617,13 @@ Planokaskia ENGEL & MORRIS, 1994 [gibsoni] Flagstaff Fm, New South Wales, Austra
 Planolimbus GEYER, 1990 [hessikouanus] Bailiella Fm, Morocco; ELLIPSOCEPHALIDAE; MCAM.
 Plasiaspis PRANTL & PŘIBYL, 1949c [Dindymenebohemica BARRANDE, 1852] Šárka Fm, Czech Republic; ENCRINURIDAE; MORD.
 Platagnostus HOWELL, 1935b [immensus] Coulouma, France; AGNOSTIDAE; MCAM [j.s.s. of Phalacroma, fide SHERGOLD et al., 1990].
-Plataspella WILSON, 1949 [Iddingsia anatina RESSER, 1942b] Honey Ck Lst, Oklahoma, USA; DOKIMOCEPHALIDAE; UCAM [j.s.s. of Id-dingsia, fide WESTROP, 1986b].
+Plataspella WILSON, 1949 [Iddingsia anatina RESSER, 1942b] Honey Ck Lst, Oklahoma, USA; DOKIMOCEPHALIDAE; UCAM [j.s.s. of Iddingsia, fide WESTROP, 1986b].
 Platillaenus JAANUSSON, 1954 [Illaenus ladogensis HOLM in SCHMIDT, 1886b] Obuchov Fm, St Petersburg region, Russia; ILLAENIDAE; MORD.
 Platopolichas GURICH, 1901 [Lichas avus BARRANDE, 1872] Šárka Fm, Czech Republic; LICHIDAE; MORD [j.s.s. of Uralichas, fide THOMAS & HOLLOWAY, 1988].
 Platyantyx WHITTINGTON, 1953 [Bathyurus arcuatus BILLINGS, 1865] boulder near St Antoine de Tilly, Quebec, Canada; BATHYURIDAE; MORD.
 Platycalymene SHIRLEY, 1936 [Asaphus duplicatus MURCHISON, 1839] Chirbury Fm, Shelve, England; CALYMENIDAE; UORD.
 Platycolpus RAYMOND, 1913a [preocc. replaced by Rasettia].
-Platycoryphe FOERSTE, 1919a [Calymene platy-cephala FOERSTE, 1910] Saltillo Lst, Tennessee, USA; HOMALONOTIDAE; MORD.
+Platycoryphe FOERSTE, 1919a [Calymene platycephala FOERSTE, 1910] Saltillo Lst, Tennessee, USA; HOMALONOTIDAE; MORD.
 Platydiamesus RAYMOND, 1937 [depressus] Gorge Fm, Vermont, USA; ILLAENURIDAE; UCAM.
 Platyharpes WHITTINGTON, 1950b [j.o.s. of Hibbertia].
 Platylichas GURICH, 1901 [Lichas margaritifer NIESZKOWSKI, 1857] Porkuni Lst, Estonia; LICHIDAE; UORD.
@@ -3677,7 +3677,7 @@ Pliomeroides HARRINGTON & LEANZA, 1957 [Protopliomerops deferrariisi HARRINGTON,
 Pliomerops RAYMOND, 1905b [Amphion canadensis BILLINGS, 1859] Chazy Lst, Mingan Is, Quebec, Canada; PLIOMERIDAE; UORD.
 Plurinodus OPIK, 1967 [discretus] O’Hara Sh, Queensland, Australia; AGNOSTINA FAMILY UNCERTAIN; MUCAM.
 Plusiarges GURICH, 1901 [Lichas palmata BARRANDE, 1846a] Lite. Fm, Czech Republic; LICHIDAE; LSIL [j.s.s. of Trochurus, fide TRIPP, 1958].
-Plutonia HICKS, 1871 [preocc., replaced by Pluton-ides].
+Plutonia HICKS, 1871 [preocc., replaced by Plutonides].
 Plutonides HICKS, 1895 [Plutonia sedgwickii HICKS, 1871] SW Wales; PARADOXIDIDAE; MCAM [replacement name for Plutonia].
 Podoliproetus ŠNAJDR, 1980 [Proetus perinsignisCHLUPAC & VANĚK, 1965] Dvorce-Prokop Fm, Czech Republic; PROETIDAE; LDEV.
 Podolites BALASHOVA, 1968 [preocc., replaced by Rugulites].
@@ -3690,7 +3690,7 @@ Poletaevella DALMATOV & REPINA, 1971 [baljutica] E Sayan, S Siberia, Russia; OLE
 Poliella WALCOTT, 1916b [anteros] Spence Sh, Idaho, USA; DOLICHOMETOPIDAE; MCAM.
 Poliellaites SUNDBERG & McCOLLUM, 2003 [gloriosa] Pioche Sh, Nevada, USA; DOLICHOMETOPIDAE; MCAM.
 Poliellaspidella POLETAEVA, 1960 [tannuolica] San-ashtykgol Horizon, Tuva, Russia; DOLICHOMETOPIDAE; LCAM.
-Poliellaspis LERMONTOVA, 1940 [Poliellina say-anicus POLETAEVA, 1936] Amgaian, W Sayan, Russia; DOLICHOMETOPIDAE; MCAM.
+Poliellaspis LERMONTOVA, 1940 [Poliellina sayanicus POLETAEVA, 1936] Amgaian, W Sayan, Russia; DOLICHOMETOPIDAE; MCAM.
 Poliellina POLETAEVA, 1936 [lermontovi] Amgaian, W Sayan, Russia; DOLICHOMETOPIDAE; MCAM.
 Politicurus ADRAIN et al., 2003 [Hystricurus politus ROSS, 1951] Garden City Fm, Idaho, USA; HYSTRICURIDAE; LORD.
 Politinella IVSHIN, 1979 [Poliellina (Politinella) bajanica] Bayanaulsk Horizon, central Kazakhstan; DOLICHOMETOPIDAE; LCAM.
@@ -3735,18 +3735,18 @@ Prehousia PALMER, 1960 [alata] Dunderberg Fm, Nevada, USA; PTEROCEPHALIIDAE; UCA
 Preodontochile DEGARDIN & PILLET, 1984 [Dalmanites (Preodontochile) camprodonensis] Camprodon, Gerone, Spain; DALMANITIDAE; LSIL.
 Prephacopidella DESTOMBES, 1963 [Phacopidella (Prephacopidella) struvei] Ktaoua series, Morocco; DALMANITIDAE; UORD [j.s.s. of Dreyfussina, fide DESTOMBES, 1972].
 Presbynileus HINTZE, 1954 [Paranileus ibexensis HINTZE, 1953] Fillmore Fm, Utah, USA; ASAPHIDAE; LORD [replacement name for Paranileus].
-Prestalia ELDREDGE & BRANI°A, 1980 [Deltacephalaspis (Prestalia) tumida] Icla Fm, Bolivia; CALMONIIDAE; LDEV.
+Prestalia ELDREDGE & BRAÑA, 1980 [Deltacephalaspis (Prestalia) tumida] Icla Fm, Bolivia; CALMONIIDAE; LDEV.
 Pribylia ERBEN, 1951 [Proetus inaequicostatus BARRANDE, 1846a] Koneprusy Lst, Czech Republic; TROPIDOCORYPHIDAE; LDEV.
 Priceaspis LEGG, 1976 [Priceaspis (Priceaspis) oepiki] Emanuel Fm, Western Australia; ASAPHIDAE; LORD.
 Pricyclopyge RICHTER & RICHTER, 1954 [Aeglinaprisca BARRANDE, 1872] Šárka Fm, Czech Republic; CYCLOPYGIDAE; MORD.
-Primaspis RICHTER & RICHTER, 1917 [Odonto-pleura primordialis BARRANDE, 1846a] Letna Fm, Czech Republic; ODONTOPLEURIDAE; UORD.
+Primaspis RICHTER & RICHTER, 1917 [Odontopleura primordialis BARRANDE, 1846a] Letna Fm, Czech Republic; ODONTOPLEURIDAE; UORD.
 Primoriella REPINA, 1973 [bella] Redlichina culmenica Zone, Far E Siberia, Russia; PARADOXIDIDAE; LCAM.
 Princetonella LOCHMAN, 1953a [Calyptomma typicale RESSER, 1942b] Red Lion Fm, Montana, USA; DIKELOCEPHALIDAE; UCAM [replacement name for Calyptomma].
-Prionocheilus ROUAULT, 1847 [verneuili] Cara-docian, Brittany, France; PHAROSTOMATIDAE; MORD.
-Prionopeltis HAWLE & CORDA, 1847 [Phaeton arch-iaci BARRANDE, 1846a] Kopanina Fm, Czech Republic; TROPIDOCORYPHIDAE; USIL.
+Prionocheilus ROUAULT, 1847 [verneuili] Caradocian, Brittany, France; PHAROSTOMATIDAE; MORD.
+Prionopeltis HAWLE & CORDA, 1847 [Phaeton archiaci BARRANDE, 1846a] Kopanina Fm, Czech Republic; TROPIDOCORYPHIDAE; USIL.
 Prionopyge HARRINGTON & LEANZA, 1942 [unnecessary replacement name for, and thus j.o.s. of Onychopyge].
 Prionurus HAWLE & CORDA, 1847 [typographical error for Prionopeltis].
-Prismenaspis HENDERSON, 1976 [Eugonocare pro-pinquum WHITEHOUSE, 1939] Georgina Lst, Queensland, Australia; ELVINIIDAE; UCAM [j.s.s. of Protemnites, fide SHERGOLD, 1982].
+Prismenaspis HENDERSON, 1976 [Eugonocare propinquum WHITEHOUSE, 1939] Georgina Lst, Queensland, Australia; ELVINIIDAE; UCAM [j.s.s. of Protemnites, fide SHERGOLD, 1982].
 Proagnostus BUTTS, 1926 [bulbus] Nolichucky Fm, Alabama, USA; AMMAGNOSTIDAE; UCAM.
 Proampyx FRECH, 1897 [Proetus? difformis acuminatus ANGELIN, 1851] Andrarum Lst, Sweden; AGRAULIDAE; MCAM.
 Proapatokephaloides ERGALIEV, 1980 [longifrons] Malokaratau Fm, Kazakhstan; PTEROCEPHALIIDAE; UCAM.
@@ -3794,7 +3794,7 @@ Proinouyia QIU, 1980 [jiagouensis] Manto Fm, Jiangsu, China; INOUYIIDAE; MCAM.
 Prokootenia LERMONTOVA, 1940 [rara] Protolenus Zone, Siberia, Russia; DORYPYGIDAE; LCAM.
 Prokops CHLUPAC, 1971b [Phacops (Prokops) prokopi] Dvorce-Prokop Lst, Czech Republic; PHACOPIDAE; LDEV.
 Proliaoningaspis J. ZHANG & WANG, 1985 [pingquanensis] Kushan Fm, Hubei, China; MONKASPIDIDAE; UCAM.
-Proliobole ARCHINAL, 1991 [Phillipsia nitida HOLZAPFEL, 1889] Bad-Grund/Ober Harz (cuII), Germany; PROETIDAE; MISS [j.s.s. of Panibole, fide YUAN & XIANG, 1998].
+Proliobole ARCHINAL, 1991 [Phillipsia nitida HOLZAPFEL, 1889] Bad-Grund/Ober Harz (cuII), Germany; PROETIDAE; MISS [j.s.s. of Panibole, fide YUAN & XIANG, 1998].
 Proliostracus POULSEN, 1932[strenuelliformis] Ella Island Fm, E Greenland; PTYCHOPARIIDAE; LCAM.
 Prolloydia KOBAYASHI, 1960b [orientalis] Dictyites Zone, South Korea; KAOLISHANIIDAE; UCAM.
 Prolonchocephalus PALMER in PALMER & PEEL, 1981 [spinosus] Cass Fjord Fm, NW Greenland; LONCHOCEPHALIDAE; UCAM.
@@ -3809,7 +3809,7 @@ Proricephalus WESTROP, 1986a [Keithiella scapane LONGACRE, 1970] Wilberns Fm, Te
 Proromma LANE, 1971 [bregmops] Skelgill Beds, England; CHEIRURIDAE; LSIL.
 Prosaukia ULRICH & RESSER, 1933 [Dikelocephalus misa HALL, 1863] Lone Rock Fm, Wisconsin, USA; SAUKIIDAE; UCAM.
 Proscharyia PENG, 1990 [sinensis] Madaoyu Fm, Hunan, China; ?BATHYURIDAE; LORD.
-Proshantungaspis QIU & LIN in QIU et al., 1983 [peculialis] Maochuang Fm, Jiangsu, China; PTYCHOPARIIDAE; MCAM [j.s.s. of Prob-owmaniella, fide W. ZHANG & JELL, 1987].
+Proshantungaspis QIU & LIN in QIU et al., 1983 [peculialis] Maochuang Fm, Jiangsu, China; PTYCHOPARIIDAE; MCAM [j.s.s. of Probowmaniella, fide W. ZHANG & JELL, 1987].
 Prosocephalus CAMPBELL, 1977 [Huntonia (Prosocephalus) xylabion] Bois d’Arc Fm, Oklahoma, USA; DALMANITIDAE; LDEV.
 Prosopiscus SALTER in SALTER & BLANFORD, 1865 [mimus] Himalaya; PROSOPISCIDAE; MORD.
 Prospectatrix FORTEY, 1981 [Cyclopyge genatenta STUBBLEFIELD in STUBBLEFIELD & BULMAN, 1927] Shineton Sh Fm, England; CYCLOPYGIDAE; LORD.
@@ -3823,7 +3823,7 @@ Protapatokephalus RAYMOND, 1937 [arctostriatus] Gorge Fm, Vermont, USA; REMOPLEU
 Protarchaeogonus SDZUY, 1955 [moroffi] Leimitz Schiefer, Bavaria, Germany; RORRINGTONIIDAE; LORD.
 Protemnites WHITEHOUSE, 1939 [elegans] Georgina Lst, Queensland, Australia; ELVINIIDAE; UCAM.
 Proteuloma SDZUY, 1958b [Conocephalites geinitzi BARRANDE, 1868] Leimitz Schiefer, Bavaria; EULOMIDAE; LORD
-Protillaenus RAYMOND, 1937 [marginatus] Rock-ledge Cgte, Vermont, USA; KINGSTONIIDAE; UCAM, [j.s.s. of Blountia, fide LOCHMAN, 1953a].
+Protillaenus RAYMOND, 1937 [marginatus] Rockledge Cgte, Vermont, USA; KINGSTONIIDAE; UCAM, [j.s.s. of Blountia, fide LOCHMAN, 1953a].
 Protobronteus ŠNAJDR, 1960 [Eobronteus reedi SINCLAIR, 1949a] Trenton Lst, Quebec, Canada; STYGINIDAE; MORD.
 Protocalymene ROSS, 1967 [mcallisteri] Antelope Valley Fm, California, USA; CALYMENIDAE; MORD.
 Protocerauroides CHATTERTON & PERRY, 1984 [lanei] Whittaker Fm, Northwest Territories, Canada; CHEIRURIDAE; LSIL.
@@ -3846,10 +3846,10 @@ Protoryctocara ZHOU in ZHOU et al., 1977 [cylindrica] Hunan, China; ORYCTOCEPHAL
 Protoryctocephalus ZHOU in LU et al., 1974b [wuxunensis] Guizhou, China; ORYCTOCEPHALIDAE; LCAM.
 Protoscutellum ŠNAJDR, 1960 [Bronteus simulans BARRANDE, 1852] Lite. Fm, Czech Republic; STYGINIDAE; LSIL [j.s.s. of Planiscutellum, fide KACHA & SARIC, 1994].
 Protostygina PRANTL & PŘIBYL, 1949c [Holometopus? (Illaenurus) bohemica BARRANDE,1872] Šárka Fm, Czech Republic; STYGINIDAE; MORD.
-Protrachoparia Q.Z ZHANG in QIU et al., 1983 [ov-ata] Hsuchuang Fm, Anhui, China; SOLENOPLEURIDAE; MCAM.
+Protrachoparia Q.Z ZHANG in QIU et al., 1983 [ovata] Hsuchuang Fm, Anhui, China; SOLENOPLEURIDAE; MCAM.
 Protypus WALCOTT, 1886 [Angelina hitchcocki WHITFIELD, 1884] Parker Sl, Vermont, USA; DORYPYGIDAE; LCAM.
 Prouktaspis REPINA in KHOMENTOVSKY & REPINA, 1965 [Paramicmacca insolens SUVOROVA, 1960] Atdaban Horizon, Siberia, Russia; JAKUTIDAE; LCAM.
-Proveedoria LOCHMAN, 1948 [starquistae] Los Ar-rojos Fm, Sonora, Mexico; ALOKISTOCARIDAE; MCAM.
+Proveedoria LOCHMAN, 1948 [starquistae] Los Arrojos Fm, Sonora, Mexico; ALOKISTOCARIDAE; MCAM.
 Proxiniobe HOEL, 1999 [Niobe flabellifera FORTEY, 1975] Valhallfona Fm, Spitsbergen; ASAPHIDAE; LORD.
 Prozacanthoides RESSER, 1937b [Olenoides stissingensis DWIGHT, 1889] Stissing Fm, New York, USA; ZACANTHOIDIDAE; MCAM.
 Pruvostina HUPE, 1953a [nicklesi] Amouslek Fm, Morocco; BIGOTINIDAE; LCAM.
@@ -3875,7 +3875,7 @@ Pseudoacrocephalites ROZOVA, 1968 [preocc., replaced by Rosovaspis].
 Pseudoalokistocare SUNDBERG, 1994 [swasii] Swasey Lst, Utah, USA; ALOKISTOCARIDAE; MCAM [j.s.s. of Alokistocare, fide SUNDBERG, 1999].
 Pseudoasaphinus BALASHOVA, 1976 [Asaphus tecticaudatus STEINHARDT, 1874] Volchov Stage, Estonia; ASAPHIDAE; MORD.
 Pseudoasaphoides BALASHOVA, 1976 [Pseudoasaphus tecticaudatus var. praecurrens SCHMIDT, 1904] Valaste Substage to Aseri Stage, Archangel region, Russia; ASAPHIDAE; MORD.
-Pseudoasaphus SCHMIDT, 1901 [Ptychopyge glob-ifrons EICHWALD, 1858] Vaginatenkalk, Kunda Stage, Tallinn, Estonia; ASAPHIDAE; MORD.
+Pseudoasaphus SCHMIDT, 1901 [Ptychopyge globifrons EICHWALD, 1858] Vaginatenkalk, Kunda Stage, Tallinn, Estonia; ASAPHIDAE; MORD.
 Pseudoasiatella REPINA in REPINA & ROMANENKO, 1978 [Asiatella (Pseudoasiatella) grata] Gorny Altay, S Siberia, Russia; ELLIPSOCEPHALIDAE; LCAM.
 Pseudobarrandia COURTESSOLE & PILLET, 1976 [j.o.s. of Rokycania].
 Pseudobasilicoides BALASHOVA, 1971 [elegans] Volkhovstroisk Fm, St Petersburg region, Russia; ASAPHIDAE; MORD.
@@ -3898,7 +3898,7 @@ Pseudocyrtosymbole YUAN & XIANG, 1998 [acutangularis] Yonghsien Fm, Guangxi; PRO
 Pseudodechenella PILLET, 1973a [Calymene rowi GREEN, 1838] Hamilton Group, New York, USA; PROETIDAE; MDEV.
 Pseudodipharus KOROBOV, 1980 [privus] Egyngolskaya Fm, Mongolia; UNCERTAIN; LCAM [maybe redlichiid juvenile; j.s.s. of Dipharus, fide JELL, 1997].
 Pseudodudu HAHN, HAHN & MULLER,1997 [keto] Erdbach Lst, Hessen, Germany; PROETIDAE; MISS.
-Pseudoeobronteus MAKSIMOVA, 1979 [Micro-scutellum (Pseudoeobronteus) kotelnensis] Ishenitsynskaya Fm, S Siberia, Russia; STYGINIDAE; LDEV.
+Pseudoeobronteus MAKSIMOVA, 1979 [Microscutellum (Pseudoeobronteus) kotelnensis] Ishenitsynskaya Fm, S Siberia, Russia; STYGINIDAE; LDEV.
 Pseudoerbia REPINA in REPINA et al., 1964 [minima] Kuznetsk Alatau, Russia; DINESIDAE; LCAM.
 Pseudoerbiopsis KOROBOV, 1989 [privus] Akbashinsky Fm, W Mongolia; DINESIDAE; LCAM.
 Pseudoeteraspis CHERNYSHEVA in DZEVANOVSKIJ & CHERNYSHEVA, 1950 [angarensis] Angarsk Fm, Siberia, Russia; AGRAULIDAE; LCAM.
@@ -3930,7 +3930,7 @@ Pseudomegalaspis JAANUSSON, 1953 [Megalaspisformosa TORNQUIST, 1884] Folkeslunda
 Pseudomera HOLLIDAY, 1942[Amphion barrandei BILLINGS, 1865] Newfoundland, Canada; PLIOMERIDAE; LORD.
 Pseudomexicella SUNDBERG, 1994 [hestia] Dome Lst, Utah, USA; ALOKISTOCARIDAE; MCAM.
 Pseudomonaspis RICHTER & RICHTER, 1917 [j.o.s. of Acidaspis].
-Pseudonericella EGOROVAin EGOROVAet al., 1982 [pendula] Ust-Maisk Fm, Siberia, Russia; PROASAPHISCIDAE; MCAM.
+Pseudonericella EGOROVA inEGOROVA et al., 1982 [pendula] Ust-Maisk Fm, Siberia, Russia; PROASAPHISCIDAE; MCAM.
 Pseudonileus KOBAYASHI, 1951b [j.o.s. of Hemibarrandia].
 Pseudonileus HINTZE, 1953 [preocc., replaced by Protopresbynileus].
 Pseudoolenoides HINTZE, 1953 [dilectus] Kanosh Fm, Utah, USA; BATHYURIDAE; MORD.
@@ -3945,7 +3945,7 @@ Pseudoproetus POULSEN, 1934 [Proetus (Pseudoproetus) regalis] Cape Schuchert Fm,
 Pseudoprotolenella ZHU & LIN, 1983 [subcylindrica] Xidashan Fm, Xinjiang, China; ELLIPSOCEPHALIDAE; LCAM.
 Pseudoptychoparia TING in LU, 1940 [j.o.s. of Yunnanocephalus].
 Pseudoptychopyge BALASHOVA, 1964 [Ptychopygelimbata ANGELIN, 1852] Oland, Sweden; ASAPHIDAE; LORD.
-Pseudoptyocephalus LEGG, 1976 [spinosus] Gold-wyer Fm, Western Australia; ASAPHIDAE; MORD.
+Pseudoptyocephalus LEGG, 1976 [spinosus] Goldwyer Fm, Western Australia; ASAPHIDAE; MORD.
 Pseudoredlichia W. ZHANG & LIN in YIN & LI, 1978 [hepingensis] Shuijingtuo Fm, Shanxi, China; REDLICHIIDAE; LCAM.
 Pseudoresserops REPINA in KHOMENTOVSKY & REPINA, 1965 [oculatus] Atdaban Horizon, Siberia, Russia; CHENGKOUASPIDIDAE; LCAM.
 Pseudorhaptagnostus LERMONTOVA, 1951a [simplex] Boshche-Kulya, NE Kazakhstan; DIPLAGNOSTIDAE; UCAM [j.s.s. of Neoagnostus, fide SHERGOLD et al., 1990].
@@ -3966,7 +3966,7 @@ Pseudotaitzuia QIU in QIU et al., 1983 [insueta] Changhia Fm, Jiangsu, China; OR
 Pseudotalbotina BENEDETTO, 1977 [ovalis] Santa Rosita Fm, Argentina; LONCHOCEPHALIDAE; UCAM.
 Pseudotrinodus KOBAYASHI & HAMADA, 1971b [aenigma] Kroh, Malaysia; AULACOPLEURIDAE; LMDEV.
 Pseudotupolichas PHLEGER, 1936 [Lichas ornatus ANGELIN, 1854] Hoglint Beds, Gotland, Sweden; LICHIDAE; LSIL.
-Pseudowaribole HAHN & HAHN, 1967 [Cyrtosym-bole (Waribole) octofera RICHTER & RICHTER, 1926] Kallenhardt, Sauerland, Rhenish Massif, Germany; PROETIDAE; UDEV.
+Pseudowaribole HAHN & HAHN, 1967 [Cyrtosymbole (Waribole) octofera RICHTER & RICHTER, 1926] Kallenhardt, Sauerland, Rhenish Massif, Germany; PROETIDAE; UDEV.
 Pseudowentsuia QIAN, 1994 [cylindrica] Changshan Fm, Liaoning, China; CHANGSHANIIDAE; UCAM.
 Pseudowutingaspis LI, 1978 [longmenshanensis] Chiungchussu Fm, Sichuan, China; REDLICHIIDAE; LCAM.
 Pseudoyiliangella YIN in YIN & LI, 1978 [Yiliangella (Pseudoyiliangella) xishuiensis] Mingxinsi Fm, Guizhou, China; GIGANTOPYGIDAE; LCAM.
@@ -4051,7 +4051,7 @@ Quadratapyge ZHOU in ZHOU et al., 1977 [Microparia (Quadratapyge) latilimbata] M
 Quadraticephalus SUN, 1924 [walcotti] Changshan Fm, Shandong, China; PTYCHASPIDIDAE; UCAM [j.s.s. of Changia, fide RESSER, 1942a].
 Quadratillaenus WU, 1987 [tewoensis] Yanglugou Fm, Gansu, China; ILLAENIDAE; UORD.
 Quadratispina GANDL, 1972[Neocalmonia (Quadratispina) quadratispinosa] Bandera Fm, NE Spain; ACASTIDAE; UDEV.
-Quadratoproetus ALBERTI, 1967b [Proetus quad-ratus MAURER, 1885] Waldgirmes, Rhenish Massif, Germany; TROPIDOCORYPHIDAE; MDEV.
+Quadratoproetus ALBERTI, 1967b [Proetus quadratus MAURER, 1885] Waldgirmes, Rhenish Massif, Germany; TROPIDOCORYPHIDAE; MDEV.
 Quadrops MORZADEC, 2001 [flexuosa] El Oftal Fm, Morocco; ACASTIDAE; LDEV.
 Quandraspis YANG in YANG et al., 1991 [shengwanensis] Xijiadian Fm, Henan, China; LISANIIDAE; MCAM.
 Quebecaspis RASETTI, 1944 [breviceps] Levis Fm, Quebec, Canada; LONCHOCEPHALIDAE; UCAM.
@@ -4077,7 +4077,7 @@ Rampartaspis LOCH in LOCH et al., 1993 [dissimulosulcus] Survey Peak Fm, Alberta
 Rananasus CULLISON, 1944 [conicus] Rich Mountain Fm, Missouri, USA; BATHYURIDAE; LORD.
 Randaynia BOYCE, 1989 [saundersi] Boat Harbour Fm, Newfoundland, Canada; BATHYURIDAE; LORD.
 Randicephalus IVSHIN, 1962[macrophthalmus] Seletinsky Horizon, Kazakhstan; DIKELOCEPHALIDAE; UCAM.
-Ranunculoproetus ŠNAJDR, 1977 [Proetus hetero-clytus BARRANDE, 1852] Lochkov Fm, Czech Republic; TROPIDOCORYPHIDAE; LDEV.
+Ranunculoproetus ŠNAJDR, 1977 [Proetus heteroclytus BARRANDE, 1852] Lochkov Fm, Czech Republic; TROPIDOCORYPHIDAE; LDEV.
 Raphioampyx BALDIS & BALDIS, 1995 [argentinus] Las Aguaditas Fm, San Juan, Argentina; RAPHIOPHORIDAE; UORD.
 Raphiophorus ANGELIN, 1854 [setirostris] Black Fjacka Sh, Dalarne, Sweden; RAPHIOPHORIDAE; UORD.
 Raracephalus REPINA in REPINA et al., 1964 [typographical error for Araeocephalus].
@@ -4105,7 +4105,7 @@ Reedaspis PRANTL & PŘIBYL, 1949c [proposed as an unnecessary replacement name f
 Reedia WEDEKIND, 1911 [preocc., replaced by Reedops].
 Reediella OSMOLSKA, 1970 [reedi] Carboniferous Lst, England; PROETIDAE; MISS.
 Reedocalymene KOBAYASHI, 1951b [Calymene unicornis REED, 1917] Shidian Fm, Yunnan, China; CALYMENIDAE; MORD.
-Reedolithus BANCROFT, 1929 [Trinucleus sub-radiatus REED, 1903] Balclatchie Fm, Scotland; TRINUCLEIDAE; UORD.
+Reedolithus BANCROFT, 1929 [Trinucleus subradiatus REED, 1903] Balclatchie Fm, Scotland; TRINUCLEIDAE; UORD.
 Reedops RICHTER & RICHTER, 1925 [Phacops bronni BARRANDE, 1846a] Dvorce-Prokop Lst, Czech Republic; PHACOPIDAE; LDEV [replacement name for Reedia].
 Reedus DALMATOV, 1975 [lermontovae] Ognensk Fm, N Prebaikal, Russia; PTYCHOPARIIDAE; MCAM.
 Regina EGOROVA, 1967 [opipara] Khara-tass Fm, N Siberia, Russia; PTYCHOPARIIDAE; MCAM.
@@ -4158,8 +4158,8 @@ Rhyssometopus OPIK, 1967 [rhyssometopus] Mungerebar Lst, Queensland, Australia; 
 Richardsonaspis GUO & DUAN in GUO et al., 1982 [jilinensis] Yehli Fm, Jilin, China; REMOPLEURIDIDAE; LORD.
 Richardsonella RAYMOND, 1924 [Dikelocephalus megalops BILLINGS, 1860b] Levis Fm, Quebec, Canada; REMOPLEURIDIDAE; UCAM.
 Richterarges PHLEGER, 1936 [Lichas (Dicranogmus) ptyonurus HALL & CLARKE, 1888] Cobleskill Lst, New York, USA; LICHIDAE; USIL.
-Richteraspis ALBERTI, 1969 [Proetus (Euproetus) bi-vallatus RICHTER, 1913] Adorf Lst (Manti-coceras.Stufe), Oberscheld, Rhenish Massif, Germany; TROPIDOCORYPHIDAE; UDEV.
-Richterella HESSLER, 1965 [snakedenensis] Chou-teau Lst, Missouri, USA; PROETIDAE; MISS.
+Richteraspis ALBERTI, 1969 [Proetus (Euproetus) bivallatus RICHTER, 1913] Adorf Lst (Manticoceras.Stufe), Oberscheld, Rhenish Massif, Germany; TROPIDOCORYPHIDAE; UDEV.
+Richterella HESSLER, 1965 [snakedenensis] Chouteau Lst, Missouri, USA; PROETIDAE; MISS.
 Richterops HUPE, 1953a [falloti] Amouslek Fm, Morocco; SAUKIANDIDAE; LCAM.
 Rimouskia RESSER, 1938b [typica] Levis Fm, Quebec, Canada; SOLENOPLEURIDAE; LCAM.
 Rina POLETAEVA in ROZOVA, 1964 [Solenopleura copa SIVOV, 1940] Saarmsk Horizon, Sayan Altay Belt, Russia; SOLENOPLEURIDAE; MCAM.
@@ -4167,16 +4167,16 @@ Rinconaspis BALDIS & GONZALEZ, 1981 [santiaguensis] Rincon Fm, Santiago del Estr
 Rinconia HUPE, 1953a [Protolenus schneideri RICHTER & RICHTER, 1941a] Herrerias Marl, Spain; ELLIPSOCEPHALIDAE; LCAM.
 Rinella POLETAEVA & EGOROVA in EGOROVA & SAVITSKY, 1969 [multifaria] Suludinsk Fm, Mayaian, N Siberia, Russia; LISANIIDAE; MCAM.
 Ritella KHRAMOVA & PEGEL in PEGEL & KHRAMOVA, 1985 [plena] Ayusokkansk Stage, N Siberia, Russia; DOKIMOCEPHALIDAE; UCAM.
-Robergia WIMAN, 1905 [Remopleurides micro-phthalmus LINNARSSON, 1875] Anderson Sh, Jamtland, Sweden; REMOPLEURIDIDAE; MORD.
-Robergiella WHITTINGTON, 1959 [sagittalis] Edin-burg Lst, Virginia, USA; REMOPLEURIDIDAE; UORD.
+Robergia WIMAN, 1905 [Remopleurides microphthalmus LINNARSSON, 1875] Anderson Sh, Jamtland, Sweden; REMOPLEURIDIDAE; MORD.
+Robergiella WHITTINGTON, 1959 [sagittalis] Edinburg Lst, Virginia, USA; REMOPLEURIDIDAE; UORD.
 Robroyia LAMONT, 1975 [andersoni] Leny Lst, Scotland; UNCERTAIN; LCAM.
-Rogersvillia HUPE, 1955[Genevievella rogers-villensis RESSER, 1938b] Nolichucky Fm, Virginia, USA; LLANOASPIDIDAE; UCAM.
+Rogersvillia HUPE, 1955[Genevievella rogersvillensis RESSER, 1938b] Nolichucky Fm, Virginia, USA; LLANOASPIDIDAE; UCAM.
 Roksaspis LUDVIGSEN & WESTROP in LUDVIGSEN et al., 1989 [turbinella] Shallow Bay Fm, Newfoundland, Canada; PARABOLINOIDIDAE; UCAM.
 Rokycania PŘIBYL & VAN˛# 1965 [Barrandeia [sic] primula HOLUB, 1912] Klabava Fm, Czech Republic; NILEIDAE; LMORD. [j.s.s. of Illaenopsis, fide FORTEY & OWENS, 1987].
-Rokycanocoryphe PŘIBYL & VANĚK, 1987 [Phas-eolops krafti ŠNAJDR, 1983a] Šárka Fm, Czech Republic; TROPIDOCORYPHIDAE; MORD.
+Rokycanocoryphe PŘIBYL & VANĚK, 1987 [Phaseolops krafti ŠNAJDR, 1983a] Šárka Fm, Czech Republic; TROPIDOCORYPHIDAE; MORD.
 Rollia CULLISON, 1944 [goodwini] Rich Mountain Fm, Missouri, USA; HYSTRICURIDAE; LORD.
 Rollmops McNAMARA, 1980 [Phacops (Chasmops) wenjukowi SCHMIDT, 1881] Johvi Stage, Estonia; PTERYGOMETOPIDAE; UORD.
-Romanops ELDREDGE & BRANI°A, 1980 [Kozlowskiaspis (Romanops) borealis] Belen Fm, Bolivia; CALMONIIDAE; LDEV.
+Romanops ELDREDGE & BRAÑA, 1980 [Kozlowskiaspis (Romanops) borealis] Belen Fm, Bolivia; CALMONIIDAE; LDEV.
 Roncellia LESPERANCE & BOURQUE, 1971 [debeaujeuensis] Roncelles Fm, Quebec, Canada; DALMANITIDAE; LDEV.
 Rondocephalus POKROVSKAYA, 1959 [mirandus] Shivelik Fm, Tuva, Russia; DINESIDAE; LCAM.
 Rongxiella W. ZHANG, 1974 [globosa] Xiushan Fm, Sichuan, China; ENCRINURIDAE; LSIL.
@@ -4210,7 +4210,7 @@ Saharops MORZADEC, 2001 [behsaidi] Anti-Atlas Mts, Morocco; ACASTIDAE; LDEV.
 Sailoma SCHRANK, 1975 [loma] Changshan Fm, Liaoning, China; LEIOSTEGIIDAE; UCAM.
 Sailycaspis REPINA in KHOMENTOVSKY & REPINA, 1965 [quttata] Taryn Horizon, Siberia, Russia; ELLIPSOCEPHALIDAE; LCAM.
 Saimachia KOBAYASHI, 1937a [damesi] Changhia Fm, Shandong, China; DOKIMOCEPHALIDAE; MCAM.
-Saimixiella LI, 1978 [saimixiensis] Shihpai Fm, Shaanxi, China; DOLICHOMETOPIDAE: LCAM.
+Saimixiella LI, 1978 [saimixiensis] Shihpai Fm, Shaanxi, China; DOLICHOMETOPIDAE; LCAM.
 Sajanaspis REPINA, 1960 [pokrovskajae] Kameshkov Fm, E Sayan, Russia; REDLICHINIDAE; LCAM.
 Sakhaspidella LAZARENKO in GOGIN & PEGEL, 1997 [tuorica] Agnostus pisiformis Zone, Aldan R, E Siberia, Russia; UNCERTAIN; UCAM.
 Salankanaspis EGOROVA, 1970 [aurita] Amgaian, N Siberia, Russia; PTYCHOPARIIDAE; MCAM.
@@ -4241,7 +4241,7 @@ Sarkia KLOUČEK, 1916 [bohemica] Dobrotiva Fm, Czech Republic; SARKIIDAE; MORD.
 Sarrabesia HAMMANN & LEONE, 1997 [teichmuelleri] Punta Serpeddi Fm, Sardinia, Italy; CALYMENIDAE; UORD.
 Saryaspis LISOGOR, 1997 [micrinatus] Maidansk Fm, E. Kazakhstan; DORYPYGIDAE; MCAM.
 Saukia WALCOTT, 1914a [Dikelocephalus lodensis WHITFIELD, 1880] Saint Lawrence Fm, Wisconsin, USA; SAUKIIDAE; UCAM.
-Saukianda RICHTER & RICHTER, 1940 [an-dalusiae] Alanis Sh, Spain; SAUKIANDIDAE; LCAM.
+Saukianda RICHTER & RICHTER, 1940 [andalusiae] Alanis Sh, Spain; SAUKIANDIDAE; LCAM.
 Saukiandops HUPE, 1953a [Redlichia walcotti MANSUY, 1912] Chiungchussu Fm, Yunnan, China; REDLICHIIDAE; LCAM [j.s.s. of Eoredlichia, fide W. ZHANG et al., 1997].
 Saukiella ULRICH & RESSER, 1933 [typicalis] St Lawrence Fm, Minnesota, USA; SAUKIIDAE; UCAM.
 Saukioides KOBAYASHI, 1952[Pseudosaukia suni KOBAYASHI, 1951a] Fengshan Fm, Liaoning, China; PTYCHASPIDIDAE; UCAM [replacement name for Pseudosaukia KOBAYASHI].
@@ -4249,7 +4249,7 @@ Sayanella POKROVSKAYA, 1959 [Klotziella poletaevae LERMONTOVA, 1940] Shangansky 
 Sayramaspis XIANG & ZHANG, 1985 [angustaxis] Guozigou Fm, Xinjiang, China; CERATOPYGIDAE; UCAM [j.s.s. of Pseudoyuepingia, fide HUGHES & RUSHTON, 1990].
 Scabrella WENNDORF, 1990 [Dalmanites asselberghsi MAILLIEUX, 1936] Quartzopyllades de Longlier, Ardennes, Belgium; HOMALONOTIDAE; LDEV.
 Scabriscutellum RICHTER & RICHTER, 1956 [Bronteus scaber GOLDFUSS, 1843] Eifel, Germany; STYGINIDAE; MDEV[see NOTE 9].
-Scanagnostus BUCHHOLZ, 1997a [Svenax con-fluentus RUDOLPH, 1994] glacial boulder, Germany; PERONOPSIDAE; MCAM [j.s.s. of Lisogoragnostus, fide PENG & ROBISON, 2000].
+Scanagnostus BUCHHOLZ, 1997a [Svenax confluentus RUDOLPH, 1994] glacial boulder, Germany; PERONOPSIDAE; MCAM [j.s.s. of Lisogoragnostus, fide PENG & ROBISON, 2000].
 Sceptaspis LUDVIGSEN & CHATTERTON, 1982 [Pterygometopus lincolnensis BRANSON, 1909] Plattin Fm, Missouri, USA; PTERYGOMETOPIDAE; UORD.
 Schaderthalaspis ALBERTI, 1983 [Proetus expansus RICHTER, 1865] Tentaculiten-Kalk, E Thuringian Slate Mts, Germany; PROETIDAE; LDEV.
 Schagonaria POLETAEVA in EGOROVA et al., 1955 [tannuola] Chingin Fm, Tuva, Russia; PARADOXIDIDAE; MCAM.
@@ -4267,14 +4267,14 @@ Schizopyge CLARKE, 1913 [preocc., replaced by Tibagya].
 Schizostylus DELO, 1935 [Dalmanites brevicaudatus KOZLOWSKI, 1923] Icla Fm, Letanias, Bolivia; CALMONIIDAE; LDEV.
 Schmalenseeia MOBERG, 1903 [amphionura] Agnostus pisiformis Zone, Sweden; BURLINGIIDAE; UCAM.
 Schmidtaspis KOBAYASHI, 1943b [sibiricus] Koldinia Zone, Giranda River, Siberia, Russia; ELVINIIDAE; UCAM.
-Schmidtella TSCHERNYSCHEW, 1893 [preocc., replaced by Tschernyschewella].
+Schmidtella TSCHERNYSCHEW, 1893 [preocc., replaced by Tschernyschewiella].
 Schmidtia MARCOU, 1890 [preocc. replaced by Schmidtiellus].
 Schmidtiellus MOBERG in MOBERG & SEGERBERG, 1906 [Olenellus mickwitzi SCHMIDT, 1888] Estonia; HOLMIIDAE; LCAM [replacement name for Schmidtia].
-Schmidtops ROOMUSOKS, 1998 [Phacops (Chas-mops) maxima SCHMIDT, 1881] Keila Fm, N Estonia; PTERYGOMETOPIDAE; UORD.
+Schmidtops ROOMUSOKS, 1998 [Phacops (Chasmops) maxima SCHMIDT, 1881] Keila Fm, N Estonia; PTERYGOMETOPIDAE; UORD.
 Schoharia LESPERANCE, 1975 [Dalmanites emarginatus HALL, 1876] Schoharie Fm, New York, USA; DALMANITIDAE; LDEV.
 Schopfaspis PALMER & GATEHOUSE, 1972[granulosus] Mount Spann, Antarctica; ALOKISTOCARIDAE; MCAM.
 Schoriecare ROZOVA, 1964 [Schoriella lata LAZARENKO, 1960] Nganasansk Horizon, NW Siberia, Russia; ANOMOCARIDAE; UCAM.
-Schoriella SIVOVin EGOROVAet al., 1955 [schorica] Gornoshor Fm, Gorny Shoria, Russia; ANOMOCARIDAE; UCAM.
+Schoriella SIVOV inEGOROVA et al., 1955 [schorica] Gornoshor Fm, Gorny Shoria, Russia; ANOMOCARIDAE; UCAM.
 Schoriina FEDYANINA in CHERNYSHEVA, 1971 [elegans] Mundbash Horizon, Gorny Shoria, Russia; PARADOXIDIDAE; MCAM.
 Schyilaspis IVSHIN, 1962[dendiformis] Seletinsky Horizon, Kazakhstan; MARJUMIIDAE; UCAM.
 Scinocephalus ROSS, 1951 [solitecti] Garden City Fm, Idaho, USA; REMOPLEURIDIDAE; LORD.
@@ -4299,7 +4299,7 @@ Seleneceme CLARK, 1924 [propinqua] Levis Fm, Quebec, Canada; ALSATASPIDIDAE; LOR
 Selenoharpes WHITTINGTON, 1950b [Harpes (Eoharpes) youngi REED, 1914] Balclatchie Fm, Scotland; HARPETIDAE; UORD [j.s.s. of Scotoharpes, fide NORFORD, 1973].
 Selenopeltis HAWLE & CORDA, 1847 [Odontopleura buchii BARRANDE, 1846a] Letna Fm, Czech Republic; ODONTOPLEURIDAE; UORD.
 Selenopeltoides PRANTL & PŘIBYL, 1949a [Acidaspis hawlei BARRANDE, 1852] Lite. Fm, Czech Republic; ODONTOPLEURIDAE; LSIL.
-Selenoptychus HAWLE & CORDA, 1847 [rotund-atus] Vinice Fm, Czech Republic; CYCLOPYGIDAE; UORD [s.s.s. of Heterocyclopyge, fide MAREK, 1961].
+Selenoptychus HAWLE & CORDA, 1847 [rotundatus] Vinice Fm, Czech Republic; CYCLOPYGIDAE; UORD [s.s.s. of Heterocyclopyge, fide MAREK, 1961].
 Selenosema HAWLE & CORDA, 1847 [thunii] Jince Fm, Czech Republic; SOLENOPLEURIDAE;MCAM [j.s.s. of Sao, fide ŠNAJDR, 1958a].
 Seletella IVSHIN, 1962[choristos] Seletinsky Horizon, Kazakhstan; CATILLICEPHALIDAE; UCAM [j.s.s. of Onchonotellus, fide SHERGOLD, 1980].
 Seletoides IVSHIN, 1962[elenimilleri] Seletinsky Horizon, Kazakhstan; PAGODIIDAE; UCAM.
@@ -4370,7 +4370,7 @@ Simulolenus PALMER, 1965 [Parabolinella incerta WILSON, 1954] Dunderburg Fm, Nev
 Sinampyxina SHENG, 1974a [chekiangensis] Huang-nehkan Fm, Zhejiang, China; RAPHIOPHORIDAE; UORD.
 Sinespinaspis ADRAIN & CHATTERTON, 1990 [Odontopleura greenwoodi CHATTERTON & PERRY, 1983] Whittaker Fm, Northwest Territories, Canada; ODONTOPLEURIDAE; LSIL.
 Sinijanella REPINA in KHOMENTOVSKY & REPINA, 1965 [rara] Taryn Horizon, Siberia, Russia; DOLICHOMETOPIDAE; LCAM.
-Sinobathyurus ZHOU & ZHANG, 1985 [fidus] Wan-liangtingia Zone, Shanxi, China; BATHYURIDAE; LORD.
+Sinobathyurus ZHOU & ZHANG, 1985 [fidus] Wanliangtingia Zone, Shanxi, China; BATHYURIDAE; LORD.
 Sinobole YUAN, 1988 [Proetus eurycraspedon RICHTER, 1913] Oberscheld (toIII/toIV), Rhenish Massif, Germany; PROETIDAE; UDEV.
 Sinocoosella YUAN & YIN, 1998 [typicalis] Chefu Fm, Guizhou, China; CREPICEPHALIDAE; UCAM.
 Sinocrepicephalus J. ZHANG & WANG, 1983 [shanxiensis] Changhia Fm, Shanxi, China; CREPICEPHALIDAE; MCAM.
@@ -4393,7 +4393,7 @@ Sinosymbole YUAN & XIANG, 1998 [Cyrtosymbole guangxiensis ZHU, 1988] Yonghsien F
 Sinskia SUVOROVA, 1960 [optabilis] Perekhod Fm, Siberia, Russia; JUDOMIIDAE; LCAM.
 Sivovella POLETAEVA, 1967 [Coosia radugini SIVOV in EGOROVA et al., 1955] Salair Fm, Salair, Russia; ANOMOCARIDAE; MUCAM.
 Skelipyx LANE, 1971 [Cheirurus cancrurus SALTER, 1853a] Chair of Kildare Lst, Ireland; CHEIRURIDAE; UORD.
-Skemmatocare RICHTER & RICHTER, 1927b [Otar-ion elegans MUNSTER, 1842] Laevigites-Stufe, Schubelhammer, E Thuringian Slate Mts, Germany; PROETIDAE; UDEV.
+Skemmatocare RICHTER & RICHTER, 1927b [Otarion elegans MUNSTER, 1842] Laevigites-Stufe, Schubelhammer, E Thuringian Slate Mts, Germany; PROETIDAE; UDEV.
 Skemmatopyge RICHTER & RICHTER, 1919 [tietzei] Grey Lst, Dzikowiec (Ebersdorf), L Silesia, Poland; PROETIDAE; UDEV.
 Skljarella PETRUNINA, 1973 [lidiae] Kitatsk Fm, Kuznetsk Alatau, W Siberia, Russia; ALSATASPIDIDAE; LORD.
 Skreiaspis RŮŽIČKA, 1946 [Agraulos spinosus JAHN in POMPECKJ, 1895] Jince Fm, Czech Republic; AGRAULIDAE; MCAM.
@@ -4409,7 +4409,7 @@ Sokhretia HUPE in CHOUBERT et al., 1956 [Dalmanites solitaria BARRANDE, 1852] Zh
 Solariproetus QU, 1986 [triangularis] Shichengzi Fm, Qinghai, China; RORRINGTONIIDAE; UORD.
 Solenagnostus WHITEHOUSE, 1936 [Agnostus longifrons NICHOLAS, 1915] Upper Caered Mdst Fm, Wales; PTYCHAGNOSTIDAE; MCAM [j.s.s. of Triplagnostus, fide SHERGOLD et al., 1990].
 Solenoparia KOBAYASHI, 1935c [Ptychoparia (Liostracus) toxeus WALCOTT, 1905] Hsuchuang Fm, Shandong, China; SOLENOPLEURIDAE; MCAM.
-Solenoparina W. ZHANG, 1963 [Dorypyge semi-circularis RESSER & ENDO, 1937] Changhia Fm, Liaoning, China; SOLENOPLEURIDAE; MCAM [j.s.s. of Paramenocephalites, fide W.ZHANG & JELL, 1987].
+Solenoparina W. ZHANG, 1963 [Dorypyge semicircularis RESSER & ENDO, 1937] Changhia Fm, Liaoning, China; SOLENOPLEURIDAE; MCAM [j.s.s. of Paramenocephalites, fide W.ZHANG & JELL, 1987].
 Solenoparops W. ZHANG, 1963 [Solenoparia luna ENDO, 1944] Changhia Fm, Liaoning, China; SOLENOPLEURIDAE; MCAM.
 Solenopleura ANGELIN, 1854 [Calymene holometopa ANGELIN, 1851] Andrarum Lst, Sweden; SOLENOPLEURIDAE; MCAM.
 Solenopleurella POULSEN, 1927 [ulrichi] Cape Wood Fm, NW Greenland; SOLENOPLEURIDAE; MCAM.
@@ -4421,7 +4421,7 @@ Sombrerella LOCHMAN, 1948 [mexicana] Buelna Fm, Sonora, Mexico; ANTAGMIDAE; LCAM
 Songkania W. ZHANG, 1974 [hanjiadianensis] Hanjiadian, Guizhou, China; AULACOPLEURIDAE; LSIL.
 Songtaoia YIN in YIN & LI, 1978 [guizhouensis] Nantsinkwan Fm, Guizhou, China; HUNGAIIDAE; LORD.
 Songxites LIN, 1981 [Dalmanitina (Dalmanitina) wuningensis LIN, 1974] Xingkailing Fm, Jiangxi, China; DALMANITIDAE; UORD.
-Sonoraspis STOYANOW in COOPER et al., 1952 [torresi] Arrojos Fm, Sonora, Mexico; DOLICHOMETOPIDAE; MCAM [j.s.s. of Glosso-pleura, fide PALMER, 1954].
+Sonoraspis STOYANOW in COOPER et al., 1952 [torresi] Arrojos Fm, Sonora, Mexico; DOLICHOMETOPIDAE; MCAM [j.s.s. of Glossopleura, fide PALMER, 1954].
 Soomaspis FORTEY & THERON, 1995 [splendida] Cedarberg Fm, Cape Province, South Africa; NEKTASPIDA; UORD.
 Spathacalymene TILLMAN, 1960 [Calymene nasuta ULRICH, 1879] Salamonie Dol, Indiana, USA; CALYMENIDAE; LSIL.
 Spatulina OSMOLSKA, 1962[Phillipsia spatulata WOODWARD, 1902] Coddon Hill Chert Fm, England; PROETIDAE; MISS.
@@ -4430,9 +4430,9 @@ Spencia RESSER, 1939a [typicalis] Spence Sh, Idaho, USA; PTYCHOPARIIDAE; MCAM.
 Spergenaspis BREZINSKI, 1987 [salemi] Salem Lst, Indiana, USA; PROETIDAE; MISS.
 Sphaeragnostus HOWELL & RESSER in COOPER & KINDLE, 1936 [Agnostus similaris BARRANDE, 1872] Dobrotiva Fm, Czech Republic; PERONOPSIDAE; MORD.
 Sphaerexochus BEYRICH, 1845 [mirus] Lite. Fm, Czech Republic; CHEIRURIDAE; LSIL.
-Sphaerocoryphe ANGELIN, 1854 [dentata] U Jon-strop Mdst, Sweden; CHEIRURIDAE; UORD.
+Sphaerocoryphe ANGELIN, 1854 [dentata] U Jonstrop Mdst, Sweden; CHEIRURIDAE; UORD.
 Sphaerometopus ANGELIN, 1854 [alternate spelling of Sphaerexochus used by ANGELIN, 1854 and suppressed as a nomen nudum by ICZN Opinion 614].
-Sphaerophthalmella KOBAYASHI, 1955b [inexpect-ans] McKay Group, British Columbia, Canada; OLENIDAE; LORD [possibly s.s.s. of Boeckaspis, fide R.A. FORTEY, pers comm.].
+Sphaerophthalmella KOBAYASHI, 1955b [inexpectans] McKay Group, British Columbia, Canada; OLENIDAE; LORD [possibly s.s.s. of Boeckaspis, fide R.A. FORTEY, pers comm.].
 Sphaerophthalmoides HUTCHINSON, 1952[Leptoplastus latus MATTHEW, 1891] Narrows Fm, New Brunswick, Canada; OLENIDAE; UCAM [j.s.s. of Westergaardia, fide POULSEN in MOORE, 1959].
 Sphaerophthalmus ANGELIN, 1854 [Trilobites alatus BOECK, 1838] Alum Sh, Norway; OLENIDAE; UCAM.
 Spinacephalus STITT, 1971 [frontis] Fort Hill Lst, Oklahoma, USA; REMOPLEURIDIDAE; UCAM.
@@ -4442,7 +4442,7 @@ Spinibole CHLUPAC, 1966 [olgae] Brezina Sh, Czech Republic; PROETIDAE; MISS.
 Spinibolops HAHN & HAHN, 1971b [ephyra] Cherty Transitional Beds (cuIIIa1-2), Erdbach, Rhenish Massif, Germany; PROETIDAE; MISS.
 Spinicryphops CRONIER & FEIST, 2000 [lemkei] Wocklumeria Lst, Honne Valley, Rhenish Massif, Germany; PHACOPIDAE; UDEV.
 Spinillaenus XIA, 1978 [sinensis] Miaopo Fm, Hubei, China; ILLAENIDAE; UORD.
-Spinimetopus HAHN & HAHN, 1985 [Brachymet-opus coignouides HAHN & HAHN in HAHN, HAHN & MAASS, 1981] Schwarzwald (Black Forrest), Germany; BRACHYMETOPIDAE; MISS.
+Spinimetopus HAHN & HAHN, 1985 [Brachymetopus coignouides HAHN & HAHN in HAHN, HAHN & MAASS, 1981] Schwarzwald (Black Forrest), Germany; BRACHYMETOPIDAE; MISS.
 Spiniscutellum ŠNAJDR, 1960 [Bronteus umbellifer BEYRICH, 1845] Lochkov Fm, Czech Republic; STYGINIDAE; LDEV.
 Spinodiscus KOBAYASHI, 1943a [Microdiscus punctatus SALTER, 1864c] Lingula Flags, Wales; EODISCIDAE; MCAM [j.s.s. of Eodiscus, fide JELL, 1997].
 Spinodontochile ŠNAJDR, 1985a [Phacops spinifer BARRANDE, 1846a] ?Zlichov Fm, Czech Republic; DALMANITIDAE; LDEV [j.s.s. of Zlichovaspis, fide VANĚK &VALÍČEK, 2002].
@@ -4451,7 +4451,7 @@ Spinopanura KUSHAN, 1973 [Drepanura (Spinopanura) erbeni] Mila Fm, Iran; DAMESEL
 Spinoproetus ŠNAJDR, 1977 [Cornuproetus (Lepidoproetus) spinosus PŘIBYL, 1965] Slivenec Lst, Czech Republic; TROPIDOCORYPHIDAE; LDEV.
 Spinopyge BALASHOVA, 1976 [Megalaspis acuticauda var. triangularis SCHMIDT, 1906] Volkhov or Obuchov Fm, St Petersburg region, Russia; ASAPHIDAE; MORD [j.s.s. of Megistaspidella, fide NIELSEN, 1995].
 Spinoredlichia LIU, 1975 [typicalis] Qingzudong Fm, Guizhou, China; REDLICHIIDAE; LCAM [j.s.s. of Pteroredlichia, fide W. ZHANG et al., 1997].
-Spirantyx WHITTARD, 1961a [calvarina] Meadow-town Fm, England; ALSATASPIDIDAE; MORD.
+Spirantyx WHITTARD, 1961a [calvarina] Meadowtown Fm, England; ALSATASPIDIDAE; MORD.
 Spitella SHAH et al., 1991 [barachuensis] Kunzam La Fm, Himalaya, India; PTYCHOPARIIDAE; MCAM [j.s.s. of Xingrenaspis, fide JELL & HUGHES, 1997].
 Spitiaspis KOBAYASHI, 1967 [Anomocare conjunctiva REED, 1910] Kunzam La Fm, Himalaya, India; PROASAPHISCIDAE; MCAM [j.s.s. of Szeaspis, fide JELL & HUGHES, 1997].
 Spitsbergaspis PŘIBYL & VANĚK, 1980 [Hypermecaspis venulosa FORTEY, 1974b] Valhallfona Fm, Spitsbergen; OLENIDAE; LORD [j.s.s. of Hypermecaspis, fide EBBESTAD, 1999].
@@ -4464,11 +4464,11 @@ Stauroholcus RESSER, 1939a [typicalis] Spence Sh, Idaho, USA; PTYCHOPARIIDAE; MC
 Stegnopsis WHITTINGTON, 1965a [solitarius] Table Point Fm, Newfoundland, Canada; ASAPHIDAE; MORD.
 Stelckaspis CHATTERTON & PERRY, 1983 [warreni] Whittaker Fm, Northwest Territories, Canada; ODONTOPLEURIDAE; LSIL.
 Stella EGOROVA & SAVITSKY, 1968 [flabellata] Mayaian, N Siberia, Russia; PROASAPHISCIDAE; MCAM.
-Stenambon PALMER, 1965 [megagranulus] Dun-derberg Fm, Nevada, USA; PTEROCEPHALIIDAE; UCAM.
-Stenelymus RAYMOND, 1937 [kobayashii] Rock-ledge Cgte, Vermont, USA; LLANOASPIDIDAE; UCAM.
+Stenambon PALMER, 1965 [megagranulus] Dunderberg Fm, Nevada, USA; PTEROCEPHALIIDAE; UCAM.
+Stenelymus RAYMOND, 1937 [kobayashii] Rockledge Cgte, Vermont, USA; LLANOASPIDIDAE; UCAM.
 Stenoblepharum OWENS, 1973a [Paraproetus warburgae PŘIBYL, 1964] Boda Lst, Dalarne, Sweden; TROPIDOCORYPHIDAE; UORD.
 Stenochilina ULRICH in BRIDGE, 1931 [spinifera] Eminence Dol, Missouri, USA; CATILLICEPHALIDAE; UCAM.
-Stenocombus RAYMOND, 1937 [princeps] Rock-ledge Cgte, Vermont, USA; KINGSTONIIDAE; UCAM [j.s.s. of Blountia, fide PALMER & PEEL, 1981].
+Stenocombus RAYMOND, 1937 [princeps] Rockledge Cgte, Vermont, USA; KINGSTONIIDAE; UCAM [j.s.s. of Blountia, fide PALMER & PEEL, 1981].
 Stenopareia HOLM in SCHMIDT,1886b [Illaenus linnarssoni HOLM, 1882] Boda Lst, Dalarne, Sweden; ILLAENIDAE; UORD.
 Stenopilus CLARK, 1924 [intermedius] Levis Fm, Quebec, Canada; PLETHOPELTIDAE; UCAM.
 Stenorhachis HINTZE & JAANUSSON, 1956 [Isoteloides? genalticurvatus HINTZE, 1953] Wahwah Fm, Utah, USA; ASAPHIDAE; LORD.
@@ -4486,7 +4486,7 @@ Stigmaspis NELSON, 1951 [hudsonensis] Franconia Fm, Wisconsin, USA; SAUKIIDAE; U
 Stigmatoa OPIK, 1963 [diloma] Pomegranate Lst, Queensland, Australia; EULOMIDAE; UCAM.
 Stiktocybele INGHAM & TRIPP, 1991 [bathytera] Doularg Fm, Scotland; ENCRINURIDAE; UORD.
 Stoecklinia WOLFART, 1974a [spinosa] Sanshih Fm, SE Iran; PTYCHOPARIIDAE; LCAM.
-Stoermeraspis PRANTL& PŘIBYL, 1947b [Bronteusfranconicus GUMBEL, 1879] Orthocerenkalk, Elbersreuth, Frankenwald, Germany; STYGINIDAE; USIL [replacement name for Stoermeria; j.s.s. of Octobronteus, fide RICHTER & RICHTER, 1956].
+Stoermeraspis PRANTL & PŘIBYL, 1947b [Bronteusfranconicus GUMBEL, 1879] Orthocerenkalk, Elbersreuth, Frankenwald, Germany; STYGINIDAE; USIL [replacement name for Stoermeria; j.s.s. of Octobronteus, fide RICHTER & RICHTER, 1956].
 Stoermeria PRANTL & PŘIBYL, 1947a [preocc., replaced by Stoermeraspis].
 Strenax OPIK, 1975b [cerastes] Cymbric Vale Fm, New South Wales, Australia; ESTAINGIIDAE; LCAM [j.s.s. of Hsuaspis (=Estaingia), fide JAGO et al., 1997].
 Strenuaeva RICHTER & RICHTER, 1940 [Arionellusprimaeva BROGGER, 1878] Holmia Sh, Tømten, Ringsaker, Norway; ELLIPSOCEPHALIDAE; LCAM.
@@ -4670,7 +4670,7 @@ Thompsonaspis DEISS, 1939 [obscura] Steamboat Lst, Montana, USA; ALOKISTOCARIDAE
 Thoracocare ROBISON & CAMPBELL, 1974 [Vistoia ? minuta RESSER, 1939a] Spence Sh, Idaho, USA; ZACANTHOIDIDAE; MCAM.
 Thoralaspis HUPE, 1953a [Olenopsis thorali COBBOLD, 1931b] Montagne Noire, France; ELLIPSOCEPHALIDAE; LCAM.
 Thoralocolus PILLET & COURTESSOLE, 1985 [Aegalina azaizi THORAL, 1935] Montagne Noire, France; ISOCOLIDAE; LORD.
-Thoralocoryphe COURTESSOLE, PILLET & VIZCAINO in COURTESSOLE et al., 1983 [escudiei] Schistes de Landeyran, Montagne Noire, France; CALYMENIDAE; LORD [j.s.s. of Col-pocoryphe, fide COURTESSOLE et al., 1991].
+Thoralocoryphe COURTESSOLE, PILLET & VIZCAINO in COURTESSOLE et al., 1983 [escudiei] Schistes de Landeyran, Montagne Noire, France; CALYMENIDAE; LORD [j.s.s. of Colpocoryphe, fide COURTESSOLE et al., 1991].
 Thorslundops PŘIBYL & VANĚK, 1981b [Harpes dalecarlicus THORSLUND, 1930] Boda Lst, Dalarne, Sweden; HARPETIDAE; MORD [j.s.s. of Hibbertia, fide EBACH & McNAMARA, 2002].
 Thulincola TRIPP, 1962[barbarus] Confinis Fm, Scotland; PHAROSTOMATIDAE; MORD.
 Thuringaspis STRUVE, 1962[Dalmanitina (Thuringaspis) osiris] Lederschiefer, Thuringia, Germany; DALMANITIDAE; UORD.
@@ -4699,14 +4699,14 @@ Tolanaspis IVSHIN, 1953 [almaematris] Boshchekul Fm, Kazakhstan; DORYPYGIDAE; MC
 Tolbinella EGOROVA , 1983 [varlamovi] Elgyansk Fm, S Siberia, Russia; REDLICHIIDAE; LCAM.
 Toletanaspis RABANO, 1989e [trivignoi] “Pizarras con Neseuretus,” Toledo, Spain; DALMANITIDAE; MORD.
 Tolkienia LIEBERMAN & KLOC, 1997 [Comura (Comura) granulispina MORZADEC, 1983] Fret Fm, Brittany, France; ACASTIDAE; LDEV.
-Tollaspis KOBAYASHI, 1935c [Anomocare paw-lowski SCHMIDT, 1886a] Wiliu River, Siberia, Russia; DINESIDAE; MCAM.
+Tollaspis KOBAYASHI, 1935c [Anomocare pawlowski SCHMIDT, 1886a] Wiliu River, Siberia, Russia; DINESIDAE; MCAM.
 Tologoja KOROBOV, 1980 [subquadrata] Egyngolsk Fm, NW Mongolia; CALODISCIDAE; LCAM [j.s.s. of Sinodiscus, fide JELL, 1997].
 Tolstotchichaspis ROZOVA, 1960a [grandis] Tolstochikhin Fm, Salair, Russia; PLETHOPELTIDAE; UCAM.
 Tomagnostella KOBAYASHI, 1939a [Agnostus exsculptus ANGELIN, 1851] Andrarum Lst, Sweden; PTYCHAGNOSTIDAE; MCAM.
 Tomagnostus HOWELL, 1935c [Agnostus fissus LUNDGREN in LINNARSSON, 1879] Ptychagnostus gibbus Zone, Sweden; PTYCHAGNOSTIDAE; MCAM.
 Tomoligus RAFINESQUE, 1832[levis] [see NOTE 2].
 Tomorhachis RESSER, 1938b [spinosa] Nolichucky Fm, Alabama, USA; CLAVAGNOSTIDAE; UCAM [j.s.s. of Clavagnostus, fide SHERGOLD et al., 1990].
-Tongshania QIU & LIN in QIU et al., 1983 [tong-shanensis] Maochuang Fm, Jiangsu, China; PTYCHOPARIIDAE; MCAM [j.s.s. of Douposiella, fide JELL & HUGHES, 1997].
+Tongshania QIU & LIN in QIU et al., 1983 [tongshanensis] Maochuang Fm, Jiangsu, China; PTYCHOPARIIDAE; MCAM [j.s.s. of Douposiella, fide JELL & HUGHES, 1997].
 Tongxinaspis ZHOU, 1981 [polymorpha] Miboshan Fm, Ningxia Hui, China; DIONIDIDAE; MORD.
 Tonkinella MANSUY, 1916 [flabelliformis] Siaopin-tchai Horizon, North Vietnam; ORYCTOCEPHALIDAE; MCAM.
 Toragnostus ROBISON, 1988 [Agnostus bituberculatus ANGELIN, 1851] Andrarum Lst, Sweden; AGNOSTINA FAMILY UNCERTAIN; MCAM [j.s.s. of Glaberagnostus, fide PENG & ROBISON, 2000].
@@ -4755,7 +4755,7 @@ Trigonocerca ROSS, 1951 [typica] Garden City Fm, Idaho, USA; ASAPHIDAE; LORD.
 Trigonocercella HINTZE, 1953 [acuta] Wahwah Fm, Utah, USA; ASAPHIDAE; LORD.
 Trigonoproetus APOLLONOV, 1974 [triquetrus] Kazakhstan; RORRINGTONIIDAE; UORD [j.s.s. of Rorringtonia, fide FORTEY, 1997].
 Trigonyangaspis JELL, nov. [hujiaensis] Fengjia’ao Fm, Henan, China; PTYCHOPARIIDAE; LMCAM [replacement name for Trigonaspis YANG in YANG et al., 1991].
-Trigrypos KOBAYASHI, 1940c [Dionide atra SALTER, 1866b] Ty-obry, near Porthmadog, Wales; DIONIDIDAE; UORD [j.s.s. of Dionide, fide WHITTINGTON, 1952b].
+Trigrypos KOBAYASHI, 1940c [Dionide atra SALTER, 1866b] Tyobry, near Porthmadog, Wales; DIONIDIDAE; UORD [j.s.s. of Dionide, fide WHITTINGTON, 1952b].
 Trilagnostus SHAH et al., 1995 [kashmirensis] Nut-unus Fm, Kashmir; DIPLAGNOSTIDAE; MCAM [?j.s.s. of Baltagnostus, fide JELL, herein].
 Trilobagnostus HARRINGTON, 1938 [Agnostus innocens CLARK, 1923b] Levis Fm, Quebec, Canada; AGNOSTIDAE; UCAM.
 Trimerocephalus McCOY, 1849 [Trinucleus? laevisMUNSTER, 1842] Gattendorf, N Bavaria, Germany; PHACOPIDAE; UDEV.
@@ -4774,7 +4774,7 @@ Tririmagnostus QIU in QIU et al., 1983 [Pseudagn ostus (Tririmagnostus) anhuiens
 Trisulcagnostus ERGALIEV, 1980 [trisulcus] Batyrbaian, Kazakhstan; DIPLAGNOSTIDAE; UCAM.
 Trochurus BEYRICH, 1845 [speciosus] Lite. Fm, Czech Republic; LICHIDAE; LSIL.
 Troedssonia POLETAEVA in KHALFIN, 1960 [Symphysurus? wimani TROEDSSON, 1937] Xiangguletage Fm, Xinjiang, China; NILEIDAE; LORD.
-Tropiconiproetus ŠNAJDR, 1980 [Proetus multi-rugosus PŘIBYL, 1966] Slivenec Lst, Czech Republic; PROETIDAE; LDEV.
+Tropiconiproetus ŠNAJDR, 1980 [Proetus multirugosus PŘIBYL, 1966] Slivenec Lst, Czech Republic; PROETIDAE; LDEV.
 Tropicoryphe ŠNAJDR, 1977 [Prionopeltis memnon HAWLE & CORDA, 1847] Dvorce-Prokop Lst, Czech Republic; TROPIDOCORYPHIDAE; LDEV.
 Tropidocare CHLUPAC, 1971a [index] Lochkov Fm, Czech Republic; PROETIDAE; LDEV.
 Tropidocoryphe NOVÁK, 1890 [filicostata] Bicken, Rhenish Massif, Germany; TROPIDOCORYPHIDAE; MDEV.
@@ -4789,13 +4789,13 @@ Tsunyidiscus W. ZHANG, 1966 [Hebediscus niutitangensis W. ZHANG, 1964a] Shuijing
 Tsunyilichas W. ZHANG, 1974 [pustulosus] Guanyingqiao Fm, Guizhou, China; LICHIDAE; LSIL [j.s.s. of Dicranopeltis, fide THOMAS, 1981].
 Tugurellum SUN, 1990 [cameratum] Fengshan Fm, Hebei, China; KAOLISHANIIDAE; UCAM.
 Tukalandaspis LAZARENKO in LAZARENKO & NIKIFOROV, 1968 [egens] Kulyumbina Fm, NW Siberia, Russia; PTYCHOPARIIDAE; UCAM.
-Tumicephalus PALMER, 1965 [depressus] Dunder-berg Fm, Nevada, USA; PTEROCEPHALIIDAE; UCAM.
+Tumicephalus PALMER, 1965 [depressus] Dunderberg Fm, Nevada, USA; PTEROCEPHALIIDAE; UCAM.
 Tumidulaspis M. ROMANENKO in ROMANENKO & ROMANENKO, 1967 [verrucosa] Gorny Altay, S Siberia, Russia; CATILLICEPHALIDAE; UCAM.
 Tumulina REPINA, 1960 [tumidica] Kameshkov Fm, E Sayan, Russia; DINESIDAE; LCAM.
 Tungtzuella SHENG in LU, 1957 [kweichowensis] Tungtzu Fm, N Guizhou, China; TAIHUNGSHANIIDAE; LORD.
 Tungusella REPINA, 1960 [manica] Olekminsk Fm, E Sayan, Russia; REDLICHINIDAE; LCAM.
 Tuojiangella DUAN et al., 1999 [tuojiangensis] Ting-ziguang Fm, Hunan, China; CATILLICEPHALIDAE; UCAM.
-Turantyx PŘIBYL & VANĚKinPŘIBYL et al., 1985b [Areia fritschi BARRANDE, 1872] Dobrotiva Fm, Czech Republic; CHEIRURIDAE; MORD.
+Turantyx PŘIBYL & VANĚK in PŘIBYL et al., 1985b [Areia fritschi BARRANDE, 1872] Dobrotiva Fm, Czech Republic; CHEIRURIDAE; MORD.
 Turcopyge RICHTER & RICHTER, 1939 [eduardi] Kartel Fm, Turkey; ACASTIDAE; LDEV.
 Turgicephalus FORTEY, 1980 [falcatus] Valhallfona Fm, Spitsbergen; STYGINIDAE; MORD.
 Turkestanella REPINA in REPINA et al., 1975 [mira] Pseudanomocarina Zone, Turkestan; CHENGKOUIIDAE; MCAM.
@@ -4832,7 +4832,7 @@ Uripes THOMAS & HOLLOWAY, 1988 [Lichas scutalis SALTER, 1873] Coalbrookdale Fm, 
 Urjungaspis EGOROVA & SAVITSKY, 1968 [picta] Mayaian, N Siberia, Russia; PROASAPHISCIDAE; MCAM.
 Uromystrum WHITTINGTON, 1953 [Bathyurellus validus BILLINGS, 1865] Table Point Fm, Newfoundland, Canada; BATHYURIDAE; MORD.
 Ursinella EDDY & McCOLLUM, 1998 [major] Pioche Sh, Nevada, USA; ZACANTHOIDIDAE; MCAM.
-Ushbaspis POKROVSKAYA in KELLER & POKROVSKAYA, 1965 [granulata] Ushbaspis limb-ata Zone, Botoman, Kazakhstan; REDLICHIIDAE; LCAM.
+Ushbaspis POKROVSKAYA in KELLER & POKROVSKAYA, 1965 [granulata] Ushbaspis limbata Zone, Botoman, Kazakhstan; REDLICHIIDAE; LCAM.
 Usoviana POLETAEVA, 1977b [gourievskii] Orlinogorsk Fm, Salair, Russia; LICHAKEPHALIDAE; MCAM.
 Usovinurus IVSHIN, 1960 [magnus] Arinichevskoj Fm, Salair, Russia; ANOMOCARIDAE; UCAM.
 Usumunaspis LAZARENKO, 1962[convexa] Hebediscus-Judomia Zone, N Siberia, Russia; SOLENOPLEURIDAE; LCAM.
@@ -4841,7 +4841,7 @@ Utaspis ROBISON, 1964 [Bathyuriscus marjumensis RESSER, 1935] Marjum Fm, Utah, U
 Utia WALCOTT, 1924b [curio] Ute Fm, Idaho, USA; UTIIDAE; MCAM.
 Uxunella ROMANENKO, 1985 [gloriosa] Glyptagnostus stolidotus Zone, Gorny Altay, S Siberia, Russia; PTEROCEPHALIIDAE; UCAM.
 Valdaites BALASHOVA, 1976 [Ptychopyge aciculatus ANGELIN, 1854] Oland, Sweden; ASAPHIDAE; MORD.
-Valdariops ROOMUSOKS, 2000 [Phacops (Chas-mops) eichwaldi SCHMIDT, 1881] Harju Series, Estonia; PTERYGOMETOPIDAE; UORD.
+Valdariops ROOMUSOKS, 2000 [Phacops (Chasmops) eichwaldi SCHMIDT, 1881] Harju Series, Estonia; PTERYGOMETOPIDAE; UORD.
 Valenagnostus JAGO, 1976 [Agnostus nudus var. marginata BROGGER. 1878] Angermanland, Norway; AGNOSTINA FAMILY UNCERTAIN; MCAM.
 Validaspis REPINA, 1977 [usitata] Shumninsk Fm, NW Siberia, Russia; PALAEOLENIDAE; LCAM.
 Valongia PŘIBYL & VANĚK, 1984 [Actinopeltis wattisoni CURTIS, 1961] Valongo Fm, Portugal; CHEIRURIDAE; MORD.
@@ -4896,7 +4896,7 @@ Walcottaspis ULRICH & RESSER, 1930 [Dikelocephalus vanhornei WALCOTT, 1914a] St 
 Waldminia KOCH & LEMKE, 1994 [spinigera] lower Tonschiefer, Ebbe-Sattel, Germany; CYCLOPYGIDAE; MORD.
 Walencrinuroides LESPERANCE & DESBIENS, 1995 [Ceraurus rarus WALCOTT, 1877] Platteville Group, Wisconsin, USA; ENCRINURIDAE; UORD.
 Wallacia LAMONT, 1978 [Encrinurus expansus HASWELL, 1865] Wether Law Linn Fm, Scotland; ENCRINURIDAE; LSIL.
-Walliserops MORZADEC, 2001 [trifurcatus] Tim-rhanrhart Fm, Morocco; ACASTIDAE; LDEV.
+Walliserops MORZADEC, 2001 [trifurcatus] Timrhanrhart Fm, Morocco; ACASTIDAE; LDEV.
 Wanagnostus QIU in QIU et al., 1983 [anhuiensis] Anhui, China; AGNOSTIDAE; UCAM [j.s.s. of Acmarhachis, fide SHERGOLD et al., 1990].
 Wanbeiaspis QIU in QIU et al., 1983 [huaibeiensis] Manto Fm, Anhui, China; ANTAGMIDAE; LCAM.
 Wandelella ROBISON, 1988 [compta] Holm Dal Fm, NW Greenland; PAPYRIASPIDIDAE; MCAM.
@@ -4907,7 +4907,7 @@ Wanliangtingia LU in LU & ZHANG, 1974 [lobata] Panho Fm, Sichuan, China; REMOPLE
 Wannania QIU in QIU et al., 1983 [latilimbata] Chang-shan Fm, Anhui, China; CERATOPYGIDAE; UCAM.
 Wanneria WALCOTT, 1910 [Olenellus (Holmia) walcottanus WANNER, 1901] York Fm, Pennsylvania, USA; OLENELLIDAE; LCAM.
 Wanshania RONG & YANG in ZHOU et al., 1977 [wanshanensis] Baojing Fm, Hunan, China; ORDOSIIDAE; MCAM.
-Wanwanaspis KOBAYASHI, 1966 [Kingstonia semi-circularis KOBAYASHI, 1933b] Wanwankou Dol, Liaoning, China; KINGSTONIIDAE; UCAM.
+Wanwanaspis KOBAYASHI, 1966 [Kingstonia semicircularis KOBAYASHI, 1933b] Wanwankou Dol, Liaoning, China; KINGSTONIIDAE; UCAM.
 Wanwanoglobus KOBAYASHI, 1966 [Stenopilus convexus KOBAYASHI, 1933b] Wanwankou Dol, Liaoning, China; KINGSTONIIDAE; UCAM.
 Warburgaspis PŘIBYL, 1946 [Proetus modestusTORNQUIST, 1884] Boda Fm, Dalarne, Sweden; TROPIDOCORYPHIDAE; UORD [j.s.s. of Decoroproetus, fide OWENS, 1970].
 Warburgella REED, 1931a [Asaphus stokesii MURCHISON, 1839] Much Wenlock Lst Fm, England; PROETIDAE; LSIL.
@@ -4988,7 +4988,7 @@ Xialiangshania ZHEN in LI et al., 1975 [rara] Siliangssu Fm, Shaanxi, China; CHE
 Xianfengia ZHU & SUN in ZHOU et al., 1977 [puteata] Guangzhuling Fm, Hubei, China; SOLENOPLEURIDAE; MCAM.
 Xiangia PENG, 1987 [taoyuanensis] Huaqiao Fm, Hunan, China; DICERATOCEPHALIDAE; UCAM.
 Xiangqianaspis ZHOU in W. ZHANG et al., 1980a [hunanensis] Qingzhudong Fm, Hunan, China; ANTAGMIDAE; LCAM.
-Xiangshanaspis LIN in QIU et al., 1983 [tong-shanensis] Hsuchuang Fm, Jiangsu, China; PTYCHOPARIIDAE; MCAM.
+Xiangshanaspis LIN in QIU et al., 1983 [tongshanensis] Hsuchuang Fm, Jiangsu, China; PTYCHOPARIIDAE; MCAM.
 Xiangshania QIU in QIU et al., 1983 [kiangshanensis] Hsuchuang Fm, Anhui, China; PROASAPHISCIDAE; MCAM.
 Xiangxiia LIU, 1982[yongshunensis] Fenxiang, Hunan, China; HUNGAIIDAE; LORD. [j.s.s. of Asaphopsoides, fide PENG, 1990].
 Xiangzhongella LIU, 1987 [xinshaoensis] Liugiatang Fm, Hunan, China; PROETIDAE; MISS.
@@ -5016,8 +5016,8 @@ Xundiania LUO in LUO et al., 1994 [quadrata] Shu-anglongtan Fm, Yunnan, China; O
 Xuzhouia QIU, 1980 [zhanglouensis] Manto Fm, Jiangsu, China; ZACANTHOIDIDAE; MCAM.
 Xylabion LANE, 1971 [Ceraurinus craigensis TRIPP, 1954] Kiln Mdst, Scotland; CHEIRURIDAE; UORD.
 Xyoeax HOLLOWAY, 1996 [eponcus] Murrindal Lst, Victoria, Australia; STYGINIDAE; LDEV.
-Xystocrania WHITTINGTON, 1965a [Cheirurus per-forator BILLINGS, 1865] Table Cove Fm, Newfoundland, Canada; CHEIRURIDAE; MORD.
-Xystridura WHITEHOUSE, 1936 [Milesia temple-tonensis CHAPMAN, 1929] Beetle Creek Fm, Queensland, Australia; XYSTRIDURIDAE; MCAM [replacement name for Milesia].
+Xystocrania WHITTINGTON, 1965a [Cheirurus perforator BILLINGS, 1865] Table Cove Fm, Newfoundland, Canada; CHEIRURIDAE; MORD.
+Xystridura WHITEHOUSE, 1936 [Milesia templetonensis CHAPMAN, 1929] Beetle Creek Fm, Queensland, Australia; XYSTRIDURIDAE; MCAM [replacement name for Milesia].
 Yabeia RESSER & ENDO in KOBAYASHI, 1935c [laevigata] Changhia Fm, Liaoning, China; SOLENOPLEURIDAE; MCAM.
 Yangweizhouia YUAN & YIN, 1998 [carinata] Chefu Fm, Guizhou, China; DOKIMOCEPHALIDAE; UCAM.
 Yanhaoia ZHOU et al., 1998a [Pterygometopus huayinshanensis LU, 1975] Neichiashan Series, Sichuan, China; PTERYGOMETOPIDAE; MORD.
@@ -5032,7 +5032,7 @@ Yanzhuangia M. ZHANG & PENG, 1998 [cylindrata] Changshan Fm, Shandong, China; KI
 Yaojiayuella LIN & WU in W. ZHANG et al., 1980b [ocellata] Maochuang Fm, Shanxi, China; PTYCHOPARIIDAE; MCAM.
 Yaopuia GUO & DUAN in GUO et al., 1982[tianshifuensis] Yehli Fm, Liaoning, China; LEIOSTEGIIDAE; LORD.
 Yarmakaspis LISOGOR, 1977a [grygori] Shabaktin Fm, Kazakhstan; LEIOSTEGIIDAE; UCAM.
-Ybexaspis PŘIBYL & VANĚKinPŘIBYL et al., 1985 [misspelling of Ibexaspis].
+Ybexaspis PŘIBYL & VANĚK in PŘIBYL et al., 1985 [misspelling of Ibexaspis].
 Yeshanaspis ZHU & JIANG, 1981 [subconicus] Mu-fushan Fm, Jiangsu, China; ELLIPSOCEPHALIDAE; LCAM.
 Yichangaspis XIANG & ZHOU, 1987 [yichangensis] Lungmachi Fm, Hubei, China; PROETIDAE; LSIL.
 Yiliangaspis LUO in LUO et al., 1994 [yiliangensis] Tsanglangpu Fm, Yunnan, China; PTYCHOPARIIDAE; LCAM [j.s.s. of Gunnia, fide YUAN & ZHAO, 1999].

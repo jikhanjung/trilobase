@@ -643,6 +643,15 @@
     - 잔여 1건: Szechuanella (syn 960) — 대체명 없는 것이 정상 (NOTE 8)
     - devlog: `devlog/20260219_081_fix_unlinked_synonyms.md`
 
+- **2026-02-19~20 소스 데이터 품질 수정** (txt + DB raw_entry 동기)
+  - 콜론→세미콜론 4건, BRAÑA 인코딩 13건, Paraacidaspis 중복 해소 1건
+  - 공백 누락 수정 44건 (in/et/& 앞뒤), 제어문자 제거 2건
+  - 철자 교정 4건 (Grinellaspis, Bailliella, Parakoldinoidia, Tschernyschewella)
+  - CHU-GAEVA → CHUGAEVA 1건
+  - **PDF 줄바꿈 하이픈 제거 165건** (149 고유 패턴: 분류군명 38 + 종소명 52 + 지명 56 + 복합 3)
+  - parent_id NULL (valid): 72→**68**건, 유효 Genus: 4,260→**4,259**, 무효: 855→**856**
+  - devlog: `devlog/20260219_082_data_quality_fixes.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -661,8 +670,8 @@
 
 | 항목 | 값 | 비율 |
 |------|-----|------|
-| 유효 Genus | 4,260 | 83.3% |
-| 무효 Genus | 855 | 16.7% |
+| 유효 Genus | 4,259 | 83.3% |
+| 무효 Genus | 856 | 16.7% |
 | Synonym 연결됨 | 1,054 | 99.9% |
 | Country 연결됨 | 4,841 | 99.9% |
 | Formation 연결됨 | 4,853 | 99.9% |
@@ -823,7 +832,8 @@ pytest tests/
 
 - Synonym 미연결 1건: Szechuanella (syn 960) — preocc., not replaced (NOTE 8에 의해 정상)
 - Location/Formation 없는 taxa는 모두 무효 taxa (정상)
-- parent_id NULL인 Genus 329건: invalid 257건(정상) + valid 72건(FAMILY UNCERTAIN/INDET/?FAMILY 등)
+- parent_id NULL인 Genus 325건: invalid 257건(정상) + valid 68건(FAMILY UNCERTAIN/INDET/?FAMILY 등)
+- 중국어 로마자 하이픈 ~30건: 구 로마자 표기(Wade-Giles) 가능성 있어 보류
 
 ## 전체 계획
 
