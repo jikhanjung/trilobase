@@ -138,6 +138,47 @@ txt + DB raw_entry 양쪽 동시 수정.
 | 정상 지명 | ~50 | Dvorce-Prokop, Loire-Atlantique, Saint-Chinian |
 | 중국어 로마자 (보류) | ~30 | Chang-shan, Gui-zhou, Shan-dong, Mao-tian |
 
+### 4f. txt↔DB raw_entry 동기화 검증 및 수정 — 23건
+
+전수 비교(5,115줄)로 txt와 DB raw_entry 사이 불일치를 검출하여 수정.
+
+**DB raw_entry 미반영 — 17건:**
+
+| 수정 유형 | 건수 | 원인 |
+|-----------|------|------|
+| `BRAÑA&` → `BRAÑA &` (공백 추가) | 7 | 인코딩 수정 시 raw_entry에 `&` 공백 미반영 |
+| `IDAE:` → `IDAE;` | 4 | 콜론 수정 시 raw_entry 미반영 |
+| `Grinellaspis` → `Grinnellaspis` | 1 | 철자 교정 raw_entry 미반영 |
+| `Bailliella` → `Bailiella` | 1 | 철자 교정 raw_entry 미반영 |
+| `Parakoldinoidia` → `Parakoldinioidia` | 1 | 철자 교정 raw_entry 미반영 |
+| `Tschernyschewella` → `Tschernyschewiella` | 1 | 철자 교정 raw_entry 미반영 |
+| Actinopeltis(294) Grinnellaspis | 1 | 위와 동일 |
+| Liocephalus(2732) Bailiella | 1 | 위와 동일 |
+
+**TXT 미반영 — 6건:**
+
+| 패턴 | 건수 | 대상 genera |
+|------|------|-------------|
+| `inKRYSKOV` → `in KRYSKOV` | 1 | Kuraspis |
+| `inROZOVA` → `in ROZOVA` | 1 | Paivinia |
+| `inCHERNYSHEVA` → `in CHERNYSHEVA` | 1 | Paraorlovia |
+| `inREPINA` → `in REPINA` | 1 | Parapagetia |
+| `inEGOROVA` → `in EGOROVA` | 2 | Pseudonericella, Schoriella |
+
+### 4g. 결합 엔트리 raw_entry 분리 — 2건
+
+devlog 029에서 genus 분리 시 raw_entry는 원본 결합 텍스트를 유지했으나,
+각 genus가 자기 raw_entry만 갖도록 분리.
+
+| id | Genus | 변경 | 분리된 genus |
+|----|-------|------|-------------|
+| 2441 | Kaniniella | Kanlingia 부분 제거 | Kanlingia (id=5339, 이미 분리됨) |
+| 2965 | Melopetasus | Memmatella 부분 제거 | Memmatella (id=5340, 이미 분리됨) |
+
+### 최종 동기화 현황
+
+**txt ↔ DB raw_entry: 5,115/5,115 (100%) 완전 일치**
+
 ## 남은 이슈 (미수정)
 
 - **?FAMILY genera** 29건: `?CERATOPYGIDAE` 등 불확실 family 배정. 원저자 의도 존중하여 보류 중
