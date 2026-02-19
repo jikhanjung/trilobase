@@ -691,8 +691,13 @@ trilobase/                                 # 도메인 데이터/스크립트/�
 ├── CLAUDE.md
 ├── pytest.ini                             # pytest 설정 (testpaths=tests)
 ├── requirements.txt                       # scoda-engine 의존
-├── trilobase.db                           # Canonical SQLite DB
-├── paleocore.db                           # PaleoCore 참조 DB
+├── db/                                    # Canonical DB (git tracked)
+│   ├── trilobase.db                       # Trilobase SQLite DB
+│   └── paleocore.db                       # PaleoCore 참조 DB
+├── dist/                                  # 생성 산출물 (gitignored)
+│   ├── trilobase.scoda                    # .scoda 패키지
+│   ├── paleocore.scoda
+│   └── *_overlay.db                       # Overlay DB
 ├── data/                                  # 소스 데이터 파일
 │   ├── trilobite_genus_list.txt           # 정제된 genus 목록 (최신 버전)
 │   ├── trilobite_genus_list_original.txt
@@ -706,12 +711,12 @@ trilobase/                                 # 도메인 데이터/스크립트/�
 │   ├── app.js
 │   └── style.css
 ├── scripts/                               # 도메인 스크립트
-│   ├── create_scoda.py                    # trilobase.scoda 패키지 생성
-│   ├── create_paleocore_scoda.py          # paleocore.scoda 패키지 생성
-│   ├── create_paleocore.py                # PaleoCore DB 생성
+│   ├── create_scoda.py                    # trilobase.scoda → dist/
+│   ├── create_paleocore_scoda.py          # paleocore.scoda → dist/
+│   ├── create_paleocore.py                # PaleoCore DB → db/
 │   ├── validate_manifest.py               # Manifest validator
 │   ├── add_opinions_schema.py             # Taxonomic opinions 마이그레이션
-│   ├── create_database.py                 # DB 생성
+│   ├── create_database.py                 # DB 생성 → db/
 │   └── ... (normalize, import, etc.)
 ├── tests/
 │   ├── conftest.py                        # 공유 fixtures
@@ -912,9 +917,9 @@ user_annotations (
 
 **SQLite ATTACH 사용 (3-DB):**
 ```python
-conn = sqlite3.connect('trilobase.db')  # Canonical DB
-conn.execute("ATTACH DATABASE 'trilobase_overlay.db' AS overlay")
-conn.execute("ATTACH DATABASE 'paleocore.db' AS pc")
+conn = sqlite3.connect('db/trilobase.db')  # Canonical DB
+conn.execute("ATTACH DATABASE 'dist/trilobase_overlay.db' AS overlay")
+conn.execute("ATTACH DATABASE 'db/paleocore.db' AS pc")
 
 # Canonical 테이블 접근: SELECT * FROM taxonomic_ranks
 # Overlay 테이블 접근: SELECT * FROM overlay.user_annotations
@@ -926,10 +931,10 @@ conn.execute("ATTACH DATABASE 'paleocore.db' AS pc")
 
 ```bash
 # 기본 쿼리 (taxa 뷰 사용)
-sqlite3 trilobase.db "SELECT * FROM taxa LIMIT 10;"
+sqlite3 db/trilobase.db "SELECT * FROM taxa LIMIT 10;"
 
 # 전체 계층 구조 조회
-sqlite3 trilobase.db "SELECT g.name, f.name as family, o.name as 'order'
+sqlite3 db/trilobase.db "SELECT g.name, f.name as family, o.name as 'order'
 FROM taxonomic_ranks g
 LEFT JOIN taxonomic_ranks f ON g.parent_id = f.id
 LEFT JOIN taxonomic_ranks sf ON f.parent_id = sf.id
@@ -937,14 +942,14 @@ LEFT JOIN taxonomic_ranks o ON sf.parent_id = o.id
 WHERE g.rank = 'Genus' AND g.is_valid = 1 LIMIT 10;"
 
 # Genus의 Formation 조회 (relation 테이블 사용)
-sqlite3 trilobase.db "SELECT g.name, f.name as formation
+sqlite3 db/trilobase.db "SELECT g.name, f.name as formation
 FROM taxonomic_ranks g
 JOIN genus_formations gf ON g.id = gf.genus_id
 JOIN formations f ON gf.formation_id = f.id
 WHERE g.name = 'Paradoxides';"
 
 # 특정 국가의 Genus 조회 (relation 테이블 사용)
-sqlite3 trilobase.db "SELECT g.name, gl.region
+sqlite3 db/trilobase.db "SELECT g.name, gl.region
 FROM taxonomic_ranks g
 JOIN genus_locations gl ON g.id = gl.genus_id
 JOIN countries c ON gl.country_id = c.id
@@ -954,6 +959,6 @@ WHERE c.name = 'China' LIMIT 10;"
 ## 주의사항
 
 - `data/trilobite_genus_list.txt`가 항상 최신 텍스트 버전
-- `trilobase.db`가 최신 데이터베이스
+- `db/trilobase.db`가 최신 데이터베이스
 - 각 Phase 완료 시 git commit
 - 원본 PDF 필요 시: Jell & Adrain (2002)

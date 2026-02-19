@@ -19,8 +19,13 @@ trilobase/
 ├── CLAUDE.md
 ├── pytest.ini                        # pytest config (testpaths = tests)
 ├── requirements.txt                  # scoda-engine dependency
-├── trilobase.db                      # Canonical SQLite DB
-├── paleocore.db                      # PaleoCore reference DB
+├── db/                               # Canonical databases (git tracked)
+│   ├── trilobase.db                  # Trilobase SQLite DB
+│   └── paleocore.db                  # PaleoCore reference DB
+├── dist/                             # Generated artifacts (gitignored)
+│   ├── trilobase.scoda               # Trilobase .scoda package
+│   ├── paleocore.scoda               # PaleoCore .scoda package
+│   └── *_overlay.db                  # Overlay databases
 ├── data/                             # Source data files
 │   ├── trilobite_genus_list.txt      # 최신 버전 (항상 이 파일 수정)
 │   ├── trilobite_genus_list_original.txt
@@ -30,10 +35,10 @@ trilobase/
 │   └── mcp_tools_trilobase.json      # MCP 도구 정의
 ├── spa/                              # Reference SPA (trilobase 전용)
 ├── scripts/                          # 도메인 데이터 파이프라인 스크립트
-│   ├── create_scoda.py               # trilobase.scoda 패키지 생성
-│   ├── create_paleocore_scoda.py     # paleocore.scoda 패키지 생성
-│   ├── create_paleocore.py           # PaleoCore DB 생성
-│   ├── create_database.py            # Trilobase DB 생성
+│   ├── create_scoda.py               # trilobase.scoda 패키지 생성 → dist/
+│   ├── create_paleocore_scoda.py     # paleocore.scoda 패키지 생성 → dist/
+│   ├── create_paleocore.py           # PaleoCore DB 생성 → db/
+│   ├── create_database.py            # Trilobase DB 생성 → db/
 │   ├── validate_manifest.py          # Manifest validator
 │   └── ... (normalize, import, etc.)
 ├── tests/

@@ -20,8 +20,13 @@ Trilobase is a paleontological database project focused on trilobite taxonomy. T
 trilobase/                                 # 도메인 데이터/스크립트/테스트만
 ├── pytest.ini                             # pytest config
 ├── requirements.txt                       # scoda-engine 의존
-├── trilobase.db                           # Canonical SQLite DB
-├── paleocore.db                           # PaleoCore 참조 DB
+├── db/                                    # Canonical DB (git tracked)
+│   ├── trilobase.db                       # Trilobase SQLite DB
+│   └── paleocore.db                       # PaleoCore 참조 DB
+├── dist/                                  # 생성 산출물 (gitignored)
+│   ├── trilobase.scoda                    # .scoda 패키지
+│   ├── paleocore.scoda
+│   └── *_overlay.db                       # Overlay DB
 ├── data/                                  # 소스 데이터 파일
 │   ├── trilobite_genus_list.txt           # 최신 버전 (항상 이 파일 수정)
 │   ├── trilobite_family_list.txt          # Family 목록
