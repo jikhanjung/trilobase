@@ -12,26 +12,29 @@ Trilobase is a paleontological database project focused on trilobite taxonomy. T
 
 ## Repository Structure
 
+**Runtime engine** (`scoda-engine`)은 별도 repo: `/mnt/d/projects/scoda-engine`
+- `pip install -e /mnt/d/projects/scoda-engine[dev]`로 설치
+- import: `from scoda_engine.app import app` 등
+
 ```
-trilobase/
-├── scoda_desktop/                    # SCODA Desktop runtime package
-│   ├── scoda_package.py              # Core library (DB access, .scoda packages)
-│   ├── app.py                        # Flask web server
-│   ├── mcp_server.py                 # MCP server (stdio/SSE)
-│   ├── gui.py                        # GUI control panel
-│   ├── serve.py, build.py            # Server launcher, PyInstaller build
-│   ├── templates/, static/           # Generic viewer
-├── tests/                            # Test suite (230 tests)
-├── data/                             # Source data files
-│   ├── trilobite_genus_list.txt      # 최신 버전 (항상 이 파일 수정)
-│   ├── trilobite_family_list.txt     # Family 목록
-│   └── adrain2011.txt                # Suprafamilial taxa
-├── scripts/                          # 데이터 파이프라인 스크립트
-├── spa/                              # Reference SPA
-├── devlog/                           # 작업 기록
-│   └── YYYYMMDD_NNN_*.md            # 일별 작업 로그
+trilobase/                                 # 도메인 데이터/스크립트/테스트만
+├── pytest.ini                             # pytest config
+├── requirements.txt                       # scoda-engine 의존
+├── trilobase.db                           # Canonical SQLite DB
+├── paleocore.db                           # PaleoCore 참조 DB
+├── data/                                  # 소스 데이터 파일
+│   ├── trilobite_genus_list.txt           # 최신 버전 (항상 이 파일 수정)
+│   ├── trilobite_family_list.txt          # Family 목록
+│   └── adrain2011.txt                     # Suprafamilial taxa
+├── scripts/                               # 도메인 스크립트
+├── spa/                                   # Reference SPA
+├── tests/
+│   ├── conftest.py
+│   └── test_trilobase.py                  # 도메인 테스트 (66개)
+├── devlog/                                # 작업 기록
+│   └── YYYYMMDD_NNN_*.md
 └── docs/
-    └── HANDOFF.md                   # 인수인계 문서 (필독)
+    └── HANDOFF.md                         # 인수인계 문서 (필독)
 ```
 
 ## Data Format Conventions

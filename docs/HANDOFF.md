@@ -567,7 +567,7 @@
   - `app.py`: `app.mount("/mcp", create_mcp_app())` — `/mcp/sse`, `/mcp/messages`, `/mcp/health`
   - `gui.py`: MCP 프로세스 관리 코드 전면 제거 (~100줄)
   - `ScodaDesktop.spec`: `ScodaDesktop_mcp` → `ScodaMCP` 리네이밍
-  - stdio 모드(`python -m scoda_desktop.mcp_server`) 변경 없이 유지
+  - stdio 모드(`python -m scoda_engine.mcp_server`) 변경 없이 유지
   - 테스트: 228개 전부 통과 (기존 226 + 신규 2)
   - 계획 문서: `devlog/20260215_P48_mcp_web_api_merge.md`
   - devlog: `devlog/20260215_066_mcp_web_api_merge.md`
