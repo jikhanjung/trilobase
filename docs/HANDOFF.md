@@ -633,6 +633,16 @@
   - trilobase 테스트: 66 passed
   - devlog: `devlog/20260219_078_repo_split_scoda_engine.md`
 
+- **2026-02-19 데이터 품질 수정**: parent_id NULL Genus + Synonym 미연결 정리
+  - parent_id NULL valid Genus 13건 family 연결 (파싱 누락 — raw_entry에 확정 family 있었음)
+    - parent_id NULL: 342→329건 (valid 85→72, invalid 257 유지)
+    - devlog: `devlog/20260219_080_fix_null_parent_13_genera.md`
+  - Synonym 미연결 24건 → 1건으로 축소 (연결률 97.6%→99.9%)
+    - senior_taxon_id 연결: exact 18건 + 철자 교정 4건 + ICZN 조사 1건 = 23건
+    - junior_taxon_id 오류 수정: 2건 (Actinopeltis 293→294, Szechuanella 4774→4775)
+    - 잔여 1건: Szechuanella (syn 960) — 대체명 없는 것이 정상 (NOTE 8)
+    - devlog: `devlog/20260219_081_fix_unlinked_synonyms.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -653,7 +663,7 @@
 |------|-----|------|
 | 유효 Genus | 4,260 | 83.3% |
 | 무효 Genus | 855 | 16.7% |
-| Synonym 연결됨 | 1,031 | 97.6% |
+| Synonym 연결됨 | 1,054 | 99.9% |
 | Country 연결됨 | 4,841 | 99.9% |
 | Formation 연결됨 | 4,853 | 99.9% |
 
@@ -811,9 +821,9 @@ pytest tests/
 
 ## 미해결 항목
 
-- Synonym 미연결 4건 (원본에 senior taxa 없음)
+- Synonym 미연결 1건: Szechuanella (syn 960) — preocc., not replaced (NOTE 8에 의해 정상)
 - Location/Formation 없는 taxa는 모두 무효 taxa (정상)
-- parent_id NULL인 Genus 342건 (family 필드 자체가 NULL인 무효 taxa)
+- parent_id NULL인 Genus 329건: invalid 257건(정상) + valid 72건(FAMILY UNCERTAIN/INDET/?FAMILY 등)
 
 ## 전체 계획
 
