@@ -11,9 +11,9 @@ import zipfile
 
 import pytest
 
-import scoda_desktop.scoda_package as scoda_package
-from scoda_desktop.app import app
-from scoda_desktop.scoda_package import get_db, ScodaPackage
+import scoda_engine.scoda_package as scoda_package
+from scoda_engine.app import app
+from scoda_engine.scoda_package import get_db, ScodaPackage
 
 
 

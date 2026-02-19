@@ -1,1 +1,0 @@
-# SCODA Desktop runtime package

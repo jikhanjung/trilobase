@@ -1,9 +1,2 @@
-fastapi
-httpx
-pyinstaller
-mcp>=1.0.0
-starlette
-uvicorn
-requests
-pytest
-pytest-asyncio
+# For development (local scoda-engine)
+-e /mnt/d/projects/scoda-engine[dev]

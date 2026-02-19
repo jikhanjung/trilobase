@@ -1,10 +1,14 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-18
+**마지막 업데이트:** 2026-02-19
 
 ## 프로젝트 개요
 
 삼엽충(trilobite) 분류학 데이터베이스 구축 프로젝트. Jell & Adrain (2002) PDF에서 추출한 genus 목록을 정제하여 데이터베이스화하는 것이 목표.
+
+**SCODA Engine** (런타임)은 별도 repo로 분리됨: `/mnt/d/projects/scoda-engine`
+- `pip install -e /mnt/d/projects/scoda-engine[dev]`로 설치
+- `scoda_desktop` → `scoda_engine`으로 패키지명 변경
 
 ## 현재 상태
 
@@ -619,6 +623,16 @@
   - 계획 문서: `devlog/20260215_P49_pydantic_response_model.md`
   - devlog: `devlog/20260215_067_pydantic_response_model.md`
 
+- **ScodaEngine / Trilobase 프로젝트 분리**
+  - `scoda_desktop/` → 별도 repo `/mnt/d/projects/scoda-engine` (패키지명: `scoda_engine`)
+  - 이동: scoda_engine/, tests/{test_runtime,test_mcp,test_mcp_basic}.py, scripts/{build,release,init_overlay_db}.py, ScodaDesktop.spec, launcher_*.py, examples/, SCODA docs 7개
+  - 남은 것: trilobase 도메인 데이터/스크립트/테스트만
+  - import 경로: `scoda_desktop` → `scoda_engine` 전환
+  - 의존성: `pip install -e /mnt/d/projects/scoda-engine[dev]`
+  - scoda-engine 테스트: 191 passed (5 MCP subprocess tests need .scoda in CWD)
+  - trilobase 테스트: 66 passed
+  - devlog: `devlog/20260219_078_repo_split_scoda_engine.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -673,66 +687,52 @@
 ### 파일 구조
 
 ```
-trilobase/
-├── scoda_desktop/                    # SCODA Desktop runtime package (Phase 45)
-│   ├── __init__.py                   # 패키지 init
-│   ├── scoda_package.py              # .scoda 패키지 + 중앙 DB 접근 (Phase 25)
-│   ├── app.py                        # FastAPI 웹 앱
-│   ├── mcp_server.py                 # MCP 서버 (Phase 22-23, stdio/SSE 모드)
-│   ├── gui.py                        # GUI 컨트롤 패널 (Phase 19)
-│   ├── serve.py                      # 웹 서버 런처 (uvicorn)
-│   ├── templates/
-│   │   └── index.html                # Generic viewer 메인 페이지
-│   └── static/
-│       ├── css/style.css             # Generic viewer 스타일
-│       └── js/app.js                 # Generic viewer 프론트엔드 로직
-├── tests/                            # 테스트 (Phase 45에서 분리)
-│   ├── conftest.py                   # 공유 fixtures + anyio 백엔드
-│   ├── test_runtime.py               # Runtime 테스트 (135개)
-│   ├── test_trilobase.py             # Trilobase 도메인 테스트 (51개)
-│   ├── test_mcp.py                   # MCP 통합 테스트 (7개)
-│   └── test_mcp_basic.py             # MCP 기본 테스트 (1개)
-├── data/                             # 소스 데이터 파일 (Phase 45에서 분리)
-│   ├── trilobite_genus_list.txt      # 정제된 genus 목록 (최신 버전)
+trilobase/                                 # 도메인 데이터/스크립트/테스트만
+├── CLAUDE.md
+├── pytest.ini                             # pytest 설정 (testpaths=tests)
+├── requirements.txt                       # scoda-engine 의존
+├── trilobase.db                           # Canonical SQLite DB
+├── paleocore.db                           # PaleoCore 참조 DB
+├── data/                                  # 소스 데이터 파일
+│   ├── trilobite_genus_list.txt           # 정제된 genus 목록 (최신 버전)
 │   ├── trilobite_genus_list_original.txt
-│   ├── trilobite_family_list.txt     # Family 목록
-│   ├── trilobite_nomina_nuda.txt     # Nomina nuda
-│   ├── adrain2011.txt                # Suprafamilial taxa 목록
-│   ├── mcp_tools_trilobase.json      # MCP 도구 정의 (Phase 46 Step 2)
-│   ├── Jell_and_Adrain_2002_Literature_Cited.txt
-│   └── *.pdf                         # Reference PDFs
-├── trilobase.db                      # Canonical SQLite DB
-├── trilobase_overlay.db              # Overlay DB (사용자 주석, Phase 20)
-├── spa/                              # Reference Implementation SPA (Phase 44)
+│   ├── trilobite_family_list.txt
+│   ├── trilobite_nomina_nuda.txt
+│   ├── adrain2011.txt
+│   ├── mcp_tools_trilobase.json           # MCP 도구 정의
+│   └── *.pdf                              # Reference PDFs
+├── spa/                                   # Reference Implementation SPA
 │   ├── index.html
 │   ├── app.js
 │   └── style.css
-├── scripts/                          # 데이터 파이프라인 + 빌드 스크립트 (24개)
-│   ├── build.py                      # PyInstaller exe 빌드 전용
-│   ├── create_scoda.py               # trilobase.scoda 패키지 생성
-│   ├── create_paleocore_scoda.py     # paleocore.scoda 패키지 생성
-│   ├── create_paleocore.py           # PaleoCore DB 생성
-│   ├── validate_manifest.py          # Manifest validator/linter (A-2)
-│   ├── add_opinions_schema.py        # Taxonomic opinions 마이그레이션 (B-1)
-│   ├── release.py                    # 릴리스 패키징
-│   ├── create_database.py            # DB 생성
+├── scripts/                               # 도메인 스크립트
+│   ├── create_scoda.py                    # trilobase.scoda 패키지 생성
+│   ├── create_paleocore_scoda.py          # paleocore.scoda 패키지 생성
+│   ├── create_paleocore.py                # PaleoCore DB 생성
+│   ├── validate_manifest.py               # Manifest validator
+│   ├── add_opinions_schema.py             # Taxonomic opinions 마이그레이션
+│   ├── create_database.py                 # DB 생성
 │   └── ... (normalize, import, etc.)
-├── examples/
-│   └── genus-explorer/index.html     # Custom SPA 예제
-├── ScodaDesktop.spec                 # PyInstaller 빌드 설정
-├── pytest.ini                        # pytest 설정 (testpaths=tests)
-├── requirements.txt
-├── CLAUDE.md
+├── tests/
+│   ├── conftest.py                        # 공유 fixtures
+│   └── test_trilobase.py                  # Trilobase 도메인 테스트 (66개)
 ├── vendor/
 │   ├── cow/v2024/States2024/statelist2024.csv
 │   └── ics/gts2020/chart.ttl
 ├── docs/
 │   ├── HANDOFF.md
-│   ├── RELEASE_GUIDE.md
-│   ├── SCODA_CONCEPT.md
-│   ├── SCODA_Stable_UID_Schema_v0.2.md
 │   └── paleocore_schema.md
 └── devlog/
+
+scoda-engine/                              # 별도 repo: /mnt/d/projects/scoda-engine
+├── pyproject.toml                         # pip install -e ".[dev]"
+├── scoda_engine/                          # SCODA runtime package
+│   ├── scoda_package.py, app.py, mcp_server.py, gui.py, serve.py
+│   ├── templates/, static/
+├── tests/                                 # Runtime 테스트 (191개)
+├── scripts/                               # build.py, release.py 등
+├── examples/, docs/
+└── ScodaDesktop.spec
 ```
 
 ## SCODA 구현 + 배포 완료 (브랜치: `feature/scoda-implementation`)
@@ -765,25 +765,36 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 ## 테스트 현황
 
+### Trilobase (이 repo)
+
+| 파일 | 테스트 수 | 상태 |
+|------|---------|------|
+| `tests/test_trilobase.py` | 66개 | ✅ 통과 |
+
+### scoda-engine (별도 repo)
+
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
 | `tests/test_runtime.py` | 122개 | ✅ 통과 |
-| `tests/test_trilobase.py` | 123개 | ✅ 통과 |
-| `tests/test_mcp.py` | 16개 | ✅ 통과 |
+| `tests/test_mcp.py` | 6개 | ✅ 1 / ⚠ 5 (CWD에 .scoda 필요) |
 | `tests/test_mcp_basic.py` | 1개 | ✅ 통과 |
-| **합계** | **262개** | **✅ 전부 통과** |
 
 **실행 방법:**
 ```bash
+# Trilobase
+pip install -e /mnt/d/projects/scoda-engine[dev]
 pytest tests/
-# 의존성: pip install fastapi httpx mcp pytest-asyncio uvicorn starlette
+
+# scoda-engine
+cd /mnt/d/projects/scoda-engine
+pip install -e ".[dev]"
+pytest tests/
 ```
 
 **pytest 설정 (`pytest.ini`):**
 - `testpaths = tests` — 테스트 디렉토리 지정
 - `asyncio_mode = auto` — async 테스트 자동 인식
 - `asyncio_default_fixture_loop_scope = function` — 독립 이벤트 루프
-- `tests/conftest.py` — 공유 fixtures + anyio 백엔드
 
 ## 다음 작업
 

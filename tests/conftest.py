@@ -9,13 +9,47 @@ import sys
 
 import pytest
 
-import scoda_desktop.scoda_package as scoda_package
-from scoda_desktop.app import app
-from scoda_desktop.scoda_package import get_db, ScodaPackage
+import scoda_engine.scoda_package as scoda_package
+from scoda_engine.app import app
+from scoda_engine.scoda_package import get_db, ScodaPackage
 
-# Import overlay DB init (used by test_db fixture)
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(__file__)), 'scripts'))
-from init_overlay_db import create_overlay_db
+
+def create_overlay_db(db_path, canonical_version='1.0.0'):
+    """Create overlay database with metadata and user_annotations table."""
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS overlay_metadata (
+            key TEXT PRIMARY KEY, value TEXT NOT NULL
+        )
+    """)
+    cursor.execute(
+        "INSERT OR REPLACE INTO overlay_metadata (key, value) VALUES ('canonical_version', ?)",
+        (canonical_version,))
+    cursor.execute(
+        "INSERT OR REPLACE INTO overlay_metadata (key, value) VALUES ('created_at', datetime('now'))")
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS user_annotations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            entity_type TEXT NOT NULL,
+            entity_id INTEGER NOT NULL,
+            entity_name TEXT,
+            annotation_type TEXT NOT NULL,
+            content TEXT NOT NULL,
+            author TEXT,
+            created_at TEXT NOT NULL DEFAULT (datetime('now'))
+        )
+    """)
+    cursor.execute("""
+        CREATE INDEX IF NOT EXISTS idx_annotations_entity
+            ON user_annotations(entity_type, entity_id)
+    """)
+    cursor.execute("""
+        CREATE INDEX IF NOT EXISTS idx_annotations_name
+            ON user_annotations(entity_name)
+    """)
+    conn.commit()
+    conn.close()
 
 
 @pytest.fixture
