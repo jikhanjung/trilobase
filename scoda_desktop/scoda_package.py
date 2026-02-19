@@ -498,27 +498,46 @@ def get_active_package_name():
 
 
 def _resolve_dependencies(base_dir):
-    """Resolve dependency databases from main package manifest."""
+    """Resolve dependency databases from main package manifest.
+
+    First checks the .scoda manifest for declared dependencies.
+    Then, if no 'pc' dependency was found, tries to discover
+    paleocore.scoda or paleocore.db alongside the main package
+    (covers .db fallback mode and stale .scoda builds).
+    """
     global _dep_dbs, _dep_pkgs
 
-    if not _scoda_pkg:
-        return
-    deps = _scoda_pkg.manifest.get('dependencies', [])
-    for dep in deps:
-        dep_name = dep.get('name')
-        alias = dep.get('alias', dep_name)
-        if not dep_name:
-            continue
-        # Try .scoda first, then .db
-        dep_scoda = os.path.join(base_dir, f'{dep_name}.scoda')
-        if os.path.exists(dep_scoda):
-            pkg = ScodaPackage(dep_scoda)
-            _dep_pkgs.append(pkg)
-            _dep_dbs[alias] = pkg.db_path
-        else:
-            dep_db = os.path.join(base_dir, f'{dep_name}.db')
-            if os.path.exists(dep_db):
-                _dep_dbs[alias] = dep_db
+    if _scoda_pkg:
+        deps = _scoda_pkg.manifest.get('dependencies', [])
+        for dep in deps:
+            dep_name = dep.get('name')
+            alias = dep.get('alias', dep_name)
+            if not dep_name:
+                continue
+            # Try .scoda first, then .db
+            dep_scoda = os.path.join(base_dir, f'{dep_name}.scoda')
+            if os.path.exists(dep_scoda):
+                pkg = ScodaPackage(dep_scoda)
+                _dep_pkgs.append(pkg)
+                _dep_dbs[alias] = pkg.db_path
+            else:
+                dep_db = os.path.join(base_dir, f'{dep_name}.db')
+                if os.path.exists(dep_db):
+                    _dep_dbs[alias] = dep_db
+
+    # Fallback: auto-discover paleocore if 'pc' alias not yet resolved
+    if 'pc' not in _dep_dbs:
+        for candidate in ('paleocore.scoda', 'paleocore.db'):
+            candidate_path = os.path.join(base_dir, candidate)
+            if os.path.exists(candidate_path):
+                if candidate.endswith('.scoda'):
+                    pkg = ScodaPackage(candidate_path)
+                    _dep_pkgs.append(pkg)
+                    _dep_dbs['pc'] = pkg.db_path
+                else:
+                    _dep_dbs['pc'] = candidate_path
+                logger.info("Auto-discovered dependency: pc=%s", candidate)
+                break
 
 
 def _resolve_paths():

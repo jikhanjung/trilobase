@@ -1494,6 +1494,10 @@ async function renderDetailFromManifest(viewKey, entityId) {
             ? view.source.replace('{id}', entityId)
             : `/api/composite/${viewKey}?id=${entityId}`;
         const response = await fetch(url);
+        if (!response.ok) {
+            const err = await response.json().catch(() => ({}));
+            throw new Error(err.error || `HTTP ${response.status}`);
+        }
         const data = await response.json();
 
         // Title
