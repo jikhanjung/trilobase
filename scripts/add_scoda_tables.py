@@ -13,7 +13,7 @@ import sys
 from datetime import date
 
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
+DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
 
 
 def create_tables(conn):

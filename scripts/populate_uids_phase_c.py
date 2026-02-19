@@ -30,8 +30,8 @@ import time
 import unicodedata
 
 
-TRILOBASE_DB = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
-PALEOCORE_DB = os.path.join(os.path.dirname(__file__), '..', 'paleocore.db')
+TRILOBASE_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
+PALEOCORE_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'paleocore.db')
 
 UID_COLUMNS = [
     ('uid', 'TEXT'),

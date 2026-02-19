@@ -25,7 +25,7 @@ import sys
 import unicodedata
 
 
-PALEOCORE_DB = os.path.join(os.path.dirname(__file__), '..', 'paleocore.db')
+PALEOCORE_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'paleocore.db')
 
 # ── Countries where the "actual country" name is NOT the shortest ──────────
 # Phase A used shortest-name-per-ISO as primary. These are the corrections.

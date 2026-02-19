@@ -275,6 +275,6 @@ def fix_synonyms(db_path):
 
 if __name__ == '__main__':
     base_dir = Path(__file__).parent.parent
-    db_path = base_dir / 'trilobase.db'
+    db_path = base_dir / 'db' / 'trilobase.db'
 
     fix_synonyms(db_path)

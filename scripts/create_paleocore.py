@@ -19,8 +19,8 @@ import sys
 from datetime import date, datetime, timezone
 
 
-SOURCE_DB = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
-DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'paleocore.db')
+SOURCE_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
+DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'db', 'paleocore.db')
 
 # Tables to extract (order matters for FK dependencies)
 DATA_TABLES = [

@@ -337,7 +337,7 @@ if __name__ == '__main__':
     import sys
 
     base_path = Path(__file__).parent.parent
-    db_path = base_path / 'trilobase.db'
+    db_path = base_path / 'db' / 'trilobase.db'
     family_file = base_path / 'data' / 'trilobite_family_list.txt'
 
     if not db_path.exists():

@@ -18,8 +18,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from scoda_engine.scoda_package import ScodaPackage, _sha256_file
 from validate_manifest import validate_db
 
-DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'paleocore.db')
-DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'paleocore.scoda')
+DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'paleocore.db')
+DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'dist', 'paleocore.scoda')
 
 
 def main():

@@ -17,7 +17,7 @@ import os
 import sqlite3
 import sys
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
+DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
 CSV_PATH = os.path.join(os.path.dirname(__file__), '..',
                         'vendor', 'cow', 'v2024', 'States2024', 'statelist2024.csv')
 

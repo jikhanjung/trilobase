@@ -11,7 +11,7 @@ import os
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
 INPUT_FILE = os.path.join(PROJECT_DIR, 'data', 'Jell_and_Adrain_2002_Literature_Cited.txt')
-DATABASE = os.path.join(PROJECT_DIR, 'trilobase.db')
+DATABASE = os.path.join(PROJECT_DIR, 'db', 'trilobase.db')
 
 
 def read_and_merge_lines(filepath):

@@ -18,8 +18,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from scoda_engine.scoda_package import ScodaPackage, _sha256_file
 from validate_manifest import validate_db
 
-DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
-DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'trilobase.scoda')
+DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
+DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'dist', 'trilobase.scoda')
 DEFAULT_MCP_TOOLS = os.path.join(os.path.dirname(__file__), '..', 'data', 'mcp_tools_trilobase.json')
 
 

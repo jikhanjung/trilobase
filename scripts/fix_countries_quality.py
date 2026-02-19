@@ -22,7 +22,7 @@ import os
 import sqlite3
 import sys
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
+DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
 
 
 def merge_country(cursor, bad_name, good_name):

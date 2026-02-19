@@ -167,6 +167,6 @@ def populate_database_from_ranks(file_path, db_path):
     print("Database population complete.")
 
 if __name__ == "__main__":
-    db_path = 'trilobase.db'
-    txt_file_path = 'data/adrain2011.txt'
+    db_path = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
+    txt_file_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'adrain2011.txt')
     populate_database_from_ranks(txt_file_path, db_path)

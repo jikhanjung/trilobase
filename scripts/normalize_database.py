@@ -234,7 +234,7 @@ def normalize_database(db_path):
 
 if __name__ == '__main__':
     base_dir = Path(__file__).parent.parent
-    db_path = base_dir / 'trilobase.db'
+    db_path = base_dir / 'db' / 'trilobase.db'
 
     print(f"Normalizing database: {db_path}\n")
     normalize_database(db_path)

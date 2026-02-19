@@ -11,11 +11,12 @@ countries 테이블의 국가/지역 혼재를 해결하여
 사용법:
     python scripts/create_geographic_regions.py [--dry-run] [--report]
 """
+import os
 import sqlite3
 import argparse
 from collections import defaultdict
 
-DB_PATH = 'trilobase.db'
+DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
 
 # 국가 이름 변형 → COW 코드 (countries 테이블에 있지만 실제로는 국가의 별명)
 # 이들은 region이 아니라 sovereign state 자체의 다른 이름

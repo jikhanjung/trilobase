@@ -26,8 +26,8 @@ import sys
 import unicodedata
 
 
-PALEOCORE_DB = os.path.join(os.path.dirname(__file__), '..', 'paleocore.db')
-TRILOBASE_DB = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
+PALEOCORE_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'paleocore.db')
+TRILOBASE_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
 
 UID_COLUMNS = [
     ('uid', 'TEXT'),

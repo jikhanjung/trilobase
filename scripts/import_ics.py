@@ -23,7 +23,7 @@ except ImportError:
     print("Error: rdflib is required. Install with: pip install rdflib", file=sys.stderr)
     sys.exit(1)
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'trilobase.db')
+DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
 TTL_PATH = os.path.join(os.path.dirname(__file__), '..',
                         'vendor', 'ics', 'gts2020', 'chart.ttl')
 

@@ -23,7 +23,7 @@ except ImportError:
           file=sys.stderr)
     sys.exit(1)
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'paleocore.db')
+DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'db', 'paleocore.db')
 
 # ── Manual mapping for names that pycountry can't resolve ──────────────────
 # Includes: sub-national regions mapped to parent country ISO,
