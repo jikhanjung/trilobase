@@ -160,6 +160,28 @@ def test_db(tmp_path):
             ON taxonomic_opinions(taxon_id, opinion_type)
             WHERE is_accepted = 1;
 
+        -- Taxon-Bibliography junction
+        CREATE TABLE taxon_bibliography (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            taxon_id INTEGER NOT NULL,
+            bibliography_id INTEGER NOT NULL,
+            relationship_type TEXT NOT NULL DEFAULT 'original_description'
+                CHECK(relationship_type IN ('original_description', 'fide')),
+            synonym_id INTEGER,
+            match_confidence TEXT NOT NULL DEFAULT 'high'
+                CHECK(match_confidence IN ('high', 'medium', 'low')),
+            match_method TEXT,
+            notes TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (taxon_id) REFERENCES taxonomic_ranks(id),
+            FOREIGN KEY (bibliography_id) REFERENCES bibliography(id),
+            FOREIGN KEY (synonym_id) REFERENCES synonyms(id),
+            UNIQUE(taxon_id, bibliography_id, relationship_type, synonym_id)
+        );
+        CREATE INDEX idx_tb_taxon ON taxon_bibliography(taxon_id);
+        CREATE INDEX idx_tb_bib ON taxon_bibliography(bibliography_id);
+        CREATE INDEX idx_tb_type ON taxon_bibliography(relationship_type);
+
         -- BEFORE INSERT: deactivate existing accepted (before unique index check)
         CREATE TRIGGER trg_deactivate_before_insert
         BEFORE INSERT ON taxonomic_opinions
@@ -336,6 +358,21 @@ def test_db(tmp_path):
         VALUES (2, 2, 'PLACED_IN', 3, NULL, 'asserted', 'medium', 0, 'Hypothetical alternative for testing');
     """)
 
+    # Taxon-Bibliography junction data
+    cursor.executescript("""
+        -- Phacops EMMRICH, 1839 → EMMRICH 1839 (original_description)
+        INSERT INTO taxon_bibliography (id, taxon_id, bibliography_id, relationship_type, match_confidence, match_method)
+        VALUES (1, 100, 10, 'original_description', 'high', 'unique_match');
+
+        -- Acuticryphops RICHTER & RICHTER, 1926 → RICHTER & RICHTER 1926 (original_description)
+        INSERT INTO taxon_bibliography (id, taxon_id, bibliography_id, relationship_type, match_confidence, match_method)
+        VALUES (2, 101, 11, 'original_description', 'high', 'unique_match');
+
+        -- Cryphops synonym fide CLARKSON, 1969 → CLARKSON 1969 (fide)
+        INSERT INTO taxon_bibliography (id, taxon_id, bibliography_id, relationship_type, synonym_id, match_confidence, match_method)
+        VALUES (3, 102, 12, 'fide', 1, 'high', 'fide_unique');
+    """)
+
     # Bibliography (for metadata statistics)
     cursor.execute("""
         CREATE TABLE bibliography (
@@ -385,6 +422,31 @@ def test_db(tmp_path):
                 'Bulletin of the AMNH', '223', '1-56', 'article',
                 'Lieberman, B.S. (1994) Evolution of the trilobite subfamily Proetinae.',
                 'scoda:bib:doi:10.1234/test-lieberman-1994', 'doi', 'high')
+    """)
+    # Bibliography entries for taxon_bibliography matching
+    cursor.execute("""
+        INSERT INTO bibliography (id, authors, year, title, journal, volume, pages, reference_type, raw_entry,
+            uid, uid_method, uid_confidence)
+        VALUES (10, 'EMMRICH, H.F.', 1839, 'De Trilobitis',
+                'Dissertatio petrefactologica', NULL, '1-56', 'article',
+                'EMMRICH, H.F. (1839) De Trilobitis.',
+                'scoda:bib:fp_v1:sha256:test_emmrich_1839', 'fp_v1', 'medium')
+    """)
+    cursor.execute("""
+        INSERT INTO bibliography (id, authors, year, title, journal, volume, pages, reference_type, raw_entry,
+            uid, uid_method, uid_confidence)
+        VALUES (11, 'RICHTER, R. & RICHTER, E.', 1926, 'Die Trilobiten des Oberdevons',
+                'Abhandlungen der Preussischen Geologischen Landesanstalt', '99', '1-314', 'article',
+                'RICHTER, R. & RICHTER, E. (1926) Die Trilobiten des Oberdevons.',
+                'scoda:bib:fp_v1:sha256:test_richter_1926', 'fp_v1', 'medium')
+    """)
+    cursor.execute("""
+        INSERT INTO bibliography (id, authors, year, title, journal, volume, pages, reference_type, raw_entry,
+            uid, uid_method, uid_confidence)
+        VALUES (12, 'CLARKSON, E.N.K.', 1969, 'On Acuticryphops and other trilobites',
+                'Palaeontology', '12', '1-24', 'article',
+                'CLARKSON, E.N.K. (1969) On Acuticryphops and other trilobites.',
+                'scoda:bib:fp_v1:sha256:test_clarkson_1969', 'fp_v1', 'medium')
     """)
 
     # SCODA metadata
@@ -610,6 +672,20 @@ def test_db(tmp_path):
                 '{"chronostrat_id": "integer"}', '2026-02-14T00:00:00')
     """)
 
+    # Taxon-Bibliography queries
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('taxon_bibliography_list', 'Taxa linked to a specific bibliography entry',
+                'SELECT tr.id, tr.name, tr.rank, tr.author, tr.year, tr.is_valid, tb.relationship_type, tb.match_confidence FROM taxon_bibliography tb JOIN taxonomic_ranks tr ON tb.taxon_id = tr.id WHERE tb.bibliography_id = :bibliography_id ORDER BY tb.relationship_type, tr.rank, tr.name',
+                '{"bibliography_id": "integer"}', '2026-02-20T00:00:00')
+    """)
+    cursor.execute("""
+        INSERT INTO ui_queries (name, description, sql, params_json, created_at)
+        VALUES ('taxon_bibliography', 'Bibliography entries linked to a specific taxon',
+                'SELECT b.id, b.authors, b.year, b.year_suffix, b.title, b.reference_type, tb.relationship_type, tb.match_confidence FROM taxon_bibliography tb JOIN bibliography b ON tb.bibliography_id = b.id WHERE tb.taxon_id = :taxon_id ORDER BY tb.relationship_type, b.year, b.authors',
+                '{"taxon_id": "integer"}', '2026-02-20T00:00:00')
+    """)
+
     # Taxon opinions query (B-1)
     cursor.execute("""
         INSERT INTO ui_queries (name, description, sql, params_json, created_at)
@@ -831,7 +907,7 @@ def test_db(tmp_path):
                 "source_query": "bibliography_detail",
                 "source_param": "bibliography_id",
                 "sub_queries": {
-                    "genera": {"query": "bibliography_genera", "params": {"author_name": "result.authors"}}
+                    "taxa": {"query": "taxon_bibliography_list", "params": {"bibliography_id": "id"}}
                 },
                 "icon": "bi-book",
                 "title_template": {"format": "{icon} {authors}, {year}", "icon": "bi-book"},
@@ -839,7 +915,18 @@ def test_db(tmp_path):
                     {"title": "Basic Information", "type": "field_grid",
                      "fields": [{"key": "authors", "label": "Authors"}]},
                     {"title": "Original Entry", "type": "raw_text",
-                     "data_key": "raw_entry", "condition": "raw_entry"}
+                     "data_key": "raw_entry", "condition": "raw_entry"},
+                    {"title": "Related Taxa ({count})", "type": "linked_table",
+                     "data_key": "taxa", "condition": "taxa",
+                     "columns": [
+                         {"key": "name", "label": "Name", "italic": True},
+                         {"key": "rank", "label": "Rank"},
+                         {"key": "author", "label": "Author"},
+                         {"key": "year", "label": "Year"},
+                         {"key": "relationship_type", "label": "Relationship"},
+                         {"key": "is_valid", "label": "Valid", "format": "boolean"}
+                     ],
+                     "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}}
                 ]
             },
             "chronostrat_detail": {
@@ -871,7 +958,8 @@ def test_db(tmp_path):
                     "synonyms": {"query": "genus_synonyms", "params": {"genus_id": "id"}},
                     "formations": {"query": "genus_formations", "params": {"genus_id": "id"}},
                     "locations": {"query": "genus_locations", "params": {"genus_id": "id"}},
-                    "temporal_ics_mapping": {"query": "genus_ics_mapping", "params": {"temporal_code": "result.temporal_code"}}
+                    "temporal_ics_mapping": {"query": "genus_ics_mapping", "params": {"temporal_code": "result.temporal_code"}},
+                    "bibliography": {"query": "taxon_bibliography", "params": {"taxon_id": "id"}}
                 },
                 "title_template": {"format": "<i>{name}</i> {author}, {year}"},
                 "sections": [
@@ -885,6 +973,15 @@ def test_db(tmp_path):
                      "fields": [{"key": "type_species", "label": "Species", "format": "italic"}]},
                     {"title": "Geographic Information", "type": "genus_geography"},
                     {"title": "Synonymy", "type": "synonym_list", "data_key": "synonyms", "condition": "synonyms"},
+                    {"title": "Bibliography ({count})", "type": "linked_table",
+                     "data_key": "bibliography", "condition": "bibliography",
+                     "columns": [
+                         {"key": "authors", "label": "Authors"},
+                         {"key": "year", "label": "Year"},
+                         {"key": "title", "label": "Title"},
+                         {"key": "relationship_type", "label": "Relationship"}
+                     ],
+                     "on_row_click": {"detail_view": "bibliography_detail", "id_key": "id"}},
                     {"title": "Original Entry", "type": "raw_text", "data_key": "raw_entry", "condition": "raw_entry"},
                     {"title": "My Notes", "type": "annotations", "entity_type": "genus"}
                 ]
@@ -898,7 +995,8 @@ def test_db(tmp_path):
                 "sub_queries": {
                     "children_counts": {"query": "rank_children_counts", "params": {"rank_id": "id"}},
                     "children": {"query": "rank_children", "params": {"rank_id": "id"}},
-                    "opinions": {"query": "taxon_opinions", "params": {"taxon_id": "id"}}
+                    "opinions": {"query": "taxon_opinions", "params": {"taxon_id": "id"}},
+                    "bibliography": {"query": "taxon_bibliography", "params": {"taxon_id": "id"}}
                 },
                 "title_template": {"format": "<span class=\"badge bg-secondary me-2\">{rank}</span> {name}"},
                 "sections": [
@@ -913,6 +1011,15 @@ def test_db(tmp_path):
                      ]},
                     {"title": "Statistics", "type": "rank_statistics"},
                     {"title": "Children", "type": "rank_children", "data_key": "children", "condition": "children"},
+                    {"title": "Bibliography ({count})", "type": "linked_table",
+                     "data_key": "bibliography", "condition": "bibliography",
+                     "columns": [
+                         {"key": "authors", "label": "Authors"},
+                         {"key": "year", "label": "Year"},
+                         {"key": "title", "label": "Title"},
+                         {"key": "relationship_type", "label": "Relationship"}
+                     ],
+                     "on_row_click": {"detail_view": "bibliography_detail", "id_key": "id"}},
                     {"title": "Taxonomic Opinions ({count})", "type": "linked_table",
                      "data_key": "opinions", "condition": "opinions",
                      "columns": [

@@ -691,14 +691,14 @@ class TestCompositeBibliographyDetail:
     """Composite bibliography detail via manifest-driven queries."""
 
     def test_bibliography_composite(self, client):
-        """Composite bibliography detail should return bib info + genera."""
+        """Composite bibliography detail should return bib info + taxa."""
         response = client.get('/api/composite/bibliography_detail?id=1')
         assert response.status_code == 200
         data = response.json()
         assert data['authors'] == 'Jell, P.A. & Adrain, J.M.'
         assert data['year'] == 2002
-        assert 'genera' in data
-        assert isinstance(data['genera'], list)
+        assert 'taxa' in data
+        assert isinstance(data['taxa'], list)
 
 
 class TestCompositeChronostratDetail:
@@ -950,4 +950,187 @@ class TestTaxonomicOpinions:
         opinion_sections = [s for s in sections if s.get('data_key') == 'opinions']
         assert len(opinion_sections) == 1
         assert opinion_sections[0]['type'] == 'linked_table'
+
+
+# ---------------------------------------------------------------------------
+# Taxon-Bibliography Junction
+# ---------------------------------------------------------------------------
+
+class TestTaxonBibliography:
+    """Tests for taxon_bibliography junction table, queries, and manifest integration."""
+
+    # --- Schema tests ---
+
+    def test_table_exists(self, test_db):
+        """taxon_bibliography table should exist."""
+        conn = sqlite3.connect(test_db[0])
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='taxon_bibliography'")
+        assert cursor.fetchone()[0] == 1
+        conn.close()
+
+    def test_columns(self, test_db):
+        """taxon_bibliography should have all expected columns."""
+        conn = sqlite3.connect(test_db[0])
+        cursor = conn.cursor()
+        cursor.execute("PRAGMA table_info(taxon_bibliography)")
+        columns = {row[1] for row in cursor.fetchall()}
+        expected = {
+            'id', 'taxon_id', 'bibliography_id', 'relationship_type',
+            'synonym_id', 'match_confidence', 'match_method', 'notes', 'created_at'
+        }
+        assert expected.issubset(columns)
+        conn.close()
+
+    def test_relationship_type_check(self, test_db):
+        """Invalid relationship_type should be rejected."""
+        conn = sqlite3.connect(test_db[0])
+        with pytest.raises(sqlite3.IntegrityError):
+            conn.execute("""
+                INSERT INTO taxon_bibliography (taxon_id, bibliography_id, relationship_type)
+                VALUES (100, 10, 'INVALID')
+            """)
+        conn.close()
+
+    def test_match_confidence_check(self, test_db):
+        """Invalid match_confidence should be rejected."""
+        conn = sqlite3.connect(test_db[0])
+        with pytest.raises(sqlite3.IntegrityError):
+            conn.execute("""
+                INSERT INTO taxon_bibliography (taxon_id, bibliography_id, match_confidence)
+                VALUES (100, 10, 'INVALID')
+            """)
+        conn.close()
+
+    def test_unique_constraint(self, test_db):
+        """Duplicate (taxon_id, bibliography_id, relationship_type, synonym_id) should be rejected."""
+        conn = sqlite3.connect(test_db[0])
+        # Existing row: (102, 12, 'fide', synonym_id=1) — insert duplicate with same synonym_id
+        with pytest.raises(sqlite3.IntegrityError):
+            conn.execute("""
+                INSERT INTO taxon_bibliography (taxon_id, bibliography_id, relationship_type, synonym_id, match_confidence, match_method)
+                VALUES (102, 12, 'fide', 1, 'high', 'fide_unique')
+            """)
+        conn.close()
+
+    # --- Data tests ---
+
+    def test_original_description_link(self, test_db):
+        """Phacops should be linked to EMMRICH 1839 as original_description."""
+        conn = sqlite3.connect(test_db[0])
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT tb.relationship_type, tb.match_confidence, b.authors, b.year
+            FROM taxon_bibliography tb
+            JOIN bibliography b ON tb.bibliography_id = b.id
+            WHERE tb.taxon_id = 100 AND tb.relationship_type = 'original_description'
+        """)
+        row = cursor.fetchone()
+        conn.close()
+        assert row is not None
+        assert row[0] == 'original_description'
+        assert row[1] == 'high'
+        assert 'EMMRICH' in row[2]
+        assert row[3] == 1839
+
+    def test_fide_link(self, test_db):
+        """Cryphops should have a fide link to CLARKSON 1969 via synonym."""
+        conn = sqlite3.connect(test_db[0])
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT tb.relationship_type, tb.synonym_id, b.authors, b.year
+            FROM taxon_bibliography tb
+            JOIN bibliography b ON tb.bibliography_id = b.id
+            WHERE tb.taxon_id = 102 AND tb.relationship_type = 'fide'
+        """)
+        row = cursor.fetchone()
+        conn.close()
+        assert row is not None
+        assert row[0] == 'fide'
+        assert row[1] == 1  # synonym_id
+        assert 'CLARKSON' in row[2]
+        assert row[3] == 1969
+
+    def test_junction_row_count(self, test_db):
+        """Should have 3 junction rows (2 original_description + 1 fide)."""
+        conn = sqlite3.connect(test_db[0])
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM taxon_bibliography")
+        assert cursor.fetchone()[0] == 3
+        conn.close()
+
+    # --- Named query tests ---
+
+    def test_taxon_bibliography_list_query(self, client):
+        """taxon_bibliography_list should return taxa linked to a bibliography entry."""
+        response = client.get('/api/queries/taxon_bibliography_list/execute?bibliography_id=10')
+        assert response.status_code == 200
+        data = response.json()
+        assert data['row_count'] == 1
+        assert data['rows'][0]['name'] == 'Phacops'
+        assert data['rows'][0]['relationship_type'] == 'original_description'
+
+    def test_taxon_bibliography_query(self, client):
+        """taxon_bibliography should return bibliography entries linked to a taxon."""
+        response = client.get('/api/queries/taxon_bibliography/execute?taxon_id=101')
+        assert response.status_code == 200
+        data = response.json()
+        assert data['row_count'] == 1
+        assert 'RICHTER' in data['rows'][0]['authors']
+        assert data['rows'][0]['relationship_type'] == 'original_description'
+
+    # --- Composite detail tests ---
+
+    def test_bibliography_detail_has_taxa(self, client):
+        """Composite bibliography_detail should include linked taxa (not LIKE-based genera)."""
+        response = client.get('/api/composite/bibliography_detail?id=11')
+        assert response.status_code == 200
+        data = response.json()
+        assert 'taxa' in data
+        assert len(data['taxa']) == 1
+        assert data['taxa'][0]['name'] == 'Acuticryphops'
+        assert data['taxa'][0]['relationship_type'] == 'original_description'
+
+    def test_genus_detail_has_bibliography(self, client):
+        """Composite genus_detail should include bibliography sub_query."""
+        response = client.get('/api/composite/genus_detail?id=100')
+        assert response.status_code == 200
+        data = response.json()
+        assert 'bibliography' in data
+        assert len(data['bibliography']) == 1
+        assert 'EMMRICH' in data['bibliography'][0]['authors']
+
+    def test_rank_detail_has_bibliography(self, client):
+        """Composite rank_detail should include bibliography sub_query (empty for ranks without links)."""
+        # Phacopida (id=2) has no direct bibliography link in test data
+        response = client.get('/api/composite/rank_detail?id=2')
+        assert response.status_code == 200
+        data = response.json()
+        assert 'bibliography' in data
+
+    # --- Manifest tests ---
+
+    def test_bibliography_detail_manifest_uses_taxa(self, client):
+        """bibliography_detail manifest should use taxon_bibliography_list (not bibliography_genera)."""
+        response = client.get('/api/manifest')
+        manifest = response.json()['manifest']
+        bib_detail = manifest['views']['bibliography_detail']
+        assert 'taxa' in bib_detail['sub_queries']
+        assert bib_detail['sub_queries']['taxa']['query'] == 'taxon_bibliography_list'
+
+    def test_genus_detail_manifest_has_bibliography(self, client):
+        """genus_detail manifest should have bibliography in sub_queries."""
+        response = client.get('/api/manifest')
+        manifest = response.json()['manifest']
+        genus_detail = manifest['views']['genus_detail']
+        assert 'bibliography' in genus_detail['sub_queries']
+        assert genus_detail['sub_queries']['bibliography']['query'] == 'taxon_bibliography'
+
+    def test_rank_detail_manifest_has_bibliography(self, client):
+        """rank_detail manifest should have bibliography in sub_queries."""
+        response = client.get('/api/manifest')
+        manifest = response.json()['manifest']
+        rank_detail = manifest['views']['rank_detail']
+        assert 'bibliography' in rank_detail['sub_queries']
+        assert rank_detail['sub_queries']['bibliography']['query'] == 'taxon_bibliography'
 
