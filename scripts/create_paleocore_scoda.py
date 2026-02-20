@@ -84,7 +84,7 @@ def main():
             "format": "scoda",
             "format_version": "1.0",
             "name": db_meta.get('artifact_id', 'paleocore'),
-            "version": db_meta.get('version', '0.3.0'),
+            "version": db_meta.get('version', '0.1.0'),
             "title": db_meta.get('name', 'PaleoCore') + ' - ' + db_meta.get('description', ''),
             "description": db_meta.get('description', ''),
             "created_at": datetime.now(timezone.utc).isoformat(),

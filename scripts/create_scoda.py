@@ -88,7 +88,7 @@ def main():
             "format": "scoda",
             "format_version": "1.0",
             "name": db_meta.get('artifact_id', 'trilobase'),
-            "version": db_meta.get('version', '1.0.0'),
+            "version": db_meta.get('version', '0.1.0'),
             "title": db_meta.get('name', 'Trilobase') + ' - ' + db_meta.get('description', ''),
             "description": db_meta.get('description', ''),
             "created_at": datetime.now(timezone.utc).isoformat(),
@@ -101,7 +101,7 @@ def main():
                 {
                     "name": "paleocore",
                     "alias": "pc",
-                    "version": "0.3.0",
+                    "version": "0.1.0",
                     "file": "paleocore.scoda",
                     "description": "Shared paleontological infrastructure (geography, stratigraphy)"
                 }
@@ -133,7 +133,7 @@ def main():
             {
                 "name": "paleocore",
                 "alias": "pc",
-                "version": "0.3.0",
+                "version": "0.1.0",
                 "file": "paleocore.scoda",
                 "description": "Shared paleontological infrastructure (geography, stratigraphy)"
             }
