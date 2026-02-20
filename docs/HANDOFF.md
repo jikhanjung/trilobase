@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-19
+**마지막 업데이트:** 2026-02-20
 
 ## 프로젝트 개요
 
@@ -652,6 +652,16 @@
   - parent_id NULL (valid): 72→**68**건, 유효 Genus: 4,260→**4,259**, 무효: 855→**856**
   - devlog: `devlog/20260219_082_data_quality_fixes.md`
 
+- **2026-02-20 taxon_bibliography Junction Table**
+  - `taxon_bibliography` 테이블: Bibliography↔taxonomic_ranks FK 링크 (4,040건)
+  - original_description 3,607건 + fide 433건 (전부 high confidence)
+  - 기존 LIKE '%author%' 텍스트 매칭 → junction table 기반 정확한 링크로 대체
+  - Named queries 2개: `taxon_bibliography_list`, `taxon_bibliography`
+  - Manifest 3개 뷰 업데이트: bibliography_detail, genus_detail, rank_detail
+  - 스크립트: `scripts/link_bibliography.py` (idempotent, `--dry-run`, `--report`)
+  - 테스트: 82개 (기존 66 + 신규 16)
+  - devlog: `devlog/20260220_083_taxon_bibliography_junction.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -687,13 +697,14 @@
 | genus_formations | 4,853 | Genus-Formation 다대다 관계 |
 | genus_locations | 4,841 | Genus-Country 다대다 관계 |
 | bibliography | 2,130 | 참고문헌 (Literature Cited) |
+| taxon_bibliography | 4,040 | Taxon↔Bibliography FK 링크 |
 | taxonomic_opinions | 2 | 분류학적 의견 (B-1 PoC) |
 | taxa (뷰) | 5,113 | 하위 호환성 뷰 |
 | artifact_metadata | 7 | SCODA 아티팩트 메타데이터 |
 | provenance | 5 | 데이터 출처 |
-| schema_descriptions | 104 | 테이블/컬럼 설명 |
+| schema_descriptions | 112 | 테이블/컬럼 설명 |
 | ui_display_intent | 6 | SCODA 뷰 타입 힌트 |
-| ui_queries | 34 | Named SQL 쿼리 (Phase 46에서 17개 추가, B-1에서 1개) |
+| ui_queries | 36 | Named SQL 쿼리 (Phase 46에서 17개, B-1에서 1개, taxon_bib 2개) |
 | ui_manifest | 1 | 선언적 뷰 정의 (JSON) |
 
 **Overlay DB (trilobase_overlay.db) — Read/write, 사용자 로컬 데이터:**
@@ -735,11 +746,12 @@ trilobase/                                 # 도메인 데이터/스크립트/�
 │   ├── create_paleocore.py                # PaleoCore DB → db/
 │   ├── validate_manifest.py               # Manifest validator
 │   ├── add_opinions_schema.py             # Taxonomic opinions 마이그레이션
+│   ├── link_bibliography.py               # taxon_bibliography 링크 생성
 │   ├── create_database.py                 # DB 생성 → db/
 │   └── ... (normalize, import, etc.)
 ├── tests/
 │   ├── conftest.py                        # 공유 fixtures
-│   └── test_trilobase.py                  # Trilobase 도메인 테스트 (66개)
+│   └── test_trilobase.py                  # Trilobase 도메인 테스트 (82개)
 ├── vendor/
 │   ├── cow/v2024/States2024/statelist2024.csv
 │   └── ics/gts2020/chart.ttl
@@ -793,7 +805,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_trilobase.py` | 66개 | ✅ 통과 |
+| `tests/test_trilobase.py` | 82개 | ✅ 통과 |
 
 ### scoda-engine (별도 repo)
 
@@ -897,6 +909,10 @@ genus_locations (id, genus_id, country_id, region, is_type_locality, notes)
 -- bibliography: 2,130 records - 참고문헌
 bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
               publisher, city, editors, book_title, reference_type, raw_entry)
+
+-- taxon_bibliography: 4,040 records - Taxon↔Bibliography FK 링크
+taxon_bibliography (id, taxon_id, bibliography_id, relationship_type,
+                    synonym_id, match_confidence, match_method, notes, created_at)
 
 -- taxonomic_opinions: 2 records - 분류학적 의견 (B-1 PoC)
 taxonomic_opinions (id, taxon_id, opinion_type, related_taxon_id, proposed_valid,
