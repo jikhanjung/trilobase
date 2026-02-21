@@ -110,7 +110,14 @@ def main():
         "authors": ["Correlates of War Project", "International Commission on Stratigraphy"],
     }
 
-    result = ScodaPackage.create(db_path, output_path, metadata=metadata)
+    # Include CHANGELOG_paleocore.md as CHANGELOG.md in package
+    extra_assets = {}
+    changelog_path = os.path.join(os.path.dirname(__file__), '..', 'CHANGELOG_paleocore.md')
+    if os.path.isfile(changelog_path):
+        extra_assets['CHANGELOG.md'] = changelog_path
+
+    result = ScodaPackage.create(db_path, output_path, metadata=metadata,
+                                 extra_assets=extra_assets if extra_assets else None)
     size = os.path.getsize(result)
 
     print(f"Created: {result}")

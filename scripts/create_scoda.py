@@ -101,7 +101,7 @@ def main():
                 {
                     "name": "paleocore",
                     "alias": "pc",
-                    "version": "0.1.0",
+                    "version": "0.1.1",
                     "file": "paleocore.scoda",
                     "description": "Shared paleontological infrastructure (geography, stratigraphy)"
                 }
@@ -127,13 +127,18 @@ def main():
             if os.path.isfile(fpath):
                 extra_assets[f'assets/spa/{fname}'] = fpath
 
+    # Include CHANGELOG.md
+    changelog_path = os.path.join(os.path.dirname(__file__), '..', 'CHANGELOG.md')
+    if os.path.isfile(changelog_path):
+        extra_assets['CHANGELOG.md'] = changelog_path
+
     # Create .scoda package with paleocore dependency + SPA
     metadata = {
         "dependencies": [
             {
                 "name": "paleocore",
                 "alias": "pc",
-                "version": "0.1.0",
+                "version": "0.1.1",
                 "file": "paleocore.scoda",
                 "description": "Shared paleontological infrastructure (geography, stratigraphy)"
             }
