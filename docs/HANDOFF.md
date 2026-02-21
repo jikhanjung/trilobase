@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-20
+**마지막 업데이트:** 2026-02-21
 
 ## 프로젝트 개요
 
@@ -662,6 +662,15 @@
   - 테스트: 82개 (기존 66 + 신규 16)
   - devlog: `devlog/20260220_083_taxon_bibliography_junction.md`
 
+- **2026-02-21 버전 관리 + Changelog 프로세스**
+  - `CHANGELOG.md` (trilobase), `CHANGELOG_paleocore.md` (paleocore) — Keep a Changelog 형식
+  - `scripts/bump_version.py`: DB artifact_metadata + create_scoda.py 의존성 버전 일괄 갱신 (`--dry-run` 지원)
+  - `.scoda` 패키지에 CHANGELOG.md 포함 (extra_assets)
+  - 버전 범프: trilobase 0.1.0→**0.2.0**, paleocore 0.1.0→**0.1.1**
+  - 버전 체계: Major=스키마 변경, Minor=유의미 데이터 추가, Patch=데이터 품질 수정
+  - 계획 문서: `devlog/20260221_P65_version_changelog_process.md`
+  - devlog: `devlog/20260221_085_version_changelog_process.md`
+
 ### 데이터베이스 현황
 
 #### taxonomic_ranks (통합 테이블)
@@ -719,6 +728,8 @@
 ```
 trilobase/                                 # 도메인 데이터/스크립트/테스트만
 ├── CLAUDE.md
+├── CHANGELOG.md                          # Trilobase 패키지 changelog
+├── CHANGELOG_paleocore.md                # PaleoCore 패키지 changelog
 ├── pytest.ini                             # pytest 설정 (testpaths=tests)
 ├── requirements.txt                       # scoda-engine 의존
 ├── db/                                    # Canonical DB (git tracked)
@@ -744,6 +755,7 @@ trilobase/                                 # 도메인 데이터/스크립트/�
 │   ├── create_scoda.py                    # trilobase.scoda → dist/
 │   ├── create_paleocore_scoda.py          # paleocore.scoda → dist/
 │   ├── create_paleocore.py                # PaleoCore DB → db/
+│   ├── bump_version.py                    # 버전 갱신 스크립트
 │   ├── validate_manifest.py               # Manifest validator
 │   ├── add_opinions_schema.py             # Taxonomic opinions 마이그레이션
 │   ├── link_bibliography.py               # taxon_bibliography 링크 생성
@@ -837,8 +849,8 @@ pytest tests/
 **향후 로드맵:** `devlog/20260219_P63_future_roadmap.md`
 
 - **T-1. Uncertain Family Opinions 확장** — 56개 Family × 문헌 기반 opinion 입력 (B-1 후속)
-- S-1. scoda-engine conftest Generic Fixture 전환
-- S-2. scoda-engine PyPI 배포
+- ~~S-1. scoda-engine conftest Generic Fixture 전환~~ ✅ 완료 (196 tests, conftest 60% 감소)
+- ~~S-2. scoda-engine PyPI 배포~~ — 하지 않기로 결정
 
 ## 미해결 항목
 
