@@ -1134,3 +1134,210 @@ class TestTaxonBibliography:
         assert 'bibliography' in rank_detail['sub_queries']
         assert rank_detail['sub_queries']['bibliography']['query'] == 'taxon_bibliography'
 
+
+# ---------------------------------------------------------------------------
+# Group A Fix: Spelling variant duplicates resolved
+# ---------------------------------------------------------------------------
+
+class TestGroupAFix:
+    """Verify spelling variant duplicates have been resolved in production DB."""
+
+    DB_PATH = 'db/trilobase.db'
+
+    def test_shirakiellidae_duplicate_deleted(self):
+        """Empty Shirakiellidae duplicate (id=196) should be deleted."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute('SELECT COUNT(*) FROM taxonomic_ranks WHERE id = 196')
+        assert cursor.fetchone()[0] == 0
+        conn.close()
+
+    def test_dokimocephalidae_deleted(self):
+        """Dokimocephalidae (id=210) should be deleted."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute('SELECT COUNT(*) FROM taxonomic_ranks WHERE id = 210')
+        assert cursor.fetchone()[0] == 0
+        conn.close()
+
+    def test_dokimokephalidae_has_genera(self):
+        """Dokimokephalidae (id=134) should have 46 genera."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute('SELECT genera_count FROM taxonomic_ranks WHERE id = 134')
+        assert cursor.fetchone()[0] == 46
+        conn.close()
+
+    def test_chengkouaspidae_deleted(self):
+        """Chengkouaspidae (id=205) should be deleted."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute('SELECT COUNT(*) FROM taxonomic_ranks WHERE id = 205')
+        assert cursor.fetchone()[0] == 0
+        conn.close()
+
+    def test_chengkouaspididae_has_genera(self):
+        """Chengkouaspididae (id=36) should have 11 genera."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute('SELECT genera_count FROM taxonomic_ranks WHERE id = 36')
+        assert cursor.fetchone()[0] == 11
+        conn.close()
+
+
+# ---------------------------------------------------------------------------
+# Agnostida Order creation
+# ---------------------------------------------------------------------------
+
+class TestAgnostidaOrder:
+    """Verify Agnostida Order created with 10 families via PLACED_IN opinions."""
+
+    DB_PATH = 'db/trilobase.db'
+
+    def test_agnostida_order_exists(self):
+        """Agnostida Order should exist under Class Trilobita."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT id, parent_id, author, year, genera_count FROM taxonomic_ranks "
+            "WHERE name = 'Agnostida' AND rank = 'Order'"
+        )
+        row = cursor.fetchone()
+        conn.close()
+        assert row is not None
+        assert row[1] == 1  # parent = Trilobita
+        assert row[2] == 'SALTER'
+        assert row[3] == '1864'
+        assert row[4] == 162
+
+    def test_agnostida_has_10_families(self):
+        """Agnostida should have exactly 10 families."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT COUNT(*) FROM taxonomic_ranks WHERE parent_id = "
+            "(SELECT id FROM taxonomic_ranks WHERE name = 'Agnostida' AND rank = 'Order') "
+            "AND rank = 'Family'"
+        )
+        assert cursor.fetchone()[0] == 10
+        conn.close()
+
+    def test_agnostida_opinions_count(self):
+        """Should have 10 accepted PLACED_IN opinions for Agnostida families."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        agnostida_id = cursor.execute(
+            "SELECT id FROM taxonomic_ranks WHERE name = 'Agnostida' AND rank = 'Order'"
+        ).fetchone()[0]
+        cursor.execute(
+            "SELECT COUNT(*) FROM taxonomic_opinions "
+            "WHERE related_taxon_id = ? AND opinion_type = 'PLACED_IN' AND is_accepted = 1",
+            (agnostida_id,)
+        )
+        assert cursor.fetchone()[0] == 10
+        conn.close()
+
+    def test_order_uncertain_reduced(self):
+        """Order Uncertain should have 68 families after both fixes."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT COUNT(*) FROM taxonomic_ranks WHERE parent_id = 144 AND rank = 'Family'"
+        )
+        assert cursor.fetchone()[0] == 68
+        conn.close()
+
+    def test_total_opinions_count(self):
+        """Total taxonomic opinions should be 14 (2 PoC + 10 Agnostida + 2 SPELLING_OF)."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM taxonomic_opinions")
+        assert cursor.fetchone()[0] == 14
+        conn.close()
+
+
+# ---------------------------------------------------------------------------
+# SPELLING_OF Opinion Type for Orthographic Variants
+# ---------------------------------------------------------------------------
+
+class TestSpellingOfOpinions:
+    """Verify SPELLING_OF opinion type and placeholder entries for orthographic variants."""
+
+    DB_PATH = 'db/trilobase.db'
+
+    def test_spelling_of_type_allowed(self, test_db):
+        """SPELLING_OF should be accepted by CHECK constraint in test DB."""
+        conn = sqlite3.connect(test_db[0])
+        # Insert a placeholder taxon
+        conn.execute(
+            "INSERT INTO taxonomic_ranks (id, name, rank, is_placeholder, uid, uid_method, uid_confidence) "
+            "VALUES (999, 'TestVariant', 'Family', 1, 'scoda:taxon:family:TestVariant', 'name', 'high')"
+        )
+        # Insert SPELLING_OF opinion — should not raise
+        conn.execute(
+            "INSERT INTO taxonomic_opinions (taxon_id, opinion_type, related_taxon_id, "
+            "assertion_status, curation_confidence, is_accepted) "
+            "VALUES (999, 'SPELLING_OF', 10, 'asserted', 'high', 1)"
+        )
+        conn.commit()
+        row = conn.execute(
+            "SELECT opinion_type FROM taxonomic_opinions WHERE taxon_id = 999"
+        ).fetchone()
+        assert row[0] == 'SPELLING_OF'
+        conn.close()
+
+    def test_dokimocephalidae_placeholder(self):
+        """Dokimocephalidae should exist as placeholder (is_placeholder=1, genera_count=0)."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT id, is_placeholder, genera_count, parent_id "
+            "FROM taxonomic_ranks WHERE name = 'Dokimocephalidae' AND rank = 'Family'"
+        )
+        row = cursor.fetchone()
+        conn.close()
+        assert row is not None, "Dokimocephalidae placeholder not found"
+        assert row[1] == 1  # is_placeholder
+        assert row[2] == 0  # genera_count
+        assert row[3] is None  # parent_id NULL
+
+    def test_dokimocephalidae_opinion(self):
+        """Dokimocephalidae should have SPELLING_OF opinion pointing to Dokimokephalidae (id=134)."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT o.opinion_type, o.related_taxon_id, o.is_accepted, t.name "
+            "FROM taxonomic_opinions o "
+            "JOIN taxonomic_ranks t ON o.related_taxon_id = t.id "
+            "WHERE o.taxon_id = ("
+            "  SELECT id FROM taxonomic_ranks WHERE name = 'Dokimocephalidae' AND is_placeholder = 1"
+            ") AND o.opinion_type = 'SPELLING_OF'"
+        )
+        row = cursor.fetchone()
+        conn.close()
+        assert row is not None, "SPELLING_OF opinion for Dokimocephalidae not found"
+        assert row[0] == 'SPELLING_OF'
+        assert row[1] == 134  # Dokimokephalidae
+        assert row[2] == 1   # is_accepted
+        assert row[3] == 'Dokimokephalidae'
+
+    def test_chengkouaspidae_opinion(self):
+        """Chengkouaspidae should have SPELLING_OF opinion pointing to Chengkouaspididae (id=36)."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT o.opinion_type, o.related_taxon_id, o.is_accepted, t.name "
+            "FROM taxonomic_opinions o "
+            "JOIN taxonomic_ranks t ON o.related_taxon_id = t.id "
+            "WHERE o.taxon_id = ("
+            "  SELECT id FROM taxonomic_ranks WHERE name = 'Chengkouaspidae' AND is_placeholder = 1"
+            ") AND o.opinion_type = 'SPELLING_OF'"
+        )
+        row = cursor.fetchone()
+        conn.close()
+        assert row is not None, "SPELLING_OF opinion for Chengkouaspidae not found"
+        assert row[0] == 'SPELLING_OF'
+        assert row[1] == 36   # Chengkouaspididae
+        assert row[2] == 1    # is_accepted
+        assert row[3] == 'Chengkouaspididae'
+

@@ -140,7 +140,7 @@ def test_db(tmp_path):
             id                  INTEGER PRIMARY KEY AUTOINCREMENT,
             taxon_id            INTEGER NOT NULL REFERENCES taxonomic_ranks(id),
             opinion_type        TEXT NOT NULL
-                                CHECK(opinion_type IN ('PLACED_IN', 'VALID_AS', 'SYNONYM_OF')),
+                                CHECK(opinion_type IN ('PLACED_IN', 'VALID_AS', 'SYNONYM_OF', 'SPELLING_OF')),
             related_taxon_id    INTEGER REFERENCES taxonomic_ranks(id),
             proposed_valid      INTEGER,
             bibliography_id     INTEGER REFERENCES bibliography(id),
