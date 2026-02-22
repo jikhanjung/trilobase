@@ -93,7 +93,7 @@ def main():
             "description": db_meta.get('description', ''),
             "created_at": datetime.now(timezone.utc).isoformat(),
             "license": db_meta.get('license', 'CC-BY-4.0'),
-            "authors": ["Jell, P.A.", "Adrain, J.M."],
+            "authors": [],
             "data_file": "data.db",
             "record_count": record_count,
             "data_checksum_sha256": checksum,
@@ -101,8 +101,9 @@ def main():
                 {
                     "name": "paleocore",
                     "alias": "pc",
-                    "version": "0.1.1",
+                    "version": ">=0.1.1,<0.2.0",
                     "file": "paleocore.scoda",
+                    "required": True,
                     "description": "Shared paleontological infrastructure (geography, stratigraphy)"
                 }
             ],
@@ -138,8 +139,9 @@ def main():
             {
                 "name": "paleocore",
                 "alias": "pc",
-                "version": "0.1.1",
+                "version": ">=0.1.1,<0.2.0",
                 "file": "paleocore.scoda",
+                "required": True,
                 "description": "Shared paleontological infrastructure (geography, stratigraphy)"
             }
         ],

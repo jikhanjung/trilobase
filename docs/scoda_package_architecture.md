@@ -22,10 +22,11 @@ A SCODA package is:
 
 - A versioned, immutable snapshot artifact (.scoda file)
 - A ZIP container including:
-  - data.db
-  - manifest.json
-  - optional assets/
-  - checksums.sha256
+  - data.db — SQLite database
+  - manifest.json — package metadata (includes `data_checksum_sha256` for integrity verification)
+  - mcp_tools.json (optional) — MCP tool definitions
+  - assets/ (optional) — reference SPA, images, etc.
+  - CHANGELOG.md (optional) — version history
 - Designed for distribution, caching, and reproducibility
 
 SCODA runtime is responsible for:
@@ -104,25 +105,32 @@ Without PaleoCore, Trilobase cannot function correctly for:
 
 ### PaleoCore
 
+```json
 {
   "name": "paleocore",
-  "version": "0.3.0",
+  "version": "0.1.1",
   "dependencies": []
 }
+```
 
 ### Trilobase
 
+```json
 {
   "name": "trilobase",
-  "version": "1.0.0",
+  "version": "0.2.1",
   "dependencies": [
     {
       "name": "paleocore",
-      "version": ">=0.3.0,<0.4.0",
-      "required": true
+      "alias": "pc",
+      "version": ">=0.1.1,<0.2.0",
+      "file": "paleocore.scoda",
+      "required": true,
+      "description": "Shared paleontological infrastructure (geography, stratigraphy)"
     }
   ]
 }
+```
 
 ## 5.3 Version Semantics
 

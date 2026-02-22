@@ -89,10 +89,11 @@ def main():
             "description": db_meta.get('description', ''),
             "created_at": datetime.now(timezone.utc).isoformat(),
             "license": db_meta.get('license', 'CC-BY-4.0'),
-            "authors": ["Correlates of War Project", "International Commission on Stratigraphy"],
+            "authors": [],
             "data_file": "data.db",
             "record_count": record_count,
             "data_checksum_sha256": checksum,
+            "dependencies": [],
         }
 
         print("=== DRY RUN (no file will be created) ===")
@@ -107,7 +108,8 @@ def main():
 
     # PaleoCore-specific metadata override
     metadata = {
-        "authors": ["Correlates of War Project", "International Commission on Stratigraphy"],
+        "authors": [],
+        "dependencies": [],
     }
 
     # Include CHANGELOG_paleocore.md as CHANGELOG.md in package
