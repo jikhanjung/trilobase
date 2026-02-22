@@ -6,6 +6,7 @@ Usage:
   python scripts/create_scoda.py              # create trilobase.scoda
   python scripts/create_scoda.py --dry-run    # preview manifest without creating file
   python scripts/create_scoda.py --output out.scoda  # custom output path
+  python scripts/create_scoda.py --no-spa            # exclude reference SPA
 """
 
 import argparse
@@ -36,6 +37,9 @@ def main():
     parser.add_argument(
         '--dry-run', action='store_true',
         help='Preview manifest without creating file')
+    parser.add_argument(
+        '--no-spa', action='store_true',
+        help='Exclude reference SPA from package')
     args = parser.parse_args()
 
     db_path = os.path.abspath(args.db)
@@ -118,13 +122,14 @@ def main():
         return
 
     # Collect SPA files as extra_assets
-    spa_dir = os.path.join(os.path.dirname(__file__), '..', 'spa')
     extra_assets = {}
-    if os.path.isdir(spa_dir):
-        for fname in os.listdir(spa_dir):
-            fpath = os.path.join(spa_dir, fname)
-            if os.path.isfile(fpath):
-                extra_assets[f'assets/spa/{fname}'] = fpath
+    if not args.no_spa:
+        spa_dir = os.path.join(os.path.dirname(__file__), '..', 'spa')
+        if os.path.isdir(spa_dir):
+            for fname in os.listdir(spa_dir):
+                fpath = os.path.join(spa_dir, fname)
+                if os.path.isfile(fpath):
+                    extra_assets[f'assets/spa/{fname}'] = fpath
 
     # Include CHANGELOG.md
     changelog_path = os.path.join(os.path.dirname(__file__), '..', 'CHANGELOG.md')
@@ -144,7 +149,7 @@ def main():
             }
         ],
     }
-    if extra_assets:
+    if not args.no_spa and extra_assets:
         metadata["has_reference_spa"] = True
         metadata["reference_spa_path"] = "assets/spa/"
 
