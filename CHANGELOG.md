@@ -8,6 +8,24 @@ This project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html):
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-02-22
+
+### Added
+- Agnostina Suborder (id=5344) under Agnostida Order — conventional taxonomy placement
+- `questionable` assertion_status for `?FAMILY`/`??FAMILY` genera (32 opinions)
+- `incertae_sedis` opinions for FAMILY UNCERTAIN genera (22 opinions)
+- `indet` opinions for INDET genera (14 opinions)
+- Conventional placement opinions for 10 Agnostida families under Agnostina (10 opinions)
+
+### Changed
+- Valid genera parent_id NULL: 68 → 0 (all resolved)
+- Agnostida 10 families reparented: Order → Agnostina Suborder
+- Total taxonomic opinions: 6 → 84 (PLACED_IN 82 + SPELLING_OF 2)
+- taxonomic_ranks: 5,340 → 5,341 (+1 Agnostina Suborder)
+
+### Removed
+- `scripts/validate_manifest.py` — migrated to `scoda_engine_core` (P10)
+
 ## [0.2.1] - 2026-02-22
 
 ### Added

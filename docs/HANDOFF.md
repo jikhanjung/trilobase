@@ -14,7 +14,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | Item | Value |
 |------|-------|
 | Phases completed | 1~46 (all done) |
-| Trilobase version | 0.2.1 |
+| Trilobase version | 0.2.2 |
 | PaleoCore version | 0.1.1 |
 | taxonomic_ranks | 5,341 records (Class~Genus + 2 placeholders + 1 Suborder) |
 | Valid genera | 4,259 (83.3%) |
