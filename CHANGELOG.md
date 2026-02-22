@@ -8,6 +8,18 @@ This project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html):
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-02-22
+
+### Added
+- `SPELLING_OF` opinion type — orthographic variant tracking (2 records)
+- `is_placeholder` column in `taxonomic_ranks` — placeholder entries for Agnostida Order (2 records)
+- `scripts/fill_temporal_codes.py` — temporal_code auto-fill from raw_entry
+
+### Changed
+- Agnostida opinions restructured: family-level → order-level (4 PLACED_IN opinions)
+- `temporal_code` populated for 84 of 85 genera missing codes (1 has no code in source)
+- Total taxonomic opinions: 2 → 6 (PLACED_IN 4 + SPELLING_OF 2)
+
 ## [0.2.0] - 2026-02-21
 
 ### Added
