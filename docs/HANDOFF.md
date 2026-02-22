@@ -76,6 +76,12 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
   - Few blockers (only 1 senior_taxon_id is NULL)
   - Requires updating all queries/UI/tests referencing the synonyms table (**large scope**)
 
+### UI/Manifest
+
+- genus_detail 쿼리에 synonym JOIN 추가 — invalid genus에서 valid genus로 링크
+- tree item 및 genera_table에 is_valid 컬럼 표시 (boolean format, Yes/No label)
+- `create_scoda.py --no-spa` 옵션 추가
+
 ## Open Issues
 
 - **1 unlinked synonym**: Szechuanella (syn 960) — preocc., not replaced (normal per NOTE 8)
@@ -109,11 +115,9 @@ trilobase/                                 # Domain data, scripts, and tests onl
 │   ├── mcp_tools_trilobase.json           # MCP tool definitions
 │   └── *.pdf                              # Reference PDFs
 ├── spa/                                   # Reference Implementation SPA (trilobase-specific)
-│   ├── index.html
-│   ├── app.js
-│   └── style.css
+│   └── index.html                        # Single-file SPA (HTML+CSS+JS, 2,915 lines)
 ├── scripts/                               # Domain pipeline scripts
-│   ├── create_scoda.py                    # trilobase.scoda → dist/
+│   ├── create_scoda.py                    # trilobase.scoda → dist/ (--no-spa 옵션 지원)
 │   ├── create_paleocore_scoda.py          # paleocore.scoda → dist/
 │   ├── create_paleocore.py                # PaleoCore DB → db/
 │   ├── bump_version.py                    # Version bump script
