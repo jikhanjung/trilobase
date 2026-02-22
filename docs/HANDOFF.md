@@ -1,6 +1,6 @@
 # Trilobase 프로젝트 Handover
 
-**마지막 업데이트:** 2026-02-21
+**마지막 업데이트:** 2026-02-22
 
 ## 프로젝트 개요
 
@@ -662,6 +662,23 @@
   - 테스트: 82개 (기존 66 + 신규 16)
   - devlog: `devlog/20260220_083_taxon_bibliography_junction.md`
 
+- **2026-02-22 Group A 데이터 품질 수정 + Agnostida Order 생성**
+  - Group A: 철자 변형 중복 3건 해소 (Shirakiellidae/Dokimocephalidae/Chengkouaspidae)
+    - 3 엔트리 삭제, 57 genera 정위치 family로 이동
+  - Agnostida Order 신설 (SALTER, 1864): 10 families, 162 genera
+    - PLACED_IN opinion 10건으로 트리거 기반 자동 이동
+  - Order Uncertain: 81→68 families, taxonomic_opinions: 2→12
+  - 스크립트: `scripts/fix_spelling_variants.py`, `scripts/create_agnostida_order.py`
+  - 테스트: 92개 (기존 82 + 신규 10)
+  - devlog: `devlog/20260222_086_group_a_fix_and_agnostida.md`
+
+- **2026-02-22 SPELLING_OF Opinion Type**
+  - `SPELLING_OF` opinion type 추가 (taxonomic_opinions CHECK 제약조건 재구축)
+  - Dokimocephalidae, Chengkouaspidae placeholder 엔트리 + SPELLING_OF opinion 2건
+  - 스크립트: `scripts/add_spelling_of_opinions.py` (idempotent, `--dry-run`)
+  - 테스트: 96개 (기존 92 + 신규 4)
+  - taxonomic_opinions: 12→14건, taxonomic_ranks: 5,338→5,340건
+
 - **2026-02-21 버전 관리 + Changelog 프로세스**
   - `CHANGELOG.md` (trilobase), `CHANGELOG_paleocore.md` (paleocore) — Keep a Changelog 형식
   - `scripts/bump_version.py`: DB artifact_metadata + create_scoda.py 의존성 버전 일괄 갱신 (`--dry-run` 지원)
@@ -678,10 +695,10 @@
 | Rank | 개수 |
 |------|------|
 | Class | 1 |
-| Order | 12 |
+| Order | 13 |
 | Suborder | 8 |
 | Superfamily | 13 |
-| Family | 191 |
+| Family | 190 (placeholder 2 포함) |
 | Genus | 5,115 |
 | **총계** | **5,340** |
 
@@ -701,13 +718,13 @@
 
 | 테이블/뷰 | 레코드 수 | 설명 |
 |-----------|----------|------|
-| taxonomic_ranks | 5,340 | 통합 분류 체계 (Class~Genus) |
+| taxonomic_ranks | 5,340 | 통합 분류 체계 (Class~Genus) + placeholder 2 |
 | synonyms | 1,055 | 동의어 관계 |
 | genus_formations | 4,853 | Genus-Formation 다대다 관계 |
 | genus_locations | 4,841 | Genus-Country 다대다 관계 |
 | bibliography | 2,130 | 참고문헌 (Literature Cited) |
 | taxon_bibliography | 4,040 | Taxon↔Bibliography FK 링크 |
-| taxonomic_opinions | 2 | 분류학적 의견 (B-1 PoC) |
+| taxonomic_opinions | 6 | 분류학적 의견 (PLACED_IN 4 + SPELLING_OF 2) |
 | taxa (뷰) | 5,113 | 하위 호환성 뷰 |
 | artifact_metadata | 7 | SCODA 아티팩트 메타데이터 |
 | provenance | 5 | 데이터 출처 |
@@ -817,7 +834,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_trilobase.py` | 82개 | ✅ 통과 |
+| `tests/test_trilobase.py` | 96개 | ✅ 통과 |
 
 ### scoda-engine (별도 repo)
 
@@ -848,7 +865,19 @@ pytest tests/
 
 **향후 로드맵:** `devlog/20260219_P63_future_roadmap.md`
 
-- **T-1. Uncertain Family Opinions 확장** — 56개 Family × 문헌 기반 opinion 입력 (B-1 후속)
+- **T-1. Taxonomic Opinions 확장** (B-1 후속)
+  - ✅ B-1 PoC: `taxonomic_opinions` 테이블 + 4-trigger 패턴 + `is_placeholder` 컬럼 구현
+  - ✅ PoC 데이터: Eurekiidae 2건 (Uncertain incertae_sedis accepted + Asaphida alternative)
+  - ✅ Agnostida Order 신설: 10 families parent_id로 이동 (Order Uncertain 81→68)
+  - ✅ Agnostida opinion 재구조화: family-level 10건 삭제 → order-level 2건 (JA2002: in Trilobita not accepted, A2011: excluded accepted)
+  - ✅ SPELLING_OF opinion type: Dokimocephalidae→Dokimokephalidae, Chengkouaspidae→Chengkouaspididae (placeholder 2건)
+  - 현재: PLACED_IN 4건 + SPELLING_OF 2건 = **6 opinions**, Order Uncertain **68 families** 잔여
+  - 남은 작업: 68개 Uncertain Family × 문헌 기반 opinion 입력 (Adrain 2011 등 참조)
+- **T-4. synonyms → taxonomic_opinions 통합** — 기존 `synonyms` 테이블 데이터를 `SYNONYM_OF` opinion으로 마이그레이션
+  - 이점: 모든 분류학적 판단이 한 테이블에 통합, `is_accepted`로 경쟁 의견 추적, `bibliography_id`로 정확한 출처 연결
+  - `synonym_type` (j.s.s./j.o.s./preocc.) 구분은 `notes`에 기록
+  - 장애물 거의 없음: 1,055건 중 `senior_taxon_id` NULL은 1건뿐 (Szechuanella, preocc. not replaced — 특수 케이스)
+  - 기존 `synonyms` 테이블 참조하는 쿼리/UI/테스트 전환 필요 (범위 큼)
 - ~~S-1. scoda-engine conftest Generic Fixture 전환~~ ✅ 완료 (196 tests, conftest 60% 감소)
 - ~~S-2. scoda-engine PyPI 배포~~ — 하지 않기로 결정
 
@@ -901,7 +930,7 @@ pytest tests/
 ### Canonical DB (trilobase.db)
 
 ```sql
--- taxonomic_ranks: 5,340 records - 통합 분류 체계 (Class~Genus)
+-- taxonomic_ranks: 5,340 records - 통합 분류 체계 (Class~Genus) + placeholder 2
 taxonomic_ranks (
     id, name, rank, parent_id, author, year, year_suffix,
     genera_count, notes, created_at,
@@ -928,7 +957,7 @@ bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
 taxon_bibliography (id, taxon_id, bibliography_id, relationship_type,
                     synonym_id, match_confidence, match_method, notes, created_at)
 
--- taxonomic_opinions: 2 records - 분류학적 의견 (B-1 PoC)
+-- taxonomic_opinions: 6 records - 분류학적 의견 (PLACED_IN 4 + SPELLING_OF 2)
 taxonomic_opinions (id, taxon_id, opinion_type, related_taxon_id, proposed_valid,
                     bibliography_id, assertion_status, curation_confidence,
                     is_accepted, notes, created_at)

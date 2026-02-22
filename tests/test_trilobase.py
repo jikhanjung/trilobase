@@ -1190,12 +1190,12 @@ class TestGroupAFix:
 # ---------------------------------------------------------------------------
 
 class TestAgnostidaOrder:
-    """Verify Agnostida Order created with 10 families via PLACED_IN opinions."""
+    """Verify Agnostida Order with order-level opinions (not family-level)."""
 
     DB_PATH = 'db/trilobase.db'
 
     def test_agnostida_order_exists(self):
-        """Agnostida Order should exist under Class Trilobita."""
+        """Agnostida Order should exist with parent_id=NULL (excluded from Trilobita by A2011)."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute(
@@ -1205,13 +1205,13 @@ class TestAgnostidaOrder:
         row = cursor.fetchone()
         conn.close()
         assert row is not None
-        assert row[1] == 1  # parent = Trilobita
+        assert row[1] is None  # parent_id = NULL (A2011 excluded from Trilobita)
         assert row[2] == 'SALTER'
         assert row[3] == '1864'
         assert row[4] == 162
 
     def test_agnostida_has_10_families(self):
-        """Agnostida should have exactly 10 families."""
+        """Agnostida should have exactly 10 families (parent_id, no opinions needed)."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute(
@@ -1222,23 +1222,47 @@ class TestAgnostidaOrder:
         assert cursor.fetchone()[0] == 10
         conn.close()
 
-    def test_agnostida_opinions_count(self):
-        """Should have 10 accepted PLACED_IN opinions for Agnostida families."""
+    def test_agnostida_no_family_opinions(self):
+        """No family-level PLACED_IN opinions for Agnostida (undisputed membership)."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         agnostida_id = cursor.execute(
             "SELECT id FROM taxonomic_ranks WHERE name = 'Agnostida' AND rank = 'Order'"
         ).fetchone()[0]
         cursor.execute(
-            "SELECT COUNT(*) FROM taxonomic_opinions "
-            "WHERE related_taxon_id = ? AND opinion_type = 'PLACED_IN' AND is_accepted = 1",
+            "SELECT COUNT(*) FROM taxonomic_opinions o "
+            "JOIN taxonomic_ranks t ON o.taxon_id = t.id "
+            "WHERE o.related_taxon_id = ? AND t.rank = 'Family'",
             (agnostida_id,)
         )
-        assert cursor.fetchone()[0] == 10
+        assert cursor.fetchone()[0] == 0
         conn.close()
 
+    def test_agnostida_order_opinions(self):
+        """Agnostida should have 2 order-level opinions: JA2002 (not accepted) + A2011 (accepted)."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cursor = conn.cursor()
+        agnostida_id = cursor.execute(
+            "SELECT id FROM taxonomic_ranks WHERE name = 'Agnostida' AND rank = 'Order'"
+        ).fetchone()[0]
+        cursor.execute(
+            "SELECT related_taxon_id, is_accepted, bibliography_id FROM taxonomic_opinions "
+            "WHERE taxon_id = ? AND opinion_type = 'PLACED_IN' ORDER BY is_accepted",
+            (agnostida_id,)
+        )
+        rows = cursor.fetchall()
+        conn.close()
+        assert len(rows) == 2
+        # JA2002: PLACED_IN Trilobita, not accepted
+        assert rows[0][0] == 1   # related_taxon_id = Trilobita
+        assert rows[0][1] == 0   # not accepted
+        # A2011: PLACED_IN NULL (excluded), accepted
+        assert rows[1][0] is None  # excluded
+        assert rows[1][1] == 1    # accepted
+        assert rows[1][2] == 2131  # Adrain 2011 bibliography
+
     def test_order_uncertain_reduced(self):
-        """Order Uncertain should have 68 families after both fixes."""
+        """Order Uncertain should have 68 families."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute(
@@ -1248,11 +1272,11 @@ class TestAgnostidaOrder:
         conn.close()
 
     def test_total_opinions_count(self):
-        """Total taxonomic opinions should be 14 (2 PoC + 10 Agnostida + 2 SPELLING_OF)."""
+        """Total taxonomic opinions should be 6 (2 Eurekiidae + 2 Agnostida + 2 SPELLING_OF)."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute("SELECT COUNT(*) FROM taxonomic_opinions")
-        assert cursor.fetchone()[0] == 14
+        assert cursor.fetchone()[0] == 6
         conn.close()
 
 
