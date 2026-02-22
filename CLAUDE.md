@@ -39,7 +39,6 @@ trilobase/
 │   ├── create_paleocore_scoda.py     # paleocore.scoda 패키지 생성 → dist/
 │   ├── create_paleocore.py           # PaleoCore DB 생성 → db/
 │   ├── create_database.py            # Trilobase DB 생성 → db/
-│   ├── validate_manifest.py          # Manifest validator
 │   └── ... (normalize, import, etc.)
 ├── tests/
 │   ├── conftest.py                   # Shared fixtures
