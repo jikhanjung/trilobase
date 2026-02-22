@@ -1365,3 +1365,60 @@ class TestSpellingOfOpinions:
         assert row[2] == 1    # is_accepted
         assert row[3] == 'Chengkouaspididae'
 
+
+class TestTemporalCodeFill:
+    """Verify temporal_code auto-fill from raw_entry for valid genera."""
+
+    DB_PATH = 'db/trilobase.db'
+
+    def test_only_one_genus_missing_temporal_code(self):
+        """After fill, only Dignagnostus should lack temporal_code among valid genera."""
+        conn = sqlite3.connect(self.DB_PATH)
+        rows = conn.execute(
+            "SELECT name FROM taxonomic_ranks "
+            "WHERE rank = 'Genus' AND is_valid = 1 "
+            "AND (temporal_code IS NULL OR temporal_code = '') "
+            "ORDER BY name"
+        ).fetchall()
+        conn.close()
+        names = [r[0] for r in rows]
+        assert names == ['Dignagnostus'], f"Expected only Dignagnostus, got {names}"
+
+    def test_compound_temporal_codes(self):
+        """Genera with compound temporal codes (e.g., USIL/LDEV) should be filled correctly."""
+        conn = sqlite3.connect(self.DB_PATH)
+        cases = {
+            'Andinacaste': 'USIL/LDEV',
+            'Archaeopleura': 'UCAM/LORD',
+            'Carniphillipsia': 'PENN/LPERM',
+            'Eoleonaspis': 'UORD/LSIL',
+        }
+        for name, expected in cases.items():
+            row = conn.execute(
+                "SELECT temporal_code FROM taxonomic_ranks "
+                "WHERE name = ? AND rank = 'Genus'", (name,)
+            ).fetchone()
+            assert row is not None, f"{name} not found"
+            assert row[0] == expected, f"{name}: expected {expected}, got {row[0]}"
+        conn.close()
+
+    def test_edge_case_genera(self):
+        """Genera with non-standard raw_entry patterns should have correct temporal_code."""
+        conn = sqlite3.connect(self.DB_PATH)
+        # These had tricky patterns: bracket after code, INDET. prefix, etc.
+        cases = {
+            'Granularaspis': 'LCAM',    # "; LCAM [replacement name...]."
+            'Holubaspis': 'LORD',        # "; LORD [replacement name...]."
+            'Protillaenus': 'UCAM',      # "; UCAM, [j.s.s. of...]."
+            'Microdiscus': 'ORD',        # "; ORD? [juvenile...]."
+            'Chambersiellus': 'LCAM',    # "INDET. LCAM."
+        }
+        for name, expected in cases.items():
+            row = conn.execute(
+                "SELECT temporal_code FROM taxonomic_ranks "
+                "WHERE name = ? AND rank = 'Genus'", (name,)
+            ).fetchone()
+            assert row is not None, f"{name} not found"
+            assert row[0] == expected, f"{name}: expected {expected}, got {row[0]}"
+        conn.close()
+

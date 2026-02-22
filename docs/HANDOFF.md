@@ -672,12 +672,22 @@
   - 테스트: 92개 (기존 82 + 신규 10)
   - devlog: `devlog/20260222_086_group_a_fix_and_agnostida.md`
 
-- **2026-02-22 SPELLING_OF Opinion Type**
+- **2026-02-22 SPELLING_OF Opinion Type + Agnostida Restructure**
   - `SPELLING_OF` opinion type 추가 (taxonomic_opinions CHECK 제약조건 재구축)
   - Dokimocephalidae, Chengkouaspidae placeholder 엔트리 + SPELLING_OF opinion 2건
-  - 스크립트: `scripts/add_spelling_of_opinions.py` (idempotent, `--dry-run`)
-  - 테스트: 96개 (기존 92 + 신규 4)
-  - taxonomic_opinions: 12→14건, taxonomic_ranks: 5,338→5,340건
+  - Agnostida opinion 재구조화: family-level 10건 삭제 → order-level 2건
+    - JA2002: Agnostida PLACED_IN Trilobita (not accepted)
+    - A2011: Agnostida excluded (accepted) → parent_id=NULL
+  - 스크립트: `scripts/add_spelling_of_opinions.py`, `scripts/restructure_agnostida_opinions.py`
+  - taxonomic_opinions: 12→6건 (PLACED_IN 4 + SPELLING_OF 2), taxonomic_ranks: 5,338→5,340건
+
+- **2026-02-22 T-3a: Temporal Code 자동 채우기**
+  - valid genus 85건 중 84건의 temporal_code를 raw_entry에서 추출하여 자동 채움
+  - 엣지 케이스 처리: `INDET. LCAM.`, `?MDEV.`, `UCAM,`, `LCAM [replacement...]`
+  - 1건 (Dignagnostus) 원본에 코드 없음 — 정상 skip
+  - 스크립트: `scripts/fill_temporal_codes.py` (idempotent, `--dry-run`)
+  - 테스트: 100개 (기존 92 + SPELLING_OF 4 + AgnostidaRestructure 수정 + TemporalCodeFill 3)
+  - devlog: `devlog/20260222_087_spelling_of_and_agnostida_restructure.md`
 
 - **2026-02-21 버전 관리 + Changelog 프로세스**
   - `CHANGELOG.md` (trilobase), `CHANGELOG_paleocore.md` (paleocore) — Keep a Changelog 형식
@@ -775,12 +785,15 @@ trilobase/                                 # 도메인 데이터/스크립트/�
 │   ├── bump_version.py                    # 버전 갱신 스크립트
 │   ├── validate_manifest.py               # Manifest validator
 │   ├── add_opinions_schema.py             # Taxonomic opinions 마이그레이션
+│   ├── add_spelling_of_opinions.py        # SPELLING_OF opinion type 추가
+│   ├── restructure_agnostida_opinions.py  # Agnostida order-level opinion 재구조화
+│   ├── fill_temporal_codes.py             # temporal_code 자동 채우기 (raw_entry 추출)
 │   ├── link_bibliography.py               # taxon_bibliography 링크 생성
 │   ├── create_database.py                 # DB 생성 → db/
 │   └── ... (normalize, import, etc.)
 ├── tests/
 │   ├── conftest.py                        # 공유 fixtures
-│   └── test_trilobase.py                  # Trilobase 도메인 테스트 (82개)
+│   └── test_trilobase.py                  # Trilobase 도메인 테스트 (100개)
 ├── vendor/
 │   ├── cow/v2024/States2024/statelist2024.csv
 │   └── ics/gts2020/chart.ttl
@@ -834,7 +847,7 @@ Trilobase를 SCODA(Self-Contained Data Artifact) 참조 구현으로 전환하�
 
 | 파일 | 테스트 수 | 상태 |
 |------|---------|------|
-| `tests/test_trilobase.py` | 96개 | ✅ 통과 |
+| `tests/test_trilobase.py` | 100개 | ✅ 통과 |
 
 ### scoda-engine (별도 repo)
 
@@ -891,7 +904,7 @@ pytest tests/
 - **Synonym 미연결 1건**: Szechuanella (syn 960) — preocc., not replaced (NOTE 8에 의해 정상)
 - **parent_id NULL 325건**: invalid 257건(정상) + valid 68건(FAMILY UNCERTAIN/INDET/?FAMILY 등)
   - ?FAMILY genera 29건: 불확실 family 배정, 원저자 의도 존중하여 보류 (T-3b)
-- **valid genus without temporal_code 85건**: 미조사 (T-3a)
+- **valid genus without temporal_code 1건**: Dignagnostus — 원본에 코드 없음 (T-3a 완료)
 - **중국어 로마자 하이픈 ~30건**: 구 로마자 표기(Wade-Giles) 가능성 있어 보류 (T-3c)
 - Location/Formation 없는 taxa는 모두 무효 taxa (정상)
 
