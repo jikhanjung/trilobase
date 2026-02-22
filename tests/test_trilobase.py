@@ -1216,7 +1216,7 @@ class TestAgnostidaOrder:
         cursor = conn.cursor()
         cursor.execute(
             "SELECT COUNT(*) FROM taxonomic_ranks WHERE parent_id = "
-            "(SELECT id FROM taxonomic_ranks WHERE name = 'Agnostida' AND rank = 'Order') "
+            "(SELECT id FROM taxonomic_ranks WHERE name = 'Agnostina' AND rank = 'Suborder') "
             "AND rank = 'Family'"
         )
         assert cursor.fetchone()[0] == 10
@@ -1272,11 +1272,11 @@ class TestAgnostidaOrder:
         conn.close()
 
     def test_total_opinions_count(self):
-        """Total taxonomic opinions should be 6 (2 Eurekiidae + 2 Agnostida + 2 SPELLING_OF)."""
+        """Total taxonomic opinions: 13 asserted + 23 incertae_sedis + 14 indet + 32 questionable + 2 SPELLING_OF = 84."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute("SELECT COUNT(*) FROM taxonomic_opinions")
-        assert cursor.fetchone()[0] == 6
+        assert cursor.fetchone()[0] == 84
         conn.close()
 
 

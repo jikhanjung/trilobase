@@ -13,10 +13,8 @@ import json
 import os
 import sys
 
-# Add parent directory to path for imports
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from scoda_engine.scoda_package import ScodaPackage, _sha256_file
-from validate_manifest import validate_db
+from scoda_engine_core import validate_db
 
 DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'paleocore.db')
 DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'dist', 'paleocore.scoda')

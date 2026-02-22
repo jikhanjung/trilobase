@@ -16,11 +16,12 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | Phases completed | 1~46 (all done) |
 | Trilobase version | 0.2.1 |
 | PaleoCore version | 0.1.1 |
-| taxonomic_ranks | 5,340 records (Class~Genus + 2 placeholders) |
+| taxonomic_ranks | 5,341 records (Class~Genus + 2 placeholders + 1 Suborder) |
 | Valid genera | 4,259 (83.3%) |
 | Invalid genera | 856 (16.7%) |
+| Valid genera parent_id NULL | 0 (was 68, all resolved) |
 | Synonym linkage | 99.9% (1,054/1,055) |
-| Taxonomic opinions | 6 (PLACED_IN 4 + SPELLING_OF 2) |
+| Taxonomic opinions | 84 (PLACED_IN 82 + SPELLING_OF 2) |
 | Tests | 100 passing |
 
 ## Database Status
@@ -29,13 +30,13 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 
 | Table/View | Records | Description |
 |------------|---------|-------------|
-| taxonomic_ranks | 5,340 | Unified taxonomy (Class~Genus) + 2 placeholders |
+| taxonomic_ranks | 5,341 | Unified taxonomy (Class~Genus) + 2 placeholders + 1 Suborder |
 | synonyms | 1,055 | Synonym relationships |
 | genus_formations | 4,853 | Genus-Formation many-to-many |
 | genus_locations | 4,841 | Genus-Country many-to-many |
 | bibliography | 2,130 | Literature Cited references |
 | taxon_bibliography | 4,040 | Taxon↔Bibliography FK links |
-| taxonomic_opinions | 6 | Taxonomic opinions (PLACED_IN 4 + SPELLING_OF 2) |
+| taxonomic_opinions | 84 | Taxonomic opinions (PLACED_IN 82 + SPELLING_OF 2) |
 | taxa (view) | 5,113 | Backward-compatibility view |
 | artifact_metadata | 7 | SCODA artifact metadata |
 | provenance | 5 | Data provenance |
@@ -58,16 +59,19 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 ### Data Quality
 
 - ~~T-3a: Fill temporal_code~~ ✅ (84/85 done; 1 genus has no code in source)
-- **T-3b: ?FAMILY genera (29)** — uncertain family assignment; **deferred** (respecting original author intent)
+- ~~T-3b: ?FAMILY genera~~ ✅ 32건 잠정 배정 완료 (parent_id 연결 + `questionable` opinion)
 - **T-3c: Chinese romanization hyphens (~30)** — possible Wade-Giles; **deferred**
 
 ### Structural Improvements
 
-- **T-1: Expand Taxonomic Opinions** — 68 Uncertain families
-  - B-1 PoC complete: `taxonomic_opinions` table + 4-trigger pattern + `is_placeholder` column
-  - Agnostida Order created + SPELLING_OF opinion type added
-  - Current: PLACED_IN 4 + SPELLING_OF 2 = **6 opinions**
-  - **Analysis of 68 Uncertain families**: 0 families can be reassigned to another Order based on A2011. Additional literature required — **blocked**
+- ~~T-1: Expand Taxonomic Opinions~~ ✅ 68 Uncertain families 전수 해소
+  - Agnostina Suborder 추가 (id=5344, Agnostida 산하)
+  - Agnostida 10개 Family → Agnostina 아래로 재배치 (관례적 배정, opinion 기록)
+  - FAMILY UNCERTAIN 22건 → Suborder 연결 + `incertae_sedis` opinion
+  - INDET 14건 → Trilobita 연결 + `indet` opinion
+  - ?FAMILY/??FAMILY 32건 → Family 연결 + `questionable` opinion
+  - Current: PLACED_IN 82 + SPELLING_OF 2 = **84 opinions**
+  - assertion_status: `asserted` 13 / `incertae_sedis` 23 / `indet` 14 / `questionable` 32
 - **T-4: Merge synonyms → taxonomic_opinions** — migrate 1,055 records as SYNONYM_OF opinions
   - Few blockers (only 1 senior_taxon_id is NULL)
   - Requires updating all queries/UI/tests referencing the synonyms table (**large scope**)
@@ -75,8 +79,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 ## Open Issues
 
 - **1 unlinked synonym**: Szechuanella (syn 960) — preocc., not replaced (normal per NOTE 8)
-- **325 parent_id NULL**: 257 invalid (normal) + 68 valid (FAMILY UNCERTAIN/INDET/?FAMILY etc.)
-  - 29 ?FAMILY genera: uncertain family assignment, deferred (T-3b)
+- **257 parent_id NULL**: all invalid genera (normal) — valid genera **0건** (전수 해소)
 - **1 valid genus without temporal_code**: Dignagnostus — no code in source (T-3a complete)
 - **~30 Chinese romanization hyphens**: possible Wade-Giles notation, deferred (T-3c)
 - Taxa without Location/Formation are all invalid taxa (normal)
@@ -114,7 +117,6 @@ trilobase/                                 # Domain data, scripts, and tests onl
 │   ├── create_paleocore_scoda.py          # paleocore.scoda → dist/
 │   ├── create_paleocore.py                # PaleoCore DB → db/
 │   ├── bump_version.py                    # Version bump script
-│   ├── validate_manifest.py               # Manifest validator
 │   ├── add_opinions_schema.py             # Taxonomic opinions migration
 │   ├── add_spelling_of_opinions.py        # SPELLING_OF opinion type
 │   ├── restructure_agnostida_opinions.py  # Agnostida order-level opinions
@@ -183,7 +185,7 @@ pytest tests/
 ### Canonical DB (trilobase.db)
 
 ```sql
--- taxonomic_ranks: 5,340 records — unified taxonomy (Class~Genus) + 2 placeholders
+-- taxonomic_ranks: 5,341 records — unified taxonomy (Class~Genus) + 2 placeholders + Agnostina Suborder
 taxonomic_ranks (
     id, name, rank, parent_id, author, year, year_suffix,
     genera_count, notes, created_at,
@@ -210,7 +212,7 @@ bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
 taxon_bibliography (id, taxon_id, bibliography_id, relationship_type,
                     synonym_id, match_confidence, match_method, notes, created_at)
 
--- taxonomic_opinions: 6 records — taxonomic opinions (PLACED_IN 4 + SPELLING_OF 2)
+-- taxonomic_opinions: 84 records — taxonomic opinions (PLACED_IN 82 + SPELLING_OF 2)
 taxonomic_opinions (id, taxon_id, opinion_type, related_taxon_id, proposed_valid,
                     bibliography_id, assertion_status, curation_confidence,
                     is_accepted, notes, created_at)
