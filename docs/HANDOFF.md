@@ -872,7 +872,12 @@ pytest tests/
   - ✅ Agnostida opinion 재구조화: family-level 10건 삭제 → order-level 2건 (JA2002: in Trilobita not accepted, A2011: excluded accepted)
   - ✅ SPELLING_OF opinion type: Dokimocephalidae→Dokimokephalidae, Chengkouaspidae→Chengkouaspididae (placeholder 2건)
   - 현재: PLACED_IN 4건 + SPELLING_OF 2건 = **6 opinions**, Order Uncertain **68 families** 잔여
-  - 남은 작업: 68개 Uncertain Family × 문헌 기반 opinion 입력 (Adrain 2011 등 참조)
+  - **68 Uncertain families 분석 결과** (family 이상 분류가 Adrain 2011 기준이므로 당연한 결과):
+    - 특수 placeholder 3건: INDET(29g), UNCERTAIN(74g), NEKTASPIDA(8g) — opinion 대상 아님
+    - A2011에서도 Order Uncertain 55건 — A2011 기준으로는 배정 불가
+    - A2011에 불포함 8건 (JA2002에만 존재): Bohemillidae, Burlingiidae, Conokephalinidae, Ordosiidae, Pagodiidae, Pilekiidae, Saukiidae, Toernquistiidae
+    - 불완전 엔트리 2건: Linguaproetidae, Scutelluidae (author/year 없음)
+  - 결론: A2011 기준으로 다른 Order에 배정 가능한 family는 **0건**. 추가 진행하려면 A2011 외 문헌 필요
 - **T-4. synonyms → taxonomic_opinions 통합** — 기존 `synonyms` 테이블 데이터를 `SYNONYM_OF` opinion으로 마이그레이션
   - 이점: 모든 분류학적 판단이 한 테이블에 통합, `is_accepted`로 경쟁 의견 추적, `bibliography_id`로 정확한 출처 연결
   - `synonym_type` (j.s.s./j.o.s./preocc.) 구분은 `notes`에 기록
