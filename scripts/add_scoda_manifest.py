@@ -72,6 +72,7 @@ def insert_manifest(conn):
                     "item_param": "family_id",
                     "item_columns": [
                         {"key": "name", "label": "Genus", "italic": True},
+                        {"key": "is_valid", "label": "Valid", "type": "boolean"},
                         {"key": "author", "label": "Author"},
                         {"key": "year", "label": "Year"},
                         {"key": "type_species", "label": "Type Species", "truncate": 40},
