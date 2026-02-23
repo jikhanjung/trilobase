@@ -1,6 +1,6 @@
 # Trilobase Project Handover
 
-**Last updated:** 2026-02-22
+**Last updated:** 2026-02-23
 
 ## Project Overview
 
@@ -22,7 +22,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | Valid genera parent_id NULL | 0 (was 68, all resolved) |
 | Synonym linkage | 99.9% (1,054/1,055) |
 | Taxonomic opinions | 84 (PLACED_IN 82 + SPELLING_OF 2) |
-| Tests | 100 passing |
+| Tests | 101 passing |
 
 ## Database Status
 
@@ -81,6 +81,9 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 - genus_detail 쿼리에 synonym JOIN 추가 — invalid genus에서 valid genus로 링크
 - tree item 및 genera_table에 is_valid 컬럼 표시 (boolean format, Yes/No label)
 - `create_scoda.py --no-spa` 옵션 추가
+- `label_map` 동적 컬럼 label 지원 — opinion_type에 따라 헤더 자동 변경
+  - PLACED_IN → "Proposed Parent", SPELLING_OF → "Correct Spelling", SYNONYM_OF → "Valid Name"
+  - 혼합 시 fallback label "Related Taxon" 사용
 
 ## Open Issues
 
@@ -157,13 +160,13 @@ scoda-engine/                              # Separate repo: /mnt/d/projects/scod
 
 | File | Tests | Status |
 |------|-------|--------|
-| `tests/test_trilobase.py` | 100 | ✅ Passing |
+| `tests/test_trilobase.py` | 101 | ✅ Passing |
 
 ### scoda-engine (separate repo)
 
 | File | Tests | Status |
 |------|-------|--------|
-| `tests/test_runtime.py` | 122 | ✅ Passing |
+| `tests/test_runtime.py` | 218 | ✅ Passing |
 | `tests/test_mcp.py` | 6 | ✅ 1 / ⚠ 5 (requires .scoda in CWD) |
 | `tests/test_mcp_basic.py` | 1 | ✅ Passing |
 
