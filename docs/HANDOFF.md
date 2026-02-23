@@ -93,10 +93,30 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 - **~30 Chinese romanization hyphens**: possible Wade-Giles notation, deferred (T-3c)
 - Taxa without Location/Formation are all invalid taxa (normal)
 
+## CI/CD
+
+GitHub Actions workflows in `.github/workflows/`:
+
+| Workflow | Trigger | Action |
+|----------|---------|--------|
+| `ci.yml` | push/PR to main | pytest 자동 실행 |
+| `release.yml` | tag `v*.*.*` push | pytest → .scoda 빌드 → GitHub Release 생성 |
+
+**릴리스 방법:**
+```bash
+python scripts/bump_version.py trilobase 0.2.3
+git add -A && git commit -m "release: v0.2.3"
+git tag v0.2.3
+git push origin main --tags
+```
+
+**주의:** scoda-engine 레포가 public이어야 CI에서 clone 가능 (private이면 deploy key/PAT 설정 필요)
+
 ## File Structure
 
 ```
 trilobase/                                 # Domain data, scripts, and tests only
+├── .github/workflows/                    # CI/CD (ci.yml, release.yml)
 ├── CLAUDE.md
 ├── CHANGELOG.md                          # Trilobase package changelog
 ├── CHANGELOG_paleocore.md                # PaleoCore package changelog
