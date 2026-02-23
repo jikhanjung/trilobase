@@ -72,7 +72,7 @@ def insert_manifest(conn):
                     "item_param": "family_id",
                     "item_columns": [
                         {"key": "name", "label": "Genus", "italic": True},
-                        {"key": "is_valid", "label": "Valid", "type": "boolean"},
+                        {"key": "is_valid", "label": "Valid", "type": "boolean", "true_label": "Yes", "false_label": "No"},
                         {"key": "author", "label": "Author"},
                         {"key": "year", "label": "Year"},
                         {"key": "type_species", "label": "Type Species", "truncate": 40},
@@ -94,7 +94,7 @@ def insert_manifest(conn):
                     {"key": "year", "label": "Year", "sortable": True, "searchable": False},
                     {"key": "family", "label": "Family", "sortable": True, "searchable": True},
                     {"key": "temporal_code", "label": "Period", "sortable": True, "searchable": True},
-                    {"key": "is_valid", "label": "Valid", "sortable": True, "searchable": False, "type": "boolean"}
+                    {"key": "is_valid", "label": "Valid", "sortable": True, "searchable": False, "type": "boolean", "true_label": "Yes", "false_label": "No"}
                 ],
                 "default_sort": {"key": "name", "direction": "asc"},
                 "searchable": True,
@@ -222,7 +222,7 @@ def insert_manifest(conn):
                             {"key": "name", "label": "Genus", "italic": True},
                             {"key": "author", "label": "Author"},
                             {"key": "year", "label": "Year"},
-                            {"key": "is_valid", "label": "Valid", "format": "boolean"}
+                            {"key": "is_valid", "label": "Valid", "format": "boolean", "true_label": "Yes", "false_label": "No"}
                         ],
                         "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
                     }
@@ -266,7 +266,7 @@ def insert_manifest(conn):
                             {"key": "year", "label": "Year"},
                             {"key": "region", "label": "Region",
                              "link": {"detail_view": "region_detail", "id_key": "region_id"}},
-                            {"key": "is_valid", "label": "Valid", "format": "boolean"}
+                            {"key": "is_valid", "label": "Valid", "format": "boolean", "true_label": "Yes", "false_label": "No"}
                         ],
                         "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
                     }
@@ -299,7 +299,7 @@ def insert_manifest(conn):
                             {"key": "name", "label": "Genus", "italic": True},
                             {"key": "author", "label": "Author"},
                             {"key": "year", "label": "Year"},
-                            {"key": "is_valid", "label": "Valid", "format": "boolean"}
+                            {"key": "is_valid", "label": "Valid", "format": "boolean", "true_label": "Yes", "false_label": "No"}
                         ],
                         "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
                     }
@@ -350,7 +350,7 @@ def insert_manifest(conn):
                             {"key": "name", "label": "Genus", "italic": True},
                             {"key": "author", "label": "Author"},
                             {"key": "year", "label": "Year"},
-                            {"key": "is_valid", "label": "Valid", "format": "boolean"}
+                            {"key": "is_valid", "label": "Valid", "format": "boolean", "true_label": "Yes", "false_label": "No"}
                         ],
                         "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
                     }
@@ -420,7 +420,7 @@ def insert_manifest(conn):
                             {"key": "author", "label": "Author"},
                             {"key": "year", "label": "Year"},
                             {"key": "temporal_code", "label": "Temporal Code", "format": "code"},
-                            {"key": "is_valid", "label": "Valid", "format": "boolean"}
+                            {"key": "is_valid", "label": "Valid", "format": "boolean", "true_label": "Yes", "false_label": "No"}
                         ],
                         "on_row_click": {"detail_view": "genus_detail", "id_key": "id"}
                     }
