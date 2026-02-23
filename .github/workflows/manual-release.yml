@@ -1,0 +1,66 @@
+name: Manual Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_tag:
+        description: 'Version tag (e.g., v0.2.3, v0.3.0-beta.1)'
+        required: true
+        type: string
+      prerelease:
+        description: 'Is this a pre-release?'
+        required: true
+        type: boolean
+        default: false
+      release_notes:
+        description: 'Release notes (optional)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Clone scoda-engine
+        uses: actions/checkout@v4
+        with:
+          repository: jikhanjung/scoda-engine
+          path: scoda-engine
+      - name: Install dependencies
+        run: |
+          pip install -e "./scoda-engine/core"
+          pip install -e "./scoda-engine[dev]"
+      - name: Run tests (gate)
+        run: pytest tests/ -v
+      - name: Build .scoda packages
+        run: |
+          mkdir -p dist
+          python scripts/create_paleocore_scoda.py
+          python scripts/create_scoda.py
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.version_tag }}
+          name: "Trilobase ${{ github.event.inputs.version_tag }}"
+          body: |
+            ## Trilobase ${{ github.event.inputs.version_tag }}
+
+            Built from commit: ${{ github.sha }}
+
+            ${{ github.event.inputs.release_notes }}
+
+            ### Artifacts
+            - `trilobase.scoda` — Trilobase SCODA package
+            - `paleocore.scoda` — PaleoCore dependency package
+          files: |
+            dist/trilobase.scoda
+            dist/paleocore.scoda
+          draft: false
+          prerelease: ${{ github.event.inputs.prerelease }}
