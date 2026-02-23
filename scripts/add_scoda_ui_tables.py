@@ -324,14 +324,24 @@ FROM bibliography
 WHERE id = :bibliography_id""",
          '{"bibliography_id": "integer — bibliography.id"}'),
 
+        ('genus_bibliography',
+         'Bibliography entries linked to a genus via taxon_bibliography',
+         """SELECT b.id, b.authors, b.year, b.title, b.journal, tb.relationship_type
+FROM taxon_bibliography tb
+JOIN bibliography b ON b.id = tb.bibliography_id
+WHERE tb.taxon_id = :genus_id
+ORDER BY b.year, b.authors""",
+         '{"genus_id": "integer — taxonomic_ranks.id"}'),
+
         ('bibliography_genera',
-         'Genera related to a bibliography entry by author name',
+         'Genera linked to a bibliography entry via taxon_bibliography',
          """SELECT tr.id, tr.name, tr.author, tr.year, tr.is_valid
-FROM taxonomic_ranks tr
-WHERE tr.rank = 'Genus'
-  AND tr.author LIKE '%' || :author_name || '%'
+FROM taxon_bibliography tb
+JOIN taxonomic_ranks tr ON tr.id = tb.taxon_id
+WHERE tb.bibliography_id = :bibliography_id
+  AND tr.rank = 'Genus'
 ORDER BY tr.name""",
-         '{"author_name": "string — author name to search for"}'),
+         '{"bibliography_id": "integer — bibliography.id"}'),
 
         ('chronostrat_detail',
          'ICS chronostratigraphic unit detail with parent',

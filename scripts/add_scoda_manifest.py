@@ -312,7 +312,7 @@ def insert_manifest(conn):
                 "source_query": "bibliography_detail",
                 "source_param": "bibliography_id",
                 "sub_queries": {
-                    "genera": {"query": "bibliography_genera", "params": {"author_name": "result.authors"}}
+                    "genera": {"query": "bibliography_genera", "params": {"bibliography_id": "id"}}
                 },
                 "icon": "bi-book",
                 "title_template": {"format": "{icon} {authors}, {year}", "icon": "bi-book"},
@@ -431,6 +431,9 @@ def insert_manifest(conn):
                 "title": "Genus Detail",
                 "source": "/api/genus/{id}",
                 "title_template": {"format": "<i>{name}</i> {author}, {year}"},
+                "sub_queries": {
+                    "bibliography": {"query": "genus_bibliography", "params": {"genus_id": "id"}}
+                },
                 "sections": [
                     {
                         "title": "Basic Information",
@@ -459,8 +462,37 @@ def insert_manifest(conn):
                         ]
                     },
                     {
-                        "title": "Geographic Information",
-                        "type": "genus_geography"
+                        "title": "Locations ({count})",
+                        "type": "linked_table",
+                        "data_key": "locations",
+                        "condition": "locations",
+                        "columns": [
+                            {"key": "country_name", "label": "Country", "link": {"detail_view": "country_detail", "id_key": "country_id"}},
+                            {"key": "region_name", "label": "Region", "link": {"detail_view": "region_detail", "id_key": "region_id"}}
+                        ]
+                    },
+                    {
+                        "title": "Formations ({count})",
+                        "type": "linked_table",
+                        "data_key": "formations",
+                        "condition": "formations",
+                        "columns": [
+                            {"key": "name", "label": "Formation", "link": {"detail_view": "formation_detail", "id_key": "id"}},
+                            {"key": "period", "label": "Period"}
+                        ]
+                    },
+                    {
+                        "title": "Bibliography ({count})",
+                        "type": "linked_table",
+                        "data_key": "bibliography",
+                        "condition": "bibliography",
+                        "columns": [
+                            {"key": "authors", "label": "Authors"},
+                            {"key": "year", "label": "Year"},
+                            {"key": "title", "label": "Title", "truncate": 60},
+                            {"key": "relationship_type", "label": "Relation"}
+                        ],
+                        "on_row_click": {"detail_view": "bibliography_detail", "id_key": "id"}
                     },
                     {
                         "title": "Synonymy",

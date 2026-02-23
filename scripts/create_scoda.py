@@ -6,7 +6,7 @@ Usage:
   python scripts/create_scoda.py              # create trilobase.scoda
   python scripts/create_scoda.py --dry-run    # preview manifest without creating file
   python scripts/create_scoda.py --output out.scoda  # custom output path
-  python scripts/create_scoda.py --no-spa            # exclude reference SPA
+  python scripts/create_scoda.py --with-spa           # include reference SPA
 """
 
 import argparse
@@ -49,8 +49,8 @@ def main():
         '--dry-run', action='store_true',
         help='Preview manifest without creating file')
     parser.add_argument(
-        '--no-spa', action='store_true',
-        help='Exclude reference SPA from package')
+        '--with-spa', action='store_true',
+        help='Include reference SPA in package (default: excluded)')
     args = parser.parse_args()
 
     db_path = os.path.abspath(args.db)
@@ -139,7 +139,7 @@ def main():
 
     # Collect SPA files as extra_assets
     extra_assets = {}
-    if not args.no_spa:
+    if args.with_spa:
         spa_dir = os.path.join(os.path.dirname(__file__), '..', 'spa')
         if os.path.isdir(spa_dir):
             for fname in os.listdir(spa_dir):
@@ -165,7 +165,7 @@ def main():
             }
         ],
     }
-    if not args.no_spa and extra_assets:
+    if args.with_spa and extra_assets:
         metadata["has_reference_spa"] = True
         metadata["reference_spa_path"] = "assets/spa/"
 
