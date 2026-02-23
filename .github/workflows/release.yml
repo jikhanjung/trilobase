@@ -19,7 +19,9 @@ jobs:
           repository: jikhanjung/scoda-engine
           path: scoda-engine
       - name: Install dependencies
-        run: pip install -e "./scoda-engine[dev]"
+        run: |
+          pip install -e "./scoda-engine/core"
+          pip install -e "./scoda-engine[dev]"
       - name: Run tests (gate)
         run: pytest tests/ -v
       - name: Build .scoda packages

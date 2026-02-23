@@ -20,6 +20,7 @@ jobs:
           path: scoda-engine
       - name: Install dependencies
         run: |
+          pip install -e "./scoda-engine/core"
           pip install -e "./scoda-engine[dev]"
           pip install pytest pytest-asyncio httpx
       - name: Run tests
