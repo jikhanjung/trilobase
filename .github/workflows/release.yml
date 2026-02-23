@@ -42,10 +42,10 @@ jobs:
             See [CHANGELOG.md](CHANGELOG.md) for details.
 
             ### Artifacts
-            - `trilobase.scoda` — Trilobase SCODA package
-            - `paleocore.scoda` — PaleoCore dependency package
+            - `trilobase-{version}.scoda` — Trilobase SCODA package
+            - `paleocore-{version}.scoda` — PaleoCore dependency package
           files: |
-            dist/trilobase.scoda
-            dist/paleocore.scoda
+            dist/trilobase-*.scoda
+            dist/paleocore-*.scoda
           draft: false
           prerelease: false

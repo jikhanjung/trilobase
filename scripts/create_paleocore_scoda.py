@@ -17,7 +17,18 @@ from scoda_engine.scoda_package import ScodaPackage, _sha256_file
 from scoda_engine_core import validate_db
 
 DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'paleocore.db')
-DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'dist', 'paleocore.scoda')
+DEFAULT_OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'dist')
+
+
+def _read_version(db_path):
+    """Read version from artifact_metadata table."""
+    import sqlite3
+    conn = sqlite3.connect(db_path)
+    try:
+        row = conn.execute("SELECT value FROM artifact_metadata WHERE key='version'").fetchone()
+        return row[0] if row else '0.0.0'
+    finally:
+        conn.close()
 
 
 def main():
@@ -27,15 +38,20 @@ def main():
         '--db', default=DEFAULT_DB,
         help='Path to source SQLite database (default: paleocore.db)')
     parser.add_argument(
-        '--output', default=DEFAULT_OUTPUT,
-        help='Output .scoda file path (default: paleocore.scoda)')
+        '--output', default=None,
+        help='Output .scoda file path (default: paleocore-{version}.scoda)')
     parser.add_argument(
         '--dry-run', action='store_true',
         help='Preview manifest without creating file')
     args = parser.parse_args()
 
     db_path = os.path.abspath(args.db)
-    output_path = os.path.abspath(args.output)
+    if args.output:
+        output_path = os.path.abspath(args.output)
+    else:
+        version = _read_version(db_path)
+        output_path = os.path.abspath(
+            os.path.join(DEFAULT_OUTPUT_DIR, f'paleocore-{version}.scoda'))
 
     if not os.path.exists(db_path):
         print(f"Error: Database not found: {db_path}", file=sys.stderr)

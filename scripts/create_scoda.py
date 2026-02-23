@@ -18,8 +18,19 @@ from scoda_engine.scoda_package import ScodaPackage, _sha256_file
 from scoda_engine_core import validate_db
 
 DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
-DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'dist', 'trilobase.scoda')
+DEFAULT_OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'dist')
 DEFAULT_MCP_TOOLS = os.path.join(os.path.dirname(__file__), '..', 'data', 'mcp_tools_trilobase.json')
+
+
+def _read_version(db_path):
+    """Read version from artifact_metadata table."""
+    import sqlite3
+    conn = sqlite3.connect(db_path)
+    try:
+        row = conn.execute("SELECT value FROM artifact_metadata WHERE key='version'").fetchone()
+        return row[0] if row else '0.0.0'
+    finally:
+        conn.close()
 
 
 def main():
@@ -29,8 +40,8 @@ def main():
         '--db', default=DEFAULT_DB,
         help='Path to source SQLite database (default: trilobase.db)')
     parser.add_argument(
-        '--output', default=DEFAULT_OUTPUT,
-        help='Output .scoda file path (default: trilobase.scoda)')
+        '--output', default=None,
+        help='Output .scoda file path (default: trilobase-{version}.scoda)')
     parser.add_argument(
         '--mcp-tools', default=DEFAULT_MCP_TOOLS,
         help='Path to mcp_tools.json (default: data/mcp_tools_trilobase.json)')
@@ -43,7 +54,12 @@ def main():
     args = parser.parse_args()
 
     db_path = os.path.abspath(args.db)
-    output_path = os.path.abspath(args.output)
+    if args.output:
+        output_path = os.path.abspath(args.output)
+    else:
+        version = _read_version(db_path)
+        output_path = os.path.abspath(
+            os.path.join(DEFAULT_OUTPUT_DIR, f'trilobase-{version}.scoda'))
 
     if not os.path.exists(db_path):
         print(f"Error: Database not found: {db_path}", file=sys.stderr)
