@@ -139,6 +139,22 @@ class TestManifestDetailSchema:
         assert 'nested_table_display' in chrono
         assert 'cell_click' in chrono['nested_table_display']
 
+    def test_opinions_column_has_label_map(self, client):
+        """Opinions related_taxon_name column should have label_map for dynamic header."""
+        m = self._get_manifest(client)
+        rank_detail = m['views']['rank_detail']
+        opinions_section = next(
+            s for s in rank_detail['sections'] if s.get('data_key') == 'opinions'
+        )
+        col = next(c for c in opinions_section['columns'] if c['key'] == 'related_taxon_name')
+        assert col['label'] == 'Related Taxon'
+        assert 'label_map' in col
+        lm = col['label_map']
+        assert lm['key'] == 'opinion_type'
+        assert lm['map']['PLACED_IN'] == 'Proposed Parent'
+        assert lm['map']['SPELLING_OF'] == 'Correct Spelling'
+        assert lm['map']['SYNONYM_OF'] == 'Valid Name'
+
 
 # --- Manifest Hierarchy Options (Phase 41 → A-3 정규화) ---
 

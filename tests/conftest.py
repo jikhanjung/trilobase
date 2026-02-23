@@ -1023,7 +1023,11 @@ def test_db(tmp_path):
                     {"title": "Taxonomic Opinions ({count})", "type": "linked_table",
                      "data_key": "opinions", "condition": "opinions",
                      "columns": [
-                         {"key": "related_taxon_name", "label": "Proposed Parent"},
+                         {"key": "related_taxon_name", "label": "Related Taxon",
+                          "label_map": {"key": "opinion_type", "map": {
+                              "PLACED_IN": "Proposed Parent",
+                              "SPELLING_OF": "Correct Spelling",
+                              "SYNONYM_OF": "Valid Name"}}},
                          {"key": "related_taxon_rank", "label": "Rank"},
                          {"key": "bib_authors", "label": "Author"},
                          {"key": "bib_year", "label": "Year"},
