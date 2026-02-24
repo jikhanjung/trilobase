@@ -149,15 +149,17 @@ WHERE s.junior_taxon_id = :genus_id""",
          'Formations where a genus was found',
          """SELECT f.id, f.name, f.formation_type, f.country, f.period
 FROM genus_formations gf
-JOIN formations f ON gf.formation_id = f.id
+JOIN pc.formations f ON gf.formation_id = f.id
 WHERE gf.genus_id = :genus_id""",
          '{"genus_id": "integer — taxonomic_ranks.id"}'),
 
         ('genus_locations',
          'Countries/regions where a genus was found',
-         """SELECT c.id, c.name as country, gl.region
+         """SELECT parent.id as country_id, parent.name as country_name,
+       r.id as region_id, r.name as region_name
 FROM genus_locations gl
-JOIN countries c ON gl.country_id = c.id
+JOIN pc.geographic_regions r ON gl.region_id = r.id
+LEFT JOIN pc.geographic_regions parent ON r.parent_id = parent.id
 WHERE gl.genus_id = :genus_id""",
          '{"genus_id": "integer — taxonomic_ranks.id"}'),
 
@@ -171,16 +173,22 @@ ORDER BY authors, year""",
 
         ('formations_list',
          'All formations with taxa counts',
-         """SELECT id, name, formation_type, country, period, taxa_count
-FROM formations
-ORDER BY name""",
+         """SELECT f.id, f.name, f.formation_type, f.country, f.period,
+       (SELECT COUNT(*) FROM genus_formations gf WHERE gf.formation_id = f.id) as taxa_count
+FROM pc.formations f
+ORDER BY f.name""",
          None),
 
         ('countries_list',
          'All countries with taxa counts',
-         """SELECT id, name, code, taxa_count
-FROM countries
-ORDER BY name""",
+         """SELECT gr.id, gr.name, gr.cow_ccode as code,
+       (SELECT COUNT(DISTINCT gl.genus_id) FROM genus_locations gl
+        WHERE gl.country_id = gr.id
+           OR gl.region_id IN (SELECT id FROM pc.geographic_regions WHERE parent_id = gr.id)
+       ) as taxa_count
+FROM pc.geographic_regions gr
+WHERE gr.parent_id IS NULL AND gr.level = 'country'
+ORDER BY gr.name""",
          None),
 
         ('genera_by_country',
@@ -188,10 +196,22 @@ ORDER BY name""",
          """SELECT g.id, g.name, g.author, g.year, gl.region
 FROM taxonomic_ranks g
 JOIN genus_locations gl ON g.id = gl.genus_id
-JOIN countries c ON gl.country_id = c.id
+JOIN pc.geographic_regions c ON gl.country_id = c.id
 WHERE c.name = :country_name
 ORDER BY g.name""",
          '{"country_name": "string — country name (e.g., China)"}'),
+
+        ('regions_list',
+         'All regions with parent country and taxa counts',
+         """SELECT gr.id, gr.name,
+       parent.name as country_name, parent.id as country_id,
+       (SELECT COUNT(DISTINCT gl.genus_id) FROM genus_locations gl
+        WHERE gl.region_id = gr.id) as taxa_count
+FROM pc.geographic_regions gr
+LEFT JOIN pc.geographic_regions parent ON gr.parent_id = parent.id
+WHERE gr.level = 'region'
+ORDER BY parent.name, gr.name""",
+         None),
 
         ('genera_by_period',
          'Genera from a specific geological time period',

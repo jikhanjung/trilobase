@@ -12,10 +12,16 @@ This project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html):
 
 ### Fixed
 - Family detail 페이지에서 Children 테이블이 표시되지 않던 버그 수정 (rank_children → linked_table)
+- rank_children 쿼리 LIMIT 20 제거 — Family children 전체 표시
+- genus_detail Location 테이블 컬럼명 불일치 수정 (country→country_name, region→region_name)
+- `genus_locations.country_id` 데이터 수정 — 77%(3,750건) region 부모와 불일치 해소
+- ui_queries에서 PaleoCore 테이블 참조 `pc.` prefix 누락 수정 (formations_list, countries_list, genus_formations, genera_by_country)
+- formations_list, countries_list, regions_list 쿼리의 `taxa_count` 컬럼을 서브쿼리로 대체
 - `create_database.py`에서 VIEW에 인덱스를 생성하려던 레거시 코드 제거
 
 ### Added
 - rank_detail에서 Genus 클릭 시 genus_detail로 자동 redirect (scoda-engine `redirect` 매니페스트 지원)
+- `regions_list` 쿼리를 trilobase ui_queries에 추가 (taxa_count 포함)
 
 ## [0.2.2] - 2026-02-22
 
