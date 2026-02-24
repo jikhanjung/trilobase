@@ -229,8 +229,7 @@ WHERE m.temporal_code = :temporal_code""",
          """SELECT id, name, rank, author, genera_count
 FROM taxonomic_ranks
 WHERE parent_id = :rank_id
-ORDER BY rank, name
-LIMIT 20""",
+ORDER BY rank, name""",
          '{"rank_id": "integer — taxonomic_ranks.id"}'),
 
         ('rank_children_counts',
