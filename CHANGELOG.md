@@ -8,6 +8,15 @@ This project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html):
 
 ## [Unreleased]
 
+## [0.2.3] - 2026-02-24
+
+### Fixed
+- Family detail 페이지에서 Children 테이블이 표시되지 않던 버그 수정 (rank_children → linked_table)
+- `create_database.py`에서 VIEW에 인덱스를 생성하려던 레거시 코드 제거
+
+### Added
+- rank_detail에서 Genus 클릭 시 genus_detail로 자동 redirect (scoda-engine `redirect` 매니페스트 지원)
+
 ## [0.2.2] - 2026-02-22
 
 ### Added

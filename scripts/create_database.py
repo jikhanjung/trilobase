@@ -55,11 +55,6 @@ CREATE TABLE IF NOT EXISTS synonyms (
     FOREIGN KEY (junior_taxon_id) REFERENCES taxa(id)
 );
 
--- Indexes
-CREATE INDEX IF NOT EXISTS idx_taxa_name ON taxa(name);
-CREATE INDEX IF NOT EXISTS idx_taxa_family ON taxa(family);
-CREATE INDEX IF NOT EXISTS idx_taxa_temporal ON taxa(temporal_code);
-CREATE INDEX IF NOT EXISTS idx_synonyms_junior ON synonyms(junior_taxon_id);
 """
 
 # Temporal range data

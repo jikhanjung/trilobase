@@ -526,6 +526,7 @@ def insert_manifest(conn):
                 "source": "/api/composite/rank_detail?id={id}",
                 "source_query": "rank_detail",
                 "source_param": "rank_id",
+                "redirect": {"key": "rank", "map": {"Genus": "genus_detail"}},
                 "sub_queries": {
                     "children_counts": {"query": "rank_children_counts", "params": {"rank_id": "id"}},
                     "children": {"query": "rank_children", "params": {"rank_id": "id"}},
@@ -554,10 +555,17 @@ def insert_manifest(conn):
                         "type": "rank_statistics"
                     },
                     {
-                        "title": "Children",
-                        "type": "rank_children",
+                        "title": "Children ({count})",
+                        "type": "linked_table",
                         "data_key": "children",
-                        "condition": "children"
+                        "condition": "children",
+                        "columns": [
+                            {"key": "name", "label": "Name"},
+                            {"key": "rank", "label": "Rank"},
+                            {"key": "author", "label": "Author"},
+                            {"key": "genera_count", "label": "Genera", "condition": "genera_count"}
+                        ],
+                        "on_row_click": {"detail_view": "rank_detail", "id_key": "id"}
                     },
                     {
                         "title": "Taxonomic Opinions ({count})",
