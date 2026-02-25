@@ -1,6 +1,6 @@
 # Trilobase Project Handover
 
-**Last updated:** 2026-02-23
+**Last updated:** 2026-02-25
 
 ## Project Overview
 
@@ -14,7 +14,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | Item | Value |
 |------|-------|
 | Phases completed | 1~46 (all done) |
-| Trilobase version | 0.2.2 |
+| Trilobase version | 0.2.3 |
 | PaleoCore version | 0.1.1 |
 | taxonomic_ranks | 5,341 records (Class~Genus + 2 placeholders + 1 Suborder) |
 | Valid genera | 4,259 (83.3%) |
@@ -42,7 +42,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | provenance | 5 | Data provenance |
 | schema_descriptions | 112 | Table/column descriptions |
 | ui_display_intent | 6 | SCODA view type hints |
-| ui_queries | 36 | Named SQL queries |
+| ui_queries | 37 | Named SQL queries |
 | ui_manifest | 1 | Declarative view definitions (JSON) |
 
 **Overlay DB (trilobase_overlay.db) — read/write, user-local data:**
@@ -82,6 +82,10 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 - ~~tree item 및 genera_table에 is_valid 컬럼 표시~~ ✅ boolean format, Yes/No label
 - ~~`create_scoda.py --with-spa` 옵션 추가~~ ✅ `--with-spa` flag로 구현
 - ~~`label_map` 동적 컬럼 label 지원~~ ✅ opinion_type별 동적 헤더 변경
+- ~~Hub Manifest 자동 생성~~ ✅ `.scoda` 빌드 시 `{id}-{version}.manifest.json` 자동 생성
+- ~~rank_detail Children 버그 수정~~ ✅ linked_table 전환, Genus redirect 지원
+- ~~ui_queries pc.* prefix 수정~~ ✅ 7개 쿼리 수정, genus_locations country_id 3,750건 데이터 복원
+- ~~genus_bibliography 쿼리 추가~~ ✅ FK 기반 참고문헌 연결
 
 ## Open Issues
 
@@ -98,7 +102,8 @@ GitHub Actions workflows in `.github/workflows/`:
 | Workflow | Trigger | Action |
 |----------|---------|--------|
 | `ci.yml` | push/PR to main | pytest 자동 실행 |
-| `release.yml` | tag `v*.*.*` push | pytest → .scoda 빌드 → GitHub Release 생성 |
+| `release.yml` | tag `v*.*.*` push | pytest → .scoda 빌드 → Hub Manifest 생성 → GitHub Release |
+| `manual-release.yml` | workflow_dispatch | 수동 릴리스 (동일 파이프라인, hub manifest 포함) |
 
 **릴리스 방법:**
 ```bash
@@ -114,7 +119,7 @@ git push origin main --tags
 
 ```
 trilobase/                                 # Domain data, scripts, and tests only
-├── .github/workflows/                    # CI/CD (ci.yml, release.yml)
+├── .github/workflows/                    # CI/CD (ci.yml, release.yml, manual-release.yml)
 ├── CLAUDE.md
 ├── CHANGELOG.md                          # Trilobase package changelog
 ├── CHANGELOG_paleocore.md                # PaleoCore package changelog
@@ -124,8 +129,9 @@ trilobase/                                 # Domain data, scripts, and tests onl
 │   ├── trilobase.db                       # Trilobase SQLite DB
 │   └── paleocore.db                       # PaleoCore reference DB
 ├── dist/                                  # Build artifacts (gitignored)
-│   ├── trilobase.scoda                    # .scoda package
-│   ├── paleocore.scoda
+│   ├── trilobase-{ver}.scoda              # .scoda package (버전 포함 파일명)
+│   ├── paleocore-{ver}.scoda
+│   ├── *-{ver}.manifest.json              # Hub Manifest (SHA-256, 메타데이터)
 │   └── *_overlay.db                       # Overlay DBs
 ├── data/                                  # Source data files
 │   ├── trilobite_genus_list.txt           # Cleaned genus list (canonical version)
@@ -138,7 +144,7 @@ trilobase/                                 # Domain data, scripts, and tests onl
 ├── spa/                                   # Reference Implementation SPA (trilobase-specific)
 │   └── index.html                        # Single-file SPA (HTML+CSS+JS, 2,915 lines)
 ├── scripts/                               # Domain pipeline scripts
-│   ├── create_scoda.py                    # trilobase.scoda → dist/ (--no-spa 옵션 지원)
+│   ├── create_scoda.py                    # trilobase.scoda → dist/ (--with-spa 옵션, hub manifest 자동 생성)
 │   ├── create_paleocore_scoda.py          # paleocore.scoda → dist/
 │   ├── create_paleocore.py                # PaleoCore DB → db/
 │   ├── bump_version.py                    # Version bump script
@@ -151,7 +157,7 @@ trilobase/                                 # Domain data, scripts, and tests onl
 │   └── ... (normalize, import, etc.)
 ├── tests/
 │   ├── conftest.py                        # Shared fixtures
-│   └── test_trilobase.py                  # Trilobase domain tests (100)
+│   └── test_trilobase.py                  # Trilobase domain tests (101)
 ├── vendor/
 │   ├── cow/v2024/States2024/statelist2024.csv
 │   └── ics/gts2020/chart.ttl
