@@ -78,12 +78,10 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 
 ### UI/Manifest
 
-- genus_detail 쿼리에 synonym JOIN 추가 — invalid genus에서 valid genus로 링크
-- tree item 및 genera_table에 is_valid 컬럼 표시 (boolean format, Yes/No label)
-- `create_scoda.py --no-spa` 옵션 추가
-- `label_map` 동적 컬럼 label 지원 — opinion_type에 따라 헤더 자동 변경
-  - PLACED_IN → "Proposed Parent", SPELLING_OF → "Correct Spelling", SYNONYM_OF → "Valid Name"
-  - 혼합 시 fallback label "Related Taxon" 사용
+- ~~genus_detail 쿼리에 synonym JOIN 추가~~ ✅ genus_synonyms 쿼리 + 매니페스트 Synonymy 섹션
+- ~~tree item 및 genera_table에 is_valid 컬럼 표시~~ ✅ boolean format, Yes/No label
+- ~~`create_scoda.py --with-spa` 옵션 추가~~ ✅ `--with-spa` flag로 구현
+- ~~`label_map` 동적 컬럼 label 지원~~ ✅ opinion_type별 동적 헤더 변경
 
 ## Open Issues
 

@@ -9,9 +9,12 @@ Usage:
 """
 
 import argparse
+import hashlib
 import json
 import os
+import sqlite3
 import sys
+from datetime import datetime, timezone
 
 from scoda_engine.scoda_package import ScodaPackage, _sha256_file
 from scoda_engine_core import validate_db
@@ -22,13 +25,71 @@ DEFAULT_OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'dist')
 
 def _read_version(db_path):
     """Read version from artifact_metadata table."""
-    import sqlite3
     conn = sqlite3.connect(db_path)
     try:
         row = conn.execute("SELECT value FROM artifact_metadata WHERE key='version'").fetchone()
         return row[0] if row else '0.0.0'
     finally:
         conn.close()
+
+
+def _read_db_metadata(db_path):
+    """Read all artifact_metadata as a dict."""
+    conn = sqlite3.connect(db_path)
+    try:
+        rows = conn.execute("SELECT key, value FROM artifact_metadata").fetchall()
+        return dict(rows)
+    finally:
+        conn.close()
+
+
+def _sha256_scoda(path):
+    """Compute SHA-256 of a .scoda file."""
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def generate_hub_manifest(scoda_path, db_path):
+    """Generate Hub Manifest JSON alongside the .scoda file."""
+    meta = _read_db_metadata(db_path)
+    package_id = meta.get('artifact_id', 'paleocore')
+    version = meta.get('version', '0.0.0')
+
+    provenance = []
+    conn = sqlite3.connect(db_path)
+    try:
+        rows = conn.execute("SELECT citation FROM provenance WHERE citation IS NOT NULL").fetchall()
+        provenance = [r[0] for r in rows]
+    finally:
+        conn.close()
+
+    manifest = {
+        "hub_manifest_version": "1.0",
+        "package_id": package_id,
+        "version": version,
+        "title": meta.get('name', 'PaleoCore') + ' - ' + meta.get('description', ''),
+        "description": meta.get('description', ''),
+        "license": meta.get('license', 'CC-BY-4.0'),
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "provenance": provenance,
+        "dependencies": {},
+        "filename": os.path.basename(scoda_path),
+        "sha256": _sha256_scoda(scoda_path),
+        "size_bytes": os.path.getsize(scoda_path),
+        "scoda_format_version": "1.0",
+        "engine_compat": ">=0.1.0",
+    }
+
+    out_path = os.path.join(os.path.dirname(scoda_path), f"{package_id}-{version}.manifest.json")
+    with open(out_path, "w") as f:
+        json.dump(manifest, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+    print(f"  Hub Manifest: {out_path}")
+    return out_path
 
 
 def main():
@@ -69,9 +130,6 @@ def main():
     print(f"Manifest validation: OK ({len(warnings)} warning(s))")
 
     if args.dry_run:
-        import sqlite3
-        from datetime import datetime, timezone
-
         conn = sqlite3.connect(db_path)
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
@@ -138,6 +196,9 @@ def main():
 
     print(f"Created: {result}")
     print(f"  Size: {size:,} bytes ({size / 1024:.0f} KB)")
+
+    # Generate Hub Manifest
+    generate_hub_manifest(result, db_path)
 
     # Verify by opening
     with ScodaPackage(result) as pkg:

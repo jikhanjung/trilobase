@@ -52,5 +52,6 @@ jobs:
           files: |
             dist/trilobase-*.scoda
             dist/paleocore-*.scoda
+            dist/*.manifest.json
           draft: false
           prerelease: false
