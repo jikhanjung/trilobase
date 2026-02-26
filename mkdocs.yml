@@ -1,0 +1,77 @@
+site_name: Trilobase
+site_url: https://jikhanjung.github.io/trilobase/
+site_description: A trilobite genus-level taxonomic database built from Jell & Adrain (2002)
+site_author: Jikhan Jung
+repo_url: https://github.com/jikhanjung/trilobase
+repo_name: jikhanjung/trilobase
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: ko
+          name: 한국어
+          build: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Database:
+    - Schema: database/schema.md
+    - Queries: database/queries.md
+    - PaleoCore Schema: database/paleocore-schema.md
+  - Architecture:
+    - SCODA Package: architecture/scoda-package.md
+    - SCODA Registry: architecture/scoda-registry.md
+    - Registry Detail: architecture/scoda-registry-detailed.md
+  - API:
+    - MCP Tools: api/mcp-tools.md
+  - Project:
+    - Changelog: project/changelog.md
+    - PaleoCore Changelog: project/changelog-paleocore.md
+    - Handoff: project/handoff.md
+    - History: project/history.md
+    - Dev Log Summary: project/devlog-summary.md

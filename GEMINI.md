@@ -4,7 +4,7 @@ This file provides guidance to Gemini Code when working with code in this reposi
 
 ## Quick Start
 
-**새 세션 시작 시 반드시 `docs/HANDOFF.md`를 먼저 읽을 것.** 현재 프로젝트 상태, 진행 중인 작업, 다음 단계가 정리되어 있음.
+**새 세션 시작 시 반드시 `HANDOFF.md`를 먼저 읽을 것.** 현재 프로젝트 상태, 진행 중인 작업, 다음 단계가 정리되어 있음.
 
 ## Project Overview
 

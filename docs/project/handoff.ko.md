@@ -7,7 +7,7 @@
 A trilobite taxonomic database project. Genus data extracted from Jell & Adrain (2002) PDF is cleaned, normalized, and distributed as a SCODA package.
 
 - **SCODA Engine** (runtime): separate repo at `/mnt/d/projects/scoda-engine` (`pip install -e /mnt/d/projects/scoda-engine[dev]`)
-- **Completed Phase 1~46 details**: see [HISTORY.md](HISTORY.md)
+- **Completed Phase 1~46 details**: see [HISTORY.md](history.md)
 
 ## Current Status
 

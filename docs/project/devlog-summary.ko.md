@@ -1,11 +1,11 @@
 # Trilobase 개발 기록 요약
 
-**최종 업데이트:** 2026-02-26
-**총 문서:** 175개 (작업 로그 102개, 계획 문서 70개, 리뷰 2개, 기타 1개)
-**개발 기간:** 2026-02-04 ~ 2026-02-26 (23일)
+**최종 업데이트:** 2026-02-25
+**총 문서:** 174개 (작업 로그 102개, 계획 문서 69개, 리뷰 2개, 기타 1개)
+**개발 기간:** 2026-02-04 ~ 2026-02-25 (22일)
 
 > **참고:** 02-18 이전 문서(001~077, P01~P60, R01~R02)는 `devlog/archive/`에 보관되어 있습니다.
-> 02-19 이후 문서(078~095, P62~P69)는 `devlog/`에 위치합니다.
+> 02-19 이후 문서(078~095, P62~P68)는 `devlog/`에 위치합니다.
 
 ---
 
@@ -357,16 +357,6 @@ SCODA Hub 정적 레지스트리 스펙에 따라 `.scoda` 빌드 시 `{id}-{ver
 
 ---
 
-### 2026-02-26 (Day 22) — MkDocs 문서 사이트
-
-| # | 유형 | 제목 | 문서 |
-|---|------|------|------|
-| P69 | 계획 | MkDocs Documentation Site (GitHub Pages + i18n) | `20260226_P69_mkdocs_documentation_site.md` |
-
-MkDocs + Material theme + mkdocs-static-i18n으로 영어/한국어 이중 언어 문서 사이트 구축. 기존 `docs/` 설계 문서를 `design/`으로 분리하고, `docs/`를 공식 문서 전용으로 재구조화. GitHub Actions `docs.yml` 워크플로우로 gh-pages 자동 배포.
-
----
-
 ## 주제별 분류
 
 ### 1. 데이터 정제 및 DB 구축 (Phase 1-12)
@@ -454,7 +444,6 @@ LLM을 위한 Model Context Protocol 서버. stdio → SSE → EXE 분리 → Fa
 | 02-19 | DB/dist 디렉토리 재구성 (db/ + dist/ 분리) |
 | 02-21 | 버전 관리 체계 구축 (CHANGELOG.md, bump_version.py) |
 | 02-23 | GitHub Actions CI/CD (ci.yml, release.yml, manual-release.yml) |
-| 02-26 | MkDocs 문서 사이트 (Material + i18n, GitHub Pages 배포) |
 
 ### 9. Generic Viewer 강화 (02-16, 02-23~24)
 
@@ -526,7 +515,7 @@ LLM을 위한 Model Context Protocol 서버. stdio → SSE → EXE 분리 → Fa
 | 유형 | 접두사 | 개수 | 설명 |
 |------|--------|------|------|
 | 작업 로그 | `NNN` (숫자) | 102 | 완료된 작업의 상세 기록 (001~095) |
-| 계획 문서 | `PNN` | 70 | 작업 전 설계/계획 (P01~P69) |
+| 계획 문서 | `PNN` | 69 | 작업 전 설계/계획 (P01~P68) |
 | 리뷰 문서 | `RNN` | 2 | 아키텍처 검토 |
 | 기타 | — | 1 | SCODA MCP Wrapping Plan (초기 문서) |
 
@@ -558,4 +547,3 @@ LLM을 위한 Model Context Protocol 서버. stdio → SSE → EXE 분리 → Fa
 | — | 02-23 | CI/CD GitHub Actions, label_map, UI 쿼리 개선 |
 | — | 02-24 | UI 버그 수정, genus_locations 데이터 복원 (v0.2.3) |
 | — | 02-25 | Hub Manifest 자동 생성 |
-| — | 02-26 | MkDocs 문서 사이트 (EN/KO, GitHub Pages) |
