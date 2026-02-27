@@ -14,7 +14,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | Item | Value |
 |------|-------|
 | Phases completed | 1~46 (all done) |
-| Trilobase version | 0.2.3 |
+| Trilobase version | 0.2.4 |
 | PaleoCore version | 0.1.1 |
 | taxonomic_ranks | 5,341 records (Class~Genus + 2 placeholders + 1 Suborder) |
 | Valid genera | 4,259 (83.3%) |
@@ -35,7 +35,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | genus_formations | 4,853 | Genus-Formation many-to-many |
 | genus_locations | 4,841 | Genus-Country many-to-many |
 | bibliography | 2,130 | Literature Cited references |
-| taxon_bibliography | 4,040 | Taxon↔Bibliography FK links (opinion_id replaces synonym_id) |
+| taxon_bibliography | 4,173 | Taxon↔Bibliography FK links (opinion_id replaces synonym_id) |
 | taxonomic_opinions | 1,139 | All opinions (PLACED_IN 82 + SPELLING_OF 2 + SYNONYM_OF 1,055) |
 | taxa (view) | 5,113 | Backward-compatibility view |
 | artifact_metadata | 7 | SCODA artifact metadata |
@@ -75,7 +75,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 - ~~T-4: Merge synonyms → taxonomic_opinions~~ ✅ 1,055 SYNONYM_OF opinions migrated
   - synonyms table → backward-compat VIEW; taxon_bibliography.synonym_id → opinion_id
   - synonym_type column added to taxonomic_opinions
-  - 433 fide→bibliography links preserved; 287 unmatched fide in notes
+  - 566 fide→bibliography links (433 migration + 133 post-fix); 154 unmatched fide in notes
 
 ### UI/Manifest
 
@@ -87,6 +87,8 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 - ~~rank_detail Children 버그 수정~~ ✅ linked_table 전환, Genus redirect 지원
 - ~~ui_queries pc.* prefix 수정~~ ✅ 7개 쿼리 수정, genus_locations country_id 3,750건 데이터 복원
 - ~~genus_bibliography 쿼리 추가~~ ✅ FK 기반 참고문헌 연결
+- ~~synonym manifest fix~~ ✅ genus_detail synonyms sub_query 추가, synonym_list → linked_table 전환
+- ~~fide matching 개선~~ ✅ et al./year suffix/initial prefix 처리 → 133건 추가 매칭 (총 566건)
 
 ## Open Issues
 
@@ -105,12 +107,13 @@ GitHub Actions workflows in `.github/workflows/`:
 | `ci.yml` | push/PR to main | pytest 자동 실행 |
 | `release.yml` | tag `v*.*.*` push | pytest → .scoda 빌드 → Hub Manifest 생성 → GitHub Release |
 | `manual-release.yml` | workflow_dispatch | 수동 릴리스 (동일 파이프라인, hub manifest 포함) |
+| `docs.yml` | push to main (docs/) | MkDocs 문서 사이트 빌드 → GitHub Pages 배포 |
 
 **릴리스 방법:**
 ```bash
-python scripts/bump_version.py trilobase 0.2.3
-git add -A && git commit -m "release: v0.2.3"
-git tag v0.2.3
+python scripts/bump_version.py trilobase 0.2.5
+git add -A && git commit -m "release: v0.2.5"
+git tag v0.2.5
 git push origin main --tags
 ```
 
@@ -251,7 +254,7 @@ genus_locations (id, genus_id, country_id, region, is_type_locality, notes)
 bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
               publisher, city, editors, book_title, reference_type, raw_entry)
 
--- taxon_bibliography: 4,040 records — Taxon↔Bibliography FK links
+-- taxon_bibliography: 4,173 records — Taxon↔Bibliography FK links
 taxon_bibliography (id, taxon_id, bibliography_id, relationship_type,
                     opinion_id, match_confidence, match_method, notes, created_at)
 
