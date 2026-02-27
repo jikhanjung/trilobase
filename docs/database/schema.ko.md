@@ -41,13 +41,13 @@ conn.execute("ATTACH DATABASE 'db/paleocore.db' AS pc")
 | is_valid | INTEGER | 1 = 유효, 0 = 무효 (Genus 전용) |
 | raw_entry | TEXT | 원본 텍스트 (Genus 전용) |
 
-### synonyms
+### synonyms (뷰)
 
-동의어 관계 — 1,055건.
+`taxonomic_opinions`에 대한 하위 호환 뷰 — SYNONYM_OF 행을 레거시 스키마로 노출. 1,055행.
 
 | 컬럼 | 타입 | 설명 |
 |------|------|------|
-| id | INTEGER | 기본키 |
+| id | INTEGER | opinion id |
 | junior_taxon_id | INTEGER | 이차 동의어 FK (taxonomic_ranks) |
 | senior_taxon_name | TEXT | 선취 동의어명 |
 | senior_taxon_id | INTEGER | 선취 동의어 FK (taxonomic_ranks) |
@@ -112,7 +112,7 @@ conn.execute("ATTACH DATABASE 'db/paleocore.db' AS pc")
 | taxon_id | INTEGER | taxonomic_ranks FK |
 | bibliography_id | INTEGER | bibliography FK |
 | relationship_type | TEXT | original_description, fide |
-| synonym_id | INTEGER | synonyms FK (동의어를 통한 경우) |
+| opinion_id | INTEGER | taxonomic_opinions FK (동의어를 통한 경우) |
 | match_confidence | REAL | 매칭 신뢰도 |
 | match_method | TEXT | 매칭 방법 |
 | notes | TEXT | 비고 |
@@ -120,14 +120,15 @@ conn.execute("ATTACH DATABASE 'db/paleocore.db' AS pc")
 
 ### taxonomic_opinions
 
-분류학적 의견 — 84건 (PLACED_IN 82 + SPELLING_OF 2).
+분류학적 의견 — 1,139건 (PLACED_IN 82 + SPELLING_OF 2 + SYNONYM_OF 1,055).
 
 | 컬럼 | 타입 | 설명 |
 |------|------|------|
 | id | INTEGER | 기본키 |
 | taxon_id | INTEGER | taxonomic_ranks FK |
-| opinion_type | TEXT | PLACED_IN, SPELLING_OF |
+| opinion_type | TEXT | PLACED_IN, SPELLING_OF, SYNONYM_OF |
 | related_taxon_id | INTEGER | 관련 분류군 FK |
+| synonym_type | TEXT | j.s.s., j.o.s., preocc., replacement, suppressed (SYNONYM_OF 전용) |
 | proposed_valid | INTEGER | 유효 제안 여부 |
 | bibliography_id | INTEGER | bibliography FK |
 | assertion_status | TEXT | asserted, incertae_sedis, indet, questionable |

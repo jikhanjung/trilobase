@@ -65,7 +65,6 @@ def fix_spelling_variants(db_path: str, dry_run: bool = False) -> dict:
         # Check FK safety
         for tbl, col in [
             ('taxon_bibliography', 'taxon_id'),
-            ('synonyms', 'junior_taxon_id'),
             ('taxonomic_opinions', 'taxon_id'),
             ('taxonomic_opinions', 'related_taxon_id'),
         ]:

@@ -432,7 +432,8 @@ def insert_manifest(conn):
                 "source": "/api/genus/{id}",
                 "title_template": {"format": "<i>{name}</i> {author}, {year}"},
                 "sub_queries": {
-                    "bibliography": {"query": "genus_bibliography", "params": {"genus_id": "id"}}
+                    "bibliography": {"query": "genus_bibliography", "params": {"genus_id": "id"}},
+                    "synonyms": {"query": "genus_synonyms", "params": {"genus_id": "id"}}
                 },
                 "sections": [
                     {
@@ -496,9 +497,16 @@ def insert_manifest(conn):
                     },
                     {
                         "title": "Synonymy",
-                        "type": "synonym_list",
+                        "type": "linked_table",
                         "data_key": "synonyms",
-                        "condition": "synonyms"
+                        "condition": "synonyms",
+                        "columns": [
+                            {"key": "synonym_type", "label": "Type"},
+                            {"key": "senior_name", "label": "Senior Synonym",
+                             "link": {"detail_view": "genus_detail", "id_key": "senior_taxon_id"}},
+                            {"key": "fide_author", "label": "Fide"},
+                            {"key": "fide_year", "label": "Year"}
+                        ]
                     },
                     {
                         "title": "Notes",

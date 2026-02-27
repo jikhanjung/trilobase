@@ -2355,12 +2355,16 @@ function renderSynonymList(section, data) {
     synonyms.forEach(s => {
         const seniorLink = s.senior_taxon_id
             ? `<a href="#" class="synonym-link" onclick="openDetail('genus_detail', ${s.senior_taxon_id}); return false;"><i>${s.senior_name}</i></a>`
-            : `<i>${s.senior_name}</i>`;
+            : (s.senior_name ? `<i>${s.senior_name}</i>` : '');
+        // fide info: from bibliography join (fide_author) or from notes field
+        const fideText = s.fide_author
+            ? `<small class="text-muted">fide ${s.fide_author}${s.fide_year ? ', ' + s.fide_year : ''}</small>`
+            : (s.notes && s.notes.startsWith('fide ') ? `<small class="text-muted">${s.notes.split(';')[0]}</small>` : '');
         html += `
             <li>
                 <span class="badge bg-secondary badge-synonym">${s.synonym_type}</span>
                 ${seniorLink}
-                ${s.fide_author ? `<small class="text-muted">fide ${s.fide_author}${s.fide_year ? ', ' + s.fide_year : ''}</small>` : ''}
+                ${fideText}
             </li>`;
     });
 

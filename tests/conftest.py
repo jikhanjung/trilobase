@@ -96,18 +96,6 @@ def test_db(tmp_path):
         );
         CREATE UNIQUE INDEX idx_taxonomic_ranks_uid ON taxonomic_ranks(uid);
 
-        CREATE TABLE synonyms (
-            id INTEGER PRIMARY KEY,
-            junior_taxon_id INTEGER,
-            senior_taxon_name TEXT,
-            synonym_type TEXT,
-            fide_author TEXT,
-            fide_year TEXT,
-            notes TEXT,
-            senior_taxon_id INTEGER,
-            FOREIGN KEY (junior_taxon_id) REFERENCES taxonomic_ranks(id)
-        );
-
         CREATE TABLE genus_formations (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             genus_id INTEGER NOT NULL,
@@ -151,6 +139,9 @@ def test_db(tmp_path):
             curation_confidence TEXT DEFAULT 'high'
                                 CHECK(curation_confidence IN ('high', 'medium', 'low')),
             is_accepted         INTEGER DEFAULT 0,
+            synonym_type        TEXT
+                                CHECK(synonym_type IS NULL OR synonym_type IN
+                                    ('j.s.s.', 'j.o.s.', 'preocc.', 'replacement', 'suppressed')),
             notes               TEXT,
             created_at          TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
@@ -167,7 +158,7 @@ def test_db(tmp_path):
             bibliography_id INTEGER NOT NULL,
             relationship_type TEXT NOT NULL DEFAULT 'original_description'
                 CHECK(relationship_type IN ('original_description', 'fide')),
-            synonym_id INTEGER,
+            opinion_id INTEGER,
             match_confidence TEXT NOT NULL DEFAULT 'high'
                 CHECK(match_confidence IN ('high', 'medium', 'low')),
             match_method TEXT,
@@ -175,8 +166,8 @@ def test_db(tmp_path):
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (taxon_id) REFERENCES taxonomic_ranks(id),
             FOREIGN KEY (bibliography_id) REFERENCES bibliography(id),
-            FOREIGN KEY (synonym_id) REFERENCES synonyms(id),
-            UNIQUE(taxon_id, bibliography_id, relationship_type, synonym_id)
+            FOREIGN KEY (opinion_id) REFERENCES taxonomic_opinions(id),
+            UNIQUE(taxon_id, bibliography_id, relationship_type, opinion_id)
         );
         CREATE INDEX idx_tb_taxon ON taxon_bibliography(taxon_id);
         CREATE INDEX idx_tb_bib ON taxon_bibliography(bibliography_id);
@@ -326,11 +317,28 @@ def test_db(tmp_path):
             'scoda:taxon:genus:Olenus', 'name', 'high');
     """)
 
-    # Synonyms
+    # SYNONYM_OF opinion (Cryphops → Acuticryphops, j.s.s.)
     cursor.execute("""
-        INSERT INTO synonyms (id, junior_taxon_id, senior_taxon_name, senior_taxon_id,
-            synonym_type, fide_author, fide_year)
-        VALUES (1, 102, 'Acuticryphops', 101, 'j.s.s.', 'CLARKSON', '1969')
+        INSERT INTO taxonomic_opinions (id, taxon_id, opinion_type, related_taxon_id,
+            bibliography_id, assertion_status, curation_confidence, is_accepted, synonym_type)
+        VALUES (3, 102, 'SYNONYM_OF', 101, 12, 'asserted', 'high', 1, 'j.s.s.')
+    """)
+
+    # Backward-compatible synonyms VIEW
+    cursor.execute("""
+        CREATE VIEW synonyms AS
+        SELECT o.id,
+               o.taxon_id AS junior_taxon_id,
+               rt.name AS senior_taxon_name,
+               o.related_taxon_id AS senior_taxon_id,
+               o.synonym_type,
+               b.authors AS fide_author,
+               CAST(b.year AS TEXT) AS fide_year,
+               o.notes
+        FROM taxonomic_opinions o
+        LEFT JOIN taxonomic_ranks rt ON o.related_taxon_id = rt.id
+        LEFT JOIN bibliography b ON o.bibliography_id = b.id
+        WHERE o.opinion_type = 'SYNONYM_OF'
     """)
 
     # Genus-Formation relations
@@ -369,8 +377,8 @@ def test_db(tmp_path):
         VALUES (2, 101, 11, 'original_description', 'high', 'unique_match');
 
         -- Cryphops synonym fide CLARKSON, 1969 → CLARKSON 1969 (fide)
-        INSERT INTO taxon_bibliography (id, taxon_id, bibliography_id, relationship_type, synonym_id, match_confidence, match_method)
-        VALUES (3, 102, 12, 'fide', 1, 'high', 'fide_unique');
+        INSERT INTO taxon_bibliography (id, taxon_id, bibliography_id, relationship_type, opinion_id, match_confidence, match_method)
+        VALUES (3, 102, 12, 'fide', 3, 'high', 'fide_unique');
     """)
 
     # Bibliography (for metadata statistics)
@@ -474,7 +482,7 @@ def test_db(tmp_path):
         INSERT INTO schema_descriptions (table_name, column_name, description)
         VALUES ('taxonomic_ranks', 'rank', 'Taxonomic rank: Class, Order, Suborder, Superfamily, Family, or Genus');
         INSERT INTO schema_descriptions (table_name, column_name, description)
-        VALUES ('synonyms', NULL, 'Taxonomic synonym relationships');
+        VALUES ('synonyms', NULL, 'Backward-compatible VIEW over taxonomic_opinions WHERE opinion_type = SYNONYM_OF');
     """)
 
     # SCODA display intents (Phase 14)
@@ -552,7 +560,7 @@ def test_db(tmp_path):
     cursor.execute("""
         INSERT INTO ui_queries (name, description, sql, params_json, created_at)
         VALUES ('genus_synonyms', 'Synonyms for a specific genus',
-                'SELECT s.id, s.senior_taxon_id, COALESCE(senior.name, s.senior_taxon_name) as senior_name, s.synonym_type, s.fide_author, s.fide_year FROM synonyms s LEFT JOIN taxonomic_ranks senior ON s.senior_taxon_id = senior.id WHERE s.junior_taxon_id = :genus_id',
+                'SELECT o.id, o.related_taxon_id as senior_taxon_id, COALESCE(senior.name, '''') as senior_name, o.synonym_type, b.authors as fide_author, CAST(b.year AS TEXT) as fide_year FROM taxonomic_opinions o LEFT JOIN taxonomic_ranks senior ON o.related_taxon_id = senior.id LEFT JOIN bibliography b ON o.bibliography_id = b.id WHERE o.taxon_id = :genus_id AND o.opinion_type = ''SYNONYM_OF''',
                 '{"genus_id": "integer"}', '2026-02-14T00:00:00')
     """)
     cursor.execute("""
@@ -690,7 +698,7 @@ def test_db(tmp_path):
     cursor.execute("""
         INSERT INTO ui_queries (name, description, sql, params_json, created_at)
         VALUES ('taxon_opinions', 'Taxonomic opinions for a specific taxon',
-                'SELECT o.id, o.opinion_type, o.related_taxon_id, t.name as related_taxon_name, t.rank as related_taxon_rank, o.bibliography_id, b.authors as bib_authors, b.year as bib_year, o.assertion_status, o.curation_confidence, o.is_accepted, o.notes, o.created_at FROM taxonomic_opinions o LEFT JOIN taxonomic_ranks t ON o.related_taxon_id = t.id LEFT JOIN bibliography b ON o.bibliography_id = b.id WHERE o.taxon_id = :taxon_id ORDER BY o.is_accepted DESC, o.created_at',
+                'SELECT o.id, o.opinion_type, o.related_taxon_id, t.name as related_taxon_name, t.rank as related_taxon_rank, o.bibliography_id, b.authors as bib_authors, b.year as bib_year, o.assertion_status, o.curation_confidence, o.is_accepted, o.synonym_type, o.notes, o.created_at FROM taxonomic_opinions o LEFT JOIN taxonomic_ranks t ON o.related_taxon_id = t.id LEFT JOIN bibliography b ON o.bibliography_id = b.id WHERE o.taxon_id = :taxon_id ORDER BY o.is_accepted DESC, o.created_at',
                 '{"taxon_id": "integer"}', '2026-02-18T00:00:00')
     """)
 

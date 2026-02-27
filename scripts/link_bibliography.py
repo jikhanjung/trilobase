@@ -275,7 +275,7 @@ def create_table(conn, dry_run=False):
             bibliography_id INTEGER NOT NULL,
             relationship_type TEXT NOT NULL DEFAULT 'original_description'
                 CHECK(relationship_type IN ('original_description', 'fide')),
-            synonym_id INTEGER,
+            opinion_id INTEGER,
             match_confidence TEXT NOT NULL DEFAULT 'high'
                 CHECK(match_confidence IN ('high', 'medium', 'low')),
             match_method TEXT,
@@ -283,8 +283,8 @@ def create_table(conn, dry_run=False):
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (taxon_id) REFERENCES taxonomic_ranks(id),
             FOREIGN KEY (bibliography_id) REFERENCES bibliography(id),
-            FOREIGN KEY (synonym_id) REFERENCES synonyms(id),
-            UNIQUE(taxon_id, bibliography_id, relationship_type, synonym_id)
+            FOREIGN KEY (opinion_id) REFERENCES taxonomic_opinions(id),
+            UNIQUE(taxon_id, bibliography_id, relationship_type, opinion_id)
         )
     """
     print("  [CREATE] taxon_bibliography table")
@@ -354,7 +354,10 @@ def match_original_descriptions(conn, bib_index, dry_run=False, report_only=Fals
 
 
 def match_fide_links(conn, bib_index, dry_run=False, report_only=False):
-    """Step 4: Match synonyms fide_author/fide_year → bibliography (fide)."""
+    """Step 4: Match synonym opinions fide → bibliography (fide).
+
+    Reads from synonyms VIEW (backward-compat) or taxonomic_opinions directly.
+    """
     cursor = conn.cursor()
 
     # Check if already populated
@@ -366,12 +369,25 @@ def match_fide_links(conn, bib_index, dry_run=False, report_only=False):
             print(f"  [SKIP] {count} fide links already exist")
             return
 
-    cursor.execute("""
-        SELECT s.id, s.junior_taxon_id, s.fide_author, s.fide_year
-        FROM synonyms s
-        WHERE s.fide_author IS NOT NULL AND s.fide_author != ''
-    """)
-    synonyms = cursor.fetchall()
+    # Try taxonomic_opinions first (post-migration), fall back to synonyms table
+    try:
+        cursor.execute("""
+            SELECT o.id, o.taxon_id, b.authors as fide_author, CAST(b.year AS TEXT) as fide_year
+            FROM taxonomic_opinions o
+            LEFT JOIN bibliography b ON o.bibliography_id = b.id
+            WHERE o.opinion_type = 'SYNONYM_OF'
+              AND o.bibliography_id IS NOT NULL
+        """)
+        synonyms = cursor.fetchall()
+        using_opinions = True
+    except sqlite3.OperationalError:
+        cursor.execute("""
+            SELECT s.id, s.junior_taxon_id, s.fide_author, s.fide_year
+            FROM synonyms s
+            WHERE s.fide_author IS NOT NULL AND s.fide_author != ''
+        """)
+        synonyms = cursor.fetchall()
+        using_opinions = False
 
     stats = {'total': len(synonyms), 'matched': 0, 'skipped': 0, 'high': 0, 'low': 0, 'unmatched': 0}
     inserts = []
@@ -402,11 +418,15 @@ def match_fide_links(conn, bib_index, dry_run=False, report_only=False):
     print(f"  Matched: {stats['matched']} ({stats['high']} high, {stats['low']} low)")
     print(f"  Unmatched: {stats['unmatched']}")
 
+    # Detect column name: opinion_id (post-migration) or synonym_id (pre-migration)
+    tb_cols = {row[1] for row in cursor.execute("PRAGMA table_info(taxon_bibliography)").fetchall()}
+    fk_col = 'opinion_id' if 'opinion_id' in tb_cols else 'synonym_id'
+
     if not dry_run and not report_only:
         for taxon_id, bib_id, rel_type, syn_id, confidence, method in inserts:
-            cursor.execute("""
+            cursor.execute(f"""
                 INSERT OR IGNORE INTO taxon_bibliography
-                    (taxon_id, bibliography_id, relationship_type, synonym_id, match_confidence, match_method)
+                    (taxon_id, bibliography_id, relationship_type, {fk_col}, match_confidence, match_method)
                 VALUES (?, ?, ?, ?, ?, ?)
             """, (taxon_id, bib_id, rel_type, syn_id, confidence, method))
         conn.commit()
@@ -638,7 +658,7 @@ def add_schema_descriptions(conn, dry_run=False):
         ('taxon_bibliography', 'taxon_id', 'Reference to taxonomic_ranks.id'),
         ('taxon_bibliography', 'bibliography_id', 'Reference to bibliography.id'),
         ('taxon_bibliography', 'relationship_type', 'original_description (taxon author=bib) or fide (synonym fide=bib)'),
-        ('taxon_bibliography', 'synonym_id', 'Reference to synonyms.id (for fide relationships)'),
+        ('taxon_bibliography', 'opinion_id', 'Reference to taxonomic_opinions.id (for fide relationships)'),
         ('taxon_bibliography', 'match_confidence', 'Confidence of the automated match: high, medium, low'),
         ('taxon_bibliography', 'match_method', 'Algorithm used for matching (unique_match, suffix_disambiguated, etc.)'),
         ('taxon_bibliography', 'notes', 'Additional notes about the link'),

@@ -147,23 +147,9 @@ def insert_schema_descriptions(conn):
         ('taxonomic_ranks', 'formation_id',
          'FK to formations.id (legacy, use genus_formations instead)'),
 
-        # --- synonyms ---
+        # --- synonyms (VIEW) ---
         ('synonyms', None,
-         'Taxonomic synonym relationships (1,055 records)'),
-        ('synonyms', 'id', 'Primary key'),
-        ('synonyms', 'junior_taxon_id',
-         'FK to taxonomic_ranks.id — the junior (invalid) taxon'),
-        ('synonyms', 'senior_taxon_name',
-         'Name of the senior (valid) taxon'),
-        ('synonyms', 'senior_taxon_id',
-         'FK to taxonomic_ranks.id — the senior (valid) taxon'),
-        ('synonyms', 'synonym_type',
-         'Type: j.s.s. (junior subjective synonym), j.o.s. (junior objective synonym), preocc. (preoccupied), replacement, suppressed'),
-        ('synonyms', 'fide_author',
-         'Attribution: "according to AUTHOR" (fide)'),
-        ('synonyms', 'fide_year',
-         'Year of the attribution reference'),
-        ('synonyms', 'notes', 'Additional notes'),
+         'Backward-compatible VIEW over taxonomic_opinions WHERE opinion_type = SYNONYM_OF (1,055 records)'),
 
         # --- formations ---
         ('formations', None,

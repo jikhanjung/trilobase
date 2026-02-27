@@ -41,13 +41,13 @@ Unified taxonomic hierarchy — 5,341 records (Class through Genus + 2 placehold
 | is_valid | INTEGER | 1 = valid, 0 = invalid (Genus only) |
 | raw_entry | TEXT | Original source text (Genus only) |
 
-### synonyms
+### synonyms (view)
 
-Synonym relationships — 1,055 records.
+Backward-compatible view over `taxonomic_opinions` — exposes SYNONYM_OF rows in the legacy schema. 1,055 rows.
 
 | Column | Type | Description |
 |--------|------|-------------|
-| id | INTEGER | Primary key |
+| id | INTEGER | Opinion id |
 | junior_taxon_id | INTEGER | FK to junior synonym in taxonomic_ranks |
 | senior_taxon_name | TEXT | Name of senior synonym |
 | senior_taxon_id | INTEGER | FK to senior synonym in taxonomic_ranks |
@@ -112,7 +112,7 @@ Taxon–Bibliography FK links — 4,040 records.
 | taxon_id | INTEGER | FK to taxonomic_ranks |
 | bibliography_id | INTEGER | FK to bibliography |
 | relationship_type | TEXT | original_description, fide |
-| synonym_id | INTEGER | FK to synonyms (if via synonym) |
+| opinion_id | INTEGER | FK to taxonomic_opinions (if via synonym) |
 | match_confidence | REAL | Matching confidence score |
 | match_method | TEXT | How the match was determined |
 | notes | TEXT | Additional notes |
@@ -120,14 +120,15 @@ Taxon–Bibliography FK links — 4,040 records.
 
 ### taxonomic_opinions
 
-Taxonomic opinions — 84 records (PLACED_IN 82 + SPELLING_OF 2).
+Taxonomic opinions — 1,139 records (PLACED_IN 82 + SPELLING_OF 2 + SYNONYM_OF 1,055).
 
 | Column | Type | Description |
 |--------|------|-------------|
 | id | INTEGER | Primary key |
 | taxon_id | INTEGER | FK to taxonomic_ranks |
-| opinion_type | TEXT | PLACED_IN, SPELLING_OF |
+| opinion_type | TEXT | PLACED_IN, SPELLING_OF, SYNONYM_OF |
 | related_taxon_id | INTEGER | FK to related taxon |
+| synonym_type | TEXT | j.s.s., j.o.s., preocc., replacement, suppressed (SYNONYM_OF only) |
 | proposed_valid | INTEGER | Whether this opinion proposes the taxon as valid |
 | bibliography_id | INTEGER | FK to bibliography |
 | assertion_status | TEXT | asserted, incertae_sedis, indet, questionable |

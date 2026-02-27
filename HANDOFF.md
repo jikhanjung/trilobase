@@ -1,6 +1,6 @@
 # Trilobase Project Handover
 
-**Last updated:** 2026-02-25
+**Last updated:** 2026-02-27
 
 ## Project Overview
 
@@ -21,8 +21,8 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | Invalid genera | 856 (16.7%) |
 | Valid genera parent_id NULL | 0 (was 68, all resolved) |
 | Synonym linkage | 99.9% (1,054/1,055) |
-| Taxonomic opinions | 84 (PLACED_IN 82 + SPELLING_OF 2) |
-| Tests | 101 passing |
+| Taxonomic opinions | 1,139 (PLACED_IN 82 + SPELLING_OF 2 + SYNONYM_OF 1,055) |
+| Tests | 108 passing |
 
 ## Database Status
 
@@ -31,12 +31,12 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | Table/View | Records | Description |
 |------------|---------|-------------|
 | taxonomic_ranks | 5,341 | Unified taxonomy (Class~Genus) + 2 placeholders + 1 Suborder |
-| synonyms | 1,055 | Synonym relationships |
+| synonyms (view) | 1,055 | Backward-compat VIEW over taxonomic_opinions SYNONYM_OF |
 | genus_formations | 4,853 | Genus-Formation many-to-many |
 | genus_locations | 4,841 | Genus-Country many-to-many |
 | bibliography | 2,130 | Literature Cited references |
-| taxon_bibliography | 4,040 | Taxon↔Bibliography FK links |
-| taxonomic_opinions | 84 | Taxonomic opinions (PLACED_IN 82 + SPELLING_OF 2) |
+| taxon_bibliography | 4,040 | Taxon↔Bibliography FK links (opinion_id replaces synonym_id) |
+| taxonomic_opinions | 1,139 | All opinions (PLACED_IN 82 + SPELLING_OF 2 + SYNONYM_OF 1,055) |
 | taxa (view) | 5,113 | Backward-compatibility view |
 | artifact_metadata | 7 | SCODA artifact metadata |
 | provenance | 5 | Data provenance |
@@ -72,9 +72,10 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
   - ?FAMILY/??FAMILY 32건 → Family 연결 + `questionable` opinion
   - Current: PLACED_IN 82 + SPELLING_OF 2 = **84 opinions**
   - assertion_status: `asserted` 13 / `incertae_sedis` 23 / `indet` 14 / `questionable` 32
-- **T-4: Merge synonyms → taxonomic_opinions** — migrate 1,055 records as SYNONYM_OF opinions
-  - Few blockers (only 1 senior_taxon_id is NULL)
-  - Requires updating all queries/UI/tests referencing the synonyms table (**large scope**)
+- ~~T-4: Merge synonyms → taxonomic_opinions~~ ✅ 1,055 SYNONYM_OF opinions migrated
+  - synonyms table → backward-compat VIEW; taxon_bibliography.synonym_id → opinion_id
+  - synonym_type column added to taxonomic_opinions
+  - 433 fide→bibliography links preserved; 287 unmatched fide in notes
 
 ### UI/Manifest
 
@@ -151,6 +152,7 @@ trilobase/                                 # Domain data, scripts, and tests onl
 │   ├── bump_version.py                    # Version bump script
 │   ├── add_opinions_schema.py             # Taxonomic opinions migration
 │   ├── add_spelling_of_opinions.py        # SPELLING_OF opinion type
+│   ├── migrate_synonyms_to_opinions.py    # T-4: synonyms → SYNONYM_OF opinions
 │   ├── restructure_agnostida_opinions.py  # Agnostida order-level opinions
 │   ├── fill_temporal_codes.py             # temporal_code auto-fill from raw_entry
 │   ├── link_bibliography.py               # taxon_bibliography link builder
@@ -194,7 +196,7 @@ scoda-engine/                              # Separate repo: /mnt/d/projects/scod
 
 | File | Tests | Status |
 |------|-------|--------|
-| `tests/test_trilobase.py` | 101 | ✅ Passing |
+| `tests/test_trilobase.py` | 108 | ✅ Passing |
 
 ### scoda-engine (separate repo)
 
@@ -235,9 +237,9 @@ taxonomic_ranks (
     temporal_code, is_valid, raw_entry
 )
 
--- synonyms: 1,055 records — synonym relationships
-synonyms (id, junior_taxon_id, senior_taxon_name, senior_taxon_id,
-          synonym_type, fide_author, fide_year, notes)
+-- synonyms: backward-compat VIEW over taxonomic_opinions WHERE opinion_type = 'SYNONYM_OF'
+-- Returns: id, junior_taxon_id, senior_taxon_name, senior_taxon_id,
+--          synonym_type, fide_author, fide_year, notes
 
 -- genus_formations: 4,853 records — Genus-Formation many-to-many
 genus_formations (id, genus_id, formation_id, is_type_locality, notes)
@@ -251,12 +253,12 @@ bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
 
 -- taxon_bibliography: 4,040 records — Taxon↔Bibliography FK links
 taxon_bibliography (id, taxon_id, bibliography_id, relationship_type,
-                    synonym_id, match_confidence, match_method, notes, created_at)
+                    opinion_id, match_confidence, match_method, notes, created_at)
 
--- taxonomic_opinions: 84 records — taxonomic opinions (PLACED_IN 82 + SPELLING_OF 2)
+-- taxonomic_opinions: 1,139 records — all opinions (PLACED_IN 82, SPELLING_OF 2, SYNONYM_OF 1,055)
 taxonomic_opinions (id, taxon_id, opinion_type, related_taxon_id, proposed_valid,
                     bibliography_id, assertion_status, curation_confidence,
-                    is_accepted, notes, created_at)
+                    is_accepted, synonym_type, notes, created_at)
 -- Triggers: trg_deactivate_before_insert, trg_sync_parent_insert,
 --           trg_deactivate_before_update, trg_sync_parent_update
 

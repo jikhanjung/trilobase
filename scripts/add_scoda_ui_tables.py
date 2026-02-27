@@ -138,11 +138,16 @@ ORDER BY g.name""",
          None),
 
         ('genus_synonyms',
-         'Synonyms for a specific genus',
-         """SELECT s.*, senior.name as senior_name
-FROM synonyms s
-LEFT JOIN taxonomic_ranks senior ON s.senior_taxon_id = senior.id
-WHERE s.junior_taxon_id = :genus_id""",
+         'Synonyms for a specific genus (from taxonomic_opinions)',
+         """SELECT o.id, o.related_taxon_id as senior_taxon_id,
+       COALESCE(senior.name, '') as senior_name,
+       o.synonym_type,
+       b.authors as fide_author,
+       CAST(b.year AS TEXT) as fide_year
+FROM taxonomic_opinions o
+LEFT JOIN taxonomic_ranks senior ON o.related_taxon_id = senior.id
+LEFT JOIN bibliography b ON o.bibliography_id = b.id
+WHERE o.taxon_id = :genus_id AND o.opinion_type = 'SYNONYM_OF'""",
          '{"genus_id": "integer — taxonomic_ranks.id of the junior taxon"}'),
 
         ('genus_formations',

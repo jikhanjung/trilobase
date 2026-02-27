@@ -6,7 +6,16 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html):
 **Major** = schema change, **Minor** = significant data addition, **Patch** = data quality fix.
 
-## [Unreleased]
+## [0.2.4] - 2026-02-27
+
+### Changed
+- **T-4: Synonym → Taxonomic Opinions migration** — 1,055 synonym records migrated to `SYNONYM_OF` opinions
+  - `synonyms` table replaced with backward-compatible VIEW
+  - New `synonym_type` column on `taxonomic_opinions` (j.s.s., j.o.s., preocc., replacement, suppressed)
+  - `taxon_bibliography.synonym_id` renamed to `opinion_id`
+  - `taxonomic_opinions` total: 84 → 1,139 (82 PLACED_IN + 2 SPELLING_OF + 1,055 SYNONYM_OF)
+  - `genus_synonyms` query rewritten to use `taxonomic_opinions`
+  - 433 fide→bibliography links preserved; SPA updated for nullable fide
 
 ## [0.2.3] - 2026-02-24
 

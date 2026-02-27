@@ -787,7 +787,7 @@ class TestTaxonomicOpinions:
         expected = {
             'id', 'taxon_id', 'opinion_type', 'related_taxon_id', 'proposed_valid',
             'bibliography_id', 'assertion_status', 'curation_confidence',
-            'is_accepted', 'notes', 'created_at'
+            'is_accepted', 'synonym_type', 'notes', 'created_at'
         }
         assert expected.issubset(columns)
         conn.close()
@@ -993,7 +993,7 @@ class TestTaxonBibliography:
         columns = {row[1] for row in cursor.fetchall()}
         expected = {
             'id', 'taxon_id', 'bibliography_id', 'relationship_type',
-            'synonym_id', 'match_confidence', 'match_method', 'notes', 'created_at'
+            'opinion_id', 'match_confidence', 'match_method', 'notes', 'created_at'
         }
         assert expected.issubset(columns)
         conn.close()
@@ -1019,13 +1019,13 @@ class TestTaxonBibliography:
         conn.close()
 
     def test_unique_constraint(self, test_db):
-        """Duplicate (taxon_id, bibliography_id, relationship_type, synonym_id) should be rejected."""
+        """Duplicate (taxon_id, bibliography_id, relationship_type, opinion_id) should be rejected."""
         conn = sqlite3.connect(test_db[0])
-        # Existing row: (102, 12, 'fide', synonym_id=1) — insert duplicate with same synonym_id
+        # Existing row: (102, 12, 'fide', opinion_id=3) — insert duplicate with same opinion_id
         with pytest.raises(sqlite3.IntegrityError):
             conn.execute("""
-                INSERT INTO taxon_bibliography (taxon_id, bibliography_id, relationship_type, synonym_id, match_confidence, match_method)
-                VALUES (102, 12, 'fide', 1, 'high', 'fide_unique')
+                INSERT INTO taxon_bibliography (taxon_id, bibliography_id, relationship_type, opinion_id, match_confidence, match_method)
+                VALUES (102, 12, 'fide', 3, 'high', 'fide_unique')
             """)
         conn.close()
 
@@ -1050,11 +1050,11 @@ class TestTaxonBibliography:
         assert row[3] == 1839
 
     def test_fide_link(self, test_db):
-        """Cryphops should have a fide link to CLARKSON 1969 via synonym."""
+        """Cryphops should have a fide link to CLARKSON 1969 via opinion."""
         conn = sqlite3.connect(test_db[0])
         cursor = conn.cursor()
         cursor.execute("""
-            SELECT tb.relationship_type, tb.synonym_id, b.authors, b.year
+            SELECT tb.relationship_type, tb.opinion_id, b.authors, b.year
             FROM taxon_bibliography tb
             JOIN bibliography b ON tb.bibliography_id = b.id
             WHERE tb.taxon_id = 102 AND tb.relationship_type = 'fide'
@@ -1063,7 +1063,7 @@ class TestTaxonBibliography:
         conn.close()
         assert row is not None
         assert row[0] == 'fide'
-        assert row[1] == 1  # synonym_id
+        assert row[1] == 3  # opinion_id (SYNONYM_OF opinion for Cryphops)
         assert 'CLARKSON' in row[2]
         assert row[3] == 1969
 
@@ -1288,11 +1288,11 @@ class TestAgnostidaOrder:
         conn.close()
 
     def test_total_opinions_count(self):
-        """Total taxonomic opinions: 13 asserted + 23 incertae_sedis + 14 indet + 32 questionable + 2 SPELLING_OF = 84."""
+        """Total taxonomic opinions: 82 PLACED_IN + 2 SPELLING_OF + 1055 SYNONYM_OF = 1139."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute("SELECT COUNT(*) FROM taxonomic_opinions")
-        assert cursor.fetchone()[0] == 84
+        assert cursor.fetchone()[0] == 1139
         conn.close()
 
 
@@ -1380,6 +1380,89 @@ class TestSpellingOfOpinions:
         assert row[1] == 36   # Chengkouaspididae
         assert row[2] == 1    # is_accepted
         assert row[3] == 'Chengkouaspididae'
+
+
+# ---------------------------------------------------------------------------
+# SYNONYM_OF Opinion Type (T-4 Migration)
+# ---------------------------------------------------------------------------
+
+class TestSynonymOfOpinions:
+    """Verify SYNONYM_OF opinions and synonyms backward-compat VIEW."""
+
+    def test_synonym_of_type_allowed(self, test_db):
+        """SYNONYM_OF with synonym_type should be accepted by CHECK constraints."""
+        conn = sqlite3.connect(test_db[0])
+        conn.execute(
+            "INSERT INTO taxonomic_opinions (taxon_id, opinion_type, related_taxon_id, "
+            "assertion_status, curation_confidence, is_accepted, synonym_type) "
+            "VALUES (200, 'SYNONYM_OF', 100, 'asserted', 'high', 1, 'j.o.s.')"
+        )
+        conn.commit()
+        row = conn.execute(
+            "SELECT opinion_type, synonym_type FROM taxonomic_opinions "
+            "WHERE taxon_id = 200 AND opinion_type = 'SYNONYM_OF'"
+        ).fetchone()
+        assert row[0] == 'SYNONYM_OF'
+        assert row[1] == 'j.o.s.'
+        conn.close()
+
+    def test_synonym_type_check_constraint(self, test_db):
+        """Invalid synonym_type should be rejected by CHECK constraint."""
+        conn = sqlite3.connect(test_db[0])
+        with pytest.raises(sqlite3.IntegrityError):
+            conn.execute(
+                "INSERT INTO taxonomic_opinions (taxon_id, opinion_type, related_taxon_id, synonym_type) "
+                "VALUES (200, 'SYNONYM_OF', 100, 'INVALID')"
+            )
+        conn.close()
+
+    def test_synonym_type_null_for_non_synonym(self, test_db):
+        """synonym_type should be NULL for non-SYNONYM_OF opinions."""
+        conn = sqlite3.connect(test_db[0])
+        row = conn.execute(
+            "SELECT synonym_type FROM taxonomic_opinions WHERE opinion_type = 'PLACED_IN' AND id = 1"
+        ).fetchone()
+        assert row[0] is None
+        conn.close()
+
+    def test_synonyms_view_exists(self, test_db):
+        """synonyms should be a VIEW (not a table)."""
+        conn = sqlite3.connect(test_db[0])
+        row = conn.execute(
+            "SELECT type FROM sqlite_master WHERE name = 'synonyms'"
+        ).fetchone()
+        assert row is not None
+        assert row[0] == 'view'
+        conn.close()
+
+    def test_synonyms_view_returns_data(self, test_db):
+        """synonyms VIEW should return SYNONYM_OF opinions in backward-compat format."""
+        conn = sqlite3.connect(test_db[0])
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM synonyms WHERE junior_taxon_id = 102")
+        row = cursor.fetchone()
+        conn.close()
+        assert row is not None
+        # Should have: id, junior_taxon_id, senior_taxon_name, senior_taxon_id,
+        # synonym_type, fide_author, fide_year, notes
+
+    def test_taxon_bibliography_opinion_id(self, test_db):
+        """taxon_bibliography should use opinion_id (not synonym_id)."""
+        conn = sqlite3.connect(test_db[0])
+        cols = {row[1] for row in conn.execute("PRAGMA table_info(taxon_bibliography)").fetchall()}
+        assert 'opinion_id' in cols
+        assert 'synonym_id' not in cols
+        conn.close()
+
+    def test_genus_synonyms_query_uses_opinions(self, client):
+        """genus_synonyms query should return synonym data for Cryphops from opinions table."""
+        response = client.get('/api/queries/genus_synonyms/execute?genus_id=102')
+        assert response.status_code == 200
+        data = response.json()
+        assert data['row_count'] == 1
+        row = data['rows'][0]
+        assert row['senior_taxon_id'] == 101
+        assert row['synonym_type'] == 'j.s.s.'
 
 
 class TestTemporalCodeFill:
