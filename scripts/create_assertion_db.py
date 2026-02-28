@@ -831,6 +831,20 @@ def _build_queries():
          "WHERE ec.profile_id = :profile_id\n"
          "ORDER BY parent.rank, parent.name, child.rank, child.name",
          '{"profile_id": "integer"}'),
+
+        # --- P75: Radial Tree ---
+        ("radial_tree_nodes", "All taxon nodes for radial tree visualization",
+         "SELECT id, name, rank, genera_count, is_valid,\n"
+         "       temporal_code, author, year\n"
+         "FROM taxon\n"
+         "ORDER BY rank, name",
+         None),
+
+        ("radial_tree_edges", "Parent-child edges for radial tree (by profile)",
+         "SELECT child_taxon_id, parent_taxon_id\n"
+         "FROM classification_edge_cache\n"
+         "WHERE profile_id = :profile_id",
+         '{"profile_id": "integer"}'),
     ]
 
 
@@ -1499,6 +1513,30 @@ def _build_manifest():
                         ],
                     },
                 ],
+            },
+            # === P75: Radial Tree ===
+            "radial_tree": {
+                "type": "hierarchy",
+                "display": "radial",
+                "title": "Radial Tree",
+                "description": "Radial taxonomy visualization — Class at center, genera at periphery",
+                "icon": "bi-bullseye",
+                "source_query": "radial_tree_nodes",
+                "hierarchy_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "rank_key": "rank",
+                },
+                "radial_display": {
+                    "edge_query": "radial_tree_edges",
+                    "edge_params": {"profile_id": 1},
+                    "color_key": "rank",
+                    "count_key": "genera_count",
+                    "depth_toggle": True,
+                    "leaf_rank": "Genus",
+                    "on_node_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
+                },
             },
         },
     }
