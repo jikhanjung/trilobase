@@ -1,0 +1,1426 @@
+{
+  "source": "Treatise on Invertebrate Paleontology, Part O, Arthropoda 1, Trilobita (Revised), Chapter 4",
+  "pages": "331-403",
+  "year": 2004,
+  "taxonomy": {
+    "rank": "order",
+    "name": "AGNOSTIDA",
+    "author": "SALTER",
+    "year": 1864,
+    "children": [
+      {
+        "rank": "suborder",
+        "name": "AGNOSTINA",
+        "author": "SALTER",
+        "year": 1864,
+        "children": [
+          {
+            "rank": "superfamily",
+            "name": "AGNOSTOIDEA",
+            "author": "M'COY",
+            "year": 1849,
+            "children": [
+              {
+                "rank": "family",
+                "name": "AGNOSTIDAE",
+                "author": "M'COY",
+                "year": 1849,
+                "children": [
+                  {
+                    "rank": "subfamily",
+                    "name": "AGNOSTINAE",
+                    "author": "M'COY",
+                    "year": 1849,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Agnostus",
+                        "author": "BRONGNIART",
+                        "year": 1822,
+                        "children": [
+                          {
+                            "rank": "subgenus",
+                            "name": "Agnostus",
+                            "author": "BRONGNIART",
+                            "year": 1822
+                          },
+                          {
+                            "rank": "subgenus",
+                            "name": "Homagnostus",
+                            "author": "HOWELL",
+                            "year": 1935
+                          }
+                        ]
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Lotagnostus",
+                        "author": "WHITEHOUSE",
+                        "year": 1936,
+                        "children": [
+                          {
+                            "rank": "subgenus",
+                            "name": "Lotagnostus",
+                            "author": "WHITEHOUSE",
+                            "year": 1936
+                          },
+                          {
+                            "rank": "subgenus",
+                            "name": "Eolotagnostus",
+                            "author": "LU",
+                            "year": 1964
+                          },
+                          {
+                            "rank": "subgenus",
+                            "name": "Distagnostus",
+                            "author": "SHERGOLD",
+                            "year": 1977
+                          }
+                        ]
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Micragnostus",
+                        "author": "HOWELL",
+                        "year": 1935
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Oncagnostus",
+                        "author": "WHITEHOUSE",
+                        "year": 1936,
+                        "children": [
+                          {
+                            "rank": "subgenus",
+                            "name": "Oncagnostus",
+                            "author": "WHITEHOUSE",
+                            "year": 1936
+                          },
+                          {
+                            "rank": "subgenus",
+                            "name": "Strictagnostus",
+                            "author": "ÖPIK",
+                            "year": 1967
+                          },
+                          {
+                            "rank": "subgenus",
+                            "name": "Kymagnostus",
+                            "author": "ÖPIK",
+                            "year": 1979
+                          }
+                        ]
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Trilobagnostus",
+                        "author": "HARRINGTON",
+                        "year": 1938
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Acutatagnostus",
+                        "author": "ÖPIK",
+                        "year": 1979
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Ivshinagnostus",
+                        "author": "ÖPIK",
+                        "year": 1979,
+                        "uncertain": true
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Innitagnostus",
+                        "author": "ÖPIK",
+                        "year": 1979
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Gymnagnostus",
+                        "author": "HARRINGTON",
+                        "year": 1938
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Formosagnostus",
+                        "author": "LU & LIN",
+                        "year": 1983
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "AMMAGNOSTINAE",
+                    "author": "ÖPIK",
+                    "year": 1967,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Ammagnostus",
+                        "author": "ÖPIK",
+                        "year": 1967,
+                        "children": [
+                          {
+                            "rank": "subgenus",
+                            "name": "Ammagnostus",
+                            "author": "ÖPIK",
+                            "year": 1967
+                          },
+                          {
+                            "rank": "subgenus",
+                            "name": "Tentagnostus",
+                            "author": "ÖPIK",
+                            "year": 1979
+                          }
+                        ]
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Hadragnostus",
+                        "author": "ÖPIK",
+                        "year": 1979
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Kormagnostella",
+                        "author": "ÖPIK",
+                        "year": 1979,
+                        "uncertain": true
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Kormagnostus",
+                        "author": "ÖPIK",
+                        "year": 1967
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Proagnostus",
+                        "author": "BUTTS",
+                        "year": 1926
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "GLYPTAGNOSTINAE",
+                    "author": "WHITEHOUSE",
+                    "year": 1936,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Glyptagnostus",
+                        "author": "WHITEHOUSE",
+                        "year": 1936
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Agnostardis",
+                        "author": "ÖPIK",
+                        "year": 1963
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "UNCERTAIN",
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Acmarhachis",
+                        "author": "RESSER",
+                        "year": 1938
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Connagnostus",
+                        "author": "ÖPIK",
+                        "year": 1967
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Aistagnostus",
+                        "author": "XIANG & ZHANG",
+                        "year": 1985
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Idolagnostus",
+                        "author": "ÖPIK",
+                        "year": 1967,
+                        "uncertain": true
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Quadrahomagnostus",
+                        "author": "CHU",
+                        "year": 1959
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "PTYCHAGNOSTIDAE",
+                "author": "KOBAYASHI",
+                "year": 1939,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Ptychagnostus",
+                    "author": "JAEKEL",
+                    "year": 1909
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Acidusus",
+                    "author": "ÖPIK",
+                    "year": 1979
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Goniagnostus",
+                    "author": "HOWELL",
+                    "year": 1935,
+                    "children": [
+                      {
+                        "rank": "subgenus",
+                        "name": "Goniagnostus",
+                        "author": "HOWELL",
+                        "year": 1935
+                      },
+                      {
+                        "rank": "subgenus",
+                        "name": "Allobodochus",
+                        "author": "ÖPIK",
+                        "year": 1979
+                      },
+                      {
+                        "rank": "subgenus",
+                        "name": "Criotypus",
+                        "author": "ÖPIK",
+                        "year": 1979
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Lejopyge",
+                    "author": "HAWLE & CORDA",
+                    "year": 1847
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Myrmecomimus",
+                    "author": "ÖPIK",
+                    "year": 1979
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Onymagnostus",
+                    "author": "ÖPIK",
+                    "year": 1979
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Pentagnostus",
+                    "author": "LERMONTOVA",
+                    "year": 1940
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Tomagnostus",
+                    "author": "HOWELL",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Triplagnostus",
+                    "author": "HOWELL",
+                    "year": 1935,
+                    "children": [
+                      {
+                        "rank": "subgenus",
+                        "name": "Triplagnostus",
+                        "author": "HOWELL",
+                        "year": 1935
+                      },
+                      {
+                        "rank": "subgenus",
+                        "name": "Aotagnostus",
+                        "author": "ÖPIK",
+                        "year": 1979
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Zeteagnostus",
+                    "author": "ÖPIK",
+                    "year": 1979
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "SPINAGNOSTIDAE",
+                "author": "HOWELL",
+                "year": 1935,
+                "children": [
+                  {
+                    "rank": "subfamily",
+                    "name": "SPINAGNOSTINAE",
+                    "author": "HOWELL",
+                    "year": 1935,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Hypagnostus",
+                        "author": "JAEKEL",
+                        "year": 1909,
+                        "children": [
+                          {
+                            "rank": "subgenus",
+                            "name": "Hypagnostus",
+                            "author": "JAEKEL",
+                            "year": 1909
+                          },
+                          {
+                            "rank": "subgenus",
+                            "name": "Brevignostus",
+                            "author": "LIU",
+                            "year": 1982
+                          },
+                          {
+                            "rank": "subgenus",
+                            "name": "Metahypagnostus",
+                            "author": "QIU",
+                            "year": 1983
+                          }
+                        ]
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Cotalagnostus",
+                        "author": "WHITEHOUSE",
+                        "year": 1936
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Eoagnostus",
+                        "author": "RESSER & HOWELL",
+                        "year": 1938
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Micagnostus",
+                        "author": "HAJRULLINA",
+                        "year": 1975
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Peratagnostus",
+                        "author": "ÖPIK",
+                        "year": 1967
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Raragnostus",
+                        "author": "HAJRULLINA",
+                        "year": 1975
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Svenax",
+                        "author": "ÖPIK",
+                        "year": 1979
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Tomagnostella",
+                        "author": "KOBAYASHI",
+                        "year": 1939
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "DORYAGNOSTINAE",
+                    "author": "SHERGOLD, LAURIE, & SUN",
+                    "year": 1990,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Doryagnostus",
+                        "author": "KOBAYASHI",
+                        "year": 1939
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Itagnostus",
+                        "author": "ÖPIK",
+                        "year": 1979
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Rhodotypiscus",
+                        "author": "ÖPIK",
+                        "year": 1979
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "UNCERTAIN",
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Pseudoperonopsis",
+                        "author": "HARRINGTON",
+                        "year": 1938
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "PERONOPSIDAE",
+                "author": "WESTERGÅRD",
+                "year": 1936,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Peronopsis",
+                    "author": "HAWLE & CORDA",
+                    "year": 1847
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Diplorrhina",
+                    "author": "HAWLE & CORDA",
+                    "year": 1847
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Gratagnostus",
+                    "author": "HAJRULLINA",
+                    "year": 1975
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Peronopsella",
+                    "author": "SDZUY",
+                    "year": 1968
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "DIPLAGNOSTIDAE",
+                "author": "WHITEHOUSE",
+                "year": 1936,
+                "children": [
+                  {
+                    "rank": "subfamily",
+                    "name": "DIPLAGNOSTINAE",
+                    "author": "WHITEHOUSE",
+                    "year": 1936,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Diplagnostus",
+                        "author": "JAEKEL",
+                        "year": 1909
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Acadagnostus",
+                        "author": "KOBAYASHI",
+                        "year": 1939
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Baltagnostus",
+                        "author": "LOCHMAN",
+                        "year": 1944
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Linguagnostus",
+                        "author": "KOBAYASHI",
+                        "year": 1939
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Dolichagnostus",
+                        "author": "POKROVSKAYA",
+                        "year": 1958
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Iniospheniscus",
+                        "author": "ÖPIK",
+                        "year": 1979,
+                        "uncertain": true
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Oedorhachis",
+                        "author": "RESSER",
+                        "year": 1938
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Tasagnostus",
+                        "author": "JAGO",
+                        "year": 1976
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "OIDALAGNOSTINAE",
+                    "author": "ÖPIK",
+                    "year": 1967,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Oidalagnostus",
+                        "author": "WESTERGÅRD",
+                        "year": 1946
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Cristagnostus",
+                        "author": "RUSHTON",
+                        "year": 1978
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "PSEUDAGNOSTINAE",
+                    "author": "WHITEHOUSE",
+                    "year": 1936,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Pseudagnostus",
+                        "author": "JAEKEL",
+                        "year": 1909,
+                        "children": [
+                          {
+                            "rank": "subgenus",
+                            "name": "Pseudagnostus",
+                            "author": "JAEKEL",
+                            "year": 1909
+                          },
+                          {
+                            "rank": "subgenus",
+                            "name": "Pseudagnostina",
+                            "author": "PALMER",
+                            "year": 1962
+                          },
+                          {
+                            "rank": "subgenus",
+                            "name": "Sulcatagnostus",
+                            "author": "KOBAYASHI",
+                            "year": 1937
+                          }
+                        ]
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Agnostotes",
+                        "author": "ÖPIK",
+                        "year": 1963,
+                        "children": [
+                          {
+                            "rank": "subgenus",
+                            "name": "Agnostotes",
+                            "author": "ÖPIK",
+                            "year": 1963
+                          },
+                          {
+                            "rank": "subgenus",
+                            "name": "Pseudoglyptagnostus",
+                            "author": "LU",
+                            "year": 1964
+                          }
+                        ]
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Denagnostus",
+                        "author": "JAGO",
+                        "year": 1987
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Litagnostus",
+                        "author": "RASETTI",
+                        "year": 1944
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Nahannagnostus",
+                        "author": "PRATT",
+                        "year": 1992,
+                        "children": [
+                          {
+                            "rank": "subgenus",
+                            "name": "Nahannagnostus",
+                            "author": "PRATT",
+                            "year": 1992
+                          },
+                          {
+                            "rank": "subgenus",
+                            "name": "Machairagnostus",
+                            "author": "HARRINGTON & LEANZA",
+                            "year": 1957
+                          }
+                        ]
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Neoagnostus",
+                        "author": "KOBAYASHI",
+                        "year": 1955
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Oxyagnostus",
+                        "author": "ÖPIK",
+                        "year": 1967
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Rhaptagnostus",
+                        "author": "WHITEHOUSE",
+                        "year": 1936
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Trisulcagnostus",
+                        "author": "ERGALIEV",
+                        "year": 1980
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Xestagnostus",
+                        "author": "ÖPIK",
+                        "year": 1967
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "CLAVAGNOSTIDAE",
+                "author": "HOWELL",
+                "year": 1937,
+                "children": [
+                  {
+                    "rank": "subfamily",
+                    "name": "CLAVAGNOSTINAE",
+                    "author": "HOWELL",
+                    "year": 1937,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Clavagnostus",
+                        "author": "HOWELL",
+                        "year": 1937
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "ASPIDAGNOSTINAE",
+                    "author": "POKROVSKAYA",
+                    "year": 1960,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Aspidagnostus",
+                        "author": "WHITEHOUSE",
+                        "year": 1936
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Triadaspis",
+                        "author": "ÖPIK",
+                        "year": 1967
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "UNCERTAIN",
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Utagnostus",
+                        "author": "ROBISON",
+                        "year": 1964
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "METAGNOSTIDAE",
+                "author": "JAEKEL",
+                "year": 1909,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Arthrorhachis",
+                    "author": "HAWLE & CORDA",
+                    "year": 1847
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Anglagnostus",
+                    "author": "HOWELL",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Chatkalagnostus",
+                    "author": "HAJRULLINA & ABDULLAEV",
+                    "year": 1970
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Corrugatagnostus",
+                    "author": "KOBAYASHI",
+                    "year": 1939
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Dividuagnostus",
+                    "author": "KOROLEVA",
+                    "year": 1982
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Galbagnostus",
+                    "author": "WHITTINGTON",
+                    "year": 1965
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Geragnostella",
+                    "author": "KOBAYASHI",
+                    "year": 1939
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Geragnostus",
+                    "author": "HOWELL",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Granuloagnostus",
+                    "author": "PEK",
+                    "year": 1970
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Homagnostoides",
+                    "author": "KOBAYASHI",
+                    "year": 1939
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Trinodus",
+                    "author": "M'COY",
+                    "year": 1846
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "UNCERTAIN",
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Agnostogonus",
+                    "author": "ÖPIK",
+                    "year": 1967
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Archaeagnostus",
+                    "author": "KOBAYASHI",
+                    "year": 1939
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Armagnostus",
+                    "author": "HOWELL",
+                    "year": 1937
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Blystagnostus",
+                    "author": "ÖPIK",
+                    "year": 1961
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Ciceragnostus",
+                    "author": "KOBAYASHI",
+                    "year": 1937
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Delagnostus",
+                    "author": "ÖPIK",
+                    "year": 1961
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Gallagnostus",
+                    "author": "HOWELL",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Glaberagnostus",
+                    "author": "ROMANENKO",
+                    "year": 1985
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Grandagnostus",
+                    "author": "HOWELL",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Hastagnostus",
+                    "author": "HOWELL",
+                    "year": 1937
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Leiagnostus",
+                    "author": "JAEKEL",
+                    "year": 1909
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Monaxagnostus",
+                    "author": "LIU",
+                    "year": 1982
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Phaldagnostus",
+                    "author": "IVSHIN",
+                    "year": 1960
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Phoidagnostus",
+                    "author": "WHITEHOUSE",
+                    "year": 1936
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Plurinodus",
+                    "author": "ÖPIK",
+                    "year": 1967
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Quadragnostus",
+                    "author": "HOWELL",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Skryjagnostus",
+                    "author": "ŠNAJDR",
+                    "year": 1957
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Toragnostus",
+                    "author": "ANGELIN",
+                    "year": 1851
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Valenagnostus",
+                    "author": "JAGO",
+                    "year": 1976
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "rank": "superfamily",
+            "name": "UNCERTAIN",
+            "children": [
+              {
+                "rank": "family",
+                "name": "PHALACROMIDAE",
+                "author": "HAWLE & CORDA",
+                "year": 1847,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Phalacroma",
+                    "author": "HAWLE & CORDA",
+                    "year": 1847
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Dignagnostus",
+                    "author": "HAJRULLINA",
+                    "year": 1975,
+                    "uncertain": true
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Lisogoragnostus",
+                    "author": "ROZOVA",
+                    "year": 1988
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "SPHAERAGNOSTIDAE",
+                "author": "KOBAYASHI",
+                "year": 1939,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Sphaeragnostus",
+                    "author": "HOWELL & RESSER",
+                    "year": 1936
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "rank": "superfamily",
+            "name": "CONDYLOPYGOIDEA",
+            "author": "RAYMOND",
+            "year": 1913,
+            "children": [
+              {
+                "rank": "family",
+                "name": "CONDYLOPYGIDAE",
+                "author": "RAYMOND",
+                "year": 1913,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Condylopyge",
+                    "author": "HAWLE & CORDA",
+                    "year": 1847
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Pleuroctenium",
+                    "author": "HAWLE & CORDA",
+                    "year": 1847
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rank": "suborder",
+        "name": "EODISCINA",
+        "author": "KOBAYASHI",
+        "year": 1939,
+        "children": [
+          {
+            "rank": "superfamily",
+            "name": "EODISCOIDEA",
+            "author": "RAYMOND",
+            "year": 1913,
+            "children": [
+              {
+                "rank": "family",
+                "name": "TSUNYIDISCIDAE",
+                "author": "S. ZHANG",
+                "year": 1980,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Tsunyidiscus",
+                    "author": "W. CHANG",
+                    "year": 1966
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "HEBEDISCIDAE",
+                "author": "KOBAYASHI",
+                "year": 1944,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Hebediscus",
+                    "author": "WHITEHOUSE",
+                    "year": 1936
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Delgadella",
+                    "author": "WALCOTT",
+                    "year": 1912
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Dicerodiscus",
+                    "author": "W. ZHANG",
+                    "year": 1964
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Luvsanodiscus",
+                    "author": "KOROBOV",
+                    "year": 1980
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Natalina",
+                    "author": "E. ROMANENKO",
+                    "year": 1978
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Neopagetina",
+                    "author": "POKROVSKAYA",
+                    "year": 1960
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Parapagetia",
+                    "author": "REPINA",
+                    "year": 1964
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Tchernyshevioides",
+                    "author": "HAJRULLINA",
+                    "year": 1975
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "CALODISCIDAE",
+                "author": "KOBAYASHI",
+                "year": 1943,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Calodiscus",
+                    "author": "HOWELL",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Chelediscus",
+                    "author": "RUSHTON",
+                    "year": 1966
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Korobovia",
+                    "author": "JELL",
+                    "year": 1990
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Neocobboldia",
+                    "author": "RASETTI",
+                    "year": 1952
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Sinodiscus",
+                    "author": "W. CHANG",
+                    "year": 1974
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Pseudocobboldia",
+                    "author": "HUPÉ",
+                    "year": 1979
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "WEYMOUTHIIDAE",
+                "author": "KOBAYASHI",
+                "year": 1943,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Weymouthia",
+                    "author": "RAYMOND",
+                    "year": 1913
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Abakolia",
+                    "author": "BOGDANOVA",
+                    "year": 1971
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Acidiscus",
+                    "author": "RASETTI",
+                    "year": 1966
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Acimetopus",
+                    "author": "RASETTI",
+                    "year": 1966
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Analox",
+                    "author": "RASETTI",
+                    "year": 1966
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Bathydiscus",
+                    "author": "RASETTI",
+                    "year": 1966
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Bolboparia",
+                    "author": "RASETTI",
+                    "year": 1966
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Cephalopyge",
+                    "author": "GEYER",
+                    "year": 1988
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Cobboldites",
+                    "author": "KOBAYASHI",
+                    "year": 1943
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Jinghediscus",
+                    "author": "XIANG & ZHANG",
+                    "year": 1985
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Leptochilodiscus",
+                    "author": "RASETTI",
+                    "year": 1966
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Litometopus",
+                    "author": "RASETTI",
+                    "year": 1966
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Mallagnostus",
+                    "author": "HOWELL",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Meniscuchus",
+                    "author": "ÖPIK",
+                    "year": 1975
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Ninadiscus",
+                    "author": "KOROBOV",
+                    "year": 1980
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Oodiscus",
+                    "author": "RASETTI",
+                    "year": 1966
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Runcinodiscus",
+                    "author": "RUSHTON",
+                    "year": 1976
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Semadiscus",
+                    "author": "E. V. ROMANENKO",
+                    "year": 1978
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Serrodiscus",
+                    "author": "RICHTER & RICHTER",
+                    "year": 1941
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Stigmadiscus",
+                    "author": "RASETTI",
+                    "year": 1966
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Tannudiscus",
+                    "author": "POKROVSKAYA",
+                    "year": 1959
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "YUKONIIDAE",
+                "author": "S. ZHANG",
+                "year": 1980,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Yukonia",
+                    "author": "PALMER",
+                    "year": 1968
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Alaskadiscus",
+                    "author": "S. ZHANG",
+                    "year": 1980
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Ekwipagetia",
+                    "author": "FRITZ",
+                    "year": 1973
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Egyngolia",
+                    "author": "KOROBOV",
+                    "year": 1980
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Hebediscina",
+                    "author": "RASETTI",
+                    "year": 1972
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Lenadiscus",
+                    "author": "REPINA",
+                    "year": 1965
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Yukonides",
+                    "author": "FRITZ",
+                    "year": 1972
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "EODISCIDAE",
+                "author": "RAYMOND",
+                "year": 1913,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Eodiscus",
+                    "author": "HARTT",
+                    "year": 1884
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Dawsonia",
+                    "author": "HARTT",
+                    "year": 1868
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Helepagetia",
+                    "author": "JELL",
+                    "year": 1975
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Kiskinella",
+                    "author": "ROMANENKO & ROMANENKO",
+                    "year": 1962
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Macannaia",
+                    "author": "JELL",
+                    "year": 1975
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Opsidiscus",
+                    "author": "WESTERGÅRD",
+                    "year": 1950
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Pagetia",
+                    "author": "WALCOTT",
+                    "year": 1916
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Pagetides",
+                    "author": "RASETTI",
+                    "year": 1945
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Sinopagetia",
+                    "author": "W. ZHANG & YUAN",
+                    "year": 1981
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

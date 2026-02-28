@@ -1,0 +1,707 @@
+{
+  "source": "Treatise on Invertebrate Paleontology, Part O, Revised, Volume 1, Chapter 5 (2004)",
+  "pages": "404-481",
+  "taxonomy": {
+    "rank": "order",
+    "name": "Redlichiida",
+    "author": "Richter",
+    "year": 1932,
+    "children": [
+      {
+        "rank": "suborder",
+        "name": "Olenellina",
+        "author": "Walcott",
+        "year": 1890,
+        "children": [
+          {
+            "rank": "superfamily",
+            "name": "Olenelloidea",
+            "author": "Walcott",
+            "year": 1890,
+            "children": [
+              {
+                "rank": "family",
+                "name": "Olenellidae",
+                "author": "Walcott",
+                "year": 1890,
+                "children": [
+                  {
+                    "rank": "subfamily",
+                    "name": "Olenellinae",
+                    "author": "Walcott",
+                    "year": 1890,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Olenellus",
+                        "author": "Hall",
+                        "year": 1861,
+                        "children": [
+                          { "rank": "subgenus", "name": "Olenellus", "author": "Hall", "year": 1861 },
+                          { "rank": "subgenus", "name": "Angustolenellus", "author": "Palmer & Repina", "year": 1993 },
+                          { "rank": "subgenus", "name": "Mesolenellus", "author": "Palmer & Repina", "year": 1993 },
+                          { "rank": "subgenus", "name": "Paedeumias", "author": "Walcott", "year": 1910 },
+                          { "rank": "subgenus", "name": "Mesonacis", "author": "Walcott", "year": 1885 }
+                        ]
+                      },
+                      { "rank": "genus", "name": "Fremontella", "author": "Harrington", "year": 1956 }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Biceratopsinae",
+                    "author": "Pack & Gayle",
+                    "year": 1971,
+                    "children": [
+                      { "rank": "genus", "name": "Biceratops", "author": "Pack & Gayle", "year": 1971 },
+                      { "rank": "genus", "name": "Peachella", "author": "Walcott", "year": 1910 },
+                      { "rank": "genus", "name": "Mummaspis", "author": "Fritz", "year": 1992 }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Bristoliinae",
+                    "author": "Palmer & Repina",
+                    "year": 1993,
+                    "children": [
+                      { "rank": "genus", "name": "Bristolia", "author": "Harrington", "year": 1956 },
+                      { "rank": "genus", "name": "Arcuolenellus", "author": "Palmer & Repina", "year": 1993 },
+                      { "rank": "genus", "name": "Bolbolenellus", "author": "Palmer & Repina", "year": 1993 },
+                      { "rank": "genus", "name": "Nephrolenellus", "author": "Palmer & Repina", "year": 1993 }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Gabriellinae",
+                    "author": "Palmer & Repina",
+                    "year": 1993,
+                    "children": [
+                      { "rank": "genus", "name": "Gabriellus", "author": "Fritz", "year": 1992 }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Laudoniinae",
+                    "author": "Palmer & Repina",
+                    "year": 1993,
+                    "children": [
+                      { "rank": "genus", "name": "Laudonia", "author": "Harrington", "year": 1956 },
+                      { "rank": "genus", "name": "Olenelloides", "author": "Peach", "year": 1894, "uncertain": true }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Wanneriinae",
+                    "author": "Hupé",
+                    "year": 1953,
+                    "children": [
+                      { "rank": "genus", "name": "Wanneria", "author": "Walcott", "year": 1910 }
+                    ]
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Holmiidae",
+                "author": "Hupé",
+                "year": 1953,
+                "children": [
+                  {
+                    "rank": "subfamily",
+                    "name": "Holmiinae",
+                    "author": "Hupé",
+                    "year": 1953,
+                    "children": [
+                      { "rank": "genus", "name": "Holmia", "author": "Matthew", "year": 1890 },
+                      { "rank": "genus", "name": "Andalusiana", "author": "Sdzuy", "year": 1961 },
+                      { "rank": "genus", "name": "Cambropallas", "author": "Geyer", "year": 1993 },
+                      { "rank": "genus", "name": "Elliptocephala", "author": "Emmons", "year": 1844 },
+                      { "rank": "genus", "name": "Esmeraldina", "author": "Resser & Howell", "year": 1938 },
+                      { "rank": "genus", "name": "Holmiella", "author": "Fritz", "year": 1972 },
+                      { "rank": "genus", "name": "Iyouella", "author": "Geyer & Palmer", "year": 1995 },
+                      { "rank": "genus", "name": "Palmettaspis", "author": "Fritz", "year": 1995 },
+                      { "rank": "genus", "name": "Schmidtiellus", "author": "Moberg", "year": 1906 },
+                      { "rank": "genus", "name": "Kjerulfia", "author": "Kiær", "year": 1917 }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Callaviinae",
+                    "author": "Poulsen",
+                    "year": 1959,
+                    "children": [
+                      { "rank": "genus", "name": "Callavia", "author": "Matthew", "year": 1897 }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "rank": "superfamily",
+            "name": "Fallotaspidoidea",
+            "author": "Hupé",
+            "year": 1953,
+            "children": [
+              {
+                "rank": "family",
+                "name": "Fallotaspididae",
+                "author": "Hupé",
+                "year": 1953,
+                "children": [
+                  {
+                    "rank": "subfamily",
+                    "name": "Fallotaspidinae",
+                    "author": "Hupé",
+                    "year": 1953,
+                    "children": [
+                      { "rank": "genus", "name": "Fallotaspis", "author": "Hupé", "year": 1953 },
+                      { "rank": "genus", "name": "Eofallotaspis", "author": "Sdzuy", "year": 1978 },
+                      { "rank": "genus", "name": "Lenallina", "author": "Repina", "year": 1990 },
+                      { "rank": "genus", "name": "Parafallotaspis", "author": "Fritz", "year": 1972 },
+                      { "rank": "genus", "name": "Pelmanaspis", "author": "Repina", "year": 1990 }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Daguinaspidinae",
+                    "author": "Hupé",
+                    "year": 1953,
+                    "children": [
+                      { "rank": "genus", "name": "Daguinaspis", "author": "Hupé & Abadie", "year": 1950 },
+                      { "rank": "genus", "name": "Choubertella", "author": "Hupé", "year": 1953 },
+                      { "rank": "genus", "name": "Wolynaspis", "author": "Tchernysheva", "year": 1967, "uncertain": true }
+                    ]
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Archaeaspididae",
+                "author": "Repina",
+                "year": 1979,
+                "children": [
+                  { "rank": "genus", "name": "Archaeaspis", "author": "Repina", "year": 1965 },
+                  { "rank": "genus", "name": "Bradyfallotaspis", "author": "Fritz", "year": 1972 },
+                  { "rank": "genus", "name": "Fallotaspidella", "author": "Repina", "year": 1961 },
+                  { "rank": "genus", "name": "Geraldinella", "author": "Fritz", "year": 1993 },
+                  { "rank": "genus", "name": "Selindella", "author": "Repina", "year": 1979 }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Judomiidae",
+                "author": "Repina",
+                "year": 1979,
+                "children": [
+                  { "rank": "genus", "name": "Judomia", "author": "Lermontova", "year": 1951 },
+                  { "rank": "genus", "name": "Judomiella", "author": "Lazarenko", "year": 1962 },
+                  { "rank": "genus", "name": "Paranevadella", "author": "Palmer & Repina", "year": 1993 },
+                  { "rank": "genus", "name": "Sinskia", "author": "Suvorova", "year": 1960 }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Neltneriidae",
+                "author": "Hupé",
+                "year": 1953,
+                "children": [
+                  { "rank": "genus", "name": "Neltneria", "author": "Hupé", "year": 1953 },
+                  { "rank": "genus", "name": "Bondonella", "author": "Hupé", "year": 1953 }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Nevadiidae",
+                "author": "Hupé",
+                "year": 1953,
+                "children": [
+                  { "rank": "genus", "name": "Nevadia", "author": "Walcott", "year": 1910 },
+                  { "rank": "genus", "name": "Nevadella", "author": "Raw", "year": 1936 },
+                  { "rank": "genus", "name": "Buenellus", "author": "Blaker", "year": 1988 },
+                  { "rank": "genus", "name": "Cirquella", "author": "Fritz", "year": 1993 },
+                  { "rank": "genus", "name": "Pseudojudomia", "author": "Egorova", "year": 1964 }
+                ]
+              }
+            ]
+          },
+          {
+            "rank": "superfamily",
+            "name": "uncertain",
+            "note": "Olenellina superfamily uncertain",
+            "children": [
+              { "rank": "genus", "name": "Poletaevella", "author": "Dalmatov & Repina", "year": 1971 },
+              { "rank": "genus", "name": "Postfallotaspis", "author": "Orlowski", "year": 1985 }
+            ]
+          }
+        ]
+      },
+      {
+        "rank": "suborder",
+        "name": "Redlichiina",
+        "author": "Richter",
+        "year": 1932,
+        "children": [
+          {
+            "rank": "superfamily",
+            "name": "Emuelloidea",
+            "author": "Pocock",
+            "year": 1970,
+            "children": [
+              {
+                "rank": "family",
+                "name": "Emuellidae",
+                "author": "Pocock",
+                "year": 1970,
+                "children": [
+                  { "rank": "genus", "name": "Emuella", "author": "Pocock", "year": 1970 },
+                  { "rank": "genus", "name": "Balcoracania", "author": "Pocock", "year": 1970 }
+                ]
+              }
+            ]
+          },
+          {
+            "rank": "superfamily",
+            "name": "Redlichioidea",
+            "author": "Poulsen",
+            "year": 1927,
+            "children": [
+              {
+                "rank": "family",
+                "name": "Redlichiidae",
+                "author": "Poulsen",
+                "year": 1927,
+                "children": [
+                  {
+                    "rank": "subfamily",
+                    "name": "Redlichiinae",
+                    "author": "Poulsen",
+                    "year": 1927,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Redlichia",
+                        "author": "Cossmann",
+                        "year": 1902,
+                        "children": [
+                          { "rank": "subgenus", "name": "Redlichia", "author": "Cossmann", "year": 1902 },
+                          { "rank": "subgenus", "name": "Conoredlichia", "author": "Chang", "year": 1966 },
+                          { "rank": "subgenus", "name": "Latiredlichia", "author": "Hupé", "year": 1953 },
+                          { "rank": "subgenus", "name": "Pteroredlichia", "author": "Chang", "year": 1966 }
+                        ]
+                      },
+                      { "rank": "genus", "name": "Syndianella", "author": "Lu", "year": 1961 }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Metaredlichiinae",
+                    "author": "Zhang & Lin",
+                    "year": 1980,
+                    "children": [
+                      { "rank": "genus", "name": "Metaredlichia", "author": "Lu", "year": 1965 },
+                      { "rank": "genus", "name": "Bornemannaspis", "author": "Rasetti", "year": 1972 },
+                      { "rank": "genus", "name": "Breviredlichia", "author": "Chang & Lin", "year": 1978 },
+                      { "rank": "genus", "name": "Iglesiella", "author": "Rasetti", "year": 1972 },
+                      { "rank": "genus", "name": "Jingyangia", "author": "Chang & Zhang", "year": 1974 },
+                      { "rank": "genus", "name": "Maopingaspis", "author": "Lin & Yin", "year": 1978 },
+                      { "rank": "genus", "name": "Nebidella", "author": "Rasetti", "year": 1972, "uncertain": true },
+                      { "rank": "genus", "name": "Parazhenbaspis", "author": "Zhu & Lin", "year": 1983 },
+                      { "rank": "genus", "name": "Pseudoredlichia", "author": "Chang & Lin", "year": 1978 },
+                      { "rank": "genus", "name": "Sardoredlichia", "author": "Rasetti", "year": 1972 },
+                      { "rank": "genus", "name": "Ushbaspis", "author": "Pokrovskaya", "year": 1965 },
+                      { "rank": "genus", "name": "Xela", "author": "Jell", "year": 1990 },
+                      { "rank": "genus", "name": "Zhenbaspis", "author": "Zhu & Chang", "year": 1974 }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Neoredlichiinae",
+                    "author": "Hupé",
+                    "year": 1953,
+                    "children": [
+                      { "rank": "genus", "name": "Neoredlichia", "author": "Saito", "year": 1936 },
+                      {
+                        "rank": "genus",
+                        "name": "Leptoredlichia",
+                        "author": "Chang",
+                        "year": 1966,
+                        "children": [
+                          { "rank": "subgenus", "name": "Leptoredlichia", "author": "Chang", "year": 1966 },
+                          { "rank": "subgenus", "name": "Xenoredlichia", "author": "Zhang", "year": 1983 }
+                        ]
+                      },
+                      { "rank": "genus", "name": "Olgaspis", "author": "Korobeinikova", "year": 1966, "uncertain": true }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Pararedlichiinae",
+                    "author": "Hupé",
+                    "year": 1953,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Eoredlichia",
+                        "author": "Chang",
+                        "year": 1952,
+                        "children": [
+                          { "rank": "subgenus", "name": "Eoredlichia", "author": "Chang", "year": 1952 },
+                          { "rank": "subgenus", "name": "Pachyredlichia", "author": "Chang", "year": 1966 }
+                        ]
+                      },
+                      { "rank": "genus", "name": "Irgitkhemia", "author": "Tchernysheva", "year": 1977, "uncertain": true },
+                      { "rank": "genus", "name": "Lemdadella", "author": "Sdzuy", "year": 1978 },
+                      { "rank": "genus", "name": "Ningqiangaspis", "author": "Zhang & Lin", "year": 1980 },
+                      { "rank": "genus", "name": "Redlichops", "author": "Richter & Richter", "year": 1941, "uncertain": true }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Wutingaspinae",
+                    "author": "Chang",
+                    "year": 1966,
+                    "children": [
+                      { "rank": "genus", "name": "Wutingaspis", "author": "Kobayashi", "year": 1944 },
+                      { "rank": "genus", "name": "Chaoaspis", "author": "Chang", "year": 1966 },
+                      { "rank": "genus", "name": "Chengjiangaspis", "author": "Zhang & Lin", "year": 1980 },
+                      { "rank": "genus", "name": "Kepingaspis", "author": "Chang", "year": 1965 },
+                      {
+                        "rank": "genus",
+                        "name": "Kuanyangia",
+                        "author": "Hupé",
+                        "year": 1953,
+                        "children": [
+                          { "rank": "subgenus", "name": "Kuanyangia", "author": "Hupé", "year": 1953 },
+                          { "rank": "subgenus", "name": "Sapushania", "author": "Chang", "year": 1966 }
+                        ]
+                      },
+                      { "rank": "genus", "name": "Sardaspis", "author": "Brasier", "year": 1976 },
+                      { "rank": "genus", "name": "Wenganaspis", "author": "Yin & Li", "year": 1978, "uncertain": true },
+                      { "rank": "genus", "name": "Yorkella", "author": "Kobayashi", "year": 1942, "uncertain": true }
+                    ]
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Dolerolenidae",
+                "author": "Kobayashi",
+                "year": 1951,
+                "children": [
+                  {
+                    "rank": "subfamily",
+                    "name": "Doleroleninae",
+                    "author": "Kobayashi",
+                    "year": 1951,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Dolerolenus",
+                        "author": "Leanza",
+                        "year": 1949,
+                        "children": [
+                          { "rank": "subgenus", "name": "Dolerolenus", "author": "Leanza", "year": 1949 },
+                          { "rank": "subgenus", "name": "Malungia", "author": "Lu", "year": 1961 }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Paramalungiinae",
+                    "author": "Zhang & Lin",
+                    "year": 1980,
+                    "uncertain": true,
+                    "children": [
+                      { "rank": "genus", "name": "Paramalungia", "author": "Chang", "year": 1966 }
+                    ]
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Yinitidae",
+                "author": "Hupé",
+                "year": 1953,
+                "children": [
+                  { "rank": "genus", "name": "Yinites", "author": "Chang", "year": 1966 },
+                  { "rank": "genus", "name": "Drepanopyge", "author": "Lu", "year": 1961 },
+                  { "rank": "genus", "name": "Drepanuroides", "author": "Chang", "year": 1966 },
+                  { "rank": "genus", "name": "Meitanella", "author": "Lin & Yin", "year": 1978 },
+                  { "rank": "genus", "name": "Paokannia", "author": "Ho & Li", "year": 1959 },
+                  { "rank": "genus", "name": "Parapaokannia", "author": "Zhang & Lin", "year": 1980 },
+                  { "rank": "genus", "name": "Pseudopaokannia", "author": "Yin & Li", "year": 1978 },
+                  { "rank": "genus", "name": "Qingkouia", "author": "Zhang, Lin & Zhou", "year": 1980 },
+                  { "rank": "genus", "name": "Parayinites", "author": "Zhang & Lin", "year": 1980 }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Gigantopygidae",
+                "author": "Harrington",
+                "year": 1959,
+                "children": [
+                  {
+                    "rank": "subfamily",
+                    "name": "Gigantopyginae",
+                    "author": "Harrington",
+                    "year": 1959,
+                    "children": [
+                      { "rank": "genus", "name": "Gigantopygus", "author": "Hupé", "year": 1953 }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Yiliangellinae",
+                    "author": "Zhang & Lin",
+                    "year": 1980,
+                    "children": [
+                      { "rank": "genus", "name": "Yiliangella", "author": "Chang", "year": 1966 },
+                      { "rank": "genus", "name": "Yiliangellina", "author": "Chang", "year": 1966 },
+                      { "rank": "genus", "name": "Zhangshania", "author": "Li & Zhang", "year": 1990 }
+                    ]
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Saukiandidae",
+                "author": "Hupé",
+                "year": 1953,
+                "children": [
+                  {
+                    "rank": "subfamily",
+                    "name": "Saukiandinae",
+                    "author": "Hupé",
+                    "year": 1953,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Saukianda",
+                        "author": "Richter & Richter",
+                        "year": 1940,
+                        "children": [
+                          { "rank": "subgenus", "name": "Saukianda", "author": "Richter & Richter", "year": 1940 },
+                          { "rank": "subgenus", "name": "Pseudosaukianda", "author": "Hupé", "year": 1953 }
+                        ]
+                      },
+                      { "rank": "genus", "name": "Longianda", "author": "Hupé", "year": 1953 }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Despujolsiinae",
+                    "author": "Harrington",
+                    "year": 1959,
+                    "children": [
+                      { "rank": "genus", "name": "Despujolsia", "author": "Neltner & Poctey", "year": 1949 }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Resseropinae",
+                    "author": "Chang",
+                    "year": 1966,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Perrector",
+                        "author": "Richter & Richter",
+                        "year": 1940,
+                        "children": [
+                          { "rank": "subgenus", "name": "Perrector", "author": "Richter & Richter", "year": 1940 },
+                          { "rank": "subgenus", "name": "Resserops", "author": "Richter & Richter", "year": 1940 },
+                          { "rank": "subgenus", "name": "Richterops", "author": "Hupé", "year": 1953 }
+                        ]
+                      },
+                      { "rank": "genus", "name": "Australaspis", "author": "Palmer & Gatehouse", "year": 1972 },
+                      { "rank": "genus", "name": "Clariondia", "author": "Hupé", "year": 1953 },
+                      { "rank": "genus", "name": "Dolerolichia", "author": "Sdzuy", "year": 1962 },
+                      { "rank": "genus", "name": "Eops", "author": "Richter & Richter", "year": 1940 },
+                      { "rank": "genus", "name": "Pareops", "author": "Hupé", "year": 1953 },
+                      { "rank": "genus", "name": "Realaspis", "author": "Sdzuy", "year": 1961 }
+                    ]
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Metadoxididae",
+                "author": "Whitehouse",
+                "year": 1939,
+                "children": [
+                  { "rank": "genus", "name": "Metadoxides", "author": "Bornemann", "year": 1891 },
+                  { "rank": "genus", "name": "Enantiaspis", "author": "Rasetti", "year": 1972 },
+                  { "rank": "genus", "name": "Churkinia", "author": "Palmer", "year": 1968, "uncertain": true },
+                  { "rank": "genus", "name": "Fuminaspis", "author": "Zhang & Lin", "year": 1980 },
+                  { "rank": "genus", "name": "Hongshiyanaspis", "author": "Zhang & Lin", "year": 1980 },
+                  { "rank": "genus", "name": "Minusinella", "author": "Repina", "year": 1960 },
+                  { "rank": "genus", "name": "Onaraspis", "author": "Öpik", "year": 1968, "uncertain": true }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Abadiellidae",
+                "author": "Hupé",
+                "year": 1953,
+                "children": [
+                  { "rank": "genus", "name": "Abadiella", "author": "Hupé", "year": 1953 },
+                  { "rank": "genus", "name": "Guangyuanaspis", "author": "Chang & Qian", "year": 1974 },
+                  { "rank": "genus", "name": "Lunolenus", "author": "Sdzuy", "year": 1961 },
+                  { "rank": "genus", "name": "Malongocephalus", "author": "Zhang & Lin", "year": 1980 },
+                  { "rank": "genus", "name": "Parabadiella", "author": "Chang", "year": 1966 },
+                  { "rank": "genus", "name": "Shaanxia", "author": "Zhang & Lin", "year": 1980 },
+                  { "rank": "genus", "name": "Sibiriaspis", "author": "Repina", "year": 1960 }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Menneraspidae",
+                "author": "Pokrovskaya",
+                "year": 1959,
+                "children": [
+                  { "rank": "genus", "name": "Menneraspis", "author": "Pokrovskaya", "year": 1959 }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Redlichinidae",
+                "author": "Zhang & Lin",
+                "year": 1980,
+                "children": [
+                  { "rank": "genus", "name": "Redlichina", "author": "Lermontova", "year": 1940 },
+                  { "rank": "genus", "name": "Asthenaspis", "author": "Suvorova", "year": 1959 },
+                  { "rank": "genus", "name": "Kolbaspis", "author": "Repina", "year": 1979 },
+                  { "rank": "genus", "name": "Parasajanaspis", "author": "Tchernysheva", "year": 1972 },
+                  { "rank": "genus", "name": "Sajanaspis", "author": "Repina", "year": 1960 },
+                  { "rank": "genus", "name": "Tungusella", "author": "Repina", "year": 1960 }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Chengkouaspidae",
+                "author": "Zhang & Lin",
+                "year": 1980,
+                "children": [
+                  { "rank": "genus", "name": "Chengkouaspis", "author": "Zhang & Lin", "year": 1980 },
+                  { "rank": "genus", "name": "Belliceps", "author": "Repina", "year": 1966 },
+                  { "rank": "genus", "name": "Bulaiaspis", "author": "Lermontova", "year": 1956 },
+                  { "rank": "genus", "name": "Inella", "author": "Repina", "year": 1964 },
+                  { "rank": "genus", "name": "Pseudoresserops", "author": "Repina", "year": 1965 },
+                  { "rank": "genus", "name": "Terechtaspis", "author": "Repina", "year": 1960 }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Mayiellidae",
+                "author": "Chang",
+                "year": 1966,
+                "children": [
+                  { "rank": "genus", "name": "Mayiella", "author": "Chang", "year": 1966 },
+                  { "rank": "genus", "name": "Qiaodiella", "author": "Zhang, Lin & Zhou", "year": 1980 },
+                  { "rank": "genus", "name": "Qiaotingaspis", "author": "Chang", "year": 1966 },
+                  { "rank": "genus", "name": "Yunnanaspidella", "author": "Chang", "year": 1966 },
+                  { "rank": "genus", "name": "Yunnanaspis", "author": "Chang", "year": 1966 }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Kueichowiidae",
+                "author": "Lu",
+                "year": 1965,
+                "children": [
+                  { "rank": "genus", "name": "Kueichowia", "author": "Lu", "year": 1942 },
+                  { "rank": "genus", "name": "Shatania", "author": "Chang", "year": 1974 }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "uncertain",
+                "note": "Redlichioidea family uncertain",
+                "children": [
+                  { "rank": "genus", "name": "Akbashichia", "author": "Korobov", "year": 1989 },
+                  { "rank": "genus", "name": "Elegestina", "author": "Pokrovskaya", "year": 1959 },
+                  { "rank": "genus", "name": "Elganellus", "author": "Suvorova", "year": 1958 },
+                  { "rank": "genus", "name": "Iofgia", "author": "Kraevsky", "year": 1965 },
+                  { "rank": "genus", "name": "Paratungusella", "author": "Repina", "year": 1964 },
+                  { "rank": "genus", "name": "Sarassina", "author": "Romanenko", "year": 1980 }
+                ]
+              }
+            ]
+          },
+          {
+            "rank": "superfamily",
+            "name": "Paradoxidoidea",
+            "author": "Hawle & Corda",
+            "year": 1847,
+            "children": [
+              {
+                "rank": "family",
+                "name": "Paradoxididae",
+                "author": "Hawle & Corda",
+                "year": 1847,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Paradoxides",
+                    "author": "Brongniart",
+                    "year": 1822,
+                    "children": [
+                      { "rank": "subgenus", "name": "Acadoparadoxides", "author": "Šnajdr", "year": 1957 },
+                      { "rank": "subgenus", "name": "Baltoparadoxides", "author": "Šnajdr", "year": 1986 }
+                    ]
+                  },
+                  { "rank": "genus", "name": "Anabaraceps", "author": "Repina", "year": 1972 },
+                  { "rank": "genus", "name": "Anabaraspis", "author": "Lermontova", "year": 1951 },
+                  { "rank": "genus", "name": "Eccaparadoxides", "author": "Šnajdr", "year": 1957 },
+                  { "rank": "genus", "name": "Hydrocephalus", "author": "Barrande", "year": 1846 },
+                  { "rank": "genus", "name": "Plutonides", "author": "Hicks", "year": 1895 },
+                  { "rank": "genus", "name": "Primoriella", "author": "Repina", "year": 1973, "uncertain": true },
+                  { "rank": "genus", "name": "Schagonaria", "author": "Poltarsis", "year": 1955 }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Centropleuridae",
+                "author": "Angelin",
+                "year": 1854,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Centropleura",
+                    "author": "Angelin",
+                    "year": 1854,
+                    "children": [
+                      { "rank": "subgenus", "name": "Centropleura", "author": "Angelin", "year": 1854 },
+                      { "rank": "subgenus", "name": "Beishanella", "author": "Xiang & Zhang", "year": 1985 }
+                    ]
+                  },
+                  { "rank": "genus", "name": "Anopolenus", "author": "Salter", "year": 1864 },
+                  { "rank": "genus", "name": "Clarella", "author": "Howell", "year": 1933 },
+                  { "rank": "genus", "name": "Luhops", "author": "Šnajdr", "year": 1957 }
+                ]
+              }
+            ]
+          },
+          {
+            "rank": "unrecognizable",
+            "name": "Unrecognizable Redlichioid Genera",
+            "children": [
+              { "rank": "genus", "name": "Eomalungia", "author": "Li", "year": 1978 },
+              { "rank": "genus", "name": "Fandianaspis", "author": "Li", "year": 1978 },
+              { "rank": "genus", "name": "Guangyuania", "author": "Li", "year": 1978 },
+              { "rank": "genus", "name": "Longmenshania", "author": "Li", "year": 1978 },
+              { "rank": "genus", "name": "Micangshania", "author": "Zhou", "year": 1975 },
+              { "rank": "genus", "name": "Parawutingaspis", "author": "Li", "year": 1978 },
+              { "rank": "genus", "name": "Pseudowutingaspis", "author": "Li", "year": 1978 },
+              { "rank": "genus", "name": "Runnania", "author": "Li", "year": 1978 },
+              { "rank": "genus", "name": "Shangsiaspis", "author": "Li", "year": 1978 },
+              { "rank": "genus", "name": "Xingzishania", "author": "Zhou", "year": 1975 }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
