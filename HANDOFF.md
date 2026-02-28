@@ -52,6 +52,25 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | overlay_metadata | 2 | Canonical DB version tracking (canonical_version, created_at) |
 | user_annotations | 0 | User annotations (Local Overlay) |
 
+## Modular Rebuild Pipeline (P72/P73) ✅
+
+소스 텍스트 2개로부터 현재 DB와 동일한 결과를 한 번에 생성하는 모듈화된 파이프라인.
+기존 46개 Phase + 10+ fix 스크립트의 모든 교훈을 통합.
+
+```bash
+python scripts/rebuild_database.py --output-dir dist/rebuild/ --validate
+# → dist/rebuild/trilobase.db + dist/rebuild/paleocore.db
+# → 35/35 validations passed
+```
+
+**Pipeline 모듈**: `scripts/pipeline/` (clean → hierarchy → parse_genera → load_data → paleocore → junctions → metadata → validate)
+
+**주요 개선**: is_valid 정확도 (s.o.s.=VALID, suppressed anywhere, NOTE 8), Type 3 formation→region (356건), synonym dedup, bibliography dot-optional, hierarchy footnote stripping
+
+**P73 차이 해소**: SYNONYM_OF 행 단위 diff 0건 달성. hierarchy 파싱(3노드), SPELLING_OF 매핑(47속), synonym 추출(~13건), Type 3 reclassification(356건), bracket stripping(5속) 수정.
+
+**상세**: `devlog/20260228_099_rebuild_pipeline_complete.md`, `devlog/20260228_100_rebuild_diff_resolution.md`
+
 ## Next Tasks
 
 **Roadmap:** `devlog/20260219_P63_future_roadmap.md`
@@ -153,6 +172,16 @@ trilobase/                                 # Domain data, scripts, and tests onl
 ├── spa/                                   # Reference Implementation SPA (trilobase-specific)
 │   └── index.html                        # Single-file SPA (HTML+CSS+JS, 2,915 lines)
 ├── scripts/                               # Domain pipeline scripts
+│   ├── rebuild_database.py                # ★ Modular rebuild orchestrator (P72)
+│   ├── pipeline/                          # ★ Modular rebuild pipeline modules
+│   │   ├── clean.py                       #   Step 1: text loading
+│   │   ├── hierarchy.py                   #   Step 2: adrain2011 hierarchy
+│   │   ├── parse_genera.py                #   Step 3: genus entry parsing
+│   │   ├── load_data.py                   #   Step 4: schema + data load
+│   │   ├── paleocore.py                   #   Step 5: PaleoCore DB
+│   │   ├── junctions.py                   #   Step 6: junction tables
+│   │   ├── metadata.py                    #   Step 7: SCODA metadata
+│   │   └── validate.py                    #   Step 8: validation (35 checks)
 │   ├── create_scoda.py                    # trilobase.scoda → dist/ (--with-spa 옵션, hub manifest 자동 생성)
 │   ├── create_paleocore_scoda.py          # paleocore.scoda → dist/
 │   ├── create_paleocore.py                # PaleoCore DB → db/
