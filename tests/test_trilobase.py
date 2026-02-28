@@ -1521,3 +1521,68 @@ class TestTemporalCodeFill:
             assert row[0] == expected, f"{name}: expected {expected}, got {row[0]}"
         conn.close()
 
+
+class TestCountryIdConsistency:
+    """T-5: country_id should match the country in taxonomic_ranks.location."""
+
+    DB_PATH = 'db/trilobase.db'
+    PC_DB_PATH = 'db/paleocore.db'
+
+    def test_country_id_match_rate(self):
+        """At least 95% of genus_locations should have country_id matching location text."""
+        conn = sqlite3.connect(self.DB_PATH)
+        conn.execute(f"ATTACH DATABASE '{self.PC_DB_PATH}' AS pc")
+        rows = conn.execute("""
+            SELECT COUNT(*) as total,
+                   SUM(CASE WHEN tr.location LIKE '%' || c.name THEN 1 ELSE 0 END) as matched
+            FROM genus_locations gl
+            JOIN taxonomic_ranks tr ON gl.genus_id = tr.id
+            JOIN pc.countries c ON gl.country_id = c.id
+            WHERE tr.location IS NOT NULL
+        """).fetchone()
+        conn.close()
+        total, matched = rows
+        rate = matched * 100.0 / total
+        assert rate >= 95.0, f"country_id match rate {rate:.1f}% < 95%"
+
+    def test_china_not_mapped_to_england(self):
+        """China locations should not be mapped to England (was the biggest error)."""
+        conn = sqlite3.connect(self.DB_PATH)
+        conn.execute(f"ATTACH DATABASE '{self.PC_DB_PATH}' AS pc")
+        count = conn.execute("""
+            SELECT COUNT(*) FROM genus_locations gl
+            JOIN taxonomic_ranks tr ON gl.genus_id = tr.id
+            JOIN pc.countries c ON gl.country_id = c.id
+            WHERE tr.location LIKE '%China' AND c.name = 'England'
+        """).fetchone()[0]
+        conn.close()
+        assert count == 0, f"{count} China locations still mapped to England"
+
+    def test_formation_not_country_name(self):
+        """Genera with location=NULL should not have country names as formation."""
+        conn = sqlite3.connect(self.DB_PATH)
+        conn.execute(f"ATTACH DATABASE '{self.PC_DB_PATH}' AS pc")
+        rows = conn.execute("""
+            SELECT tr.name, tr.formation FROM taxonomic_ranks tr
+            JOIN pc.countries c ON tr.formation = c.name
+            WHERE tr.rank = 'Genus' AND tr.location IS NULL
+        """).fetchall()
+        conn.close()
+        assert len(rows) == 0, f"Found {len(rows)} genera with country as formation: {rows[:5]}"
+
+    def test_type1_genera_have_locations(self):
+        """Previously misaligned Type 1 genera should now have genus_locations entries."""
+        conn = sqlite3.connect(self.DB_PATH)
+        conn.execute(f"ATTACH DATABASE '{self.PC_DB_PATH}' AS pc")
+        type1_genera = ['Culipagnostus', 'Girvanagnostus', 'Harpesoides',
+                        'Helioharpes', 'Phlysacium', 'Rudagnostus',
+                        'Tetralichas', 'Trigonoproetus']
+        for name in type1_genera:
+            row = conn.execute("""
+                SELECT gl.id FROM genus_locations gl
+                JOIN taxonomic_ranks tr ON gl.genus_id = tr.id
+                WHERE tr.name = ?
+            """, (name,)).fetchone()
+            assert row is not None, f"{name} has no genus_locations entry"
+        conn.close()
+

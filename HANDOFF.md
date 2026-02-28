@@ -1,6 +1,6 @@
 # Trilobase Project Handover
 
-**Last updated:** 2026-02-27
+**Last updated:** 2026-02-28
 
 ## Project Overview
 
@@ -14,7 +14,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | Item | Value |
 |------|-------|
 | Phases completed | 1~46 (all done) |
-| Trilobase version | 0.2.4 |
+| Trilobase version | 0.2.5 |
 | PaleoCore version | 0.1.1 |
 | taxonomic_ranks | 5,341 records (Class~Genus + 2 placeholders + 1 Suborder) |
 | Valid genera | 4,259 (83.3%) |
@@ -22,7 +22,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | Valid genera parent_id NULL | 0 (was 68, all resolved) |
 | Synonym linkage | 99.9% (1,054/1,055) |
 | Taxonomic opinions | 1,139 (PLACED_IN 82 + SPELLING_OF 2 + SYNONYM_OF 1,055) |
-| Tests | 108 passing |
+| Tests | 112 passing |
 
 ## Database Status
 
@@ -32,8 +32,8 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 |------------|---------|-------------|
 | taxonomic_ranks | 5,341 | Unified taxonomy (Class~Genus) + 2 placeholders + 1 Suborder |
 | synonyms (view) | 1,055 | Backward-compat VIEW over taxonomic_opinions SYNONYM_OF |
-| genus_formations | 4,853 | Genus-Formation many-to-many |
-| genus_locations | 4,841 | Genus-Country many-to-many |
+| genus_formations | 4,503 | Genus-Formation many-to-many |
+| genus_locations | 4,849 | Genus-Country many-to-many |
 | bibliography | 2,130 | Literature Cited references |
 | taxon_bibliography | 4,173 | Taxon↔Bibliography FK links (opinion_id replaces synonym_id) |
 | taxonomic_opinions | 1,139 | All opinions (PLACED_IN 82 + SPELLING_OF 2 + SYNONYM_OF 1,055) |
@@ -61,6 +61,10 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 - ~~T-3a: Fill temporal_code~~ ✅ (84/85 done; 1 genus has no code in source)
 - ~~T-3b: ?FAMILY genera~~ ✅ 32건 잠정 배정 완료 (parent_id 연결 + `questionable` opinion)
 - **T-3c: Chinese romanization hyphens (~30)** — possible Wade-Giles; **deferred**
+- ~~T-5: genus_locations country_id 수정 + Formation 오정렬~~ ✅
+  - country_id: 3,769건 재매핑 (77.8%), 매칭률 95%+
+  - Formation 오정렬: 350건 수정 (Type 1: 8, Type 2: 36, Type 3: 306)
+  - 182개 orphan formation 레코드 정리
 
 ### Structural Improvements
 
@@ -157,6 +161,8 @@ trilobase/                                 # Domain data, scripts, and tests onl
 │   ├── add_spelling_of_opinions.py        # SPELLING_OF opinion type
 │   ├── migrate_synonyms_to_opinions.py    # T-4: synonyms → SYNONYM_OF opinions
 │   ├── restructure_agnostida_opinions.py  # Agnostida order-level opinions
+│   ├── fix_country_id.py                  # T-5: country_id 일괄 수정
+│   ├── fix_formation_misalignment.py      # T-5: formation 오정렬 수정
 │   ├── fill_temporal_codes.py             # temporal_code auto-fill from raw_entry
 │   ├── link_bibliography.py               # taxon_bibliography link builder
 │   ├── create_database.py                 # DB creation → db/
@@ -199,7 +205,7 @@ scoda-engine/                              # Separate repo: /mnt/d/projects/scod
 
 | File | Tests | Status |
 |------|-------|--------|
-| `tests/test_trilobase.py` | 108 | ✅ Passing |
+| `tests/test_trilobase.py` | 112 | ✅ Passing |
 
 ### scoda-engine (separate repo)
 

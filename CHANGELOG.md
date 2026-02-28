@@ -6,6 +6,31 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html):
 **Major** = schema change, **Minor** = significant data addition, **Patch** = data quality fix.
 
+## [0.2.5] - 2026-02-28
+
+### Fixed
+- **T-5: genus_locations country_id 수정** — 3,769건 (77.8%) 재매핑
+  - Root cause: `normalize_database.py`의 `LIKE '%country_name'` 후속 매칭이 이전 결과를 덮어씀
+  - China 1,023건이 England로 배정되는 등 대규모 오류 해소
+  - Unicode curly quote (U+201D) 처리, COUNTRY_NORMALIZE 맵 13개 변형 지원
+- **T-5: Formation 필드 오정렬 수정** — 350건
+  - Type 1 (formation=country, location=NULL): 8건 — formation→NULL, genus_locations 생성
+  - Type 2 (formation=location 동일값): 36건 — formation→NULL
+  - Type 3 (formation=region, location=country): 306건 — formation→NULL, region으로 이관
+  - 182개 orphan formation 레코드 정리 (pc.formations)
+- **genus_locations.region_id 수정** — 272건
+  - country-level → 올바른 region-level 엔트리 연결 (160 매칭 + 104 신규 생성 + 8 기타)
+  - 93개 신규 region 엔트리 생성 (pc.geographic_regions)
+- **taxonomic_ranks.location 복원** — 314건
+  - Type 3 수정 후 `China` → `Zhejiang, China` 형태로 복원 (306건)
+  - Type 1 NULL location 채움 (8건)
+- **genus_locations 쿼리 수정** — country/region level 분기 처리
+
+### Changed
+- `genus_formations`: 4,853 → 4,503 (-350)
+- `genus_locations`: 4,841 → 4,849 (+8)
+- Tests: 108 → 112 (+4 country_id consistency tests)
+
 ## [0.2.4] - 2026-02-27
 
 ### Changed
