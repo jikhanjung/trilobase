@@ -1,23 +1,39 @@
 #!/usr/bin/env python3
 """P74 — Assertion-centric test DB validator.
 
-Validates dist/assertion_test/trilobase_assertion.db against db/trilobase.db:
+Validates dist/assertion_test/trilobase_assertion-{version}.db against db/trilobase.db:
   1. Tree equivalence (parent_id vs v_taxonomic_ranks)
   2. Count verification
   3. CTE tree traversal (all valid genera reachable)
 """
 
+import argparse
+import glob
 import sqlite3
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC_DB = ROOT / "db" / "trilobase.db"
-DST_DB = ROOT / "dist" / "assertion_test" / "trilobase_assertion.db"
+DST_DIR = ROOT / "dist" / "assertion_test"
 
 PASS = "PASS"
 FAIL = "FAIL"
 results = []
+
+
+def _resolve_db(db_arg: str | None) -> Path:
+    """Resolve assertion DB path from --db arg or glob for latest."""
+    if db_arg:
+        return Path(db_arg)
+    candidates = sorted(
+        glob.glob(str(DST_DIR / "trilobase_assertion-*.db")),
+        key=lambda p: Path(p).stat().st_mtime,
+    )
+    if candidates:
+        return Path(candidates[-1])
+    # Fallback to unversioned name (legacy)
+    return DST_DIR / "trilobase_assertion.db"
 
 
 def check(name: str, passed: bool, detail: str = ""):
@@ -31,9 +47,22 @@ def check(name: str, passed: bool, detail: str = ""):
 
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="P74 — Assertion-centric test DB validator")
+    parser.add_argument(
+        "--db", default=None,
+        help="Path to assertion DB (default: latest dist/assertion_test/trilobase_assertion-*.db)")
+    args = parser.parse_args()
+
+    DST_DB = _resolve_db(args.db)
+
     if not SRC_DB.exists() or not DST_DB.exists():
-        print("ERROR: Source or assertion DB not found.", file=sys.stderr)
+        print(f"ERROR: Source or assertion DB not found.", file=sys.stderr)
+        if not DST_DB.exists():
+            print(f"  Assertion DB: {DST_DB}", file=sys.stderr)
         sys.exit(1)
+
+    print(f"Assertion DB: {DST_DB}")
 
     src = sqlite3.connect(str(SRC_DB))
     dst = sqlite3.connect(str(DST_DB))

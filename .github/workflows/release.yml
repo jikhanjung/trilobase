@@ -29,11 +29,14 @@ jobs:
           mkdir -p dist
           python scripts/create_paleocore_scoda.py
           python scripts/create_scoda.py
+      - name: Build assertion DB
+        run: python scripts/create_assertion_db.py
       - name: Detect built filenames
         id: files
         run: |
           echo "TRILOBASE=$(basename dist/trilobase-*.scoda)" >> $GITHUB_OUTPUT
           echo "PALEOCORE=$(basename dist/paleocore-*.scoda)" >> $GITHUB_OUTPUT
+          echo "ASSERTION=$(basename dist/assertion_test/trilobase_assertion-*.db)" >> $GITHUB_OUTPUT
       - name: Extract version from tag
         id: version
         run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
@@ -49,9 +52,12 @@ jobs:
             ### Artifacts
             - `${{ steps.files.outputs.TRILOBASE }}` — Trilobase SCODA package
             - `${{ steps.files.outputs.PALEOCORE }}` — PaleoCore dependency package
+            - `${{ steps.files.outputs.ASSERTION }}` — Assertion-centric test DB
           files: |
             dist/trilobase-*.scoda
             dist/paleocore-*.scoda
             dist/*.manifest.json
+            dist/assertion_test/trilobase_assertion-*.db
+            dist/assertion_test/*.manifest.json
           draft: false
           prerelease: false

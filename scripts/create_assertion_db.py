@@ -2,7 +2,7 @@
 """P74 — Assertion-centric test DB builder.
 
 Reads db/trilobase.db (P52 schema) and creates
-dist/assertion_test/trilobase_assertion.db with:
+dist/assertion_test/trilobase_assertion-{version}.db with:
   - taxon (no parent_id)
   - reference (renamed bibliography)
   - assertion (subject/predicate/object)
@@ -12,16 +12,20 @@ dist/assertion_test/trilobase_assertion.db with:
 Canonical DB is NOT modified.
 """
 
+import argparse
+import hashlib
 import json
 import os
 import sqlite3
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
+
+ASSERTION_VERSION = "0.1.0"
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC_DB = ROOT / "db" / "trilobase.db"
 DST_DIR = ROOT / "dist" / "assertion_test"
-DST_DB = DST_DIR / "trilobase_assertion.db"
 
 # Adrain 2011 bibliography id in source DB
 ADRAIN_2011_BIB_ID = 2131
@@ -376,7 +380,7 @@ def copy_junction_tables(src: sqlite3.Connection, dst: sqlite3.Connection) -> di
     return counts
 
 
-def create_scoda_metadata(dst: sqlite3.Connection) -> None:
+def create_scoda_metadata(dst: sqlite3.Connection, version: str = ASSERTION_VERSION) -> None:
     """Create SCODA metadata tables for .scoda packaging."""
     cur = dst.cursor()
 
@@ -400,7 +404,7 @@ def create_scoda_metadata(dst: sqlite3.Connection) -> None:
     cur.executemany("INSERT INTO artifact_metadata VALUES (?,?)", [
         ("artifact_id", "trilobase-assertion"),
         ("name", "Trilobase (Assertion-Centric)"),
-        ("version", "0.1.0"),
+        ("version", version),
         ("schema_version", "1.0"),
         ("created_at", "2026-02-28"),
         ("description", "Assertion-centric trilobite taxonomy — experimental P74 model"),
@@ -1584,21 +1588,68 @@ def create_views(cur: sqlite3.Cursor) -> None:
     """)
 
 
+def _sha256_file(path: Path) -> str:
+    """Compute SHA-256 of a file."""
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def generate_hub_manifest(db_path: Path, version: str) -> Path:
+    """Generate Hub Manifest JSON alongside the assertion DB."""
+    manifest = {
+        "hub_manifest_version": "1.0",
+        "package_id": "trilobase-assertion",
+        "version": version,
+        "title": "Trilobase (Assertion-Centric) — experimental P74 model",
+        "description": "Assertion-centric trilobite taxonomy database",
+        "license": "CC-BY-4.0",
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "provenance": [
+            "Jell, P.A., and Adrain, J.M., 2002, Available Generic Names for Trilobites",
+            "Adrain, J.M., 2011, Class Trilobita Walch, 1771",
+        ],
+        "filename": db_path.name,
+        "sha256": _sha256_file(db_path),
+        "size_bytes": db_path.stat().st_size,
+    }
+
+    out_path = db_path.parent / f"trilobase-assertion-{version}.manifest.json"
+    with open(out_path, "w") as f:
+        json.dump(manifest, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+    print(f"  Hub Manifest: {out_path}")
+    return out_path
+
+
 def main():
+    parser = argparse.ArgumentParser(
+        description="P74 — Assertion-centric test DB builder")
+    parser.add_argument(
+        "--version", default=ASSERTION_VERSION,
+        help=f"Version string (default: {ASSERTION_VERSION})")
+    args = parser.parse_args()
+
+    version = args.version
+
     if not SRC_DB.exists():
         print(f"ERROR: Source DB not found: {SRC_DB}", file=sys.stderr)
         sys.exit(1)
 
     DST_DIR.mkdir(parents=True, exist_ok=True)
-    if DST_DB.exists():
-        DST_DB.unlink()
+    dst_db = DST_DIR / f"trilobase_assertion-{version}.db"
+    if dst_db.exists():
+        dst_db.unlink()
 
     src = sqlite3.connect(str(SRC_DB))
-    dst = sqlite3.connect(str(DST_DB))
+    dst = sqlite3.connect(str(dst_db))
     dst.execute("PRAGMA journal_mode=WAL")
     dst.execute("PRAGMA foreign_keys=ON")
 
-    print("=== P74: Assertion-Centric Test DB Builder ===\n")
+    print(f"=== P74: Assertion-Centric Test DB Builder (v{version}) ===\n")
 
     # 1. Schema
     print("1. Creating schema...")
@@ -1655,7 +1706,7 @@ def main():
 
     # 10. SCODA metadata
     print("10. Creating SCODA metadata...")
-    create_scoda_metadata(dst)
+    create_scoda_metadata(dst, version=version)
     n_queries = dst.execute("SELECT COUNT(*) FROM ui_queries").fetchone()[0]
     print(f"   → {n_queries} ui_queries, 1 ui_manifest, 3 provenance")
 
@@ -1673,10 +1724,14 @@ def main():
     print(f"    SYNONYM_OF:  {opinion_counts.get('SYNONYM_OF', 0)}")
     print(f"    SPELLING_OF: {opinion_counts.get('SPELLING_OF', 0)}")
     print(f"  edge_cache:     {n_edges}")
-    print(f"\nOutput: {DST_DB}")
+    print(f"\nOutput: {dst_db}")
 
     src.close()
     dst.close()
+
+    # 11. Hub Manifest
+    print("\n11. Generating Hub Manifest...")
+    generate_hub_manifest(dst_db, version)
 
 
 if __name__ == "__main__":
