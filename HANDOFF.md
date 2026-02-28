@@ -71,6 +71,27 @@ python scripts/rebuild_database.py --output-dir dist/rebuild/ --validate
 
 **상세**: `devlog/20260228_099_rebuild_pipeline_complete.md`, `devlog/20260228_100_rebuild_diff_resolution.md`
 
+## P74: Assertion-Centric Test DB ✅
+
+Canonical DB 변경 없이, assertion-centric 모델을 별도 테스트 DB로 구현.
+
+```bash
+python scripts/create_assertion_db.py   # → dist/assertion_test/trilobase_assertion.db
+python scripts/validate_assertion_db.py  # → 12/12 checks passed
+```
+
+| 테이블 | 건수 | 설명 |
+|--------|------|------|
+| `taxon` | 5,341 | parent_id 제거 |
+| `reference` | 2,132 | bibliography + JA2002 |
+| `assertion` | 6,142 | PLACED_IN 5,085 + SYNONYM_OF 1,055 + SPELLING_OF 2 |
+| `classification_profile` | 2 | default, ja2002_strict |
+| `classification_edge_cache` | 5,083 | default profile |
+
+Views: `v_taxonomy_tree`, `v_taxonomic_ranks`, `synonyms` (기존 호환)
+
+**상세**: `devlog/20260228_P74_assertion_centric_plan.md`
+
 ## Next Tasks
 
 **Roadmap:** `devlog/20260219_P63_future_roadmap.md`
@@ -194,6 +215,8 @@ trilobase/                                 # Domain data, scripts, and tests onl
 │   ├── fix_formation_misalignment.py      # T-5: formation 오정렬 수정
 │   ├── fill_temporal_codes.py             # temporal_code auto-fill from raw_entry
 │   ├── link_bibliography.py               # taxon_bibliography link builder
+│   ├── create_assertion_db.py              # P74: assertion-centric test DB → dist/assertion_test/
+│   ├── validate_assertion_db.py            # P74: assertion DB validation (12 checks)
 │   ├── create_database.py                 # DB creation → db/
 │   └── ... (normalize, import, etc.)
 ├── tests/
