@@ -23,7 +23,7 @@ from pathlib import Path
 
 from db_path import find_trilobase_db
 
-ASSERTION_VERSION = "0.1.1"
+ASSERTION_VERSION = "0.1.2"
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC_DB = Path(find_trilobase_db())
@@ -484,20 +484,31 @@ def _build_queries():
     """Return list of (name, description, sql, params_json) tuples."""
     return [
         # --- Tree / Genera ---
-        ("taxonomy_tree", "Hierarchical tree from Class to Family",
-         "SELECT id, name, rank, parent_id, author, genera_count\n"
-         "FROM v_taxonomic_ranks\n"
-         "WHERE rank != 'Genus'\n"
-         "ORDER BY rank, name", None),
-
-        ("family_genera", "Genera belonging to a specific family",
-         "SELECT t.id, t.name, t.author, t.year, t.type_species, t.location, t.is_valid\n"
+        ("taxonomy_tree", "Hierarchical tree from Class to Family (profile-aware via edge_cache)",
+         "SELECT t.id, t.name, t.rank, NULL as parent_id, t.author, t.genera_count\n"
+         "FROM taxon t WHERE t.rank = 'Class'\n"
+         "UNION ALL\n"
+         "SELECT t.id, t.name, t.rank, e.parent_id, t.author, t.genera_count\n"
          "FROM taxon t\n"
-         "JOIN assertion a ON a.subject_taxon_id = t.id\n"
-         "  AND a.predicate = 'PLACED_IN' AND a.is_accepted = 1\n"
-         "WHERE a.object_taxon_id = :family_id AND t.rank = 'Genus'\n"
+         "JOIN classification_edge_cache e ON e.child_id = t.id\n"
+         "WHERE e.profile_id = COALESCE(:profile_id, 1) AND t.rank != 'Genus'\n"
+         "ORDER BY rank, name",
+         '{"profile_id": "integer"}'),
+
+        ("family_genera", "Genera under a family/subfamily subtree (profile-aware, recursive)",
+         "WITH RECURSIVE subtree AS (\n"
+         "    SELECT child_id FROM classification_edge_cache\n"
+         "    WHERE parent_id = :family_id AND profile_id = COALESCE(:profile_id, 1)\n"
+         "    UNION ALL\n"
+         "    SELECT e.child_id FROM classification_edge_cache e\n"
+         "    JOIN subtree s ON e.parent_id = s.child_id\n"
+         "    WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
+         ")\n"
+         "SELECT t.id, t.name, t.author, t.year, t.type_species, t.location, t.is_valid\n"
+         "FROM taxon t JOIN subtree ON subtree.child_id = t.id\n"
+         "WHERE t.rank = 'Genus'\n"
          "ORDER BY t.name",
-         '{"family_id": "integer"}'),
+         '{"family_id": "integer", "profile_id": "integer"}'),
 
         ("genera_list", "All genera with family and validity",
          "SELECT t.id, t.name, t.author, t.year, t.family, t.temporal_code,\n"
@@ -536,23 +547,21 @@ def _build_queries():
          "ORDER BY a.predicate, a.is_accepted DESC",
          '{"taxon_id": "integer"}'),
 
-        ("taxon_children", "Children of a taxon via assertions",
+        ("taxon_children", "Children of a taxon (profile-aware via edge_cache)",
          "SELECT t.id, t.name, t.rank, t.author, t.genera_count\n"
          "FROM taxon t\n"
-         "JOIN assertion a ON a.subject_taxon_id = t.id\n"
-         "  AND a.predicate = 'PLACED_IN' AND a.is_accepted = 1\n"
-         "WHERE a.object_taxon_id = :taxon_id\n"
+         "JOIN classification_edge_cache e ON e.child_id = t.id\n"
+         "WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id = :taxon_id\n"
          "ORDER BY t.rank, t.name",
-         '{"taxon_id": "integer"}'),
+         '{"taxon_id": "integer", "profile_id": "integer"}'),
 
-        ("taxon_children_counts", "Child rank counts",
+        ("taxon_children_counts", "Child rank counts (profile-aware via edge_cache)",
          "SELECT t.rank, COUNT(*) as count\n"
          "FROM taxon t\n"
-         "JOIN assertion a ON a.subject_taxon_id = t.id\n"
-         "  AND a.predicate = 'PLACED_IN' AND a.is_accepted = 1\n"
-         "WHERE a.object_taxon_id = :taxon_id\n"
+         "JOIN classification_edge_cache e ON e.child_id = t.id\n"
+         "WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id = :taxon_id\n"
          "GROUP BY t.rank",
-         '{"taxon_id": "integer"}'),
+         '{"taxon_id": "integer", "profile_id": "integer"}'),
 
         # --- Genus-specific ---
         ("genus_hierarchy", "Ancestor chain for a taxon via assertions",
@@ -852,6 +861,11 @@ def _build_queries():
          "FROM classification_edge_cache\n"
          "WHERE profile_id = :profile_id",
          '{"profile_id": "integer"}'),
+
+        # --- Classification profile selector ---
+        ("classification_profiles_selector", "Available classification profiles",
+         "SELECT id, name, description FROM classification_profile ORDER BY id",
+         None),
     ]
 
 
@@ -863,6 +877,15 @@ def _build_manifest():
     """Build the full UI manifest dict."""
     return {
         "default_view": "taxonomy_tree",
+        "global_controls": [{
+            "type": "select",
+            "param": "profile_id",
+            "label": "Classification",
+            "source_query": "classification_profiles_selector",
+            "value_key": "id",
+            "label_key": "name",
+            "default": 1,
+        }],
         "views": {
             # === Tab views ===
             "taxonomy_tree": {
@@ -1537,7 +1560,7 @@ def _build_manifest():
                 },
                 "radial_display": {
                     "edge_query": "radial_tree_edges",
-                    "edge_params": {"profile_id": 1},
+                    "edge_params": {"profile_id": "$profile_id"},
                     "color_key": "rank",
                     "count_key": "genera_count",
                     "depth_toggle": True,
