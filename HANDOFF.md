@@ -22,7 +22,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | Valid genera parent_id NULL | 0 (was 68, all resolved) |
 | Synonym linkage | 99.9% (1,054/1,055) |
 | Taxonomic opinions | 1,139 (PLACED_IN 82 + SPELLING_OF 2 + SYNONYM_OF 1,055) |
-| Tests | 112 passing |
+| Tests | 118 passing |
 
 ## Database Status
 
@@ -83,7 +83,7 @@ python scripts/validate_assertion_db.py  # → 15/15 checks passed
 | 테이블 | 건수 | 설명 |
 |--------|------|------|
 | `taxon` | 5,391 | parent_id 제거 (+50 Treatise taxa) |
-| `reference` | 2,134 | bibliography + JA2002 + Treatise ch4/ch5 |
+| `reference` | 2,134 | bibliography + JA2002 (id=2132) + Treatise ch4/ch5 |
 | `assertion` | 6,563 | PLACED_IN 5,506 + SYNONYM_OF 1,055 + SPELLING_OF 2 |
 | `classification_profile` | 3 | default, ja2002_strict, treatise2004 |
 | `classification_edge_cache` | 10,221 | default (5,083) + treatise2004 (5,138) |
@@ -159,6 +159,32 @@ P78 Treatise import 후 orphan 문제 해결: `classification_edge_cache` 기반
 - Profile 1 (default): 224 tree nodes, Profile 3 (treatise2004): 272 tree nodes
 
 **상세**: `devlog/20260301_106_P79_profile_selector_ui.md`
+
+## P80: Assertion DB CRUD (Manifest-Driven Editing) ✅
+
+scoda-engine에 manifest-driven CRUD 프레임워크를 추가하고 assertion DB에 적용. Admin 모드에서 웹 UI를 통해 taxon/assertion/reference/classification_profile CRUD 가능.
+
+**scoda-engine 신규 파일:**
+- `scoda_engine/entity_schema.py`: `FieldDef`, `EntitySchema` 데이터클래스 + 파서/검증
+- `scoda_engine/crud_engine.py`: 제네릭 CRUD 엔진 (FK 검증, unique 제약, post-mutation 훅)
+- `tests/test_crud.py`: 27개 CRUD 테스트
+
+**scoda-engine 수정:**
+- `serve.py`: `--db-path`, `--mode admin|viewer` CLI 인자
+- `app.py`: REST 엔드포인트 10개 (`/api/entities/*`, `/api/search/*`), admin 가드
+- `app.js`: Admin UI (Edit/Delete/Add 버튼, FK autocomplete, readonly_on_edit, PLACED_IN rank 필터)
+- `validate_manifest.py`: `editable_entities` 검증 규칙
+
+**trilobase 변경:**
+- `create_assertion_db.py`: `editable_entities` 선언 (taxon, assertion, reference, classification_profile), linked_table 인라인 CRUD, JA2002 ref id=0 → auto_increment(2132)
+- `test_trilobase.py`: +6 editable_entities 검증 테스트
+
+```bash
+# Admin 모드로 실행
+python -m scoda_engine.serve --db-path db/trilobase-assertion-0.1.2.db --mode admin --port 8090
+```
+
+**상세**: `devlog/20260301_107_P80_assertion_crud.md`
 
 ## Next Tasks
 
@@ -285,13 +311,13 @@ trilobase/                                 # Domain data, scripts, and tests onl
 │   ├── fix_formation_misalignment.py      # T-5: formation 오정렬 수정
 │   ├── fill_temporal_codes.py             # temporal_code auto-fill from raw_entry
 │   ├── link_bibliography.py               # taxon_bibliography link builder
-│   ├── create_assertion_db.py              # P74: assertion-centric test DB → dist/assertion_test/
+│   ├── create_assertion_db.py              # P74/P80: assertion-centric DB → db/ (with editable_entities)
 │   ├── validate_assertion_db.py            # P74: assertion DB validation (12 checks)
 │   ├── create_database.py                 # DB creation → db/
 │   └── ... (normalize, import, etc.)
 ├── tests/
 │   ├── conftest.py                        # Shared fixtures
-│   └── test_trilobase.py                  # Trilobase domain tests (101)
+│   └── test_trilobase.py                  # Trilobase domain tests (118)
 ├── vendor/
 │   ├── cow/v2024/States2024/statelist2024.csv
 │   └── ics/gts2020/chart.ttl
@@ -314,8 +340,9 @@ scoda-engine/                              # Separate repo: /mnt/d/projects/scod
 ├── pyproject.toml                         # pip install -e ".[dev]"
 ├── scoda_engine/                          # SCODA runtime package
 │   ├── scoda_package.py, app.py, mcp_server.py, gui.py, serve.py
+│   ├── entity_schema.py, crud_engine.py   # P80: manifest-driven CRUD
 │   ├── templates/, static/
-├── tests/                                 # Runtime tests (191)
+├── tests/                                 # Runtime tests (218 + 27 CRUD)
 ├── scripts/                               # build.py, release.py, etc.
 ├── examples/, docs/
 └── ScodaDesktop.spec
@@ -327,13 +354,14 @@ scoda-engine/                              # Separate repo: /mnt/d/projects/scod
 
 | File | Tests | Status |
 |------|-------|--------|
-| `tests/test_trilobase.py` | 112 | ✅ Passing |
+| `tests/test_trilobase.py` | 118 | ✅ Passing |
 
 ### scoda-engine (separate repo)
 
 | File | Tests | Status |
 |------|-------|--------|
 | `tests/test_runtime.py` | 218 | ✅ Passing |
+| `tests/test_crud.py` | 27 | ✅ Passing |
 | `tests/test_mcp.py` | 6 | ✅ 1 / ⚠ 5 (requires .scoda in CWD) |
 | `tests/test_mcp_basic.py` | 1 | ✅ Passing |
 
