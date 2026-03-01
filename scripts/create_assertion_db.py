@@ -31,9 +31,9 @@ DST_DIR = ROOT / "db"
 
 # Adrain 2011 bibliography id in source DB
 ADRAIN_2011_BIB_ID = 2131
-# Jell & Adrain 2002 is NOT in bibliography — we'll insert it as reference id 0
-# (using id that won't collide with existing bibliography ids 1..2131)
-JA2002_REF_ID = 0  # will be inserted manually
+# Jell & Adrain 2002 is NOT in bibliography — inserted after bibliography rows
+# so it gets the next auto_increment id.
+JA2002_REF_ID = None  # set at runtime after insert
 
 
 def create_schema(cur: sqlite3.Cursor) -> None:
@@ -201,13 +201,13 @@ def copy_reference(src: sqlite3.Connection, dst: sqlite3.Connection) -> int:
         VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
     """, rows)
 
-    # Insert Jell & Adrain 2002 as reference id 0
-    dst.execute("""
-        INSERT INTO reference (id, authors, year, title, journal, volume, pages,
+    # Insert Jell & Adrain 2002 (not in source bibliography)
+    global JA2002_REF_ID
+    cursor = dst.execute("""
+        INSERT INTO reference (authors, year, title, journal, volume, pages,
                                reference_type, raw_entry)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     """, (
-        JA2002_REF_ID,
         "JELL, P.A. & ADRAIN, J.M.",
         2002,
         "Available Generic Names for Trilobites",
@@ -218,6 +218,7 @@ def copy_reference(src: sqlite3.Connection, dst: sqlite3.Connection) -> int:
         "Jell, P.A., and Adrain, J.M., 2002, Available Generic Names for Trilobites: "
         "Memoirs of the Queensland Museum, v. 48, p. 331-553.",
     ))
+    JA2002_REF_ID = cursor.lastrowid
 
     # Update Adrain 2011 with correct bibliographic details
     dst.execute("""
@@ -535,7 +536,7 @@ def _build_queries():
          '{"taxon_id": "integer"}'),
 
         ("taxon_assertions", "All assertions for a specific taxon",
-         "SELECT a.id, a.predicate, a.object_taxon_id,\n"
+         "SELECT a.id as assertion_id, a.predicate, a.object_taxon_id,\n"
          "       ot.name as object_name, ot.rank as object_rank,\n"
          "       a.reference_id, r.authors as ref_authors, r.year as ref_year,\n"
          "       a.assertion_status, a.curation_confidence,\n"
@@ -1118,9 +1119,11 @@ def _build_manifest():
                             {"key": "ref_authors", "label": "Reference"},
                             {"key": "ref_year", "label": "Year"},
                             {"key": "assertion_status", "label": "Status"},
-                            {"key": "is_accepted", "label": "Accepted", "format": "boolean"},
                         ],
                         "on_row_click": {"detail_view": "taxon_detail_view", "id_key": "object_taxon_id"},
+                        "entity_type": "assertion",
+                        "entity_id_key": "assertion_id",
+                        "entity_defaults": {"subject_taxon_id": "id"},
                     },
                     {"title": "Notes", "type": "raw_text", "data_key": "notes",
                      "condition": "notes", "format": "paragraph"},
@@ -1232,8 +1235,10 @@ def _build_manifest():
                             {"key": "ref_authors", "label": "Reference"},
                             {"key": "ref_year", "label": "Year"},
                             {"key": "assertion_status", "label": "Status"},
-                            {"key": "is_accepted", "label": "Accepted", "format": "boolean"},
                         ],
+                        "entity_type": "assertion",
+                        "entity_id_key": "assertion_id",
+                        "entity_defaults": {"subject_taxon_id": "id"},
                     },
                     {"title": "Notes", "type": "raw_text", "data_key": "notes",
                      "condition": "notes", "format": "paragraph"},
@@ -1299,7 +1304,6 @@ def _build_manifest():
                             {"key": "subject_rank", "label": "Rank"},
                             {"key": "object_name", "label": "Object"},
                             {"key": "assertion_status", "label": "Status"},
-                            {"key": "is_accepted", "label": "Accepted", "format": "boolean"},
                         ],
                         "on_row_click": {"detail_view": "taxon_detail_view", "id_key": "subject_taxon_id"},
                     },
@@ -1577,6 +1581,108 @@ def _build_manifest():
                         "Genus": 1.0,
                     },
                 },
+            },
+        },
+        "editable_entities": {
+            "taxon": {
+                "table": "taxon",
+                "pk": "id",
+                "operations": ["create", "read", "update", "delete"],
+                "fields": {
+                    "name": {"type": "text", "required": True, "label": "Name"},
+                    "rank": {"type": "text", "required": True,
+                             "enum": ["Class", "Order", "Suborder", "Superfamily",
+                                      "Family", "Subfamily", "Genus"],
+                             "label": "Rank"},
+                    "author": {"type": "text", "label": "Author"},
+                    "year": {"type": "text", "label": "Year"},
+                    "year_suffix": {"type": "text", "label": "Year Suffix"},
+                    "notes": {"type": "text", "label": "Notes"},
+                    "is_placeholder": {"type": "boolean", "default": 0, "label": "Placeholder"},
+                    "genera_count": {"type": "integer", "default": 0, "label": "Genera Count"},
+                    "type_species": {"type": "text", "label": "Type Species"},
+                    "type_species_author": {"type": "text", "label": "Type Species Author"},
+                    "formation": {"type": "text", "label": "Formation"},
+                    "location": {"type": "text", "label": "Location"},
+                    "family": {"type": "text", "label": "Family"},
+                    "temporal_code": {"type": "text", "label": "Temporal Code"},
+                    "is_valid": {"type": "boolean", "default": 1, "label": "Valid"},
+                    "raw_entry": {"type": "text", "label": "Raw Entry"},
+                },
+                "list_query": "genera_list",
+                "detail_query": "taxon_detail",
+            },
+            "assertion": {
+                "table": "assertion",
+                "pk": "id",
+                "operations": ["create", "read", "update", "delete"],
+                "fields": {
+                    "subject_taxon_id": {"type": "integer", "required": True,
+                                         "fk": "taxon.id", "label": "Subject Taxon",
+                                         "readonly_on_edit": True},
+                    "predicate": {"type": "text", "required": True,
+                                  "enum": ["PLACED_IN", "SYNONYM_OF", "SPELLING_OF",
+                                           "RANK_AS", "VALID_AS"],
+                                  "label": "Predicate"},
+                    "object_taxon_id": {"type": "integer", "fk": "taxon.id",
+                                        "label": "Object Taxon"},
+                    "value_text": {"type": "text", "label": "Value"},
+                    "reference_id": {"type": "integer", "fk": "reference.id",
+                                     "label": "Reference"},
+                    "assertion_status": {"type": "text", "default": "asserted",
+                                         "enum": ["asserted", "incertae_sedis",
+                                                  "questionable", "indet"],
+                                         "label": "Status"},
+                    "curation_confidence": {"type": "text", "default": "high",
+                                            "enum": ["high", "medium", "low"],
+                                            "label": "Confidence"},
+                    "synonym_type": {"type": "text", "label": "Synonym Type"},
+                    "notes": {"type": "text", "label": "Notes"},
+                },
+                "list_query": "assertion_list",
+                "hooks": [
+                    {
+                        "name": "rebuild_edge_cache",
+                        "on": ["create", "update", "delete"],
+                        "trigger_when": {"field": "predicate", "value": "PLACED_IN"},
+                        "sql": "DELETE FROM classification_edge_cache; INSERT INTO classification_edge_cache (profile_id, child_id, parent_id) SELECT p.id, a.subject_taxon_id, a.object_taxon_id FROM assertion a CROSS JOIN classification_profile p WHERE a.predicate = 'PLACED_IN' AND (a.is_accepted = 1 OR (p.name != 'default' AND a.reference_id IN (SELECT r.id FROM reference r WHERE r.authors LIKE '%Treatise%')))",
+                    },
+                ],
+            },
+            "reference": {
+                "table": "reference",
+                "pk": "id",
+                "operations": ["create", "read", "update"],
+                "fields": {
+                    "authors": {"type": "text", "required": True, "label": "Authors"},
+                    "year": {"type": "integer", "label": "Year"},
+                    "year_suffix": {"type": "text", "label": "Year Suffix"},
+                    "title": {"type": "text", "label": "Title"},
+                    "journal": {"type": "text", "label": "Journal"},
+                    "volume": {"type": "text", "label": "Volume"},
+                    "pages": {"type": "text", "label": "Pages"},
+                    "publisher": {"type": "text", "label": "Publisher"},
+                    "city": {"type": "text", "label": "City"},
+                    "editors": {"type": "text", "label": "Editors"},
+                    "book_title": {"type": "text", "label": "Book Title"},
+                    "reference_type": {"type": "text", "default": "article",
+                                       "enum": ["article", "book", "chapter",
+                                                "thesis", "report", "cross_ref"],
+                                       "label": "Type"},
+                    "raw_entry": {"type": "text", "required": True, "label": "Raw Entry"},
+                },
+                "list_query": "reference_list",
+            },
+            "classification_profile": {
+                "table": "classification_profile",
+                "pk": "id",
+                "operations": ["create", "read", "update", "delete"],
+                "fields": {
+                    "name": {"type": "text", "required": True, "label": "Name"},
+                    "description": {"type": "text", "label": "Description"},
+                    "rule_json": {"type": "text", "label": "Rules (JSON)"},
+                },
+                "list_query": "profile_list",
             },
         },
     }

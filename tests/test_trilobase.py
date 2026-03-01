@@ -1590,3 +1590,98 @@ class TestCountryIdConsistency:
             assert row is not None, f"{name} has no genus_locations entry"
         conn.close()
 
+
+# ═══════════════════════════════════════════════════════════════════════
+# Assertion DB — editable_entities manifest validation
+# ═══════════════════════════════════════════════════════════════════════
+
+class TestAssertionDBEditableEntities:
+    """Validate the editable_entities section in assertion DB manifest."""
+
+    @pytest.fixture(autouse=True)
+    def setup(self):
+        import sys, os
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+        from db_path import find_assertion_db
+        self.DB_PATH = find_assertion_db()
+
+    def _get_manifest(self):
+        import sqlite3, json
+        conn = sqlite3.connect(self.DB_PATH)
+        conn.row_factory = sqlite3.Row
+        row = conn.execute(
+            "SELECT manifest_json FROM ui_manifest WHERE name = 'default'"
+        ).fetchone()
+        conn.close()
+        return json.loads(row['manifest_json'])
+
+    def test_editable_entities_exist(self):
+        """Manifest contains editable_entities section."""
+        m = self._get_manifest()
+        assert 'editable_entities' in m
+        entities = m['editable_entities']
+        assert 'taxon' in entities
+        assert 'assertion' in entities
+        assert 'reference' in entities
+        assert 'classification_profile' in entities
+
+    def test_taxon_entity_schema(self):
+        """Taxon entity has correct table, pk, fields."""
+        e = self._get_manifest()['editable_entities']['taxon']
+        assert e['table'] == 'taxon'
+        assert e['pk'] == 'id'
+        assert 'name' in e['fields']
+        assert 'rank' in e['fields']
+        assert e['fields']['name']['required'] is True
+        assert e['fields']['rank']['required'] is True
+        assert 'enum' in e['fields']['rank']
+
+    def test_assertion_entity_schema(self):
+        """Assertion entity has correct FK references and hooks."""
+        e = self._get_manifest()['editable_entities']['assertion']
+        assert e['table'] == 'assertion'
+        assert e['fields']['subject_taxon_id']['fk'] == 'taxon.id'
+        assert e['fields']['object_taxon_id']['fk'] == 'taxon.id'
+        assert e['fields']['reference_id']['fk'] == 'reference.id'
+        assert len(e.get('hooks', [])) > 0
+
+    def test_reference_entity_no_delete(self):
+        """Reference entity should not allow delete."""
+        e = self._get_manifest()['editable_entities']['reference']
+        assert 'delete' not in e['operations']
+        assert 'create' in e['operations']
+        assert 'read' in e['operations']
+        assert 'update' in e['operations']
+
+    def test_manifest_validation_passes(self):
+        """Manifest passes scoda-engine validation with editable_entities."""
+        import sqlite3, json
+        from scoda_engine_core.validate_manifest import validate_manifest
+        conn = sqlite3.connect(self.DB_PATH)
+        conn.row_factory = sqlite3.Row
+        manifest = json.loads(conn.execute(
+            "SELECT manifest_json FROM ui_manifest WHERE name = 'default'"
+        ).fetchone()['manifest_json'])
+        queries = {r['name'] for r in conn.execute("SELECT name FROM ui_queries")}
+        conn.close()
+        errors, warnings = validate_manifest(manifest, queries)
+        assert errors == [], f"Manifest validation errors: {errors}"
+
+    def test_field_fk_references_valid_tables(self):
+        """All FK references point to existing tables."""
+        import sqlite3
+        conn = sqlite3.connect(self.DB_PATH)
+        conn.row_factory = sqlite3.Row
+        tables = {r[0] for r in conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table'"
+        ).fetchall()}
+        conn.close()
+
+        entities = self._get_manifest()['editable_entities']
+        for ename, edef in entities.items():
+            for fname, fdef in edef.get('fields', {}).items():
+                if isinstance(fdef, dict) and fdef.get('fk'):
+                    fk_table = fdef['fk'].split('.')[0]
+                    assert fk_table in tables, \
+                        f"{ename}.{fname}: FK table '{fk_table}' not in DB"
+
