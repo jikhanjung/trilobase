@@ -17,9 +17,11 @@ from datetime import datetime, timezone
 from scoda_engine.scoda_package import ScodaPackage, _sha256_file
 from scoda_engine_core import validate_db
 
+from db_path import find_assertion_db
+
 ROOT = os.path.join(os.path.dirname(__file__), '..')
-DEFAULT_DB = os.path.join(ROOT, 'dist', 'assertion_test', 'trilobase_assertion.db')
-DEFAULT_OUTPUT_DIR = os.path.join(ROOT, 'dist', 'assertion_test')
+DEFAULT_DB = find_assertion_db()
+DEFAULT_OUTPUT_DIR = os.path.join(ROOT, 'dist')
 
 
 def _read_version(db_path):
@@ -94,7 +96,7 @@ def main():
         description='Create a .scoda package from the assertion-centric test DB')
     parser.add_argument(
         '--db', default=DEFAULT_DB,
-        help='Path to assertion DB (default: dist/assertion_test/trilobase_assertion.db)')
+        help='Path to assertion DB (default: latest db/trilobase_assertion-*.db)')
     parser.add_argument(
         '--output', default=None,
         help='Output .scoda file path')

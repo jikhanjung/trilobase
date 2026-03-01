@@ -20,7 +20,9 @@ from datetime import datetime, timezone
 from scoda_engine.scoda_package import ScodaPackage, _sha256_file
 from scoda_engine_core import validate_db
 
-DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
+from db_path import find_trilobase_db
+
+DEFAULT_DB = find_trilobase_db()
 DEFAULT_OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'dist')
 DEFAULT_MCP_TOOLS = os.path.join(os.path.dirname(__file__), '..', 'data', 'mcp_tools_trilobase.json')
 
@@ -115,6 +117,9 @@ def main():
     parser.add_argument(
         '--with-spa', action='store_true',
         help='Include reference SPA in package (default: excluded)')
+    parser.add_argument(
+        '--no-assertion', action='store_true',
+        help='Skip building trilobase-assertion .scoda package')
     args = parser.parse_args()
 
     db_path = os.path.abspath(args.db)
@@ -263,6 +268,39 @@ def main():
             print(f"  MCP tools: {len(tool_names)} ({', '.join(tool_names)})")
         else:
             print(f"  MCP tools: none")
+
+    # Build trilobase-assertion .scoda package
+    if not args.no_assertion:
+        if not build_assertion(dry_run=args.dry_run):
+            sys.exit(1)
+
+
+def build_assertion(dry_run=False):
+    """Build trilobase-assertion .scoda package."""
+    import subprocess
+    print(flush=True)
+    print("=" * 60, flush=True)
+    print("Building trilobase-assertion .scoda ...", flush=True)
+    print("=" * 60, flush=True)
+
+    # Step 1: Rebuild assertion DB
+    db_script = os.path.join(os.path.dirname(__file__), 'create_assertion_db.py')
+    result = subprocess.run([sys.executable, db_script], cwd=os.path.join(os.path.dirname(__file__), '..'))
+    if result.returncode != 0:
+        print("Error: create_assertion_db.py failed", file=sys.stderr)
+        return False
+
+    if dry_run:
+        return True
+
+    # Step 2: Build .scoda package
+    scoda_script = os.path.join(os.path.dirname(__file__), 'create_assertion_scoda.py')
+    result = subprocess.run([sys.executable, scoda_script], cwd=os.path.join(os.path.dirname(__file__), '..'))
+    if result.returncode != 0:
+        print("Error: create_assertion_scoda.py failed", file=sys.stderr)
+        return False
+
+    return True
 
 
 if __name__ == '__main__':

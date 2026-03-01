@@ -17,8 +17,9 @@ import sys
 import json
 from datetime import datetime
 
+from db_path import find_trilobase_db
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
+DB_PATH = find_trilobase_db()
 
 
 def create_table(conn):
@@ -189,6 +190,33 @@ def insert_manifest(conn):
                     "value_column": {"key": "start_mya", "label": "Age (Ma)"},
                     "cell_click": {"detail_view": "chronostrat_detail", "id_key": "id"}
                 }
+            },
+
+            "radial_tree": {
+                "type": "hierarchy",
+                "display": "radial",
+                "title": "Radial Tree",
+                "description": "Radial taxonomy — Class at center, genera at periphery",
+                "icon": "bi-bullseye",
+                "source_query": "radial_tree_nodes",
+                "hierarchy_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "rank_key": "rank",
+                },
+                "radial_display": {
+                    "color_key": "rank",
+                    "count_key": "genera_count",
+                    "depth_toggle": True,
+                    "leaf_rank": "Genus",
+                    "on_node_click": {"detail_view": "rank_detail", "id_key": "id"},
+                    "rank_radius": {
+                        "_root": 0, "Class": 0.10, "Order": 0.25,
+                        "Suborder": 0.40, "Superfamily": 0.55,
+                        "Family": 0.70, "Genus": 1.0,
+                    },
+                },
             },
 
             # ── Detail Views ────────────────────────────────────────

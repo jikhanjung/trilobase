@@ -19,9 +19,10 @@ trilobase/
 ├── CLAUDE.md
 ├── pytest.ini                        # pytest config (testpaths = tests)
 ├── requirements.txt                  # scoda-engine dependency
-├── db/                               # Canonical databases (git tracked)
-│   ├── trilobase.db                  # Trilobase SQLite DB
-│   └── paleocore.db                  # PaleoCore reference DB
+├── db/                               # Canonical databases (git tracked, versioned filenames)
+│   ├── trilobase-{ver}.db            # Trilobase SQLite DB
+│   ├── trilobase-assertion-{ver}.db  # Assertion-centric DB
+│   └── paleocore-{ver}.db            # PaleoCore reference DB
 ├── dist/                             # Generated artifacts (gitignored)
 │   ├── trilobase.scoda               # Trilobase .scoda package
 │   ├── paleocore.scoda               # PaleoCore .scoda package

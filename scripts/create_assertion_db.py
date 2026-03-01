@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """P74 — Assertion-centric test DB builder.
 
-Reads db/trilobase.db (P52 schema) and creates
-dist/assertion_test/trilobase_assertion-{version}.db with:
+Reads db/trilobase-{version}.db and creates
+db/trilobase_assertion-{version}.db with:
   - taxon (no parent_id)
   - reference (renamed bibliography)
   - assertion (subject/predicate/object)
@@ -21,11 +21,13 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from db_path import find_trilobase_db
+
 ASSERTION_VERSION = "0.1.0"
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC_DB = ROOT / "db" / "trilobase.db"
-DST_DIR = ROOT / "dist" / "assertion_test"
+SRC_DB = Path(find_trilobase_db())
+DST_DIR = ROOT / "db"
 
 # Adrain 2011 bibliography id in source DB
 ADRAIN_2011_BIB_ID = 2131
@@ -112,9 +114,9 @@ def create_schema(cur: sqlite3.Cursor) -> None:
     -- classification_edge_cache
     CREATE TABLE classification_edge_cache (
         profile_id INTEGER NOT NULL REFERENCES classification_profile(id),
-        child_taxon_id INTEGER NOT NULL REFERENCES taxon(id),
-        parent_taxon_id INTEGER REFERENCES taxon(id),
-        PRIMARY KEY (profile_id, child_taxon_id)
+        child_id INTEGER NOT NULL REFERENCES taxon(id),
+        parent_id INTEGER REFERENCES taxon(id),
+        PRIMARY KEY (profile_id, child_id)
     );
 
     -- Junction tables (copied from canonical DB)
@@ -332,7 +334,7 @@ def build_edge_cache(dst: sqlite3.Connection) -> int:
         WHERE predicate = 'PLACED_IN' AND is_accepted = 1
     """).fetchall()
     dst.executemany("""
-        INSERT INTO classification_edge_cache (profile_id, child_taxon_id, parent_taxon_id)
+        INSERT INTO classification_edge_cache (profile_id, child_id, parent_id)
         VALUES (1, ?, ?)
     """, edges)
     return len(edges)
@@ -814,38 +816,39 @@ def _build_queries():
         ("profile_detail", "Profile detail with edge statistics",
          "SELECT cp.*,\n"
          "       (SELECT COUNT(*) FROM classification_edge_cache ec WHERE ec.profile_id = cp.id) as edge_count,\n"
-         "       (SELECT COUNT(DISTINCT ec.child_taxon_id) FROM classification_edge_cache ec\n"
-         "        JOIN taxon t ON ec.child_taxon_id = t.id\n"
+         "       (SELECT COUNT(DISTINCT ec.child_id) FROM classification_edge_cache ec\n"
+         "        JOIN taxon t ON ec.child_id = t.id\n"
          "        WHERE ec.profile_id = cp.id AND t.rank = 'Order') as order_count,\n"
-         "       (SELECT COUNT(DISTINCT ec.child_taxon_id) FROM classification_edge_cache ec\n"
-         "        JOIN taxon t ON ec.child_taxon_id = t.id\n"
+         "       (SELECT COUNT(DISTINCT ec.child_id) FROM classification_edge_cache ec\n"
+         "        JOIN taxon t ON ec.child_id = t.id\n"
          "        WHERE ec.profile_id = cp.id AND t.rank = 'Family') as family_count,\n"
-         "       (SELECT COUNT(DISTINCT ec.child_taxon_id) FROM classification_edge_cache ec\n"
-         "        JOIN taxon t ON ec.child_taxon_id = t.id\n"
+         "       (SELECT COUNT(DISTINCT ec.child_id) FROM classification_edge_cache ec\n"
+         "        JOIN taxon t ON ec.child_id = t.id\n"
          "        WHERE ec.profile_id = cp.id AND t.rank = 'Genus') as genus_count\n"
          "FROM classification_profile cp WHERE cp.id = :profile_id",
          '{"profile_id": "integer"}'),
 
         ("profile_edges", "Edges for a specific profile",
-         "SELECT ec.child_taxon_id, child.name as child_name, child.rank as child_rank,\n"
-         "       ec.parent_taxon_id, parent.name as parent_name, parent.rank as parent_rank\n"
+         "SELECT ec.child_id, child.name as child_name, child.rank as child_rank,\n"
+         "       ec.parent_id, parent.name as parent_name, parent.rank as parent_rank\n"
          "FROM classification_edge_cache ec\n"
-         "JOIN taxon child ON ec.child_taxon_id = child.id\n"
-         "LEFT JOIN taxon parent ON ec.parent_taxon_id = parent.id\n"
+         "JOIN taxon child ON ec.child_id = child.id\n"
+         "LEFT JOIN taxon parent ON ec.parent_id = parent.id\n"
          "WHERE ec.profile_id = :profile_id\n"
          "ORDER BY parent.rank, parent.name, child.rank, child.name",
          '{"profile_id": "integer"}'),
 
         # --- P75: Radial Tree ---
-        ("radial_tree_nodes", "All taxon nodes for radial tree visualization",
+        ("radial_tree_nodes", "Valid taxon nodes for radial tree visualization",
          "SELECT id, name, rank, genera_count, is_valid,\n"
          "       temporal_code, author, year\n"
          "FROM taxon\n"
+         "WHERE is_valid = 1 OR rank <> 'Genus'\n"
          "ORDER BY rank, name",
          None),
 
         ("radial_tree_edges", "Parent-child edges for radial tree (by profile)",
-         "SELECT child_taxon_id, parent_taxon_id\n"
+         "SELECT child_id, parent_id\n"
          "FROM classification_edge_cache\n"
          "WHERE profile_id = :profile_id",
          '{"profile_id": "integer"}'),
@@ -1540,6 +1543,15 @@ def _build_manifest():
                     "depth_toggle": True,
                     "leaf_rank": "Genus",
                     "on_node_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
+                    "rank_radius": {
+                        "_root": 0,
+                        "Class": 0.10,
+                        "Order": 0.25,
+                        "Suborder": 0.40,
+                        "Superfamily": 0.55,
+                        "Family": 0.70,
+                        "Genus": 1.0,
+                    },
                 },
             },
         },
@@ -1640,7 +1652,7 @@ def main():
         sys.exit(1)
 
     DST_DIR.mkdir(parents=True, exist_ok=True)
-    dst_db = DST_DIR / f"trilobase_assertion-{version}.db"
+    dst_db = DST_DIR / f"trilobase-assertion-{version}.db"
     if dst_db.exists():
         dst_db.unlink()
 

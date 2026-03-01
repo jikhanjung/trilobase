@@ -1,6 +1,6 @@
 # Trilobase Project Handover
 
-**Last updated:** 2026-02-28
+**Last updated:** 2026-03-01
 
 ## Project Overview
 
@@ -14,7 +14,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | Item | Value |
 |------|-------|
 | Phases completed | 1~46 (all done) |
-| Trilobase version | 0.2.5 |
+| Trilobase version | 0.2.6 |
 | PaleoCore version | 0.1.1 |
 | taxonomic_ranks | 5,341 records (Class~Genus + 2 placeholders + 1 Suborder) |
 | Valid genera | 4,259 (83.3%) |
@@ -26,7 +26,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 
 ## Database Status
 
-**Canonical DB (trilobase.db) — read-only, immutable:**
+**Canonical DB (trilobase-{version}.db) — read-only, immutable:**
 
 | Table/View | Records | Description |
 |------------|---------|-------------|
@@ -42,7 +42,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | provenance | 5 | Data provenance |
 | schema_descriptions | 112 | Table/column descriptions |
 | ui_display_intent | 6 | SCODA view type hints |
-| ui_queries | 37 | Named SQL queries |
+| ui_queries | 38 | Named SQL queries |
 | ui_manifest | 1 | Declarative view definitions (JSON) |
 
 **Overlay DB (trilobase_overlay.db) — read/write, user-local data:**
@@ -76,8 +76,8 @@ python scripts/rebuild_database.py --output-dir dist/rebuild/ --validate
 Canonical DB 변경 없이, assertion-centric 모델을 별도 테스트 DB로 구현.
 
 ```bash
-python scripts/create_assertion_db.py   # → dist/assertion_test/trilobase_assertion.db
-python scripts/validate_assertion_db.py  # → 12/12 checks passed
+python scripts/create_assertion_db.py   # → db/trilobase-assertion-{version}.db
+python scripts/validate_assertion_db.py  # → 15/15 checks passed
 ```
 
 | 테이블 | 건수 | 설명 |
@@ -91,6 +91,30 @@ python scripts/validate_assertion_db.py  # → 12/12 checks passed
 Views: `v_taxonomy_tree`, `v_taxonomic_ranks`, `synonyms` (기존 호환)
 
 **상세**: `devlog/20260228_P74_assertion_centric_plan.md`
+
+## P76: Radial Tree → Canonical trilobase.scoda ✅
+
+P75에서 assertion DB 전용이던 Radial Tree를 canonical `trilobase.scoda`에도 추가.
+`taxonomic_ranks`에 `parent_id`가 이미 있으므로 별도 edge 쿼리 없이 쿼리 1개 + manifest 뷰 1개만 추가.
+
+- `radial_tree_nodes` 쿼리: valid Genus 포함 (invalid 제외), parent_id 직접 반환
+- `radial_tree` manifest 뷰: `display: "radial"`, `rank_radius` 동심원 배치
+- ui_queries: 37 → 38, manifest views: 13 → 14 (7 tab + 7 detail)
+
+**상세**: `devlog/20260301_P76_radial_tree_canonical_scoda.md`
+
+## P77: Versioned DB Filename ✅
+
+모든 canonical DB를 `{name}-{version}.db` 패턴으로 통일. 파일명만으로 DB 버전 식별 가능.
+
+- `scripts/db_path.py`: `find_trilobase_db()`, `find_assertion_db()`, `find_paleocore_db()` glob 헬퍼
+- 활성 스크립트 + 테스트 DB_PATH 교체 (`find_*_db()` 사용)
+- assertion DB: `dist/assertion_test/` → `db/` 이동, 파일명 `trilobase-assertion-{ver}.db`
+- `bump_version.py`: 버전 범프 시 기존 파일 복사(copy)하여 과거 버전 보존 (trilobase, paleocore 공통)
+- CI workflow: 별도 "Build assertion DB" step 제거, release artifact는 `dist/*.scoda`만 포함
+- `.scoda` 패키지 영향 없음 (내부에서 `data.db`로 저장)
+
+**상세**: `devlog/20260301_P77_versioned_db_filename.md`
 
 ## Next Tasks
 
@@ -155,9 +179,10 @@ GitHub Actions workflows in `.github/workflows/`:
 
 **릴리스 방법:**
 ```bash
-python scripts/bump_version.py trilobase 0.2.5
-git add -A && git commit -m "release: v0.2.5"
-git tag v0.2.5
+python scripts/bump_version.py trilobase 0.2.7
+# → db/trilobase-0.2.6.db 보존, db/trilobase-0.2.7.db 생성
+git add db/trilobase-0.2.7.db && git commit -m "release: v0.2.7"
+git tag v0.2.7
 git push origin main --tags
 ```
 
@@ -174,9 +199,10 @@ trilobase/                                 # Domain data, scripts, and tests onl
 ├── CHANGELOG_paleocore.md                # PaleoCore package changelog
 ├── pytest.ini                             # pytest config (testpaths=tests)
 ├── requirements.txt                       # scoda-engine dependency
-├── db/                                    # Canonical DBs (git tracked)
-│   ├── trilobase.db                       # Trilobase SQLite DB
-│   └── paleocore.db                       # PaleoCore reference DB
+├── db/                                    # Canonical DBs (git tracked, versioned filenames)
+│   ├── trilobase-{ver}.db                 # Trilobase SQLite DB
+│   ├── trilobase-assertion-{ver}.db       # Assertion-centric DB
+│   └── paleocore-{ver}.db                 # PaleoCore reference DB
 ├── dist/                                  # Build artifacts (gitignored)
 │   ├── trilobase-{ver}.scoda              # .scoda package (버전 포함 파일명)
 │   ├── paleocore-{ver}.scoda
@@ -286,7 +312,7 @@ pytest tests/
 
 ## DB Schema
 
-### Canonical DB (trilobase.db)
+### Canonical DB (trilobase-{ver}.db)
 
 ```sql
 -- taxonomic_ranks: 5,341 records — unified taxonomy (Class~Genus) + 2 placeholders + Agnostina Suborder
@@ -356,9 +382,9 @@ user_annotations (
 
 **SQLite ATTACH usage (3-DB):**
 ```python
-conn = sqlite3.connect('db/trilobase.db')  # Canonical DB
+conn = sqlite3.connect('db/trilobase-0.2.6.db')  # Canonical DB (versioned)
 conn.execute("ATTACH DATABASE 'dist/trilobase_overlay.db' AS overlay")
-conn.execute("ATTACH DATABASE 'db/paleocore.db' AS pc")
+conn.execute("ATTACH DATABASE 'db/paleocore-0.1.1.db' AS pc")
 
 # Canonical tables: SELECT * FROM taxonomic_ranks
 # Overlay tables:   SELECT * FROM overlay.user_annotations
@@ -370,10 +396,10 @@ conn.execute("ATTACH DATABASE 'db/paleocore.db' AS pc")
 
 ```bash
 # Basic query (using taxa view)
-sqlite3 db/trilobase.db "SELECT * FROM taxa LIMIT 10;"
+sqlite3 db/trilobase-0.2.6.db "SELECT * FROM taxa LIMIT 10;"
 
 # Full hierarchy query
-sqlite3 db/trilobase.db "SELECT g.name, f.name as family, o.name as 'order'
+sqlite3 db/trilobase-0.2.6.db "SELECT g.name, f.name as family, o.name as 'order'
 FROM taxonomic_ranks g
 LEFT JOIN taxonomic_ranks f ON g.parent_id = f.id
 LEFT JOIN taxonomic_ranks sf ON f.parent_id = sf.id
@@ -381,14 +407,14 @@ LEFT JOIN taxonomic_ranks o ON sf.parent_id = o.id
 WHERE g.rank = 'Genus' AND g.is_valid = 1 LIMIT 10;"
 
 # Genus formations (using relation table)
-sqlite3 db/trilobase.db "SELECT g.name, f.name as formation
+sqlite3 db/trilobase-0.2.6.db "SELECT g.name, f.name as formation
 FROM taxonomic_ranks g
 JOIN genus_formations gf ON g.id = gf.genus_id
 JOIN formations f ON gf.formation_id = f.id
 WHERE g.name = 'Paradoxides';"
 
 # Genera by country (using relation table)
-sqlite3 db/trilobase.db "SELECT g.name, gl.region
+sqlite3 db/trilobase-0.2.6.db "SELECT g.name, gl.region
 FROM taxonomic_ranks g
 JOIN genus_locations gl ON g.id = gl.genus_id
 JOIN countries c ON gl.country_id = c.id
@@ -398,6 +424,6 @@ WHERE c.name = 'China' LIMIT 10;"
 ## Notes
 
 - `data/trilobite_genus_list.txt` is always the canonical text version
-- `db/trilobase.db` is the latest database
+- `db/trilobase-{ver}.db` is the latest database (use `scripts/db_path.py:find_trilobase_db()` to resolve)
 - Git commit after each Phase completion
 - Original PDF reference: Jell & Adrain (2002)

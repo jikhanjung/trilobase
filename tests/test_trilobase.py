@@ -11,6 +11,10 @@ import zipfile
 
 import pytest
 
+# Add scripts/ to path for db_path helper
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+from db_path import find_trilobase_db, find_paleocore_db
+
 import scoda_engine.scoda_package as scoda_package
 from scoda_engine.app import app
 from scoda_engine.scoda_package import get_db, ScodaPackage
@@ -1158,7 +1162,7 @@ class TestTaxonBibliography:
 class TestGroupAFix:
     """Verify spelling variant duplicates have been resolved in production DB."""
 
-    DB_PATH = 'db/trilobase.db'
+    DB_PATH = find_trilobase_db()
 
     def test_shirakiellidae_duplicate_deleted(self):
         """Empty Shirakiellidae duplicate (id=196) should be deleted."""
@@ -1208,7 +1212,7 @@ class TestGroupAFix:
 class TestAgnostidaOrder:
     """Verify Agnostida Order with order-level opinions (not family-level)."""
 
-    DB_PATH = 'db/trilobase.db'
+    DB_PATH = find_trilobase_db()
 
     def test_agnostida_order_exists(self):
         """Agnostida Order should exist with parent_id=NULL (excluded from Trilobita by A2011)."""
@@ -1303,7 +1307,7 @@ class TestAgnostidaOrder:
 class TestSpellingOfOpinions:
     """Verify SPELLING_OF opinion type and placeholder entries for orthographic variants."""
 
-    DB_PATH = 'db/trilobase.db'
+    DB_PATH = find_trilobase_db()
 
     def test_spelling_of_type_allowed(self, test_db):
         """SPELLING_OF should be accepted by CHECK constraint in test DB."""
@@ -1468,7 +1472,7 @@ class TestSynonymOfOpinions:
 class TestTemporalCodeFill:
     """Verify temporal_code auto-fill from raw_entry for valid genera."""
 
-    DB_PATH = 'db/trilobase.db'
+    DB_PATH = find_trilobase_db()
 
     def test_only_one_genus_missing_temporal_code(self):
         """After fill, only Dignagnostus should lack temporal_code among valid genera."""
@@ -1525,8 +1529,8 @@ class TestTemporalCodeFill:
 class TestCountryIdConsistency:
     """T-5: country_id should match the country in taxonomic_ranks.location."""
 
-    DB_PATH = 'db/trilobase.db'
-    PC_DB_PATH = 'db/paleocore.db'
+    DB_PATH = find_trilobase_db()
+    PC_DB_PATH = find_paleocore_db()
 
     def test_country_id_match_rate(self):
         """At least 95% of genus_locations should have country_id matching location text."""

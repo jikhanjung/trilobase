@@ -15,15 +15,18 @@ Usage:
 import argparse
 import os
 import re
+import shutil
 import sqlite3
 import sys
+
+from db_path import find_trilobase_db, find_paleocore_db
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.join(SCRIPT_DIR, '..')
 
 DB_PATHS = {
-    'trilobase': os.path.join(ROOT_DIR, 'db', 'trilobase.db'),
-    'paleocore': os.path.join(ROOT_DIR, 'db', 'paleocore.db'),
+    'trilobase': find_trilobase_db(),
+    'paleocore': find_paleocore_db(),
 }
 
 # Files containing hardcoded paleocore dependency version
@@ -174,10 +177,19 @@ def main():
     print(f"=== {mode}: {args.package} {current} → {args.version} ===")
     print()
 
-    # 1. Update DB
+    # 1. Update DB version in artifact_metadata
     update_db_version(db_path, args.version, dry_run=args.dry_run)
 
-    # 2. If paleocore, also update dependency version in create_scoda.py
+    # 2. Copy to new versioned filename
+    db_dir = os.path.dirname(db_path)
+    new_db_path = os.path.join(db_dir, f'{args.package}-{args.version}.db')
+    if args.dry_run:
+        print(f"  Copy: {os.path.basename(db_path)} → {os.path.basename(new_db_path)}")
+    else:
+        shutil.copy2(db_path, new_db_path)
+        print(f"  Copy: {os.path.basename(db_path)} → {os.path.basename(new_db_path)}")
+
+    # 3. If paleocore, also update dependency version in create_scoda.py
     if args.package == 'paleocore':
         update_paleocore_dep_version(args.version, dry_run=args.dry_run)
 

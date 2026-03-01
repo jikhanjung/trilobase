@@ -11,8 +11,9 @@ import os
 import sys
 from datetime import datetime
 
+from db_path import find_trilobase_db
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'db', 'trilobase.db')
+DB_PATH = find_trilobase_db()
 
 
 def create_tables(conn):
@@ -402,6 +403,15 @@ JOIN taxonomic_ranks tr ON tr.temporal_code = m.temporal_code
 WHERE m.ics_id = :chronostrat_id AND tr.rank = 'Genus'
 ORDER BY tr.name""",
          '{"chronostrat_id": "integer — ics_chronostrat.id"}'),
+
+        ('radial_tree_nodes',
+         'All higher ranks + valid genera for radial tree visualization',
+         """SELECT id, name, rank, parent_id, genera_count, is_valid,
+       temporal_code, author, year
+FROM taxonomic_ranks
+WHERE is_valid = 1 OR rank <> 'Genus'
+ORDER BY rank, name""",
+         None),
     ]
 
     for name, desc, sql, params in queries:

@@ -19,7 +19,9 @@ from datetime import datetime, timezone
 from scoda_engine.scoda_package import ScodaPackage, _sha256_file
 from scoda_engine_core import validate_db
 
-DEFAULT_DB = os.path.join(os.path.dirname(__file__), '..', 'db', 'paleocore.db')
+from db_path import find_paleocore_db
+
+DEFAULT_DB = find_paleocore_db()
 DEFAULT_OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'dist')
 
 

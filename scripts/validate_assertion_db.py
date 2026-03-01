@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """P74 — Assertion-centric test DB validator.
 
-Validates dist/assertion_test/trilobase_assertion-{version}.db against db/trilobase.db:
+Validates db/trilobase_assertion-{version}.db against db/trilobase-{version}.db:
   1. Tree equivalence (parent_id vs v_taxonomic_ranks)
   2. Count verification
   3. CTE tree traversal (all valid genera reachable)
@@ -13,9 +13,11 @@ import sqlite3
 import sys
 from pathlib import Path
 
+from db_path import find_trilobase_db
+
 ROOT = Path(__file__).resolve().parent.parent
-SRC_DB = ROOT / "db" / "trilobase.db"
-DST_DIR = ROOT / "dist" / "assertion_test"
+SRC_DB = Path(find_trilobase_db())
+DST_DIR = ROOT / "db"
 
 PASS = "PASS"
 FAIL = "FAIL"
@@ -27,13 +29,13 @@ def _resolve_db(db_arg: str | None) -> Path:
     if db_arg:
         return Path(db_arg)
     candidates = sorted(
-        glob.glob(str(DST_DIR / "trilobase_assertion-*.db")),
+        glob.glob(str(DST_DIR / "trilobase-assertion-*.db")),
         key=lambda p: Path(p).stat().st_mtime,
     )
     if candidates:
         return Path(candidates[-1])
     # Fallback to unversioned name (legacy)
-    return DST_DIR / "trilobase_assertion.db"
+    return DST_DIR / "trilobase-assertion.db"
 
 
 def check(name: str, passed: bool, detail: str = ""):
@@ -51,7 +53,7 @@ def main():
         description="P74 — Assertion-centric test DB validator")
     parser.add_argument(
         "--db", default=None,
-        help="Path to assertion DB (default: latest dist/assertion_test/trilobase_assertion-*.db)")
+        help="Path to assertion DB (default: latest db/trilobase-assertion-*.db)")
     args = parser.parse_args()
 
     DST_DB = _resolve_db(args.db)
