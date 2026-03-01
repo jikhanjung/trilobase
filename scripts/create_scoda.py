@@ -290,6 +290,14 @@ def build_assertion(dry_run=False):
         print("Error: create_assertion_db.py failed", file=sys.stderr)
         return False
 
+    # Step 1b: Import Treatise (2004) data
+    treatise_script = os.path.join(os.path.dirname(__file__), 'import_treatise.py')
+    if os.path.exists(treatise_script):
+        result = subprocess.run([sys.executable, treatise_script], cwd=os.path.join(os.path.dirname(__file__), '..'))
+        if result.returncode != 0:
+            print("Error: import_treatise.py failed", file=sys.stderr)
+            return False
+
     if dry_run:
         return True
 
