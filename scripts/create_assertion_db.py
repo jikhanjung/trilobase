@@ -23,7 +23,7 @@ from pathlib import Path
 
 from db_path import find_trilobase_db
 
-ASSERTION_VERSION = "0.1.0"
+ASSERTION_VERSION = "0.1.1"
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC_DB = Path(find_trilobase_db())
