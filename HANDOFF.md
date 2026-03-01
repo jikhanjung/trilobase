@@ -87,6 +87,7 @@ python scripts/validate_assertion_db.py  # → 15/15 checks passed
 | `assertion` | 6,563 | PLACED_IN 5,506 + SYNONYM_OF 1,055 + SPELLING_OF 2 |
 | `classification_profile` | 3 | default, ja2002_strict, treatise2004 |
 | `classification_edge_cache` | 10,221 | default (5,083) + treatise2004 (5,138) |
+| `ui_queries` | 43 | +1 classification_profiles_selector |
 
 Views: `v_taxonomy_tree`, `v_taxonomic_ranks`, `synonyms` (기존 호환)
 
@@ -142,6 +143,22 @@ python scripts/validate_assertion_db.py    # 15/15 검증 통과
 - 모든 Treatise assertion은 `is_accepted=0` (default 프로필 영향 없음)
 
 **상세**: `devlog/20260301_105_P78_treatise_import.md`
+
+## P79: Profile-Based Taxonomy Tree + Profile Selector UI ✅
+
+P78 Treatise import 후 orphan 문제 해결: `classification_edge_cache` 기반으로 tree 표시, profile selector UI 추가.
+
+**scoda-engine 변경:**
+- `app.js`: `globalControls` state, `renderGlobalControls()`, `fetchQuery()` global params 자동 병합, `isLeaf` 확장
+- `radial.js`: `$variable` reference 해석 (`$profile_id` → globalControls 값)
+- `index.html`: `#global-controls` 컨테이너
+- `style.css`: compact select 스타일
+
+**trilobase 변경:**
+- `create_assertion_db.py`: 4개 쿼리 → edge_cache 기반, `classification_profiles_selector` 추가, `global_controls` manifest, version 0.1.2
+- Profile 1 (default): 224 tree nodes, Profile 3 (treatise2004): 272 tree nodes
+
+**상세**: `devlog/20260301_106_P79_profile_selector_ui.md`
 
 ## Next Tasks
 
