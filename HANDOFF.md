@@ -1,6 +1,6 @@
 # Trilobase Project Handover
 
-**Last updated:** 2026-03-01
+**Last updated:** 2026-03-03
 
 ## Project Overview
 
@@ -150,7 +150,7 @@ P78 Treatise import 후 orphan 문제 해결: `classification_edge_cache` 기반
 
 **scoda-engine 변경:**
 - `app.js`: `globalControls` state, `renderGlobalControls()`, `fetchQuery()` global params 자동 병합, `isLeaf` 확장
-- `radial.js`: `$variable` reference 해석 (`$profile_id` → globalControls 값)
+- `tree_chart.js` (was `radial.js`): `$variable` reference 해석 (`$profile_id` → globalControls 값)
 - `index.html`: `#global-controls` 컨테이너
 - `style.css`: compact select 스타일
 
@@ -181,10 +181,49 @@ scoda-engine에 manifest-driven CRUD 프레임워크를 추가하고 assertion D
 
 ```bash
 # Admin 모드로 실행
-python -m scoda_engine.serve --db-path db/trilobase-assertion-0.1.2.db --mode admin --port 8090
+python -m scoda_engine.serve --db-path db/trilobase-assertion-0.1.3.db --mode admin --port 8090
 ```
 
 **상세**: `devlog/20260301_107_P80_assertion_crud.md`
+
+## Assertion DB v0.1.3: Tree Chart 리네이밍 ✅
+
+scoda-engine P23/032의 `radial.js` → `tree_chart.js` 리네이밍에 맞춰 assertion DB manifest 업데이트.
+
+| Before | After |
+|--------|-------|
+| view key: `radial_tree` | `tree_chart` |
+| display: `"radial"` | `"tree_chart"` |
+| title: `"Radial Tree"` | `"Tree Chart"` |
+| options key: `radial_display` | `tree_chart_options` |
+| icon: `bi-bullseye` | `bi-diagram-3` |
+
+Backward compatibility: scoda-engine이 `"radial"` display를 자동으로 `"tree_chart"`로 변환.
+
+**상세**: commit `0243363`
+
+## R01/R02: 설계 리뷰 문서
+
+### R01: 시간에 따라 변화하는 Taxonomy 관리 방법
+
+Assertion-centric 모델의 확장 방향을 탐색한 아이디어 문서:
+- **Layered Profile**: profile을 여러 layer의 스택으로 구성 (부분 개정 논문 반영)
+- **Assertion Timeline**: 개별 taxon의 의견 이력 추적 (`supersedes_id`)
+- **Revision Package**: 논문 단위 assertion 일괄 import/revert 워크플로우
+- **Working Classification**: 사용자의 현행 분류를 관리하는 mutable profile
+- **단계적 접근 제안**: Phase A (최소 구조 보강) → B (Revision Package) → C (Layered Profile) → D (Tree Editing)
+
+**상세**: `devlog/20260302_R01_taxonomy_management.md`
+
+### R02: 두 Classification Profile의 시각적 비교
+
+Profile 간 차이를 시각화하는 구체적 설계 문서:
+- **Compare UI**: 패턴 A (Compare 모드 토글) 채택
+- **표시 모드 4가지**: Diff Table → Diff Tree → Overlay + Side-by-side → Animated Morphing
+- **구현 순서**: Phase 0 (Compare UI 인프라) → 1 (Diff Table) → 2 (Diff Tree) → 3 (Overlay/Side-by-side) → 4 (Morphing)
+- **책임 분리**: scoda-engine = "어떻게 비교하고 그릴지", trilobase = "무엇을 비교할지" (manifest 계약)
+
+**상세**: `devlog/20260302_R02_tree_diff_visualization.md`
 
 ## Next Tasks
 
@@ -227,6 +266,20 @@ python -m scoda_engine.serve --db-path db/trilobase-assertion-0.1.2.db --mode ad
 - ~~genus_bibliography 쿼리 추가~~ ✅ FK 기반 참고문헌 연결
 - ~~synonym manifest fix~~ ✅ genus_detail synonyms sub_query 추가, synonym_list → linked_table 전환
 - ~~fide matching 개선~~ ✅ et al./year suffix/initial prefix 처리 → 133건 추가 매칭 (총 566건)
+
+### Assertion DB — Profile Comparison (R02 로드맵)
+
+- **Phase 0: Compare UI 인프라** — Compare 모드 토글 + 두 번째 프로필 셀렉터 + 표시 모드 선택
+- **Phase 1: Diff Table** — 두 프로필 간 차이 목록 테이블 (profile_diff 쿼리 + manifest 뷰)
+- **Phase 2: Diff Tree** — tree chart에서 diff 색상 코딩 (ghost edge, 범례, tooltip)
+- **Phase 3: Overlay + Side-by-side** — 두 트리 겹침/나란히 표시, zoom/hover 동기화
+- **Phase 4: Animated Morphing** — 프로필 전환 시 노드 위치 보간 애니메이션
+
+### Assertion DB — Taxonomy Management (R01 로드맵)
+
+- **Phase A: 최소 구조 보강** — `assertion.effective_year`, `reference.scope_type`, taxon opinion history UI
+- **Phase B: Revision Package** — 논문 단위 assertion 일괄 import/review/accept 워크플로우
+- **Phase C: Layered Profile** — profile layer 스택 + working classification
 
 ## Open Issues
 
