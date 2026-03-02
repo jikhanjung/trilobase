@@ -23,7 +23,7 @@ from pathlib import Path
 
 from db_path import find_trilobase_db
 
-ASSERTION_VERSION = "0.1.2"
+ASSERTION_VERSION = "0.1.3"
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC_DB = Path(find_trilobase_db())
@@ -1548,13 +1548,13 @@ def _build_manifest():
                     },
                 ],
             },
-            # === P75: Radial Tree ===
-            "radial_tree": {
+            # === P75/P23: Tree Chart (was Radial Tree) ===
+            "tree_chart": {
                 "type": "hierarchy",
-                "display": "radial",
-                "title": "Radial Tree",
-                "description": "Radial taxonomy visualization — Class at center, genera at periphery",
-                "icon": "bi-bullseye",
+                "display": "tree_chart",
+                "title": "Tree Chart",
+                "description": "Taxonomy tree visualization — radial or rectangular layout",
+                "icon": "bi-diagram-3",
                 "source_query": "radial_tree_nodes",
                 "hierarchy_options": {
                     "id_key": "id",
@@ -1562,7 +1562,7 @@ def _build_manifest():
                     "label_key": "name",
                     "rank_key": "rank",
                 },
-                "radial_display": {
+                "tree_chart_options": {
                     "edge_query": "radial_tree_edges",
                     "edge_params": {"profile_id": "$profile_id"},
                     "color_key": "rank",
