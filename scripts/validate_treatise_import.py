@@ -283,7 +283,7 @@ def main():
     n_profiles = conn.execute(
         "SELECT COUNT(*) FROM classification_profile"
     ).fetchone()[0]
-    check("3 profiles exist", n_profiles == 3,
+    check("2 profiles exist", n_profiles == 2,
           f"{n_profiles}")
 
     # --- Summary ---

@@ -23,7 +23,7 @@ from pathlib import Path
 
 from db_path import find_trilobase_db
 
-ASSERTION_VERSION = "0.1.3"
+ASSERTION_VERSION = "0.1.4"
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC_DB = Path(find_trilobase_db())
@@ -313,17 +313,9 @@ def create_profiles(dst: sqlite3.Connection) -> None:
         INSERT INTO classification_profile (name, description, rule_json)
         VALUES (?, ?, ?)
     """, (
-        "default",
-        "All accepted PLACED_IN assertions",
+        "Jell & Adrain 2002 + Adrain 2011",
+        "Genus taxonomy from Jell & Adrain (2002) with family hierarchy from Adrain (2011)",
         '{"predicate": "PLACED_IN", "is_accepted": 1}',
-    ))
-    dst.execute("""
-        INSERT INTO classification_profile (name, description, rule_json)
-        VALUES (?, ?, ?)
-    """, (
-        "ja2002_strict",
-        "Only Jell & Adrain (2002) PLACED_IN assertions",
-        '{"predicate": "PLACED_IN", "is_accepted": 1, "reference_id": 0}',
     ))
 
 
@@ -1645,7 +1637,7 @@ def _build_manifest():
                         "name": "rebuild_edge_cache",
                         "on": ["create", "update", "delete"],
                         "trigger_when": {"field": "predicate", "value": "PLACED_IN"},
-                        "sql": "DELETE FROM classification_edge_cache; INSERT INTO classification_edge_cache (profile_id, child_id, parent_id) SELECT p.id, a.subject_taxon_id, a.object_taxon_id FROM assertion a CROSS JOIN classification_profile p WHERE a.predicate = 'PLACED_IN' AND (a.is_accepted = 1 OR (p.name != 'default' AND a.reference_id IN (SELECT r.id FROM reference r WHERE r.authors LIKE '%Treatise%')))",
+                        "sql": "DELETE FROM classification_edge_cache; INSERT INTO classification_edge_cache (profile_id, child_id, parent_id) SELECT p.id, a.subject_taxon_id, a.object_taxon_id FROM assertion a CROSS JOIN classification_profile p WHERE a.predicate = 'PLACED_IN' AND (a.is_accepted = 1 OR (p.id != 1 AND a.reference_id IN (SELECT r.id FROM reference r WHERE r.authors LIKE '%Treatise%')))",
                     },
                 ],
             },

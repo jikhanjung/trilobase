@@ -627,6 +627,23 @@
                   { "rank": "genus", "name": "Paratungusella", "author": "Repina", "year": 1964 },
                   { "rank": "genus", "name": "Sarassina", "author": "Romanenko", "year": 1980 }
                 ]
+              },
+              {
+                "rank": "family",
+                "name": "Unrecognizable Redlichioid Genera",
+                "note": "Unrecognizable genera placed under Redlichioidea",
+                "children": [
+                  { "rank": "genus", "name": "Eomalungia", "author": "Li", "year": 1978 },
+                  { "rank": "genus", "name": "Fandianaspis", "author": "Li", "year": 1978 },
+                  { "rank": "genus", "name": "Guangyuania", "author": "Li", "year": 1978 },
+                  { "rank": "genus", "name": "Longmenshania", "author": "Li", "year": 1978 },
+                  { "rank": "genus", "name": "Micangshania", "author": "Zhou", "year": 1975 },
+                  { "rank": "genus", "name": "Parawutingaspis", "author": "Li", "year": 1978 },
+                  { "rank": "genus", "name": "Pseudowutingaspis", "author": "Li", "year": 1978 },
+                  { "rank": "genus", "name": "Runnania", "author": "Li", "year": 1978 },
+                  { "rank": "genus", "name": "Shangsiaspis", "author": "Li", "year": 1978 },
+                  { "rank": "genus", "name": "Xingzishania", "author": "Zhou", "year": 1975 }
+                ]
               }
             ]
           },
@@ -682,22 +699,6 @@
                   { "rank": "genus", "name": "Luhops", "author": "Šnajdr", "year": 1957 }
                 ]
               }
-            ]
-          },
-          {
-            "rank": "unrecognizable",
-            "name": "Unrecognizable Redlichioid Genera",
-            "children": [
-              { "rank": "genus", "name": "Eomalungia", "author": "Li", "year": 1978 },
-              { "rank": "genus", "name": "Fandianaspis", "author": "Li", "year": 1978 },
-              { "rank": "genus", "name": "Guangyuania", "author": "Li", "year": 1978 },
-              { "rank": "genus", "name": "Longmenshania", "author": "Li", "year": 1978 },
-              { "rank": "genus", "name": "Micangshania", "author": "Zhou", "year": 1975 },
-              { "rank": "genus", "name": "Parawutingaspis", "author": "Li", "year": 1978 },
-              { "rank": "genus", "name": "Pseudowutingaspis", "author": "Li", "year": 1978 },
-              { "rank": "genus", "name": "Runnania", "author": "Li", "year": 1978 },
-              { "rank": "genus", "name": "Shangsiaspis", "author": "Li", "year": 1978 },
-              { "rank": "genus", "name": "Xingzishania", "author": "Zhou", "year": 1975 }
             ]
           }
         ]

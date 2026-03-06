@@ -144,19 +144,18 @@ class TreatiseImporter:
             self.stats["skipped_subgenus"] += 1
             return None
 
-        # Handle "unrecognizable" container
+        # Handle "unrecognizable" container → treat as Family
         if rank == "unrecognizable":
-            rank = "unrecognizable"
-            tid = self._create_new(name, rank, node, is_placeholder=1)
+            tid = self._create_new(name, "Family", node, is_placeholder=1)
             return tid
 
         # Handle uncertain/UNCERTAIN containers
         if name.lower() == "uncertain":
-            parent_rank = rank  # e.g. 'subfamily', 'family', 'superfamily'
+            db_rank = rank.capitalize()  # e.g. 'subfamily' → 'Subfamily'
             # Get note for context
-            note = node.get("note", f"Treatise (2004) {parent_rank} uncertain")
-            placeholder_name = f"uncertain ({self.chapter} {parent_rank})"
-            tid = self._create_new(placeholder_name, parent_rank, {},
+            note = node.get("note", f"Treatise (2004) {db_rank} uncertain")
+            placeholder_name = "Uncertain"
+            tid = self._create_new(placeholder_name, db_rank, {},
                                    is_placeholder=1, notes=note)
             return tid
 
