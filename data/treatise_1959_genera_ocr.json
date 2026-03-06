@@ -1,0 +1,8480 @@
+{
+  "source": "Treatise on Invertebrate Paleontology, Part O (1959)",
+  "method": "Tesseract OCR at 300 DPI",
+  "pages_processed": "191-545",
+  "total_genera_found": 1170,
+  "total_raw_matches": 1174,
+  "family_headers_found": 181,
+  "genera": [
+    {
+      "name": "Supertamily",
+      "author": "Crepicephalacea Kobayashi",
+      "year": 1933,
+      "page": 191
+    },
+    {
+      "name": "Ciavagnostus",
+      "author": "Howei.",
+      "year": 1937,
+      "page": 194
+    },
+    {
+      "name": "Cyclopagnostus",
+      "author": "Elowen.",
+      "year": 1937,
+      "page": 195
+    },
+    {
+      "name": "Diplagnostus",
+      "author": "JaEKer",
+      "year": 1909,
+      "page": 195
+    },
+    {
+      "name": "Linguagnostus",
+      "author": "Kowavasnt",
+      "year": 1939,
+      "page": 195
+    },
+    {
+      "name": "Otdalagnostus",
+      "author": "Wesrracaro",
+      "year": 1946,
+      "page": 195
+    },
+    {
+      "name": "Tomagnostus",
+      "author": "Howerr",
+      "year": 1955,
+      "page": 195
+    },
+    {
+      "name": "Geragnostella",
+      "author": "Kosayasy",
+      "year": 1939,
+      "page": 197
+    },
+    {
+      "name": "Homagnostoides",
+      "author": "Kosarasut",
+      "year": 1939,
+      "page": 197
+    },
+    {
+      "name": "Hastagnostus",
+      "author": "Hower",
+      "year": 1937,
+      "page": 198
+    },
+    {
+      "name": "Ptychagnostus",
+      "author": "JarKet",
+      "year": 1909,
+      "page": 199
+    },
+    {
+      "name": "Triplagnostus",
+      "author": "Hower",
+      "year": 1933,
+      "page": 199
+    },
+    {
+      "name": "Micragnostus",
+      "author": "Hower.",
+      "year": 1935,
+      "page": 199
+    },
+    {
+      "name": "Anglagnostus",
+      "author": "Howe ect",
+      "year": 1733,
+      "page": 199
+    },
+    {
+      "name": "Hyperagnostus",
+      "author": "Kosayaset",
+      "year": 1955,
+      "page": 199
+    },
+    {
+      "name": "Gallagnostoides",
+      "author": "Kogavasti",
+      "year": 1939,
+      "page": 201
+    },
+    {
+      "name": "Litagnostus",
+      "author": "Raserti",
+      "year": 1944,
+      "page": 201
+    },
+    {
+      "name": "Phalagnostus",
+      "author": "Howerr",
+      "year": 1953,
+      "page": 201
+    },
+    {
+      "name": "Phoidagnostus",
+      "author": "Wrorntovss",
+      "year": 1936,
+      "page": 201
+    },
+    {
+      "name": "Eupiethagnostus",
+      "author": "Lermeonrova",
+      "year": 1940,
+      "page": 202
+    },
+    {
+      "name": "Cyclagnostus",
+      "author": "Lermonrova",
+      "year": 1940,
+      "page": 202
+    },
+    {
+      "name": "Rhaptagnostus",
+      "author": "WHITEHOUSE",
+      "year": 1930,
+      "page": 203
+    },
+    {
+      "name": "Cotalagnostus",
+      "author": "Family SPHAERAGNOSTIDAE\nRobayashi",
+      "year": 1939,
+      "page": 203
+    },
+    {
+      "name": "Armagnostus",
+      "author": "Howeit",
+      "year": 1937,
+      "page": 204
+    },
+    {
+      "name": "Ciceragnostus",
+      "author": "Kousayasai",
+      "year": 1937,
+      "page": 204
+    },
+    {
+      "name": "Eusgnostus",
+      "author": "Wairenouse",
+      "year": 1936,
+      "page": 204
+    },
+    {
+      "name": "Kormagnostus",
+      "author": "RESseR",
+      "year": 1935,
+      "page": 205
+    },
+    {
+      "name": "Quadragnostus",
+      "author": "Howerr",
+      "year": 1935,
+      "page": 206
+    },
+    {
+      "name": "Tomagnostella",
+      "author": "Kosayasit",
+      "year": 1939,
+      "page": 206
+    },
+    {
+      "name": "Calodiscus",
+      "author": "Howerr",
+      "year": 1935,
+      "page": 208
+    },
+    {
+      "name": "Opsidiscus",
+      "author": "Westrercarp",
+      "year": 1950,
+      "page": 208
+    },
+    {
+      "name": "Serrodiscus",
+      "author": "RicutTer & Ricuter",
+      "year": 1941,
+      "page": 208
+    },
+    {
+      "name": "Hebediscus",
+      "author": "Wairesovse",
+      "year": 1936,
+      "page": 210
+    },
+    {
+      "name": "Neocobdoldia",
+      "author": "Raseryi",
+      "year": 1952,
+      "page": 210
+    },
+    {
+      "name": "Mesamacida",
+      "author": "Poctsen",
+      "year": 1927,
+      "page": 211
+    },
+    {
+      "name": "Bristolia",
+      "author": "Hanrincron",
+      "year": 1956,
+      "page": 212
+    },
+    {
+      "name": "Fremontella",
+      "author": "Haraiscton",
+      "year": 1956,
+      "page": 212
+    },
+    {
+      "name": "Fremontia",
+      "author": "Raw",
+      "year": 1939,
+      "page": 212
+    },
+    {
+      "name": "Laudonia",
+      "author": "Hageainoros",
+      "year": 1935,
+      "page": 212
+    },
+    {
+      "name": "Callavia",
+      "author": "Marruzw",
+      "year": 1897,
+      "page": 213
+    },
+    {
+      "name": "Judomia",
+      "author": "Lexstontova",
+      "year": 1951,
+      "page": 213
+    },
+    {
+      "name": "Fallotaspis",
+      "author": "Hurft",
+      "year": 1953,
+      "page": 214
+    },
+    {
+      "name": "Holmia",
+      "author": "MartHew",
+      "year": 1890,
+      "page": 215
+    },
+    {
+      "name": "Nevadia",
+      "author": "Waccorr",
+      "year": 1910,
+      "page": 216
+    },
+    {
+      "name": "Nevadella",
+      "author": "Raw",
+      "year": 1936,
+      "page": 216
+    },
+    {
+      "name": "Olenelloides",
+      "author": "Peacu",
+      "year": 1994,
+      "page": 217
+    },
+    {
+      "name": "Wanneria",
+      "author": "Warcorr",
+      "year": 1910,
+      "page": 217
+    },
+    {
+      "name": "Choubertella",
+      "author": "Hues",
+      "year": 1953,
+      "page": 218
+    },
+    {
+      "name": "Hoalicfiza",
+      "author": "COSSMANN",
+      "year": 1907,
+      "page": 218
+    },
+    {
+      "name": "Redlichia",
+      "author": "Cossata",
+      "year": 1902,
+      "page": 220
+    },
+    {
+      "name": "Redlichaspis",
+      "author": "Konsavasut",
+      "year": 1955,
+      "page": 220
+    },
+    {
+      "name": "Saukiandiops",
+      "author": "Huet",
+      "year": 1993,
+      "page": 220
+    },
+    {
+      "name": "Pararedlichia",
+      "author": "Huet",
+      "year": 1953,
+      "page": 220
+    },
+    {
+      "name": "Archaeops",
+      "author": "Hupt",
+      "year": 1953,
+      "page": 220
+    },
+    {
+      "name": "Mesodema",
+      "author": "Wuitenouse",
+      "year": 1939,
+      "page": 220
+    },
+    {
+      "name": "Redlichops",
+      "author": "Richter & Ricrrer",
+      "year": 1941,
+      "page": 221
+    },
+    {
+      "name": "Neoredlichia",
+      "author": "Sarro",
+      "year": 1936,
+      "page": 221
+    },
+    {
+      "name": "Clariondia",
+      "author": "Huet",
+      "year": 1953,
+      "page": 221
+    },
+    {
+      "name": "Resserops",
+      "author": "RicntTes & Ricurer",
+      "year": 1940,
+      "page": 222
+    },
+    {
+      "name": "Saukianda",
+      "author": "Ricuter & Ricuter",
+      "year": 1940,
+      "page": 222
+    },
+    {
+      "name": "Gigantopygus",
+      "author": "Hupe",
+      "year": 1955,
+      "page": 224
+    },
+    {
+      "name": "Despujolsia",
+      "author": "Newtner & Poctey",
+      "year": 1949,
+      "page": 224
+    },
+    {
+      "name": "Yinites",
+      "author": "Lu",
+      "year": 1946,
+      "page": 225
+    },
+    {
+      "name": "Abadiella",
+      "author": "Hurt",
+      "year": 1953,
+      "page": 225
+    },
+    {
+      "name": "Rediichina",
+      "author": "Lermonrova",
+      "year": 1940,
+      "page": 225
+    },
+    {
+      "name": "Dolerolenus",
+      "author": "Ceanza",
+      "year": 1949,
+      "page": 227
+    },
+    {
+      "name": "Micmaccopsis",
+      "author": "Lerstontova",
+      "year": 1940,
+      "page": 227
+    },
+    {
+      "name": "Ellipsocephalus",
+      "author": "Zenker",
+      "year": 1833,
+      "page": 227
+    },
+    {
+      "name": "Alanisia",
+      "author": "Hours",
+      "year": 1953,
+      "page": 227
+    },
+    {
+      "name": "Filipsostrenua",
+      "author": "Kautsky",
+      "year": 1945,
+      "page": 227
+    },
+    {
+      "name": "Inoyellaspis",
+      "author": "IvsHin",
+      "year": 1953,
+      "page": 227
+    },
+    {
+      "name": "Strenuaeva",
+      "author": "Ricnrer & Ricnrer",
+      "year": 1940,
+      "page": 227
+    },
+    {
+      "name": "Strenuclla",
+      "author": "Matrruew",
+      "year": 1887,
+      "page": 227
+    },
+    {
+      "name": "Micmacca",
+      "author": "MatrHew",
+      "year": 1895,
+      "page": 228
+    },
+    {
+      "name": "Kingaspis",
+      "author": "KosavasHt",
+      "year": 1935,
+      "page": 228
+    },
+    {
+      "name": "Palacolenus",
+      "author": "Mansuy",
+      "year": 1912,
+      "page": 229
+    },
+    {
+      "name": "Quijjania",
+      "author": "Huet",
+      "year": 1953,
+      "page": 231
+    },
+    {
+      "name": "Paratermierella",
+      "author": "Hert",
+      "year": 1953,
+      "page": 231
+    },
+    {
+      "name": "Pruvostina",
+      "author": "Here",
+      "year": 1953,
+      "page": 231
+    },
+    {
+      "name": "Pseudofenus",
+      "author": "Hupe",
+      "year": 1953,
+      "page": 231
+    },
+    {
+      "name": "Myopsolenus",
+      "author": "Hurt",
+      "year": 1953,
+      "page": 231
+    },
+    {
+      "name": "Hamatolenus",
+      "author": "Here",
+      "year": 1953,
+      "page": 231
+    },
+    {
+      "name": "Protolenus",
+      "author": "Matruew",
+      "year": 1892,
+      "page": 231
+    },
+    {
+      "name": "Anabaraspis",
+      "author": "Leamrontova",
+      "year": 1951,
+      "page": 231
+    },
+    {
+      "name": "Bergeroniellus",
+      "author": "Lermontova",
+      "year": 1940,
+      "page": 231
+    },
+    {
+      "name": "Blayacina",
+      "author": "Copsoup",
+      "year": 1931,
+      "page": 231
+    },
+    {
+      "name": "Lermontovia",
+      "author": "Suvorova",
+      "year": 1956,
+      "page": 232
+    },
+    {
+      "name": "Lusatiops",
+      "author": "Richter & Ricuter",
+      "year": 1941,
+      "page": 232
+    },
+    {
+      "name": "Thoralaspis",
+      "author": "Hurt",
+      "year": 1953,
+      "page": 232
+    },
+    {
+      "name": "Bigotina",
+      "author": "Cossoip",
+      "year": 1935,
+      "page": 232
+    },
+    {
+      "name": "Aldonaia",
+      "author": "Lermontova",
+      "year": 1940,
+      "page": 232
+    },
+    {
+      "name": "Yunnanocephalus",
+      "author": "Kosayasui",
+      "year": 1936,
+      "page": 232
+    },
+    {
+      "name": "Sinolenus",
+      "author": "KoevayasHi",
+      "year": 1944,
+      "page": 232
+    },
+    {
+      "name": "Eccaparadoxides",
+      "author": "Snayor",
+      "year": 1957,
+      "page": 233
+    },
+    {
+      "name": "Acadoparadoxides",
+      "author": "Swayor",
+      "year": 1957,
+      "page": 233
+    },
+    {
+      "name": "Luhops",
+      "author": "Sxayorn",
+      "year": 1957,
+      "page": 233
+    },
+    {
+      "name": "Centropleura",
+      "author": "AnceLix",
+      "year": 1854,
+      "page": 234
+    },
+    {
+      "name": "Anopolenus",
+      "author": "Sarrer",
+      "year": 1864,
+      "page": 234
+    },
+    {
+      "name": "Clarella",
+      "author": "Howexrr",
+      "year": 1933,
+      "page": 234
+    },
+    {
+      "name": "Anadoxides",
+      "author": "MattHew",
+      "year": 1899,
+      "page": 234
+    },
+    {
+      "name": "Catadoxides",
+      "author": "Marruew",
+      "year": 1899,
+      "page": 234
+    },
+    {
+      "name": "Xystridura",
+      "author": "Wutrenouse",
+      "year": 1936,
+      "page": 234
+    },
+    {
+      "name": "Subfamuly",
+      "author": "UNCERTAIN\nSchagonaria Poreragzva",
+      "year": 1956,
+      "page": 235
+    },
+    {
+      "name": "Schistocephalus",
+      "author": "CrernysuHeva",
+      "year": 1956,
+      "page": 235
+    },
+    {
+      "name": "Hicksia",
+      "author": "Detcapo",
+      "year": 1904,
+      "page": 236
+    },
+    {
+      "name": "Bathynotus",
+      "author": "Hari",
+      "year": 1860,
+      "page": 236
+    },
+    {
+      "name": "Bathyonotus",
+      "author": "Bicssy",
+      "year": 1868,
+      "page": 236
+    },
+    {
+      "name": "Bathynotellus",
+      "author": "Lenmontova",
+      "year": 1940,
+      "page": 236
+    },
+    {
+      "name": "Corynexochidea",
+      "author": "Ricuren & RicHtTzer",
+      "year": 1941,
+      "page": 237
+    },
+    {
+      "name": "Dorypyge",
+      "author": "Dames",
+      "year": 1883,
+      "page": 237
+    },
+    {
+      "name": "Bonnaria",
+      "author": "Locuman",
+      "year": 1956,
+      "page": 237
+    },
+    {
+      "name": "Bonnia",
+      "author": "Watcotr",
+      "year": 1916,
+      "page": 237
+    },
+    {
+      "name": "Bonniella",
+      "author": "Resser",
+      "year": 1937,
+      "page": 237
+    },
+    {
+      "name": "Bonniopsis",
+      "author": "Poursen",
+      "year": 1946,
+      "page": 237
+    },
+    {
+      "name": "Dorypygina",
+      "author": "Leratonrova",
+      "year": 1940,
+      "page": 237
+    },
+    {
+      "name": "Fordaspis",
+      "author": "Locuman",
+      "year": 1956,
+      "page": 237
+    },
+    {
+      "name": "Holterta",
+      "author": "Warcorr",
+      "year": 1924,
+      "page": 238
+    },
+    {
+      "name": "Kootenia",
+      "author": "Waccott",
+      "year": 1888,
+      "page": 238
+    },
+    {
+      "name": "Notasaphus",
+      "author": "Grecory",
+      "year": 1903,
+      "page": 238
+    },
+    {
+      "name": "Olenoides",
+      "author": "Meex",
+      "year": 1877,
+      "page": 238
+    },
+    {
+      "name": "Prokootenia",
+      "author": "Leamontova",
+      "year": 1940,
+      "page": 239
+    },
+    {
+      "name": "Ogygopsis",
+      "author": "Waxtcotr",
+      "year": 1889,
+      "page": 239
+    },
+    {
+      "name": "Oryctocephalus",
+      "author": "Watcorr",
+      "year": 1886,
+      "page": 240
+    },
+    {
+      "name": "Oryctocephalinad",
+      "author": "Lerseoxntova",
+      "year": 1940,
+      "page": 240
+    },
+    {
+      "name": "Rainelia",
+      "author": "Rusconi",
+      "year": 1952,
+      "page": 240
+    },
+    {
+      "name": "Lancastria",
+      "author": "Kosayasui",
+      "year": 1935,
+      "page": 240
+    },
+    {
+      "name": "Oryctocara",
+      "author": "Waxucort",
+      "year": 1908,
+      "page": 240
+    },
+    {
+      "name": "Oryctocephalites",
+      "author": "Resser",
+      "year": 1939,
+      "page": 240
+    },
+    {
+      "name": "Oryctocephalops",
+      "author": "Lermownrova",
+      "year": 1940,
+      "page": 240
+    },
+    {
+      "name": "Tonkinella",
+      "author": "Mansuy",
+      "year": 1916,
+      "page": 240
+    },
+    {
+      "name": "Dolichometopus",
+      "author": "Awncetis",
+      "year": 1854,
+      "page": 241
+    },
+    {
+      "name": "Amphoton",
+      "author": "Lorenz",
+      "year": 1906,
+      "page": 242
+    },
+    {
+      "name": "Bathyuriscus",
+      "author": "Mrex",
+      "year": 1873,
+      "page": 244
+    },
+    {
+      "name": "Chilometopus",
+      "author": "Resconr",
+      "year": 1952,
+      "page": 244
+    },
+    {
+      "name": "Chdonorria",
+      "author": "Rusconi",
+      "year": 1952,
+      "page": 244
+    },
+    {
+      "name": "Clavaspidella",
+      "author": "Pounrsen",
+      "year": 1927,
+      "page": 244
+    },
+    {
+      "name": "Dolichometopsis",
+      "author": "Poursen",
+      "year": 1927,
+      "page": 244
+    },
+    {
+      "name": "Glossopleura",
+      "author": "Poursen",
+      "year": 1927,
+      "page": 244
+    },
+    {
+      "name": "Hemirhodon",
+      "author": "Raymonp",
+      "year": 1937,
+      "page": 244
+    },
+    {
+      "name": "Klotziella",
+      "author": "RaymMono",
+      "year": 1928,
+      "page": 244
+    },
+    {
+      "name": "Mendospidella",
+      "author": "Ruscont",
+      "year": 1952,
+      "page": 244
+    },
+    {
+      "name": "Orria",
+      "author": "Watcotr",
+      "year": 1916,
+      "page": 244
+    },
+    {
+      "name": "Parapoliella",
+      "author": "CuernysHeva",
+      "year": 1956,
+      "page": 246
+    },
+    {
+      "name": "Parkaspis",
+      "author": "Raserti",
+      "year": 1951,
+      "page": 246
+    },
+    {
+      "name": "Policila",
+      "author": "Warcotr",
+      "year": 1916,
+      "page": 246
+    },
+    {
+      "name": "Poliellaspis",
+      "author": "Lermontova",
+      "year": 1940,
+      "page": 246
+    },
+    {
+      "name": "Polypleuraspis",
+      "author": "Pounsen",
+      "year": 1927,
+      "page": 246
+    },
+    {
+      "name": "Prosymphysurus",
+      "author": "Pounsen",
+      "year": 1927,
+      "page": 246
+    },
+    {
+      "name": "Ptarmigania",
+      "author": "Raymonp",
+      "year": 1928,
+      "page": 246
+    },
+    {
+      "name": "Prarmiganoides",
+      "author": "Rasertr",
+      "year": 1951,
+      "page": 246
+    },
+    {
+      "name": "Wenkchemnia",
+      "author": "Rasettr",
+      "year": 1951,
+      "page": 246
+    },
+    {
+      "name": "Corynexochida",
+      "author": "Corynexochus ANGELIN",
+      "year": 1854,
+      "page": 247
+    },
+    {
+      "name": "Bonnaspis",
+      "author": "Resser",
+      "year": 1936,
+      "page": 247
+    },
+    {
+      "name": "Corynexochina",
+      "author": "Lerstiontova",
+      "year": 1940,
+      "page": 247
+    },
+    {
+      "name": "Zacanthoides",
+      "author": "Watcott",
+      "year": 1888,
+      "page": 247
+    },
+    {
+      "name": "Albertella",
+      "author": "Wancorr",
+      "year": 1908,
+      "page": 247
+    },
+    {
+      "name": "Fieldaspis",
+      "author": "Raserri",
+      "year": 1951,
+      "page": 247
+    },
+    {
+      "name": "Mexicaspis",
+      "author": "Locuman",
+      "year": 1948,
+      "page": 247
+    },
+    {
+      "name": "Albertelia",
+      "author": "Lacanthopsis\n\nProzacanthoides Resser",
+      "year": 1937,
+      "page": 248
+    },
+    {
+      "name": "Stephenaspis",
+      "author": "RaseTtt",
+      "year": 1951,
+      "page": 249
+    },
+    {
+      "name": "Vanuxemelia",
+      "author": "Waccotr",
+      "year": 1916,
+      "page": 250
+    },
+    {
+      "name": "Zacanthopsis",
+      "author": "Resser",
+      "year": 1938,
+      "page": 250
+    },
+    {
+      "name": "Erbia",
+      "author": "Lermontova",
+      "year": 1940,
+      "page": 250
+    },
+    {
+      "name": "Proerbia",
+      "author": "Lermontova",
+      "year": 1940,
+      "page": 251
+    },
+    {
+      "name": "Tollaspis",
+      "author": "Kosayasui",
+      "year": 1943,
+      "page": 251
+    },
+    {
+      "name": "Prychoparia",
+      "author": "Hawt & Cospa",
+      "year": 1847,
+      "page": 251
+    },
+    {
+      "name": "Braintreclla",
+      "author": "Wueever",
+      "year": 1942,
+      "page": 253
+    },
+    {
+      "name": "Caborcella",
+      "author": "Locuaran",
+      "year": 1948,
+      "page": 253
+    },
+    {
+      "name": "Drabia",
+      "author": "Winson",
+      "year": 1951,
+      "page": 253
+    },
+    {
+      "name": "Lyriaspis",
+      "author": "Wuitrexouse",
+      "year": 1939,
+      "page": 253
+    },
+    {
+      "name": "Ptychoparella",
+      "author": "Poursen",
+      "year": 1927,
+      "page": 253
+    },
+    {
+      "name": "Ptychoparoides",
+      "author": "ROGZitxa",
+      "year": 1939,
+      "page": 253
+    },
+    {
+      "name": "Yohoaspis",
+      "author": "Raserri",
+      "year": 1951,
+      "page": 253
+    },
+    {
+      "name": "Yuknessaspis",
+      "author": "Raserri",
+      "year": 1951,
+      "page": 253
+    },
+    {
+      "name": "Periommeiia",
+      "author": "Resser",
+      "year": 1938,
+      "page": 254
+    },
+    {
+      "name": "Euloma",
+      "author": "ANGELIN",
+      "year": 1854,
+      "page": 254
+    },
+    {
+      "name": "Nassovia",
+      "author": "Howert",
+      "year": 1937,
+      "page": 254
+    },
+    {
+      "name": "Brunswickia",
+      "author": "Hower",
+      "year": 1937,
+      "page": 254
+    },
+    {
+      "name": "Champlainia",
+      "author": "Hower",
+      "year": 1937,
+      "page": 255
+    },
+    {
+      "name": "Vermontella",
+      "author": "Hower",
+      "year": 1937,
+      "page": 255
+    },
+    {
+      "name": "Antagmus",
+      "author": "Resser",
+      "year": 1936,
+      "page": 255
+    },
+    {
+      "name": "Austinvillia",
+      "author": "Resser",
+      "year": 1938,
+      "page": 255
+    },
+    {
+      "name": "Bicella",
+      "author": "Raserri",
+      "year": 1955,
+      "page": 255
+    },
+    {
+      "name": "Crasstimbra",
+      "author": "LocumMan",
+      "year": 1947,
+      "page": 256
+    },
+    {
+      "name": "Fopiychoparia",
+      "author": "Raserti",
+      "year": 1955,
+      "page": 256
+    },
+    {
+      "name": "Qnchocephalus",
+      "author": "Resser",
+      "year": 1937,
+      "page": 257
+    },
+    {
+      "name": "Periomma",
+      "author": "Resser",
+      "year": 1937,
+      "page": 257
+    },
+    {
+      "name": "Piaziella",
+      "author": "Locsman",
+      "year": 1947,
+      "page": 257
+    },
+    {
+      "name": "Poulsenia",
+      "author": "Resser",
+      "year": 1936,
+      "page": 257
+    },
+    {
+      "name": "Proliostracus",
+      "author": "Pounsen",
+      "year": 1932,
+      "page": 257
+    },
+    {
+      "name": "Sombrerella",
+      "author": "LocumMan",
+      "year": 1948,
+      "page": 257
+    },
+    {
+      "name": "Syspacephalus",
+      "author": "Resser",
+      "year": 1936,
+      "page": 257
+    },
+    {
+      "name": "Conokephalina",
+      "author": "Brdccer",
+      "year": 1886,
+      "page": 258
+    },
+    {
+      "name": "Schoriella",
+      "author": "Stvov",
+      "year": 1955,
+      "page": 258
+    },
+    {
+      "name": "Alokistocare",
+      "author": "Lorenz",
+      "year": 1906,
+      "page": 258
+    },
+    {
+      "name": "Alokistocarella",
+      "author": "Resser",
+      "year": 1938,
+      "page": 258
+    },
+    {
+      "name": "Amecephalina",
+      "author": "Poutsenx",
+      "year": 1927,
+      "page": 258
+    },
+    {
+      "name": "Annamita",
+      "author": "Mansuy",
+      "year": 1916,
+      "page": 258
+    },
+    {
+      "name": "Arellanelia",
+      "author": "LocumMan",
+      "year": 1948,
+      "page": 258
+    },
+    {
+      "name": "Bythicheilus",
+      "author": "Resser",
+      "year": 1939,
+      "page": 258
+    },
+    {
+      "name": "Chancia",
+      "author": "Watcort",
+      "year": 1924,
+      "page": 258
+    },
+    {
+      "name": "Chelidonocephalus",
+      "author": "Kinc",
+      "year": 1937,
+      "page": 258
+    },
+    {
+      "name": "Ehmania",
+      "author": "Resser",
+      "year": 1935,
+      "page": 258
+    },
+    {
+      "name": "Ehmaniella",
+      "author": "Resser",
+      "year": 1937,
+      "page": 259
+    },
+    {
+      "name": "Elrathia",
+      "author": "Watcott",
+      "year": 1924,
+      "page": 260
+    },
+    {
+      "name": "Elrathiella",
+      "author": "Poutsen",
+      "year": 1927,
+      "page": 260
+    },
+    {
+      "name": "Elrathina",
+      "author": "Resser",
+      "year": 1937,
+      "page": 260
+    },
+    {
+      "name": "Ingieheidia",
+      "author": "Poutsex",
+      "year": 1927,
+      "page": 260
+    },
+    {
+      "name": "Kistocare",
+      "author": "Locusmanx",
+      "year": 1948,
+      "page": 260
+    },
+    {
+      "name": "Kochiella",
+      "author": "Pocrsen",
+      "year": 1927,
+      "page": 260
+    },
+    {
+      "name": "Kochina",
+      "author": "Resser",
+      "year": 1935,
+      "page": 260
+    },
+    {
+      "name": "Kujandaspis",
+      "author": "Ivsiin",
+      "year": 1956,
+      "page": 260
+    },
+    {
+      "name": "Mcgadunderbergia",
+      "author": "KosayasHi",
+      "year": 1938,
+      "page": 260
+    },
+    {
+      "name": "Mexicella",
+      "author": "Locuman",
+      "year": 1948,
+      "page": 260
+    },
+    {
+      "name": "Orlovia",
+      "author": "Watcott & Resser",
+      "year": 1925,
+      "page": 260
+    },
+    {
+      "name": "Pachyaspis",
+      "author": "Resser",
+      "year": 1939,
+      "page": 261
+    },
+    {
+      "name": "Parehmania",
+      "author": "Detss",
+      "year": 1939,
+      "page": 261
+    },
+    {
+      "name": "Perioura",
+      "author": "Resser",
+      "year": 1938,
+      "page": 261
+    },
+    {
+      "name": "Proveedoria",
+      "author": "Locuman",
+      "year": 1948,
+      "page": 261
+    },
+    {
+      "name": "Trachycheilus",
+      "author": "Resser",
+      "year": 1945,
+      "page": 261
+    },
+    {
+      "name": "Conocoryphe",
+      "author": "Hawte & Corpa",
+      "year": 1847,
+      "page": 262
+    },
+    {
+      "name": "Atops",
+      "author": "Eamions",
+      "year": 1844,
+      "page": 262
+    },
+    {
+      "name": "Bailiaspis",
+      "author": "Resser",
+      "year": 1936,
+      "page": 262
+    },
+    {
+      "name": "Bailiella",
+      "author": "Mattuew",
+      "year": 1885,
+      "page": 262
+    },
+    {
+      "name": "Cainatops",
+      "author": "Mattoew",
+      "year": 1899,
+      "page": 262
+    },
+    {
+      "name": "Coulourmania",
+      "author": "THoraL",
+      "year": 1946,
+      "page": 262
+    },
+    {
+      "name": "Crenocephalus",
+      "author": "Hawise & Corpa",
+      "year": 1847,
+      "page": 262
+    },
+    {
+      "name": "Dasometopus",
+      "author": "Resser",
+      "year": 1936,
+      "page": 262
+    },
+    {
+      "name": "Hartshillia",
+      "author": "Elyx Anceuin",
+      "year": 1854,
+      "page": 263
+    },
+    {
+      "name": "Hartshilta",
+      "author": "Icutnc",
+      "year": 1916,
+      "page": 264
+    },
+    {
+      "name": "Meneviella",
+      "author": "StussLerietp",
+      "year": 1951,
+      "page": 264
+    },
+    {
+      "name": "Parabailtella",
+      "author": "THorat",
+      "year": 1946,
+      "page": 264
+    },
+    {
+      "name": "Shumardia",
+      "author": "Birttncs",
+      "year": 1862,
+      "page": 265
+    },
+    {
+      "name": "Idiomesus",
+      "author": "Raymonp",
+      "year": 1924,
+      "page": 265
+    },
+    {
+      "name": "Koldinioidia",
+      "author": "Kosayasnt",
+      "year": 1930,
+      "page": 266
+    },
+    {
+      "name": "Urianae",
+      "author": "Kosayasei",
+      "year": 1935,
+      "page": 267
+    },
+    {
+      "name": "Furostina",
+      "author": "Warrenouse",
+      "year": 1939,
+      "page": 267
+    },
+    {
+      "name": "Lorenzella",
+      "author": "Kosayvasnl",
+      "year": 1935,
+      "page": 267
+    },
+    {
+      "name": "Metabowmania",
+      "author": "Kosayasiu",
+      "year": 1955,
+      "page": 267
+    },
+    {
+      "name": "Probowmania",
+      "author": "Kowgayasin",
+      "year": 1933,
+      "page": 267
+    },
+    {
+      "name": "Protemnites",
+      "author": "Wrirenouse",
+      "year": 1939,
+      "page": 267
+    },
+    {
+      "name": "Utia",
+      "author": "Watcorr",
+      "year": 1924,
+      "page": 267
+    },
+    {
+      "name": "Changshania",
+      "author": "Sun",
+      "year": 1923,
+      "page": 267
+    },
+    {
+      "name": "Dorypygella",
+      "author": "Watcorr",
+      "year": 1905,
+      "page": 268
+    },
+    {
+      "name": "Shangtungia",
+      "author": "Watcotr",
+      "year": 1905,
+      "page": 268
+    },
+    {
+      "name": "Teinistion",
+      "author": "Moxne",
+      "year": 1903,
+      "page": 268
+    },
+    {
+      "name": "Liostracina",
+      "author": "Monke",
+      "year": 1903,
+      "page": 268
+    },
+    {
+      "name": "Liostracinoides",
+      "author": "RaymMonyv",
+      "year": 1957,
+      "page": 268
+    },
+    {
+      "name": "Crepicephalus",
+      "author": "Owen",
+      "year": 1852,
+      "page": 268
+    },
+    {
+      "name": "Bonneterrina",
+      "author": "Locusan",
+      "year": 1936,
+      "page": 268
+    },
+    {
+      "name": "Kochaspis",
+      "author": "Resser",
+      "year": 1935,
+      "page": 270
+    },
+    {
+      "name": "Tricrepicephalus",
+      "author": "Kogayasui",
+      "year": 1935,
+      "page": 270
+    },
+    {
+      "name": "Metcoraspis",
+      "author": "Resser",
+      "year": 1935,
+      "page": 270
+    },
+    {
+      "name": "Nepea",
+      "author": "Wuirrnouse",
+      "year": 1939,
+      "page": 271
+    },
+    {
+      "name": "Idahoia",
+      "author": "Watcort",
+      "year": 1924,
+      "page": 272
+    },
+    {
+      "name": "Bellaspidella",
+      "author": "Raserri",
+      "year": 1945,
+      "page": 272
+    },
+    {
+      "name": "Comanchia",
+      "author": "Freperickson",
+      "year": 1950,
+      "page": 272
+    },
+    {
+      "name": "Pseudosaratogia",
+      "author": "Wirson",
+      "year": 1951,
+      "page": 272
+    },
+    {
+      "name": "Saratogia",
+      "author": "Watcorr",
+      "year": 1916,
+      "page": 272
+    },
+    {
+      "name": "Wilbernia",
+      "author": "Watcort",
+      "year": 1924,
+      "page": 272
+    },
+    {
+      "name": "Meeria",
+      "author": "Freperitcxson",
+      "year": 1949,
+      "page": 272
+    },
+    {
+      "name": "Dikelocephalus",
+      "author": "Owen",
+      "year": 1852,
+      "page": 274
+    },
+    {
+      "name": "Briscoia",
+      "author": "Waccort",
+      "year": 1924,
+      "page": 274
+    },
+    {
+      "name": "Osceolia",
+      "author": "Wactcorr",
+      "year": 1914,
+      "page": 274
+    },
+    {
+      "name": "Pterocephalia",
+      "author": "F. Roemer",
+      "year": 1852,
+      "page": 276
+    },
+    {
+      "name": "Aphelaspis",
+      "author": "Resser",
+      "year": 1935,
+      "page": 276
+    },
+    {
+      "name": "Blandicephalus",
+      "author": "Patater",
+      "year": 1934,
+      "page": 276
+    },
+    {
+      "name": "Camaraspis",
+      "author": "Utraicnh & Resser",
+      "year": 1924,
+      "page": 276
+    },
+    {
+      "name": "Camaraspoides",
+      "author": "Frepericxson",
+      "year": 1949,
+      "page": 277
+    },
+    {
+      "name": "Dikelocephalites",
+      "author": "Sux",
+      "year": 1955,
+      "page": 278
+    },
+    {
+      "name": "Dyuremacephalus",
+      "author": "Parmer",
+      "year": 1954,
+      "page": 278
+    },
+    {
+      "name": "Eugonocare",
+      "author": "Wuirewouse",
+      "year": 1939,
+      "page": 278
+    },
+    {
+      "name": "Kazelia",
+      "author": "Watcotr & Resser",
+      "year": 1924,
+      "page": 278
+    },
+    {
+      "name": "Labiostria",
+      "author": "Patsmcer",
+      "year": 1954,
+      "page": 278
+    },
+    {
+      "name": "Litocephalus",
+      "author": "Resser",
+      "year": 1937,
+      "page": 279
+    },
+    {
+      "name": "Maladioidella",
+      "author": "Enno",
+      "year": 1937,
+      "page": 280
+    },
+    {
+      "name": "Olentella",
+      "author": "Ivsuin",
+      "year": 1956,
+      "page": 280
+    },
+    {
+      "name": "Pedinacephalus",
+      "author": "Ivsuin",
+      "year": 1956,
+      "page": 280
+    },
+    {
+      "name": "Pterocephalops",
+      "author": "Rasetrtri",
+      "year": 1944,
+      "page": 280
+    },
+    {
+      "name": "Housia",
+      "author": "Warcort",
+      "year": 1916,
+      "page": 280
+    },
+    {
+      "name": "Agaso",
+      "author": "Cossotp & Pocock",
+      "year": 1934,
+      "page": 281
+    },
+    {
+      "name": "Andrarina",
+      "author": "Raymonp",
+      "year": 1937,
+      "page": 281
+    },
+    {
+      "name": "Groenwallia",
+      "author": "Konavasiit",
+      "year": 1935,
+      "page": 281
+    },
+    {
+      "name": "Holasaphus",
+      "author": "MattHew",
+      "year": 1895,
+      "page": 281
+    },
+    {
+      "name": "Liesolenopleura",
+      "author": "THorar",
+      "year": 1948,
+      "page": 281
+    },
+    {
+      "name": "Oidae",
+      "author": "Huek",
+      "year": 1953,
+      "page": 281
+    },
+    {
+      "name": "Parabolina",
+      "author": "Satter",
+      "year": 1849,
+      "page": 282
+    },
+    {
+      "name": "Parabolinites",
+      "author": "Hennincsscoen",
+      "year": 1957,
+      "page": 282
+    },
+    {
+      "name": "Leptoplastus",
+      "author": "AnGELIN",
+      "year": 1854,
+      "page": 283
+    },
+    {
+      "name": "Furycare",
+      "author": "AwnceLin",
+      "year": 1854,
+      "page": 284
+    },
+    {
+      "name": "Sphaerophthalmus",
+      "author": "Ancevin",
+      "year": 1834,
+      "page": 284
+    },
+    {
+      "name": "Pelturinae",
+      "author": "Hasgaincron & Leanza",
+      "year": 1952,
+      "page": 284
+    },
+    {
+      "name": "Peltura",
+      "author": "Micne Epwarps",
+      "year": 1840,
+      "page": 284
+    },
+    {
+      "name": "Ainopocare",
+      "author": "AnceLtnx",
+      "year": 1834,
+      "page": 284
+    },
+    {
+      "name": "Acerocare",
+      "author": "ANGELIN",
+      "year": 1854,
+      "page": 285
+    },
+    {
+      "name": "Acerocarina",
+      "author": "Pouusen",
+      "year": 1951,
+      "page": 286
+    },
+    {
+      "name": "Beltella",
+      "author": "Lake",
+      "year": 1919,
+      "page": 286
+    },
+    {
+      "name": "Boeckaspis",
+      "author": "Henninasmoen",
+      "year": 1955,
+      "page": 286
+    },
+    {
+      "name": "Cyclognathina",
+      "author": "Lerseontrova",
+      "year": 1951,
+      "page": 286
+    },
+    {
+      "name": "Jujuyaspis",
+      "author": "Kosayasyit",
+      "year": 1936,
+      "page": 286
+    },
+    {
+      "name": "Parabolinopsis",
+      "author": "Hoex",
+      "year": 1912,
+      "page": 286
+    },
+    {
+      "name": "Peltocare",
+      "author": "HENNINGSMoEN",
+      "year": 1957,
+      "page": 286
+    },
+    {
+      "name": "Pelturing",
+      "author": "Hexninosmoen",
+      "year": 1957,
+      "page": 286
+    },
+    {
+      "name": "Protopeltura",
+      "author": "Brgccrer",
+      "year": 1882,
+      "page": 286
+    },
+    {
+      "name": "Saltaspis",
+      "author": "Harrincton & Leanza",
+      "year": 1952,
+      "page": 286
+    },
+    {
+      "name": "Westergaardia",
+      "author": "Raymonno",
+      "year": 1924,
+      "page": 286
+    },
+    {
+      "name": "Nericiaspis",
+      "author": "Tyernvix",
+      "year": 1955,
+      "page": 286
+    },
+    {
+      "name": "Triarthrus",
+      "author": "Green",
+      "year": 1832,
+      "page": 287
+    },
+    {
+      "name": "Bienvillia",
+      "author": "Crank",
+      "year": 1924,
+      "page": 287
+    },
+    {
+      "name": "Leiobienvillia",
+      "author": "Rasetti",
+      "year": 1954,
+      "page": 287
+    },
+    {
+      "name": "Moxomia",
+      "author": "Waccott",
+      "year": 1924,
+      "page": 287
+    },
+    {
+      "name": "Parabolinelia",
+      "author": "Bagccer",
+      "year": 1882,
+      "page": 287
+    },
+    {
+      "name": "Plicatolina",
+      "author": "Suaw",
+      "year": 1951,
+      "page": 288
+    },
+    {
+      "name": "Porterficldia",
+      "author": "B. N. Cooper",
+      "year": 1953,
+      "page": 288
+    },
+    {
+      "name": "Westergaardites",
+      "author": "Troepsson",
+      "year": 1937,
+      "page": 288
+    },
+    {
+      "name": "Papyriaspis",
+      "author": "WurrtHouse",
+      "year": 1939,
+      "page": 289
+    },
+    {
+      "name": "Hedinaspis",
+      "author": "Trorpsson",
+      "year": 1952,
+      "page": 289
+    },
+    {
+      "name": "Pianaspis",
+      "author": "Sarro & Sakaxura",
+      "year": 1936,
+      "page": 289
+    },
+    {
+      "name": "Hypermecaspis",
+      "author": "Harrincron & Leanza",
+      "year": 1957,
+      "page": 290
+    },
+    {
+      "name": "Tropidopyge",
+      "author": "Harrincton & Kay",
+      "year": 1951,
+      "page": 290
+    },
+    {
+      "name": "Ilaenurus",
+      "author": "Hari",
+      "year": 1863,
+      "page": 291
+    },
+    {
+      "name": "Macelloura",
+      "author": "Ressern",
+      "year": 1935,
+      "page": 291
+    },
+    {
+      "name": "Yukonaspis",
+      "author": "Kosavasnt",
+      "year": 1936,
+      "page": 291
+    },
+    {
+      "name": "Shirakiella",
+      "author": "Kopayasut",
+      "year": 1935,
+      "page": 291
+    },
+    {
+      "name": "Parabolinoides",
+      "author": "Faepericxson",
+      "year": 1949,
+      "page": 292
+    },
+    {
+      "name": "Bernia",
+      "author": "Frepericxson",
+      "year": 1949,
+      "page": 292
+    },
+    {
+      "name": "Croixana",
+      "author": "Nexson",
+      "year": 1951,
+      "page": 292
+    },
+    {
+      "name": "Maustonia",
+      "author": "Raascy in Locuman",
+      "year": 1950,
+      "page": 292
+    },
+    {
+      "name": "Orygmaspis",
+      "author": "Resser",
+      "year": 1936,
+      "page": 292
+    },
+    {
+      "name": "Psalaspis",
+      "author": "Resser",
+      "year": 1937,
+      "page": 293
+    },
+    {
+      "name": "Olenaspelia",
+      "author": "Witson",
+      "year": 1956,
+      "page": 294
+    },
+    {
+      "name": "Solenopleura",
+      "author": "AsGetin",
+      "year": 1854,
+      "page": 295
+    },
+    {
+      "name": "Asthenopsis",
+      "author": "Wrirenocse",
+      "year": 1939,
+      "page": 295
+    },
+    {
+      "name": "Crusoia",
+      "author": "WaccotTr",
+      "year": 1924,
+      "page": 295
+    },
+    {
+      "name": "Jincella",
+      "author": "Snaypr",
+      "year": 1957,
+      "page": 295
+    },
+    {
+      "name": "Maiaspis",
+      "author": "CuHernysreva",
+      "year": 1956,
+      "page": 295
+    },
+    {
+      "name": "Parasolenopleura",
+      "author": "Wesrercarp",
+      "year": 1953,
+      "page": 295
+    },
+    {
+      "name": "Perneraspis",
+      "author": "Pranti",
+      "year": 1947,
+      "page": 295
+    },
+    {
+      "name": "Pseudosolenepleura",
+      "author": "Sun",
+      "year": 1933,
+      "page": 295
+    },
+    {
+      "name": "Soienopleurella",
+      "author": "Pouusen",
+      "year": 1927,
+      "page": 295
+    },
+    {
+      "name": "Spencia",
+      "author": "Resser",
+      "year": 1939,
+      "page": 295
+    },
+    {
+      "name": "Aolcus",
+      "author": "Resser",
+      "year": 1939,
+      "page": 295
+    },
+    {
+      "name": "Acrocephalites",
+      "author": "WaLierivs",
+      "year": 1895,
+      "page": 296
+    },
+    {
+      "name": "Aldanaspis",
+      "author": "Lerstontova",
+      "year": 1840,
+      "page": 296
+    },
+    {
+      "name": "Clifa",
+      "author": "J. L. Wicsox",
+      "year": 1951,
+      "page": 296
+    },
+    {
+      "name": "Solenopleuropsis",
+      "author": "Toran",
+      "year": 1947,
+      "page": 298
+    },
+    {
+      "name": "Hystricurus",
+      "author": "Raymonp",
+      "year": 1913,
+      "page": 298
+    },
+    {
+      "name": "Amblycranium",
+      "author": "Ross",
+      "year": 1951,
+      "page": 298
+    },
+    {
+      "name": "Hillyardina",
+      "author": "Ross",
+      "year": 1951,
+      "page": 298
+    },
+    {
+      "name": "Pachycranium",
+      "author": "Ross",
+      "year": 1951,
+      "page": 298
+    },
+    {
+      "name": "Parahystricurus",
+      "author": "Ross",
+      "year": 1931,
+      "page": 298
+    },
+    {
+      "name": "Psalikilopsis",
+      "author": "Ross",
+      "year": 1953,
+      "page": 298
+    },
+    {
+      "name": "Psalikilus",
+      "author": "Ross",
+      "year": 1951,
+      "page": 298
+    },
+    {
+      "name": "Rollia",
+      "author": "Corutson",
+      "year": 1944,
+      "page": 298
+    },
+    {
+      "name": "Agraulos",
+      "author": "Hawre & Corpa",
+      "year": 1847,
+      "page": 298
+    },
+    {
+      "name": "Arion",
+      "author": "Barranpe",
+      "year": 1846,
+      "page": 298
+    },
+    {
+      "name": "Proampyx",
+      "author": "Fares",
+      "year": 1897,
+      "page": 298
+    },
+    {
+      "name": "Skreiaspis",
+      "author": "RedidKa",
+      "year": 1944,
+      "page": 299
+    },
+    {
+      "name": "Lonchocephalus",
+      "author": "Owen",
+      "year": 1852,
+      "page": 299
+    },
+    {
+      "name": "Calymenidius",
+      "author": "Raserrr",
+      "year": 1944,
+      "page": 299
+    },
+    {
+      "name": "Quebecaspis",
+      "author": "Raserri",
+      "year": 1944,
+      "page": 299
+    },
+    {
+      "name": "Glaphyraspis",
+      "author": "Resser",
+      "year": 1937,
+      "page": 299
+    },
+    {
+      "name": "Talbotina",
+      "author": "Locrstan",
+      "year": 1938,
+      "page": 299
+    },
+    {
+      "name": "Terranovella",
+      "author": "Locusatan",
+      "year": 1935,
+      "page": 300
+    },
+    {
+      "name": "Weeksina",
+      "author": "Resser",
+      "year": 1933,
+      "page": 300
+    },
+    {
+      "name": "Welleraspis",
+      "author": "Kosarasut",
+      "year": 1935,
+      "page": 301
+    },
+    {
+      "name": "Dokimocephalus",
+      "author": "Watcotr",
+      "year": 1924,
+      "page": 301
+    },
+    {
+      "name": "Suleocephalus",
+      "author": "J. L. Witsox",
+      "year": 1943,
+      "page": 301
+    },
+    {
+      "name": "Burneticlia",
+      "author": "Locusan",
+      "year": 1958,
+      "page": 301
+    },
+    {
+      "name": "Deckera",
+      "author": "Freperickson",
+      "year": 1949,
+      "page": 301
+    },
+    {
+      "name": "Heterocarvon",
+      "author": "Raysronp",
+      "year": 1937,
+      "page": 302
+    },
+    {
+      "name": "Kindbladia",
+      "author": "Frepericxson",
+      "year": 1948,
+      "page": 303
+    },
+    {
+      "name": "Kyphocephalus",
+      "author": "B. M. Mitcer",
+      "year": 1936,
+      "page": 303
+    },
+    {
+      "name": "Wongia",
+      "author": "Sun",
+      "year": 1924,
+      "page": 303
+    },
+    {
+      "name": "Xenocheilos",
+      "author": "J.L. Winson",
+      "year": 1949,
+      "page": 303
+    },
+    {
+      "name": "Caullicephala",
+      "author": "Raystono",
+      "year": 1935,
+      "page": 304
+    },
+    {
+      "name": "Distazeris",
+      "author": "RayMonp",
+      "year": 1937,
+      "page": 305
+    },
+    {
+      "name": "Madarocephalus",
+      "author": "Resser",
+      "year": 1958,
+      "page": 305
+    },
+    {
+      "name": "Stenechiina",
+      "author": "Ucaice in Brince",
+      "year": 1930,
+      "page": 305
+    },
+    {
+      "name": "Theodenisia",
+      "author": "Crarx",
+      "year": 1948,
+      "page": 305
+    },
+    {
+      "name": "Triarthropsis",
+      "author": "Liatce in Brince",
+      "year": 1930,
+      "page": 305
+    },
+    {
+      "name": "Kingstonia",
+      "author": "WatcorT",
+      "year": 1924,
+      "page": 305
+    },
+    {
+      "name": "Ankoura",
+      "author": "Resser",
+      "year": 1938,
+      "page": 305
+    },
+    {
+      "name": "Brachyaspidion",
+      "author": "B. M. Mituer",
+      "year": 1936,
+      "page": 306
+    },
+    {
+      "name": "Bynumia",
+      "author": "Waccotr",
+      "year": 1924,
+      "page": 306
+    },
+    {
+      "name": "Bynumina",
+      "author": "Resser",
+      "year": 1942,
+      "page": 306
+    },
+    {
+      "name": "Anomocare",
+      "author": "Ancetitn",
+      "year": 1852,
+      "page": 306
+    },
+    {
+      "name": "Anomocarina",
+      "author": "Lermontova",
+      "year": 1940,
+      "page": 307
+    },
+    {
+      "name": "Anomocarioides",
+      "author": "Lermontova",
+      "year": 1940,
+      "page": 307
+    },
+    {
+      "name": "Glyphaspis",
+      "author": "Pouusex",
+      "year": 1927,
+      "page": 308
+    },
+    {
+      "name": "Glyphopeltis",
+      "author": "Detss",
+      "year": 1939,
+      "page": 308
+    },
+    {
+      "name": "Haniwa",
+      "author": "Kosayasur",
+      "year": 1933,
+      "page": 308
+    },
+    {
+      "name": "Haniwoides",
+      "author": "Kosayasnr",
+      "year": 1935,
+      "page": 308
+    },
+    {
+      "name": "Inouyella",
+      "author": "ResserR & Enno in Enpo & Resser",
+      "year": 1937,
+      "page": 308
+    },
+    {
+      "name": "Kokuria",
+      "author": "Kopayasut",
+      "year": 1935,
+      "page": 308
+    },
+    {
+      "name": "Lioparia",
+      "author": "Lorenz",
+      "year": 1906,
+      "page": 308
+    },
+    {
+      "name": "Macrotoxus",
+      "author": "Lorenz",
+      "year": 1906,
+      "page": 308
+    },
+    {
+      "name": "Metanomocare",
+      "author": "Lermontova",
+      "year": 1940,
+      "page": 308
+    },
+    {
+      "name": "Monocheilus",
+      "author": "Resser",
+      "year": 1927,
+      "page": 308
+    },
+    {
+      "name": "Palella",
+      "author": "Howentzt",
+      "year": 1937,
+      "page": 308
+    },
+    {
+      "name": "Paracoosia",
+      "author": "KosavasHi",
+      "year": 1936,
+      "page": 308
+    },
+    {
+      "name": "Saimachia",
+      "author": "Kosavasut",
+      "year": 1937,
+      "page": 308
+    },
+    {
+      "name": "Wentsuia",
+      "author": "Sun",
+      "year": 1935,
+      "page": 308
+    },
+    {
+      "name": "Anomocariopsis",
+      "author": "Srvov",
+      "year": 1955,
+      "page": 308
+    },
+    {
+      "name": "Catuniella",
+      "author": "Jecorova",
+      "year": 1956,
+      "page": 310
+    },
+    {
+      "name": "Chondranomocare",
+      "author": "Porerarva",
+      "year": 1956,
+      "page": 310
+    },
+    {
+      "name": "Pseudanomocarina",
+      "author": "CursnysHeva",
+      "year": 1956,
+      "page": 310
+    },
+    {
+      "name": "Asaphiscus",
+      "author": "Meex",
+      "year": 1873,
+      "page": 310
+    },
+    {
+      "name": "Anomocarella",
+      "author": "Watcort",
+      "year": 1905,
+      "page": 310
+    },
+    {
+      "name": "Slainia",
+      "author": "Watcott",
+      "year": 1916,
+      "page": 310
+    },
+    {
+      "name": "Blainiopsis",
+      "author": "Poursen",
+      "year": 1947,
+      "page": 310
+    },
+    {
+      "name": "Dolgaia",
+      "author": "Warcott & Resser",
+      "year": 1925,
+      "page": 310
+    },
+    {
+      "name": "Dunderbergella",
+      "author": "Hower",
+      "year": 1945,
+      "page": 310
+    },
+    {
+      "name": "Grandioculus",
+      "author": "Cossman",
+      "year": 1908,
+      "page": 310
+    },
+    {
+      "name": "Hundwarella",
+      "author": "Reep",
+      "year": 1934,
+      "page": 310
+    },
+    {
+      "name": "Iranoleesia",
+      "author": "Kinc",
+      "year": 1955,
+      "page": 310
+    },
+    {
+      "name": "Kaninia",
+      "author": "Watcorr & Resser",
+      "year": 1925,
+      "page": 310
+    },
+    {
+      "name": "Kaniniclla",
+      "author": "Rosavastt",
+      "year": 1938,
+      "page": 310
+    },
+    {
+      "name": "Paraoriovia",
+      "author": "TcHernysutva",
+      "year": 1956,
+      "page": 312
+    },
+    {
+      "name": "Blounua",
+      "author": "Waccott",
+      "year": 1916,
+      "page": 312
+    },
+    {
+      "name": "Biounticlla",
+      "author": "Resser",
+      "year": 1938,
+      "page": 312
+    },
+    {
+      "name": "Maryvillia",
+      "author": "Waccorr",
+      "year": 1916,
+      "page": 312
+    },
+    {
+      "name": "Blountiana",
+      "author": "Suaw",
+      "year": 1952,
+      "page": 312
+    },
+    {
+      "name": "Burlingia",
+      "author": "Watcorr",
+      "year": 1908,
+      "page": 313
+    },
+    {
+      "name": "Schmalenseeia",
+      "author": "Mogerc",
+      "year": 1903,
+      "page": 313
+    },
+    {
+      "name": "Komaspis",
+      "author": "Kosayasni",
+      "year": 1933,
+      "page": 315
+    },
+    {
+      "name": "Benthamaspis",
+      "author": "Poucsex",
+      "year": 1947,
+      "page": 315
+    },
+    {
+      "name": "Carolinites",
+      "author": "Kosavasti",
+      "year": 1940,
+      "page": 315
+    },
+    {
+      "name": "Dartonaspis",
+      "author": "B. M. Minter",
+      "year": 1936,
+      "page": 315
+    },
+    {
+      "name": "Irvingella",
+      "author": "Utaicn & Ressen in Warcort",
+      "year": 1924,
+      "page": 315
+    },
+    {
+      "name": "Princetonella",
+      "author": "Locusanx",
+      "year": 1953,
+      "page": 316
+    },
+    {
+      "name": "Elvinia",
+      "author": "Watcotrr",
+      "year": 1924,
+      "page": 316
+    },
+    {
+      "name": "Drumaspis",
+      "author": "Resser",
+      "year": 1942,
+      "page": 317
+    },
+    {
+      "name": "Maladioides",
+      "author": "Kosavasnt",
+      "year": 1933,
+      "page": 317
+    },
+    {
+      "name": "Taishania",
+      "author": "Sux",
+      "year": 1935,
+      "page": 317
+    },
+    {
+      "name": "Teiephaus",
+      "author": "Bantanos",
+      "year": 1852,
+      "page": 317
+    },
+    {
+      "name": "Telephina",
+      "author": "Marek",
+      "year": 1952,
+      "page": 318
+    },
+    {
+      "name": "Glaphurus",
+      "author": "Raymonp",
+      "year": 1905,
+      "page": 318
+    },
+    {
+      "name": "Glaphurina",
+      "author": "Ucaicu",
+      "year": 1930,
+      "page": 318
+    },
+    {
+      "name": "Raymondina",
+      "author": "T. H. Crarx",
+      "year": 1924,
+      "page": 319
+    },
+    {
+      "name": "Amquia",
+      "author": "Raserti.",
+      "year": 1946,
+      "page": 319
+    },
+    {
+      "name": "Brassicicephalus",
+      "author": "Locumax",
+      "year": 1940,
+      "page": 319
+    },
+    {
+      "name": "Lianoaspidella",
+      "author": "Tasco",
+      "year": 1951,
+      "page": 320
+    },
+    {
+      "name": "Pilgrimia",
+      "author": "Duncan",
+      "year": 1944,
+      "page": 320
+    },
+    {
+      "name": "Cedaria",
+      "author": "Watcotrr",
+      "year": 1924,
+      "page": 321
+    },
+    {
+      "name": "Cedarina",
+      "author": "Locuman",
+      "year": 1940,
+      "page": 321
+    },
+    {
+      "name": "Llanoaspis",
+      "author": "Locuman",
+      "year": 1938,
+      "page": 321
+    },
+    {
+      "name": "Arcuolimbus",
+      "author": "Parmer",
+      "year": 1954,
+      "page": 321
+    },
+    {
+      "name": "Norwoodia",
+      "author": "WatcotTt",
+      "year": 1916,
+      "page": 322
+    },
+    {
+      "name": "Holcacephalus",
+      "author": "Ressea",
+      "year": 1938,
+      "page": 322
+    },
+    {
+      "name": "Norwoodella",
+      "author": "Resser",
+      "year": 1938,
+      "page": 323
+    },
+    {
+      "name": "Paranorwoodia",
+      "author": "Rasetti",
+      "year": 1945,
+      "page": 323
+    },
+    {
+      "name": "Menomonia",
+      "author": "Watcorr",
+      "year": 1916,
+      "page": 323
+    },
+    {
+      "name": "Bolaspidella",
+      "author": "Resser",
+      "year": 1937,
+      "page": 324
+    },
+    {
+      "name": "Detssella",
+      "author": "Howetr & Duncan",
+      "year": 1939,
+      "page": 324
+    },
+    {
+      "name": "Coenasms",
+      "author": "Resser",
+      "year": 1938,
+      "page": 324
+    },
+    {
+      "name": "Densonelia",
+      "author": "Suaw",
+      "year": 1952,
+      "page": 324
+    },
+    {
+      "name": "Dresbachia",
+      "author": "Watcotr",
+      "year": 1916,
+      "page": 324
+    },
+    {
+      "name": "Bolaspis",
+      "author": "Resser",
+      "year": 1935,
+      "page": 324
+    },
+    {
+      "name": "Acrocephalops",
+      "author": "Poutsen",
+      "year": 1927,
+      "page": 324
+    },
+    {
+      "name": "Eldoradia",
+      "author": "Resser",
+      "year": 1935,
+      "page": 325
+    },
+    {
+      "name": "Rawlinsella",
+      "author": "SHaw",
+      "year": 1956,
+      "page": 325
+    },
+    {
+      "name": "Marjumia",
+      "author": "Watcott",
+      "year": 1916,
+      "page": 326
+    },
+    {
+      "name": "Aposolenopleura",
+      "author": "Rayvmono",
+      "year": 1937,
+      "page": 326
+    },
+    {
+      "name": "Bellaspis",
+      "author": "Rasettr",
+      "year": 1945,
+      "page": 326
+    },
+    {
+      "name": "Bemaspis",
+      "author": "Frepericxson",
+      "year": 1949,
+      "page": 326
+    },
+    {
+      "name": "Crepichilella",
+      "author": "Wuitson",
+      "year": 1951,
+      "page": 326
+    },
+    {
+      "name": "Deadwoodia",
+      "author": "Resser",
+      "year": 1938,
+      "page": 326
+    },
+    {
+      "name": "Dellea",
+      "author": "Witson",
+      "year": 1949,
+      "page": 326
+    },
+    {
+      "name": "Eshelmania",
+      "author": "Witson",
+      "year": 1951,
+      "page": 326
+    },
+    {
+      "name": "Lecancpieura",
+      "author": "Raymonp",
+      "year": 1937,
+      "page": 326
+    },
+    {
+      "name": "Modocia",
+      "author": "Warcotr",
+      "year": 1924,
+      "page": 326
+    },
+    {
+      "name": "Nasocephalus",
+      "author": "Wicson",
+      "year": 1954,
+      "page": 328
+    },
+    {
+      "name": "Neotaenicephalus",
+      "author": "Kosayvasui",
+      "year": 1955,
+      "page": 328
+    },
+    {
+      "name": "Nericia",
+      "author": "Wesrercaro",
+      "year": 1948,
+      "page": 328
+    },
+    {
+      "name": "Obrucheviaspis",
+      "author": "IvsHixn",
+      "year": 1953,
+      "page": 329
+    },
+    {
+      "name": "Shickshockia",
+      "author": "Raserti",
+      "year": 1946,
+      "page": 329
+    },
+    {
+      "name": "Urbanaspis",
+      "author": "Ivsuin",
+      "year": 1956,
+      "page": 329
+    },
+    {
+      "name": "Vermilionites",
+      "author": "Kosayasur",
+      "year": 1955,
+      "page": 329
+    },
+    {
+      "name": "Coosia",
+      "author": "Waxrcotr",
+      "year": 1911,
+      "page": 329
+    },
+    {
+      "name": "Coosina",
+      "author": "Rasetri",
+      "year": 1956,
+      "page": 330
+    },
+    {
+      "name": "Syspacheilus",
+      "author": "Resser",
+      "year": 1938,
+      "page": 330
+    },
+    {
+      "name": "Pagodia",
+      "author": "Watcorr",
+      "year": 1905,
+      "page": 330
+    },
+    {
+      "name": "Bienella",
+      "author": "Locustax",
+      "year": 1944,
+      "page": 331
+    },
+    {
+      "name": "Hardyia",
+      "author": "Waxtcott",
+      "year": 1924,
+      "page": 332
+    },
+    {
+      "name": "Ithycephalus",
+      "author": "Resser",
+      "year": 1938,
+      "page": 332
+    },
+    {
+      "name": "Nixonella",
+      "author": "LocHmMan",
+      "year": 1944,
+      "page": 332
+    },
+    {
+      "name": "Cheilocephalus",
+      "author": "Berkey",
+      "year": 1898,
+      "page": 332
+    },
+    {
+      "name": "Licydia",
+      "author": "Vocpes",
+      "year": 1890,
+      "page": 333
+    },
+    {
+      "name": "Ambonolium",
+      "author": "Raymioxp",
+      "year": 1924,
+      "page": 333
+    },
+    {
+      "name": "Cheiopilus",
+      "author": "Raymonp",
+      "year": 1924,
+      "page": 333
+    },
+    {
+      "name": "Chuangig",
+      "author": "Waccorr",
+      "year": 1911,
+      "page": 333
+    },
+    {
+      "name": "Chuangiclia",
+      "author": "Kosavasui",
+      "year": 1935,
+      "page": 333
+    },
+    {
+      "name": "Chuangiopsis",
+      "author": "Sivev",
+      "year": 1955,
+      "page": 333
+    },
+    {
+      "name": "Evansaspis",
+      "author": "Kosavasii",
+      "year": 1955,
+      "page": 333
+    },
+    {
+      "name": "Idamea",
+      "author": "Wuitenouse",
+      "year": 1939,
+      "page": 334
+    },
+    {
+      "name": "Kassinius",
+      "author": "Ivsrin",
+      "year": 1953,
+      "page": 334
+    },
+    {
+      "name": "Komaspidella",
+      "author": "Kopayasni",
+      "year": 1938,
+      "page": 334
+    },
+    {
+      "name": "Ordosia",
+      "author": "Lu",
+      "year": 1954,
+      "page": 335
+    },
+    {
+      "name": "Eochuangia",
+      "author": "Kosayasut",
+      "year": 1935,
+      "page": 335
+    },
+    {
+      "name": "Ataktaspis",
+      "author": "Locuman & Duwcean",
+      "year": 1944,
+      "page": 335
+    },
+    {
+      "name": "Iranaspis",
+      "author": "Kine",
+      "year": 1937,
+      "page": 335
+    },
+    {
+      "name": "Plethopeltclla",
+      "author": "Kosayvasut",
+      "year": 1943,
+      "page": 335
+    },
+    {
+      "name": "Damesella",
+      "author": "Watcort",
+      "year": 1905,
+      "page": 337
+    },
+    {
+      "name": "Blackwelderia",
+      "author": "Watcorr",
+      "year": 1906,
+      "page": 337
+    },
+    {
+      "name": "Drepanura",
+      "author": "Berceron",
+      "year": 1899,
+      "page": 337
+    },
+    {
+      "name": "Parablackwelderia",
+      "author": "KopasYasHI",
+      "year": 1942,
+      "page": 338
+    },
+    {
+      "name": "Kaohshania",
+      "author": "Sun",
+      "year": 1924,
+      "page": 338
+    },
+    {
+      "name": "Kaolishaniella",
+      "author": "Sun",
+      "year": 1935,
+      "page": 339
+    },
+    {
+      "name": "Mansuyia",
+      "author": "Sux",
+      "year": 1924,
+      "page": 339
+    },
+    {
+      "name": "Prochuangia",
+      "author": "Kosavasit",
+      "year": 1935,
+      "page": 339
+    },
+    {
+      "name": "Prychaspis",
+      "author": "Hart",
+      "year": 1863,
+      "page": 340
+    },
+    {
+      "name": "Anderssonella",
+      "author": "Kosbavasit",
+      "year": 1936,
+      "page": 340
+    },
+    {
+      "name": "Suning",
+      "author": "Stranp",
+      "year": 1943,
+      "page": 340
+    },
+    {
+      "name": "Changia",
+      "author": "Sux",
+      "year": 1924,
+      "page": 340
+    },
+    {
+      "name": "Conaspis",
+      "author": "Harr",
+      "year": 1863,
+      "page": 340
+    },
+    {
+      "name": "Coreanocephalus",
+      "author": "Kopavasut",
+      "year": 1935,
+      "page": 340
+    },
+    {
+      "name": "Eoptychaspis",
+      "author": "Nerson",
+      "year": 1951,
+      "page": 342
+    },
+    {
+      "name": "Euptychaspis",
+      "author": "Utricw in Baipce",
+      "year": 1930,
+      "page": 342
+    },
+    {
+      "name": "Keithia",
+      "author": "Raymonp",
+      "year": 1924,
+      "page": 342
+    },
+    {
+      "name": "Quadraticephalus",
+      "author": "Sun",
+      "year": 1924,
+      "page": 342
+    },
+    {
+      "name": "Saukioides",
+      "author": "Kosayasnr",
+      "year": 1952,
+      "page": 342
+    },
+    {
+      "name": "Stigmaspis",
+      "author": "Nexuson",
+      "year": 1951,
+      "page": 342
+    },
+    {
+      "name": "Wuhuia",
+      "author": "Kosavasut",
+      "year": 1933,
+      "page": 342
+    },
+    {
+      "name": "Saukia",
+      "author": "Watcott",
+      "year": 1914,
+      "page": 343
+    },
+    {
+      "name": "Lichengia",
+      "author": "Kosavasnt",
+      "year": 1942,
+      "page": 343
+    },
+    {
+      "name": "Prosaukia",
+      "author": "Unricn & Resser",
+      "year": 1933,
+      "page": 344
+    },
+    {
+      "name": "Saukiella",
+      "author": "Ucricu & Resser",
+      "year": 1933,
+      "page": 345
+    },
+    {
+      "name": "Tellerina",
+      "author": "Ucaicn & Ressea",
+      "year": 1933,
+      "page": 345
+    },
+    {
+      "name": "Eurekia",
+      "author": "Watcott",
+      "year": 1924,
+      "page": 345
+    },
+    {
+      "name": "Bayfieldia",
+      "author": "T. H. Crarn",
+      "year": 1924,
+      "page": 345
+    },
+    {
+      "name": "Corbinia",
+      "author": "Watcorr",
+      "year": 1924,
+      "page": 345
+    },
+    {
+      "name": "Maladia",
+      "author": "Watcott",
+      "year": 1924,
+      "page": 346
+    },
+    {
+      "name": "Tostonia",
+      "author": "Warcorr",
+      "year": 1924,
+      "page": 346
+    },
+    {
+      "name": "Remopleurides",
+      "author": "Hawise & Conpa",
+      "year": 1847,
+      "page": 347
+    },
+    {
+      "name": "Amphytrion",
+      "author": "HawLe & Corpa",
+      "year": 1847,
+      "page": 347
+    },
+    {
+      "name": "Remopleuridiella",
+      "author": "Ross",
+      "year": 1951,
+      "page": 347
+    },
+    {
+      "name": "Robergia",
+      "author": "Wintaxn",
+      "year": 1905,
+      "page": 347
+    },
+    {
+      "name": "Teratorhynchus",
+      "author": "Reep",
+      "year": 1903,
+      "page": 349
+    },
+    {
+      "name": "Richardsonella",
+      "author": "Raymono",
+      "year": 1924,
+      "page": 349
+    },
+    {
+      "name": "Apatokephalus",
+      "author": "Broccer",
+      "year": 1896,
+      "page": 349
+    },
+    {
+      "name": "Eorobergia",
+      "author": "Cooper",
+      "year": 1953,
+      "page": 349
+    },
+    {
+      "name": "Kainella",
+      "author": "Watcorr",
+      "year": 1925,
+      "page": 349
+    },
+    {
+      "name": "Pseudokainella",
+      "author": "Harnincron",
+      "year": 1938,
+      "page": 350
+    },
+    {
+      "name": "Scinocephalus",
+      "author": "Ross",
+      "year": 1951,
+      "page": 350
+    },
+    {
+      "name": "Tramoria",
+      "author": "Reep",
+      "year": 1899,
+      "page": 350
+    },
+    {
+      "name": "Lingukainella",
+      "author": "Kopayasoi",
+      "year": 1953,
+      "page": 351
+    },
+    {
+      "name": "Hukasawaia",
+      "author": "Kosayasni",
+      "year": 1953,
+      "page": 351
+    },
+    {
+      "name": "Artokephalus",
+      "author": "Stvov & Jecorova",
+      "year": 1955,
+      "page": 351
+    },
+    {
+      "name": "Portentosus",
+      "author": "Jecorova",
+      "year": 1955,
+      "page": 351
+    },
+    {
+      "name": "Loganellus",
+      "author": "Devine",
+      "year": 1863,
+      "page": 351
+    },
+    {
+      "name": "Lauzonella",
+      "author": "Rasettt",
+      "year": 1944,
+      "page": 351
+    },
+    {
+      "name": "Levisella",
+      "author": "Ucricu in Raserri",
+      "year": 1944,
+      "page": 352
+    },
+    {
+      "name": "Hungaia",
+      "author": "Warcotr",
+      "year": 1914,
+      "page": 353
+    },
+    {
+      "name": "Diceratocephalus",
+      "author": "Lu",
+      "year": 1954,
+      "page": 354
+    },
+    {
+      "name": "Aulacoparia",
+      "author": "Hintze & Jaanusson",
+      "year": 1956,
+      "page": 356
+    },
+    {
+      "name": "Basilicus",
+      "author": "Satter",
+      "year": 1849,
+      "page": 356
+    },
+    {
+      "name": "Eoisotelus",
+      "author": "Wanc",
+      "year": 1938,
+      "page": 356
+    },
+    {
+      "name": "Ogmasaphus",
+      "author": "JaAanusson",
+      "year": 1953,
+      "page": 356
+    },
+    {
+      "name": "Plectasaphus",
+      "author": "Jaanusson",
+      "year": 1953,
+      "page": 356
+    },
+    {
+      "name": "Pseudobasilicus",
+      "author": "Reep",
+      "year": 1931,
+      "page": 358
+    },
+    {
+      "name": "Prychopyge",
+      "author": "Anceuin",
+      "year": 1854,
+      "page": 359
+    },
+    {
+      "name": "Xenasaphus",
+      "author": "Jaanusson",
+      "year": 1953,
+      "page": 359
+    },
+    {
+      "name": "Isotelus",
+      "author": "DeKay",
+      "year": 1824,
+      "page": 359
+    },
+    {
+      "name": "Anataphrus",
+      "author": "Wuirtincton",
+      "year": 1954,
+      "page": 360
+    },
+    {
+      "name": "Ectenaspis",
+      "author": "Raymonp",
+      "year": 1920,
+      "page": 361
+    },
+    {
+      "name": "Homotelus",
+      "author": "Stocum",
+      "year": 1913,
+      "page": 361
+    },
+    {
+      "name": "Homalopyge",
+      "author": "Jaanusson",
+      "year": 1956,
+      "page": 361
+    },
+    {
+      "name": "Isateloides",
+      "author": "RaymMonp",
+      "year": 1910,
+      "page": 361
+    },
+    {
+      "name": "Lachnostoma",
+      "author": "Ross",
+      "year": 1951,
+      "page": 361
+    },
+    {
+      "name": "Lannacus",
+      "author": "Tyernvix",
+      "year": 1956,
+      "page": 361
+    },
+    {
+      "name": "Megalaspides",
+      "author": "Braccrr",
+      "year": 1886,
+      "page": 361
+    },
+    {
+      "name": "Nileoides",
+      "author": "RayvmMonp",
+      "year": 1920,
+      "page": 361
+    },
+    {
+      "name": "Parabasilicus",
+      "author": "Kosayvasut",
+      "year": 1934,
+      "page": 362
+    },
+    {
+      "name": "Presbynileus",
+      "author": "Hinze",
+      "year": 1954,
+      "page": 363
+    },
+    {
+      "name": "Pseudogygites",
+      "author": "Konsavasni",
+      "year": 1934,
+      "page": 363
+    },
+    {
+      "name": "Pryocephalus",
+      "author": "Wuirrincron",
+      "year": 1948,
+      "page": 363
+    },
+    {
+      "name": "Stenorhachis",
+      "author": "Hintze & Jaanusson",
+      "year": 1956,
+      "page": 363
+    },
+    {
+      "name": "Trigonocerca",
+      "author": "Ross",
+      "year": 1951,
+      "page": 363
+    },
+    {
+      "name": "Trigonocercella",
+      "author": "Hintze",
+      "year": 1953,
+      "page": 363
+    },
+    {
+      "name": "Vogdesia",
+      "author": "Raymonp",
+      "year": 1910,
+      "page": 364
+    },
+    {
+      "name": "Asaphellus",
+      "author": "Cattaway",
+      "year": 1877,
+      "page": 366
+    },
+    {
+      "name": "Hoekaspis",
+      "author": "Kosarasnt",
+      "year": 1937,
+      "page": 366
+    },
+    {
+      "name": "Hunnebergia",
+      "author": "Tyernvik",
+      "year": 1956,
+      "page": 366
+    },
+    {
+      "name": "Megalaspidella",
+      "author": "Kosayasut",
+      "year": 1937,
+      "page": 367
+    },
+    {
+      "name": "Megistaspis",
+      "author": "Jaanussox",
+      "year": 1956,
+      "page": 367
+    },
+    {
+      "name": "Niobides",
+      "author": "Harrincron & Leanza",
+      "year": 1957,
+      "page": 369
+    },
+    {
+      "name": "Notopeltis",
+      "author": "Harrincton & Leanza",
+      "year": 1957,
+      "page": 369
+    },
+    {
+      "name": "Paramegalaspis",
+      "author": "THoraL in JaaNntssox",
+      "year": 1956,
+      "page": 369
+    },
+    {
+      "name": "Niebe",
+      "author": "Ancevin",
+      "year": 1851,
+      "page": 370
+    },
+    {
+      "name": "Bohemopyge",
+      "author": "Pkisyit",
+      "year": 1950,
+      "page": 370
+    },
+    {
+      "name": "Lapidaria",
+      "author": "Tyernvix",
+      "year": 1956,
+      "page": 370
+    },
+    {
+      "name": "Niobella",
+      "author": "Reen",
+      "year": 1931,
+      "page": 370
+    },
+    {
+      "name": "Niobina",
+      "author": "Lake",
+      "year": 1946,
+      "page": 370
+    },
+    {
+      "name": "Norinia",
+      "author": "Troepsson",
+      "year": 1937,
+      "page": 370
+    },
+    {
+      "name": "Ogygiocaris",
+      "author": "AnceLin",
+      "year": 1854,
+      "page": 372
+    },
+    {
+      "name": "Homalopteon",
+      "author": "Satrer.",
+      "year": 1866,
+      "page": 372
+    },
+    {
+      "name": "Ogyginus",
+      "author": "Raysionn",
+      "year": 1912,
+      "page": 372
+    },
+    {
+      "name": "Ogygiocareila",
+      "author": "Harrincrox & Leanza",
+      "year": 1957,
+      "page": 372
+    },
+    {
+      "name": "Promegalaspides",
+      "author": "Westercarn",
+      "year": 1959,
+      "page": 373
+    },
+    {
+      "name": "Borogothus",
+      "author": "Trernvix",
+      "year": 1956,
+      "page": 373
+    },
+    {
+      "name": "Bellefontia",
+      "author": "Urricu in Waccort",
+      "year": 1924,
+      "page": 373
+    },
+    {
+      "name": "Gelemnurus",
+      "author": "Waite",
+      "year": 1874,
+      "page": 373
+    },
+    {
+      "name": "Parabellefantia",
+      "author": "Hinrze",
+      "year": 1953,
+      "page": 373
+    },
+    {
+      "name": "Varvia",
+      "author": "Tyerxvik",
+      "year": 1956,
+      "page": 374
+    },
+    {
+      "name": "Thysanopyge",
+      "author": "Kayser",
+      "year": 1898,
+      "page": 374
+    },
+    {
+      "name": "Australopyge",
+      "author": "Harrinoton & Leanza",
+      "year": 1957,
+      "page": 374
+    },
+    {
+      "name": "Zuninaspis",
+      "author": "Harrixncron & Leanza",
+      "year": 1957,
+      "page": 374
+    },
+    {
+      "name": "Dolerobasilicus",
+      "author": "Harrincton & Leanza",
+      "year": 1942,
+      "page": 374
+    },
+    {
+      "name": "Basilircotdes",
+      "author": "Ma",
+      "year": 1938,
+      "page": 374
+    },
+    {
+      "name": "Eoasaphus",
+      "author": "Kogavasyr",
+      "year": 1956,
+      "page": 375
+    },
+    {
+      "name": "Asaphelloides",
+      "author": "Kosavasur",
+      "year": 1937,
+      "page": 375
+    },
+    {
+      "name": "Brachyaspis",
+      "author": "Satter",
+      "year": 1866,
+      "page": 375
+    },
+    {
+      "name": "Coiumbicephalus",
+      "author": "Kosayaswr",
+      "year": 1955,
+      "page": 375
+    },
+    {
+      "name": "Gerasaphes",
+      "author": "Crarke",
+      "year": 1897,
+      "page": 375
+    },
+    {
+      "name": "Meteptogyrus",
+      "author": "Raymonp",
+      "year": 1937,
+      "page": 375
+    },
+    {
+      "name": "Taihungshania",
+      "author": "Sux",
+      "year": 1931,
+      "page": 376
+    },
+    {
+      "name": "Tsinania",
+      "author": "Watcott",
+      "year": 1914,
+      "page": 376
+    },
+    {
+      "name": "Dictyites",
+      "author": "Kosayasiut",
+      "year": 1936,
+      "page": 376
+    },
+    {
+      "name": "Nileus",
+      "author": "Daustan",
+      "year": 1827,
+      "page": 376
+    },
+    {
+      "name": "Bumastides",
+      "author": "Weser",
+      "year": 1948,
+      "page": 378
+    },
+    {
+      "name": "Symphysurus",
+      "author": "Goupruss",
+      "year": 1843,
+      "page": 378
+    },
+    {
+      "name": "Dikelokephalina",
+      "author": "Brgccrr",
+      "year": 1896,
+      "page": 379
+    },
+    {
+      "name": "Asaphopsis",
+      "author": "Mansuy",
+      "year": 1920,
+      "page": 379
+    },
+    {
+      "name": "Birmanites",
+      "author": "SHenc",
+      "year": 1934,
+      "page": 379
+    },
+    {
+      "name": "Dactylocephalus",
+      "author": "Hsi",
+      "year": 1948,
+      "page": 379
+    },
+    {
+      "name": "Dikelocephalopsis",
+      "author": "Poreratva",
+      "year": 1955,
+      "page": 381
+    },
+    {
+      "name": "Leimitzia",
+      "author": "Sozuy",
+      "year": 1955,
+      "page": 381
+    },
+    {
+      "name": "Aeglinidue",
+      "author": "Prerer",
+      "year": 1854,
+      "page": 381
+    },
+    {
+      "name": "Cyclopyge",
+      "author": "Hawie & Corba",
+      "year": 1847,
+      "page": 381
+    },
+    {
+      "name": "Egie",
+      "author": "Barranoe",
+      "year": 1846,
+      "page": 381
+    },
+    {
+      "name": "Aspidacglina",
+      "author": "Hoirua",
+      "year": 1911,
+      "page": 381
+    },
+    {
+      "name": "Ellipsotaphrus",
+      "author": "Wuitraro",
+      "year": 1952,
+      "page": 381
+    },
+    {
+      "name": "Pricyclopyge",
+      "author": "Ricnter & Ricurer",
+      "year": 1954,
+      "page": 382
+    },
+    {
+      "name": "Microparia",
+      "author": "Hawie & Corpa",
+      "year": 1847,
+      "page": 382
+    },
+    {
+      "name": "Psilacella",
+      "author": "Wurrrarp",
+      "year": 1952,
+      "page": 382
+    },
+    {
+      "name": "Symphysops",
+      "author": "Raysmonp",
+      "year": 1925,
+      "page": 382
+    },
+    {
+      "name": "Ceratopyge",
+      "author": "Hawie & Corpa",
+      "year": 1847,
+      "page": 383
+    },
+    {
+      "name": "Boschchekulia",
+      "author": "LermMontova",
+      "year": 1951,
+      "page": 383
+    },
+    {
+      "name": "Diceratopyge",
+      "author": "Trorepsson",
+      "year": 1937,
+      "page": 383
+    },
+    {
+      "name": "Dipleurcpyge",
+      "author": "Lermontova",
+      "year": 1951,
+      "page": 383
+    },
+    {
+      "name": "Hysterolenus",
+      "author": "Morerc",
+      "year": 1898,
+      "page": 383
+    },
+    {
+      "name": "Kogenium",
+      "author": "Kosavasitt",
+      "year": 1935,
+      "page": 383
+    },
+    {
+      "name": "Onychopyge",
+      "author": "Hargincton",
+      "year": 1938,
+      "page": 384
+    },
+    {
+      "name": "Proceratopyge",
+      "author": "Wacterius",
+      "year": 1895,
+      "page": 384
+    },
+    {
+      "name": "Pseudohysterolenus",
+      "author": "Harrincron & Leanza",
+      "year": 1957,
+      "page": 384
+    },
+    {
+      "name": "Stygina",
+      "author": "Savrer",
+      "year": 1853,
+      "page": 386
+    },
+    {
+      "name": "Protostygina",
+      "author": "Pranrt & Pkrevi",
+      "year": 1948,
+      "page": 387
+    },
+    {
+      "name": "Raymondaspis",
+      "author": "Pkravt",
+      "year": 1948,
+      "page": 387
+    },
+    {
+      "name": "Goidiidae",
+      "author": "Rarmonn",
+      "year": 1913,
+      "page": 387
+    },
+    {
+      "name": "Zoological",
+      "author": "Congress in London. Such rescission would make\nScutellidac Ricirren & Rictrrenz",
+      "year": 1925,
+      "page": 387
+    },
+    {
+      "name": "Seutellum",
+      "author": "Puscu",
+      "year": 1833,
+      "page": 389
+    },
+    {
+      "name": "Paralejulus",
+      "author": "PRanti & Piktsyt",
+      "year": 1947,
+      "page": 389
+    },
+    {
+      "name": "Eobronteus",
+      "author": "Reep",
+      "year": 1928,
+      "page": 391
+    },
+    {
+      "name": "Weberopeltis",
+      "author": "Maxstmeova",
+      "year": 1957,
+      "page": 392
+    },
+    {
+      "name": "Octobronteus",
+      "author": "Weser",
+      "year": 1945,
+      "page": 392
+    },
+    {
+      "name": "Cekovia",
+      "author": "Swayor",
+      "year": 1956,
+      "page": 392
+    },
+    {
+      "name": "Nanillaenus",
+      "author": "Jaanusson",
+      "year": 1954,
+      "page": 393
+    },
+    {
+      "name": "Panderia",
+      "author": "Votsorru",
+      "year": 1863,
+      "page": 394
+    },
+    {
+      "name": "Stenoparela",
+      "author": "Horas",
+      "year": 1886,
+      "page": 394
+    },
+    {
+      "name": "Thaleops",
+      "author": "Conran",
+      "year": 1843,
+      "page": 394
+    },
+    {
+      "name": "Bumastus",
+      "author": "Murcuisoxn",
+      "year": 1839,
+      "page": 394
+    },
+    {
+      "name": "Dysplanus",
+      "author": "Burmeister",
+      "year": 1843,
+      "page": 394
+    },
+    {
+      "name": "Hlaenoides",
+      "author": "Wetter",
+      "year": 1907,
+      "page": 394
+    },
+    {
+      "name": "Platillaenus",
+      "author": "Jaanusson",
+      "year": 1954,
+      "page": 394
+    },
+    {
+      "name": "Thomastus",
+      "author": "Gpeix",
+      "year": 1953,
+      "page": 394
+    },
+    {
+      "name": "Ectillaenus",
+      "author": "Saurex",
+      "year": 1867,
+      "page": 394
+    },
+    {
+      "name": "Zhirovia",
+      "author": "SNayor",
+      "year": 1956,
+      "page": 395
+    },
+    {
+      "name": "Zdicelia",
+      "author": "Snajpr",
+      "year": 1957,
+      "page": 395
+    },
+    {
+      "name": "Theamataspis",
+      "author": "Orix",
+      "year": 1937,
+      "page": 396
+    },
+    {
+      "name": "Bathyurus",
+      "author": "Bittines",
+      "year": 1859,
+      "page": 396
+    },
+    {
+      "name": "Bathyurelius",
+      "author": "Birtixos",
+      "year": 1865,
+      "page": 396
+    },
+    {
+      "name": "Bathyurina",
+      "author": "Poursen",
+      "year": 1937,
+      "page": 396
+    },
+    {
+      "name": "Bolbocephalus",
+      "author": "Wuitriecp",
+      "year": 1890,
+      "page": 396
+    },
+    {
+      "name": "Eleutherocentrus",
+      "author": "CrarKx",
+      "year": 1935,
+      "page": 398
+    },
+    {
+      "name": "Goniotelina",
+      "author": "Wuirtincron & Ross in WHITTINGTON",
+      "year": 1953,
+      "page": 399
+    },
+    {
+      "name": "Goniotelus",
+      "author": "Unricu",
+      "year": 1927,
+      "page": 399
+    },
+    {
+      "name": "Jeffersonia",
+      "author": "Poutsen",
+      "year": 1927,
+      "page": 399
+    },
+    {
+      "name": "Lutesvillia",
+      "author": "Curztison",
+      "year": 1944,
+      "page": 399
+    },
+    {
+      "name": "Peltabellia",
+      "author": "Wrirrincton",
+      "year": 1953,
+      "page": 399
+    },
+    {
+      "name": "Petigucus",
+      "author": "RayvmMonp",
+      "year": 1913,
+      "page": 399
+    },
+    {
+      "name": "Platyantyx",
+      "author": "Wairrincron",
+      "year": 1953,
+      "page": 399
+    },
+    {
+      "name": "Rananasus",
+      "author": "Curuison",
+      "year": 1944,
+      "page": 399
+    },
+    {
+      "name": "Raymondites",
+      "author": "Sincram",
+      "year": 1944,
+      "page": 400
+    },
+    {
+      "name": "Uromystrum",
+      "author": "Wurirtincton",
+      "year": 1933,
+      "page": 400
+    },
+    {
+      "name": "Goniotelaides",
+      "author": "Konavasni",
+      "year": 1955,
+      "page": 400
+    },
+    {
+      "name": "Lecanopyge",
+      "author": "Raymonp",
+      "year": 1937,
+      "page": 400
+    },
+    {
+      "name": "Platydiamesus",
+      "author": "Raymonp",
+      "year": 1937,
+      "page": 400
+    },
+    {
+      "name": "Rasettia",
+      "author": "Locusan",
+      "year": 1953,
+      "page": 400
+    },
+    {
+      "name": "Resseraspis",
+      "author": "Raserri",
+      "year": 1945,
+      "page": 401
+    },
+    {
+      "name": "Strigigenalis",
+      "author": "WHittincton & Ross",
+      "year": 1953,
+      "page": 401
+    },
+    {
+      "name": "Proctus",
+      "author": "Sreinincer",
+      "year": 1831,
+      "page": 404
+    },
+    {
+      "name": "Cornuproctus",
+      "author": "Ricurer & Ricuter",
+      "year": 1919,
+      "page": 405
+    },
+    {
+      "name": "Phactonellus",
+      "author": "Novax",
+      "year": 1890,
+      "page": 406
+    },
+    {
+      "name": "Xiphogonium",
+      "author": "Hawre & Corpa",
+      "year": 1847,
+      "page": 407
+    },
+    {
+      "name": "Dechenella",
+      "author": "Kayser",
+      "year": 1880,
+      "page": 407
+    },
+    {
+      "name": "Paradechenella",
+      "author": "Rup. Ricntrer",
+      "year": 1912,
+      "page": 408
+    },
+    {
+      "name": "Schizoproetus",
+      "author": "Rup. Ricuter",
+      "year": 1912,
+      "page": 409
+    },
+    {
+      "name": "Cyrtasymbole",
+      "author": "Run. Rictrer",
+      "year": 1913,
+      "page": 409
+    },
+    {
+      "name": "Archegonus",
+      "author": "Burmeister",
+      "year": 1843,
+      "page": 412
+    },
+    {
+      "name": "Phillibole",
+      "author": "Ricuter & Ricuter",
+      "year": 1937,
+      "page": 412
+    },
+    {
+      "name": "Liobole",
+      "author": "Ricuter & RicutTer",
+      "year": 1949,
+      "page": 412
+    },
+    {
+      "name": "Liobolina",
+      "author": "Ricuter & Ricutrer",
+      "year": 1951,
+      "page": 412
+    },
+    {
+      "name": "Drevermannia",
+      "author": "Rup. Ricuter",
+      "year": 1909,
+      "page": 413
+    },
+    {
+      "name": "Chauneproctus",
+      "author": "Richter & Ricuter",
+      "year": 1919,
+      "page": 414
+    },
+    {
+      "name": "Skemmatopyge",
+      "author": "Ricuter & Ricuter",
+      "year": 1919,
+      "page": 414
+    },
+    {
+      "name": "Skemmatocare",
+      "author": "Ricutrer & Ricuter",
+      "year": 1927,
+      "page": 414
+    },
+    {
+      "name": "Cystispina",
+      "author": "Richter & Ricuter",
+      "year": 1939,
+      "page": 414
+    },
+    {
+      "name": "Proetidella",
+      "author": "Bancrorr",
+      "year": 1949,
+      "page": 415
+    },
+    {
+      "name": "Astroproctus",
+      "author": "Beco",
+      "year": 1939,
+      "page": 415
+    },
+    {
+      "name": "Clypoproctus",
+      "author": "Beco",
+      "year": 1939,
+      "page": 415
+    },
+    {
+      "name": "Paryfenus",
+      "author": "Hapotnc",
+      "year": 1913,
+      "page": 415
+    },
+    {
+      "name": "Prantlia",
+      "author": "P&isyc",
+      "year": 1946,
+      "page": 415
+    },
+    {
+      "name": "Tropidocoryphe",
+      "author": "NovaAx",
+      "year": 1890,
+      "page": 417
+    },
+    {
+      "name": "Astycoryphe",
+      "author": "Ricorer & RicuTer",
+      "year": 1919,
+      "page": 418
+    },
+    {
+      "name": "Denemarkia",
+      "author": "Piisvi",
+      "year": 1946,
+      "page": 418
+    },
+    {
+      "name": "Phillipsia",
+      "author": "Portiock",
+      "year": 1843,
+      "page": 419
+    },
+    {
+      "name": "Grifithides",
+      "author": "Portitock",
+      "year": 1843,
+      "page": 419
+    },
+    {
+      "name": "Eocyphinium",
+      "author": "Reep",
+      "year": 1942,
+      "page": 419
+    },
+    {
+      "name": "Bollandia",
+      "author": "Reep",
+      "year": 1943,
+      "page": 419
+    },
+    {
+      "name": "Exochops",
+      "author": "Werrer",
+      "year": 1936,
+      "page": 419
+    },
+    {
+      "name": "Kaskia",
+      "author": "Weirer",
+      "year": 1936,
+      "page": 419
+    },
+    {
+      "name": "Humilogriffithides",
+      "author": "Inar",
+      "year": 1936,
+      "page": 421
+    },
+    {
+      "name": "Neogrifiithides",
+      "author": "Toumansxy",
+      "year": 1935,
+      "page": 421
+    },
+    {
+      "name": "Paragrifiithides",
+      "author": "Reenp",
+      "year": 1943,
+      "page": 421
+    },
+    {
+      "name": "Paladin",
+      "author": "Wetter",
+      "year": 1936,
+      "page": 421
+    },
+    {
+      "name": "Weberides",
+      "author": "Reep",
+      "year": 1942,
+      "page": 421
+    },
+    {
+      "name": "Ditamopyge",
+      "author": "Newerr",
+      "year": 1931,
+      "page": 421
+    },
+    {
+      "name": "Delaria",
+      "author": "Wercer",
+      "year": 1944,
+      "page": 421
+    },
+    {
+      "name": "Cyphinioides",
+      "author": "Reep",
+      "year": 1942,
+      "page": 421
+    },
+    {
+      "name": "Permoproetus",
+      "author": "Tocmansky",
+      "year": 1935,
+      "page": 421
+    },
+    {
+      "name": "Ameura",
+      "author": "Wercer",
+      "year": 1936,
+      "page": 421
+    },
+    {
+      "name": "Sevilla",
+      "author": "Wexrer",
+      "year": 1936,
+      "page": 421
+    },
+    {
+      "name": "Cummingella",
+      "author": "Reep",
+      "year": 1942,
+      "page": 421
+    },
+    {
+      "name": "Linguaphillipsia",
+      "author": "Srussierietp",
+      "year": 1948,
+      "page": 421
+    },
+    {
+      "name": "Paraphillipsia",
+      "author": "Toumansky",
+      "year": 1935,
+      "page": 421
+    },
+    {
+      "name": "Neoproctus",
+      "author": "Tesco",
+      "year": 1923,
+      "page": 421
+    },
+    {
+      "name": "Anisopyge",
+      "author": "Girty",
+      "year": 1908,
+      "page": 422
+    },
+    {
+      "name": "Vidria",
+      "author": "Wetver",
+      "year": 1944,
+      "page": 422
+    },
+    {
+      "name": "Pscudophillipsia",
+      "author": "Genereccarno",
+      "year": 1892,
+      "page": 422
+    },
+    {
+      "name": "Otarion",
+      "author": "Zener",
+      "year": 1833,
+      "page": 425
+    },
+    {
+      "name": "Conoparia",
+      "author": "Hawtre & Coroa",
+      "year": 1847,
+      "page": 425
+    },
+    {
+      "name": "Coignouina",
+      "author": "Reep",
+      "year": 1943,
+      "page": 426
+    },
+    {
+      "name": "Tschernyschewiella",
+      "author": "Tort",
+      "year": 1899,
+      "page": 426
+    },
+    {
+      "name": "Schmidtella",
+      "author": "CrueanysuHev",
+      "year": 1893,
+      "page": 426
+    },
+    {
+      "name": "Aulacopleura",
+      "author": "Hawise & Corpa",
+      "year": 1847,
+      "page": 426
+    },
+    {
+      "name": "Cordania",
+      "author": "Crarke",
+      "year": 1892,
+      "page": 428
+    },
+    {
+      "name": "Phillipsinella",
+      "author": "Novak",
+      "year": 1886,
+      "page": 429
+    },
+    {
+      "name": "Celmus",
+      "author": "Ancettn",
+      "year": 1854,
+      "page": 429
+    },
+    {
+      "name": "Plethopeltis",
+      "author": "Raymonp",
+      "year": 1913,
+      "page": 429
+    },
+    {
+      "name": "Arapahoia",
+      "author": "B. M. Mitiea",
+      "year": 1936,
+      "page": 429
+    },
+    {
+      "name": "Leiocoryphe",
+      "author": "T. H. Cearx",
+      "year": 1924,
+      "page": 429
+    },
+    {
+      "name": "Parapicthopeltis",
+      "author": "Brioce & Croup",
+      "year": 1947,
+      "page": 430
+    },
+    {
+      "name": "Picthometopus",
+      "author": "Urricn in Brincs",
+      "year": 1930,
+      "page": 430
+    },
+    {
+      "name": "Stenopilus",
+      "author": "Raymonp",
+      "year": 1924,
+      "page": 432
+    },
+    {
+      "name": "Strotocephala",
+      "author": "Rayrmonp",
+      "year": 1937,
+      "page": 432
+    },
+    {
+      "name": "Dimeropyge",
+      "author": "Orix",
+      "year": 1937,
+      "page": 432
+    },
+    {
+      "name": "Chomatopyge",
+      "author": "Wuurrrincton & Evirtr",
+      "year": 1953,
+      "page": 432
+    },
+    {
+      "name": "Dimeropygiella",
+      "author": "Ross",
+      "year": 1951,
+      "page": 432
+    },
+    {
+      "name": "Mesotaphraspis",
+      "author": "Weittincton & Evirr",
+      "year": 1953,
+      "page": 433
+    },
+    {
+      "name": "Toernquistia",
+      "author": "Reso",
+      "year": 1896,
+      "page": 433
+    },
+    {
+      "name": "Cyrtoproetus",
+      "author": "Reen",
+      "year": 1943,
+      "page": 433
+    },
+    {
+      "name": "Palacophullipsia",
+      "author": "Sucivama & Oxano",
+      "year": 1944,
+      "page": 433
+    },
+    {
+      "name": "Perunaspis",
+      "author": "PRiavi",
+      "year": 1949,
+      "page": 433
+    },
+    {
+      "name": "Proctides",
+      "author": "O. T. Wacter",
+      "year": 1924,
+      "page": 434
+    },
+    {
+      "name": "Proetina",
+      "author": "Pkisyz",
+      "year": 1946,
+      "page": 435
+    },
+    {
+      "name": "Scharyia",
+      "author": "Pktsy.",
+      "year": 1946,
+      "page": 435
+    },
+    {
+      "name": "Harpes",
+      "author": "Gorpruss",
+      "year": 1839,
+      "page": 435
+    },
+    {
+      "name": "Asistoharpes",
+      "author": "Warrrincton",
+      "year": 1950,
+      "page": 436
+    },
+    {
+      "name": "Arraphus",
+      "author": "Ancenin",
+      "year": 1854,
+      "page": 436
+    },
+    {
+      "name": "Australoharpes",
+      "author": "Harrincton & Leanza",
+      "year": 1957,
+      "page": 437
+    },
+    {
+      "name": "Dolichoharpes",
+      "author": "Wuirrincron",
+      "year": 1949,
+      "page": 437
+    },
+    {
+      "name": "Dubhglasina",
+      "author": "Lawonr",
+      "year": 1948,
+      "page": 438
+    },
+    {
+      "name": "Eoharpes",
+      "author": "Rayrmonp",
+      "year": 1905,
+      "page": 438
+    },
+    {
+      "name": "Hibbertia",
+      "author": "Jones & Woopwarp",
+      "year": 1898,
+      "page": 438
+    },
+    {
+      "name": "Licharpes",
+      "author": "Wurrcincton",
+      "year": 1950,
+      "page": 438
+    },
+    {
+      "name": "Metaharpes",
+      "author": "Lamont",
+      "year": 1948,
+      "page": 438
+    },
+    {
+      "name": "Paraharpes",
+      "author": "Wauirrincron",
+      "year": 1950,
+      "page": 438
+    },
+    {
+      "name": "Selenoharpes",
+      "author": "Wuirrinctron",
+      "year": 1950,
+      "page": 438
+    },
+    {
+      "name": "Harpides",
+      "author": "Beyarcu",
+      "year": 1846,
+      "page": 438
+    },
+    {
+      "name": "Fissocephalus",
+      "author": "Lermontova",
+      "year": 1951,
+      "page": 438
+    },
+    {
+      "name": "Loganopeltis",
+      "author": "Raserrt",
+      "year": 1943,
+      "page": 438
+    },
+    {
+      "name": "Loganopeltoides",
+      "author": "Raserti",
+      "year": 1945,
+      "page": 438
+    },
+    {
+      "name": "Entomaspis",
+      "author": "Uaicn in Brince",
+      "year": 1930,
+      "page": 439
+    },
+    {
+      "name": "Hypothetica",
+      "author": "Ross",
+      "year": 1951,
+      "page": 439
+    },
+    {
+      "name": "Haw",
+      "author": "Le & Coruna",
+      "year": 1847,
+      "page": 440
+    },
+    {
+      "name": "Trinucleus",
+      "author": "Murciison",
+      "year": 1839,
+      "page": 440
+    },
+    {
+      "name": "Paratrinucieus",
+      "author": "Wuirrincron",
+      "year": 1941,
+      "page": 440
+    },
+    {
+      "name": "Reedolithus",
+      "author": "Bancrorr",
+      "year": 1929,
+      "page": 442
+    },
+    {
+      "name": "Onnia",
+      "author": "Bancrort",
+      "year": 1933,
+      "page": 442
+    },
+    {
+      "name": "Reuscholithos",
+      "author": "Bancrorr",
+      "year": 1929,
+      "page": 442
+    },
+    {
+      "name": "Saleerolithus",
+      "author": "Bancrorr",
+      "year": 1929,
+      "page": 443
+    },
+    {
+      "name": "Marrolithus",
+      "author": "Bancrorr",
+      "year": 1929,
+      "page": 443
+    },
+    {
+      "name": "Marrolithoides",
+      "author": "A. Wintiams",
+      "year": 1948,
+      "page": 443
+    },
+    {
+      "name": "Talacomarrolithus",
+      "author": "A. Wittiams",
+      "year": 1948,
+      "page": 443
+    },
+    {
+      "name": "Lioydolithus",
+      "author": "Bancrorr",
+      "year": 1933,
+      "page": 443
+    },
+    {
+      "name": "Eirelithus",
+      "author": "Lamont",
+      "year": 1941,
+      "page": 443
+    },
+    {
+      "name": "Famatinolithus",
+      "author": "Harnincton & Leanza",
+      "year": 1957,
+      "page": 443
+    },
+    {
+      "name": "Myttonia",
+      "author": "Wurrraap",
+      "year": 1955,
+      "page": 443
+    },
+    {
+      "name": "Bergamia",
+      "author": "Wurrraro",
+      "year": 1955,
+      "page": 443
+    },
+    {
+      "name": "Incaia",
+      "author": "Wutrrarp",
+      "year": 1955,
+      "page": 443
+    },
+    {
+      "name": "Stapeleyelia",
+      "author": "Wrrrrarp",
+      "year": 1955,
+      "page": 443
+    },
+    {
+      "name": "Bettonia",
+      "author": "Warrrarp",
+      "year": 1956,
+      "page": 443
+    },
+    {
+      "name": "Hangchungolithus",
+      "author": "Lo",
+      "year": 1956,
+      "page": 443
+    },
+    {
+      "name": "Ningkianolithus",
+      "author": "Lu",
+      "year": 1956,
+      "page": 443
+    },
+    {
+      "name": "Novaspis",
+      "author": "Wuirtincton",
+      "year": 1941,
+      "page": 444
+    },
+    {
+      "name": "Orometopus",
+      "author": "Brgccer",
+      "year": 1896,
+      "page": 444
+    },
+    {
+      "name": "Dionide",
+      "author": "Barnranpe",
+      "year": 1847,
+      "page": 444
+    },
+    {
+      "name": "Digrypos",
+      "author": "Kosavasni",
+      "year": 1940,
+      "page": 444
+    },
+    {
+      "name": "Dionidella",
+      "author": "Prantt & Pktpyt",
+      "year": 1948,
+      "page": 444
+    },
+    {
+      "name": "Trinucleoides",
+      "author": "Raymonp",
+      "year": 1917,
+      "page": 445
+    },
+    {
+      "name": "Raphiophorus",
+      "author": "ANGELIN",
+      "year": 1854,
+      "page": 446
+    },
+    {
+      "name": "Ampyx",
+      "author": "Datman",
+      "year": 1827,
+      "page": 446
+    },
+    {
+      "name": "Ampyxina",
+      "author": "Unaicu",
+      "year": 1922,
+      "page": 446
+    },
+    {
+      "name": "Caoemidopyge",
+      "author": "Waitrarn",
+      "year": 1953,
+      "page": 447
+    },
+    {
+      "name": "Edmundsonia",
+      "author": "B. N. Coorer",
+      "year": 1953,
+      "page": 447
+    },
+    {
+      "name": "Lonchodomas",
+      "author": "Anceun",
+      "year": 1854,
+      "page": 447
+    },
+    {
+      "name": "Mendolaspis",
+      "author": "Ruscont",
+      "year": 1951,
+      "page": 447
+    },
+    {
+      "name": "Raymondelia",
+      "author": "Reep",
+      "year": 1935,
+      "page": 447
+    },
+    {
+      "name": "Endymionia",
+      "author": "Bruuines",
+      "year": 1865,
+      "page": 447
+    },
+    {
+      "name": "Seleneceme",
+      "author": "T. H. Crarx",
+      "year": 1924,
+      "page": 448
+    },
+    {
+      "name": "Falanaspis",
+      "author": "Tyernvix",
+      "year": 1956,
+      "page": 448
+    },
+    {
+      "name": "Hapalopleura",
+      "author": "Haraincron & Leanza",
+      "year": 1957,
+      "page": 449
+    },
+    {
+      "name": "Araiopleura",
+      "author": "Haraincton & Leanza",
+      "year": 1957,
+      "page": 449
+    },
+    {
+      "name": "Clavatellus",
+      "author": "Potetragva",
+      "year": 1955,
+      "page": 450
+    },
+    {
+      "name": "Ityophorus",
+      "author": "Wargurc",
+      "year": 1925,
+      "page": 450
+    },
+    {
+      "name": "Cheirurus",
+      "author": "Berricy",
+      "year": 1845,
+      "page": 451
+    },
+    {
+      "name": "Ceraurinella",
+      "author": "Cooper",
+      "year": 1953,
+      "page": 452
+    },
+    {
+      "name": "Ceraurinus",
+      "author": "Barton",
+      "year": 1913,
+      "page": 452
+    },
+    {
+      "name": "Cerauroides",
+      "author": "Pranti & Pkisyt",
+      "year": 1947,
+      "page": 452
+    },
+    {
+      "name": "Ceraurus",
+      "author": "Green",
+      "year": 1832,
+      "page": 453
+    },
+    {
+      "name": "Hapsiceraurus",
+      "author": "Waitrtincron",
+      "year": 1954,
+      "page": 453
+    },
+    {
+      "name": "Lehua",
+      "author": "Barron",
+      "year": 1915,
+      "page": 453
+    },
+    {
+      "name": "Osekaspis",
+      "author": "Prant. & P&myt",
+      "year": 1947,
+      "page": 453
+    },
+    {
+      "name": "Pseudocheirurus",
+      "author": "PRantL & Piravt.",
+      "year": 1947,
+      "page": 453
+    },
+    {
+      "name": "Remipyga",
+      "author": "Wuittincron",
+      "year": 1954,
+      "page": 453
+    },
+    {
+      "name": "Cyrtometopus",
+      "author": "ANGELIN",
+      "year": 1854,
+      "page": 454
+    },
+    {
+      "name": "Actinopeltis",
+      "author": "HawLe & Conpa",
+      "year": 1847,
+      "page": 454
+    },
+    {
+      "name": "Eccoptochile",
+      "author": "Hawre & Corna",
+      "year": 1847,
+      "page": 455
+    },
+    {
+      "name": "Kawina",
+      "author": "Barron",
+      "year": 1915,
+      "page": 455
+    },
+    {
+      "name": "Pseudosphaerexochus",
+      "author": "Scumipt",
+      "year": 1881,
+      "page": 455
+    },
+    {
+      "name": "Reraspis",
+      "author": "Germ",
+      "year": 1937,
+      "page": 455
+    },
+    {
+      "name": "Stubblefieldia",
+      "author": "Prant. & P&rnyi",
+      "year": 1947,
+      "page": 455
+    },
+    {
+      "name": "Acanthoparypha",
+      "author": "Wurirtincton & Evrrr",
+      "year": 1953,
+      "page": 455
+    },
+    {
+      "name": "Holia",
+      "author": "Brapiey",
+      "year": 1930,
+      "page": 455
+    },
+    {
+      "name": "Nieszkowskia",
+      "author": "Scumipr",
+      "year": 1881,
+      "page": 456
+    },
+    {
+      "name": "Sphaerexochus",
+      "author": "Bevaicw",
+      "year": 1845,
+      "page": 456
+    },
+    {
+      "name": "Pompeckia",
+      "author": "Warsurc",
+      "year": 1925,
+      "page": 456
+    },
+    {
+      "name": "Deiphon",
+      "author": "Barranpe",
+      "year": 1850,
+      "page": 456
+    },
+    {
+      "name": "Hemisphacrocoryphe",
+      "author": "Reep",
+      "year": 1896,
+      "page": 458
+    },
+    {
+      "name": "Onycopyge",
+      "author": "Woopwarp",
+      "year": 1880,
+      "page": 458
+    },
+    {
+      "name": "Sphacrocoryphe",
+      "author": "Anceiin",
+      "year": 1854,
+      "page": 458
+    },
+    {
+      "name": "Arcia",
+      "author": "Barranne",
+      "year": 1872,
+      "page": 458
+    },
+    {
+      "name": "Heliomera",
+      "author": "Raymonp",
+      "year": 1905,
+      "page": 458
+    },
+    {
+      "name": "Heliomeroides",
+      "author": "Evirr",
+      "year": 1951,
+      "page": 458
+    },
+    {
+      "name": "Youngia",
+      "author": "Jones & Kineny",
+      "year": 1886,
+      "page": 459
+    },
+    {
+      "name": "Pliomera",
+      "author": "Anceutn",
+      "year": 1852,
+      "page": 459
+    },
+    {
+      "name": "Cybelopsis",
+      "author": "Poursen",
+      "year": 1927,
+      "page": 459
+    },
+    {
+      "name": "Pliomerina",
+      "author": "CHoucarva",
+      "year": 1956,
+      "page": 459
+    },
+    {
+      "name": "Pliomerops",
+      "author": "Raymonp",
+      "year": 1905,
+      "page": 460
+    },
+    {
+      "name": "Pilekia",
+      "author": "Barton",
+      "year": 1915,
+      "page": 461
+    },
+    {
+      "name": "Anacheirurus",
+      "author": "Reen",
+      "year": 1896,
+      "page": 461
+    },
+    {
+      "name": "Metapilekia",
+      "author": "Haarincton",
+      "year": 1938,
+      "page": 461
+    },
+    {
+      "name": "Parapilekia",
+      "author": "Kosayvasut",
+      "year": 1934,
+      "page": 461
+    },
+    {
+      "name": "Protepliomerops",
+      "author": "Kosavasin",
+      "year": 1934,
+      "page": 464
+    },
+    {
+      "name": "Hintzeia",
+      "author": "Harrincton",
+      "year": 1957,
+      "page": 464
+    },
+    {
+      "name": "Kanoshia",
+      "author": "Harrincron",
+      "year": 1957,
+      "page": 464
+    },
+    {
+      "name": "Leiostrotetropis",
+      "author": "Raymonp",
+      "year": 1937,
+      "page": 464
+    },
+    {
+      "name": "Pliomeroides",
+      "author": "Hanrincton & Leanza",
+      "year": 1957,
+      "page": 464
+    },
+    {
+      "name": "Protopliomerelia",
+      "author": "Harrincron",
+      "year": 1957,
+      "page": 464
+    },
+    {
+      "name": "Pseudocybele",
+      "author": "Ross",
+      "year": 1931,
+      "page": 464
+    },
+    {
+      "name": "Rossaspis",
+      "author": "Harrincron",
+      "year": 1957,
+      "page": 464
+    },
+    {
+      "name": "Pliomereiia",
+      "author": "Reev",
+      "year": 1941,
+      "page": 465
+    },
+    {
+      "name": "Placoparia",
+      "author": "Hawie & Corpa",
+      "year": 1847,
+      "page": 465
+    },
+    {
+      "name": "Diaphanometepus",
+      "author": "Fr. Scumuptr",
+      "year": 1881,
+      "page": 465
+    },
+    {
+      "name": "Encrinurus",
+      "author": "EmMricn",
+      "year": 1844,
+      "page": 466
+    },
+    {
+      "name": "Cromus",
+      "author": "Barranne",
+      "year": 1852,
+      "page": 467
+    },
+    {
+      "name": "Cybele",
+      "author": "Lovin",
+      "year": 1846,
+      "page": 468
+    },
+    {
+      "name": "Atractopyge",
+      "author": "Hawite & Corpa",
+      "year": 1847,
+      "page": 468
+    },
+    {
+      "name": "Bevanopsis",
+      "author": "Coorer",
+      "year": 1953,
+      "page": 468
+    },
+    {
+      "name": "Cybeloides",
+      "author": "Stocom",
+      "year": 1913,
+      "page": 468
+    },
+    {
+      "name": "Paracybeloides",
+      "author": "Hurt",
+      "year": 1955,
+      "page": 468
+    },
+    {
+      "name": "Piasiaspis",
+      "author": "Prantu & PRisyt",
+      "year": 1949,
+      "page": 469
+    },
+    {
+      "name": "Staurocephalus",
+      "author": "BARRANDE",
+      "year": 1946,
+      "page": 469
+    },
+    {
+      "name": "Ocedicybele",
+      "author": "Warrrineron",
+      "year": 1938,
+      "page": 469
+    },
+    {
+      "name": "Encrinurella",
+      "author": "Reen",
+      "year": 1915,
+      "page": 469
+    },
+    {
+      "name": "Caiymene",
+      "author": "Brononiast",
+      "year": 1822,
+      "page": 470
+    },
+    {
+      "name": "Calymene",
+      "author": "Brononiant",
+      "year": 1822,
+      "page": 472
+    },
+    {
+      "name": "Calymmene",
+      "author": "Koenic",
+      "year": 1825,
+      "page": 472
+    },
+    {
+      "name": "Calymenesun",
+      "author": "KogayrasHl",
+      "year": 1951,
+      "page": 472
+    },
+    {
+      "name": "Diacalymene",
+      "author": "Kecer",
+      "year": 1927,
+      "page": 472
+    },
+    {
+      "name": "Flexicalymene",
+      "author": "Suincey",
+      "year": 1936,
+      "page": 472
+    },
+    {
+      "name": "Gravicalymene",
+      "author": "SHiacey",
+      "year": 1936,
+      "page": 472
+    },
+    {
+      "name": "Liecalymene",
+      "author": "Raymono",
+      "year": 1916,
+      "page": 472
+    },
+    {
+      "name": "Metacalymene",
+      "author": "Kecer",
+      "year": 1927,
+      "page": 472
+    },
+    {
+      "name": "Platycalymenc",
+      "author": "Suintey",
+      "year": 1936,
+      "page": 472
+    },
+    {
+      "name": "Papillicalymene",
+      "author": "SuuRLEY",
+      "year": 1936,
+      "page": 472
+    },
+    {
+      "name": "Prychometopus",
+      "author": "Scumipr",
+      "year": 1894,
+      "page": 472
+    },
+    {
+      "name": "Reedocalymene",
+      "author": "Kosarvasnt",
+      "year": 1951,
+      "page": 473
+    },
+    {
+      "name": "Synhomalonotus",
+      "author": "Pomrpecxy",
+      "year": 1898,
+      "page": 473
+    },
+    {
+      "name": "Bathycheilus",
+      "author": "Horus",
+      "year": 1908,
+      "page": 473
+    },
+    {
+      "name": "Pharostomina",
+      "author": "Spozuy",
+      "year": 1955,
+      "page": 473
+    },
+    {
+      "name": "Bayarilla",
+      "author": "Barranoe",
+      "year": 1868,
+      "page": 475
+    },
+    {
+      "name": "Calymenelia",
+      "author": "Bencernow",
+      "year": 1890,
+      "page": 475
+    },
+    {
+      "name": "Synhomalonetus",
+      "author": "Pompecky",
+      "year": 1898,
+      "page": 476
+    },
+    {
+      "name": "Brongniartella",
+      "author": "Reep",
+      "year": 1918,
+      "page": 476
+    },
+    {
+      "name": "Colpocaryphe",
+      "author": "Novak in Perner",
+      "year": 1918,
+      "page": 476
+    },
+    {
+      "name": "Placsiacomia",
+      "author": "HawLe & Corpa",
+      "year": 1847,
+      "page": 478
+    },
+    {
+      "name": "Homalonotus",
+      "author": "Konic",
+      "year": 1825,
+      "page": 478
+    },
+    {
+      "name": "Burmeisteria",
+      "author": "Satter",
+      "year": 1865,
+      "page": 480
+    },
+    {
+      "name": "Burmeisterella",
+      "author": "Reev",
+      "year": 1918,
+      "page": 481
+    },
+    {
+      "name": "Parahomaionotus",
+      "author": "Reev",
+      "year": 1918,
+      "page": 481
+    },
+    {
+      "name": "Phacops",
+      "author": "Emamicn",
+      "year": 1839,
+      "page": 483
+    },
+    {
+      "name": "Cryphops",
+      "author": "Ricurer & Ricntrer",
+      "year": 1926,
+      "page": 483
+    },
+    {
+      "name": "Dianops",
+      "author": "Ricnter & Ricnter",
+      "year": 1923,
+      "page": 483
+    },
+    {
+      "name": "Eocryphops",
+      "author": "Ricurer & Ricurer",
+      "year": 1931,
+      "page": 483
+    },
+    {
+      "name": "Eophacops",
+      "author": "Dexo",
+      "year": 1935,
+      "page": 485
+    },
+    {
+      "name": "Nephranops",
+      "author": "Richter & Ricuter",
+      "year": 1926,
+      "page": 485
+    },
+    {
+      "name": "Plagiolaria",
+      "author": "Kecer",
+      "year": 1952,
+      "page": 485
+    },
+    {
+      "name": "Reedops",
+      "author": "Ricuter & RIcHTER",
+      "year": 1925,
+      "page": 486
+    },
+    {
+      "name": "Phacopidelila",
+      "author": "Reep",
+      "year": 1905,
+      "page": 487
+    },
+    {
+      "name": "Denckmannites",
+      "author": "Weoexinn",
+      "year": 1914,
+      "page": 487
+    },
+    {
+      "name": "Dienstina",
+      "author": "Ricurer & Ricurer",
+      "year": 1931,
+      "page": 487
+    },
+    {
+      "name": "Ductina",
+      "author": "RicHTER & Ricuter",
+      "year": 1931,
+      "page": 487
+    },
+    {
+      "name": "Nephranomma",
+      "author": "Ensen",
+      "year": 1952,
+      "page": 488
+    },
+    {
+      "name": "Dalmanites",
+      "author": "Barranpr",
+      "year": 1852,
+      "page": 488
+    },
+    {
+      "name": "Hausmannia",
+      "author": "Hatt & Crarxe",
+      "year": 1888,
+      "page": 488
+    },
+    {
+      "name": "Seronura",
+      "author": "Hatt & Crarxe",
+      "year": 1888,
+      "page": 490
+    },
+    {
+      "name": "Serycephalus",
+      "author": "Hare & Crarxe",
+      "year": 1888,
+      "page": 490
+    },
+    {
+      "name": "Dalmanitoides",
+      "author": "Dero",
+      "year": 1935,
+      "page": 490
+    },
+    {
+      "name": "Heliocephaius",
+      "author": "Dero",
+      "year": 1936,
+      "page": 490
+    },
+    {
+      "name": "Malladaia",
+      "author": "OruHiesrt",
+      "year": 1896,
+      "page": 490
+    },
+    {
+      "name": "Odontocephalus",
+      "author": "Connap",
+      "year": 1840,
+      "page": 490
+    },
+    {
+      "name": "Odontochile",
+      "author": "Hawise & Corps",
+      "year": 1847,
+      "page": 491
+    },
+    {
+      "name": "Aausmanni",
+      "author": "Bronentiart",
+      "year": 1822,
+      "page": 491
+    },
+    {
+      "name": "Neoprebolium",
+      "author": "Strauve",
+      "year": 1958,
+      "page": 492
+    },
+    {
+      "name": "Synphoroides",
+      "author": "Deio",
+      "year": 1940,
+      "page": 492
+    },
+    {
+      "name": "Trypaulites",
+      "author": "De.o",
+      "year": 1935,
+      "page": 492
+    },
+    {
+      "name": "Eocorycephatus",
+      "author": "Rano",
+      "year": 1925,
+      "page": 492
+    },
+    {
+      "name": "The",
+      "author": "Zeliszkella probably is a somewhat\n\nspecialized offshoot of the early dalmanitids\nthat became extinct soon after its appearance.\n\nZeliszkella Deto",
+      "year": 1935,
+      "page": 493
+    },
+    {
+      "name": "Ormathops",
+      "author": "Dero",
+      "year": 1935,
+      "page": 493
+    },
+    {
+      "name": "Dalmanitina",
+      "author": "Reep",
+      "year": 1905,
+      "page": 495
+    },
+    {
+      "name": "Eudolatites",
+      "author": "Dero",
+      "year": 1935,
+      "page": 495
+    },
+    {
+      "name": "Acastella",
+      "author": "Reep",
+      "year": 1925,
+      "page": 496
+    },
+    {
+      "name": "Acastellina",
+      "author": "Ricntrer & Ricurer",
+      "year": 1954,
+      "page": 496
+    },
+    {
+      "name": "Asteropyge",
+      "author": "Haw te & Corpa",
+      "year": 1847,
+      "page": 497
+    },
+    {
+      "name": "Comura",
+      "author": "Ricerer & Ricerren",
+      "year": 1926,
+      "page": 499
+    },
+    {
+      "name": "Cryphina",
+      "author": "Ornurert",
+      "year": 1889,
+      "page": 499
+    },
+    {
+      "name": "Gourdonia",
+      "author": "Pitter",
+      "year": 1954,
+      "page": 500
+    },
+    {
+      "name": "Greenops",
+      "author": "De.o",
+      "year": 1935,
+      "page": 500
+    },
+    {
+      "name": "Kayserops",
+      "author": "Dero",
+      "year": 1935,
+      "page": 502
+    },
+    {
+      "name": "Metacanthina",
+      "author": "Pitter",
+      "year": 1954,
+      "page": 502
+    },
+    {
+      "name": "Pseudocryphacus",
+      "author": "Pitter",
+      "year": 1954,
+      "page": 502
+    },
+    {
+      "name": "Psychopyge",
+      "author": "Texmier & Termizr",
+      "year": 1950,
+      "page": 503
+    },
+    {
+      "name": "Rhenops",
+      "author": "Ricurer & Ricwrer",
+      "year": 1943,
+      "page": 503
+    },
+    {
+      "name": "Treveropyge",
+      "author": "Struve",
+      "year": 1958,
+      "page": 503
+    },
+    {
+      "name": "Calmonia",
+      "author": "Crarke",
+      "year": 1913,
+      "page": 504
+    },
+    {
+      "name": "Bainclla",
+      "author": "Renniz",
+      "year": 1930,
+      "page": 504
+    },
+    {
+      "name": "Cryphacoides",
+      "author": "Dezo",
+      "year": 1935,
+      "page": 505
+    },
+    {
+      "name": "Dalmaniturus",
+      "author": "Cuernycueva",
+      "year": 1937,
+      "page": 505
+    },
+    {
+      "name": "Metacryphacus",
+      "author": "Reep",
+      "year": 1907,
+      "page": 506
+    },
+    {
+      "name": "Pennaia",
+      "author": "Crarxe",
+      "year": 1913,
+      "page": 506
+    },
+    {
+      "name": "Phacopidina",
+      "author": "Baxcrorr",
+      "year": 1949,
+      "page": 506
+    },
+    {
+      "name": "Probolops",
+      "author": "Deo",
+      "year": 1935,
+      "page": 506
+    },
+    {
+      "name": "Paracalmonia",
+      "author": "Struve",
+      "year": 1958,
+      "page": 506
+    },
+    {
+      "name": "Tibagya",
+      "author": "Srruve",
+      "year": 1958,
+      "page": 506
+    },
+    {
+      "name": "Schizostylus",
+      "author": "Deto",
+      "year": 1935,
+      "page": 507
+    },
+    {
+      "name": "Typhioniscus",
+      "author": "Sauter",
+      "year": 1856,
+      "page": 507
+    },
+    {
+      "name": "Acaste",
+      "author": "Goipruss",
+      "year": 1843,
+      "page": 508
+    },
+    {
+      "name": "Acastoides",
+      "author": "Dero",
+      "year": 1935,
+      "page": 508
+    },
+    {
+      "name": "Kloucekia",
+      "author": "Dero",
+      "year": 1935,
+      "page": 509
+    },
+    {
+      "name": "Pterygometopus",
+      "author": "Fr. Scuminr",
+      "year": 1881,
+      "page": 510
+    },
+    {
+      "name": "Calyptaulax",
+      "author": "G. A. Cooper",
+      "year": 1930,
+      "page": 512
+    },
+    {
+      "name": "Eomonarachus",
+      "author": "Dero",
+      "year": 1935,
+      "page": 512
+    },
+    {
+      "name": "Monorakos",
+      "author": "Fr. Scumipt",
+      "year": 1886,
+      "page": 514
+    },
+    {
+      "name": "Elasmaspis",
+      "author": "KRAMARENKO",
+      "year": 1956,
+      "page": 514
+    },
+    {
+      "name": "Isalaux",
+      "author": "Frepericxson & Poitack",
+      "year": 1952,
+      "page": 514
+    },
+    {
+      "name": "Parevenkaspis",
+      "author": "Kramarenko",
+      "year": 1952,
+      "page": 515
+    },
+    {
+      "name": "Lichas",
+      "author": "Datman",
+      "year": 1827,
+      "page": 516
+    },
+    {
+      "name": "Mctopolichas",
+      "author": "Giricu",
+      "year": 1901,
+      "page": 516
+    },
+    {
+      "name": "Uralichas",
+      "author": "Dencapo",
+      "year": 1892,
+      "page": 516
+    },
+    {
+      "name": "Leiolichas",
+      "author": "Scumint",
+      "year": 1885,
+      "page": 516
+    },
+    {
+      "name": "Dicranopeltis",
+      "author": "Hawre & Corpa",
+      "year": 1847,
+      "page": 516
+    },
+    {
+      "name": "Arctinurus",
+      "author": "Castetnau",
+      "year": 1843,
+      "page": 516
+    },
+    {
+      "name": "Gaspelichas",
+      "author": "Crarxe",
+      "year": 1907,
+      "page": 518
+    },
+    {
+      "name": "Echinolichas",
+      "author": "Giricn",
+      "year": 1901,
+      "page": 518
+    },
+    {
+      "name": "Hoplolichas",
+      "author": "Dantes",
+      "year": 1877,
+      "page": 518
+    },
+    {
+      "name": "Platylichas",
+      "author": "Gtricu",
+      "year": 1901,
+      "page": 518
+    },
+    {
+      "name": "Ceratolichas",
+      "author": "Haut & CLARKE",
+      "year": 1888,
+      "page": 518
+    },
+    {
+      "name": "Terataspis",
+      "author": "Hatt",
+      "year": 1863,
+      "page": 518
+    },
+    {
+      "name": "Conolichas",
+      "author": "Dames",
+      "year": 1877,
+      "page": 518
+    },
+    {
+      "name": "Ceratarges",
+      "author": "Gdnicu",
+      "year": 1901,
+      "page": 521
+    },
+    {
+      "name": "Hemiarges",
+      "author": "Goricn",
+      "year": 1901,
+      "page": 523
+    },
+    {
+      "name": "Chonetlobarges",
+      "author": "Purecer",
+      "year": 1936,
+      "page": 523
+    },
+    {
+      "name": "Trochurus",
+      "author": "Bevaicu",
+      "year": 1845,
+      "page": 523
+    },
+    {
+      "name": "Dicranogmus",
+      "author": "Hawise & Corpa",
+      "year": 1847,
+      "page": 523
+    },
+    {
+      "name": "Acanthopyge",
+      "author": "Haw ie & Corpa",
+      "year": 1847,
+      "page": 523
+    },
+    {
+      "name": "Mephtarges",
+      "author": "Ricutrer & Ricuter",
+      "year": 1930,
+      "page": 523
+    },
+    {
+      "name": "Eifuarges",
+      "author": "Ricurer & Ricnren",
+      "year": 1917,
+      "page": 523
+    },
+    {
+      "name": "Radiolichas",
+      "author": "Rezn",
+      "year": 1923,
+      "page": 523
+    },
+    {
+      "name": "Lichakephalus",
+      "author": "Syzuy",
+      "year": 1955,
+      "page": 524
+    },
+    {
+      "name": "Odontoplcura",
+      "author": "Emmricu",
+      "year": 1939,
+      "page": 524
+    },
+    {
+      "name": "Acidaspis",
+      "author": "Murcutson",
+      "year": 1839,
+      "page": 526
+    },
+    {
+      "name": "Diacanthaspis",
+      "author": "Wurrrtncton",
+      "year": 1941,
+      "page": 526
+    },
+    {
+      "name": "Dudleyaspis",
+      "author": "Prant. & Pkriayt",
+      "year": 1949,
+      "page": 526
+    },
+    {
+      "name": "Leonaspis",
+      "author": "Ricnter & Ricurer",
+      "year": 1917,
+      "page": 526
+    },
+    {
+      "name": "Primaspis",
+      "author": "RicnTer & Ricutrer",
+      "year": 1917,
+      "page": 526
+    },
+    {
+      "name": "Radiaspis",
+      "author": "Ricurrer & RicnTer",
+      "year": 1917,
+      "page": 526
+    },
+    {
+      "name": "Ceratonurus",
+      "author": "PrantL & Pkisyt",
+      "year": 1949,
+      "page": 527
+    },
+    {
+      "name": "Dicranurus",
+      "author": "Conran",
+      "year": 1840,
+      "page": 527
+    },
+    {
+      "name": "Koneprusia",
+      "author": "Pate. & Phrevt",
+      "year": 1949,
+      "page": 527
+    },
+    {
+      "name": "Ceratocephala",
+      "author": "Warner",
+      "year": 1838,
+      "page": 527
+    },
+    {
+      "name": "Orphanaspis",
+      "author": "Paantc & Piisyt",
+      "year": 1949,
+      "page": 528
+    },
+    {
+      "name": "Proceratocephala",
+      "author": "Prantt & PkisyLt",
+      "year": 1949,
+      "page": 528
+    },
+    {
+      "name": "Selenopeltoides",
+      "author": "Paant. & Paipy.",
+      "year": 1949,
+      "page": 528
+    },
+    {
+      "name": "Aawlei",
+      "author": "Banranpe",
+      "year": 1952,
+      "page": 528
+    },
+    {
+      "name": "Whittingtania",
+      "author": "Pranri. & Pkiayt",
+      "year": 1949,
+      "page": 528
+    },
+    {
+      "name": "Selenopeltis",
+      "author": "Hawre & Corpa",
+      "year": 1847,
+      "page": 528
+    },
+    {
+      "name": "Apianurus",
+      "author": "Wurrtincron",
+      "year": 1956,
+      "page": 529
+    },
+    {
+      "name": "Calipernurus",
+      "author": "Wuirttncron",
+      "year": 1956,
+      "page": 529
+    },
+    {
+      "name": "Ancyropyge",
+      "author": "Crarxe",
+      "year": 1892,
+      "page": 529
+    },
+    {
+      "name": "Bounyongia",
+      "author": "Erntaince & Mircnece",
+      "year": 1917,
+      "page": 529
+    },
+    {
+      "name": "Giobulaspis",
+      "author": "Reeo",
+      "year": 1931,
+      "page": 529
+    },
+    {
+      "name": "Belovia",
+      "author": "PoteTarva",
+      "year": 1956,
+      "page": 530
+    },
+    {
+      "name": "Evacidaspis",
+      "author": "Poverazva",
+      "year": 1956,
+      "page": 530
+    },
+    {
+      "name": "Acidaspides",
+      "author": "Lenmontova",
+      "year": 1951,
+      "page": 530
+    },
+    {
+      "name": "Isocolus",
+      "author": "ANGetm",
+      "year": 1854,
+      "page": 531
+    },
+    {
+      "name": "Cyphoniscus",
+      "author": "Sarrer",
+      "year": 1853,
+      "page": 532
+    },
+    {
+      "name": "Holdenia",
+      "author": "Cooper",
+      "year": 1953,
+      "page": 532
+    },
+    {
+      "name": "Myinda",
+      "author": "STuss.eFieLp in Strussreriero & BuLMaN",
+      "year": 1927,
+      "page": 532
+    },
+    {
+      "name": "Sarkia",
+      "author": "Kroutex",
+      "year": 1916,
+      "page": 532
+    },
+    {
+      "name": "Aguaraya",
+      "author": "Rusconr",
+      "year": 1955,
+      "page": 532
+    },
+    {
+      "name": "Avalonia",
+      "author": "Watcort",
+      "year": 1891,
+      "page": 532
+    },
+    {
+      "name": "Binodaspis",
+      "author": "Lermontova",
+      "year": 1951,
+      "page": 532
+    },
+    {
+      "name": "Jakutus",
+      "author": "Lermonrova",
+      "year": 1951,
+      "page": 532
+    },
+    {
+      "name": "Jangudaspis",
+      "author": "Octenko",
+      "year": 1956,
+      "page": 533
+    },
+    {
+      "name": "Judaiclla",
+      "author": "Lermonrova",
+      "year": 1951,
+      "page": 533
+    },
+    {
+      "name": "Kueichowia",
+      "author": "Lu",
+      "year": 1942,
+      "page": 533
+    },
+    {
+      "name": "Kuanyangia",
+      "author": "Hort",
+      "year": 1953,
+      "page": 533
+    },
+    {
+      "name": "Meneghineila",
+      "author": "Bornemann",
+      "year": 1891,
+      "page": 533
+    },
+    {
+      "name": "Metisaspina",
+      "author": "Sivov",
+      "year": 1955,
+      "page": 533
+    },
+    {
+      "name": "Namanoia",
+      "author": "Lermontova",
+      "year": 1951,
+      "page": 533
+    },
+    {
+      "name": "Paragraulos",
+      "author": "Lu",
+      "year": 1941,
+      "page": 533
+    },
+    {
+      "name": "Protypus",
+      "author": "Watcotr",
+      "year": 1886,
+      "page": 533
+    },
+    {
+      "name": "Amgaspis",
+      "author": "CHernysHeva",
+      "year": 1956,
+      "page": 533
+    },
+    {
+      "name": "Amginouyia",
+      "author": "Cuernysueva",
+      "year": 1956,
+      "page": 533
+    },
+    {
+      "name": "Chakasskia",
+      "author": "Poretragva",
+      "year": 1936,
+      "page": 533
+    },
+    {
+      "name": "Chittidilla",
+      "author": "Kine",
+      "year": 1941,
+      "page": 533
+    },
+    {
+      "name": "Chondragrauios",
+      "author": "Lermontova",
+      "year": 1940,
+      "page": 535
+    },
+    {
+      "name": "Chondroparia",
+      "author": "Lorenz",
+      "year": 1906,
+      "page": 535
+    },
+    {
+      "name": "Conoides",
+      "author": "Hower",
+      "year": 1937,
+      "page": 535
+    },
+    {
+      "name": "Edelsteinaspis",
+      "author": "Lermontova",
+      "year": 1940,
+      "page": 535
+    },
+    {
+      "name": "Fabulaspis",
+      "author": "Ivsuin",
+      "year": 1953,
+      "page": 535
+    },
+    {
+      "name": "Hanburia",
+      "author": "Waxicort",
+      "year": 1916,
+      "page": 535
+    },
+    {
+      "name": "Inouyina",
+      "author": "Poveragva",
+      "year": 1936,
+      "page": 535
+    },
+    {
+      "name": "Levisia",
+      "author": "Watcorr",
+      "year": 1911,
+      "page": 536
+    },
+    {
+      "name": "Megagraulos",
+      "author": "Kosayasur",
+      "year": 1935,
+      "page": 536
+    },
+    {
+      "name": "Metagraulos",
+      "author": "Kopsayasut",
+      "year": 1935,
+      "page": 536
+    },
+    {
+      "name": "Orloviella",
+      "author": "Srvov",
+      "year": 1955,
+      "page": 536
+    },
+    {
+      "name": "Plagiura",
+      "author": "Resser",
+      "year": 1935,
+      "page": 536
+    },
+    {
+      "name": "Prohedinella",
+      "author": "Stvov",
+      "year": 1955,
+      "page": 536
+    },
+    {
+      "name": "Pseudoliostracing",
+      "author": "Kosayasut",
+      "year": 1938,
+      "page": 536
+    },
+    {
+      "name": "Schistometopus",
+      "author": "Resser",
+      "year": 1938,
+      "page": 536
+    },
+    {
+      "name": "Toxotis",
+      "author": "WaLierius",
+      "year": 1895,
+      "page": 536
+    },
+    {
+      "name": "Trinia",
+      "author": "Poveragva",
+      "year": 1956,
+      "page": 536
+    },
+    {
+      "name": "Trintidae",
+      "author": "Poteratva",
+      "year": 1996,
+      "page": 536
+    },
+    {
+      "name": "Ullaspis",
+      "author": "Westrercarp",
+      "year": 1948,
+      "page": 536
+    },
+    {
+      "name": "Yorkella",
+      "author": "Kosavasut",
+      "year": 1942,
+      "page": 536
+    },
+    {
+      "name": "Abakanopleura",
+      "author": "Srvov",
+      "year": 1955,
+      "page": 537
+    },
+    {
+      "name": "Acantholenus",
+      "author": "Matruew",
+      "year": 1898,
+      "page": 537
+    },
+    {
+      "name": "Acrohybus",
+      "author": "Rayvmonp",
+      "year": 1937,
+      "page": 537
+    },
+    {
+      "name": "Aidarella",
+      "author": "Lermontova",
+      "year": 1951,
+      "page": 537
+    },
+    {
+      "name": "Bowmania",
+      "author": "Waxcorr",
+      "year": 1925,
+      "page": 537
+    },
+    {
+      "name": "Cryptoderaspis",
+      "author": "Rasetri",
+      "year": 1946,
+      "page": 537
+    },
+    {
+      "name": "Ellipsocephaloides",
+      "author": "Kopravasut",
+      "year": 1935,
+      "page": 537
+    },
+    {
+      "name": "Eosaukia",
+      "author": "Lu",
+      "year": 1954,
+      "page": 537
+    },
+    {
+      "name": "Esseigania",
+      "author": "Kosavasut",
+      "year": 1944,
+      "page": 537
+    },
+    {
+      "name": "Kazellina",
+      "author": "Sivov",
+      "year": 1955,
+      "page": 539
+    },
+    {
+      "name": "Koechtelia",
+      "author": "Locuman",
+      "year": 1950,
+      "page": 539
+    },
+    {
+      "name": "Koldinia",
+      "author": "Watcorr & Ressern",
+      "year": 1924,
+      "page": 539
+    },
+    {
+      "name": "Koldiniella",
+      "author": "Sivov",
+      "year": 1955,
+      "page": 539
+    },
+    {
+      "name": "Kujandina",
+      "author": "Ivsuin",
+      "year": 1956,
+      "page": 539
+    },
+    {
+      "name": "Mareda",
+      "author": "Kosavasut",
+      "year": 1942,
+      "page": 539
+    },
+    {
+      "name": "Matania",
+      "author": "Raserri",
+      "year": 1946,
+      "page": 539
+    },
+    {
+      "name": "Mataninella",
+      "author": "Stvov",
+      "year": 1955,
+      "page": 539
+    },
+    {
+      "name": "Neoacrocephalites",
+      "author": "Stvov",
+      "year": 1955,
+      "page": 539
+    },
+    {
+      "name": "Ninaspis",
+      "author": "Ivsin",
+      "year": 1956,
+      "page": 539
+    },
+    {
+      "name": "Oligometopus",
+      "author": "Resser",
+      "year": 1936,
+      "page": 539
+    },
+    {
+      "name": "Onchonotopis",
+      "author": "Raserri",
+      "year": 1946,
+      "page": 539
+    },
+    {
+      "name": "Phoreotropis",
+      "author": "RayMonp",
+      "year": 1924,
+      "page": 539
+    },
+    {
+      "name": "Phylacterus",
+      "author": "Raymonp",
+      "year": 1924,
+      "page": 539
+    },
+    {
+      "name": "Pseudosalteria",
+      "author": "Raymonp",
+      "year": 1924,
+      "page": 540
+    },
+    {
+      "name": "Triarthrella",
+      "author": "Harr",
+      "year": 1863,
+      "page": 541
+    },
+    {
+      "name": "Volonellus",
+      "author": "Ivsuin",
+      "year": 1953,
+      "page": 541
+    },
+    {
+      "name": "Westonaspis",
+      "author": "Raserti",
+      "year": 1945,
+      "page": 541
+    },
+    {
+      "name": "Zacompsus",
+      "author": "Raymonp",
+      "year": 1924,
+      "page": 541
+    },
+    {
+      "name": "Bodenbenderia",
+      "author": "Haratncron & Leanza",
+      "year": 1957,
+      "page": 541
+    },
+    {
+      "name": "Brackebuschia",
+      "author": "Harrincron & Leanza",
+      "year": 1957,
+      "page": 541
+    },
+    {
+      "name": "Carmon",
+      "author": "Barranne",
+      "year": 1872,
+      "page": 541
+    },
+    {
+      "name": "Ceratopeltis",
+      "author": "Poursenw",
+      "year": 1937,
+      "page": 541
+    },
+    {
+      "name": "Cielandia",
+      "author": "Cossmann",
+      "year": 1902,
+      "page": 541
+    },
+    {
+      "name": "Crossoura",
+      "author": "MoserG & Secerserc",
+      "year": 1906,
+      "page": 541
+    },
+    {
+      "name": "Curiaspis",
+      "author": "Sozuy",
+      "year": 1955,
+      "page": 541
+    },
+    {
+      "name": "Endeaspis",
+      "author": "Locuman",
+      "year": 1956,
+      "page": 542
+    },
+    {
+      "name": "Etheridgaspis",
+      "author": "Kosavasut",
+      "year": 1940,
+      "page": 542
+    },
+    {
+      "name": "Eulomella",
+      "author": "Koparvasut",
+      "year": 1955,
+      "page": 542
+    },
+    {
+      "name": "Gignopeltis",
+      "author": "Raymonp",
+      "year": 1924,
+      "page": 542
+    },
+    {
+      "name": "Grinnellaspis",
+      "author": "Poursen",
+      "year": 1948,
+      "page": 543
+    },
+    {
+      "name": "Hyperbolochilus",
+      "author": "Ross",
+      "year": 1951,
+      "page": 543
+    },
+    {
+      "name": "Idiorhapha",
+      "author": "Wairtincton",
+      "year": 1953,
+      "page": 543
+    },
+    {
+      "name": "Ischyrotoma",
+      "author": "Raymonp",
+      "year": 1925,
+      "page": 543
+    },
+    {
+      "name": "Koraipsis",
+      "author": "Kosayasur",
+      "year": 1934,
+      "page": 543
+    },
+    {
+      "name": "Leptopilus",
+      "author": "Raymonp",
+      "year": 1924,
+      "page": 543
+    },
+    {
+      "name": "Macroculites",
+      "author": "Kosayvasui",
+      "year": 1955,
+      "page": 543
+    },
+    {
+      "name": "Nannopeltis",
+      "author": "Harrincton & Leanza",
+      "year": 1957,
+      "page": 543
+    },
+    {
+      "name": "Neseuretus",
+      "author": "Hicxs",
+      "year": 1872,
+      "page": 543
+    },
+    {
+      "name": "Pseudocelandia",
+      "author": "Ross",
+      "year": 1951,
+      "page": 544
+    },
+    {
+      "name": "Rhamphopyge",
+      "author": "Kosayasnt",
+      "year": 1955,
+      "page": 544
+    },
+    {
+      "name": "Sphaerocare",
+      "author": "Harrincton & Leanza",
+      "year": 1957,
+      "page": 544
+    },
+    {
+      "name": "Tasmanaspis",
+      "author": "Kosayasni",
+      "year": 1940,
+      "page": 544
+    },
+    {
+      "name": "Piltolites",
+      "author": "Cozzens",
+      "year": 1848,
+      "page": 544
+    },
+    {
+      "name": "Acheilus",
+      "author": "Clark in Raymonp",
+      "year": 1924,
+      "page": 544
+    },
+    {
+      "name": "Aligerites",
+      "author": "Hower",
+      "year": 1942,
+      "page": 544
+    },
+    {
+      "name": "Alloctops",
+      "author": "Rarinesque",
+      "year": 1832,
+      "page": 544
+    },
+    {
+      "name": "Annamitella",
+      "author": "Mansuy",
+      "year": 1920,
+      "page": 544
+    },
+    {
+      "name": "Anthracopeltis",
+      "author": "Boutay",
+      "year": 1880,
+      "page": 544
+    },
+    {
+      "name": "Arthricocephalus",
+      "author": "Berceron",
+      "year": 1899,
+      "page": 544
+    },
+    {
+      "name": "Billingaspis",
+      "author": "Resser",
+      "year": 1935,
+      "page": 544
+    },
+    {
+      "name": "Canotiana",
+      "author": "Rusconi",
+      "year": 1950,
+      "page": 544
+    },
+    {
+      "name": "Cayastaia",
+      "author": "Rusconi",
+      "year": 1954,
+      "page": 544
+    },
+    {
+      "name": "Changshanocephalus",
+      "author": "Sun",
+      "year": 1935,
+      "page": 544
+    },
+    {
+      "name": "Chosenia",
+      "author": "Kosavasui",
+      "year": 1934,
+      "page": 544
+    },
+    {
+      "name": "Chuangites",
+      "author": "Hows t",
+      "year": 1945,
+      "page": 544
+    },
+    {
+      "name": "Cobboldites",
+      "author": "Kosayasni",
+      "year": 1943,
+      "page": 544
+    },
+    {
+      "name": "Conagraulos",
+      "author": "Hower",
+      "year": 1937,
+      "page": 544
+    },
+    {
+      "name": "Costapyge",
+      "author": "Hower",
+      "year": 1937,
+      "page": 545
+    },
+    {
+      "name": "Cylindrocephalus",
+      "author": "Trexxner",
+      "year": 1868,
+      "page": 545
+    },
+    {
+      "name": "Dictyella",
+      "author": "Kosayasni",
+      "year": 1933,
+      "page": 545
+    },
+    {
+      "name": "Dipharus",
+      "author": "Crank",
+      "year": 1923,
+      "page": 545
+    },
+    {
+      "name": "Diplopsites",
+      "author": "Rarinesque",
+      "year": 1832,
+      "page": 545
+    },
+    {
+      "name": "Diplozyga",
+      "author": "Raymonp",
+      "year": 1938,
+      "page": 545
+    },
+    {
+      "name": "Exigua",
+      "author": "Howexr",
+      "year": 1937,
+      "page": 545
+    },
+    {
+      "name": "Glabrella",
+      "author": "Lenmonrova",
+      "year": 1940,
+      "page": 545
+    },
+    {
+      "name": "Glossicephalus",
+      "author": "Howeir",
+      "year": 1937,
+      "page": 545
+    },
+    {
+      "name": "Hagiorites",
+      "author": "KosayasHt",
+      "year": 1951,
+      "page": 545
+    },
+    {
+      "name": "Hamptonella",
+      "author": "Resser",
+      "year": 1937,
+      "page": 545
+    },
+    {
+      "name": "Hockaspiella",
+      "author": "Rusconz",
+      "year": 1950,
+      "page": 545
+    },
+    {
+      "name": "Huilichia",
+      "author": "Rusconi",
+      "year": 1955,
+      "page": 545
+    },
+    {
+      "name": "Isidrella",
+      "author": "Rusconr",
+      "year": 1955,
+      "page": 545
+    },
+    {
+      "name": "Isoctomesa",
+      "author": "Rarinesove",
+      "year": 1822,
+      "page": 545
+    },
+    {
+      "name": "Leiostegioides",
+      "author": "Kosavasn",
+      "year": 1934,
+      "page": 545
+    },
+    {
+      "name": "Levinia",
+      "author": "Rusconi",
+      "year": 1950,
+      "page": 545
+    },
+    {
+      "name": "Litocodia",
+      "author": "Resser",
+      "year": 1938,
+      "page": 545
+    },
+    {
+      "name": "Micragraulos",
+      "author": "Howeir",
+      "year": 1937,
+      "page": 545
+    },
+    {
+      "name": "Mimana",
+      "author": "Kosavasui",
+      "year": 1935,
+      "page": 545
+    },
+    {
+      "name": "Orimops",
+      "author": "Rarinesquz",
+      "year": 1832,
+      "page": 545
+    },
+    {
+      "name": "Oryctocephalina",
+      "author": "Lermontova",
+      "year": 1940,
+      "page": 545
+    },
+    {
+      "name": "Perimetopus",
+      "author": "Resser",
+      "year": 1937,
+      "page": 545
+    },
+    {
+      "name": "Prychopleurites",
+      "author": "Kopayasni",
+      "year": 1936,
+      "page": 545
+    },
+    {
+      "name": "Querandinia",
+      "author": "Rusconi",
+      "year": 1954,
+      "page": 545
+    },
+    {
+      "name": "Retusites",
+      "author": "Rarinesque",
+      "year": 1832,
+      "page": 545
+    },
+    {
+      "name": "Taianocephalus",
+      "author": "Sun",
+      "year": 1924,
+      "page": 545
+    },
+    {
+      "name": "Telesiops",
+      "author": "Rarinesque",
+      "year": 1832,
+      "page": 545
+    },
+    {
+      "name": "Tomoligus",
+      "author": "Rarinesquet",
+      "year": 1832,
+      "page": 545
+    },
+    {
+      "name": "Vinakainella",
+      "author": "Rusconi",
+      "year": 1953,
+      "page": 545
+    },
+    {
+      "name": "Wedekindia",
+      "author": "Sun",
+      "year": 1933,
+      "page": 545
+    },
+    {
+      "name": "Yanquetruzia",
+      "author": "Rusconi",
+      "year": 1955,
+      "page": 545
+    },
+    {
+      "name": "Yoyarria",
+      "author": "Rusconr",
+      "year": 1955,
+      "page": 545
+    },
+    {
+      "name": "Particeps",
+      "author": "Reep",
+      "year": 1943,
+      "page": 545
+    },
+    {
+      "name": "Dalmaniopsis",
+      "author": "Gernitz",
+      "year": 1862,
+      "page": 545
+    }
+  ],
+  "family_headers": [
+    {
+      "rank": "family",
+      "name": "CONDYLOPYGIDAE",
+      "author": "Raymond",
+      "year": 1913,
+      "pos": 529,
+      "page": 194
+    },
+    {
+      "rank": "family",
+      "name": "CYCLOPAGNOSTIDAE",
+      "author": "Howell",
+      "year": 1937,
+      "pos": 1962,
+      "page": 194
+    },
+    {
+      "rank": "family",
+      "name": "DIPLAGNOSTIDAE",
+      "author": "Whitehouse",
+      "year": 1936,
+      "pos": 662,
+      "page": 195
+    },
+    {
+      "rank": "family",
+      "name": "GERAGNOSTIDAE",
+      "author": "Howell",
+      "year": 1935,
+      "pos": 1772,
+      "page": 196
+    },
+    {
+      "rank": "family",
+      "name": "MICRAGNOSTIDAE",
+      "author": "Howell.",
+      "year": 1935,
+      "pos": 2061,
+      "page": 199
+    },
+    {
+      "rank": "family",
+      "name": "PHALACROMIDAE",
+      "author": "Hawle &\nCorda",
+      "year": 1847,
+      "pos": 604,
+      "page": 201
+    },
+    {
+      "rank": "family",
+      "name": "PSEUDAGNOSTIDAE",
+      "author": "Whitehouse",
+      "year": 1936,
+      "pos": 437,
+      "page": 202
+    },
+    {
+      "rank": "family",
+      "name": "SPHAERAGNOSTIDAE",
+      "author": "Robayashi",
+      "year": 1939,
+      "pos": 783,
+      "page": 203
+    },
+    {
+      "rank": "family",
+      "name": "EODISCIDAE",
+      "author": "Raymond",
+      "year": 1913,
+      "pos": 1579,
+      "page": 207
+    },
+    {
+      "rank": "family",
+      "name": "PAGETIIDAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 3481,
+      "page": 208
+    },
+    {
+      "rank": "family",
+      "name": "OLENELLIDAE",
+      "author": "Vogdes",
+      "year": 1893,
+      "pos": 1484,
+      "page": 211
+    },
+    {
+      "rank": "subfamily",
+      "name": "OLENELLINAE",
+      "author": "Vogdes",
+      "year": 1893,
+      "pos": 387,
+      "page": 212
+    },
+    {
+      "rank": "subfamily",
+      "name": "FALLOTASPIDINAE",
+      "author": "Hupe",
+      "year": 1953,
+      "pos": 1660,
+      "page": 214
+    },
+    {
+      "rank": "subfamily",
+      "name": "OLENELLODDINAE",
+      "author": "Hupe",
+      "year": 1933,
+      "pos": 468,
+      "page": 217
+    },
+    {
+      "rank": "family",
+      "name": "REDLICHIDAE",
+      "author": "Poulsen",
+      "year": 1927,
+      "pos": 457,
+      "page": 219
+    },
+    {
+      "rank": "family",
+      "name": "SAUKIANDIDAE",
+      "author": "Hupe",
+      "year": 1953,
+      "pos": 2312,
+      "page": 222
+    },
+    {
+      "rank": "family",
+      "name": "DOLEROLENIDAE",
+      "author": "Kobayashi",
+      "year": 1951,
+      "pos": 3532,
+      "page": 225
+    },
+    {
+      "rank": "family",
+      "name": "ELLIPSOCEPHALIDAE",
+      "author": "Matthew",
+      "year": 1887,
+      "pos": 1438,
+      "page": 227
+    },
+    {
+      "rank": "subfamily",
+      "name": "ELLIPSOCEPHALINAE",
+      "author": "Matthew",
+      "year": 1987,
+      "pos": 1864,
+      "page": 227
+    },
+    {
+      "rank": "subfamily",
+      "name": "STRENUELLINAE",
+      "author": "Hupe",
+      "year": 1953,
+      "pos": 3936,
+      "page": 227
+    },
+    {
+      "rank": "subfamily",
+      "name": "ANTATLASIINAE",
+      "author": "Hupe",
+      "year": 1953,
+      "pos": 1667,
+      "page": 229
+    },
+    {
+      "rank": "family",
+      "name": "PROTOLENIDAE",
+      "author": "Richter & Subfamily TERMIERELLINAE Hupe",
+      "year": 1953,
+      "pos": 241,
+      "page": 230
+    },
+    {
+      "rank": "subfamily",
+      "name": "TERMIERELLINAE",
+      "author": "Hupe",
+      "year": 1953,
+      "pos": 271,
+      "page": 230
+    },
+    {
+      "rank": "family",
+      "name": "YUNNANOCEPHALIDAE",
+      "author": "Hupe",
+      "year": 1953,
+      "pos": 2346,
+      "page": 232
+    },
+    {
+      "rank": "family",
+      "name": "PARADOXIDIDAE",
+      "author": "Hawle &\nCorda",
+      "year": 1847,
+      "pos": 327,
+      "page": 233
+    },
+    {
+      "rank": "subfamily",
+      "name": "PARADOXIDINAE",
+      "author": "Hawle & Corda",
+      "year": 1847,
+      "pos": 1215,
+      "page": 233
+    },
+    {
+      "rank": "subfamily",
+      "name": "CENTROPLEURINAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 2993,
+      "page": 233
+    },
+    {
+      "rank": "subfamily",
+      "name": "METADOXIDINAE",
+      "author": "Whitchouse",
+      "year": 1939,
+      "pos": 1358,
+      "page": 234
+    },
+    {
+      "rank": "subfamily",
+      "name": "XYSTRIDURINAE",
+      "author": "Whitchouse",
+      "year": 1939,
+      "pos": 2719,
+      "page": 234
+    },
+    {
+      "rank": "family",
+      "name": "DORYPYGIDAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 1815,
+      "page": 237
+    },
+    {
+      "rank": "family",
+      "name": "CORYNEXOCHIDAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 3404,
+      "page": 246
+    },
+    {
+      "rank": "subfamily",
+      "name": "CORYNEXOCHINAE",
+      "author": "Angclin",
+      "year": 1854,
+      "pos": 4039,
+      "page": 246
+    },
+    {
+      "rank": "subfamily",
+      "name": "ACONTHEINAE",
+      "author": "Westergard",
+      "year": 1950,
+      "pos": 869,
+      "page": 247
+    },
+    {
+      "rank": "family",
+      "name": "ZACANTHOIDIDAE",
+      "author": "Swinnerton",
+      "year": 1915,
+      "pos": 1266,
+      "page": 247
+    },
+    {
+      "rank": "family",
+      "name": "DINESIDAE",
+      "author": "Lermontova",
+      "year": 1940,
+      "pos": 1096,
+      "page": 250
+    },
+    {
+      "rank": "subfamily",
+      "name": "PTYCHOPARIINAE",
+      "author": "Matthew",
+      "year": 1887,
+      "pos": 2043,
+      "page": 253
+    },
+    {
+      "rank": "subfamily",
+      "name": "PERIOMMELLINAE",
+      "author": "Rasetti",
+      "year": 1995,
+      "pos": 686,
+      "page": 254
+    },
+    {
+      "rank": "subfamily",
+      "name": "EULOMINAE",
+      "author": "Kobayashi",
+      "year": 1955,
+      "pos": 1382,
+      "page": 254
+    },
+    {
+      "rank": "subfamily",
+      "name": "NASSOVIINAE",
+      "author": "Howell",
+      "year": 1937,
+      "pos": 2991,
+      "page": 254
+    },
+    {
+      "rank": "subfamily",
+      "name": "ANTAGMINAE",
+      "author": "Hupe",
+      "year": 1953,
+      "pos": 688,
+      "page": 255
+    },
+    {
+      "rank": "family",
+      "name": "ALOKISTOCARIDAE",
+      "author": "Resser",
+      "year": 1939,
+      "pos": 2049,
+      "page": 258
+    },
+    {
+      "rank": "family",
+      "name": "CONOCORYPHIDAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 1311,
+      "page": 262
+    },
+    {
+      "rank": "family",
+      "name": "SHUMARDIIDAE",
+      "author": "Lake",
+      "year": 1907,
+      "pos": 4652,
+      "page": 264
+    },
+    {
+      "rank": "family",
+      "name": "EMMRICHELLIDAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 49,
+      "page": 267
+    },
+    {
+      "rank": "subfamily",
+      "name": "EMMRICHELLINAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 629,
+      "page": 267
+    },
+    {
+      "rank": "subfamily",
+      "name": "CHANGSHANIINAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 3224,
+      "page": 267
+    },
+    {
+      "rank": "family",
+      "name": "LIOSTRACINIDAE",
+      "author": "Raymond",
+      "year": 1937,
+      "pos": 1366,
+      "page": 268
+    },
+    {
+      "rank": "family",
+      "name": "CREPICEPHALIDAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 3088,
+      "page": 268
+    },
+    {
+      "rank": "family",
+      "name": "TRICREPICEPHALIDAE",
+      "author": "Palmer",
+      "year": 1954,
+      "pos": 2507,
+      "page": 270
+    },
+    {
+      "rank": "family",
+      "name": "NEPEIDAE",
+      "author": "Whitehouse",
+      "year": 1939,
+      "pos": 1045,
+      "page": 271
+    },
+    {
+      "rank": "family",
+      "name": "IDAHOITIDAE",
+      "author": "Lochman",
+      "year": 1956,
+      "pos": 2909,
+      "page": 271
+    },
+    {
+      "rank": "family",
+      "name": "DIKELOCEPHALIDAE",
+      "author": "Miller",
+      "year": 1889,
+      "pos": 5356,
+      "page": 272
+    },
+    {
+      "rank": "family",
+      "name": "PTEROCEPHALIIDAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 344,
+      "page": 276
+    },
+    {
+      "rank": "family",
+      "name": "ANDRARINIDAE",
+      "author": "Raymond",
+      "year": 1937,
+      "pos": 5137,
+      "page": 280
+    },
+    {
+      "rank": "family",
+      "name": "OLENIDAE",
+      "author": "Burmeister",
+      "year": 1843,
+      "pos": 289,
+      "page": 282
+    },
+    {
+      "rank": "subfamily",
+      "name": "OLENINAE",
+      "author": "Burmeister",
+      "year": 1843,
+      "pos": 929,
+      "page": 282
+    },
+    {
+      "rank": "subfamily",
+      "name": "LEPTOPLASTINAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 4681,
+      "page": 282
+    },
+    {
+      "rank": "subfamily",
+      "name": "PELTURINAE",
+      "author": "Hawle & Corda",
+      "year": 1847,
+      "pos": 3718,
+      "page": 284
+    },
+    {
+      "rank": "subfamily",
+      "name": "TRIARTHRINAE",
+      "author": "Ulrich",
+      "year": 1930,
+      "pos": 564,
+      "page": 287
+    },
+    {
+      "rank": "family",
+      "name": "PAPYRIASPIDIDAE",
+      "author": "Whitehouse",
+      "year": 1939,
+      "pos": 1654,
+      "page": 288
+    },
+    {
+      "rank": "family",
+      "name": "ILLAENURIDAE",
+      "author": "Vogdes",
+      "year": 1890,
+      "pos": 456,
+      "page": 291
+    },
+    {
+      "rank": "family",
+      "name": "PARABOLINOIDIDAE",
+      "author": "Lochman",
+      "year": 1956,
+      "pos": 3446,
+      "page": 291
+    },
+    {
+      "rank": "family",
+      "name": "SOLENOPLEURIDAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 4264,
+      "page": 294
+    },
+    {
+      "rank": "subfamily",
+      "name": "SOLENOPLEURINAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 4961,
+      "page": 294
+    },
+    {
+      "rank": "family",
+      "name": "AGRAULIDAE",
+      "author": "Raymond",
+      "year": 1913,
+      "pos": 4984,
+      "page": 298
+    },
+    {
+      "rank": "family",
+      "name": "LONCHOCEPHALIDAE",
+      "author": "Hupe",
+      "year": 1953,
+      "pos": 724,
+      "page": 299
+    },
+    {
+      "rank": "family",
+      "name": "DOKIMOCEPHALIDAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 1160,
+      "page": 301
+    },
+    {
+      "rank": "family",
+      "name": "AVONINIDAE",
+      "author": "Lochman",
+      "year": 1936,
+      "pos": 2954,
+      "page": 303
+    },
+    {
+      "rank": "family",
+      "name": "CATILLICEPHALIDAE",
+      "author": "Raymond",
+      "year": 1938,
+      "pos": 665,
+      "page": 304
+    },
+    {
+      "rank": "family",
+      "name": "KINGSTONTIDAE",
+      "author": "Kobayashi",
+      "year": 1933,
+      "pos": 3126,
+      "page": 305
+    },
+    {
+      "rank": "family",
+      "name": "ANOMOCARIDAE",
+      "author": "Poulsen",
+      "year": 1927,
+      "pos": 3109,
+      "page": 306
+    },
+    {
+      "rank": "family",
+      "name": "ASAPHISCIDAE",
+      "author": "Raymond",
+      "year": 1924,
+      "pos": 1246,
+      "page": 310
+    },
+    {
+      "rank": "subfamily",
+      "name": "ASAPHISCINAE",
+      "author": "Raymond",
+      "year": 1924,
+      "pos": 1324,
+      "page": 310
+    },
+    {
+      "rank": "family",
+      "name": "KOMASPIDIDAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 2109,
+      "page": 314
+    },
+    {
+      "rank": "family",
+      "name": "TELEPHINIDAE",
+      "author": "Marek",
+      "year": 1952,
+      "pos": 2946,
+      "page": 317
+    },
+    {
+      "rank": "family",
+      "name": "RAYMONDINIDAE",
+      "author": "Clark",
+      "year": 1924,
+      "pos": 895,
+      "page": 319
+    },
+    {
+      "rank": "subfamily",
+      "name": "RAYMONDININAE",
+      "author": "Clark",
+      "year": 1924,
+      "pos": 1032,
+      "page": 319
+    },
+    {
+      "rank": "subfamily",
+      "name": "CEDARITINAE",
+      "author": "Raymend",
+      "year": 1937,
+      "pos": 216,
+      "page": 321
+    },
+    {
+      "rank": "subfamily",
+      "name": "LLANOASPIDINAE",
+      "author": "Lochman",
+      "year": 1944,
+      "pos": 1519,
+      "page": 321
+    },
+    {
+      "rank": "family",
+      "name": "NORWOODIIDAE",
+      "author": "Walcott",
+      "year": 1916,
+      "pos": 542,
+      "page": 322
+    },
+    {
+      "rank": "family",
+      "name": "MENOMONIIDAE",
+      "author": "Walcott",
+      "year": 1916,
+      "pos": 1711,
+      "page": 323
+    },
+    {
+      "rank": "family",
+      "name": "MARJUMITIDAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 2575,
+      "page": 325
+    },
+    {
+      "rank": "family",
+      "name": "COOSELLIDAE",
+      "author": "Palmer",
+      "year": 1954,
+      "pos": 2990,
+      "page": 329
+    },
+    {
+      "rank": "family",
+      "name": "PAGODIIDAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 2716,
+      "page": 330
+    },
+    {
+      "rank": "family",
+      "name": "CHEILOCEPHALIDAE",
+      "author": "Shaw",
+      "year": 1956,
+      "pos": 4053,
+      "page": 332
+    },
+    {
+      "rank": "family",
+      "name": "LEIOSTEGIDAE",
+      "author": "Bradley",
+      "year": 1925,
+      "pos": 878,
+      "page": 333
+    },
+    {
+      "rank": "subfamily",
+      "name": "EQCHUANGIINAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 1946,
+      "page": 335
+    },
+    {
+      "rank": "subfamily",
+      "name": "DAMESELLINAE",
+      "author": "Kobayashi",
+      "year": 1935,
+      "pos": 669,
+      "page": 337
+    },
+    {
+      "rank": "family",
+      "name": "PYYCHASPIDIDAE",
+      "author": "Raymond",
+      "year": 1924,
+      "pos": 1238,
+      "page": 340
+    },
+    {
+      "rank": "family",
+      "name": "REMOPLEURIDIDAE",
+      "author": "Hawle &\nCorda",
+      "year": 1847,
+      "pos": 890,
+      "page": 347
+    },
+    {
+      "rank": "subfamily",
+      "name": "REMOPLEURIDINAE",
+      "author": "Hawle & Corda",
+      "year": 1847,
+      "pos": 2049,
+      "page": 347
+    },
+    {
+      "rank": "subfamily",
+      "name": "RICHARDSONELLINAE",
+      "author": "Raymond",
+      "year": 1924,
+      "pos": 1501,
+      "page": 349
+    },
+    {
+      "rank": "family",
+      "name": "HUNGATIDAE",
+      "author": "Raymond",
+      "year": 1924,
+      "pos": 857,
+      "page": 352
+    },
+    {
+      "rank": "family",
+      "name": "DICERATOCEPHALIDAE",
+      "author": "Lu",
+      "year": 1954,
+      "pos": 332,
+      "page": 354
+    },
+    {
+      "rank": "family",
+      "name": "ASAPHIDAE",
+      "author": "Burmeister",
+      "year": 1843,
+      "pos": 1912,
+      "page": 354
+    },
+    {
+      "rank": "subfamily",
+      "name": "ASAPHINAE",
+      "author": "Burmeister",
+      "year": 1843,
+      "pos": 3037,
+      "page": 354
+    },
+    {
+      "rank": "subfamily",
+      "name": "ISOTELINAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 3608,
+      "page": 359
+    },
+    {
+      "rank": "subfamily",
+      "name": "OGYGIOCARIDINAE",
+      "author": "Raymond",
+      "year": 1937,
+      "pos": 4655,
+      "page": 370
+    },
+    {
+      "rank": "subfamily",
+      "name": "SYMPHYSURININAE",
+      "author": "Kobayashi",
+      "year": 1955,
+      "pos": 1007,
+      "page": 373
+    },
+    {
+      "rank": "family",
+      "name": "TATHUNGSHANIDAE",
+      "author": "Sun",
+      "year": 1931,
+      "pos": 1780,
+      "page": 375
+    },
+    {
+      "rank": "family",
+      "name": "TSINANIIDAE",
+      "author": "Kobayashi",
+      "year": 1933,
+      "pos": 2340,
+      "page": 376
+    },
+    {
+      "rank": "family",
+      "name": "NILEIDAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 4310,
+      "page": 376
+    },
+    {
+      "rank": "family",
+      "name": "DIKELOKEPHALINIDAE",
+      "author": "Kobayashi",
+      "year": 1936,
+      "pos": 558,
+      "page": 379
+    },
+    {
+      "rank": "family",
+      "name": "CYCLOPYGIDAE",
+      "author": "Raymond",
+      "year": 1925,
+      "pos": 3823,
+      "page": 381
+    },
+    {
+      "rank": "family",
+      "name": "CERATOPYGIDAE",
+      "author": "Linnarsson",
+      "year": 1869,
+      "pos": 348,
+      "page": 383
+    },
+    {
+      "rank": "family",
+      "name": "STYGINIDAE",
+      "author": "Vogdes",
+      "year": 1890,
+      "pos": 1717,
+      "page": 385
+    },
+    {
+      "rank": "family",
+      "name": "THYSANOPELTIDAE",
+      "author": "Hawle &\nCorda",
+      "year": 1847,
+      "pos": 1528,
+      "page": 387
+    },
+    {
+      "rank": "family",
+      "name": "ILLAENIDAE",
+      "author": "Hawle & Corda",
+      "year": 1847,
+      "pos": 1864,
+      "page": 392
+    },
+    {
+      "rank": "subfamily",
+      "name": "LLAENINAE",
+      "author": "Hawle & Corda",
+      "year": 1847,
+      "pos": 2612,
+      "page": 392
+    },
+    {
+      "rank": "subfamily",
+      "name": "BUMASTINAE",
+      "author": "Raymond",
+      "year": 1916,
+      "pos": 1730,
+      "page": 394
+    },
+    {
+      "rank": "family",
+      "name": "LECANOPYGIDAE",
+      "author": "Lochman",
+      "year": 1953,
+      "pos": 1443,
+      "page": 400
+    },
+    {
+      "rank": "family",
+      "name": "PROETIDAE",
+      "author": "Salter",
+      "year": 1864,
+      "pos": 3445,
+      "page": 402
+    },
+    {
+      "rank": "subfamily",
+      "name": "PROETINAE",
+      "author": "Salter",
+      "year": 1864,
+      "pos": 2317,
+      "page": 404
+    },
+    {
+      "rank": "subfamily",
+      "name": "CORNUPROETINAE",
+      "author": "Richter & Richter",
+      "year": 1956,
+      "pos": 3106,
+      "page": 405
+    },
+    {
+      "rank": "subfamily",
+      "name": "DECHENELLINAE",
+      "author": "Pribyl",
+      "year": 1946,
+      "pos": 3285,
+      "page": 407
+    },
+    {
+      "rank": "subfamily",
+      "name": "PROETIDELLINAE",
+      "author": "Hupe",
+      "year": 1953,
+      "pos": 1519,
+      "page": 415
+    },
+    {
+      "rank": "subfamily",
+      "name": "TROPIDOCORYPHINAE",
+      "author": "Pribyl",
+      "year": 1946,
+      "pos": 409,
+      "page": 417
+    },
+    {
+      "rank": "family",
+      "name": "BRACHYMETOPIDAE",
+      "author": "Prantl &\nPiibyl",
+      "year": 1950,
+      "pos": 1098,
+      "page": 427
+    },
+    {
+      "rank": "family",
+      "name": "PHILLIPSINELLIDAE",
+      "author": "Whittington",
+      "year": 1950,
+      "pos": 3626,
+      "page": 428
+    },
+    {
+      "rank": "family",
+      "name": "CELMIDAE",
+      "author": "Jaanusson",
+      "year": 1956,
+      "pos": 685,
+      "page": 429
+    },
+    {
+      "rank": "family",
+      "name": "PLETHOPELTIDAE",
+      "author": "Raymond",
+      "year": 1925,
+      "pos": 1602,
+      "page": 429
+    },
+    {
+      "rank": "family",
+      "name": "DIMEROPYGIDAE",
+      "author": "Haupe",
+      "year": 1953,
+      "pos": 1045,
+      "page": 432
+    },
+    {
+      "rank": "family",
+      "name": "HARPIDAE",
+      "author": "Hawle & Corda",
+      "year": 1847,
+      "pos": 3715,
+      "page": 435
+    },
+    {
+      "rank": "family",
+      "name": "HARPIDIDAE",
+      "author": "Whittington",
+      "year": 1950,
+      "pos": 3161,
+      "page": 438
+    },
+    {
+      "rank": "family",
+      "name": "ENTOMASPIDIDAE",
+      "author": "Ulrich in\nBridge",
+      "year": 1930,
+      "pos": 525,
+      "page": 439
+    },
+    {
+      "rank": "family",
+      "name": "TRINUCLEIDAE",
+      "author": "Hawle & Corda",
+      "year": 1847,
+      "pos": 755,
+      "page": 440
+    },
+    {
+      "rank": "subfamily",
+      "name": "TRETASPIDINAE",
+      "author": "Whittington",
+      "year": 1941,
+      "pos": 163,
+      "page": 441
+    },
+    {
+      "rank": "subfamily",
+      "name": "CRYPTOLITHINAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 3644,
+      "page": 442
+    },
+    {
+      "rank": "subfamily",
+      "name": "NOVASPIDINAE",
+      "author": "Whittington",
+      "year": 1941,
+      "pos": 290,
+      "page": 444
+    },
+    {
+      "rank": "family",
+      "name": "DIONIDIDAE",
+      "author": "Gitrich",
+      "year": 1908,
+      "pos": 2313,
+      "page": 444
+    },
+    {
+      "rank": "family",
+      "name": "RAPHIOPHORIDAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 277,
+      "page": 446
+    },
+    {
+      "rank": "family",
+      "name": "ALSATASPIDIDAE",
+      "author": "Turner",
+      "year": 1940,
+      "pos": 2536,
+      "page": 448
+    },
+    {
+      "rank": "family",
+      "name": "ITYOPHORIDAE",
+      "author": "Warburg",
+      "year": 1925,
+      "pos": 1045,
+      "page": 450
+    },
+    {
+      "rank": "family",
+      "name": "CHEIRURIDAE",
+      "author": "Salter",
+      "year": 1864,
+      "pos": 656,
+      "page": 451
+    },
+    {
+      "rank": "subfamily",
+      "name": "CHEFRURINAE",
+      "author": "Salter",
+      "year": 1864,
+      "pos": 1815,
+      "page": 451
+    },
+    {
+      "rank": "subfamily",
+      "name": "CYRTOMETOPINAE",
+      "author": "Spik",
+      "year": 1937,
+      "pos": 3325,
+      "page": 453
+    },
+    {
+      "rank": "subfamily",
+      "name": "ACANTHOPARYPHINAE",
+      "author": "Whittington & Evitt",
+      "year": 1953,
+      "pos": 3645,
+      "page": 455
+    },
+    {
+      "rank": "subfamily",
+      "name": "SPHAEREXOCHINAE",
+      "author": "Opik",
+      "year": 1937,
+      "pos": 708,
+      "page": 456
+    },
+    {
+      "rank": "subfamily",
+      "name": "DEIPHONINAE",
+      "author": "Raymond",
+      "year": 1913,
+      "pos": 1973,
+      "page": 456
+    },
+    {
+      "rank": "subfamily",
+      "name": "AREIINAE",
+      "author": "Prantl & Piibyl",
+      "year": 1947,
+      "pos": 1167,
+      "page": 458
+    },
+    {
+      "rank": "subfamily",
+      "name": "HELIOMERINAE",
+      "author": "Evitt",
+      "year": 1951,
+      "pos": 1618,
+      "page": 458
+    },
+    {
+      "rank": "family",
+      "name": "PLIOMERIDAE",
+      "author": "Raymond",
+      "year": 1913,
+      "pos": 530,
+      "page": 459
+    },
+    {
+      "rank": "subfamily",
+      "name": "PLIOMERINAE",
+      "author": "Raymond",
+      "year": 1913,
+      "pos": 1185,
+      "page": 459
+    },
+    {
+      "rank": "subfamily",
+      "name": "PILEKIINAE",
+      "author": "Sdzuy",
+      "year": 1935,
+      "pos": 252,
+      "page": 461
+    },
+    {
+      "rank": "subfamily",
+      "name": "PLIOMERELLINAE",
+      "author": "Hupe",
+      "year": 1953,
+      "pos": 289,
+      "page": 465
+    },
+    {
+      "rank": "family",
+      "name": "ENCRINURIDAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 3032,
+      "page": 465
+    },
+    {
+      "rank": "subfamily",
+      "name": "ENCRINURINAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 693,
+      "page": 466
+    },
+    {
+      "rank": "subfamily",
+      "name": "CYBELINAE",
+      "author": "Holliday",
+      "year": 1942,
+      "pos": 616,
+      "page": 468
+    },
+    {
+      "rank": "subfamily",
+      "name": "STAUROCEPHALINAE",
+      "author": "Prantl & Pribyl",
+      "year": 1947,
+      "pos": 1217,
+      "page": 469
+    },
+    {
+      "rank": "family",
+      "name": "CALYMENIDAE",
+      "author": "Burmeister",
+      "year": 1843,
+      "pos": 2888,
+      "page": 470
+    },
+    {
+      "rank": "subfamily",
+      "name": "CALYMENINAE",
+      "author": "Burmeister",
+      "year": 1843,
+      "pos": 1904,
+      "page": 471
+    },
+    {
+      "rank": "family",
+      "name": "HOMALONOTIDAE",
+      "author": "E. J. Chapman",
+      "year": 1890,
+      "pos": 1785,
+      "page": 474
+    },
+    {
+      "rank": "subfamily",
+      "name": "EOHOMALONOTINAE",
+      "author": "Hupk",
+      "year": 1953,
+      "pos": 1939,
+      "page": 475
+    },
+    {
+      "rank": "subfamily",
+      "name": "COLPOCORYPHINAE",
+      "author": "Hupe",
+      "year": 1955,
+      "pos": 3304,
+      "page": 476
+    },
+    {
+      "rank": "subfamily",
+      "name": "HOMALONOTINAE",
+      "author": "E. J. Chapman",
+      "year": 1890,
+      "pos": 1396,
+      "page": 478
+    },
+    {
+      "rank": "family",
+      "name": "PHACOPIDAE",
+      "author": "Hawle & Corda",
+      "year": 1847,
+      "pos": 2604,
+      "page": 482
+    },
+    {
+      "rank": "subfamily",
+      "name": "PHACOPINAE",
+      "author": "Hawle & Carda",
+      "year": 1847,
+      "pos": 589,
+      "page": 483
+    },
+    {
+      "rank": "subfamily",
+      "name": "PHACOPIDELLINAE",
+      "author": "Delo",
+      "year": 1935,
+      "pos": 1415,
+      "page": 487
+    },
+    {
+      "rank": "family",
+      "name": "DALMANITIDAE",
+      "author": "Vogdes",
+      "year": 1890,
+      "pos": 1914,
+      "page": 488
+    },
+    {
+      "rank": "subfamily",
+      "name": "DALMANITTINAE",
+      "author": "Voagdes",
+      "year": 1890,
+      "pos": 3277,
+      "page": 488
+    },
+    {
+      "rank": "subfamily",
+      "name": "ZELISZKELLINAE",
+      "author": "Delo",
+      "year": 1935,
+      "pos": 866,
+      "page": 493
+    },
+    {
+      "rank": "subfamily",
+      "name": "ACASTAVINAE",
+      "author": "Struve",
+      "year": 1958,
+      "pos": 3424,
+      "page": 495
+    },
+    {
+      "rank": "subfamily",
+      "name": "ASTEROPYGINAE",
+      "author": "Delo",
+      "year": 1935,
+      "pos": 92,
+      "page": 497
+    },
+    {
+      "rank": "family",
+      "name": "CALMONIIDAE",
+      "author": "Delo",
+      "year": 1935,
+      "pos": 3600,
+      "page": 503
+    },
+    {
+      "rank": "subfamily",
+      "name": "CALMONIINAE",
+      "author": "Delo",
+      "year": 1935,
+      "pos": 4922,
+      "page": 503
+    },
+    {
+      "rank": "subfamily",
+      "name": "ACASTINAE",
+      "author": "Delo",
+      "year": 1935,
+      "pos": 2887,
+      "page": 507
+    },
+    {
+      "rank": "family",
+      "name": "PTERYGOMETOPIDAE",
+      "author": "Reed",
+      "year": 1905,
+      "pos": 3345,
+      "page": 509
+    },
+    {
+      "rank": "subfamily",
+      "name": "PIERYGOMETOPINAE",
+      "author": "Reed",
+      "year": 1905,
+      "pos": 4220,
+      "page": 509
+    },
+    {
+      "rank": "subfamily",
+      "name": "CHASMOPINAE",
+      "author": "Pillet",
+      "year": 1954,
+      "pos": 5154,
+      "page": 512
+    },
+    {
+      "rank": "family",
+      "name": "MONORAKIDAE",
+      "author": "Kramarenko",
+      "year": 1952,
+      "pos": 1613,
+      "page": 513
+    },
+    {
+      "rank": "family",
+      "name": "LICHIDAE",
+      "author": "Hawle & Corda",
+      "year": 1847,
+      "pos": 2037,
+      "page": 515
+    },
+    {
+      "rank": "subfamily",
+      "name": "LICHINAE",
+      "author": "Hawle & Corda",
+      "year": 1847,
+      "pos": 686,
+      "page": 516
+    },
+    {
+      "rank": "subfamily",
+      "name": "TETRALICHINAE",
+      "author": "Phieger",
+      "year": 1936,
+      "pos": 3220,
+      "page": 518
+    },
+    {
+      "rank": "subfamily",
+      "name": "HOMOLICHINAE",
+      "author": "Phieger",
+      "year": 1936,
+      "pos": 3676,
+      "page": 518
+    },
+    {
+      "rank": "subfamily",
+      "name": "CERATARGINAE",
+      "author": "Tripp",
+      "year": 1957,
+      "pos": 436,
+      "page": 520
+    },
+    {
+      "rank": "family",
+      "name": "ODONTOPLEURIDAE",
+      "author": "Burmeister",
+      "year": 1843,
+      "pos": 3338,
+      "page": 524
+    },
+    {
+      "rank": "subfamily",
+      "name": "ODONTOPLEURINAE",
+      "author": "Burmeister",
+      "year": 1843,
+      "pos": 3570,
+      "page": 524
+    },
+    {
+      "rank": "subfamily",
+      "name": "MIRASPIDINAE",
+      "author": "Richter & Richter",
+      "year": 1917,
+      "pos": 4467,
+      "page": 526
+    },
+    {
+      "rank": "subfamily",
+      "name": "SELENOPELTINAE",
+      "author": "Hawle & Corda",
+      "year": 1847,
+      "pos": 1614,
+      "page": 528
+    },
+    {
+      "rank": "subfamily",
+      "name": "APIANURINAE",
+      "author": "Whittington",
+      "year": 1956,
+      "pos": 827,
+      "page": 529
+    },
+    {
+      "rank": "family",
+      "name": "ISOCOLIDAE",
+      "author": "Angelin",
+      "year": 1854,
+      "pos": 358,
+      "page": 531
+    }
+  ]
+}
