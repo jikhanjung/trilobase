@@ -1,6 +1,6 @@
 # Trilobase Project Handover
 
-**Last updated:** 2026-03-03
+**Last updated:** 2026-03-07
 
 ## Project Overview
 
@@ -186,21 +186,35 @@ python -m scoda_engine.serve --db-path db/trilobase-assertion-0.1.3.db --mode ad
 
 **상세**: `devlog/20260301_107_P80_assertion_crud.md`
 
-## Assertion DB v0.1.3: Tree Chart 리네이밍 ✅
+## Assertion DB v0.1.5: Treatise 1959 + Profile Comparison ✅
 
-scoda-engine P23/032의 `radial.js` → `tree_chart.js` 리네이밍에 맞춰 assertion DB manifest 업데이트.
+### Treatise 1959 Import (devlog 109)
+1959 Treatise on Invertebrate Paleontology Part O에서 삼엽충 전체 분류 체계를 추출하여 `treatise1959` 프로필로 import.
 
-| Before | After |
-|--------|-------|
-| view key: `radial_tree` | `tree_chart` |
-| display: `"radial"` | `"tree_chart"` |
-| title: `"Radial Tree"` | `"Tree Chart"` |
-| options key: `radial_display` | `tree_chart_options` |
-| icon: `bi-bullseye` | `bi-diagram-3` |
+- OCR + 수동 입력 → 8 orders, 13 suborders, 33 superfamilies, 142 families, 128 subfamilies, 1,014 genera
+- `treatise1959` 프로필: standalone 1,324 edges
+- `treatise2004` 프로필: treatise1959 기반 1,667 edges (Agnostida/Redlichiida 교체)
 
-Backward compatibility: scoda-engine이 `"radial"` display를 자동으로 `"tree_chart"`로 변환.
+**상세**: `devlog/20260307_109_treatise1959_import.md`, `devlog/20260307_110_assertion_v015_profile_fixes.md`
 
-**상세**: commit `0243363`
+### Profile Diff Table — R02 Phase 0+1 (devlog 111)
+Compare 모드 UI 인프라 + Diff Table 구현.
+- `compare_profile_id` global control, Compare 모드 자동 토글
+- `profile_diff` SQL 쿼리: moved/added/removed 행 색상 코딩
+
+**상세**: `devlog/20260307_111_profile_diff_table.md`
+
+### Side-by-Side Tree — R02 Phase 3 (devlog 112~113)
+`tree_chart.js`를 `TreeChartInstance` 클래스로 리팩토링하여 듀얼 렌더링 구현.
+
+- 전역 변수 20+개 → 인스턴스 멤버, 전역 함수 30+개 → 클래스 메서드
+- `loadSideBySideView()`: 좌(base profile) / 우(compare profile) 독립 렌더링
+- 동기화 5종: zoom/pan, layout mode, hover highlight, depth toggle, collapse/expand, view-as-root
+- 양쪽 독립 tooltip
+- 성능 최적화: offscreen bitmap cache (zoom), SVG 라벨 숨김, guide depth 캐싱
+- scoda-engine v0.2.0 (TreeChartInstance 리팩토링)
+
+**상세**: `devlog/20260307_112_side_by_side_tree.md`, `devlog/20260307_113_sbs_sync_and_perf.md`
 
 ## R01/R02: 설계 리뷰 문서
 
@@ -269,10 +283,10 @@ Profile 간 차이를 시각화하는 구체적 설계 문서:
 
 ### Assertion DB — Profile Comparison (R02 로드맵)
 
-- **Phase 0: Compare UI 인프라** — Compare 모드 토글 + 두 번째 프로필 셀렉터 + 표시 모드 선택
-- **Phase 1: Diff Table** — 두 프로필 간 차이 목록 테이블 (profile_diff 쿼리 + manifest 뷰)
+- ~~Phase 0: Compare UI 인프라~~ ✅ (devlog 111)
+- ~~Phase 1: Diff Table~~ ✅ (devlog 111)
 - **Phase 2: Diff Tree** — tree chart에서 diff 색상 코딩 (ghost edge, 범례, tooltip)
-- **Phase 3: Overlay + Side-by-side** — 두 트리 겹침/나란히 표시, zoom/hover 동기화
+- ~~Phase 3: Side-by-side~~ ✅ (devlog 112~113) — 동기화 5종 + 성능 최적화 포함
 - **Phase 4: Animated Morphing** — 프로필 전환 시 노드 위치 보간 애니메이션
 
 ### Assertion DB — Taxonomy Management (R01 로드맵)
