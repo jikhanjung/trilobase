@@ -189,8 +189,10 @@ class Treatise1959Importer:
             "created": 0,
             "assertions": 0,
             "skipped": 0,
+            "dup_skipped": 0,
         }
         self.created_taxa = []
+        self.asserted_children = set()  # track child_ids already given PLACED_IN
 
     def _match_or_create(self, name, rank, author=None, year=None,
                          is_placeholder=0, notes=None):
@@ -252,10 +254,14 @@ class Treatise1959Importer:
             is_placeholder=1 if is_uncertain else 0,
         )
 
-        # Create PLACED_IN assertion
+        # Create PLACED_IN assertion (skip if already asserted — dedup)
         if parent_id is not None:
-            status = "incertae_sedis" if is_uncertain else "asserted"
-            self._insert_assertion(tid, parent_id, status=status)
+            if tid in self.asserted_children:
+                self.stats["dup_skipped"] += 1
+            else:
+                status = "incertae_sedis" if is_uncertain else "asserted"
+                self._insert_assertion(tid, parent_id, status=status)
+                self.asserted_children.add(tid)
 
         # Process children
         for child in node.get("children", []):
@@ -265,8 +271,9 @@ class Treatise1959Importer:
 def build_treatise1959_profile(cur, ref_id):
     """Create treatise1959 profile and build edge cache.
 
-    Strategy: start with default edges, then replace with 1959 Treatise
-    edges for all taxa that the 1959 Treatise explicitly places.
+    Strategy: standalone — only include edges from 1959 Treatise assertions.
+    No default edges are copied. The tree only contains taxa that the
+    1959 Treatise explicitly places.
     """
     cur.execute("""
         INSERT INTO classification_profile (name, description, rule_json)
@@ -276,64 +283,27 @@ def build_treatise1959_profile(cur, ref_id):
         "Treatise (1959) complete trilobite classification — "
         "all 7 orders + Order Uncertain",
         json.dumps({
-            "description": "hybrid",
+            "description": "standalone",
             "builder": "import_treatise1959.py",
             "scope": "all_orders",
         }),
     ))
     profile_id = cur.lastrowid
 
-    # Copy all default (profile_id=1) edges
+    # Build edge cache from 1959 Treatise assertions only
     cur.execute("""
         INSERT INTO classification_edge_cache (profile_id, child_id, parent_id)
-        SELECT ?, child_id, parent_id
-        FROM classification_edge_cache
-        WHERE profile_id = 1
-    """, (profile_id,))
-    n_copied = cur.execute("SELECT changes()").fetchone()[0]
-
-    # Get all 1959 Treatise PLACED_IN assertions
-    treatise_edges = cur.execute("""
-        SELECT subject_taxon_id, object_taxon_id
+        SELECT ?, subject_taxon_id, object_taxon_id
         FROM assertion
         WHERE predicate = 'PLACED_IN'
           AND reference_id = ?
           AND object_taxon_id IS NOT NULL
-    """, (ref_id,)).fetchall()
-
-    n_replaced = 0
-    n_added = 0
-    for child_id, parent_id in treatise_edges:
-        existing = cur.execute("""
-            SELECT parent_id FROM classification_edge_cache
-            WHERE profile_id = ? AND child_id = ?
-        """, (profile_id, child_id)).fetchone()
-
-        if existing:
-            cur.execute("""
-                UPDATE classification_edge_cache
-                SET parent_id = ?
-                WHERE profile_id = ? AND child_id = ?
-            """, (parent_id, profile_id, child_id))
-            n_replaced += 1
-        else:
-            cur.execute("""
-                INSERT INTO classification_edge_cache (profile_id, child_id, parent_id)
-                VALUES (?, ?, ?)
-            """, (profile_id, child_id, parent_id))
-            n_added += 1
-
-    total_edges = cur.execute(
-        "SELECT COUNT(*) FROM classification_edge_cache WHERE profile_id = ?",
-        (profile_id,)
-    ).fetchone()[0]
+    """, (profile_id, ref_id))
+    n_edges = cur.execute("SELECT changes()").fetchone()[0]
 
     return {
         "profile_id": profile_id,
-        "copied": n_copied,
-        "replaced": n_replaced,
-        "added": n_added,
-        "total_edges": total_edges,
+        "total_edges": n_edges,
     }
 
 
@@ -446,16 +416,15 @@ def main():
     print(f"   Created: {imp.stats['created']}")
     print(f"   Assertions: {imp.stats['assertions']}")
     print(f"   Skipped: {imp.stats['skipped']}")
+    if imp.stats['dup_skipped']:
+        print(f"   Dup skipped: {imp.stats['dup_skipped']}")
 
     # 5. Build profile + edge cache
     print("\n5. Building treatise1959 classification profile...")
     profile_stats = build_treatise1959_profile(cur, ref_id)
     conn.commit()
     print(f"   Profile ID: {profile_stats['profile_id']}")
-    print(f"   Copied from default: {profile_stats['copied']}")
-    print(f"   Replaced edges: {profile_stats['replaced']}")
-    print(f"   Added new edges: {profile_stats['added']}")
-    print(f"   Total edges: {profile_stats['total_edges']}")
+    print(f"   Total edges: {profile_stats['total_edges']} (standalone, no default copy)")
 
     # 6. Provenance
     print("\n6. Updating provenance...")

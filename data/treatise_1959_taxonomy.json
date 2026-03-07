@@ -68,14 +68,7 @@
                 "year": 1937,
                 "genera_count": 1,
                 "range": "M.Cam.",
-                "children": [
-                  {
-                    "rank": "genus",
-                    "name": "Ciavagnostus",
-                    "author": "HOWELL",
-                    "year": 1937
-                  }
-                ]
+                "children": []
               },
               {
                 "rank": "family",
@@ -702,7 +695,7 @@
                   },
                   {
                     "rank": "family",
-                    "name": "Family Uncertain",
+                    "name": "Family Uncertain (Redlichiacea)",
                     "genera_count": 2,
                     "range": "L.Cam."
                   }
@@ -955,7 +948,7 @@
                       },
                       {
                         "rank": "subfamily",
-                        "name": "Subfamily Uncertain",
+                        "name": "Subfamily Uncertain (Protolenidae)",
                         "genera_count": 2,
                         "range": "L.Cam."
                       }
@@ -1015,7 +1008,7 @@
                   },
                   {
                     "rank": "family",
-                    "name": "Family Uncertain",
+                    "name": "Family Uncertain (Ellipsocephalacea)",
                     "genera_count": 2,
                     "range": "L.Cam."
                   }
@@ -1165,7 +1158,7 @@
                       },
                       {
                         "rank": "subfamily",
-                        "name": "Subfamily Uncertain",
+                        "name": "Subfamily Uncertain (Paradoxididae)",
                         "genera_count": 2,
                         "range": "M.Cam."
                       }
@@ -1635,162 +1628,6 @@
                 "name": "Prychoparia",
                 "author": "Hawt & Cospa",
                 "year": 1847
-              },
-              {
-                "rank": "genus",
-                "name": "Braintreclla",
-                "author": "Wueever",
-                "year": 1942
-              },
-              {
-                "rank": "genus",
-                "name": "Caborcella",
-                "author": "Locuaran",
-                "year": 1948
-              },
-              {
-                "rank": "genus",
-                "name": "Drabia",
-                "author": "Winson",
-                "year": 1951
-              },
-              {
-                "rank": "genus",
-                "name": "Lyriaspis",
-                "author": "Wuitrexouse",
-                "year": 1939
-              },
-              {
-                "rank": "genus",
-                "name": "Ptychoparella",
-                "author": "Poursen",
-                "year": 1927
-              },
-              {
-                "rank": "genus",
-                "name": "Ptychoparoides",
-                "author": "ROGZitxa",
-                "year": 1939
-              },
-              {
-                "rank": "genus",
-                "name": "Yohoaspis",
-                "author": "Raserri",
-                "year": 1951
-              },
-              {
-                "rank": "genus",
-                "name": "Yuknessaspis",
-                "author": "Raserri",
-                "year": 1951
-              },
-              {
-                "rank": "genus",
-                "name": "Periommeiia",
-                "author": "Resser",
-                "year": 1938
-              },
-              {
-                "rank": "genus",
-                "name": "Euloma",
-                "author": "ANGELIN",
-                "year": 1854
-              },
-              {
-                "rank": "genus",
-                "name": "Nassovia",
-                "author": "Howert",
-                "year": 1937
-              },
-              {
-                "rank": "genus",
-                "name": "Brunswickia",
-                "author": "Hower",
-                "year": 1937
-              },
-              {
-                "rank": "genus",
-                "name": "Champlainia",
-                "author": "Hower",
-                "year": 1937
-              },
-              {
-                "rank": "genus",
-                "name": "Vermontella",
-                "author": "Hower",
-                "year": 1937
-              },
-              {
-                "rank": "genus",
-                "name": "Antagmus",
-                "author": "Resser",
-                "year": 1936
-              },
-              {
-                "rank": "genus",
-                "name": "Austinvillia",
-                "author": "Resser",
-                "year": 1938
-              },
-              {
-                "rank": "genus",
-                "name": "Bicella",
-                "author": "Raserri",
-                "year": 1955
-              },
-              {
-                "rank": "genus",
-                "name": "Crasstimbra",
-                "author": "LocumMan",
-                "year": 1947
-              },
-              {
-                "rank": "genus",
-                "name": "Fopiychoparia",
-                "author": "RASETTI",
-                "year": 1955
-              },
-              {
-                "rank": "genus",
-                "name": "Qnchocephalus",
-                "author": "Resser",
-                "year": 1937
-              },
-              {
-                "rank": "genus",
-                "name": "Periomma",
-                "author": "Resser",
-                "year": 1937
-              },
-              {
-                "rank": "genus",
-                "name": "Piaziella",
-                "author": "Locsman",
-                "year": 1947
-              },
-              {
-                "rank": "genus",
-                "name": "Poulsenia",
-                "author": "Resser",
-                "year": 1936
-              },
-              {
-                "rank": "genus",
-                "name": "Proliostracus",
-                "author": "Pounsen",
-                "year": 1932
-              },
-              {
-                "rank": "genus",
-                "name": "Sombrerella",
-                "author": "LocumMan",
-                "year": 1948
-              },
-              {
-                "rank": "genus",
-                "name": "Syspacephalus",
-                "author": "Resser",
-                "year": 1936
               }
             ]
           }
@@ -2925,24 +2762,6 @@
                             "year": 1882
                           }
                         ]
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Yinites",
-                        "author": "Lu",
-                        "year": 1946
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Abadiella",
-                        "author": "Hurt",
-                        "year": 1953
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Rediichina",
-                        "author": "LERMONTOVA",
-                        "year": 1940
                       }
                     ]
                   },
@@ -4612,7 +4431,7 @@
                       },
                       {
                         "rank": "subfamily",
-                        "name": "Subfamily Uncertain",
+                        "name": "Subfamily Uncertain (Remopleurididae)",
                         "genera_count": 3,
                         "range": "U.Cam."
                       }
@@ -4638,7 +4457,7 @@
               },
               {
                 "rank": "superfamily",
-                "name": "Superfamily Uncertain",
+                "name": "Superfamily Uncertain (Ptychopariina)",
                 "genera_count": 1,
                 "range": "U.Cam.",
                 "children": [
@@ -4956,7 +4775,7 @@
                       },
                       {
                         "rank": "subfamily",
-                        "name": "Subfamily Uncertain",
+                        "name": "Subfamily Uncertain (Asaphidae)",
                         "genera_count": 3,
                         "range": "U.Cam.-M.Ord."
                       },
@@ -5444,7 +5263,7 @@
                       },
                       {
                         "rank": "subfamily",
-                        "name": "Subfamily Uncertain",
+                        "name": "Subfamily Uncertain (Illaenidae)",
                         "genera_count": 1,
                         "range": "Ord."
                       }
@@ -6226,7 +6045,7 @@
                   },
                   {
                     "rank": "family",
-                    "name": "Family Uncertain",
+                    "name": "Family Uncertain (Proetacea)",
                     "genera_count": 6,
                     "range": "Sil.-Miss."
                   }
@@ -7000,7 +6819,7 @@
                   },
                   {
                     "rank": "subfamily",
-                    "name": "Subfamily Uncertain",
+                    "name": "Subfamily Uncertain (Cheiruridae)",
                     "genera_count": 1,
                     "range": "Sil.-L.Dev."
                   }
@@ -7266,7 +7085,7 @@
               },
               {
                 "rank": "family",
-                "name": "Family Uncertain",
+                "name": "Family Uncertain (Cheirurina)",
                 "genera_count": 2,
                 "range": "L.Ord.-M.Ord."
               }
@@ -7634,7 +7453,7 @@
                       },
                       {
                         "rank": "subfamily",
-                        "name": "Subfamily Uncertain",
+                        "name": "Subfamily Uncertain (Phacopidae)",
                         "genera_count": 1,
                         "range": "Sil."
                       }
@@ -7914,32 +7733,7 @@
                     "genera_count": 5,
                     "subgenera_count": 6,
                     "range": "M.Ord.-U.Ord.",
-                    "children": [
-                      {
-                        "rank": "genus",
-                        "name": "Kloucekia",
-                        "author": "Dero",
-                        "year": 1935
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Pterygometopus",
-                        "author": "Fr. Scuminr",
-                        "year": 1881
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Calyptaulax",
-                        "author": "G. A. Cooper",
-                        "year": 1930
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Eomonarachus",
-                        "author": "Dero",
-                        "year": 1935
-                      }
-                    ]
+                    "children": []
                   },
                   {
                     "rank": "subfamily",
@@ -8422,7 +8216,7 @@
               },
               {
                 "rank": "subfamily",
-                "name": "Subfamily Uncertain",
+                "name": "Subfamily Uncertain (Odontopleuridae)",
                 "genera_count": 3,
                 "range": "L.Sil.-M.Dev."
               }
@@ -8440,7 +8234,7 @@
       },
       {
         "rank": "order",
-        "name": "Order Uncertain",
+        "name": "Order Uncertain (Trilobita)",
         "genera_count": 8,
         "children": [
           {
@@ -9347,7 +9141,7 @@
       },
       {
         "rank": "note",
-        "name": "Order and Family Uncertain",
+        "name": "Order and Family Uncertain (Trilobita)",
         "note": "genera (121)",
         "children": [
           {

@@ -312,38 +312,47 @@ class TreatiseImporter:
 def build_treatise_profile(cur: sqlite3.Cursor) -> dict:
     """Create treatise2004 profile and build its edge cache.
 
-    Algorithm: hybrid approach — start with default edges, then replace
-    only the taxa that the Treatise explicitly places.  Taxa not mentioned
-    in the Treatise keep their default placement.
+    Algorithm: hybrid approach — start with treatise1959 edges (if available,
+    otherwise default), then replace only the taxa that the Treatise 2004
+    explicitly places.  Taxa not mentioned in the Treatise 2004 keep their
+    base profile placement.
 
-    1. Copy all default edges
+    1. Copy base profile edges (treatise1959 if available, else default)
     2. Collect the set of taxa that have Treatise PLACED_IN assertions
-    3. For those taxa only, remove their default edge and use the Treatise edge
-    4. Add edges for new taxa (subfamilies etc.) that have no default edge
+    3. For those taxa only, remove their base edge and use the Treatise edge
+    4. Add edges for new taxa (subfamilies etc.) that have no base edge
     5. Ensure Agnostida → Trilobita edge
     """
     # 1. Insert profile
+    # Determine base profile: treatise1959 if exists, else default (id=1)
+    base_row = cur.execute(
+        "SELECT id FROM classification_profile WHERE name = 'treatise1959'"
+    ).fetchone()
+    base_profile_id = base_row[0] if base_row else 1
+    base_name = "treatise1959" if base_row else "default"
+
     cur.execute("""
         INSERT INTO classification_profile (name, description, rule_json)
         VALUES (?, ?, ?)
     """, (
         "treatise2004",
-        "Treatise (2004) for Agnostida/Redlichiida, default for other orders",
+        f"Treatise (2004) for Agnostida/Redlichiida, {base_name} for other orders",
         json.dumps({
             "description": "hybrid",
             "builder": "import_treatise.py",
+            "base_profile": base_name,
             "scope": ["Agnostida", "Redlichiida", "Eodiscida"],
         }),
     ))
     profile_id = cur.lastrowid
 
-    # 2. Copy all default (profile_id=1) edges
+    # 2. Copy all base profile edges
     cur.execute("""
         INSERT INTO classification_edge_cache (profile_id, child_id, parent_id)
         SELECT ?, child_id, parent_id
         FROM classification_edge_cache
-        WHERE profile_id = 1
-    """, (profile_id,))
+        WHERE profile_id = ?
+    """, (profile_id, base_profile_id))
     n_copied = cur.execute("SELECT changes()").fetchone()[0]
 
     # 3. Find Treatise reference IDs
@@ -421,6 +430,7 @@ def build_treatise_profile(cur: sqlite3.Cursor) -> dict:
 
     return {
         "profile_id": profile_id,
+        "base_profile": base_name,
         "copied": n_copied,
         "replaced": n_replaced,
         "added": n_added,
@@ -553,7 +563,8 @@ def main():
     profile_stats = build_treatise_profile(cur)
     conn.commit()
     print(f"   Profile ID: {profile_stats['profile_id']}")
-    print(f"   Copied from default: {profile_stats['copied']}")
+    print(f"   Base profile: {profile_stats['base_profile']}")
+    print(f"   Copied from base: {profile_stats['copied']}")
     print(f"   Replaced edges: {profile_stats['replaced']}")
     print(f"   Added new edges: {profile_stats['added']}")
     print(f"   Total edges: {profile_stats['total_edges']}")

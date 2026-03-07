@@ -290,7 +290,15 @@ def build_assertion(dry_run=False):
         print("Error: create_assertion_db.py failed", file=sys.stderr)
         return False
 
-    # Step 1b: Import Treatise (2004) data
+    # Step 1b: Import Treatise (1959) data — must run before 2004 (2004 uses 1959 as base)
+    treatise1959_script = os.path.join(os.path.dirname(__file__), 'import_treatise1959.py')
+    if os.path.exists(treatise1959_script):
+        result = subprocess.run([sys.executable, treatise1959_script], cwd=os.path.join(os.path.dirname(__file__), '..'))
+        if result.returncode != 0:
+            print("Error: import_treatise1959.py failed", file=sys.stderr)
+            return False
+
+    # Step 1c: Import Treatise (2004) data — uses treatise1959 profile as base
     treatise_script = os.path.join(os.path.dirname(__file__), 'import_treatise.py')
     if os.path.exists(treatise_script):
         result = subprocess.run([sys.executable, treatise_script], cwd=os.path.join(os.path.dirname(__file__), '..'))

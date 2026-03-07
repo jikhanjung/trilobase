@@ -161,6 +161,10 @@ def integrate_genera_into_tree(taxonomy, genera):
     Strategy: build page ranges for each family/subfamily in the outline,
     then use OCR family headers to refine the mapping, and place genera
     at the lowest matching level (subfamily if possible, otherwise family).
+
+    A genus is placed at most once (global dedup). Subfamily matches take
+    priority over family-level matches to avoid OCR page-boundary errors
+    (e.g. Dinesidae page range bleeding into Ptychopariidae genera).
     """
 
     # Build lookup: family_name (normalized) -> list of genera
@@ -180,6 +184,7 @@ def integrate_genera_into_tree(taxonomy, genera):
             unplaced.append(g)
 
     placed_count = [0]
+    placed_globally = set()  # track genera placed anywhere in tree
 
     def try_match_key(name):
         """Generate possible match keys for a taxon name."""
@@ -194,12 +199,12 @@ def integrate_genera_into_tree(taxonomy, genera):
         return keys
 
     def add_genera_to_node(node, genus_list):
-        """Add a list of genus dicts as children of node."""
+        """Add a list of genus dicts as children of node (skip globally placed)."""
         if 'children' not in node:
             node['children'] = []
         existing_names = {c['name'] for c in node['children'] if c.get('rank') == 'genus'}
         for g in genus_list:
-            if g['name'] not in existing_names:
+            if g['name'] not in existing_names and g['name'] not in placed_globally:
                 node['children'].append({
                     'rank': 'genus',
                     'name': g['name'],
@@ -207,6 +212,7 @@ def integrate_genera_into_tree(taxonomy, genera):
                     'year': g['year'],
                 })
                 existing_names.add(g['name'])
+                placed_globally.add(g['name'])
                 placed_count[0] += 1
 
     def add_genera_recursive(node):
@@ -226,7 +232,17 @@ def integrate_genera_into_tree(taxonomy, genera):
                 c.get('rank') == 'subfamily' for c in node.get('children', [])
             )
 
-            # Match family genera
+            # First: place subfamily genera (higher priority — more specific)
+            if has_subfamily_children:
+                for child in node.get('children', []):
+                    if child.get('rank') == 'subfamily':
+                        for key in try_match_key(child['name']):
+                            sub_matched = subfamily_genera.get(key, [])
+                            if sub_matched:
+                                add_genera_to_node(child, sub_matched)
+                                break
+
+            # Then: place family-level genera (skips already-placed genera)
             matched_fam = []
             for key in try_match_key(name):
                 matched_fam = family_genera.get(key, [])
@@ -243,23 +259,7 @@ def integrate_genera_into_tree(taxonomy, genera):
                         break
 
             if matched_fam:
-                if has_subfamily_children:
-                    # Place genera that don't belong to any known subfamily
-                    # at the family level as "unassigned to subfamily"
-                    add_genera_to_node(node, matched_fam)
-                else:
-                    add_genera_to_node(node, matched_fam)
-
-            # Also check: if family has subfamily children, try to match
-            # subfamily genera directly
-            if has_subfamily_children:
-                for child in node.get('children', []):
-                    if child.get('rank') == 'subfamily':
-                        for key in try_match_key(child['name']):
-                            sub_matched = subfamily_genera.get(key, [])
-                            if sub_matched:
-                                add_genera_to_node(child, sub_matched)
-                                break
+                add_genera_to_node(node, matched_fam)
 
         for child in node.get('children', []):
             add_genera_recursive(child)
@@ -337,7 +337,39 @@ def main():
     # We need to not modify the original, use a copy
     import copy
     tree = copy.deepcopy(taxonomy)
+
+    # Strip any existing genus nodes and revert placeholder renames from previous runs
+    def reset_tree(node):
+        if 'children' in node:
+            node['children'] = [c for c in node['children'] if c.get('rank') != 'genus']
+            for c in node['children']:
+                reset_tree(c)
+        # Revert placeholder renames like "Subfamily Uncertain (ParentName)" → "Subfamily Uncertain"
+        name = node.get('name', '')
+        if 'uncertain' in name.lower() and '(' in name:
+            node['name'] = re.sub(r'\s*\(.*\)$', '', name)
+    reset_tree(tree['taxonomy'])
+
     tree = integrate_genera_into_tree(tree, assigned)
+
+    # Step 6: Make placeholder names unique by appending parent name
+    print("Step 6: Making placeholder names unique...")
+    placeholder_renames = [0]
+
+    def uniquify_placeholders(node, parent_name=None):
+        name = node.get('name', '')
+        rank = node.get('rank', '')
+        # Detect generic placeholder names like "Family Uncertain", "Subfamily Uncertain"
+        if parent_name and 'uncertain' in name.lower():
+            new_name = f"{name} ({parent_name})"
+            if new_name != name:
+                node['name'] = new_name
+                placeholder_renames[0] += 1
+        for child in node.get('children', []):
+            uniquify_placeholders(child, name)
+
+    uniquify_placeholders(tree['taxonomy'])
+    print(f"  Renamed: {placeholder_renames[0]} placeholders")
 
     # Count genera actually placed in tree
     genera_in_tree = count_genera_in_tree(tree['taxonomy'])
