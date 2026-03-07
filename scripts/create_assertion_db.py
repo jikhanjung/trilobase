@@ -901,6 +901,38 @@ def _build_queries():
          "\n"
          "ORDER BY diff_status, taxon_rank, taxon_name",
          '{"profile_id": "integer", "compare_profile_id": "integer"}'),
+
+        # --- Profile diff edges (for Diff Tree rendering) ---
+        ("profile_diff_edges", "Diff edges: base profile structure with change status vs compare",
+         "SELECT\n"
+         "    a.child_id,\n"
+         "    a.parent_id,\n"
+         "    a.parent_id AS parent_id_a,\n"
+         "    b.parent_id AS parent_id_b,\n"
+         "    CASE\n"
+         "        WHEN b.child_id IS NULL THEN 'removed'\n"
+         "        WHEN a.parent_id != b.parent_id THEN 'moved'\n"
+         "        ELSE 'same'\n"
+         "    END AS diff_status\n"
+         "FROM classification_edge_cache a\n"
+         "LEFT JOIN classification_edge_cache b\n"
+         "    ON a.child_id = b.child_id AND b.profile_id = :compare_profile_id\n"
+         "WHERE a.profile_id = :profile_id\n"
+         "\n"
+         "UNION ALL\n"
+         "\n"
+         "SELECT\n"
+         "    b.child_id,\n"
+         "    b.parent_id,\n"
+         "    NULL AS parent_id_a,\n"
+         "    b.parent_id AS parent_id_b,\n"
+         "    'added' AS diff_status\n"
+         "FROM classification_edge_cache b\n"
+         "LEFT JOIN classification_edge_cache a\n"
+         "    ON b.child_id = a.child_id AND a.profile_id = :profile_id\n"
+         "WHERE b.profile_id = :compare_profile_id\n"
+         "    AND a.child_id IS NULL",
+         '{"profile_id": "integer", "compare_profile_id": "integer"}'),
     ]
 
 
@@ -1130,6 +1162,40 @@ def _build_manifest():
                     "removed": "danger",
                 },
                 "on_row_click": {"detail_view": "taxon_detail_view", "id_key": "taxon_id"},
+            },
+
+            # === Diff Tree (compare mode) ===
+            "diff_tree": {
+                "type": "hierarchy",
+                "display": "tree_chart",
+                "title": "Diff Tree",
+                "description": "Single merged tree with diff color coding",
+                "icon": "bi-diagram-3-fill",
+                "compare_view": True,
+                "source_query": "radial_tree_nodes",
+                "hierarchy_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "rank_key": "rank",
+                },
+                "tree_chart_options": {
+                    "source_view": "tree_chart",
+                    "diff_mode": {
+                        "edge_query": "profile_diff_edges",
+                        "edge_params": {
+                            "profile_id": "$profile_id",
+                            "compare_profile_id": "$compare_profile_id",
+                        },
+                        "colors": {
+                            "same": "#adb5bd",
+                            "moved": "#fd7e14",
+                            "added": "#198754",
+                            "removed": "#dc3545",
+                        },
+                        "show_ghost_edges": False,
+                    },
+                },
             },
 
             # === Side-by-Side Tree (compare mode) ===

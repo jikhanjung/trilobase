@@ -26,6 +26,7 @@ CH5_JSON = DATA_DIR / "treatise_ch5_taxonomy.json"
 # Well-known taxon IDs
 TRILOBITA_ID = 1
 EODISCIDA_ID = 2
+EODISCINA_ID = 5353
 AGNOSTIDA_ID = 5341
 
 
@@ -164,10 +165,10 @@ class TreatiseImporter:
         if db_rank == "Superfamily":
             db_rank = "Superfamily"
 
-        # Special case: Eodiscina suborder → reuse Eodiscida (id=2)
+        # Special case: Eodiscina suborder → use existing Eodiscina taxon
         if name.lower() == "eodiscina" and rank == "suborder":
             self.stats["matched"] += 1
-            return EODISCIDA_ID
+            return EODISCINA_ID
 
         # Try matching by name + rank
         key = f"{name.lower()}|{db_rank.lower()}"
@@ -233,10 +234,7 @@ class TreatiseImporter:
             else:
                 status = "asserted"
 
-            # Special notes for Eodiscida reuse
             notes = None
-            if tid == EODISCIDA_ID:
-                notes = "Treatise (2004): Suborder Eodiscina of Agnostida"
 
             self._insert_assertion(tid, parent_id, status=status, notes=notes)
 
@@ -270,13 +268,7 @@ class TreatiseImporter:
             else:
                 child_status = "asserted"
 
-            # Special notes for Eodiscida reuse
-            child_notes = None
-            if child_tid == EODISCIDA_ID:
-                child_notes = "Treatise (2004): Suborder Eodiscina of Agnostida"
-
-            self._insert_assertion(child_tid, tid, status=child_status,
-                                   notes=child_notes)
+            self._insert_assertion(child_tid, tid, status=child_status)
 
             # Recurse into child's children (skip the child itself, already processed)
             for grandchild in child.get("children", []):
@@ -405,7 +397,23 @@ def build_treatise_profile(cur: sqlite3.Cursor) -> dict:
             """, (profile_id, child_id, parent_id))
             n_added += 1
 
-    # 6. Ensure Agnostida → Trilobita edge
+    # 6. Remove Eodiscida: move its children under Eodiscina
+    eodiscida_children = cur.execute("""
+        SELECT child_id FROM classification_edge_cache
+        WHERE profile_id = ? AND parent_id = ?
+    """, (profile_id, EODISCIDA_ID)).fetchall()
+    for (child_id,) in eodiscida_children:
+        cur.execute("""
+            UPDATE classification_edge_cache
+            SET parent_id = ?
+            WHERE profile_id = ? AND child_id = ?
+        """, (EODISCINA_ID, profile_id, child_id))
+    cur.execute("""
+        DELETE FROM classification_edge_cache
+        WHERE profile_id = ? AND child_id = ?
+    """, (profile_id, EODISCIDA_ID))
+
+    # 7. Ensure Agnostida → Trilobita edge
     existing = cur.execute("""
         SELECT parent_id FROM classification_edge_cache
         WHERE profile_id = ? AND child_id = ?
