@@ -859,6 +859,48 @@ def _build_queries():
         ("classification_profiles_selector", "Available classification profiles",
          "SELECT id, name, description FROM classification_profile ORDER BY id",
          None),
+
+        # --- Profile diff ---
+        ("profile_diff", "Compare edges between two classification profiles",
+         "SELECT\n"
+         "    COALESCE(a.child_id, b.child_id) AS taxon_id,\n"
+         "    t.name AS taxon_name,\n"
+         "    t.rank AS taxon_rank,\n"
+         "    pa.name AS parent_a,\n"
+         "    pb.name AS parent_b,\n"
+         "    CASE\n"
+         "        WHEN b.child_id IS NULL THEN 'removed'\n"
+         "        WHEN a.child_id IS NULL THEN 'added'\n"
+         "        WHEN a.parent_id != b.parent_id THEN 'moved'\n"
+         "    END AS diff_status\n"
+         "FROM classification_edge_cache a\n"
+         "LEFT JOIN classification_edge_cache b\n"
+         "    ON a.child_id = b.child_id AND b.profile_id = :compare_profile_id\n"
+         "LEFT JOIN taxon t ON t.id = COALESCE(a.child_id, b.child_id)\n"
+         "LEFT JOIN taxon pa ON pa.id = a.parent_id\n"
+         "LEFT JOIN taxon pb ON pb.id = b.parent_id\n"
+         "WHERE a.profile_id = :profile_id\n"
+         "    AND (b.child_id IS NULL OR a.parent_id != b.parent_id)\n"
+         "\n"
+         "UNION ALL\n"
+         "\n"
+         "SELECT\n"
+         "    b.child_id AS taxon_id,\n"
+         "    t.name AS taxon_name,\n"
+         "    t.rank AS taxon_rank,\n"
+         "    NULL AS parent_a,\n"
+         "    pb.name AS parent_b,\n"
+         "    'added' AS diff_status\n"
+         "FROM classification_edge_cache b\n"
+         "LEFT JOIN classification_edge_cache a\n"
+         "    ON b.child_id = a.child_id AND a.profile_id = :profile_id\n"
+         "LEFT JOIN taxon t ON t.id = b.child_id\n"
+         "LEFT JOIN taxon pb ON pb.id = b.parent_id\n"
+         "WHERE b.profile_id = :compare_profile_id\n"
+         "    AND a.child_id IS NULL\n"
+         "\n"
+         "ORDER BY diff_status, taxon_rank, taxon_name",
+         '{"profile_id": "integer", "compare_profile_id": "integer"}'),
     ]
 
 
@@ -870,15 +912,27 @@ def _build_manifest():
     """Build the full UI manifest dict."""
     return {
         "default_view": "taxonomy_tree",
-        "global_controls": [{
-            "type": "select",
-            "param": "profile_id",
-            "label": "Classification",
-            "source_query": "classification_profiles_selector",
-            "value_key": "id",
-            "label_key": "name",
-            "default": 1,
-        }],
+        "global_controls": [
+            {
+                "type": "select",
+                "param": "profile_id",
+                "label": "Classification",
+                "source_query": "classification_profiles_selector",
+                "value_key": "id",
+                "label_key": "name",
+                "default": 1,
+            },
+            {
+                "type": "select",
+                "param": "compare_profile_id",
+                "label": "Compare with",
+                "source_query": "classification_profiles_selector",
+                "value_key": "id",
+                "label_key": "name",
+                "default": 2,
+                "compare_control": True,
+            },
+        ],
         "views": {
             # === Tab views ===
             "taxonomy_tree": {
@@ -1050,6 +1104,32 @@ def _build_manifest():
                 ],
                 "default_sort": {"key": "name", "direction": "asc"},
                 "on_row_click": {"detail_view": "profile_detail_view", "id_key": "id"},
+            },
+
+            # === Profile diff (compare mode) ===
+            "profile_diff_table": {
+                "type": "table",
+                "title": "Profile Diff",
+                "description": "Differences between two classification profiles",
+                "source_query": "profile_diff",
+                "icon": "bi-arrow-left-right",
+                "compare_view": True,
+                "searchable": True,
+                "columns": [
+                    {"key": "taxon_name", "label": "Taxon", "sortable": True, "searchable": True, "italic": True},
+                    {"key": "taxon_rank", "label": "Rank", "sortable": True, "searchable": True},
+                    {"key": "parent_a", "label": "Base Parent", "sortable": True, "searchable": True},
+                    {"key": "parent_b", "label": "Compare Parent", "sortable": True, "searchable": True},
+                    {"key": "diff_status", "label": "Status", "sortable": True, "searchable": True},
+                ],
+                "default_sort": {"key": "diff_status", "direction": "asc"},
+                "row_color_key": "diff_status",
+                "row_color_map": {
+                    "moved": "warning",
+                    "added": "success",
+                    "removed": "danger",
+                },
+                "on_row_click": {"detail_view": "taxon_detail_view", "id_key": "taxon_id"},
             },
 
             # === Detail views ===
