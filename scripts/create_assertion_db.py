@@ -1132,6 +1132,26 @@ def _build_manifest():
                 "on_row_click": {"detail_view": "taxon_detail_view", "id_key": "taxon_id"},
             },
 
+            # === Side-by-Side Tree (compare mode) ===
+            "side_by_side_tree": {
+                "type": "hierarchy",
+                "display": "side_by_side",
+                "title": "Side-by-Side",
+                "description": "Two tree charts side by side for visual comparison",
+                "icon": "bi-layout-split",
+                "compare_view": True,
+                "source_query": "radial_tree_nodes",
+                "hierarchy_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "rank_key": "rank",
+                },
+                "tree_chart_options": {
+                    "source_view": "tree_chart",
+                },
+            },
+
             # === Detail views ===
             "taxon_detail_view": {
                 "type": "detail",
