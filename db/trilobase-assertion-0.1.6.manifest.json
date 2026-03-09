@@ -1,0 +1,16 @@
+{
+  "hub_manifest_version": "1.0",
+  "package_id": "trilobase-assertion",
+  "version": "0.1.6",
+  "title": "Trilobase (Assertion-Centric) — experimental P74 model",
+  "description": "Assertion-centric trilobite taxonomy database",
+  "license": "CC-BY-4.0",
+  "created_at": "2026-03-09T09:31:29.796737+00:00",
+  "provenance": [
+    "Jell, P.A., and Adrain, J.M., 2002, Available Generic Names for Trilobites",
+    "Adrain, J.M., 2011, Class Trilobita Walch, 1771"
+  ],
+  "filename": "trilobase-assertion-0.1.6.db",
+  "sha256": "3014900c3362cde5a2e42a30e93708f83c7fc52ddd0a2ff54a4def5bf6c5baad",
+  "size_bytes": 4648960
+}

@@ -1,6 +1,6 @@
 # Trilobase Project Handover
 
-**Last updated:** 2026-03-07
+**Last updated:** 2026-03-09
 
 ## Project Overview
 
@@ -87,7 +87,7 @@ python scripts/validate_assertion_db.py  # → 15/15 checks passed
 | `assertion` | 6,563 | PLACED_IN 5,506 + SYNONYM_OF 1,055 + SPELLING_OF 2 |
 | `classification_profile` | 3 | default, ja2002_strict, treatise2004 |
 | `classification_edge_cache` | 10,221 | default (5,083) + treatise2004 (5,138) |
-| `ui_queries` | 43 | +1 classification_profiles_selector |
+| `ui_queries` | 45 | +taxonomy_tree_genera_counts, classification_profiles_selector |
 
 Views: `v_taxonomy_tree`, `v_taxonomic_ranks`, `synonyms` (기존 호환)
 
@@ -216,6 +216,34 @@ Compare 모드 UI 인프라 + Diff Table 구현.
 
 **상세**: `devlog/20260307_112_side_by_side_tree.md`, `devlog/20260307_113_sbs_sync_and_perf.md`
 
+## Assertion DB v0.1.6: Profile Comparison Compound View + Morphing ✅
+
+3개의 개별 compare 뷰(Diff Table, Diff Tree, Side-by-Side)를 하나의 **Profile Comparison** compound view로 통합하고, **Morphing** 애니메이션 뷰 추가.
+
+### Compound View
+- `compound` view 타입: sub-view 탭(Diff Table, Diff Tree, Side-by-Side, Morphing)으로 구성
+- 자체 From/To profile selector 보유, 기존 global `compare_profile_id` 제거
+- `tree_chart_morph` display 타입 신규 추가
+
+### Morphing 애니메이션 (R02 Phase 4)
+- `loadMorph()` → `renderMorphFrame(t)` → `startMorphAnimation()` 파이프라인
+- Transport controls: |< ◀ || ▶ >| + scrubber + speed 조절
+- 정방향/역방향 재생, 현재 위치에서 이어 재생
+- Radial/Rectangular 양쪽 지원, view-as-root 중에도 작동
+
+### 렌더링 단순화 + 성능 개선
+- SVG label → canvas `drawLabels()` 전환, bitmap cache/depth toggle/동적 radius 제거
+- `textScale`: A−/A+ 버튼으로 font/node 크기 직접 조절 (layout 재계산 불필요)
+- `taxonomy_tree` genera_count 쿼리: 10,310ms → 9ms (per-row recursive CTE → 별도 flat 쿼리 + JS 전파)
+- Rectangular tree depth spacing: view-as-root 시 rank 수 × depthSpacing 기반으로 수정
+
+### 기타 UI
+- Global loading indicator (animated gradient bar + wait cursor)
+- Show Text / Hide Text 토글 (탭 바)
+- Radial tree fit margin 10% 추가
+
+**상세**: `devlog/20260309_115_compound_view_and_morphing.md`
+
 ## R01/R02: 설계 리뷰 문서
 
 ### R01: 시간에 따라 변화하는 Taxonomy 관리 방법
@@ -285,9 +313,9 @@ Profile 간 차이를 시각화하는 구체적 설계 문서:
 
 - ~~Phase 0: Compare UI 인프라~~ ✅ (devlog 111)
 - ~~Phase 1: Diff Table~~ ✅ (devlog 111)
-- **Phase 2: Diff Tree** — tree chart에서 diff 색상 코딩 (ghost edge, 범례, tooltip)
+- ~~Phase 2: Diff Tree~~ ✅ (devlog 114) — diff 색상 코딩 (moved/added/removed)
 - ~~Phase 3: Side-by-side~~ ✅ (devlog 112~113) — 동기화 5종 + 성능 최적화 포함
-- **Phase 4: Animated Morphing** — 프로필 전환 시 노드 위치 보간 애니메이션
+- ~~Phase 4: Animated Morphing~~ ✅ (devlog 115) — transport controls, scrubber, 정방향/역방향 재생
 
 ### Assertion DB — Taxonomy Management (R01 로드맵)
 

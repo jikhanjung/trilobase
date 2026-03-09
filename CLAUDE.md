@@ -43,14 +43,13 @@ trilobase/
 │   └── ... (normalize, import, etc.)
 ├── tests/
 │   ├── conftest.py                   # Shared fixtures
-│   └── test_trilobase.py             # Trilobase domain tests (66)
+│   └── test_trilobase.py             # Trilobase domain tests (118)
 ├── vendor/                           # Third-party reference data
 ├── devlog/                           # 작업 기록
 │   ├── YYYYMMDD_NNN_*.md            # 작업 로그
 │   ├── YYYYMMDD_PNN_*.md            # 계획(Plan) 문서
 │   └── YYYYMMDD_RNN_*.md            # 리뷰(Review) 문서
 └── docs/
-    ├── HANDOFF.md                    # 인수인계 문서 (필독)
     └── paleocore_schema.md
 ```
 
