@@ -27,6 +27,7 @@ crossref_checkpoint.json
 
 # Large PDFs (Treatise volumes)
 data/Treatise.pdf
+data/Treatise 1959.pdf
 data/Treatise Chapter 4.pdf
 data/Treatise Chapter 5.pdf
 .vscode/settings.json

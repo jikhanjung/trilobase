@@ -26,6 +26,7 @@ CH5_JSON = DATA_DIR / "treatise_ch5_taxonomy.json"
 # Well-known taxon IDs
 TRILOBITA_ID = 1
 EODISCIDA_ID = 2
+EODISCINA_ID = 5353
 AGNOSTIDA_ID = 5341
 
 
@@ -144,19 +145,18 @@ class TreatiseImporter:
             self.stats["skipped_subgenus"] += 1
             return None
 
-        # Handle "unrecognizable" container
+        # Handle "unrecognizable" container → treat as Family
         if rank == "unrecognizable":
-            rank = "unrecognizable"
-            tid = self._create_new(name, rank, node, is_placeholder=1)
+            tid = self._create_new(name, "Family", node, is_placeholder=1)
             return tid
 
         # Handle uncertain/UNCERTAIN containers
         if name.lower() == "uncertain":
-            parent_rank = rank  # e.g. 'subfamily', 'family', 'superfamily'
+            db_rank = rank.capitalize()  # e.g. 'subfamily' → 'Subfamily'
             # Get note for context
-            note = node.get("note", f"Treatise (2004) {parent_rank} uncertain")
-            placeholder_name = f"uncertain ({self.chapter} {parent_rank})"
-            tid = self._create_new(placeholder_name, parent_rank, {},
+            note = node.get("note", f"Treatise (2004) {db_rank} uncertain")
+            placeholder_name = "Uncertain"
+            tid = self._create_new(placeholder_name, db_rank, {},
                                    is_placeholder=1, notes=note)
             return tid
 
@@ -165,10 +165,10 @@ class TreatiseImporter:
         if db_rank == "Superfamily":
             db_rank = "Superfamily"
 
-        # Special case: Eodiscina suborder → reuse Eodiscida (id=2)
+        # Special case: Eodiscina suborder → use existing Eodiscina taxon
         if name.lower() == "eodiscina" and rank == "suborder":
             self.stats["matched"] += 1
-            return EODISCIDA_ID
+            return EODISCINA_ID
 
         # Try matching by name + rank
         key = f"{name.lower()}|{db_rank.lower()}"
@@ -234,10 +234,7 @@ class TreatiseImporter:
             else:
                 status = "asserted"
 
-            # Special notes for Eodiscida reuse
             notes = None
-            if tid == EODISCIDA_ID:
-                notes = "Treatise (2004): Suborder Eodiscina of Agnostida"
 
             self._insert_assertion(tid, parent_id, status=status, notes=notes)
 
@@ -271,13 +268,7 @@ class TreatiseImporter:
             else:
                 child_status = "asserted"
 
-            # Special notes for Eodiscida reuse
-            child_notes = None
-            if child_tid == EODISCIDA_ID:
-                child_notes = "Treatise (2004): Suborder Eodiscina of Agnostida"
-
-            self._insert_assertion(child_tid, tid, status=child_status,
-                                   notes=child_notes)
+            self._insert_assertion(child_tid, tid, status=child_status)
 
             # Recurse into child's children (skip the child itself, already processed)
             for grandchild in child.get("children", []):
@@ -313,38 +304,47 @@ class TreatiseImporter:
 def build_treatise_profile(cur: sqlite3.Cursor) -> dict:
     """Create treatise2004 profile and build its edge cache.
 
-    Algorithm: hybrid approach — start with default edges, then replace
-    only the taxa that the Treatise explicitly places.  Taxa not mentioned
-    in the Treatise keep their default placement.
+    Algorithm: hybrid approach — start with treatise1959 edges (if available,
+    otherwise default), then replace only the taxa that the Treatise 2004
+    explicitly places.  Taxa not mentioned in the Treatise 2004 keep their
+    base profile placement.
 
-    1. Copy all default edges
+    1. Copy base profile edges (treatise1959 if available, else default)
     2. Collect the set of taxa that have Treatise PLACED_IN assertions
-    3. For those taxa only, remove their default edge and use the Treatise edge
-    4. Add edges for new taxa (subfamilies etc.) that have no default edge
+    3. For those taxa only, remove their base edge and use the Treatise edge
+    4. Add edges for new taxa (subfamilies etc.) that have no base edge
     5. Ensure Agnostida → Trilobita edge
     """
     # 1. Insert profile
+    # Determine base profile: treatise1959 if exists, else default (id=1)
+    base_row = cur.execute(
+        "SELECT id FROM classification_profile WHERE name = 'treatise1959'"
+    ).fetchone()
+    base_profile_id = base_row[0] if base_row else 1
+    base_name = "treatise1959" if base_row else "default"
+
     cur.execute("""
         INSERT INTO classification_profile (name, description, rule_json)
         VALUES (?, ?, ?)
     """, (
         "treatise2004",
-        "Treatise (2004) for Agnostida/Redlichiida, default for other orders",
+        f"Treatise (2004) for Agnostida/Redlichiida, {base_name} for other orders",
         json.dumps({
             "description": "hybrid",
             "builder": "import_treatise.py",
+            "base_profile": base_name,
             "scope": ["Agnostida", "Redlichiida", "Eodiscida"],
         }),
     ))
     profile_id = cur.lastrowid
 
-    # 2. Copy all default (profile_id=1) edges
+    # 2. Copy all base profile edges
     cur.execute("""
         INSERT INTO classification_edge_cache (profile_id, child_id, parent_id)
         SELECT ?, child_id, parent_id
         FROM classification_edge_cache
-        WHERE profile_id = 1
-    """, (profile_id,))
+        WHERE profile_id = ?
+    """, (profile_id, base_profile_id))
     n_copied = cur.execute("SELECT changes()").fetchone()[0]
 
     # 3. Find Treatise reference IDs
@@ -397,7 +397,23 @@ def build_treatise_profile(cur: sqlite3.Cursor) -> dict:
             """, (profile_id, child_id, parent_id))
             n_added += 1
 
-    # 6. Ensure Agnostida → Trilobita edge
+    # 6. Remove Eodiscida: move its children under Eodiscina
+    eodiscida_children = cur.execute("""
+        SELECT child_id FROM classification_edge_cache
+        WHERE profile_id = ? AND parent_id = ?
+    """, (profile_id, EODISCIDA_ID)).fetchall()
+    for (child_id,) in eodiscida_children:
+        cur.execute("""
+            UPDATE classification_edge_cache
+            SET parent_id = ?
+            WHERE profile_id = ? AND child_id = ?
+        """, (EODISCINA_ID, profile_id, child_id))
+    cur.execute("""
+        DELETE FROM classification_edge_cache
+        WHERE profile_id = ? AND child_id = ?
+    """, (profile_id, EODISCIDA_ID))
+
+    # 7. Ensure Agnostida → Trilobita edge
     existing = cur.execute("""
         SELECT parent_id FROM classification_edge_cache
         WHERE profile_id = ? AND child_id = ?
@@ -422,6 +438,7 @@ def build_treatise_profile(cur: sqlite3.Cursor) -> dict:
 
     return {
         "profile_id": profile_id,
+        "base_profile": base_name,
         "copied": n_copied,
         "replaced": n_replaced,
         "added": n_added,
@@ -554,7 +571,8 @@ def main():
     profile_stats = build_treatise_profile(cur)
     conn.commit()
     print(f"   Profile ID: {profile_stats['profile_id']}")
-    print(f"   Copied from default: {profile_stats['copied']}")
+    print(f"   Base profile: {profile_stats['base_profile']}")
+    print(f"   Copied from base: {profile_stats['copied']}")
     print(f"   Replaced edges: {profile_stats['replaced']}")
     print(f"   Added new edges: {profile_stats['added']}")
     print(f"   Total edges: {profile_stats['total_edges']}")

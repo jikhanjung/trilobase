@@ -23,7 +23,7 @@ from pathlib import Path
 
 from db_path import find_trilobase_db
 
-ASSERTION_VERSION = "0.1.3"
+ASSERTION_VERSION = "0.1.5"
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC_DB = Path(find_trilobase_db())
@@ -313,17 +313,9 @@ def create_profiles(dst: sqlite3.Connection) -> None:
         INSERT INTO classification_profile (name, description, rule_json)
         VALUES (?, ?, ?)
     """, (
-        "default",
-        "All accepted PLACED_IN assertions",
+        "Jell & Adrain 2002 + Adrain 2011",
+        "Genus taxonomy from Jell & Adrain (2002) with family hierarchy from Adrain (2011)",
         '{"predicate": "PLACED_IN", "is_accepted": 1}',
-    ))
-    dst.execute("""
-        INSERT INTO classification_profile (name, description, rule_json)
-        VALUES (?, ?, ?)
-    """, (
-        "ja2002_strict",
-        "Only Jell & Adrain (2002) PLACED_IN assertions",
-        '{"predicate": "PLACED_IN", "is_accepted": 1, "reference_id": 0}',
     ))
 
 
@@ -867,6 +859,80 @@ def _build_queries():
         ("classification_profiles_selector", "Available classification profiles",
          "SELECT id, name, description FROM classification_profile ORDER BY id",
          None),
+
+        # --- Profile diff ---
+        ("profile_diff", "Compare edges between two classification profiles",
+         "SELECT\n"
+         "    COALESCE(a.child_id, b.child_id) AS taxon_id,\n"
+         "    t.name AS taxon_name,\n"
+         "    t.rank AS taxon_rank,\n"
+         "    pa.name AS parent_a,\n"
+         "    pb.name AS parent_b,\n"
+         "    CASE\n"
+         "        WHEN b.child_id IS NULL THEN 'removed'\n"
+         "        WHEN a.child_id IS NULL THEN 'added'\n"
+         "        WHEN a.parent_id != b.parent_id THEN 'moved'\n"
+         "    END AS diff_status\n"
+         "FROM classification_edge_cache a\n"
+         "LEFT JOIN classification_edge_cache b\n"
+         "    ON a.child_id = b.child_id AND b.profile_id = :compare_profile_id\n"
+         "LEFT JOIN taxon t ON t.id = COALESCE(a.child_id, b.child_id)\n"
+         "LEFT JOIN taxon pa ON pa.id = a.parent_id\n"
+         "LEFT JOIN taxon pb ON pb.id = b.parent_id\n"
+         "WHERE a.profile_id = :profile_id\n"
+         "    AND (b.child_id IS NULL OR a.parent_id != b.parent_id)\n"
+         "\n"
+         "UNION ALL\n"
+         "\n"
+         "SELECT\n"
+         "    b.child_id AS taxon_id,\n"
+         "    t.name AS taxon_name,\n"
+         "    t.rank AS taxon_rank,\n"
+         "    NULL AS parent_a,\n"
+         "    pb.name AS parent_b,\n"
+         "    'added' AS diff_status\n"
+         "FROM classification_edge_cache b\n"
+         "LEFT JOIN classification_edge_cache a\n"
+         "    ON b.child_id = a.child_id AND a.profile_id = :profile_id\n"
+         "LEFT JOIN taxon t ON t.id = b.child_id\n"
+         "LEFT JOIN taxon pb ON pb.id = b.parent_id\n"
+         "WHERE b.profile_id = :compare_profile_id\n"
+         "    AND a.child_id IS NULL\n"
+         "\n"
+         "ORDER BY diff_status, taxon_rank, taxon_name",
+         '{"profile_id": "integer", "compare_profile_id": "integer"}'),
+
+        # --- Profile diff edges (for Diff Tree rendering) ---
+        ("profile_diff_edges", "Diff edges: base profile structure with change status vs compare",
+         "SELECT\n"
+         "    a.child_id,\n"
+         "    a.parent_id,\n"
+         "    a.parent_id AS parent_id_a,\n"
+         "    b.parent_id AS parent_id_b,\n"
+         "    CASE\n"
+         "        WHEN b.child_id IS NULL THEN 'removed'\n"
+         "        WHEN a.parent_id != b.parent_id THEN 'moved'\n"
+         "        ELSE 'same'\n"
+         "    END AS diff_status\n"
+         "FROM classification_edge_cache a\n"
+         "LEFT JOIN classification_edge_cache b\n"
+         "    ON a.child_id = b.child_id AND b.profile_id = :compare_profile_id\n"
+         "WHERE a.profile_id = :profile_id\n"
+         "\n"
+         "UNION ALL\n"
+         "\n"
+         "SELECT\n"
+         "    b.child_id,\n"
+         "    b.parent_id,\n"
+         "    NULL AS parent_id_a,\n"
+         "    b.parent_id AS parent_id_b,\n"
+         "    'added' AS diff_status\n"
+         "FROM classification_edge_cache b\n"
+         "LEFT JOIN classification_edge_cache a\n"
+         "    ON b.child_id = a.child_id AND a.profile_id = :profile_id\n"
+         "WHERE b.profile_id = :compare_profile_id\n"
+         "    AND a.child_id IS NULL",
+         '{"profile_id": "integer", "compare_profile_id": "integer"}'),
     ]
 
 
@@ -878,15 +944,27 @@ def _build_manifest():
     """Build the full UI manifest dict."""
     return {
         "default_view": "taxonomy_tree",
-        "global_controls": [{
-            "type": "select",
-            "param": "profile_id",
-            "label": "Classification",
-            "source_query": "classification_profiles_selector",
-            "value_key": "id",
-            "label_key": "name",
-            "default": 1,
-        }],
+        "global_controls": [
+            {
+                "type": "select",
+                "param": "profile_id",
+                "label": "Classification",
+                "source_query": "classification_profiles_selector",
+                "value_key": "id",
+                "label_key": "name",
+                "default": 1,
+            },
+            {
+                "type": "select",
+                "param": "compare_profile_id",
+                "label": "Compare with",
+                "source_query": "classification_profiles_selector",
+                "value_key": "id",
+                "label_key": "name",
+                "default": 2,
+                "compare_control": True,
+            },
+        ],
         "views": {
             # === Tab views ===
             "taxonomy_tree": {
@@ -1058,6 +1136,86 @@ def _build_manifest():
                 ],
                 "default_sort": {"key": "name", "direction": "asc"},
                 "on_row_click": {"detail_view": "profile_detail_view", "id_key": "id"},
+            },
+
+            # === Profile diff (compare mode) ===
+            "profile_diff_table": {
+                "type": "table",
+                "title": "Profile Diff",
+                "description": "Differences between two classification profiles",
+                "source_query": "profile_diff",
+                "icon": "bi-arrow-left-right",
+                "compare_view": True,
+                "searchable": True,
+                "columns": [
+                    {"key": "taxon_name", "label": "Taxon", "sortable": True, "searchable": True, "italic": True},
+                    {"key": "taxon_rank", "label": "Rank", "sortable": True, "searchable": True},
+                    {"key": "parent_a", "label": "Base Parent", "sortable": True, "searchable": True},
+                    {"key": "parent_b", "label": "Compare Parent", "sortable": True, "searchable": True},
+                    {"key": "diff_status", "label": "Status", "sortable": True, "searchable": True},
+                ],
+                "default_sort": {"key": "diff_status", "direction": "asc"},
+                "row_color_key": "diff_status",
+                "row_color_map": {
+                    "moved": "warning",
+                    "added": "success",
+                    "removed": "danger",
+                },
+                "on_row_click": {"detail_view": "taxon_detail_view", "id_key": "taxon_id"},
+            },
+
+            # === Diff Tree (compare mode) ===
+            "diff_tree": {
+                "type": "hierarchy",
+                "display": "tree_chart",
+                "title": "Diff Tree",
+                "description": "Single merged tree with diff color coding",
+                "icon": "bi-diagram-3-fill",
+                "compare_view": True,
+                "source_query": "radial_tree_nodes",
+                "hierarchy_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "rank_key": "rank",
+                },
+                "tree_chart_options": {
+                    "source_view": "tree_chart",
+                    "diff_mode": {
+                        "edge_query": "profile_diff_edges",
+                        "edge_params": {
+                            "profile_id": "$profile_id",
+                            "compare_profile_id": "$compare_profile_id",
+                        },
+                        "colors": {
+                            "same": "#adb5bd",
+                            "moved": "#fd7e14",
+                            "added": "#198754",
+                            "removed": "#dc3545",
+                        },
+                        "show_ghost_edges": False,
+                    },
+                },
+            },
+
+            # === Side-by-Side Tree (compare mode) ===
+            "side_by_side_tree": {
+                "type": "hierarchy",
+                "display": "side_by_side",
+                "title": "Side-by-Side",
+                "description": "Two tree charts side by side for visual comparison",
+                "icon": "bi-layout-split",
+                "compare_view": True,
+                "source_query": "radial_tree_nodes",
+                "hierarchy_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "rank_key": "rank",
+                },
+                "tree_chart_options": {
+                    "source_view": "tree_chart",
+                },
             },
 
             # === Detail views ===
@@ -1645,7 +1803,7 @@ def _build_manifest():
                         "name": "rebuild_edge_cache",
                         "on": ["create", "update", "delete"],
                         "trigger_when": {"field": "predicate", "value": "PLACED_IN"},
-                        "sql": "DELETE FROM classification_edge_cache; INSERT INTO classification_edge_cache (profile_id, child_id, parent_id) SELECT p.id, a.subject_taxon_id, a.object_taxon_id FROM assertion a CROSS JOIN classification_profile p WHERE a.predicate = 'PLACED_IN' AND (a.is_accepted = 1 OR (p.name != 'default' AND a.reference_id IN (SELECT r.id FROM reference r WHERE r.authors LIKE '%Treatise%')))",
+                        "sql": "DELETE FROM classification_edge_cache; INSERT INTO classification_edge_cache (profile_id, child_id, parent_id) SELECT p.id, a.subject_taxon_id, a.object_taxon_id FROM assertion a CROSS JOIN classification_profile p WHERE a.predicate = 'PLACED_IN' AND (a.is_accepted = 1 OR (p.id != 1 AND a.reference_id IN (SELECT r.id FROM reference r WHERE r.authors LIKE '%Treatise%')))",
                     },
                 ],
             },
