@@ -82,6 +82,18 @@ def parse_line(raw_line: str):
     if not stripped:
         return None
 
+    # Special case: "Order and Family UNCERTAIN"
+    if re.match(r'^order\s+and\s+family\s+uncertain', stripped, re.IGNORECASE):
+        return 'order', 'Order and Family Uncertain (Trilobita)', None, None
+
+    # Special case: "Order UNCERTAIN" (but not "Order and ...")
+    if re.match(r'^order\s+uncertain\s*$', stripped, re.IGNORECASE):
+        return 'order', 'Order Uncertain (Trilobita)', None, None
+
+    # Skip section headers like "Unrecognizable Genera", "Unrecognizable Asaphid Genera"
+    if re.match(r'^unrecognizable\b', stripped, re.IGNORECASE):
+        return None
+
     # Check known rank keywords
     for rank, pattern in RANK_KEYWORDS:
         if re.match(pattern, stripped, re.IGNORECASE):

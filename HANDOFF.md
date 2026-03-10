@@ -1,6 +1,6 @@
 # Trilobase Project Handover
 
-**Last updated:** 2026-03-09
+**Last updated:** 2026-03-10
 
 ## Project Overview
 
@@ -82,12 +82,12 @@ python scripts/validate_assertion_db.py  # → 15/15 checks passed
 
 | 테이블 | 건수 | 설명 |
 |--------|------|------|
-| `taxon` | 5,391 | parent_id 제거 (+50 Treatise taxa) |
-| `reference` | 2,134 | bibliography + JA2002 (id=2132) + Treatise ch4/ch5 |
-| `assertion` | 6,563 | PLACED_IN 5,506 + SYNONYM_OF 1,055 + SPELLING_OF 2 |
-| `classification_profile` | 3 | default, ja2002_strict, treatise2004 |
-| `classification_edge_cache` | 10,221 | default (5,083) + treatise2004 (5,138) |
-| `ui_queries` | 45 | +taxonomy_tree_genera_counts, classification_profiles_selector |
+| `taxon` | 5,604 | parent_id 제거 (+213 Treatise taxa) |
+| `reference` | 2,135 | bibliography + JA2002 (id=2132) + Treatise ch4/ch5 |
+| `assertion` | 7,950 | PLACED_IN 6,893 + SYNONYM_OF 1,055 + SPELLING_OF 2 |
+| `classification_profile` | 3 | default, treatise1959, treatise2004 |
+| `classification_edge_cache` | 8,151 | default (5,083) + treatise1959 (1,387) + treatise2004 (1,681) |
+| `ui_queries` | 46 | +taxonomy_tree_genera_counts, classification_profiles_selector |
 
 Views: `v_taxonomy_tree`, `v_taxonomic_ranks`, `synonyms` (기존 호환)
 
@@ -192,8 +192,8 @@ python -m scoda_engine.serve --db-path db/trilobase-assertion-0.1.3.db --mode ad
 1959 Treatise on Invertebrate Paleontology Part O에서 삼엽충 전체 분류 체계를 추출하여 `treatise1959` 프로필로 import.
 
 - OCR + 수동 입력 → 8 orders, 13 suborders, 33 superfamilies, 142 families, 128 subfamilies, 1,014 genera
-- `treatise1959` 프로필: standalone 1,324 edges
-- `treatise2004` 프로필: treatise1959 기반 1,667 edges (Agnostida/Redlichiida 교체)
+- `treatise1959` 프로필: standalone 1,387 edges (v0.1.7 기준)
+- `treatise2004` 프로필: treatise1959 기반 1,681 edges (Agnostida/Redlichiida 교체)
 
 **상세**: `devlog/20260307_109_treatise1959_import.md`, `devlog/20260307_110_assertion_v015_profile_fixes.md`
 
@@ -243,6 +243,31 @@ Compare 모드 UI 인프라 + Diff Table 구현.
 - Radial tree fit margin 10% 추가
 
 **상세**: `devlog/20260309_115_compound_view_and_morphing.md`
+
+## Assertion DB v0.1.7: Treatise 1959 TXT 파이프라인 + 버그 수정 ✅
+
+### TXT → JSON 변환 파이프라인 (`parse_treatise_txt.py`)
+수작업 `data/treatise_1959_taxonomy.txt`를 정제 소스로 사용하여 JSON으로 변환하는 파이프라인 신규 구축.
+
+- **rank 키워드 기반** 계층 파악 (들여쓰기 의존 제거)
+- taxon name 정규화 (첫 글자만 대문자), `[type species]` 자동 제거, `?` 접두사 처리
+- 기존 JSON에서 TXT가 커버하는 Order만 교체하는 merge 전략
+- Redlichiida 데이터 대폭 확장: families 2→14, genera 22→88
+
+### 버그 수정 2건
+1. **`import_treatise.py` EODISCINA_ID 하드코딩**: 새 taxon 추가로 ID 밀림 → DB 동적 조회로 변경
+2. **Diff Tree `rank_radius` 누락**: Subfamily가 Genus보다 바깥쪽에 표시되는 역전 → rank_radius 명시 추가
+
+### v0.1.6 → v0.1.7 수치 변화
+| 항목 | 0.1.6 | 0.1.7 | 차이 |
+|------|-------|-------|------|
+| taxon | 5,610 | 5,604 | -6 |
+| assertion | 7,887 | 7,950 | +63 |
+| PLACED_IN | 6,830 | 6,893 | +63 |
+| treatise1959 edges | 1,324 | 1,387 | +63 |
+| treatise2004 edges | 1,666 | 1,681 | +15 |
+
+**상세**: `devlog/20260310_116_treatise1959_txt_pipeline_and_fixes.md`
 
 ## R01/R02: 설계 리뷰 문서
 
