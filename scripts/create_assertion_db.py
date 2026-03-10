@@ -23,7 +23,7 @@ from pathlib import Path
 
 from db_path import find_trilobase_db
 
-ASSERTION_VERSION = "0.1.6"
+ASSERTION_VERSION = "0.1.7"
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC_DB = Path(find_trilobase_db())
@@ -1198,6 +1198,16 @@ def _build_manifest():
                         },
                         "tree_chart_options": {
                             "source_view": "tree_chart",
+                            "rank_radius": {
+                                "_root": 0,
+                                "Class": 0.08,
+                                "Order": 0.20,
+                                "Suborder": 0.32,
+                                "Superfamily": 0.44,
+                                "Family": 0.56,
+                                "Subfamily": 0.70,
+                                "Genus": 1.0,
+                            },
                             "diff_mode": {
                                 "edge_query": "profile_diff_edges",
                                 "edge_params": {

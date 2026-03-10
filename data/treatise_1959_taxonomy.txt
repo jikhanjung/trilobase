@@ -1,0 +1,223 @@
+Order AGNOSTIDA Kobayashi, 1935
+  Suborder AGNOSTINA
+    Family AGNOSTIDAE M'Coy, 1849
+      Agnostus Brongniart, 1822 [Entomostracites pisiformis]
+      Acmarhachis Resser, 1938 [A. typicalis]
+      Aspidagnostus Whitehouse, 1936 [A. parmatus]
+      Fallagnostus Howell, 1935 [F. blayaci]
+      Homagnostus Howell, 1935 [Agnostus pisiformis obesus Belt, 1867]
+      Neoagnostus Kobayashi, 1955 [N. aspidoides]
+    Family CLAVAGNOSTIDAE Howell, 1937
+      Clavagnostus Howell, 1937
+    Family Condylopygidae Raymond, 1913
+      Condylopyge Hawle & Corda, 1847
+      Mallagnostus Howell, 1935 [Agnostus desideratus Walcott, 1890]
+      Pleuroctenium Hawle & Corda, 1847 [Battus granulatus Barrande, 1846; SD Vogdes, 1925]
+    Family CYCLOPAGNOSTIDAE Howell, 1937
+      Cyclopagnostus Howell, 1937 [C. hesperius]
+    Family Diplagnostidae Whitehouse, 1936
+      Diplagnostus Jaekel, 1909 [Agnostus planicauda Tullberg, 1880 (non Angelin, 1851)]
+      Linguagnostus Kobayashi, 1939 [Agnostus kjeulfi Brogger, 1878]
+      Oidalagnostus Westergard, 1946 [O. trispinifer]
+      Tomagnostus Howell, 1935 [Agnostus fissus Lundgren in Linnarson, 1879]
+    Family GERAGNOSTIDAE Howell, 1935
+      Geragnostus Howell, 1935 [Agnostus sidenbladhi Linnarson, 1869]
+      Corrugatagnostus Kobayashi, 1939 [Agnostus perrugatus Barrande, 1872]
+      Geragnostella Kobayashi, 1939 [Agnostus tullbergi Novak, 1883]
+      Girvanagnostus Kobayashi, 1939 [Agnostus girvanensis Reed, 1903]
+      Homagnostoides Kobayashi, 1939 [Agnostus ferralsensis Munier-Chalmas & Bergeron, 1889]
+      Trinodus M'Coy, 1846 [T. Agnostiformis]
+    Family HASTAGNOSTIDAE Howell, 1937
+      Hastagnostus Howell, 1937 [H. angustus]
+      Culipagnostus Rusconi, 1952 [C. chipiquensis]
+      Doryagnostus Kobayashi, 1939 [Agnostus incertus Brogger 1878]
+      Glyptagnostus Whitehouse, 1936 [G. toreuma]
+      Goniagnostus Howell, 1935 [Agnostus narhosti Brogger, 1878]
+      Lojypyge Hawle & Corda, 1847 [Battus laevigatus Dalman, 1828]
+      Lotagnostus Whitehouse, 1936 [Agnostus trisectus Salter, 1864]
+      Ptychagnostus Jaekel, 1909
+      Trilobagnostus Harrington, 1938
+      Triplagnostus Howell, 1935
+    Family MICRAGNOSTIDAE Howell, 1935
+      Micragnostus Howell, 1935
+      Anglagnostus Howell, 1935
+      Hyperagnostus Kobayashi, 1955
+      ?Rudagnostus Lermontova, 1951
+      ?Eurudagnostus Lermontova, 1951
+    Family PHALACROMIDAE Hawle & Corda, 1847
+      Phalacroma Hawle & Corda, 1847
+      Gallagnostus Howell, 1935
+      Gallagnostoides Kobayashi, 1939
+      Grandagnostus Howell, 1935
+      Leiagnostus Jaekel, 1909
+      Litagnostus Rasetti, 1944
+      Phalagnostus Howell, 1955
+      Phoidagnostus Whitehouse, 1936
+    Family PSEUDAGNOSTIDAE Whitehouse, 1936
+      Pseudagnostus Jaekel, 1909
+      Cyclagnostus Lermontova, 1940
+      Machairagnostus Harrington & Leanza, 1957
+      Rhaptagnostus Whitehouse, 1936
+    Family SPHAERAGNOSTIDAE Kobayashi, 1939
+      Sphaeragnostus Howell & Resser in Cooper & Kindle, 1936
+    Family SPINAGNOSTIDAE Howell, 1935
+      Spinagnostus Howell, 1935
+      Acadagnostus Kobayashi, 1939
+      Archaeagnostus Kobayashi, 1939
+      Armagnostus Howell, 1937
+      Baltagnostus Lochman in Lochman & Duncan, 1944
+      Ciceragnostus Kobayashi, 1937
+      Cotalagnostus Whitehouse, 1936
+      Eoagnostus Resser & Howell, 1938
+      Euagnostus Whitehouse, 1936
+      Hypagnostus Jaekel, 1909
+      Kormagnostus Resser, 1938
+      Pentagnostus Lermontova, 1940
+      Peronopsis Hawle & Corda, 1847
+      Quadragnostus Howell, 1935
+      Sulcatagnostus Kobayashi, 1937
+      Tomagnostella Kobayashi, 1939
+  Suborder EODISCINA Kobayashi, 1939
+    Family EODISCIDAE Raymond, 1913
+	  Eodiscus Hartt in Walcott, 1884
+	  Calodiscus Howell, 1935
+	  Dawsonia Hartt in Dawson, 1868
+	  Opisdiscus Westergard, 1950
+	  Serrodiscus Richter & Richter, 1941
+	  Weymouthia Raymond, 1913
+	Family PAGETIIDAE Kobayashi, 1935
+	  Pagetia Walcott, 1916
+	  Delgadella Walcott, 1912
+	  Hebediscus Whitehouse, 1936
+	  Neocobboldia Rasetti, 1952
+	  Pagetides Rasetti, 1945
+	  Pagetiellus Lermontova, 1940
+	  ?Triangulaspis Lermontova, 1940
+Order REDLICHIIDA Richter, 1933
+  Suborder OLENELLINA Resser, 1938
+    Family OLENELLIDAE Vogdes, 1893
+	  Subfamily Olenellinae Vogdes, 1893
+	    Olenellus Billings, 1861
+		Bristolia Harrington, 1956
+		Fremontella Harrington, 1956
+		Fremontia Raw, 1939
+		Laudonia Harrington, 1956
+		Paedeumias Walcott, 1910
+		Peachella Walcott, 1910
+	  Subfamily CALLAVIINAE Poulsen, nov.
+	    Callavia Matthew, 1897
+		Judomia Lermontova, 1951
+		Kjerulfia Kjar, 1917
+	  Subfamily ELLIPTOCEPHALINAE Hupe, 1953
+	    Elliptocephala Emmons, 1884
+	  Subfamily FALLOTASPIDINAE Hupe, 1953
+	    Fallotaspis Huep, 1953
+	  Subfamily HOLMIINAE Hupe, 1953
+	    Holmia Matthew, 1890
+		Bondonella Hupe, 1953
+		?Schmidtiellus Moberg in Moberg & Segerberg, 1906
+	  Subfamily NELTNERIINAE Hupe, 1953
+	    Neltneria Hupe, 1953
+	  Subfamily Nevadiinae Hupe, 1953
+	    Nevadia Walcott, 1910
+		Nevadella Raw, 1936
+	  Subfamily OLENELLOIDINAE Hupe, 1953
+	    Olenelloides Peach, 1894
+	  Subfamily WANNERIINAE Hupe, 1953
+	    Wanneria Walcott, 1910
+    Family DAGUINASPIDIDAE Hupe, 1953
+	  Daguinaspis Hupe & Abadie, 1950
+	  Choubertella Hupe, 1953 
+  Suborder REDLICHIINA Harrington, nov.
+    Superfamily REDLICHIACEA Poulsen, 1927
+      Family REDLICHIIDAE Poulsen, 1927
+	    Subfamily REDLICHIINAE Poulsen, 1927
+		  Redlichia COssmann, 1902
+		  Latiredlichia Hupe, 1953
+		  Redlichaspis Kobayashi, 1935
+		  ?Bulaiaspis Repina, 1956
+		  Saukiandiops Hupe, 1953
+		Subfamily PARAREDLICHIINAE Hupe, 1953
+		  Pararedlichia Hupe, 1953
+		  Archaeops Hupe, 1953
+		  Mesodema Whitehouse, 1939
+		  Pareops Hupe, 1953
+		  Redlichops Richter & Richter, 1941
+	  Family NEOREDLICHIIDAE Hupe, 1953
+	    Neoredlichia Saito, 1936
+		Clariondia Hupe, 1953
+		Resserops Richter & Richter, 1940
+		?Eops Richter & Richter, 1940
+	  Family SAUKIANDIDAE Hupe, 1953
+	    Saukianda Richter & Richter 1940
+		Longianda Hupe, 1953
+	  Family GIGANTOPYGIDAE Harrington, nov.
+	    Gigantopygus Hupe, 1953
+	  Family DESPUJOLSIIDAE Harrington, nov.
+	    Despujolsia Neltner & Poctey, 1949
+	  Family YINITIDAE Hupe, 1953
+	    Yinites Lu, 1946
+	  Family ABADIELLIDAE Hupe, 1953
+	    Abadiella Hupe, 1953
+		Redlichina Lermontova, 1940
+		Wutingaspis Kobayashi, 1944
+	  Family DOLEROLENIDAE Kobayashi, 1951
+	    Dolerolenus Leanza, 1949
+	  Family UNCERTAIN
+	    Bathyuriscellus Lermontova, 1951
+		Micmaccopsis Lermontova, 1940
+	Superfamily ELLIPSOCEPHALACEA Matthew, 1887
+	  Family ELLIPSOCEPHALIDAE
+	    Subfamily Ellipsocephalinae Matthew, 1887
+          Ellipsocephalus Zenker, 1833
+ 		  Alanista Hupe, 1953
+		  ?Angusteva Hupe, 1953
+		  Ellipsostrenua Kautsky, 1945
+		  Hindermeyeria Hupe, 1953
+		  Inoyellaspis Ivshin, 1953
+		  Strenuaeva Richter & Richter, 1940
+		  ?Protagraulos Matthew, 1895
+	Subfamily STRENUELLINAE Hupe, 1953
+	  Strenuella Hupe, 1953
+	  ?Luaspis Hupe, 1953
+	  Micmacca Matthew, 1895
+	  ?Pruvostinoides Hupe, 1953
+	Subfamily KINGASPIDINAE Hupe, 1953
+	  Kingaspis Kobayashi, 1935
+	Subfamily PALAEOLENINAE Hupe, 1953
+	  Palaeolenus Masuy, 1912
+	  ?Hoffetella Hupe, 1953
+	  ?Manchurocephalus Endo, 1944
+	Subfamily ANTATLASIINAE Hupe, 1953
+	  Antatlasia Hupe, 1953
+  Family PROTOLENIDAE Richter & Richter, 1948
+    Subfamily TERMIERELLINAE Hupe, 1953
+	  Termierella Hupe, 1953
+	  Bigotinops Hupe, 1953
+	  Ouijjania Hupe, 1953
+	  Paratermierella Hupe, 1953
+	  Pruvostina Hupe, 1953
+	  Pseudolenus Hupe, 1953
+	Subfamily MYOPSOLENINAE Hupe, 1953
+	  Hamatolenus Hupe, 1953
+	Subfamily PROTOLENINAE Richter & Richter, 1948
+	  Protolenus Matthew, 1892
+	  Anabaraspis Lermontova, 1951
+	  Bergeroniellus Lermontova, 1940
+	  Blayacina Cobbold, 1931
+	  ?Ferralsia Cobbold, 1935
+	  Lermontovia Suvorova, 1956
+	  Lusatiops Richter & Richter, 1941
+	  Thoralaspis Hupe, 1953
+	Subfamily Bigotininae Hupe, 1953
+	  Bigotina Cobbold, 1935
+	?Subfamily ALDONAIINAE Hupe, 1953
+	  Aldonaia Lermontova, 1940
+	Subfamily UNCERTAIN
+	  Hupeia Kobayashi, 1944
+	  Rinconia Hupe, 1953
+  ?Family YUNNANOCEPHALIDAE
+    Yunnanocephalus Kobayashi, 1936
+  Family UNCERTAIN
+    Labradoria Resser, 1936
+	Sinolenus Kobayashi, 1944 

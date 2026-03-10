@@ -16,200 +16,345 @@
       {
         "rank": "order",
         "name": "Agnostida",
-        "author": "KOBAYASHI",
+        "author": "Kobayashi",
         "year": 1935,
-        "genera_count": 79,
-        "range": "L.Cam.-U.Ord.",
         "children": [
           {
             "rank": "suborder",
             "name": "Agnostina",
-            "author": "SALTER",
-            "year": 1864,
-            "genera_count": 66,
-            "range": "L.Cam.-U.Ord.",
             "children": [
               {
                 "rank": "family",
                 "name": "Agnostidae",
-                "author": "M'COY",
+                "author": "M'Coy",
                 "year": 1849,
-                "genera_count": 6,
-                "range": "M.Cam.-L.Ord.",
                 "children": [
                   {
                     "rank": "genus",
-                    "name": "Ciavagnostus",
-                    "author": "HOWELL",
-                    "year": 1937
+                    "name": "Agnostus",
+                    "author": "Brongniart",
+                    "year": 1822
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Acmarhachis",
+                    "author": "Resser",
+                    "year": 1938
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Aspidagnostus",
+                    "author": "Whitehouse",
+                    "year": 1936
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Fallagnostus",
+                    "author": "Howell",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Homagnostus",
+                    "author": "Howell",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Neoagnostus",
+                    "author": "Kobayashi",
+                    "year": 1955
                   }
                 ]
               },
               {
                 "rank": "family",
                 "name": "Clavagnostidae",
-                "author": "HOWELL",
+                "author": "Howell",
                 "year": 1937,
-                "genera_count": 1,
-                "range": "M.Cam.-U.Cam."
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Clavagnostus",
+                    "author": "Howell",
+                    "year": 1937
+                  }
+                ]
               },
               {
                 "rank": "family",
                 "name": "Condylopygidae",
-                "author": "RAYMOND",
+                "author": "Raymond",
                 "year": 1913,
-                "genera_count": 3,
-                "range": "L.Cam.-M.Cam."
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Condylopyge",
+                    "author": "Hawle & Corda",
+                    "year": 1847
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Mallagnostus",
+                    "author": "Howell",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Pleuroctenium",
+                    "author": "Hawle & Corda",
+                    "year": 1847
+                  }
+                ]
               },
               {
                 "rank": "family",
                 "name": "Cyclopagnostidae",
-                "author": "HOWELL",
+                "author": "Howell",
                 "year": 1937,
-                "genera_count": 1,
-                "range": "M.Cam.",
-                "children": []
-              },
-              {
-                "rank": "family",
-                "name": "Diplagnostidae",
-                "author": "WHITEHOUSE",
-                "year": 1936,
-                "genera_count": 4,
-                "range": "M.Cam.",
                 "children": [
                   {
                     "rank": "genus",
                     "name": "Cyclopagnostus",
-                    "author": "HOWELL",
+                    "author": "Howell",
                     "year": 1937
-                  },
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Diplagnostidae",
+                "author": "Whitehouse",
+                "year": 1936,
+                "children": [
                   {
                     "rank": "genus",
                     "name": "Diplagnostus",
-                    "author": "JAEKEL",
+                    "author": "Jaekel",
                     "year": 1909
                   },
                   {
                     "rank": "genus",
                     "name": "Linguagnostus",
-                    "author": "KOBAYASHI",
+                    "author": "Kobayashi",
                     "year": 1939
                   },
                   {
                     "rank": "genus",
-                    "name": "Otdalagnostus",
-                    "author": "WESTERGARD",
+                    "name": "Oidalagnostus",
+                    "author": "Westergard",
                     "year": 1946
                   },
                   {
                     "rank": "genus",
                     "name": "Tomagnostus",
-                    "author": "HOWELL",
-                    "year": 1955
+                    "author": "Howell",
+                    "year": 1935
                   }
                 ]
               },
               {
                 "rank": "family",
                 "name": "Geragnostidae",
-                "author": "HOWELL",
+                "author": "Howell",
                 "year": 1935,
-                "genera_count": 6,
-                "range": "L.Ord.-U.Ord.",
                 "children": [
                   {
                     "rank": "genus",
+                    "name": "Geragnostus",
+                    "author": "Howell",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Corrugatagnostus",
+                    "author": "Kobayashi",
+                    "year": 1939
+                  },
+                  {
+                    "rank": "genus",
                     "name": "Geragnostella",
-                    "author": "Kosayasy",
+                    "author": "Kobayashi",
+                    "year": 1939
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Girvanagnostus",
+                    "author": "Kobayashi",
                     "year": 1939
                   },
                   {
                     "rank": "genus",
                     "name": "Homagnostoides",
-                    "author": "KOBAYASHI",
+                    "author": "Kobayashi",
                     "year": 1939
                   },
                   {
                     "rank": "genus",
-                    "name": "Hastagnostus",
-                    "author": "Hower",
-                    "year": 1937
+                    "name": "Trinodus",
+                    "author": "M'Coy",
+                    "year": 1846
                   }
                 ]
               },
               {
                 "rank": "family",
                 "name": "Hastagnostidae",
-                "author": "HOWELL",
+                "author": "Howell",
                 "year": 1937,
-                "genera_count": 10,
-                "range": "M.Cam.-U.Cam."
-              },
-              {
-                "rank": "family",
-                "name": "Micragnostidae",
-                "author": "HOWELL",
-                "year": 1935,
-                "genera_count": 5,
-                "range": "U.Cam.-L.Ord.",
                 "children": [
                   {
                     "rank": "genus",
+                    "name": "Hastagnostus",
+                    "author": "Howell",
+                    "year": 1937
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Culipagnostus",
+                    "author": "Rusconi",
+                    "year": 1952
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Doryagnostus",
+                    "author": "Kobayashi",
+                    "year": 1939
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Glyptagnostus",
+                    "author": "Whitehouse",
+                    "year": 1936
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Goniagnostus",
+                    "author": "Howell",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Lojypyge",
+                    "author": "Hawle & Corda",
+                    "year": 1847
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Lotagnostus",
+                    "author": "Whitehouse",
+                    "year": 1936
+                  },
+                  {
+                    "rank": "genus",
                     "name": "Ptychagnostus",
-                    "author": "JAEKEL",
+                    "author": "Jaekel",
                     "year": 1909
                   },
                   {
                     "rank": "genus",
-                    "name": "Triplagnostus",
-                    "author": "Hower",
-                    "year": 1933
+                    "name": "Trilobagnostus",
+                    "author": "Harrington",
+                    "year": 1938
                   },
                   {
                     "rank": "genus",
+                    "name": "Triplagnostus",
+                    "author": "Howell",
+                    "year": 1935
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Micragnostidae",
+                "author": "Howell",
+                "year": 1935,
+                "children": [
+                  {
+                    "rank": "genus",
                     "name": "Micragnostus",
-                    "author": "HOWELL",
+                    "author": "Howell",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Anglagnostus",
+                    "author": "Howell",
                     "year": 1935
                   },
                   {
                     "rank": "genus",
                     "name": "Hyperagnostus",
-                    "author": "KOBAYASHI",
+                    "author": "Kobayashi",
                     "year": 1955
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Rudagnostus",
+                    "author": "Lermontova",
+                    "year": 1951
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Eurudagnostus",
+                    "author": "Lermontova",
+                    "year": 1951
                   }
                 ]
               },
               {
                 "rank": "family",
                 "name": "Phalacromidae",
-                "author": "HAWLE & CORDA",
+                "author": "Hawle & Corda",
                 "year": 1847,
-                "genera_count": 8,
-                "range": "M.Cam.-L.Ord.",
                 "children": [
                   {
                     "rank": "genus",
+                    "name": "Phalacroma",
+                    "author": "Hawle & Corda",
+                    "year": 1847
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Gallagnostus",
+                    "author": "Howell",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
                     "name": "Gallagnostoides",
-                    "author": "KOBAYASHI",
+                    "author": "Kobayashi",
                     "year": 1939
                   },
                   {
                     "rank": "genus",
+                    "name": "Grandagnostus",
+                    "author": "Howell",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Leiagnostus",
+                    "author": "Jaekel",
+                    "year": 1909
+                  },
+                  {
+                    "rank": "genus",
                     "name": "Litagnostus",
-                    "author": "RASETTI",
+                    "author": "Rasetti",
                     "year": 1944
                   },
                   {
                     "rank": "genus",
                     "name": "Phalagnostus",
-                    "author": "HOWELL",
-                    "year": 1953
+                    "author": "Howell",
+                    "year": 1955
                   },
                   {
                     "rank": "genus",
                     "name": "Phoidagnostus",
-                    "author": "WHITEHOUSE",
+                    "author": "Whitehouse",
                     "year": 1936
                   }
                 ]
@@ -217,146 +362,252 @@
               {
                 "rank": "family",
                 "name": "Pseudagnostidae",
-                "author": "WHITEHOUSE",
+                "author": "Whitehouse",
                 "year": 1936,
-                "genera_count": 4,
-                "range": "U.Cam.-L.Ord.",
                 "children": [
                   {
                     "rank": "genus",
-                    "name": "Eupiethagnostus",
-                    "author": "LERMONTOVA",
-                    "year": 1940
+                    "name": "Pseudagnostus",
+                    "author": "Jaekel",
+                    "year": 1909
                   },
                   {
                     "rank": "genus",
                     "name": "Cyclagnostus",
-                    "author": "LERMONTOVA",
+                    "author": "Lermontova",
                     "year": 1940
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Machairagnostus",
+                    "author": "Harrington & Leanza",
+                    "year": 1957
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Rhaptagnostus",
+                    "author": "Whitehouse",
+                    "year": 1936
                   }
                 ]
               },
               {
                 "rank": "family",
                 "name": "Sphaeragnostidae",
-                "author": "KOBAYASHI",
+                "author": "Kobayashi",
                 "year": 1939,
-                "genera_count": 1,
-                "range": "Ord.",
                 "children": [
                   {
                     "rank": "genus",
-                    "name": "Rhaptagnostus",
-                    "author": "WHITEHOUSE",
-                    "year": 1930
-                  },
-                  {
-                    "rank": "genus",
-                    "name": "Cotalagnostus",
-                    "author": "Family SPHAERAGNOSTIDAE\nKOBAYASHI",
-                    "year": 1939
-                  },
-                  {
-                    "rank": "genus",
-                    "name": "Armagnostus",
-                    "author": "HOWELL",
-                    "year": 1937
-                  },
-                  {
-                    "rank": "genus",
-                    "name": "Ciceragnostus",
-                    "author": "KOBAYASHI",
-                    "year": 1937
-                  },
-                  {
-                    "rank": "genus",
-                    "name": "Eusgnostus",
-                    "author": "WHITEHOUSE",
+                    "name": "Sphaeragnostus",
+                    "author": "Howell & Resser in Cooper & Kindle",
                     "year": 1936
-                  },
-                  {
-                    "rank": "genus",
-                    "name": "Kormagnostus",
-                    "author": "RESseR",
-                    "year": 1935
-                  },
-                  {
-                    "rank": "genus",
-                    "name": "Quadragnostus",
-                    "author": "HOWELL",
-                    "year": 1935
-                  },
-                  {
-                    "rank": "genus",
-                    "name": "Tomagnostella",
-                    "author": "KOBAYASHI",
-                    "year": 1939
                   }
                 ]
               },
               {
                 "rank": "family",
                 "name": "Spinagnostidae",
-                "author": "HOWELL",
-                "year": 1937,
-                "genera_count": 17,
-                "range": "L.Cam.-U.Cam."
+                "author": "Howell",
+                "year": 1935,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Spinagnostus",
+                    "author": "Howell",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Acadagnostus",
+                    "author": "Kobayashi",
+                    "year": 1939
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Archaeagnostus",
+                    "author": "Kobayashi",
+                    "year": 1939
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Armagnostus",
+                    "author": "Howell",
+                    "year": 1937
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Baltagnostus",
+                    "author": "Lochman in Lochman & Duncan",
+                    "year": 1944
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Ciceragnostus",
+                    "author": "Kobayashi",
+                    "year": 1937
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Cotalagnostus",
+                    "author": "Whitehouse",
+                    "year": 1936
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Eoagnostus",
+                    "author": "Resser & Howell",
+                    "year": 1938
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Euagnostus",
+                    "author": "Whitehouse",
+                    "year": 1936
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Hypagnostus",
+                    "author": "Jaekel",
+                    "year": 1909
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Kormagnostus",
+                    "author": "Resser",
+                    "year": 1938
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Pentagnostus",
+                    "author": "Lermontova",
+                    "year": 1940
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Peronopsis",
+                    "author": "Hawle & Corda",
+                    "year": 1847
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Quadragnostus",
+                    "author": "Howell",
+                    "year": 1935
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Sulcatagnostus",
+                    "author": "Kobayashi",
+                    "year": 1937
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Tomagnostella",
+                    "author": "Kobayashi",
+                    "year": 1939
+                  }
+                ]
               }
             ]
           },
           {
             "rank": "suborder",
             "name": "Eodiscina",
-            "author": "KOBAYASHI",
+            "author": "Kobayashi",
             "year": 1939,
-            "genera_count": 13,
-            "range": "L.Cam.-M.Cam.",
             "children": [
               {
                 "rank": "family",
                 "name": "Eodiscidae",
-                "author": "RAYMOND",
+                "author": "Raymond",
                 "year": 1913,
-                "genera_count": 6,
-                "range": "L.Cam.-M.Cam."
-              },
-              {
-                "rank": "family",
-                "name": "Pagetiidae",
-                "author": "KOBAYASHI",
-                "year": 1935,
-                "genera_count": 7,
-                "range": "L.Cam.-M.Cam.",
                 "children": [
                   {
                     "rank": "genus",
+                    "name": "Eodiscus",
+                    "author": "Hartt in Walcott",
+                    "year": 1884
+                  },
+                  {
+                    "rank": "genus",
                     "name": "Calodiscus",
-                    "author": "HOWELL",
+                    "author": "Howell",
                     "year": 1935
                   },
                   {
                     "rank": "genus",
-                    "name": "Opsidiscus",
-                    "author": "Westrercarp",
+                    "name": "Dawsonia",
+                    "author": "Hartt in Dawson",
+                    "year": 1868
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Opisdiscus",
+                    "author": "Westergard",
                     "year": 1950
                   },
                   {
                     "rank": "genus",
                     "name": "Serrodiscus",
-                    "author": "RicutTer & Ricuter",
+                    "author": "Richter & Richter",
                     "year": 1941
                   },
                   {
                     "rank": "genus",
+                    "name": "Weymouthia",
+                    "author": "Raymond",
+                    "year": 1913
+                  }
+                ]
+              },
+              {
+                "rank": "family",
+                "name": "Pagetiidae",
+                "author": "Kobayashi",
+                "year": 1935,
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Pagetia",
+                    "author": "Walcott",
+                    "year": 1916
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Delgadella",
+                    "author": "Walcott",
+                    "year": 1912
+                  },
+                  {
+                    "rank": "genus",
                     "name": "Hebediscus",
-                    "author": "Wairesovse",
+                    "author": "Whitehouse",
                     "year": 1936
                   },
                   {
                     "rank": "genus",
-                    "name": "Neocobdoldia",
-                    "author": "Raseryi",
+                    "name": "Neocobboldia",
+                    "author": "Rasetti",
                     "year": 1952
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Pagetides",
+                    "author": "Rasetti",
+                    "year": 1945
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Pagetiellus",
+                    "author": "Lermontova",
+                    "year": 1940
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Triangulaspis",
+                    "author": "Lermontova",
+                    "year": 1940
                   }
                 ]
               }
@@ -367,47 +618,43 @@
       {
         "rank": "order",
         "name": "Redlichiida",
-        "author": "RICHTER",
+        "author": "Richter",
         "year": 1933,
-        "genera_count": 107,
-        "subgenera_count": 22,
-        "range": "L.Cam.-M.Cam.",
         "children": [
           {
             "rank": "suborder",
             "name": "Olenellina",
-            "author": "RESSER",
+            "author": "Resser",
             "year": 1938,
-            "genera_count": 22,
-            "subgenera_count": 3,
-            "range": "L.Cam.",
             "children": [
               {
                 "rank": "family",
                 "name": "Olenellidae",
-                "author": "WALCOTT",
-                "year": 1890,
-                "genera_count": 20,
-                "range": "L.Cam.",
+                "author": "Vogdes",
+                "year": 1893,
                 "children": [
                   {
                     "rank": "subfamily",
                     "name": "Olenellinae",
-                    "author": "WALCOTT",
-                    "year": 1890,
-                    "genera_count": 7,
-                    "range": "L.Cam.",
+                    "author": "Vogdes",
+                    "year": 1893,
                     "children": [
                       {
                         "rank": "genus",
+                        "name": "Olenellus",
+                        "author": "Billings",
+                        "year": 1861
+                      },
+                      {
+                        "rank": "genus",
                         "name": "Bristolia",
-                        "author": "Hanrincron",
+                        "author": "Harrington",
                         "year": 1956
                       },
                       {
                         "rank": "genus",
                         "name": "Fremontella",
-                        "author": "Haraiscton",
+                        "author": "Harrington",
                         "year": 1956
                       },
                       {
@@ -419,63 +666,126 @@
                       {
                         "rank": "genus",
                         "name": "Laudonia",
-                        "author": "Hageainoros",
-                        "year": 1935
+                        "author": "Harrington",
+                        "year": 1956
                       },
                       {
                         "rank": "genus",
-                        "name": "Callavia",
-                        "author": "Marruzw",
-                        "year": 1897
+                        "name": "Paedeumias",
+                        "author": "Walcott",
+                        "year": 1910
                       },
                       {
                         "rank": "genus",
-                        "name": "Judomia",
-                        "author": "Lexstontova",
-                        "year": 1951
+                        "name": "Peachella",
+                        "author": "Walcott",
+                        "year": 1910
                       }
                     ]
                   },
                   {
                     "rank": "subfamily",
                     "name": "Callaviinae",
-                    "author": "POULSEN",
-                    "year": 1927,
-                    "genera_count": 3,
-                    "range": "L.Cam."
+                    "author": "Poulsen",
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Callavia",
+                        "author": "Matthew",
+                        "year": 1897
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Judomia",
+                        "author": "Lermontova",
+                        "year": 1951
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Kjerulfia",
+                        "author": "Kjar",
+                        "year": 1917
+                      }
+                    ]
                   },
                   {
                     "rank": "subfamily",
                     "name": "Elliptocephalinae",
-                    "author": "MATTHEW",
-                    "year": 1887,
-                    "genera_count": 1,
-                    "range": "L.Cam."
+                    "author": "Hupe",
+                    "year": 1953,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Elliptocephala",
+                        "author": "Emmons",
+                        "year": 1884
+                      }
+                    ]
                   },
                   {
                     "rank": "subfamily",
                     "name": "Fallotaspidinae",
-                    "author": "HUPE",
+                    "author": "Hupe",
                     "year": 1953,
-                    "genera_count": 1,
-                    "range": "L.Cam.",
                     "children": [
                       {
                         "rank": "genus",
                         "name": "Fallotaspis",
-                        "author": "Hurft",
+                        "author": "Huep",
                         "year": 1953
-                      },
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Holmiinae",
+                    "author": "Hupe",
+                    "year": 1953,
+                    "children": [
                       {
                         "rank": "genus",
                         "name": "Holmia",
-                        "author": "MartHew",
+                        "author": "Matthew",
                         "year": 1890
                       },
                       {
                         "rank": "genus",
+                        "name": "Bondonella",
+                        "author": "Hupe",
+                        "year": 1953
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Schmidtiellus",
+                        "author": "Moberg in Moberg & Segerberg",
+                        "year": 1906
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Neltneriinae",
+                    "author": "Hupe",
+                    "year": 1953,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Neltneria",
+                        "author": "Hupe",
+                        "year": 1953
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "subfamily",
+                    "name": "Nevadiinae",
+                    "author": "Hupe",
+                    "year": 1953,
+                    "children": [
+                      {
+                        "rank": "genus",
                         "name": "Nevadia",
-                        "author": "Waccorr",
+                        "author": "Walcott",
                         "year": 1910
                       },
                       {
@@ -488,266 +798,318 @@
                   },
                   {
                     "rank": "subfamily",
-                    "name": "Holmiinae",
-                    "author": "HUPE",
-                    "year": 1953,
-                    "genera_count": 3,
-                    "range": "L.Cam."
-                  },
-                  {
-                    "rank": "subfamily",
-                    "name": "Neltneriinae",
-                    "author": "HUPE",
-                    "year": 1953,
-                    "genera_count": 1,
-                    "range": "L.Cam."
-                  },
-                  {
-                    "rank": "subfamily",
-                    "name": "Nevadiinae",
-                    "author": "HUPE",
-                    "year": 1953,
-                    "genera_count": 2,
-                    "range": "L.Cam."
-                  },
-                  {
-                    "rank": "subfamily",
                     "name": "Olenelloidinae",
-                    "author": "HUPE",
+                    "author": "Hupe",
                     "year": 1953,
-                    "genera_count": 1,
-                    "range": "L.Cam."
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Olenelloides",
+                        "author": "Peach",
+                        "year": 1894
+                      }
+                    ]
                   },
                   {
                     "rank": "subfamily",
                     "name": "Wanneriinae",
-                    "author": "HUPE",
+                    "author": "Hupe",
                     "year": 1953,
-                    "genera_count": 1,
-                    "range": "L.Cam."
-                  },
-                  {
-                    "rank": "genus",
-                    "name": "Mesamacida",
-                    "author": "Poctsen",
-                    "year": 1927
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Wanneria",
+                        "author": "Walcott",
+                        "year": 1910
+                      }
+                    ]
                   }
                 ]
               },
               {
                 "rank": "family",
                 "name": "Daguinaspididae",
-                "author": "HUPE",
+                "author": "Hupe",
                 "year": 1953,
-                "genera_count": 2,
-                "subgenera_count": 3,
-                "range": "L.Cam."
+                "children": [
+                  {
+                    "rank": "genus",
+                    "name": "Daguinaspis",
+                    "author": "Hupe & Abadie",
+                    "year": 1950
+                  },
+                  {
+                    "rank": "genus",
+                    "name": "Choubertella",
+                    "author": "Hupe",
+                    "year": 1953
+                  }
+                ]
               }
             ]
           },
           {
             "rank": "suborder",
             "name": "Redlichiina",
-            "author": "HARRINGTON",
-            "year": 1959,
-            "note": "nov.",
-            "genera_count": 83,
-            "subgenera_count": 19,
-            "range": "L.Cam.-M.Cam.",
+            "author": "Harrington",
             "children": [
               {
                 "rank": "superfamily",
                 "name": "Redlichiacea",
-                "author": "POULSEN",
+                "author": "Poulsen",
                 "year": 1927,
-                "genera_count": 25,
-                "subgenera_count": 2,
-                "range": "L.Cam.-M.Cam.",
                 "children": [
                   {
                     "rank": "family",
                     "name": "Redlichiidae",
-                    "author": "POULSEN",
+                    "author": "Poulsen",
                     "year": 1927,
-                    "genera_count": 10,
-                    "range": "L.Cam.",
                     "children": [
                       {
                         "rank": "subfamily",
                         "name": "Redlichiinae",
-                        "author": "POULSEN",
+                        "author": "Poulsen",
                         "year": 1927,
-                        "genera_count": 5,
-                        "range": "L.Cam."
+                        "children": [
+                          {
+                            "rank": "genus",
+                            "name": "Redlichia",
+                            "author": "COssmann",
+                            "year": 1902
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Latiredlichia",
+                            "author": "Hupe",
+                            "year": 1953
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Redlichaspis",
+                            "author": "Kobayashi",
+                            "year": 1935
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Bulaiaspis",
+                            "author": "Repina",
+                            "year": 1956
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Saukiandiops",
+                            "author": "Hupe",
+                            "year": 1953
+                          }
+                        ]
                       },
                       {
                         "rank": "subfamily",
                         "name": "Pararedlichiinae",
-                        "author": "HUPE",
+                        "author": "Hupe",
                         "year": 1953,
-                        "genera_count": 5,
-                        "range": "L.Cam."
+                        "children": [
+                          {
+                            "rank": "genus",
+                            "name": "Pararedlichia",
+                            "author": "Hupe",
+                            "year": 1953
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Archaeops",
+                            "author": "Hupe",
+                            "year": 1953
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Mesodema",
+                            "author": "Whitehouse",
+                            "year": 1939
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Pareops",
+                            "author": "Hupe",
+                            "year": 1953
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Redlichops",
+                            "author": "Richter & Richter",
+                            "year": 1941
+                          }
+                        ]
                       }
                     ]
                   },
                   {
                     "rank": "family",
                     "name": "Neoredlichiidae",
-                    "author": "HUPE",
+                    "author": "Hupe",
                     "year": 1953,
-                    "genera_count": 4,
-                    "subgenera_count": 2,
-                    "range": "L.Cam."
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Neoredlichia",
+                        "author": "Saito",
+                        "year": 1936
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Clariondia",
+                        "author": "Hupe",
+                        "year": 1953
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Resserops",
+                        "author": "Richter & Richter",
+                        "year": 1940
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Eops",
+                        "author": "Richter & Richter",
+                        "year": 1940
+                      }
+                    ]
                   },
                   {
                     "rank": "family",
                     "name": "Saukiandidae",
-                    "author": "HUPE",
+                    "author": "Hupe",
                     "year": 1953,
-                    "genera_count": 2,
-                    "range": "L.Cam.",
                     "children": [
                       {
                         "rank": "genus",
-                        "name": "Resserops",
-                        "author": "RicntTes & Ricurer",
-                        "year": 1940
-                      },
-                      {
-                        "rank": "genus",
                         "name": "Saukianda",
-                        "author": "Ricuter & Ricuter",
-                        "year": 1940
+                        "author": "Richter & Richter 1940"
                       },
                       {
                         "rank": "genus",
-                        "name": "Gigantopygus",
+                        "name": "Longianda",
                         "author": "Hupe",
-                        "year": 1955
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Despujolsia",
-                        "author": "Newtner & Poctey",
-                        "year": 1949
+                        "year": 1953
                       }
                     ]
                   },
                   {
                     "rank": "family",
                     "name": "Gigantopygidae",
-                    "author": "HARRINGTON",
-                    "year": 1959,
-                    "genera_count": 1,
-                    "range": "L.Cam."
+                    "author": "Harrington",
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Gigantopygus",
+                        "author": "Hupe",
+                        "year": 1953
+                      }
+                    ]
                   },
                   {
                     "rank": "family",
                     "name": "Despujolsiidae",
-                    "author": "HUPE",
-                    "year": 1953,
-                    "genera_count": 1,
-                    "range": "L.Cam."
+                    "author": "Harrington",
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Despujolsia",
+                        "author": "Neltner & Poctey",
+                        "year": 1949
+                      }
+                    ]
                   },
                   {
                     "rank": "family",
                     "name": "Yinitidae",
-                    "author": "HUPE",
+                    "author": "Hupe",
                     "year": 1953,
-                    "genera_count": 1,
-                    "range": "M.Cam."
-                  },
-                  {
-                    "rank": "family",
-                    "name": "Abadiellidae",
-                    "author": "HUPE",
-                    "year": 1953,
-                    "genera_count": 3,
-                    "range": "L.Cam.-M.Cam."
-                  },
-                  {
-                    "rank": "family",
-                    "name": "Dolerolenidae",
-                    "author": "HARRINGTON",
-                    "year": 1959,
-                    "genera_count": 1,
-                    "range": "Up.L.Cam.",
                     "children": [
                       {
                         "rank": "genus",
                         "name": "Yinites",
                         "author": "Lu",
                         "year": 1946
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Abadiella",
-                        "author": "Hurt",
-                        "year": 1953
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Rediichina",
-                        "author": "LERMONTOVA",
-                        "year": 1940
                       }
                     ]
                   },
                   {
                     "rank": "family",
-                    "name": "Family Uncertain (Redlichiacea)",
-                    "genera_count": 2,
-                    "range": "L.Cam."
+                    "name": "Abadiellidae",
+                    "author": "Hupe",
+                    "year": 1953,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Abadiella",
+                        "author": "Hupe",
+                        "year": 1953
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Redlichina",
+                        "author": "Lermontova",
+                        "year": 1940
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Wutingaspis",
+                        "author": "Kobayashi",
+                        "year": 1944
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "family",
+                    "name": "Dolerolenidae",
+                    "author": "Kobayashi",
+                    "year": 1951,
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Dolerolenus",
+                        "author": "Leanza",
+                        "year": 1949
+                      }
+                    ]
+                  },
+                  {
+                    "rank": "family",
+                    "name": "Uncertain",
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Bathyuriscellus",
+                        "author": "Lermontova",
+                        "year": 1951
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Micmaccopsis",
+                        "author": "Lermontova",
+                        "year": 1940
+                      }
+                    ]
                   }
                 ]
               },
               {
                 "rank": "superfamily",
                 "name": "Ellipsocephalacea",
-                "author": "MATTHEW",
+                "author": "Matthew",
                 "year": 1887,
-                "genera_count": 42,
-                "subgenera_count": 17,
-                "range": "L.Cam.-M.Cam.",
                 "children": [
                   {
                     "rank": "family",
                     "name": "Ellipsocephalidae",
-                    "author": "MATTHEW",
-                    "year": 1887,
-                    "genera_count": 18,
-                    "subgenera_count": 9,
-                    "range": "L.Cam.-M.Cam.",
                     "children": [
                       {
                         "rank": "subfamily",
                         "name": "Ellipsocephalinae",
-                        "author": "MATTHEW",
+                        "author": "Matthew",
                         "year": 1887,
-                        "genera_count": 8,
-                        "range": "L.Cam.-M.Cam."
-                      },
-                      {
-                        "rank": "subfamily",
-                        "name": "Strenuellinae",
-                        "author": "HUPE",
-                        "year": 1953,
-                        "genera_count": 4,
-                        "subgenera_count": 7,
-                        "range": "L.Cam.-M.Cam.",
                         "children": [
-                          {
-                            "rank": "genus",
-                            "name": "Dolerolenus",
-                            "author": "Ceanza",
-                            "year": 1949
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Micmaccopsis",
-                            "author": "Lerstontova",
-                            "year": 1940
-                          },
                           {
                             "rank": "genus",
                             "name": "Ellipsocephalus",
@@ -756,78 +1118,131 @@
                           },
                           {
                             "rank": "genus",
-                            "name": "Alanisia",
-                            "author": "Hours",
+                            "name": "Alanista",
+                            "author": "Hupe",
                             "year": 1953
                           },
                           {
                             "rank": "genus",
-                            "name": "Filipsostrenua",
+                            "name": "Angusteva",
+                            "author": "Hupe",
+                            "year": 1953
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Ellipsostrenua",
                             "author": "Kautsky",
                             "year": 1945
                           },
                           {
                             "rank": "genus",
+                            "name": "Hindermeyeria",
+                            "author": "Hupe",
+                            "year": 1953
+                          },
+                          {
+                            "rank": "genus",
                             "name": "Inoyellaspis",
-                            "author": "IvsHin",
+                            "author": "Ivshin",
                             "year": 1953
                           },
                           {
                             "rank": "genus",
                             "name": "Strenuaeva",
-                            "author": "Ricnrer & Ricnrer",
+                            "author": "Richter & Richter",
                             "year": 1940
                           },
                           {
                             "rank": "genus",
-                            "name": "Strenuclla",
-                            "author": "Matrruew",
-                            "year": 1887
+                            "name": "Protagraulos",
+                            "author": "Matthew",
+                            "year": 1895
+                          }
+                        ]
+                      },
+                      {
+                        "rank": "subfamily",
+                        "name": "Strenuellinae",
+                        "author": "Hupe",
+                        "year": 1953,
+                        "children": [
+                          {
+                            "rank": "genus",
+                            "name": "Strenuella",
+                            "author": "Hupe",
+                            "year": 1953
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Luaspis",
+                            "author": "Hupe",
+                            "year": 1953
                           },
                           {
                             "rank": "genus",
                             "name": "Micmacca",
-                            "author": "MatrHew",
+                            "author": "Matthew",
                             "year": 1895
                           },
                           {
                             "rank": "genus",
-                            "name": "Kingaspis",
-                            "author": "KosavasHt",
-                            "year": 1935
+                            "name": "Pruvostinoides",
+                            "author": "Hupe",
+                            "year": 1953
                           }
                         ]
                       },
                       {
                         "rank": "subfamily",
                         "name": "Kingaspidinae",
-                        "author": "HUPE",
+                        "author": "Hupe",
                         "year": 1953,
-                        "genera_count": 2,
-                        "subgenera_count": 2,
-                        "range": "L.Cam."
+                        "children": [
+                          {
+                            "rank": "genus",
+                            "name": "Kingaspis",
+                            "author": "Kobayashi",
+                            "year": 1935
+                          }
+                        ]
                       },
                       {
                         "rank": "subfamily",
                         "name": "Palaeoleninae",
-                        "author": "HUPE",
+                        "author": "Hupe",
                         "year": 1953,
-                        "genera_count": 3,
-                        "range": "L.Cam."
+                        "children": [
+                          {
+                            "rank": "genus",
+                            "name": "Palaeolenus",
+                            "author": "Masuy",
+                            "year": 1912
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Hoffetella",
+                            "author": "Hupe",
+                            "year": 1953
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Manchurocephalus",
+                            "author": "Endo",
+                            "year": 1944
+                          }
+                        ]
                       },
                       {
                         "rank": "subfamily",
                         "name": "Antatlasiinae",
-                        "author": "HUPE",
+                        "author": "Hupe",
                         "year": 1953,
-                        "genera_count": 1,
-                        "range": "L.Cam.",
                         "children": [
                           {
                             "rank": "genus",
-                            "name": "Palacolenus",
-                            "author": "Mansuy",
-                            "year": 1912
+                            "name": "Antatlasia",
+                            "author": "Hupe",
+                            "year": 1953
                           }
                         ]
                       }
@@ -836,67 +1251,83 @@
                   {
                     "rank": "family",
                     "name": "Protolenidae",
-                    "author": "RICHTER & RICHTER",
+                    "author": "Richter & Richter",
                     "year": 1948,
-                    "genera_count": 21,
-                    "subgenera_count": 8,
-                    "range": "L.Cam.",
                     "children": [
                       {
                         "rank": "subfamily",
                         "name": "Termierellinae",
-                        "author": "HUPE",
+                        "author": "Hupe",
                         "year": 1953,
-                        "genera_count": 6,
-                        "subgenera_count": 3,
-                        "range": "L.Cam.",
                         "children": [
                           {
                             "rank": "genus",
-                            "name": "Quijjania",
-                            "author": "Huet",
-                            "year": 1953
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Paratermierella",
-                            "author": "Hert",
-                            "year": 1953
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Pruvostina",
-                            "author": "Here",
-                            "year": 1953
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Pseudofenus",
+                            "name": "Termierella",
                             "author": "Hupe",
                             "year": 1953
                           },
                           {
                             "rank": "genus",
-                            "name": "Myopsolenus",
-                            "author": "Hurt",
+                            "name": "Bigotinops",
+                            "author": "Hupe",
                             "year": 1953
                           },
+                          {
+                            "rank": "genus",
+                            "name": "Ouijjania",
+                            "author": "Hupe",
+                            "year": 1953
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Paratermierella",
+                            "author": "Hupe",
+                            "year": 1953
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Pruvostina",
+                            "author": "Hupe",
+                            "year": 1953
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Pseudolenus",
+                            "author": "Hupe",
+                            "year": 1953
+                          }
+                        ]
+                      },
+                      {
+                        "rank": "subfamily",
+                        "name": "Myopsoleninae",
+                        "author": "Hupe",
+                        "year": 1953,
+                        "children": [
                           {
                             "rank": "genus",
                             "name": "Hamatolenus",
-                            "author": "Here",
+                            "author": "Hupe",
                             "year": 1953
-                          },
+                          }
+                        ]
+                      },
+                      {
+                        "rank": "subfamily",
+                        "name": "Protoleninae",
+                        "author": "Richter & Richter",
+                        "year": 1948,
+                        "children": [
                           {
                             "rank": "genus",
                             "name": "Protolenus",
-                            "author": "Matruew",
+                            "author": "Matthew",
                             "year": 1892
                           },
                           {
                             "rank": "genus",
                             "name": "Anabaraspis",
-                            "author": "Leamrontova",
+                            "author": "Lermontova",
                             "year": 1951
                           },
                           {
@@ -908,290 +1339,111 @@
                           {
                             "rank": "genus",
                             "name": "Blayacina",
-                            "author": "Copsoup",
+                            "author": "Cobbold",
                             "year": 1931
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Ferralsia",
+                            "author": "Cobbold",
+                            "year": 1935
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Lermontovia",
+                            "author": "Suvorova",
+                            "year": 1956
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Lusatiops",
+                            "author": "Richter & Richter",
+                            "year": 1941
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Thoralaspis",
+                            "author": "Hupe",
+                            "year": 1953
                           }
                         ]
-                      },
-                      {
-                        "rank": "subfamily",
-                        "name": "Myopsoleninae",
-                        "author": "HUPE",
-                        "year": 1953,
-                        "genera_count": 3,
-                        "range": "L.Cam."
-                      },
-                      {
-                        "rank": "subfamily",
-                        "name": "Protoleninae",
-                        "author": "RICHTER & RICHTER",
-                        "year": 1948,
-                        "genera_count": 8,
-                        "subgenera_count": 5,
-                        "range": "L.Cam."
                       },
                       {
                         "rank": "subfamily",
                         "name": "Bigotininae",
-                        "author": "HUPE",
+                        "author": "Hupe",
                         "year": 1953,
-                        "genera_count": 1,
-                        "range": "L.Cam."
-                      },
-                      {
-                        "rank": "subfamily",
-                        "name": "?Aldonaiinae",
-                        "author": "HUPE",
-                        "year": 1953,
-                        "genera_count": 1,
-                        "range": "L.Cam."
-                      },
-                      {
-                        "rank": "subfamily",
-                        "name": "Subfamily Uncertain (Protolenidae)",
-                        "genera_count": 2,
-                        "range": "L.Cam."
-                      }
-                    ]
-                  },
-                  {
-                    "rank": "family",
-                    "name": "?Yunnanocephalidae",
-                    "author": "HUPE",
-                    "year": 1953,
-                    "genera_count": 1,
-                    "range": "L.Cam.",
-                    "children": [
-                      {
-                        "rank": "genus",
-                        "name": "Lermontovia",
-                        "author": "Suvorova",
-                        "year": 1956
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Lusatiops",
-                        "author": "Richter & Ricuter",
-                        "year": 1941
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Thoralaspis",
-                        "author": "Hurt",
-                        "year": 1953
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Bigotina",
-                        "author": "Cossoip",
-                        "year": 1935
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Aldonaia",
-                        "author": "Lermontova",
-                        "year": 1940
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Yunnanocephalus",
-                        "author": "Kosayasui",
-                        "year": 1936
-                      },
-                      {
-                        "rank": "genus",
-                        "name": "Sinolenus",
-                        "author": "KoevayasHi",
-                        "year": 1944
-                      }
-                    ]
-                  },
-                  {
-                    "rank": "family",
-                    "name": "Family Uncertain (Ellipsocephalacea)",
-                    "genera_count": 2,
-                    "range": "L.Cam."
-                  }
-                ]
-              },
-              {
-                "rank": "superfamily",
-                "name": "Paradoxidacea",
-                "author": "HAWLE & CORDA",
-                "year": 1847,
-                "genera_count": 16,
-                "range": "Up.L.Cam.-M.Cam.",
-                "children": [
-                  {
-                    "rank": "family",
-                    "name": "Paradoxididae",
-                    "author": "HAWLE & CORDA",
-                    "year": 1847,
-                    "genera_count": 15,
-                    "range": "Up.L.Cam.-M.Cam.",
-                    "children": [
-                      {
-                        "rank": "subfamily",
-                        "name": "Paradoxidinae",
-                        "author": "HAWLE & CORDA",
-                        "year": 1847,
-                        "genera_count": 5,
-                        "range": "M.Cam."
-                      },
-                      {
-                        "rank": "subfamily",
-                        "name": "Centropleurinae",
-                        "author": "ANGELIN",
-                        "year": 1854,
-                        "genera_count": 3,
-                        "range": "M.Cam.",
                         "children": [
                           {
                             "rank": "genus",
-                            "name": "Eccaparadoxides",
-                            "author": "Snayor",
-                            "year": 1957
+                            "name": "Bigotina",
+                            "author": "Cobbold",
+                            "year": 1935
                           },
                           {
                             "rank": "genus",
-                            "name": "Acadoparadoxides",
-                            "author": "Swayor",
-                            "year": 1957
+                            "name": "Subfamily",
+                            "author": "ALDONAIINAE Hupe",
+                            "year": 1953
                           },
                           {
                             "rank": "genus",
-                            "name": "Luhops",
-                            "author": "Sxayorn",
-                            "year": 1957
-                          }
-                        ]
-                      },
-                      {
-                        "rank": "subfamily",
-                        "name": "Metadoxidinae",
-                        "author": "HUPE",
-                        "year": 1953,
-                        "genera_count": 3,
-                        "range": "Up.L.Cam."
-                      },
-                      {
-                        "rank": "subfamily",
-                        "name": "Xystridurinae",
-                        "author": "WHITEHOUSE",
-                        "year": 1939,
-                        "genera_count": 2,
-                        "range": "Up.L.Cam.-M.Cam.",
-                        "children": [
-                          {
-                            "rank": "genus",
-                            "name": "Centropleura",
-                            "author": "AnceLix",
-                            "year": 1854
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Anopolenus",
-                            "author": "Sarrer",
-                            "year": 1864
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Clarella",
-                            "author": "Howexrr",
-                            "year": 1933
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Anadoxides",
-                            "author": "MattHew",
-                            "year": 1899
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Catadoxides",
-                            "author": "Marruew",
-                            "year": 1899
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Xystridura",
-                            "author": "Wutrenouse",
-                            "year": 1936
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Subfamuly",
-                            "author": "UNCERTAIN\nSchagonaria Poreragzva",
-                            "year": 1956
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Schistocephalus",
-                            "author": "CrernysuHeva",
-                            "year": 1956
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Hicksia",
-                            "author": "Detcapo",
-                            "year": 1904
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Bathynotus",
-                            "author": "Hari",
-                            "year": 1860
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Bathyonotus",
-                            "author": "Bicssy",
-                            "year": 1868
-                          },
-                          {
-                            "rank": "genus",
-                            "name": "Bathynotellus",
-                            "author": "Lenmontova",
+                            "name": "Aldonaia",
+                            "author": "Lermontova",
                             "year": 1940
                           }
                         ]
                       },
                       {
                         "rank": "subfamily",
-                        "name": "Subfamily Uncertain (Paradoxididae)",
-                        "genera_count": 2,
-                        "range": "M.Cam."
+                        "name": "Uncertain",
+                        "children": [
+                          {
+                            "rank": "genus",
+                            "name": "Hupeia",
+                            "author": "Kobayashi",
+                            "year": 1944
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Rinconia",
+                            "author": "Hupe",
+                            "year": 1953
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Family",
+                            "author": "YUNNANOCEPHALIDAE"
+                          },
+                          {
+                            "rank": "genus",
+                            "name": "Yunnanocephalus",
+                            "author": "Kobayashi",
+                            "year": 1936
+                          }
+                        ]
                       }
                     ]
                   },
                   {
                     "rank": "family",
-                    "name": "Hicksiidae",
-                    "author": "HUPE",
-                    "year": 1953,
-                    "genera_count": 1,
-                    "range": "L.Cam."
+                    "name": "Uncertain",
+                    "children": [
+                      {
+                        "rank": "genus",
+                        "name": "Labradoria",
+                        "author": "Resser",
+                        "year": 1936
+                      },
+                      {
+                        "rank": "genus",
+                        "name": "Sinolenus",
+                        "author": "Kobayashi",
+                        "year": 1944
+                      }
+                    ]
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "rank": "suborder",
-            "name": "Bathynotina",
-            "author": "LOCHMAN-BALK",
-            "year": 1959,
-            "note": "nov.",
-            "genera_count": 2,
-            "range": "Up.L.Cam.-Low.M.Cam.",
-            "children": [
-              {
-                "rank": "family",
-                "name": "Bathynotidae",
-                "author": "LOCHMAN-BALK",
-                "year": 1959,
-                "genera_count": 2,
-                "range": "Up.L.Cam.-Low.M.Cam."
               }
             ]
           }
@@ -2133,7 +2385,7 @@
                   },
                   {
                     "rank": "family",
-                    "name": "?Shumardiidae",
+                    "name": "?shumardiidae",
                     "author": "LAKE",
                     "year": 1907,
                     "genera_count": 7,
@@ -5255,7 +5507,7 @@
                       },
                       {
                         "rank": "subfamily",
-                        "name": "?Theamataspdinae",
+                        "name": "?theamataspdinae",
                         "author": "HUPE",
                         "year": 1953,
                         "genera_count": 1,
@@ -6773,7 +7025,7 @@
                   },
                   {
                     "rank": "subfamily",
-                    "name": "?Heliomerinae",
+                    "name": "?heliomerinae",
                     "author": "WEBER",
                     "year": 1948,
                     "genera_count": 2,

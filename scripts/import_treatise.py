@@ -23,11 +23,13 @@ DATA_DIR = ROOT / "data"
 CH4_JSON = DATA_DIR / "treatise_ch4_taxonomy.json"
 CH5_JSON = DATA_DIR / "treatise_ch5_taxonomy.json"
 
-# Well-known taxon IDs
+# Well-known taxon IDs (stable)
 TRILOBITA_ID = 1
 EODISCIDA_ID = 2
-EODISCINA_ID = 5353
-AGNOSTIDA_ID = 5341
+
+# These IDs vary by build — resolved dynamically in main()
+EODISCINA_ID = None
+AGNOSTIDA_ID = None
 
 
 # ---------------------------------------------------------------------------
@@ -514,6 +516,21 @@ def main():
 
     print(f"=== P78: Treatise (2004) Import ===\n")
     print(f"  DB: {db_path}")
+
+    # Resolve build-variable IDs dynamically
+    global AGNOSTIDA_ID, EODISCINA_ID
+
+    def _resolve_id(name, rank):
+        row = cur.execute(
+            "SELECT id FROM taxon WHERE name=? AND rank=?", (name, rank)
+        ).fetchone()
+        if not row:
+            raise RuntimeError(f"Taxon not found: {name} ({rank})")
+        return row[0]
+
+    AGNOSTIDA_ID = _resolve_id("Agnostida", "Order")
+    EODISCINA_ID = _resolve_id("Eodiscina", "Suborder")
+    print(f"  Agnostida id={AGNOSTIDA_ID}, Eodiscina id={EODISCINA_ID}")
 
     # 1. Insert references
     print("\n1. Inserting Treatise references...")
