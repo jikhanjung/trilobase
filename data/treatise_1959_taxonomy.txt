@@ -221,3 +221,1099 @@ Order REDLICHIIDA Richter, 1933
   Family UNCERTAIN
     Labradoria Resser, 1936
 	Sinolenus Kobayashi, 1944 
+  Superfamily PARADOXIDACEA Hawle & Corda, 1847
+    Family PARADOXIDIDAE Hawle & Corda, 1847
+      Subfamily PARADOXIDINAE Hawle & Corda, 1847
+	    Paradoxides Brongniart, 1822
+		Eccaparadoxides Snajdr, 1957
+		Acadoparadoxides Snajdr, 1957
+		Luhops Snajdr, 1957
+		?Vinicella Snajdr, 1957
+	  Subfamily CENTROPLEURINAE Angelin, 1854
+	    Centropleura Angelin, 1854
+		Anopolenus Salter, 1864
+		Clarella Howell, 1933
+	  Subfamily METADOXIDINAE Whitehouse, 1939
+	    Metadoxides Bornemann, 1891
+		Anadoxides Matthew, 1899
+		Catadoxides Matthew, 1899
+	  Subfamily XYSTRIDURINAE Whitehouse, 1939
+	    Xystridura Whitehouse, 1936
+		?Gigoutella Hupe, 1953
+	  Subfamily UNCERTAIN
+	    Schagonaria Poletaeve, 1956
+		Schistocephalus Chernysheva, 1956
+	Family HICKSIIDAE Hupe, 1953
+	  Hicksia Delgado, 1904
+Suborder BATHYNOTINA Lochman-Balk, nov.
+  Family BATHYNOTIDAE Hupe, 1953
+    Bathynotus Hall, 1860
+	Bathynotellus Lermontova, 1940
+Order CORYNEXOCHIDA Kobayashi, 1935
+  Family DORYPYGIDAE Kobayashi, 1935
+    Dorypyge Dames, 1883
+	Basocephalus Ivshin, 1953
+	Bonnaria Lochman, 1956
+	Bonnia Walcott, 1916
+	Bonniella Resser, 1937
+	Bonniospis Poulsen, 1946
+	Dorypygina Lermontova, 1940
+	?Erbiopsis Lermontova, 1940
+	Fordaspis Lochman, 1956
+	Holteria Walcott, 1924
+	Kootenia Walcott, 1888
+	Notasaphus Gregory, 1903
+	?Paraolenoides Ivshin, 1953
+	Olenoides Meek, 1877
+	?Strettonia Cobbold, 1931
+	?Tolanaspis Ivshin, 1953
+	Prokootenia Lermontova, 1940
+	?Tabatopygellina Sivov, 1955
+	?Kooteniellina Sivov, 1955
+	?Babakovia Sivov, 1955
+  Family OGYGOPSIDAE Rasetti, 1951
+    Ogygopsis Walcott, 1889
+  Family ORYCTOCEPHALIDAE Beecher, 1897
+    Oryctocephalus Walcott, 1886
+	?Cheiruroides Kobayashi, 1935
+	Lancastria Kobayashi, 1935
+	Oryctocara Walcott, 1908
+	Oryctocephalites Resser, 1939
+	Oryctocephalops Lermontova, 1940
+	Tonkinella Mansuy, 1916
+  Family DOLICHOMETOPIDAE Walcott, 1916
+    Dolichometopus Angelin, 1854
+    Amphoton Lorenz, 1906
+	Anoria Walcott, 1924
+	Asperocare V. Poulsen, 1958
+	Athabaskia Raymond, 1928
+	Athabaskiella Kobayashi, 1942
+	Bathyuriscidella Rasetti, 1948
+	Bathyuriscus Meek, 1872
+	Chilometopus Rusconi, 1952
+	Chilonorria Rusconi, 1952
+	Clavaspidella Poulsen, 1927
+	Corynexochides Rasetti, 1948
+	Dolichometopsis Poulsen, 1927
+	Glossopleura Poulsen, 1927
+	Hemirhodon Raymond, 1937
+	Klotziella Raymond, 1928
+	Mendospidella Rusconi, 1952
+	Neochilonorria Rusconi, 1953
+	Orria Walcott, 1916
+	Orriella Rasetti, 1948
+	Parapoliella Chernysheva, 1956
+	Parkaspis Rasetti, 1951
+	Poliella Walcott, 1916
+	Poliellaspis Lermontova, 1940
+	Poliellina Poletaeva, 1936
+	Polypleuraspis Poulsen, 1927
+	Prosymphysurus Poulsen, 1927
+	Ptarmigania Raymond, 1928
+	Ptarmiganoides Rasetti, 1951
+	Wenkchemnia Rasetti, 1951
+  Family CORYNEXOCHIDAE Angelin, 1854
+    Subfamily CORYNEXOCHINAE Angelin, 1854
+	  Corynexochus Angelin, 1854
+	  Bonnaspis Resser, 1936
+	  Corynexochina Lermontova, 1940
+	Subfamily ACONTHEINAE Westergard, 1950
+	  Acontheus Angelin, 1851
+  Family Zacanthoididae Swinnerton, 1915
+    Zacanthoides Walcott, 1888
+	Albertella Walcott, 1908
+	Fieldaspis Rasetti, 1951
+	Mexicaspis Lochman, 1948
+	Prozacanthoides Resser, 1937
+	Stephenaspis Rasetti, 1951
+	Vanuxemella Walcott, 1916
+	Zacanthopsis Resser, 1938
+  Family DINESIDAE Lermontova, 1940
+    Dinesus Etheridge, Jr., 1896
+	Erbia Lermontova, 1940
+	Proerbia Lermontova, 1940
+	Tollaspis Kobayashi, 1943
+Order PTYCHOPARIIDA Swinnerton, 1915
+  Suborder PTYCHOPARIINA Richter, 1933
+    Superfamily PTYCHOPARIACEA Matthew, 1887
+	  Family PTYCHOPARIIDAE Matthew, 1887
+	    Subfamily PTYCHOPARIINAE Matthew, 1887
+		  Ptychoparia Hawle & Corda, 1847
+		  Braintreella Wheeler, 1942
+		  Caborcella Lochman, 1948
+		  Drabia Wilson, 1951
+		  Lyriaspis Whitehouse, 1939
+		  Ptychoparella Poulsen, 1927
+		  Ptychoparoides Ruzicka, 1939
+		  Yohoaspis Rasetti, 1951
+		  Yuknessaspis Rasetti, 1951
+		  ?Agraulopsis Ruzicka, 1940
+		Subfamily PERIOMMELLINAE Rasetti, 1955
+		  Periommella Resseti, 1938
+		Subfamily EULOMINAE Kobayashi, 1955
+		  Euloma Angelin, 1854
+		  Pareuloma Rasetti, 1954
+		Subfamily NASSOVIINAE Howell, 1937
+		  Nassovia Howell, 1937
+		  Brunswickia Howell, 1937
+		  Champlainia Howell, 1937
+		  Vermontella Howell, 1937
+		Subfamily ANTAGMINAE Hupe, 1953
+		  Antagmus Resser, 1936
+		  Austinvillia Resser, 1938
+		  Bicella Rasetti, 1955
+		  Crassifimbra Lochman, 1947
+		  Eoptychoparia Rasetti, 1955
+		  Luxella Rasetti, 1955
+		  Onchocephalus Resser, 1937
+		  Periomma Resser, 1937
+		  Piaziella Lochman, 1947
+		  Poulsenia Resser, 1936
+		  Proliostracus Poulsen, 1932
+		  Sombrerella Lochman, 1948
+		  Syspacephalus Resser, 1936
+		Subfamily CONOKEPHALININAE Hupe, 1953
+		  Conokephalina Brogger, 1886
+		  Lobocephalina Ruzicka, 1940
+		  Schoriella Sivov, 1955
+	  Family ALOKISTOCARIDAE Resser, 1939
+	    Alokistocare Lorenz, 1906
+		Alokistocarella Resser, 1938
+		Amecephalina Poulsen, 1927
+		Annamitia Mansuy, 1916
+		Arellanella Lochman, 1948
+		Bythicheilus Resser, 1939
+		Chancia Walcott, 1924
+		Chelidonocephalus King, 1937
+		Dunderbergia Walcott, 1924
+		Ehmania Resser, 1935
+		Ehmaniella Resser, 1937
+		Elrathia Walcott, 1924
+		Elrathiella Poulsen, 1927
+		Elrathina Resser, 1937
+		Inglefieldia Poulsen, 1927
+		Ithyektyphus Shaw, 1956
+		Kistocare Lochman, 1948
+		Kochiella Poulsen, 1927
+		Kochina Resser, 1935
+		?Kounamkites Poletaeva & Chernysheva, 1956
+		Kujandaspis Ivshin, 1956
+		Megadunderbergia Kobayashi, 1938
+		Mexicella Lochman, 1948
+		Orlovia Walcott & Resser, 1925
+		Pachyaspis Resser, 1939
+		Parehmania Deiss, 1939
+		Perioura Resser, 1938
+		Proveedoria Lochman, 1948
+		Ptychoparopsis Hupe, 1953
+		Trachycheilus Resser, 1945
+    Superfamily CONOCORYPHACEA Angelin, 1854
+	  Family CONOCORYPHIDAE Angelin, 1854
+	    Conocoryphe Hawle & Corda, 1847
+		Atops Emmons, 1844
+		Bailiaspis Resser, 1936
+		Bailiella Matthew, 1885
+		Cainatops Matthew, 1899
+		Couloumania Thoral, 1946
+		Ctenocephalus Hawle & Corda, 1847
+		Dasometopus Resser, 1936
+		Elyx Angelin, 1854
+		Hartshillia Illing, 1916
+		?Hartshillina Lake, 1940
+		Holocephalina Salter, 1864
+		?Hospes Stubblefield, in Stubblefield & Bulman, 1927
+		Meneviella Stubblefield, 1951
+		Parabailiella Thoral, 1946
+		Pseudatops Lake, 1940
+	  ?Family Shumardiidae Lake, 1907
+	    Shumardia Billings, 1862
+		Acanthopleurella Groom, 1902
+		Eoshumardia Hupe, 1953
+		Idiomesus Raymond, 1924
+		?Lunacrania Kobayashi, 1955
+		Koldinioidia Kobayashi, 1930
+		Shumardops Hupe, 1953
+	Superfamily EMMRICHELLACEA Kobayashi, 1935
+	  Family EMMRICHELLIDAE Kobayashi, 1935
+	    Subfamily EMMRICHELLINAE Kobayashi, 1935
+		  Emmrichella Walcott, 1911
+		  Eurostina Whitehouse, 1939
+		  Inouyia Walcott, 1911
+		  Lorenzella Kobayashi, 1935
+		  Metabowmania Kobayashi, 1955
+		  Probowmania Kobayashi, 1935
+		  Protemnites Whitehouse, 1939
+		  Utia Walcott, 1924
+		  ?Inouyops Resser, 1942
+	    Subfamily CHANSHANIINAE Kobayashi, 1935
+		  Changshania Sun, 1923
+		  Dorypygella Walcott, 1905
+		  Shangtungia Walcott, 1905
+		  Teinistion Monke, 1903
+	  Family LIOSTRACINIDAE Raymond, 1937
+	    Liostracina Monke, 1903
+		Liostracinoides Raymond, 1937
+	Superfamily CREPICEPHALACEA Kobayashi, 1935
+	  Family CREPICEPHALIDAE Kobayashi, 1935
+	    Crepicephalus Owen, 1852
+		Bonneterrina Lochman, 1936
+		Crepicephalina Resser & Endo, in Kobayashi, 1935
+		Kochaspis Resser, 1935
+		Uncaspis Kobayashi, 1935
+	  Family TRICREPICEPHALIDAE Palmer, 1954
+	    Tricrepicephalus Kobayashi, 1935
+		Meteoraspis Resser, 1935
+	Superfamily NEPEACEA Whitehouse, 1939
+	  Family NEPEIDAE Whitehouse, 1939
+	    Nepea Whitehouse, 1939
+	Superfamily DIKELOCEPHALACEA Miller, 1889
+	  Family IDAHOIIDAE Lochman, 1956
+	    Idahoia Walcott, 1924
+		Bellaspidella Rasetti, 1945
+		Comanchia Frederickson, 1950
+		Pseudosaratogia Wilson, 1951
+		Saratogia Walcott, 1916
+		Wilbernia Walcott, 1924
+		Meeria Frederickson, 1949
+	  Family DIKELOCEPHALIDAE Miller, 1889
+	    Dikelocephalus Owen, 1852
+		Briscoia Walcott, 1924
+		Elkia Walcott, 1924
+		Osceolia Walcott, 1914
+		Walcottaspis Ulrich & Resser, 1930
+	  Family PTEROCEPHALIIDAE Kobayashi, 1935
+	    Pterocephalia F. Roemer, 1852
+		Aphelaspis Resser, 1935
+		Blandicephalus Palmer, 1954
+		Camaraspis Ulrich & Resser, 1924
+		Camaraspoides Frederickson, 1949
+		Dikelocephalites Sun, 1935
+		Dytremacephalus Palmer, 1954
+		Eugonocare Whitehouse, 1939
+		?Iranella Hupe, 1953
+		Kazelia Walcott & Resser, 1924
+		Labiostria Palmer, 1954
+		Litocephalus Resser, 1937
+		Maladioidella Endo, 1937
+		Oleniella Ivshin, 1956
+		Pedinocephalus Ivshin, 1956
+		Pterocephalops Rasetti, 1944
+	  Family HOUSIIDAE Hupe, 1953
+	    Housia Walcott, 1916
+	  Family ANDRARINIDAE Raymond, 1937
+	    Agaso Cobbold & Pocock, 1934
+		Andrarina Raymond, 1937
+		Groenwallia Kobayashi, 1935
+		Holasaphus Matthew, 1895
+		Liosolenopleura Thoral, 1948
+	Superfamily OLENACEA Burmeister, 1843
+	  Family OLENIDAE Burmeister, 1843
+	    Subfamily OLENINAE Burmeister, 1843
+		  Olenus Dalman, 1827
+		  Highgatella Shaw, 1955
+		  Parabolina Salter, 1849
+		  Parabolinites Henningsmoen, 1957
+		  ?Paraolenus Lermontova, 1951
+		  ?Plesioparabolina Harrington & Leanza, 1942
+		Subfamily LEPTOPLASTINAE Angelin, 1854
+		  Leptoplastus Angelin, 1854
+		  Ctenopyge Linnarsson, 1880
+		  Eurycare Angelin, 1854
+		  ?Leptoplastides Raw, 1907
+		  ?Mekynophrys Harrington, 1938
+		  Sphaerophthalmus Angelin, 1854
+		Subfamily PELTURINAE Hawle & Corda, 1847
+		  Peltura Milne Edwards, 1840
+		  Acerocare Angelin, 1854
+		  Acerocarina Poulsen, 1951
+		  Beltella Lake, 1919
+		  Boeckaspis Henningsmoen, 1955
+		  Cyclognathina Lermontova, 1951
+		  Jujuyaspis Kobayashi, 1936
+		  Nericiaspis Tjernvik, 1955
+		  ?Paenebeltella Ross, 1951
+		  Parabolinopsis Hoek, 1912
+		  Peltocare Henningsmoen, 1957
+		  Pelturina Henningsmoen, 1957
+		  Protopeltura Brogger, 1882
+		  Saltaspis Harrington & Leanza, 1952
+		  ?Sphaerophthalmella Kobayashi, 1955
+		  Westergaardia Raymond, 1924
+		Subfamily TRIARTHRINAE Ulrich, 1930
+		  Triarthrus Green, 1832
+		  ?Angelina Salter, 1859
+		  Bienvillia Clark, 1924
+		  Leiobienvillia Rasetti, 1954
+		  Moxomia Walcott, 1924
+		  Parabolinella Brogger, 1882
+		  Plicatolina Shaw, 1951
+		  Porterfieldia B. N. Cooper, 1953
+		  Westergaardites Troedsson, 1937
+	  Family PAPYRIASPIDIDAE Whitehouse, 1939
+	    Papyriaspis Whitehouse, 1939
+		Hedinaspis Troedsson, 1952
+		Pianaspis Saito & Sakakura, 1936
+		?Proaulacopleura Kobayashi, 1936
+		?Prohedinia Lermontova, 1955
+		?Rhodonaspis Whitehouse, 1939
+	  Family HYPERMECASPIDIDAE Harrington & Leanza, 1957
+	    Hypermecaspis Harrington & Leanza, 1957
+		Tropidopyge Harrington & Kay, 1951
+	Superfamily ILLAENURACEA Vogdes, 1890
+	  Family ILLAENURIDAE Vogdes, 1890
+	    Illaenurus Hall, 1863
+		Macelloura Resser, 1935
+	  Family SHIRAKIELLIDAE Hupe, 1953
+	    Shirakiella Kobayashi, 1935
+	  Family PARABOLINOIDIDAE Lochman, 1956
+	    Parabolinoides Frederickson, 1949
+		Bernia Frederickson, 1949
+		Croixana Nelson, 1951
+		Kendallina Berg, nom. subst. herein [pro Kendallia Berg, 1953 (non Evermann & Shaw, 1927)]
+		Maustonia Raasch in Lochman, 1950
+		Orygmaspis Resser, 1936
+		Psalaspis Resser, 1937
+		Stigmacephalus Resser, 1936
+		Taenicephalus Ulrich & Resser in Walcott, 1924
+		Olenaspella Wilson, 1956
+	Superfamily SOLENOPLEURACEA Angelin, 1854
+	  Family SOLENOPLEURIDAE Angelin, 1854
+	    Subfamily SOLENOPLEURINAE Angelin, 1854
+		  Solenopleura Angelin, 1854
+		  ?Albansia Howell, 1937
+		  Asthenospis Whitehouse, 1939
+		  ?Crusoia Walcott, 1924
+		  Jincella Snajdr, 1957
+		  Maiaspis Chernysheva, 1956
+		  ?Menocephalites Kobayashi, 1935
+		  Parasolenopleura Westergard, 1953
+		  Perneraspis Prantl, 1947
+		  Pseudosolenopleura Sun, 1935
+		  Solenopleurella Poulsen, 1927
+		  Solenopleurina Ruzicka, 1938
+		  Spencia Resser, 1939
+		Subfamily ACROCEPHALITINAE Hupe, 1953
+		  Acrocephalites Wallerius, 1895
+		  Acrocephalaspis Ivshin, 1956
+		  ?Acrocephalina Troedsson, 1937
+		  Aldanaspis Lermontova, 1940
+		  Cliffia J. L. Wilson, 1951
+		  ?Paracrocephalites Poulsen, 1954
+		  Pesaia Walcott & Resser, 1924
+		Subfamily SAOINAE Hupe, 1953
+		  Sao Barrande, 1846
+		  Pardailhania Thoral, 1947
+		  Rimouskia Resser, 1938
+		  Solenopleuropsis Thoral, 1947
+		Subfamily HYSTRICURINAE Hupe, 1953
+		  Hystricurus Raymond, 1913
+		  Amblycranium Ross, 1951
+		  ?Apachia Frederickson, 1949
+		  Hillyardina Ross, 1951
+		  Pachycranium Ross, 1951
+		  Parahystricurus Ross, 1951
+		  Psalikilopsis Ross, 1953
+		  Psalikilus Ross, 1951
+		  Rollia Cullison, 1944
+	  Family AGRAULIDAE Raymond, 1913
+	    Agraulos Hawle & Corda, 1847
+		Skreiaspis Ruzicka, 1944
+	  Family LONCHOCEPHALIDAE Hupe, 1953
+	    Lonchocephalus Owen, 1852
+		Amiaspis Lochman, in Lochman & Duncan, 1944
+		Calymenidius Rasetti, 1944
+		Glyptometopus Rasetti, 1944
+		Quebecaspis Rasetti, 1944
+		Glaphyraspis Resser, 1937
+		Talbotina Lochman, 1938
+		Terranovella Lochman, 1938
+		Weeksina Resser, 1935
+		Welleraspis Kobayashi, 1935
+		BUcksella Howell, 1957
+	  Family DOKIMOCEPHALIDAE Kobayashi, 1935
+	    Dokimocephalus Walcott, 1924
+		Sulcocephalus J. L. Wilson, 1948
+		Burnetiella Lochman, 1958
+		Deckera Frederickson, 1949
+		Heterocaryon Raymond, 1937
+		Iddingsia Walcott, 1924
+		Kinbladia Frederickson, 1948
+		Kyphocephalus B. M. Miller, 1936
+		Onchopeltis Rasetti, 1944
+		Tatulaspis Ivshin, 1956
+	  Family AVONINIDAE Lochman, 1936
+	    Avonina Lochman, 1936
+	    Wongia Sun, 1924
+	    Xenocheilos J. L. Wilson, 1949
+	  Family CATILLICEPHALIDAE Raymond, 1938
+	    Catillicephala Raymond, 1938
+		Buttsia J. L. Wilson, 1951
+		Distazeris Raymond, 1937
+		Madarocephalus Resser, 1938
+		Pemphigaspis Hall, 1863
+		Stenochilina Ulrich in Bridge, 1930
+		Theodenisia Clark, 1948
+		Triarthropsis Ulrich in Bridge, 1930
+	  Family KINGSTONIIDAE Kobayashi, 1933
+		Kingstonia Walcott, 1924
+		Ankoura Resser, 1938
+		Brachyaspidion B. M. Muller, 1936
+		Bynumia Walcott, 1924
+		Bynumiella Resser, 1942
+		Bynumina Resser, 1942
+	Superfamily ANOMOCARACEA Poulsen, 1927
+	  Family ANOMOCARIDAE Poulsen, 1927
+	    Anomocare Angelin, 1852
+		Anomocarina Lermontova, 1940
+		Anomocarioides Lermontova, 1940
+		Eymekops Kobayashi (non Resser & Endo), 1935
+		Glyphaspis Poulsen, 1927
+		Glyphopeltis Deiss, 1939
+		Haniwa Kobayashi, 1933
+		Haniwoides Kobayashi, 1935
+		Inouyella Resser & Endo in Endo & Resser, 1937
+		Kokuria Kobayashi (non Resser & Endo), 1935
+		Lioparia Lorenz, 1906
+		Macrotoxus Lorenz, 1906
+		Mapania Kobayashi (non Resser & Endo), 1935
+		Metanomocare Lermontova, 1940
+		Monkaspis Kobayashi, 1935
+		Monocheilus Resser, 1927
+		Palella Howell, 1937
+		Paracoosia Kobayashi, 1936
+		Saimachia Kobayashi, 1937
+		Wentsuia Sun, 1935
+		Anomocariospis Sivov, 1955
+		Catuniella Jegorova, 1956
+		Chondranomocare Poletaeva, 1956
+		?Glyphaspellus Ivshin, 1953
+		Pseudanomocarina Chernysheva, 1956
+	Superfamily ASAPHISCACEA Raymond, 1924
+	  Family ASAPHISCIDAE Raymond, 1924
+	    Subfamily ASAPHISCINAE Raymond, 1924
+	      Asaphiscus Meek, 1873
+		  Anomocarella Walcott, 1905
+		  Blainia Walcott, 1916
+  		  Blainiospis Poulsen, 1947
+		  Dolgaia Walcott & Resser, 1925
+		  Dunderbergella Howell, 1945
+		  Grandioculus Cossman, 1908
+		  Hundwarella Reed, 1934
+		  Iranoleesia King, 1955
+		  Kaninia Walcott & Resser, 1925
+		  Kaniniella Kobayashi, 1938
+		  Lioparella Kobayashi, 1937
+ 		  Manchuriella Kobayashi (non Resser & Endo in Koba.) 1935
+		  Paraorlovia Tchernysheva, 1956
+		  Peishania Resser & Endo, in Endo & Resser, 1937
+		  Proasaphiscus Kobayashi (non Resser & Endo in Koba.) 1935
+	    Subfamily Blountiinae Lochman, 1944
+		  Blountia Walcott, 1916
+		  Blountiella Resser, 1938
+		  Maryvillia Walcott, 1916
+	Superfamily BURLINGIACEA
+	  Family Burlingiidae Walcott, 1908
+	    Burlingia Walcott, 1908
+		Schmalenseeia Moberg, 1903
+	Superfamily KOMASPIDACEA
+	  Family KOMASPIDIDAE Kobayashi, 1935
+	    Komaspis Kobayashi, 1935
+		Benthamaspis Poulsen, 1947
+		Carolinites Kobayashi, 1940
+		Dartonaspis B. M. Miller, 1936
+		Goniophrys Ross, 1951
+		Irvingella Ulrich & Resser in Walcott, 1924
+		Irvingelloides Kobayashi, 1935
+		Princetonella Lochman, 1953
+	  Family ELVINIIDAE Kobayashi, 1935
+	    Elvinia Walcott, 1924
+		Chariocephalus Hall, 1863
+		Drumaspis Resser, 1942
+		Maladioides Kobayashi, 1933
+		Taishania Sun, 1935
+	  Family TELEPHINIDAE Marek, 1952
+	    Telephina Marek, 1952
+	  Family GLAPHURIDAE Hupe, 1953
+	    Glaphurus Raymond, 1905
+		Glaphurina Ulrich, 1930
+	Superfamily RAYMONDINACEA Clark, 1924
+	  Family RAYMONDINIDAE Clark, 1924
+	    Subfamily RAYMONDININAE Clark, 1924
+		  Raymondina T. H. Clark, 1924
+		  Amquia Rasetti, 1946
+		  Brassicicephalus Lochman, 1940
+		  Llanoaspidella Tasch, 1951
+		  Paracedaria Buncan in Lochman & Duncan [pro Pilgrimia Duncan, 1944 (non Osborn, 1925)][*Pilgrimia montanensis Duncan in Lochman & Duncan, 1944)
+		Subfamily CEDARIINAE Raymond, 1937
+		  Cedaria Walcott, 1924
+		  Cedarina Lochman, 1940
+		Subfamily LLANOASPIDINAE Lochman, 1944
+		  Llanoaspis Lochman, 1938
+		  Arcuolimbus Palmer, 1954
+		  Genevievella Lochman, 1936
+		  Metisaspis Rasetti, 1946
+	Superfamily NORWOODIACEA Walcott, 1916
+	  Family NORWOODIIDAE Walcott, 1916
+	    Norwoodia Walcott, 1916
+		Hardyoides Kobayashi, 1938
+		Holcacephalus Resser, 1938
+		Norwoodella Resser, 1938
+		Paranorwoodia Rasetti, 1945
+	  Family MENOMONIIDAE Walcott, 1916
+	    Menomonia Walcott, 1916
+		Bolaspidella Resser, 1937
+		Coenaspis Resser, 1938
+		Deiracephalus Resser, feb. 1935
+		Densonella Shaw, 1952
+		Dresbachia Walcott, 1916
+	  Family BOLASPIDIDAE Howell, nov.
+	    Bolaspis Resser, 19 35
+		Acrocephalops Poulsen, 1927
+		Eldoradia Resser, 1935
+		Rawlinsella Shaw, 1956
+	Superfamily MARJUMIACEA Kobayashi, 1935
+	  Family MARJUMIIDAE Kobayashi, 1935
+	    Marjumia Walcott, 1916
+		Aposolenopleura Raymond, 1937
+		Bellaspis Rasetti, 1945
+		Bemaspis Frederickson, 1949
+		Crepichilella Wilson, 1951
+		Deadwoodia Resser, 1938
+		Dellea Wilson, 1949
+		Eshelmania Wilson, 1951
+		Lecanopleura Raymond, 1937
+		Modocia Walcott, 1924
+		Nasocephalus Wilson, 1954
+		Neotaenicephalus Kobayashi, 1955
+		Nericia Westergard, 1948
+		Obrucheviaspis Ivshin, 1953
+		Shickshockia Rasetti, 1946
+		Solenoparia Kobayashi, 1935
+		Taenicephalina Rasetti, 1945
+		Urbanaspis Ivshin, 1956
+		Vermilionites Kobayashi, 1955
+		Yabeia Resser & Endo, in Endo & Resser, 1937
+	  Family COOSELLIDAE Palmer, 1954
+	    Coosella Lochman, 1936
+	    Coosia Walcott, 1911
+	    Coosina Rasetti, 1956
+	    Syspacheilus Resser, 1938
+	  Family PAGODIIDAE Kobayashi, 1935
+	    Pagodia Walcott, 1905
+		Aojia Resser & Endo, in Endo & Resser, 1937
+		Bienella Lochman, 1944
+		Girandia Kobayashi, 1944
+		Hardyia Walcott, 1924
+		Ithycephalus Resser, 1938
+		Kiowaia Frederickson, 1949
+		Lisania Walcott, 1911
+		Nixonella Lochma, 1944
+		Taitzuia Resser & Endo, 1937
+	  Family CHEILOCEPHALIDAE Shaw, 1956
+	    Cheilocephalus Berkey, 1898
+	Superfamily LEIOSTEGIACEA Bradley, 1925
+	  Family LEIOSTEGIIDAE Bradley, 1925
+	    Subfamily LEIOSTEGINAE Bradley, 1925
+		  Lloydia Vogdes, 1890
+		  Ambonolium Raymond, 1924
+		  Cholopilus Raymond, 1924
+		  Chuangia Walcott, 1911
+		  Chuangiella Kobayashi, 1935
+		  Chuangiopsis Sivov, 1955
+		  Evanspis Kobayashi, 1955
+		  Idamea Whitehouse, 1939
+		  Kassinius Ivshin, 1953
+		  Komaspidella Kobayashi, 1938
+		  Ordosia Lu, 1954
+		  Perischodory (sic) Raymond, 1937
+	    Subfamily EOCHUANGIINAE Kobayashi, 1935
+		  Eochuangia Kobayashi, 1935
+		  Ataktaspis Lochman & Duncan, 1944
+		Subfamily IRANASPIDINAE Lochman, nov.
+		  Iranaspis King, 1937
+		  Plethopeltella Kobayashi, 1943
+	Superfamily DAMESELLACEA Kobayashi, 1935
+	  Family DAMESELLIDAE Kobayashi, 1935
+	    Subfamily DAMESELLINAE Kobayashi, 1935
+		  Damesella Walcott, 1905
+		  Blackwelderia Walcott, 1906
+		  Blackwelderioides Hupe, 1955
+		  Stephanocare Monke, 1903
+		Subfamily DREPANURINAE Hupe, 1953
+		  Drepanura Bergeron, 1899
+		  Parablackwelderia Kobayashi, 1942
+	  Family KAOLISHANIIDAE Kobayashi, 1935
+	    Kaolishania Sun, 1924
+		Kaolishaniella Sun, 1935
+		Mansuyia Sun, 1924
+		Prochuangia Kobayashi, 1935
+	Superfamily PTYCHASPIDACEA Raymond, 1924
+	  Family PTYCHASPIDIDAE Raymond, 1924
+	    Ptychaspis Hall, 1863
+		Anderssonella Kobayashi, 1936
+		Changia Sun, 1924
+		Conaspis Hall, 1863
+		Coreanocephalus Kobayashi, 1935
+		Eoptychaspis Neoson, 1951
+		Euptychaspis Ulrich in Bridge, 1930
+		Keithia Raymond, 1924
+		Keithiella Rasetti, 1944
+		Quadraticephalus Sun, 1924
+		Saukioides Kobayashi, 1952
+		Stigmaspis Nelson, 1951
+		Wuhuia Kobayashi, 1933
+	  Family SAUKIIDAE Ulrich & Resser, 1930
+	    Saukia Walcott, 1914
+	    Calvinella Walcott, 1914
+		Lichengia Kobayashi, 1942
+		Prosaukia Ulrich & Resser 1933
+		Saukiella Ulrich & Resser, 1933
+		Telletina Ulrich & Resser, 1933
+	  Family EUREKIIDAE Hupe, 1953
+	    Eurekia Walcott, 1924
+		Bayfieldia T. H. Clark, 1924
+		Maladia Walcott, 1924
+		Tostonia Walcott, 1924
+	Superfamily REMOPLEURIDACEA
+	  Family REMOPLEURIDIDAE Hawle & Corda, 1847
+	    Subfamily REMOPLEURIDINAE Hawle & Corda, 1847
+		  Remopleurides Portlock, 1843
+		  Amphytrion Hawle & Corda, 1847
+		  Hypodicranotus Whittington, 1952
+		  Remopleuridiella Ross, 1951
+		  Robergia Wiman, 1905
+		  Teratorhynchus Reed, 1903
+		Subfamily RICHARDSONELLINAE Raymond, 1924
+		  Richardsonella Raymond, 1924
+		  Apatokephalus Brogger, 1896
+		  Eorobergia Cooper, 1953
+		  Kainella Walcott, 1925
+		  Macropyge Stubblefield in Stubblefield & Bulman, 1927
+		  Menoparia Ross, 1951
+		  Pseudokainella Harrington, 1938
+		  Scinocephalus Ross, 1951
+		  Tramoria Reed, 1899
+		  Lingukainella Kobayashi, 1953
+		  Hukasawaia Kobayashi, 1953
+		  ?Lichapyge Callaway, 1877
+		Subfamily UNCERTAIN  Apatokephalina Sivov, 1955
+		  Artokephalus Sivov & Jegorova, 1955
+		  Portentosus Jegorova, 1955
+	  Family LOGANELLIDAE Rasetti, nov.
+	    Loganellus Devine, 1863
+		Lauzonella Rasetti, 1944
+		Levisella Ulrich in Rasetti, 1944
+	  Family HUNGAIIDAE Raymond, 1924
+	    Hungaia Walcott, 1914
+	Superfamily UNCERTAIN
+	  Family DICERATOCEPHALIDAE Lu, 1954
+	    Diceratocephalus Lu, 1954
+  Suborder ASAPHINA Salter, 1864
+    Superfamily ASAPHACEA Burmeister, 1843
+	  Family ASAPHIDAE Burmeister, 1843
+	    Subfamily ASAPHINAE Burmeister, 1843
+		  Asaphus Brongniart in Brongniart & Desmarest, 1822
+		  Aulacoparia Hintze & Jaanusson, 1956
+		  Basilicus Salter, 1849
+		  Eoisotelus Wang, 1938
+		  Ogmasaphus Jaanusson, 1953
+		  Plectasaphus Jaanusson, 1953
+		  Pseudoasaphus Fr. Schmidt, 1904
+		  Pseudobasilicus Reed, 1931
+		  Pseudomegalaspis Jaanusson, 1953
+		  Ptychopyge Angelin, 1854
+		  Xenasaphus Jaanusson, 1953
+		Subfamily ISOTELINAE Angelin, 1854
+		  Isotelus DeKay, 1824
+		  Anataphrus Whittington, 1954
+		  Ectenaspis Raymond, 1920
+		  Homalopyge Jaanusson, 1956
+		  Homotelus Raymond, 1925
+		  Isoteloides Raymond, 1910
+		  Lachnostoma Ross, 1951
+		  Lannacus Tjernvik, 1956
+		  Megalaspides Brogger, 1886
+		  Nileoides Raymond, 1920
+		  Ogygitoides Kobayashi, 1934
+		  Parabasilicus Kobayashi, 1934
+		  Presbynileus Hintze, 1954
+		  Pseudogygites Kobayashi, j1934
+		  Ptyocephalus Whittington, 1948
+		  Stenorhachis Hintze & Jaanusson, 1956
+		  Trigonocerca Ross, 1951
+		  Trigonocercella Hintze, 1953
+		  Vogdesia Raymond, 1910
+		  Asaphellus Callaway, 1877
+		  Hoekaspis Kobayashi, 1937
+		  Hunnebergia Tjervnik, 1956
+		  Megalaspidella Kobayashi, 1937
+		  Megistaspis Jaanusson, 1956
+		  Niobides Harrington & Leanza, 1957
+		  Notopeltis Harrington & Leanza, 1957
+		  Paramegalaspis Thoral in Jaanusson, 1956
+		Subfamily NIOBINAE Jaanusson, nov.
+		  Niobe Angelin, 1851
+		  Bohemopyge Pribyl, 1950
+		  Lapidaria Tjernvik, 1956
+		  Niobella Reed, 1931
+		  Niobina Lake, 1946
+		  Norinia Troedsson, 1937
+		  Yuepingia Lu, 1956
+		Subfamily Ogygiocaridinae Raymond, 1937
+		  Ogygiocaris Angelin, 1854
+		  Homalopteron Salter, 1866
+		  Ogyginus Raymond, 1912
+		  Ogygiocarella Harrington & Leanza, 1937
+		  Ogygites Tromelin & Lebesconte, 1876
+		Subfamily PROMEGALASPIDINAE Jaanusson, nov.
+		  Promegalaspides Westergard, 1939
+		  Borogothus Tjernvik, 1956
+		Subfamily SYMPHYSURININAE Kobayashi, 1955
+		  Symphysurina Ulrich in Walcott, 1924
+		  Bellefontia Ulrich in Walcott, 1924
+		  Kobayashia Harrington, 1938
+		  Parabellefontia Hintze, 1953
+		  Varvia Tjernvik, 1956
+		Subfamily THYSANOPYGINAE Jaanusson, nov.
+		  Thysanopyge Kayser, 1898
+		  Australopyge Harrington & Leanza, 1957
+		  Zuninaspis Harrington 7 Leanza, 1957
+		Subfamily UNCERTAIN
+		  Charchaqia Troedsson, 1937
+		  Dolerobasilicus Harrington & Leanza, 1942
+		  Eoasaphus Kobayashi, 1936
+		Unrecognizable Asaphid Genera
+		  Asaphelloides Kobayashi, 1937
+		  Brachyaspis Salter, 1866
+		  Columbicephalus Kobayashi, 1955
+		  Gerasphes Clarke, 1897
+		  Metoptogyrus Raymond, 1937
+	  Family TAIHUNGSHANIIDAE Sun, 1931
+	    Taihungshania Sun, 1931
+		Asaphellina Munier-Chalmas & Bergeron in Bergeron, 1889
+		Omeipsis Kobayashi, 1951
+		Tungtzuella Sheng in Lu, 1957
+	  Family Tsinaniidae Kobayashi, 1933
+	    Tsinania Walcott, 1914
+		Dictyites Kobayashi, 1936
+	  Family NILEIDAE Angelin, 1854
+	    Nileus Dalman, 1827
+		Barrandia M'Coy, 1849
+		?Borthaspidella Rasetti, 1954
+		?Borthaspis Stubblefield, 1951
+		Bumastides Weber, 1948
+		?Hemibarrandia Prantl & Pribyl, 1950
+		?Illaenopsis Salter, 1866
+		?Lakaspis Kobayashi, 1937
+		?Platypeltoides Pribyl, 1949
+		?Psilocephalina Hsu, 1948
+		Symphysurus Goldfuss, 1843
+	  Family DIKELOKEPHALINIDAE Kobayashi, 1936
+	    Dikelokephalina Brogger, 1896
+	    Asaphopsis Mansuy, 1920
+		Asaphopsoides Hupe, 1955
+		Birmanites Sheng, 1934
+		Dactylocephalus Hsu, 1948
+		Dikelocephalopsis Poletaeva, 1955
+		Hungioides Kobayashi, 1936
+		Leimitzia Sdzuy, 1955
+		Temnoura Resser & Endo, in Endo & Resser, 1937
+	Superfamily CYCLOPYGACEA Raymond, 1925
+	  Family CYCLOPYGIDAE Raymond, 1925
+	    Aspidaeglina Holub, 1911
+	    Ellipsotaphrus Whittard, 1952
+	    Microparia Hawle & Corda, 1847
+	    Pricyclopyge Richter & Richter, 1954
+	    Psilacella Whittard, 1952
+	    Symphysops Raymond, 1925
+	Superfamily CERATOPYGACEA Linnarson, 1869
+	  Family CERATOPYGIDAE Linnarson, 1869
+	    Ceratopyge Hawle & Corda, 1847
+		Boschchekulia Lermontova, 1951
+		Diceratopyge Troedsson, 1937
+		?Dichelepyge Harrington & Leanza, 1952
+		Dipleuropyge Lermontova, 1951
+		Hysterolenus Moberg, 1898
+		Kogenium Kobayashi, 1935
+		Mansuyella Endo, in Endo & Resser, 1937
+		Onychopyge Harrington, 1938
+		Proceratopyge Wallerius, 1895
+		Pseudohysterolenus Harrington & Leanza, 1957
+  Suborder ILLAENINA Jaanusson, nov.
+    Superfamily ILLAENACEA Hawle & Corda, 1847
+	  Family STYGINIDA Vogdes, 1890
+	    Stygina Salter, 1853
+		Bronteopsis Nicholson & Etheridge, 1873
+		Protostygina Prantl & Pribyl 1948
+		Raymondaspis Pribyl, 1948
+	  Family THYSANOPELTIDAE Hawle & Corda, 1847
+	    Scutellum Pusch, 1833
+		Eobronteus Reed, 1928
+		Weberopeltis Maksimova, 1957
+		Octobronteus Weber, 1945
+	  Family Illaenidae Hawle & Corda, 1847
+	    Subfamily ILLAENINAE Hawle & Corda, 1847
+		  Illaenus Dalman, 1827
+		  Cekovia Snajdr, 1956
+		  Nanillaenus Jaanusson, 1954
+		  Octillaenus Salter, 1867
+		  Panderia Volborth, 1863
+		  Stenopareia Holm, 1886
+		  Thaleops Conrad, 1843
+		Subfamily BUMASTINAE Raymond, 1916
+		  Bumastus Murchison, 1839
+		  Dysplanus Burmeister, 1843
+		  Illaenoides Weller, 1907
+		  Platillaenus Jaanusson, 1954
+		  Thomastus Opik, 1953
+		Subfamily ECTILLAENINAE Jaanusson, nov.
+		  Ectillaenus Salter, 1867
+		  Zbirovia Snajdr, 1956
+		  Zdicella Snajdr, 1957
+		?Subfamily THEAMATASPIDINAE Hupe, 1953
+		  Theamataspis Opik, 1937
+		Subfamily UNCERTAIN
+		  Hyboaspis Raymond, 1925
+	Superfamily BATHYURACEA Walcott, 1886
+	  Family BATHYURIDAE Walcott, 1886
+	    Bathyurus Billings, 1859
+	    ?Agerina Tjernvik, 1956
+	    Bathyurellus Billings, 1865
+	    Bathyurina Poulsen, 1937
+	    Bolbocephalus Whitfield, 1890
+	    Eleutherocentrus Clark, 1935
+	    Goniotelina Whittington & Ross in Whittington, 1953
+	    Goniotelus Ulrich, 1927
+	    Jeffersonia Poulsen, 1927
+	    Licnocephala Ross, 1951
+	    Lutesvillia Cullison, 1944
+	    Peltabellia Whittington, 1953
+	    Petigurus Raymond, 1913
+		Platyantyx Whittington, 1953
+		Rananasus Cullison, 1944
+		Raymondites Sinclair, 1944
+		Uromystrum Whittington, 1953
+		Gonioteloides Kobayashi, 1955
+	  Family LECANOPYGIDAE Lochman, 1953
+	    Lecanopyge Raymond, 1937
+		Platydiamesus Raymond, 1937
+		Rasettia Lochman, 1953
+		Resseraspis Rasetti, 1945
+		Strigigenalis Whittington & Ross, 1953
+	Superfamily HOLOTRACHELACEA Warburg, 1925
+	  Family HOLOTRACHELIDAE Warburg, 1925
+	    Holotrachelus Linnarsson in Tornquist, 1919
+	Superfamily PROETACEA Salter, 1864
+	  Family PROETIDAE Salter, 1864
+	    Subfamily PROETINAE Salter, 1864
+		  Proetus Steininger, 1831
+		  ?Crassiproetus Stumm, 1953
+		  ?Isbergia Warburg, 1925
+		  ?Unguliproetus Erben, 1951
+		Subfamily CORNUPROETINAE Richter & Richter, 1956
+		  Cornuproetus Richter & Richter, 1919
+		  Phaetonellus Novak, 1890
+		  Xiphogonium Hawle & Corda, 1847
+		  ?Eremiproetus Richter & Richter, 1919
+		  ?Pribylia Erben, 1951
+		  ?Perliproetus Richter & Richter, 1926
+		Subfamily DECHENELLINAE Pribyl, 1946
+		  Dechenella Kayser, 1880
+		  Paradechenella Rud. Richter, 1912
+		  Schizoproetus Rud. Richter, 1912
+		Subfamily CYRTOSYMBOLINAE Hupe, 1953
+		  Cyrtosymbole Rud. Richter, 1913
+		  Archegonus Burmeister, 1843
+		  Phillibole Richter & Richter, 1937
+		  Liobole Richter & Richter, 1949
+		  Liobolina Richter & Richter, 1951
+		  Drevermannia Rud. Richter, 1909
+		  Chaunoproetus Richter & Richter, 1919
+		  Skemmatopyge Richter & Richter, 1919
+		  Skemmatocare Richter & Richter, 1927
+		  Cystispina Richter & Richter, 1939
+		  ?Carbonocoryphe Richter & Richter, 1950
+		  ?Diacoryphe Richter & Richter, 1951
+		  ?Typhloproetus Rud. Richter, 1913
+		Subfamily PROETIDELLINAE Hupe, 1953
+		  Proetidella Bancroft, 1949
+		  Astroproetus Begg, 1939
+		  Clypoproetus Begg, 1939
+		  Paryfenus Hadding, 1913
+		  Prantlia Pribyl, 1946
+		  ?Prionopeltis Hawle & Corda, 1847
+		  ?Pseudoproetus Poulsen, 1934
+		  ?Warburgaspis Pribyl, 1946
+		  ?Warburgella Reed, 1931
+		Subfamily TROPIDOCORYPHINAE Pribyl, 1946
+		  Tropidocoryphe Novak, 1890
+		  Astycoryphe Richter & Richter, 1919
+		  ?Decoroproetus Pribyl, 1946
+		  Denemarkia Pribyl, 1946
+		  ?Phyllaspis Reinh. Richter, 1863
+		  Pteroparia Rud. Richter, 1913
+	  Family PHILLIPSIIDAE Oehlert, 1886
+	    Phillipsia Portlock, 1843
+		Griffithides Portlock, 1843
+		Eocyphinium Reed, 1942
+		Bollandia Reed, 1943
+		Exochops Weller, 1936
+		Kaskia Weller, 1936
+		Humilogriffithides Inai, 1936
+		Neogriffithides Toumansky, 1935
+		Paragriffithides Reed, 1943
+		Paladin Weller, 1936
+		Weberides Reed, 1942
+		Ditomopyge Newell, 1931
+		Cyphinioides Reed, 1942
+		Permoproetus Toumansky, 1935
+		Ameura Weller, 1936
+		Sevillia Weller, 1936
+		Cummingella Reed, 1942
+		Linguaphillipsia Stubblefield, 1948
+		Paraphillipsia Toumansky, 1935
+		Neoproetus Tesch, 1923
+		Anisopyge Girty, 1908
+		Vidria Weller, 1944
+		Pseudophillipsia Gemmellaro, 1892
+	  Family OTARIONIDAE Richter & Richter, 1926
+	    Subfamily OTARIONINAE Richter & Richter, 1926
+		  Otarion Zenker, 1833
+		  Coignouina Reed, 1943
+		  Tschernyschewiella Toll, 1899
+		Subfamily CYPHASPIDINAE Pribyl, 1947
+		  Cyphaspides Novak, 1890
+	  Family AULACOPLEURIDAE Angelin, 1854
+	    Aulacopleura Hawle & Corda, 1847
+		?Aulacopleurina Pribyl, 1949
+	  Family BRACHYMETOPIDAE Prantl & Pribyl, 1950
+	    Brachymetopus M'Coy, 1847
+		Cordania Clarke, 1892
+		?Cheiropyge Diener, 1897
+		?Namuropyge Richter & Richter, 1939
+		?Panarchaegonus Opik, 1937
+	  Family PHILLIPSINELLIDAE Whittington, 1950
+	    Phillipsinella Novak, 1886
+	  Family CELMIDAE Jaanusson, 1956
+	    Celmus Angelin, 1854
+	  Family PLETHOPELTIDAE Raymond, 1925
+	    Plethopeltis Raymond, 1913
+		Arapahoia B. M. Miller, 1936
+		Leiocoryphe T. H. Clark, 1924
+	    Paraplethopeltis Bridge & Cloud, 1947
+		Plethometopus Ulrich in Bridge, 1930
+		Stenopilus Raymond, 1924
+		Strotocephala Raymond, 1937
+	  Family DIMEROPYGIDAE Hupe, 1953
+	    Dimeropyge Opik, 1937
+	    Chomatopyge Whittington & Evitt, 1953
+		Dimeropygiella Ross, 1951
+		Mesotaphraspis Whittington & Evitt, 1953
+		Toernquistia Reed, 1896
+	  Family UNCERTAIN  
+	    Cyrtoproetus Reed, 1943
+		Palaeophillipsia Sugiyama & Okano, 1944
+		Perunaspis Pribyl, 1949
+		Proetides O. T. Walter, 1924
+		Proetina Pribyl, 1946
+		Scharyia Pribyl, 1946
+  Suborder HARPINA Whittington, nov.
+    Family HARPIDAE Hawle & Corda, 1847
+	  Harpes Goldfuss, 1839
+	  Aristoharpes Whittington, 1950
+	  Arraphus Angelin, 1854
+	  Australoharpes Harrington & Leanza, 1957
+	  Dolichoharpes Whittington, 1949
+	  Dubhglastina Lamont, 1948
+	  Eoharpes Raymond, 1905
+	  Hibbertia Jones & Woodward, 1898
+	  Lioharpes Whittington, 1950
+	  Metaharpes Larmont, 1948
+	  Paraharpes Whittington, 1950
+	  Selenoharpes Whittington, 1950
+	Family HARPIDIDAE Whittington, 1950
+	  Harpides Beyrich, 1846
+	  Fissocephalus Rasetti, 1943
+	  Loganopeltoides Rasetti, 1945
+	Family ENTOMASPIDIDAE Ulrich in Bridge, 1930
+	  Entomaspis Ulrich in Bridge, 1930
+  Suborder TRINUCLEINA Swinnerton, 1915
+    Family TRINUCLEIDAE Hawle & Corda, 1847
+	  Subfamily TRINUCLEINAE Hawle & Corda, 1847
+	    Trinucleus Murchison, 1839
+	    Paratrinucleus Whittington, 1941
+	  Subfamily TRETASPIDINAE Whittington, 1941
+	    Tretaspis M'Coy, 1849
+		Reedolithus Bancroft, 1929
+	  Subfamily CRYPTOLITHINAE Angelin, 1854
+	    Cryptolithus Green, 1832
+		Onnia Bancroft, 1933
+		Broeggerolithus Bancroft in Lamont, 1935
+		Cryptolithoides Whittington, 1941
+		Reuscholithus Bancroft, 1929
+		Salterolithus Bancroft, 1929
+		Marrolithus Bancroft, 1929
+		Marrolithoides A. Williams, 1948
+		Talaeomarrolithus A. Williams, 1948
+		Lloydolithus Bancroft, 1933
+		Protolloydolithus A. Williams, 1948
+		Eirelithus Lamont, 1941
+		Famatinolithus Harrington & Leanza, 1957
+		Myttonia Whittard, 1955
+		Bergamia Whittard, 1955
+		Incania Whittard, 1955
+		Stapeleyella Whittard, 1955
+		Bettonia Whittard, 1956
+		Hangchungolithus Lu, 1956
+		Ningkianolithus Lu, 1956
+		Nankinolithus Lu, 1957
+	  Subfamily NOVASPIDINAE Whittington, 1941
+	    Novaspis Whittington, 1941
+	Family OROMETOPIDAE Hupe, 1955
+	  Orometopus Brogger, 1896
+	Family DIONIDIDAE Gurich, 1908
+	  Dionide Barrande, 1847
+	  Digrypos Kobayashi, 1940
+	  Dionidella Prantl & Pribyl, 1948
+	  Trinucleoides Raymond, 1917
+	Family RAPHIOPHORIDAE Angelin, 1854
+	  Raphiophorus Angelin, 1854
+	  Ampyx Dalman, 1827
+	  Ampyxina Ulrich, 1922
+	  Anisonotella Whittington, 1952
+	  Cnemidopyge Whittard, 1955
+	  Edmundsonia B. N. Cooper, 1953
+	  Lonchodomas Angelin, 1854
+	  Mendolaspis Rusconi, 1951
+	  Raymondella Reed, 1935
+	Family ENDYMIONIIDAE Raymond, 1920
+	  Endymionia Billings, 1865
+	  Salteria W. Thomson, 1864
+	Family ALSATASPIDIDAE Turner, 1940
+	  Seleneceme T. H. Clark, 1924
+	  Falanaspis Tjernvik, 1956
+	Family HAPALOPLEURIDAE Harrington & Leanza, 1957
+	  Hapalopleura Harrington & Leanza, 1957
+	  Araiopleura Harrington & Leanza, 1957
+	  Clavatellus Poletaeva, 1955
+	  Rhadinopleura Harrington & Leanza, 1957
+	Family ITYOPHORIDAE Warburg, 1925
+	  Ityophorus Warburg, 1925
+Order PHACOPIDA Salter, 1864
+  Suborder CHEIRURINA Harrington & Leanza, 1957
+    Family CHEIRURIDAE Salter, 1864
+	  Subfamily CHEIRURINAE Salter, 1864
+	    Cheirurus Beyrich, 1845
+		Ceraurinella Cooper, 1953
+		Ceraurinus Barton, 1913
+		Cerauroides Prantl & Pribyl, 1947
+		Ceraurus Green, 1832
+		Hapsiceraurus Whittington, 1954
+		?Krattaspis Opik, 1937
+		Lehua Barton, 1915
+		Osekaspis Prantl & Pribyl, 1947
+		Pseudocheirurus Prantl & Pribyl, 1947
+		Remipyga Whittington, 1954
+	  Subfamily CYRTOMETOPINAE Opik, 1937
+	  
+    
