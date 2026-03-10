@@ -1315,5 +1315,84 @@ Order PHACOPIDA Salter, 1864
 		Pseudocheirurus Prantl & Pribyl, 1947
 		Remipyga Whittington, 1954
 	  Subfamily CYRTOMETOPINAE Opik, 1937
-	  
+	    Cyrtometopus Angelin, 1854
+        Actinopeltis Hawle & Corda, 1847
+        Eccoptochile Hawle & Corda, 1847
+        Kawina Barton, 1915
+        Pseudosphaerexochus Schmidt, 1881
+		Reraspis Opik, 1937
+		Stubblefieldia Prantl & Pribyl, 1947
+	  Subfamily ACANTHOPARYPHINAE Whittington & Evitt, 1953
+	    Acanthoparypha Whittington & Evitt, 1953
+		?Hadrohybus Raymond, 1925
+		Holia Bradley, 1930
+		Nieszkowskia Schmidt, 1881
+	  Subfamily SPHAEREXOCHINAE Opik, 1937
+	    Sphaerexochus Beyrich, 1845
+		Pompeckia Warburg, 1925
+	  Subfamily DEIPHONINAE Raymond, 1913
+	    Deiphon Barrande, 1850
+		Hemisphaerocoryphe Reed, 1896
+		Onycopyge Woodward, 1880
+		Sphaerocoryphe Angelin, 1854
+	  Subfamily AREIINAE Prantl & Pribyl, 1947
+	    Areia Barrande, 1872
+	  ?Subfamily HELIOMERINAE Evitt, 1951
+	    Heliomera Raymond, 1905
+		Heliomeroides Evitt, 1951
+	  Subfamily UNCERTAIN
+	    Youngia Lindstrom, 1885
+	Family PLIOMERIDAE Raymond, 1913
+	  Subfamily PLIOMERINAE Raymond, 1913
+	    Pliomera Angelin, 1852
+		Cybelopsis Poulsen, 1927
+		Pliomerina Chougaeva, 1956
+		Pliomerops Raymond, 1905
+		Pseudomera Holliday, 1942
+	  Subfamily PILEKIINAE Sdzuy, 1955
+	    Pilekia Barton, 1915
+		Anacheirurus Reed, 1896
+		Metapilekia Harrington, 1938
+		Metapliomerops Kobayashi, 1934
+		Parapilekia Kobayashi, 1934
+		?Emsurina Sivov, 1955
+		?Scisonia Kobayashi, 1934
+		?Tesselacauda Ross, 1951
+	  Subfamily PROTOPLIOMEROPINAE Hupe, 1953
+	    Protopliomerops Kobayashi, 1934
+		Hintzeia Harrington, 1957
+		Kanoshia Harrington, 1957
+		Leiostrototropis Raymond, 1937
+		Pliomeroides Harrington & Leanza, 1957
+		Protopliomerella Harrington, 1957
+		Pseudocybele Ross, 1951
+		Rossaspis Harrington, 1957
+		Strotactinus Bradley, 1925
+	  Subfamily PLIOMERELLINAE Hupe, 1953
+	    Pliomerella Reed, 1941
+	  Subfamily PLACOPARIINAE Hupe, 1953
+	    Placoparia Hawle & Corda, 1847
+	  Subfamily DIAPHANOMETOPINAE Jaanusson, nov.
+	    Diaphanometopus Fr. Schmidt, 1881
+	Family ENCRINURIDAE Angelin, 1854
+	  Subfamily ENCRINURINAE Angelin, 1854
+	    Encrinurus Emmrich, 1844
+		Cromus Barrande, 1852
+		Encrinuroides Reed, 1931
+		?Mitchellaspis Henningsmoen, nom. subst herein [pro Mitchellia Vogdes, 1917 (305. p. 17) (non De Koninck, 1877)]
+	  Subfamily Cybelinae Holliday, 1942
+	    Cybele Loven, 1846
+		Atractopyge Hawle & Corda, 1847
+		Bevanopsis Cooper, 1953
+		Cybeloides Slocom, 1913
+		Paracybeloides Hupe, 1955
+	  Subfamily DINDYMENINAE Henningsmoen, nov.
+	    Dindymene Hawle & Corda, 1847
+		Plasiaspis Prantl & Pribyl, 1949
+		?Prosopiscus Salter, in Salter & Blanford, 1865
+	  Subfamily STAUROCEPHALINAE Prantl & Pribyl, 1947
+	    Staurocephalus Barrande, 1846
+		Oedicybele Whittington, 1938
+	Family UNCERTAIN
+		
     
