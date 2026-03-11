@@ -1,0 +1,232 @@
+---
+reference: Palmer, A.R. & Repina, L.N., 2004. Classification of the Redlichiida. In: Kaesler, R.L. (Ed.), Treatise on Invertebrate Paleontology, Part O, Revised, Vol. 1, Ch. 5
+scope:
+  - taxon: Redlichiida
+    coverage: comprehensive
+---
+
+Order REDLICHIIDA Richter, 1932
+  Suborder OLENELLINA Walcott, 1890
+    Superfamily Olenelloidea Walcott, 1890
+      Family Olenellidae Walcott, 1890
+        Subfamily Olenellinae Walcott, 1890
+          Olenellus Hall, 1861
+          Fremontella Harrington, 1956
+        Subfamily Biceratopsinae Pack & Gayle, 1971
+          Biceratops Pack & Gayle, 1971
+          Peachella Walcott, 1910
+          Mummaspis Fritz, 1992
+        Subfamily Bristoliinae Palmer & Repina, 1993
+          Bristolia Harrington, 1956
+          Arcuolenellus Palmer & Repina, 1993
+          Bolbolenellus Palmer & Repina, 1993
+          Nephrolenellus Palmer & Repina, 1993
+        Subfamily Gabriellinae Palmer & Repina, 1993
+          Gabriellus Fritz, 1992
+        Subfamily Laudoniinae Palmer & Repina, 1993
+          Laudonia Harrington, 1956
+          ?Olenelloides Peach, 1894
+        Subfamily Wanneriinae Hupé, 1953
+          Wanneria Walcott, 1910
+      Family Holmiidae Hupé, 1953
+        Subfamily Holmiinae Hupé, 1953
+          Holmia Matthew, 1890
+          Andalusiana Sdzuy, 1961
+          Cambropallas Geyer, 1993
+          Elliptocephala Emmons, 1844
+          Esmeraldina Resser & Howell, 1938
+          Holmiella Fritz, 1972
+          Iyouella Geyer & Palmer, 1995
+          Palmettaspis Fritz, 1995
+          Schmidtiellus Moberg, 1906
+          Kjerulfia Kiær, 1917
+        Subfamily Callaviinae Poulsen, 1959
+          Callavia Matthew, 1897
+    Superfamily Fallotaspidoidea Hupé, 1953
+      Family Fallotaspididae Hupé, 1953
+        Subfamily Fallotaspidinae Hupé, 1953
+          Fallotaspis Hupé, 1953
+          Eofallotaspis Sdzuy, 1978
+          Lenallina Repina, 1990
+          Parafallotaspis Fritz, 1972
+          Pelmanaspis Repina, 1990
+        Subfamily Daguinaspidinae Hupé, 1953
+          Daguinaspis Hupé & Abadie, 1950
+          Choubertella Hupé, 1953
+          ?Wolynaspis Tchernysheva, 1967
+      Family Archaeaspididae Repina, 1979
+        Archaeaspis Repina, 1965
+        Bradyfallotaspis Fritz, 1972
+        Fallotaspidella Repina, 1961
+        Geraldinella Fritz, 1993
+        Selindella Repina, 1979
+      Family Judomiidae Repina, 1979
+        Judomia Lermontova, 1951
+        Judomiella Lazarenko, 1962
+        Paranevadella Palmer & Repina, 1993
+        Sinskia Suvorova, 1960
+      Family Neltneriidae Hupé, 1953
+        Neltneria Hupé, 1953
+        Bondonella Hupé, 1953
+      Family Nevadiidae Hupé, 1953
+        Nevadia Walcott, 1910
+        Nevadella Raw, 1936
+        Buenellus Blaker, 1988
+        Cirquella Fritz, 1993
+        Pseudojudomia Egorova, 1964
+    Superfamily Uncertain
+      Poletaevella Dalmatov & Repina, 1971
+      Postfallotaspis Orlowski, 1985
+  Suborder REDLICHIINA Richter, 1932
+    Superfamily Emuelloidea Pocock, 1970
+      Family Emuellidae Pocock, 1970
+        Emuella Pocock, 1970
+        Balcoracania Pocock, 1970
+    Superfamily Redlichioidea Poulsen, 1927
+      Family Redlichiidae Poulsen, 1927
+        Subfamily Redlichiinae Poulsen, 1927
+          Redlichia Cossmann, 1902
+          Syndianella Lu, 1961
+        Subfamily Metaredlichiinae Zhang & Lin, 1980
+          Metaredlichia Lu, 1965
+          Bornemannaspis Rasetti, 1972
+          Breviredlichia Chang & Lin, 1978
+          Iglesiella Rasetti, 1972
+          Jingyangia Chang & Zhang, 1974
+          Maopingaspis Lin & Yin, 1978
+          ?Nebidella Rasetti, 1972
+          Parazhenbaspis Zhu & Lin, 1983
+          Pseudoredlichia Chang & Lin, 1978
+          Sardoredlichia Rasetti, 1972
+          Ushbaspis Pokrovskaya, 1965
+          Xela Jell, 1990
+          Zhenbaspis Zhu & Chang, 1974
+        Subfamily Neoredlichiinae Hupé, 1953
+          Neoredlichia Saito, 1936
+          Leptoredlichia Chang, 1966
+          ?Olgaspis Korobeinikova, 1966
+        Subfamily Pararedlichiinae Hupé, 1953
+          Eoredlichia Chang, 1952
+          ?Irgitkhemia Tchernysheva, 1977
+          Lemdadella Sdzuy, 1978
+          Ningqiangaspis Zhang & Lin, 1980
+          ?Redlichops Richter & Richter, 1941
+        Subfamily Wutingaspinae Chang, 1966
+          Wutingaspis Kobayashi, 1944
+          Chaoaspis Chang, 1966
+          Chengjiangaspis Zhang & Lin, 1980
+          Kepingaspis Chang, 1965
+          Kuanyangia Hupé, 1953
+          Sardaspis Brasier, 1976
+          ?Wenganaspis Yin & Li, 1978
+          ?Yorkella Kobayashi, 1942
+      Family Dolerolenidae Kobayashi, 1951
+        Subfamily Doleroleninae Kobayashi, 1951
+          Dolerolenus Leanza, 1949
+        Subfamily ?Paramalungiinae Zhang & Lin, 1980
+          Paramalungia Chang, 1966
+      Family Yinitidae Hupé, 1953
+        Yinites Chang, 1966
+        Drepanopyge Lu, 1961
+        Drepanuroides Chang, 1966
+        Meitanella Lin & Yin, 1978
+        Paokannia Ho & Li, 1959
+        Parapaokannia Zhang & Lin, 1980
+        Pseudopaokannia Yin & Li, 1978
+        Qingkouia Zhang, Lin & Zhou, 1980
+        Parayinites Zhang & Lin, 1980
+      Family Gigantopygidae Harrington, 1959
+        Subfamily Gigantopyginae Harrington, 1959
+          Gigantopygus Hupé, 1953
+        Subfamily Yiliangellinae Zhang & Lin, 1980
+          Yiliangella Chang, 1966
+          Yiliangellina Chang, 1966
+          Zhangshania Li & Zhang, 1990
+      Family Saukiandidae Hupé, 1953
+        Subfamily Saukiandinae Hupé, 1953
+          Saukianda Richter & Richter, 1940
+          Longianda Hupé, 1953
+        Subfamily Despujolsiinae Harrington, 1959
+          Despujolsia Neltner & Poctey, 1949
+        Subfamily Resseropinae Chang, 1966
+          Perrector Richter & Richter, 1940
+          Australaspis Palmer & Gatehouse, 1972
+          Clariondia Hupé, 1953
+          Dolerolichia Sdzuy, 1962
+          Eops Richter & Richter, 1940
+          Pareops Hupé, 1953
+          Realaspis Sdzuy, 1961
+      Family Metadoxididae Whitehouse, 1939
+        Metadoxides Bornemann, 1891
+        Enantiaspis Rasetti, 1972
+        ?Churkinia Palmer, 1968
+        Fuminaspis Zhang & Lin, 1980
+        Hongshiyanaspis Zhang & Lin, 1980
+        Minusinella Repina, 1960
+        ?Onaraspis Öpik, 1968
+      Family Abadiellidae Hupé, 1953
+        Abadiella Hupé, 1953
+        Guangyuanaspis Chang & Qian, 1974
+        Lunolenus Sdzuy, 1961
+        Malongocephalus Zhang & Lin, 1980
+        Parabadiella Chang, 1966
+        Shaanxia Zhang & Lin, 1980
+        Sibiriaspis Repina, 1960
+      Family Menneraspidae Pokrovskaya, 1959
+        Menneraspis Pokrovskaya, 1959
+      Family Redlichinidae Zhang & Lin, 1980
+        Redlichina Lermontova, 1940
+        Asthenaspis Suvorova, 1959
+        Kolbaspis Repina, 1979
+        Parasajanaspis Tchernysheva, 1972
+        Sajanaspis Repina, 1960
+        Tungusella Repina, 1960
+      Family Chengkouaspidae Zhang & Lin, 1980
+        Chengkouaspis Zhang & Lin, 1980
+        Belliceps Repina, 1966
+        Bulaiaspis Lermontova, 1956
+        Inella Repina, 1964
+        Pseudoresserops Repina, 1965
+        Terechtaspis Repina, 1960
+      Family Mayiellidae Chang, 1966
+        Mayiella Chang, 1966
+        Qiaodiella Zhang, Lin & Zhou, 1980
+        Qiaotingaspis Chang, 1966
+        Yunnanaspidella Chang, 1966
+        Yunnanaspis Chang, 1966
+      Family Kueichowiidae Lu, 1965
+        Kueichowia Lu, 1942
+        Shatania Chang, 1974
+      Family Uncertain
+        Akbashichia Korobov, 1989
+        Elegestina Pokrovskaya, 1959
+        Elganellus Suvorova, 1958
+        Iofgia Kraevsky, 1965
+        Paratungusella Repina, 1964
+        Sarassina Romanenko, 1980
+      Family Unrecognizable Redlichioid Genera
+        Eomalungia Li, 1978
+        Fandianaspis Li, 1978
+        Guangyuania Li, 1978
+        Longmenshania Li, 1978
+        Micangshania Zhou, 1975
+        Parawutingaspis Li, 1978
+        Pseudowutingaspis Li, 1978
+        Runnania Li, 1978
+        Shangsiaspis Li, 1978
+        Xingzishania Zhou, 1975
+    Superfamily Paradoxidoidea Hawle & Corda, 1847
+      Family Paradoxididae Hawle & Corda, 1847
+        Paradoxides Brongniart, 1822
+        Anabaraceps Repina, 1972
+        Anabaraspis Lermontova, 1951
+        Eccaparadoxides Šnajdr, 1957
+        Hydrocephalus Barrande, 1846
+        Plutonides Hicks, 1895
+        ?Primoriella Repina, 1973
+        Schagonaria Poltarsis, 1955
+      Family Centropleuridae Angelin, 1854
+        Centropleura Angelin, 1854
+        Anopolenus Salter, 1864
+        Clarella Howell, 1933
+        Luhops Šnajdr, 1957

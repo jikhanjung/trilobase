@@ -1,0 +1,209 @@
+---
+reference: Adrain, J.M., 2011. Class Trilobita Walch, 1771. In: Zhang, Z.-Q. (Ed.), Animal biodiversity: An outline of higher-level classification and survey of taxonomic richness. Zootaxa, 3148, 104-109
+scope:
+  - taxon: Trilobita
+    coverage: comprehensive
+notes: |
+  Suprafamilial classification only (Order → Family). No genera.
+  Agnostida is excluded from Trilobita sensu stricto by Adrain (2011).
+---
+
+Order Eodiscida Kobayashi, 1939
+  Family Calodiscidae Kobayashi, 1943
+  Family Eodiscidae Raymond, 1913
+  Family Hebediscidae Kobayashi, 1944
+  Family Tsunyidiscidae Zhang, 1980
+  Family Weymouthiidae Kobayashi, 1943
+  Family Yukoniidae Zhang, 1980
+Order Redlichiida Richter, 1932
+  Suborder Olenellina Walcott, 1890
+    Superfamily Olenelloidea Walcott, 1890
+      Family Olenellidae Walcott, 1890
+      Family Holmiidae Hupé, 1953
+    Superfamily Fallotaspidoidea Hupé, 1953
+      Family Archaeaspididae Repina, 1979
+      Family Fallotaspididae Hupé, 1953
+      Family Judomiidae Repina, 1979
+      Family Neltneriidae Hupé, 1953
+      Family Nevadiidae Hupé, 1953
+  Suborder Redlichiina Richter, 1932
+    Superfamily Ellipsocephaloidea Matthew, 1887
+      Family Agraulidae Raymond, 1913
+      Family Bigotinidae Hupé, 1953
+      Family Ellipsocephalidae Matthew, 1887
+      Family Estaingiidae Öpik, 1975
+      Family Palaeolenidae Hupé, 1953
+      Family Yunnanocephalidae Hupé, 1953
+    Superfamily Emuelloidea Pocock, 1970
+      Family Emuellidae Pocock, 1970
+    Superfamily Paradoxidoidea Hawle & Corda, 1847
+      Family Centropleuridae Angelin, 1854
+      Family Paradoxididae Hawle & Corda, 1847
+      Family Xystriduridae Whitehouse, 1939
+    Superfamily Redlichioidea Poulsen, 1927
+      Family Abadiellidae Hupé, 1953
+      Family Chengkouaspididae Zhang & Lin, 1980
+      Family Dolerolenidae Kobayashi, 1951
+      Family Gigantopygidae Harrington, 1959
+      Family Kueichowiidae Lu, 1965
+      Family Mayiellidae Zhang, 1966
+      Family Menneraspididae Pokrovskaâ, 1959
+      Family Metadoxididae Whitehouse, 1939
+      Family Redlichiidae Poulsen, 1927
+      Family Redlichinidae Zhang & Lin, 1980
+      Family Saukiandidae Hupé, 1953
+      Family Yinitidae Hupé, 1953
+Order Corynexochida Kobayashi, 1935
+  Suborder Corynexochina Kobayashi, 1935
+    Family Chengkouiidae Zhu, 1980
+    Family Corynexochidae Angelin, 1854
+    Family Dinesidae Lermontova, 1940
+    Family Dolichometopidae Walcott, 1916
+    Family Dorypygidae Kobayashi, 1935
+    Family Edelsteinaspididae Hupé, 1953
+    Family Jakutidae Suvorova, 1959
+    Family Oryctocephalidae Beecher, 1897
+    Family Zacanthoididae Swinnerton, 1915
+  Suborder Illaenina Jaanusson, 1959
+    Family Illaenidae Hawle & Corda, 1847
+    Family Panderiidae Bruton, 1968
+    Family Styginidae Vogdes, 1890
+    Family Tsinaniidae Kobayashi, 1935
+  Suborder Leiostegiina Bradley, 1925
+    Family Illaenuridae Vogdes, 1890
+    Family Kaolishaniidae Kobayashi, 1955
+    Family Leiostegiidae Bradley, 1925 11
+    Family Shirakiellidae Hupé, 1953
+Order Lichida Moore, 1959
+  Family Lichakephalidae Tripp, 1957
+  Family Lichidae Hawle & Corda, 1847
+Order Odontopleurida Whittington, 1959
+  Family Odontopleuridae Burmeister, 1843
+Order Phacopida Salter, 1864
+  Suborder Phacopina Struve, 1959 (3 subfamilies)
+    Superfamily Acastoidea Delo, 1935
+      Family Acastidae Delo, 1935
+      Family Calmoniidae Delo, 1935
+    Superfamily Dalmanitoidea Vogdes, 1890
+      Family Dalmanitidae Vogdes, 1890
+    Superfamily Phacopoidea Hawle & Corda, 1847
+      Family Phacopidae Hawle & Corda, 1847
+      Family Pterygometopidae Reed, 1905
+    Superfamily Uncertain
+      Family Diaphanometopidae Jaanusson, 1959
+      Family Prosopiscidae Fortey & Shergold, 1984
+  Suborder Cheirurina Harrington & Leanza, 1957
+    Family Cheiruridae Hawle & Corda, 1847
+    Family Encrinuridae Angelin, 1854
+    Family Pliomeridae Raymond, 1913
+  Suborder Calymenina Swinnerton, 1915
+    Family Bathycheilidae Přibyl, 1953
+    Family Bavarillidae Sdzuy, 1957
+    Family Calymenidae Burmeister, 1843
+    Family Homalonotidae Chapman, 1890
+    Family Pharostomatidae Hupé, 1953
+Order Proetida Fortey & Owens, 1975
+  Family Proetidae Salter, 1864
+  Family Tropidocoryphidae Přibyl, 1946
+Order Aulacopleurida, 2011
+  Family Alokistocaridae Resser, 1939
+  Family Aulacopleuridae Angelin, 1854
+  Family Bathyuridae Walcott, 1886
+  Family Brachymetopidae Prantl and Přibyl, 1951
+  Family Crepicephalidae Kobayashi, 1935
+  Family Dimeropygidae Hupé, 1953
+  Family Ehmaniellidae Sundberg, 1994
+  Family Holotrachelidae Warburg, 1925
+  Family Hystricuridae Hupé, 1953
+  Family Marjumiidae Kobayashi, 1935
+  Family Rorringtoniidae Owens, 1990
+  Family Scharyiidae Osmólska, 1957
+  Family Solenopleuridae Angelin, 1854
+  Family Telephinidae Marek, 1952
+  Family Tricrepicephalidae Palmer, 1955
+Order Asaphida Salter, 1864
+  Superfamily Asaphoidea Burmeister, 1843
+    Family Asaphidae Burmeister, 1843
+    Family Ceratopygidae Linnarsson, 1869
+  Superfamily Cyclopygoidea Raymond, 1925
+    Family Cyclopygidae Raymond, 1925
+    Family Nileidae Angelin, 1854
+    Family Taihungshaniidae Sun, 1931
+  Superfamily Trinucleoidea Hawle & Corda, 1847
+    Family Alsataspididae Turner, 1940
+    Family Dionididae Gürich, 1907
+    Family Liostracinidae Raymond, 1937
+    Family Raphiophoridae Angelin, 1854
+    Family Trinucleidae Hawle & Corda, 1847
+Order Olenida, 2011
+  Family Andrarinidae Raymond, 1937
+  Family Aphelaspididae Palmer, 1960
+  Family Asaphiscidae Raymond, 1924
+  Family Cedariidae Raymond, 1937
+  Family Dokimokephalidae Kobayashi, 1935
+  Family Eulomidae Kobayashi, 1935
+  Family Idahoiidae Lochman, 1956
+  Family Loganellidae Rasetti, 1959
+  Family Olenidae Burmeister, 1843
+  Family Parabolinoididae Lochman, 1956
+  Family Pterocephaliidae Kobayashi, 1935
+  Family Remopleurididae Hawle and Corda, 1847
+Order Harpida Whittington, 1959
+  Family Harpetidae Hawle & Corda, 1847
+Order Uncertain37
+  Family Acrocephalitidae Hupé, 1953
+  Family Aldonaiidae Hupé, 1953
+  Family Amgaspididae Černyševa, 1960
+  Family Anomocarellidae Hupé, 1955
+  Family Anomocaridae Poulsen, 1927
+  Family Antagmidae Hupé, 1953
+  Family Atopidae Hupé, 1953
+  Family Auritamidae Öpik, 1967
+  Family Avoninidae Lochman, 1936
+  Family Bolaspididae Howell, 1959
+  Family Catillicephalidae Raymond, 1938
+  Family Changshaniidae Kobayashi, 1935
+  Family Cheilocephalidae Shaw, 1956
+  Family Conocoryphidae Angelin, 1854
+  Family Damesellidae Kobayashi, 1935
+  Family Diceratocephalidae Lu, 1954
+  Family Dikelocephalidae Miller, 1889
+  Family Ellipsocephaloididae Hupé, 1955
+  Family Elviniidae Kobayashi, 1935
+  Family Eurekiidae Hupé, 1953
+  Family Harpididae Whittington, 1950
+  Family Holocephalinidae Hupé, 1953
+  Family Hungaiidae Raymond, 1924
+  Family Ignotogregatidae Zhang & Jell, 1987
+  Family Inouyiidae Zhang, 1963
+  Family Isocolidae Angelin, 1854
+  Family Ityophoridae Warburg, 1925
+  Family Jamrogiidae Bentley, Jago & Cooper, 2009
+  Family Kingstoniidae Kobayashi, 1933
+  Family Lisaniidae Zhang, 1963
+  Family Llanoaspididae Lochman, 1944
+  Family Lonchocephalidae Hupé, 1953
+  Family Lorenzellidae Zhang, 1963
+  Family Mapaniidae Zhang, 1963
+  Family Menomoniidae Walcott, 1916
+  Family Missisquoiidae Hupé, 1953
+  Family Monkaspididae Kobayashi, 1935
+  Family Namanoiidae Lermontova, 1951
+  Family Nepeidae Whitehouse, 1939
+  Family Norwoodiidae Walcott, 1916
+  Family Onchonotopsidae Shaw, 1966
+  Family Papyriaspididae Whitehouse, 1939
+  Family Phylacteridae Ludvigsen & Westrop, 1989
+  Family Plethopeltidae Raymond, 1925
+  Family Polycyrtaspididae Öpik, 1967
+  Family Proasaphiscidae Zhang, 1963
+  Family Ptychaspididae Raymond, 1924
+  Family Ptychopariidae Matthew, 1887
+  Family Raymondinidae Clark, 1924
+  Family Rhyssometopidae Öpik, 1967
+  Family Sarkiidae Hupé, 1953
+  Family Shirakiellidae Hupé, 1953
+  Family Shumardiidae Lake, 1907
+  Family Sunaspididae Zhang & Jell, 1987
+  Family Utiidae Kobayashi, 1935
+  Family Wuaniidae Zhang & Yuan, 1981
