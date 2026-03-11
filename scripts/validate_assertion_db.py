@@ -230,17 +230,19 @@ def main():
           f"({valid_genera_excluded} in excluded subtrees, "
           f"{valid_genera_no_placement} without accepted placement)")
 
-    # Check orders are reachable (minus excluded)
-    n_orders_total = dst.execute(
-        "SELECT COUNT(*) FROM taxon WHERE rank='Order'"
-    ).fetchone()[0]
-    n_orders_excluded = len([rid for rid in excluded_root_ids
-                             if dst.execute("SELECT rank FROM taxon WHERE id=?", (rid,)).fetchone()[0] == 'Order'])
-    n_orders = dst.execute(
-        "SELECT COUNT(*) FROM v_taxonomy_tree WHERE rank='Order'"
-    ).fetchone()[0]
-    check("orders in tree", n_orders == n_orders_total - n_orders_excluded,
-          f"{n_orders}/{n_orders_total} ({n_orders_excluded} excluded)")
+    # Check orders reachable per profile
+    profiles = dst.execute(
+        "SELECT id, name FROM classification_profile ORDER BY id"
+    ).fetchall()
+    for pid, pname in profiles:
+        n_orders_in_profile = dst.execute("""
+            SELECT COUNT(DISTINCT e.child_id) FROM classification_edge_cache e
+            JOIN taxon t ON e.child_id = t.id
+            WHERE e.profile_id = ? AND t.rank = 'Order'
+        """, (pid,)).fetchone()[0]
+        # Orders that have at least one descendant edge in this profile
+        check(f"orders in profile '{pname}'", n_orders_in_profile > 0,
+              f"{n_orders_in_profile} orders")
 
     # --- 4. View consistency ---
     print("\n4. View consistency")

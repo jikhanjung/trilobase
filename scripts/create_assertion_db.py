@@ -23,7 +23,7 @@ from pathlib import Path
 
 from db_path import find_trilobase_db
 
-ASSERTION_VERSION = "0.1.7"
+ASSERTION_VERSION = "0.1.8"
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC_DB = Path(find_trilobase_db())
@@ -968,7 +968,7 @@ def _build_manifest():
             "taxonomy_tree": {
                 "type": "hierarchy",
                 "display": "tree",
-                "title": "Taxonomy Tree",
+                "title": "Taxonomy",
                 "description": "Hierarchical classification derived from assertions (Profile: default)",
                 "source_query": "taxonomy_tree",
                 "icon": "bi-diagram-3",
@@ -998,7 +998,7 @@ def _build_manifest():
             },
             "genera_table": {
                 "type": "table",
-                "title": "All Genera",
+                "title": "Genera",
                 "description": "Flat list of all trilobite genera",
                 "source_query": "genera_list",
                 "icon": "bi-table",
@@ -1017,7 +1017,7 @@ def _build_manifest():
             },
             "assertion_table": {
                 "type": "table",
-                "title": "All Assertions",
+                "title": "Assertions",
                 "description": "Complete list of taxonomic assertions",
                 "source_query": "assertion_list",
                 "icon": "bi-link-45deg",
@@ -1122,7 +1122,7 @@ def _build_manifest():
             },
             "profiles_table": {
                 "type": "table",
-                "title": "Classification Profiles",
+                "title": "Profiles",
                 "description": "Named classification profiles for building different taxonomy trees",
                 "source_query": "profile_list",
                 "icon": "bi-sliders",
@@ -1139,7 +1139,7 @@ def _build_manifest():
             # === Profile Comparison (compound view) ===
             "profile_comparison": {
                 "type": "compound",
-                "title": "Profile Comparison",
+                "title": "Comparison",
                 "icon": "bi-arrow-left-right",
                 "controls": [
                     {
@@ -1240,7 +1240,7 @@ def _build_manifest():
                         },
                     },
                     "morph": {
-                        "title": "Morphing",
+                        "title": "Animation",
                         "display": "tree_chart_morph",
                         "description": "Animated transition between two classification trees",
                         "source_query": "radial_tree_nodes",
@@ -1749,7 +1749,7 @@ def _build_manifest():
             "tree_chart": {
                 "type": "hierarchy",
                 "display": "tree_chart",
-                "title": "Tree Chart",
+                "title": "Tree",
                 "description": "Taxonomy tree visualization — radial or rectangular layout",
                 "icon": "bi-diagram-3",
                 "source_query": "radial_tree_nodes",
