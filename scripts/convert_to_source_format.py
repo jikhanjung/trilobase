@@ -188,9 +188,13 @@ notes: |
         # Pattern: 4-digit year followed by extra digits (footnotes)
         line = re.sub(r'(\d{4})\d+(\s|$)', r'\1\2', line)
 
-        # Replace "nov." (with optional trailing footnote digits) with 2011
-        # Must come after parenthetical/footnote cleanup
-        line = re.sub(r',?\s*nov\.\d*', ', 2011', line)
+        # Replace "nov." (with optional trailing footnote digits) with "Adrain, 2011"
+        # Adrain is the author of all new taxa in this publication
+        line = re.sub(r',?\s*nov\.\d*', ' Adrain, 2011', line)
+
+        # Strip trailing footnote digits from taxon names (e.g., "Uncertain37" → "Uncertain")
+        # Pattern: word ending with digits that aren't part of a year
+        line = re.sub(r'([A-Za-z])\d+\s*$', r'\1', line)
 
         # Determine rank and indent based on parent context
         rank_match = re.match(r'^(Class|Order|Suborder|Superfamily|Family)\s+', line)
@@ -364,6 +368,11 @@ def parse_genus_entry(line, pub_year=2002):
     # Clean family name
     family = family.strip()
 
+    # Normalize "SUBORDER FAMILY UNCERTAIN" → "UNCERTAIN"
+    # e.g., "AGNOSTINA FAMILY UNCERTAIN" → "UNCERTAIN"
+    if "FAMILY UNCERTAIN" in family:
+        family = "UNCERTAIN"
+
     # Determine if questionable family
     questionable_family = family.startswith("?")
     family = family.lstrip("?")
@@ -421,7 +430,10 @@ notes: |
         else:
             by_family[e["family"]].append(e)
 
-    # Sort families alphabetically
+    # Sort families alphabetically; skip empty-family genera (nomenclatural notes)
+    notes_genera = by_family.pop("", [])
+    notes_genera.extend(by_family.pop("NOTES", []))
+
     lines = []
     for family in sorted(by_family.keys()):
         genera = by_family[family]
@@ -463,6 +475,18 @@ notes: |
                     target = syn["target"]
                     label = syn["type"].replace("_", " ")
                     lines.append(f"    ~ {target} ({label})")
+
+    # Nomenclatural notes (genera without family assignment — synonyms, replacements, etc.)
+    if notes_genera:
+        lines.append("")
+        lines.append("# --- Nomenclatural notes (no family assignment) ---")
+        for g in sorted(notes_genera, key=lambda x: x["name"]):
+            note = g.get("_note", "")
+            syns = "; ".join(
+                f"{s['type']}: {s['target']}" for s in g.get("synonyms", []) if s.get("target")
+            )
+            detail = note or syns or "no family"
+            lines.append(f"# {g['name']} {g.get('authority', '')} — {detail}")
 
     if unparsed:
         lines.append("")

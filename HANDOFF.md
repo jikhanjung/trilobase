@@ -1,6 +1,6 @@
 # Trilobase Project Handover
 
-**Last updated:** 2026-03-10
+**Last updated:** 2026-03-11
 
 ## Project Overview
 
@@ -268,6 +268,34 @@ Compare 모드 UI 인프라 + Diff Table 구현.
 | treatise2004 edges | 1,666 | 1,681 | +15 |
 
 **상세**: `devlog/20260310_116_treatise1959_txt_pipeline_and_fixes.md`
+
+## Assertion DB v0.2.0: Source-Driven Build ✅
+
+기존 3단계 파이프라인(`create_assertion_db.py` → `import_treatise1959.py` → `import_treatise.py`)을 `data/sources/*.txt` 기반 단일 스크립트로 통합.
+
+```bash
+python scripts/convert_to_source_format.py   # → data/sources/*.txt 재생성
+python scripts/build_assertion_db.py          # → db/trilobase-assertion-0.2.0.db
+```
+
+| 항목 | 0.1.8 | 0.2.0 | 차이 |
+|------|-------|-------|------|
+| taxon | 5,610 | 5,627 | +17 |
+| PLACED_IN (accepted) | 5,083 | 5,113 | +30 |
+| SYNONYM_OF | 1,055 | 1,075 | +20 |
+| Default edges | 5,083 | 5,113 | +30 |
+| Treatise 1959 edges | 1,768 | 1,645 | -123 |
+| Treatise 2004 edges | 2,053 | 1,912 | -141 |
+
+**주요 개선:**
+- 단일 스크립트 빌드 (기존 3단계 → 1단계)
+- 소스 데이터 7건 정제 (세미콜론 구분자, OCR 오타)
+- Family 이름 정규화 (ALL CAPS → Title Case, Dokimokephalidae → Dokimocephalidae 등)
+- Canonical parent_id 폴백 (소스에 없는 50개 taxa)
+- Canonical opinions 임포트 (386건 추가 synonym/spelling)
+- Treatise 프로필: 직접 파싱 (fuzzy matching 제거)
+
+**상세**: `devlog/20260311_119_assertion_db_020_source_build.md`, `devlog/20260311_P83_build_assertion_from_sources.md`
 
 ## R01/R02: 설계 리뷰 문서
 

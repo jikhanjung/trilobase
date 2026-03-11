@@ -9,455 +9,6 @@ notes: |
   Format: GenusName Author, Year [type species] | formation, location | TEMPORAL_CODE
 ---
 
-Family 
-  Acanthaloma CONRAD, 1840 [suppressed by decision of ICZN, for discussion see WHITTINGTON, 1952c]
-    = Leonaspis (j.s.s., fide WHITTINGTON, 1952c)
-  Acastina REED, 1927 [unnecessary replacement and thus j.o.s. of Acaste]
-    ~ Acaste (unnecessary replacement)
-  Acheilus RAYMOND, 1924 [preocc., replaced by Peracheilus]
-    # preocc., replaced by Peracheilus
-  Acrectopyge HAWLE & CORDA, 1847 in VOGDES, 1925 [error for Acanthopyge]
-  Actinobolus EICHWALD, 1858 [misspelling of Actinolobus]
-  Actinolobus EICHWALD, 1858 [preocc., not replaced]
-    = Illaenus (j.s.s., fide JAANUSSON, 1954)
-    # preocc., not replaced
-  Actinopeltis POULSEN, 1946 [preocc., replaced by Grinnellaspis]
-    # preocc., replaced by Grinnellaspis
-  Aeglina BARRANDE, 1850 [replacement name for Egle]
-    = Cyclopyge (j.o.s.)
-    # replacement name for Egle
-  Aeonia BURMEISTER, 1843 [j.o.s. of Proetus]
-    = Proetus (j.o.s.)
-  Aliger HOWELL, 1937 [preocc. replaced by Aligerites]
-    # preocc., replaced by Aligerites
-  Alloctops RAFINESQUE, 1832 [see NOTE 2]
-  Ambonslium KOBAYASHI, 1941 [misspelling of Ambonolium]
-  Amphion PANDER, 1830 [preocc., replaced by Pliomera]
-    # preocc., replaced by Pliomera
-  Anderssonia SUN, 1924 [preocc. replaced by Anderssonella]
-    # preocc., replaced by Anderssonella
-  Aneuacanthus BARRANDE, 1856 [unnecessary emendation of Aneucanthus and thus j.o.s. of Acontheus]
-  Aneucanthus ANGELIN, 1854 [unnecessary replacement of Acontheus and thus j.o.s. of Acontheus]
-    ~ Acontheus and thus j.o.s. of Acontheus (unnecessary replacement)
-  Anginouyia SAVITSKY et al., 1974 [quoted in NOMENCLATOR ZOOLOGICUS vol. 8; misspelling of Amginouyia]
-  Anisonotus RAYMOND, 1920 [preocc., replaced by Anisonotella]
-    # preocc., replaced by Anisonotella
-  Anorina WHITEHOUSE, 1936 [j.o.s. of Eoasaphus]
-    = Eoasaphus (j.o.s.)
-  Anthes GOLDFUSS, 1843 [j.o.s. of Peltura]
-    = Peltura (j.o.s.)
-  Arctaspis LERMONTOVA, 1940 [preocc., replaced by Paracrocephalites]
-    # preocc., replaced by Paracrocephalites
-  Arethusa BARRANDE, 1846a [preocc., replaced by Arethusina]
-    # preocc., replaced by Arethusina
-  Arethusina BARRANDE, 1852 [replacement name for Arethusa]
-    = Aulacopleura (j.o.s.)
-    # replacement name for Arethusa
-  Arges GOLDFUSS, 1839 [preocc., replaced by Ceratarges]
-    # preocc., replaced by Ceratarges
-  Arion BARRANDE, 1846a [preocc., replaced by Agraulos]
-    # preocc., replaced by Agraulos
-  Arionellus BARRANDE, 1852 [replacement name for Arionides]
-    = Agraulos (j.o.s.)
-    # replacement name for Arionides
-  Arionides BARRANDE, 1847 [replacement name for Arion]
-    = Agraulos (j.o.s.)
-    # replacement name for Arion
-  Asteraspis KOBAYASHI, 1935c [j.o.s. of Deiracephalus]
-    = Deiracephalus (j.o.s.)
-  Astyages ANGELIN, 1854 [preocc., replaced by Isocolus]
-    # preocc., replaced by Isocolus
-  Aulacodiscus WESTERGARD, 1946 [preocc. replaced by Opsidiscus]
-    # preocc., replaced by Opsidiscus
-  Australurus RAMSKOLD, 1986a [preocc., replaced by Pacificurus]
-    # preocc., replaced by Pacificurus
-  Barrandia HALL, 1860 [preocc., replaced by Olenellus]
-    # preocc., replaced by Olenellus
-  Basilicoides MA, 1938 [preocc., replaced by Dolerobasilicus]
-    # preocc., replaced by Dolerobasilicus
-  Battus DALMAN, 1827 [j.o.s. of Agnostus]
-    = Agnostus (j.o.s.)
-  Bergeronia MATTHEW, 1895 [j.o.s. of Protolenus]
-    = Protolenus (j.o.s.)
-  Bettonia WHITTARD, 1956 [preocc., replaced by Bettonolithus]
-    # preocc., replaced by Bettonolithus
-  Boeckia BROGGER, 1882 [preocc., replaced by Boeckaspis]
-    # preocc., replaced by Boeckaspis
-  Boeckia PILLET, 1965a [preocc., replaced by Pilletopeltis]
-    # preocc., replaced by Pilletopeltis
-  Borthaspis STUBBLEFIELD, 1951b [j.o.s. of Psilocephalinella]
-    = Psilocephalinella (j.o.s.)
-  Brachyampyx FORBES, 1849 [j.o.s. of Ampyx]
-    = Ampyx (j.o.s.)
-  Brachyaspis MILLER, 1936a [preocc., replaced by Brachyaspidion]
-    # preocc., replaced by Brachyaspidion
-  Brachymetopina REED, 1903 [j.o.s. of Brachymetopus]
-    = Brachymetopus (j.o.s.)
-  Branisella PŘIBYL & VANĚK, 1981a [preocc., not replaced; j.s.s. of Maurotarion, fide ADRAIN & EDGECOMBE, 1996]
-  Briania EDGECOMBE, 1994 [preocc., replaced by Brianurus]
-    # preocc., replaced by Brianurus
-  Broeggeria BANCROFT, 1933 [preocc., replaced by Broeggerolithus]
-    # preocc., replaced by Broeggerolithus
-  Brongniartia SALTER, 1865 [preocc., replaced by Eohomalonotus]
-    # preocc., replaced by Eohomalonotus
-  Brontes GOLDFUSS, 1839 [preocc., replaced by Bronteus and by Goldius]
-    # preocc., replaced by Bronteus and by Goldius
-  Burnetia WALCOTT, 1924b [preocc. replaced by Burnetiella]
-    # preocc., replaced by Burnetiella
-  Calymena DESMAREST, 1817 [suppressed in favour of Calymene, by ICZN Opinion 1433]
-  Calyptomma RESSER, 1942b [preocc. replaced by Princetonella]
-    # preocc., replaced by Princetonella
-  Cephalocoelia RAYMOND, 1937 [preocc., replaced by Catillicephala]
-    # preocc., replaced by Catillicephala
-  Cobboldia LERMONTOVA, 1940 [preocc. replaced by Neocobboldia]
-    # preocc., replaced by Neocobboldia
-  Colymbus HADDING, 1913a [preocc., replaced by Paryfenus]
-    # preocc., replaced by Paryfenus
-  Conocephalites BARRANDE, 1852 [j.o.s. of Conocoryphe]
-    = Conocoryphe (j.o.s.)
-  Cryphaeus GREEN, 1837 [preocc., replaced by Greenops]
-    # preocc., replaced by Greenops
-  Cryptonymus EICHWALD, 1840 [suppressed in favour of Illaenus by ICZN opinion 508]
-  Cyamops OWENS, 1979 [preocc., replaced by Cyamella]
-    # preocc., replaced by Cyamella
-  Cyclognathus LINNARSSON, 1875 [preocc., replaced by Acerocarina]
-    # preocc., replaced by Acerocarina
-  Cylindraspis SANDBERGER in SANDBERGER & SANDBERGER, 1850 [preocc., not replaced; j.s.s. of Archegonus, fide MOORE, 1959]
-  Cylindrocephalus TRENKNER, 1868 [angustus]
-  Dahungshania LI et al. 1975 [misspelling of Taihungshania]
-  Dalmania EMMRICH, 1844 [preocc., replaced by Dalmanites]
-    # preocc., replaced by Dalmanites
-  Dalmaniopsis GEINITZ, 1862 [not a trilobite, fide RICHTER & RICHTER, 1955, Senckenbergiana Lethaea 36: 294]
-  Delamarella EDDY & McCOLLUM, 1998 [preocc., replaced by Delamarina]
-    # preocc., replaced by Delamarina
-  Denckmannia WEDEKIND, 1911 [preocc., replaced by Denckmannites]
-    # preocc., replaced by Denckmannites
-  Denisia CLARK, 1924 [preocc., replaced by Theodenisia]
-    # preocc., replaced by Theodenisia
-  Diandongaspis LU & ZHANG in W. ZHANG et al., 1980a [preocc. replaced by Diandongaspidella]
-    # preocc., replaced by Diandongaspidella
-  Dichagnostus JAEKEL,1909 [j.o.s. of Pleuroctenium]
-    = Pleuroctenium (j.o.s.)
-  Dictya KOBAYASHI, 1933a [preocc. replaced by Dictyites]
-    # preocc., replaced by Dictyites
-  Dione BARRANDE, 1846a [preocc., replaced by Dionide]
-    # preocc., replaced by Dionide
-  Diplopsites RAFINESQUE, 1832 [levis]
-  Ebenzeria MARCOU, 1888 [unnecessary replacement name for and thus j.o.s. of Elliptocephala]
-    ~ Elliptocephala (unnecessary replacement)
-  Edgellia SHAW in SHAW & STUBBLEFIELD, 1950 [j.o.s. of Trinucleus]
-    = Trinucleus (j.o.s.)
-  Egle BARRANDE, 1846a [preocc., replaced by Cyclopyge]
-    # preocc., replaced by Cyclopyge
-  Embolimus ROMINGER, 1887 [preocc., replaced by Zacanthoides]
-    # preocc., replaced by Zacanthoides
-  Endymion BILLINGS, 1862 [preocc., replaced by Endymionia]
-    # preocc., replaced by Endymionia
-  Entomolithus LINNAEUS, 1745 [suppressed in favour of Paradoxides]
-  Entomostracites WAHLENBERG, 1821 [suppressed in favour of Paradoxides]
-  Eoasaphiscus LU & YUAN in LI, 1978 [preocc., replaced by Eoasaphiscellus]
-    # preocc., replaced by Eoasaphiscellus
-  Eocorycephalus REED, 1925 [j.o.s. of Synphoria]
-    = Synphoria (j.o.s.)
-  Erinnys SALTER in HICKS, 1872 [preocc., replaced by Salteria, then Menevia, then Meneviella]
-    # preocc., replaced by Salteria, then Menevia, then Meneviella
-  Eryx ANGELIN, 1851 [preocc. replaced by Elyx]
-    # preocc., replaced by Elyx
-  Eudechenella RICHTER, 1912 [j.o.s. of Dechenella]
-    = Dechenella (j.o.s.)
-  Euproetus RICHTER, 1913 [j.o.s. of Proetus]
-    = Proetus (j.o.s.)
-  Eutrimerocephalus GORTANI, 1907 [j.o.s. of Trimerocephalus]
-    = Trimerocephalus (j.o.s.)
-  Fimbriomarrolithus WILLIAMS, 1948 [j.o.s. of Telaeomarrolithus]
-    = Telaeomarrolithus (j.o.s.)
-  Georgiellus MOBERG, 1899 [j.o.s. of Elliptocephala]
-    = Elliptocephala (j.o.s.)
-  Gibbocephalus PILLET, 1965a [j.o.s. of Crotalocephalina]
-    = Crotalocephalina (j.o.s.)
-  Glockeria WEDEKIND, 1914 [j.o.s. of Phacopidella]
-    = Phacopidella (j.o.s.)
-  Glomerites RAFINESQUE, 1817 [see NOTE 2]
-  Gloria EGOROVA & SAVITSKY, 1968 [preocc., replaced by Gloriagloria]
-    # preocc., replaced by Gloriagloria
-  Goldfussius BARRANDE, 1852 [unnecessary emendation and thus j.o.s. of Goldfussia]
-  Goniodiscus RAYMOND, 1913c [preocc., replaced by Calodiscus]
-    # preocc., replaced by Calodiscus
-  Goniurus RAYMOND, 1913a [preocc., replaced by Goniotelus]
-    # preocc., replaced by Goniotelus
-  Gortania COSSMAN, 1909 [s.o.s. of Cryphops, rejected by ICZN Opinion 2006; replacement name for Microphthalmus]
-  Granularia POLETAEVA in LERMONTOVA, 1951b [preocc., replaced by Granularaspis]
-    # preocc., replaced by Granularaspis
-  Hadrorakos DELO, 1940 [unnecessary emendation of and thus j.o.s. of Hadrorachus]
-  Haploconus RAYMOND, 1913a [preocc., replaced by Dimeropyge]
-    # preocc., replaced by Dimeropyge
-  Harpina NOVÁK, 1885 [preocc., replaced by Eoharpes]
-    # preocc., replaced by Eoharpes
-  Harrisia CLELAND, 1900 [preocc., replaced by Clelandia]
-    # preocc., replaced by Clelandia
-  Hausmannia HALL & CLARK, 1888 [unnecessary replacement and thus j.o.s. of Odontochile]
-    ~ Odontochile (unnecessary replacement)
-  Hausmannia ETHERIDGE & MITCHELL, 1895 [preocc., not replaced, j.s.s. of Dalmanites, fide MITCHELL, 1919]
-  Hawkinsia RASETTI, 1965a [preocc., replaced by Hawkinsaspis]
-    # preocc., replaced by Hawkinsaspis
-  Hectoria LU, 1975 [preocc., replaced by Ruapyge; j.s.s. of Hysterolenus, fide PENG, 1990]
-    # preocc., replaced by Ruapyge; j.s.s. of Hysterolenus, fide PENG, 1990
-  Hedinia TROEDSSON, 1937 [preocc., replaced by Hedinaspis]
-    # preocc., replaced by Hedinaspis
-  Hoeferia REDLICH, 1899 [preocc., replaced by Redlichia]
-    # preocc., replaced by Redlichia
-  Holometopus ANGELIN, 1854 [preocc., replaced by Warburgella]
-    # preocc., replaced by Warburgella
-  Holubia KLOUČEK, 1931 [preocc., replaced by Holubaspis]
-    # preocc., replaced by Holubaspis
-  Huntonia CAMPBELL, 1977 [preocc., replaced by Huntoniatonia]
-    # preocc., replaced by Huntoniatonia
-  Irania KING, 1937 [preocc., replaced by Iranoleesia]
-    # preocc., replaced by Iranoleesia
-  Isoctomesa RAFINESQUE, 1821 [Trilobites emarginatus]
-  Jeholaspis KOBAYASHI, 1953b [j.o.s. of Saukioides]
-    = Saukioides (j.o.s.)
-  Jixiania W. ZHANG in W. ZHANG et al., 1995 [preocc. replaced by Jixianella]
-    # preocc., replaced by Jixianella
-  Kaniniella SIVOV in EGOROVA et al., 1955 [preocc., replaced by Eokaninia]
-    # preocc., replaced by Eokaninia
-  Kaufmannia SDZUY, 1961 [preocc., replaced by Kaufmannella]
-    # preocc., replaced by Kaufmannella
-  Kendallia RAASCH in BERG, 1953 [preocc., replaced by Kendallina]
-    # preocc., replaced by Kendallina
-  Koenigia SALTER, 1865 [j.o.s. of Homalonotus]
-    = Homalonotus (j.o.s.)
-  Koreaspis RICHTER, 1942 [inappropriate emendation of Koraipsis]
-    ~ Koraipsis (inappropriate emendation)
-  Lalax HOLLOWAY & LANE, 1998 [preocc., replaced by Liolalax]
-    # preocc., replaced by Liolalax
-  Lepidocephaloides REPINA in REPINA et al., 1964 [typographical error for Compsocephalus on p. 307 . hand corrected by author in copy held by A.R. Palmer . borne out by assignment of type species on p. 308]
-  Liostracus ANGELIN, 1854 [preocc., replaced by Andrarina]
-    # preocc., replaced by Andrarina
-  Liparges GURICH, 1901 [j.o.s. of Dicranogmus; see THOMAS & HOLLOWAY, 1988]
-    = Dicranogmus; see THOMAS & HOLLOWAY, 1988 (j.o.s.)
-  Livia LENDZION, 1975 [preocc., replaced by Liwia]
-    # preocc., replaced by Liwia
-  Lobocephalus RŮŽIČKA, 1940 [preocc., replaced by Ruzickaia]
-    # preocc., replaced by Ruzickaia
-  Lorentzia COSSMAN, 1908 [inappropriate proposal as replacement name for Lioparia thought to be preoccupied by Loparia]
-  Luaspis PENG et al., 1995 [preocc., replaced by Luyanhaoaspis]
-    # preocc., replaced by Luyanhaoaspis
-  Maja LOMOVITSKAYA, 1955 [preocc., replaced by Erdelia]
-    # preocc., replaced by Erdelia
-  Malvernia DELO, 1935 [preocc., replaced by Heliocephalus]
-    # preocc., replaced by Heliocephalus
-  Megalaspis ANGELIN, 1851 [preocc., replaced by Megistaspis]
-    # preocc., replaced by Megistaspis
-  Megalophthalmus LORENZ, 1906 [preocc., replaced by Grandioculus]
-    # preocc., replaced by Grandioculus
-  Melopetasus SCHALLREUTER, 1979 [name given to indeterminate ?asaphoid trilobite protaspis]
-  Menevia LAKE, 1938 [replacement name for Salteria]
-    # preocc., replaced by Meneviella
-    # replacement name for Salteria
-  Mesagnostus JAEKEL, 1909 [j.o.s. of Peronopsis]
-    = Peronopsis (j.o.s.)
-  Metacanthus HAWLE & CORDA, 1847 [preocc., replaced by Neometacanthus]
-    # preocc., replaced by Neometacanthus
-  Metopias EICHWALD, 1842 [preocc., replaced by Metopolichas]
-    # preocc., replaced by Metopolichas
-  Miagnostus JAEKEL, 1909 [j.o.s. of Lejopyge]
-    = Lejopyge (j.o.s.)
-  Microphthalmus GORTANI, 1907 [preocc., replaced by Gortania]
-    # preocc., replaced by Gortania
-  Milesia CHAPMAN, 1929 [preocc., replaced by Xystridura]
-    # preocc., replaced by Xystridura
-  Millardia WALCOTT, 1916a [preocc. replaced by Densonella]
-    # preocc., replaced by Densonella
-  Minusella REPINA, 1966 [incorrect spelling of Minusinella]
-    ~ Minusinella (incorrect spelling)
-  Mitchellia VOGDES, 1917 [preocc., replaced by Mitchellaspis]
-    # preocc., replaced by Mitchellaspis
-  Monadella BARRANDE, 1847 [unnecessary emendation of Monadina]
-  Monorachus CLARKE, 1897 [unjustified emendation of Monorakos]
-  Monorhachis VOGDES, 1925 [unjustified emendation of Monorakos]
-  Myoproetus MAKSIMOVA, 1978a [j.o.s. of Myoproetus, ŠNAJDR]
-    = Myoproetus, ŠNAJDR (j.o.s.)
-  Neosynphoria PILLET, 1954 [j.o.s. of Synphoria]
-    = Synphoria (j.o.s.)
-  Octoillaenus BIGSBY, 1868 [misspelling of Octillaenus]
-  Odontopyge HAWLE & CORDA, 1847 [preocc., replaced by Parabolina]
-    # preocc., replaced by Parabolina
-  Oehlertia PILLET, 1973a [preocc., replaced by Oehlertaspis]
-    # preocc., replaced by Oehlertaspis
-  Ogygia BRONGNIART in DESMAREST, 1817 [suppressed by ICZN Opinion 1259]
-  Olenopsis BORNEMANN, 1891 [preocc., replaced by Dolerolenus]
-    # preocc., replaced by Dolerolenus
-  Oncholichas SCHMIDT, 1885 [j.o.s. of Arctinurus]
-    = Arctinurus (j.o.s.)
-  Onychaspis RAYMOND, 1925 [misspelling of Onchaspis]
-  Orimops RAFINESQUE, 1832 [see NOTE 2]
-  Otarionella KOROLEVA, 1977 [preocc., replaced by Otarionellina]
-    # preocc., replaced by Otarionellina
-  Pagetina LERMONTOVA, 1940 [preocc., replaced by Neopagetina]
-    # preocc., replaced by Neopagetina
-  Palaeocrepicephalus KOBAYASHI, 1935c [j.o.s. of Kochaspis]
-    = Kochaspis (j.o.s.)
-  Pamirites BALASHOVA, 1966b [preocc., replaced by Pamirotellus]
-    # preocc., replaced by Pamirotellus
-  Paracalymene LIU, 1982 [preocc., replaced by Paracalymenemene]
-    # preocc., replaced by Paracalymenemene
-  Paracrepicephalus LOCHMAN, 1936 [j.o.s. of Tricrepicephalus]
-    = Tricrepicephalus (j.o.s.)
-  Paragnostus JAEKEL, 1909 [j.o.s. of Condylopyge]
-    = Condylopyge (j.o.s.)
-  Paralichas REED, 1902 [replacement name for Platymetopus; preocc., replaced by Amphilichas]
-    # replacement name for Platymetopus; preocc., replaced by Amphilichas
-  Paralorenzella Q.Z ZHANG in QIU et al., 1983 [preocc., replaced by Paralorenzangella]
-    # preocc., replaced by Paralorenzangella
-  Paramansuyia ENDO, 1939 [misspelling of Paramansuyella]
-  Paranileus HINTZE, 1953 [preocc., replaced by Presbynileus]
-    # preocc., replaced by Presbynileus
-  Paraproetus KOBAYASHI & HAMADA, 1979 [preocc., replaced by Siciliproetus]
-    # preocc., replaced by Siciliproetus
-  Parasolenopleura POLETAEVA in EGOROVA et al., 1955 [preocc., replaced by Parasolopleurena]
-    # preocc., replaced by Parasolopleurena
-  Paratollaspis KOBAYASHI, 1943b [j.o.s. of Erbia]
-    = Erbia (j.o.s.)
-  Paraulacopleura MAKSIMOVA, 1968 [misspelling of Paraaulacopleura]
-  Perneria RŮŽIČKA, 1940 [preocc., replaced by Perneraspis]
-    # preocc., replaced by Perneraspis
-  Phaeton BARRANDE, 1946a [preocc., replaced by Phaetonides]
-    # preocc., replaced by Phaetonides
-  Phaetonides BARRANDE, 1947 [j.o.s. of Prionopeltis]
-    = Prionopeltis (j.o.s.)
-  Phillibolina GANDL, 1968 [preocc., replaced by Philliboloides]
-    # preocc., replaced by Philliboloides
-  Phillipsella OEHLERT, 1886 [suppressed by ICZN opinion 476 in favour of Phillipsinella]
-  Pilgrimia DUNCAN in LOCHMAN & DUNCAN, 1944 [preocc. replaced by Paracedaria]
-    # preocc., replaced by Paracedaria
-  Plagiops KEGEL, 1932 [preocc., replaced by Plagiolaria]
-    # preocc., replaced by Plagiolaria
-  Platycolpus RAYMOND, 1913a [preocc. replaced by Rasettia]
-    # preocc., replaced by Rasettia
-  Platyharpes WHITTINGTON, 1950b [j.o.s. of Hibbertia]
-    = Hibbertia (j.o.s.)
-  Platymetopus ANGELIN, 1854 [preocc., replaced by Paralichas]
-    # preocc., replaced by Paralichas
-  Platynotus CONRAD, 1838 [preocc., replaced by Arctinurus]
-    # preocc., replaced by Arctinurus
-  Platypeltis CALLAWAY, 1877 [preocc., replaced by Platypeltoides]
-    # preocc., replaced by Platypeltoides
-  Pleuracanthus MILNE-EDWARDS, 1840 [preocc., replaced by Asteropyge]
-    # preocc., replaced by Asteropyge
-  Pliomeraspis HARRINGTON, 1957 [j.o.s. of Pliomerina]
-    = Pliomerina (j.o.s.)
-  Plutonia HICKS, 1871 [preocc., replaced by Plutonides]
-    # preocc., replaced by Plutonides
-  Podolites BALASHOVA, 1968 [preocc., replaced by Rugulites]
-    # preocc., replaced by Rugulites
-  Polytomurus HAWLE & CORDA, 1847 [suppressed in favour of Dionide, fide WHITTINGTON, 1952b]
-  Prionopyge HARRINGTON & LEANZA, 1942 [unnecessary replacement name for, and thus j.o.s. of Onychopyge]
-    ~ Onychopyge (unnecessary replacement)
-  Prionurus HAWLE & CORDA, 1847 [typographical error for Prionopeltis]
-  Probolium OEHLERT, 1889 [preocc., replaced by Neoprobolium]
-    # preocc., replaced by Neoprobolium
-  Proboloides CLARKE, 1913 [preocc., replaced by Paracalmonia]
-    # preocc., replaced by Paracalmonia
-  Promenites RAFINESQUE, 1832 [see NOTE 2]
-  Pseudoacrocephalites ROZOVA, 1968 [preocc., replaced by Rosovaspis]
-    # preocc., replaced by Rosovaspis
-  Pseudobarrandia COURTESSOLE & PILLET, 1976 [j.o.s. of Rokycania]
-    = Rokycania (j.o.s.)
-  Pseudoliostracina KOBAYASHI, 1938b [j.o.s. of Lioparia]
-    = Lioparia (j.o.s.)
-  Pseudomonaspis RICHTER & RICHTER, 1917 [j.o.s. of Acidaspis]
-    = Acidaspis (j.o.s.)
-  Pseudonileus KOBAYASHI, 1951b [j.o.s. of Hemibarrandia]
-    = Hemibarrandia (j.o.s.)
-  Pseudonileus HINTZE, 1953 [preocc., replaced by Protopresbynileus]
-    # preocc., replaced by Protopresbynileus
-  Pseudoptychoparia TING in LU, 1940 [j.o.s. of Yunnanocephalus]
-    = Yunnanocephalus (j.o.s.)
-  Pseudosaukia KOBAYASHI, 1951 [preocc., replaced by Saukioides]
-    # preocc., replaced by Saukioides
-  Psilocephalina STUBBLEFIELD, 1951a [replacement name for Psilocephalus]
-    # preocc., replaced by Psilocephalinella
-    # replacement name for Psilocephalus
-  Psilocephalus SALTER, 1866a [preocc., replaced by Psilocephalina STUBBLEFIELD, 1951a also preocc., replaced by Psilocephalinella]
-    # preocc., replaced by Psilocephalina STUBBLEFIELD, 1951a also preocc., replaced by Psilocephalinella
-  Pterocephalops LIN & ZHANG in ZHU et al., 1979 [preocc., replaced by Pterocephalopsinus]
-    # preocc., replaced by Pterocephalopsinus
-  Pterocephalus HALL & WHITFIELD, 1877 [invalid spelling emendation of Pterocephalia]
-  Pterolichas GURICH, 1901 [j.o.s. of Arctinurus]
-    = Arctinurus (j.o.s.)
-  Pterygometopidella WEDEKIND, 1911 [suppressed in favour of Eophacops]
-  Ptychocheilus NOVÁK, 1884 [preocc., replaced by Bohemopyge]
-    # preocc., replaced by Bohemopyge
-  Ptychopleura KOBAYASHI, 1936a [preocc. replaced by Ptychopleurites]
-    # preocc., replaced by Ptychopleurites
-  Qingshuiheella LU & QIAN, 1983a [preocc., replaced by Paraqingshuiheella]
-    # preocc., replaced by Paraqingshuiheella
-  Qinlingia YANG in YANG et al., 1991 [preocc., replaced by Qinlingialingia]
-    # preocc., replaced by Qinlingialingia
-  Raracephalus REPINA in REPINA et al., 1964 [typographical error for Araeocephalus]
-  Raymondia KOBAYASHI, 1935c [misspelling of Raymondina]
-  Reedaspis PRANTL & PŘIBYL, 1949c [proposed as an unnecessary replacement name for, and hence j.o.s. of Raymondella, see SINCLAIR, 1949b]
-  Reedia WEDEKIND, 1911 [preocc., replaced by Reedops]
-    # preocc., replaced by Reedops
-  Retusites RAFINESQUE, 1832 [levis]
-  Reussia MAKSIMOVA, 1972 [preocc., replaced by Reussiana]
-    # preocc., replaced by Reussiana
-  Rhax LANE & THOMAS, 1978 [preocc., replaced by Rhaxeros]
-    # preocc., replaced by Rhaxeros
-  Rhodope ANGELIN, 1854 [preocc., replaced by Panderia]
-    # preocc., replaced by Panderia
-  Rosovaspis COURTESSOLE & PILLET, 1976 [replacement name for Pseudoacrocephalites ROSOVA; j.o.s. of Dolgeuloma]
-    # replacement name for Pseudoacrocephalites ROSOVA; j.o.s. of Dolgeuloma
-  Salteria WALCOTT, 1884b [replacement name for Erinnys]
-    # preocc., replaced by Menevia, then Meneviella
-    # replacement name for Erinnys
-  Schizopyge CLARKE, 1913 [preocc., replaced by Tibagya]
-    # preocc., replaced by Tibagya
-  Schmidtella TSCHERNYSCHEW, 1893 [preocc., replaced by Tschernyschewiella]
-    # preocc., replaced by Tschernyschewiella
-  Schmidtia MARCOU, 1890 [preocc. replaced by Schmidtiellus]
-    # preocc., replaced by Schmidtiellus
-  Scottia WOLFART, 1994 [preocc., replaced by Ganovexopyge]
-    # preocc., replaced by Ganovexopyge
-  Shumardella PŘIBYL & VANĚK, 1980 [preocc., replaced by Shumardoella]
-    # preocc., replaced by Shumardoella
-  Solenopleurina RŮŽIČKA, 1938 [j.o.s. of Herse]
-    = Herse (j.o.s.)
-  Sphaerometopus ANGELIN, 1854 [alternate spelling of Sphaerexochus used by ANGELIN, 1854 and suppressed as a nomen nudum by ICZN Opinion 614]
-  Stoermeria PRANTL & PŘIBYL, 1947a [preocc., replaced by Stoermeraspis]
-    # preocc., replaced by Stoermeraspis
-  Sunina STRAND, 1943 [j.o.s. of Anderssonella]
-    = Anderssonella (j.o.s.)
-  Taihangshania J. ZHANG & WANG, 1985 [preocc., replaced by Taihangshaniashania]
-    # preocc., replaced by Taihangshaniashania
-  Telephus BARRANDE, 1852 [preocc., replaced by Telephina]
-    # preocc., replaced by Telephina
-  Telesiops RAFINESQUE, 1832 [leiocephalus]
-  Tomoligus RAFINESQUE, 1832 [levis]
-  Trachylichas GURICH, 1901 [j.o.s. of Dicranopeltis]
-    = Dicranopeltis (j.o.s.)
-  Trapelocera HAWLE & CORDA, 1847 [j.o.s. of Ceratocephala]
-    = Ceratocephala (j.o.s.)
-  Trigonaspis YANG in YANG et al., 1991 [preocc., replaced by Trigonyangaspis]
-    # preocc., replaced by Trigonyangaspis
-  Varvaspis TJERNVIK in TJERNVIK & JOHANSSON, 1980 [j.o.s. of Paramegistaspis]
-    = Paramegistaspis (j.o.s.)
-  Vicinopeltis PŘIBYL, 1967 [j.o.s. of Vicinoproetus]
-    = Vicinoproetus (j.o.s.)
-  Warburgella RAYMOND, 1937 [preocc., replaced by Raymondaspis]
-    # preocc., replaced by Raymondaspis
-  Wedekindia SUN, 1935 [preocc. replaced by Wedekindiaspis]
-    # preocc., replaced by Wedekindiaspis
-  Wutingia ENDO, 1935 [preocc., replaced by Endoaspis]
-    # preocc., replaced by Endoaspis
-  Yanshania J. ZHANG & WANG, 1985 [preocc., replaced by Yanshaniashania]
-    # preocc., replaced by Yanshaniashania
-  Ybexaspis PŘIBYL & VANĚK in PŘIBYL et al., 1985 [misspelling of Ibexaspis]
-  Zhenania LUO, 1983 [preocc., replaced by Zhenanianania]
-    # preocc., replaced by Zhenanianania
-  Zhifangia T. ZHANG, 1983 [preocc., replaced by Zhifangiafangia]
-    # preocc., replaced by Zhifangiafangia
 Family ABADIELLIDAE
   Abadiella HUPE, 1953a [bourgini] | Amouslek Fm, Morocco | LCAM
   Danangouia CHEN, 1985 [Parabadiella (Danangouia) transversa] | Chiungchussu Fm, Shaanxi, China | LCAM
@@ -609,32 +160,6 @@ Family AGNOSTIDAE
   Trilobagnostus HARRINGTON, 1938 [Agnostus innocens CLARK, 1923b] | Levis Fm, Quebec, Canada | UCAM
   Wanagnostus QIU in QIU et al., 1983 [anhuiensis] | Anhui, China | UCAM
     = Acmarhachis (j.s.s., fide SHERGOLD et al., 1990)
-Family AGNOSTINA FAMILY UNCERTAIN
-  Agnostogonus OPIK, 1967 [incognitus] | O’Hara Sh, Queensland, Australia | UCAM
-  Armagnostus HOWELL, 1937 [megalaxis] | St Albans Sh, Vermont, USA | MCAM
-  Blystagnostus OPIK, 1961 [laciniatus] | Roaring Siltstone, Queensland, Australia | MCAM
-  Ciceragnostus KOBAYASHI, 1937b [Agnostus barlowii BELT, 1868] | Dolgellau, N Wales | LORD
-    = Leiagnostus (j.s.s., fide NIELSEN, 1997)
-  Delagnostus OPIK, 1961 [dilemma] | Devoncourt Lst, Queensland, Australia | MCAM
-  Gallagnostus HOWELL, 1935b [geminus] | Herault, France | MCAM
-  Glaberagnostus ROMANENKO, 1985 [altaicus] | Glyptagnostus reticulatus Zone, Gorny Altay, Russia | UCAM
-  Grandagnostus HOWELL, 1935a [vermontensis] | St Albans, Vermont, USA | MCAM
-  Hastagnostus HOWELL, 1937 [angustus] | St Albans Sh, Vermont, USA | MCAM
-  Leiagnostus JAEKEL, 1909 [erraticus] | glacial erratic lst boulder, Rixdorf, N Germany | LORD
-  Megagnostus ROBISON, 1994 [Agnostus glandiformis ANGELIN, 1851] | Andrarum, Sweden | MCAM
-  Monaxagnostus LIU, 1982 [yongshunensis] | Yong-shun, Hunan, China | MCAM
-    = Peratagnostus (=Phaldagnostus) (j.s.s., fide PENG & ROBISON, 2000)
-  Peratagnostus OPIK, 1967 [nobilis] | Pomegranate Lst, Queensland, Australia | UCAM
-    = Phaldagnostus (j.s.s., fide SHERGOLD, 1982)
-  Phaldagnostus IVSHIN in KHALFIN, 1960 [orbiformis] | Kulbich Fm, Kazakhstan | UCAM
-  Phoidagnostoides PILLET in CAPERA et al., 1978 [Leiagnostus miqueli SDZUY, 1958b] | Horizon C, Combes de Barrroubio, Montagne Noire, France | LORD
-    = Leiagnostus (j.s.s., fide SHERGOLD et al., 1990)
-  Phoidagnostus WHITEHOUSE, 1936 [limbatus] | Devoncourt Lst, Queensland, Australia | MCAM
-  Plurinodus OPIK, 1967 [discretus] | O’Hara Sh, Queensland, Australia | MUCAM
-  Skryjagnostus ŠNAJDR, 1957b [pompeckji] | Jince Fm, Czech Republic | MCAM
-  Toragnostus ROBISON, 1988 [Agnostus bituberculatus ANGELIN, 1851] | Andrarum Lst, Sweden | MCAM
-    = Glaberagnostus (j.s.s., fide PENG & ROBISON, 2000)
-  Valenagnostus JAGO, 1976 [Agnostus nudus var. marginata BROGGER. 1878] | Angermanland, Norway | MCAM
 Family AGRAULIDAE
   Agasella LERMONTOVA & CHERNYSHEVA in CHERNYSHEVA, 1950 [falcata] | Paradoxides forchhammeri Zone, E Siberia, Russia | MCAM
   Agaso COBBOLD in COBBOLD & POCOCK, 1934 [rushtonensis] | P. forchhammeri Grit, England | MCAM
@@ -1285,8 +810,6 @@ Family AURITAMIDAE
 Family AVONINIDAE
   Avonina LOCHMAN, 1936 [bizarria] | Bonneterre Dol, Missouri, USA | UCAM
   Wongia SUN, 1924 [triangulata] | Kushan Fm, Hebei, China | UCAM
-Family Ahrdorf Fm, Gees, Eifel, TROPIDOCORYPHIDAE
-  Astycoryphe RICHTER & RICHTER, 1919 [senckenbergiana] | MDEV
 Family BATHYCHEILIDAE
   Bathycheilus HOLUB, 1908 [Dalmanites perplexusBARRANDE, 1872] | Šárka Fm, Czech Republic | MORD
   Calymenia KOLOBOVA in SOKOLOV & ELKIN, 1978 [whittingtoni] | Shakhriomon Fm, Uzbekistan | UORD
@@ -1964,11 +1487,6 @@ Family CYCLOPYGIDAE
   Symphysops RAYMOND, 1925 [Aeglina armata BARRANDE, 1872] | Kraluv Dvur Fm, Czech Republic | UORD
   Waldminia KOCH & LEMKE, 1994 [spinigera] | lower Tonschiefer, Ebbe-Sattel, Germany | MORD
   Xenocyclopyge LU in WANG, 1962 [radiata] | Pagoda Fm, Shaanxi, China | UORD
-Family Chiungchussu Fm, Yunnan, China: REDLICHIIDAE
-  Wutingaspis KOBAYASHI, 1944b [tingi] | LCAM
-Family Currant Bush Lst, Queensland, Australia
-  Agnostonymus OPIK, 1979 [Onymagnostus (Agnostonymus) semiermis] | PTYCHAGNOSTIDAE, MCAM
-    = Onymagnostus (j.s.s., fide SHERGOLD et al., 1990)
 Family DALMANITIDAE
   Anchiopsis DELO, 1935 [Calymene anchiops GREEN, 1832] | Schoharie Fm, New York, USA | LDEV
   Andreaspis STRUVE, 1962 [phacopoides] | Andreasteich Quartzite, Hessen, Germany | UORD
@@ -2912,6 +2430,8 @@ Family HARPIDIDAE
   Paraharpides PILLET & COURTESSOLE, 1981 [Harpides atlanticus BILLINGS, 1865] | Table Cove Fm, Newfoundland, Canada | MORD
   Pscemiaspis ABDULLAEV in ABDULLAEV & KHALETSKAYA, 1970 [depressa] | Pskem Ridge, Uzbekistan | UORD
 Family HEBEDISCIDAE
+  Alemtejoia KOBAYASHI, 1943a [Microdiscus souzai DELGADO, 1904] | Spain | LCAM
+    = Delgadella (j.s.s., fide JELL, 1997)
   Delgadella WALCOTT, 1912a [Lingulepis lusitanica DELGADO, 1904] | Spain | LCAM
   Delgadodiscus KOBAYASHI, 1935c [Microdiscus caudatus DELGADO, 1904] | Vila Boim, Portugal | LCAM
     = Delgadella (j.s.s., fide JELL, 1997)
@@ -3166,6 +2686,7 @@ Family INDET
 Family INDET (fide HENNINGSMOEN in MOORE, 1959)
   Anthracopeltis BOULAY, 1880 [crepini] | Houiller, France | ?ORD
 Family INDET.
+  Chambersiellus LAMONT, 1975 [conditor] | Leny Lst, Scotland | LCAM
   Eilidh LAMONT, 1975 [macgregori] | Leny Lst, Scotland | LCAM
   Ellesides LAMONT, 1975 [altaterra] | Leny Lst, Scotland | LCAM
   Glossicephalus HOWELL, 1937 [longifrons] | St Albans Sh, Vermont, USA | MCAM
@@ -3603,13 +3124,10 @@ Family LORENZELLIDAE
   Ptyctolorenzella LIN & WU in W. ZHANG et al., 1980b [rugosa] | Hsuchuang Fm, Shanxi, China | MCAM
   Zhongweia ZHOU in ZHOU et al., 1982 [transversa] | Xiangshan Fm, Ningxia Hui, China | MCAM
 Family Leny Lst, Scotland
-  Chambersiellus LAMONT, 1975 [conditor] | INDET. LCAM
   Kilmahogia LAMONT, 1975 [jamesbeggi] | INDET. LCAM
   Mial LAMONT, 1975 [lanaigh] | INDET. LCAM
   Neilsoniella LAMONT, 1975 [agnesae] | INDET. LCAM
   Perthiellus LAMONT, 1975 [pringlei] | INDET. LCAM
-Family Lite
-  Nitidocare PŘIBYL et al., 1985a [Arethusa nitida BARRANDE, 1846a]
 Family MAPANIIDAE
   Angsiduoa ZHOU in ZHOU et al., 1996 [lajishanensis] | Liudaogou Fm, Qinghai, China | UCAM
   Hualongia ZHOU in ZHOU et al., 1996 [typica] | Liudaogou Group, Qinghai, China | UCAM
@@ -3849,11 +3367,6 @@ Family NORWOODIIDAE
   Whitfieldina RESSER, 1937b [Conocephalites quadratus WHITFIELD, 1880] | Eau Claire Fm, Wisconsin, USA | UCAM
     = Norwoodia (j.s.s., fide RESSER, 1938c)
   Xenocheilos WILSON, 1949 [minutum] | Wilberns Fm, Texas, USA | UCAM
-Family NOTES
-  # Blountiana: misspelling of Blountina in SHAW, 1952
-  # Crepicocephalus: misspelling of Crepicephalus
-  # Deiocoryphe: misspelling of Leiocoryphe
-  # Leptoplastoides: misspelling of Leptoplastides in MOORE, 1959:111-142
 Family ODONTOPLEURIDAE
   Acanthalomina PRANTL & PŘIBYL, 1949a [Odontopleura minuta BARRANDE, 1846a] | Kopanina Fm, Czech Republic | USIL
   Acidaspis MURCHISON, 1839 [brightii] | Much Wenlock Lst Fm, England | LSIL
@@ -3947,8 +3460,6 @@ Family OLENELLIDAE
   Paedeumias WALCOTT, 1910 [transitans] | Parker Sh, Vermont, USA | LCAM
   Peachella WALCOTT, 1910 [Olenellus iddingsi WALCOTT, 1884a] | Carrara Fm, Nevada, USA | LCAM
   Wanneria WALCOTT, 1910 [Olenellus (Holmia) walcottanus WANNER, 1901] | York Fm, Pennsylvania, USA | LCAM
-Family OLENELLINA FAMILY UNCERTAIN
-  Poletaevella DALMATOV & REPINA, 1971 [baljutica] | E Sayan, S Siberia, Russia | LCAM
 Family OLENIDAE
   Acerocare ANGELIN, 1854 [ecorne] | Sandby, Sweden | UCAM
   Acerocarina POULSEN, 1952 [Cyclognathus micropygus LINNARSSON, 1875] | Sweden | UCAM
@@ -5000,6 +4511,8 @@ Family PTEROCEPHALIIDAE
   Zhenanianania JELL, 2002 [carinata] | Liushui Fm, Yunnan, China | UCAM
     # replacement name for Zhenania
   Zhuangliella QIU in QIU et al., 1983 [zhuangliensis] | Anhui, China | UCAM
+Family PTEROPARIIDAE
+  Nitidocare PŘIBYL et al., 1985a [Arethusa nitida BARRANDE, 1846a] | Litéň Fm, Czech Republic | LSIL
 Family PTERYGOMETOPIDAE
   Achatella DELO, 1935 [Dalmanites achates BILLINGS, 1860a] | Cobourg Fm, Ontario | UORD
   Bolbochasmops McNAMARA, 1980 [Phacops (Chasmops) bucculenta var. emarginata SCHMIDT, 1881] | Idavere .Keila Stages, Estonia | MORD
@@ -5044,6 +4557,8 @@ Family PTERYGOMETOPIDAE
 Family PTYCHAGNOSTIDAE
   Acidusus OPIK, 1979 [Ptychagnostus (Acidusus) acidusus] | Currant Bush Limestone, Queensland, Australia | MCAM
     = Ptychagnostus (j.s.s., fide PENG & ROBISON, 2000)
+  Agnostonymus OPIK, 1979 [Onymagnostus (Agnostonymus) semiermis] | Currant Bush Lst, Queensland, Australia | MCAM
+    = Onymagnostus (j.s.s., fide SHERGOLD et al., 1990)
   Allobodochus OPIK, 1979 [Ptychagnostus (Goniagnostus) fumicola OPIK, 1961] | Devoncourt Lst, Queensland, Australia | MCAM
   Aotagnostus OPIK, 1979 [culminosus] | V Creek Lst, Queensland, Australia | MCAM
     = Ptychagnostus (j.s.s., fide PENG & ROBISON, 2000)
@@ -5414,16 +4929,11 @@ Family REDLICHIIDAE
   Tolbinella EGOROVA , 1983 [varlamovi] | Elgyansk Fm, S Siberia, Russia | LCAM
   Ushbaspis POKROVSKAYA in KELLER & POKROVSKAYA, 1965 [granulata] | Ushbaspis limbata Zone, Botoman, Kazakhstan | LCAM
   Wenganaspis YIN in YIN & LI, 1978 [baiyanensis] | Mingxinsi Fm, Guizhou, China | LCAM
+  Wutingaspis KOBAYASHI, 1944b [tingi] | Chiungchussu Fm, Yunnan, China | LCAM
   Xela JELL in BENGTSON et al., 1990 [drena] | Wilkawillina Lst, South Australia | LCAM
   Xenoredlichia Q.Z. ZHANG in QIU et al., 1983 [Leptoredlichia (Xenoredlichia) suiheensis] | Manto Fm, Anhui, China | LCAM
   Yorkella KOBAYASHI, 1942e [Conocephalites australis WOODWARD, 1884b] | Parara Lst, South Australia | LCAM
   Zhanglouia QIU, 1980 [zhanglouensis] | Manto Fm, Jiangsu, China | LCAM
-Family REDLICHIINA FAMILY UNCERTAIN
-  Akbashichia KOROBOV, 1989 [plana] | Akbashinsky Fm, W Mongolia | LCAM
-  Fandianaspis LI, 1978 [fandianensis] | Chiungchussu Fm, Sichuan, China | LCAM
-  Iolgia KRAEVSKY, 1965 [prima] | Botomian, Gorny Altay, S Siberia, Russia | LCAM
-  Micangshania ZHOU in LI et al., 1975 [gracilis] | Xian-nudong Fm, Shaanxi, China | LCAM
-  Xingzishania ZHOU in LI et al., 1975 [lata] | Shuijingtuo Fm, Shaanxi, China | LCAM
 Family REDLICHINIDAE
   Asthenaspis SUVOROVA, 1959 [tenuis] | Botomian, E Sayan, Russia | LCAM
   Kolbaspis REPINA, 1979a [sajanica] | Sinersky Fm, S Siberia, Russia | LCAM
@@ -5896,11 +5406,6 @@ Family STYGINIDAE
 Family SUNASPIDIDAE
   Sunaspidella W. ZHANG & YUAN, 1981 [rara] | Hsuchuang Fm, Inner Mongolia, China | MCAM
   Sunaspis LU in LU & DONG, 1952 [laevis] | Hsuchuang Fm, Shandong, China | MCAM
-Family Spain
-  Alemtejoia KOBAYASHI, 1943a [Microdiscus souzai DELGADO, 1904] | HEBEDISCIDAE, LCAM
-    = Delgadella (j.s.s., fide JELL, 1997)
-Family Sulyukty region, N slopes of Turkestan Range, Uzbekistan
-  Dignagnostus HAJRULLINA in REPINA et al., 1975 [grandis] | AGNOSTINA FAMILY UNCERTAIN
 Family TAIHUNGSHANIIDAE
   Asaphellina MUNIER-CHALMAS & BERGERON in BERGERON, 1889 [barroisi] | Saint Chinian, Montagne Noire, France | LORD
   Asaphopsis MANSUY, 1920 [jacobi] | Dong-son, Vietnam | LORD
@@ -6025,6 +5530,7 @@ Family TRINUCLEIDAE?
   Microdiscus EMMONS, 1855 [quadricostatus] | “Taconic System”, New York?, USA | ORD?
 Family TROPIDOCORYPHIDAE
   Alberticoryphe ERBEN, 1966 [Astycoryphe cogneyi ALBERTI, 1964] | Ghtira Lst, NW Morocco | LDEV
+  Astycoryphe RICHTER & RICHTER, 1919 [senckenbergiana] | Ahrdorf Fm, Gees, Eifel | MDEV
   Bojocoryphe ŠNAJDR, 1976a [splendens] | Dvorce-Prokop Lst, Czech Republic | LDEV
   Buchiproetus PILLET, 1969a [Proetus buchii HAWLE & CORDA, 1847] | Suchomasty Lst, Czech Republic | MDEV
   Centriproetus ŠNAJDR, 1977 [Proetus (Decoroproetus) concentricus PŘIBYL, 1949] | Dvorce-Prokop Lst, Czech Republic | LDEV
@@ -6135,22 +5641,30 @@ Family TSUNYIDISCIDAE
   Tsunyidiscus W. ZHANG, 1966 [Hebediscus niutitangensis W. ZHANG, 1964a] | Shuijingtuo Fm, Guizhou, China | LCAM
 Family UNCERTAIN
   Aethia QIAN & ZHOU, 1984 [rectangula] | Kunshan County, Jiangsu, China | MCAM
+  Agnostogonus OPIK, 1967 [incognitus] | O’Hara Sh, Queensland, Australia | UCAM
   Agyrenella IVSHIN, 1957 [macropleura] | Erbia Zone, central Kazakhstan | LCAM
+  Akbashichia KOROBOV, 1989 [plana] | Akbashinsky Fm, W Mongolia | LCAM
   Aligerites HOWELL, 1942 [Aliger venustus HOWELL, 1937] | St Albans Sh, Vermont, USA | MCAM
     # replacement name for Aliger
   Altiplanelaspis PŘIBYL & VANĚK, 1980 [palquensis] | Kainella meridionalis Biozone, Bolivia | LORD
   Amechilus ROSS, 1951 [palaora] | Garden City Fm, Idaho, USA | LORD
   Araeocephalus REPINA in REPINA et al., 1964 [primus] | Sanashtykgol Horizon, Kuznetsk Alatau, Russia | LCAM
   Arglina HAJRULLINA, 1973 [perrara] | Mayaian, Turkestan Ranges, Uzbekistan | MCAM
+  Armagnostus HOWELL, 1937 [megalaxis] | St Albans Sh, Vermont, USA | MCAM
   Aulacopleurina PŘIBYL, 1949 [Arethusina peltata NOVÁK, 1890] | Acanthopyge Lst, Czech Republic | MDEV
   Bifodina ROBISON & PANTOJA-ALOR, 1968 [longifrons] | Tinu Fm, Oaxaca, Mexico | LORD
   Bijaspis PETRUNINA, 1990 [krivtchikovi] | Ishpinsk Fm, Gorny Altay, Russia | LORD
+  Blystagnostus OPIK, 1961 [laciniatus] | Roaring Siltstone, Queensland, Australia | MCAM
   Carmon BARRANDE, 1872 [Trilobites mutilis BARRANDE, 1852] | Kraluv Dvur Fm, Czech Republic | UORD
   Cayastaia RUSCONI, 1954a [flexuosa] | Peladiana Fm, Quebradita Oblicua, Mendoza, Argentina | UCAM
   Chishanheella W. ZHANG in W. ZHANG et al., 1995 [longispina] | Hsuchuang Fm, Henan, China | MCAM
+  Ciceragnostus KOBAYASHI, 1937b [Agnostus barlowii BELT, 1868] | Dolgellau, N Wales | LORD
+    = Leiagnostus (j.s.s., fide NIELSEN, 1997)
   Crossoura MOBERG & SEGERBERG, 1906 [parvula] | Tremadoc Series, Sweden | LORD
   Curiaspis SDZUY, 1955 [notabilis] | Leimitz Schiefer, Bavaria, Germany | LORD
+  Delagnostus OPIK, 1961 [dilemma] | Devoncourt Lst, Queensland, Australia | MCAM
   Deltacare HARRINGTON & LEANZA, 1957 [prosops] | Angosto Fm, Salta, NW Argentina | LORD
+  Dignagnostus HAJRULLINA in REPINA et al., 1975 [grandis] | Sulyukty region, N slopes of Turkestan Range, Uzbekistan | MCAM
   Discagnostus OPIK, 1963 [spectator] | O’Hara Sh, Queensland, Australia | UCAM
   Dolgaiella SIVOV, 1940 [minuta] | Gornoshorskaia Fm, Sayan Altay, Russia | UCAM
   Entsyna ROZOVA, 1968 [entsynica] | Entsy Horizon, NW Siberia, Russia | UCAM
@@ -6159,14 +5673,20 @@ Family UNCERTAIN
   Eulomella KOBAYASHI, 1955b [mckayensis] | McKay Group, British Columbia, Canada | LORD
   Fabulaspis IVSHIN, 1953 [famosus] | Boshchekul Fm, Kazakhstan | MCAM
   Faciura ROZOVA, 1963 [premiera] | Entsyisky Horizon, NE Siberia, Russia | UCAM
+  Fandianaspis LI, 1978 [fandianensis] | Chiungchussu Fm, Sichuan, China | LCAM
   Fengtienia ENDO, 1937 [peculiaris] | Kushan Fm, Liaoning, China | UCAM
+  Gallagnostus HOWELL, 1935b [geminus] | Herault, France | MCAM
   Gdowia YANISHEVSKY, 1950 [assatkini] | Blue Clay, Baltic region, Russia | LCAM
+  Glaberagnostus ROMANENKO, 1985 [altaicus] | Glyptagnostus reticulatus Zone, Gorny Altay, Russia | UCAM
   Gladiatoria HUPE, 1955 [Macropyge gladiator ROSS, 1951] | Garden City Fm, Idaho, USA | LORD
   Gonioteloides KOBAYASHI, 1955b [monoceros] | McKay Group, British Columbia, Canada | LORD
   Goycoia RUSCONI, 1950b [tellecheai] | Mendoza, Argentina | MCAM
+  Grandagnostus HOWELL, 1935a [vermontensis] | St Albans, Vermont, USA | MCAM
+  Hastagnostus HOWELL, 1937 [angustus] | St Albans Sh, Vermont, USA | MCAM
   Hospes STUBBLEFIELD in STUBBLEFIELD & BULMAN, 1927 [clonograpti] | Shineton Sh Fm, England | LORD
   Hybocephalus REMELE, 1885 [hauchecornei] | glacial erratic, Upper Red Orthoceras Limestone, Eberswalde, E Germany | MORD
   Idiorhapha WHITTINGTON, 1953 [Cheirurus solitarius BILLINGS, 1865] | boulder at St. Antoine de Tilly, Quebec, Canada | MORD
+  Iolgia KRAEVSKY, 1965 [prima] | Botomian, Gorny Altay, S Siberia, Russia | LCAM
   Irvingelloides KOBAYASHI, 1935c [Irvingella? orientalis KOBAYASHI, 1934b] | Clarkella Zone, Saisho-ri, South Korea | LORD
   Ishpella PETRUNINA, 1990 [platycephala] | Kamlak Fm, Gorny Altay, Russia | UCAM
   Isidreana RUSCONI, 1954c [tellecheai] | Empozadense Fm, San Isidro, Mendoza, Argentina | ORD
@@ -6176,13 +5696,18 @@ Family UNCERTAIN
     = Sukhanaspis (j.s.s., fide GOGIN & PEGEL, 1997)
   Kirengina OGIENKO, 1974 [lata] | Ustkut Fm, S Siberia, Russia | UCAM
   Kleptothule BUDD, 1995 [rasmusseni] | Buen Fm, N Greenland | LCAM
+  Leiagnostus JAEKEL, 1909 [erraticus] | glacial erratic lst boulder, Rixdorf, N Germany | LORD
   Loxoparia RASETTI, 1965a [obliqua] | Nolichucky Fm, Tennessee, USA | UCAM
   Loxopeltis RASETTI, 1957 [problematica] | Mt Whyte Fm, British Columbia, Canada | MCAM
   Lusampa PETRUNINA, 1990 [cupoides] | Kamlak Fm, Gorny Altay, Russia | UCAM
   Macnairides LAMONT, 1975 [munitatus] | Leny Lst, Scotland | LCAM
   Maximovella PETRUNINA, 1990 [Plethopeltides (Maximovella) improvisus] | Kamlak Fm, Gorny Altay, Russia | LORD
+  Megagnostus ROBISON, 1994 [Agnostus glandiformis ANGELIN, 1851] | Andrarum, Sweden | MCAM
   Metaprodamesella YUAN & YIN, 2000 [Prodamesella subtriangulata PENG, 1987] | Chefu Fm, Hunan, China | UCAM
     = Prodamesella (j.s.s., fide PENG et al., 2001a)
+  Micangshania ZHOU in LI et al., 1975 [gracilis] | Xian-nudong Fm, Shaanxi, China | LCAM
+  Monaxagnostus LIU, 1982 [yongshunensis] | Yong-shun, Hunan, China | MCAM
+    = Peratagnostus (=Phaldagnostus) (j.s.s., fide PENG & ROBISON, 2000)
   Muchattellina REPINA in KHOMENTOVSKY & REPINA, 1965 [translatica] | Taryn Horizon, Siberia, Russia | LCAM
   Nanshihmenia W. ZHANG & FAN, 1960 [rectangula] | Yaomoshan Fm, Gansu, China | UORD
   Neoprodamesella YUAN & YIN, 2000 [spinosa] | Chefu Fm, Guizhou, China | MUCAM
@@ -6190,8 +5715,16 @@ Family UNCERTAIN
   Oenonella FORTEY, 1980 [paulula] | Valhallfona Fm, Spitsbergen | MORD
   Paraxenocephalus RUDOLPH, 1994 [mirus] | glacial boulder, Germany | MCAM
   Peculicephalina QIAN, 1985a [jinxianensis] | Tangcun Fm, Anhui, China | UCAM
+  Peratagnostus OPIK, 1967 [nobilis] | Pomegranate Lst, Queensland, Australia | UCAM
+    = Phaldagnostus (j.s.s., fide SHERGOLD, 1982)
+  Phaldagnostus IVSHIN in KHALFIN, 1960 [orbiformis] | Kulbich Fm, Kazakhstan | UCAM
+  Phoidagnostoides PILLET in CAPERA et al., 1978 [Leiagnostus miqueli SDZUY, 1958b] | Horizon C, Combes de Barrroubio, Montagne Noire, France | LORD
+    = Leiagnostus (j.s.s., fide SHERGOLD et al., 1990)
+  Phoidagnostus WHITEHOUSE, 1936 [limbatus] | Devoncourt Lst, Queensland, Australia | MCAM
   Pichyklen RUSCONI, 1956 [minutissima] | Empozada Fm, San Isidro, Mendoza, Argentina | LORD
   Pliomerellus CHUGAEVA, 1964 [jacuticus] | Elgenchack Mts, Kolyma, Russia | LORD
+  Plurinodus OPIK, 1967 [discretus] | O’Hara Sh, Queensland, Australia | MUCAM
+  Poletaevella DALMATOV & REPINA, 1971 [baljutica] | E Sayan, S Siberia, Russia | LCAM
   Prodamesella W. ZHANG, 1959 [convexa] | Changhia Fm, Shandong, China | MCAM
   Pseudoclelandia ROSS, 1951 [cornupsittaca] | Garden City Fm, Idaho, USA | LORD
   Pseudodipharus KOROBOV, 1980 [privus] | Egyngolskaya Fm, Mongolia | LCAM
@@ -6202,14 +5735,19 @@ Family UNCERTAIN
   Resseria HOWELL, 1945 [Pseudosalteria welleri RAYMOND, 1924] | Upper Kittatinny Lst, New Jersey, USA | UCAM
   Robroyia LAMONT, 1975 [andersoni] | Leny Lst, Scotland | LCAM
   Sakhaspidella LAZARENKO in GOGIN & PEGEL, 1997 [tuorica] | Agnostus pisiformis Zone, Aldan R, E Siberia, Russia | UCAM
+  Skryjagnostus ŠNAJDR, 1957b [pompeckji] | Jince Fm, Czech Republic | MCAM
   Spizharaspis G. ERGALIEV in ERGALIEV & ERGALIEV, 2001 [rarus] | Zhumabaisk Fm, Kazakhstan | UCAM
   Subitella REPINA, 1980 [grata] | Solontsov Horizon, Altay Sayan, S Siberia, Russia | LCAM
   Sukhanaspis LAZARENKO in LAZARENKO & NIKIFOROV, 1968 [gravis] | Nganasansk Horizon, NW Siberia, Russia | UCAM
   Tersiceps REPINA in REPINA et al., 1964 [pensa] | Kuznetsk Alatau, Russia | LCAM
   Thymurus WHITTARD, 1966 [incertum] | Mytton Flags Fm, England | LORD
+  Toragnostus ROBISON, 1988 [Agnostus bituberculatus ANGELIN, 1851] | Andrarum Lst, Sweden | MCAM
+    = Glaberagnostus (j.s.s., fide PENG & ROBISON, 2000)
   Toxotis WALLERIUS, 1895 [pusilla] | Lejopyge laevigata Zone, Sweden | MCAM
   Trapezocephalina REPINA in REPINA et al., 1964 [quadratica] | Sanashtykgol Horizon, Kuznetsk Alatau, Russia | LCAM
   Typhlokorynetes SHAW, 1966 [Warburgella plana RAYMOND, 1937] | Highgate Fm, Vermont, USA | LORD
+  Valenagnostus JAGO, 1976 [Agnostus nudus var. marginata BROGGER. 1878] | Angermanland, Norway | MCAM
+  Xingzishania ZHOU in LI et al., 1975 [lata] | Shuijingtuo Fm, Shaanxi, China | LCAM
   Yinaspis W. ZHANG & FAN, 1960 [granulatus] | Gansu, China | LORD
   Yoyarria RUSCONI, 1955b [puelchana] | Mendoza, Argentina | ORD
 Family UNCERTAIN (pyg.)
@@ -6348,3 +5886,253 @@ Family ZACANTHOIDIDAE
   Zacanthopsis RESSER, 1938b [Olenoides levis WALCOTT, 1886] | Pioche Sh, Nevada, USA | LCAM
 Family indet. juvenile?
   Dipharus CLARK, 1923a [insperatus] | Massachusetts, USA | LCAM
+
+# --- Nomenclatural notes (no family assignment) ---
+# Acanthaloma CONRAD, 1840 — j.s.s.: Leonaspis
+# Acastina REED, 1927 — unnecessary_replacement: Acaste
+# Acheilus RAYMOND, 1924 — preocc.: Peracheilus
+# Acrectopyge HAWLE & CORDA, 1847 in VOGDES, 1925 — no family
+# Actinobolus EICHWALD, 1858 — no family
+# Actinolobus EICHWALD, 1858 — j.s.s.: Illaenus
+# Actinopeltis POULSEN, 1946 — preocc.: Grinnellaspis
+# Aeglina BARRANDE, 1850 — j.o.s.: Cyclopyge; replacement: Egle
+# Aeonia BURMEISTER, 1843 — j.o.s.: Proetus
+# Aliger HOWELL, 1937 — preocc.: Aligerites
+# Alloctops RAFINESQUE, 1832 — no family
+# Ambonslium KOBAYASHI, 1941 — no family
+# Amphion PANDER, 1830 — preocc.: Pliomera
+# Anderssonia SUN, 1924 — preocc.: Anderssonella
+# Aneuacanthus BARRANDE, 1856 — no family
+# Aneucanthus ANGELIN, 1854 — unnecessary_replacement: Acontheus and thus j.o.s. of Acontheus
+# Anginouyia SAVITSKY et al., 1974 — no family
+# Anisonotus RAYMOND, 1920 — preocc.: Anisonotella
+# Anorina WHITEHOUSE, 1936 — j.o.s.: Eoasaphus
+# Anthes GOLDFUSS, 1843 — j.o.s.: Peltura
+# Arctaspis LERMONTOVA, 1940 — preocc.: Paracrocephalites
+# Arethusa BARRANDE, 1846a — preocc.: Arethusina
+# Arethusina BARRANDE, 1852 — j.o.s.: Aulacopleura; replacement: Arethusa
+# Arges GOLDFUSS, 1839 — preocc.: Ceratarges
+# Arion BARRANDE, 1846a — preocc.: Agraulos
+# Arionellus BARRANDE, 1852 — j.o.s.: Agraulos; replacement: Arionides
+# Arionides BARRANDE, 1847 — j.o.s.: Agraulos; replacement: Arion
+# Asteraspis KOBAYASHI, 1935c — j.o.s.: Deiracephalus
+# Astyages ANGELIN, 1854 — preocc.: Isocolus
+# Aulacodiscus WESTERGARD, 1946 — preocc.: Opsidiscus
+# Australurus RAMSKOLD, 1986a — preocc.: Pacificurus
+# Barrandia HALL, 1860 — preocc.: Olenellus
+# Basilicoides MA, 1938 — preocc.: Dolerobasilicus
+# Battus DALMAN, 1827 — j.o.s.: Agnostus
+# Bergeronia MATTHEW, 1895 — j.o.s.: Protolenus
+# Bettonia WHITTARD, 1956 — preocc.: Bettonolithus
+# Blountiana  — misspelling of Blountina in SHAW, 1952
+# Boeckia BROGGER, 1882 — preocc.: Boeckaspis
+# Boeckia PILLET, 1965a — preocc.: Pilletopeltis
+# Borthaspis STUBBLEFIELD, 1951b — j.o.s.: Psilocephalinella
+# Brachyampyx FORBES, 1849 — j.o.s.: Ampyx
+# Brachyaspis MILLER, 1936a — preocc.: Brachyaspidion
+# Brachymetopina REED, 1903 — j.o.s.: Brachymetopus
+# Branisella PŘIBYL & VANĚK, 1981a — no family
+# Briania EDGECOMBE, 1994 — preocc.: Brianurus
+# Broeggeria BANCROFT, 1933 — preocc.: Broeggerolithus
+# Brongniartia SALTER, 1865 — preocc.: Eohomalonotus
+# Brontes GOLDFUSS, 1839 — preocc.: Bronteus and by Goldius
+# Burnetia WALCOTT, 1924b — preocc.: Burnetiella
+# Calymena DESMAREST, 1817 — no family
+# Calyptomma RESSER, 1942b — preocc.: Princetonella
+# Cephalocoelia RAYMOND, 1937 — preocc.: Catillicephala
+# Cobboldia LERMONTOVA, 1940 — preocc.: Neocobboldia
+# Colymbus HADDING, 1913a — preocc.: Paryfenus
+# Conocephalites BARRANDE, 1852 — j.o.s.: Conocoryphe
+# Crepicocephalus  — misspelling of Crepicephalus
+# Cryphaeus GREEN, 1837 — preocc.: Greenops
+# Cryptonymus EICHWALD, 1840 — no family
+# Cyamops OWENS, 1979 — preocc.: Cyamella
+# Cyclognathus LINNARSSON, 1875 — preocc.: Acerocarina
+# Cylindraspis SANDBERGER in SANDBERGER & SANDBERGER, 1850 — no family
+# Cylindrocephalus TRENKNER, 1868 — no family
+# Dahungshania LI et al. 1975 — no family
+# Dalmania EMMRICH, 1844 — preocc.: Dalmanites
+# Dalmaniopsis GEINITZ, 1862 — no family
+# Deiocoryphe  — misspelling of Leiocoryphe
+# Delamarella EDDY & McCOLLUM, 1998 — preocc.: Delamarina
+# Denckmannia WEDEKIND, 1911 — preocc.: Denckmannites
+# Denisia CLARK, 1924 — preocc.: Theodenisia
+# Diandongaspis LU & ZHANG in W. ZHANG et al., 1980a — preocc.: Diandongaspidella
+# Dichagnostus JAEKEL,1909 — j.o.s.: Pleuroctenium
+# Dictya KOBAYASHI, 1933a — preocc.: Dictyites
+# Dione BARRANDE, 1846a — preocc.: Dionide
+# Diplopsites RAFINESQUE, 1832 — no family
+# Ebenzeria MARCOU, 1888 — unnecessary_replacement: Elliptocephala
+# Edgellia SHAW in SHAW & STUBBLEFIELD, 1950 — j.o.s.: Trinucleus
+# Egle BARRANDE, 1846a — preocc.: Cyclopyge
+# Embolimus ROMINGER, 1887 — preocc.: Zacanthoides
+# Endymion BILLINGS, 1862 — preocc.: Endymionia
+# Entomolithus LINNAEUS, 1745 — no family
+# Entomostracites WAHLENBERG, 1821 — no family
+# Eoasaphiscus LU & YUAN in LI, 1978 — preocc.: Eoasaphiscellus
+# Eocorycephalus REED, 1925 — j.o.s.: Synphoria
+# Erinnys SALTER in HICKS, 1872 — preocc.: Salteria, then Menevia, then Meneviella
+# Eryx ANGELIN, 1851 — preocc.: Elyx
+# Eudechenella RICHTER, 1912 — j.o.s.: Dechenella
+# Euproetus RICHTER, 1913 — j.o.s.: Proetus
+# Eutrimerocephalus GORTANI, 1907 — j.o.s.: Trimerocephalus
+# Fimbriomarrolithus WILLIAMS, 1948 — j.o.s.: Telaeomarrolithus
+# Georgiellus MOBERG, 1899 — j.o.s.: Elliptocephala
+# Gibbocephalus PILLET, 1965a — j.o.s.: Crotalocephalina
+# Glockeria WEDEKIND, 1914 — j.o.s.: Phacopidella
+# Glomerites RAFINESQUE, 1817 — no family
+# Gloria EGOROVA & SAVITSKY, 1968 — preocc.: Gloriagloria
+# Goldfussius BARRANDE, 1852 — no family
+# Goniodiscus RAYMOND, 1913c — preocc.: Calodiscus
+# Goniurus RAYMOND, 1913a — preocc.: Goniotelus
+# Gortania COSSMAN, 1909 — no family
+# Granularia POLETAEVA in LERMONTOVA, 1951b — preocc.: Granularaspis
+# Hadrorakos DELO, 1940 — no family
+# Haploconus RAYMOND, 1913a — preocc.: Dimeropyge
+# Harpina NOVÁK, 1885 — preocc.: Eoharpes
+# Harrisia CLELAND, 1900 — preocc.: Clelandia
+# Hausmannia HALL & CLARK, 1888 — unnecessary_replacement: Odontochile
+# Hausmannia ETHERIDGE & MITCHELL, 1895 — no family
+# Hawkinsia RASETTI, 1965a — preocc.: Hawkinsaspis
+# Hectoria LU, 1975 — preocc.: Ruapyge; j.s.s. of Hysterolenus, fide PENG, 1990
+# Hedinia TROEDSSON, 1937 — preocc.: Hedinaspis
+# Hoeferia REDLICH, 1899 — preocc.: Redlichia
+# Holometopus ANGELIN, 1854 — preocc.: Warburgella
+# Holubia KLOUČEK, 1931 — preocc.: Holubaspis
+# Huntonia CAMPBELL, 1977 — preocc.: Huntoniatonia
+# Irania KING, 1937 — preocc.: Iranoleesia
+# Isoctomesa RAFINESQUE, 1821 — no family
+# Jeholaspis KOBAYASHI, 1953b — j.o.s.: Saukioides
+# Jixiania W. ZHANG in W. ZHANG et al., 1995 — preocc.: Jixianella
+# Kaniniella SIVOV in EGOROVA et al., 1955 — preocc.: Eokaninia
+# Kaufmannia SDZUY, 1961 — preocc.: Kaufmannella
+# Kendallia RAASCH in BERG, 1953 — preocc.: Kendallina
+# Koenigia SALTER, 1865 — j.o.s.: Homalonotus
+# Koreaspis RICHTER, 1942 — inappropriate_emendation: Koraipsis
+# Lalax HOLLOWAY & LANE, 1998 — preocc.: Liolalax
+# Lepidocephaloides REPINA in REPINA et al., 1964 — no family
+# Leptoplastoides  — misspelling of Leptoplastides in MOORE, 1959:111-142
+# Liostracus ANGELIN, 1854 — preocc.: Andrarina
+# Liparges GURICH, 1901 — j.o.s.: Dicranogmus; see THOMAS & HOLLOWAY, 1988
+# Livia LENDZION, 1975 — preocc.: Liwia
+# Lobocephalus RŮŽIČKA, 1940 — preocc.: Ruzickaia
+# Lorentzia COSSMAN, 1908 — no family
+# Luaspis PENG et al., 1995 — preocc.: Luyanhaoaspis
+# Maja LOMOVITSKAYA, 1955 — preocc.: Erdelia
+# Malvernia DELO, 1935 — preocc.: Heliocephalus
+# Megalaspis ANGELIN, 1851 — preocc.: Megistaspis
+# Megalophthalmus LORENZ, 1906 — preocc.: Grandioculus
+# Melopetasus SCHALLREUTER, 1979 — no family
+# Menevia LAKE, 1938 — preocc.: Meneviella; replacement: Salteria
+# Mesagnostus JAEKEL, 1909 — j.o.s.: Peronopsis
+# Metacanthus HAWLE & CORDA, 1847 — preocc.: Neometacanthus
+# Metopias EICHWALD, 1842 — preocc.: Metopolichas
+# Miagnostus JAEKEL, 1909 — j.o.s.: Lejopyge
+# Microphthalmus GORTANI, 1907 — preocc.: Gortania
+# Milesia CHAPMAN, 1929 — preocc.: Xystridura
+# Millardia WALCOTT, 1916a — preocc.: Densonella
+# Minusella REPINA, 1966 — incorrect_spelling: Minusinella
+# Mitchellia VOGDES, 1917 — preocc.: Mitchellaspis
+# Monadella BARRANDE, 1847 — no family
+# Monorachus CLARKE, 1897 — no family
+# Monorhachis VOGDES, 1925 — no family
+# Myoproetus MAKSIMOVA, 1978a — j.o.s.: Myoproetus, ŠNAJDR
+# Neosynphoria PILLET, 1954 — j.o.s.: Synphoria
+# Octoillaenus BIGSBY, 1868 — no family
+# Odontopyge HAWLE & CORDA, 1847 — preocc.: Parabolina
+# Oehlertia PILLET, 1973a — preocc.: Oehlertaspis
+# Ogygia BRONGNIART in DESMAREST, 1817 — no family
+# Olenopsis BORNEMANN, 1891 — preocc.: Dolerolenus
+# Oncholichas SCHMIDT, 1885 — j.o.s.: Arctinurus
+# Onychaspis RAYMOND, 1925 — no family
+# Orimops RAFINESQUE, 1832 — no family
+# Otarionella KOROLEVA, 1977 — preocc.: Otarionellina
+# Pagetina LERMONTOVA, 1940 — preocc.: Neopagetina
+# Palaeocrepicephalus KOBAYASHI, 1935c — j.o.s.: Kochaspis
+# Pamirites BALASHOVA, 1966b — preocc.: Pamirotellus
+# Paracalymene LIU, 1982 — preocc.: Paracalymenemene
+# Paracrepicephalus LOCHMAN, 1936 — j.o.s.: Tricrepicephalus
+# Paragnostus JAEKEL, 1909 — j.o.s.: Condylopyge
+# Paralichas REED, 1902 — replacement: Platymetopus; preocc., replaced by Amphilichas
+# Paralorenzella Q.Z ZHANG in QIU et al., 1983 — preocc.: Paralorenzangella
+# Paramansuyia ENDO, 1939 — no family
+# Paranileus HINTZE, 1953 — preocc.: Presbynileus
+# Paraproetus KOBAYASHI & HAMADA, 1979 — preocc.: Siciliproetus
+# Parasolenopleura POLETAEVA in EGOROVA et al., 1955 — preocc.: Parasolopleurena
+# Paratollaspis KOBAYASHI, 1943b — j.o.s.: Erbia
+# Paraulacopleura MAKSIMOVA, 1968 — no family
+# Perneria RŮŽIČKA, 1940 — preocc.: Perneraspis
+# Phaeton BARRANDE, 1946a — preocc.: Phaetonides
+# Phaetonides BARRANDE, 1947 — j.o.s.: Prionopeltis
+# Phillibolina GANDL, 1968 — preocc.: Philliboloides
+# Phillipsella OEHLERT, 1886 — no family
+# Pilgrimia DUNCAN in LOCHMAN & DUNCAN, 1944 — preocc.: Paracedaria
+# Plagiops KEGEL, 1932 — preocc.: Plagiolaria
+# Platycolpus RAYMOND, 1913a — preocc.: Rasettia
+# Platyharpes WHITTINGTON, 1950b — j.o.s.: Hibbertia
+# Platymetopus ANGELIN, 1854 — preocc.: Paralichas
+# Platynotus CONRAD, 1838 — preocc.: Arctinurus
+# Platypeltis CALLAWAY, 1877 — preocc.: Platypeltoides
+# Pleuracanthus MILNE-EDWARDS, 1840 — preocc.: Asteropyge
+# Pliomeraspis HARRINGTON, 1957 — j.o.s.: Pliomerina
+# Plutonia HICKS, 1871 — preocc.: Plutonides
+# Podolites BALASHOVA, 1968 — preocc.: Rugulites
+# Polytomurus HAWLE & CORDA, 1847 — no family
+# Prionopyge HARRINGTON & LEANZA, 1942 — unnecessary_replacement: Onychopyge
+# Prionurus HAWLE & CORDA, 1847 — no family
+# Probolium OEHLERT, 1889 — preocc.: Neoprobolium
+# Proboloides CLARKE, 1913 — preocc.: Paracalmonia
+# Promenites RAFINESQUE, 1832 — no family
+# Pseudoacrocephalites ROZOVA, 1968 — preocc.: Rosovaspis
+# Pseudobarrandia COURTESSOLE & PILLET, 1976 — j.o.s.: Rokycania
+# Pseudoliostracina KOBAYASHI, 1938b — j.o.s.: Lioparia
+# Pseudomonaspis RICHTER & RICHTER, 1917 — j.o.s.: Acidaspis
+# Pseudonileus KOBAYASHI, 1951b — j.o.s.: Hemibarrandia
+# Pseudonileus HINTZE, 1953 — preocc.: Protopresbynileus
+# Pseudoptychoparia TING in LU, 1940 — j.o.s.: Yunnanocephalus
+# Pseudosaukia KOBAYASHI, 1951 — preocc.: Saukioides
+# Psilocephalina STUBBLEFIELD, 1951a — preocc.: Psilocephalinella; replacement: Psilocephalus
+# Psilocephalus SALTER, 1866a — preocc.: Psilocephalina STUBBLEFIELD, 1951a also preocc., replaced by Psilocephalinella
+# Pterocephalops LIN & ZHANG in ZHU et al., 1979 — preocc.: Pterocephalopsinus
+# Pterocephalus HALL & WHITFIELD, 1877 — no family
+# Pterolichas GURICH, 1901 — j.o.s.: Arctinurus
+# Pterygometopidella WEDEKIND, 1911 — no family
+# Ptychocheilus NOVÁK, 1884 — preocc.: Bohemopyge
+# Ptychopleura KOBAYASHI, 1936a — preocc.: Ptychopleurites
+# Qingshuiheella LU & QIAN, 1983a — preocc.: Paraqingshuiheella
+# Qinlingia YANG in YANG et al., 1991 — preocc.: Qinlingialingia
+# Raracephalus REPINA in REPINA et al., 1964 — no family
+# Raymondia KOBAYASHI, 1935c — no family
+# Reedaspis PRANTL & PŘIBYL, 1949c — no family
+# Reedia WEDEKIND, 1911 — preocc.: Reedops
+# Retusites RAFINESQUE, 1832 — no family
+# Reussia MAKSIMOVA, 1972 — preocc.: Reussiana
+# Rhax LANE & THOMAS, 1978 — preocc.: Rhaxeros
+# Rhodope ANGELIN, 1854 — preocc.: Panderia
+# Rosovaspis COURTESSOLE & PILLET, 1976 — replacement: Pseudoacrocephalites ROSOVA; j.o.s. of Dolgeuloma
+# Salteria WALCOTT, 1884b — preocc.: Menevia, then Meneviella; replacement: Erinnys
+# Schizopyge CLARKE, 1913 — preocc.: Tibagya
+# Schmidtella TSCHERNYSCHEW, 1893 — preocc.: Tschernyschewiella
+# Schmidtia MARCOU, 1890 — preocc.: Schmidtiellus
+# Scottia WOLFART, 1994 — preocc.: Ganovexopyge
+# Shumardella PŘIBYL & VANĚK, 1980 — preocc.: Shumardoella
+# Solenopleurina RŮŽIČKA, 1938 — j.o.s.: Herse
+# Sphaerometopus ANGELIN, 1854 — no family
+# Stoermeria PRANTL & PŘIBYL, 1947a — preocc.: Stoermeraspis
+# Sunina STRAND, 1943 — j.o.s.: Anderssonella
+# Taihangshania J. ZHANG & WANG, 1985 — preocc.: Taihangshaniashania
+# Telephus BARRANDE, 1852 — preocc.: Telephina
+# Telesiops RAFINESQUE, 1832 — no family
+# Tomoligus RAFINESQUE, 1832 — no family
+# Trachylichas GURICH, 1901 — j.o.s.: Dicranopeltis
+# Trapelocera HAWLE & CORDA, 1847 — j.o.s.: Ceratocephala
+# Trigonaspis YANG in YANG et al., 1991 — preocc.: Trigonyangaspis
+# Varvaspis TJERNVIK in TJERNVIK & JOHANSSON, 1980 — j.o.s.: Paramegistaspis
+# Vicinopeltis PŘIBYL, 1967 — j.o.s.: Vicinoproetus
+# Warburgella RAYMOND, 1937 — preocc.: Raymondaspis
+# Wedekindia SUN, 1935 — preocc.: Wedekindiaspis
+# Wutingia ENDO, 1935 — preocc.: Endoaspis
+# Yanshania J. ZHANG & WANG, 1985 — preocc.: Yanshaniashania
+# Ybexaspis PŘIBYL & VANĚK in PŘIBYL et al., 1985 — no family
+# Zhenania LUO, 1983 — preocc.: Zhenanianania
+# Zhifangia T. ZHANG, 1983 — preocc.: Zhifangiafangia

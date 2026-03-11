@@ -105,7 +105,7 @@ Order Phacopida Salter, 1864
 Order Proetida Fortey & Owens, 1975
   Family Proetidae Salter, 1864
   Family Tropidocoryphidae Přibyl, 1946
-Order Aulacopleurida, 2011
+Order Aulacopleurida Adrain, 2011
   Family Alokistocaridae Resser, 1939
   Family Aulacopleuridae Angelin, 1854
   Family Bathyuridae Walcott, 1886
@@ -135,7 +135,7 @@ Order Asaphida Salter, 1864
     Family Liostracinidae Raymond, 1937
     Family Raphiophoridae Angelin, 1854
     Family Trinucleidae Hawle & Corda, 1847
-Order Olenida, 2011
+Order Olenida Adrain, 2011
   Family Andrarinidae Raymond, 1937
   Family Aphelaspididae Palmer, 1960
   Family Asaphiscidae Raymond, 1924
@@ -150,7 +150,7 @@ Order Olenida, 2011
   Family Remopleurididae Hawle and Corda, 1847
 Order Harpida Whittington, 1959
   Family Harpetidae Hawle & Corda, 1847
-Order Uncertain37
+Order Uncertain
   Family Acrocephalitidae Hupé, 1953
   Family Aldonaiidae Hupé, 1953
   Family Amgaspididae Černyševa, 1960

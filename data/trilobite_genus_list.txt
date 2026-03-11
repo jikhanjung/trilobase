@@ -94,7 +94,7 @@ Agnostardis OPIK, 1963 [amplinatus] Georgina Lst, Queensland, Australia; GLYPTAG
 Agnostascus OPIK, 1967 [gravis] Mungerebar Lst, Queensland, Australia; AMMAGNOSTIDAE; UCAM [j.s.s. of Proagnostus, fide SHERGOLD et al., 1990].
 Agnostoglossa OPIK, 1967 [bassa] Mungerebar Lst; AMMAGNOSTIDAE; UCAM. [j.s.s. of Ammagnostus, fide SHERGOLD et al., 1990]
 Agnostogonus OPIK, 1967 [incognitus] O’Hara Sh, Queensland, Australia; AGNOSTINA FAMILY UNCERTAIN; UCAM.
-Agnostonymus OPIK, 1979 [Onymagnostus (Agnostonymus) semiermis] Currant Bush Lst, Queensland, Australia; PTYCHAGNOSTIDAE, MCAM [j.s.s. of Onymagnostus, fide SHERGOLD et al., 1990].
+Agnostonymus OPIK, 1979 [Onymagnostus (Agnostonymus) semiermis] Currant Bush Lst, Queensland, Australia; PTYCHAGNOSTIDAE; MCAM [j.s.s. of Onymagnostus, fide SHERGOLD et al., 1990].
 Agnostotes OPIK, 1963 [inconstans] Pomegranate Lst, Queensland, Australia; DIPLAGNOSTIDAE; UCAM.
 Agnostus BRONGNIART, 1822 [Entomostracites pisiformis WAHLENBERG, 1821] Kinnekulle, Vastergotland, Sweden; AGNOSTIDAE; UCAM.
 Agrauloides HOWELL, 1937 [ Agraulos socialis BILLINGS, 1874] Trinity Bay, Newfoundland, Canada; AGRAULIDAE; MCAM [j.s.s. of Agraulos, fide HENNINGSMOEN in MOORE, 1959].
@@ -136,7 +136,7 @@ Alcymene RAMSKOLD et al., 1994 [Calymene neointermedia RICHTER & RICHTER, 1954] 
 Aldanaspis LERMONTOVA, 1940 [punctata] Paradoxides forchhammeri Zone, Aldan region, Yakutia; SOLENOPLEURIDAE; MCAM.
 Aldonaia LERMONTOVA, 1940 [ornata] Keteme Fm, Siberia, Russia; ALDONAIIDAE; LCAM.
 Alekcinella IVSHIN, 1962[delicata] Seletinsk Horizon, Kazakhstan; DOKIMOCEPHALIDAE; UCAM.
-Alemtejoia KOBAYASHI, 1943a [Microdiscus souzai DELGADO, 1904] Spain; HEBEDISCIDAE, LCAM [j.s.s. of Delgadella, fide JELL, 1997].
+Alemtejoia KOBAYASHI, 1943a [Microdiscus souzai DELGADO, 1904] Spain; HEBEDISCIDAE; LCAM [j.s.s. of Delgadella, fide JELL, 1997].
 Aliger HOWELL, 1937 [preocc. replaced by Aligerites].
 Aligerites HOWELL, 1942[Aliger venustus HOWELL, 1937] St Albans Sh, Vermont, USA; UNCERTAIN; MCAM [replacement name for Aliger].
 Alimbetaspis BALASHOVA, 1961 [kelleri] Aktyubinsk region, Kazakhstan; OLENIDAE; LORD [j.s.s. of Jujuyaspis, fide NIKOLAISEN & HENNINGSMOEN, 1985].
@@ -378,7 +378,7 @@ Asthenopsis WHITEHOUSE, 1939 [levior] V Creek Lst, Queensland, Australia; PTYCHO
 Astroproetus BEGG, 1939 [Proetus (Asteropyge) reedi] Upper Drummock Group, Scotland; PROETIDAE; UORD.
 Asturiaspis SDZUY, 1967 [inopinatus] E Asturia, Spain; ACROCEPHALITIDAE; MCAM.
 Astyages ANGELIN, 1854 [preocc., replaced by Isocolus].
-Astycoryphe RICHTER & RICHTER, 1919 [senckenbergiana] Ahrdorf Fm, Gees, Eifel, TROPIDOCORYPHIDAE; MDEV.
+Astycoryphe RICHTER & RICHTER, 1919 [senckenbergiana] Ahrdorf Fm, Gees, Eifel; TROPIDOCORYPHIDAE; MDEV.
 Ataktaspis LOCHMAN & DUNCAN, 1944 [modesta] Pilgrim Fm, Montana, USA; KINGSTONIIDAE; UCAM [j.s.s. of Komaspidella, fide WESTROP, 1992].
 Atdabanella REPINA in KHOMENTOVSKY & REPINA, 1965 [plana] Botoman, Siberia, Russia; DORYPYGIDAE; LCAM.
 Athabaskia RAYMOND, 1928 [ostheimeri] toe of Columbia Glacier, Alberta, Canada; DOLICHOMETOPIDAE; MCAM.
@@ -829,7 +829,7 @@ Chacomurus BRAÑA & VANĚK, 1973 [confragosus] Belen Fm, Bolivia; DALMANITIDAE; 
 Chakasskia POLETAEVA, 1936 [minussensis] Kuznetsk Alatau, Russia; DINESIDAE; CAM.
 Chakasskinella REPINA in REPINA et al., 1964 [lita] Sanashtykgol Horizon, Kuznetsk Alatau, Russia; DINESIDAE; LCAM.
 Chalfontia SHERGOLD, 1982[Prismenaspis alta HENDERSON, 1976] Georgina Lst, Queensland, Australia; DOKIMOCEPHALIDAE; UCAM.
-Chambersiellus LAMONT, 1975 [conditor] Leny Lst, Scotland; INDET. LCAM.
+Chambersiellus LAMONT, 1975 [conditor] Leny Lst, Scotland; INDET.; LCAM.
 Champlainia HOWELL, 1937 [rectimargo] St Albans Sh, Vermont, USA; PTYCHOPARIIDAE; MCAM.
 Chancia WALCOTT, 1924b [ebdome] Spence Sh, Idaho, USA; ALOKISTOCARIDAE; MCAM.
 Chanciaopsis SUNDBERG, 1994 [heteromorphos] Trailer Lst, Utah, USA; ALOKISTOCARIDAE; MCAM.
@@ -1229,7 +1229,7 @@ Didwudina IVSHIN, 1962[strigosa] Seletinsky Horizon, Kazakhstan; DOKIMOCEPHALIDA
 Diemanosaukia JAGO in JAGO & CORBETT, 1990 [miserabilis] Misery Hill, Tasmania, Australia; SAUKIIDAE; UCAM.
 Dienstina RICHTER & RICHTER, 1931 [Phacopidella diensti RICHTER & RICHTER, 1923] Oberscheld, Rhenish Massif, Germany; PHACOPIDAE; LDEV.
 Dignaceps HAJRULLINA in REPINA et al., 1975 [recta] Dignaceps Zone, Mayaian, Turkestan; PROASAPHISCIDAE; MCAM.
-Dignagnostus HAJRULLINA in REPINA et al., 1975 [grandis] Sulyukty region, N slopes of Turkestan Range, Uzbekistan; AGNOSTINA FAMILY UNCERTAIN.
+Dignagnostus HAJRULLINA in REPINA et al., 1975 [grandis] Sulyukty region, N slopes of Turkestan Range, Uzbekistan; UNCERTAIN; MCAM.
 Digonus GURICH, 1909 [ Homalonotus gigas ROEMER, 1843] Kahleberg Sst, Harz Mts, Germany; HOMALONOTIDAE; LDEV.
 Digrypos KOBAYASHI, 1940c [Dionide hybrida REED, 1915] Hwe Maung Beds, Burma; DIONIDIDAE; MORD.
 Dikella ROZOVA in ROZOVA et al., 1985 [truncata] Maslyaninsk Horizon, NW Salair, Russia; HUNGAIIDAE; LORD.
@@ -3034,7 +3034,7 @@ Niobina LAKE, 1946 [davidis] Tremadoc Series, Wales; ASAPHIDAE; LORD.
 Nipponarges KANEKO, 1984 [mediosulcatus] Kitakami Mts, NE Japan; LICHIDAE; MDEV.
 Nipponaspis KOIZUMI, 1972[takaizumii] Yabeina Zone, Fukushima, Japan; PROETIDAE; UPERM.
 Nipponocalymene KANEKO, 1985 [hamadai] Kitakami Mts, NE Japan; CALYMENIDAE; MDEV.
-Nitidocare PŘIBYL et al., 1985a [Arethusa nitida BARRANDE, 1846a] Lite.  
+Nitidocare PŘIBYL et al., 1985a [Arethusa nitida BARRANDE, 1846a] Litéň Fm, Czech Republic; PTEROPARIIDAE; LSIL.
 Nitidulopyge PŘIBYL & ERBEN, 1952[Lichas nitidulus BARRANDE, 1872] Dvorce-Prokop Lst, Czech Republic; LICHIDAE; LDEV [j.s.s. of Perunaspis, fide VANĚK, 1959].
 Niuchangella W. ZHANG, 1974 [meitanensis] Lung-machi Fm, Guizhou, China; SCHARYIIDAE; LSIL.
 Nixonella LOCHMAN in LOCHMAN & DUNCAN, 1944 [montanensis] Pilgrim Fm, Montana, USA; LLANOASPIDIDAE; UCAM [j.s.s. of Genevievella, fide PRATT, 1992].
@@ -4968,7 +4968,7 @@ Wuhushania W. ZHANG & YUAN, 1981 [cylindrica] Hsuchuang Fm, Inner Mongolia, Chin
 Wujiajiania LU & LIN, 1980 [expansa] Siyangshan Fm, Zhejiang, China; OLENIDAE; UCAM.
 Wutaishanaspis J. ZHANG & WANG, 1992[orientalis] Changhia Fm, Shanxi, China; PROASAPHISCIDAE; MCAM.
 Wutaishania J. ZHANG & WANG, 1985 [shaheensis] Hsuchuang Fm, Shanxi, China; AGRAULIDAE; MCAM.
-Wutingaspis KOBAYASHI, 1944b [tingi] Chiungchussu Fm, Yunnan, China: REDLICHIIDAE; LCAM.
+Wutingaspis KOBAYASHI, 1944b [tingi] Chiungchussu Fm, Yunnan, China; REDLICHIIDAE; LCAM.
 Wutingia ENDO, 1935 [preocc., replaced by Endoaspis].
 Wutingshania ZHU, 1959 [lui] Kushan Fm, Liaoning, China; ANOMOCARIDAE; UCAM.
 Wuxunaspis YUAN in W. ZHANG et al., 1980a [deltoidea] Kaili Fm, Guizhou, China; PTYCHOPARIIDAE; MCAM [j.s.s. of Xingrenaspis, fide W. ZHANG & JELL, 1987].
