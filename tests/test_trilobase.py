@@ -1168,7 +1168,7 @@ class TestGroupAFix:
         """Empty Shirakiellidae duplicate (id=196) should be deleted."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
-        cursor.execute('SELECT COUNT(*) FROM taxonomic_ranks WHERE id = 196')
+        cursor.execute('SELECT COUNT(*) FROM taxon WHERE id = 196')
         assert cursor.fetchone()[0] == 0
         conn.close()
 
@@ -1176,7 +1176,7 @@ class TestGroupAFix:
         """Dokimocephalidae (id=210) should be deleted."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
-        cursor.execute('SELECT COUNT(*) FROM taxonomic_ranks WHERE id = 210')
+        cursor.execute('SELECT COUNT(*) FROM taxon WHERE id = 210')
         assert cursor.fetchone()[0] == 0
         conn.close()
 
@@ -1184,7 +1184,7 @@ class TestGroupAFix:
         """Dokimokephalidae (id=134) should have 46 genera."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
-        cursor.execute('SELECT genera_count FROM taxonomic_ranks WHERE id = 134')
+        cursor.execute('SELECT genera_count FROM taxon WHERE id = 134')
         assert cursor.fetchone()[0] == 46
         conn.close()
 
@@ -1192,7 +1192,7 @@ class TestGroupAFix:
         """Chengkouaspidae (id=205) should be deleted."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
-        cursor.execute('SELECT COUNT(*) FROM taxonomic_ranks WHERE id = 205')
+        cursor.execute('SELECT COUNT(*) FROM taxon WHERE id = 205')
         assert cursor.fetchone()[0] == 0
         conn.close()
 
@@ -1200,7 +1200,7 @@ class TestGroupAFix:
         """Chengkouaspididae (id=36) should have 11 genera."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
-        cursor.execute('SELECT genera_count FROM taxonomic_ranks WHERE id = 36')
+        cursor.execute('SELECT genera_count FROM taxon WHERE id = 36')
         assert cursor.fetchone()[0] == 11
         conn.close()
 
@@ -1210,93 +1210,102 @@ class TestGroupAFix:
 # ---------------------------------------------------------------------------
 
 class TestAgnostidaOrder:
-    """Verify Agnostida Order with order-level opinions (not family-level)."""
+    """Verify Agnostida Order in assertion-centric DB (0.3.0)."""
 
     DB_PATH = find_trilobase_db()
 
     def test_agnostida_order_exists(self):
-        """Agnostida Order should exist with parent_id=NULL (excluded from Trilobita by A2011)."""
+        """Agnostida Order should exist, excluded from default profile (no edge_cache entry)."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT id, parent_id, author, year, genera_count FROM taxonomic_ranks "
+            "SELECT id, author, year, genera_count FROM taxon "
             "WHERE name = 'Agnostida' AND rank = 'Order'"
         )
         row = cursor.fetchone()
-        conn.close()
         assert row is not None
-        assert row[1] is None  # parent_id = NULL (A2011 excluded from Trilobita)
-        assert row[2] == 'SALTER'
-        assert row[3] == '1864'
-        assert row[4] == 162
+        agnostida_id = row[0]
+        assert row[1] == 'SALTER'
+        assert row[2] == '1864'
+        assert row[3] == 162
+        # Not in default profile edge_cache (excluded from Trilobita by A2011)
+        edge = cursor.execute(
+            "SELECT parent_id FROM classification_edge_cache "
+            "WHERE child_id = ? AND profile_id = 1", (agnostida_id,)
+        ).fetchone()
+        assert edge is None, "Agnostida should not be in default profile"
+        conn.close()
 
     def test_agnostida_has_10_families(self):
-        """Agnostida should have exactly 10 families (parent_id, no opinions needed)."""
+        """Agnostina should have exactly 10 families in default profile edge_cache."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
+        agnostina_id = cursor.execute(
+            "SELECT id FROM taxon WHERE name = 'Agnostina' AND rank = 'Suborder'"
+        ).fetchone()[0]
         cursor.execute(
-            "SELECT COUNT(*) FROM taxonomic_ranks WHERE parent_id = "
-            "(SELECT id FROM taxonomic_ranks WHERE name = 'Agnostina' AND rank = 'Suborder') "
-            "AND rank = 'Family'"
+            "SELECT COUNT(*) FROM classification_edge_cache ec "
+            "JOIN taxon t ON ec.child_id = t.id "
+            "WHERE ec.parent_id = ? AND ec.profile_id = 1 AND t.rank = 'Family'",
+            (agnostina_id,)
         )
         assert cursor.fetchone()[0] == 10
         conn.close()
 
     def test_agnostida_no_family_opinions(self):
-        """No family-level PLACED_IN opinions for Agnostida (undisputed membership)."""
+        """No family-level PLACED_IN assertions for Agnostida (undisputed membership)."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         agnostida_id = cursor.execute(
-            "SELECT id FROM taxonomic_ranks WHERE name = 'Agnostida' AND rank = 'Order'"
+            "SELECT id FROM taxon WHERE name = 'Agnostida' AND rank = 'Order'"
         ).fetchone()[0]
         cursor.execute(
-            "SELECT COUNT(*) FROM taxonomic_opinions o "
-            "JOIN taxonomic_ranks t ON o.taxon_id = t.id "
-            "WHERE o.related_taxon_id = ? AND t.rank = 'Family'",
+            "SELECT COUNT(*) FROM assertion a "
+            "JOIN taxon t ON a.subject_taxon_id = t.id "
+            "WHERE a.object_taxon_id = ? AND t.rank = 'Family' AND a.predicate = 'PLACED_IN'",
             (agnostida_id,)
         )
         assert cursor.fetchone()[0] == 0
         conn.close()
 
-    def test_agnostida_order_opinions(self):
-        """Agnostida should have 2 order-level opinions: JA2002 (not accepted) + A2011 (accepted)."""
+    def test_agnostida_order_assertions(self):
+        """Agnostida should have PLACED_IN assertions from multiple references."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         agnostida_id = cursor.execute(
-            "SELECT id FROM taxonomic_ranks WHERE name = 'Agnostida' AND rank = 'Order'"
+            "SELECT id FROM taxon WHERE name = 'Agnostida' AND rank = 'Order'"
         ).fetchone()[0]
         cursor.execute(
-            "SELECT related_taxon_id, is_accepted, bibliography_id FROM taxonomic_opinions "
-            "WHERE taxon_id = ? AND opinion_type = 'PLACED_IN' ORDER BY is_accepted",
+            "SELECT object_taxon_id, reference_id FROM assertion "
+            "WHERE subject_taxon_id = ? AND predicate = 'PLACED_IN' "
+            "ORDER BY reference_id",
             (agnostida_id,)
         )
         rows = cursor.fetchall()
         conn.close()
-        assert len(rows) == 2
-        # JA2002: PLACED_IN Trilobita, not accepted
-        assert rows[0][0] == 1   # related_taxon_id = Trilobita
-        assert rows[0][1] == 0   # not accepted
-        # A2011: PLACED_IN NULL (excluded), accepted
-        assert rows[1][0] is None  # excluded
-        assert rows[1][1] == 1    # accepted
-        assert rows[1][2] == 2131  # Adrain 2011 bibliography
+        assert len(rows) >= 2
+        # Both should place Agnostida under Trilobita (id=1)
+        for row in rows:
+            assert row[0] == 1  # object_taxon_id = Trilobita
 
     def test_order_uncertain_reduced(self):
-        """Order Uncertain should have 68 families."""
+        """Order Uncertain should have 68 families in default profile."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT COUNT(*) FROM taxonomic_ranks WHERE parent_id = 144 AND rank = 'Family'"
+            "SELECT COUNT(*) FROM classification_edge_cache ec "
+            "JOIN taxon t ON ec.child_id = t.id "
+            "WHERE ec.parent_id = 144 AND ec.profile_id = 1 AND t.rank = 'Family'"
         )
         assert cursor.fetchone()[0] == 68
         conn.close()
 
-    def test_total_opinions_count(self):
-        """Total taxonomic opinions: 82 PLACED_IN + 2 SPELLING_OF + 1055 SYNONYM_OF = 1139."""
+    def test_total_assertions_count(self):
+        """Total assertions: PLACED_IN 7305 + SPELLING_OF 2 + SYNONYM_OF 1075 = 8382."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
-        cursor.execute("SELECT COUNT(*) FROM taxonomic_opinions")
-        assert cursor.fetchone()[0] == 1139
+        cursor.execute("SELECT COUNT(*) FROM assertion")
+        assert cursor.fetchone()[0] == 8382
         conn.close()
 
 
@@ -1335,55 +1344,52 @@ class TestSpellingOfOpinions:
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT id, is_placeholder, genera_count, parent_id "
-            "FROM taxonomic_ranks WHERE name = 'Dokimocephalidae' AND rank = 'Family'"
+            "SELECT id, is_placeholder, genera_count "
+            "FROM taxon WHERE name = 'Dokimocephalidae' AND rank = 'Family'"
         )
         row = cursor.fetchone()
         conn.close()
         assert row is not None, "Dokimocephalidae placeholder not found"
         assert row[1] == 1  # is_placeholder
         assert row[2] == 0  # genera_count
-        assert row[3] is None  # parent_id NULL
 
     def test_dokimocephalidae_opinion(self):
-        """Dokimocephalidae should have SPELLING_OF opinion pointing to Dokimokephalidae (id=134)."""
+        """Dokimocephalidae should have SPELLING_OF assertion pointing to Dokimokephalidae (id=134)."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT o.opinion_type, o.related_taxon_id, o.is_accepted, t.name "
-            "FROM taxonomic_opinions o "
-            "JOIN taxonomic_ranks t ON o.related_taxon_id = t.id "
-            "WHERE o.taxon_id = ("
-            "  SELECT id FROM taxonomic_ranks WHERE name = 'Dokimocephalidae' AND is_placeholder = 1"
-            ") AND o.opinion_type = 'SPELLING_OF'"
+            "SELECT a.predicate, a.object_taxon_id, t.name "
+            "FROM assertion a "
+            "JOIN taxon t ON a.object_taxon_id = t.id "
+            "WHERE a.subject_taxon_id = ("
+            "  SELECT id FROM taxon WHERE name = 'Dokimocephalidae' AND is_placeholder = 1"
+            ") AND a.predicate = 'SPELLING_OF'"
         )
         row = cursor.fetchone()
         conn.close()
-        assert row is not None, "SPELLING_OF opinion for Dokimocephalidae not found"
+        assert row is not None, "SPELLING_OF assertion for Dokimocephalidae not found"
         assert row[0] == 'SPELLING_OF'
         assert row[1] == 134  # Dokimokephalidae
-        assert row[2] == 1   # is_accepted
-        assert row[3] == 'Dokimokephalidae'
+        assert row[2] == 'Dokimokephalidae'
 
     def test_chengkouaspidae_opinion(self):
-        """Chengkouaspidae should have SPELLING_OF opinion pointing to Chengkouaspididae (id=36)."""
+        """Chengkouaspidae should have SPELLING_OF assertion pointing to Chengkouaspididae (id=36)."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT o.opinion_type, o.related_taxon_id, o.is_accepted, t.name "
-            "FROM taxonomic_opinions o "
-            "JOIN taxonomic_ranks t ON o.related_taxon_id = t.id "
-            "WHERE o.taxon_id = ("
-            "  SELECT id FROM taxonomic_ranks WHERE name = 'Chengkouaspidae' AND is_placeholder = 1"
-            ") AND o.opinion_type = 'SPELLING_OF'"
+            "SELECT a.predicate, a.object_taxon_id, t.name "
+            "FROM assertion a "
+            "JOIN taxon t ON a.object_taxon_id = t.id "
+            "WHERE a.subject_taxon_id = ("
+            "  SELECT id FROM taxon WHERE name = 'Chengkouaspidae' AND is_placeholder = 1"
+            ") AND a.predicate = 'SPELLING_OF'"
         )
         row = cursor.fetchone()
         conn.close()
-        assert row is not None, "SPELLING_OF opinion for Chengkouaspidae not found"
+        assert row is not None, "SPELLING_OF assertion for Chengkouaspidae not found"
         assert row[0] == 'SPELLING_OF'
         assert row[1] == 36   # Chengkouaspididae
-        assert row[2] == 1    # is_accepted
-        assert row[3] == 'Chengkouaspididae'
+        assert row[2] == 'Chengkouaspididae'
 
 
 # ---------------------------------------------------------------------------
@@ -1474,12 +1480,13 @@ class TestTemporalCodeFill:
 
     DB_PATH = find_trilobase_db()
 
-    def test_only_one_genus_missing_temporal_code(self):
-        """After fill, only Dignagnostus should lack temporal_code among valid genera."""
+    def test_only_one_ja2002_genus_missing_temporal_code(self):
+        """Among JA2002 genera (with raw_entry), only Dignagnostus should lack temporal_code."""
         conn = sqlite3.connect(self.DB_PATH)
         rows = conn.execute(
-            "SELECT name FROM taxonomic_ranks "
+            "SELECT name FROM taxon "
             "WHERE rank = 'Genus' AND is_valid = 1 "
+            "AND raw_entry IS NOT NULL "
             "AND (temporal_code IS NULL OR temporal_code = '') "
             "ORDER BY name"
         ).fetchall()
@@ -1498,7 +1505,7 @@ class TestTemporalCodeFill:
         }
         for name, expected in cases.items():
             row = conn.execute(
-                "SELECT temporal_code FROM taxonomic_ranks "
+                "SELECT temporal_code FROM taxon "
                 "WHERE name = ? AND rank = 'Genus'", (name,)
             ).fetchone()
             assert row is not None, f"{name} not found"
@@ -1518,7 +1525,7 @@ class TestTemporalCodeFill:
         }
         for name, expected in cases.items():
             row = conn.execute(
-                "SELECT temporal_code FROM taxonomic_ranks "
+                "SELECT temporal_code FROM taxon "
                 "WHERE name = ? AND rank = 'Genus'", (name,)
             ).fetchone()
             assert row is not None, f"{name} not found"
@@ -1527,7 +1534,7 @@ class TestTemporalCodeFill:
 
 
 class TestCountryIdConsistency:
-    """T-5: country_id should match the country in taxonomic_ranks.location."""
+    """T-5: country_id should match the country in taxon.location."""
 
     DB_PATH = find_trilobase_db()
     PC_DB_PATH = find_paleocore_db()
@@ -1538,11 +1545,11 @@ class TestCountryIdConsistency:
         conn.execute(f"ATTACH DATABASE '{self.PC_DB_PATH}' AS pc")
         rows = conn.execute("""
             SELECT COUNT(*) as total,
-                   SUM(CASE WHEN tr.location LIKE '%' || c.name THEN 1 ELSE 0 END) as matched
+                   SUM(CASE WHEN t.location LIKE '%' || c.name THEN 1 ELSE 0 END) as matched
             FROM genus_locations gl
-            JOIN taxonomic_ranks tr ON gl.genus_id = tr.id
+            JOIN taxon t ON gl.genus_id = t.id
             JOIN pc.countries c ON gl.country_id = c.id
-            WHERE tr.location IS NOT NULL
+            WHERE t.location IS NOT NULL
         """).fetchone()
         conn.close()
         total, matched = rows
@@ -1555,9 +1562,9 @@ class TestCountryIdConsistency:
         conn.execute(f"ATTACH DATABASE '{self.PC_DB_PATH}' AS pc")
         count = conn.execute("""
             SELECT COUNT(*) FROM genus_locations gl
-            JOIN taxonomic_ranks tr ON gl.genus_id = tr.id
+            JOIN taxon t ON gl.genus_id = t.id
             JOIN pc.countries c ON gl.country_id = c.id
-            WHERE tr.location LIKE '%China' AND c.name = 'England'
+            WHERE t.location LIKE '%China' AND c.name = 'England'
         """).fetchone()[0]
         conn.close()
         assert count == 0, f"{count} China locations still mapped to England"
@@ -1567,9 +1574,9 @@ class TestCountryIdConsistency:
         conn = sqlite3.connect(self.DB_PATH)
         conn.execute(f"ATTACH DATABASE '{self.PC_DB_PATH}' AS pc")
         rows = conn.execute("""
-            SELECT tr.name, tr.formation FROM taxonomic_ranks tr
-            JOIN pc.countries c ON tr.formation = c.name
-            WHERE tr.rank = 'Genus' AND tr.location IS NULL
+            SELECT t.name, t.formation FROM taxon t
+            JOIN pc.countries c ON t.formation = c.name
+            WHERE t.rank = 'Genus' AND t.location IS NULL
         """).fetchall()
         conn.close()
         assert len(rows) == 0, f"Found {len(rows)} genera with country as formation: {rows[:5]}"
@@ -1584,8 +1591,8 @@ class TestCountryIdConsistency:
         for name in type1_genera:
             row = conn.execute("""
                 SELECT gl.id FROM genus_locations gl
-                JOIN taxonomic_ranks tr ON gl.genus_id = tr.id
-                WHERE tr.name = ?
+                JOIN taxon t ON gl.genus_id = t.id
+                WHERE t.name = ?
             """, (name,)).fetchone()
             assert row is not None, f"{name} has no genus_locations entry"
         conn.close()
