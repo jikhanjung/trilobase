@@ -1,0 +1,948 @@
+---
+reference: Williams, A., Carlson, S.J., Brunton, C.H.C. & others, 2000. Brachiopoda. In: Kaesler, R.L. (Ed.), Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), Volumes 2 & 3
+scope:
+  - taxon: Brachiopoda
+    coverage: comprehensive
+notes: |
+  Linguliformea, Craniiformea, and Rhynchonelliformea (part).
+  Genus-level classification with type species.
+---
+
+Phylum BRACHIOPODA Duméril, 1806
+  Subphylum LINGULIFORMEA Williams & others, 1996
+    Class LINGULATA Gorjansky & Popov, 1985
+      Order LINGULIDA Waagen, 1885
+        Superfamily LINGULOIDEA Menke, 1828
+          Family LINGULIDAE Menke, 1828
+            Lingula BRUGUIERE, 1797 [*L. anatina]
+            ?Apsilingula A. J. WILLIAMS, 1977 [*A. parkesensis]
+            ?Barroisella HALL & CLARKE, 1892 [*B. campbelli]
+            Glottidia DALL, 1870 [*Lingula albida]
+            ?Langella MENDES, 1961 [*Lingula imbituvensis]
+            Lingularia BIERNAT & EMIG, 1993 [*L. similis]
+            Semilingula POPOV in EGOROV & POPOV, 1990 [*Lingula arctica]
+          Family PSEUDOLINGULIDAE Holmer, 1991
+            Pseudolingula MICKWITZ, 1909 [*Crania quadrata]
+            Bicarinatina BATRUKOVA, 1969 [*Lingula bicarinata]
+            ?Tarutiglossa HAVLICEK, 1984 [*T. platyfaba]
+            ?Wadiglossa HAVLICEK, 1984 [*W. supramarginalis]
+          Family OBOLIDAE King, 1846
+            Subfamily OBOLINAE King, 1846
+              Obolus VON EICHWALD, 1829 [*O. apollinis]
+              Agalatassia POPOV & HOLMER, 1994 [*A. triangularis]
+              Aksarinaia KONEVA, 1992 [*A. triquetrae]
+              Anomaloglossa PERCIVAL, 1978 [*A. porca]
+              Apatobolus POPOV in NAZAROV & POPOV, 1980 [*A. plicatus]
+              Barbatulella WILLIAMS & LOCKLEY, 1983 [*B. lacunosa]
+              Chakassilingula USHATINSKAYA, 1992 [*C. erbiensis]
+              Dicellomus HALL, 1871a [*Lingula polita]
+              Euobolus MICKWITZ, 1896 [*Obolus (Euobolus) elegans]
+              Expellobolus HAVLICEK, 1982 [*Lingula expulsa]
+              Experilingula KONEVA & POPOV, 1983 [*E. divulgata]
+              ?Gorjanskya TENYAKOVA, 1980 [*G. tselinogradica]
+              Kyrshabaktella KONEVA, 1986a [*K. certa]
+              Leontiella YADRENKINA, 1982 [*L. gloriosa]
+              Leptembolon MICKWITZ, 1896 [*Obolus (Leptembolon) lingulaeformis]
+              Lindinella MERGL & SLEHOFEROVA, 1990 [*L. kordulei]
+              Lingulella SALTER, 1866 [*Lingula davisii]
+              Lingulepis HALL, 1863c [*Lingula pinnaformis]
+              Lingulobolus MATTHEW, 1895 [*?Lingulella affinis]
+              Notiobolus POPOV & SOLOVIEV, 1981 [*N. tenuis]
+              Oepikites KHAZANOVITCH & POPOV in KHAZANOVITCH, POPOV, & MELNIKOVA, 1984 [*O. macilentus]
+              Palaeobolus MATTHEW, 1899 [*P. bretonensis]
+            Subfamily GLOSSELLINAE Cooper, 1956
+              Glossella COOPER, 1956 [*G. papillosa]
+              ?Anx HAVLICEK, 1980a [*A. angens]
+              Casquella PERCIVAL, 1978 [*C. bifida]
+              ?Ectenoglossa SINCLAIR, 1945 [*Lingula lesueri]
+              Fezzanoglossa HAVLICEK in HAVLICEK & MASSA, 1973 [*F. fezzanica]
+              Glyptoglossella COOPER, 1960 [*Glyptoglossa cavellosa]
+              ?Lachrymula GRAHAM, 1970 [*L. inusitata]
+              Leptobolus HALL, 1871b [*L. lepis]
+              ?Libyaeglossa HAVLICEK in HAVLICEK & MASSA, 1973 [*L. collombi]
+              Pachyglossella COOPER, 1960 [*Pachyglossa dorsiconvexa]
+              Plectoglossa COOPER, 1956 [*P. oklahomensis]
+              Rafanoglossa HAVLICEK, 1980b [*Lingula impar]
+              ?Spondyglossella HAVLICEK, 1980b [*S. spondylifera]
+              ?Tunisiglossa MASSA, HAVLICEK, & BONNEFOUS, 1977 [*T. tripolitanea]
+            Subfamily ELLIPTOGLOSSINAE Popov & Holmer, 1994
+              Elliptoglossa COOPER, 1956 [*Leptobolus ovalis]
+              Lingulops HALL, 1872a [*L. whitfieldi]
+          Family EOOBOLIDAE Holmer, Popov, & Wrona, 1996
+            Eoobolus MATTHEW, 1902 [*Obolus (Eoobolus) triparilis]
+            Vassilkovia POPOV & KHAZANOVITCH in POPOV & others, 1989 [*V. granulata]
+          Family ZHANATELLIDAE Koneva, 1986
+            Zhanatella KONEVA, 1986a [*Z. rotunda]
+            ?Canalilatus PELMAN, 1983 [*C. paululus]
+            Fossuliella POPOV & USHATINSKAYA, 1992 [*Lingulella linguata]
+            Hyperbolus HAVLICEK, 1982 [*Lingula feistmanteli]
+            Paldiskia GORJANSKY, 1969 [*P. obscuricostata]
+            Rosobolus HAVLICEK, 1982 [*R. robertinus]
+            Rowellella WRIGHT, 1963b [*R. minuta]
+            Thysanotos MICKWITZ, 1896 [*Obolus siluricus]
+            Tropidoglossa ROWELL, 1966 [*Linnarsonella modesta]
+          Family ELKANIIDAE Walcott & Schuchert, 1908
+            Elkania FORD, 1886b [*Obolella desiderata]
+            Broeggeria WALCOTT, 1902 [*Obolella salteri]
+            Elkanisca HAVLICEK, 1982 [*Obolus klouceki]
+            Keskentassia POPOV & HOLMER, 1994 [*K. multispinulosa]
+            Lamanskya MOBERG & SEGERBERG, 1906 [*L. splendens]
+            Monobolina SALTER, 1866 [*Lingula plumbea]
+            ?Pseudodicellomus BELL in BELL & ELLINWOOD, 1962 [*Dicellomus mosaicus]
+            Tilasia HOLMER, 1991b [*T. rugosa]
+            Volborthia VON MOLLER, 1870 [*Acrotreta recurva]
+          Family AULONOTRETIDAE Popov & Holmer, herein
+            Aulonotreta KUTORGA, 1848 [*A. sculpta]
+          Family LINGULELLOTRETIDAE Koneva & Popov, 1983
+            Lingulellotreta KONEVA in GORJANSKY & KONEVA, 1983 [*L. ergalieivi]
+            Aboriginella KONEVA in KONEVA & POPOV, 1983 [*A. denudata]
+            Mirilingula POPOV in KONEVA & POPOV, 1983 [*M. mutabilis]
+            Vaculina KONEVA, 1992 [*V. obscura]
+          Family LINGULASMATIDAE Winchell & Schuchert, 1893
+            Lingulasma ULRICH, 1889 [*L. schucherti]
+          Family PATERULIDAE Cooper, 1956
+            Paterula BARRANDE, 1879 [*P. bohemica]
+          Family DYSORISTIDAE Popov & Ushatinskaya, 1992
+            Dysoristus BELL, 1944 [*D. lochmanae]
+            Ferrobolus HAVLICEK, 1982 [*F. catharinus]
+          Family UNCERTAIN
+            Bistramia VON HOEK, 1912 [*B. elegans]
+            Dignomia HALL, 1871a [*Lingula alveata]
+            Laima GRAVITIS, 1981 [*L. latgalica]
+            Lingulipora GIRTY, 1898 [*Lingula (Lingulipora) williamsana]
+            Lunoglossa XU & XIE, 1985 [*L. pugiensis]
+            Oxlosia ULRICH & COOPER, 1936b [*Eunoa accola]
+            Timalina BATRUKOVA, 1969 [*T. miranda]
+            Tomasina HALL & CLARKE, 1892 [*Lingula criei]
+        Superfamily DISCINOIDEA Gray, 1840
+          Family TREMATIDAE Schuchert, 1893
+            Trematis SHARPE, 1848 [*Orbicula terminalis EMMONS, 1842]
+            Drabodiscina HAVLICEK, 1972 [*Discina grandis BARRANDE, 1879]
+            Schizocrania HALL & WHITFIELD, 1875 [*Orbicula filosa HALL, 1847]
+            ?Schizobolus ULRICH, 1886 [*Discina truncata HALL, 1863a]
+            Tethyrete HAVLICEK, 1994 [*T. frigerum]
+          Family DISCINIDAE Gray, 1840
+            Discina LAMARCK, 1819 [*D. ostreoides]
+            Acrosaccus WILLARD, 1928 [*A. shuler]
+            Chrustenotra HAVLICEK, 1994 [*C. chrustenica]
+            Discradisca STENZEL, 1964 [*Orbicula antillarum D'ORBIGNY, 1845]
+            Kosoidea HAVLICEK & MERGL, 1988 [*K. fissurella]
+            Lindstroemella HALL & CLARKE, 1890 [*L. aspidium]
+            Lingulodiscina WHITFIELD, 1890 [*Lingula exilis HALL, 1860]
+            Lochkothele HAVLICEK & MERGL, 1988 [*Discina intermedia BARRANDE, 1879]
+            ?Oehlertella HALL & CLARKE, 1890 [*Discina pleurites MEEK, 1875]
+            Orbiculoidea D'ORBIGNY, 1847 [*Orbicula forbesii DAVIDSON, 1848]
+            Pelagodiscus DALL, 1908 [*Discina atlantica KING, 1868]
+            Roemerella HALL & CLARKE, 1890 [*Orbicula grandis VANUXEM, 1842]
+            Schizotreta KUTORGA, 1848 [*Orbicula elliptica KUTORGA, 1846]
+            Schizotretinia HAVLICEK, 1994 [*S. euxina]
+        Superfamily ACROTHELOIDEA Walcott & Schuchert, 1908
+          Family ACROTHELIDAE Walcott & Schuchert, 1908
+            Subfamily ACROTHELINAE Walcott & Schuchert, 1908
+              Acrothele LINNARSSON, 1876 [*A. coriacea]
+              Eothele ROWELL, 1980 [*E. spurri]
+              Orbithele SDZUY, 1955 [*Discina contraria BARRANDE, 1868]
+              Schizopholis WAAGEN, 1885 [*S. rugosa]
+              Spinulothele ROWELL, 1977 [*?Siphonotreta dubia WALCOTT, 1912]
+            Subfamily CONODISCINAE Rowell, 1965
+              Conodiscus ULRICH & COOPER, 1936b [*Acrothele burlingi KOBAYASHI, 1935a]
+              ?Discotreta ULRICH & COOPER, 1936b [*Acrothele levisensis WALCOTT, 1908]
+          Family BOTSFORDIIDAE Schindewolf, 1955
+            Botsfordia MATTHEW, 1891 [*Obolus pulcher MATTHEW, 1889]
+            ?Bomina KOROVNIKOV & USHATINSKAYA, 1994 [*B. inusitata]
+            Diandongia RONG, 1974 [*D. pista]
+            Edreja KONEVA, 1979 [*E. crassa]
+            Glyptias WALCOTT, 1901 [*?Lingula favosa LINNARSSON, 1869]
+            Karathele KONEVA, 1986b [*K. coronata]
+            Neobolus WAAGEN, 1885 [*N. warthi]
+      Order ACROTRETIDA Kuhn, 1949
+        Superfamily ACROTRETOIDEA Schuchert, 1893
+          Family ACROTRETIDAE Schuchert, 1893
+            Acrotreta KUTORGA, 1848 [*A. subconica]
+            Acrothyra MATTHEW, 1901 [*Acrotreta proavia MATTHEW, 1899]
+            Aktassia POPOV in NAZAROV & POPOV, 1976 [*A. triangularis]
+            Amictocracens HENDERSON & MACKINNON, 1981 [*A. teres]
+            Anabolotreta ROWELL & HENDERSON, 1978 [*A. regula]
+            Anelotreta PELMAN in ERMAK & PELMAN, 1986 [*A. magna]
+            Angulotreta PALMER, 1954 [*A. triangularis]
+            Aphelotreta ROWELL, 1980 [*A. minuta]
+            Apsotreta PALMER, 1954 [*A. expansa]
+            Araktina KONEVA, 1992 [*A. intermedia]
+            Canthylotreta ROWELL, 1966 [*Acrotreta marjumensis WALCOTT, 1908]
+            Conotreta WALCOTT, 1889 [*C. rusti]
+            Cyrtonotreta HOLMER, 1989b [*Conotreta depressa COOPER, 1956]
+            Dactylotreta ROWELL & HENDERSON, 1978 [*D. redunca]
+            Dicondylotreta MEI, 1993 [*D. parallela]
+            Ditreta BIERNAT, 1973 [*E. dividua]
+            Eschatelasma POPOV, 1981 [*E. rugosum]
+            Eurytreta ROWELL, 1966 [*Acrotreta curvata WALCOTT, 1902]
+            Fascicoma POPOV in NAZAROV & POPOV, 1980 [*F. obscura]
+            Galinella POPOV & HOLMER, 1994 [*Acrotreta retrorsa LERMONTOVA, 1951]
+            Hadrotreta ROWELL, 1966 [*Acrotreta primaea WALCOTT, 1902]
+            Hansotreta KRAUSE & ROWELL, 1975 [*H. acrobela]
+            Hisingerella HENNINGSMOEN in WAERN, THORSLUND & HENNINGSMOEN, 1948 [*?Atrypa nitens VON HISINGER, 1837]
+            Kotylotreta KONEVA, 1990 [*K. undata]
+            Linnarssonella WALCOTT, 1902 [*L. girtyi]
+            Linnarssonia WALCOTT, 1885 [*Obolella transversa HARTT in DAWSON, 1868]
+            Longipegma POPOV & HOLMER, 1994 [*L. gorjanskii]
+            Neotreta SOBOLEV, 1976 [*N. tumida]
+            Olentotreta KONEVA, POPOV, & USHATINSKAYA in KONEVA & others, 1990 [*O. olentensis]
+            Opisthotreta PALMER, 1954 [*O. depressa]
+            Ottenbyella POPOV & HOLMER, 1994 [*Acrotreta carinata MOBERG & SEGERBERG, 1906]
+            Physotreta ROWELL, 1966 [*Acrotreta spinosa WALCOTT, 1905]
+            Picnotreta HENDERSON & MACKINNON, 1981 [*P. debilis]
+            Prototreta BELL, 1938 [*P. trapeza]
+            Quadrisonia ROWELL & HENDERSON, 1978 [*Q. minor]
+            Rhondellina ROWELL, 1986 [*R. dorei]
+            Satpakella KONEVA, POPOV, & USHATINSKAYA in KONEVA & others, 1990 [*S. inconstans]
+            Semitreta BIERNAT, 1973 [*S. maior]
+            Spondylotreta COOPER, 1956 [*S. concentrica]
+            Stilpnotreta HENDERSON & MACKINNON, 1981 [*S. magna]
+            Treptotreta HENDERSON & MACKINNON, 1981 [*T. jucunda]
+            Vandalotreta MERGL, 1988 [*V. vafra]
+          Family SCAPHELASMATIDAE Rowell, 1965
+            Scaphelasma COOPER, 1956 [*S. septatum]
+            Artiotreta IRELAND, 1961 [*A. parva]
+            Batenevotreta USHATINSKAYA, 1992 [*B. formosa]
+            Eoscaphelasma KONEVA, POPOV, & USHATINSKAYA in KONEVA & others, 1990 [*E. satpakensis]
+            Rhysotreta COOPER, 1956 [*R. corrugata]
+            ?Tobejalotreta KONEVA, POPOV, & USHATINSKAYA in KONEVA & others, 1990 [*T. aseptata]
+          Family TORYNELASMATIDAE Rowell, 1965
+            Torynelasma COOPER, 1956 [*T. toryniferum]
+            Acrotretella IRELAND, 1961 [*A. siluriana]
+            Cristicoma POPOV in NAZAROV & POPOV, 1980 [*C. sincera]
+            Issedonia POPOV in NAZAROV & POPOV, 1980 [*I. spinosa]
+            Mylloconotreta WILLIAMS & CURRY, 1985 [*M. elimata]
+            ?Paratreta BIERNAT, 1973 [*P. similis]
+            Polylasma POPOV in NAZAROV & POPOV, 1980 [*P. subcidum]
+            Sasyksoria POPOV & HOLMER, 1994 [*S. rugosa]
+          Family EPHIPPELASMATIDAE Rowell, 1965
+            Ephippelasma COOPER, 1956 [*E. minutum]
+            Akmolina POPOV & HOLMER, 1994 [*A. olentensis]
+            Lurgiticoma POPOV in NAZAROV & POPOV, 1980 [*L. singularis]
+            Mamatia POPOV & HOLMER, 1994 [*Paratreta retracta POPOV in NAZAROV & POPOV, 1980]
+            Myotreta GORJANSKY, 1969 [*M. crassa]
+            Numericoma POPOV in NAZAROV & POPOV, 1980 [*N. ornata]
+            Pomeraniotreta BEDNARCZYK, 1986 [*P. biernatae]
+            Rhinotreta HOLMER, 1986 [*R. muscularis]
+            Veliseptum POPOV in NAZAROV & POPOV, 1976 [*V. fragile]
+          Family BIERNATIDAE Holmer, 1989
+            Biernatia HOLMER, 1989b [*Torynelasma minor rossicum GORJANSKY, 1969]
+            Opsiconidion LUDVIGSEN, 1974 [*O. arcticon]
+          Family CERATRETIDAE Rowell, 1965
+            Ceratreta BELL, 1941 [*C. hebes]
+            Bozshakolia USHATINSKAYA in USHATINSKAYA, GIDASPOV, & RIAZANTSEV, 1986 [*B. conformis]
+            Erbotreta HOLMER & USHATINSKAYA, 1994 [*E. singularis]
+            Keyserlingia PANDER in VON HELMERSEN, 1861 [*Orbicula reversa DE VERNEUIL, 1845]
+            Kleithriatreta ROBERTS in ROBERTS & JELL, 1990 [*K. lamellosa]
+          Family EOCONULIDAE Rowell, 1965
+            Eoconulus COOPER, 1956 [*E. rectangulatus]
+            Otariconulus HOLMER & POPOV, herein [*Otariella prisca POPOV & HOLMER, 1994]
+            Undiferina COOPER, 1956 [*U. rugosa]
+          Family CURTICIIDAE Walcott & Schuchert, 1908
+            Curticia WALCOTT, 1905 [*C. elegantula]
+          Family UNCERTAIN
+            Craniotreta TERMIER & MONOD, 1978 [*C. caltepensis]
+            Dzhagdicus SOBOLEV, 1992 [*D. sentus]
+            Schizotretoides TERMIER & MONOD, 1978 [*S. tauricus]
+      Order SIPHONOTRETIDA Kuhn, 1949
+        Superfamily SIPHONOTRETOIDEA Kutorga, 1848
+          Family SIPHONOTRETIDAE Kutorga, 1848
+            Siphonotreta DE VERNEUIL, 1845 [*Crania unguiculata VON EICHWALD, 1829]
+            Acanthambonia COOPER, 1956 [*A. minutissima]
+            Alichovia GORJANSKY, 1969 [*A. ramispinosa]
+            Celdobolus HAVLICEK, 1982 [*Obolus complexus BARRANDE, 1879]
+            Cyrbasiotreta WILLIAMS & CURRY, 1985 [*C. cirrata]
+            Eosiphonotreta HAVLICEK, 1982 [*Terebratula verrucosa VON EICHWALD, 1840]
+            Gorchakovia POPOV & KHAZANOVITCH in POPOV & others, 1989 [*G. granulata]
+            Helmersenia PANDER in VON HELMERSEN, 1861 [*Siphonotreta ladogensis JEREMEJEW, 1856]
+            Karnotreta WILLIAMS & CURRY, 1985 [*K. adnata]
+            Mesotreta KUTORGA, 1848 [*Siphonotreta tentorium KUTORGA, 1848]
+            Multispinula ROWELL, 1962a [*Schizambon macrothyris COOPER, 1956]
+            Nushbiella POPOV in KOLOBOVA & POPOV, 1986 [*Multispinula dubia POPOV, 1977]
+            ?Quasithambonia BEDNARCZYK & BIERNAT, 1978 [*Q. rarispinosa]
+            Schizambon WALCOTT, 1884 [*S. typicalis]
+            Siphonobolus HAVLICEK, 1982 [*Siphonotreta simulans RUZICKA, 1927]
+            Siphonotretella POPOV & HOLMER, 1994 [*S. jani]
+    Class PATERINATA Williams & others, 1996
+      Order PATERINIDA Rowell, 1965
+        Superfamily PATERINOIDEA Schuchert, 1893
+          Family PATERINIDAE Schuchert, 1893
+            Paterina BEECHER, 1891 [*Obolus labradoricus BILLINGS, 1861a]
+            Dictyonina COOPER, 1942 [*Trematis pannulus WHITE, 1874]
+            Dictyonites COOPER, 1956 [*D. perforata]
+            Kolihium HAVLICEK, 1982 [*Kutorgina kolihai RUZICKA, 1927]
+            Lacunites GORJANSKY, 1969 [*L. balachonovae]
+            Micromitra MEEK, 1873 [*Iphidea sculptilis MEEK, 1873]
+          Family CRYPTOTRETIDAE Pelman, 1979
+            Cryptotreta PELMAN, 1977 [*C. neguertchenensis]
+            Aldanotreta PELMAN, 1977 [*A. sunnaginensis]
+            Askepasma LAURIE, 1986 [*A. toddense]
+            Dzunarzina USHATINSKAYA, 1993a [*D. elenae]
+            Salanygolina USHATINSKAYA, 1987 [*S. obliqua]
+          Family MICKWITZIIDAE Gorjansky, 1969
+            Mickwitzia SCHMIDT, 1888 [*?Lingula monilifera LINNARSSON, 1869]
+          Family TIANZHUSHANELLIDAE Conway Morris, 1990
+            Tianzhushanella LIU, 1979 [*T. ovata]
+            Apistoconcha CONWAY MORRIS in BENGTSON & others, 1990 [*A. apheles]
+            Aroonia BENGTSON in BENGTSON & others, 1990 [*A. seposita]
+  Subphylum CRANIIFORMEA Popov & others, 1993
+    Class CRANIATA Williams & others, 1996
+      Order CRANIOPSIDA Gorjansky & Popov, 1985
+        Superfamily CRANIOPSOIDEA Williams, 1963
+          Family CRANIOPSIDAE Williams, 1963
+            Craniops HALL, 1859b [*?Orbicula squamiformis HALL, 1843a]
+            ?Discinopsis MATTHEW in HALL & CLARKE, 1892 [*Acrotreta gulielmi MATTHEW, 1886]
+            ?Heliomedusa SUN & HOU, 1987 [*H. orienta]
+            Lingulapholis SCHUCHERT, 1913b [*Pholidops terminalis HALL, 1859a]
+            Paracraniops WILLIAMS, 1963 [*Craniops pararia WILLIAMS, 1962]
+            Pseudopholidops BEKKER, 1921 [*Pholidops scutellata]
+      Order CRANIIDA Waagen, 1885
+        Superfamily CRANIOIDEA Menke, 1828
+          Family CRANIIDAE Menke, 1828
+            Crania RETZIUS, 1781 [*Anomia craniolaris LINNAEUS, 1758]
+            Acanthocrania WILLIAMS, 1943 [*Crania spiculata ROWLEY, 1908]
+            Ancistrocrania DALL, 1877 [*Crania parisiensis DEFRANCE, 1818]
+            Conocrania SMIRNOVA, 1996 [*Craniscus spinacostatum SMIRNOVA, 1972]
+            Craniscus DALL, 1871b [*Crania tripartita VON MUNSTER, 1840]
+            Danocrania ROSENKRANTZ, 1964 [*Crania tuberculata NILSSON, 1826]
+            Isocrania JAEKEL, 1902 [*Crania egnabergensis RETZIUS, 1781]
+            Lepidocrania COOPER & GRANT, 1974 [*L. tardispinosa]
+            Nematocrania GRANT, 1976 [*N. crassa]
+            Neoancistrocrania LAURIN, 1992 [*N. norfolki]
+            Neocrania LEE & BRUNTON, 1986 [*Patella anomala MULLER, 1776]
+            Orthisocrania ROWELL, 1963 [*Pseudocrania divaricata M'COY, 1851]
+            Petrocrania RAYMOND, 1911 [*Craniella meduanensis OEHLERT, 1888]
+            Philhedra KOKEN, 1889 [*P. baltica]
+            Pseudocrania M'COY, 1851 [*Orbicula antiquissima VON EICHWALD, 1840]
+            Valdiviathyris HELMCKE, 1940 [*V. quenstedti]
+      Order TRIMERELLIDA Gorjansky & Popov, 1985
+        Superfamily TRIMERELLOIDEA Davidson & King, 1872
+          Family TRIMERELLIDAE Davidson & King, 1872
+            Trimerella BILLINGS, 1862c [*T. grandis]
+            Costitrimerella RONG & LI, 1993 [*C. costellata]
+            Dinobolus HALL, 1871a [*Obolus conradi HALL, 1867b]
+            Eodinobolus ROWELL, 1963 [*Obolellina magnifica BILLINGS, 1871c]
+            Fengzuella LI & HAN, 1980 [*F. zhejiangensis]
+            Gasconsia NORTHROP, 1939 [*G. schucherti]
+            ?Gyroselenella LI, 1985 [*Selenella circularis LI, 1984]
+            Monomerella BILLINGS, 1871b [*M. prisca]
+            Ovidiella NIKITIN & POPOV, 1984 [*O. plana]
+            Palaeotrimerella LI & HAN, 1980 [*P. orientalis]
+            Paradinobolus LI & HAN, 1980 [*P. sinensis]
+            Peritrimerella LIANG, 1983 [*P. chunanensis]
+            Rhynobolus HALL, 1871a [*Obolus galtensis BILLINGS, 1862c]
+            Sinotrimerella LI & HAN, 1980 [*S. jiangshanensis]
+            Yidurella ZENG, 1987 [*Y. yiduensis]
+          Family ADENSUIDAE Popov & Rukavishnikova, 1986
+            Adensu POPOV & RUKAVISHNIKOVA, 1986 [*A. monstratum]
+          Family USSUNIIDAE Nikitin & Popov, 1984
+            Ussunia NIKITIN & POPOV, 1984 [*U. incredibilis]
+  Subphylum RHYNCHONELLIFORMEA Williams & others, 1996
+    Class CHILEATA Williams & others, 1996
+      Order CHILEIDA Popov & Tikhonov, 1990
+        Superfamily MATUTELLOIDEA Andreeva, 1962
+          Family MATUTELLIDAE Andreeva, 1962
+            Matutella COOPER, 1951 [*M. clarki]
+            Kotujella ANDREEVA, 1962 [*K. calva]
+          Family CHILEIDAE Popov & Tikhonov, 1990
+            Chile POPOV & TIKHONOV, 1990 [*C. mirabilis]
+            Acareorthis ROBERTS in ROBERTS & JELL, 1990 [*A. jelli]
+      Order DICTYONELLIDA Cooper, 1956
+        Superfamily EICHWALDIOIDEA Schuchert, 1893
+          Family EICHWALDIIDAE Schuchert, 1893
+            Eichwaldia BILLINGS, 1858 [*E. subtrigonalis]
+            Eodictyonella WRIGHT, 1994a [*Dictyonella HALL, 1867a]
+          Family ISOGRAMMIDAE Schuchert, 1929
+            Isogramma MEEK & WORTHEN, 1870 [*?Chonetes millipunctatus MEEK & WORTHEN, 1870]
+            Megapleuronia COOPER, 1952a [*Productus fabianii GRECO, 1947]
+            Schizopleuronia LIAO, 1983 [*S. grandis]
+    Class OBOLELLATA Williams & others, 1996
+      Order OBOLELLIDA Rowell, 1965
+        Superfamily OBOLELLOIDEA Walcott & Schuchert, 1908
+          Family OBOLELLIDAE Walcott & Schuchert, 1908
+            Obolella BILLINGS, 1861b [*O. chromatica]
+            Bicia WALCOTT, 1901 [*Obolella gemma BILLINGS, 1871b]
+            Brevipelta GEYER, 1994 [*B. chouberti]
+            Ivshinella KONEVA, 1979 [*I. modesta]
+            Magnicanalis ROWELL, 1962a [*Obolella mobergi WALCOTT, 1901]
+          Family TREMATOBOLIDAE Popov & Holmer, herein
+            Trematobolus MATTHEW, 1893 [*T. insignis]
+            Alisina ROWELL, 1962a [*Obolella atlantica WALCOTT, 1890]
+            Sibiria GORJANSKY in PELMAN, 1977 [*S. magna]
+          Superfamily UNCERTAIN
+            Monoconvexa PELMAN, 1977 [*M. monoconvexa]
+            Nochoroiella PELMAN in GRIGORIEVA, MELNIKOVA, & PELMAN, 1983 [*N. initia]
+      Order NAUKATIDA Popov & Tikhonov, 1990
+        Superfamily NAUKATOIDEA Popov & Tikhonov, 1990
+          Family NAUKATIDAE Popov & Tikhonov, 1990
+            Naukat POPOV & TIKHONOV, 1990 [*N. proprium]
+            Bojarkinoia AKSARINA in AKSARINA & PELMAN, 1978 [*B. levigata]
+            Bynguanoia ROBERTS in ROBERTS & JELL, 1990 [*B. perplexa]
+            Oina POPOV & TIKHONOV, 1990 [*O. rotunda]
+            ?Swantonia WALCOTT, 1905 [*Camerella antiquata BILLINGS, 1861b]
+    Class KUTORGINATA Williams & others, 1996
+      Order KUTORGINIDA Kuhn, 1949
+        Superfamily KUTORGINOIDEA Schuchert, 1893
+          Family KUTORGINIDAE Schuchert, 1893
+            Kutorgina BILLINGS, 1861b [*K. cingulata]
+            Agyrekia KONEVA, 1979 [*A. altai]
+            Haupiria MACKINNON, 1983 [*H. tasmani]
+            Schuchertina WALCOTT, 1905 [*S. cambria]
+            Yorkia WALCOTT, 1897 [*Y. wanneri]
+        Superfamily NISUSIOIDEA Walcott & Schuchert, 1908
+          Family NISUSIIDAE Walcott & Schuchert, 1908
+            Nisusia WALCOTT, 1905 [*Orthisina festinata BILLINGS, 1861b]
+            Eoconcha COOPER, 1951 [*E. austini]
+            Narynella ANDREEVA, 1987 [*Nisusia ferganensis ANDREEVA, 1962]
+            Khasagtina USHATINSKAYA, 1987 [*K. primaria]
+            Trematosia COOPER, 1976 [*Obolus radifer RICHTER & RICHTER, 1941]
+    Class STROPHOMENATA Williams & others, 1996
+      Order STROPHOMENIDA Opik, 1934
+        Superfamily STROPHOMENOIDEA King, 1846
+          Family STROPHOMENIDAE King, 1846
+            Subfamily STROPHOMENINAE King, 1846
+              Strophomena RAFINESQUE in DE BLAINVILLE, 1824 [*Leptaena planumbona HALL, 1847]
+                S. (Strophomena)
+                S. (Keilamena) ROOMUSOKS, 1993b [*Actinomena occidens MANNIL in ORASPOLD, 1956]
+                S. (Tetraphalerella) WANG, 1949 [*T. cooperi]
+              Actinomena OPIK, 1930 [*Strophomena (A.) orta]
+              Drummuckina BANCROFT, 1949 [*Stropheodonta donax REED, 1917]
+              Longvillia BANCROFT, 1933 [*Orthis grandis J. DE C. SOWERBY, 1839]
+              Esilia NIKITIN & POPOV, 1985 [*E. tchetvericovae]
+              Holtedahlina FOERSTE, 1924 [*Leptaena sulcata DE VERNEUIL, 1848b]
+              Infurca PERCIVAL, 1979a [*I. tessellata]
+              Pseudostrophomena ROOMUSOKS, 1963 [*P. reclinis]
+              Trotlandella NEUMAN in NEUMAN & BRUTON, 1974 [*T. loki]
+            Subfamily FURCITELLINAE Williams, 1965
+              Furcitella COOPER, 1956 [*F. plicata]
+              ?Bajanhongorella ROZMAN, 1977 [*B. bajanhongorica]
+              Bekkerina ROOMUSOKS, 1993a [*Rafinesquina dorsata BEKKER, 1921]
+              Bellimurina COOPER, 1956 [*Leptaena charlottae WINCHELL & SCHUCHERT, 1892]
+                B. (Bellimurina)
+                B. (Cyphomenoidea) COCKS, 1968 [*Leptaena wisgoriensis LAMONT & GILBERT, 1945]
+              Biparetis AMSDEN, 1974 [*B. paucirigosus]
+              Dactylogonia ULRICH & COOPER, 1942 [*D. geniculata]
+              ?Dzhebaglina MISIUS, 1986 [*D. kelpensis]
+              Geniculina ROOMUSOKS, 1993a [*Strophomena pseudoalternata SCHMIDT, 1858]
+              ?Hostimena HAVLICEK in HAVLICEK & STORCH, 1990 [*Strophomena frivaldo explanans BARRANDE, 1879]
+              Iberomena VILLAS, 1985 [*Strophomena sardoa VINASSA, 1927]
+              Katastrophomena COCKS, 1968 [*Strophomena antiquata woodlandensis REED, 1917]
+                K. (Katastrophomena)
+                K. (Costistrophomena) SHEEHAN, 1987 [*C. costata]
+              Kirkina SALMON, 1942 [*K. millardensis]
+              Laevicyphomena COCKS, 1968 [*Cyphomena (L.) feliciter]
+              Luhaia ROOMUSOKS, 1956 [*L. vardi]
+              Maakina ANDREEVA in NIKIFOROVA & ANDREEVA, 1961 [*Oepikina (M.) kulinnensis]
+              ?Mansina ANDREEVA, 1977 [*M. uralica]
+              Molongcola PERCIVAL, 1991 [*M. variabilis]
+              Murinella COOPER, 1956 [*M. partita]
+              Oepikina SALMON, 1942 [*O. septata]
+              ?Oslomena SPJELDNAES, 1957 [*O. osloensis]
+              Panderites ROOMUSOKS, 1993a [*Oepikina? imbrexoidea SOKOLSKAYA, 1954]
+              Pentlandina BANCROFT, 1949 [*Strophomena (P.) tartana]
+              Quondongia PERCIVAL, 1991 [*Q. altitis]
+              Tallinnites ROOMUSOKS, 1993a [*Oepikina? imbrexoidea SOKOLSKAYA, 1954]
+              Teratelasmella LAURIE, 1991 [*T. plicata]
+              ?Titanomena BERGSTROM, 1968 [*T. grandis]
+              Trigrammaria WILSON, 1945 [*T. trigonalis]
+            Subfamily LEPTAENINAE Hall & Clarke, 1894
+              Leptaena DALMAN, 1828 [*L. rugosa]
+                L. (Leptaena)
+                L. (Septomena) ROOMUSOKS, 1989 [*L. juvenilis OPIK, 1930]
+              ?Bracteoleptaena HAVLICEK, 1963 [*Strophomena bracteola BARRANDE, 1879]
+              Glossoleptaena HAVLICEK, 1967 [*Strophomena emarginata BARRANDE, 1879]
+              Harjumena ROOMUSOKS, 1993c [*Strophomena schmidti GAGEL, 1890]
+              Hingganoleptaena ZHU, 1985 [*Leptaena nenjiangensi SU, 1980]
+              Hollardina RACHEBOEUF & GARCIA-ALCALDE in RACHEBOEUF, CARLS, & GARCIA-ALCALDE, 1982 [*H. plana]
+              Kiaeromena SPJELDNAES, 1957 [*Leptaena kjerulfi HOLTEDAHL, 1916]
+                K. (Kiaeromena)
+                K. (Bekkeromena) ROOMUSOKS, 1963 [*Strophomena semipartita ROEMER, 1861]
+              Lepidoleptaena HAVLICEK, 1963 [*Strophomena rhomboidalis lepidula BARRANDE, 1879]
+              Leptaenopyxis HAVLICEK, 1963 [*Leptaena bouei BARRANDE, 1848]
+                L. (Leptaenopyxis)
+                L. (Hefengia) XU, 1991 [*L. (H.) hefengensis]
+              Leptagonia M'COY, 1844 [*Producta analoga PHILLIPS, 1836]
+              Limbimurina COOPER, 1956 [*L. insurata]
+              ?Lioleptaena XIAN in XIAN & JIANG, 1978 [*L. kailiensis]
+              Lissoleptaena HAVLICEK, 1992 [*L. lissodermis]
+              Mackerrovia COCKS, 1968 [*Brachyprion artaensis LAMONT & GILBERT, 1945]
+              Notoleptaena GILL, 1951 [*N. linguifera]
+              Rugoleptaena HAVLICEK, 1956 [*R. hornyi]
+              Scamnomena BASSETT, 1977 [*Strophomena rugata LINDSTROM, 1861]
+              ?Tchadania KULKOV in KULKOV, VLADIMIRSKAYA, & RYBKINA, 1985 [*T. insignis]
+          Family RAFINESQUINIDAE Schuchert, 1893
+            Subfamily RAFINESQUININAE Schuchert, 1893
+              Rafinesquina HALL & CLARKE, 1892 [*Leptaena alternata CONRAD, 1838]
+              Colaptomena COOPER, 1956 [*C. leptostrophoidea]
+              Hedstroemina BANCROFT, 1929 [*H. fragilis]
+              ?Hibernodonta HARPER & MITCHELL in HARPER & others, 1985 [*H. praeco]
+              Kjaerina BANCROFT, 1929 [*K. typa]
+              Kjerulfina BANCROFT, 1929 [*K. trigonalis]
+              Kosomena HAVLICEK in HAVLICEK & STORCH, 1990 [*K. kosia]
+              Megamyonia WANG, 1949 [*M. knighti]
+              Odoratus ZHU, 1985 [*O. wangi]
+              Rhipidomena COOPER, 1956 [*Strophomena tennesseenis WILLARD, 1928]
+            Subfamily TERATELASMINAE Pope, 1976
+              Teratelasma COOPER, 1956 [*T. neumani]
+              Tashanomena ZHAN & RONG, 1994 [*T. variabilis]
+          Family GLYPTOMENIDAE Williams, 1965
+            Glyptomena COOPER, 1956 [*G. sculpturata]
+            Bystomena WILLIAMS, 1974 [*B. perplexa]
+            ?Hesperinina COOPER, 1956 [*H. kirki]
+            Linostrophomena RONG, XU, & YANG, 1974 [*L. convexa]
+            ?Mjoesina SPJELDNAES, 1957 [*Rafinesquina mjoesensis HOLTEDAHL, 1916]
+            Paromalomena RONG, 1984 [*Platymena polonica TEMPLE, 1965]
+            ?Pionomena COOPER, 1956 [*P. neumani]
+            Platymena COOPER, 1956 [*P. plana]
+            Pomeromena MITCHELL, 1977 [*P. transversa]
+            ?Proboscisambon HAVLICEK & MERGL, 1982 [*Strophomena quaesita BARRANDE, 1879]
+            Qianomena RONG & YANG, 1981 [*Q. unicosta]
+            Rhactomena MITCHELL, 1977 [*R. splendens]
+          Family FOLIOMENIDAE Williams, 1965
+            Foliomena HAVLICEK, 1952 [*Strophomena folium BARRANDE, 1879]
+          Family CHRISTIANIIDAE Williams, 1953
+            Christiania HALL & CLARKE, 1892 [*Leptaena subquadrata HALL, 1883]
+            Nubialba NEUMAN, 1994 [*N. forbesi]
+          Family LEPTAENOIDEIDAE Williams, 1953
+            Leptaenoidea HEDSTROM, 1917 [*L. silurica]
+            Leptaenisca BEECHER, 1890a [*Leptaena concava HALL, 1857]
+            Leptaenoideida GARCIA-ALCALDE & MARTINEZ-CHACON, 1978 [*L. chaconae]
+            Liljevallia HEDSTROM, 1917 [*L. gotlandica]
+            ?Taleoleptaena HAVLICEK, 1967 [*T. taleolata]
+          Family AMPHISTROPHIIDAE Harper, 1973
+            Subfamily AMPHISTROPHIINAE Harper, 1973
+              Amphistrophia HALL & CLARKE, 1892 [*Strophomena striata HALL, 1843a]
+                A. (Amphistrophia)
+                A. (Amphistrophiella) HARPER & BOUCOT, 1978 [*Orthis funiculata M'COY, 1846]
+                A. (Pembrostrophia) BASSETT, 1971 [*A. (P.) freshwaterensis]
+              Devonamphisrophia HARPER & BOUCOT, 1978 [*Strophodonta alveata HALL, 1863a]
+              Eoamphistrophia HARPER & BOUCOT, 1978 [*Amphistrophia whittardi COCKS, 1967]
+            Subfamily MESODOUVILLININAE Harper & Boucot, 1978
+              Mesodouvillina WILLIAMS, 1950 [*Stropheodonta subinterstrialis seretensis KOZLOWSKI, 1929]
+              Desistrophia TALENT in GRATSIANOVA, SHISHKINA, & TALENT, 1988 [*Maoristrophia papilio STRUSZ, 1983]
+              Eomaoristrophia USHATINSKAYA in USHATINSKAYA & ALEKSEEVA, 1983 [*E. kobdensis]
+              Gladiostrophia HAVLICEK, 1967 [*Leptaena verneuili BARRANDE, 1848]
+              ?Jakutostrophia MANANKOV, 1991 [*J. undata]
+              Maoristrophia ALLAN, 1947 [*M. neozelanica]
+              Mclearnites CASTER, 1945 [*Brachyprion mertoni MCLEARN, 1924]
+                M. (Mclearnites)
+                M. (Geniculomclearnites) HARPER & BOUCOT, 1978 [*M. (G.) genicularia]
+              Sinostrophia HAMADA, 1971 [*S. kondoi]
+          Family DOUVILLINIDAE Caster, 1939
+            Subfamily DOUVILLININAE Caster, 1939
+              Douvillina OEHLERT, 1887b [*Orthis dutertrei MURCHISON, 1840]
+              Douvillinaria STAINBROOK, 1945 [*Stropheodonta variabilis CALVIN, 1878]
+              Douvillinoides HARPER & BOUCOT, 1978 [*Douvillinella? erickmayi PEDDER, 1960]
+            Subfamily PROTODOUVILLININAE Harper & Boucot, 1978
+              Protodouvillina HARPER & BOUCOT, 1978 [*Strophomena inaequistriata CONRAD, 1842]
+              Bojodouvillina HAVLICEK, 1967 [*Leptaena phillipsii BARRANDE, 1848]
+              ?Contradouvillina GRATSIANOVA, 1975 [*C. salairica]
+              Cymostrophia CASTER, 1939 [*Leptaena stephani BARRANDE, 1848]
+                C. (Cymostrophia)
+                C. (Protocymostrophia) HARPER & BOUCOT, 1978 [*Strophomena ivanensis BARRANDE, 1879]
+              Douvillinella SPRIESTERSBACH, 1925 [*Stropheodonta filifer SCHMIDT, 1913]
+                D. (Douvillinella)
+                D. (Crinistrophia) HAVLICEK, 1967 [*C. crinita]
+              Hercostrophia WILLIAMS, 1950 [*H. alpenensis]
+              Malurostrophia CAMPBELL & TALENT, 1967 [*M. flabellicauda]
+              Megastrophiella HARPER & BOUCOT, 1978 [*Stropheodonta iddingsi MERRIAM, 1940]
+              ?Moravostrophia HAVLICEK, 1962 [*Strophomena interstrialis moravica SMYCKA, 1897]
+              Nadiastrophia TALENT, 1963 [*N. superba]
+              Paucistrophia WANG & ZHU, 1979 [*Radiomena concinnusa WANG in WANG, YU, & WU, 1974]
+              Phragmostrophia HARPER, JOHNSON, & BOUCOT, 1967 [*P. merriami]
+              Radiomena HAVLICEK, 1962 [*Orthis irregularis ROEMER, 1844]
+              Taemostrophia CHATTERTON, 1973 [*T. patmorei]
+              Teichostrophia HARPER, JOHNSON, & BOUCOT, 1967 [*Strophomena lepis BRONN, 1837]
+              Telaeoshaleria WILLIAMS, 1950 [*Shaleria (T.) sulcata]
+              Tsaganella OLENEVA, 1994 [*T. plana]
+            Subfamily DICOELOSTROPHIINAE Wang & Rong, 1986
+              Dicoelostrophia WANG, 1955a [*D. punctatum]
+            Subfamily LEPTODONTELLINAE Williams, 1965
+              Leptodontella KHALFIN, 1948 [*Leptaena caudata SCHNUR, 1854]
+              Parastrophonella BUBLICHENKO, 1956 [*Strophomena anaglypha KAYSER, 1871]
+              ?Spinostrophia JIANG in XIAN & JIANG, 1978 [*S. ellipsoidea]
+              Sulcatostrophia CASTER, 1939 [*Leptostrophia camerata FENTON & FENTON, 1924]
+              Zophostrophia VEEVERS, 1959 [*Z. ungamica]
+          Family LEPTOSTROPHIIDAE Caster, 1939
+            Leptostrophia HALL & CLARKE, 1892 [*Stropheodonta magnifica HALL, 1857]
+              L. (Leptostrophia)
+              L. (Rhytistrophia) CASTER, 1939 [*Stropheodonta beckii HALL, 1859a]
+            ?Barbaestrophia HAVLICEK, 1965a [*Strophomena praestans BARRANDE, 1879]
+            Brachyprion SHALER, 1865 [*Strophomena leda BILLINGS, 1860]
+            Castellaroina BOUCOT in AMOS, 1972 [*Tropidoleptus fascifer KAYSER, 1897]
+            Chynistrophia HAVLICEK, 1977b [*C. foliola]
+            Eomegastrophia COCKS, 1967 [*Megastrophia (E.) ethica]
+            Eostropheodonta BANCROFT, 1949 [*Orthis hirnantensis M'COY, 1851]
+            Gamphalosia STAINBROOK, 1945 [*G. tenuissima]
+            Gibberostrophia HARPER & BOUCOT, 1978 [*Stropheodonta gibbera AMSDEN, 1958]
+            Mesoleptostrophia HARPER & BOUCOT, 1978 [*M. kartalensis]
+              M. (Mesoleptostrophia)
+              M. (Paraleptostrophia) HARPER & BOUCOT, 1978 [*Leptostrophia clarkei CHATTERTON, 1973]
+            Nervostrophia CASTER, 1939 [*Strophomena nervosa HALL, 1843a]
+            Palaeoleptostrophia RONG & COCKS, 1994 [*Stropheodonta jamesoni REED, 1917]
+            Protoleptostrophia CASTER, 1939 [*Strophomena blainvillii BILLINGS, 1874]
+            Protomegastrophia CASTER, 1939 [*Leptaena profunda HALL, 1852]
+            Rotundostrophia GRATSIANOVA in GRATSIANOVA, ZINCHENKO, & KUL'KOV, 1960 [*Leptodontella rotundata KHALFIN, 1948]
+            ?Tubulostrophia HAVLICEK, 1967 [*Leptaena fugax BARRANDE, 1848]
+            ?Tudiaophomena XIAN in XIAN & JIANG, 1978 [*T. plicata]
+            Tuvaechonetes KULKOV in KULKOV, VLADIMIRSKAYA, & RYBKINA, 1985 [*T. insolitus]
+            Tuvaestrophia KULKOV in KULKOV, VLADIMIRSKAYA, & RYBKINA, 1985 [*T. elegantula]
+            Velostrophia HAVLICEK, 1965a [*Strophomena insolita BARRANDE, 1879]
+            Viodostrophia VILLAS & COCKS, 1996 [*V. alcaldei]
+          Family EOPHOLIDOSTROPHIIDAE Rong & Cocks, 1994
+            Eopholidostrophia HARPER, JOHNSON, & BOUCOT, 1967 [*Stropheodonta sefinensis WILLIAMS, 1951]
+            Mesopholidostrophia WILLIAMS, 1950 [*Pholidostrophia (M.) nitens]
+            Mongolostrophia ROZMAN & RONG, 1993 [*Leptodonta ludmilae ROZMAN, 1992]
+            Origostrophia MITCHELL, 1977 [*O. fragilis]
+          Family STROPHODONTIDAE Caster, 1939
+            Strophodonta HALL, 1850 [*Strophomena demissa CONRAD, 1842]
+              S. (Strophodonta)
+              S. (Asturistrophia) GARCIA-ALCALDE, 1992 [*A. insolita]
+            Arbizustrophia GARCIA-ALCALDE, 1972 [*A. diaphragmata]
+            Boucotstrophia JAHNKE, 1981 [*Stropheodonta herculea DREVERMANN, 1904]
+            Dictyostrophia CASTER, 1939 [*D. cooperi]
+              D. (Dictyostrophia)
+              D. (Plicostropheodonta) SOKOLSKAYA, 1960 [*Orthis murchisoni DE VERNEUIL & D'ARCHIAC, 1842]
+            Fascistropheodonta HARPER & BOUCOT, 1978 [*Orthis sedgwicki D'ARCHIAC & DE VERNEUIL, 1842]
+            Galateastrophia HARPER & BOUCOT, 1978 [*Stropheodonta galatea BILLINGS, 1874]
+            Gorgostrophia HAVLICEK, 1967 [*Leptaena neutra BARRANDE, 1848]
+            Khangaestrophia MENDBAJAR, 1994 [*K. raisae]
+            ?Leptodonta KHALFIN, 1955 [*?Leptaena leblanci ROUAULT, 1851]
+            Lissostrophia AMSDEN, 1949 [*L. cooperi]
+            Megastrophia CASTER, 1939 [*Stropheodonta concava HALL, 1857]
+            Minutostropheodonta HARPER & BOUCOT, 1978 [*Leptaena subtransversa SCHNUR, 1854]
+            ?Neumanella HARPER & BOUCOT, 1978 [*N. varimya]
+            Papillostrophia HAVLICEK, 1967 [*Leptaena consobrina BARRANDE, 1848]
+            Parapholidostrophia JOHNSON, 1971 [*P. harperi]
+            Pholidostrophia HALL & CLARKE, 1892 [*Strophomena nacrea HALL, 1857]
+            Pterostrophia GARRATT, 1985 [*P. carinatus]
+            Strophonelloides CASTER, 1939 [*Strophodonta reversa HALL, 1858a]
+            ?Trilobostrophia SHISHKINA, 1983 [*Megastrophia bohilevi SHISHKINA, 1977]
+          Family SHALERIIDAE Williams, 1965
+            Shaleria CASTER, 1939 [*Strophomena gilpeni DAWSON, 1881]
+              S. (Shaleria)
+              S. (Janiomya) HAVLICEK, 1967 [*J. parallelomya]
+            Shaleriella HAVLICEK, 1967 [*S. delicata]
+          Family STROPHONELLIDAE Caster, 1939
+            Strophonella HALL, 1879 [*Strophomena semifasciata HALL, 1863b]
+              S. (Strophonella)
+              S. (Quasistrophonella) HARPER & BOUCOT, 1978 [*Leptaena bohemica BARRANDE, 1848]
+            Eostrophonella WILLIAMS, 1950 [*Strophonella davidsonii HOLTEDAHL, 1916]
+          Family UNCERTAIN
+            Douvinella LJASCHENKO, 1985 [*D. parva]
+            Gunnarella SPJELDNAES, 1957 [*Strophomena (G.) delta]
+            Idioglyptus NORTHROP, 1939 [*I. stigmatus]
+            Playfairia REED, 1917 [*Strophomena deltoidea CONRAD, 1839]
+            Rhenostrophia BOUCOT, 1960b [*Orthis subarachnoidea D'ARCHIAC & DE VERNEUIL, 1842]
+            Syntrophodonta STRUVE, 1982 [*S. paeckelmanni]
+        Superfamily PLECTAMBONITOIDEA Jones, 1928
+          Family PLECTAMBONITIDAE Jones, 1928
+            Subfamily PLECTAMBONITINAE Jones, 1928
+              Plectambonites PANDER, 1830 [*P. planissimus]
+              ?Akelina SEVERGINA, 1967 [*A. akelina]
+              Ingria OPIK, 1930 [*Orthisina nefedyevi VON EICHWALD, 1855]
+              Plectella LAMANSKY, 1905 [*Plectambonites uncinata PANDER, 1830]
+            Subfamily TAPHRODONTINAE Cooper, 1956
+              Taphrodonta COOPER, 1956 [*T. parallela]
+                T. (Taphrodonta)
+                T. (Nanambonites) LIU, 1976 [*N. paucus]
+              Isophragma COOPER, 1956 [*I. ricevillense]
+          Family TAFFIIDAE Schuchert & Cooper, 1931
+            Subfamily TAFFIINAE Schuchert & Cooper, 1931
+              Taffia BUTTS, 1926 [*T. planoconvexa]
+              Aporthophyla ULRICH & COOPER, 1936b [*A. typa]
+              Aporthophylina LIU, 1976 [*A. intermedia]
+              Spanodonta PRENDERGAST, 1935 [*S. hoskingiae]
+            Subfamily AHTIELLINAE Opik, 1933
+              Ahtiella OPIK, 1932 [*A. lirata]
+              Borua WILLIAMS & CURRY, 1985 [*B. modesta]
+              Guttasella NEUMAN, 1976 [*G. gutta]
+              Inversella OPIK, 1933a [*I. borealis]
+                I. (Inversella)
+                I. (Reinversella) BATES, 1968 [*R. monensis]
+              ?Rutrumella HARPER in BRUTON & HARPER, 1981 [*R. implexa]
+              Sanjuanella BENEDETTO & HERRERA, 1987 [*S. plicata]
+              Schedophyla NEUMAN, 1971 [*S. potteri]
+              Vehnia NEUMAN in NEUMAN & BRUTON, 1989 [*Chonetoidea triangularis REED, 1932a]
+            Subfamily PELONOMIINAE Cocks & Rong, 1989
+              Pelonomia COOPER, 1956 [*Orthis delicatula BILLINGS, 1865]
+            Subfamily LEPTELLINAE Williams, 1965
+              Leptella HALL & CLARKE, 1892 [*Leptaena sordida BILLINGS, 1862]
+                L. (Leptella)
+                L. (Huacoella) BENEDETTO & HERRERA, 1993 [*H. radiata]
+                L. (Petroria) WILSON, 1926 [*P. rugosa]
+              Tourmakeadia WILLIAMS & CURRY, 1985 [*T. fimbriata]
+                T. (Tourmakeadia)
+                T. (Bockelia) NEUMAN in NEUMAN & BRUTON, 1989 [*B. angusticostata]
+          Family BIMURIIDAE Cooper, 1956
+            Bimuria ULRICH & COOPER, 1942 [*B. superba]
+              B. (Bimuria)
+              B. (Cooperea) COCKS & RONG, 1989 [*B. siphonata COOPER, 1956]
+            Craspedelia COOPER, 1956 [*C. marginata]
+          Family SYNDIELASMATIDAE Cooper, 1956
+            Syndielasma COOPER, 1956 [*S. biseptatum]
+            Sowerbyites TEICHERT, 1937 [*S. medioseptatus]
+          Family LEPTELLINIDAE Ulrich & Cooper, 1936
+            Subfamily LEPTELLININAE Ulrich & Cooper, 1936
+              Leptellina ULRICH & COOPER, 1936b [*L. tennesseensis]
+                L. (Leptellina)
+                L. (Merciella) LAMONT & GILBERT, 1945 [*Leptella (Merciella) vesper]
+              Acculina MISIUS in MISIUS & USHATINSKAYA, 1977 [*A. acculica]
+              Dulankarella RUKAVISHNIKOVA, 1956 [*D. magna]
+              Kajnaria NIKITIN & POPOV in KLENINA, NIKITIN, & POPOV, 1984 [*K. derupta]
+              Leptelloidea JONES, 1928 [*Plectambonites schmidti var. leptelloides BEKKER, 1921]
+              Mabella KLENINA in KLENINA, NIKITIN, & POPOV, 1984 [*Leptellina (M.) semiovalis]
+              Reversella LIANG in LIU, XU, & LIANG, 1983 [*R. trigonoformis]
+              Shlyginia NIKITIN & POPOV, 1983 [*S. declivis]
+              Bekkerella REED, 1936 [*Orthis subcircularis REED, 1906]
+              Benignites HAVLICEK, 1952 [*Strophomena primula BARRANDE, 1879]
+            Subfamily PALAEOSTROPHOMENINAE Cocks & Rong, 1989
+              Palaeostrophomena HOLTEDAHL, 1916 [*Strophomena concava SCHMIDT, 1858]
+              Apatomorpha COOPER, 1956 [*Rafinesquina pulchella RAYMOND, 1928]
+              Glyptambonites COOPER, 1956 [*G. musculosus]
+              ?Goniotrema ULRICH & COOPER, 1936b [*G. perplexum]
+              Ishimia NIKITIN, 1974 [*I. ishimenssis]
+              Lepidomena LAURIE, 1991 [*L. pulchra]
+              Onegia ANDREEV, 1993 [*O. vitrea]
+              Titanambonites COOPER, 1956 [*T. medius]
+              Toquimia ULRICH & COOPER, 1936b [*T. kirki]
+              Ujukites ANDREEVA, 1985 [*U. altaicus]
+              Calyptolepta NEUMAN, 1976 [*C. diaphragma]
+          Family GRORUDIIDAE Cocks & Rong, 1989
+            Grorudia SPJELDNAES, 1957 [*G. grorudi]
+            Diambonioidea ZENG, 1987 [*D. transversa]
+            Railtonella LAURIE, 1991 [*R. scanloni]
+            Tetraodontella JAANUSSON, 1962 [*T. biseptata]
+          Family LEPTESTIIDAE Opik, 1933
+            Leptestia BEKKER, 1922 [*L. musculosa]
+            Bilobia COOPER, 1956 [*B. hemisphaerica]
+            Leangella OPIK, 1933a [*Plectambonites scissa var. triangularis HOLTEDAHL, 1916]
+              L. (Leangella)
+              L. (Leptestiina) HAVLICEK, 1952 [*Benignites prantli]
+            Rurambonites COCKS & RONG, 1989 [*Plectambonites ruralis REED, 1917]
+            Sampo OPIK, 1933a [*S. hiiuensis]
+          Family XENAMBONITIDAE Cooper, 1956
+            Subfamily XENAMBONITINAE Cooper, 1956
+              Xenambonites COOPER, 1956 [*X. undosus]
+              Metambonites ZHAN & RONG, 1995 [*M. meritus]
+              Synambonites ZHAN & RONG, 1995 [*S. biconvexus]
+            Subfamily AEGIROMENINAE Havlicek, 1961
+              Aegiromena HAVLICEK, 1961 [*Leptaena aquila BARRANDE, 1848]
+              Aegiria OPIK, 1933a [*A. norvegica]
+              Chonetoidea JONES, 1928 [*Plectambonites papillosa REED, 1905]
+              Epelidoaegiria STRUSZ, 1982 [*Aegiria (E.) chilidifera]
+              Jonesea COCKS & RONG, 1989 [*Leptaena grayi DAVIDSON, 1849]
+              Mezounia HAVLICEK, 1967 [*Strophomena bicuspis BARRANDE, 1879]
+              Multiridgia ZENG, 1987 [*M. elegans]
+              Nabiaoia XU, 1979 [*N. pusilla]
+          Family HESPEROMENIDAE Cooper, 1956
+            Hesperomena COOPER, 1956 [*H. leptellinoidea]
+            Anoptambonites WILLIAMS, 1962 [*Leptaena grayae DAVIDSON, 1883]
+            Aulie NIKITIN & POPOV in KLENINA, NIKITIN, & POPOV, 1984 [*A. convexa]
+            Chaganella NIKITIN, 1974 [*C. chaganensis]
+            Kassinella BORISSIAK, 1956 [*K. globosa]
+              K. (Kassinella)
+              K. (Trimurellina) MITCHELL, 1977 [*T. superba]
+          Family SOWERBYELLIDAE Opik, 1930
+            Subfamily SOWERBYELLINAE Opik, 1930
+              Sowerbyella JONES, 1928 [*Leptaena sericea J. DE C. SOWERBY, 1839]
+                S. (Sowerbyella)
+                S. (Rugosowerbyella) MITCHELL, 1977 [*Ptychoglyptus ambiguus REED, 1952]
+              Anisopleurella COOPER, 1956 [*A. tricostellata]
+              Dubioleptina HAVLICEK, 1967 [*Strophomena expulsa BARRANDE, 1879]
+              Eochonetes REED, 1917 [*Chonetes (Eochonetes) advena REED, 1917]
+              Eoplectodonta KOZLOWSKI, 1929 [*Sowerbyella precursor JONES, 1928]
+                E. (Eoplectodonta)
+                E. (Kozlowskites) HAVLICEK, 1952 [*Strophomena nuntia BARRANDE, 1879]
+                E. (Ygerodiscus) HAVLICEK, 1967 [*Leptaena transversalis var. undulata SALTER, 1848]
+              Gunningblandella PERCIVAL, 1979b [*G. resupinata]
+              Plectodonta KOZLOWSKI, 1929 [*P. mariae]
+                P. (Plectodonta)
+                P. (Dalejodiscus) HAVLICEK, 1961 [*Strophomena comitans BARRANDE, 1879]
+                P. (Plectodontella) HAVLICEK, 1953 [*P. redunca]
+            Subfamily PTYCHOGLYPTINAE Cooper, 1956
+              Ptychoglyptus WILLARD, 1928 [*P. virginiensis]
+          PLECTAMBONITOIDEAN GENERA UNASSIGNED TO FAMILIES
+            Leptoptilum OPIK, 1930 [*Leptestia (Leptoptilum) bekkeri]
+            Paucicostella COOPER, 1956 [*P. canadensis]
+            Ukoa OPIK, 1932 [*U. ornata]
+          Suborder UNCERTAIN
+            Family EOCRAMATIIDAE Williams, 1974
+              Eocramatia WILLIAMS, 1974 [*E. dissimulata]
+        Superfamily CHONETOIDEA Bronn, 1862
+          Family STROPHOCHONETIDAE Muir-Wood, 1962
+            Subfamily STROPHOCHONETINAE Racheboeuf, herein
+              Amosina BOUCOT, 1975 [*Chonetes fuertensis]
+              Andalucinetes RACHEBOEUF, 1985 [*A. hastatus]
+              Archeochonetes RACHEBOEUF & COPPER, 1986 [*Chonetes (Eodevonaria) primigenius]
+              Asymmetrochonetes SMITH, 1980 [*A. spinalonga]
+              Australostrophia CASTER, 1939 [*Leptostrophia? mesembria]
+              Babinia RACHEBOEUF & BRANISA, 1985 [*B. parvula]
+              Borealinetes RACHEBOEUF & LESPERANCE, 1995 [*B. comestus]
+              Chlupacina HAVLICEK & RACHEBOEUF, 1979 [*C. longispina]
+              Ctenochonetes RACHEBOEUF, 1976 [*Chonetes tenuicostatus]
+              Dawsonelloides BOUCOT & HARPER, 1968 [*Chonetes canadensis]
+              Johnsonetes RACHEBOEUF, 1987 [*Chonetes filistriata]
+              Kentronetes RACHEBOEUF & HERRERA, 1994 [*Chonetes radei]
+              Leptochonetes HAVLICEK & RACHEBOEUF, 1979 [*Chonetes tardus]
+              Novellinetes HAVLICEK & RACHEBOEUF, 1979 [*Chonetes novellus]
+              Perichonetes XU, 1979 [*P. mirabilis]
+              Pseudostrophochonetes RACHEBOEUF, 1981b [*Chonetes mediocostalis]
+              Sanjuanetes RACHEBOEUF & HERRERA, 1994 [*S. dalenzae]
+              Spinochonetes RONG, XU, & YANG, 1974 [*S. notata]
+            Subfamily PROTOCHONETINAE Racheboeuf, herein
+              Protochonetes MUIR-WOOD, 1962 [*P. ludloviensis]
+              Eoplicanoplia BOUCOT & HARPER, 1968 [*Chonetes colliculus]
+              Hypselonetes RACHEBOEUF, 1981b [*Strophochonetes (Hypselonetes) vinearum]
+              Nabarredia HAVLICEK & RACHEBOEUF, 1979 [*Chonetes minor]
+              Quadrikentron BOUCOT & GAURI, 1966 [*Chonetes hudsoncia camdenensis]
+              Shagamella BOUCOT & HARPER, 1968 [*S. ludloviensis]
+            Subfamily PARACHONETINAE Johnson, 1970
+              Parachonetes JOHNSON, 1966b [*Chonetes macrostriata]
+              Eccentricosta BERDAN, 1963 [*Chonetes jerseyensis]
+              Pseudochonetes SU, 1976 [*P. flexoplicatus]
+              Squamatina HAVLICEK & RACHEBOEUF, 1979 [*Chonetes squamatula]
+          Family CHONOSTROPHIIDAE Muir-Wood, 1962
+            Chonostrophia HALL & CLARKE, 1892 [*Chonetes reversa]
+            Chonostrophiella BOUCOT & AMSDEN, 1964 [*Chonetes complanata]
+            Tulcumbella CAMPBELL in CAMPBELL & ENGEL, 1963 [*T. microstriata]
+          Family ANOPLIIDAE Muir-Wood, 1962
+            Subfamily ANOPLIINAE Muir-Wood, 1962
+              Anoplia HALL & CLARKE, 1892 [*Leptaena nucleata]
+              Anopliella RACHEBOEUF, 1998 [*Tuberella tangyuangensis]
+              Anopliopsis GIRTY, 1938a [*Chonetina subcarinata]
+              Chonetina KROTOW, 1888 [*Chonetella artiensis]
+              Demonedys GRANT, 1976 [*D. fastigiata]
+              Gatia ARCHBOLD, 1993 [*G. superba]
+              Glabrichonetina WATERHOUSE, 1978 [*G. kuwaensis]
+              Tornquistia PAECKELMANN, 1930 [*Leptaena (Chonetes) polita]
+              Yagonia ROBERTS, HUNT, & THOMPSON, 1976 [*Y. gibberensis]
+            Subfamily CAENANOPLIINAE Archbold, 1980
+              Caenanoplia CARTER, 1968 [*C. burlingtonensis]
+              Arcuaminetes BIZZARRO, 1995 [*Chonetes scitula]
+              Caplinoplia HAVLICEK & RACHEBOEUF, 1979 [*C. pragensis]
+              Celtanoplia RACHEBOEUF, 1981b [*Chonetes boblayei]
+              Corbicularia LJASCHENKO, 1973 [*Chonetes menneri]
+              Costachonetes WATERHOUSE, 1975 [*Chonetes uralica]
+              Costachonetina WATERHOUSE, 1981 [*C. krotowi]
+              Devonaria BIERNAT, 1966 [*Chonetes zeuschneri]
+              Globosochonetes BRUNTON, 1968 [*G. parseptus]
+              Klocinetes BIZZARRO, 1995 [*Chonetes lepidus]
+              Pernochonetes AFANAS'EVA, 1977a [*P. pamiricus]
+              Plicanoplia BOUCOT & HARPER, 1968 [*Chonetes fornacula]
+              Pygmochonetes JING & HU, 1978 [*P. jingxianensis]
+              Semicaplinoplia RACHEBOEUF, 1995 [*Plicanoplia sotoi]
+              Songzichonetes YANG XUE-CHANG, 1984 [*S. sanxiaensis]
+              Subglobosochonetes AFANAS'EVA, 1976 [*C. (Rugosochonetes) malevkensis]
+            Subfamily HOLYNETINAE Racheboeuf, 1981
+              Holynetes HAVLICEK & RACHEBOEUF, 1979 [*H. holynensis]
+              Herrerella RACHEBOEUF, 1995 [*H. zarelae]
+              Malayanoplia HAMADA, 1969 [*M. demiluna]
+              Saharonetes HAVLICEK, 1984 [*S. taharensis]
+              Septachonetes CHATTERTON, 1973 [*S. melanus]
+              Trichochonetes ROBERTS, 1976 [*T. perpendicularis]
+            Subfamily AIRTONIINAE Muir-Wood, 1962
+              Airtonia COPE, 1934 [*A. hudsoni]
+          Family EODEVONARIIDAE Sokolskaja, 1960
+            Eodevonaria BREGER, 1906 [*Chonetes arcuatus]
+            Davoustia RACHEBOEUF, 1976 [*Chonetes davousti]
+            Lomaella HERRERA, 1995 [*L. primoris]
+            Loreleiella RACHEBOEUF, 1986 [*Eodevonaria jahnkei]
+            Renaudia RACHEBOEUF, 1976 [*Eodevonaria (Renaudia) mainensis]
+          Family CHONETIDAE Bronn, 1862
+            Subfamily CHONETINAE Bronn, 1862
+              Chonetes FISCHER DE WALDHEIM, 1830 [*Terebratulites sarcinulatus]
+              Boicinetes HAVLICEK & RACHEBOEUF, 1979 [*Chonetes bohemicus]
+              Plebejochonetes BOUCOT & HARPER, 1968 [*Chonetes plebeja]
+            Subfamily DAGNACHONETINAE Racheboeuf, 1981
+              Dagnachonetes AFANAS'EVA, 1978b [*D. caucasius]
+              Frankiella RACHEBOEUF, 1983 [*F. drewitzii]
+              Luanquella GARCIA-ALCALDE & RACHEBOEUF, 1978 [*L. cantabriensis]
+              Maminetes HAVLICEK, 1990 [*M. latipleura]
+              Nurochonetes USHATINSKAYA, 1977 [*Chonetes akkultukensis]
+              Pradochonetes PARDO & GARCIA-ALCALDE, 1984 [*P. muelleri]
+              Rhyssochonetes JOHNSON, 1970b [*R. aurora]
+              Sinochonetes WANG, BOUCOT, & RONG, 1981 [*Chonetes minutisulcatus]
+            Subfamily DEVONOCHONETINAE Muir-Wood, 1962
+              Devonochonetes MUIR-WOOD, 1962 [*Chonetes coronatus]
+              Aseptonetes ISAACSON, 1977 [*A. boucoti]
+              Hallinetes RACHEBOEUF & FELDMAN, 1990 [*Strophomena lineata]
+              Huananochonetes WANG, BOUCOT, & RONG, 1981 [*Parachonetes ovalis]
+              Longispina COOPER, 1942 [*Chonetes emmetensis]
+              Montsenetes RACHEBOEUF, 1992 [*Devonochonetes notius]
+              Striatochonetes MIKRJUKOV, 1968 [*Strophonema setigera]
+              Xinjiangochonetes XU, 1991 [*X. pygmaeus]
+            Subfamily NOTIOCHONETINAE Racheboeuf, 1992
+              Notiochonetes MUIR-WOOD, 1962 [*Chonetes skottsbergi]
+              Allanetes BOUCOT & JOHNSON, 1967 [*A. neozelanica]
+              Pleurochonetes ISAACSON, 1977 [*Chonetes (Pleurochonetes) lauriata]
+              Prachetes BIZZARRO, 1995 [*Pleurochonetes? condori]
+            Subfamily RETICHONETINAE Muir-Wood, 1962
+              Retichonetes MUIR-WOOD, 1962 [*Chonetes armata]
+              Austronoplia ISAACSON, 1977 [*Chonetes stuebeli]
+          Family RUGOSOCHONETIDAE Muir-Wood, 1962
+            Subfamily RUGOSOCHONETINAE Muir-Wood, 1962
+              Rugosochonetes SOKOLSKAYA, 1950 [*Orthis hardrensis]
+              Alatochonetes LIANG, 1990 [*A. alata]
+              Arctochonetes IFANOVA, 1968 [*Chonetina? postartiensis]
+              Chonetinella RAMSBOTTOM, 1952 [*Chonetes flemingi]
+              Fanichonetes XU & GRANT, 1994 [*F. campigia]
+              Fusichonetes LIAO in ZHAO & others, 1981 [*Plicochonetes nayongensis]
+              Isochonetes AISENVERG, 1985 [*I. larinoensis]
+              Jakutochonetes AFANAS'EVA, 1977a [*J. jacuticus]
+              Komukia WATERHOUSE, 1982b [*K. solita]
+              Neochonetes MUIR-WOOD, 1962 [*Chonetes dominus]
+                N. (Neochonetes)
+                N. (Sommeriella) ARCHBOLD, 1982 [*Chonetes pratti]
+              Paramesolobus AFANAS'EVA, 1975 [*P. ivanovae]
+              Schistochonetes ROBERTS, 1971 [*S. abruptus]
+              Sokolskya AISENVERG, 1980 [*S. calmiusensis]
+              Waagenites PAECKELMANN, 1930 [*Chonetes grandicostus]
+              Waterhouseiella ARCHBOLD, 1983a [*Waagenites speciosus]
+            Subfamily CAPILLOMESOLOBINAE Pecar, 1986
+              Capillomesolobus PECAR, 1986 [*C. karavankensis]
+              Mesolobus DUNBAR & CONDRA, 1932 [*Chonetes mesolobus]
+              Tenuichonetes JING & HU, 1978 [*Chonetes tenuilirata]
+            Subfamily DELEPINEINAE Muir-Wood, 1962
+              Delepinea MUIR-WOOD, 1962 [*Productus comoides]
+              Gibbochonetes AISENVERG, 1971 [*Delepinea (Gibbochonetes) forniculata]
+              Megachonetes SOKOLSKAYA, 1950 [*Chonetes siblyi]
+              Mongolochonetes AFANAS'EVA, 1991 [*M. inaequalis]
+              Petalochonetes AFANAS'EVA in AFANAS'EVA & others, 1988 [*P. altaicus]
+            Subfamily PLICOCHONETINAE Sokolskaja, 1960
+              Plicochonetes PAECKELMANN, 1930 [*Chonetes buchianus]
+              Hemichonetes LI, GU, & SU, 1980 [*H. hemipleura]
+              Prorugaria WATERHOUSE, 1982a [*P. thailandica]
+              Rugaria COOPER & GRANT, 1969 [*Chonetes hessensis]
+              Sulcirugaria WATERHOUSE, 1983b [*S. transversa]
+            Subfamily STRIOCHONETINAE Waterhouse & Piyasin, 1970
+              Striochonetes WATERHOUSE & PIYASIN, 1970 [*S. scutella]
+            Subfamily SVALBARDIINAE Archbold, 1982
+              Svalbardia BARCHATOVA, 1970 [*Chonetes capitolinus]
+              Capillonia WATERHOUSE, 1973 [*Lissochonetes brevisulcus]
+              Chonetinetes COOPER & GRANT, 1969 [*C. reversus]
+              Dyoros STEHLI, 1954 [*Chonetes consanguineus]
+                D. (Dyoros)
+                D. (Lissosia) COOPER & GRANT, 1975 [*D. (L.) concavus]
+                D. (Tetragonetes) COOPER & GRANT, 1975 [*D. (T.) quadrangulatus]
+              Eolissochonetes HOARE, 1960 [*Chonetes laevis]
+              Komiella BARCHATOVA, 1970 [*Chonetes omolonensis]
+              Leiochonetes ROBERTS, 1976 [*L. salisburyensis]
+              Leurosina COOPER & GRANT, 1975 [*L. marginata]
+              Lissochonetes DUNBAR & CONDRA, 1932 [*Chonetes geinitzianus]
+              Quadrochonetes STEHLI, 1954 [*Q. girtyi]
+              Sulcataria COOPER & GRANT, 1969 [*Chonetina? rostrata]
+              Tivertonia ARCHBOLD, 1983a [*Lissochonetes yarrolensis]
+              Zhexichonetes LIANG, 1982 [*Z. longispina]
+            Subfamily UNDULELLINAE Cooper & Grant, 1975
+              Undulella COOPER & GRANT, 1969 [*U. undulata]
+              Micraphelia COOPER & GRANT, 1969 [*M. scitula]
+            Subfamily LAMELLOSIINAE Cooper & Grant, 1975
+              Lamellosia COOPER & GRANT, 1975 [*L. lamellosa]
+              Parademonedys YANG XUE-CHANG, 1984 [*P. huananensis]
+            Subfamily QUINQUENELLINAE Archbold, 1981
+              Quinquenella WATERHOUSE, 1975 [*Q. glabra]
+              Sandrella WATERHOUSE, 1985 [*S. platina]
+          Family DAVIESIELLIDAE Sokolskaja, 1960
+            Daviesiella WAAGEN, 1884 [*Productus llangollensis]
