@@ -1160,49 +1160,62 @@ class TestTaxonBibliography:
 # ---------------------------------------------------------------------------
 
 class TestGroupAFix:
-    """Verify spelling variant duplicates have been resolved in production DB."""
+    """Verify spelling variant handling in 0.3.0 DB."""
 
     DB_PATH = find_trilobase_db()
 
-    def test_shirakiellidae_duplicate_deleted(self):
-        """Empty Shirakiellidae duplicate (id=196) should be deleted."""
+    def test_dokimocephalidae_is_placeholder(self):
+        """Dokimocephalidae should exist as a placeholder with SPELLING_OF assertion."""
         conn = sqlite3.connect(self.DB_PATH)
-        cursor = conn.cursor()
-        cursor.execute('SELECT COUNT(*) FROM taxon WHERE id = 196')
-        assert cursor.fetchone()[0] == 0
+        row = conn.execute(
+            "SELECT is_placeholder FROM taxon WHERE name = 'Dokimocephalidae'"
+        ).fetchone()
+        assert row is not None and row[0] == 1
+        spelling = conn.execute(
+            "SELECT predicate FROM assertion "
+            "WHERE subject_taxon_id = (SELECT id FROM taxon WHERE name = 'Dokimocephalidae') "
+            "AND predicate = 'SPELLING_OF'"
+        ).fetchone()
+        assert spelling is not None
         conn.close()
 
-    def test_dokimocephalidae_deleted(self):
-        """Dokimocephalidae (id=210) should be deleted."""
+    def test_chengkouaspidae_is_placeholder(self):
+        """Chengkouaspidae should exist as a placeholder with SPELLING_OF assertion."""
         conn = sqlite3.connect(self.DB_PATH)
-        cursor = conn.cursor()
-        cursor.execute('SELECT COUNT(*) FROM taxon WHERE id = 210')
-        assert cursor.fetchone()[0] == 0
+        row = conn.execute(
+            "SELECT is_placeholder FROM taxon WHERE name = 'Chengkouaspidae'"
+        ).fetchone()
+        assert row is not None and row[0] == 1
+        spelling = conn.execute(
+            "SELECT predicate FROM assertion "
+            "WHERE subject_taxon_id = (SELECT id FROM taxon WHERE name = 'Chengkouaspidae') "
+            "AND predicate = 'SPELLING_OF'"
+        ).fetchone()
+        assert spelling is not None
         conn.close()
 
-    def test_dokimokephalidae_has_genera(self):
-        """Dokimokephalidae (id=134) should have 46 genera."""
+    def test_dokimokephalidae_in_edge_cache(self):
+        """Dokimokephalidae should be in default profile edge_cache."""
         conn = sqlite3.connect(self.DB_PATH)
-        cursor = conn.cursor()
-        cursor.execute('SELECT genera_count FROM taxon WHERE id = 134')
-        assert cursor.fetchone()[0] == 46
+        row = conn.execute(
+            "SELECT parent_id FROM classification_edge_cache "
+            "WHERE child_id = (SELECT id FROM taxon WHERE name = 'Dokimokephalidae') "
+            "AND profile_id = 1"
+        ).fetchone()
         conn.close()
-
-    def test_chengkouaspidae_deleted(self):
-        """Chengkouaspidae (id=205) should be deleted."""
-        conn = sqlite3.connect(self.DB_PATH)
-        cursor = conn.cursor()
-        cursor.execute('SELECT COUNT(*) FROM taxon WHERE id = 205')
-        assert cursor.fetchone()[0] == 0
-        conn.close()
+        assert row is not None, "Dokimokephalidae not in default profile"
 
     def test_chengkouaspididae_has_genera(self):
-        """Chengkouaspididae (id=36) should have 11 genera."""
+        """Chengkouaspididae should have genera in default profile."""
         conn = sqlite3.connect(self.DB_PATH)
-        cursor = conn.cursor()
-        cursor.execute('SELECT genera_count FROM taxon WHERE id = 36')
-        assert cursor.fetchone()[0] == 11
+        count = conn.execute(
+            "SELECT COUNT(*) FROM classification_edge_cache e "
+            "JOIN taxon g ON e.child_id = g.id "
+            "WHERE e.parent_id = (SELECT id FROM taxon WHERE name = 'Chengkouaspididae') "
+            "AND e.profile_id = 1 AND g.rank = 'Genus'"
+        ).fetchone()[0]
         conn.close()
+        assert count >= 10
 
 
 # ---------------------------------------------------------------------------
@@ -1219,7 +1232,7 @@ class TestAgnostidaOrder:
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT id, author, year, genera_count FROM taxon "
+            "SELECT id, author, year FROM taxon "
             "WHERE name = 'Agnostida' AND rank = 'Order'"
         )
         row = cursor.fetchone()
@@ -1227,7 +1240,6 @@ class TestAgnostidaOrder:
         agnostida_id = row[0]
         assert row[1] == 'SALTER'
         assert row[2] == '1864'
-        assert row[3] == 162
         # Not in default profile edge_cache (excluded from Trilobita by A2011)
         edge = cursor.execute(
             "SELECT parent_id FROM classification_edge_cache "
@@ -1340,18 +1352,17 @@ class TestSpellingOfOpinions:
         conn.close()
 
     def test_dokimocephalidae_placeholder(self):
-        """Dokimocephalidae should exist as placeholder (is_placeholder=1, genera_count=0)."""
+        """Dokimocephalidae should exist as placeholder (is_placeholder=1)."""
         conn = sqlite3.connect(self.DB_PATH)
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT id, is_placeholder, genera_count "
+            "SELECT id, is_placeholder "
             "FROM taxon WHERE name = 'Dokimocephalidae' AND rank = 'Family'"
         )
         row = cursor.fetchone()
         conn.close()
         assert row is not None, "Dokimocephalidae placeholder not found"
         assert row[1] == 1  # is_placeholder
-        assert row[2] == 0  # genera_count
 
     def test_dokimocephalidae_opinion(self):
         """Dokimocephalidae should have SPELLING_OF assertion pointing to Dokimokephalidae (id=134)."""

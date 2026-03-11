@@ -225,7 +225,6 @@ def create_schema(cur):
         year_suffix TEXT,
         notes TEXT,
         is_placeholder INTEGER DEFAULT 0,
-        genera_count INTEGER DEFAULT 0,
         type_species TEXT,
         type_species_author TEXT,
         formation TEXT,
@@ -343,17 +342,17 @@ def copy_taxon(src, dst):
     """Copy all taxa from canonical DB, preserving IDs and metadata."""
     rows = src.execute("""
         SELECT id, name, rank, author, year, year_suffix, notes,
-               is_placeholder, genera_count, type_species, type_species_author,
+               is_placeholder, type_species, type_species_author,
                formation, location, family, temporal_code, is_valid,
                raw_entry, created_at
         FROM taxonomic_ranks
     """).fetchall()
     dst.executemany("""
         INSERT INTO taxon (id, name, rank, author, year, year_suffix, notes,
-                           is_placeholder, genera_count, type_species, type_species_author,
+                           is_placeholder, type_species, type_species_author,
                            formation, location, family, temporal_code, is_valid,
                            raw_entry, created_at)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
     """, rows)
     return len(rows)
 
@@ -1054,10 +1053,10 @@ def _build_queries():
     return [
         # --- Tree / Genera ---
         ("taxonomy_tree", "Hierarchical tree from Class to Family (profile-aware via edge_cache)",
-         "SELECT t.id, t.name, t.rank, NULL as parent_id, t.author, 0 as genera_count\n"
+         "SELECT t.id, t.name, t.rank, NULL as parent_id, t.author\n"
          "FROM taxon t WHERE t.rank = 'Class'\n"
          "UNION ALL\n"
-         "SELECT t.id, t.name, t.rank, e.parent_id, t.author, 0 as genera_count\n"
+         "SELECT t.id, t.name, t.rank, e.parent_id, t.author\n"
          "FROM taxon t\n"
          "JOIN classification_edge_cache e ON e.child_id = t.id\n"
          "WHERE e.profile_id = COALESCE(:profile_id, 1) AND t.rank != 'Genus'\n"
@@ -1125,7 +1124,11 @@ def _build_queries():
          '{"taxon_id": "integer"}'),
 
         ("taxon_children", "Children of a taxon (profile-aware via edge_cache)",
-         "SELECT t.id, t.name, t.rank, t.author, t.genera_count\n"
+         "SELECT t.id, t.name, t.rank, t.author,\n"
+         "  (SELECT COUNT(*) FROM classification_edge_cache e2\n"
+         "   JOIN taxon g ON g.id = e2.child_id AND g.rank = 'Genus'\n"
+         "   WHERE e2.parent_id = t.id AND e2.profile_id = COALESCE(:profile_id, 1)\n"
+         "  ) AS genera_count\n"
          "FROM taxon t\n"
          "JOIN classification_edge_cache e ON e.child_id = t.id\n"
          "WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id = :taxon_id\n"
@@ -1872,7 +1875,7 @@ def _build_manifest():
                             {"key": "name", "label": "Name"},
                             {"key": "rank", "label": "Rank"},
                             {"key": "author", "label": "Author"},
-                            {"key": "genera_count", "label": "Genera", "condition": "genera_count"},
+                            {"key": "genera_count", "label": "Genera"},
                         ],
                         "on_row_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
                     },
@@ -2368,7 +2371,6 @@ def _build_manifest():
                     "year_suffix": {"type": "text", "label": "Year Suffix"},
                     "notes": {"type": "text", "label": "Notes"},
                     "is_placeholder": {"type": "boolean", "default": 0, "label": "Placeholder"},
-                    "genera_count": {"type": "integer", "default": 0, "label": "Genera Count"},
                     "type_species": {"type": "text", "label": "Type Species"},
                     "type_species_author": {"type": "text", "label": "Type Species Author"},
                     "formation": {"type": "text", "label": "Formation"},
