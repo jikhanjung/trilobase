@@ -13,312 +13,102 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 
 | Item | Value |
 |------|-------|
-| Phases completed | 1~46 (all done) |
-| Trilobase version | 0.2.6 |
+| Trilobase version | **0.3.0** (assertion-centric 통합) |
 | PaleoCore version | 0.1.1 |
-| taxonomic_ranks | 5,341 records (Class~Genus + 2 placeholders + 1 Suborder) |
-| Valid genera | 4,259 (83.3%) |
-| Invalid genera | 856 (16.7%) |
-| Valid genera parent_id NULL | 0 (was 68, all resolved) |
-| Synonym linkage | 99.9% (1,054/1,055) |
-| Taxonomic opinions | 1,139 (PLACED_IN 82 + SPELLING_OF 2 + SYNONYM_OF 1,055) |
+| taxon | 5,627 |
+| reference | 2,135 |
+| assertion | 8,382 (PLACED_IN 7,305 + SYNONYM_OF 1,075 + SPELLING_OF 2) |
+| classification_edge_cache | 8,930 (default 5,113 / treatise1959 1,772 / treatise2004 2,045) |
+| classification_profile | 3 (default, treatise1959, treatise2004) |
+| genus_formations | 4,503 |
+| genus_locations | 4,849 |
+| taxon_reference | 4,173 |
+| ui_queries | 46 |
 | Tests | 118 passing |
+| Legacy canonical DB | `trilobase-canonical-0.2.6.db` (보존) |
 
 ## Database Status
 
-**Canonical DB (trilobase-{version}.db) — read-only, immutable:**
+**Trilobase DB (trilobase-0.3.0.db) — assertion-centric 통합:**
 
 | Table/View | Records | Description |
 |------------|---------|-------------|
-| taxonomic_ranks | 5,341 | Unified taxonomy (Class~Genus) + 2 placeholders + 1 Suborder |
-| synonyms (view) | 1,055 | Backward-compat VIEW over taxonomic_opinions SYNONYM_OF |
+| taxon | 5,627 | All taxa (Class~Genus + Subfamily + placeholders) |
+| assertion | 8,382 | PLACED_IN 7,305 + SYNONYM_OF 1,075 + SPELLING_OF 2 |
+| reference | 2,135 | Bibliography + JA2002 + Treatise ch4/ch5 |
+| classification_profile | 3 | default, treatise1959, treatise2004 |
+| classification_edge_cache | 8,930 | default 5,113 / treatise1959 1,772 / treatise2004 2,045 |
 | genus_formations | 4,503 | Genus-Formation many-to-many |
 | genus_locations | 4,849 | Genus-Country many-to-many |
-| bibliography | 2,130 | Literature Cited references |
-| taxon_bibliography | 4,173 | Taxon↔Bibliography FK links (opinion_id replaces synonym_id) |
-| taxonomic_opinions | 1,139 | All opinions (PLACED_IN 82 + SPELLING_OF 2 + SYNONYM_OF 1,055) |
-| taxa (view) | 5,113 | Backward-compatibility view |
-| artifact_metadata | 7 | SCODA artifact metadata |
-| provenance | 5 | Data provenance |
-| schema_descriptions | 112 | Table/column descriptions |
-| ui_display_intent | 6 | SCODA view type hints |
-| ui_queries | 38 | Named SQL queries |
+| taxon_reference | 4,173 | Taxon↔Reference FK links |
+| artifact_metadata | — | SCODA artifact metadata |
+| provenance | — | Data provenance |
+| schema_descriptions | — | Table/column descriptions |
+| ui_display_intent | — | SCODA view type hints |
+| ui_queries | 46 | Named SQL queries |
 | ui_manifest | 1 | Declarative view definitions (JSON) |
+| synonyms (view) | — | Backward-compat VIEW |
+| v_taxonomy_tree (view) | — | edge_cache 기반 트리 뷰 |
+| v_taxonomic_ranks (view) | — | edge_cache 기반 랭크 뷰 |
 
-**Overlay DB (trilobase_overlay.db) — read/write, user-local data:**
+**Legacy canonical DB**: `trilobase-canonical-0.2.6.db` (기존 taxonomic_ranks 기반, 보존용)
 
-| Table | Records | Description |
-|-------|---------|-------------|
-| overlay_metadata | 2 | Canonical DB version tracking (canonical_version, created_at) |
-| user_annotations | 0 | User annotations (Local Overlay) |
-
-## Modular Rebuild Pipeline (P72/P73) ✅
-
-소스 텍스트 2개로부터 현재 DB와 동일한 결과를 한 번에 생성하는 모듈화된 파이프라인.
-기존 46개 Phase + 10+ fix 스크립트의 모든 교훈을 통합.
+## Build Pipeline
 
 ```bash
-python scripts/rebuild_database.py --output-dir dist/rebuild/ --validate
-# → dist/rebuild/trilobase.db + dist/rebuild/paleocore.db
-# → 35/35 validations passed
-```
+# 전체 빌드 (DB + .scoda 패키지)
+python scripts/build_all.py
 
-**Pipeline 모듈**: `scripts/pipeline/` (clean → hierarchy → parse_genera → load_data → paleocore → junctions → metadata → validate)
+# 개별 빌드
+python scripts/build_trilobase_db.py          # → db/trilobase-0.3.0.db
+python scripts/build_paleocore_db.py           # → db/paleocore-0.1.1.db
+python scripts/build_trilobase_scoda.py        # → dist/trilobase-0.3.0.scoda
+python scripts/build_paleocore_scoda.py        # → dist/paleocore-0.1.1.scoda
+python scripts/validate_trilobase_db.py        # → 17/17 검증 통과
 
-**주요 개선**: is_valid 정확도 (s.o.s.=VALID, suppressed anywhere, NOTE 8), Type 3 formation→region (356건), synonym dedup, bibliography dot-optional, hierarchy footnote stripping
-
-**P73 차이 해소**: SYNONYM_OF 행 단위 diff 0건 달성. hierarchy 파싱(3노드), SPELLING_OF 매핑(47속), synonym 추출(~13건), Type 3 reclassification(356건), bracket stripping(5속) 수정.
-
-**상세**: `devlog/20260228_099_rebuild_pipeline_complete.md`, `devlog/20260228_100_rebuild_diff_resolution.md`
-
-## P74: Assertion-Centric Test DB ✅
-
-Canonical DB 변경 없이, assertion-centric 모델을 별도 테스트 DB로 구현.
-
-```bash
-python scripts/create_assertion_db.py   # → db/trilobase-assertion-{version}.db
-python scripts/validate_assertion_db.py  # → 15/15 checks passed
-```
-
-| 테이블 | 건수 | 설명 |
-|--------|------|------|
-| `taxon` | 5,604 | parent_id 제거 (+213 Treatise taxa) |
-| `reference` | 2,135 | bibliography + JA2002 (id=2132) + Treatise ch4/ch5 |
-| `assertion` | 7,950 | PLACED_IN 6,893 + SYNONYM_OF 1,055 + SPELLING_OF 2 |
-| `classification_profile` | 3 | default, treatise1959, treatise2004 |
-| `classification_edge_cache` | 8,151 | default (5,083) + treatise1959 (1,387) + treatise2004 (1,681) |
-| `ui_queries` | 46 | +taxonomy_tree_genera_counts, classification_profiles_selector |
-
-Views: `v_taxonomy_tree`, `v_taxonomic_ranks`, `synonyms` (기존 호환)
-
-**상세**: `devlog/20260228_P74_assertion_centric_plan.md`
-
-## P76: Radial Tree → Canonical trilobase.scoda ✅
-
-P75에서 assertion DB 전용이던 Radial Tree를 canonical `trilobase.scoda`에도 추가.
-`taxonomic_ranks`에 `parent_id`가 이미 있으므로 별도 edge 쿼리 없이 쿼리 1개 + manifest 뷰 1개만 추가.
-
-- `radial_tree_nodes` 쿼리: valid Genus 포함 (invalid 제외), parent_id 직접 반환
-- `radial_tree` manifest 뷰: `display: "radial"`, `rank_radius` 동심원 배치
-- ui_queries: 37 → 38, manifest views: 13 → 14 (7 tab + 7 detail)
-
-**상세**: `devlog/20260301_P76_radial_tree_canonical_scoda.md`
-
-## P77: Versioned DB Filename ✅
-
-모든 canonical DB를 `{name}-{version}.db` 패턴으로 통일. 파일명만으로 DB 버전 식별 가능.
-
-- `scripts/db_path.py`: `find_trilobase_db()`, `find_assertion_db()`, `find_paleocore_db()` glob 헬퍼
-- 활성 스크립트 + 테스트 DB_PATH 교체 (`find_*_db()` 사용)
-- assertion DB: `dist/assertion_test/` → `db/` 이동, 파일명 `trilobase-assertion-{ver}.db`
-- `bump_version.py`: 버전 범프 시 기존 파일 복사(copy)하여 과거 버전 보존 (trilobase, paleocore 공통)
-- CI workflow: 별도 "Build assertion DB" step 제거, release artifact는 `dist/*.scoda`만 포함
-- `.scoda` 패키지 영향 없음 (내부에서 `data.db`로 저장)
-
-**상세**: `devlog/20260301_P77_versioned_db_filename.md`
-
-## P78: Treatise (2004) Taxonomy Import ✅
-
-Treatise on Invertebrate Paleontology (2004) Agnostida (ch4) + Redlichiida (ch5) 분류를 제3의 의견 소스로 assertion DB에 추가.
-
-```bash
-python scripts/create_assertion_db.py      # 기존대로 assertion DB 생성
-python scripts/import_treatise.py          # Treatise 데이터 증분 추가
-python scripts/validate_treatise_import.py # 17/17 검증 통과
-python scripts/validate_assertion_db.py    # 15/15 검증 통과
-```
-
-| 항목 | 수량 |
-|------|------|
-| Treatise references | 2 (ch4: Shergold et al., ch5: Palmer & Repina) |
-| 신규 taxon | 50 (Subfamily 32, Superfamily 3, Family 4, Genus 3, placeholder 8) |
-| PLACED_IN assertions | 421 (asserted 367, questionable 17, incertae_sedis 27, indet 10) |
-| treatise2004 프로필 edges | 5,138 (default 5,083 + Subfamily 계층) |
-
-**주요 결정:**
-- Eodiscida (id=2) 재사용: Treatise에서 Agnostida 하위 Suborder로 배치
-- Agnostida → Trilobita: Treatise 프로필에서 포함
-- Hybrid edge cache: default 유지 + Treatise가 명시한 taxa만 교체
-- Subfamily rank 신규 추가 (32건), radial tree rank_radius 7단계로 확장
-- 모든 Treatise assertion은 `is_accepted=0` (default 프로필 영향 없음)
-
-**상세**: `devlog/20260301_105_P78_treatise_import.md`
-
-## P79: Profile-Based Taxonomy Tree + Profile Selector UI ✅
-
-P78 Treatise import 후 orphan 문제 해결: `classification_edge_cache` 기반으로 tree 표시, profile selector UI 추가.
-
-**scoda-engine 변경:**
-- `app.js`: `globalControls` state, `renderGlobalControls()`, `fetchQuery()` global params 자동 병합, `isLeaf` 확장
-- `tree_chart.js` (was `radial.js`): `$variable` reference 해석 (`$profile_id` → globalControls 값)
-- `index.html`: `#global-controls` 컨테이너
-- `style.css`: compact select 스타일
-
-**trilobase 변경:**
-- `create_assertion_db.py`: 4개 쿼리 → edge_cache 기반, `classification_profiles_selector` 추가, `global_controls` manifest, version 0.1.2
-- Profile 1 (default): 224 tree nodes, Profile 3 (treatise2004): 272 tree nodes
-
-**상세**: `devlog/20260301_106_P79_profile_selector_ui.md`
-
-## P80: Assertion DB CRUD (Manifest-Driven Editing) ✅
-
-scoda-engine에 manifest-driven CRUD 프레임워크를 추가하고 assertion DB에 적용. Admin 모드에서 웹 UI를 통해 taxon/assertion/reference/classification_profile CRUD 가능.
-
-**scoda-engine 신규 파일:**
-- `scoda_engine/entity_schema.py`: `FieldDef`, `EntitySchema` 데이터클래스 + 파서/검증
-- `scoda_engine/crud_engine.py`: 제네릭 CRUD 엔진 (FK 검증, unique 제약, post-mutation 훅)
-- `tests/test_crud.py`: 27개 CRUD 테스트
-
-**scoda-engine 수정:**
-- `serve.py`: `--db-path`, `--mode admin|viewer` CLI 인자
-- `app.py`: REST 엔드포인트 10개 (`/api/entities/*`, `/api/search/*`), admin 가드
-- `app.js`: Admin UI (Edit/Delete/Add 버튼, FK autocomplete, readonly_on_edit, PLACED_IN rank 필터)
-- `validate_manifest.py`: `editable_entities` 검증 규칙
-
-**trilobase 변경:**
-- `create_assertion_db.py`: `editable_entities` 선언 (taxon, assertion, reference, classification_profile), linked_table 인라인 CRUD, JA2002 ref id=0 → auto_increment(2132)
-- `test_trilobase.py`: +6 editable_entities 검증 테스트
-
-```bash
 # Admin 모드로 실행
-python -m scoda_engine.serve --db-path db/trilobase-assertion-0.1.3.db --mode admin --port 8090
+python -m scoda_engine.serve --db-path db/trilobase-0.3.0.db --mode admin --port 8090
 ```
 
-**상세**: `devlog/20260301_107_P80_assertion_crud.md`
+## History (완료된 주요 작업)
 
-## Assertion DB v0.1.5: Treatise 1959 + Profile Comparison ✅
+### Modular Rebuild Pipeline (P72/P73) ✅
+소스 텍스트로부터 canonical DB를 한 번에 재생성하는 파이프라인. 현재 `scripts/archive/`에 보존.
 
-### Treatise 1959 Import (devlog 109)
-1959 Treatise on Invertebrate Paleontology Part O에서 삼엽충 전체 분류 체계를 추출하여 `treatise1959` 프로필로 import.
+### Assertion-Centric DB (P74~P80) ✅
+- P74: assertion-centric 모델 구현 (taxon/assertion/reference/classification_profile)
+- P76: Radial Tree 뷰
+- P77: Versioned DB filename (`{name}-{version}.db`)
+- P78: Treatise 2004 Import (Agnostida + Redlichiida)
+- P79: Profile-Based Taxonomy Tree + Profile Selector UI
+- P80: Manifest-Driven CRUD (Admin 모드에서 웹 UI CRUD)
 
-- OCR + 수동 입력 → 8 orders, 13 suborders, 33 superfamilies, 142 families, 128 subfamilies, 1,014 genera
-- `treatise1959` 프로필: standalone 1,387 edges (v0.1.7 기준)
-- `treatise2004` 프로필: treatise1959 기반 1,681 edges (Agnostida/Redlichiida 교체)
+### Treatise 1959/2004 Import ✅
+- 1959 Treatise Part O: 8 orders, 13 suborders, 33 superfamilies, 142 families, 128 subfamilies, 1,014 genera
+- 2004 Treatise: Agnostida + Redlichiida 분류 교체
+- TXT → JSON 파이프라인 (`parse_treatise_txt.py`)
 
-**상세**: `devlog/20260307_109_treatise1959_import.md`, `devlog/20260307_110_assertion_v015_profile_fixes.md`
+### Profile Comparison (R02) ✅
+- Diff Table, Diff Tree, Side-by-Side, Morphing 애니메이션 4가지 비교 뷰
+- Compound View로 통합 (sub-view 탭)
+- `TreeChartInstance` 클래스 리팩토링 + 듀얼 렌더링
 
-### Profile Diff Table — R02 Phase 0+1 (devlog 111)
-Compare 모드 UI 인프라 + Diff Table 구현.
-- `compare_profile_id` global control, Compare 모드 자동 토글
-- `profile_diff` SQL 쿼리: moved/added/removed 행 색상 코딩
+### Source-Driven Build (v0.2.0) ✅
+- `data/sources/*.txt` 기반 단일 스크립트 빌드
+- Family 이름 정규화, canonical opinions 임포트, Treatise 직접 파싱
 
-**상세**: `devlog/20260307_111_profile_diff_table.md`
+### Trilobase 0.3.0: 이름 통합 ✅
+- `trilobase-assertion` → `trilobase`로 통합, assertion-centric 모델이 메인
+- `is_accepted` 컬럼 제거 → `classification_edge_cache` 기반 뷰로 전환
+- 스크립트 이름 통일 (`build_trilobase_*`, `build_paleocore_*`, `build_all`)
+- `_trilobase_queries.py`를 `build_trilobase_db.py`에 통합
+- 60+ 레거시 스크립트 → `scripts/archive/`
+- **상세**: `devlog/20260311_121_trilobase_030_rename_consolidation.md`
 
-### Side-by-Side Tree — R02 Phase 3 (devlog 112~113)
-`tree_chart.js`를 `TreeChartInstance` 클래스로 리팩토링하여 듀얼 렌더링 구현.
-
-- 전역 변수 20+개 → 인스턴스 멤버, 전역 함수 30+개 → 클래스 메서드
-- `loadSideBySideView()`: 좌(base profile) / 우(compare profile) 독립 렌더링
-- 동기화 5종: zoom/pan, layout mode, hover highlight, depth toggle, collapse/expand, view-as-root
-- 양쪽 독립 tooltip
-- 성능 최적화: offscreen bitmap cache (zoom), SVG 라벨 숨김, guide depth 캐싱
-- scoda-engine v0.2.0 (TreeChartInstance 리팩토링)
-
-**상세**: `devlog/20260307_112_side_by_side_tree.md`, `devlog/20260307_113_sbs_sync_and_perf.md`
-
-## Assertion DB v0.1.6: Profile Comparison Compound View + Morphing ✅
-
-3개의 개별 compare 뷰(Diff Table, Diff Tree, Side-by-Side)를 하나의 **Profile Comparison** compound view로 통합하고, **Morphing** 애니메이션 뷰 추가.
-
-### Compound View
-- `compound` view 타입: sub-view 탭(Diff Table, Diff Tree, Side-by-Side, Morphing)으로 구성
-- 자체 From/To profile selector 보유, 기존 global `compare_profile_id` 제거
-- `tree_chart_morph` display 타입 신규 추가
-
-### Morphing 애니메이션 (R02 Phase 4)
-- `loadMorph()` → `renderMorphFrame(t)` → `startMorphAnimation()` 파이프라인
-- Transport controls: |< ◀ || ▶ >| + scrubber + speed 조절
-- 정방향/역방향 재생, 현재 위치에서 이어 재생
-- Radial/Rectangular 양쪽 지원, view-as-root 중에도 작동
-
-### 렌더링 단순화 + 성능 개선
-- SVG label → canvas `drawLabels()` 전환, bitmap cache/depth toggle/동적 radius 제거
-- `textScale`: A−/A+ 버튼으로 font/node 크기 직접 조절 (layout 재계산 불필요)
-- `taxonomy_tree` genera_count 쿼리: 10,310ms → 9ms (per-row recursive CTE → 별도 flat 쿼리 + JS 전파)
-- Rectangular tree depth spacing: view-as-root 시 rank 수 × depthSpacing 기반으로 수정
-
-### 기타 UI
-- Global loading indicator (animated gradient bar + wait cursor)
-- Show Text / Hide Text 토글 (탭 바)
-- Radial tree fit margin 10% 추가
-
-**상세**: `devlog/20260309_115_compound_view_and_morphing.md`
-
-## Assertion DB v0.1.7: Treatise 1959 TXT 파이프라인 + 버그 수정 ✅
-
-### TXT → JSON 변환 파이프라인 (`parse_treatise_txt.py`)
-수작업 `data/treatise_1959_taxonomy.txt`를 정제 소스로 사용하여 JSON으로 변환하는 파이프라인 신규 구축.
-
-- **rank 키워드 기반** 계층 파악 (들여쓰기 의존 제거)
-- taxon name 정규화 (첫 글자만 대문자), `[type species]` 자동 제거, `?` 접두사 처리
-- 기존 JSON에서 TXT가 커버하는 Order만 교체하는 merge 전략
-- Redlichiida 데이터 대폭 확장: families 2→14, genera 22→88
-
-### 버그 수정 2건
-1. **`import_treatise.py` EODISCINA_ID 하드코딩**: 새 taxon 추가로 ID 밀림 → DB 동적 조회로 변경
-2. **Diff Tree `rank_radius` 누락**: Subfamily가 Genus보다 바깥쪽에 표시되는 역전 → rank_radius 명시 추가
-
-### v0.1.6 → v0.1.7 수치 변화
-| 항목 | 0.1.6 | 0.1.7 | 차이 |
-|------|-------|-------|------|
-| taxon | 5,610 | 5,604 | -6 |
-| assertion | 7,887 | 7,950 | +63 |
-| PLACED_IN | 6,830 | 6,893 | +63 |
-| treatise1959 edges | 1,324 | 1,387 | +63 |
-| treatise2004 edges | 1,666 | 1,681 | +15 |
-
-**상세**: `devlog/20260310_116_treatise1959_txt_pipeline_and_fixes.md`
-
-## Assertion DB v0.2.0: Source-Driven Build ✅
-
-기존 3단계 파이프라인(`create_assertion_db.py` → `import_treatise1959.py` → `import_treatise.py`)을 `data/sources/*.txt` 기반 단일 스크립트로 통합.
-
-```bash
-python scripts/convert_to_source_format.py   # → data/sources/*.txt 재생성
-python scripts/build_assertion_db.py          # → db/trilobase-assertion-0.2.0.db
-```
-
-| 항목 | 0.1.8 | 0.2.0 | 차이 |
-|------|-------|-------|------|
-| taxon | 5,610 | 5,627 | +17 |
-| PLACED_IN (accepted) | 5,083 | 5,113 | +30 |
-| SYNONYM_OF | 1,055 | 1,075 | +20 |
-| Default edges | 5,083 | 5,113 | +30 |
-| Treatise 1959 edges | 1,768 | 1,645 | -123 |
-| Treatise 2004 edges | 2,053 | 1,912 | -141 |
-
-**주요 개선:**
-- 단일 스크립트 빌드 (기존 3단계 → 1단계)
-- 소스 데이터 7건 정제 (세미콜론 구분자, OCR 오타)
-- Family 이름 정규화 (ALL CAPS → Title Case, Dokimokephalidae → Dokimocephalidae 등)
-- Canonical parent_id 폴백 (소스에 없는 50개 taxa)
-- Canonical opinions 임포트 (386건 추가 synonym/spelling)
-- Treatise 프로필: 직접 파싱 (fuzzy matching 제거)
-
-**상세**: `devlog/20260311_119_assertion_db_020_source_build.md`, `devlog/20260311_P83_build_assertion_from_sources.md`
-
-## R01/R02: 설계 리뷰 문서
-
-### R01: 시간에 따라 변화하는 Taxonomy 관리 방법
-
-Assertion-centric 모델의 확장 방향을 탐색한 아이디어 문서:
-- **Layered Profile**: profile을 여러 layer의 스택으로 구성 (부분 개정 논문 반영)
-- **Assertion Timeline**: 개별 taxon의 의견 이력 추적 (`supersedes_id`)
-- **Revision Package**: 논문 단위 assertion 일괄 import/revert 워크플로우
-- **Working Classification**: 사용자의 현행 분류를 관리하는 mutable profile
-- **단계적 접근 제안**: Phase A (최소 구조 보강) → B (Revision Package) → C (Layered Profile) → D (Tree Editing)
-
-**상세**: `devlog/20260302_R01_taxonomy_management.md`
-
-### R02: 두 Classification Profile의 시각적 비교
-
-Profile 간 차이를 시각화하는 구체적 설계 문서:
-- **Compare UI**: 패턴 A (Compare 모드 토글) 채택
-- **표시 모드 4가지**: Diff Table → Diff Tree → Overlay + Side-by-side → Animated Morphing
-- **구현 순서**: Phase 0 (Compare UI 인프라) → 1 (Diff Table) → 2 (Diff Tree) → 3 (Overlay/Side-by-side) → 4 (Morphing)
-- **책임 분리**: scoda-engine = "어떻게 비교하고 그릴지", trilobase = "무엇을 비교할지" (manifest 계약)
-
-**상세**: `devlog/20260302_R02_tree_diff_visualization.md`
+### 설계 리뷰 문서
+- **R01**: 시간에 따라 변화하는 Taxonomy 관리 — `devlog/20260302_R01_taxonomy_management.md`
+- **R02**: Classification Profile 시각적 비교 — `devlog/20260302_R02_tree_diff_visualization.md`
+- **R05**: Assertion DB 0.1.8 vs 0.2.0 차이 분석 — `devlog/` 참조
 
 ## Next Tasks
 
@@ -362,15 +152,14 @@ Profile 간 차이를 시각화하는 구체적 설계 문서:
 - ~~synonym manifest fix~~ ✅ genus_detail synonyms sub_query 추가, synonym_list → linked_table 전환
 - ~~fide matching 개선~~ ✅ et al./year suffix/initial prefix 처리 → 133건 추가 매칭 (총 566건)
 
-### Assertion DB — Profile Comparison (R02 로드맵)
+### P84: Tree Search 개선 + Watch 기능
 
-- ~~Phase 0: Compare UI 인프라~~ ✅ (devlog 111)
-- ~~Phase 1: Diff Table~~ ✅ (devlog 111)
-- ~~Phase 2: Diff Tree~~ ✅ (devlog 114) — diff 색상 코딩 (moved/added/removed)
-- ~~Phase 3: Side-by-side~~ ✅ (devlog 112~113) — 동기화 5종 + 성능 최적화 포함
-- ~~Phase 4: Animated Morphing~~ ✅ (devlog 115) — transport controls, scrubber, 정방향/역방향 재생
+- **Search Nodes 수정** — 검색창 기능 복구, 뷰포트 내 노드 팝업
+- **Watch 기능** — 노드 우클릭 → Watch/Unwatch, Watch 목록 패널, 확대 렌더링(2×/1.5×)
+- **Removed Taxa 목록** — Diff Tree/Animation에서 제거된 taxa 표시
+- **상세**: `devlog/20260311_P84_tree_search_and_watch.md`
 
-### Assertion DB — Taxonomy Management (R01 로드맵)
+### Taxonomy Management (R01 로드맵)
 
 - **Phase A: 최소 구조 보강** — `assertion.effective_year`, `reference.scope_type`, taxon opinion history UI
 - **Phase B: Revision Package** — 논문 단위 assertion 일괄 import/review/accept 워크플로우
@@ -397,10 +186,11 @@ GitHub Actions workflows in `.github/workflows/`:
 
 **릴리스 방법:**
 ```bash
-python scripts/bump_version.py trilobase 0.2.7
-# → db/trilobase-0.2.6.db 보존, db/trilobase-0.2.7.db 생성
-git add db/trilobase-0.2.7.db && git commit -m "release: v0.2.7"
-git tag v0.2.7
+python scripts/build_trilobase_db.py    # DB 빌드
+python scripts/validate_trilobase_db.py # 검증
+python scripts/build_trilobase_scoda.py # .scoda 패키지 빌드
+git add db/trilobase-0.3.1.db && git commit -m "release: v0.3.1"
+git tag v0.3.1
 git push origin main --tags
 ```
 
@@ -418,71 +208,41 @@ trilobase/                                 # Domain data, scripts, and tests onl
 ├── pytest.ini                             # pytest config (testpaths=tests)
 ├── requirements.txt                       # scoda-engine dependency
 ├── db/                                    # Canonical DBs (git tracked, versioned filenames)
-│   ├── trilobase-{ver}.db                 # Trilobase SQLite DB
-│   ├── trilobase-assertion-{ver}.db       # Assertion-centric DB
-│   └── paleocore-{ver}.db                 # PaleoCore reference DB
+│   ├── trilobase-0.3.0.db                # ★ 현재 메인 DB (assertion-centric)
+│   ├── trilobase-canonical-0.2.6.db      # Legacy canonical DB (보존용)
+│   ├── trilobase-assertion-*.db          # 이전 assertion DB 버전들 (보존용)
+│   └── paleocore-0.1.1.db               # PaleoCore reference DB
 ├── dist/                                  # Build artifacts (gitignored)
-│   ├── trilobase-{ver}.scoda              # .scoda package (버전 포함 파일명)
+│   ├── trilobase-{ver}.scoda             # .scoda package
 │   ├── paleocore-{ver}.scoda
-│   ├── *-{ver}.manifest.json              # Hub Manifest (SHA-256, 메타데이터)
-│   └── *_overlay.db                       # Overlay DBs
+│   ├── *-{ver}.manifest.json             # Hub Manifest (SHA-256, 메타데이터)
+│   └── *_overlay.db                      # Overlay DBs
 ├── data/                                  # Source data files
-│   ├── trilobite_genus_list.txt           # Cleaned genus list (canonical version)
-│   ├── trilobite_genus_list_original.txt
+│   ├── sources/                          # ★ assertion DB 빌드 소스 (*.txt)
+│   ├── trilobite_genus_list.txt          # Cleaned genus list (canonical version)
 │   ├── trilobite_family_list.txt
-│   ├── trilobite_nomina_nuda.txt
 │   ├── adrain2011.txt
-│   ├── mcp_tools_trilobase.json           # MCP tool definitions
-│   └── *.pdf                              # Reference PDFs
-├── spa/                                   # Reference Implementation SPA (trilobase-specific)
-│   └── index.html                        # Single-file SPA (HTML+CSS+JS, 2,915 lines)
-├── scripts/                               # Domain pipeline scripts
-│   ├── rebuild_database.py                # ★ Modular rebuild orchestrator (P72)
-│   ├── pipeline/                          # ★ Modular rebuild pipeline modules
-│   │   ├── clean.py                       #   Step 1: text loading
-│   │   ├── hierarchy.py                   #   Step 2: adrain2011 hierarchy
-│   │   ├── parse_genera.py                #   Step 3: genus entry parsing
-│   │   ├── load_data.py                   #   Step 4: schema + data load
-│   │   ├── paleocore.py                   #   Step 5: PaleoCore DB
-│   │   ├── junctions.py                   #   Step 6: junction tables
-│   │   ├── metadata.py                    #   Step 7: SCODA metadata
-│   │   └── validate.py                    #   Step 8: validation (35 checks)
-│   ├── create_scoda.py                    # trilobase.scoda → dist/ (--with-spa 옵션, hub manifest 자동 생성)
-│   ├── create_paleocore_scoda.py          # paleocore.scoda → dist/
-│   ├── create_paleocore.py                # PaleoCore DB → db/
-│   ├── bump_version.py                    # Version bump script
-│   ├── add_opinions_schema.py             # Taxonomic opinions migration
-│   ├── add_spelling_of_opinions.py        # SPELLING_OF opinion type
-│   ├── migrate_synonyms_to_opinions.py    # T-4: synonyms → SYNONYM_OF opinions
-│   ├── restructure_agnostida_opinions.py  # Agnostida order-level opinions
-│   ├── fix_country_id.py                  # T-5: country_id 일괄 수정
-│   ├── fix_formation_misalignment.py      # T-5: formation 오정렬 수정
-│   ├── fill_temporal_codes.py             # temporal_code auto-fill from raw_entry
-│   ├── link_bibliography.py               # taxon_bibliography link builder
-│   ├── create_assertion_db.py              # P74/P80: assertion-centric DB → db/ (with editable_entities)
-│   ├── validate_assertion_db.py            # P74: assertion DB validation (12 checks)
-│   ├── create_database.py                 # DB creation → db/
-│   └── ... (normalize, import, etc.)
+│   ├── mcp_tools_trilobase.json          # MCP tool definitions
+│   └── *.pdf                             # Reference PDFs
+├── scripts/                               # ★ 활성 빌드 스크립트만 (60+ 레거시 → archive/)
+│   ├── build_trilobase_db.py             # Trilobase DB 빌드 → db/
+│   ├── build_trilobase_scoda.py          # trilobase.scoda → dist/
+│   ├── validate_trilobase_db.py          # DB 검증 (17 checks)
+│   ├── build_paleocore_db.py             # PaleoCore DB → db/
+│   ├── build_paleocore_scoda.py          # paleocore.scoda → dist/
+│   ├── build_all.py                      # 전체 빌드 (DB + .scoda)
+│   ├── convert_to_source_format.py       # data/sources/*.txt 재생성
+│   ├── db_path.py                        # DB 경로 헬퍼 (find_trilobase_db 등)
+│   └── archive/                          # 레거시 스크립트 보관
 ├── tests/
-│   ├── conftest.py                        # Shared fixtures
-│   └── test_trilobase.py                  # Trilobase domain tests (118)
-├── vendor/
-│   ├── cow/v2024/States2024/statelist2024.csv
-│   └── ics/gts2020/chart.ttl
+│   ├── conftest.py                       # Shared fixtures
+│   └── test_trilobase.py                # Trilobase domain tests (118)
+├── vendor/                               # Third-party reference data
 ├── design/                               # Design & concept documents
-│   ├── HISTORY.md                         # Completed Phase 1~46 detailed records
-│   ├── paleocore_schema.md
-│   ├── scoda_package_architecture.md
-│   ├── scoda_registry_architecture.md
-│   └── scoda_registry_dependency_distribution_detailed.md
-├── docs/                                  # MkDocs documentation site (EN/KO)
-│   ├── index.en.md / index.ko.md
-│   ├── getting-started.en.md / .ko.md
-│   ├── database/                          # Schema, queries, PaleoCore
-│   ├── architecture/                      # SCODA package & registry
-│   ├── api/                               # MCP tools reference
-│   └── project/                           # Changelog, handoff, history
-└── devlog/
+├── docs/                                 # MkDocs documentation site (EN/KO)
+│   ├── canonical_vs_assertion.md         # 두 DB 구조 비교 설명
+│   └── source_data_guide.md              # 소스 데이터 작성 가이드
+└── devlog/                               # 작업 기록
 
 scoda-engine/                              # Separate repo: /mnt/d/projects/scoda-engine
 ├── pyproject.toml                         # pip install -e ".[dev]"
@@ -491,9 +251,7 @@ scoda-engine/                              # Separate repo: /mnt/d/projects/scod
 │   ├── entity_schema.py, crud_engine.py   # P80: manifest-driven CRUD
 │   ├── templates/, static/
 ├── tests/                                 # Runtime tests (218 + 27 CRUD)
-├── scripts/                               # build.py, release.py, etc.
-├── examples/, docs/
-└── ScodaDesktop.spec
+└── scripts/                               # build.py, release.py, etc.
 ```
 
 ## Test Status
@@ -532,118 +290,63 @@ pytest tests/
 
 ## DB Schema
 
-### Canonical DB (trilobase-{ver}.db)
+### Trilobase DB (trilobase-0.3.0.db)
 
 ```sql
--- taxonomic_ranks: 5,341 records — unified taxonomy (Class~Genus) + 2 placeholders + Agnostina Suborder
-taxonomic_ranks (
-    id, name, rank, parent_id, author, year, year_suffix,
-    genera_count, notes, created_at,
-    -- Genus-specific fields
+-- taxon: 5,627 records — all taxa (Class~Genus + Subfamily + placeholders)
+taxon (
+    id, name, rank, author, year, year_suffix,
     type_species, type_species_author, formation, location, family,
-    temporal_code, is_valid, raw_entry
+    temporal_code, is_valid, notes, raw_entry, created_at
 )
 
--- synonyms: backward-compat VIEW over taxonomic_opinions WHERE opinion_type = 'SYNONYM_OF'
--- Returns: id, junior_taxon_id, senior_taxon_name, senior_taxon_id,
---          synonym_type, fide_author, fide_year, notes
+-- assertion: 8,382 records — PLACED_IN 7,305 + SYNONYM_OF 1,075 + SPELLING_OF 2
+assertion (
+    id, subject_taxon_id, predicate, object_taxon_id, value_text,
+    reference_id, assertion_status, curation_confidence,
+    synonym_type, notes, created_at
+)
 
--- genus_formations: 4,853 records — Genus-Formation many-to-many
+-- reference: 2,135 records
+reference (id, authors, year, year_suffix, title, journal, volume, pages,
+           publisher, city, editors, book_title, reference_type, raw_entry)
+
+-- classification_profile: 3 records (default, treatise1959, treatise2004)
+classification_profile (id, name, description, created_at)
+
+-- classification_edge_cache: 8,930 records
+classification_edge_cache (profile_id, taxon_id, parent_taxon_id)
+
+-- genus_formations: 4,503 records
 genus_formations (id, genus_id, formation_id, is_type_locality, notes)
 
--- genus_locations: 4,841 records — Genus-Country many-to-many
+-- genus_locations: 4,849 records
 genus_locations (id, genus_id, country_id, region, is_type_locality, notes)
 
--- bibliography: 2,130 records — Literature Cited references
-bibliography (id, authors, year, year_suffix, title, journal, volume, pages,
-              publisher, city, editors, book_title, reference_type, raw_entry)
+-- taxon_reference: 4,173 records
+taxon_reference (id, taxon_id, reference_id, relationship_type,
+                 assertion_id, match_confidence, match_method, notes, created_at)
 
--- taxon_bibliography: 4,173 records — Taxon↔Bibliography FK links
-taxon_bibliography (id, taxon_id, bibliography_id, relationship_type,
-                    opinion_id, match_confidence, match_method, notes, created_at)
+-- Views
+synonyms         -- backward-compat VIEW over assertion WHERE predicate='SYNONYM_OF'
+v_taxonomy_tree  -- edge_cache 기반 트리 뷰
+v_taxonomic_ranks -- edge_cache 기반 랭크 뷰
 
--- taxonomic_opinions: 1,139 records — all opinions (PLACED_IN 82, SPELLING_OF 2, SYNONYM_OF 1,055)
-taxonomic_opinions (id, taxon_id, opinion_type, related_taxon_id, proposed_valid,
-                    bibliography_id, assertion_status, curation_confidence,
-                    is_accepted, synonym_type, notes, created_at)
--- Triggers: trg_deactivate_before_insert, trg_sync_parent_insert,
---           trg_deactivate_before_update, trg_sync_parent_update
-
--- taxa: backward-compatibility view
-CREATE VIEW taxa AS SELECT ... FROM taxonomic_ranks WHERE rank = 'Genus';
-
--- SCODA-Core tables
-artifact_metadata (key, value)                    -- artifact metadata (key-value)
-provenance (id, source_type, citation, description, year, url)  -- data provenance
-schema_descriptions (table_name, column_name, description)      -- schema descriptions
-
--- SCODA UI tables
-ui_display_intent (id, entity, default_view, description, source_query, priority)  -- view hints
-ui_queries (id, name, description, sql, params_json, created_at)                   -- named queries
-ui_manifest (name, description, manifest_json, created_at)                         -- declarative view defs (JSON)
-
--- Note: 8 PaleoCore tables were DROPped in Phase 34
--- countries, formations, geographic_regions, cow_states, country_cow_mapping,
--- temporal_ranges, ics_chronostrat, temporal_ics_mapping → paleocore.db (pc.* prefix)
-```
-
-### Overlay DB (trilobase_overlay.db)
-
-```sql
--- overlay_metadata: canonical DB version tracking
-overlay_metadata (key, value)  -- canonical_version, created_at
-
--- user_annotations: user annotations
-user_annotations (
-    id, entity_type, entity_id, entity_name,  -- entity_name: cross-release matching
-    annotation_type, content, author, created_at
-)
+-- SCODA tables
+artifact_metadata, provenance, schema_descriptions,
+ui_display_intent, ui_queries (46), ui_manifest (1)
 ```
 
 **SQLite ATTACH usage (3-DB):**
 ```python
-conn = sqlite3.connect('db/trilobase-0.2.6.db')  # Canonical DB (versioned)
+conn = sqlite3.connect('db/trilobase-0.3.0.db')
 conn.execute("ATTACH DATABASE 'dist/trilobase_overlay.db' AS overlay")
 conn.execute("ATTACH DATABASE 'db/paleocore-0.1.1.db' AS pc")
-
-# Canonical tables: SELECT * FROM taxonomic_ranks
-# Overlay tables:   SELECT * FROM overlay.user_annotations
-# PaleoCore tables: SELECT * FROM pc.countries
-# Cross-DB JOIN:    SELECT ... FROM genus_locations gl JOIN pc.countries c ON gl.country_id = c.id
-```
-
-## DB Usage Examples
-
-```bash
-# Basic query (using taxa view)
-sqlite3 db/trilobase-0.2.6.db "SELECT * FROM taxa LIMIT 10;"
-
-# Full hierarchy query
-sqlite3 db/trilobase-0.2.6.db "SELECT g.name, f.name as family, o.name as 'order'
-FROM taxonomic_ranks g
-LEFT JOIN taxonomic_ranks f ON g.parent_id = f.id
-LEFT JOIN taxonomic_ranks sf ON f.parent_id = sf.id
-LEFT JOIN taxonomic_ranks o ON sf.parent_id = o.id
-WHERE g.rank = 'Genus' AND g.is_valid = 1 LIMIT 10;"
-
-# Genus formations (using relation table)
-sqlite3 db/trilobase-0.2.6.db "SELECT g.name, f.name as formation
-FROM taxonomic_ranks g
-JOIN genus_formations gf ON g.id = gf.genus_id
-JOIN formations f ON gf.formation_id = f.id
-WHERE g.name = 'Paradoxides';"
-
-# Genera by country (using relation table)
-sqlite3 db/trilobase-0.2.6.db "SELECT g.name, gl.region
-FROM taxonomic_ranks g
-JOIN genus_locations gl ON g.id = gl.genus_id
-JOIN countries c ON gl.country_id = c.id
-WHERE c.name = 'China' LIMIT 10;"
 ```
 
 ## Notes
 
-- `data/trilobite_genus_list.txt` is always the canonical text version
-- `db/trilobase-{ver}.db` is the latest database (use `scripts/db_path.py:find_trilobase_db()` to resolve)
-- Git commit after each Phase completion
+- `data/sources/*.txt`가 assertion DB 빌드의 정규 소스
+- `db/trilobase-0.3.0.db`가 현재 메인 DB (`scripts/db_path.py:find_trilobase_db()`로 resolve)
+- `db/trilobase-canonical-0.2.6.db`는 이전 canonical DB (taxonomic_ranks 기반, 보존용)
 - Original PDF reference: Jell & Adrain (2002)

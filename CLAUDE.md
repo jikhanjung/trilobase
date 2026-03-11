@@ -19,38 +19,40 @@ trilobase/
 ├── CLAUDE.md
 ├── pytest.ini                        # pytest config (testpaths = tests)
 ├── requirements.txt                  # scoda-engine dependency
-├── db/                               # Canonical databases (git tracked, versioned filenames)
-│   ├── trilobase-{ver}.db            # Trilobase SQLite DB
-│   ├── trilobase-assertion-{ver}.db  # Assertion-centric DB
-│   └── paleocore-{ver}.db            # PaleoCore reference DB
+├── db/                               # Databases (git tracked, versioned filenames)
+│   ├── trilobase-0.3.0.db           # ★ 메인 DB (assertion-centric)
+│   ├── trilobase-canonical-0.2.6.db # Legacy canonical DB (보존용)
+│   └── paleocore-0.1.1.db           # PaleoCore reference DB
 ├── dist/                             # Generated artifacts (gitignored)
-│   ├── trilobase.scoda               # Trilobase .scoda package
-│   ├── paleocore.scoda               # PaleoCore .scoda package
-│   └── *_overlay.db                  # Overlay databases
+│   ├── trilobase-{ver}.scoda        # Trilobase .scoda package
+│   ├── paleocore-{ver}.scoda        # PaleoCore .scoda package
+│   └── *_overlay.db                 # Overlay databases
 ├── data/                             # Source data files
-│   ├── trilobite_genus_list.txt      # 최신 버전 (항상 이 파일 수정)
-│   ├── trilobite_genus_list_original.txt
+│   ├── sources/                     # ★ assertion DB 빌드 소스 (*.txt)
+│   ├── trilobite_genus_list.txt     # Cleaned genus list (canonical version)
 │   ├── trilobite_family_list.txt
-│   ├── trilobite_nomina_nuda.txt
 │   ├── adrain2011.txt
-│   └── mcp_tools_trilobase.json      # MCP 도구 정의
-├── spa/                              # Reference SPA (trilobase 전용)
-├── scripts/                          # 도메인 데이터 파이프라인 스크립트
-│   ├── create_scoda.py               # trilobase.scoda 패키지 생성 → dist/
-│   ├── create_paleocore_scoda.py     # paleocore.scoda 패키지 생성 → dist/
-│   ├── create_paleocore.py           # PaleoCore DB 생성 → db/
-│   ├── create_database.py            # Trilobase DB 생성 → db/
-│   └── ... (normalize, import, etc.)
+│   └── mcp_tools_trilobase.json     # MCP 도구 정의
+├── scripts/                          # ★ 활성 빌드 스크립트만
+│   ├── build_trilobase_db.py        # Trilobase DB 빌드 → db/
+│   ├── build_trilobase_scoda.py     # trilobase.scoda → dist/
+│   ├── validate_trilobase_db.py     # DB 검증 (17 checks)
+│   ├── build_paleocore_db.py        # PaleoCore DB → db/
+│   ├── build_paleocore_scoda.py     # paleocore.scoda → dist/
+│   ├── build_all.py                 # 전체 빌드
+│   ├── db_path.py                   # DB 경로 헬퍼
+│   └── archive/                     # 레거시 스크립트 보관
 ├── tests/
-│   ├── conftest.py                   # Shared fixtures
-│   └── test_trilobase.py             # Trilobase domain tests (118)
+│   ├── conftest.py                  # Shared fixtures
+│   └── test_trilobase.py            # Trilobase domain tests (118)
 ├── vendor/                           # Third-party reference data
 ├── devlog/                           # 작업 기록
-│   ├── YYYYMMDD_NNN_*.md            # 작업 로그
-│   ├── YYYYMMDD_PNN_*.md            # 계획(Plan) 문서
-│   └── YYYYMMDD_RNN_*.md            # 리뷰(Review) 문서
+│   ├── YYYYMMDD_NNN_*.md           # 작업 로그
+│   ├── YYYYMMDD_PNN_*.md           # 계획(Plan) 문서
+│   └── YYYYMMDD_RNN_*.md           # 리뷰(Review) 문서
 └── docs/
-    └── paleocore_schema.md
+    ├── canonical_vs_assertion.md     # 두 DB 구조 비교
+    └── source_data_guide.md          # 소스 데이터 가이드
 ```
 
 ## Dependencies
