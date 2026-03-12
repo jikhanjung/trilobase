@@ -1,0 +1,1413 @@
+---
+reference: Brunton, C.H.C., Lazarev, S.S., Grant, R.E., Jin Yu-Gan, Williams, A., et al., 2000. In: Kaesler, R.L. (Ed.), Treatise on Invertebrate Paleontology, Part H, Brachiopoda Revised, Vol. 3
+scope:
+  - taxon: Productida (part)
+    coverage: comprehensive
+  - taxon: Orthotetida
+    coverage: comprehensive
+  - taxon: Billingsellida
+    coverage: comprehensive
+  - taxon: Orthida
+    coverage: comprehensive
+notes: |
+  Covers Productidina, Strophalosiidina, Lyttoniidina, Orthotetida, Billingsellida, Protorthida, Orthida.
+---
+
+Suborder PRODUCTIDINA Waagen, 1883
+  Superfamily PRODUCTOIDEA Gray, 1840
+    Family PRODUCTELLIDAE Schuchert, 1929
+      Subfamily PRODUCTELLINAE Schuchert, 1929
+        Productella HALL, 1867 [subaculeatus] | Eurasia | MDEV-UDEV
+        Chattertonia JOHNSON, 1976 [campbelli] | Australia | LDEV
+        Helaspis IMBRIE, 1959 [luma] | North America | MDEV
+        Sinoproductella WANG, 1955 [hemispherica] | China | UDEV
+        Spinulicosta NALIVKIN, 1937 [spinulicostus] | North America, Europe, Australia, ?Asia | LDEV-MDEV
+        Stelckia CRICKMAY, 1963 [galearius] | Canada | MDEV
+      Subfamily PRODUCTININAE Muir-Wood & Cooper, 1960
+        Tribe PRODUCTININI Muir-Wood & Cooper, 1960
+          Productina SUTTON, 1938 [sampsoni] | North America, Europe, Australia, ?northern Africa | UDEV-LCARB
+          Argentiproductus COOPER & MUIR-WOOD, 1951 [margaritacea] | Europe, northern Africa | LCARB
+            = Thomasia FREDERICKS, 1928 (preocc., replaced by Thomasina PAECKELMANN, 1931, then Thomasella PAUL, 1942, then Argentiproductus)
+            = Thomasina PAECKELMANN, 1931 (preocc.)
+          Dorsirugatia LAZAREV, 1992 [tsagankhalgensis] | Mongolia | UDEV
+          Productellina REED, 1943 [fremingtonensis] | southern Britain | UDEV-LCARB
+        Tribe CHONETELLINI Licharew, 1960
+          Chonetella WAAGEN, 1884 [nasuta] | Pakistan | LPERM-UPERM
+          Celebetes GRANT, 1976 [gymnus] | Thailand | LPERM
+          Haydenella REED, 1944 [kiangsiensis] | China, Asia, Transcaucasia | LPERM-UPERM
+            = Striatospica WATERHOUSE, 1975 (j.s.s.)
+          Ogbinia SARYTCHEVA, 1965 [dzhagrensis] | Transcaucasus | LPERM
+          ?Parachonetella LIAO, 1980 [zhongyingensis] | China | UPERM
+          Planihaydenella CHANG, 1987 [anqingensis] | China | ?UPERM
+        Tribe PARAMARGINIFERINI Lazarev, 1986
+          Paramarginifera FREDERICKS, 1916 [clarkei] | Ural Mountains, Inner Mongolia, northern China | LPERM
+          Alitaria COOPER & MUIR-WOOD, 1967 [konincki] | Europe, northern Africa, northern Asia | LCARB
+          Bibatiola GRANT, 1976 [costata] | Thailand | LPERM
+          Bothrionia COOPER & GRANT, 1975 [nasuta] | USA | PERM
+          Cathaysia CHING, 1966 [chonetoides] | southern China, Caucasus | PERM-LTRI
+          Cymoproductus XU, 1987 [callicostella] | China | UPERM
+          Eomarginiferina BRUNTON, 1966 [trispina] | Europe, ?China | LCARB-?UCARB
+          Huatangia LIAO & MENG, 1986 [sulcatifera] | China | UPERM
+          ?Paryphella LIAO, 1981 [sulcatifera] | southern China | UPERM-?LTRI
+            = Spinoparyphella LIANG, 1990 (nom. nud.)
+          ?Protoniella BELL, 1929 [beedii] | central, eastern North America | LCARB
+          Rugivestis MUIR-WOOD & COOPER, 1960 [carinata] | North America, Russia | LPERM
+      Subfamily OVERTONIINAE Muir-Wood & Cooper, 1960
+        Tribe OVERTONIINI Muir-Wood & Cooper, 1960
+          Overtonia THOMAS, 1914 [fimbriata] | Europe, ?Asia, ?northern Africa | LCARB
+          Fimbrinia COOPER, 1972 [plummeri] | North America | UCARB-LPERM
+        Tribe AVONIINI Sarytcheva, 1960
+          Avonia THOMAS, 1914 [youngianus] | Europe, Asia | LCARB
+          Barunkhuraya LAZAREV, 1997 [indrengynensis] | Mongolia | UDEV
+          Onavia LAZAREV, 1997 [barunkhurensis] | Mongolia | LCARB
+          Quasiavonia BRUNTON, 1966 [aculeatus] | Europe, western Asia, northern Africa | LCARB
+        Tribe COSTISPINIFERINI Muir-Wood & Cooper, 1960
+          Costispinifera MUIR-WOOD & COOPER, 1960 [texana] | USA | LPERM-UPERM
+          Comuquia GRANT, 1976 [modesta] | Thailand, Himalaya, northern Tibet | LPERM
+          Darlinuria LI & GU, 1976 [liaoningensis] | Inner Mongolia, China | UPERM
+          Dorashamia SARYTCHEVA, 1965 [abichi] | Transcaucasus, ?North Caucasus, Kashmir | UPERM
+          Dyschrestia GRANT, 1976 [spodia] | Thailand, Western Australia, Indonesia | LPERM
+          Echinauriella LAZAREV, 1997 [jisuensiformis] | Transcaucasus | LPERM-UPERM
+          Echinauris MUIR-WOOD & COOPER, 1960 [lateralis] | USA, Tibet | LPERM-UPERM
+          ?Lethamia WATERHOUSE, 1973 [ligurritus] | New Zealand, ?Australia | LPERM-UPERM
+          Neoplicatifera CHING, LIAO, & HOU, 1974 [huangi] | China, Salt Range | LPERM-UPERM
+          Paraplicatifera ZHAO & TAN, 1984 [regularis] | China | LPERM-UPERM
+          Pseudoavonia WANG, 1983 [lopingensiformis] | China | LPERM
+          Stictozoster GRANT, 1976 [leptus] | Thailand, western and eastern Timor, Indonesia, Western Australia, western Malaysia | LPERM
+          Tubersulculus WATERHOUSE, 1971 [maximus] | Canada, Russia | UCARB-LPERM
+          Zhuaconcha LIANG, 1990 [hirsutispins] | China | UPERM
+        Tribe INSTITIFERINI Muir-Wood & Cooper, 1960
+          Institifera MUIR-WOOD & COOPER, 1960 [tessellatus] | western Europe | LCARB
+          ?Thomasella FREDERICKS, 1928 [wrighti] | British Isles | LCARB
+        Tribe KROTOVIINI Brunton, Lazarev, & Grant, 1995
+          Krotovia FREDERICKS, 1928 [spinulosus] | Eurasia, northern Africa | LCARB-UCARB
+          Scoloconcha GORDON, 1966 [indianensis] | USA | LCARB
+      Subfamily MARGINIFERINAE Stehli, 1954
+        Tribe MARGINIFERINI Stehli, 1954
+          Marginifera WAAGEN, 1884 [typica] | Himalayas, southeastern Asia, north, northeastern China | LPERM-UPERM
+            = Strigospina LIAO, 1979 (j.s.s.)
+          Entacanthadus GRANT, 1993 [chioticus] | Greece | LPERM
+          ?Jipuproductus SUN, 1983 [jipuensis] | Xizang, Tibet | LPERM
+          Otariella WATERHOUSE, 1978 [otaria] | Thailand | LPERM
+          Probolionia COOPER, 1957 [posteroreticulata] | USA, Pamir | LPERM-UPERM
+          Spinomarginifera HUANG, 1932 [kueichowensis] | China, Japan, Afghanistan, Middle East | LPERM-UPERM
+            = Rugosomarginifera XU, 1987 (j.s.s.)
+            = Haydenoides CHAN, 1977 (j.s.s.)
+        Tribe BREILEENIINI Brunton, 1997
+          Breileenia BRUNTON, 1997 [davidsoni] | western Europe, ?China, Canada | LCARB-UCARB
+          Desmoinesia HOARE, 1960 [muricatus] | North America | UCARB
+            = Rudinia MUIR-WOOD & COOPER, 1960 (j.o.s.)
+          Sandia SUTHERLAND & HARLOW, 1973 [brevis] | southern North America | UCARB
+        Tribe INCISIINI Grant, 1976
+          Incisius GRANT, 1976 [concisus] | Thailand, southern China, Greece | LPERM-UPERM
+          Cyrtalosia TERMIER & TERMIER, 1970 [circinata] | Cambodia | UPERM
+          Rhytisia COOPER & GRANT, 1975 [rugosa] | USA | LPERM-UPERM
+          Scapharina COOPER & GRANT, 1975 [rugosa] | USA | UPERM
+          Simplicarina COOPER & GRANT, 1975 [incompta] | USA | LPERM
+        Tribe PAUCISPINIFERINI Muir-Wood & Cooper, 1960
+          Paucispinifera MUIR-WOOD & COOPER, 1960 [auriculata] | southern USA | LPERM-UPERM
+          Anemonaria COOPER & GRANT, 1969 [inflata] | USA, north and northeastern China | LPERM
+          Azygidium WATERHOUSE, 1983 [mitis] | eastern Australia | LPERM
+          Caricula GRANT, 1976 [salebrosa] | Thailand | LPERM
+          Caucasoproductus KOTLYAR, 1989 [dichotomocostatus] | North Caucasus | UPERM
+          Costiferina MUIR-WOOD & COOPER, 1960 [indicus] | Pakistan, Western Australia, southeastern Asia, China | LPERM-UPERM
+          Elliottella STEHLI, 1955 [transversalis] | southern USA | LPERM
+            = Psilonotus STEHLI, 1954 (preocc., replaced by Elliottella)
+          Hystriculina MUIR-WOOD & COOPER, 1960 [texana] | North America, central Europe | UCARB-PERM
+          Jiguliconcha LAZAREV, 1990 [gracilicosta] | eastern Europe | UCARB
+          Lamnimargus WATERHOUSE, 1975 [himalayensis] | Himalayas, Nepal, Pamirs | LPERM
+          Lampangella WATERHOUSE, 1983 [lata] | Thailand | UPERM
+          Liosotella COOPER, 1953 [rugosa] | central, North America, northern and northeastern China | LPERM-UPERM
+          Nudauris STEHLI, 1954 [diabloensis] | USA | LPERM
+          Oncosarina COOPER & GRANT, 1969 [spinocostata] | USA | LPERM
+          Retimarginifera WATERHOUSE, 1970 [perforata] | Western Australia, Thailand, Himalayas, northern China | LPERM
+          Shanxiproductus DUAN & LI, 1985 [shanxiensis] | China | UCARB-LPERM
+          Spinarella COOPER & GRANT, 1975 [perfecta] | USA | LPERM
+          Transennatia WATERHOUSE, 1975 [gratiosus] | Himalayas, Thailand, China, Timor, Western Australia, Greece, Sicily | LPERM-UPERM
+            = Gratiosina GRANT, 1976 (j.o.s.)
+            = Asioproductus CHAN, 1979 (j.s.s.)
+            = Kurtomarginifera XU, 1987 (j.s.s.)
+          Xestosia COOPER & GRANT, 1975 [obsolescens] | USA | LPERM
+      Subfamily PLICATIFERINAE Muir-Wood & Cooper, 1960
+        Tribe PLICATIFERINI Muir-Wood & Cooper, 1960
+          Plicatifera CHAO, 1927 [plicatilis] | Eurasia, northern Africa | LCARB
+          Absenticosta LAZAREV, 1991 [uldzejtuensis] | Transbaikalia, Mongolia | LCARB
+          Aseptella MARTINEZ CHACON & WINKLER PRINS, 1977 [asturica] | Spain, Argentina, Thailand | LCARB-UCARB
+          Crossacanthia GORDON, 1966 [perlamellosa] | USA | LCARB
+          Ferganoproductus GALITSKAYA, 1977 [ferganensis] | eastern Europe, Asia | LCARB-UCARB
+          Platyselma GORDON, 1966 [echinatum] | southern USA | LCARB
+          ?Rugoconcha JIN & SUN, 1981 [chaoi] | southern China | UCARB
+        Tribe LEVIPUSTULINI Lazarev, 1985
+          Levipustula MAXWELL, 1951 [levis] | Australia, South America | LCARB-UCARB
+          Bulahdelia ROBERTS, 1976 [myallensis] | Australia | LCARB
+          Impiacus LAZAREV & SUUR'SUREN, 1988 [dzhinsetuensis] | northeastern Asia | LCARB
+            = Nudymia LAZAREV, 1990 (j.s.s.)
+          Jakutoproductus KASCHIRTZEV, 1959 [verchoyanica] | northern Canada, Siberia, Mongolia, northern Asia | LPERM
+          Lanipustula KLETS, 1983 [baicalensis] | Russia, Transbaikal, Mongolia | LCARB-UCARB
+          Onopordumaria WATERHOUSE, 1971 [punctura] | Canada | UCARB
+          Piatnitzkya TABOADA, 1993 [borrelloi] | Argentina | LPERM
+          Verchojania ABRAMOV, 1970 [cheraskowi] | northern Asia | UCARB
+        Tribe LEVITUSIINI Muir-Wood & Cooper, 1960
+          Levitusia MUIR-WOOD & COOPER, 1960 [humerosus] | Europe, Ural Mountains, ?Middle Asia | LCARB
+          Acanthoplecta MUIR-WOOD & COOPER, 1960 [mesoloba] | Eurasia, northern Africa | LCARB
+          Admodorugosus BRUNTON & MUNDY, 1993 [cracoensis] | western Europe | LCARB
+          Geniculifera MUIR-WOOD & COOPER, 1960 [boonensis] | North America, Europe | LCARB
+          Kadraliproductus GALITSKAYA, 1977 [kadralensis] | Kirghizia, western Europe | LCARB
+          Spinorugifera ROBERTS, 1976 [chichesterensis] | Australia | LCARB
+        Tribe RUGAURINI Lazarev, 1990
+          Rugauris MUIR-WOOD & COOPER, 1960 [paucispina] | USA, Russia, eastern Australia, Canada, ?San Salvador | LCARB
+          Carringtonia BRUNTON & MUNDY, 1986 [carringtoniana] | western Europe | LCARB
+          Iniproductus LAZAREV, 1990 [inica] | Russia | UDEV
+          Orbinaria MUIR-WOOD & COOPER, 1960 [pyxidata] | North America, ?Europe, ?northern Africa | UDEV-LCARB
+          Planoproductus STAINBROOK, 1947 [hillsboroensis] | southern USA, France, ?Japan | UDEV
+        Tribe SEMICOSTELLINI Nalivkin, 1979
+          Semicostella MUIR-WOOD & COOPER, 1960 [oklahomensis] | southern USA, Ural Mountains, northern Asia | LCARB
+          Cinctifera MUIR-WOOD & COOPER, 1960 [medusa] | Europe | LCARB
+          Limbifera BRUNTON & MUNDY, 1988 [griffithianus] | western Europe | LCARB
+          Maemia LAZAREV, 1997 [chaykensis] | Arctic Russia | UCARB
+          Overtoniina GRUNT, 1973 [mamazairica] | Pamir, Afghanistan | LPERM
+          Pharcidodiscus ROBERTS, 1976 [boulderensis] | Australia | LCARB
+          Rhytiophora MUIR-WOOD & COOPER, 1960 [blairi] | USA, Central America, northwestern Australia, ?central China | LCARB
+          Spinosteges LIANG, 1990 [sinensis] | China | UPERM
+        Tribe YAKOVLEVIINI Waterhouse, 1975
+          Yakovlevia FREDERICKS, 1925 [kaluzinensis] | Siberia, Arctic regions, Mongolia, China, Japan, USA | LPERM-UPERM
+            = Muirwoodia LICHAREW, 1947 (j.s.s., partim)
+          Duartea MENDES, 1959 [batesianus] | South America, Eurasia | UCARB
+            = Paramuirwoodia ZHANG, 1983 (j.s.s.)
+          Inflatia MUIR-WOOD & COOPER, 1960 [inflatus] | North America, Asia, Australia | LCARB-UCARB
+            = Adairia GORDON, HENRY, & TREWORGY, 1993 (j.s.s.)
+          Sajakella NASIKANOVA, 1968 [formosa] | Boreal Asia | LCARB-UCARB
+          Tenaspinus LAZAREV, 1997 [derbyianus] | South America, Eurasia | UCARB
+
+      Liolimbella LI LI, 1991 [spanoptycha] | China | LPERM
+
+    Family PRODUCTIDAE Gray, 1840
+      Subfamily PRODUCTINAE Gray, 1840
+        Tribe PRODUCTINI Gray, 1840
+          Productus SOWERBY, 1814 [productus] | Eurasia, northern Africa, southern China, ?North America | UCARB
+            = Producta CONYBEARE & PHILLIPS, 1822 (obj.)
+            = Protonia LINK, 1830 (obj., non RAFINESQUE, 1814)
+            = Hubeiproductus YANG, 1984 (j.s.s.)
+          Carlinia GORDON, 1971 [phillipsi] | North America | LCARB
+          Companteris LAZAREV, 1981 [aljutovensis] | eastern Europe | UCARB
+          Diaphragmus GIRTY, 1910 [elegans] | North America | LCARB
+          Dowhatania WATERHOUSE, 1979 [dowhatensis] | Himalayas, ?China | ?LCARB-UCARB
+            = Parabuxtonia YANG & ZHANG, 1982 (j.s.s.)
+            = Shishapangmaella YANG, 1983 (j.s.s.)
+          Lopasnia ILKHOVSKY, 1990 [adhaerescens] | Russia | UCARB
+          ?Marginirugus SUTTON, 1938 [magnus] | central North America | LCARB
+          Tenaspinus BRUNTON & MUNDY, 1994 [smarti] | British Isles | LCARB
+
+        Tribe KOZLOWSKIINI Brunton, Lazarev, & Grant, 1995
+          Kozlowskia FREDERICKS, 1933 [capaci] | cosmopolitan | UCARB-LPERM
+          Eomarginifera MUIR-WOOD, 1930 [longispinus] | Eurasia, northern Africa, ?North America | LCARB-?UCARB
+            = Lissomarginifera LANE, 1962 (j.s.s.)
+          Minispina WATERHOUSE, 1982 [alata] | southeastern Asia | UCARB
+
+        Tribe RETARIINI Muir-Wood & Cooper, 1960
+          Kutorginella IVANOVA, 1951 [mosquensis] | eastern Europe, middle Asia, North America, China | UCARB-LPERM
+            = Retaria MUIR-WOOD & COOPER, 1960 (j.s.s.)
+            = Calliomarginatia CHING, 1976 (j.s.s.)
+            = Aspinosella WATERHOUSE, 1982 (j.s.s.)
+          Antiquatonia MILORADOVICH, 1945 [antiquatus] | cosmopolitan | LCARB
+          Kelamelia ZHANG, 1983 [typica] | northern China | UCARB
+          Keokukia CARTER, 1990 [sulcata] | central North America | LCARB
+          Marginoproductus TAN, 1986 [hunanensis] | southern China | LCARB
+          Promarginifera SHIELLS, 1966 [trearnensis] | British Isles | LCARB
+          Svalbardoproductus USTRITSKY, 1962 [stratoauritus] | Spitzbergen | LPERM
+          Tesuquea SUTHERLAND & HARLOW, 1973 [formosa] | southern North America | UCARB
+          Thamnosia COOPER & GRANT, 1969 [anterospinosa] | USA, Arctic Canada, eastern Greenland, Arctic Eurasia, ?China | ?UCARB-LPERM
+            = ?Neopugilis LI, 1991 (j.s.s.)
+            = Thuleproductus SARYTCHEVA & WATERHOUSE, 1972 (j.s.s.)
+          Tubaria MUIR-WOOD & COOPER, 1960 [genuinus] | Russia, Fergana | UCARB-LPERM
+
+        Tribe SPYRIDIOPHORINI Muir-Wood & Cooper, 1960
+          Spyridiophora COOPER & STEHLI, 1955 [distincta] | USA, southeastern Asia | LPERM
+            = Spiridiophora SARYTCHEVA, 1960 (obj.)
+          Alexenia IVANOVA, 1935 [reticulata] | Eurasia | UCARB
+
+      Subfamily LEIOPRODUCTINAE Muir-Wood & Cooper, 1960
+        Tribe LEIOPRODUCTINI Muir-Wood & Cooper, 1960
+          Leioproductus STAINBROOK, 1947 [plicatus] | North America, Asia | UDEV
+          Ardiviscus LAZAREV, 1986 [naidovense] | Eurasia, ?North America | UDEV
+          Bispinoproductus STAINBROOK, 1947 [varispinosus] | southern North America | UDEV
+          Galeatella MUIR-WOOD & COOPER, 1960 [galeata] | North America | UDEV
+          Grandiproductella LAZAREV, 1987 [omolonensis] | northeastern Asia | UDEV
+          ?Hunanoproductus HOU, 1965 [hunanensis] | southern China | LCARB
+          Kavesia LAZAREV, 1987 [intrastriata] | northeastern Asia | ?UDEV-LCARB
+          Magnumbonella CARTER, 1968 [macrura] | central North America | LCARB
+          Mesoplica REED, 1943 [praelonga] | Europe, northern Africa, ?Asia | UDEV
+          Productelloides KOTLYAR, 1985 [gorobtsovensis] | Ukraine | UDEV
+
+        Tribe HORRIDONIINI Muir-Wood & Cooper, 1960
+          Horridonia CHAO, 1927 [horridus] | Europe, Arctic regions, ?Pakistan | UPERM
+            = ?Sowerbina FREDERICKS, 1928 (j.s.s.)
+            = Pleurohorridonia DUNBAR, 1955 (j.s.s.)
+          Bailliena NELSON & JOHNSON, 1968 [yukonensis] | northern Canada | UCARB-LPERM
+          Burovia USTRITSKY, 1980 [selanderensis] | Arctic regions | UPERM
+          Praehorridonia USTRITSKY, 1962 [dorsoplicata] | Arctic regions, Siberia, Canada | LCARB-UCARB
+          ?Rugoclostus EASTON, 1962 [nivalis] | central North America | UCARB
+          Tityrophoria WATERHOUSE, 1971 [nelsoni] | Canada | LPERM
+
+        Tribe SEMIPRODUCTINI McKellar, 1970
+          Semiproductus BUBLICHENKO, 1956 [minax] | Ural Mountains, Asia, northern Australia | UDEV-LCARB
+          Acanthoproductus MARTYNOVA, 1970 [bogdanovi] | Kazakhstan | UDEV
+          Lomatiphora ROBERTS, 1971 [aquila] | Australia | LCARB
+          Margaritiproductus LAZAREV, 1986 [celak] | central Asia | UDEV
+          Nigerinoplica LAZAREV, 1986 [nigerina] | Eurasia, ?North America | UDEV
+          Seminucella CARTER, 1987 [parva] | northern North America | LCARB
+          Spinocarinifera ROBERTS, 1971 [adunata] | Australia, Eurasia, northern Africa, North America | LCARB
+            = Nigeroplica NALIVKIN, 1975 (j.s.s.)
+          Yanguania YANG, 1978 [dushanensis] | southern China | LCARB
+
+        Tribe TYLOPLECTINI Termier & Termier, 1970
+          Tyloplecta MUIR-WOOD & COOPER, 1960 [nankingensis] | China, southern Europe, ?Indonesia | LPERM
+            = Nankinoproductus HUANG & TSENG, 1948 (nom. nud.)
+          Araxilevis SARYTCHEVA, 1965 [intermedius] | Transcaucasus | UPERM
+          Pseudoantiquatonia ZHAN & WU, 1982 [mutabilis] | China | UPERM
+
+      Subfamily DICTYOCLOSTINAE Stehli, 1954
+        Dictyoclostus MUIR-WOOD, 1930 [semireticulatus] | Europe, ?Asia, ?northern Africa | LCARB
+        Auloprotonia MUIR-WOOD & COOPER, 1960 [aulacophora] | North America | LCARB
+        Callytharrella ARCHBOLD, 1985 [callytharrensis] | Western Australia, Himalayas | LPERM
+        Chaoiella FREDERICKS, 1933 [gruenewaldti] | Eurasia | LPERM
+        Dasysaria COOPER & GRANT, 1969 [undulata] | USA | LPERM
+        Kunlunia WANG, 1983 [aspera] | China | LPERM
+        Liraplecta JIN & SUN, 1981 [richthofeni] | China | LPERM
+        ?Niutoushania LIAO, 1984 [niutoushanensis] | China | UPERM
+        Ozora CARTER, 1990 [genevievensis] | central North America | LCARB
+        Pugilis SARYTCHEVA, 1949 [pugilis] | Europe, northern Africa | LCARB
+          = Pugilus SARYTCHEVA, 1952 (obj.)
+        Reticulatia MUIR-WOOD & COOPER, 1960 [huecoensis] | North America, Europe, Asia | UCARB-LPERM
+        Rugatia MUIR-WOOD & COOPER, 1960 [paraindicus] | southern USA | LPERM
+        Stereochia GRANT, 1976 [litostyla] | Thailand, Indonesia, ?northeastern Asia | LPERM
+
+      Subfamily BUXTONIINAE Muir-Wood & Cooper, 1960
+        Tribe BUXTONIINI Muir-Wood & Cooper, 1960
+          Buxtonia THOMAS, 1914 [scabriculus] | Europe, America, Australia, ?Far East | LCARB
+          ?Bellaclathrus WINTERS, 1963 [spinosus] | USA | LPERM
+          Buxtonioides MENDES, 1959 [amazonicus] | South America, Canada, Russia | UCARB
+            = Gemmulicosta WATERHOUSE, 1971 (j.s.s.)
+          Flexaria MUIR-WOOD & COOPER, 1960 [arkansana] | North America | LCARB
+          Kochiproductus DUNBAR, 1955 [porrectus] | Arctic regions, Mongolia, North and South America | LPERM
+          Labriproductus COOPER & MUIR-WOOD, 1951 [wortheni] | central North America | LCARB
+          Marginicinctus SUTTON, 1938 [marginicinctus] | North America, Europe | LCARB
+          Setigerites GIRTY, 1939 [setiger] | North America, Eurasia, ?northern Africa | LCARB
+
+        Tribe TOLMATCHOFFIINI Sarytcheva, 1963
+          Tolmatchoffia FREDERICKS, 1933 [robusta] | Eurasia, northern Africa, North America | LCARB
+          Acanthocosta ROBERTS, 1971 [teicherti] | Australia | LCARB
+          Brasilioproductus MENDES, 1959 [chandlessi] | South America, southern North America | UCARB
+          Libys MASSA, TERMIER, & TERMIER, 1974 [hericinus] | northern Africa | LCARB
+          Marginatia MUIR-WOOD & COOPER, 1960 [fernglenensis] | North America, Europe, northern Africa, central China | LCARB
+            = Paramarginatia YANG, 1978 (j.s.s.)
+          Peniculauris MUIR-WOOD & COOPER, 1960 [mckeei] | USA | LPERM
+          Piloricilla CARTER, 1987 [desmetensis] | Canada | LCARB
+          Scissicosta LAZAREV, 1992 [gobiensis] | Mongolia | LCARB
+          Spinifrons STEHLI, 1954 [quadratus] | southern USA | LPERM
+          Squamaria MUIR-WOOD & COOPER, 1960 [moorei] | USA | LPERM
+          Tomilia SARYTCHEVA, 1963 [khalfini] | Siberia | LCARB
+          Tomiproductus SARYTCHEVA, 1963 [elegantulus] | Eurasia, North America, ?northern Africa | LCARB
+          Umboanctus WATERHOUSE, 1971 [spinosus] | Canada | UCARB
+          Xinshaoproductus TAN, 1986 [xinshaoensis] | southern China | LCARB
+            = Neoyanguania SHI, 1988 (j.s.s.)
+
+  Superfamily ECHINOCONCHOIDEA Stehli, 1954
+    Family ECHINOCONCHIDAE Stehli, 1954
+      Subfamily ECHINOCONCHINAE Stehli, 1954
+        Tribe ECHINOCONCHINI Stehli, 1954
+          Echinoconchus WELLER, 1914 [punctatus] | cosmopolitan | LCARB
+          Echinaria MUIR-WOOD & COOPER, 1960 [semipunctata] | North America, northern South America, Eurasia | UCARB-LPERM
+          Stepanoconchus LAZAREV, 1985 [postpunctatus] | Ural Mountains | UCARB-LPERM
+
+        Tribe CALLIPROTONIINI Lazarev, 1985
+
+
+Superfamily ECHINOCONCHOIDEA Stehli, 1954
+  Family ECHINOCONCHIDAE Stehli, 1954
+    Subfamily ECHINOCONCHINAE Stehli, 1954
+      Tribe ECHINOCONCHINI Stehli, 1954
+        Calliprotonia MUIR-WOOD & COOPER, 1960 [renfrarum] | North America, South America, eastern Europe, Asia, ?Spitzbergen | UCARB-LPERM
+      Tribe KARAVANKININI Ramovs, 1969
+        Karavankina RAMOVS, 1969 [typica] | Eurasia | UCARB-UPERM
+          = Karavankina RAMOVS, 1966 (nom. nud.)
+        Echinoconchella LAZAREV, 1985 [elegans] | Eurasia | LCARB
+    Subfamily JURESANIINAE Muir-Wood & Cooper, 1960
+      Tribe JURESANIINI Muir-Wood & Cooper, 1960
+        Juresania FREDERICKS, 1928 [juresanensis] | Arctic Eurasia, western Himalayas | UCARB-LPERM
+        Ametoria COOPER & GRANT, 1975 [residua] | USA | LPERM
+        Bathymyonia MUIR-WOOD & COOPER, 1960 [nevadensis] | USA, ?eastern China, ?Japan | LPERM
+        Bilotina REED, 1944 [subtecta] | western Pakistan, Thailand | LPERM
+          = Septasteges WATERHOUSE & PIYASIN, 1970 (j.s.s.)
+        Buntoxia LAZAREV, 1986 [mosquensis] | Russia | LCARB-UCARB
+        Cubacula LAZAREV, 1984 [subpunctata] | eastern Europe | UCARB
+        Densepustula LAZAREV, 1982 [russiensis] | Russia | UCARB
+        Parajuresania LAZAREV, 1982 [nebrascensis] | North America, northern Europe | UCARB-LPERM
+        Pulchratia MUIR-WOOD & COOPER, 1960 [symmetricus] | North America | UCARB
+        Vediproductus SARYTCHEVA, 1965 [vediensis] | Transcaucasus, China | LPERM
+      Tribe WAAGENOCONCHINI Muir-Wood & Cooper, 1960
+        Waagenoconcha CHAO, 1927 [humboldti] | cosmopolitan | UCARB-UPERM
+          = Biplatyconcha WATERHOUSE, 1983 (preocc., nom. nov. pro Platyconcha WATERHOUSE, 1975)
+          = Ruthenia FREDERIKS, 1928 (j.s.s.)
+          = Wimanoconcha WATERHOUSE, 1983 (j.s.s.)
+        Balkhasheconcha LAZAREV, 1985 [balkhashensis] | northeastern Arctic Russia | UCARB
+        Buxtoniella ABRAMOV & GRIGORJEVA, 1986 [longispina] | Russia | LCARB
+        Spinauris ROBERTS, 1971 [cristata] | Western Australia | LCARB
+    Subfamily PUSTULINAE Waterhouse, 1981
+      Pustula THOMAS, 1914 [pustulosa] | Eurasia, northern Africa, ?North America | LCARB
+      ?Etheridgina OEHLERT, 1887 [complectens] | British Isles | LCARB
+      Scutepustula SARYTCHEVA, 1963 [scutelatus] | Eurasia, North America | LCARB
+      ?Septarinia MUIR-WOOD & COOPER, 1960 [leuchtenbergensis] | western Europe | LCARB
+  Family SENTOSIIDAE McKellar, 1970
+    Subfamily SENTOSIINAE McKellar, 1970
+      Tribe SENTOSIINI McKellar, 1970
+        Sentosia MUIR-WOOD & COOPER, 1960 [praecursor] | North America, ?northern Africa, Europe | UDEV
+        Alatoproductus JING & ZHU, 1978 [truncatus] | China | ?LPERM-UPERM
+          = Chenxianoproductus LIAO & MENG, 1986 (j.s.s.)
+          = ?Chonostegoidella LI & YANG, 1986 (j.s.s.)
+        Jakutella ABRAMOV, 1970 [sarytchevae] | northern Asia | UCARB
+        Laminatia MUIR-WOOD & COOPER, 1960 [laminata] | southern North America, Australia, ?Kazakhstan | UDEV
+        Malloproductus TACHIBANA, 1981 [pexus] | Japan | UDEV
+        Markamia JIN & SHI, 1985 [transversa] | China, Tibet, western Ural Mountains | UCARB-LPERM
+          = Tuberella LI, 1986 (j.s.s.)
+          = Uraloconchus LAZAREV, 1990 (j.s.s.)
+        Productellana STAINBROOK, 1950 [bifaria] | North America, ?China | UDEV
+        Sentosioides LAZAREV, 1992 [tsagankhalginensis] | Russia, Asia | UDEV
+        Stegacanthia MUIR-WOOD & COOPER, 1960 [bowsheri] | southern North America, ?northern Africa, Europe | LCARB
+      Tribe BAGRASIINI Nalivkin, 1979
+        Ericiatia MUIR-WOOD & COOPER, 1960 [newberryi] | western Ural Mountains, North America | LCARB
+          = Bagrasia NALIVKIN, 1960 (j.s.s.)
+    Subfamily CAUCASIPRODUCTINAE Lazarev, 1987
+      Caucasiproductus LAZAREV, 1987 [gretchishnikovae] | Transcaucasia | MDEV
+      Praewaagenoconcha SOKOLSKAYA, 1948 [oreliana] | eastern Europe | UDEV
+      Strophoproductus NALIVKIN, 1937 [hystriculus] | North America, Eurasia | UDEV
+  Family UNCERTAIN
+    Septiconcha TERMIER & OTHERS, 1974 [taeniosa] | Afghanistan | UPERM
+Superfamily LINOPRODUCTOIDEA Stehli, 1954
+  Family LINOPRODUCTIDAE Stehli, 1954
+    Subfamily LINOPRODUCTINAE Stehli, 1954
+      Linoproductus CHAO, 1927 [cora] | cosmopolitan | UCARB-UPERM
+        = Euproductus WHITEHOUSE, 1928 (obj.)
+        = Cora FREDERICKS, 1928 (obj.)
+        = Levisapicus TONG, 1990 (j.s.s.)
+      Balakhonia SARYTCHEVA, 1963 [ostrogensis] | Eurasia, ?northern Africa | LCARB
+      Bandoproductus JING & SUN, 1981 [hemiglobica] | Tibet | UCARB-LPERM
+      Coolkilella ARCHBOLD, 1993 [coolkilyaensis] | Western Australia | LPERM
+      Fluctuaria MUIR-WOOD & COOPER, 1960 [undatus] | Eurasia, ?North America | LCARB
+      Kasetia WATERHOUSE, 1981 [kaseti] | southern Thailand | LPERM
+      Marginovatia GORDON & HENRY, 1990 [minor] | USA, Arctic Canada | LCARB-UCARB
+      ?Mistproductus YANG, 1991 [eucallusus] | southern China | LPERM
+    Subfamily ANIDANTHINAE Waterhouse, 1968
+      Anidanthus HILL, 1950 [springsurensis] | Australia, northern and central Asia, central America | LPERM-UPERM
+        = Anidanthus WHITEHOUSE, 1928 (nom. nud.)
+        = ?Pseudomarginifera STEPANOV, 1934 (j.s.s.)
+      Akatchania KLETS, 1988 [plana] | central Siberia | LPERM
+      Fusiproductus WATERHOUSE, 1975 [fusiformis] | China, ?Urals, ?Siberia | UPERM
+      Kuvelousia WATERHOUSE, 1968 [sphiva] | Arctic Canada, USA, eastern Australia | UPERM
+        = Nothokuvelousia WATERHOUSE, 1986 (j.s.s.)
+      Megousia MUIR-WOOD & COOPER, 1960 [auriculata] | North America, eastern Australia, Tasmania | UPERM
+      Protanidanthus LIAO, 1979 [elegans] | China | LPERM
+      Zia SUTHERLAND & HARLOW, 1973 [novamexicana] | southern USA | UCARB-LPERM
+        = Semilunataproductus HAN, 1987 (j.s.s.)
+    Subfamily GRANDAURISPININAE Lazarev, 1986
+      Grandaurispina MUIR-WOOD & COOPER, 1960 [kingorum] | USA | UPERM
+      Cancrinella FREDERICKS, 1928 [cancrini] | cosmopolitan | UCARB-UPERM
+        = Platycancrinella WATERHOUSE, 1983 (j.s.s.)
+      Holotricharina COOPER & GRANT, 1975 [hirsuta] | USA | LPERM-UPERM
+      Lyonia ARCHBOLD, 1983 [lyoni] | Western Australia, ?Himalayas | LPERM
+      Paucispinauria WATERHOUSE, 1983 [concava] | southern New Zealand, Australia | LPERM-UPERM
+      Stepanoviella ZAVODOWSKY, 1960 [paracurvata] | northeastern Russia | UPERM
+      Terrakea BOOKER, 1930 [brachythaerus] | eastern Australia, New Zealand, Russian Arctic | LPERM-UPERM
+        = Saetosina WATERHOUSE, 1986 (j.s.s.)
+    Subfamily SIPHONOSIINAE Lazarev, 1986
+      Siphonosia COOPER & GRANT, 1975 [alleni] | USA | LPERM
+    Subfamily UNCERTAIN
+      Selloproductus TERMIER & OTHERS, 1974 [sellatus] | Afghanistan | UPERM
+  Family MONTICULIFERIDAE Muir-Wood & Cooper, 1960
+    Subfamily MONTICULIFERINAE Muir-Wood & Cooper, 1960
+      Monticulifera MUIR-WOOD & COOPER, 1960 [sinensis] | central China, ?Indonesia | LPERM-UPERM
+        = Sinoproductus CHAN & LI, 1962 (obj.)
+      Chilianshania YANG & TING, 1962 [chilianshanensis] | west central China | LPERM-UPERM
+        = Capillifera JIN & YE, 1979 (invalid)
+        = Pseudomonticulifera ZHAO & TAN, 1984 (j.s.s.)
+      ?Paramonticulifera TONG, 1978 [incosta] | China | UPERM
+        = Tongluella LIANG, 1990 (j.s.s.)
+      Zhenania DING, 1983 [zhenanensis] | China | LPERM-UPERM
+    Subfamily AURICULISPININAE Waterhouse, 1986
+      Auriculispina WATERHOUSE, 1975 [levis] | eastern Australia | LPERM
+      Asperlinus WATERHOUSE & PIYASIN, 1970 [asperulus] | western Pakistan, Thailand, Timor | LPERM-UPERM
+      Cancrinelloides USTRITSKY, 1963 [obrutschewi] | Arctic, Transbaikalia, Mongolia | LPERM
+      Chianella WATERHOUSE, 1975 [chianensis] | China | LPERM-UPERM
+        = Longyania ZHU, 1990 (j.s.s.)
+      Costatumulus WATERHOUSE, 1986 [tumidus] | Australia, central and ?eastern Himalayas | LPERM
+      Filiconcha DEAR, 1969 [hillae] | eastern Australia | LPERM
+      Globiella MUIR-WOOD & COOPER, 1960 [hemisphaerium] | Russia, Himalayan chain | UPERM
+      Linoprotonia FERGUSON, 1971 [hemisphaericus] | Eurasia, northern Africa | LCARB
+        = Connectoproductus DONAKOVA, 1974 (j.s.s.)
+      Liraria COOPER & GRANT, 1975 [lirata] | USA | LPERM
+      Magadania GANELIN, 1977 [bajkurica] | Taymyr, ?northeastern Mongolia | UPERM
+      Magniplicatina WATERHOUSE, 1983 [magniplica] | Australia, New Zealand, USA, Mongolia, Russian Arctic, ?China | LPERM-UPERM
+        = Helenaeproductus LAZAREV, 1991 (j.s.s.)
+      Ovatia MUIR-WOOD & COOPER, 1960 [elongata] | North America, Eurasia, northern Africa | LCARB-UCARB
+      Papiliolinus WATERHOUSE & GUPTA, 1977 [eishmakami] | northern India | LCARB
+      Pseudohaydenella LIANG, 1990 [huadongensis] | eastern China | UPERM
+        = Lamiproductus LIANG, 1990 (j.s.s.)
+      Spitzbergenia KOTLYAR, 1977 [loveni] | Spitzbergen, Novaya Zemlaya, Canada, Alaska, northern and northeastern European Russia | UPERM
+      Teleoproductus LI, 1986 [typicus] | China | LPERM-UPERM
+      Undaria MUIR-WOOD & COOPER, 1960 [manxensis] | western Europe | LCARB
+      Undellaria COOPER & GRANT, 1975 [magnifica] | USA | LPERM
+      ?Vitiliproductus CHING & LIAO, 1974 [groeberi] | China, western Europe, Asia, Australia | LCARB
+    Subfamily COMPRESSOPRODUCTINAE Jing & Hu, 1978
+      Compressoproductus SARYTCHEVA, 1960 [compressus] | Pakistan, northern Caucasus, Transcaucasus, southeastern Asia | UPERM
+        = Substriatifera KOTLYAR, 1964 (j.s.s.)
+      Fallaxoproductus LI, GU, & LI, 1982 [sutungensis] | Inner Mongolia | LPERM
+      Sarytchevinella WATERHOUSE, 1983 [djulfensis] | Armenia, Caucasus, southern China, northern Thailand | UPERM
+    Subfamily DEVONOPRODUCTINAE Muir-Wood & Cooper, 1960
+      Devonoproductus STAINBROOK, 1943 [walcotti] | North America, Europe, central Asia | UDEV
+        = Striatoproductus NALIVKIN, 1947 (j.s.s.)
+      Chonopectoides CRICKMAY, 1963 [catamorphus] | Canada | MDEV
+      Poloniproductus BIERNAT & LAZAREV, 1988 [varians] | eastern Europe | MDEV
+    Subfamily EOPRODUCTELLINAE Lazarev, 1987
+      Eoproductella RZHONSNITZKAYA, 1980 [menakovae] | middle Asia | LDEV
+      Plicoproductus LJASCHENKO, 1969 [mosolovica] | Russia | MDEV
+      Striatoproductella KRYLOVA, 1962 [tunguensis] | northern Eurasia | MDEV
+        = Hanaeproductus FICNER & HAVLICEK, 1978 (j.s.s.)
+    Subfamily GIGANTOPRODUCTINAE Muir-Wood & Cooper, 1960
+      Tribe GIGANTOPRODUCTINI Muir-Wood & Cooper, 1960
+        Gigantoproductus PRENTICE, 1950 [giganteus] | Eurasia, northern Africa | LCARB
+          = Gigantella SARYTCHEVA, 1928 (preocc.)
+        Beleutella LITVINOVICH, 1967 [rara] | Kazakhstan | LCARB
+        Datangia YANG, 1977 [luzhaiensis] | China, northern Africa | LCARB
+          = Moderatoproductus LITVINOVICH & VORONTSOVA, 1983 (j.s.s.)
+        Globosoproductus LITVINOVICH & VORONTSOVA, 1983 [magnifica] | Russia | LCARB
+        Kansuella CHAO, 1928 [kansuensis] | Eurasia | LCARB
+          = Parakansuella TAN, 1987 (j.s.s.)
+        Kueichowella YANG, 1978 [kueichowensis] | China | LCARB
+          = Guizhouella YANG, 1978 (obj.)
+        Serbarinia MOROZOV, 1985 [kalugensis] | Russia | LCARB
+        Titanaria MUIR-WOOD & COOPER, 1960 [costellata] | North America, North Africa | LCARB
+        Xinjiangiproductus YAO & FU, 1987 [yamansuensis] | China | LCARB
+      Tribe SEMIPLANINI Sarytcheva, 1960
+        Semiplanus SARYTCHEVA, 1952 [semiplanus] | Eurasia | LCARB
+        Latiproductus SARYTCHEVA & LEGRAND-BLAIN, 1977 [latissimus] | Eurasia, northern Africa | LCARB
+        Semiplanella SARYTCHEVA & LEGRAND-BLAIN, 1977 [carinthica] | western Europe, ?central Asia, ?northern Africa | LCARB
+        Talasoproductus LITVINOVICH & VORONTSOVA, 1983 [turlanensis] | Kazakhstan | LCARB
+    Subfamily STRIATIFERINAE Muir-Wood & Cooper, 1960
+      Tribe STRIATIFERINI Muir-Wood & Cooper, 1960
+        Striatifera CHAO, 1927 [striata] | Eurasia, northern Africa, North America | LCARB
+      Tribe PROBOSCIDELLINI Muir-Wood & Cooper, 1960
+        Proboscidella OEHLERT, 1887 [proboscidea] | Eurasia | LCARB
+    Subfamily SCHRENKIELLINAE Lazarev, 1986
+      Schrenkiella BARCHATOVA, 1973 [schrenki] | northern Russia, ?Australia | LPERM
+        = ?Achunoproductus USTRITSKY, 1971 (j.s.s.)
+        = Indigia BARCHATOVA, 1973 (j.s.s.)
+      Dictyoclostoidea JING & HU, 1978 [kiangsiensis] | eastcentral China | LPERM-UPERM
+        = ?Hypolinoproductus LIANG, 1982 (j.s.s.)
+      Permundaria NAKAMURA, KATO, & CHOI, 1970 [asiatica] | Japan, Cambodia, southern China, Kashmir, ?Iran | UPERM
+      Striatospica WATERHOUSE, 1975 [kayseri] | China | UPERM
+    Subfamily UNCERTAIN
+      Lercarella MASCLE & TERMIER, 1970 [sicana] | Sicily | LPERM
+      Zhejiangoproductus LIANG, 1990 [zhejiangensis] | China | UPERM
+Superfamily UNCERTAIN
+  Gosaukammerella SENOWBARI-DARYAN & FLUGEL, 1996 [eomesozoica] | alpine Mediterranean | ?UTRI
+
+
+Suborder STROPHALOSIIDINA Schuchert, 1913
+  Superfamily STROPHALOSIOIDEA Schuchert, 1913
+    Family STROPHALOSIIDAE Schuchert, 1913
+      Subfamily STROPHALOSIINAE Schuchert, 1913
+        Strophalosia W. KING, 1844 [gerardi] | Himalayas, Australia, ?Arctic Russia, China, Salt Range | LPERM-UPERM
+          = Leptaenalosia W. KING, 1850 (nom. nud.)
+        Coronalosia WATERHOUSE & GUPTA, 1978 [blijniensis] | India | ?LPERM
+        Craspedalosia MUIR-WOOD & COOPER, 1960 [lamellosa] | Europe | LPERM
+        Etherilosia ARCHBOLD, 1993 [etheridgei] | Western Australia | LPERM
+        Heteralosia KING, 1938 [slocomi] | North America, Europe | LCARB-UPERM
+        Leptalosia DUNBAR & CONDRA, 1932 [scintilla] | North America, ?Russia | LCARB-UCARB
+        Lialosia MUIR-WOOD & COOPER, 1960 [kimberleyensis] | Western Australia | LPERM
+        Licharewiella USTRITSKY, 1960 [costata] | Pakistan, China, Caucasus | LPERM-UPERM
+          = Magniderbyia TING, 1965 (j.s.s.)
+          = Costalosia WATERHOUSE & SHAH, 1966 (obj.)
+          = Truncatenia LIAO, 1982 (j.s.s.)
+        Liveringia ARCHBOLD, 1987 [magnifica] | Western Australia | UPERM
+        Megalosia WATERHOUSE, 1988 [chuluensis] | Nepal | UPERM
+        Sphenalosia MUIR-WOOD & COOPER, 1960 [smedleyi] | USA | UPERM
+        Subtaeniothaerus SOLOMINA, 1988 [lungersgauzeni] | northern Siberia | UPERM
+      Subfamily DASYALOSIINAE Brunton, 1966
+        Dasyalosia MUIR-WOOD & COOPER, 1960 [goldfussi] | western Europe | LCARB-UPERM
+        Acanthalosia WATERHOUSE, 1986 [domina] | eastern Australia | LPERM
+        Arcticalosia WATERHOUSE, 1986 [unispinosa] | Arctic Canada | LPERM-UPERM
+        ?Costalosiella WATERHOUSE, 1983 [argentea] | Iran | LPERM-UPERM
+        Crossalosia MUIR-WOOD & COOPER, 1960 [buchiana] | Europe | LCARB
+        Echinalosia WATERHOUSE, 1967 [maxwelli] | eastern Australia, southern New Zealand, Nepal, Pakistan | LPERM-UPERM
+        Hontorialosia MARTINEZ CHACON, 1979 [uniplicata] | southwestern Europe | UCARB
+        Marginalosia WATERHOUSE, 1978 [kalikotei] | northwestern Nepal, ?Russian Arctic, New Zealand | UPERM
+        Notolosia ARCHBOLD, 1986 [dickinsi] | Western Australia | UPERM
+        Orthothrix GEINITZ, 1847 [excavata] | Europe | LPERM-UPERM
+        Wyndhamia BOOKER, 1929 [dalwoodensis] | Australia, New Zealand, Siberia, Arctic Canada | LPERM-UPERM
+          = Branxtonia BOOKER, 1929 (j.s.s.)
+          = Pseudostrophalosia CLARKE, 1970 (j.s.s.)
+      Subfamily MINGENEWIINAE Archbold, 1980
+        Mingenewia ARCHBOLD, 1980 [anomala] | Western Australia | LPERM
+    Family CHONOPECTIDAE Muir-Wood & Cooper, 1960
+      Chonopectus HALL & CLARKE, 1892 [fischeri] | North America, western Europe | UDEV-LCARB
+      Dengalosia MANANKOV & PAVLOVA, 1981 [gobica] | northern Asia | LCARB
+      Parmephrix BRUNTON & MUNDY, 1994 [eileenarum] | western Europe | LCARB
+      Semenewia PAECKELMANN, 1930 [concentrica] | western Europe | LCARB
+        = Palmerhytis BRUNTON & MUNDY, 1986 (j.s.s., partim)
+    Family ARAKSALOSIIDAE Lazarev, 1989
+      Subfamily ARAKSALOSIINAE Lazarev, 1989
+        Araksalosia LAZAREV, 1989 [maxima] | Transcaucasia, Mongolia | UDEV
+        Acanthatia MUIR-WOOD & COOPER, 1960 [nupera] | North America, western Europe, ?northern Africa, ?Asia | UDEV-LCARB
+        Hamlingella REED, 1943 [goergesi] | Germany, England, ?Asia | UDEV
+        Kahlella LEGRAND-BLAIN, 1995 [meyendorffi] | Algeria | UDEV
+        Ruthiphiala CARTER, 1988 [bushbergensis] | central North America | LCARB
+        Whidbornella REED, 1943 [caperata] | western Europe, northern Africa, ?North America | UDEV-LCARB
+      Subfamily DONALOSIINAE Lazarev, 1989
+        Donalosia LAZAREV, 1989 [multispinosa] | eastern Europe, Transcaucasia | UDEV
+        ?Auchmerella STRUVE, 1964 [irmingina] | Germany | MDEV
+        Australosia MCKELLAR, 1970 [starensis] | Australia | UDEV
+        Devonalosia MUIR-WOOD & COOPER, 1960 [wrightorum] | North America | MDEV
+        Dichacaenia COOPER & DUTRO, 1982 [perplexa] | southern USA, northern Africa, ?France | MDEV
+        Dotswoodia MCKELLAR, 1970 [wyatti] | Australia, western Europe | UDEV
+        ?Enigmalosia CZARNIECKI, 1969 [sarytchevae] | Spitzbergen | ?UCARB
+        Eostrophalosia STAINBROOK, 1943 [rockfordensis] | North America, ?western Europe | UDEV
+        ?Irboskites BEKKER, 1924 [fixatus] | eastern Europe | UDEV
+        Morganella MCKELLAR, 1970 [maxwelli] | Australia | UDEV
+        Oligorhachis IMBRIE, 1959 [oligorhachis] | North America | MDEV
+        Ralia LAZAREV, 1987 [primigenia] | Mongolia | LDEV
+        Truncalosia IMBRIE, 1959 [gibbosa] | North America | MDEV
+      Subfamily QUADRATIINAE Lazarev, 1989
+        Quadratia MUIR-WOOD & COOPER, 1960 [hirsutiformis] | North America | LCARB-UCARB
+        Chonetipustula PAECKELMANN, 1931 [plicata] | Europe, ?Asia | LCARB
+        Cyphotalosia CARTER, 1967 [masonensis] | North America | LCARB
+        Plicaea AISENVERG, 1992 [insignita] | Ukraine | LCARB
+        Plicatiferina KALASHNIKOV, 1980 [pseudoplicatilis] | eastern Europe | UCARB
+      Subfamily RHYTIALOSIINAE Lazarev, 1989
+        Rhytialosia LAZAREV, 1989 [petini] | Europe | UDEV
+        Agramatia SOKOLSKAYA, 1948 [agramati] | Russia, ?North America | UDEV
+        Steinhagella GOLDRING, 1957 [membranacea] | Eurasia, northern Africa | UDEV
+        Veeversalosia LAZAREV, 1989 [numida] | Western Australia | UDEV
+  Superfamily AULOSTEGOIDEA Muir-Wood & Cooper, 1960
+    Family AULOSTEGIDAE Muir-Wood & Cooper, 1960
+      Subfamily AULOSTEGINAE Muir-Wood & Cooper, 1960
+        Aulosteges VON HELMERSEN, 1847 [wangenheimi] | northern Eurasia, ?Australia | UPERM
+        Lipanteris BRIGGS, 1986 [cracowensis] | eastern Australia | LPERM
+        Megasteges WATERHOUSE, 1975 [nepalensis] | Himalayas, ?eastern Australia | UPERM
+        Reedoconcha G. KOTLYAR, 1964 [permixta] | Oman, Afghanistan, Himalayas | LPERM
+        Taeniothaerus WHITEHOUSE, 1928 [subquadratus] | Australia, ?Asia | LPERM
+        Wyatkina FREDERICKS, 1931 [gigas] | Eurasia | UPERM
+      Subfamily AGELESIINAE Cooper & Grant, 1975
+        Agelesia COOPER & GRANT, 1969 [triagonalis] | USA | LPERM
+        ?Rhytibulbus LI LI, 1991 [zhenanensis] | China | LPERM
+        Stipulina MUIR-WOOD & COOPER, 1960 [deshayesianus] | western Europe | LCARB
+      Subfamily CHONOSTEGINAE Muir-Wood & Cooper, 1960
+        Chonosteges MUIR-WOOD & COOPER, 1960 [magnicostatus] | southern USA, Russia, ?Malaysia | LPERM
+        Chonostegoides SARYTCHEVA, 1965 [ogbinensis] | Transcaucasus | LPERM
+        Costisteges LIAO, 1982 [dongluoensis] | China | UPERM
+        Urushtenia LICHAREW, 1935 [pseudomedusa] | Russia, China | LPERM
+        Urushtenoidea JING & HU, 1978 [chaoi] | southern China | LPERM
+          = Uncisteges JING & HU, 1978 (j.s.s.)
+      Subfamily CTENALOSIINAE Muir-Wood & Cooper, 1960
+        Ctenalosia COOPER & STEHLI, 1955 [fixata] | USA | UPERM
+        Mongolosia MANANKOV & PAVLOVA, 1976 [morenkovi] | central Mongolia | LPERM-UPERM
+      Subfamily ECHINOSTEGINAE Muir-Wood & Cooper, 1960
+        Echinosteges MUIR-WOOD & COOPER, 1960 [tuberculatus] | USA | UPERM
+        Archaiosteges CARTER, 1991 [harperi] | USA | LCARB
+        Baissalosteges G. KOTLYAR, 1989 [gracilis] | Transcaucasus, ?China | UPERM
+        Edriosteges MUIR-WOOD & COOPER, 1960 [multispinosus] | USA, China, Tibet, Salt Range | LPERM
+          = Neoedriosteges LIANG, 1990 (j.s.s.)
+        Girlasia DE GREGORIO, 1930 [superelegans] | Sicily | PERM
+        Howseia LOGAN, 1963 [latirostrata] | England | UPERM
+        Limbella STEHLI, 1954 [wolfcampensis] | USA | UCARB-LPERM
+        Sphenosteges MUIR-WOOD & COOPER, 1960 [hispidus] | USA | UPERM
+        ?Spirisosium DE GREGORIO, 1930 [primarium] | Sicily | ?PERM
+        ?Strophalosiella LICHAREW, 1935 [coraeformis] | northern Europe, Russia | LPERM
+        Strophalosiina LICHAREW, 1935 [tibeticus] | Himalayas, Caucasus | LPERM-UPERM
+        Xenosteges MUIR-WOOD & COOPER, 1960 [adherens] | southern USA | LPERM-UPERM
+      Subfamily INSTITELLINAE Muir-Wood & Cooper, 1960
+        Institina MUIR-WOOD & COOPER, 1960 [marginalis] | Europe | LCARB
+        Costellarina COOPER & MUIR-WOOD, 1967 [costellata] | USA | LPERM
+        Craspedona COOPER & GRANT, 1975 [newelli] | USA | LPERM-UPERM
+        Glyptosteges COOPER & GRANT, 1975 [intricatus] | USA | LPERM
+        Institella COOPER, 1942 [leonardensis] | USA | LPERM-UPERM
+        Polymorpharia COOPER & GRANT, 1975 [polymorpha] | USA | LPERM-UPERM
+        Retroplexus BRUNTON & MUNDY, 1988 [parkhousensis] | British Isles, ?western Europe | LCARB
+        Rugicostella MUIR-WOOD & COOPER, 1960 [nystiana] | Europe, ?Far East | LCARB
+        Sinuatella MUIR-WOOD, 1928 [sinuata] | Eurasia | LCARB
+      Subfamily RHAMNARIINAE Muir-Wood & Cooper, 1960
+        Rhamnaria MUIR-WOOD & COOPER, 1960 [kingorum] | southern USA | UPERM
+        Cactosteges COOPER & GRANT, 1975 [anomalus] | USA | UPERM
+        Ramavectus STEHLI, 1954 [diabloensis] | southern USA | LPERM
+        Ramovsina SREMAC, 1986 [likana] | Croatia | UPERM
+        Spuriosia COOPER & GRANT, 1975 [circularis] | USA | LPERM
+      Subfamily GONDOLININAE Jin Yu-gan, Brunton, & Lazarev, 1998
+        Gondolina CHING & LIAO, 1966 [weiningensis] | China | LCARB
+    Family COOPERINIDAE Pajaud, 1968
+      Subfamily COOPERININAE Pajaud, 1968
+        Cooperina TERMIER, TERMIER, & PAJAUD, 1966 [inexpectata] | USA, Thailand | PERM
+        Ansehia TERMIER & TERMIER, 1970 [thecideiformis] | Cambodia | UPERM
+        Atelestegastus COOPER & GRANT, 1975 [marginatus] | USA | LPERM
+        Falafer GRANT, 1972 [epidelus] | Greece | UPERM
+      Subfamily EPICELIINAE Grant, 1972
+        Epicelia GRANT, 1972 [episcopiensis] | Greece | UPERM
+        Ceocypea GRANT, 1972 [dischides] | Thailand, Pakistan, Greece | UPERM
+    Family SCACCHINELLIDAE Licharew, 1928
+      Subfamily SCACCHINELLINAE Licharew, 1928
+        Scacchinella GEMMELLARO, 1891 [variabilis] | North America, southern Europe, Russia | PERM
+        Derbyella GRABAU, 1931 [bureri] | Mongolia | LPERM
+      Subfamily TSCHERNYSCHEWIINAE Muir-Wood & Cooper, 1960
+        Tschernyschewia STOYANOW, 1910 [typica] | southern Europe, China | UPERM
+        Megatschernyschewia SREMAC, 1986 [longiseptata] | Croatia | UPERM
+  Superfamily RICHTHOFENIOIDEA Waagen, 1885
+    Family RICHTHOFENIIDAE Waagen, 1885
+      Richthofenia KAYSER, 1881 [lawrenciana] | Sicily, Russia, China, Japan, Pakistan, Timor | LPERM-UPERM
+      Coscinarina MUIR-WOOD & COOPER, 1960 [communis] | Europe | PERM
+      Globosobucina WATERHOUSE & PIYASIN, 1970 [scopae] | Thailand | LPERM-UPERM
+      Seseloidia GRANT, 1993 [phelbodes] | Greece | LPERM
+      Striirichthofenia LU, 1982 [mianchuensis] | China | LPERM
+    Family HERCOSIIDAE Cooper & Grant, 1975
+      Hercosia COOPER & GRANT, 1969 [uddeni] | USA | LPERM
+      Hercosestria COOPER & GRANT, 1969 [cribrosa] | USA | LPERM
+      Neorichthofenia SHEN, HE, & ZHU, 1992 [mabutii] | China, Japan | UPERM
+      Sicularia GRANT, 1993 [sicula] | Sicily | LPERM-UPERM
+      Strophorichthofenia TERMIER & OTHERS, 1974 [afghana] | Afghanistan | UPERM
+    Family CYCLACANTHARIIDAE Cooper & Grant, 1975
+      Subfamily CYCLACANTHARIINAE Cooper & Grant, 1975
+        Cyclacantharia COOPER & GRANT, 1969 [kingorum] | USA | PERM
+        Collumatus COOPER & GRANT, 1969 [solitarius] | USA | LPERM
+        Sestropoma COOPER & GRANT, 1969 [cribriferum] | USA, Mexico | UPERM
+        Taphrosestria COOPER & GRANT, 1975 [peculiaris] | USA | LPERM
+      Subfamily TEGULIFERININAE Muir-Wood & Cooper, 1960
+        Teguliferina SCHUCHERT & LEVENE, 1929 [deformis] | Yugoslavia, Japan, China, Russia, Ferghana, USA | UCARB-UPERM
+        Acritosia COOPER & GRANT, 1969 [magna] | USA | LPERM
+        Ardmosteges SUTHERLAND, 1996 [orchamus] | USA | UCARB
+        Planispina STEHLI, 1954 [conida] | North America | UCARB-LPERM
+        Proteguliferina LICHAREW, 1960 [rossica] | Russia, ?North America | UCARB-LPERM
+      Subfamily ZALVERINAE Brunton, 1996
+        Zalvera BRUNTON, 1996 [sibaica] | Russia, ?northern Spain | UCARB
+    Family GEMMELLAROIIDAE Williams, 1953
+      Gemmellaroia COSSMANN, 1898 [marii] | Europe, Asia | LPERM-UPERM
+        = Megalorrhynchus DE GREGORIO, 1930 (preocc.)
+        = Gemmellaroiella MABUTI, 1937 (j.s.s.)
+      ?Cyndalia GRANT, 1993 [rudistiformis] | Greece | LPERM-UPERM
+      Tectarea GRANT, 1993 [hemiglobosa] | Greece | LPERM-UPERM
+
+
+Suborder LYTTONIIDINA Williams, Harper, & Grant, 2000
+  Superfamily LYTTONIOIDEA Waagen, 1883
+    Family LYTTONIIDAE Waagen, 1883
+      Subfamily LYTTONIINAE Waagen, 1883
+        Leptodus KAYSER, 1883 [richthofeni] | Eurasia, USA, Australia | UPERM
+          = Lyttonia WAAGEN, 1883 (j.s.s.)
+          = Gubleria TERMIER & TERMIER, 1960 (j.s.s.)
+          = Spinolyttonia SARYTCHEVA, 1964 (j.s.s.)
+          = Lyttonia (Digitia) DE GREGORIO, 1930 (j.s.s.)
+          = Lyttonia (Irma) DE GREGORIO, 1930 (j.s.s.)
+          = Lyttonia (Vincia) DE GREGORIO, 1930 (j.s.s.)
+          = ?Lyttonia (Prisca) DE GREGORIO, 1930 (j.s.s.)
+          = Juxoldhamina LIANG, 1990 (j.s.s.)
+          = Semigublerina LIANG, 1990 (j.s.s.)
+        Cardinocrania WAAGEN, 1885 [indica] | Pakistan, Timor | UPERM
+          = ?Pseudokeyserlingina FREDERICKS, 1916 (j.s.s.)
+        Collemataria COOPER & GRANT, 1974 [elongata] | USA, Venezuela, China | UPERM
+        Coscinophora COOPER & STEHLI, 1955 [nodosa] | USA | LPERM
+        Eolyttonia FREDERICKS, 1924 [mira] | Austria, Yugoslavia, China, Japan, Siberia, USA, Thailand, Timor | UCARB-LPERM
+          = Uralina SCHUCHERT & LEVENE, 1929 (j.s.s.)
+          = Paraleptodus LI & GU, 1980 (j.s.s.)
+        Keyserlingina CHERNYSCHEV, 1902 [schellwieni] | China, Austria, Thailand, Russia | ?LCARB-LPERM
+          = Parakeyserlingina FREDERICKS, 1916 (j.s.s.)
+          = Chaoella LIKHAREV, 1931 (j.s.s.)
+        Loxophragmus COOPER & GRANT, 1974 [ellipticus] | USA, China | LPERM
+          = Palaeoldhamina LIANG, 1982 (j.s.s.)
+        Matanoleptodus LIAO, 1983 [punctatus] | China | UPERM
+        Oldhamina WAAGEN, 1883 [decipiens] | Asia | UPERM
+          = Waagenopora FRECH, 1902 (obj.)
+          = Oldhamella NOETLING, 1905 (obj.)
+          = Oldhamia VON ZITTEL, 1910 (nom. null.)
+        Oldhaminella WANNER, 1935 [philocrina] | Timor | UPERM
+        Petasmaia COOPER & GRANT, 1969 [expansa] | USA | LPERM
+        Pirgulia COOPER & MUIR-WOOD, 1951 [pediculata] | Italy, USA | LPERM-UPERM
+      Subfamily POIKILOSAKINAE Williams, 1953
+        Poikilosakos WATSON, 1917 [petaloides] | cosmopolitan | UCARB-UPERM
+          = ?Prokeyserlingina FREDERICKS, 1916 (j.s.s.)
+        Adriana DE GREGORIO, 1930 [osiensis] | Sicily, USA, ?Thailand | UPERM
+          = Stita DE GREGORIO, 1930 (j.s.s.)
+        Choanodus COOPER & GRANT, 1974 [irregularis] | USA | LPERM
+        Pseudoleptodus STEHLI, 1956 [getawayensis] | USA, Thailand | LPERM-UPERM
+        Sceletonia COOPER & GRANT, 1974 [crassa] | USA, China | LPERM
+    Family RIGBYELLIDAE Williams, Harper, & Grant, 2000
+      Rigbyella STEHLI, 1956 [girtyi] | USA, Thailand | LPERM
+      Paralyttonia WANNER, 1935 [permica] | Austria, Japan, Thailand, Timor | LPERM
+  Superfamily PERMIANELLOIDEA He & Zhu, 1979
+    Family PERMIANELLIDAE He & Zhu, 1979
+      Permianella HE & ZHU, 1979 [typica] | China | UPERM
+      Dicystoconcha TERMIER & TERMIER, 1974 [lapparenti] | Afghanistan, China, Thailand | LPERM
+        = Dipunctella LIANG, 1982 (j.s.s.)
+        = Guangjiayanella YANG, 1984 (j.s.s.)
+        = Guangdongina MOU & LIU, 1989 (j.s.s.)
+        = Paritisteges LIANG, 1990 (j.s.s.)
+        = Fabulasteges LIANG, 1990 (j.s.s.)
+      Laterispina WANG & JIN, 1991 [liaoi] | China | UPERM
+      Tenerella LIANG, 1990 [usualisa] | China | UPERM
+        = Obliqunsteges LIANG, 1990 (j.s.s.)
+        = Sicyusella LIANG, 1990 (j.s.s.)
+  Family UNCERTAIN
+    Subfamily LOCZYELLINAE Licharew, 1937
+      Loczyella FRECH, 1901 [nankingensis] | China, Caucasus | UPERM
+      Caninella LIANG, 1990 [zhinanensis] | China | UPERM
+    Litocothia GRANT, 1976 [cateora] | Thailand | LPERM
+  Suborder UNCERTAIN
+    ?Chonopectella SARYTCHEVA, 1966 [permicus] | Transcaucasia | UPERM
+    Ploughsharella LIANG, 1982 [putaoshanensis] | China | UPERM
+    ?Punctoproductus LIANG, 1990 [eximus] | China | UPERM
+  NOMINA NUDA
+    Achunoproductus USTRITSKY, 1971 [nom. nud.] | Russia | UCARB-?LPERM
+    Chaoina CHING, 1974 [reticulatia] | China | LPERM
+    Choanoproductus TERMIER & TERMIER, 1970 [guberi] | Cambodia | UPERM
+    Parapulchratia CHAN, 1979 [pustulosus palliatus] | China | UPERM
+    Uraloproductus USTRITSKY, 1971 [stuckenbergensis] | Arctic Asia | LPERM
+Order ORTHOTETIDA Waagen, 1884
+  Suborder ORTHOTETIDINA Waagen, 1884
+    Superfamily ORTHOTETOIDEA Waagen, 1884
+      Family ORTHOTETIDAE Waagen, 1884
+        Orthotetes FISCHER DE WALDHEIM, 1829 [radiata] | Eurasia | LCARB-LPERM
+          = Pseudoorthotetes SOKOLSKAYA, 1963 (j.s.s.)
+          = Orthotetoides LAZAREV, 1984 (j.s.s.)
+        Apsocalymma MCINTOSH, 1974 [shiellsi] | Scotland | LCARB
+        Brochocarina BRUNTON, 1968 [wexfordensis] | Ireland, ?Australia | LCARB
+        Derbyoides DUNBAR & CONDRA, 1932 [nebrascensis] | North America | UCARB-LPERM
+        Liberella LIANG, 1990 [cassidula] | China | UPERM
+        Tapajotia DRESSER, 1954 [tapajotensis] | Brazil | UCARB-LPERM
+        Tethorotes MANANKOV, 1979 [grandis] | Kazakhstan | LCARB-LPERM
+        Werriea CAMPBELL, 1957 [australis] | Australia, North America | LCARB-LPERM
+          = Permorthotetes THOMAS, 1958 (j.s.s.)
+      Family PULSIIDAE Cooper & Grant, 1974
+        Pulsia IVANOV, 1925 [mosquensis] | Russia | LCARB-UCARB
+        Schellwienella THOMAS, 1910 [crenistria] | cosmopolitan | MDEV-LCARB
+          = Carlopsina REED, 1954 (j.s.s.)
+      Family ORTHOTETELLIDAE Cooper & Grant, 1974
+        Orthotetella KING, 1931 [wolfcampensis] | USA | LPERM
+        Hypopsia COOPER & GRANT, 1974 [versuta] | USA | LPERM
+      Family DERBYIIDAE Stehli, 1954
+        Derbyia WAAGEN, 1884 [regularis] | cosmopolitan | UCARB-UPERM
+          = Derbyaeconcha LICHAREW, 1934 (j.s.s.)
+          = Grabauellina LICHAREW, 1934 (j.s.s.)
+          = Magniderbyia TING, 1965 (j.s.s.)
+          = Pseudoderbyia LICHAREW, 1934 (j.s.s.)
+          = Plicatoderbya THOMAS, 1937 (j.s.s.)
+          = Wardakia TERMIER & OTHERS, 1974 (j.s.s.)
+          = Paraderbyia SUN, 1983 (j.s.s.)
+        Diplanus STEHLI, 1954 [lamellatus] | USA | LPERM
+        Dorsoscyphus ROBERTS, 1971 [spinulosus] | Western Australia | LCARB
+        Nothopindax COOPER & GRANT, 1974 [egregius] | USA | LPERM
+        Streptopomum HAVLICEK, 1967 [mjatschkowensis] | Russia | UCARB
+          = Miniplanus WATERHOUSE & PIYASIN, 1970 (j.s.s.)
+      Family MEEKELLIDAE Stehli, 1954
+        Subfamily MEEKELLINAE Stehli, 1954
+          Meekella WHITE & ST. JOHN, 1867 [striatocostata] | cosmopolitan | LCARB-UPERM
+            = Gegenella LI & GU, 1976 (j.s.s.)
+          Alatorthotetina HE & ZHU, 1985 [sichuanensis] | China | UPERM
+          Asiomeekella LIANG, 1990 [isoconvexa] | China | LCARB-UPERM
+          Geyerella SCHELLWIEN, 1900 [gemmellaroi] | cosmopolitan | UCARB-UPERM
+            = Turriculum DE GREGORIO, 1930 (j.s.s.)
+          Niviconia COOPER & GRANT, 1974 [globosa] | USA | LPERM
+          Orthothetina SCHELLWIEN, 1900 [persicus] | cosmopolitan | LCARB-UPERM
+            = Lopingia CHAN, 1979 (j.s.s.)
+          Paraorthotetina HE & ZHU, 1985 [provecta] | China | UPERM
+            = Parameekella HE & ZHU, 1985 (j.s.s.)
+          Perigeyerella WANG, 1955 [costellata] | China | UPERM
+          Sicelia GORTANI & MERLA, 1934 [acropedion] | Eurasia | UPERM
+            = Gemmellaria FABIANI & RUIZ, 1933 (preocc.)
+            = Parageyerella HE & ZHU, 1985 (j.s.s.)
+            = Hamletella HAYASAKA, 1953 (j.s.s.)
+        Subfamily OMBONIINAE Sokolskaya, 1960
+          Ombonia CANEVA, 1906 [canevai] | Eurasia, North America | LPERM-UPERM
+      Family SCHUCHERTELLIDAE Williams, 1953
+        Subfamily SCHUCHERTELLINAE Williams, 1953
+          Schuchertella GIRTY, 1904 [lens] | ?cosmopolitan | UDEV-UCARB
+          Goniarina COOPER & GRANT, 1969 [pyelodes] | USA | LPERM
+          Serratocrista BRUNTON, 1968 [fistulosa] | Ireland, Australia, ?North America | LCARB
+          Schuchertellopsis MAILLIEUX, 1939 [durbutensis] | western Europe, ?North America | MDEV-UDEV
+        Subfamily STREPTORHYNCHINAE Stehli, 1954
+          Streptorhynchus KING, 1850 [pelargonatus] | cosmopolitan | LCARB-UPERM
+            = Lespius DE GREGORIO, 1930 (j.s.s.)
+            = Mammosum DE GREGORIO, 1930 (j.s.s.)
+          Arctitreta WHITFIELD, 1908 [pearyi] | Arctic North America, Greenland, Spitzbergen, Arctic Russia | LPERM-UPERM
+            = Grumantia USTRITSKY, 1963 (j.s.s.)
+          Bothrostegium COOPER & GRANT, 1974 [derbyoideum] | USA | LPERM
+          Chelononia COOPER & GRANT, 1974 [neali] | USA | LPERM
+          Drahanorhynchus HAVLICEK, 1967 [drahanicus] | Czech Republic | LCARB
+          Kiangsiella GRABAU, 1927 [tingi] | Asia, Australia | UCARB-UPERM
+          Notostrophia WATERHOUSE, 1973 [homeri] | New Zealand | LPERM
+          Taimyropsis USTRITSKY, 1963 [monstrosus] | Russia | LPERM-UPERM
+          Tropidelasma COOPER & GRANT, 1969 [culmenatum] | USA, Thailand, ?Australia | LPERM
+            = Erismatina WATERHOUSE, 1983 (j.s.s.)
+    Superfamily CHILIDIOPSOIDEA Boucot, 1959
+      Family CHILIDIOPSIDAE Boucot, 1959
+        Subfamily GACELLINAE Williams & Brunton, 2000
+          Gacella WILLIAMS, 1962 [insolita] | Scotland, USA | UORD
+        Subfamily CHILIDIOPSINAE Boucot, 1959
+          Coolinia BANCROFT, 1949 [applanata] | cosmopolitan | LSIL-USIL
+            = Chilidiopsis BOUCOT, 1959 (j.s.s.)
+            = Krizistrophia HAVLICEK, 1992 (j.s.s.)
+          Fardenia LAMONT, 1935 [scotica] | Europe | UORD-LSIL
+            = Saughina BANCROFT, 1949 (j.s.s.)
+          Hipparionix VANUXEM, 1842 [proximus] | North America | LDEV
+            = Hipparionyx KING, 1846 (obj.)
+          Iridistrophia HAVLICEK, 1965 [umbella] | Europe, China, Argentina | UORD-LDEV
+            = Hinganella SU, 1980 (j.s.s.)
+            = Magicostrophia ZHU, 1985 (j.s.s.)
+          Morinorhynchus HAVLICEK, 1965 [dalmanelliformis] | Europe | USIL
+          Pseudostrophomena ROOMUSOKS, 1963 [reclinis] | Baltic region | UORD
+          Valdaria BASSETT & COCKS, 1974 [testudo] | Sweden | LSIL-USIL
+          Xystostrophia HAVLICEK, 1965 [umbraculum] | Europe | MDEV
+            = Apicilirella SU, 1976 (j.s.s.)
+      Family AREOSTROPHIIDAE Manankov, 1979
+        Subfamily AREOSTROPHIINAE Manankov, 1979
+          Areostrophia HAVLICEK, 1965 [distorta] | Czech Republic, Siberia | USIL-LDEV
+          Aesopomum HAVLICEK, 1965 [aesopeum] | Czech Republic, China | USIL-LDEV
+          Carinastrophia GRATSIANOVA, 1975 [elinovi] | Russia | LDEV-MDEV
+            = Xenizostrophia SU, 1976 (j.s.s.)
+        Subfamily ADECTORHYNCHINAE Henry & Gordon, 1985
+          Adectorhynchus HENRY & GORDON, 1985 [suspectum] | North America | LCARB
+          Drahanostrophia HAVLICEK, 1967 [ficneri] | Czech Republic | MDEV
+          Eoschuchertella GRATSIANOVA, 1974 [popovi] | Russia | LDEV-MDEV
+          Floweria COOPER & DUTRO, 1982 [prava] | North America | UDEV
+          Guistrophia WANG & RONG, 1986 [modesta] | China | LDEV
+          Orthopleura IMBRIE, 1959 [rhipis] | North America | MDEV
+          Terazkia HAVLICEK, 1990 [expandens] | Czech Republic | USIL
+  Suborder TRIPLESIIDINA Moore, 1952
+    Superfamily TRIPLESIOIDEA Schuchert, 1913
+      Family TRIPLESIIDAE Schuchert, 1913
+        Triplesia HALL, 1859 [extans] | North America, Eurasia, Morocco | LORD-LSIL
+          = Triplecia HALL & CLARKE, 1892 (obj.)
+          = Dicraniscus MEEK, 1872 (j.s.s.)
+        Amphiplecia WRIGHT & JAANUSSON, 1993 [tardicostata] | Sweden, Norway, Siberia | UORD
+        Bicuspina HAVLICEK, 1950 [cava] | Europe, Morocco, Kazakhstan, China, Argentina | MORD-UORD
+        Brachymimulus COCKERELL, 1929 [perversus] | Bohemia | USIL
+        Caeroplecia WILLIAMS, 1974 [plicata] | England, Wales, Northern Ireland, USA | UORD
+        Cliftonia FOERSTE, 1909 [striata] | Morocco, France, North America, Eurasia, Argentina | UORD-LSIL
+        Craigella REED, 1935 [grayiae] | Scotland, Mongolia, China | UORD
+          = Epacroplecia WILLIAMS, 1962 (obj.)
+          = Nucleorhynchia LIANG, 1983 (j.s.s.)
+        Grammoplecia WRIGHT & JAANUSSON, 1993 [triplesioides] | Sweden, Urals, Siberia, Kazakhstan, China, ?Scotland, ?USA | MORD-UORD
+        Ogmoplecia WRIGHT & JAANUSSON, 1993 [plicata] | Baltic, British Isles, Belgium, Quebec, Siberia | UORD
+        Onychoplecia COOPER, 1956 [brevirostris] | North America, ?England, ?China | LORD-UORD
+        Onychotreta ULRICH & COOPER, 1936 [mesleri] | USA, Bohemia | USIL
+          = Eilotreta AMSDEN, 1968 (j.s.s.)
+          = Lissotreta AMSDEN, 1968 (j.s.s.)
+        Oxoplecia WILSON, 1913 [calhouni] | North America, Eurasia | LORD-UORD
+          = California BASSLER, 1915 (obj.)
+        Paraonychoplecia PERCIVAL, 1991 [inversa] | Australia, Quebec, British Isles, USA | UORD-USIL
+        Placocliftonia HAVLICEK, 1990 [colibri] | Bohemia, USA, Arctic Canada | USIL
+        Placotriplesia AMSDEN, 1968 [praecipta] | USA, Bohemia, England, Estonia | USIL
+        Plectotreta ULRICH & COOPER, 1936 [lindstroemi] | northwestern Europe | LSIL-USIL
+        Streptis DAVIDSON, 1881 [grayii] | Europe, Kazakhstan, North America, Greenland | UORD-USIL
+
+# coverage: tail of Triplesioidea, Order Billingsellida, Order Protorthida, Superfamily Skenidioidea, start of Order Orthida
+
+# --- continuation from Triplesioidea (previous chunk) ---
+Placotriplesia AMSDEN, 1968 [praecipta] | USA, Bohemia, England, Estonia | USIL
+Plectotreta ULRICH & COOPER, 1936 [lindstroemi] | Gotland, England | USIL
+Streptis DAVIDSON, 1881 [grayii] | Europe, Kazakhstan, North America, Greenland | UORD-USIL
+
+Order BILLINGSELLIDA Schuchert, 1893
+  Suborder BILLINGSELLIDINA Schuchert, 1893
+    Superfamily BILLINGSELLOIDEA Schuchert, 1893
+      Family BILLINGSELLIDAE Schuchert, 1893
+        Billingsella HALL & CLARKE, 1892 [pepina] | cosmopolitan | MCAM-LORD
+        Cymbithyris COOPER, 1952 [hami] | USA | LORD
+        Eosotrematorthis WANG, 1955 [sinensis] | China | LORD
+        Kozhuchinella SEVERINGA, 1967 [mariinica] | Siberia | LORD
+        Saccogonum HAVLICEK, 1971 [saccatum] | Morocco | UCAM
+        Xenorthis ULRICH & COOPER, 1936 [stosei] | USA | UCAM-LORD
+  Suborder CLITAMBONITIDINA Opik, 1934
+    Superfamily CLITAMBONITOIDEA Winchell & Schuchert, 1893
+      Family CLITAMBONITIDAE Winchell & Schuchert, 1893
+        Clitambonites PANDER, 1830 [adscendens] | Estonia, Russia, Norway, Sweden, China | LORD-UORD
+          = Klitambonites PANDER, 1830 (nom. neg.)
+          = Pronites PANDER, 1830 (obj.)
+          = Prionites FISCHER DE WALDHEIM, 1834 (invalid intentional spelling)
+          = Orthisina D'ORBIGNY, 1847 (obj.)
+        Apomatella SCHUCHERT & COOPER, 1931 [ingrica] | Norway, Estonia, Russia | LORD
+        Atelelasma COOPER, 1956 [perfectum] | USA, Wales, Siberia, Mongolia | MORD-UORD
+        Clinambon SCHUCHERT & COOPER, 1932 [anomala] | Estonia, Russia | UORD
+        Fistulogonites NEUMAN, 1971 [novaterrensis] | Newfoundland, China | MORD
+        Hemipronites PANDER, 1830 [tumida] | Estonia, Russia, Norway | LORD-MORD
+          = Ladogiella OPIK, 1934 (j.s.s.)
+        Ilmarinia OPIK, 1934 [sinuata] | Estonia, Russia | UORD
+        Iru OPIK, 1934 [concava] | Estonia, Russia | LORD-MORD
+        Lacunarites OPIK, 1934 [ilmatar] | Estonia, Russia | MORD
+        Neumania HARPER, 1981 [atlanticus] | Newfoundland, Wales, Norway, Estonia, Russia | LORD-MORD
+        Pahlenella SCHUCHERT & COOPER, 1931 [trigonula] | Russia, Estonia | MORD
+        Vellamo OPIK, 1930 [verneuili] | Eurasia, North America, North Africa, Tasmania | MORD-UORD
+      Family GONAMBONITIDAE Schuchert & Cooper, 1931
+        Gonambonites PANDER, 1830 [latus] | Estonia, Russia, China | LORD-MORD
+          = Progonambonites OPIK, 1934 (j.s.s.)
+        Anchigonites OPIK, 1939 [conulus] | Norway, Estonia, Russia, China | LORD
+        Antigonambonites OPIK, 1934 [planus] | Norway, Estonia, Russia, Poland, Newfoundland, China | LORD
+        Atelelasmoidea ZENG, 1987 [typica] | China | LORD
+        Estlandia SCHUCHERT & COOPER, 1931 [marginata] | Estonia, Russia | MORD-UORD
+        Jaanussonites NEUMAN, 1976 [hornei] | Newfoundland, Maine | LORD
+        Kullervo OPIK, 1932 [panderi] | Eurasia, North America | MORD-UORD
+        Oslogonites OPIK, 1939 [costellatus] | Norway, Estonia, England | LORD-MORD
+        Raunites OPIK, 1939 [janischewskyi] | Estonia, Russia | LORD-MORD
+    Superfamily POLYTOECHIOIDEA Opik, 1934
+      Family POLYTOECHIIDAE Opik, 1934
+        Polytoechia HALL & CLARKE, 1892 [apicalis] | USA, Greenland, China | LORD
+          = Deltatreta ULRICH, 1926 (j.s.s.)
+          = Deltorthis ULRICH, 1927 (nom. nov. pro Waagenia HALL, 1889)
+        Acanthotoechia WILLIAMS & CURRY, 1985 [hibernica] | Ireland | LORD
+        Admixtella ROZMAN, 1978 [orientalis] | Asia | UORD
+        Asymphylotoechia ROSS, 1970 [nolani] | USA | MORD
+        Eremotoechia COOPER, 1956 [cloudi] | USA, Scotland, Kazakhstan, Argentina, China | MORD
+        Martellia WIRTH, 1936 [giraldii] | China, Argentina | LORD-MORD
+        Peritritoechia XU, RONG, & LIU, 1974 [imbricatia] | China | MORD-UORD
+        Platytoechia NEUMAN, 1964 [boucoti] | USA | LORD
+        Pomatotrema ULRICH & COOPER, 1932 [muralis] | USA, Canada, Greenland, Ireland, China, Korea | LORD
+        Protambonites HAVLICEK, 1972 [kolihai] | Bohemia, Spain, China, Urals | LORD
+        Tritoechia ULRICH & COOPER, 1936 [typica] | widespread | LORD
+
+Order PROTORTHIDA Schuchert & Cooper, 1931
+  Superfamily PROTORTHOIDEA Schuchert & Cooper, 1931
+    Family PROTORTHIDAE Schuchert & Cooper, 1931
+      Protorthis HALL & CLARKE, 1892 [billingsi] | North America | MCAM
+      Glyptoria COOPER, 1976 [glypta] | Dead Sea region | LCAM
+      Israelaria COOPER, 1976 [parnesi] | Dead Sea region, Morocco | LCAM
+      Jamesella WALCOTT, 1905 [perpasta] | Bohemia, Spain | MCAM
+      Psiloria COOPER, 1976 [pauperata] | Dead Sea region | LCAM
+    Family ARCTOHEDRIDAE Williams & Harper, 2000
+      Arctohedra COOPER, 1936 [minima] | Alaska, Australia, central Asia | MCAM
+      Loperia WALCOTT, 1905 [dougaldensis] | Canada | MCAM
+    Family LEIORIIDAE Cooper, 1976
+      Leioria COOPER, 1976 [bentori] | Israel, Jordan | LCAM
+  Superfamily SKENIDIOIDEA Kozlowski, 1929
+    Family SKENIDIIDAE Kozlowski, 1929
+      Skenidium HALL, 1860 [insignis] | cosmopolitan | LDEV-UDEV
+      Crossiskenidium WILLIAMS & CURRY, 1985 [spinosum] | Ireland | LORD
+      Protoskenidioides WILLIAMS, 1974 [revelata] | Great Britain, China, Ireland | LORD
+      Replicoskenidioides POTTER, 1990 [rodneygreggi] | North America | UORD
+      Skenidioides SCHUCHERT & COOPER, 1931 [billingsi] | cosmopolitan | LORD-LDEV
+      Tropidothyris COOPER, 1956 [pentagona] | USA | UORD
+
+Order ORTHIDA Schuchert & Cooper, 1932
+# note: Order Orthida begins on p.714 but no genera are described in this chunk (descriptive text only)
+
+# coverage: Suborder ORTHIDINA, Superfamily ORTHOIDEA and PLECTORTHOIDEA (multiple families)
+
+Order ORTHIDA Schuchert & Cooper, 1932
+  Suborder ORTHIDINA Schuchert & Cooper, 1932
+    Superfamily ORTHOIDEA Woodward, 1852
+      Family ORTHIDAE Woodward, 1852
+        Orthis DALMAN, 1828 [callactis] | Baltoscandia | LORD-MORD
+        Diochthofera POTTER, 1990 [conspicua] | USA | UORD
+        Orthambonites PANDER, 1830 [calligramma] | Baltoscandia, Russia | LORD-MORD
+        Orthokopis BAARLI, 1995 [idunnae] | Norway | LSIL
+        Orthostrophella AMSDEN, 1968 [dartae] | North America, Bohemia, Great Britain | USIL-LDEV
+        Orthostrophia HALL, 1883 [strophomenoides] | North America, Bohemia, Australia, Argentina, China | USIL-LDEV
+        Paralenorthis HAVLICEK & BRANISA, 1980 [immitatrix] | cosmopolitan | LORD-MORD
+        Sinorthis WANG, 1955 [typica] | China, France | LORD
+          = Yichangorthis ZENG, 1987 (j.s.s.)
+        Sivorthis JAANUSSON & BASSETT, 1993 [filistera] | North America, Europe | MORD-UORD
+        Sulcatorthis ZENG, 1987 [sulcata] | China | LORD
+        Sulevorthis JAANUSSON & BASSETT, 1993 [lyckholmiensis] | North America, Europe | MORD-UORD
+        Taphrorthis COOPER, 1956 [emarginata] | North America, Scotland, Ireland, Estonia, China | UORD
+        Trondorthis NEUMAN, 1974 [bifurcatus] | North America, Baltoscandia, France, central Asia | LORD-MORD
+          = Ocorthis MELOU, 1982 (j.s.s.)
+      Family ANOMALORTHIDAE Ulrich & Cooper, 1936
+        Anomalorthis ULRICH & COOPER, 1936 [utahensis] | USA | LORD-MORD
+        Alimbella ANDREEVA, 1960 [armata] | Russia | LORD
+        Astraborthis WILLIAMS, 1974 [uniplicata] | Great Britain | LORD
+        Medessia ANDREEVA, 1960 [uralica] | Russia | LORD
+        Mogoktella ANDREEVA, 1968 [islendica] | Siberia | UCAM
+      Family BOHEMIELLIDAE Havlicek, 1977
+        Bohemiella SCHUCHERT & COOPER, 1931 [romingeri] | Bohemia, New Zealand | MCAM
+          = Shiragia KOBAYASHI, 1935 (j.s.s.)
+        Chilidorthis HAVLICEK & JOSOPAIT, 1972 [tecta] | Spain | MCAM
+        Cymbricia ROBERTS & JELL, 1990 [spinicostata] | Australia | MCAM
+        Diraphora BELL, 1941 [bellicostata] | North America, Iran, Siberia, Australia | MCAM
+        Murrinyinella KRUSE, 1990 [garradin] | Australia | MCAM
+        Oligomys SCHUCHERT & COOPER, 1931 [exporrecta] | Europe | MCAM
+        Wimanella WALCOTT, 1908 [simplex] | North America, Australia, Siberia, China | LCAM-MCAM
+      Family GLYPTORTHIDAE Schuchert & Cooper, 1931
+        Glyptorthis FOERSTE, 1914 [insculpta] | Northern Hemisphere | MORD-USIL
+        Cinerorthis HAVLICEK, 1974 [cineraria] | Bohemia | USIL
+        Eridorthis FOERSTE, 1909 [nicklesi] | North America, Europe, Siberia, central Asia, North Africa, Australia, China | UORD-USIL
+        Lepidorthis WANG, 1955 [typicalis] | China | LORD
+        Lomatorthis WILLIAMS & CURRY, 1985 [mimula] | Ireland | LORD
+        Schalidomorthis BASSETT, 1981 [stubblefieldi] | England | MORD
+        Spinorthis WRIGHT, 1964 [geniculata] | Ireland, Belgium, Wales | UORD
+      Family HESPERONOMIIDAE Ulrich & Cooper, 1936
+        Hesperonomia ULRICH & COOPER, 1936 [planidorsalis] | North America, Siberia, Great Britain, Argentina, France, central Asia, China | LORD
+        Hesperonomiella ULRICH & COOPER, 1936 [porcias] | North America, Wales, Ireland, Bohemia, Afghanistan, central Asia, Australia, China, Russia | MCAM-LORD
+          = Engenella ANDREEVA, 1987 (j.s.s.)
+        Monorthis BATES, 1968 [typis] | Wales, Argentina | LORD-MORD
+        Murjukiana SEVERGINA, 1967 [ilovata] | Siberia | MORD
+        Protohesperonomia WILLIAMS & CURRY, 1985 [resupinata] | Ireland, Bohemia | LORD
+        Treioria NEUMAN & BATES, 1978 [chaulioda] | Wales, Ireland | LORD-MORD
+      Family HESPERORTHIDAE Schuchert & Cooper, 1931
+        Hesperorthis SCHUCHERT & COOPER, 1931 [tricenaria] | cosmopolitan | MORD-USIL
+        Barbarorthis OPIK, 1934 [foraminifera] | Baltoscandia | UORD
+        Boreadorthis OPIK, 1934 [crassa] | Baltoscandia, central Asia, Siberia, Ukraine, Belgium | UORD
+        Dolerorthis SCHUCHERT & COOPER, 1931 [interplicata] | cosmopolitan | LORD-LDEV
+          = Altaeorthis SEVERGINA, 1967 (j.s.s.)
+          = Munhella NEUMAN, 1971 (j.s.s.)
+        Flabellitesia ZHANG, 1989 [kessei] | North America, Europe | USIL
+        Lordorthis ROSS, 1959 [variabilis] | North America | UORD
+        Paradolerorthis ZENG, 1987 [calla] | China | MORD
+        Ptychopleurella SCHUCHERT & COOPER, 1931 [bouchardi] | cosmopolitan | MORD-LDEV
+        Schizonema FOERSTE, 1909 [fissistriata] | cosmopolitan | LSIL-USIL
+          = Schizoramma FOERSTE, 1912 (obj.)
+      Family LYCOPHORIIDAE Schuchert & Cooper, 1931
+        Lycophoria LAHUSEN, 1886 [nucella] | Baltoscandia, Poland | LORD-MORD
+      Family NANORTHIDAE Havlicek, 1977
+        Nanorthis ULRICH & COOPER, 1936 [hamburgensis] | cosmopolitan | LORD
+          = Evenkinorthis YADRENKINA, 1977 (j.s.s.)
+        Archaeorthis SCHUCHERT & COOPER, 1931 [electra] | North America, Europe, South America, Asia | LORD
+        Cyrtonotella SCHUCHERT & COOPER, 1931 [semicircularis] | Northern Hemisphere | MORD-UORD
+        Diplonorthis MITCHELL, 1977 [portlocki] | Ireland, Wales | UORD
+        Nicoloidea ZENG, 1987 [mina] | China | LORD
+        Nothorthis ULRICH & COOPER, 1938 [delicatula] | North America | LORD
+        Pleurorthis COOPER, 1956 [fascicostellata] | North America, Siberia, Argentina | LORD
+          = Ambardella ANDREEVA, 1987 (j.s.s.)
+        Riograndella KOBAYASHI, 1937 [subcircus] | Bolivia | LORD
+        Shoshonorthis JAANUSSON & BASSETT, 1993 [michaelis] | North America, China, North Africa | LORD-MORD
+        Xinanorthis XU, RONG, & LIU, 1974 [striata] | China | LORD
+      Family ORTHIDIELLIDAE Ulrich & Cooper, 1936
+        Orthidiella ULRICH & COOPER, 1936 [longwelli] | North America, Estonia, Siberia, Argentina | LORD-MORD
+        Eostrophomena WALCOTT, 1905 [elegantula] | Sweden, eastern Baltic | LORD
+        Orthidium HALL & CLARKE, 1892 [gemmicula] | North America, Ireland, Scotland, China, Argentina | LORD-MORD
+        Trematorthis ULRICH & COOPER, 1938 [masoni] | North America, Argentina | LORD-MORD
+        Tuvinia ANDREEVA, 1982 [radiata] | central Asia | UORD
+      Family PLAESIOMYIDAE Schuchert, 1913
+        Subfamily PLAESIOMYINAE Schuchert, 1913
+          Plaesiomys HALL & CLARKE, 1892 [subquadrata] | Northern Hemisphere | UORD
+          Austinella FOERSTE, 1909 [kankakensis] | North America, Europe, Siberia, Kazakhstan, China | UORD
+          Campylorthis ULRICH & COOPER, 1942 [deflecta] | USA, Scotland, Ireland | UORD
+          Chaulistomella COOPER, 1956 [inequistriata] | North America, Scotland, Siberia, Kirghizia | UORD
+          Dinorthis HALL & CLARKE, 1892 [pectinella] | Northern Hemisphere | UORD
+            = Diorthis KOBAYASHI, 1937 (nom. nud.)
+          Multicostella SCHUCHERT & COOPER, 1931 [saffordi] | Northern Hemisphere | UORD
+          Pionorthis SCHUCHERT & COOPER, 1931 [sola] | North America, China | UORD
+          Retrorsirostra SCHUCHERT & COOPER, 1931 [carleyi] | Northern Hemisphere | UORD
+          Valcourea RAYMOND, 1911 [strophomenoides] | North America, Scotland, Norway, China, central Asia, Argentina | MORD-UORD
+        Subfamily EVENKININAE Williams, 1965
+          Evenkina ANDREEVA, 1961 [anarbensis] | Siberia | UORD
+        Subfamily METORTHINAE Williams, 1965
+          Metorthis WANG, 1955 [alata] | China | LORD
+      Family PORAMBORTHIDAE Havlicek, 1950
+        Poramborthis HAVLICEK, 1949 [klouceki] | Bohemia, Bavaria, Spain | LORD
+      Family PRODUCTORTHIDAE Schuchert & Cooper, 1931
+        Subfamily PRODUCTORTHINAE Schuchert & Cooper, 1931
+          Productorthis KOZLOWSKI, 1927 [obtusus] | cosmopolitan | LORD-UORD
+          Ferrax HAVLICEK, 1975 [oolitica] | Bohemia | LORD
+          Nicolella REED, 1917 [actoniae] | Europe, North America, North Africa, Asia | UORD
+          Panderina SCHUCHERT & COOPER, 1931 [abscissus] | Baltic Region, China | LORD
+          Saucrorthis XU, RONG, & LIU, 1974 [minor] | China | MORD
+          Styxorthis MERGL, 1991 [tuffogena] | Bohemia | LORD
+        Subfamily GLOSSORTHINAE Williams & Harper, 2000
+          Glossorthis OPIK, 1930 [tacens] | Europe, North Africa | LORD-UORD
+          Krattorthis JAANUSSON & BASSETT, 1993 [verneuili] | Baltic Region | MORD
+          Nicolorthis HAVLICEK, 1981 [instanta] | France | UORD
+          Prantlina HAVLICEK, 1949 [desiderata] | Bohemia, Estonia, France | LORD-MORD
+      Family WHITTARDIIDAE Williams, 1974
+        Whittardia WILLIAMS, 1974 [paradoxica] | Great Britain | UORD
+        Marginorthis LIU, ZHU, & XUE, 1985 [crassocostata] | China | MORD
+    Superfamily PLECTORTHOIDEA Schuchert & LeVene, 1929
+      Family PLECTORTHIDAE Schuchert & LeVene, 1929
+        Plectorthis HALL & CLARKE, 1892 [plicatella] | cosmopolitan | UORD
+        Apollonorthis MITCHELL, 1974 [bussacensis] | Portugal, France | MORD
+        Atlantida HAVLICEK, 1971 [atlantis] | North Africa | MORD
+        Corineorthis STUBBLEFIELD, 1939 [decipiens] | Great Britain, France, China | MORD-UORD
+        Desmorthis ULRICH & COOPER, 1936 [nevadensis] | North America, England, Bolivia, China | MORD
+        Doleroides COOPER, 1930 [gibbosa] | North America, Scotland, Ireland, Kazakhstan, Australia, China | UORD
+        Hebertella HALL & CLARKE, 1892 [sinuata] | North America, Ireland, Kazakhstan, Estonia, Australia | UORD
+        Irhirea HAVLICEK, 1971 [gigantea] | North Africa | UORD
+        Mimella COOPER, 1930 [globosa] | Northern Hemisphere | UORD
+          = Sonculina MISIUS, 1986 (j.s.s.)
+        Oligorthis ULRICH & COOPER, 1936 [arbucklensis] | North America, China, Scotland | LORD
+        Paterorthis HAVLICEK, 1971 [paterina] | North Africa | MORD
+        Pseudomimella XU & LIU, 1984 [formosa] | China | LORD
+        Schizophorella REED, 1917 [fallax] | Great Britain, Ireland, Kazakhstan, China, Spain, central Asia, Norway | UORD
+        Severginella ROZMAN, 1981 [altaica] | central Asia | UORD
+      Family CREMNORTHIDAE Williams, 1963
+        Cremnorthis WILLIAMS, 1963 [parva] | Wales, Estonia, Ireland | MORD-UORD
+        Brandysia HAVLICEK, 1975 [benigna] | Bohemia, China | MORD
+        Septorthis HINTS, 1973 [engurensis] | Latvia, Sweden | UORD
+      Family CYCLOCOELIIDAE Schuchert & Cooper, 1931
+        Cyclocoelia FOERSTE, 1909 [sordida] | USA, central Asia, Canada, China | UORD
+          = Encuclodema FOERSTE, 1912 (obj.)
+        Rhynchorthis BATES, 1968 [rotundus] | Wales, Ireland | LORD-MORD
+      Family EOORTHIDAE Walcott, 1908
+        Eoorthis WALCOTT, 1908 [remnicha] | cosmopolitan | UCAM-LORD
+        Apheoorthina HAVLICEK, 1949 [ferrigena] | Bohemia, Baltic | LORD
+        Apheoorthis ULRICH & COOPER, 1936 [lineocosta] | North America, Kazakhstan, Siberia, Colombia, Sweden, Baltic, Ireland, China, Australia, Afghanistan | UCAM-LORD
+        Austrohedra ROBERTS & JELL, 1990 [mimica] | Australia | MCAM
+        Brahimorthis HAVLICEK, 1971 [antiqua] | Europe, North Africa | MCAM
+        Glaphyrorthis ROBERTS & JELL, 1990 [fastigiata] | Australia | MCAM
+        Jivinella HAVLICEK, 1949 [incola] | Bohemia, Spain, China, Germany | LORD
+          = Jevinellina LIU, 1983 (j.s.s.)
+        Ocnerorthis BELL, 1941 [cooperi] | North America, Bohemia, Novaya Zemlya | UCAM-LORD
+        Otusia WALCOTT, 1905 [sandbergi] | North America, Argentina | UCAM
+        Pompeckium HAVLICEK, 1970 [kuthani] | Bohemia, USA | MCAM
+        Robertorthis HAVLICEK, 1977 [holoubkovensis] | Bohemia | LORD
+      Family EUORTHISINIDAE Havlicek, 1977
+        Euorthisina HAVLICEK, 1950 [moesta] | Europe, North Africa, Bolivia, China | LORD-MORD
+        Notorthisina HAVLICEK & BRANISA, 1980 [notoconcha] | Bolivia | LORD
+      Family FINKELNBURGIIDAE Schuchert & Cooper, 1931
+        Finkelnburgia WALCOTT, 1905 [finkelnburgi] | Northern Hemisphere | UCAM-LORD
+          = Marcharella ANDREEVA, 1968 (j.s.s.)
+        Diparelasma ULRICH & COOPER, 1936 [typicum] | North America, Great Britain, China | LORD
+        Fasciculina COOPER, 1952 [desmopleura] | North America, Scotland | LORD
+        Notoscaphidia WILLIAMS & CURRY, 1985 [revelata] | Ireland | LORD
+        Orusia WALCOTT, 1905 [lenticularis] | North America, Baltoscandia, Wales, Argentina, China | MCAM-LORD
+      Family GIRALDIELLIDAE Williams & Harper, 2000
+        Giraldiella BANCROFT, 1949 [protensa] | Wales, Sweden, central Asia | UORD-LSIL
+        Comatopoma HAVLICEK, 1950 [barrandei] | Bohemia, North Africa | UORD
+        Famatinorthis LEVY & NULLO, 1973 [turneri] | Argentina, China, North America | LORD
+        Gelidorthina HAVLICEK, 1974 [sanctoivanensis] | Bohemia | LSIL-USIL
+        Gelidorthis HAVLICEK, 1968 [partita] | Europe, North Africa | UORD
+        Giraldibella HAVLICEK, 1977 [bella] | Europe, Kazakhstan, Siberia, China, central Asia | UORD-USIL
+        Phaceloorthis PERCIVAL, 1991 [decoris] | Australia | UORD
+          = Boonderella PERCIVAL, 1991 (j.s.s.)
+        Proteorthis HAVLICEK, 1974 [tardissima] | Bohemia | USIL
+        Scaphorthis COOPER, 1956 [virginiensis] | North America, Scotland, Ireland, Australia, central Asia, Kazakhstan | UORD
+        Tazzarinia HAVLICEK, 1971 [drotae] | North Africa, England, Bohemia | UORD
+      Family PHRAGMORTHIDAE Williams, 1965
+        Phragmorthis COOPER, 1956 [buttsi] | North America, Scotland, Kazakhstan, Ireland, Argentina, China | UORD
+      Family PLATYSTROPHIIDAE Schuchert & LeVene, 1929
+        Platystrophia KING, 1850 [biforata] | cosmopolitan | LORD-USIL
+        Acanthorthis NEUMAN, 1976 [terreneuvensis] | Canada | LORD
+        Ffynnonia NEUMAN & BATES, 1978 [costatus] | Wales, Ireland | LORD-MORD
+        Mcewanella FOERSTE, 1920 [lineolata] | USA, Great Britain, Ireland, Norway, central Asia, Spain, France, China | MORD-UORD
+        Salacorthis WILLIAMS, 1974 [costellata] | England, Wales | UORD
+      Family RANORTHIDAE Havlicek, 1949
+        Ranorthis OPIK, 1939 [norvegica] | Europe, North Africa | LORD
+        Eodalmanella HAVLICEK, 1950 [socialis] | Bohemia, North America, Kazakhstan, central Asia | MORD
+        Nothorthis ULRICH & COOPER, 1938 [delicatula] | North America, Baltic, Siberia, Scotland, Bohemia, China, central Asia | LORD-MORD
+          = Altorthis ANDREEVA, 1960 (j.s.s.)
+      Family RHACTORTHIDAE Williams, 1963
+        Rhactorthis WILLIAMS, 1963 [crassa] | Great Britain, Ireland, Estonia, Norway, Bohemia | UORD
+        Aberia MELOU, 1990 [havliceki] | France | UORD
+        Eripnifera POTTER, 1990 [praecipitis] | USA | UORD
+      Family TASMANORTHIDAE Laurie, 1991
+        Tasmanorthis LAURIE, 1991 [costata] | Australia | UORD
+      Family WANGYUIIDAE Zhang, 1989
+        Wangyuia ZHANG, 1989 [thorsteinssoni] | Arctic Canada | USIL
+        Bowanorthis PERCIVAL, 1991 [fragilis] | Australia | UORD
+        Sigmelasma POTTER, 1990 [pantherae] | USA | UORD
+        Toxorthis TEMPLE, 1968 [proteus] | Great Britain, China | UORD
+
+# coverage: Suborder Dalmanellidina (Superfamilies Dalmanelloidea, Enteletoidea), Suborder Uncertain
+
+Suborder DALMANELLIDINA Moore, 1952
+  Superfamily DALMANELLOIDEA Schuchert, 1913
+    Family DALMANELLIDAE Schuchert, 1913
+      Subfamily DALMANELLINAE Schuchert, 1913
+        Dalmanella HALL & CLARKE, 1892 [testudinaria] | cosmopolitan | LORD-LSIL
+          = Wattsella BANCROFT, 1928 (j.s.s.)
+        Bancroftina SINCLAIR, 1946 [typa] | Britain, Ireland | UORD
+        Cryptothyris BANCROFT, 1945 [paracyclica] | Britain | UORD
+        Eremotrema COOPER, 1956 [biconvexum] | eastern North America, Scotland | UORD
+        Howellites BANCROFT, 1945 [striata] | Europe, Morocco | UORD
+          = Mesodalmanella HAVLICEK, 1950 (j.s.s.)
+        Mirorthis ZENG, 1983 [mira] | Europe, Morocco, China | UORD
+        Onniella BANCROFT, 1928 [broeggeri] | cosmopolitan | MORD-LSIL
+          = Soudleyella BANCROFT, 1945 (j.s.s.)
+          = Bagnorthis LEVY & NULLO, 1974 (j.s.s.)
+        Onnizetina HAVLICEK, 1974 [mellita] | Bohemia | UORD
+        Paucicrura COOPER, 1956 [rogata] | Britain, North America | UORD
+          = Cristiferina COOPER, 1956 (j.s.s.)
+          = Sigopallus LIU & LIU, 1985 (j.s.s.)
+        Ravozetina HAVLICEK, 1974 [honorata] | Europe | UORD-USIL
+        Trucizetina HAVLICEK, 1974 [subrotundata] | Bohemia | UORD
+        Wysogorskiella HINTS, 1975 [litviensis] | eastern Baltic | UORD
+      Subfamily CORTEZORTHINAE Johnson & Talent, 1967
+        Cortezorthis JOHNSON & TALENT, 1967 [maclareni] | North America, Europe | LDEV-MDEV
+        Cariniferella SCHUCHERT & COOPER, 1931 [carinata] | cosmopolitan | UDEV
+        Reeftonia ALLAN, 1947 [marwicki] | Australia, New Zealand | MDEV
+      Subfamily ISORTHINAE Schuchert & Cooper, 1931
+        Isorthis KOZLOWSKI, 1929 [szajnochai] | cosmopolitan | LSIL-MDEV
+        Costisorthis HAVLICEK, 1974 [occlusa] | Europe | LDEV-MDEV
+        Levenea SCHUCHERT & COOPER, 1931 [subcarinata] | cosmopolitan | LSIL-MDEV
+        Peleicostella HAVLICEK, 1971 [peleus] | Bohemia | LDEV-MDEV
+        Protocortezorthis JOHNSON & TALENT, 1967 [fornicatimcurvata] | cosmopolitan | USIL-LDEV
+        Tyersella PHILIP, 1962 [typica] | cosmopolitan | USIL-MDEV
+      Subfamily PROKOPIINAE Wright, 1965
+        Prokopia HAVLICEK, 1953 [bouskai] | Bohemia, Germany, Morocco, USA | LDEV-MDEV
+        Eosophragmophora WANG, 1974 [sinensis] | southern China, Australia | LDEV
+        Miniprokopia HAVLICEK, 1971 [miniconcha] | Bohemia | LDEV-MDEV
+        Phragmophora COOPER, 1955 [schnuri] | Europe | MDEV
+        Protophragmapora ALEKSEEVA, 1967 [chotchalensis] | northeastern Russia, Australia | LDEV
+      Subfamily RESSERELLINAE Walmsley & Boucot, 1971
+        Resserella BANCROFT, 1928 [canalis] | cosmopolitan | LSIL-LDEV
+          = Parmorthis SCHUCHERT & COOPER, 1931 (j.s.s.)
+        Dedzetina HAVLICEK, 1950 [macrostomoides] | cosmopolitan | UORD
+        Fascicostella SCHUCHERT & COOPER, 1931 [gervilii] | Europe, Algeria | LDEV-MDEV
+        Fascizetina HAVLICEK, 1975 [konieprusensis] | Europe, northern Africa | LDEV
+        Karlicium HAVLICEK, 1974 [karlicum] | Bohemia | UORD
+        Molongella SAVAGE, 1974 [talenti] | Bohemia, Australia | USIL-LDEV
+          = Bouskia HAVLICEK, 1975 (j.s.s.)
+        Parmorthina HAVLICEK, 1975 [pragensis] | Europe, North America | USIL-LDEV
+        Visbyella WALMSLEY, 1968 [visbyensis] | widespread | LSIL-USIL
+        Zlichopyramis HAVLICEK, 1975 [tibicen] | Bohemia | LDEV
+      Subfamily TEMPLEELLINAE Harper, 2000
+        Templeella ROZMAN & RONG, 1993 [gobiensis] | Britain, Mongolia | UORD-LSIL
+    Family ANGUSTICARDINIIDAE Schuchert & Cooper, 1931
+      Angusticardinia SCHUCHERT & COOPER, 1931 [recta] | Russia | LORD
+      Apatorthis OPIK, 1933 [punctata] | eastern Baltic | MORD-UORD
+    Family DICOELOSIIDAE Cloud, 1948
+      Dicoelosia KING, 1850 [biloba] | cosmopolitan | UORD-LDEV
+        = Dicaelosia KING, 1850 (nom. neg.)
+        = Bilobites QUENSTEDT, 1869 (obj.)
+      Epitomyonia WRIGHT, 1968 [glypha] | Baltic, Bohemia, Britain, Italy, North America, Spain, Scandinavia, central Asia | UORD-USIL
+      Teichertina VEEVERS, 1959 [fitzroyensis] | Bohemia, Moravia, USA, Western Australia, China | MDEV-UDEV
+    Family HARKNESSELLIDAE Bancroft, 1928
+      Harknessella REED, 1917 [vespertilio] | Europe | UORD
+      Horderleyella BANCROFT, 1928 [plicata] | Europe, China, Morocco, Sweden, eastern Baltic | MORD-UORD
+      Kampella BAARLI, 1988 [guttula] | Norway | LSIL
+      Reuschella BANCROFT, 1928 [semiglobata] | Europe, eastern Baltic, Argentina, eastern USA, central Asia | UORD
+      Smeathenella BANCROFT, 1928 [harnagensis] | Welsh Borderlands | UORD
+      Wulongella ZHU, 1985 [convexiplanus] | northeastern China | UORD
+    Family HETERORTHIDAE Schuchert & Cooper, 1931
+      Heterorthis HALL & CLARKE, 1892 [clytie] | Europe, North America | UORD
+      Arenorthis HAVLICEK, 1970 [arenaria] | Morocco | UORD
+      Cacemia MITCHELL, 1974 [ribeiroi] | Portugal, France | MORD
+      Cilinella HAVLICEK, 1970 [svobodai] | Bohemia | UORD
+      Heterorthella HARPER, BOUCOT, & WALMSLEY, 1969 [maehli] | Canada, Bolivia, Brazil | LSIL-USIL
+      Heterorthina BANCROFT, 1928 [praeculta] | Europe | LSIL-USIL
+      Incorthis HAVLICEK & BRANISA, 1980 [boliviana] | Bolivia | LORD
+      Marionites COOPER & MUIR-WOOD, 1951 [typa] | Britain, Bohemia | UORD
+      Svobodaina HAVLICEK, 1950 [ellipsoides] | Europe | UORD
+        = Svobodiana ALICHOVA, 1960 (nom. neg.)
+        = Planoharknessella HAVLICEK, 1950 (j.s.s.)
+      Tafilaltia HAVLICEK, 1970 [occidentalis] | Bohemia, France, Morocco | MORD-UORD
+      Tarfaya HAVLICEK, 1971 [marocana] | Morocco | LORD
+      Tissintia HAVLICEK, 1970 [convergens] | Morocco, Bolivia, Wales | MORD-UORD
+    Family HYPSOMYONIIDAE Wright, 1965
+      Hypsomyonia COOPER, 1955 [stainbrooki] | North America, Europe, Western Australia | MDEV-UDEV
+    Family KAYSERELLIDAE Wright, 1965
+      Kayserella HALL & CLARKE, 1892 [lepida] | Germany, Moravia, USA | MDEV
+    Family MYSTROPHORIDAE Schuchert & Cooper, 1931
+      Mystrophora KAYSER, 1871 [areola] | Germany, Burma | MDEV
+      Biernatium HAVLICEK, 1975 [fallax] | Europe, Burma, Western Australia | LDEV-UDEV
+      Planicardinia SAVAGE, 1968 [carroli] | southeastern Australia | LDEV
+    Family PAURORTHIDAE Opik, 1933
+      Paurorthis SCHUCHERT & COOPER, 1931 [parva] | cosmopolitan | LORD-UORD
+        = Paurorthina RUBEL, 1961 (j.s.s.)
+      Cyclomyonia COOPER, 1956 [peculiaris] | eastern USA | UORD
+      Nereidella WANG, 1955 [typa] | southern China, Bohemia | LORD-MORD
+    Family PLATYORTHIDAE Harper, Boucot, & Walmsley, 1969
+      Platyorthis SCHUCHERT & COOPER, 1931 [planoconvexa] | cosmopolitan | USIL-MDEV
+      Crozonorthis MELOU, 1976 [musculosa] | France, Iberia | MORD
+      Diceromyonia WANG, 1949 [tersa] | North America | UORD
+      Elsaella ALICHOVA, 1960 [bekkeri] | eastern Baltic, Russia | UORD
+      Eorhipidomella HINTS, 1971 [ovalis] | Russia | UORD
+      Marklandella HARPER, BOUCOT, & WALMSLEY, 1969 [giraldi] | Canada, Wales | USIL
+    Family PORTRANELLIDAE Harper, 2000
+      Portranella WRIGHT, 1964 [angulocostellata] | Ireland, Wales, Belgium, Spain | UORD
+    Family PROSCHIZOPHORIIDAE Boucot, Gauri, & Johnson, 1966
+      Proschizophoria MAILLIEUX, 1912 [personata] | Europe, Altai Mountains, Canada, Kazakhstan, Morocco, New Zealand, China, Turkey | LDEV
+      Baturria CARLS, 1974 [edgelliana] | Bohemia, Britain, Mexico, Morocco, Spain, Venezuela | USIL-LDEV
+      Cordatomyonia BOUCOT, GAURI, & JOHNSON, 1966 [shupei] | USA | LDEV
+      Elegesta VLADIMIRSKAYA, 1985 [nikiforovae] | Tuva | USIL
+      Fulcriphoria CARLS, 1974 [navarrae] | Belgium, France, Spain | LDEV
+      Idiorthis MCLEARN, 1924 [matura] | Canada | USIL
+    Family RHIPIDOMELLIDAE Schuchert, 1913
+      Subfamily RHIPIDOMELLINAE Schuchert, 1913
+        Rhipidomella OEHLERT, 1890 [michelini] | cosmopolitan | MDEV-UPERM
+        Ambonorthella BASSETT, 1972 [hancocki] | Britain | USIL
+        Aulacella SCHUCHERT & COOPER, 1931 [eifelensis] | Europe | MDEV-MISS
+        Clavodalejina HAVLICEK, 1977 [clavigera] | Bohemia | LDEV
+        Dalejina HAVLICEK, 1953 [hanusi] | cosmopolitan | USIL-LDEV
+          = Rhipidomelloides BOUCOT & AMSDEN, 1958 (j.s.s.)
+        Discomyorthis JOHNSON, 1970 [musculosa] | western USA | LDEV
+        Mendacella COOPER, 1930 [uberis] | cosmopolitan | UORD-USIL
+        Peridalejina HAVLICEK, 1973 [periens] | Bohemia | MDEV
+        Pseudodicoelosia BOUCOT & AMSDEN, 1958 [oklahomensis] | USA | USIL
+        Pseudomendacella ZHANG, 1989 [boucoti] | Canadian Arctic, USA, Venezuela | USIL
+        Stainbrookia COOPER & DUTRO, 1982 [infera] | USA | UDEV
+        Strixella BOUCOT & AMSDEN, 1958 [acutisulcata] | eastern and central USA | USIL
+        Thiemella WILLIAMS, 1908 [villenovia] | eastern USA, Germany | UDEV-MISS
+      Subfamily PERDITOCARDINIINAE Harper, 2000
+        Perditocardinia SCHUCHERT & COOPER, 1931 [dubia] | cosmopolitan | MISS-LPERM
+        Loganella BOUCOT & AMSDEN, 1958 [lehuquetiana] | eastern Canada | LDEV
+    Family TYRONELLIDAE Mitchell, 1977
+      Tyronella MITCHELL, 1977 [killeyensis] | Northern Ireland, eastern Canada | UORD
+      Didymoparcium LENZ, 1977 [costata] | Arctic Canada | LDEV
+  Superfamily ENTELETOIDEA Waagen, 1884
+    Family ENTELETIDAE Waagen, 1884
+      Enteletes FISCHER DE WALDHEIM, 1825 [glabra] | widespread | MISS-UPERM
+        = Anteletes D'ORBIGNY, 1847 (nom. neg.)
+        = Syntrilasma MEEK & WORTHEN, 1866 (j.s.s.)
+        = Syntrielasma MEEK & WORTHEN, 1866 (nom. neg.)
+      Enteletella LICHAREV, 1926 [nikschitchi] | Russia | LPERM
+      Enteletina SCHUCHERT & COOPER, 1931 [latesinuatus] | central Asia | UPERM
+      Mapingtichia LI, 1986 [longliensis] | China | LPERM
+      Parenteletes KING, 1931 [cooperi] | Europe, central Asia, North America | MISS-UPERM
+      Peltichia JIN & LIAO, 1981 [zigzag] | southern China, Tibet | UPERM
+    Family DRABOVIIDAE Havlicek, 1950
+      Subfamily DRABOVIINAE Havlicek, 1950
+        Drabovia HAVLICEK, 1950 [redux] | Europe, northern Africa | UORD
+          = Crassiorina HAVLICEK, 1950 (j.s.s.)
+        Boticium HAVLICEK & MERGL, 1982 [boticense] | Bohemia | UORD
+        Dalmanellopsis KHALFIN, 1948 [septiger] | Altai Mountains | LDEV
+        Destombesium HAVLICEK, 1971 [pectiniferum] | northern Africa | UORD
+        Diorthelasma COOPER, 1956 [parvum] | USA, Scotland | UORD
+        Drabovinella HAVLICEK, 1950 [draboviensis] | Bohemia, northern Africa | UORD
+        Eodiorthelasma XU & LIU, 1984 [striata] | southwestern China | LORD
+        Fascifera ULRICH & COOPER, 1942 [subcarinata] | North America | UORD-LSIL
+        Hirnantia LAMONT, 1935 [sagittifera] | cosmopolitan | UORD-LSIL
+          = Villicundella LEVY & NULLO, 1974 (j.s.s.)
+        Kinnella BERGSTROM, 1968 [kielanae] | cosmopolitan | UORD-LSIL
+        Megasalopina BOUCOT, GAURI, & JOHNSON, 1966 [elevata] | USA | LDEV
+        Nocturnellia HAVLICEK, 1950 [nocturna] | Bohemia | LORD
+        Oanduporella HINTS, 1975 [reticulata] | eastern Baltic, Ireland | UORD
+        Orthiella LJASCHENKO, 1985 [devoniana] | Siberia | UDEV
+        Pionodema FOERSTE, 1912 [subaequata] | North America, Europe | UORD
+        Protomendacella HAVLICEK, 1970 [eos] | Morocco | UORD
+        Salopina BOUCOT, 1960 [lunata] | cosmopolitan | UORD-MDEV
+          = Salopinella YANG & RONG, 1982 (j.s.s.)
+        Sphenophragmus IMBRIE, 1959 [nanus] | North America | MDEV
+        Talentella JOHNSON, 1990 [submurifer] | USA, Arctic and northwestern Canada, eastern Australia, Podolia | USIL-LDEV
+      Subfamily MONELASMINIINAE Harper, 2000
+        Monelasmina COOPER, 1955 [deshayesi] | Canada, Europe | UDEV
+        Muriferella JOHNSON & TALENT, 1967 [masurskyi] | USA, Australia, Bohemia | LDEV
+        Vallomyonia JOHNSON, 1966 [devonicum] | USA | MDEV
+    Family CHRUSTENOPORIDAE Havlicek & Mergl, 1982
+      Chrustenopora HAVLICEK, 1968 [imbricata] | Bohemia, southern Norway | UORD-LSIL
+      Dysprosorthis RONG, 1984 [sinensis] | England, Ireland, Morocco, China | UORD
+      Jezercia HAVLICEK & MERGL, 1982 [ostiaria] | Bohemia, southern Norway, Podolia, Sardinia, Spain, Ukraine | UORD-LSIL
+      Wangyuella ZHAN & RONG, 1995 [ventribiconvexa] | eastern China | UORD
+    Family LINOPORELLIDAE Schuchert & Cooper, 1931
+      Linoporella SCHUCHERT & COOPER, 1931 [punctata] | Europe, eastern North America | LSIL-USIL
+      Cycladigera HAVLICEK, 1971 [palliata] | Europe | LDEV
+      Elasmothyris COOPER, 1956 [concinnula] | eastern USA | UORD
+      Laticrura COOPER, 1956 [pionodema] | eastern North America, Scotland, Ireland | UORD
+      Leptoskelidion AMSDEN, 1974 [septulosum] | eastern North America, Scandinavia, Russia | UORD
+      Orthotropia HALL & CLARKE, 1894 [dolomitica] | USA | USIL
+      Salopia WILLIAMS, 1955 [salteri] | Britain | MORD-UORD
+    Family SAUKRODICTYIDAE Wright, 1964
+      Saukrodictya WRIGHT, 1964 [hibernica] | Britain, Ireland, Belgium, Baltic states, Bohemia, Sardinia, Spain, Siberia | UORD-LSIL
+      Hulterstadia WRIGHT, 1993 [cor] | Sweden | UORD
+    Family SCHIZOPHORIIDAE Schuchert & LeVene, 1929
+      Schizophoria KING, 1850 [resupinatus] | cosmopolitan | LDEV-MISS
+      Acosarina COOPER & GRANT, 1969 [dorsisulcata] | USA, China, Thailand, Venezuela | PENN-UPERM
+      Aulacophoria SCHUCHERT & COOPER, 1931 [keyserlingia] | Europe, Urals | MISS-PENN
+      Enteletoides STUCKENBERG, 1905 [rossicus] | Russia, central Asia, China | MISS-PENN
+      Eoschizophoria RONG & YANG, 1980 [hesta] | China, Canada, central Asia, Podolia, USA | USIL-LDEV
+      Neoschizophoria YANAGIDA, 1983 [otai] | southwestern Japan | MISS-PENN
+      Orthotichia HALL & CLARKE, 1892 [morganiana] | widespread | PENN-UPERM
+      Palaeoschizophoria FU, 1982 [latisepta] | northwestern China, western USA | USIL
+      Sunacosarina LIANG, 1990 [campana] | China | LPERM
+
+Suborder UNCERTAIN
+  Apatoskenidioides LIU, ZHU, & XUE, 1985 [rara] | northeastern China | MORD
+  Bajanorthis ANDREEVA, 1968 [tukolandica] | Siberia | UCAM
+  Humaella ZHU, 1982 [huangbanjiensis] | China | LORD
+  Lebediorthis SEVERGINA, 1984 [rarus] | Gorno Altai | LORD
+  Malinella ANDREEVA, 1982 [tavelensis] | Siberia | UORD
+  Nugnecella LEVY & NULLO, 1975 [rafaelensis] | Argentina | UORD
+  Ottadalenites HARPER, 1981 [incertus] | Norway | LORD-MORD
+  Turarella ANDREEVA, 1987 [alleri] | Siberia | UCAM
+  Zhejiangorthis LIANG, 1983 [zhejiangensis] | China | UORD

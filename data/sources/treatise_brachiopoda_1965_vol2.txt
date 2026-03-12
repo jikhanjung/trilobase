@@ -1,0 +1,366 @@
+---
+reference: Williams, A., et al., 1965. Treatise on Invertebrate Paleontology, Part H, Brachiopoda. Vol. 2. The Geological Society of America, Inc. and The University of Kansas Press.
+scope:
+  - taxon: Brachiopoda
+    coverage: comprehensive (Order Pentamerida, Rhynchonellida, Spiriferida, Terebratulida, Thecideidina)
+notes: |
+  Systematic Descriptions extracted from Part H (1965), Volume 2.
+  Internal page numbering (H523-H864) used.
+---
+
+Order PENTAMERIDA Schuchert & Cooper, 1931
+  Suborder SYNTROPHIIDINA Ulrich & Cooper, 1936
+    Superfamily PORAMBONITACEA Davidson, 1853
+      Family EOSTROPHIIDAE Ulrich & Cooper, 1936
+        Cambrotrophia ULRICH & COOPER, 1937 [Syntrophia cambria WALCOTT, 1908] | USA (Utah) | MCAM
+          = Eostrophia ULRICH & COOPER, 1936 (preocc.)
+      Family HUENELLIDAE Schuchert & Cooper, 1931
+        Subfamily HUENELLINAE Schuchert & Cooper, 1931
+          Huenella WALCOTT, 1908 [Syntrophia texana WALCOTT, 1905] | USA (Wyo.) | UCAM
+          Huenellina SCHUCHERT & COOPER, 1931 [Huenella triplicata WALCOTT, 1924] | USA (Mo.) | UCAM
+          Palaeostrophia ULRICH & COOPER, 1936 [Syntrophia orthia WALCOTT, 1905] | China | UCAM-LORD
+          Plectotrophia ULRICH & COOPER, 1936 [P. bridgei] | Wilberns F., USA (Tex.) | UCAM
+        Subfamily MESONOMIINAE Ulrich & Cooper, 1936
+          Mesonomia ULRICH & COOPER, 1936 [Eoorthis iophon WALCOTT, 1924] | Mons F., Canada | UCAM-LORD
+          Glyptotrophia ULRICH & COOPER, 1936 [G. imbricata] | Mons F., Canada | LORD
+      Family TETRALOBULIDAE Ulrich & Cooper, 1936
+        Tetralobula ULRICH & COOPER, 1936 [T. delicatula] | Chepultepec F., USA (Va.) | LORD
+        Doloresella SANDO, 1957 [D. concentrica] | Maryland, USA | LORD
+        Imbricatia COOPER, 1952 [I. lamellata] | Cool Creek F., USA (Okla.) | LORD
+        Punctolira ULRICH & COOPER, 1936 [P. punctolira] | Missouri, USA | LORD
+      Family ALIMBELLIDAE Andreeva, 1960
+        Alimbella ANDREEVA, 1960 [A. armata] | Urals, USSR | LORD
+        Medesia ANDREEVA, 1960 [M. uralica] | Urals, USSR | LORD
+      Family CLARKELLIDAE Schuchert & Cooper, 1931
+        Clarkella WALCOTT, 1908 [Polytoechia? montanensis WALCOTT, 1905] | Montana, USA | LORD
+        Calliglypha CLOUD, 1948 [C. miseri] | USA | LORD
+        Diaphelasma ULRICH & COOPER, 1936 [D. pennsylvanicum] | Longview F., USA (Pa.) | LORD
+        Stichotrophia COOPER, 1948 [S. lamellata] | Longview Ls., USA (Va.) | LORD
+        Syntrophina ULRICH, 1928 [Syntrophia campbelli WALCOTT, 1912] | Chepultepec F., USA (Tenn.) | LORD
+        Syntrophinella ULRICH & COOPER, 1934 [S. typica] | Longview F., USA (Va.) | LORD
+        Thaumotrophia WANG, 1955 [T. sinensis] | China | LORD
+        Yangtzeella KOLAROVA, 1925 [Triplecia poloi MARTELLI, 1901] | China | MORD-UORD
+      Family SYNTROPHOPSIDAE Ulrich & Cooper, 1936
+        Syntrophopsis ULRICH & COOPER, 1936 [S. magna] | Black Rock F., USA (Ark.) | LORD
+        Hesperotrophia ULRICH & COOPER, 1936 [H. obscura] | Sarbach F., Canada | LORD
+        Rhysostrophia ULRICH & COOPER, 1936 [R. nevadensis] | U. Pogonip F., USA (Nev.) | LORD
+      Family LYCOPHORIIDAE Schuchert & Cooper, 1931
+        Lycophoria LAHUSEN, 1886 [Atrypa nucella DALMAN, 1828] | Popovka, USSR | LORD-MORD
+      Family PORAMBONITIDAE Davidson, 1853
+        Porambonites PANDER, 1830 [P. intermedia] | NW USSR | LORD-LSIL
+          P. (Porambonites) | NW USSR | LORD
+          P. (Equirostra) COOPER & MUIR-WOOD, 1951 [Terebratulites aequirostris VON SCHLOTHEIM, 1820] | Europe | UORD
+            = Isorhynchus KING, 1850 (preocc.)
+          P. (Noetlingia) HALL & CLARKE, 1894 [Spirifer tscheffkini DE VERNEUIL, 1845] | USSR | LSIL
+      Family SYNTROPHIIDAE Schuchert, 1896
+        Subfamily SYNTROPHIINAE Schuchert, 1896
+          Syntrophia HALL & CLARKE, 1893 [Triplecia lateralis WHITFIELD, 1886] | Cassin F., USA (Vt.) | LORD
+        Subfamily XENELASMATINAE Ulrich & Cooper, 1936
+          Xenelasma ULRICH & COOPER, 1936 [X. syntrophioides] | Longview F., USA (Va.) | LORD
+      Family BREVICAMERIDAE Cooper, 1956
+        Brevicamera COOPER, 1956 [B. camerata] | Pratt Ferry F., USA (Ala.) | MORD
+      Family CAMERELLIDAE Hall & Clarke, 1894
+        Subfamily CAMERELLINAE Hall & Clarke, 1894
+          Camerella BILLINGS, 1859 [C. volborthi] | Rockland F., Canada | MORD-LSIL
+            = Rhynchocamara SCHUCHERT & COOPER, 1931
+          Idiostrophia ULRICH & COOPER, 1936 [I. perfecta] | Mystic Congl., Canada | MORD
+          Liricamera COOPER, 1956 [L. nevadensis] | Pogonip F., USA (Nev.) | LORD
+          Neostrophia ULRICH & COOPER, 1936 [N. subcostata] | Mystic Congl., Canada | MORD
+          Perimecocoelia COOPER, 1956 [P. semicostata] | Pratt Ferry F., USA (Ala.) | MORD
+          Plectocamara COOPER, 1956 [P. costata] | Ward Cove F., USA (Tenn.) | MORD
+        Subfamily STENOCAMARINAE Cooper, 1956
+          Stenocamara COOPER, 1956 [S. perplexa] | Ellett F., USA (Va.-Tenn.) | LORD
+      Family PARASTROPHINIDAE Ulrich & Cooper, 1938
+        Parastrophina SCHUCHERT & LEVENE, 1929 [Atrypa hemiplicata HALL, 1847] | USA (W.Va.) | MORD
+          = Parastrophia HALL & CLARKE, 1893 (preocc.)
+        Anastrophia HALL, 1867 [Pentamerus verneuili HALL, 1857] | Helderberg., USA | LSIL-LDEV
+          = Brachymyrus SHALER, 1865 (preocc.)
+        Liostrophia COOPER & KINDLE, 1936 [L. glabra] | Canada (Que.) | UORD
+        Parastrophinella SCHUCHERT & COOPER, 1931 [Pentamerus reversus BILLINGS, 1857] | Anticosti | UORD-LSIL
+
+  Suborder PENTAMERIDINA Schuchert & Cooper, 1931
+    Superfamily PENTAMERACEA M'Coy, 1844
+      Family PARALLELELASMATIDAE Cooper, 1956
+        Parallelelasma COOPER, 1956 [P. pentagonum] | Pratt Ferry F., USA (Ala.) | MORD
+        Didymelasma COOPER, 1956 [D. longicrurum] | Lebanon F., USA (Tenn.) | MORD
+        Metacamerella REED, 1917 [Stricklandinia? balcletchiensis DAVIDSON, 1883] | Scotland | MORD
+        Salonia COOPER & WHITCOMB, 1933 [S. magnaplicata] | Salona F., USA (Pa.) | MORD
+      Family STRICKLANDIIDAE Schuchert & Cooper, 1931
+        Stricklandia BILLINGS, 1859 [Atrypa lens J. SOWERBY, 1839] | S. Norway | LSIL
+          = Stricklandinia BILLINGS, 1863
+        Costistricklandia AMSDEN, 1953 [Stricklandia gaspeensis BILLINGS, 1859] | Quebec | LSIL-USIL
+        Kulumbella NIKIFOROVA, 1960 [K. kulumbensis] | Siberia | LSIL
+        Microcardinalia BOUCOT & EHLERS, 1963 [Stricklandinia triplesiana FOERSTE, 1890] | Ohio | LSIL
+        Plicostricklandia BOUCOT & EHLERS, 1963 [Stricklandinia multilirata WHITFIELD, 1878] | Iowa | LSIL-USIL
+      Family VIRGIANIDAE Boucot & Amsden, 1963
+        Virgiana TWENHOFEL, 1914 [Pentamerus barrandei BILLINGS, 1857] | Anticosti | LSIL
+        Holorhynchus KIAER, 1902 [H. giganteus] | SE Norway | UORD
+        Platymerella FOERSTE, 1909 [P. manniensis] | Tennessee | LSIL
+      Family PENTAMERIDAE M'Coy, 1844
+        Subfamily PENTAMERINAE M'Coy, 1844
+          Pentamerus J. SOWERBY, 1813 [P. oblongus J. DE C. SOWERBY, 1839] | New York | LSIL-USIL
+          Aliconchidium ST. JOSEPH, 1942 [A. yassi] | New S. Wales | USIL
+          Brooksina KIRK, 1922 [B. alaskensis] | SE Alaska | USIL
+          Capelliniella STRAND, 1928 [Capellinia mira HALL & CLARKE, 1894] | Wisconsin | USIL
+            = Capellinia HALL & CLARKE, 1894 (preocc.)
+          Conchidium OEHLERT, 1887 [Anomia bilocularis HISINGER, 1799] | Gotland | UORD-LDEV
+          Cymbidium KIRK, 1926 [C. acutum] | SE Alaska | USIL
+          Harpidium KIRK, 1925 [H. insigne] | SE Alaska | USIL
+          Jovvia SAPELNIKOV, 1960 [J. multiplexa] | Ural Mts. | USIL
+          Lissocoelina SCHUCHERT & COOPER, 1931 [Pentamerus pergibbosus HALL & WHITFIELD, 1872] | Kentucky | LSIL-USIL
+          Pentamerifera KHODALEVICH, 1939 [Pentamerus taltiensis CHERNYSHEV, 1893] | Urals | USIL
+          Pentameroides SCHUCHERT & COOPER, 1931 [Pentamerus oblongus subrectus HALL & CLARKE, 1894] | Iowa | LSIL-USIL
+          Pleurodium WANG, 1955 [Conchidium tenuiplicatus GRABAU, 1925] | China | USIL
+          Rhipidium SCHUCHERT & COOPER, 1931 [Pentamerus knappi HALL & WHITFIELD, 1872] | Kentucky | USIL
+        Subfamily GYPIDULINAE Schuchert & LeVene, 1929
+          Gypidula HALL, 1867 [Gypidula typicalis AMSDEN, 1953] | Iowa | LSIL-UDEV
+          Barrandina BOOKER, 1926 [Pentamerus linguifera wilkinsoni ETHERIDGE, 1892] | New S. Wales | USIL
+          Biseptum KHODALEVICH & BREIVEL, 1959 [B. rectecostatum] | Ural Mts. | MDEV
+          Devonogypa HAVLIČEK, 1951 [D. spinulosa] | Czechoslovakia | MDEV
+          Gypidulella KHODALEVICH & BREIVEL, 1959 [G. pennatula] | Ural Mts. | MDEV
+          Gypidulina RZHONSNITSKAYA, 1956 [Pentamerus optatus BARRANDE, 1847] | Czechoslovakia | LDEV
+            = Sieberina ANDRONOV, 1961
+          Ivdelinia ANDRONOV, 1961 [Gypidula ivdelensis KHODALEVICH, 1951] | Ural Mts. | LDEV-MDEV
+          Leviconchidiella RZHONSNITSKAYA, 1960 [Sieberella? vagranica KHODALEVICH, 1951] | USSR | MDEV
+          Levigatella ANDRONOV, 1961 [Gypidula olga KHODALEVICH, 1939] | Ural Mts. | SIL-UDEV
+          Pentamerella HALL, 1867 [Atrypa arata CONRAD, 1841] | New York | LDEV-UDEV
+          Procerulina ANDRONOV, 1961 [Pentamerus acutolobatus procerulus BARRANDE, 1879] | Czechoslovakia | LDEV-UDEV
+          Sieberella OEHLERT, 1887 [Pentamerus sieberi VON BUCH, 1847] | Czechoslovakia | USIL-LDEV
+          Wyella KHODALEVICH, 1939 [Eichwaldia uralica CHERNYSHEV, 1893] | Ural Mts. | USIL
+          Zdimir BARRANDE, 1881 [Zdimir solus BARRANDE, 1881] | Czechoslovakia | MDEV
+            = Conchidiella KHODALEVICH, 1938
+        Subfamily CLORINDINAE Rzhonsnitskaya, 1956
+          Clorinda BARRANDE, 1879 [C. armata] | Czechoslovakia | SIL-MDEV
+          Antirhynchonella OEHLERT, 1887 [Atrypa linguifera J. DE C. SOWERBY, 1839] | England | SIL
+            = Barrandella HALL & CLARKE, 1894
+          Clorindella AMSDEN, 1964 [Barrandella areyi HALL & CLARKE, 1894] | New York | LSIL-USIL
+          Clorindilla KHODALEVICH, 1939 [C. uralica] | Urals | LDEV
+      Family ENANTIOSPHENIDAE Torley, 1934
+        Enantiosphen WHIDBORNE, 1893 [Meganteris? vicaryi DAVIDSON, 1882] | Germany | MDEV
+
+Order RHYNCHONELLIDA Kuhn, 1949
+  Superfamily RHYNCHONELLACEA Gray, 1848
+    Family ANCISTRORHYNCHIDAE Cooper, 1956
+      Ancistrorhyncha ULRICH & COOPER, 1942 [A. costata] | Oklahoma | MORD
+      Drepanorhyncha COOPER, 1956 [Porambonites ottawaensis BILLINGS, 1862] | Ontario | MORD
+    Family OLIGORHYNCHIIDAE Cooper, 1956
+      Oligorhynchia COOPER, 1935 [O. subplana] | Tennessee | MORD
+      Dorytreta COOPER, 1956 [D. bella] | Oklahoma | MORD
+      Rhynchotreta HALL, 1879 [Terebratula cuneata DALMAN, 1828] | Gotland | SIL
+      Sphenotreta COOPER, 1956 [S. cuneata] | Tennessee | MORD
+    Family RHYNCHOTREMATIDAE Schuchert, 1913
+      Subfamily RHYNCHOTREMATINAE Schuchert, 1913
+        Rhynchotrema HALL, 1860 [Atrypa increbescens HALL, 1847] | USA | MORD-UORD
+        Ferganella NIKIFOROVA, 1937 [F. turkestanica] | Fergana | SIL-LDEV
+        Hypsiptycha WANG, 1949 [H. hybrida] | Iowa | UORD
+        Lepidocycloides NIKIFOROVA, 1961 [L. baikiticus] | Siberia | UORD
+        Pleurocornu HAVLIČEK, 1961 [Rhynchonella amissa BARRANDE, 1879] | Bohemia | SIL
+        Stegerhynchus FOERSTE, 1909 [S. praecursor] | Tennessee | USIL
+        Stegorhynchella RZHONSNITSKAYA, 1959 [Stegerhynchus decemplicatus angaciensis CHERNYSHEV, 1937] | Tuva | USIL
+      Subfamily ORTHORHYNCHULINAE Cooper, 1956
+        Orthorhynchula HALL & CLARKE, 1893 [Orthis? linneyi JAMES, 1881] | Kentucky | MORD
+        Callipleura COOPER, 1942 [Rhynchospira nobilis HALL, 1860] | New York | MDEV
+          = Cyclorhina HALL & CLARKE, 1893 (preocc.)
+        Latonotoechia HAVLIČEK, 1960 [Terebratula latona BARRANDE, 1847] | Bohemia | LDEV
+        Machaeraria COOPER, 1955 [Rhynchonella formosa HALL, 1857] | New York | LDEV
+        Orthorhynchuloides WILLIAMS, 1962 [Hemithyris nasuta M'COY, 1852] | Scotland | MORD
+        Sicorhyncha HAVLIČEK, 1961 [Stegerhynchus trinacrius HAVLIČEK, 1956] | Bohemia | LDEV
+        Zlichorhynchus HAVLIČEK, 1963 [Z. hiatus] | Czechoslovakia | LDEV
+    Family TRIGONIRHYNCHIIDAE McLaren, 1965
+      Trigonirhynchia COOPER, 1942 [Uncinulina fallaciosa BAYLE, 1878] | France | LDEV-MDEV
+        = Uncinulina BAYLE, 1878 (preocc.)
+      Ancillotoechia HAVLIČEK, 1959 [Rhynchonella ancillans BARRANDE, 1879] | Bohemia | USIL
+      Bathyrhyncha FUCHS, 1923 [B. sinuosa] | Germany-Belgium | LDEV
+      Cupularostrum SARTENAER, 1961 [C. recticostatum SARTENAER, 1961] | New York | MDEV
+      Hemiplethorhynchus VON PEETZ, 1898 [H. fallax] | Altay | MISS
+        = Greenockia BROWN, 1952
+      Moorefieldella GIRTY, 1911 [Rhynchonella eurekensis WALCOTT, 1884] | Arkansas | MISS
+      Nekhoroshevia BUBLICHENKO, 1956 [N. altaica] | Altay | UDEV
+      Nymphorhynchia RZHONSNITSKAYA, 1956 [N. bischofioides] | Kuznetsk | MDEV
+      Ptychomaletoechia SARTENAER, 1961 [Rhynchonella omaliusi GOSSELET, 1877] | W. Europe | UDEV
+      Rostricellula ULRICH & COOPER, 1942 [R. rostrata] | N. America | MORD-UORD
+      Sinotectirostrum SARTENAER, 1961 [S. medicinale] | W. Canada | UDEV
+      Wilsoniella KHALFIN, 1939 [W. prima] | Altay | LDEV
+        = Ussotia KHALFIN, 1955
+    Family UNCINULIDAE Rzhonsnitskaya, 1956
+      Subfamily UNCINULINAE Rzhonsnitskaya, 1956
+        Uncinulus BAYLE, 1878 [Hemithiris subwilsoni D'ORBIGNY, 1850] | France | LDEV-UDEV
+        Fitzroyella VEEVERS, 1959 [F. primula] | Australia | MDEV-UDEV
+        Glossinulus SCHMIDT, 1942 [Rhynchonella adolphi mimica BARRANDE, 1879] | Germany | LDEV-MDEV
+          G. (Glossinulus) | Germany | LDEV-MDEV
+          G. (Glossinotoechia) HAVLIČEK, 1959 [Terebratula henrici BARRANDE, 1847] | Bohemia | LDEV-MDEV
+        Eoglossinotoechia HAVLIČEK, 1959 [E. cacuminata HAVLIČEK, 1959] | Bohemia | SIL-LDEV
+        Markitoechia HAVLIČEK, 1959 [Uncinulus (Uncinulus) marki HAVLIČEK, 1956] | Bohemia | MDEV
+        Plethorhyncha HALL & CLARKE, 1893 [Rhynchonella speciosa HALL, 1856] | Maryland | LDEV
+        Uncinunellina GRABAU, 1932 [Uncinulus theobaldi WAAGEN, 1884] | India | PERM
+      Subfamily HEBETOECHIINAE Havlicek, 1960
+        Hebetoechia HAVLIČEK, 1959 [Terebratula hebe BARRANDE, 1847] | Bohemia | USIL-LDEV
+        Cassidirostrum MCLAREN, 1961 [C. pedderi] | Canada | MDEV
+        Estonirhynchia SCHMIDT, 1954 [Sphaerirhynchia (E.) estonica] | Estonia | SIL
+        Lanceomyonia HAVLIČEK, 1960 [Terebratula tarda BARRANDE, 1847] | Bohemia | USIL
+        Obturamentella AMSDEN, 1958 [Wilsonia wadei DUNBAR, 1919] | USA (Tenn.-Okla.) | LDEV
+        Pectorhyncha MCLEARN, 1918 [Atrypa obtusiplicata HALL, 1852] | New York | SIL
+        Sphaerirhynchia COOPER & MUIR-WOOD, 1951 [Terebratula wilsoni SOWERBY, 1818] | England | SIL
+        Tadschikia NIKIFOROVA, 1937 [Wilsonella (T.) wilsoniaformis] | Turkestan | USIL
+      Subfamily HYPOTHYRIDININAE Rzhonsnitskaya, 1956
+        Hypothyridina BUCKMAN, 1906 [Atrypa cuboides SOWERBY, 1840] | England | MDEV-UDEV
+        Decoropugnax HAVLIČEK, 1960 [Terebratula berenice BARRANDE, 1847] | Bohemia | USIL
+        Lorangerella CRICKMAY, 1963 [L. phaulomorpha] | Canada | UDEV
+      Subfamily HADRORHYNCHIINAE McLaren, 1965
+        Hadrorhynchia MCLAREN, 1961 [Pugnoides sandersoni WARREN, 1944] | W. Canada | MDEV
+    Family EATONIIDAE Schmidt, 1965
+      Eatonia HALL, 1857 [Atrypa medialis VANUXEM, 1852] | Maryland | LDEV
+        = Pareatonia MCLEARN, 1918
+      Clarkeia KOZLOWSKI, 1923 [Terebratula antisiensis D'ORBIGNY, 1847] | South America | SIL
+      Costellirostra COOPER, 1942 [Atrypa peculiaris CONRAD, 1841] | L.Dev., N.Am. | LDEV
+      ?Eatonioides McLEARN, 1918 [Eatonioides lamellornatus] | Sil., N.Am. | SIL
+      Eucharitina SCHMIDT, 1955 [Terebratula eucharis BARRANDE, 1847] | L.Dev., Eu.-?Afr. | LDEV
+      Pegmarhynchia COOPER, 1955 [Pegmarhynchia zimmi] | L.Dev., N.Am. | LDEV
+      Tanerhynchia ALLAN, 1947 [Eatonia parki ALLAN, 1935] | L.Dev., N.Z. | LDEV
+    Family PUGNACIDAE Rzhonsnitskaya, 1956
+      Pugnax HALL & CLARKE, 1893 [Terebratula acuminata SOWERBY, 1822] | M.Dev.-Carb., Cosmop. | MDEV-PENN
+      Corvinopugnax HAVLICEK, 1961 [Rhynchonella corvina BARRANDE, 1847] | L.Dev.-M.Dev., Eu. | LDEV-MDEV
+      Donella ROTAY, 1931 [Donella minima] | L.Carb., USSR | MISS
+      Isopoma TORLEY, 1934 [Terebratula brachyptycta SCHNUR, 1853] | M.Dev., Eu. | MDEV
+      Parapugnax SCHMIDT, 1964 [Pugnax pugnus brecciae SCHMIDT, 1941] | M.Dev.-U.Dev., Eu. | MDEV-UDEV
+      Shumardella WELLER, 1910 [Rhynchonella missouriensis SHUMARD, 1855] | L.Carb., N.Am. | MISS
+    Family CAMAROTOECHIIDAE Schuchert & LeVene, 1929
+      Subfamily CAMAROTOECHIINAE Schuchert & LeVene, 1929
+        Camarotoechia HALL & CLARKE, 1893 [Atrypa congregata CONRAD, 1841] | M.Dev., N.Am. | MDEV
+        ?Astutorhyncha HAVLICEK, 1961 [Rhynchonella proserpina BARRANDE, 1847] | U.Sil.-L.Dev., Eu. | USIL-LDEV
+        Calvinaria STAINBROOK, 1945 [Rhynchonella ambigua CALVIN, 1878] | U.Dev., Cosmop. | UDEV
+        Caryorhynchus CRICKMAY, 1952 [Leiorhynchus carya CRICKMAY, 1952] | M.Dev.-U.Dev., N.Am. | MDEV-UDEV
+        ?Felinotoechia HAVLICEK, 1961 [Atrypa astuta BARRANDE var. felina BARRANDE, 1879] | U.Sil.-L.Dev., Eu. | USIL-LDEV
+        ?Fenestrirostra COOPER, 1955 [Rhynchonella glacialis BILLINGS, 1862] | L.Sil., Canada | LSIL
+    Family WELLERELLIDAE Likharev, 1956
+      Subfamily WELLERELLINAE Likharev, 1956
+        Pseudowellerella LIKHAREV, 1956 [P. nikitchi] | USSR | UPERM
+        Denticuliphoria LIKHAREV, 1956 [D. rara] | USSR | UPERM
+        Fascicosta STEHLI, 1955 [Rhynchonella? longaeva GIRTY, 1909] | USA (Tex.) | PERM
+        Plekonella CAMPBELL, 1953 [P. acuta] | Australia | PERM
+        Allorhynchus WELLER, 1910 [Rhynchonella heteropsis WINCHELL, 1865] | USA (Iowa) | MISS
+        Gerassimovia LIKHAREV, 1956 [G. gefoensis] | USSR | UPERM
+        Terebratuloidea WAAGEN, 1883 [T. davidsoni] | Asia, Europe | PERM
+      Subfamily CIRPINAE Ager, 1965
+        Cirpa DEGREGORIO, 1930 [Rhynchonella (C.) primitiva] | Europe | LJUR
+        Calcirhynchia BUCKMAN, 1918 [C. calcaria] | Europe | LJUR
+        Caucasorhynchia DAGIS, 1963 [C. kuenensis] | USSR | UTRIAS
+        Euxinella MOISSEEV, 1936 [E. iatirgtvantaensis] | Asia, N.Am. | TRIAS
+        Hagabirhynchia JEFFERIES, 1961 [H. arabica] | Arabia | UTRIAS
+        Moisseievia DAGIS, 1963 [M. moisseievi] | USSR | UTRIAS
+        Prionorhynchia BUCKMAN, 1918 [Terebratula serrata SOWERBY, 1825] | Europe, Asia | LJUR
+        Pseudogibbirhynchia AGER, 1962 [Rhynchonella Moorei DAVIDSON, 1852] | Europe | LJUR
+        Rimirhynchopsis DAGIS, 1963 [R. triadicus] | USSR | UTRIAS
+        Robinsonella MOISSEEV, 1936 [R. mastakanensis] | USSR | TRIAS
+        Salgirella MOISSEEV, 1936 [Rhynchonella albertii OPPEL, 1861] | Europe, USSR | LJUR
+        Squamirhynchia BUCKMAN, 1918 [Terebratula triplicata squamiplex QUENSTEDT, 1871] | Europe | LJUR
+        Trigonirhynchella DAGIS, 1963 [Trigonirhynchia trigona DAGIS, 1961] | USSR | UTRIAS
+      Subfamily LACUNOSELLINAE Smirnova, 1963
+        Lacunosella WISNIEWSKA, 1932 [Rhynchonella arolica OPPEL, 1866] | Europe | UJUR-LCRET
+        Bodrakella MOISSEEV, 1936 [Rhynchonella bodrakensis MOISSEEV, 1934] | USSR | LJUR
+        Hesperorhynchia WARREN, 1937 [H. superba] | Canada | UCRET
+        Kallirhynchia BUCKMAN, 1918 [Rhynchonella concinna yaxleyensis DAVIDSON, 1878] | Europe, Asia, N.Am. | JUR
+        Orbirhynchia PETTITT, 1954 [O. orbignyi] | Europe | CRET
+        Rhynchonelloidella MUIR-WOOD, 1936 [Rhynchonella varians smithi DAVIDSON, 1878] | Europe | MJUR-UJUR
+        Stolmorhynchia BUCKMAN, 1918 [S. stolidota] | Europe, Asia | LJUR-LCRET
+        Thurmannella LEIDHOLD, 1920 [Terebratula Thurmanni VOLTZ, 1833] | Europe | UJUR
+    Family RHYNCHONELLIDAE Gray, 1848
+      Subfamily RHYNCHONELLINAE Gray, 1848
+        Rhynchonella FISCHER, 1809 [R. loxiae] | USSR | UJUR
+        Costirhynchia BUCKMAN, 1918 [C. costigera] | Europe | MJUR
+        Homocorhynchia BUCKMAN, 1918 [Terebratula acuta J. SOWERBY, 1816] | Europe, N.Am. | TRIAS-MJUR
+        Ivanoviella MAKRIDIN, 1955 [Rhynchonella alemanica ROLLIER, 1917] | Europe, Asia | MJUR-UJUR
+        Tetrarhynchia BUCKMAN, 1918 [Terebratula tetrahedra SOWERBY, 1812] | Europe, Canada | LJUR-MJUR
+      Subfamily ACANTHOTHYRIDINAE Schuchert, 1913
+        Acanthothiris D'ORBIGNY, 1850 [Anomia spinosa LINNE, 1788] | Europe, Asia | MJUR
+        Acanthorhynchia BUCKMAN, 1918 [Acanthothyris panaeanthina BUCKMAN & WALKER, 1889] | Europe, Africa, Asia | MJUR-UJUR
+        Granulirhynchia BUCKMAN, 1918 [Rhynchonella granulata UPTON, 1905] | Europe | MJUR
+      Subfamily CYCLOTHYRIDINAE Makridin, 1955
+        Cyclothyris M'COY, 1844 [Terebratula latissima J. DE C. SOWERBY, 1829] | Europe, N.Am. | LCRET-UCRET
+        Cretirhynchia PETTITT, 1950 [Terebratula plicatilis J. SOWERBY, 1816] | Europe | UCRET
+        Rhactorhynchia BUCKMAN, 1918 [R. rhacta] | Europe, Asia, Africa, N.Am. | LJUR-UJUR
+        Septaliphoria LEIDHOLD, 1921 [Rhynchonella arduennensis OPPEL, 1857] | Europe | UJUR-LCRET
+    Family BASILIOLIDAE Cooper, 1959
+      Basiliola DALL, 1908 [Hemithyris beecheri DALL, 1895] | Hawaii | PLIO-REC
+      Aetheia THOMSON, 1915 [Waldheimia(?) sinuata HUTTON, 1873] | New Zealand | UCRET-MIO
+    Family HEMITHYRIDIDAE Rzhonsnitskaya, 1956
+      Hemithiris D'ORBIGNY, 1847 [Anomia psittacea GMELIN, 1790] | Alaska | MIO-REC
+    Family FRIELEIIDAE Cooper, 1959
+      Frieleia DALL, 1895 [F. halli] | North Pacific | ?MIO-REC
+    Family CRYPTOPORIDAE Muir-Wood, 1955
+      Cryptopora JEFFREYS, 1869 [Atretia gnomon JEFFREYS, 1876] | Global | EOC-REC
+
+  Suborder SPIRIFERIDINA Waagen, 1883
+    Superfamily ATRYPACEA Gill, 1871
+      Family ATRYPIDAE Gill, 1871
+        Subfamily ZYGOSPIRINAE Waagen, 1883
+          Zygospira HALL, 1862 [Atrypa modesta HALL, 1847] | Europe, N.Am. | MORD-UORD
+          Catazyga HALL & CLARKE, 1893 [Athyris headi BILLINGS, 1862] | Europe, N.Am. | MORD-LSIL
+        Subfamily ATRYPINAE Gill, 1871
+          Atrypa DALMAN, 1828 [Anomia reticularis LINNE, 1758] | Cosmopolitan | LSIL-UDEV
+          Spinatrypa STAINBROOK, 1951 [Atrypa occidentalis STAINBROOK, 1938] | Cosmopolitan | LDEV-UDEV
+    Superfamily DAYIACEA Waagen, 1883
+      Family DAYIIDAE Waagen, 1883
+        Dayia DAVIDSON, 1881 [Terebratula navicula SOWERBY, 1839] | Europe, Asia | USIL-LDEV
+    Superfamily RETZIACEA Waagen, 1883
+      Family RETZIIDAE Waagen, 1883
+        Hustedia HALL & CLARKE, 1893 [Terebratula mormoni MARCOU, 1858] | Cosmopolitan | MISS-UPERM
+    Superfamily ATHYRIDACEA M'Coy, 1844
+      Family MERISTELLIDAE Waagen, 1883
+        Meristella HALL, 1859 [Atrypa laevis VANUXEM, 1842] | N.Am. | LDEV
+        Whitfieldella HALL & CLARKE, 1893 [Atrypa nitida HALL, 1843] | Europe, N.Am. | SIL-LDEV
+      Family ATHYRIDIDAE M'Coy, 1844
+        Athyris M'Coy, 1844 [Terebratula concentrica VON BUCH, 1834] | Cosmopolitan | LDEV-TRIAS
+        Composita BROWN, 1849 [Spirifer ambiguus SOWERBY, 1823] | Cosmopolitan | UDEV-PERM
+    Superfamily SPIRIFERACEA King, 1846
+      Family SPIRIFERIDAE King, 1846
+        Spirifer SOWERBY, 1816 [Anomia striata MARTIN, 1793] | Europe | MISS
+        Neospirifer FREDERIKS, 1919 [Spirifer fasciger KEYSERLING, 1846] | USSR | LPERM
+      Family SYRINGOTHYRIDIDAE Frederiks, 1926
+        Syringothyris WINCHELL, 1863 [S. typa] | Cosmopolitan | UDEV-MISS
+      Family CYRTOSPIRIFERIDAE Termier & Termier, 1949
+        Cyrtospirifer FREDERIKS, 1919 [Spirifer verneuili MURCHISON, 1840] | Cosmopolitan | UDEV-LCARB
+    Superfamily SPIRIFERINACEA Davidson, 1884
+      Family SPIRIFERINIDAE Davidson, 1884
+        Spiriferina D'ORBIGNY, 1847 [Spirifer walcotti SOWERBY, 1823] | Cosmopolitan | TRIAS-LJUR
+    Superfamily RETICULARIACEA Waagen, 1883
+      Family RETICULARIIDAE Waagen, 1883
+        Reticularia M'COY, 1844 [Terebratula? imbricata SOWERBY, 1822] | Europe, Asia | LCARB
+      Family MARTINIIDAE Waagen, 1883
+        Martinia M'COY, 1844 [Spirifer glaber J. SOWERBY, 1820] | Cosmopolitan | MISS-PENN
+
+Order TEREBRATULIDA Waagen, 1883
+  Suborder CENTRONELLIDINA Stehli, 1965
+    Superfamily STRINGOCEPHALACEA King, 1850
+      Family CENTRONELLIDAE Waagen, 1882
+        Centronella BILLINGS, 1859 [Rhynchonella glans-fagea HALL, 1857] | N.Am. | LDEV-MDEV
+      Family STRINGOCEPHALIDAE King, 1850
+        Stringocephalus DE BLAINVILLE, 1825 [Terebratula burtini DE BLAINVILLE, 1825] | Cosmopolitan | MDEV
+      Family MUTATIONELLIDAE Cloud, 1942
+        Mutationella KOZLOWSKI, 1929 [Waldheimia podolica SIEMIRADZKI, 1906] | Poland | LDEV
+  Suborder TEREBRATULIDINA Waagen, 1883
+    Superfamily DIELASMATACEA Schuchert, 1913
+      Family DIELASMATIDAE Schuchert, 1913
+        Dielasma KING, 1859 [Terebratulites elongatus VON SCHLOTHEIM, 1816] | Cosmopolitan | MISS-PERM
+    Superfamily TEREBRATULACEA Gray, 1840
+      Family TEREBRATULIDAE Gray, 1840
+        Terebratula MULLER, 1776 [Anomia terebratula LINNÉ, 1758] | Europe | MIO-PLIO
+        Gryphus MEGERLE VON MÜHLFELD, 1811 [Anomia vitrea BORN, 1778] | Europe, N.Am. | EOC-REC
+        Liothyrella THOMSON, 1916 [Terebratula uva BRODERIP, 1883] | Global | MIO-REC
+      Family CANCELLOTHYRIDIDAE Thomson, 1926
+        Terebratulina D'ORBIGNY, 1847 [Anomia retusa LINNE, 1758] | Global | UJUR-REC
+  Suborder TEREBRATELLIDINA Muir-Wood, 1955
+    Superfamily ZEILLERIACEA Allan, 1940
+      Family ZEILLERIIDAE Allan, 1940
+        Zeilleria BAYLE, 1878 [Terebratula cornuta SOWERBY, 1824] | Europe | LJUR
+    Superfamily TEREBRATELLACEA King, 1850
+      Family DALLINIDAE Beecher, 1893
+        Dallina BEECHER, 1893 [Terebratula septigera LOVEN, 1846] | Global | ?EOC-REC
+      Family TEREBRATELLIDAE King, 1850
+        Terebratella D'ORBIGNY, 1847 [Anomia dorsata GMELIN, 1792] | S.Am., Australia | OLIGO-REC
+        Magellania BAYLE, 1880 [Terebratula australis QUOY & GAIMARD, 1834] | Global | OLIGO-REC
+
+Order UNCERTAIN THECIDEIDINA
+  Family THECIDEIDAE Gray, 1840
+    Thecidea DEFRANCE, 1822 [Terebratulites papillata VON SCHLOTHEIM, 1813] | Europe | CRET
+    Lacazella MUNIER-CHALMAS, 1881 [Thecidea mediterranea RISSO, 1826] | Global | TERT-REC

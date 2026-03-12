@@ -1,0 +1,1164 @@
+---
+reference: Williams, A., et al., 1965. Treatise on Invertebrate Paleontology, Part H, Brachiopoda. Vol. 1. The Geological Society of America, Inc. and The University of Kansas Press.
+scope:
+  - taxon: Brachiopoda
+    coverage: comprehensive (Class Inarticulata, Class Articulata - Orthida, Strophomenida)
+notes: |
+  Systematic Descriptions extracted from Part H (1965), Volume 1.
+  Internal page numbering (H263-H521) used.
+---
+
+Class INARTICULATA Huxley, 1869
+  Order LINGULIDA Waagen, 1885
+    Superfamily LINGULACEA Menke, 1828
+      Family LINGULIDAE Menke, 1828
+        Lingula BRUGUIERE, 1797 [*L. anatina LAMARCK, 1801] | Andaman Is. | ?ORD, SIL-REC
+          = Pharetra BOLTON, 1798 (j.s.s.)
+          = Ligula CUVIER, 1798 (nom. null.)
+          = Ligularius DUMERIL, 1806 (nom. van.)
+          = Lingularius SCHUCHERT & LEVENE, 1929 (nom. null.)
+        Barroisella HALL & CLARKE, 1892 [*B. campbelli COOPER, 1942] | Ohio, Ind., USA | UDEV-MISS
+          = Barroisella HALL & CLARKE, 1889 (nom. nud.)
+        Dignomia HALL, 1871 [*Lingula alveata HALL, 1863] | N.Y., USA | DEV
+        Glottidia DALL, 1870 [*Lingula albida HINDS, 1845] | N.Am.-S.Am.-Eu | EOC-REC
+        Langella MENDES, 1961 [*Lingula imbituvensis OLIVEIRA, 1930] | Brazil | PENN-LPERM
+        Lingulipora GIRTY, 1898 [*Lingula (Lingulipora) williamsana] | Va., USA | MDEV-UCARB
+        Trigonoglossa DUNBAR & CONDRA, 1932 [*Lingula nebrascensis MEEK, 1872] | Tex., USA | ?DEV-CARB
+
+      Family OBOLIDAE King, 1846 | LCAM-UORD
+        Subfamily OBOLINAE King, 1846 | LCAM-MORD
+          Obolus EICHWALD, 1829 [*O. apollinis] | Est. | ?LCAM, MCAM-LORD, ?MORD
+            = Ungula PANDER, 1830 (j.s.s.)
+            = Ungulites BRONN, 1848 (nom. null.)
+            = Obulus QUENSTEDT, 1868 (nom. null.)
+            = Euobolus MICKWITZ, 1896 (obj.)
+            = Eoobolus MATTHEW, 1902 (j.s.s.)
+          Aulonotreta KUTORGA, 1848 [*A. sculpta (=*Obolus antiquissimus EICHWALD, 1843)] | Est. | LORD
+            = Acritis VOLBORTH, 1869 (obj.)
+          Dicellomus HALL, 1871 [*Lingula polita HALL, 1861] | Mont., USA | UCAM
+          Lingulobolus MATTHEW, 1895 [*Lingulella? affinis BILLINGS, 1872] | Newf. | LORD
+            = Sphaerobolus MATTHEW, 1895 (fide ROWELL, 1965)
+          ?Obolopsis SAITO, 1936 [*O. margaritae] | Korea | LCAM
+          Palaeobolus MATTHEW, 1899 [*P. bretonensis] | N.Scotia, Canada | MCAM
+            = Palaebolus GORYANSKY, 1960 (nom. null.)
+          Pseudobolus COOPER, 1956 [*Palaeoglossa gibbosa WILLARD, 1828] | Va., USA | MORD
+          Pseudodicellomus BELL, 1962 [*Dicellomus mosaicus BELL, 1941] | Tex., USA | UCAM
+          Schmidtites SCHUCHERT & LEVENE, 1929 [*Schmidtia alata VOLBORTH, 1869] | Est. | LORD
+            = Schmidtia VOLBORTH, 1869 (non BALSAMO-CRIVELLI, 1863)
+          Thysanotos MICKWITZ, 1896 [*Obolus siluriens EICHWALD, 1843] | Est. | LORD
+            = Mickwitzella WALCOTT, 1908 (obj.)
+
+        Subfamily LINGULELLINAE Schuchert, 1893 | LCAM-UORD
+          Lingulella SALTER, 1866 [*Lingula davisii M'COY, 1851] | Wales | LCAM-MORD, ?UORD
+            = Leptembolon MICKWITZ, 1896 (fide ROWELL, 1965)
+          Fordinia WALCOTT, 1908 [*Obolus (Fordinia) perfectus] | Utah, USA | MCAM-UCAM
+          ?Lingulepis HALL, 1863 [*Lingula pinnaformis OWEN, 1852] | Wis., USA | ?LCAM, UCAM, ?LORD
+          Pseudolingula MICKWITZ, 1909 [*Crania quadrata EICHWALD, 1829] | Est. | ORD
+          Spinilingula COOPER, 1956 [*S. intralamellata] | Ala., USA | MORD
+          Westonia WALCOTT, 1901 [*Lingula aurora HALL, 1861] | Alaska, USA | MCAM-MORD
+
+        Subfamily GLOSSELLINAE Cooper, 1956 | LORD-UORD
+          Glossella COOPER, 1956 [*G. papillosa] | Va., USA | MORD-UORD
+          Plectoglossa COOPER, 1956 [*P. oklahomensis] | Okla., USA | MORD-UORD
+          Rowellella WRIGHT, 1963 [*R. minuta] | Ire. | UORD
+
+        Subfamily ACANTHAMBONIINAE Cooper, 1956 | MORD-UORD
+          Acanthambonia COOPER, 1956 [*A. minutissima] | Va., USA | MORD-UORD
+        Subfamily UNCERTAIN
+          Bistramia HOEK, 1912 [*B. elegans] | Bolivia | ORD
+            = ?Pizarroa HOEK, 1912
+            = Tinarites COOPER & MUIR-WOOD, 1951 (nom. subst. pro Tinaria HOEK, 1912)
+          Palaeoglossa COCKERELL, 1911 [*Lingula attenuata SOWERBY, 1839] | Eu., N.Am. | ORD, ?SIL
+            = Glossina PHILLIPS, 1848 (non WIEDEMANN, 1830)
+          Tomasina HALL & CLARKE, 1892 [*Lingula criei DAVIDSON, 1881] | Sarthe | LORD
+
+      Family ELKANIIDAE Walcott & Schuchert, 1908 | UCAM-LORD
+        Elkania FORD, 1886 [*Obolella desiderata BILLINGS, 1862] | Que., Canada | UCAM-LORD
+          = Billingsia FORD, 1886 (non DE KONINCK, 1876)
+        Broeggeria WALCOTT, 1902 [*Obolella salteri HOLL, 1865] | Eng. | UCAM-LORD
+        Monobilina SALTER, 1866 [*Lingula plumbea SALTER, 1859] | Wales | LORD
+
+      Family LINGULASMATIDAE Winchell & Schuchert, 1893 | MORD-UORD
+        Lingulasma ULRICH, 1889 [*L. schucherti] | Ill., USA | MORD-UORD
+          = Lingulielasma MILLER, 1889 (nom. null.)
+      Family ANDOBOLIDAE Kozlowski, 1930 | ORD
+        Andobolus KOZLOWSKI, 1930 [*A. jackowskii] | Bolivia | ORD
+      Family PATERULIDAE Cooper, 1956 | ORD-SIL
+        Paterula BARRANDE, 1879 [*P. bohemica] | Ala., USA | MORD-UORD
+        Elliptoglossa COOPER, 1956 [*Leptobolus? ovalis BASSLER, 1919] | Va., USA | LORD-UORD
+        Lingulops HALL, 1872 [*L. whitfieldi] | Ky., USA | ORD-SIL
+          = Ligulops HALL, 1871 (nom. oblitum)
+      Family CRANIOPSIDAE Williams, 1963 | MORD-LCARB
+        Craniops HALL, 1859 [*Orbicula? squamiformis HALL, 1843] | Eu. | MORD-LCARB
+          = Pholidops HALL, 1859 (obj.)
+        Lingulopholis SCHUCHERT, 1913 [*Pholidops terminalis HALL, 1859] | Tenn., USA | MORD-DEV
+        Paracraniops WILLIAMS, 1963 [*Craniops? pararia WILLIAMS, 1962] | Scot. | MORD
+        Pseudopholidops BEKKER, 1921 [*P. scutellata] | Eu. | MORD
+
+    Superfamily TRIMERELLACEA Davidson & King, 1872 | MORD-USIL
+      Family TRIMERELLIDAE Davidson & King, 1872 | MORD-USIL
+        Trimerella BILLINGS, 1862 [*T. grandis] | N.Am. | SIL
+          = Gotlandia DALL, 1870 (j.s.s.)
+        Dinobolus HALL, 1871 [*Obolus conradi HALL, 1868] | Wis., USA | LSIL-USIL
+          = Conradia HALL, 1872 (obj.)
+        Eodinobolus ROWELL, 1963 [*Obolellina magnifica BILLINGS, 1872] | Canada | MORD-UORD
+        Monomerella BILLINGS, 1871 [*M. prisca] | Ill., USA | SIL
+        Rhynobolus HALL, 1871 [*Obolus galtensis BILLINGS, 1862] | N.Am. | MSIL
+          = Obolellina BILLINGS, 1871 (obj.)
+          = Rhinobolus HALL & CLARKE, 1892 (nom. van.)
+
+  Order ACROTRETIDA Kuhn, 1949 | LCAM-REC
+    Suborder ACROTRETIDINA Kuhn, 1949 | LCAM-REC
+      Superfamily ACROTRETACEA Schuchert, 1893 | LCAM-DEV
+        Family ACROTRETIDAE Schuchert, 1893 | LCAM-USIL, ?LDEV
+          Subfamily ACROTRETINAE Schuchert, 1893 | ?LCAM, MCAM-UORD
+            Acrotreta KUTORGA, 1848 [*A. subconica] | Eu. | ?UCAM, ORD
+            Angulotreta PALMER, 1955 [*A. triangularis] | Tex., USA | UCAM
+            Apsotreta PALMER, 1955 [*A. expansa] | Tex., USA | UCAM
+            Conotreta WALCOTT, 1889 [*C. rusti] | Va., USA | ORD
+              = Geinitzia HALL, 1889 (nom. nud.)
+            Linnarssonella WALCOTT, 1902 [*L. girtyi] | S.Dak., USA | UCAM
+            Prototreta BELL, 1938 [*P. trapeza] | Mont., USA | ?LCAM, MCAM
+            Spondylotreta COOPER, 1956 [*S. concentrica] | Ala., USA | MORD-UORD
+            Undiferina COOPER, 1956 [*U. rugosa] | Ala., USA | MORD
+          Subfamily LINNARSSONIINAE Rowell, n. subfam. | LCAM-UCAM
+            Linnarssonia WALCOTT, 1885 [*Obolella transversa HARTT, 1868] | Wales | LCAM-MCAM, ?UCAM
+              = Pegmatreta BELL, 1941 (j.s.s.)
+            Acrothyra MATTHEW, 1901 [*Acrotreta proavia MATTHEW, 1899] | N.Am. | MCAM
+            Opisthotreta PALMER, 1955 [*O. depressa] | Tex., USA | UCAM
+          Subfamily CERATRETINAE Rowell, n. subfam. | UCAM-LORD
+            Ceratreta BELL, 1941 [*C. hebes] | Mont., USA | UCAM
+            Clistotrema ROWELL, 1963 [*Orbicella buehii DE VERNEUIL, 1845] | Est. | LORD
+              = Orbicella D'ORBIGNY, 1847 (non DANA, 1846)
+          Subfamily SCAPHELASMATINAE Rowell, n. subfam. | MORD-USIL
+            Scaphelasma COOPER, 1956 [*S. septatum] | Ala., USA | MORD, ?UORD
+            Artiotreta IRELAND, 1961 [*A. parva] | N.Am. | USIL
+            ?Rhysotreta COOPER, 1956 [R. corrugata] | Pratt Ferry F., Alabama, USA | MORD
+          Subfamily TORYNELASMATINAE Rowell, 1965
+            Torynelasma COOPER, 1956 [T. toryniferum] | Pratt Ferry F., Alabama, USA | MORD
+            ?Acrotretella IRELAND, 1961 [A. siluriana] | Chimneyhill, Oklahoma, USA | USIL
+          Subfamily EPHIPPELASMATINAE Rowell, 1965
+            Ephippelasma COOPER, 1956 [E. minutum] | Pratt Ferry F., Alabama, USA | MORD
+          Subfamily UNCERTAIN
+            Hisingerella HENNINGSMOEN, 1948 [Atrypa? nitens HISINGER, 1838] | Scandinavia | UORD
+            Keyserlingia PANDER, 1861 [Orbicula reversa DE VERNEUIL, 1845] | NW. USSR | LORD
+              = Kayserlingia BEECHER, 1891 (nom. null.)
+
+        Family CURTICIIDAE Walcott & Schuchert, 1908
+          Curticia WALCOTT, 1905 [C. elegantula] | Minnesota, USA | UCAM
+        Family ACROTHELIDAE Walcott & Schuchert, 1908
+          Subfamily ACROTHELINAE Walcott & Schuchert, 1908
+            Acrothele LINNARSSON, 1876 [A. coriacea] | Sweden | MCAM
+              = Dearbonia WALCOTT, 1908 (fide ROWELL, 1965)
+              = Aerothele CZARNOCKI, 1927 (nom. null.)
+            Orbithele SDZUY, 1955 [Discina contraria BARRANDE, 1868] | Europe | LORD
+            Redlichella WALCOTT, 1908 [Acrotreta granulata LINNARSSON, 1876] | Europe | MCAM
+            Schizopholis WAAGEN, 1885 [S. rugosa] | Pakistan | LCAM
+              = Discinolepis WAAGEN, 1885 (fide ROWELL, 1965)
+          Subfamily CONODISCINAE Rowell, 1965
+            Conodiscus ULRICH & COOPER, 1936 [Acrothele burlingi KOBAYASHI, 1935] | Alaska, USA | UCAM
+            ?Discinopsis MATTHEW, 1892 [Acrotreta? gulielmi MATTHEW, 1886] | New Brunswick, Canada | MCAM
+
+        Family BOTSFORDIIIDAE Schindewolf, 1955
+          Subfamily BOTSFORDIINAE Schindewolf, 1955
+            Botsfordia MATTHEW, 1891 [Obolus pulcher MATTHEW, 1889] | Pakistan | LCAM
+              = Mobergia REDLICH, 1899 (fide ROWELL, 1965)
+            ?Glyptias WALCOTT, 1901 [Lingula? favosa LINNARSSON, 1869] | Scandinavia | LCAM
+          Subfamily NEOBOLINAE Walcott & Schuchert, 1908
+            Neobolus WAAGEN, 1885 [N. warthi] | Pakistan | LCAM
+              = Lakhmina OEHLERT, 1887 (nom. subst. pro Davidsonella WAAGEN, 1885)
+        Family UNCERTAIN
+          Discotreta ULRICH & COOPER, 1936 [Acrothele levisensis WALCOTT, 1808] | Quebec, Canada | LORD
+
+      Superfamily DISCINACEA Gray, 1840
+        Family TREMATIDAE Schuchert, 1893
+          Trematis SHARPE, 1848 [Orbicula terminalis EMMONS, 1842] | North America; Europe | MORD-UORD
+          Schizocrania HALL & WHITFIELD, 1875 [Orbicula? filosa HALL, 1847] | Ohio/NY, USA | ORD-LDEV
+        Family DISCINIDAE Gray, 1840
+          = Orbiwloideinae SCHUCHERT & LEVENE, 1929 (partim)
+          Subfamily ORBICULOIDEINAE Schuchert & LeVene, 1929
+            Orbiculoidea D'ORBIGNY, 1847 [Orbicula forbesi DAVIDSON, 1848] | Cosmopolitan | ORD-PERM
+            Lindstroemella HALL & CLARKE, 1890 [L. aspidium] | New York, USA | MDEV-PENN
+              = Lindstromella HALL & CLARKE, 1889 (nom. nud.)
+              = Lindstoemelia DUNBAR & CONDRA, 1932 (nom. null.)
+            Lingulodiscina WHITFIELD, 1890 [Lingula ailiformis HALL, 1860] | North America | DEV
+            Roemerella HALL & CLARKE, 1890 [Orbicula grandis VANUXEM, 1842] | North America | DEV
+            Schizotreta KUTORGA, 1848 [Orbicula elliptica KUTORGA, 1846] | North America; Europe; Asia | MORD-SIL
+              = Acrosaccus WILLARD, 1928 (fide ROWELL, 1965)
+          Subfamily DISCINISCINAE Schuchert & LeVene, 1929
+            Discinisca DALL, 1871 [Orbicula lamellosa BRODERIP, 1833] | Cosmopolitan | LJUR-REC
+            ?Oehlertella HALL & CLARKE, 1890 [Discina pleurites MEEK, 1875] | Ohio, USA | MISS-PENN
+            Pelagodiscus DALL, 1908 [Discina atlantica KING, 1868] | Cosmopolitan | REC
+          Subfamily DISCININAE Gray, 1840
+            Discina LAMARCK, 1819 [D. ostreoides (= Crania striata SCHUMACHER, 1817)] | West Africa | REC
+      Superfamily and Family UNCERTAIN
+        Oxlosia ULRICH & COOPER, 1936 [Eunoa accola CLARKE, 1902] | Quebec, Canada | LORD
+          = Eunoa CLARKE, 1902 (non MALMGREN, 1867)
+        Schizobolus ULRICH, 1886 [Discina truncata HALL, 1863] | North America; South America | DEV
+
+      Superfamily SIPHONOTRETACEA Kutorga, 1848
+        Family SIPHONOTRETIDAE Kutorga, 1848
+          Siphonotreta DE VERNEUIL, 1845 [Crania unguiculata EICHWALD, 1829] | Europe; North America; Asia | LORD-MORD
+          Dysoristus BELL, 1944 [D. lochmanae] | Montana; Nevada, USA | UCAM
+            = Dysozistus GORYANSKY, 1960 (nom. null.)
+          Helmersenia PANDER, 1861 [Siphonotreta ladogensis ZHEREMEZHEV, 1856] | Baltic, Europe | LORD
+          Multispinula ROWELL, 1962 [Schizambon macrothyris COOPER, 1956] | Tennessee, USA; Europe | MORD-UORD
+          Schizambon WALCOTT, 1884 [S. typicalis] | Nevada, USA; South America; Greenland | UCAM-LORD
+            = Schizambonia OEHLERT, 1887 (nom. null.)
+
+    Suborder CRANIIDINA Waagen, 1885
+      Superfamily CRANIACEA Menke, 1828
+        Family CRANIIDAE Menke, 1828
+          = Valdiviathyrididae HELMCKE, 1940 (fide ROWELL, 1965)
+          Crania RETZIUS, 1781 [Anomia craniolaris LINNÉ, 1758] | Sweden; Cosmopolitan | CRET-REC
+            = Criopus POLI, 1791
+            = Criopoderma POLI, 1795
+            = Orbicula CUVIER, 1797
+            = Orbicularius DUMÉRIL, 1806
+            = Criopododerma AGASSIZ, 1836
+            = Cryopus DESHAYES, 1836 (nom. null.)
+            = Crania (Lissocrania) WILLIAMS, 1943
+          Acanthocrania WILLIAMS, 1943 [Crania spiculata ROWLEY, 1908] | Virginia, USA; Europe | ORD-CARB
+            = ?Choniopora SCHAUROTH, 1854
+          Ancistrocrania DALL, 1877 [Crania parisiensis DEFRANCE, 1819] | England; Europe | CRET
+            = Cranopsis DALL, 1871 (non ADAMS, 1860)
+          Craniscus DALL, 1871 [Crania tripartita MÜNSTER, 1837] | Europe; Japan; Indo-Pacific | JUR-REC
+          Isocrania JAEKEL, 1902 [Crania egnaburgensis RETZIUS, 1781] | England; Europe; Asia | UCRET
+          Orthisocrania ROWELL, 1963 [Pseudocrania divaricata M'COY, 1851] | Europe | MORD-UORD
+          Petrocrania RAYMOND, 1911 [Craniella meduanensis OEHLERT, 1888] | New York, USA; Europe; Asia | MORD-DEV
+            = Craniella OEHLERT, 1888 (non VON SCHLOTHEIM, 1820)
+            = Punctopatella GRUBBS, 1939
+          Philhedra KOKEN, 1889 [P. baltica] | North America; Europe; Asia | LORD-CARB
+            = Philedra BEKKER, 1921 (nom. null.)
+            = Propatella GRUBBS, 1939
+          Philhedrella KOZLOWSKI, 1929 [Philhedra (Philhedrella) mimetica] | Europe | USIL
+          Pseudocrania M'COY, 1851 [Orbiwla antiquissima EICHWALD, 1840 (= Crania petropolitana PANDER, 1830)] | Baltic; Sweden | LORD-MORD
+            = Palaeocrania EICHWALD, 1854
+          Valdiviathyris HELMCKE, 1940 [V. quenstedti] | South Indian Ocean | REC
+        Family EOCONULIDAE Rowell, 1965
+          Eoconulus COOPER, 1956 [E. rectangulatus] | Alabama; Virginia, USA; Ireland | MORD-UORD
+      GENERA DOUBTFULLY REFERRED TO CRANIACEA
+        Angarella ASATKIN, 1932 [A. jaworowskii] | Siberia; Kazakhstan | ORD
+        Eleutherocrania VON HUENE, 1899 [E. gibberosa] | Estonia | UORD-LSIL
+        Pseudometoptoma VON HUENE, 1899 [Metoptoma siluricum EICHWALD, 1842] | Baltic | ORD-LSIL
+
+  Order OBOLELLIDA Rowell, 1965
+    Superfamily OBOLELLACEA Walcott & Schuchert, 1908
+      Family OBOLELLIDAE Walcott & Schuchert, 1908
+        Obolella BILLINGS, 1861 [O. chromatica] | Labrador, Canada | LCAM
+        Alisina ROWELL, 1962 [Obolella atlantica WALCOTT, 1890] | Newfoundland, Canada; England; Mexico | LCAM
+        Bicia WALCOTT, 1901 [Obolella gemma BILLINGS, 1871] | New York, USA | LCAM
+        Magnicanalis ROWELL, 1962 [Obolella mobergi WALCOTT, 1901] | Sweden | LCAM
+        Trematobolus MATTHEW, 1893 [T. insignis] | New Brunswick, Canada; Europe; Asia | LCAM-MCAM
+          = Protosiphon MATTHEW, 1897
+          = Protosyphon GORYANSKY, 1960 (nom. null.)
+          = Trematobolos EASTMAN, 1960 (nom. null.)
+
+  Order PATERINIDA Rowell, 1965
+    Superfamily PATERINACEA Schuchert, 1893
+      Family PATERINIDAE Schuchert, 1893
+        Paterina BEECHER, 1891 [Obolus labradoricus BILLINGS, 1861] | Labrador, Canada; Cosmopolitan | CAM
+          = Iphidella WALCOTT, 1905
+          = Iphidea BILLINGS, 1872 (non BAYLEY, 1865)
+        Dictyonina COOPER, 1942 [Trematis pannulus WHITE, 1874] | Nevada, USA; Cosmopolitan | LCAM-MCAM
+          = Iphidella WALCOTT, 1912 (non WALCOTT, 1905)
+        Dictyonites COOPER, 1956 [D. perforata] | Alabama, USA | MORD
+        Micromitra MEEK, 1873 [Iphidea? sculptilis] | Montana, USA; Cosmopolitan | CAM
+          = ?Ieodonta BELL, 1941
+      GENERA DOUBTFULLY REFERRED TO PATERINIDA
+        Mickwitzia SCHMIDT, 1888 [Lingula? monilifera LINNARSSON, 1869] | Sweden; Europe | LCAM
+          = Callavea WIMAN, 1902
+        Volborthia VON MÖLLER, 1870 [Acrotreta recurva KUTORGA, 1848] | NW. USSR | LORD
+        Walcottina COBBOLD, 1921 [W. lapworthi] | England | LCAM
+      Family PTYCHOPELTIDAE Horny, 1961
+        Ptychopeltis PERNER, 1903 [P. incola] | Europe | MORD
+
+  Order KUTORGINIDA Kuhn, 1949
+    Superfamily KUTORGINACEA Schuchert, 1893
+      Family KUTORGINIDAE Schuchert, 1893
+        Kutorgina BILLINGS, 1861 [Obolella cingulata] | Vermont, USA; Cosmopolitan | LCAM
+          = Koturgina BILLINGS, 1861 (nom. imperf.)
+          = ?Rustella WALCOTT, 1905
+        ?Schuchertina WALCOTT, 1905 [S. cambria] | North America | MCAM
+      Family YORKIIDAE Rowell, 1962
+        Yorkia WALCOTT, 1897 [Y. wanneri] | Pennsylvania, USA | LCAM
+          = Quebeecia WALCOTT, 1905
+
+Class ARTICULATA Huxley, 1869
+  Order ORTHIDA Schuchert & Cooper, 1932
+    Suborder ORTHIDINA Schuchert & Cooper, 1932
+      Superfamily BILLINGSELLACEA Schuchert, 1893
+        Family BILLINGSELLIDAE Schuchert, 1893
+          Billingsella HALL & CLARKE, 1892 [Orthis pepina HALL, 1863] | Idaho/Wyoming, USA; Cosmopolitan | MCAM-LORD
+          Cymbithyris COOPER, 1952 [C. hami] | Western USA | LORD
+          Eosotrematorthis WANG, 1955 [E. sinensis] | China | LORD
+          Xenorthis ULRICH & COOPER, 1936 [Strophomena stosei BASSLER, 1919] | Maryland, USA; Ireland | UCAM-LORD
+        Family NISUSIIDAE Walcott & Schuchert, 1908
+          Nisusia WALCOTT, 1905 [Orthisina festinata BILLINGS, 1861] | Virginia; Montana, USA; North Hemisphere | LCAM-MCAM
+          Eoconcha COOPER, 1951 [E. austini] | Eastern USA | LCAM
+          Kotujella ANDREEVA, 1962 [K. calva] | USSR | LCAM
+          Matutella COOPER, 1951 [M. clarki] | Virginia, USA; USSR | LCAM
+      Superfamily ORTHACEA Woodward, 1852
+        Family EOORTHIDAE Walcott, 1908
+          Eoorthis WALCOTT, 1908 [Orthis remnicha WINCHELL, 1886] | Montana, USA; USSR | UCAM
+          Apheorthis ULRICH & COOPER, 1936 [Eoorthis lineocostata WALCOTT, 1924] | Colorado, USA; South America | UCAM-LORD
+            = Apheoorthina HAVLICEK, 1949
+          Diraphora BELL, 1941 [Eoorthis bellicostata WALCOTT, 1924] | Montana, USA | MCAM
+          Jamesella WALCOTT, 1905 [Orthis perpasta POMPECKJ, 1896] | Bohemia | UCAM
+          Ocnerorthis BELL, 1941 [O. cooperi] | Wyoming, USA; Bohemia | UCAM-LORD
+          Otusia WALCOTT, 1905 [Orthis sandbergi WINCHELL, 1886] | Montana, USA | UCAM
+          Wimanella WALCOTT, 1908 [W. simplex] | Canada; USA | MCAM
+        Family PROTORTHIDAE Schuchert & Cooper, 1931
+          Protorthis HALL & CLARKE, 1892 [Orthis billingsi HARTT, 1868] | New Brunswick, Canada | MCAM
+          Arctohedra COOPER, 1936 [A. minima] | Alaska, USA | MCAM
+          Loperia WALCOTT, 1905 [Protorthis (Loperia) dougaldensis] | Eastern Canada | MCAM
+        Family HESPERONOMIIDAE Ulrich & Cooper, 1936
+          Hesperonomia ULRICH & COOPER, 1936 [H. planidorsalis] | Alberta, Canada | LORD
+          Hesperonomiella ULRICH & COOPER, 1936 [Protorthis porcias WALCOTT, 1924] | Utah, USA | LORD
+          Jivinella HAVLICEK, 1949 [Orthis incola BARRANDE, 1879] | Bohemia | LORD
+        Family ORTHIDIELLIDAE Ulrich & Cooper, 1936
+          Orthidiella ULRICH & COOPER, 1936 [O. longwelli] | Nevada, USA | LORD
+          Eostrophomena WALCOTT, 1905 [Strophomena (Eostrophomena) elegantula] | Sweden | LORD
+          Orthidium HALL & CLARKE, 1892 [Orthis gemmicula BILLINGS, 1862] | Quebec, Canada; Nevada, USA | LORD
+          Portranella WRIGHT, 1964 [P. angulocostellata] | Ireland | UORD
+          Trematorthis ULRICH & COOPER, 1938 [T. masoni] | Nevada, USA | LORD
+        Family ORTHIDAE Woodward, 1852
+          Subfamily ORTHINAE Woodward, 1852
+            Orthis DALMAN, 1827 [O. callactis DALMAN, 1828] | USSR; Cosmopolitan | LORD
+            Archaeorthis SCHUCHERT & COOPER, 1931 [Orthis electra BILLINGS, 1865] | Oklahoma, USA; Europe | LORD
+            Bohemiella SCHUCHERT & COOPER, 1931 [Orthis romingeri BARRANDE, 1879] | Bohemia | MCAM
+              = Shiragia KOBAYASHI, 1935
+            Cyrtonotella SCHUCHERT & COOPER, 1931 [Orthis semicircularis EICHWALD, 1829] | USSR; North Hemisphere | MORD
+              = Planidorsa SCHUCHERT & COOPER, 1931
+            Glossorthis ÖPIK, 1930 [G. laans] | Estonia; Europe | MORD
+            Lenorthis ANDREEVA, 1955 [L. girardi] | Alabama, USA; Cosmopolitan | LORD-MORD
+            Nanorthis ULRICH & COOPER, 1936 [Orthis hamburgensis WALCOTT] | Nevada; Colorado, USA | LORD
+            Nothorthis ULRICH & COOPER, 1938 [N. delicatula] | Quebec, Canada; Scotland | LORD-MORD
+              = Althorthis ANDREEVA, 1960
+            Oligomys SCHUCHERT & COOPER, 1931 [Orthis exporrecta LINNARSSON, 1876] | Sweden; NW Europe | MCAM
+            Orthambonites PANDER, 1830 [O. transversa] | USSR; Cosmopolitan | LORD-MORD
+            Orthostrophia HALL, 1883 [Orthis strophomenoides HALL, 1857] | Oklahoma, USA; Europe | MSIL-LDEV
+            Pleurorthis COOPER, 1956 [P. fascicostellata] | Quebec, Canada | LORD
+            Prantlina HAVLICEK, 1949 [Orthis desiderata BARRANDE, 1848] | Bohemia | LORD
+            Ranorthis ÖPIK, 1939 [R. norvegica] | Norway | LORD
+            Riograndella KOBAYASHI, 1937 [R. subcircus] | Bolivia | LORD?
+            Sinorthis WANG, 1955 [S. typica] | China | LORD
+            Taphrorthis COOPER, 1956 [T. emarginata] | Tennessee; Alabama, USA | MORD
+          Subfamily PRODUCTORTHINAE Schuchert & Cooper, 1931
+            Productorthis KOZLOWSKI, 1927 [Productus obtusus PANDER, 1830] | USSR; Ireland | LORD-MORD
+            Nicolella REED, 1917 [Orthis actoniae SOWERBY, 1839] | England; North America | MORD-UORD
+            Panderina SCHUCHERT & COOPER, 1931 [Productus abscissus PANDER, 1830] | USSR | LORD
+          Subfamily PORAMBORTHINAE Havlicek, 1950
+            Poramborthis HAVLICEK, 1949 [P. klouceki] | Bohemia | LORD
+        Family DOLERORTHIDAE Öpik, 1934
+          Subfamily DOLERORTHINAE Öpik, 1934
+            Dolerorthis SCHUCHERT & COOPER, 1931 [Orthis interplicata] | Wales; Baltic; North Hemisphere | MORD-USIL
+          Subfamily HESPERORTHINAE Schuchert & Cooper, 1931
+            Hesperorthis SCHUCHERT & COOPER, 1931 [Orthis tricenaria CONRAD, 1843] | Tennessee, USA; North Hemisphere | LORD-USIL
+            Barbarorthis ÖPIK, 1934 [B. foramenifera] | Estonia | UORD
+            Boreadorthis ÖPIK, 1934 [B. crassa] | Estonia | UORD
+            Lordorthis ROSS, 1959 [L. variabilis] | Western USA | UORD
+            Schizoramma FOERSTE, 1909 [Hebertella (Schizonema) fissistriata] | Oklahoma, USA; North Hemisphere | SIL
+              = Schizonema FOERSTE, 1909
+          Subfamily GLYPTORTHINAE Schuchert & Cooper, 1931
+            Glyptorthis FOERSTE, 1914 [Orthis insculpta HALL, 1847] | Ohio; Oklahoma, USA | MORD-LSIL
+            Eridorthis FOERSTE, 1909 [Plectorthis (Eridorthis) nicklesi FOERSTE, 1909] | North America; Europe | MORD-LSIL
+            Lepidorthis WANG, 1955 [L. typicalis] | China | LORD
+            Ptychopleurella SCHUCHERT & COOPER, 1931 [Orthis bouchardi DAVIDSON, 1847] | England | MORD-USIL
+            Spinorthis WRIGHT, 1964 [S. geniculata] | Ireland | UORD
+        Family PLAESIOMYIDAE Schuchert, 1913
+          Subfamily PLAESIOMYINAE Schuchert, 1913
+            Plaesiomys HALL & CLARKE, 1892 [Orthis subquadrata HALL, 1847] | Ohio, USA | MORD-UORD
+              P. (Plaesiomys) | North Hemisphere | MORD-UORD
+              P. (Dinorthis) [Orthis pectinella CONRAD & EMMONS, 1842] | Eastern USA | MORD
+              P. (Pionorthis) [Orthis sola BILLINGS, 1866] | Indiana, USA | UORD
+              P. (Retrorsirostra) [Orthis carleyi HALL, 1847] | Ohio, USA | UORD
+            Austinella FOERSTE, 1909 [Orthis kankakensis MCCHESNEY, 1861] | North America; Europe | UORD
+            Campylorthis ULRICH & COOPER, 1942 [Strophomena deflecta CONRAD, 1843] | Wisconsin, USA; Scotland | MORD
+            Multicostella SCHUCHERT & COOPER, 1931 [Orthis? saffordi HALL & CLARKE, 1892] | Tennessee, USA; North Hemisphere | MORD
+              M. (Multicostella) | North Hemisphere | MORD
+              M. (Chaulistomella) [C. inequistriata] | Virginia, USA; Scotland | MORD
+              M. (Marionites) [Marionella typa BANCROFT, 1928] | England | MORD
+            Valcourea RAYMOND, 1911 [Plaesiomys strophomenoides RAYMOND, 1905] | New York; Oklahoma, USA | LORD-MORD
+          Subfamily EVENKININAE Williams, 1965
+            Evenkina ANDREEVA, 1961 [E. anarbensis] | Siberia | MORD
+          Subfamily METORTHINAE Williams, 1965
+            Metorthis WANG, 1955 [M. alata] | China | LORD
+        Family FINKELNBURGIIDAE Schuchert & Cooper, 1931
+          Finkelnburgia WALCOTT, 1905 [F. finkelnburgi] | Virginia, USA; North Hemisphere | UCAM-LORD
+          Diparelasma ULRICH & COOPER, 1936 [D. typiwm] | Alabama, USA | LORD
+          Fasciculina COOPER, 1952 [Orthis desmopleura MEEK, 1872] | Oklahoma, USA | LORD
+          Orusia WALCOTT, 1905 [Anomites lenticularis WAHLENBERG, 1821] | Sweden; North Hemisphere | UCAM
+        Family PLECTORTHIDAE Schuchert & LeVene, 1929
+          Subfamily PLECTORTHINAE Schuchert & LeVene, 1929
+            Plectorthis HALL & CLARKE, 1892 [Orthis plicatella HALL, 1847] | Virginia, USA; North Hemisphere | MORD-UORD
+            Corineorthis STUBBLEFIELD, 1939 [C. decipiens] | Wales, GB | MORD
+            Desmorthis ULRICH & COOPER, 1936 [D. nevadensis] | Nevada, USA | LORD
+            Doleroides COOPER, 1930 [Orthis gibbosa BILLINGS, 1857] | Minnesota; Tennessee, USA | MORD
+            Giraldiella BANCROFT, 1949 [Orthis protensa SOWERBY, 1839] | Wales, GB | LSIL
+            Hebertella HALL & CLARKE, 1892 [Orthis sinuata HALL, 1847] | USA; Ireland | MORD-UORD
+            Mimella COOPER, 1930 [Pionodema globosa WILLARD, 1928] | Virginia; Tennessee, USA | MORD
+            Oligorthis ULRICH & COOPER, 1936 [O. arbucklensis] | Oklahoma, USA | LORD
+            Scaphorthis COOPER, 1956 [S. virginiensis] | Virginia, USA; Scotland; Ireland | MORD-UORD
+            Schizophorella REED, 1917 [Orthis fallax SALTER, 1846] | Scotland; Ireland | UORD
+          Subfamily PLATYSTROPHIINAE Schuchert & LeVene, 1929
+            Platystrophia KING, 1850 [Terebratulites biforatus VON SCHLOTHEIM, 1820] | Southern USA; Cosmopolitan | MORD-USIL
+            Mcewanella FOERSTE, 1920 [Platystrophia fernvalensis MCEWAN, 1919] | Missouri, USA; GB; Ireland | MORD-UORD
+          Subfamily CYCLOCOELIINAE Schuchert & Cooper, 1931
+            Cyclocoelia FOERSTE, 1909 [Atrypa sordida HALL, 1847] | Ohio, USA | UORD
+              = Encyclodema FOERSTE, 1912
+          Subfamily RHACTORTHINAE Williams, 1963
+            Rhactorthis WILLIAMS, 1963 [R. crassa] | Wales, GB; Ireland | MORD-UORD
+        Family CREMNORTHIDAE Williams, 1963
+          Subfamily CREMNORTHINAE Williams, 1963
+            Cremnorthis WILLIAMS, 1963 [C. parva] | Wales, GB | MORD
+          Subfamily PHRAGMORTHINAE Williams, 1965
+            Phragmorthis COOPER, 1956 [P. buttsi] | Virginia; Tennessee, USA; Scotland | MORD-UORD
+        Family SKENIDIIDAE Kozlowski, 1929
+          Skenidium HALL, 1860 [Orthis insignis HALL, 1859] | New York, USA; Cosmopolitan | LDEV-UDEV
+          Skenidioides SCHUCHERT & COOPER, 1931 [S. billingsi] | Virginia; Tennessee, USA; Cosmopolitan | LORD-USIL
+          Tropidothyris COOPER, 1956 [T. pentagona] | Alabama, USA | MORD
+        Family TUVAELLIDAE Alichova, 1960
+          Tuvaella CHERNYSHEV, 1937 [T. rackovskii] | Eastern USSR | LSIL
+        Family SAUKRODICTYIDAE Wright, 1964
+          Saukrodictya WRIGHT, 1964 [S. hibernica] | Ireland | UORD
+
+      Superfamily ENTELETACEA Waagen, 1884
+        = Dalmanellacea SCHUCHERT & COOPER, 1931 (fide WRIGHT, 1965)
+        = Rhipidomellacea ALICHOVA, 1960 (fide WRIGHT, 1965)
+        Family ENTELETIDAE Waagen, 1884
+          = Schizophoriidae SCHUCHERT & LEVENE, 1929
+          Subfamily ENTELETINAE Waagen, 1884
+            Enteletes FISCHER DE WALDHEIM, 1825 [E. glabra FISCHER DE WALDHEIM, 1830] | Widespread | PENN-UPERM
+              = Anteletes D'ORBIGNY, 1850 (nom. null.)
+              = Enteles SCHELLWEIN, 1892 (nom. null.)
+              = Syntrilasma MEEK & WORTHEN, 1865 [Spirifer hemiplicatus HALL, 1852]
+              = Syntrielasma MEEK & WORTHEN, 1866 (nom. van.)
+            Enteletella LIKHAREV, 1925 [E. nikschitchi] | Caucasus, USSR | UPERM
+            Enteletina SCHUCHERT & COOPER, 1931 [Enteletes latesinuatus WAAGEN, 1884] | Asia, ?N. America | PENN-UPERM
+            Parenteletes KING, 1930 [P. cooperi] | Europe, Asia, N. America | PENN-LPERM
+          Subfamily DRABOVIINAE Havlíček, 1950
+            Drabovia HAVLÍČEK, 1950 [Orthis redux BARRANDE, 1848] | Europe, N. Africa | MORD
+            ?Comatopoma HAVLÍČEK, 1950 [C. barrandei] | Bohemia | UORD
+            Diorthelasma COOPER, 1956 [D. parvum] | SE USA, Scotland | MORD
+            Drabovinella HAVLÍČEK, 1950 [Orthis drabovensis BARRANDE, 1879] | Bohemia | MORD
+            Fascifera ULRICH & COOPER, 1942 [F. subcarinata] | N. America, ?Europe (Scotland) | MORD
+            Pionodema FOERSTE, 1912 [Orthis subaequata CONRAD, 1843] | N. America, Scotland, ?Asia | MORD-UORD
+              = Bathycoelia FOERSTE, 1909 (preocc. AMYOT & SERVILLE, 1843)
+          Subfamily SCHIZOPHORIINAE Schuchert & LeVene, 1929
+            Schizophoria KING, 1850 [Conchyliolithus (Anomites) resupinatus MARTIN, 1809] | Cosmopolitan | SIL-PERM
+            Aulacophoria SCHUCHERT & COOPER, 1931 [Orthis keyserlingiana DE KONINCK, 1843] | Europe | MISS
+            Enteletoides STUCKENBERG, 1905 [E. rossicus] | C. Asia | PENN
+            Hirnantia LAMONT, 1935 [Orthis sagittifera M'COY, 1851] | Europe (G. Britain) | UORD-LSIL
+            Orthotichia HALL & CLARKE, 1892 [Orthis? morganiana DERBY, 1874] | Widespread | PENN-UPERM
+              = Orthotichina CHERNYSHEV, 1914 (nom. null.)
+            Salopina BOUCOT, 1960 [Orthis lunata SOWERBY, 1839] | W. Europe, E. N. America | USIL-LDEV
+            Sphenophragmus IMRIE, 1959 [S. nanus] | E. & C. N. America | MDEV
+        Family PAURORTHIDAE Öpik, 1933
+          Paurorthis SCHUCHERT & COOPER, 1931 [Orthambonites parva PANDER, 1830] | N. Europe, N. America, Asia | LORD-MORD
+            = Naniaella WANG, 1955 [N. typa]
+            = Paurorthina RUBEL, 1961 [P. resima]
+          Cyclomyonia COOPER, 1956 [C. peculiaris] | E. USA | MORD
+        Family DALMANELLIDAE Schuchert, 1913
+          = Wattsellidae SCHUCHERT & COOPER, 1931
+          = Isorthinae SCHUCHERT & COOPER, 1931
+          = Onniellidae ÖPIK, 1933
+          Dalmanella HALL & CLARKE, 1892 [Orthis testudinaria DALMAN, 1828] | N. Hemisphere | LORD-LSIL
+            = Wattsella BANCROFT, 1928 [W. wattsi]
+            = Idiorthis MCLEARN, 1924 [I. matura]
+            = Nocturnellia HAVLÍČEK, 1950 [Orthis nocturna BARRANDE, 1879]
+          Aulacella SCHUCHERT & COOPER, 1931 [Orthis eifeliensis SCHNUR, 1853] | N. Hemisphere | MDEV-MISS
+          Bancroftina SINCLAIR, 1946 [Raymondella typa WHITTINGTON, 1938] | G. Britain, Ireland | MORD-UORD
+            = Raymondella WHITTINGTON, 1938 (preocc. REED, 1935)
+          Cariniferella SCHUCHERT & COOPER, 1931 [Orthis carinata HALL, 1843] | N. America, W. Europe, N. Africa, C. Asia, Australia | UDEV
+          Cryptothyris BANCROFT, 1945 [Resserella paracyclica BANCROFT, 1928] | England, Bohemia | MORD
+            = Crassiorina HAVLÍČEK, 1950 [Orthis notata var. crassior BARRANDE, 1879]
+          Dedzetina HAVLÍČEK, 1950 [Parmorthis (Dedzetina) macrostomoides] | Bohemia | UORD
+          Diceromyonia WANG, 1949 [Orthis tersa SARDESON, 1892] | N. America | UORD
+          Eodalmanella HAVLÍČEK, 1950 [Orthis socialis BARRANDE, 1879] | Bohemia | LORD
+          Eremotrema COOPER, 1956 [E. biconvexum] | E. USA, Scotland | MORD
+          Fascicostella SCHUCHERT & COOPER, 1931 [Strophomenes gervilii DEFRANCE, 1827] | Europe, N. Africa, C. Asia, Australia, N. Zealand | USIL-LDEV
+          Heterorthina BANCROFT, 1928 [H. praeculta] | Europe (England, Bohemia, Estonia), ?USA (Ohio) | MORD-UORD
+            = Elsaella ALICHOVA, 1960 [Bekkerella bekkeri ROSENSTEIN, 1943]
+            = Bekkerella ROSENSTEIN, 1943 (preocc. REED, 1936)
+          Howellites BANCROFT, 1945 [Resserella (Howellites) striata] | G. Britain, Bohemia | MORD
+            = Mesodalmanella HAVLÍČEK, 1950 [M. flava]
+          Isorthis KOZŁOWSKI, 1929 [Dalmanella (Isorthis) szajnochai] | Widespread | SIL-MDEV
+          Levenea SCHUCHERT & COOPER, 1931 [Orthis subcarinata HALL, 1857] | N. Hemisphere | SIL-MDEV
+            = Dalmanellopsis KHALFIN, 1948 [D. septigera]
+          Mendacella COOPER, 1930 [Orthis uberis BILLINGS, 1866] | N. America, Europe, C. Asia | UORD-MDEV
+            = Dalejina HAVLÍČEK, 1953 [D. hanusi]
+          Onniella BANCROFT, 1928 [O. bröggeri] | Europe, N. America | MORD-UORD
+            = Soudleyella BANCROFT, 1945 [S. soudleyensis]
+          Paucicrura COOPER, 1956 [Orthis rogata SARDESON, 1892] | N. America, Europe | MORD-UORD
+            = Cristiferina COOPER, 1956 [C. cristata]
+          Proschizophoria MAILLIEUX, 1912 [Orthis personata ZEILER, 1857] | W. Europe, N. Africa, C. Asia, E. N. America | DEV
+          Resserella BANCROFT, 1928 [Orthis canalis J. DE C. SOWERBY, 1839] | Widespread | SIL
+            = Parmorthis SCHUCHERT & COOPER, 1931 [Orthis elegantula DALMAN, 1828]
+          ?Teichertina VEEVERS, 1959 [T. fitzroyensis] | W. Australia | UDEV
+        Family DICOELOSIIDAE Cloud, 1948
+          = Bilobitidae SCHUCHERT & COOPER, 1931
+          Dicoelosia KING, 1850 [Anomia biloba LINNÉ, 1767] | N. America, Europe, C. Asia, Australia | UORD-MDEV
+            = Dicaelosia KING, 1850 (nom. null.)
+            = Bilobites QUENSTEDT, 1869 [obj.] (non RAFINESQUE, 1831; nec D'ORBIGNY, 1839; nec BRONN, 1848)
+        Family KAYSERELLIDAE Wright, 1965
+          Subfamily KAYSERELLINAE Wright, 1965
+            Kayserella HALL & CLARKE, 1892 [Orthis lepida SCHNUR, 1853] | Europe, E. N. America | MDEV
+          Subfamily PROKOPIINAE Wright, 1965
+            Prokopia HAVLÍČEK, 1953 [P. bouskai] | Bohemia | MDEV
+            Monelasmina COOPER, 1955 [Orthis deshayesi RIGAUX, 1873] | W. Europe, W. Canada | UDEV
+        Family HYPSOMYONIIDAE Wright, 1965
+          Hypsomyonia COOPER, 1955 [*H. stainbrooki] | U.Dev., Iowa, USA | MDEV-UDEV
+        Family HARKNESSELLIDAE Bancroft, 1928
+          Harknessella REED, 1917 [*Orthis vespertilio SOWERBY, 1839] | Caradoc., England | MORD
+          Horderleyella BANCROFT, 1928 [*H. plicata] | Caradoc., England | MORD
+          Reuschella BANCROFT, 1928 [*R. semiglobata] | Caradoc., England | MORD-UORD
+            = Reushella ALICHOVA, 1960 (nom. null.)
+          Smeathenella BANCROFT, 1928 [*S. harnagensis] | Caradoc., England | MORD
+        Family HETERORTHIDAE Schuchert & Cooper, 1931
+          Heterorthis HALL & CLARKE, 1892 [*Orthis clytie HALL, 1861] | Trenton., Kentucky, USA | MORD-UORD
+          Planoharknessella HAVLÍČEK, 1950 [*P. planidorsa] | Caradoc., Bohemia | MORD
+          Svobodaina HAVLÍČEK, 1950 [*Orthis inclyta BARRANDE, 1879] | Caradoc., Bohemia | MORD-UORD
+            = Svobodiana ALICHOVA, 1960 (nom. null.)
+        Family RHIPIDOMELLIDAE Schuchert, 1913
+          Rhipidomella OEHLERT, 1890 [Terebratula michelini LEVEILLE, 1835] | L.Carb., Belgium | LSIL-UPERM
+            = Rhipidomys OEHLERT, 1887 (non WAGNER, 1844, preocc.)
+            = Blairella MILLER & GURLEY, 1896 (nom. nud.)
+            = Pseudodicoelosia BOUCOT & AMSDEN, 1958 (j.s.s., fide WRIGHT, 1965)
+            = Loganella BOUCOT & AMSDEN, 1958 (j.s.s., fide WRIGHT, 1965)
+            = Rhipidomelloides BOUCOT & AMSDEN, 1958 (j.s.s., fide WRIGHT, 1965)
+            = Strixella BOUCOT & AMSDEN, 1958 (j.s.s., fide WRIGHT, 1965)
+          Perditocardinia SCHUCHERT & COOPER, 1931 [*Orthis dubia HALL, 1858] | Miss., Indiana, USA | LCARB-MPERM
+          Platyorthis SCHUCHERT & COOPER, 1931 [*Orthis planoconvexa HALL, 1859] | L.Dev., Maryland, USA | USIL-MDEV
+          Reeftonia ALLAN, 1947 [*R. marwicki] | L.Dev., New Zealand | LDEV
+          Thiemella WILLIAMS, 1908 [*T. villenovia] | U.Dev., New York, USA | UDEV-LCARB
+        Family LINOPORELLIDAE Schuchert & Cooper, 1931
+          Linoporella SCHUCHERT & COOPER, 1931 [*Orthis punctata DE VERNEUIL, 1848] | U.Sil., Gotland, Sweden | LSIL-USIL
+          Elasmothyris COOPER, 1956 [*E. concinnula] | Porterfield, Alabama, USA | MORD
+          Laticrura COOPER, 1956 [*L. pionodema] | Porterfield, Virginia, USA | MORD-UORD
+          Orthotropia HALL & CLARKE, 1894 [*O. dolomitica] | Wenlock., Wisconsin, USA | USIL
+          Salopia WILLIAMS, 1955 [*Orthis salteri DAVIDSON, 1871] | Caradoc., England | MORD
+        Family ANGUSTICARDINIIDAE Schuchert & Cooper, 1931
+          Angusticardinia SCHUCHERT & COOPER, 1931 [*Porambonites recta PANDER, 1830] | L.Ord., E.Baltic-Bohemia | LORD
+            = Apatorthidae ÖPIK, 1933 (j.s.s., fide WRIGHT, 1965)
+          Apatorthis ÖPIK, 1933 [*A. punctata] | M.Ord., Estonia | MORD-UORD
+        Family TROPIDOLEPTIDAE Schuchert, 1896
+          Tropidoleptus HALL, 1857 [*Strophomena carinata CONRAD, 1839] | M.Dev., New York, USA | LDEV-UDEV
+
+    Suborder CLITAMBONITIDINA Öpik, 1934
+      Superfamily CLITAMBONITACEA Winchell & Schuchert, 1893
+        Family POLYTOECHIIDAE Öpik, 1934
+          = Tritoechiidae ULRICH & COOPER, 1936
+          Polytoechia HALL & CLARKE, 1892 [Hemipronites apicalis WHITFIELD, 1886] | Vermont, USA | LORD
+            = Deltatreta ULRICH in BUTTS, 1926 (j.s.s.)
+            = Deltorthis ULRICH in POULSEN, 1927 (pro Waaglina HALL, 1889; j.o.s.)
+            = Martellia WIRTH, 1936 (j.s.s.)
+          Eremotoechia COOPER, 1956 [E. cloudi] | USA (Tenn.); Scotland | MORD
+          Pomatotrema ULRICH & COOPER, 1932 [P. muralis] | USA (Okla.) | LORD
+          Tritoechia ULRICH & COOPER, 1936 [Deltatreta typica SCHUCHERT & COOPER, 1932] | USA (Okla.); Europe | LORD
+        Family CLITAMBONITIDAE Winchell & Schuchert, 1893
+          Subfamily CLITAMBONITINAE Winchell & Schuchert, 1893
+            Clitambonites AGASSIZ, 1846 [Pronites adscendens PANDER, 1830] | Eurasia | LORD-MORD
+              = Pronites PANDER, 1830 (j.o.s.)
+              = Orthisina D'ORBIGNY, 1847 (j.o.s.)
+              Clitambonites (Clitambonites) AGASSIZ, 1846 [Pronites adscendens PANDER, 1830] | Eurasia | LORD-MORD
+              Clitambonites (Hemipronites) PANDER, 1830 [Hemipronites tumida PANDER, 1830] | E.Europe; China | LORD
+            Clinambon SCHUCHERT & COOPER, 1932 [Anomites anomala VON SCHLOTHEIM, 1822] | USSR | MORD
+            Ilmarinia ÖPIK, 1934 [Orthisina sinuata PAHLEN, 1877] | Baltic | MORD-UORD
+            Iru ÖPIK, 1934 [Orthisina concava PAHLEN, 1877] | USSR | LORD
+            Ladogiella ÖPIK, 1934 [L. imbricata] | USSR | LORD
+            Pahlenella SCHUCHERT & COOPER, 1931 [Orthis trigonilla EICHWALD, 1840] | USSR | LORD
+            Vellamo ÖPIK, 1930 [Orthis verneuili EICHWALD, 1841] | N.Hemisphere | MORD-UORD
+          Subfamily ATELELASMATINAE Cooper, 1956
+            Atelelasma COOPER, 1956 [A. perfectum] | USA (Tenn.); Europe | MORD
+            Apomatella SCHUCHERT & COOPER, 1931 [Orthisina ingrica PAHLEN, 1877] | Europe | LORD
+      Superfamily GONAMBONITACEA Schuchert & Cooper, 1931
+        Family GONAMBONITIDAE Schuchert & Cooper, 1931
+          Subfamily GONAMBONITINAE Schuchert & Cooper, 1931
+            Gonambonites PANDER, 1830 [G. lata] | E.Baltic | LORD
+            Anchigonites ÖPIK, 1939 [A. conitilus] | Scandinavia; USSR | LORD
+            Antigonambonites ÖPIK, 1934 [Gonambonites plana PANDER, 1830] | Europe | LORD
+            Estlandia SCHUCHERT & COOPER, 1931 [Orthisina marginata PAHLEN, 1877] | Europe | MORD
+            Lacunarites ÖPIK, 1934 [L. ilmatar] | USSR | LORD
+            Raunites ÖPIK, 1939 [Orthisina jallischewskyi LESSNIKOV, 1924] | USSR | LORD
+              = Ranella ÖPIK, 1932 (preocc. MUNSTER, 1839)
+          Subfamily ANOMALORTHINAE Ulrich & Cooper, 1936
+            Anomalorthis ULRICH & COOPER, 1936 [A. utahensis] | W.USA | LORD
+            Oslogonites ÖPIK, 1939 [O. costellatus] | Scandinavia | LORD
+            Progonambonites ÖPIK, 1934 [P. estonus] | Europe | LORD
+        Family KULLERVOIDAE Öpik, 1934
+          Kullervo ÖPIK, 1932 [Gonambonites panderi ÖPIK, 1930] | N.Hemisphere | MORD-UORD
+
+    Suborder TRIPLESIIDINA Moore, 1952
+      Superfamily TRIPLESIACEA Schuchert, 1913
+        Family TRIPLESIIDAE Schuchert, 1913
+          Triplesia HALL, 1859 [Atrypa extans EMMONS, 1842] | Widespread | MORD-USIL
+            = Triplecia HALL & CLARKE, 1892 (nom. van.)
+            = Dicraniscus MEEK, 1872 (j.o.s.)
+          Bicuspina HAVLÍČEK, 1950 [Orthis cava BARRANDE, 1848] | Europe | MORD-UORD
+          Brachymimulus COCKERELL, 1929 [Mimulus perversus BARRANDE, 1879] | Europe; N.America | UORD-LSIL
+            = Mimulus BARRANDE, 1879 (preocc. STIMPSON, 1860)
+          Cliftonia FOERSTE, 1909 [C. striata] | Europe; USA | UORD-LSIL
+          Epacroplecia WILLIAMS, 1962 [Triplesia grayiae DAVIDSON, 1870] | Scotland; ?China | MORD
+          Onychoplecia COOPER, 1956 [O. brevirostris] | N.America | MORD
+          Onychotreta ULRICH & COOPER, 1936 [O. mesleri] | USA (Ark.) | LSIL
+          Oxoplecia WILSON, 1913 [O. calhouni] | Europe; N.America | MORD-USIL
+            = California BASSLER, 1915 (nom. null.)
+          Plectotreta ULRICH & COOPER, 1936 [P. lindstromi] | NW.Europe | USIL
+          Streptis DAVIDSON, 1881 [Terebratula grayi DAVIDSON, 1848] | N.America; Europe | UORD-USIL
+
+  Order UNCERTAIN-DICTYONELLIDINA By A. J. ROWELL
+    Suborder DICTYONELLIDINA Cooper, 1956
+      Superfamily EICHWALDIACEA Schuchert, 1893
+        Family EICHWALDIIDAE Schuchert, 1893
+          Eichwaldia BILLINGS, 1858 [*E. subtrigonalis] | Rockland F., Can. | MORD
+          Dictyonella HALL, 1868 [*Atrypa coralifera] | Sil., N.Am.-Eu.-Asia | SIL
+            = Dyetionella OEHLERT, 1887 (nom. null.)
+        Family ISOGRAMMIDAE Schuchert & LeVene, 1929
+          Isogramma MEEK & WORTHEN, 1870 [*Chonetes? millipunctatus] | Carb.-Perm., N.Am.-Eu.-Asia | MISS-UPERM
+            = Aulacorhynchus DITTMAR, 1872 (non GOULD, 1834)
+            = Aulacorhyna STRAND, 1928 (nom. subst. pro Aulacorhynchus DITTMAR, 1872)
+          Megapleuronia COOPER, 1952 [*Productus fabianii] | Perm., Eu. | PERM
+
+  Order STROPHOMENIDA Opik, 1934
+    Superfamily PLECTAMBONITACEA Jones, 1928
+      Family PLECTAMBONITIDAE Jones, 1928
+        Subfamily PLECTAMBONITINAE Jones, 1928
+          Plectambonites PANDER, 1830 [*P. planissimus] | M.Ord., Baltic | MORD
+          Ingria OPIK, 1930 [*Orthisina nejedli] | L.Ord., Eu.-N.Am. | LORD
+            = Palinorthis ULRICH & COOPER, 1936 [*P. cloudi]
+          Plectella LAMANSKY, 1901 [*Plectambonites uncinata] | L.Ord.(B1), Baltic | LORD
+        Subfamily AHTIELLINAE Opik, 1933
+          Ahtiella OPIK, 1932 [*A. lirata] | L.Ord.(BIII)-M.Ord.(CI), Baltic | LORD-MORD
+          Inversella OPIK, 1933 [*I. borealis] | L.Ord.(BIII)-M.Ord.(CI), Baltic-Wales | LORD-MORD
+          Ukoa OPIK, 1932 [*U. ornata] | L.Ord.(BIII)-M.Ord.(CI), Baltic | LORD-MORD
+      Family TAFFIIDAE Ulrich & Cooper, 1936
+        Taffia ULRICH, 1926 [*T. planoconvexa] | L.Ord.(U.Canad.), N.Am. | LORD
+        Aporthophyla ULRICH & COOPER, 1936 [*A. typa] | L.Ord.(Whiterock), N.Am. | LORD
+        Pelonomia COOPER, 1956 [*Orthis delicatula] | L.Ord.(Whiterock), E.N.Am.(Newf.) | LORD
+        Toquimia ULRICH & COOPER, 1936 [*T. kirki] | L.Ord.(Whiterock), N.Am. | LORD
+      Family LEPTESTIIDAE Opik, 1933
+        Subfamily LEPTESTIINAE Opik, 1933
+          Leptestia BEKKER, 1922 [*L. musculosa] | M.Ord., Baltic-Eire | MORD
+            = Leptestia (Leptoptilum) OPIK, 1930 [*L. (L.) bekkeri]
+          Apatomorpha COOPER, 1956 [*Rafinesquina pulchella] | M.Ord.(Porterfield), E.USA | MORD
+          Glyptambonites COOPER, 1956 [*G. musculosus] | M.Ord.-U.Ord., E.N.Am.-Eu.(Scot.) | MORD-UORD
+          Goniotrema ULRICH & COOPER, 1936 [*G. perplexum] | L.Ord.(Canad.), USA(Nev.) | LORD
+          Grorudia SPJELDNAES, 1957 [*G. grorudi] | M.Ord.(4ab-4ba), Norway, Eire | MORD
+          Hesperomena COOPER, 1956 [*H. leptellinoidea] | L.Ord.(Whiterock), USA(Nev.) | LORD
+          Palaeostrophomena HOLTEDAHL, 1916 [*Strophomena concava] | M.Ord., Eu.-N.Am. | MORD
+          ?Paucicostella COOPER, 1956 [*P. canadensis] | L.Ord., N.Am.(E.Can.) | LORD
+          Sowerbyites TEICHERT, 1937 [*S. medioseptata] | M.Ord., ?U.Ord., N.Am.-Greenl.-?Eu. | MORD-?UORD
+          Spanodonta PRENDERGAST, 1935 [*S. hoskingiae] | M.Ord., W.Australia | MORD
+          Titanambonites COOPER, 1956 [*T. medius] | M.Ord., E.USA-Scot. | MORD
+        Subfamily ISOPHRAGMATINAE Cooper, 1956
+          = Syndielasmatidae COOPER, 1956
+          Isophragma COOPER, 1956 [*I. ricevillense] | M.Ord., E.USA-Br.I. | MORD
+          Syndielasma COOPER, 1956 [*S. biseptatum] | L.Ord.(Whiterock), USA(Nev.) | LORD
+          Tetraodontella JAANUSSON, 1962 [*T. biseptata] | M.Ord.(Cu), Baltic | MORD
+        Subfamily TAPHRODONTINAE Cooper, 1956
+          Taphrodonta COOPER, 1956 [*T. parallela] | L.Ord.(Whiterock), USA(Nev.) | LORD
+      Family LEPTELLINIDAE Ulrich & Cooper, 1936
+        Subfamily LEPTELLININAE Ulrich & Cooper, 1936
+          Leptellina ULRICH & COOPER, 1936 [*L. tennesseensis] | L.Ord.(Whiterock)-M.Ord.(Wilderness), N.Am.-Eu.(Scot.) | LORD-MORD
+          Anoptambonites WILLIAMS, 1962 [*Leptaena grayae] | M.Ord., Scot.-W.USSR | MORD
+          Leptelloidea JONES, 1928 [*Plectambonites schmidti var. leptelloides] | M.Ord., Baltic | MORD
+          Merciella LAMONT & GILBERT, 1945 [*Leptella (Merciella) vesper] | U.Ord.(Ashgill.)-L.Sil.(Llandover.), Eu. | UORD-LSIL
+            = Benignites HAVLICEK, 1952 [*Strophomena primula]
+        Subfamily LEPTELLINAE Williams, n. subfam.
+          Leptella HALL & CLARKE, 1892 [*Leptaena sordida] | L.Ord.(Whiterock), N.Am. | LORD
+            = non Leptella REUTER, 1893 (homonym)
+          Petroria WILSON, 1926 [*P. rugosa] | L.Ord., W.Can.-Eire | LORD
+        Subfamily LEPTESTIININAE Havlicek, 1961
+          Leptestiina HAVLICEK, 1952 [*L. prantli] | M.Ord.-U.Ord., Eu. | MORD-UORD
+            = Dulankarella RUKAVISHNIKOVA, 1956 [*D. magna]
+          Bilobia COOPER, 1956 [*B. hemisphaerica] | M.Ord.-U.Ord., Eu.-N.Am. | MORD-UORD
+          Diambonia COOPER & KINDLE, 1936 [*Plectambonites gibbosa] | M.Ord.-U.Ord., N.Am.-Eu. | MORD-UORD
+          Leangella OPIK, 1933 [*Plectambonites scissa var. triangularis] | M.Ord.-U.Sil., Eu.-N.Am. | MORD-USIL
+          Sampo OPIK, 1933 [*S. hiiuensis] | U.Ord., Eu. | UORD
+          Tufoleptina HAVLICEK, 1961 [*T. lulogena] | U.Sil.(Wenlock), Czech | USIL
+      Family SOWERBYELLIDAE Opik, 1930
+        Subfamily SOWERBYELLINAE Opik, 1930
+          Sowerbyella JONES, 1928 [*Leptaena sericea SOWERBY, 1839] | England | ORD-LSIL
+            S. (Sowerbyella) JONES, 1928 | England | ORD-LSIL
+            S. (Viruella) ROOMUSOKS, 1959 [*Sowerbyella liliifera OPIK, 1930] | Estonia | LORD-MORD
+          Anisopleurella COOPER, 1956 [*A. inaequistriata] | USA (Tenn.) | MORD-UORD
+          Eochonetes REED, 1917 [*E. advena] | Scotland | UORD
+          Eoplectodonta KOZLOWSKI, 1929 [*Sowerbyella praecursor JONES, 1928] | Wales | MORD-LSIL
+            = Thaerodonta WANG, 1949 (j.s.s.)
+            E. (Eoplectodonta) KOZLOWSKI, 1929 | Wales | MORD-LSIL
+            E. (Kozlowskites) HAVLIcEK, 1952 [*Strophomena nuncia BARRANDE, 1879] | Czech. | UORD
+          Plectodonta KOZLOWSKI, 1929 [*P. mariae] | Poland | USIL-MDEV
+            = Dalejodiscus HAVLIcEK, 1961 (j.s.s.)
+          Plectodontella HAVLIcEK, 1953 [*P. redunca] | Czech. | USIL-MDEV
+            = Ygera HAVLIcEK, 1961 (j.s.s.)
+        Subfamily PTYCHOGLYPTINAE Cooper, 1956
+          Ptychoglyptus WILLARD, 1928 [*P. virginiensis] | USA (Va.) | ORD
+        Subfamily XENAMBONITINAE Cooper, 1956
+          Xenambonites COOPER, 1956 [*X. undosus] | USA (Ala.) | MORD-UORD
+        Subfamily AEGIROMENINAE Havlicek, 1961
+          Aegiromena HAVLICEK, 1961 [*Leptaena aquila BARRANDE, 1848] | Czech. | MORD-UORD
+          Aegiria OPIK, 1933 [*A. norvegica] | Norway | LSIL
+          Alwynella SPJELDNAES, 1957 [*A. osloensis] | Norway | ORD
+          Chonetoidea JONES, 1928 [*Plectambonites papillosa REED, 1905] | England | UORD-LSIL
+          Kassinella BORISSIAK, 1956 [*K. globosa] | USSR (Kazakhstan) | MORD
+          Sericoidea LINDSTROM, 1953 [*Leptaena sericea var. restricta HADDING, 1913] | Sweden | MORD-UORD
+      Family BIMURIIDAE Cooper, 1956
+        Bimuria ULRICH & COOPER, 1942 [*B. superba] | USA (Tenn.) | MORD
+        Craspedelia COOPER, 1956 [*C. marginata] | USA (Ala.) | MORD
+
+    Superfamily STROPHOMENACEA King, 1846
+      Family STROPHOMENIDAE King, 1846
+        Subfamily STROPHOMENINAE King, 1846
+          Strophomena RAFINESQUE, 1820 [*S. rugosa] | USA | MORD-UORD
+          Gunnarella SPJELDNAES, 1957 [*Strophomena (Gunnarella) delta] | USA (Iowa) | MORD-UORD
+          Luhaia ROOMUSOKS, 1956 [*L. vardi] | Estonia | UORD
+          Microtrypa WILSON, 1945 [*M. altilis] | N. America | MORD
+          Pentlandina BANCROFT, 1949 [*Strophomena (Pentlandina) tartana] | Great Britain | LSIL-USIL
+          Rhipidomena COOPER, 1956 [*Strophomena tennesseensis WILLARD, 1928] | USA (Tenn.) | MORD
+          Tetraphalerella WANG, 1949 [*T. multicostata] | USA (Iowa) | UORD
+          Trigrammaria WILSON, 1945 [*T. trigonalis] | N. America | MORD
+        Subfamily FURCITELLINAE Williams, 1965
+          Furcitella COOPER, 1956 [*F. plicata] | USA (Va.) | MORD-LSIL
+          Holtedahlina FOERSTE, 1925 [*Leptaena sulcata DE VERNEUIL, 1848] | USA (Ohio) | UORD
+          Murinella COOPER, 1956 [*M. partita] | USA (Okla.) | MORD
+          Teratelasma COOPER, 1956 [*T. neumani] | USA (Va.) | MORD
+        Subfamily RAFINESQUININAE Schuchert, 1893
+          Rafinesquina HALL & CLARKE, 1892 [*Leptaena alternata CONRAD, 1838] | USA (N.Y.) | MORD-UORD
+            = Playfairia REED, 1917 (j.s.s.)
+          Kjaerina BANCROFT, 1929 [*K. typa] | England | MORD-UORD
+            K. (Kjaerina) BANCROFT, 1929 | England | MORD
+            K. (Hedstroemina) BANCROFT, 1929 [*H. fragilis] | England | MORD-UORD
+          Kjerulfina BANCROFT, 1929 [*K. trigonalis] | England | UORD
+          Megamyonia WANG, 1949 [*M. knighti] | USA (Iowa) | UORD
+        Subfamily GLYPTOMENINAE Williams, 1965
+          Glyptomena COOPER, 1956 [*G. sculpturata] | USA (Va.) | MORD
+            = Oslomena SPJELDNAES, 1957 (j.s.s.)
+          ?Hesperinia COOPER, 1956 [*H. kirki] | USA (Nev.) | LORD
+          Mjoesina SPJELDNAES, 1957 [*Rafinesquina mjoesensis HOLTEDAHL, 1916] | Scotland | MORD
+          Pionomena COOPER, 1956 [*P. neumani] | USA (Pa.) | MORD
+          Platymena COOPER, 1956 [*P. plana] | USA (Tenn.) | MORD
+        Subfamily OEPIKINAE Sokolskaya, 1960
+          Oepikina SALMON, 1942 [*Oepikina septata] | USA (Tenn.) | MORD-UORD
+          Colaptomena COOPER, 1956 [*C. leptostrophoidea] | USA (Va.) | MORD
+          Kirkina SALMON, 1942 [*K. millardensis] | USA (Nev.) | LORD
+          Maakina ANDREEVA, 1961 [*Oepikina (M.) kulinnensis] | USSR | MORD
+          Macrocoelia COOPER, 1956 [*M. obesa] | USA (Tenn.) | MORD
+        Subfamily LEPTAENOIDEINAE Williams, 1953
+          Leptaenoidea HEDSTROM, 1917 [*L. silurica] | Sweden | USIL
+          Leptaenisca BEECHER, 1890 [*Leptaena concava HALL, 1857] | USA (Okla.) | USIL-LDEV
+      Family FOLIOMENIDAE Williams, 1965
+        Foliomena HAVLICEK, 1952 [*Strophomena folium BARRANDE, 1879] | Czech. | UORD
+      Family CHRISTIANIIDAE Williams, 1953
+        Christiania HALL & CLARKE, 1892 [*Leptaena subquadrata HALL, 1883] | USA (Appalachians) | ORD
+      Family LEPTAENIDAE Hall & Clarke, 1894
+        Leptaena DALMAN, 1828 [*L. rugosa DALMAN, 1828] | Sweden | MORD-DEV
+          = Leptaenella FREDERIKS, 1917 (j.s.s.)
+          = Leptaenulopsis HAUPT, 1878 (j.s.s.)
+        Bekkeromena ROOMVSOKS, 1963 [*Strophomella semipartita ROEMER, 1861] | Estonia | UORD
+        Bellimurina COOPER, 1956 [*Leptaena charlottae WINCHELL & SCHUCHERT, 1892] | USA (Minn.) | MORD
+        Cyphomena COOPER, 1956 [*Leptaena homostriata BUTTS, 1942] | USA (Va.) | MORD
+        Dactylogonia ULRICH & COOPER, 1942 [*D. geniculata] | USA (Tenn.) | MORD
+        Kiaeromena SPJELDNAES, 1957 [*Leptaena kjerulfi HOLTEDAHL, 1916] | Norway | MORD-UORD
+        Leptagonia M'Coy, 1844 [*Producta analoga PHILLIPS, 1836] | Wales | LCARB
+          = Pseudoleptaena WILLIAMS, 1965 (pro Leptaenella SARYCHEVA & SOKOLSKAYA, 1952)
+        Limbimurina COOPER, 1956 [*L. insueta] | USA (Penn.) | MORD
+        Notoleptaena GILL, 1951 [*N. lingulifera] | Australia | LDEV
+        Rugoleptaena HAVLIcEK, 1956 [*Rugoleptaena hornyi] | Poland | USIL-LDEV
+      Family STROPHEODONTIDAE Caster, 1939
+        Subfamily STROPHEODONTINAE Caster, 1939
+          Strophodonta HALL, 1850 [*Leptaena demissa CONRAD, 1842] | USA (Mich.) | UORD-UDEV
+            = Stropheodonta HALL, 1852 (nom. van.)
+            S. (Strophodonta) HALL, 1850 | USA (Mich.) | DEV
+            S. (Brachyprion) SHALER, 1865 [*Strophomena leda BILLINGS, 1860] | USA (Okla.) | LSIL-LDEV
+            S. (Eostropheodonta) BANCROFT, 1949 [*Orthis hirnantensis M'Coy, 1851] | Wales | UORD-LSIL
+            S. (Rhenostrophia) BOUCOT, 1960 [*Orthis subarachnoidea D'ARCHIAC & DE VERNEUIL, 1842] | Europe | LDEV
+          Cymostrophia CASTER, 1939 [*Leptaena stephani BARRANDE, 1879] | Czech. | USIL-LDEV
+            = Corrugatella KHALFIN, 1948 (obj.)
+            C. (Cymostrophia) CASTER, 1939 | Czech. | LDEV
+            C. (Idioglyptus) NORTHROP, 1939 [*I. stigmatus] | E. N. America | USIL
+          Megastrophia CASTER, 1939 [*Strophomena (Strophodonta) concava HALL, 1857] | USA (N.Y.) | SIL-MDEV
+            = Dictyostrophia CASTER, 1939 (j.s.s.)
+            M. (Megastrophia) CASTER, 1939 | USA (N.Y.) | MDEV
+            M. (Protomegastrophia) CASTER, 1939 [*Leptaena profunda HALL, 1852] | USA (Wis.) | LSIL-LDEV
+          Plicostropheodonta SOKOLSKAYA, 1960 [*Orthis murchisoni D'ARCHIAC & DE VERNEUIL, 1842] | Eurasia | LDEV-MDEV
+          Radiomena HAVLIcEK, 1962 [*Orthis irregularis ROEMER, 1844] | C. Europe | MDEV
+          Strophonella HALL, 1879 [*Strophomena semifasciata HALL, 1863] | USA (Tenn.) | LSIL-LDEV
+            = Strophoprion TWENHOFEL, 1914 (j.s.s.)
+            S. (Strophonella) HALL, 1879 | USA (Tenn.) | USIL-LDEV
+            S. (Eostrophonella) WILLIAMS, 1950 [*Strophonella davidsoni HOLTEDAHL, 1916] | Wales | LSIL
+          Strophonelloides CASTER, 1939 [*Strophodonta reversa CALVIN, 1878] | USA (Iowa) | UDEV
+            = Chemungia CASTER, 1939 (j.s.s.)
+        Subfamily LEPTOSTROPHIINAE Caster, 1939
+          Leptostrophia HALL & CLARKE, 1892 [*Stropheodonta magnifica HALL, 1857] | USA (Tenn.) | SIL-DEV
+            = Rhytistrophia CASTER, 1939 (j.s.s.)
+          Gamphalosia STAINBROOK, 1946 [*G. tenuissima] | USA (Iowa) | UDEV
+          Maoristrophia ALLAN, 1947 [*M. neozelanica] | New Zealand | LDEV
+          Nervostrophia CASTER, 1939 [*Strophomena nervosa HALL, 1843] | USA (Iowa) | MDEV-UDEV
+            = Sulcatostrophia CASTER, 1939 (j.s.s.)
+            = Pseudodouvillina STAINBROOK, 1945 (j.s.s.)
+          Protoleptostrophia CASTER, 1939 [*Strophomena blainvillii BILLINGS, 1874] | USA (Ohio) | MDEV
+        Subfamily DOUVILLININAE Caster, 1939
+          Douvillina (Douvillina) OEHLERT, 1887 [Orthis dutertrei MURCHISON, 1839] | Hackberry Fm, Iowa, USA | MDEV-UDEV
+          Douvillina (Mesodouvillina) WILLIAMS, 1950 [Stropheodonta subinterstrialis var. seretensis KOZLOWSKI, 1929] | Czortkov Fm, Poland | USIL
+          Amphistrophia HALL & CLARKE, 1892 [Strophomena striata HALL, 1843] | Waldron, Indiana, USA | USIL
+          Dicoelostrophia WANG, 1955 [D. punctata] | China | MDEV
+          Douvillinaria STAINBROOK, 1946 [Stropheodonta variabilis CALVIN, 1878] | Iowa, USA | UDEV
+          Douvillinella SPRIESTERSBACH, 1925 [Stropheodonta filifer SCHMIDT, 1912] | N.Hemis. | MDEV-UDEV
+          Moravostrophia HAVLICEK, 1962 [Strophomena interstrialis moravica SMYCKA, 1897] | Moravia, Czech. | MDEV
+        Subfamily PHOLIDOSTROPHIINAE Stainbrook, 1943
+          Pholidostrophia (Pholidostrophia) HALL & CLARKE, 1892 [Strophomena nacrea HALL, 1857] | Hamilton, New York, USA | LSIL-MDEV
+          Pholidostrophia (Mesopholidostrophia) WILLIAMS, 1950 [P. (Mesopholidostrophia) nitens] | Gotland | USIL
+          Lissostrophia (Lissostrophia) AMSDEN, 1949 [L. cooperi] | Henryhouse Fm, Oklahoma, USA | LSIL-LDEV
+          Lissostrophia (Mesolissostrophia) WILLIAMS, 1950 [L. (Mesolissostrophia) pellucida] | N.Hemis. | USIL
+        Subfamily SHALERIINAE Williams, n. subfam.
+          Shaleria (Shaleria) CASTER, 1939 [Strophomena gilpini DAWSON, 1881] | N.Scotia | LSIL-MDEV
+            = Mclearnia CASTER, 1939 (j.s.s.)
+            = McLearnites CASTER, 1945 (pro Mclearnia CASTER, 1939)
+          Shaleria (Telaeoshaleria) WILLIAMS, 1950 [S. (Telaeoshaleria) sulcata] | Eifel, Germany | MDEV
+          Hercostrophia WILLIAMS, 1950 [H. alpenensis] | Michigan, USA | MDEV
+          Zophostrophia VEEVERS, 1959 [Z. ungamica] | Fitzroy Basin, W.Australia | UDEV
+        Subfamily LEPTODONTELLINAE Williams, n. subfam.
+          Leptodontella KHALFIN, 1948 [Leptaena caudata SCHNUR, 1854] | Eurasia | LDEV-MDEV
+            = Glossostrophia WILLIAMS, 1950 (obj. synonym)
+            = Altaestrophia BUBLICHENKO, 1956 (j.s.s.)
+          Leptodonta KHALFIN, 1955 [Leptaena? leblanci ROUAULT, 1851] | France | MDEV
+          Parastrophonella BUBLICHENKO, 1956 [Strophomena anaglypha KAYSER, 1871] | Eurasia | MDEV
+        Subfamily LILJEVALLIINAE Williams, 1953
+          Liljevallia HEDSTROM, 1917 [L. gotlandica] | Sweden | MSIL
+
+      Superfamily DAVIDSONIACEA King, 1850
+        Family DAVIDSONIIDAE King, 1850
+          Davidsonia BOUCHARD, 1849 [D. verneuili] | Germany | MDEV
+          Biconostrophia HAVLICEK, 1956 [B. spirifera] | Czech. | LDEV
+          Prodavidsonia HAVLICEK, 1956 [P. dalejensis] | Czech. | MDEV
+        Family MEEKELLIDAE Stehli, 1954
+          Subfamily MEEKELLINAE Stehli, 1954
+            Meekella WHITE & ST. JOHN, 1867 [Plicatula striatocostata COX, 1857] | Texas, USA | MISS-PERM
+            Geyerella SCHELLWIEN, 1899 [G. gemmellaroi] | N.Am. | MISS-PERM
+              = Turriculum DE GREGORIO, 1930 (j.s.s.)
+            Ombonia CANEVA, 1906 [O. dieneri LIKHAREV, 1932] | N.Mex., USA | PERM
+            Orthotetella R. E. KING, 1931 [O. wolfcampensis] | Texas, USA | LPERM
+            Orthothetina SCHELLWIEN, 1900 [Orthotetes persicus SCHELLWIEN] | Cosmop. | MISS-PERM
+              = Hamletella HAYASAKA, 1953 (j.s.s.)
+            Perigeyerella WANG, 1955 [P. costellata] | China | UPERM
+            Pseudoderbyia LIKHAREV, 1934 [P. netschajewi] | USSR | LPERM
+            Schellwienella (Schellwienella) THOMAS, 1910 [Spirifera crenistria PHILLIPS, 1836] | G.Brit. | LDEV-MISS
+              = Carlopsina REED, 1954 (j.s.s.)
+            Schellwienella (Pulsia) IVANOV, 1925 [P. mosquensis] | USSR | MISS
+            Sicelia GORTANI & MERLA, 1934 [Canavaria acropedion MERLA, 1928] | Sosio, Italy | PERM
+              = Gemmellaria FABIANI & RUIZ, 1933 (j.s.s.)
+          Subfamily FARDENIINAE Williams, n. subfam.
+            Fardenia LAMONT, 1935 [F. scotica] | Scotland | MORD-USIL
+              = Coolinia BANCROFT, 1949 (j.s.s.)
+              = Saughina BANCROFT, 1949 (j.s.s.)
+              = Chilidiopsis BOUCOT, 1959 (j.s.s.)
+            Gacella WILLIAMS, 1962 [G. insolita] | Scotland | MORD
+        Family SCHUCHERTELLIDAE Williams, 1953
+          Subfamily SCHUCHERTELLINAE Williams, 1953
+            Schuchertella GIRTY, 1904 [Streptorhynchus lens WHITE, 1862] | Iowa, USA | LDEV-PERM
+            Diplanus STEHLI, 1954 [Streptorhynchus lamellatum KING, 1930] | USA | LPERM
+            Orthopleura IMBRIE, 1959 [O. rhipis] | Michigan, USA | MDEV
+            Schuchertellopsis MAILLIEUX, 1939 [S. durbutensis] | Europe | UDEV
+          Subfamily STREPTORHYNCHINAE Stehli, 1954
+            Streptorhynchus KING, 1850 [Terebratulites pelargonatus SCHLOTHEIM, 1816] | Germany | MISS-PERM
+              = Lepsius DE GREGORIO, 1930 (j.s.s.)
+              = Mammosum DE GREGORIO, 1930 (j.s.s.)
+            Irboskites BEKKER, 1924 [I. fixatus] | Estonia | MDEV
+            Kiangsiella GRABAU & CHAO, 1927 [Orthotetes tingi GRABAU, 1924] | Australia | MISS-PERM
+        Family ORTHOTETIDAE Waagen, 1884
+          Subfamily ORTHOTETINAE Waagen, 1884
+            Orthotetes FISCHER DE WALDHEIM, 1829 [O. radiata FISCHER DE WALDHEIM, 1850] | USSR | MISS-PERM
+              = Werriea CAMPBELL, 1957 (j.s.s.)
+              = Permorthotetes THOMAS, 1958 (j.s.s.)
+              = Pseudoorthotetes SOKOLSKAYA, 1963 (j.s.s.)
+            Derbyoides DUNBAR & CONDRA, 1932 [D. nebrascensis] | Kansas-Nebraska, USA | PENN
+            Hipparionyx VANUXEM, 1842 [H. proximus VANUXEM, 1842] | N.Am. | LDEV
+            Tapajotia DRESSER, 1954 [Streptorhynchus tapajotensis DERBY, 1874] | Brazil | MISS-LPERM
+          Subfamily DERBYIINAE Stehli, 1954
+            Derbyia WAAGEN, 1884 [D. regularis] | Texas, USA | MISS-PERM
+              = Derbyaeconcha LIKHAREV, 1934 (j.s.s.)
+              = Grabauellina LIKHAREV, 1934 (j.s.s.)
+            Licharewiella SOKOLSKAYA, 1960 [Derbya magnifica LIKHAREV, 1939] | USSR-Asia | LPERM
+            Plicatoderbya THOMAS, 1937 [Orthotetes magnus BRANSON, 1930] | N.Am. | LPERM
+        Family THECOSPIRIDAE Bittner, 1893
+          Thecospira ZUGMAYER, 1880 [Thecidea haidingeri SUESS, 1854] | Alps | TRIAS
+
+      Suborder CHONETIDINA
+        Superfamily CHONETACEA Bronn, 1862
+          Family CHONETIDAE Bronn, 1862
+            Subfamily DELEPINEINAE Muir-Wood, 1962
+              Megachonetes SOKOLSKAYA, 1950 [*Chonetes compressa SIBLY, 1908 (=C. siblyi I. THOMAS, 1919)] | Eng. | ?MDEV, UDEV-LCARB
+            Subfamily AIRTONIINAE Muir-Wood, 1962 | LCARB
+              Airtonia COPE, 1934 [*A. hudsoni] | Yorks., Eng. | LCARB
+            Suborder and Family UNCERTAIN
+              Reticulatochonetes BUBLICHENKO, 1956 [*R. lautus] | Kazakh. | LCARB
+
+        Superfamily CADOMELLACEA Schuchert, 1893 | LJUR
+          Family CADOMELLIDAE Schuchert, 1893 | LJUR
+            Cadomella OEHLERT, 1887 [*Leptaena moorei DAVIDSON, 1850] | Eu. | LJUR (ULIAS)
+
+      Suborder PRODUCTIDINA Waagen, 1883
+        Superfamily STROPHALOSIACEA Schuchert, 1913
+          Family STROPHALOSIIDAE Schuchert, 1913
+            Subfamily STROPHALOSIINAE Schuchert, 1913
+              Strophalosia KING, 1844 [Strophalosia gerardi King, 1846] | ?, Asia; Australia | PERM
+                = Leptaenalosia KING, 1850 (nom. nud.)
+              Crossalosia MUIR-WOOD & COOPER, 1960 [Productus buchianus de Koninck, 1847] | ?, Belgium | MISS
+              Dasyalosia MUIR-WOOD & COOPER, 1960 [Spondylus goldfussi Münster, 1839] | Zechstein, Europe | UPERM
+              Eostrophalosia STAINBROOK, 1943 [Strophalosia rockfordensis Hall & Clarke, 1893] | ?, Iowa, USA | MDEV-UDEV
+              Orthothrix GEINITZ, 1847 [Orthis excavata Geinitz, 1842] | Zechstein, Europe | UPERM
+            Subfamily HETERALOSIINAE Muir-Wood & Cooper, 1960
+              Heteralosia R. H. KING, 1938 [H. slocomi] | ?, N.Am.; Europe; Australia | MISS-LPERM
+              Craspedalosia MUIR-WOOD & COOPER, 1960 [Orthothrix lamellosus Geinitz, 1848] | Zechstein, Europe | UPERM
+              Devonalosia MUIR-WOOD & COOPER, 1960 [D. wrightorum] | Arkona Sh., Ontario, Canada | LDEV-MDEV
+              Leptalosia DUNBAR & CONDRA, 1932 [Strophalosia scintilla Beecher, 1890] | Louisiana Ls., Missouri, USA | UDEV-MISS
+              Lialosia MUIR-WOOD & COOPER, 1960 [Strophalosia kimberleyensis Prendergast, 1943] | ?, Australia | LPERM
+              Oligorachis IMBRIE, 1959 [O. oligorachis] | ?, Michigan, USA | MDEV
+              Sphenalosia MUIR-WOOD & COOPER, 1960 [S. smedleyi] | Phosphoria Fm., Wyoming, USA | LPERM
+              Truncalosia IMBRIE, 1959 [T. gibbosa] | ?, Michigan, USA | MDEV
+              Wyndhamia BOOKER, 1929 [W. dalwoodensis] | ?, Australia | LPERM
+                = Branxtonia BOOKER, 1929 (j.s.s.)
+            Subfamily CTENALOSIINAE Muir-Wood & Cooper, 1960
+              Ctenalosia COOPER & STEHLI, 1955 [C. fixata] | ?, W.Texas, USA | LPERM
+          Family TEGULIFERINIDAE Muir-Wood & Cooper, 1960
+            = Teguliferidae LIKHAREV, 1960 (j.s.s.)
+            Teguliferina SCHUCHERT & LEVENE, 1929 [Tegulifera deformis Schellwien, 1898] | ?, Europe; USSR; Yugoslavia; Japan; Ferghana | PENN-LPERM
+            Planispina STEHLI, 1954 [P. canida] | ?, W.Texas, USA | PENN-LPERM
+            Prototeguliferina LIKHAREV, 1960 [Tegulifera rossica Ivanov, 1925] | Moscow & Donetz Basins, Europe (USSR) | PENN-LPERM
+          Family AULOSTEGIDAE Muir-Wood & Cooper, 1960
+            Subfamily AULOSTEGINAE Muir-Wood & Cooper, 1960
+              Aulosteges VON HELMERSEN, 1847 [A. variabilis (=Orthis wangenheimi de Verneuil, 1845)] | ?, Europe; Asia; Arctic; Australia | LPERM-UPERM
+              Taeniothaerus WHITEHOUSE, 1928 [Productus subquadratus Morris, 1845] | ?, Asia; Australia; Tasmania | LPERM
+              Wyatkina FREDERIKS, 1931 [Aulosteges gigas Nechaev, 1894] | ?, Europe; Asia; Australia | PERM
+            Subfamily ECHINOSTEGINAE Muir-Wood & Cooper, 1960
+              Echinosteges MUIR-WOOD & COOPER, 1960 [Aulosteges tuberculatus R. E. King, 1931] | ?, W.Texas, USA | LPERM
+              Edriosteges MUIR-WOOD & COOPER, 1960 [E. multispinosus] | ?, W.Texas, USA; Pakistan; China | LPERM
+              Girlasia DE GREGORIO, 1930 [Strophalosia (G.) superelegans] | Sosio Ls., Sicily | LPERM
+              Limbella STEHLI, 1954 [Aulosteges wolfcampensis R. E. King, 1931] | ?, W.Texas, USA | PENN-LPERM
+              Sphenosteges MUIR-WOOD & COOPER, 1960 [Aulosteges hispidus Girty, 1920] | Phosphoria Fm., Wyoming-Utah, USA | LPERM
+              Spirisosium DE GREGORIO, 1930 [S. primarium (=Aulosteges karpinskyi Gemmellaro, 1892)] | Sosio Ls., Sicily | LPERM
+              Strophalosiella LIKHAREV, 1935 [S. cavaeformis] | ?, Europe (USSR) | LPERM
+              Xenosteges MUIR-WOOD & COOPER, 1960 [X. adherens] | ?, W.Texas, USA | LPERM
+            Subfamily CHONOSTEGINAE Muir-Wood & Cooper, 1960
+              Chonosteges MUIR-WOOD & COOPER, 1960 [Aulosteges magnicostatus Girty, 1909] | ?, W.Texas, USA | LPERM
+              Strophalosiina LIKHAREV, 1935 [Aulosteges tibeticus Diener, 1897] | ?, Tibet-Europe | PERM
+              Urushtenia LIKHAREV, 1935 [Productus pseudomedusa Chernyshev, 1902] | ?, Europe (USSR) | LPERM
+            Subfamily INSTITELLINAE Muir-Wood & Cooper, 1960
+              Institella COOPER, 1942 [Productus leonardensis R. E. King, 1931] | ?, Europe; Asia; N.Am. | LPERM-UPERM
+            Subfamily RHAMNARIINAE Muir-Wood & Cooper, 1960
+              Rhamnaria MUIR-WOOD & COOPER, 1960 [R. kingorum] | ?, W.Texas, USA | LPERM-UPERM
+            Subfamily COSTELLARIINAE Muir-Wood & Cooper, 1960
+              Bilotina F. R. C. REED, 1944 [B. subtecta] | Asia (Pak.) | LPERM
+              Costellaria MUIR-WOOD & COOPER, 1960 [C. costellata] | USA (Tex.) | LPERM
+          Family SINUATELLIDAE Muir-Wood & Cooper, 1960
+            Sinuatella MUIR-WOOD, 1928 [Leptaena sinuata DE KONINCK, 1851] | Eu.-Asia | LCARB-UCARB
+          Family CHONETELLIDAE Likharev, 1960
+            Chonetella WAAGEN, 1884 [C. nasuta] | Eu.(USSR)-Asia(Pak.)-Arctic | ?LPERM, UPERM
+          Family SPYRIDIOPHORIDAE Muir-Wood & Cooper, 1960
+            Spyridiophora COOPER & STEHLI, 1955 [S. distincta] | N. Am. | UPENN-LPERM
+              = Spyridiophora SARYCHEVA, 1960 (nom. null.)
+          Family TSCHERNYSCHEWIIDAE Muir-Wood & Cooper, 1960
+            Tschernyschewia STOYANOW, 1910 [T. typica] | Eu.-Asia | LPERM-UPERM
+              = Septoproductus FRECH, 1911 (type, Productus abichi WAAGEN, 1884)
+          Family SCACCHINELLIDAE Likharev, 1928
+            Scacchinella GEMMELLARO, 1891 [S. variabilis GEMMELLARO, 1897] | N.Am.; Eu.-Asia | UPENN-LPERM, ?UPERM
+            Derbyella GRABAU, 1931 [D. bureri] | Asia (Mongolia) | LPERM
+
+        Superfamily RICHTHOFENIACEA Waagen, 1885
+          Family RICHTHOFENIIDAE Waagen, 1885
+            Subfamily RICHTHOFENIINAE Waagen, 1885
+              Richthofenia KAYSER, 1881 [Anomia lawrenciana DE KONINCK, 1863] | Eu.-Asia | LPERM-UPERM
+              Coscinarina MUIR-WOOD & COOPER, 1960 [Richthofenia communis GEMMELLARO, 1894] | Eu. | LPERM
+            Subfamily PRORICHTHOFENIINAE Muir-Wood & Cooper, 1960
+              Prorichthofenia R. E. KING, 1931 [Crania permiana SHUMARD, 1859] | Eu.(USSR)-N. Am. | LPERM
+            Subfamily GEMMELLAROIINAE A. Williams, 1953
+              Gemmellaroia COSSMANN, 1898 [Megarhynchus marii GEMMELLARO, 1894] | Eu.-Asia | LPERM
+                = Megarhynchus GEMMELLARO, 1894 (non DE LAPORTE, 1832)
+                = Megalorhynchus DE GREGORIO, 1930 (nom. null.)
+                = Gemmellaroiella MABUTI, 1937 (type, G. ozawai)
+              Tectarea LIKHAREV, 1928 [T. robinsoni] | Eu.(Caucasus) | LPERM
+
+        Superfamily PRODUCTACEA Gray, 1840
+          Family PRODUCTELLIDAE Schuchert & LeVene, 1929
+            Subfamily PRODUCTELLINAE Schuchert & LeVene, 1929
+              Productella HALL, 1867 [Productus subaculeatus MURCHISON, 1840] | Eu.-Asia-N.Am. | MDEV-UDEV
+              Agramatia SOKOLSKAYA, 1948 [Productus agramati NALIVKIN, 1934] | Eu.(USSR)-N.Am. | UDEV
+              Helaspis IMBRIE, 1959 [H. luma] | N.Am. | MDEV
+              Orbinaria MUIR-WOOD & COOPER, 1960 [Productella pyxidata HALL, 1858] | N.Am. | UDEV-LMISS
+              Praewaagenoconcha SOKOLSKAYA, 1948 [Productus orelianus MOLLER, 1871] | Eu.-Asia | UDEV
+              Productellana STAINBROOK, 1950 [P. bilaria] | N.Am. | LMISS
+              Sinoproductella WANG, 1955 [Productella hemispherica TIEN, 1938] | China (Hunan) | UDEV
+                = ?Praewaagenoconcha SOKOLSKAYA, 1948 (j.s.s.)
+              Spinulicosta NALIVKIN, 1937 [Productella spinulicosta HALL, 1857] | cosmop. | LDEV-UDEV
+              Strophoproductus NALIVKIN, 1937 [Productella hystricula HALL, 1867] | N.Am.-Eu.-Asia | UDEV
+            Subfamily CHONOPECTINAE Muir-Wood & Cooper, 1960
+              Chonopectus HALL & CLARKE, 1893 [Chonetes fischeri NORWOOD & PRATTEN, 1855] | N.Am. | UDEV-LMISS
+              Acanthatia MUIR-WOOD & COOPER, 1960 [Heteralosia nupera STAINBROOK, 1947] | N. Am. | UDEV
+              Chonetipustula PAECKELMANN, 1931 [Productus plicatus SARRES, 1857] | Eu. | LCARB
+              Hamlingella REED, 1943 [Productella goergesi PAECKELMANN, 1931] | Eu. | UDEV-LCARB
+              Quadratia MUIR-WOOD & COOPER, 1960 [Productus hirsutiformis WALCOTT, 1884] | USA | LMISS
+              Steinhagella GOLDRING, 1957 [Leptaena membranacea PHILLIPS, 1841] | Eu. | UDEV
+              Whidbornella REED, 1943 [Leptaena caperata J. DE C. SOWERBY, 1840] | Eu. | UDEV
+          Family INSTITINIDAE Muir-Wood & Cooper, 1960
+            Institina MUIR-WOOD & COOPER, 1960 [Productus marginalis DE KONINCK, 1847] | Eu. | LCARB
+            Cinctifera MUIR-WOOD & COOPER, 1960 [Productus medusa DE KONINCK, 1842] | Eu. | LCARB
+            Rugicostella MUIR-WOOD & COOPER, 1960 [Productus nystianus DE KONINCK, 1842] | Eu. | LCARB
+          Family LEIOPRODUCTIDAE Muir-Wood & Cooper, 1960
+            Subfamily LEIOPRODUCTINAE Muir-Wood & Cooper, 1960
+              Leioproductus STAINBROOK, 1947 [Productella coloradoensis plicatus KINDLE, 1909] | N.Am.-Asia | UDEV
+                = Bispinoproductus STAINBROOK, 1947 (type, B. varispinosus)
+              Acanthoplecta MUIR-WOOD & COOPER, 1960 [Producta mesoloba J. PHILLIPS, 1836] | Eu. | LCARB
+              Ericiatia MUIR-WOOD & COOPER, 1960 [Productus newberryi HALL, 1857] | N.Am. | LMISS
+              Galeatella MUIR-WOOD & COOPER, 1960 [G. galeata] | N.Am. | UDEV
+              Jakutoproductus KASHIRTSEV, 1959 [Marginifera verchoyanica FREDERIKS, 1931] | Asia | LPERM
+              Mesoplica REED, 1943 [Leptaena praelonga J. DE C. SOWERBY, 1840] | Eu.-Asia | UDEV
+              Planoproductus STAINBROOK, 1947 [Productella hillsboroensis KINDLE, 1909] | N.Am. | UDEV
+            Subfamily DEVONOPRODUCTINAE Muir-Wood & Cooper, 1960
+              Devonoproductus STAINBROOK, 1943 [Productella walcotti FENTON & FENTON, 1924] | Eu.-Asia-N.Am. | MDEV-UDEV
+                = Striatoproductus NALIVKIN, 1947 (type, Orthis sericea VON BUCH, 1838)
+              Productellina F. R. C. REED, 1943 [P. fremingtonensis] | Eng. (Devon) | UDEV
+            Subfamily PRODUCTININAE Muir-Wood & Cooper, 1960
+              Productina SUTTON, 1938 [Productus sampsoni WELLER, 1909] | N.Am.-Asia | LMISS-LCARB
+              Argentiproductus COOPER & MUIR-WOOD, 1951 [Producta margaritacea PHILLIPS, 1836] | Eu. | LCARB
+                = Thomasia FREDERIKS, 1929 (non POCHE, 1908; preocc.)
+                = Thomasina PAECKELMANN, 1931 (non NEWSTEAD & CARTER, 1911; preocc.)
+                = Thomasella PAUL, 1942 (non FREDERIKS, 1928; preocc.)
+          Family OVERTONIIDAE Muir-Wood & Cooper, 1960
+            Subfamily OVERTONIINAE Muir-Wood & Cooper, 1960
+              Overtonia I. THOMAS, 1914 [Productus fimbriata J. DE C. SOWERBY, 1824] | Eu.-Asia-Arctic | LCARB
+              Avonia I. THOMAS, 1914 [Productus youngianus DAVIDSON, 1860] | N.Am.; Eu.-Asia | LMISS-UCARB
+              Fimbriaria MUIR-WOOD & COOPER, 1960 [Overtonia plummeri R. H. KING, 1938] | N.Am.-S.Am. | UPENN-LPERM
+              Geniculifera MUIR-WOOD & COOPER, 1960 [Avonia boonensis E. B. BRANSON, 1938] | N.Am. | LMISS
+              Grandaurispina MUIR-WOOD & COOPER, 1960 [G. kingorum] | N.Am. | LPERM
+              Krotovia FREDERIKS, 1928 [Productus spinulosus J. SOWERBY, 1814] | cosmop. | LCARB-LPERM
+              Laminatia MUIR-WOOD & COOPER, 1960 [Productella laminata KINDLE, 1909] | N. Am. | UDEV
+              Levipustula MAXWELL, 1951 [L. levis] | Australia | UCARB
+              Rhytiophora MUIR-WOOD & COOPER, 1960 [Productus blairi MILLER, 1891] | N.Am. | LMISS
+                = ?Semiproductus BUBLITSCHENKO, 1956 (type, S. minax)
+              Rugauris MUIR-WOOD & COOPER, 1960 [R. paucispina] | N.Am. | LMISS
+              Semicostella MUIR-WOOD & COOPER, 1960 [Avonia oklahomensis SNIDER, 1915] | N.Am. | UMISS
+              Semiproductus BUBLITSCHENKO, 1956 [S. minax] | Eu.-Asia | UDEV-LCARB
+              Sentosia MUIR-WOOD & COOPER, 1960 [Krotovia praecursor STAINBROOK, 1947] | N.Am. | UDEV
+              Setigerites GIRTY, 1939 [Productus setigerus HALL, 1858] | N.Am. | LMISS-UMISS
+              Stegacanthia MUIR-WOOD & COOPER, 1960 [S. bowsheri] | N.Am. | LMISS
+              Stipulina MUIR-WOOD & COOPER, 1960 [Productus deshayesianus DE KONINCK, 1842] | Eu. | LCARB
+            Subfamily PLICATIFERINAE Muir-Wood & Cooper, 1960
+              Plicatifera CHAO, 1927 [Productus plicatilis J. DE C. SOWERBY, 1824] | Eu.-N.Am. | LCARB-UMISS
+            Subfamily INSTITIFERINAE Muir-Wood & Cooper, 1960
+              Institifera MUIR-WOOD & COOPER, 1960 [Productus tessellatus DE KONINCK, 1847] | Eu. | LCARB
+              Thomasella FREDERIKS, 1928 [Productus wrighti DAVIDSON, 1861] | Eu. | LCARB
+                = Thomasella PAUL, 1942 (preocc.)
+          Family MARGINIFERIDAE Stehli, 1954
+            Subfamily MARGINIFERINAE Stehli, 1954
+              Marginifera WAAGEN, 1884 [M. typica] | Eu.-Asia | ?LPERM, UPERM
+              Alifera MUIR-WOOD & COOPER, 1960 [Productus expansus DE KONINCK, 1842] | Eu. | LCARB
+              Duarte MENDES, 1959 [Productus batesianus DERBY, 1874] | S.Am. | MPENN
+              Eomarginifera MUIR-WOOD, 1930 [Productus longispinus J. SOWERBY, 1814] | Asia-Afr.; Eu. | LCARB-UCARB
+              Hystriculina MUIR-WOOD & COOPER, 1960 [H. texana] | N.Am.-S.Am. | PENN-LPERM
+          Family BUXTONIIDAE Muir-Wood & Cooper, 1960
+            Subfamily BUXTONIINAE Muir-Wood & Cooper, 1960
+              Protoniella BELL, 1929 [*P. beedei] | Nova Scotia, Canada | UMISS, ?LPENN
+            Subfamily JURESANIINAE Muir-Wood & Cooper, 1960 | LCARB-LPERM
+              Juresania FREDERIKS, 1928 [*Productus juresanensis CHERNYSHEV, 1902] | Eu.-Asia-N.Am. | UCARB-LPERM
+              Ramavectus STEHLI, 1954 [*R. diabloensis] | Tex., USA | LPERM
+          Family DICTYOCLOSTIDAE Stehli, 1954 | LCARB-UPERM
+            Subfamily DICTYOCLOSTINAE Stehli, 1954 | LCARB-UPERM
+              Dictyoclostus MUIR-WOOD, 1930 [*Anomites semireticulatus MARTIN, 1809] | Eu. | LCARB
+              Antiquatonia MILORADOVICH, 1945 [*Productus antiquatus J. SOWERBY, 1821] | Eu.-Asia-Afr.-Australia | LCARB-UCARB
+              Auloprotonia MUIR-WOOD & COOPER, 1960 [*A. aulacophora] | Okla., USA | MISS
+              Brasilioproductus MENDES, 1959 [*Productus chandlessi DERBY, 1874] | Brazil | MPENN
+              Chaoella FREDERIKS, 1933 [*Productus gruenewaldti KROTOV, 1888] | Eu.-Asia-N.Am.-S.Am. | UCARB-LPERM
+              Costiferina MUIR-WOOD & COOPER, 1960 [*Productus indicus WAAGEN, 1884] | Asia | LPERM-UPERM
+              Peniculauris MUIR-WOOD & COOPER, 1960 [*Productus ivesi R. E. KING, 1931 (=P. mckeei)] | Tex., USA | LPERM
+              Pugilis SARYCHEVA, 1949 [*Producta pugilis PHILLIPS, 1836] | Eu. | LCARB-UCARB
+                = Pugilus SARYCHEVA, 1952 (obj.)
+              Reticulatia MUIR-WOOD & COOPER, 1960 [*Productus huecoensis R. E. KING, 1931] | Tex., USA | UPENN-LPERM
+              Rugatia MUIR-WOOD & COOPER, 1960 [*Productus paraindicus MCKEE, 1938] | Tex., USA | LPERM
+              Spinifrons STEHLI, 1954 [*S. quadratus] | Tex., USA | LPERM
+              Squamaria MUIR-WOOD & COOPER, 1960 [*S. moorei] | Tex., USA | LPERM
+              Tolmatchoffia FREDERIKS, 1933 [*Productus robustus TOLMACHEV, 1924] | Eu.-Asia | LCARB
+              Tyloplecta MUIR-WOOD & COOPER, 1960 [*Productus scabriculus mut. nankingensis FRECH, 1911] | Asia-Eu. | LPERM-UPERM
+            Subfamily HORRIDONIINAE Muir-Wood & Cooper, 1960 | LPERM-UPERM
+              Horridonia CHAO, 1927 [*Productus horridus J. SOWERBY, 1822] | Eu.-Arctic-Asia-Australia | LPERM-UPERM
+                = Sowerbina FREDERIKS, 1928 (j.s.s.)
+                = Pleurohorridonia DUNBAR, 1955 (j.s.s.)
+            Subfamily LEVITUSIINAE Muir-Wood & Cooper, 1960
+              Levitusia MUIR-WOOD & COOPER, 1960 [*Productus humerosus J. SOWERBY, 1822] | L.Carb.(Visean), Eu.(Eng.-Belg.-Fr.)-Asia | MISS
+          Family LINOPRODUCTIDAE Stehli, 1954
+            Subfamily LINOPRODUCTINAE Stehli, 1954
+              Linoproductus CHAO, 1927 [*Productus cora D'ORBIGNY, 1842] | ?L.Carb.(L.Miss.)-U.Perm., N.Am.-S.Am.-Eu.-Asia-N.Afr.-Australia | MISS-UPERM
+                = Cora FREDERIKS, 1928 (obj.)
+                = Euproductus WHITEHOUSE, 1928 (obj.)
+              Anidanthus HILL, 1950 [*Linoproductus springsurensis BOOKER, 1932] | U.Carb.-L.Perm., Asia-Arctic-Eu.-Australia-N.Am | PENN-LPERM
+                = Anidanthus WHITEHOUSE, 1928 (nom. nud.)
+                ? = Pseudomarginifera STEPANOV, 1934 (fide TREATISE, 1965)
+              Cancrinella FREDERIKS, 1928 [*Productus cancrini DE VERNEUIL, 1845] | U.Carb.(Penn.)-Perm., Eu.-Asia-Australia-N.Am | PENN-PERM
+              Fluctuaria MUIR-WOOD & COOPER, 1960 [*Productus undatus DEFRANCE, 1826] | L.Carb.(Visean), Eu.(Eng.-Eire-Belg.-Fr.-USSR) | MISS
+              Globiella MUIR-WOOD & COOPER, 1960 [*Productus hemisphaerium KUTORGA, 1844] | L.Perm.-U.Perm., Eu.(USSR)-Arctic-Asia(China-India-Armenia) | LPERM-UPERM
+                ? = Stepanoviella ZAVODOVSKY, 1960 (fide TREATISE, 1965)
+              Marginirugus SUTTON, 1938 [*Productus magnus MEEK & WORTHEN, 1862] | L.Carb.(Miss.), N.Am.-Australia | MISS
+              Megousia MUIR-WOOD & COOPER, 1960 [*M. auriculata MUIR-WOOD & COOPER, 1960] | L.Perm., N.Am.-S.Am | LPERM
+              Ovatia MUIR-WOOD & COOPER, 1960 [*O. elongata MUIR-WOOD & COOPER, 1960] | L.Carb.(L.Miss.-U.Miss.), N.Am.-Eu.(USSR)-Asia(Kazakhstan) | MISS
+              Pseudomarginifera STEPANOV, 1934 [*Productus ussuricus FREDERIKS, 1924] | L.Perm., Asia | LPERM
+              Terrakea BOOKER, 1930 [*Productus brachythaerus MORRIS, 1845] | L.Perm., Australia | LPERM
+              Undaria MUIR-WOOD & COOPER, 1960 [*U. manxensis MUIR-WOOD & COOPER, 1960] | L.Carb.(Visean), Eu | MISS
+            Subfamily PROBOSCIDELLINAE Muir-Wood & Cooper, 1960
+              Proboscidella OEHLERT, 1887 [*Productus proboscideus DE VERNEUIL, 1840] | L.Carb.(Visean), Eu.-Asia | MISS
+            Subfamily MONTICULIFERINAE Muir-Wood & Cooper, 1960
+              Monticulifera MUIR-WOOD & COOPER, 1960 [*Productus intermedius ABICH var. sinensis FRECH, 1911] | L.Perm.-?U.Perm., Asia(IndoChina-Manchuria-China) | LPERM-UPERM
+            Subfamily PAUCISPINIFERINAE Muir-Wood & Cooper, 1960
+              Paucispinifera MUIR-WOOD & COOPER, 1960 [*P. auriculata MUIR-WOOD & COOPER, 1960] | L.Perm., N.Am | LPERM
+              Muirwoodia LIKHAREV, 1947 [*Productus mammatus KEYSERLING, 1846] | U.Carb.(Penn.)-U.Perm., Eu.-S.Am.-Arctic-N.Am.-Asia | PENN-UPERM
+              Yakovlevia FREDERIKS, 1925 [*Y. kaluzinensis FREDERIKS, 1925] | L.Perm.-?U.Perm., Arctic-Asia | LPERM-UPERM
+            Subfamily STRIATIFERINAE Muir-Wood & Cooper, 1960
+              Striatifera CHAO, 1927 [*Mytilus striatus FISCHER DE WALDHEIM, 1837] | L.Carb.(Visean), Eu.-Asia-N.Am | MISS
+              Compressoproductus SARYCHEVA, 1960 [*Productus compressus WAAGEN, 1884] | Perm., Eu.-Greenl.-Asia-Australia-S.Am | PERM
+          Family GIGANTOPRODUCTIDAE Muir-Wood & Cooper, 1960
+            Subfamily GIGANTOPRODUCTINAE Muir-Wood & Cooper, 1960
+              Gigantoproductus PRENTICE, 1950 [*Productus giganteus J. SOWERBY, 1822] | L.Carb.(Visean), cosmop., rare in N.Am | MISS
+                = Gigantella SARYCHEVA, 1928 (preocc.)
+              Titanaria MUIR-WOOD & COOPER, 1960 [*T. costellata MUIR-WOOD & COOPER, 1960] | V.Miss., N.Am(Calif.) | MISS
+            Subfamily SEMIPLANINAE Sarycheva, 1960
+              Semiplanus SARYCHEVA in SARYCHEVA & SOKOLSKAYA, 1952 [*Productus semiplanus SHVETSOV, 1922] | L.Carb.(Visean)-U.Carb.(Namur.), Eu.(USSR)-Asia(Kazakhstan) | MISS-PENN
+              ?Bagrasia NALIVKIN, 1960 [*Productus chonetiformis KRESTOVNIKOV & KARPYSHEV, 1948] | U.Dev.-L.Carb.(Etroeungt beds), Eu.(USSR, S. Urals, Caucasus) | UDEV-MISS
+            Subfamily KANSUELLINAE Muir-Wood & Cooper, 1960
+              Kansuella CHAO, 1928 [*Striatifera kansuensis CHAO, 1927] | L.Carb.(Visean), Asia(China-Ferghana) | MISS
+
+      Suborder OLDHAMINIDINA Williams, 1953
+        Superfamily LYTTONIACEA Waagen, 1883
+          Family LYTTONIIDAE Waagen, 1883
+            Oldhamina WAAGEN, 1883 [*Bellerophon decipiens DE KONINCK, 1863] | Perm., Asia | PERM
+              = Waagenopora NOETLING, 1902 (obj.)
+              = Oldhamella NOETLING, 1905 (obj.)
+            Coscinophora COOPER & STEHLI, 1955 [*C. nodosa COOPER & STEHLI, 1955] | L.Perm.(Leonard.), USA(Tex.) | LPERM
+            Eolyttonia FREDERIKS, 1923 [*Oldhamia (Lyttonia) mira FREDERIKS, 1916] | U.Carb.(Ural.)-Perm., Asia | PENN-PERM
+              = Uralina SCHUCHERT & LEVENE, 1929 (obj.)
+            Gubleria TERMIER & TERMIER, 1960 [*G. disjuncta TERMIER & TERMIER, 1960] | Perm., SE.Asia(Cambodia) | PERM
+            Keyserlingina CHERNYSHEV, 1902 [*K. schellwieni CHERNYSHEV, 1902] | U.Carb.(Ural.)-Perm., Eurasia | PENN-PERM
+              = Parakeyserlingina FREDERIKS, 1916 (obj.)
+              = Chaoella LIKHAREV, 1932 (obj.)
+            Leptodus KAYSER in RICHTHOFEN, 1882 [*L. richthofeni KAYSER, 1882] | Perm., cosmop. | PERM
+              = Lyttonia WAAGEN, 1883 (obj.)
+              = Lyttonia (Digilia) DE GREGORIO, 1930 (j.s.s.)
+              = Lyttonia (Imperia) DE GREGORIO, 1930 (j.s.s.)
+              = Lyttonia (Irma) DE GREGORIO, 1930 (j.s.s.)
+              = Lyttonia (Vincia) DE GREGORIO, 1930 (j.s.s.)
+              = Lyttonia? (Prisca) DE GREGORIO, 1930 (j.s.s.)
+            Oldhaminella WANNER & SIEVERTS, 1935 [*O. philocrina WANNER & SIEVERTS, 1935] | Perm., Timor | PERM
+            Pirgulia COOPER & MUIR-WOOD, 1951 [*Lyttonia? (Pirgula) pediculata DE GREGORIO, 1930] | Perm., Italy-USA(Tex.) | PERM
+            Paralyttonia WANNER & SIEVERTS, 1935 [*P. permica WANNER & SIEVERTS, 1935] | Perm., Timor | PERM
+            Rigbyella STEHLI, 1956 [*Paralyttonia girtyi WANNER & SIEVERTS, 1935] | M.Perm., USA(N.Mex.) | MPERM
+          Family POIKILOSAKIDAE Williams, 1953
+            Poikilosakos WATSON, 1917 [*P. petaloides WATSON, 1917] | U.Carb., cosmop. | PENN
+              ? = Prokeyserlingina FREDERIKS, 1916 (hypothetical)
+            Adriana DE GREGORIO, 1930 [*A. osiensis DE GREGORIO, 1930] | L.Perm.(Sosio Beds), Sicily, ?N.Mex | LPERM
+              = Stita DE GREGORIO, 1930 (obj.)
+            Cardinocrania WAAGEN, 1885 [*C. indica WAAGEN, 1885] | Perm., Pak.-Timor | PERM
+              ? = Pseudokeyserlingina FREDERIKS, 1916 (hypothetical)
+            Pseudoleptodus STEHLI, 1956 [*P. getawayensis STEHLI, 1956] | U.Perm., USA(N.Mex.) | UPERM
+          Family BACTRYNIIDAE Williams, n.fam.
+            Bactrynium EMMRICH, 1855 [*B. bicarinatum EMMRICH, 1855] | U.Trias.(Rhaet.), Aus. | UTRIA
+              = Pterophloios GUMBEL, 1861 (obj.)
+          Family SPINOLYTIONIIDAE Williams, n.fam.
+            Spinolyttonia SARYCHEVA, 1964 [*S. arakdjani SARYCHEVA, 1964] | U.Perm., USSR(Transcaucasus) | UPERM

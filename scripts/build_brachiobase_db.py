@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
-"""Build brachiobase DB from data/sources/treatise_brachiopoda_2000.txt.
+"""Build brachiobase DB from Treatise brachiopod source files.
+
+Two classification profiles:
+  Profile 1: Treatise 1965 (original) — vol1 + vol2
+  Profile 2: Treatise Revised 2000-2006 — vol2 + vol3 + vol4 + vol5
 
 Pure source-driven build (no canonical DB dependency).
 
 Usage:
-    python scripts/build_brachiobase_db.py [--version 0.1.0]
+    python scripts/build_brachiobase_db.py [--version 0.2.0]
 """
 
 import argparse
@@ -15,7 +19,55 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
+
+# ---------------------------------------------------------------------------
+# Source file groups per classification profile
+# ---------------------------------------------------------------------------
+
+PROFILES = [
+    {
+        "name": "Treatise 1965",
+        "description": "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (1965)",
+        "sources": [
+            "treatise_brachiopoda_1965_vol1.txt",
+            "treatise_brachiopoda_1965_vol2.txt",
+        ],
+        "reference": {
+            "authors": "WILLIAMS, A., ROWELL, A.J., MUIR-WOOD, H.M. & others",
+            "year": 1965,
+            "title": "Treatise on Invertebrate Paleontology, Part H, Brachiopoda",
+            "publisher": "Geological Society of America & University of Kansas Press",
+            "reference_type": "book",
+            "raw_entry": (
+                "Williams, A., et al., 1965. Treatise on Invertebrate Paleontology, "
+                "Part H, Brachiopoda, Volumes 1 & 2."
+            ),
+        },
+    },
+    {
+        "name": "Treatise Revised 2000-2006",
+        "description": "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), 2000-2006",
+        "sources": [
+            "treatise_brachiopoda_2000_vol2.txt",
+            "treatise_brachiopoda_2000_vol3.txt",
+            "treatise_brachiopoda_2002_vol4.txt",
+            "treatise_brachiopoda_2006_vol5.txt",
+        ],
+        "reference": {
+            "authors": "WILLIAMS, A., CARLSON, S.J., BRUNTON, C.H.C. & others",
+            "year": 2000,
+            "title": "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), Volumes 2-5",
+            "publisher": "Geological Society of America & University of Kansas",
+            "reference_type": "book",
+            "raw_entry": (
+                "Williams, A., Carlson, S.J., Brunton, C.H.C. & others, 2000-2006. "
+                "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), "
+                "Volumes 2-5."
+            ),
+        },
+    },
+]
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES = ROOT / "data" / "sources"
@@ -347,8 +399,14 @@ def create_views(cur):
     cur.executescript("""
     CREATE VIEW v_taxonomy_tree AS
     WITH RECURSIVE tree AS (
-        SELECT t.id, t.name, t.rank, NULL AS parent_id, 0 AS depth
-        FROM taxon t WHERE t.rank = 'Phylum'
+        SELECT t.id, t.name, t.rank, CAST(NULL AS INTEGER) AS parent_id, 0 AS depth
+        FROM taxon t
+        WHERE t.id IN (
+            SELECT DISTINCT e.parent_id FROM classification_edge_cache e WHERE e.profile_id = 1
+        )
+        AND t.id NOT IN (
+            SELECT e.child_id FROM classification_edge_cache e WHERE e.profile_id = 1
+        )
         UNION ALL
         SELECT t.id, t.name, t.rank, e.parent_id, tree.depth + 1
         FROM classification_edge_cache e
@@ -385,9 +443,16 @@ def create_views(cur):
 
 def _build_queries():
     return [
-        ("taxonomy_tree", "Hierarchical tree from Phylum down (profile-aware)",
+        ("taxonomy_tree", "Hierarchical tree from roots down (profile-aware)",
          "SELECT t.id, t.name, t.rank, NULL as parent_id, t.author\n"
-         "FROM taxon t WHERE t.rank = 'Phylum'\n"
+         "FROM taxon t\n"
+         "WHERE t.id IN (\n"
+         "  SELECT DISTINCT e.parent_id FROM classification_edge_cache e\n"
+         "  WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
+         ") AND t.id NOT IN (\n"
+         "  SELECT e.child_id FROM classification_edge_cache e\n"
+         "  WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
+         ")\n"
          "UNION ALL\n"
          "SELECT t.id, t.name, t.rank, e.parent_id, t.author\n"
          "FROM taxon t\n"
@@ -541,7 +606,7 @@ def _build_manifest():
                 "type": "hierarchy",
                 "display": "tree",
                 "title": "Taxonomy",
-                "description": "Brachiopod hierarchical classification (Treatise 2000)",
+                "description": "Brachiopod hierarchical classification (Treatise 1965 & Revised 2000-2006)",
                 "source_query": "taxonomy_tree",
                 "icon": "bi-diagram-3",
                 "hierarchy_options": {
@@ -693,7 +758,7 @@ def write_scoda_metadata(cur, version, ref_id):
         "artifact_id": "brachiobase",
         "name": "Brachiobase",
         "version": version,
-        "description": "Brachiopod genus-level taxonomy from the Treatise (2000)",
+        "description": "Brachiopod genus-level taxonomy from the Treatise (1965 & Revised 2000-2006)",
         "license": "CC-BY-4.0",
         "created_at": now,
     }
@@ -838,11 +903,14 @@ def main():
 
     version = args.version
     dst_path = DST_DIR / f"brachiobase-{version}.db"
-    source_file = SOURCES / "treatise_brachiopoda_2000.txt"
 
-    if not source_file.exists():
-        print(f"Error: Source file not found: {source_file}", file=sys.stderr)
-        sys.exit(1)
+    # Verify all source files exist
+    for profile in PROFILES:
+        for src_name in profile["sources"]:
+            src_path = SOURCES / src_name
+            if not src_path.exists():
+                print(f"Error: Source file not found: {src_path}", file=sys.stderr)
+                sys.exit(1)
 
     # Clean slate
     if dst_path.exists():
@@ -851,8 +919,8 @@ def main():
     DST_DIR.mkdir(parents=True, exist_ok=True)
 
     print(f"Building brachiobase v{version}")
-    print(f"  Source: {source_file}")
     print(f"  Output: {dst_path}")
+    print(f"  Profiles: {len(PROFILES)}")
 
     conn = sqlite3.connect(str(dst_path))
     cur = conn.cursor()
@@ -864,62 +932,105 @@ def main():
     create_schema(cur)
     conn.commit()
 
-    # Phase 2: Insert reference
-    print("[2/5] Inserting reference...")
-    cur.execute("""
-        INSERT INTO reference (authors, year, title, publisher, reference_type, raw_entry)
-        VALUES (?, ?, ?, ?, ?, ?)
-    """, (
-        "WILLIAMS, A., CARLSON, S.J., BRUNTON, C.H.C. & others", 2000,
-        "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), Volumes 2 & 3",
-        "Geological Society of America & University of Kansas",
-        "book",
-        "Williams, A., Carlson, S.J., Brunton, C.H.C. & others, 2000. "
-        "Brachiopoda. In: Kaesler, R.L. (Ed.), Treatise on Invertebrate Paleontology, "
-        "Part H, Brachiopoda (Revised), Volumes 2 & 3.",
-    ))
-    ref_id = cur.lastrowid
-    conn.commit()
-    print(f"  Reference id: {ref_id}")
-
-    # Phase 3: Parse source and build taxa + assertions
-    print("[3/5] Processing source file...")
+    # Shared taxon index across all profiles (taxa are shared, edges differ)
     taxon_index = {}
-    new_taxa_cache = {}
-    counts, edges = process_source(conn, source_file, ref_id, taxon_index, new_taxa_cache)
-    conn.commit()
+    all_ref_ids = []
 
-    total_taxa = conn.execute("SELECT COUNT(*) FROM taxon").fetchone()[0]
-    total_assertions = conn.execute("SELECT COUNT(*) FROM assertion").fetchone()[0]
-    print(f"  Taxa: {total_taxa}")
-    print(f"  Assertions: {total_assertions}")
-    print(f"    PLACED_IN: {counts['PLACED_IN']}")
-    print(f"    SYNONYM_OF: {counts.get('SYNONYM_OF', 0)}")
+    # Phase 2-3: Process each profile
+    for pi, profile in enumerate(PROFILES, 1):
+        profile_name = profile["name"]
+        print(f"\n[2/5] Profile {pi}: {profile_name}")
 
-    # Phase 4: Build classification profile
-    print("[4/5] Building classification profile...")
-    cur.execute("""
-        INSERT INTO classification_profile (name, description, rule_json)
-        VALUES (?, ?, ?)
-    """, (
-        "Treatise 2000",
-        "Treatise on Invertebrate Paleontology, Part H (2000)",
-        json.dumps({"source": "treatise_brachiopoda_2000.txt"}),
-    ))
-    cur.executemany("""
-        INSERT INTO classification_edge_cache (profile_id, child_id, parent_id)
-        VALUES (1, ?, ?)
-    """, edges)
-    conn.commit()
-    edge_count = conn.execute(
-        "SELECT COUNT(*) FROM classification_edge_cache WHERE profile_id = 1"
-    ).fetchone()[0]
-    print(f"  Profile 1 (Treatise 2000): {edge_count} edges")
+        # Insert reference
+        ref = profile["reference"]
+        cur.execute("""
+            INSERT INTO reference (authors, year, title, publisher, reference_type, raw_entry)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (ref["authors"], ref["year"], ref["title"],
+              ref["publisher"], ref["reference_type"], ref["raw_entry"]))
+        ref_id = cur.lastrowid
+        all_ref_ids.append(ref_id)
+        conn.commit()
+        print(f"  Reference id: {ref_id}")
+
+        # Process source files for this profile
+        print(f"[3/5] Processing {len(profile['sources'])} source files...")
+        all_edges = []
+        total_counts = {"PLACED_IN": 0, "SYNONYM_OF": 0, "SPELLING_OF": 0}
+        new_taxa_cache = {}
+
+        for src_name in profile["sources"]:
+            src_path = SOURCES / src_name
+            print(f"  {src_name}...", end=" ", flush=True)
+            counts, edges = process_source(
+                conn, src_path, ref_id, taxon_index, new_taxa_cache)
+            conn.commit()
+            all_edges.extend(edges)
+            for k in total_counts:
+                total_counts[k] += counts.get(k, 0)
+            print(f"({counts['PLACED_IN']} placements)")
+
+        # Merge new_taxa_cache into taxon_index
+        taxon_index.update(new_taxa_cache)
+
+        # Build classification profile
+        print(f"[4/5] Building classification profile {pi}...")
+        cur.execute("""
+            INSERT INTO classification_profile (name, description, rule_json)
+            VALUES (?, ?, ?)
+        """, (
+            profile_name,
+            profile["description"],
+            json.dumps({"sources": profile["sources"]}),
+        ))
+        profile_id = cur.lastrowid
+        cur.executemany(f"""
+            INSERT OR IGNORE INTO classification_edge_cache (profile_id, child_id, parent_id)
+            VALUES ({profile_id}, ?, ?)
+        """, all_edges)
+        conn.commit()
+
+        # Bridge orphan roots to Phylum BRACHIOPODA
+        phylum_id = resolve_taxon("BRACHIOPODA", "Phylum", conn, taxon_index, new_taxa_cache)
+        taxon_index.update(new_taxa_cache)
+        orphan_roots = conn.execute("""
+            SELECT DISTINCT e.parent_id, t.name, t.rank
+            FROM classification_edge_cache e
+            JOIN taxon t ON e.parent_id = t.id
+            WHERE e.profile_id = ?
+              AND t.id != ?
+              AND t.id NOT IN (
+                  SELECT e2.child_id FROM classification_edge_cache e2
+                  WHERE e2.profile_id = ?
+              )
+        """, (profile_id, phylum_id, profile_id)).fetchall()
+
+        if orphan_roots:
+            bridge_edges = [(oid, phylum_id) for oid, _, _ in orphan_roots]
+            cur.executemany(f"""
+                INSERT OR IGNORE INTO classification_edge_cache (profile_id, child_id, parent_id)
+                VALUES ({profile_id}, ?, ?)
+            """, bridge_edges)
+            conn.commit()
+            print(f"  Bridge edges to Phylum BRACHIOPODA: {len(bridge_edges)}")
+            for oid, oname, orank in orphan_roots:
+                print(f"    {orank} {oname} -> Phylum BRACHIOPODA")
+
+        edge_count = conn.execute(
+            "SELECT COUNT(*) FROM classification_edge_cache WHERE profile_id = ?",
+            (profile_id,)
+        ).fetchone()[0]
+        print(f"  Profile {profile_id} ({profile_name}): {edge_count} edges")
+        print(f"  PLACED_IN: {total_counts['PLACED_IN']}, "
+              f"SYNONYM_OF: {total_counts['SYNONYM_OF']}")
 
     # Phase 5: Views + SCODA metadata
-    print("[5/5] Writing views and SCODA metadata...")
+    total_taxa = conn.execute("SELECT COUNT(*) FROM taxon").fetchone()[0]
+    total_assertions = conn.execute("SELECT COUNT(*) FROM assertion").fetchone()[0]
+
+    print(f"\n[5/5] Writing views and SCODA metadata...")
     create_views(cur)
-    write_scoda_metadata(cur, version, ref_id)
+    write_scoda_metadata(cur, version, all_ref_ids[0])
     conn.commit()
 
     # Summary
@@ -931,12 +1042,21 @@ def main():
         "WHEN 'Subfamily' THEN 7 WHEN 'Genus' THEN 8 END"
     ).fetchall()
 
+    total_edges = conn.execute(
+        "SELECT COUNT(*) FROM classification_edge_cache"
+    ).fetchone()[0]
+
     print(f"\n=== Brachiobase v{version} ===")
     for rank, cnt in rank_counts:
         print(f"  {rank}: {cnt}")
     print(f"  Total taxa: {total_taxa}")
     print(f"  Assertions: {total_assertions}")
-    print(f"  Edges: {edge_count}")
+    print(f"  Total edges: {total_edges}")
+    for pi, profile in enumerate(PROFILES, 1):
+        ec = conn.execute(
+            "SELECT COUNT(*) FROM classification_edge_cache WHERE profile_id = ?",
+            (pi,)).fetchone()[0]
+        print(f"  Profile {pi} ({profile['name']}): {ec} edges")
     print(f"  DB: {dst_path}")
     print(f"  Size: {dst_path.stat().st_size:,} bytes")
 

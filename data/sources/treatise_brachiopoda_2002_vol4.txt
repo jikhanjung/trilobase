@@ -1,0 +1,1702 @@
+---
+reference: Williams, A., Carlson, S.J., Brunton, C.H.C. et al., 2002. Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), Volume 4: Rhynchonelliformea (part). Geological Society of America & University of Kansas, Boulder & Lawrence, 921-1688
+scope:
+  - taxon: Pentamerida
+    coverage: comprehensive
+  - taxon: Rhynchonellida
+    coverage: comprehensive
+  - taxon: Atrypida
+    coverage: comprehensive
+notes: |
+  Volume 4 covers three orders of Rhynchonelliformea.
+  Extracted from PDF by page-by-page processing.
+  Authors by section: Pentamerida (S.J. Carlson, A.J. Boucot, Rong Jia-Yu, R.B. Blodgett),
+  Rhynchonellida (N.M. Savage, M.O. Mancenido, E.F. Owen, S.J. Carlson, R.E. Grant, A.S. Dagys, Sun Dong-Li),
+  Atrypida (Paul Copper).
+---
+
+Order PENTAMERIDA Schuchert & Cooper, 1931
+  Suborder SYNTROPHIIDINA Carlson, 2002
+    Superfamily Porambonitoidea Davidson, 1853
+      Family EOSTROPHIIDAE Ulrich & Cooper, 1936
+        Cambrotrophia ULRICH & COOPER, 1937 [cambria] | Ute Fm, Utah, USA; Canada (Quebec); Siberia; Kazakhstan; ?Australia | MCAM
+        Syntrophioides SCHUCHERT & COOPER, 1931 [harlanensis] | Russia (Urals) | MCAM
+      Family HUENELLIDAE Schuchert & Cooper, 1931
+        Huenella WALCOTT, 1908 [texana] | USA, Canada, Siberia, China | UCAM-LORD
+        Bondarevia CARLSON, 2002 [nelidovi] | Novaya Zemlya, Russia | LORD
+        Eosyntrophopsis YADRENKINA, 1989 [njuicus] | southeastern Siberia | LORD
+        Huenellina SCHUCHERT & COOPER, 1931 [triplicata] | Novaya Zemlya, Russia | UCAM
+        Rectotrophia BATES, 1968 [globularis] | Wales; northeastern China | LORD
+        Rhabdostrophia NEUMAN, 1989 [striatisculpta] | Norway | LORD
+        Subfamily MESONOMIINAE Ulrich & Cooper, 1936
+          Mesonomia ULRICH & COOPER, 1936 [iophon] | USA, Canada, ?Kazakhstan, ?eastern China | UCAM-LORD
+          Glyptotrophia ULRICH & COOPER, 1936 [imbricata] | USA, Canada, eastern China, ?Kazakhstan | UCAM-LORD
+          Mogoktella ANDREEVA, 1968 [islendica] | northwestern Siberia | UCAM
+      Family SYNTROPHIIDAE Schuchert, 1896
+        Subfamily SYNTROPHIINAE Schuchert, 1896
+          Syntrophia HALL & CLARKE, 1893 [lateralis] | USA, Canada, Europe, Greenland, Russia, Siberia, China | LORD
+            = Syntrophia HALL & CLARKE, 1892 (nom. nud.)
+          Rhyselasma YADRENKINA, 1972 [akitiense] | Siberia | LORD
+          Rosella ANDREEVA, 1972 [karakulensis] | Russia (Urals) | LORD
+          Xenelasmella ROZMAN, 1964 [graciosa] | Siberia, northwestern China | LORD
+          Xenelasmopsis ROZMAN, 1968 [selennjahia] | Siberia | UORD
+        Subfamily XENELASMATINAE Ulrich & Cooper, 1936
+          Xenelasma ULRICH & COOPER, 1936 [syntrophioides] | USA, Scotland, southern China, Russia, Siberia, Tasmania, ?Argentina | LORD-UORD
+        Subfamily SYNTROPHOPSINAE Ulrich & Cooper, 1936
+          Syntrophopsis ULRICH & COOPER, 1936 [magna] | USA, Scotland, southern China, Russia, Siberia, Tasmania, ?Argentina | LORD
+          Palaeostrophia ULRICH & COOPER, 1936 [orthia] | USA, Canada, Norway, Russia, Kazakhstan, China, South Korea | UCAM-LORD
+          Hesperotrophia ULRICH & COOPER, 1936 [obscura] | Canada (Alberta) | LORD
+          Plectotrophia ULRICH & COOPER, 1936 [bridgei] | USA, Canada (Alberta) | UCAM
+          Altunella LIU, ZHANG, & DI, 1984 [typica] | northwestern China | LORD
+          Bobinella ANDREEVA, 1968 [kulumbensis] | northwestern Siberia | UCAM
+          Rhysostrophia ULRICH & COOPER, 1936 [nevadensis] | USA, Canada, Europe, Siberia, ?New Zealand | LORD
+      Family TETRALOBULIDAE Ulrich & Cooper, 1936
+        Subfamily TETRALOBULINAE Ulrich & Cooper, 1936
+          Tetralobula ULRICH & COOPER, 1936 [delicatula] | USA, Canada, Siberia, ?Kazakhstan, China | LORD
+          Disepta ZENG, 1977 [yichangensis] | southern China | LORD
+          Doloresella SANDO, 1957 [concentrica] | USA (Maryland), Russia, China | LORD
+          Imbricatia COOPER, 1952 [lamellata] | USA, Canada, Kazakhstan, Novaya Zemlya, China, ?Argentina | LORD
+            = Thaumatrophia WANG, 1955 (j.s.s.)
+      Family TETRALOBULIDAE Opik, 1962
+        Subfamily SYNTROPHOPSINAE Ulrich & Cooper, 1936
+          ?Tcharella ANDREEVA, 1987 [*T. amgensis] | Siberia | LCAM
+        Subfamily PUNCTOLIRINAE Andreeva, 1982
+          Punctolira ULRICH & COOPER, 1936 [*P. punctolira] | USA, Canada, Argentina, China, Russia | LORD
+          Cuparius ROSS, 1971 [*C. cardilatus] | USA, Siberia | LORD
+          Pseudoporambonites ZENG, 1977 [*P. yichangensis] | southwestern China | LORD
+          Rugostrophia NEUMAN, 1971 [*R. silvestris] | USA, Canada, Argentina | LORD-MORD
+          Talovia SEVERGINA, 1975 [*T. reticulata] | Russia (Gorno-Altay) | LORD
+      Family CLARKELLIDAE Schuchert & Cooper, 1931
+          Clarkella WALCOTT, 1908 [*Polytoechia? montanensis WALCOTT, 1905] | USA, Canada, southwestern China, Korea, Russia, Siberia, Kazakhstan | LORD-MORD
+          Calliglypha CLOUD, 1948 [*C. miseri] | USA, Britain, Russia, ?Argentina | LORD
+          Diaphelasma ULRICH & COOPER, 1936 [*D. pennsylvanicum] | USA, Canada, Argentina, Britain, Russia | LORD
+          Fenxiangella WANG, 1978 [*F. deltoides] | southwestern China | LORD
+          Stichotrophia COOPER, 1948 [*S. lamellata] | Ireland | LORD
+          Acanthoglypha WILLIAMS & CURRY, 1985 [*Streptis affinis REED in GARDINER & REYNOLDS, 1909] | Ireland | LORD
+          Syntrophina SCHUCHERT & COOPER, 1931 [*Syntrophia campbelli WALCOTT, 1908] | USA, Canada, Argentina, Ireland, Kazakhstan, Novaya Zemlya, China, India | LORD
+          Syntrophinella ULRICH & COOPER in KOBAYASHI, 1934 [*S. typica] | USA, Canada, North Korea, Kazakhstan, China | LORD
+            = Syntrophinella SCHUCHERT & COOPER, 1932 (nom. nud.)
+          Yangtzeella KOLAROVA, 1925 [*Schizophoria poloi MARTELLI, 1901] | China, ?Kazakhstan | LORD
+      Family PORAMBONITIDAE Davidson, 1853
+          Porambonites PANDER, 1830 [*P. intermedia] | Canada, Argentina, Russia, Europe, Himalayas, India, China, Australia, South Africa | LORD-LDEV
+          P. (Porambonites) PANDER, 1830 | Russia, Europe, Britain, Himalayas, China, Australia, South Africa | LORD-UORD
+          P. (Equirostra) COOPER & MUIR-WOOD, 1951 [*Terebratulites aequirostris VON SCHLOTHEIM, 1820 in 1820-1823] | Russia, Estonia, Europe, Canada | LORD-UORD
+          P. (Noetlingia) HALL & CLARKE, 1893 [*Spirifer tcheffkini DE VERNEUIL, 1845] | Russia | LSIL
+    Superfamily CAMERELLOIDEA Hall & Clarke, 1895
+      Family CAMERELLIDAE Hall & Clarke, 1895
+        Subfamily CAMERELLINAE Hall & Clarke, 1895
+          Camerella BILLINGS, 1859b [*C. volborthi] | Canada, USA, Britain, northern Europe, Russia, Siberia, Kazakhstan, China, Mongolia, ?India, ?Bolivia | MORD-USIL
+          Bleshidium HAVLICEK, 1982b [*Atrypa patellina BARRANDE, 1879b] | Czech Republic | USIL
+            = Bleshidimerus HAVLICEK in HAVLICEK & STORCH, 1990 (synonym)
+          ?Branconia GAGEL, 1890 [*B. borussica] | ?Poland (Prussia) | UORD
+          Brevicamera COOPER, 1956a [*B. camerata] | southern USA | MORD
+          Idiostrophia ULRICH & COOPER, 1936 [*I. perfecta] | Canada, USA, Argentina, Britain, Europe, northern Russia, Siberia | LORD-MORD
+            = Trigonotrophia ANDREEVA, 1972 (synonym)
+          Karakulina ANDREEVA, 1972 [*K. nana] | northern Russia (Urals) | LORD
+          Kokomerena MISIUS, 1986 [*K. prima] | Kirgizia | UORD
+          Liricamera COOPER, 1956a [*L. nevadensis] | western USA, northwestern Tibet | LORD-MORD
+          Llanoella BOUCOT, 1975a [*L. stephensi] | southern and western USA | LDEV
+          Neostrophia ULRICH & COOPER, 1936 [*N. subcostata] | Canada | MORD
+          Perimecocoelia COOPER, 1956a [*P. semicostata] | USA, Kazakhstan | MORD
+          Plectocamara COOPER, 1956a [*P. costata] | USA, Alaska, Siberia, western China | MORD-USIL
+          Plectosyntrophia FU, 1982 [*P. qilianshanensis] | northwestern China | LORD
+          Psilocamerella FU, 1982 [*P. planosulcata] | northwestern China | UORD
+          Tuloja STUKALINA in ROZMAN & SEVERGINA, 1983 [*T. karasensis] | south-central Russia, Mongolia | LORD
+          Xizangostrophia RONG, 1976 [*X. sinensis] | southern Tibet | LORD
+        Subfamily STENOCAMARINAE Cooper, 1956
+          Stenocamara COOPER, 1956a [*S. perplexa] | USA, Norway, Estonia, north-central Russia | LORD-UORD
+          Boreadocamara CURRY & WILLIAMS, 1984 [*B. fragilis] | Scotland | LORD
+      Family PARASTROPHINIDAE Schuchert & LeVene, 1929
+          Parastrophina SCHUCHERT & LEVENE, 1929b [*Atrypa hemiplicata HALL, 1847] | USA, eastern Canada, Britain, northern Europe, Ukraine, Russia, Kazakhstan, Siberia, China | MORD-UORD
+          Anastrophia HALL, 1867a [*Pentamerus verneuili HALL, 1857a] | USA, Canada, Britain, Europe, Ukraine, Russia, Kazakhstan, China, Mongolia, Indochina, Australia, Venezuela | USIL-LDEV
+            = Savageina BOUCOT, 1975a (synonym)
+          A. (Grayina) BOUCOT, 1975a [*A. magnifica KOZLOWSKI, 1929] | USA, Canada, Europe, Russia, Kazakhstan, Australia | USIL-LDEV
+          Eoanastrophia NIKIFOROVA & SAPELNIKOV, 1973 [*E. antiquata] | eastern Ireland, Russia, Kirgizia, Kazakhstan, Europe | UORD
+          Jolkinia BREIVEL & BREIVEL, 1988 [*Camerella turjensis KHODALEVICH, 1939] | Russia (Urals) | USIL
+          Liostrophia COOPER & KINDLE, 1936 [*L. glabra] | upper Canada, ?Ireland, Kazakhstan, northwestern China | UORD
+          Maydenella LAURIE, 1991 [*M. asymmetrica] | Tasmania | LORD
+          Parastrophinella SCHUCHERT & COOPER, 1931 [*Pentamerus reversus BILLINGS, 1857] | Tasmania | MORD
+      Family PARALLELELASMATIDAE Cooper, 1956
+          Metacamarella REED, 1917 [*Stricklandinia? balcletchiensis DAVIDSON, 1883] | southeastern USA, Britain, Norway, Estonia | MORD-UORD
+            = Parallelelasma COOPER, 1956a (synonym)
+          Didymelasma COOPER, 1956a [*D. longicrurum] | USA, Canada, Australia, China, Russia, Kazakhstan, Siberia | UORD
+          Limstrophina FU, 1982 [*L. ptychorete] | northwestern China | UORD
+            = Limstrophia FU, 1980 (nom. nud.)
+          Salonia COOPER & WHITCOMB, 1933 [*S. magnaplicata] | USA | MORD-UORD
+          Schizostrophina FU, 1982 [*S. sinensis] | northwestern China | UORD
+          Vaga SAPELNIKOV, 1972 [*V. vagensis] | Russia | MORD
+
+  Suborder PENTAMERIDINA Schuchert & Cooper, 1931
+    Superfamily PENTAMEROIDEA M'Coy, 1844
+      Family VIRGIANIDAE Boucot & Amsden, 1963
+        Subfamily VIRGIANINAE Boucot & Amsden, 1963
+          Virgiana TWENHOFEL, 1914 [*Pentamerus barrandei BILLINGS, 1857] | North America, Asia | UORD-LSIL
+            V. (Virgiana) TWENHOFEL, 1914 [*Pentamerus barrandei BILLINGS, 1857] | North America, Asia | LSIL
+            V. (Platymerella) FOERSTE, 1909a [*P. manniensis] | midcontinent North America | LSIL
+          Borealis BOUCOT, JOHNSON, & RUBEL, 1971 [*Gypidia borealis EICHWALD, 1843] | Baltic region, South China, Russia (Kolyma, Siberia) | LSIL
+          Holorhynchus KIAER, 1902 [*H. giganteus] | Eurasia, North America (including Alaska) | UORD-LSIL
+            H. (Holorhynchus) KIAER, 1902 [*H. giganteus] | Eurasia, USA (Alaska) | UORD-LSIL
+            H. (Nondia) BOUCOT & CHIANG, 1974 [*N. canadensis] | western Canada | LSIL
+            H. (Sulcipentamerus) ZENG, 1987 [*S. sulcus] | Yangtze Gorge region, central China | LSIL
+          Proconchidium SAPELNIKOV in NIKOLAEV & SAPELNIKOV, 1969 [*Conchidium munsteri ST. JOSEPH, 1938] | Urals, Central Asia, Kazakhstan, Norway, Arctic Canada, northern Greenland | UORD
+            = Paraconchidium RONG & YANG in RONG, XU, & YANG, 1974 (j.s.s.)
+          Pseudoconchidium NIKIFOROVA & SAPELNIKOV, 1971 [*P. kozhimicum] | USA (Alaska), South China, Arctic Urals, Russia (Kolyma, Vaygach) | LSIL
+          Tcherskidium NIKOLAEV & SAPELNIKOV, 1969 [*Conchidium? unicum NIKOLAEV, 1968] | Russia (Kolyma, Taymyr), northern Greenland, USA (Alaska), South China, Kazakhstan | UORD
+          Virgianella NIKIFOROVA & SAPELNIKOV, 1971 [*V. vaigatschensis] | Arctic Urals, Pechora River, Russia | LSIL
+          Prostricklandia RUKAVISHNIKOVA & SAPELNIKOV, 1973 [*P. prisca] | Kazakhstan | UORD
+        Subfamily MARIANNAELLINAE Sapelnikov & Rukavishnikova, 1975
+          Mariannaella SAPELNIKOV & RUKAVISHNIKOVA, 1975b [*M. koksengirensis] | Kazakhstan | LSIL
+          Brevilamnulella AMSDEN, 1974 [*Clorinda? thebesensis SAVAGE, 1913a] | North America, Europe, Asia | UORD-LSIL
+            = Antigaleatella SAPELNIKOV & RUKAVISHNIKOVA, 1975a (j.s.s.)
+            = Brevilamula BOUCOT & CHIANG, 1974 (nom. null.)
+          Disulcatella FU, 1982 [*D. didyma] | North China | LSIL
+          Eoconchidium ROZMAN, 1967 [*E. indigiricum] | Russia (Kolyma), Kazakhstan, USA (Alaska) | UORD
+          Galeatellina SAPELNIKOV & RUKAVISHNIKOVA, 1976 [*Galeatella kajnarensis SAPELNIKOV & RUKAVISHNIKOVA, 1975a] | Kazakhstan | UORD
+            = Galeatella SAPELNIKOV & RUKAVISHNIKOVA, 1975a (preocc., non MUIR-WOOD & COOPER, 1960)
+        Subfamily PLEURODIINAE Rong & Yang, 1977
+          Pleurodium WANG, 1955 [*Conchidium tenuiplicatus GRABAU, 1925] | South China | LSIL
+          Plicidium RONG & YANG, 1981 [*Virgiana? sinanensis RONG & YANG in RONG, XU, & YANG, 1974] | South China | LSIL
+      Family PENTAMERIDAE M'Coy, 1844
+        Pentamerus J. SOWERBY, 1813 [*P. oblongus J. de C. SOWERBY, 1839] | North America, Europe, Asia, Australia | LSIL-USIL
+          P. (Pentamerus) J. SOWERBY, 1813 [*P. oblongus J. de C. SOWERBY, 1839] | North America, Europe, Asia, Australia | LSIL-USIL
+          P. (Supertrilobus) BOUCOT & JOHNSON, 1979 [*S. hawthornensis] | central North America | USIL
+          P. (Pentameroides) SCHUCHERT & COOPER, 1931 [*Pentamerus subrectus HALL & CLARKE, 1893] | North America, Europe, Asia, Australia | LSIL-USIL
+          P. (Callipentamerus) BOUCOT, 1964a [*Pentamerus corrugatus WELLER & DAVIDSON, 1896] | midcontinent North America | LSIL
+          P. (Reveroides) SAPELNIKOV, 1976 [*P. jolvensis SAPELNIKOV, 1961a] | Ontario, northern Greenland, Urals, Altai Mountains, Canadian Arctic | LSIL
+            = Sapelnikovia BOUCOT & JOHNSON, 1979 (j.s.s.)
+          P. (Pararhipidium) BOUCOT & JOHNSON, 1979 [*P. tenuistriatus LINDSTROM in ANGELIN & LINDSTROM, 1880] | North America, Sweden, Urals, Kazakhstan, Malaysia | USIL
+        Bisulcata BOUCOT & JOHNSON, 1979 [*B. indianensis] | midcontinent North America, Urals | USIL
+        Brooksina KIRK, 1922 [*B. alaskensis] | western North America, Urals, Central Asia, Kazakhstan, Altai Mountains | USIL
+          B. (Brooksina) KIRK, 1922 [*B. alaskensis] | western North America, Urals, Central Asia | USIL
+          B. (Khodalevichia) BOUCOT & JOHNSON, 1979 [*Brooksina(?) crassa KHODALEVICH, 1939] | Urals | LSIL
+        Capelliniella STRAND, 1928 [*Capellinia HALL & CLARKE, 1893, nom. nov.] | North America, Urals, Central Asia, Malaysia | USIL
+          = Capellinia HALL & CLARKE, 1893 (preocc., non TRICHESE, 1874)
+        Eokirkidium KHODALEVICH & SAPELNIKOV, 1970 [*E. jachteljaensis] | Urals, Altai Mountains, Central Asia, Kazakhstan | USIL
+        Harpidium KIRK, 1925 [*H. insignis] | North America, Europe, Urals, Asia | LSIL-USIL
+          H. (Harpidium) KIRK, 1925 [*H. insignis] | North America, Urals, Asia | USIL
+          H. (Isovella) BREIVEL & BREIVEL in ANTSIGIN & others, 1970 [*I. regina] | midcontinent North America, Urals, China | USIL
+            = Carmanella BOUCOT in BERRY & BOUCOT, 1970 (nom. nud.)
+            = Appentamerus BOUCOT & JOHNSON, 1979 (j.s.s.)
+        Jolvia SAPELNIKOV, 1960b [*J. multiplexa] | Urals | LSIL
+        Kirkidium AMSDEN, BOUCOT, & JOHNSON, 1967 [*Pentamerus knighti J. SOWERBY, 1813] | North America, Europe, Asia, Australia | USIL
+          = Praekirkidium BREIVEL & BREIVEL, 1988 (j.s.s.)
+          K. (Kirkidium) AMSDEN, BOUCOT, & JOHNSON, 1967 [*Pentamerus knighti J. SOWERBY, 1813] | North America, Europe, Asia, Australia | USIL
+          K. (Bateridium) SU, RONG, & LI, 1985 [*B. baterobaseus] | North China, central Urals | USIL
+          K. (Pinguaella) BOUCOT & JOHNSON, 1979 [*Rhipidium pingue AMSDEN, 1949a] | North America, Europe, Asia, Australia | USIL
+        Lissocoelina SCHUCHERT & COOPER, 1931 [*Pentamerus pergibbosus HALL & WHITFIELD, 1875] | midcontinent North America | USIL
+        Nanukidium JONES, 1979 [*Rossella arctica JONES, 1978] | Canadian Arctic, USA (southeastern Alaska) | USIL
+        Pentamerifera KHODALEVICH, 1939 [*Pentamerus talitiensis CHERNYSHEV, 1893] | USA (Nevada), Urals, Central Asia, northwestern China | LSIL
+        Pentameroides SCHUCHERT & COOPER, 1931 [*Pentamerus subrectus HALL & CLARKE, 1893] | North America, Europe, Asia, Australia | LSIL-USIL
+        Rhipidium SCHUCHERT & COOPER, 1931 [*Pentamerus knappi HALL & WHITFIELD, 1872] | North America, Europe | USIL
+          R. (Rhipidium) SCHUCHERT & COOPER, 1931 [*Pentamerus knappi HALL & WHITFIELD, 1872] | midcontinent North America | USIL
+          R. (Ectorhipidium) BOUCOT & JOHNSON, 1979 [*Conchidium trilobatum KINDLE & BREGER in KINDLE, 1904] | midcontinent North America | LSIL
+        Stenopentamerus BOUCOT & JOHNSON, 1979 [*Pentamerus oblongus var. compressa KINDLE & BREGER in KINDLE, 1904] | midcontinent North America, Kazakhstan | USIL
+        Twenhofelia BOUCOT & SMITH, 1978 [*Stricklandia exploitensis SHROCK & TWENHOFEL, 1939] | Canada (Newfoundland) | USIL
+      Family SUBRIANIDAE Sapelnikov, 1963
+        Subfamily SUBRIANINAE Sapelnikov, 1963
+          Subriana SAPELNIKOV, 1960a [*S. subrini] | Urals | USIL
+          Vagranella SAPELNIKOV, 1960a [*V. diversoplicata] | Urals | USIL
+        Subfamily CONCHIDIINAE Sapelnikov, 1973
+          Conchidium OEHLERT, 1887a [*Anomia bilocularis HISINGER, 1799] | Eurasia, North America, Australia | USIL
+          Aliconchidium ST. JOSEPH, 1942 [*A. yassi] | eastern Australia | LSIL
+          Cymbidium KIRK, 1926 [*C. acutum] | USA (Alaska, Nevada), Arctic Canada | USIL
+          Lamelliconchidium KULKOV, 1968 [*L. tchergense] | Altai Mountains, Russia, USA (Nevada) | LSIL
+          Lissidium LENZ, 1989 [*L. erugatus] | USA (Nevada), Canada (Northwest Territories) | USIL
+          ?Plicocoelina BOUCOT & JOHNSON, 1966b [*Pentamerus occidentalis HALL, 1852] | midcontinent North America | LSIL
+          Raridium SAPELNIKOV & MIZENS in SAPELNIKOV, MIZENS, & SHATROV, 1987 [*Eoconchidium? rarum SAPELNIKOV & RUKAVISHNIKOVA, 1975a] | Kazakhstan | LSIL
+          Severella SAPELNIKOV, 1963b [*Brooksina (S.) magnificaformis] | Urals, USA (Nevada) | USIL
+          Spondylopyxis JOHNSON, BOUCOT, & MURPHY, 1976 [*S. ignotus] | USA (Nevada), Arctic Canada | LSIL
+          Vosmiverstum BREIVEL & BREIVEL in ANTSIGIN & others, 1970 [*Conchidium triquetrum SAPELNIKOV, 1961b] | Urals | USIL
+
+    Superfamily STRICKLANDIOIDEA Schuchert & Cooper, 1931
+      Family STRICKLANDIIDAE Schuchert & Cooper, 1931
+        Subfamily STRICKLANDIINAE Schuchert & Cooper, 1931
+          Stricklandia BILLINGS, 1859a [*Atrypa lens] | North America, Eurasia | LSIL
+            = Stricklandinia BILLINGS, 1863a
+          ?Aenigmastricklandia ZIEGLER, 1966a [*A. contorta] | Wales | LSIL
+          Costistricklandia AMSDEN, 1953 [*Stricklandia gaspeensis] | eastern North America, Europe, Novaya Zemlya | LSIL
+          Ehlersella BOUCOT & JOHNSON, 1966a [*Stricklandinia davidsoni] | Canada (Quebec), USA (Alabama) | LSIL
+        Subfamily KULUMBELLINAE Boucot, Rong, & Blodgett, new subfamily
+          Kulumbella NIKIFOROVA, 1960c [*K. kulumbensis] | Siberia, eastern Canada (Anticosti Island) | LSIL
+          Chiastodoca JIN & COPPER, 1998 [*Stricklandia salteri] | eastern North America, South China, Kazakhstan, Estonia, Norway, Siberia, northern Greenland | LSIL
+          Microcardinalia BOUCOT & EHLERS, 1963 [*Stricklandinia triplesiana] | North America, Scotland | LSIL
+          Plicostricklandia BOUCOT & EHLERS, 1963 [*Stricklandinia multistriata] | North America | LSIL
+          Stricklandiella SAPELNIKOV & RUKAVISHNIKOVA, 1973 [*S. aseptata] | Kazakhstan | LSIL
+          Rugolepyros LENZ, 1989 [*R. latispondylus] | Canada (Northwest Territories) | LSIL
+          Vadimia BOUCOT & RONG, 1994 [*V. nevadensis] | USA (Nevada) | LSIL
+      Family AENIGMASTROPHIIDAE Boucot & Rong, 1994
+        Aenigmastrophia BOUCOT, 1971 [*A. cooperi] | USA (Nevada, California) | LSIL
+        Spondylostrophia KULKOV, 1967 [*S. lata] | Altai Mountains | LSIL
+      ?Family STRICKLANDISTROPHIIDAE Sapelnikov & Kulkov, 1976
+        Stricklandistrophia SAPELNIKOV & RUKAVISHNIKOVA, 1975a [*S. lata] | Kazakhstan | LSIL
+    Superfamily GYPIDULOIDEA Schuchert & LeVene, 1929
+      Family GYPIDULIDAE Schuchert & LeVene, 1929
+        Subfamily GYPIDULINAE Schuchert & LeVene, 1929
+          Gypidula HALL, 1867b [*Gypidula typicalis] | Europe, Asia, North America, North Africa, Australia | LSIL-UDEV
+            = Metabolipa GODEFROID, 1974
+            = Neometabolipa GODEFROID, 1974
+          Amsdenina BOUCOT, 1975a [*Sieberella roemeri] | Canadian Arctic Islands, midcontinent North America | LSIL-LDEV
+          Ascanigypa HAVLICEK in HAVLICEK & STORCH, 1990 [*Pentamerus ascanius] | Czech Republic | LSIL
+          Breviseptum SAPELNIKOV, 1960b [*Conchidium oriens] | Urals | LSIL-LDEV
+          Cadudium HAVLICEK, 1985b [*Pentamerus caducus] | Czech Republic, Urals, Tian Shan | LSIL-LDEV
+          Carinagypa JOHNSON & LUDVIGSEN, 1972 [*Gypidula loweryi] | Canadian Arctic Islands, Czech Republic, USA (Nevada, Alaska), Yukon Territory, Arctic Canada | LDEV-MDEV
+            C. (Carinagypa) JOHNSON & LUDVIGSEN, 1972 [*Gypidula loweryi] | Canadian Arctic Islands, Czech Republic, USA, Yukon Territory, Arctic Canada | LDEV-MDEV
+            C. (Aseptagypa) BRICE, 1982 [*C. (A.) maclareni] | Canadian Arctic Islands, USA (east-central Alaska, Nevada), Yukon Territory | LDEV-MDEV
+          Caryogyps JOHNSON, BOUCOT, & MURPHY, 1976 [*C. plicata] | USA (Nevada, Idaho) | LSIL
+          Galeatagypa SAPELNIKOV, 1981 [*Pentamerus pelagicus] | Europe, Asia, western and Arctic North America | LSIL-MDEV
+          Gashaomiaoia RONG, SU, & LI, 1985 [*Gypidula (Gashaomiaoia) glabera] | Czech Republic, Austria (Carnic Alps), Poland, China, Neimonggol | LDEV-MDEV
+            = Rectigypidula HAVLICEK, 1985b
+          Gypidulina RZHONSNITSKAIA, 1956b [*Pentamerus optatus] | Novaya Zemlya, Urals, Tian Shan, Salair, Altai Mountains, Czech Republic, ?North America (Gaspe) | LDEV
+            = Sieberina ANDRONOV, 1961
+          Gypiduloides SAVAGE in SAVAGE & BAXTER, 1995 [*G. craigensis] | USA (southeastern Alaska) | UDEV
+          Levigypa SAPELNIKOV, 1985b [*Gypidula subtricta] | southern Tian Shan, Kyrgyzstan | LDEV
+          Lysigypa HAVLICEK in HAVLICEK & KUKAL, 1990 [*L. morosoides] | Czech Republic | LDEV
+          Multicosta KHODALEVICH & BREIVEL in BREIVEL & BREIVEL, 1977 [*Gypidula oturalica] | Urals, ?Tian Shan | LDEV-MDEV
+          Novozemelia CHERKESOVA, 1973 [*N. olgae] | Novaya Zemlya | LDEV-MDEV
+          Physemella GODEFROID, 1974 [*P. mailleuxi] | Belgium | UDEV
+          Plicogypa RZHONSNITSKAIA, 1975 [*Pentamerus kayseri] | Russia (Kuznetsk basin, Taymyr), Altai Mountains, USA (southwestern Alaska), Canadian Arctic Islands, Germany (Harz Mountains) | LDEV-MDEV
+          Sieberella OEHLERT, 1887a [*Pentamerus sieberi] | Europe, North Africa, Kazakhstan, Tian Shan, Salair, Urals, Vietnam | LDEV-MDEV
+          Sieberelloides SAPELNIKOV, 1985a [*Sieberella weberi] | Urals | LDEV-MDEV
+        Subfamily IVDELININAE Sapelnikov, 1985
+          Ivdelinia ANDRONOV, 1961 [*Gypidula ivdelensis] | Europe, Urals, Central Asia, Siberia, USA (Alaska), Russia (Kolyma, Salair), Canadian Arctic Islands | LDEV-MDEV
+            I. (Ivdelinia) ANDRONOV, 1961 [*Gypidula ivdelensis] | Europe, Urals, Central Asia, Siberia, USA (Alaska) | LDEV-MDEV
+            I. (Ivdelinella) BRICE, 1982 [*I. (I.) ellesmernsis] | Canadian Arctic Islands | LDEV-MDEV
+          Ivdeliniella KIM, 1981 [*I. trilobata] | USA (southwestern Alaska), Tian Shan | LDEV
+        Subfamily LEVIGATELLINAE Rzhonsnitskaia, 1975
+          Levigatella ANDRONOV, 1961 [*Gypidula olga] | Urals, Tian Shan, Kuznetsk basin | LDEV-MDEV
+        Subfamily DEVONOGYPINAE Breivel & Breivel, 1977
+          Devonogypa HAVLICEK, 1951 [*Gypidula (Devonogypa) spinulosa] | Czech Republic, Poland, Germany, Caucasus | LSIL-MDEV
+          Gypidatella KHODALEVICH & BREIVEL, 1959 [*G. pennatula] | Urals | LDEV-MDEV
+          Pseudosieberella GODEFROID, 1972 [*P. corrugata] | Czech Republic, Belgium, Germany | LDEV-MDEV
+          ?Wyella KHODALEVICH, 1939 [*Eichwaldia uralica] | Urals, Central Asia, Kazakhstan | LSIL-MDEV
+          Gypidulella SAPELNIKOV, 1960a [*G. severini] | Urals, Central Asia, Kazakhstan | LSIL-MDEV
+        Subfamily CONCHIDIELLINAE Rzhonsnitskaia, 1961
+          Zdimir BARRANDE, 1881 [*Z. solus] | Czech Republic, Germany, Belgium, Carnic Alps, Urals, Russia (Novaya Zemlya, Salair, northeastern Siberia), Tian Shan, Transcaucasus, South China, Japan | LDEV-MDEV
+            = Conchidiella KHODALEVICH, 1939
+          Biseptum KHODALEVICH & BREIVEL, 1959 [*B. rectecostatum] | Urals | LDEV-MDEV
+          ?Glyptogypa STRUVE, 1992 [*Pentamerus galeatus var. multiplicata] | Germany, France, Poland | MDEV
+          Leviconchidiella RZHONSNITSKAIA, 1960c [*Sierelka vagranica] | Urals, Tian Shan, Kuznetsk basin | LDEV-MDEV
+          ?Zdimirella CHERKESOVA, 1973 [*Z. kuzmini] | Novaya Zemlya, western Canada | MDEV
+        Subfamily GENICULIGYPINAE Blodgett & Boucot, 1998
+          Geniculigypa BLODGETT & BOUCOT, 1998 [*Sieberella newtonensis] | USA (Michigan) | MDEV
+        NOMEN NUDUM
+          Schegultania ANDRONOV, 1961 [no type species designated] | Urals | LDEV-MDEV
+        GENERA REJECTED FROM THE GYPIDULIDAE
+          Levibiseptum XIAN, 1975 [placed in Rhynchospiriferininae by Carter & others (1994)]
+      Family ENANTIOSPHENIDAE Torley, 1934
+        Enantiosphen WHIDBORNE, 1893 [*Meganterii vicaryi] | England, Germany, Urals | MDEV
+        Enantiosphenella JOHNSON, 1974 [*E. cybele] | USA (Nevada) | MDEV
+    Superfamily CLORINDOIDEA Rzhonsnitskaia, 1956
+      Family CLORINDIDAE Rzhonsnitskaia, 1956
+        Subfamily CLORINDINAE Rzhonsnitskaia, 1956
+          Clorinda BARRANDE, 1879b [*C. armata] | Europe, Asia, North America, Greenland, Australia, North Africa | LSIL-MDEV
+          Antirhynchonella OEHLERT, 1887a [*Atrypa linguifera] | Europe, Siberia, Turkestan, South China, North America, Venezuela | LSIL-MDEV
+            = Barrandella HALL & CLARKE, 1893
+          Barrandina BOOKER, 1926 [*Pentamerus linguifera var. wilkinsoni] | Australia (New South Wales), Czech Republic, Urals | USIL
+          Boucotides AMSDEN, 1968 [*B. barrandei] | USA (Arkansas), Czech Republic | LSIL
+          Indaclor HAVLICEK in HAVLICEK & STORCH, 1990 [*I. sellarius] | Czech Republic | USIL
+        Subfamily PENTAMERELLINAE Sapelnikov, 1973
+          Pentamerella HALL, 1867b [*Atrypa arata] | North America, Europe, Siberia | LDEV-MDEV
+          Clorindella AMSDEN, 1964 [*Barrandella areyi] | USA (New York) | LSIL
+        Subfamily CLORINDINA new
+          Clorindina KHODALEVICH, 1939 [*C. uralica] | Russia (Novaya Zemlya, Kolyma), Altai Mountains, Urals, Salair, Tian Shan, Germany | LDEV-MDEV
+          Clorindinella RZHONSNITSKAIA, 1975 [*C. alaica] | Urals, Kuznetsk Basin, Tian Shan, ?western Europe | LDEV-MDEV
+            = Clorinda alaica NIKIFOROVA, 1960d (nom. nud.)
+
+Order RHYNCHONELLIDA Kuhn, 1949
+  Superfamily ANCISTRORHYNCHOIDEA Cooper, 1956
+    Family ANCISTRORHYNCHIDAE Cooper, 1956
+      Ancistrorhyncha ULRICH & COOPER, 1942 [*A. costata; OD] | North America, Baltic, Kazakhstan, central Asia, eastern Siberia, China | LORD-UORD
+      Drepanorhyncha COOPER, 1956a [*Porambonites ottawaensis BILLINGS, 1862; OD] | North America, Europe, Kirghizia, central Asia | LORD-UORD
+      Kholbotchonia BARANOV, 1988 [*Machaeraria pygmaea ALEKSEEVA, 1967; OD] | eastern Siberia | LDEV
+      Nikolaevirhynchus BARANOV, 1988 [*N. boldymbensis; OD] | eastern Siberia | USIL
+      Obscurella BARANOV, 1991 [*O. costata; OD] | eastern Siberia | LDEV
+      Tyryrhynchus BARANOV, 1988 [*T. tyryensis; OD] | eastern Siberia | LSIL
+    Family SPHENOTRETIDAE Savage, 1996
+      Sphenotreta COOPER, 1956a [*S. cuneata; OD] | North America, eastern and central Siberia, China | LORD-UORD
+      Dorytreta COOPER, 1956a [*D. bella; OD] | North America, eastern Siberia, Kazakhstan | LORD
+    Family OLIGORHYNCHIIDAE Cooper, 1956
+      Oligorhynchia COOPER, 1935 [*O. subplana; OD] | North America, Europe, Novaya Zemlya, northern Urals, Kazakhstan | UORD
+      Paraoligorhyncha POPOV, 1981 [*P. reducta; OD] | central Asia, Kazakhstan | UORD
+      Tonsella AMSDEN, 1988 [*T. parva; OD] | North America | UORD
+    Family NIORHYNICIDAE Savage, 1996
+      Niorhynx HAVLICEK, 1982b [*Terebratula niobe BARRANDE, 1847; OD] | Bohemia | USIL
+      Leptolepyron JIN, 1989 [*Rhynchonella? argentea BILLINGS, 1866; OD] | Canada | LSIL
+  Superfamily RHYNCHOTREMATOIDEA Schuchert, 1913
+    Family RHYNCHOTREMATIDAE Schuchert, 1913
+      Subfamily RHYNCHOTREMATINAE Schuchert, 1913
+        Rhynchotrema HALL, 1860a [*Atrypa increbescens HALL, 1860a; OD] | North America, Europe, northern Africa, Urals, Siberia, Kazakhstan, Kirgizia, China, Australia | UORD-USIL
+        Hiscobeccus AMSDEN, 1983a [*Atrypa capax CONRAD, 1842; OD] | North America | UORD
+        Otarorhyncha NIKIFOROVA & POPOV, 1981 [*Rhynchotrema otarica RUKAVISCHNIKOVA, 1956; OD] | Kazakhstan, central Asia | LORD-UORD
+        Pleurocornu HAVLICEK, 1961 [*Rhynchonella amissa BARRANDE, 1879b; OD] | Bohemia | USIL
+        Stegerhynchus FOERSTE, 1909a [*Rhynchonella (Stegerhynchus) whitii-praecursor FOERSTE, 1909a; OD] | North America, Europe, Siberia, Altai, Mongolia, Australia | LSIL-USIL
+          = Stegerhynchops AMSDEN, 1978
+          = Stegocornu HAVLICEK, 1961
+          = Tungussotoechia LOPUSHINSKAYA, 1976
+      Subfamily LEPIDOCYCLINAE Cooper, 1956
+        Lepidocyclus WANG, 1949 [*L. laddi; OD] | North America, Europe, Kazakhstan | UORD-USIL
+        Rhytidorhachis JIN & CALDWELL, 1990 [*R. hudsonensis; OD] | North America | UORD-LSIL
+        Hypsiptycha WANG, 1949 [*H. hybrida; OD] | North America | UORD
+    Family TRIGONIRHYNCHIIDAE Schmidt, 1965
+      Subfamily TRIGONIRHYNCHIINAE Schmidt, 1965
+        Trigonirhynchia COOPER, 1942 [*Uncinulina fallaciosа BAYLE, 1878; OD] | Europe, North America, Siberia, Mongolia | USIL-MDEV
+        Agarhyncha HAVLICEK, 1982b [*Terebratula famula BARRANDE, 1847; OD] | Bohemia, central Asia | USIL
+        Ancillotoechia HAVLICEK, 1959 [*Rhynchonella ancillans BARRANDE, 1879b; OD] | cosmopolitan | USIL-LDEV
+        Aratoechia HAVLICEK, 1982b [*Terebratula minerva BARRANDE, 1847; OD] | Bohemia | USIL
+        Astua HAVLICEK, 1992 [*Rhynchonella astuta BARRANDE, 1879b; OD] | Bohemia | LDEV
+        Bortegitoechia ERLANGER, 1994 [*B. tsogteila; OD] | Mongolia | LDEV
+        Cupularostrum SARTENAER, 1961d [*C. recticostatum; OD] | North America | LDEV-MDEV
+        Hercotrema JIN, 1989 [*H. bulbicostatum; OD] | North America | LSIL-LDEV
+        Iberirhynchia DROT & WESTBROEK, 1966 [*I. santaluciensis; OD] | Spain, Bohemia | LDEV-MDEV
+        Lissopleura WHITFIELD, 1896 [*Rhynchonella aequivalvis HALL, 1857a; OD] | North America | LDEV
+        Macropotamorhynchus SARTENAER, 1970a [*Camarotoechia mitcheldeanensis VAUGHAN, 1905; OD] | North America, Australia | LDEV
+        Microsphaeridiоrhynchus SARTENAER, 1970a [*Rhynchonella (?) litchfieldensis SCHUCHERT, 1903; OD] | North America, Europe, China | USIL-LDEV
+        Morphorhynchus COOPER & DUTRO, 1982 [*M. varicostatum; OD] | North America | MDEV
+        Moorefieldella GIRTY, 1911 [*Rhynchonella eurekensis WALCOTT, 1884; OD] | North America | MISS
+        Nasonirhynchia HAVLICEK, 1992 [*N. naso; OD] | Bohemia | LDEV
+        Nekhoroshevia BUHLICHENKO, 1956 [*N. altaica; OD] | Altai, Kazakhstan, Verkhoyan | UDEV-MISS
+        Oligoptycherhynchus SARTENAER, 1970a [*Terebratula hexatoma SCHNUR, 1851; OD] | Europe, Morocco, Canada | LDEV-MDEV
+        Oxypleurorhynchia PLODOWSKI, 1973 [*O. acutiplicata; OD] | Austria (Carnic Alps) | USIL
+        Sinotectirostrum SARTENAER, 1961c [*S. medicinale; OD] | North America, Canada, Belorussia | UDEV
+        Stenorhynchia BRICE, 1981b [*Terebratula nympha BARRANDE, 1847; OD] | Europe, northern Africa, Urals, Tadzhikistan, Mongolia | USIL-LDEV
+          = Stenorhynchites HAVLICEK in HAVLICEK & STORCH, 1990
+        Sufetirhyncha HAVLICEK, 1982b [*Ancillotoechia radvani HAVLICEK, 1961; OD] | Bohemia | USIL
+        Tetratоmia SCHMIDT, 1941a [*Terebratula tetratoma SCHNUR, 1851; OD] | Europe, Morocco | LDEV-MDEV
+        Wilsoniella KHALFIN, 1939 [*W. prima; OD] | Altay, Mongolia | LDEV
+      Subfamily ROSTRICELLULINAE Rozman, 1969
+        Rostricellula ULRICH & COOPER, 1942 [*R. rostrata; OD] | North America, Europe, Asia | LORD-LSIL
+        Azamella LAURIE, 1991 [*A. rotunda; OD] | southeastern Australia (Tasmania) | UORD
+        Evenkorhynchia ROZMAN, 1969 [*E. dichotomians ROZMAN, 1968; OD] | northeastern Siberia | UORD
+        Lepidocycloides NIKIFOROVA, 1961 [*L. baikiiticus; OD] | central Siberia, Altai, China | UORD
+        Plectothyrella TEMPLE, 1965 [*P. platystrophoides; OD] | Europe, eastern North America, South Africa, South America, Siberia, China | UORD
+      Subfamily HEMITOECHINAE Savage, 1996
+        Hemitoechia NIKIFOROVA, 1970 [*H. distincta; OD] | cosmopolitan | LORD-MISS
+        Alorostrum SAVITSKII, 1992 [*A. elegans; OD] | Tian Shan | UDEV
+        Bathyrhyncha FUCHS, 1923 [*B. sinuosa; OD] | Belgium, Germany | LDEV
+        Browneella CHATTERTON, 1973 [*B. browneae; OD] | southeastern Australia | LDEV
+        Centrorhynchus SARTENAER, 1970a [*Camarotoechia baitalensis REED, 1922; OD] | Iran, Afghanistan, Turkey, Pamir, China, western Europe, Russia, North America, Australia | UDEV
+        Dalerhynchus BAI, 1978 [*D. dingshanlingensis; OD] | China | LDEV
+        Dushanirhynchia WANG & ZHU, 1979 [*D. inflata; OD] | southern China | UDEV-MDEV
+        Lenatoechia NIKIFOROVA, 1970 [*Camarotoechia elegans NIKIFOROVA, 1961; OD] | northern Siberian platform, Novaya Zemlya, northern Urals | LORD-USIL
+        Libyaerhynchus MERGL & MASSA, 1992 [*L. fragosus; OD] | Libya | UDEV
+        Losvia BRICE, 1976 [*Pugnoides(?) operosa KHODALEVICH, 1951; OD] | Urals | LDEV
+        Luterella AMSDEN, 1988 [*Camarotoechia altisulcata AMSDEN, 1951; OD] | USA | USIL-LDEV
+        Nymphorhynchia RZHONSNITSKAIA, 1968b [*Uncinulus (U.) marki HAVLICEK, 1956; OD] | Europe, northern Africa | LDEV
+        Pampoecilorhynchus SARTENAER, 1968d [*Rhynchonella nux GOSSELET, 1887; OD] | Europe, Morocco, Iran, Afghanistan | UDEV
+        Ptychomaletoechia SARTENAER, 1970a [*Camarotoechia(?) nalivkini ABRAMIAN, 1957; OD] | Armenia, Iran, Afghanistan, Algeria | UDEV
+        Paurogastroderhynchus SARTENAER, 1961c [*P. omaliusi GOSSELET; OD] | Europe, Afghanistan, Altai, China, North America | UDEV-MISS
+        Tabarhynchus BARANOV, 1989 [*T. mirandus; OD] | eastern Siberia | UDEV
+        Yanetechia BARANOV, 1980 [*Y. excelsa; OD] | eastern Siberia | LDEV-MDEV
+      Subfamily VIRGINIATINAE Amsden, 1974
+        Virginiata AMSDEN, 1968 [*Camarotoechia arkansana THOMAS, 1926; OD] | North America, Siberia, China | LSIL
+        Hostimex HAVLICEK, 1982b [*H. hostimensis; OD] | Bohemia | USIL
+        Rhynchotreta HALL, 1879 [*Terebratula cuneata DALMAN, 1828; OD] | Europe, Urals, Altai, China, North America | LSIL-USIL
+          = Bailongjiangella FU, 1982
+        Thebesia AMSDEN, 1974 [*Rhynchotreta thebesensis FOERSTE, 1909a; OD] | North America, Europe, Asia | UORD-LSIL
+      Subfamily RIPIDIORHYNCHINAE Savage, 1996
+        Ripidiorhynchus SARTENAER, 1966b [*Terebratula livonica VON BUCH, 1834; OD] | Europe, Asia, northern Africa, North America | MDEV-UDEV
+        Cyphoterorhynchus SARTENAER, 1965c [*Uncinulus (Uncinulina) koraghensis REED, 1922; OD] | North America | MDEV-MISS
+        Hemiplethorhynchus VON PEETZ, 1898 [*H. fallax; OD] | Altai, Europe, China, North America | MISS
+          = Greenockia BROWN, 1952
+        Pseudosinotectirostrum YUDINA, 1991 [*P. arcticum; OD] | Russia (Timan, Pechora) | UDEV
+    Family ORTHORHYNCHULIDAE Cooper, 1956
+      Orthorhynchula HALL & CLARKE, 1893 [*Orthis? linneyi JAMES, 1881; OD] | North America, ?western Europe | UORD-LSIL
+      Orthorhynchuloides WILLIAMS, 1962 [*Hemithyris naiana MCCOY, 1852; OD] | Scotland | UORD
+      Orthorhynchyllion JIN, 1989 [*Rhynchotrema prinstanum TWENHOFEL, 1928; OD] | Canada | UORD
+      Tasmanella LAURIE, 1991 [*T. nova; OD] | southeastern Australia (Tasmania) | UORD
+      Tuvaerhynchus KULKOV, 1985 [*T. khalfini; OD] | Tuva | LSIL-USIL
+    Family LEPTOCOELIIDAE Boucot & Gill, 1956
+      Leptocoelia HALL, 1857a [*L. propria; SD] | North America, South America, South Africa, Falkland Islands, Australia | LSIL-LDEV
+      Anabaia CLARKE, 1893 [*A. paraia; OD] | South America | LSIL-USIL
+      Australocoelia BOUCOT & GILL, 1956 [*Atrypa palmata MORRIS & SHARPE, 1846; OD] | South America, South Africa, Falkland Islands, Australia | LDEV-MDEV
+      Eocoelia NIKIFOROVA, 1961 [*Atrypa hemisphaerica J. DE C. SOWERBY, 1839; OD] | Europe, Asia, North America, South America, Australia | LSIL-USIL
+      Leptocoelina JOHNSON, 1970b [*L. squamosa; OD] | North America, Bohemia | LDEV
+      Pacificocoelia BOUCOT, 1975a [*Leptocoelia murphyi JOHNSON, 1970b; OD] | North America | LDEV-MDEV
+      Platytrochalos JIN, 1989 [*P. crudicostatus; OD] | eastern Canada | LSIL
+    Family MACHAERARIIDAE Savage, 1996
+      Machaeraria COOPER, 1955 [*Rhynchonella formosa HALL, 1857a; OD] | cosmopolitan | LDEV
+        = Qinlingotoechia FU, 1983a
+      Australirhynchia SAVAGE, 1968 [*A. cudalensis; OD] | eastern Australia | LDEV
+      Callipleura COOPER, 1942 [*Rhynchospira nobilis HALL, 1860b; OD] | North America | MDEV
+      Cherubicornea HAVLICEK, 1992 [*Terebratula amalthea BARRANDE, 1847; OD] | Bohemia, France | LDEV
+      Ferganella NIKIFOROVA, 1937a [*F. turkestanica; OD] | Fergana | LDEV
+      Latonotoechia HAVLICEK, 1960 [*Terebratula latona BARRANDE, 1847; OD] | Europe, North America, Urals, Altai, Salair, Tadzhikistan, China | LDEV
+      Machaeratoechia HAVLICEK, 1992 [*M. marsyas; OD] | Bohemia | LDEV
+      Sicorhyncha HAVLICEK, 1961 [*Stegerhynchus trinacria HAVLICEK, 1956; OD] | Europe, Morocco, Urals, Salair, Tadzhikistan | LDEV
+      Thliborhynchia LENZ, 1967 [*T. julli; OD] | North America | LDEV
+        = Franklinella LENZ, 1973
+      Yukiangides HAVLICEK, 1992 [*Camarotoechia paratappho WANG, 1956; OD] | China, Altai, Urals, Bohemia | LDEV
+      Zeravshanotoechia RZHONSNITSKAIA, 1977 [*Z. zeravshanica; OD] | Tadzhikistan, Urals | LDEV-MDEV
+      Zlichorhynchus HAVLICEK, 1963 [*Z. hiatus; OD] | Bohemia | LDEV
+    Family PHOENICITOECHIIDAE Havlicek, 1990
+      Phoenicitoechia HAVLICEK, 1960 [*Terebratula phoenix BARRANDE, 1847; OD] | Europe, Urals, China | LDEV
+      Kotysex HAVLICEK, 1990b [*Rhynchonella simulans BARRANDE, 1879b; OD] | Bohemia, Carnic Alps | LDEV
+      Praegnantenia HAVLICEK, 1961 [*Terebratula praegnans BARRANDE, 1847; OD] | Bohemia, southern Urals | LDEV
+  Superfamily UNCINULOIDEA Rzhonsnitskaia, 1956
+    Family UNCINULIDAE Rzhonsnitskaia, 1956
+      Uncinulus BAYLE, 1878 [*Hemithyris subwilsoni D'ORBIGNY, 1850; OD] | cosmopolitan | LDEV-MDEV
+        = Tridensilis SU, 1976
+        = Uncina KARLIN, 1991
+      Bulgaria ERLANGER, 1994 [*B. mongolica; OD] | Mongolia | UDEV
+      Eucharitina SCHMIDT, 1955 [*Terebratula eucharis BARRANDE, 1847; OD] | Europe, northern Africa | LDEV
+      Fitzroyella VEEVERS, 1959a [*F. primula; OD] | Western Australia, Germany, England, Poland | MDEV-UDEV
+      Flabellulirostrum SARTENAER, 1971a [*Uncinulus wolmericus VEEVERS, 1959a; OD] | Western Australia, Europe, northern Africa | MDEV-UDEV
+      Markitoechia HAVLICEK, 1959 [*Uncinulus (U.) marki HAVLICEK, 1956; OD] | Europe, northern Africa | LDEV
+      Paraglossinulus MARTYNOVA, 1988 [*P. parvus; OD] | central Kazakhstan | UDEV
+      Plethorhyncha HALL & CLARKE, 1893 [*Rhynchonella speciosa HALL, 1857a; SD] | North America, ?Europe | LDEV
+      Remnevitoechia GRATSIANOVA, 1970 [*R. pseudogurjevskensis; OD] | Salair, Altai | LDEV
+      Taimyrrhynx HAVLICEK, 1983 [*Uncinulus irbitensis taimyricus NIKIFOROVA, 1960b; OD] | Urals, Bohemia | LDEV-MDEV
+    Family EATONIIDAE Schmidt, 1965
+      Eatonia HALL, 1857a [*Atrypa medialis VANUXEM, 1842; OD] | North America, western Africa, Europe | LSIL-LDEV
+        = Pareatonia MCLEARN, 1918
+      Aratanea SCHMIDT, 1967 [*A. monodi; OD] | Mauritania | USIL-LDEV
+      Boucotella BOWEN, 1966 [*Camarotoechia gigantea MAYNARD, 1913; OD] | eastern USA | USIL
+      Clarkeia KOZLOWSKI, 1923 [*Terebratula antisiensis D'ORBIGNY, 1847; OD] | South America, western Africa, Europe | LSIL-USIL
+      Costellirostra COOPER, 1942 [*Atrypa peculiaris CONRAD, 1841; OD] | eastern North America | LDEV
+      Diabolirhynchia DROT, 1964a [*D. hollardi; OD] | Morocco, Mauritania | USIL
+      Eatonioides MCLEARN, 1918 [*E. lamellornatus; OD] | North America, Australia, China | LDEV
+      Pegmarhynchia COOPER, 1955 [*P. zimmi; OD] | USA (New York, Maryland) | LDEV
+      Plagiorhyncha MCLEARN, 1918 [*Rhynchonella glassii DAVIDSON, 1883; OD] | North America | LSIL-USIL
+        = Atrypa depressa J. DE C. SOWERBY, 1839 (synonym)
+      Pleiopleurina SCHMIDT, 1964 [*Atrypa pleiopleura CONRAD, 1841; OD] | USA, Canada | LDEV
+      Sulcatina SCHMIDT, 1964 [*Trigonirhynchia sulcata COOPER, 1942; OD] | North America | USIL
+    Family HEBETOECHIIDAE Havlicek, 1960
+      Subfamily HEBETOECHIИНАЕ Havlicek, 1960
+        Hebetoechia HAVLICEK, 1959 [*Terebratula hebe BARRANDE, 1847; OD] | cosmopolitan | USIL-LDEV
+        Gerrhynx BARANOV, 1991 [*G. vescus; OD] | eastern Siberia | LDEV
+        Lapradella BARANOV, 1989 [*L. definita; OD] | eastern Siberia | LDEV
+        Lanceomyonia HAVLICEK, 1960 [*Terebratula tarda BARRANDE, 1847; OD] | cosmopolitan | USIL-LDEV
+          = Cratorhynchella TONG, 1982
+        Mongolorhynx ERLANGER, 1992 [*M. drosdovae; OD] | western Mongolia | LDEV
+        Voskopitoechia HAVLICEK, 1992 [*V. orbona; OD] | Bohemia | LDEV
+      Subfamily SPHAERIRHYNCHIINAE Savage, 1996
+        Sphaerirhynchia COOPER & MUIR-WOOD, 1951 [*Terebratula wilsoni SOWERBY, 1816; OD] | Europe, Urals, Salair, Altai, China, Australia, North America | USIL-LDEV
+        Estonirhynchia SCHMIDT, 1954 [*Sphaerirhynchia (E.) estonica; OD] | Baltic | USIL
+        Notoconchidium GILL, 1951 [*N. thomasi GILL, 1950; OD] | Australia, New Zealand | USIL
+        Tadschikia NIKIFOROVA, 1937a [*Wilsonella (T.) wilsoniaformis; OD] | eastern Siberia | USIL
+      Subfamily AMSDENELLINAE Savage, new subfamily
+        Amsdenella TILLMAN, 1967 [*Rhynchonella abrupta HALL, 1857a; OD] | eastern USA | LDEV
+      Subfamily GLOSSINULININAE Savage, 1996
+        Glossinulina JOHNSON, 1975 [*G. khodalevichi; OD] | Arctic Canada | LDEV
+        Glossinulinirhynchia BARANOV, 1991 [*G. venusta; OD] | eastern Siberia | LDEV
+        Nordotoechia TCHERKESOVA, 1965 [*N. tumida; OD] | Novaya Zemlya | LDEV
+        Pseudoglossinotoechia TCHERKESOVA, 1967 [*P. atalanta; OD] | Novaya Zemlya | LDEV
+      Subfamily BETTERBERGINAE Savage, 1996
+        Betterbergia SCHMIDT, 1981 [*Camarotoechia betterbergiana SCHMIDT, 1950; OD] | Germany | MDEV
+        Kransia WESTBROEK, 1968 [*Terebratula parallelepipeda BRONN, 1837; OD] | Europe, northern Africa, Urals, Afghanistan, China | LDEV-MDEV
+        Nalivkinaria RZHONSNITSKAIA, 1968c [*N. lacunata; OD] | Kuznets, Spain | MDEV
+        Primipilaria STRUVE, 1992 [*Terebratula primipilaris VON BUCH, 1834; OD] | Europe | MDEV
+      Subfamily BECKMANNIINAE Savage, 1996
+        Beckmannia MOHANTI, 1972 [*Uncinulus minor beckmanni SCHMIDT, 1951; OD] | Europe, Urals, Tadzhikistan | MDEV
+        Cassidirostrum MCLAREN, 1961 [*C. pedderi; OD] | western North America, Spain, Libya | MDEV
+        Homeocardiorhynchus SARTENAER, 1985b [*H. pityinus; OD] | western Canada | MDEV
+      Subfamily CORVINOPUGNACINAE Savage, 1996
+        Corvinopugnax HAVLICEK, 1961 [*Rhynchonella corvina BARRANDE, 1847; OD] | Europe, northern Africa, Urals, Siberia, China | LDEV-MDEV
+        Aseptalium HOU & XIAN, 1975 [*Uncinulus guangxiense WANG, 1965; OD] | southern China | LDEV
+        Decoropugnax HAVLICEK, 1960 [*Terebratula berenice BARRANDE, 1847; OD] | Bohemia, Urals, Altai, Yakutsk, Tadzhikistan, northwestern Canada | USIL-LDEV
+        Xeniopugnax HAVLICEK, 1982a [*Terebratula modica BARRANDE, 1847; OD] | Bohemia | USIL-LDEV
+    Family OBTURAMENTELLIDAE Savage, 1996
+      Obturamentella AMSDEN, 1958 [*Wilsonia wadei DUNBAR, 1919; OD] | North America | USIL-LDEV
+      Pectorhyncha MCLEARN, 1918 [*Atrypa obtusiplicata HALL, 1852; OD] | eastern North America | USIL
+    Family INNAECHIIDAE Baranov, 1980
+      Subfamily INNAECHIINAE Baranov, 1980
+        Innaechia BARANOV, 1980 [*I. retracta; OD] | eastern Siberia | LDEV
+        Sibirirhynchia RZHONSNITSKAIA, 1978 [*Hypothyridina alata KHODALEVICH, 1951; OD] | eastern Siberia, Urals, Tadzhikistan | LDEV-MDEV
+        Lezhoeviella BARANOV, 1978 [*L. protena; OD] | eastern Siberia | LDEV
+        Dogdoa BARANOV, 1982 [*D. chalimensis; OD] | eastern Siberia | LDEV
+      Subfamily DOGDOINAE Baranov, 1982
+        Selennjachia BARANOV, 1982 [*S. abaimoae; OD] | eastern Siberia | LDEV-MDEV
+      Subfamily VLADIMIRIRHYNCHINAE Baranov, 1982
+        Vladimirirhynchus BARANOV, 1982 [*V. lezhoevi; OD] | eastern Siberia | LDEV
+        Alekseevaella BARANOV, 1980 [*A. sulcata; OD] | eastern Siberia | LDEV-MDEV
+        Sulcicostula BARANOV, 1989 [*Corvinopugnax tichiensis ALEKSEEVA, 1967; OD] | eastern Siberia | LDEV
+        Tatjania BARANOV, 1982 [*T. trigona; OD] | eastern Siberia | LDEV-MDEV
+        Yakutijaella BARANOV, 1977 [*Y. dubatolovi; OD] | eastern Siberia | LDEV
+    Family GLOSSINOTOECHIIDAE Havlicek, 1992
+      Glossinotoechia HAVLICEK, 1959 [*Terebratula henrici BARRANDE, 1847; OD] | Europe, northern Africa, Urals, Siberia, China | LDEV-MDEV
+      Chlupacitoechia HAVLICEK, 1992 [*Uncinulus (Glossinotoechia) chlupaci HAVLICEK, 1956; OD] | Bohemia | USIL-LDEV
+      Eoglossinotoechia HAVLICEK, 1959 [*E. cacuminata; OD] | cosmopolitan | USIL-LDEV
+      Glossinulus SCHMIDT, 1942 [*Rhynchonella adolfi mimica BARRANDE, 1879b; OD] | Europe, northern Africa, Siberia, China | LDEV-MDEV
+    Family HYPOTHYRIDINIDAE Rzhonsnitskaia, 1956
+      Hypothyridina BUCKMAN, 1906 [*Atrypa cuboides SOWERBY, 1840a; OD] | cosmopolitan | MDEV-UDEV
+      Glasshypothyridina RZHONSNITSKAIA, 1978 [*Rhynchonella procuboides KAYSER, 1871; OD] | Germany, Belgium, European Russia, Urals | MDEV
+      Lorangerella CRICKMAY, 1963 [*L. phaulomorpha; OD] | North America, Europe | UDEV
+      Pseudouncinulus RZHONSNITSKAIA, 1968b [*P. mamontovensis; OD] | Salair, Kuznetz, Urals, Yakutskaya | MDEV
+      Uchtella LJASCHENKO, 1973 [*Hypothyridina praesemilukiana LJASCHENKO, 1958; OD] | European Russia, Urals | UDEV
+      Xiaobangdaia WANG, 1985 [*X. zhuogedongensis; OD] | Tibet | UDEV
+    Family HADRORHYNCHIIDAE McLaren, 1965
+      Hadrorhynchia MCLAREN, 1961 [*Pugnoides sandersoni WARREN, 1944; OD] | western North America, Siberia, China | MDEV
+      Droharhynchia SARTENAER, 1985b [*Hadrorhynchia intermissa CRICKMAY, 1963; OD] | western North America, Siberia, China | MDEV
+
+    Superfamily UNCINULOIDEA Rzhonsnitskaia, 1956
+      Family HADRORHYNCHIIDAE Savage, 1996
+        Subfamily CALVINARIINAE Sartenaer, 1994
+        Calvinaria STAINBROOK, 1945 [*Rhynchonella ambigua Calvin, 1878] | North America, Europe, northern Africa, China | UDEV
+        Canavirilia SARTENAER, 1994 [*C. atrousensis] | Morocco, Europe, Urals, North America | UDEV
+        Navalicria SARTENAER, 1989 [*N. compacta] | North America, Europe, western Canada, China | UDEV
+        Lateralatirostrum SARTENAER, 1979 [*Leiorhynchus athabascense Kindle, 1924] | North America, Western Australia, central Asia | UDEV
+        Plionoptycherhynchus SARTENAER, 1979 [*P. exformosus] | Europe, western Canada | UDEV
+        Tomestenorporhynchus SARTENAER, 1993 [*Leiorhynchus rudkini Ljaschenko, 1959] | European Russia | UDEV
+        Vincalaria SARTENAER, 1989 [*Calvinaria bransoni Stainbrook, 1948] | North America, Europe, China, Morocco | UDEV
+      Subfamily PLATYTERORHYNCHINAE Savage, 1996
+        Platyterorhynchus SARTENAER, 1970 [*Leiorhynchus russelli McLaren, 1962] | western Europe, Morocco, Turkey, Russian Platform, Volga-Urals, Timan, China | MDEV-UDEV
+      Subfamily STENOMETOPORHYNCHINAE Savage, 1996
+        Stenometoporhynchus SARTENAER, 1987 [*Liorhynchus pavlovi Nalivkin, 1930] | European Russia, China | UDEV
+      Subfamily BASILICORHYNCHINAE Savage, 1996
+        Basilicorhynchus CRICKMAY, 1952 [*Leiorhynchus basilicum Crickmay, 1952] | western and northern Canada, Europe, Siberia | UDEV
+        Gastrodetoechia SARTENAER, 1965 [*Leiorhynchus utahensis Kindle, 1908] | North America, Western Australia, central Asia | UDEV
+        Minirostrella BALINSKI, 1995 [*M. rara] | Poland | UDEV
+        Rugaltarostrum SARTENAER, 1961 [*Leiorhynchus madisonense Haynes, 1916] | western North America, Western Australia, central Asia | UDEV
+    Superfamily CAMAROTOECHIOIDEA Schuchert & LeVene, 1929
+      Family CAMAROTOECHIIDAE Schuchert, 1929
+        Subfamily CAMAROTOECHIINAE Schuchert, 1929
+          Camarotoechia HALL & CLARKE, 1893 [*Atrypa congregata CONRAD, 1841; OD] | North America | LDEV-MDEV
+          Ellesmerhynchia BRICE, 1990 [*Camarotoechia pseudonedea BRICE, 1982; OD] | Canada, Podolia | LDEV-MDEV
+          Astutorhyncha HAVLICEK, 1961 [*Rhynchonella proserpina BARRANDE, 1847; OD] | Bohemia, central Asia, China | LDEV
+        Subfamily LINGUOPUGNOIDINAE Savage, 1996
+          Linguopugnoides HAVLICEK, 1960 [*Rhynchonella nympha var. carens BARRANDE, 1879b; OD] | cosmopolitan | USIL-LDEV
+      Family LEIORHYNCHIDAE Stainbrook, 1945
+        Insignitisinurostrum SARTENAER, 1987 [*Camarotoechia latissinuata Cooper & Dutro, 1982] | western USA | UDEV
+        Stenaulacorhynchus SARTENAER, 1968 [*S. cheshmehshirensis] | northern Iran, Spain | UDEV
+        Platyterorhynchus SARTENAER, 1970 [*Leiorhynchus russelli McLaren, 1962] | western Europe, Morocco, Turkey, Russian Platform | MDEV-UDEV
+      Family SEPTALARIIDAE Havlicek, 1960
+        Septalaria LEIDHOLD, 1928 [*Terebratula ascendens Steininger, 1853] | Europe, Urals, Altai, China, Australia | LDEV-MDEV
+        Amissopecten HAVLICEK, 1960 [*Terebratula velax Barrande, 1847] | Bohemia, Germany | LDEV-MDEV
+        Athyrhynchus JOHNSON, 1973 [*A. susanae] | USA (Nevada), Arctic Canada | UDEV
+        Bergalaria SCHMIDT, 1975 [*B. bergica] | Europe | UDEV
+        Monadotoechia HAVLICEK, 1960 [*Terebratula monas Barrande, 1847] | Bohemia, Morocco, southern Urals, Taimyr | LDEV
+        Onugorhynchia HAVLICEK, 1992 [*Terebratula matercula Barrande, 1847] | Bohemia | LDEV
+        Phlogoiderhynchus SARTENAER, 1970 [*Uncinalus artefactus Veevers, 1959] | Western Australia, Europe, China, Morocco | MDEV-UDEV
+        Pseudocamarophoria WEDEKIND, 1926 [*Terebratula microrhyncha Roemer, 1844] | Europe, China | LDEV-MDEV
+        Septalariopsis CHEN, 1978 [*S. zhonghuanensis] | China (Sichuan) | UDEV
+        Sagueresia MOHANTI, 1972 [*S. saguerana] | Spain | MDEV
+        Rzonsnickiana MAMEDOV, 1976 [*R. sadarakensis] | Azerbaijan | MDEV
+    Superfamily PUGNACOIDEA Rzhonsnitskaia, 1956
+      Family PUGNACIDAE Rzhonsnitskaia, 1956
+        Pugnax HALL & CLARKE, 1893 [*Terebratula acuminata Sowerby, 1822] | cosmopolitan | MDEV-UPERM
+        Aikarhyncha HAVLICEK, 1990 [*Rhynchonella praecox Barrande, 1879] | Bohemia, Salat | LDEV
+        Allorhynchoides SAVAGE, EBERLEIN, & CHURKIN, 1978 [*A. kirki] | southeastern Alaska | UDEV
+        Cavatisinurostrum SARTENAER, 1972 [*C. faniae] | western Europe, Western Australia | UDEV
+        Chapinella SAVAGE, EBERLEIN, & CHURKIN, 1978 [*C. bucarelensis] | southeastern Alaska | UDEV
+        Coeloterorhynchus SARTENAER, 1966 [*C. tabaensis] | Iran, Afghanistan, Europe, northern Africa, China | MDEV-UDEV
+        Colophragma COOPER & DUTRO, 1982 [*C. ellipticum] | USA (New Mexico) | UDEV
+        Dimensionaequalirostrum SARTENAER, 1980 [*D. pileum] | Belgium, Moravia | UDEV
+        Eopugnax BARANOV, 1991 [*E. gonesis] | eastern Siberia | LDEV
+        Evanidisinurostrum SARTENAER, 1987 [*Pseudoleiorhynchus (?) zemoulensis Drot, 1964] | Morocco | UDEV
+        Filigreenia SOJA, 1988 [*F. circularis] | USA (southeastern Alaska) | LDEV
+        Globulirhynchia BRICE, 1981 [*Rhynchonella le mesli Rigaux, 1892] | western Europe | UDEV
+        Hypseloterorhynchus SARTENAER, 1971 [*H. pennatus] | Western Australia | UDEV
+        Kwangsirhynchus HOU & XIAN, 1975 [*K. liujingensis] | southern China, Vietnam | LDEV
+        Longdongshuia HOU & XIAN, 1975 [*L. subaequata] | China | MDEV
+        Ningbingella ROBERTS, 1971 [*N. flexuosa] | Western Australia, western Canada | MISS
+        Pammegetherhynchus SARTENAER, 1977 [*P. merodae] | France, Poland | UDEV
+        Parapugnax SCHMIDT, 1964 [*Pugnax pugnus brecciae Schmidt, 1941] | cosmopolitan | MDEV-UDEV
+        Paromoeopygma SARTENAER, 1968 [*P. bellicastellana] | Europe | UDEV
+        Perrarisinurostrum SARTENAER, 1984 [*P. fensbergicum] | Germany, Morocco | UDEV
+        Pleuropugnoides FERGUSON, 1966 [*Terebratula pleurdon Phillips, 1836] | Europe, Libya, China, Australia | MISS
+        Propriopugnus SARTENAER, 1970 [*P. bellicastellana; err. = *Pugnax pugnus torlevi Schmidt, 1941] | Germany | MDEV-UDEV
+        Solidipontirostrum SARTENAER, 1970 [*Terebratula pugnoides Schnur, 1851] | Europe, western Siberia | MDEV
+        Trifidorostellum SARTENAER, 1961 [*Leiorhynchus dunbarense Haynes, 1916] | western North America, China, Kazakhstan | UDEV
+        Ujandinella BARANOV, 1977 [*U. remissiformis] | eastern Siberia | LDEV
+        Zilimia NALIVKIN, 1947 [*Rhynchonella polonica Gurich, 1896] | Poland, Urals, Kazakhstan, Tian Shan | UDEV
+      Family PLECTORHYNCHELLIDAE Rzhonsnitskaia, 1958
+        Plectorhynchella COOPER & MUIR-WOOD, 1951 [*Athyris collinensis Frech, 1902] | Europe, Urals, northern Africa, central Asia, western North America | UDEV
+        Ipherron HAVLICEK, 1982 [*I. iphis] | Bohemia | UDEV
+        Kindleina SAVAGE, EBERLEIN, & CHURKIN, 1978 [*K. suemezensis] | USA (southeastern Alaska) | UDEV
+        Nyege VEEVERS, 1959 [*N. scopimus] | Western Australia | UDEV
+        Pseudoyunnanella CHEN, 1978 [*P. sichuanensis] | China | UDEV
+        Subfamily PYGMAELLINAE Baranov, 1977
+        Pygmaella BARANOV, 1977 [*P. pygmaea] | eastern Siberia | LDEV
+        Sibiritoechia ALEKSEEVA, 1966 [*S. convexa] | northeastern Siberia | LDEV
+        Semiotoechia LJASCHENKO, 1973 [*Camarotoechia polita Ljaschenko, 1960] | eastern Siberia, Urals, central Russian Platform | MDEV-UDEV
+        Xinshaoella ZHAO, 1977 [*X. huaqiaoensis] | southern China | UDEV
+      Family LADOGIIDAE Ljaschenko, 1973
+        Ladogia NALIVKIN, 1941 [*Terebratula meyendorfii de Verneuil, 1845] | Baltic, European Russia, Urals, Siberia, Pamirs | UDEV
+        Camarothyridina LINNIK, 1966 [*C. fursenkoi] | Belorussia | UDEV
+        Comiotoechia LJASCHENKO, 1973 [*Camarotoechia galinae Ljaschenko, 1958] | Timan, Urals, central Russian Platform | UDEV
+        Gracilotoechia BARANOV, 1977 [*G. sinuata] | eastern Siberia | LDEV
+        Ladogifornix SCHMIDT, 1964 [*Terebratula fornicata Schnur, 1853] | Germany | MDEV
+        Ladogilina LJASCHENKO, 1973 [*L. rosica] | eastern Siberia | LDEV
+          = Ladogilinella Ljaschenko, 1973 (type, L. mutabilis)
+      Family ROZMANARIIDAE Havlicek, 1982
+        Rozmanaria WEYER, 1972 [*Liorhynchus? equitans Schmidt, 1924] | Germany, Bohemia, Poland, Urals | UDEV
+        Errhynx HAVLICEK, 1982 [*E. erron] | Bohemia | MDEV
+        Hadyrhyncha HAVLICEK, 1979 [*H. hadyensis] | Moravia | UDEV
+        Levipugnax PUSHKIN, 1986 [*L. malynskensis] | Belorussia (Gomel) | UDEV
+        Planovatirostrum SARTENAER, 1970 [*Liorhynchus plano-ovalis Nalivkin, 1937] | Kazakhstan, China, Poland, Moravia, Germany, northern Africa | UDEV
+        Pugnaria BIERNAT & RACKI, 1986 [*P. plana] | Poland | UDEV
+        Rackirhynchia HAVLICEK, 1990 [*Atrypa lacerata Barrande, 1879] | Bohemia | LDEV
+      Family ASEPTIRHYNCHIIDAE Savage, 1996
+        Aseptirhynchia SOJA, 1988 [*A. glabrata] | USA (Alaska) | LDEV-MDEV
+        Brunnirhyncha HAVLICEK, 1979 [*B. brunniensis] | Moravia | UDEV
+        Carolirhynchia HAVLICEK, 1992 [*C. carolina] | Bohemia | LDEV
+        Chalimia BARANOV, 1978 [*C. gracilis] | eastern Siberia | MDEV
+        Isopoma TORLEY, 1934 [*Terebratula brachypycta Schnur, 1853] | Europe, Urals, Altai, China | MDEV
+        Westbroekina SAVAGE, 1995 [*W. chaconensis] | USA (Alaska) | UDEV
+      Family PETASMARIIDAE Savage, 1996
+        Petasmaria COOPER & DUTRO, 1982 [*P. patens] | USA (New Mexico) | UDEV
+        Athabaschia CRICKMAY, 1963 [*A. asmenista] | western Canada | UDEV
+        Bryorhynchus COOPER & GRANT, 1969 [*Camerophoria(?) bisulcata Shumard, 1860] | USA (Texas) | UPERM
+        Eurycolporhynchus SARTENAER, 1968 [*Pugnax pugnus torlevi Schmidt, 1941] | Germany, France, Urals | MDEV
+        Leiorhynchoidea CLOUD, 1944 [*L. schucherti] | North America, eastern Siberia | MISS-UPERM
+        Megalopterorhynchus SARTENAER, 1965 [*M. haynesi] | western North America, Iran, Afghanistan, northern Africa, Spain | UDEV
+        Mirantesia MOHANTI, 1972 [*M. mirantana] | Spain | MDEV
+        Ovlatchania ABRAMOV & GRIGORJEWA, 1986 [*Leirhynchus ovlatchanensis Abramov, 1970] | eastern Siberia | MISS
+        Parvaltissimarostrum SARTENAER & XU, 1991 [*P. minimum] | China | UDEV
+        Porostictia COOPER, 1955 [*Paraphorhynchus perchaensis Stainbrook, 1947] | USA (New Mexico) | UDEV
+      Family CAMEROPHORINIDAE Rzhonsnitskaia, 1958
+        Camerophorina SCHMIDT, 1941 [*Terebratula pachyderma Quenstedt, 1871] | Germany, Spain, Moravia, Urals | MDEV
+      Family YUNNANELLIDAE Rzhonsnitskaia, 1959
+        Yunnanella GRABAU, 1923 [*Rhynchonella Hanburii Davidson, 1853] | China | UDEV
+        Ladogioides MCLAREN, 1961 [*L. pax] | western North America, western Europe, Siberia, China | MDEV-UDEV
+        Nayunnella GRABAU, 1931 [*Yunnanella synplicata Grabau, 1931] | China, Kazakhstan, Australia | UDEV
+        Schnurella SCHMIDT, 1964 [*Terebratula schnuri de Verneuil, 1840] | Europe, Kuznets basin, Armenia, Urals | MDEV
+      Family PARANORELLIDAE Cooper & Grant, 1976
+        Subfamily PARANORELLINAE Cooper & Grant, 1976
+        Paranorella CLOUD, 1944 [*P. imperialis] | Mexico, USA | PERM
+        Boloria GRUNT, 1973 [*B. garmoensis] | Pamir | LPERM
+        Sanjuania AMOS, 1958 [*S. dorisulcata] | Argentina | MISS
+        Subfamily IOWARHYNCHINAE Savage, 1996
+        Iowarhynchus CARTER, 1983 [*I. mirandum] | USA (Iowa) | MISS
+      Family BASILIOLIDAE Cooper, 1959
+        Subfamily BASILIOLINAE Cooper, 1959
+        Basiliola DALL, 1908 [*Hemithyris beecheri Dall, 1895] | cosmopolitan | UCRET-HOL
+          = Basiola Thomson, 1915 (nom. null.)
+          = Neohemithyris Yabe & Hatai, 1934
+        ?Almorhynchia OVCHARENKO, 1983 [*Rhynchonella artabaensis Moiseev, 1935] | southeastern Pamirs | LJUR-MJUR
+        Apringia DE GREGORIO, 1886 [*A. giuppa] | Italy, Sicily, Austria, Hungary, ?Greenland, ?Morocco | LJUR-MJUR
+        Basiliolella D'HONDT, 1987 [*B. ferox] | New Caledonia, Fiji, Australia | HOL
+        Eohemithiris HERTLEIN & GRANT, 1944 [*E. alexi] | western USA (California, Washington) | PALEOGENE-NEOGENE
+        Fortunella CALZADA, 1985 [*F. fortunae] | southern Spain | NEOGENE
+        Probolarina COOPER, 1959 [*Rhynchonella holmesii Dall, 1903] | USA, Jamaica, New Zealand (Chatham Islands) | UCRET-PALEOGENE
+        Rhytirhynchia COOPER, 1957 [*Hemithyris sladeni Dall, 1910] | Indo-Pacific, Indian Ocean | NEOGENE-HOL
+        Rionirhynchia KAMYSHAN & KVAKHADZE, 1980 [*R. ressiensis] | western Georgia (Caucasus) | LCRET
+        ?Soaresirhynchia ALMERAS, 1994 [*Rhynchonella bouchardi Davidson, 1852] | England, Portugal, Spain, France | LJUR
+        Streptaria COOPER, 1959 [*Terebratula de Buchii Michelotti, 1839] | southern Europe, northern Africa, Cuba, Arabia, western Kazakhstan, ?New Zealand, Antarctica | PALEOGENE-NEOGENE
+        Subfamily PAMIRORHYNCHIINAE Ovcharenko, 1983
+        Pamirorhynchia OVCHARENKO, 1983 [*Rhynchonella pamirensis Moiseev, 1937] | southeastern Pamirs | MJUR
+        Gagriella MOISEEV, 1939 [*G. abchasiaensis] | Georgia (Caucasus) | UJUR-LCRET
+        ?Kvesanirhynchia KVAKHADZE, 1976 [*K. tenuicostata] | Caucasus, central Asia | LJUR
+        Orbirhynchia PETTITT, 1954 [*O. orbignyi] | England, France, Germany, Switzerland | CRET
+        ?Parthirhynchia TITOVA, 1980 [*P. ungaisiformis] | Turkmenistan, Bulgaria | UCRET
+        Pseudogibbirhynchia AGER, 1962 [*Rhynchonella Moorei Davidson, 1852] | England, France, Portugal, Spain, Germany, Switzerland | LJUR-MJUR
+        Rahouiarhynchia TCHOUMATCHENKO, 1987 [*R. zidarovi] | Algeria, ?China (Qinghai) | UJUR
+        ?Riorhynchia IASIUKEVICH, 1974 [*R. nechrikovae] | western USA (Oregon) | LJUR
+        Stolmorhynchia BUCKMAN, 1918 [*S. stolidota] | Europe, North Africa, Asia | MJUR
+          S. (Praelacunosella) WISNIEWSKA-ZELICHOWSKA, 1978 [*P. substephani] | Poland, Carpatho-Balkanids, Crimea, southeastern Pamirs, ?southwestern China | MJUR
+          S. (Stolmorhynchia) BUCKMAN, 1918 [*S. stolidota] | Europe, North Africa, Asia | MJUR
+        Veghirhynchia DAGYS, 1974 [*Rhynchonella arpadica Bittner, 1890] | southern Alps, Carpathians, ?northwestern Caucasus | UTRI
+        Subfamily LACUNOSELLINAE Smirnova, 1963
+        Lacunosella WISNIEWSKA, 1932 [*Rhynchonella arolica Oppel & Waagen, 1866] | Europe, Africa, Asia, ?Mexico, ?Argentina | MJUR-LCRET
+          L. (Dichotomosella) TCHOUMATCHENKO, 1987 [*L. (D.) bourheddouensis] | Algeria, Hungary | UJUR
+          L. (Lacunosella) WISNIEWSKA, 1932 [*Rhynchonella arolica Oppel & Waagen, 1866] | Europe, Africa, Asia | MJUR-LCRET
+        Subfamily AETHEIIINAE Cooper, 1959
+        Aetheia THOMSON, 1915 [*Waldheimia(?) sinuata Hutton, 1873] | New Zealand | PALEOGENE-NEOGENE
+        Subfamily APHELESIINAE Cooper, 1959
+        Aphelesia COOPER, 1959 [*Anomia bipartita Brocchi, 1814] | Italy, northern Apennines, Sicily, Malta, Hungary, Spain, ?Germany | PALEOGENE-NEOGENE
+        Subfamily ACANTHOBASILIOLINAE Zezina, 1981
+        Acanthobasiliola ZEZINA, 1981 [*Rhynchonella doederleini Davidson, 1886] | Borneo to Japan, bathyal | NEOGENE-HOL
+        Subfamily UNCERTAIN
+        ?Dagysorhynchia SMIRNOVA, 1994 [*D. compacta] | Russia (northwestern Kamchatka) | LCRET
+        Phapsirhynchia PAJAUD, 1976 [*P. sanctapaulensis] | Spain | NEOGENE
+        ?Striarina COOPER, 1973 [*Rhynchonella valdiviae Helmcke, 1940] | southern Indian Ocean | HOL
+      Family ERYMNARIIDAE Cooper, 1959
+        Subfamily CRYPTORHYNCHIINAE Shi & Grant, 1990
+        Cryptorhynchia BUCKMAN, 1918 [*Rhynchonella pulcherrima Kitchin, 1897] | Alps, Pamirs, India, ?China, ?North America | MJUR-UJUR
+        Aethirhynchia SHI, 1990 [*A. lenticulata] | China (Qinghai) | MJUR
+        Crurirhynchia DAGYS, 1961 [*C. kiparisoae] | northwestern Caucasus, Pamirs, China | UTRI
+        Dierisma CHING, SUN, & YE IN CHING & OTHERS, 1979 [*D. furcatum] | China (Qinghai, Tibet) | UTRI
+        Subfamily CALVIRHYNCHIINAE Kamyshan, 1967
+        Calvirhynchia KAMYSHAN, 1967 [*C. kubanensis] | southern Europe, Caucasus, central Asia | LJUR-MJUR
+        Caucasella MOISEEV, 1934 [*Rhynchonella trigonella Rothpletz, 1886] | France, Switzerland, Germany, Austria, Italy, Slovakia, Romania, Bulgaria, Ukraine, Yugoslavia, Caucasus, Crimea | MJUR-UJUR
+        Subfamily SEPTOCRURELLINAE Ager, Childs, & Pearson, 1972
+        Septocrurella WISNIEWSKA, 1932 [*Rhynchonella Sanctae Clarae Roemer, 1870] | southern and eastern Europe | LJUR-UJUR
+        Erymnaria COOPER, 1959 [*Terebratula polymorpha Massalongo, 1850] | cosmopolitan | UCRET-PALEOGENE
+        Subfamily CRYPTORHYNCHIINAE Shi & Grant, 1990
+        Cryptorhynchia BUCKMAN, 1918 [*Rhynchonella pulcherrima Kitchin, 1897] | Alps, Pamirs, India, ?China, ?North America | MJUR-UJUR
+    Superfamily STENOSCISMATOIDEA Oehlert, 1887
+      Family STENOSCISMATIDAE Oehlert, 1887
+        Subfamily STENOSCISMATINAE Oehlert, 1887
+        Stenoscisma CONRAD, 1839 [*Terebratula schlottheimii von Buch, 1834] | cosmopolitan | MISS-UPERM
+        Camerisma GRANT, 1965 [*C. prava] | USA, Europe, Russia, China | MISS-LPERM
+        Coledium GRANT, 1965 [*C. erugatum] | USA, Britain, Timor, ?Australia | MDEV-PERM
+        Atribonium GRANT, 1965 [*A. simatum] | USA, Canada, Russia (Urals) | MDEV-MISS
+        Sedenticellula COOPER, 1942 [*Camarophoria hamburgensis Weller, 1910] | USA, France | MISS
+        Torynechus COOPER & GRANT, 1962 [*T. caelatus] | USA (Texas) | LPERM
+        Subfamily PROATRIBONIINAE Gratsianova, 1967
+        Proatribonium GRATSIANOVA, 1967 [*P. altaicum] | Russia (Altai Range) | LDEV
+        ?Beichuanella CHEN IN XU, WAN, & CHEN, 1978 [*B. uniplicata] | China (Sichuan, Guangxi) | MDEV
+        Paratribonium SAPELNIKOV & MIZENS, 1991 [*P. rhomboidalis] | Russia (Urals) | LDEV
+      Family PSILOCAMARIDAE Grant, 1965
+        Subfamily PSILOCAMARINAE Grant, 1965
+        Psilocamara COOPER, 1956 [*P. renfroarum] | USA (Texas, Missouri), China (Nantao, Yunnan), New Zealand | MISS-LPERM
+        Camarophorina LIKHAREV, 1936 [*Camarophoria antisella Broili, 1916] | Timor | UPERM
+        Camarophorinella LIKHAREV, 1936 [*C. caucasica] | northern Caucasus, southern Russia, southern China | UPERM
+        Goleomixa GRANT, 1976 [*G. acymata] | southern Thailand | LPERM
+        Hybostenoscisma LIAO & MENG, 1986 [*H. bambusoides] | China (southern Hunan) | UPERM
+        Zhejiangella LIANG IN WANG & OTHERS, 1982 [*Z. sesplicata] | eastern China (Zhejiang) | UPERM
+        Zhejianggellina LIANG, 1990 [*Z. wangi] | eastern China (Zhejiang) | UPERM
+        Subfamily CYROLEXINAE new subfamily
+        Cyrolexis GRANT, 1965 [*C. haquei] | Spain, Russia (Urals), eastern Siberia, Pakistan, southern China, western Japan | MISS-UPERM
+        Callaiapsida GRANT, 1971 [*Camerisma (Callaiapsida) kekuensis] | USA (Alaska), Spain, Svalbard, Russia, Novaya Zemlya, Mongolia | MISS-LPERM
+        Septacamarella GLUSHENKO, 1975 [*S. nonnulla] | Ukraine | LPERM
+        Ussuricamara KOCZYRKEVICZ, 1969 [*U. majchensis] | eastern Russia (Ussuri region) | UPERM
+    Superfamily LAMBDARINOIDEA Brunton & Champion, 1974
+      Family LAMBDARINIDAE Brunton & Champion, 1974
+        Subfamily LAMBDARININAE Brunton & Champion, 1974
+        Lambdarina BRUNTON & CHAMPION, 1974 [*L. manifoldensis] | Europe, eastern Australia | MISS
+        Hampsia MORRIS, 1994 [*H. cooperi] | England | MISS
+        Subfamily MINYSPHENIINAE Savage, 1996
+        Minysphenina GRANT, 1988 [*M. conopia] | USA (New Mexico) | MISS
+        Subfamily LOBORININAE Savage, 1996
+        Loborina BALINSKI, 1982 [*L. lobata] | Poland | UDEV
+    Superfamily RHYNCHOPOROIDEA Muir-Wood, 1955
+      Family RHYNCHOPORIDAE Muir-Wood, 1955
+        Subfamily RHYNCHOPORINAE Muir-Wood, 1955
+        Rhynchopora KING, 1865 [*Terebratula geinitziana de Verneuil, 1845] | cosmopolitan | MISS-UPERM
+        Subfamily GREIRINAE Erlanger, 1993
+        Greira ERLANGER, 1993 [*G. transcaucasica] | Azerbaijan (Nakhichevan Republic) | UDEV
+        Subfamily ARARATELLINAE Erlanger, 1986
+        Araratella ABRAMIAN, PLODOWSKI, & SARTENAER, 1975 [*Liorhynchus dichotomians Abramian, 1954] | Armenia, Germany, Spain, Urals, Kazakhstan, Iran, Afghanistan | UDEV-MISS
+        Subfamily TRETORHYNCHINAE new subfamily
+        Tretorhynchia BRUNTON, 1971 [*Terebratula trilatera de Koninck, 1843] | western Europe | MISS
+    Superfamily DIMERELLOIDEA Buckman, 1918
+      Family DIMERELLIDAE Buckman, 1918
+        Subfamily DIMERELLINAE Buckman, 1918
+        Dimerella VON ZITTEL, 1870 [*D. guembeli] | Austria, Dinarids | UTRI
+        Subfamily RHYNCHONELLININAE Ager, 1959
+        Rhynchonellina GEMMELLARO, 1871 [*R. suessi Gemmellaro, 1871] | Italy (Sicily), Austria, Switzerland, Dalmatia, Hungary, ?Crimea, Morocco, Algeria | UTRI-LJUR
+        Cooperrhynchia SANDY & CAMPBELL, 1994 [*Rhynchonella schucherti Stanton, 1895] | USA (California) | UJUR
+          = Bothrorrhynchia Cooper in Sandy & Campbell, 1994 (obj.)
+        Sulcirostra COOPER & MUIR-WOOD, 1951 [*Rhynchonellopsis de Gregorio, 1930] | Italy (Sicily), Austria, Dalmatia, Slovenia, Hungary, Morocco, Algeria, Turkey | UTRI-LJUR
+      Family PEREGRINELLIDAE Ager, 1965
+        Subfamily PEREGRINELLINAE Ager, 1965
+        Peregrinella OEHLERT, 1887 [*Terebratula peregrina von Buch, 1834] | Europe (mainly southern), North America, Asia | LCRET
+          P. (Peregrinella) OEHLERT, 1887 [*Terebratula peregrina von Buch, 1834] | Europe (mainly southern), North America, Asia | LCRET
+          P. (Peregrinellina) AGER, 1968 [*P. malkovi] | northeastern Siberia, ?Argentina | LJUR
+        Anarhynchia AGER, 1968 [*A. gabbi] | western USA (California, ?Oregon), ?Argentina | LJUR-MJUR
+        ?Carapezzia TOMLIN, 1930 [nom. nov. pro Geyeria Carapezza & Schopen, 1897] | Europe, Turkey | UDEV
+        Subfamily DZIEDUSZYCKIINAE Savage, 1996
+        Dzieduszyckia SIEMIRADZKI, 1909 [*Terebratula (?) kielcensis Roemer, 1866] | Poland, Morocco, Urals, Kazakhstan, USA | UDEV
+        Subfamily PEREGRINELLOIDEINAE Dagys, 1968
+        Peregrinelloidea DAGYS, 1968 [*P. malkovi] | northeastern Siberia | LJUR
+      ?Family HALORELLIDAE Ager, 1965
+        Halorella BITTNER, 1884 [*Rhynchonella amphitoma Bronn, 1832] | Alps, Carpathians, Turkey, Pamirs, northeastern Siberia, China, Indonesia, western USA, New Zealand | UTRI
+        Halorelloidea AGER, 1960 [*Halorella rectifrons Bittner, 1884] | eastern Alps, Italy (Sicily), Pamirs, Himalayas, Indonesia (Seran), Primorye | UTRI
+      ?Family CRYPTOPORIDAE Muir-Wood, 1955
+        Cryptopora JEFFREYS, 1869 [*C. gnomon] | cosmopolitan | UCRET-HOL
+          = Atretia gnomon Jeffreys, 1876
+          = Atretia Jeffreys in Carpenter, Jeffreys, & Thomson, 1870 (type, A. gnomon)
+          = Neatretia Fischer & Oehlert, 1891
+          = Crytopora Cooper, 1959 (nom. null.)
+          = Mannia Davidson, 1874
+        Aulites RICHARDSON, 1987 [*Atretia brazieri Crane, 1886] | Australia | PALEOGENE-HOL
+        ?Cryptoporella BITNER & PISERA, 1979 [*C. antiqua] | eastern Poland | UCRET
+    Superfamily RHYNCHOTETRADOIDEA Licharew, 1956
+      Family RHYNCHOTETRADIDAE Licharew, 1956
+        Subfamily RHYNCHOTETRADINAE Licharew, 1956
+        Rhynchotetra WELLER, 1910 [*Rhynchonella caput testudinis White, 1865] | North America, Russia | MISS
+        Goniophoria JANISCHEWSKY, 1910 [*G. monstrosa] | Urals, Donets basin, Siberia, China | MISS
+        Nepasitoechia HAVLICEK, 1979 [*N. artenaeri] | Bohemia | LDEV-MISS
+        Trasgu MARTINEZ-CHACON, 1979 [*T. minor] | Spain (Cantabrian Mountains) | MISS
+        Subfamily AXIODEANEIINAE Savage, 1996
+        Axiodeaneia CLARK, 1917 [*A. platypleura] | North America | MISS
+        Paraphorhynchus WELLER, 1905 [*P. elongatum] | North America, Europe, Urals, Novaya Zemlya, Kazakhstan | UDEV-MISS
+      Family TETRACAMERIDAE Licharew, 1956
+        Tetracamera WELLER, 1910 [*Rhynchonella subcuneata Hall, 1858] | North America, Kazakhstan, Urals, Australia | MISS
+        Rotaia RZHONSNITSKAIA, 1959 [nom. nov. pro Welleria Rotai, 1941] | North America, European Russia, Altai, Siberia, China | MISS
+
+    ?Family AUSTRIRHYNCHIIDAE Dagys, 1974
+      [no genera listed in this section for this assignment range; see previous part]
+
+    Family PRIONORHYNCHIIDAE Savage, 1996
+      [covered in previous section]
+
+    Superfamily WELLERELLOIDEA Likharev, 1956
+      Family WELLERELLIDAE Likharev, 1956
+        [genera in this family covered in previous part, ending before p.1251]
+
+      Family ALLORHYNCHIDAE Savage, 1996
+        [genera in this family covered in previous part]
+
+      Family PONTISIIDAE Savage, 1996
+        [genera in this family covered in previous part]
+
+      Family PETASMATHERIDAE Savage, 1996
+        Petasmatherus SAVAGE, 1996 [*P. extensum] | USA (Texas) | LPERM
+        Elassonia COOPER & GRANT, 1976 [*E. peculiaris] | USA (Texas) | LPERM
+        Iotina COOPER & GRANT, 1976 [*I. exotica] | USA (Texas) | LPERM
+        Ptygmactrum COOPER & GRANT, 1976 [*P. compressum] | USA (Texas) | LPERM
+
+      Family AMPHIPELLIDAE Cooper & Grant, 1976
+        Amphipella COOPER & GRANT, 1969 [*A. arcaria] | USA (Texas) | LPERM
+
+      Family SINORHYNCHIIDAE Xu & Liu, 1983
+        Sinorhynchia YANG & XU, 1966 [*S. bifaceta] | China (Guizhou), Alps, Dinarids, Carpathians, northwestern Caucasus | MTRI
+        ?Volirhynchia DAGYS, 1974 [*Rhynchonella volitani BITTNER] | Alps, Dinarids, Carpathians, northwestern Caucasus | MTRI
+
+    Superfamily RHYNCHONELLOIDEA d'Orbigny, 1847
+      Family RHYNCHONELLIDAE d'Orbigny, 1847
+        Subfamily RHYNCHONELLINAE d'Orbigny, 1847
+          Rhynchonella FISCHER DE WALDHEIM, 1809 [*R. loxiae] | Britain, France, Germany, Poland, Russia, Slovakia, Bulgaria, Mexico | UJUR-LCRET
+            = Eurhynchonella LEIDHOLD, 1921
+            = Rhynchonellis KEFERSTEIN, 1829, nom. null.
+            = Rhygonella FISCHER DE WALDHEIM, 1843, nom. null.
+            = Rhynchonella d'ORBIGNY, 1851 in 1848-1851, nom. null.
+            = Rhynchonella CARPENTER in DAVIDSON, 1853b, nom. null.
+          ?Curtirhynchia BUCKMAN, 1918 [*Rhynchonella oolitica DAVIDSON, 1852b] | England | MJUR
+          ?Herangirhynchia MACFARLAN, 1992 [*H. herangiensis] | New Zealand, New Caledonia | UTRI-LJUR
+          Homoeorhynchia BUCKMAN, 1918 [*Terebratula acuta J. SOWERBY, 1816 in 1815-1818] | Europe (mainly southern), Morocco, Algeria, Turkey, southwestern China, Canada, Peru | LJUR-MJUR
+            = Homoeorrhynchia BUCKMAN, 1914, p. 1, and 1915, p. 76, both suppressed
+            = Blochmannella LEIDHOLD, 1921
+            = Sloveniirhynchia SIBLIK, 1967
+          Laevigatorhynchia WISNIEWSKA-ZELICHOWSKA, 1978 [*Terebratula triplicosa QUENSTEDT, 1851-1852] | England, France, northwestern Caucasus | LJUR
+          ?Lunarhynchia JIN, MANCENIDO, & SUN, 1997 [*nom. nov. pro Lunaria CHING, SUN, & YE in CHING & others, 1979] | New Zealand (North Island) | UJUR
+          ?Nudirostralina YANG & XU, 1966 [*N. subtrinodosi] | China (Guizhou, Qinghai, Tibet), ?India | LTRI-UTRI
+            = Nudirostrolina SUN, 1981
+            = Nudieostralina XU & LIU, 1983, nom. null.
+          ?Planirhynchia DAGYS, 1968 [*P. tantilla] | Siberia, southern Europe | UTRI-LJUR
+          Rhynchonelloidea BUCKMAN, 1918 [*Rhynchonella ruthenensis REYNES, 1868] | England, France, Germany, Switzerland, Poland, Russia, Crimea, Caucasus | LJUR-MJUR
+            = Rhynchonelloidea BUCKMAN, 1914, p. 1, and 1915, p. 76, both suppressed
+            = Aalenirhynchia BUCKMAN, 1918
+          Kabanoviella SMIRNOVA, 1973 [*Rhynchonella obliterata LAHUSEN, 1874] | Russia (Ulianovsk area) | LCRET
+          Fusirhynchia DAGYS, 1968 [*F. furcata] | England, France, Germany, Slovakia, Italy, Austria, ?Switzerland, western Canada, Siberia, Japan, Indonesia (Seran), New Zealand, New Caledonia, Argentina, ?Chile | LJUR
+
+        Subfamily PIАРОRHYNCHIINAE Shi & Grant, 1993
+          Piarorhynchia BUCKMAN, 1918 [*Rhynchonella lineata var. radstockiensis DAVIDSON, 1878] | Britain, France, Spain, Argentina | LJUR-MJUR
+            = Piarorhynchia BUCKMAN, 1914, p. 1, and 1915, p. 76, both suppressed
+            = Tropiorhynchia BUCKMAN, 1918
+          Aorhynchia MACFARLAN, 1992 [*A. ohaeiensis] | New Zealand | MTRI
+          Paranudirostralina SUN & YE, 1982 [*P. bifurcata] | China (Qinghai) | MTRI
+          ?Tainuirhynchia MACFARLAN, 1992 [*T. tainuii] | New Zealand, ?New Caledonia | MJUR-UJUR
+
+        Subfamily URALORHYNCHIINAE Mancenido & Owen, new subfamily
+          Uralorhynchia DAGYS, 1968 [*Terebratula striatissima D'EICHWALD, 1865-1868] | northern Urals, Siberia | MTRI-UJUR
+          Sulcorhynchia DAGYS, 1974 [*Holcorhynchia borealis DAGYS, 1965] | northeastern Siberia, Himalayas, Japan | UTRI-UJUR
+          Omolonella MOISEEV, 1936 [*O. omolonensis] | northeastern Siberia, southwestern China | UTRI
+
+        Subfamily IVANOVIELLINAE Makridin, 1964
+          Ivanoviella MAKRIDIN, 1964 [*S. weberi] | France, Germany, Switzerland, Russian Platform, Poland, Crimea, Caucasus, central Asia, western Himalayas (India, Nepal), China | MJUR-UCRET
+          Bihendulirhynchia MUIR-WOOD, 1935 [*B. afra] | Somaliland, ?Kenya, ?Iran, ?India, ?China | MJUR
+          ?Bradfordirhynchia SHI & GRANT, 1993 [*Cryptorhynchia bradfordensis BUCKMAN, 1918] | England, France | MJUR
+          Grasirhynchia OWEN, 1968 [*Rhynchonella grasiana D'ORBIGNY, 1849 in 1848-1851] | England, France, Germany, Denmark, Belgium, ?Poland, Crimea | UCRET
+          ?Himalairhynchia CHING & SUN in CHING, SUN, & RONG, 1976 [*H. media] | China (Qinghai, Tibet) | UTRI
+
+        Subfamily NUCLEUSORHYNCHIINAE Xu, 1990
+          Nucleusorhynchia SUN & YE, 1982 [*N. typica] | China (Qinghai), Nepal | MTRI-UTRI
+          ?Murihikurhynchia MACFARLAN, 1992 [*M. malingi] | New Zealand, New Caledonia | UTRI-LJUR
+          Uniplicatorhynchia SUN & YE, 1982 [*U. trigona] | China (Qinghai), Nepal | MTRI-UTRI
+
+        Subfamily BILAMINELLINAE Babanova, 1964
+          Bilaminella BABANOVA, 1964 [*B. inaequicostata] | Ukraine (Crimea), central Asia | MJUR-UJUR
+          Saccorhynchia CHING, SUN, & YE in CHING & others, 1979 [*S. xiangdaica] | China (Qinghai, Xizang) | UTRI
+
+        Subfamily DAVANIRHYNCHIINAE Ovcharenko, 1983
+          Davanirhynchia OVCHARENKO, 1983 [*D. davanensis] | southeastern Pamirs | MJUR
+          Akopovorhynchia SMIRNOVA, 1990b [*A. akopovi] | northwestern Caucasus, Lower Cretaceous (Valanginian) | LCRET
+          Cubanirhynchia KAMYSHAN, 1968 [*C. roitovzevi] | northwestern Caucasus | LJUR-MJUR
+          Rimirhynchia BUCKMAN, 1918 [*R. rimosiformis] | England, Scotland, Germany, France, ?Switzerland, ?Crimea, Siberia, northwestern Canada (mainly boreal) | LJUR
+
+        Subfamily STRIIIRHYNCHIINAE Kamyshan, 1968
+          Striirhynchia BUCKMAN, 1918 [*S. dorsetiensis] | England, Austria, Hungary, Poland, Slovakia, Sicily, Caspian Basin, Transcarpathia, Caucasus, Armenia, Nakhichevan, Algeria | MJUR
+          Capillirhynchia BUCKMAN, 1918 [*Rhynchonella wrightii DAVIDSON, 1852b] | England, France, Poland, Bulgaria, Yugoslavia, ?Hungary, Russian Platform, Crimea, Caucasus, western North America | MJUR
+          Neocirpa PROZOROVSKAJA, 1985 [*N. armenica] | Armenia, Nakhichevan | MJUR
+          ?Lirellarina COOPER, 1989 [*L. costellata] | Saudi Arabia | MJUR
+          Trichorhynchia BUCKMAN, 1918 [*Rhynchonella delopechyneri DAVIDSON, 1852a] | England, France, northwestern Caucasus | LJUR-MJUR
+
+      Family ACANTHOTHIRIDIDAE Schuchert, 1913
+        Subfamily ACANTHOTHIRIDINAE Schuchert, 1913
+          Acanthothiris D'ORBIGNY, 1850 [*Hemithiris spinosa D'ORBIGNY, 1850 in 1849-1852] | England, Germany, Switzerland, Poland, Romania, Bulgaria, Slovakia, Crimea, Caucasus, Morocco, Afghanistan, Pamirs | MJUR
+          ?Paraacanthothyris KAMYSHAN in KAMYSHAN & BABANOVA, 1973 [*P. paucicostata] | ?France, northwestern Caucasus | MJUR
+          Kawhiarhynchia MACFARLAN, 1992 [*Rhynchonella (Cryptorhynchia) kawhiana TRECHMANN, 1923] | New Zealand | MJUR
+          ?Acanthothyropsis KAMYSHAN, 1967b [*A. airgulensis] | Crimea, Carpathians, ?Austria, ?Italy | MJUR-LCRET
+          Echinirhynchia CHILDS, 1969 [*Terebratulites semicosus VON SCHLOTHEIM, 1820 in 1820-1823] | western and eastern Europe, Africa, India | UJUR-LCRET
+            = Spinulirhynchia SMIRNOVA, 1972, nom. nud.
+
+        Subfamily ACANTHORHYNCHIINAE Shi & Grant, 1993
+          Acanthorhynchia BUCKMAN, 1918 [*Acanthothyris panacanthina BUCKMAN & WALKER, 1889] | England, ?France, Caucasus, ?Pliensbachian, Alenian-Bajocian, ?Argentina, ?Pliensbachian | LJUR-MJUR
+
+    Superfamily NORELLOIDEA Ager, 1959
+      Family NORELLIDAE Ager, 1959
+        Subfamily NORELLINAE Ager, 1959
+          Norella BITTNER, 1890 [*Rhynchonella refractifrons BITTNER, 1890] | Alps, Dinarids, Carpathians, northwestern Caucasus | MTRI-UTRI
+          ?Austriellula STRAND, 1928 [nom. nov. pro Austriella BITTNER, 1890] | Alps, Dinarids, Carpathians, northwestern Caucasus, Indonesia, ?Vietnam, ?Himalayas | MTRI-LJUR
+          Hectirhynchia LEIDHOLD, 1921 [*Rhynchonella pioides VON ZITTEL, 1869] | Italy, Austria, Slovakia, Hungary, ?southern Spain, Greece | LJUR
+          Rectirhynchia BUCKMAN, 1918 [*Rhynchonella lopensis MOORE, 1855] | England, Italy | MJUR
+          Pisirhynchia BUCKMAN, 1918 [*Rhynchonella pisoides VON ZITTEL, 1869] | Italy, Austria, Slovakia, Hungary, ?southern Spain, Greece | LJUR
+          ?Kericserella VOROS, 1983 [*Rhynchonella inversaeformis in BOSE & SCHLOSSER, 1900] | Apennines, southern Alps, Hungary, ?Greece | LJUR
+
+        Subfamily PARANORELLININAE Xu, 1990
+          Paranorellina DAGYS, 1974 [*P. parisis] | Russia (Far East, Primorye), China (Jiangsu, Zhejiang, Anhui, Tibet) | LTRI
+          Costinorella DAGYS, 1974 [*C. zharnikovae] | Russia (Far East) | MTRI
+
+        Subfamily HOLCORHYNCHELLINAE Dagys, 1974
+          Holcorhynchella DAGYS, 1974 [*P. mangyshlakensiis] | Alps, Balkans, Carpathians, western Kazakhstan, Primorye, ?China, western USA | LTRI-MTRI
+          Piarorhynchella DAGYS, 1974 [*P. mangyshlakensiis] | Alps, Balkans, Carpathians, northwestern Caucasus, western Kazakhstan, Primorye, ?China, western USA | LTRI-MTRI
+          ?Qilianoconcha CHING, SUN, & YE in CHING & others, 1979 [*Q. corcula] | China (Qinghai) | MTRI
+
+        Subfamily PRAEMONTICLARELLINAE Mancenido & Owen, new subfamily
+          Praemonticlarella GARCIA JORAL, 1993 [*P. distercica] | ?France, ?Italy, Spain | LJUR-MJUR
+          ?Aparimarhynchia MACFARLAN, 1992 [*A. dunrobinensis] | New Zealand | LJUR-MJUR
+          Pseudohalorella DAGYS, 1965 [*P. sibirica] | northeastern Siberia | UTRI
+          Pseudomonticlarella SMIRNOVA, 1987 [*P. varia] | Russia (Volgian), Russian Platform | UJUR
+          Scalpellirhynchia MUIR-WOOD, 1936a [*Terebratula scalpellum QUENSTEDT, 1851 in 1851-1852] | England, France, Germany, Bulgaria, ?Switzerland, ?Algeria, ?Turkey, ?Argentina | LJUR
+
+        Subfamily DIHOLKORHYNCHINAE Xu & Liu, 1983
+          Diholkorhynchia YANG & XU, 1966 [*Rhynchonella sinensis KOKEN, 1900] | southwestern China | MTRI
+          Holcorhynchia BUCKMAN, 1918 [*Rhynchonella standishensis BUCKMAN, 1901] | England, Portugal, Italy, Germany, ?Austria, ?Morocco, ?Algeria, USA (?California) | LJUR-MJUR
+          Maxillirhynchia BUCKMAN, 1918 [*M. implicata] | Upper Triassic (Norian), Lower Jurassic (Pliensbachian, Toarcian), Middle Jurassic (?Aalenian, ?Bajocian) | UTRI-MJUR
+          Gnathorhynchia BUCKMAN, 1918 [*Rhynchonella liostraca BUCKMAN, 1886] | England, France, Austria, ?Morocco, ?Algeria, USA (?California) | MJUR
+          Batangorhynchia SUN & LI, 1990 [*B. xiaoieica] | China (southern Qinghai) | MTRI
+
+        Subfamily LAEVIRHYNCHIINAE Dagys, 1974
+          Laevirhynchia DAGYS, 1974 [*Terebratula tricostata von MUNSTER in WISSMANN & VON MUNSTER, 1841] | Alps, Carpathians, southern Alps, Hungary | UTRI-MJUR
+          Nannirhynchia BUCKMAN, 1918 [*N. subpygmaea] | England, France, Portugal, ?Slovakia, ?Austria, Morocco, Algeria, Tunisia | LJUR-MJUR
+
+        Subfamily MONTICLARELLINAE Childs, 1969
+          Monticlarella WISNIEWSKA, 1932 [*Rhynchonella czenstochaviensis ROEMER, 1870] | England, France, Switzerland, Germany, western Carpathians, Poland, Romania, Italy, Bulgaria, Crimea, Caucasus, Algeria, ?China | MJUR-UCRET
+          Capillirostra COOPER & MUIR-WOOD, 1951 [nom. nov. pro Rhynchonellopsis BOSE, 1894] | Crimea, western Carpathians | UCRET
+          Osmarella PEARSON, 1977 [*Rhynchonella Starhembergica ZUGMAYER, 1880] | northern Alps, Sandling, Austria | UTRI
+          Suiaella MOISEEV in WEBER, 1949 [*S. weberi] | Crimea, western Carpathians | LCRET
+          Oriensellina SMIRNOVA in SMIRNOVA & KONOVALOV, 1986 [*O. minutalis] | Russia (eastern Siberia) | LCRET
+          Homaliarhynchia SHI, 1990 [*H. minuta] | China (eastern Tibet), England | MJUR
+
+        Subfamily LAEVIRHYNCHIINAE [continued, interleaved text]
+          ?Wairikirhynchia MACFARLAN, 1992 [*W. etaliana] | New Zealand (South Island) | MTRI
+
+      ?Family OCHOTORHYNCHIIDAE Dagys, 1968
+        Ochotorhynchia DAGYS, 1968 [*O. omolonensis] | northeastern Siberia | LJUR-LCRET
+        ?Tonasirhynchia LOBACHEVA & SMIRNOVA, 1994 [*T. janini] | Ukraine (Crimea) | LCRET
+
+      Family FRIELEIIDAE Cooper, 1959
+        Subfamily FRIELEIINAE Cooper, 1959
+          Frieleia DALL, 1895 [*F. halli] | western USA and North Pacific | HOL
+          Compsothyris JACKSON, 1918 [*Rhynchonella Racovitzae JOUBIN] | Antarctica, McMurdo Sound | HOL
+          Grammetaria COOPER, 1959 [*Hemithyris bartschi DALL, 1920] | Philippines, Molluccas, off Bali, New Caledonia, South Africa | HOL
+
+        Subfamily HISPANIRHYNCHIINAE Cooper, 1959
+          Hispanirhynchia THOMSON, 1927 [*Rhynchonella cornea FISCHER (MS) in DAVIDSON, 1887] | Cuba, Eocene; Morocco, off Sudan and Canary Islands to Cape Finistere | HOL
+          Abyssorhynchia ZEZINA, 1980 [*Hemithyris craneana DALL, 1895] | southeastern Pacific Ocean | HOL
+
+        Subfamily NEORHYNCHINAE Mancenido & Owen, new subfamily
+          Neorhynchia THOMSON, 1915 [*Hemithyris strebeli DALL, 1908] | Pacific Ocean | HOL
+          ?Manithyris FOSTER, 1974 [*M. rossi] | Antarctica (Ross Sea) | HOL
+          Sphenarina COOPER, 1959 [*Rhynchonella sicula SEGUENZA in DAVIDSON, 1870] | Mediterranean region, Neogene; Flores Sea | HOL
+
+      Family TETHYRHYNCHIIDAE Logan, 1994
+        Tethyrhynchia LOGAN & ZIBROWIUS, 1994 [*T. mediterranea] | southern France, off Tunisia, Croatia (in submarine caves) | HOL
+
+    Superfamily HEMITHIRIDOIDEA Rzhonsnitskaia, 1956
+      Family HEMITHIRIDIDAE Rzhonsnitskaia, 1956
+        Hemithiris D'ORBIGNY, 1847 [*Anomia piittacea GMELIN, 1790] | England, Belgium, Japan, Alaska, Canada, Sicily, North Pacific, Antarctica | HOL
+          = Hemithyris BRONN, 1848
+        ?Patagorhynchia ALLAN, 1938 [*Rhynchonella patagonica VON IHERING, 1903] | Argentina, Chile | HOL
+        Pemphixina COOPER, 1981 [*Rhynchonella var. pyxidata DAVIDSON, 1880] | southern Indian Ocean (Kerguelen and Amsterdam Islands) | HOL
+
+      Family CYCLOTHYRIDIDAE Makridin, 1955
+        Subfamily CYCLOTHYRIDINAE Makridin, 1955
+          Cyclothyris M'COY, 1844 [*Terebratula latissima J. de C. SOWERBY, 1840 in 1840-1846] | England, France, Germany, Switzerland, Belgium, Poland, Romania, Bulgaria, Spain, Slovakia, Yugoslavia, Russia, Morocco, South Africa, Madagascar, ?Pakistan, India, Turkmenistan, USA, Chile | LCRET-UCRET
+          Aucklandirhynchia MACFARLAN, 1992 [*A. aucklandica] | New Zealand | LJUR-MJUR
+          Bicepsirhynchia SHI, 1990 [*B. asperata] | China (southern Qinghai), France | UJUR
+          Costirhynchopsis DAGYS, 1977 [nom. nov. pro Costirhynchia DAGYS, 1974] | China (southern Qinghai) | UJUR
+          Fissirhynchia PEARSON, 1977 [*E. transversus] | Saudi Arabia, ?China, ?Argentina | MJUR
+          Eurysites COOPER, 1989 [*E. transversus] | Saudi Arabia | MJUR
+          Flabellirhynchia BUCKMAN, 1918 [*Rhynchonella lycettii DAVIDSON, 1852b] | England, France, USA (California), Argentina, Antarctica | MJUR
+          Cardinirhynchia BUCKMAN, 1918 [*Terebratula acuticosta HEHL, 1832, in VON ZIETEN, 1830-1833] | England, France, Germany, Switzerland, Spain, Caucasus, Morocco, Algeria, Madagascar, ?Japan | MJUR-UJUR
+          Parvirhynchia BUCKMAN, 1918 [*Rhynchonella parvula EUDES-DESLONGCHAMPS, 1862] | England, France, Germany, Switzerland, Poland, Romania, Caucasus, Spain, ?Italy, Morocco, Argentina | MJUR-UJUR
+
+        Subfamily INDORHYNCHIINAE Ovcharenko, 1975
+          Indorhynchia OVCHARENKO, 1975 [*I. subtrigonalis] | Tadjikistan, southeastern Pamirs, India, ?Arabia, ?Sinai | MJUR
+          Strongyloria COOPER, 1989 [*S. circularis] | Saudi Arabia | MJUR
+          Tanggularella SHI, 1990 [*T. feraxa] | China (northern Tibet, southern Qinghai) | MJUR
+          Multicorhynchia CHEN YONGMING, 1983 [*M. tulungensis] | China (Tibet, ?southern Qilian Mountains) | MTRI
+          Moquellina CHING, SUN, & YE in CHING & others, 1979 [*M. arcuata] | China (Qinghai, Yunnan) | MJUR
+
+        ?Family TRIASORHYNCHIIDAE Xu & Liu, 1983
+          Triasorhynchia XU & LIU, 1983 [*T. subglobulina] | China (Qilian Mountains) | MTRI
+
+      Family TETRARHYNCHIIDAE Ager, 1965
+        Subfamily TETRARHYNCHIINAE Ager, 1965
+          Tetrarhynchia BUCKMAN, 1918 [*Terebratula tetraedra J. SOWERBY, 1812 in 1812-1815] | England, Scotland, France, Portugal, Spain, Switzerland, Austria, Italy, Slovakia, Yugoslavia, Hungary, Romania, Morocco, Algeria, Turkey, Siberia, northwestern Canada, Argentina, Chile | LJUR-LCRET
+            = Makridiniirhynchia SUCIC-PROTIC, 1969
+          Belbekella MOISEEV, 1939 [*B. airgulensis] | Crimea, Caucasus, Turkmenistan, France, Sardinia, Romania, Russia (Caspian Basin) | LCRET
+          ?Baeоrhynchia COOPER, 1989 [*B. nucleata] | Saudi Arabia | MJUR
+          Cymatorhynchia BUCKMAN, 1918 [*Rhynchonella cymatophorina BUCKMAN, 1910] | England, France, Germany, Switzerland, Poland, Romania, Bulgaria, Spain, ?Caucasus, Morocco, Algeria, Madagascar, Arabia, Israel, ?Jordan, southwestern China (Tibet, Himalayas), Argentina | MJUR
+            = Formosarhynchia SEIFERT, 1963
+          Daghanirhynchia MUIR-WOOD, 1935 [*D. daghaniensis] | Morocco, Tunisia, Somalia, Kenya, ?Ethiopia, Egypt (Sinai), Arabia, Israel, Syria, China, India | MJUR-UJUR
+          Deltarhynchia COOPER, 1989 [*D. triangulata] | Saudi Arabia | MJUR
+          Korjakirhynchia DAGYS, 1968 [*K. vodopadica] | northeastern Russia (Koryakiya), Slovakia | UCRET
+          Druganirhynchia TCHOUMATCHENCO, 1983 [*D. nevelinae] | southeastern Bulgaria | MJUR
+          Echyrosia COOPER, 1989 [*E. costata] | Saudi Arabia, ?Israel | MJUR
+          Eoseptaliphoria CHING & SUN in CHING, SUN, & RONG, 1976 [*E. tulungensis] | China (Tibet, Qinghai) | UTRI
+          Goniorhynchia BUCKMAN, 1918 [*G. goniaeа] | England, France | MJUR
+          Grandirhynchia BUCKMAN, 1918 [*G. grandis] | Scotland, England (Hebrides) | LJUR
+          Korjakirhynchia SMIRNOVA, 1990a [*K. vodopadica] | northeastern Russia (Koryakiya), Slovakia | UCRET
+          Orlovirhynchia DAGYS, 1968 [*O. villigaensis] | northeastern Siberia | LJUR
+          Pontaltorhynchia OWEN & ROSE, 1997 [*Rhynchonella schopeni DI STEFANO, 1887] | Italy (Apennines, Sicily), Gibraltar | LJUR
+          Pycnoria COOPER, 1989 [*P. magna] | Saudi Arabia | MJUR
+          Quadratirhynchia BUCKMAN, 1918 [*Q. quadrata] | England, France, Spain, Portugal, ?Germany, ?Morocco, Algeria, Argentina, USA (?Nevada) | LJUR-MJUR
+          Robustirhynchia SEIFERT, 1963 [*Terebratula Ehningensis QUENSTEDT, 1857 in 1856-1857] | Germany, Poland (extra-Alpine) | MJUR
+          Somalirhynchia WEIR, 1925 [*S. africana] | Africa, Asia, ?Australasia | MJUR-MJUR
+            = Somalirhynchia GALICUV & TCHOUMATCHENCO, 1994
+
+        Subfamily GIBBIRHYNCHIINAE Mancenido & Owen, new subfamily
+          Gibbirhynchia BUCKMAN, 1918 [*G. gibbosa] | England, Scotland, France, Belgium, Germany, ?Portugal, Spain, Gibraltar, Switzerland, Italy, Yugoslavia, Greece, Slovakia, Hungary, Romania, ?Bulgaria, Morocco, Algeria, Anatolia, Israel, Iran, Argentina, ?Peru, western USA (?Nevada), Canada | LJUR
+          Amydroptychus COOPER, 1989 [*A. formosus] | Saudi Arabia, ?Israel | MJUR
+          Burmirhynchia BUCKMAN, 1918 [*B. gutta] | England, France, Germany, Belgium, ?Portugal, Spain, Gibraltar, Switzerland, Italy, Yugoslavia, Greece, Slovakia, ?Hungary, Romania, ?Bulgaria, Morocco, Algeria, Anatolia, Israel, Iran, Argentina, ?Peru, western USA (?Nevada), Canada | MJUR
+            = Hopkinsirhynchia SHI & YANG, 1992
+          ?Colpotoria COOPER, 1989 [*C. plicatilis] | Saudi Arabia | MJUR
+          Conarosia COOPER, 1989 [*C. rotundata] | Saudi Arabia | LJUR-MJUR
+          Nastosia COOPER, 1989 [*N. oanrgustatа] | Saudi Arabia | MJUR
+          ?Schizoria COOPER, 1989 [*S. elongata] | Arabia, Sinai | MJUR
+
+        Subfamily KALLIRHYNCHIINAE Mancenido & Owen, new subfamily
+          Kallirhynchia BUCKMAN, 1918 [*Rhynchonella concinna var. yaxleyensis DAVIDSON, 1878] | England, France, ?Switzerland, ?Poland, ?Egypt, Saudi Arabia, ?Jordan, Pamirs, India, China, ?Japan, ?USA, ?Canada, ?Argentina | MJUR
+          Kutchirhynchia BUCKMAN, 1918 [*Terebratula concinna var. kutchensis KITCHIN, 1897] | England, France, Romania, ?Morocco, ?Tunisia, ?Somalia, Saudi Arabia, India, Uzbekistan, Pamirs, ?Iran | MJUR
+          Obsolеtirhynchia SHI, 1992 [*Rhynchonella obsoleta J. SOWERBY, 1815 in 1812-1815] | England, Germany, China | MJUR
+          Rhactorhynchia BUCKMAN, 1918 [*R. rhacta] | England, France, Germany, Russia (Volgian), Moscow Basin | UJUR
+            = Rhactarhynchia WISNIEWSKA-ZELICHOWSKA, 1978, nom. null.
+          Costirhynchia BUCKMAN, 1918 [*C. costigera; non DAGYS, 1974, also Rhynchonellida] | England, Italy, Pamirs | MJUR
+          Mosquella MAKRIDIN, 1955 [*Rhynchonella oxyptycha FISCHER DE WALDHEIM, 1843] | Russia (Volgian, Moscow basin) | UJUR
+          Russirhynchia BUCKMAN, 1918 [*Terebratula (Rhynchonella) Fischeri ROUILLIER, 1847 in ROUILLIER & VOSINSKY, 1847-1848] | Russia, western Europe | UJUR
+
+        Subfamily ISJUMINELLINAE Makridin, 1964
+          Isjuminella MAKRIDIN, 1955 [*Rhynchonella pseudodecorata ROLLIER, 1917] | Europe, Russia (Donets basin, ?Caucasus) | UJUR
+            = Sardorhynchia TADDEI-RUGGIERO & UNGARO, 1984
+          Sacothyropsis CHEN & others, 1986 [*S. jiangdaensis] | Tibet | UTRI
+          Yunshannella LI & GU, 1982 [*Y. triphylla] | northeastern China | LCRET
+
+        Subfamily VIARHYNCHIINAE Mancenido & Owen, new subfamily
+          Viarhynchia CALZADA BADIA, 1975 [*Rhynchonella cerdanyolae BATALLER, 1947] | northeastern Spain | UCRET
+          Hemithyropsis KATS, 1974 [*H. globulosa] | north of Don basin, Russia | UCRET
+          Septatoechia LOBACHEVA & TITOVA, 1977 [*S. inflata] | Bulgaria, Crimea, Turkmenistan, western Kazakhstan | LCRET-UCRET
+
+        Subfamily CRETIRHYNCHIINAE Kats, 1974
+          Cretirhynchia PETTITT, 1950 [*Terebratula plicatilis J. SOWERBY, 1816 in 1815-1818] | Europe, northern Africa, ?Kazakhstan, ?Turkey, ?Turkmenistan, ?Antarctica | LCRET-UCRET
+          Begiarslania TITOVA, 1992 [*Cretirhynchia begiarslainensis NEKHRIKOVA, 1967] | Turkmenistan, western Kazakhstan | UCRET
+          Bohemirhynchia NEKVASILOVA, 1973 [*B. soukupi] | Slovakia | UCRET
+          Burrirhynchia OWEN, 1962 [*Rhynchonella leightonensis LAMPLUGH & WALKER, 1903] | England, France, Switzerland, Poland, Romania, Caucasus, Morocco, Donets basin, Turkmenistan | LCRET-UCRET
+
+      Family NOTOSARIIDAE Mancenido & Owen, new family
+        Notosaria COOPER, 1959 [*Terebratula nigricans G. B. SOWERBY, 1846] | New Zealand, lower Oligocene-Holocene; Poland, middle Miocene; Belgium, Pliocene; Antarctica (Seymour Island), Eocene | HOL
+        ?Paraplicirhynchia BITTNER, 1896 [*P. gadzickii] | Antarctica (Seymour Island) | HOL
+        Plicirhynchia ALLAN, 1947b [*Rhynchonella plicigera VON IHERING, 1897] | Argentina, ?Antarctica (Seymour and Cockburn Islands) | HOL
+        ?Protegulorhynchia OWEN, 1980 [*P. meridionalis] | Antarctica, southern India | UCRET
+        Tegulorhynchia CHAPMAN & CRESPIN, 1923 [*Rhynchonella squamosa HUTTON, 1873] | Australasia, Antarctica | HOL
+
+      ?Family SEPTIRHYNCHIIDAE Muir-Wood & Cooper, 1951
+        Septirhynchia MUIR-WOOD, 1935 [*Rhynchonella azazii COTTREAU, 1925] | Middle East, Africa, ?Madagascar, ?Lebanon | MJUR
+        Heteromychus COOPER, 1989 [*H. magnificus] | Saudi Arabia | MJUR
+        Lessinirhynchia VOROS, 1993 [nom. nov. pro Lessinella VOROS, 1993] | southern Alps (northern Italy) | MJUR
+
+    Superfamily UNCERTAIN
+      Barzellinia DE GREGORIO, 1930b [*B. primogenita] | Italy (Sicily) | UTRI-LJUR
+      Isjuminelina MAKRIDIN in SARYCHEVA, 1960 [*Rhynchonella pseudodecorata ROLLIER, 1917] | Europe, Russia | UJUR
+
+    Nomina Dubia
+      Ancorhynchia JIN & YE, 1979 [*A. madaensis] | China | UPERM
+      Areella ERLANGER, 1992 [*A. burunica] | Mongolia | LDEV
+      Asiarhynchia SU, 1980 [*Zlichorhynchus asiaticus HAMADA, 1971] | northern China | LDEV
+      Beichuanella CHEN, 1978a [*B. uniplicata] | China | MDEV
+      Beichuanrhynchus CHEN, 1990 [*Kwangsirhynchus beichuanensis CHEN, 1979] | China | LDEV
+      Borealrhynchia SU, 1976 [*B. delerensis] | northern China | LDEV
+      Camerotoechia (?) ferganica NALIVKIN, 1930b | central Asia, Urals | LDEV-MDEV
+      Camarotoechioides RZHONSNITSKAIA, 1978 [*Camarotoechia lazatkini RZHONSNITSKAIA, 1955] | central Asia | LDEV
+      Chivatschella ZAVODOWSKY, 1968 [*C. orotchensis] | northeastern Asia | UPERM
+      Corrugatimediorostrum SARTENAER, 1970a [*Terebratula rocky-montana MARCOU, 1858] | North America | MISS
+      Donella ROTAI, 1931 [*D. minima] | central Asia | MISS
+      Dorsisinus SANDERS, 1958 [*Centronella louisianensis WELLER, 1914] | USA (Mississippi Valley), Mexico | MISS
+      Ferganotoechia RZHONSNITSKAIA in RZHONSNITSKAIA, KULIKOVA, & PETROSYAN, 1978 [*C. (?) ferganica] | central Asia | LDEV-MDEV
+      Globiodorsum JIN, 1988 [*G. basale] | China | MDEV
+      Glyptorhynchia SHEN & HE, 1994 [*G. leni] | China | UPERM
+      Hypoleiorhynchus LINNIK, 1976 [*Hypothyridina (?) schelonica NALIVKIN, 1941] | Belorus, European Russia | UDEV
+      Langkawia HAMADA, 1969b [*L. jonesae] | Malay Peninsula | UDEV-MISS
+      Laosia MANSUY, 1913 [*L. dusaulti] | Indo-China | LPERM
+      Leiorhynchoides DOVGAL, 1953 [*L. gratianovae] | Ukraine | MDEV
+      Linxiangiella YANG, 1984 [*L. typica] | China | UDEV
+      Miaоhuangrhynchus YANG in YANG & others, 1977 [*M. uncinaliformis] | southern China | LDEV
+      Mongolirhynchia HOU & ZHAO, 1976 [*M. delitescens] | Mongolia, northern China | LSIL
+      Nantanella GRABAU, 1936 [*N. mapingensis] | China | LPERM
+      Neimongolella ZHANG YAN, 1981a [*N. paraplicata] | northern China | LDEV
+      Paratetratomia YANG in YANG & others, 1977 [*P. xiangzhouensis] | southern China | MDEV
+      Paryphorhynchopora SIMORIN, 1956 [*Pugnoides korsakpaica NALIVKIN, 1937] | Kazakhstan | MISS
+      Paynella GRABAU, 1934 [*P. obscura] | China | LPERM
+      Petakia HAMADA, 1969a [*P. undulata] | Malaya | LDEV-MDEV
+      Platyglossariorhynchus SARTENAER, 1970a [*Pugnax proteus TORLEY, 1934] | Germany, North America | MDEV
+      Plekonina WATERHOUSE, 1986a [*P. spisatella] | eastern Australia (Bowen Basin, Queensland) | MISS
+      Protorhyncha HALL & CLARKE, 1893 [*Atrypa dubia HALL, 1947] | eastern USA (New York) | UORD
+      Pseudopugnax LICHAREW, 1956 [*P. planiusima] | northern Russia | UPERM
+      Pugnacina ZUONG & RZHONSNITSKAIA in ZUONG & others, 1968 [*P. baoi] | Vietnam | LDEV-MDEV
+      Rhynchotretaoides SEVERGINA, 1967 [*R. aincus] | Russia (Taimyr) | UORD
+      Salairotoechia RZHONSNITSKAIA, 1968d [*Nudirostra? pseudocarens KULKOV, 1960] | Kuznets Basin | MDEV
+      Sichuanrhynchus TONG, 1978 [*S. sulcatus] | China | MISS
+      Straelenia MAILLIEUX, 1935 [*Rhynchonella Dunensis DREVERMANN, 1902] | western Europe, northern Africa | LDEV
+      Tanerhynchia ALLAN, 1947a [*Eatonia parki ALLAN, 1935] | New Zealand, Antarctica | LDEV
+      Togaella SEVERGINA, 1960b [*T. grandis] | Altai, Mongolia | UORD
+      Trilobatoechia XIAN, 1990 [*T. daxinensis] | southern China | LDEV
+      Uralotoechia SAPELNIKOV, 1963b [*U. vagranensis] | northern Urals | LSIL
+      Wulungguia ZHANG YAN, 1981b [*W. wulunguensis] | northern China | LDEV
+      Yanbianella TONG, 1978 [*Y. dorsiconvexa] | China | MISS
+      Yarirhynchia JIN & SUN, 1981 [*Y. concava] | Tibet | MISS
+      Yingtangella BAI & YING in YOH & BAI, 1978 [*Y. sulcatilis (HOU), 1963] | southern China | LDEV
+
+    Unavailable Genera
+      Almogilabinella GEORGESCU (in press) in GEORGESCU, 1993 | Middle Jurassic
+      Crurirhynchella XU & LIU, 1983 | Middle Triassic
+      Dingleirhynchia GEORGESCU (in press), in GEORGESCU, 1993 | Middle Jurassic
+      Holcothyroides DAGYS, 1974 | Middle Triassic
+      Orbignyrhynchia MICHALIK, 1992 [nom. null., personal communication, 1995] | Paleogene (Danian)
+      Postcirpa SMIRNOVA, 1984 | ?Middle Triassic
+      Septaliirhynchia XU & LIU, 1980 | Middle Triassic
+      Septocrurallia MAKRIDIN, 1954 | Middle Triassic
+      Tuwaiqirhynchia NAZER [1970, unpublished manuscript] | Middle Jurassic
+      Vindobonella PEARSON [1967, unpublished manuscript] | Upper Triassic
+
+Order ATRYPIDA Rzhonsnitskaia, 1960
+  Suborder ATRYPIDINA Moore, 1952
+    Superfamily ATRYPOIDEA Gill, 1871
+      Family ATRYPIDAE Gill, 1871
+        Subfamily ATRYPINAE Gill, 1871
+          Atrypa DALMAN, 1828 [*Anomia reticularis LINNAEUS, 1758; OD] | worldwide | USIL-MDEV
+            A. (Atrypa) DALMAN, 1828 [*Anomia reticularis LINNAEUS, 1758; OD] | worldwide | USIL-MDEV
+            A. (Planatrypa) STRUVE, 1966 [*A. (P.) collega; OD] | worldwide | LDEV-UDEV
+          Atryparia COPPER, 1966a [*A. instita COPPER, 1966a; OD] | worldwide | LDEV-MDEV
+            A. (Atryparia) COPPER, 1966a [*A. instita COPPER, 1966a; OD] | Eurasia, northern Africa, North America | LDEV-MDEV
+            A. (Costatrypa) COPPER, 1973c [*Atrypa varicostata STAINBROOK, 1945; OD] | worldwide | UDEV
+          Dihelictera COPPER, 1995 [*D. acrolopha; OD] | worldwide | UDEV
+          Endrea COPPER, 1996b [*E. echoica; OD] | western Europe, North America | LSIL-USIL
+          Gotatrypa STRUVE, 1966 [*Atrypa (Gotatrypa) hedei; OD] | worldwide | LSIL-USIL
+          Joviatrypa COPPER, 1995 [*J. brabyla COPPER, 1995; OD] | Europe, northwestern Canada | LDEV-MDEV
+          Kyrtatrypa STRUVE, 1966 [*Atrypa (Kyrtatrypa) culminigera STRUVE, 1966; OD] | worldwide | LDEV-UDEV
+            = Amiatrypa HAVLICEK, 1987a (synonym)
+          Oglupes HAVLICEK, 1987b [*O. scarabeus HAVLICEK, 1987b; OD] | Eurasia | USIL
+            = Kantinatrypa (synonym)
+          ?Omnutakhella LOPUSHINSKAYA, 1976 [*O. bazhenovae; OD] | Siberian Platform | LSIL
+          Procarinatina MIZENS & SAPELNIKOV, 1982 [*Carinatina silurica SAPELNIKOV, 1964; OD] | Eurasia, North America | LSIL-LDEV
+          Protatrypa BOUCOT, JOHNSON, & STATON, 1964 [*P. malmoeyensis BOUCOT, JOHNSON, & STATON, 1964; OD] | North America, Europe, Siberia | LSIL
+          Rugosatrypa RZHONSNITSKAIA, 1975 [*R. tschernyschewi RZHONSNITSKAIA, 1975; OD] | North America, ?Siberia | LSIL
+          ?Togatrypa HAVLICEK, 1987a [*T. fantomas; OD] | Czech Republic | LDEV
+          Zygospiraella NIKIFOROVA, 1961 [*Terebratula duboisi DE VERNEUIL, 1845; OD] | Eurasia, North America, Tasmania | LSIL
+            = Megumatrypa HARPER, 1973 (synonym)
+            = Cryptospira LAURIE, 1991 (synonym)
+        Subfamily INVERTININAE Copper & Chen, 1995
+          Invertina COPPER & CHEN, 1995 [*Atrypa aspera var. sinensis VON RICHTHOFEN, 1883; OD] | China, North Africa | MDEV
+          ?Falsatrypa HAVLICEK, 1956 [*F. admiranda; OD] | Czech Republic | LDEV-MDEV
+          Kerpina STRUVE, 1961 [*K. vineta vineta; OD] | western Europe, Urals | LDEV-MDEV
+            = Adapatrypa STRUVE, 1980 (synonym)
+        Subfamily SPINATRYPINAE Copper, 1978
+          Spinatrypa STAINBROOK, 1951 [*Atrypa hystrix var. occidentalis HALL, 1858a; OD] | worldwide | MDEV-UDEV
+            = Plicipinatrypa RZHONSNITSKAIA (synonym)
+            S. (Spinatrypa) STAINBROOK, 1951 | worldwide | MDEV-UDEV
+            S. (Exatrypa) COPPER, 1967c [*Terebratulites explanatus VON SCHLOTHEIM, 1820; OD] | worldwide | MDEV-UDEV
+          ?Catatrypa MIZENS, 1993 [*C. schemachensis; OD] | Urals | MDEV
+          Eospinatrypa COPPER, 1973c [*Atrypa nodostriata HALL, 1852; OD] | North America, Eurasia | LSIL-USIL
+            = Morinatrypa HAVLICEK in HAVLICEK & STORCH, 1990 (synonym)
+          ?Gibberosatrypa MARKOVSKII & RZHONSNITSKAIA in RZHONSNITSKAIA & others, 1998 [*Atrypa gibberosa MARKOVSKII, 1989; OD] | Urals, Russian Platform | UDEV
+          Invertrypa STRUVE, 1961 [*Spinatrypa kelusiana STRUVE, 1956; OD] | Europe, northwestern Canada | LDEV-MDEV
+          Isospinatrypa STRUVE, 1966 [*Terebratulites asper VON SCHLOTTHEIM, 1813; OD] | worldwide | LDEV-MDEV
+            = Hanusitrypa HAVLICEK, 1967a (synonym)
+          ?Oglu HAVLICEK, 1987a [*Terebratula semiorbis BARRANDE, 1847; OD] | Europe, northern Africa, Urals | LDEV
+          ?Punctspinatrypa RZHONSNITSKAIA, 1975 [*Atrypa rejensis KHODALEVICH, 1951; OD] | Europe, Urals, central Asia | LDEV
+          Spinatrypina RZHONSNITSKAIA, 1964 [*S. margaritoides; OD] | worldwide | MDEV-UDEV
+          ?Tuberculatospira XIAN, 1988 [*T. elegans; OD] | southwestern China | LDEV-MDEV
+          Waiotrypa BALINSKI, 1997 [*W. sulcicarina; OD] | western Europe, North America | UDEV
+        Subfamily PSEUDOGRUENEWALDTIINAE Rzhonsnitskaia, Yudina, & Sokiran, 1997
+          Pseudogruenewaldtia RZHONSNITSKAIA, 1960b [*P. tschernyschewi; OD] | northern Urals, Poland, Germany | UDEV
+          Iowatrypa COPPER, 1973c [*Atrypa owenensis WEBSTER, 1921; OD] | North America, Europe, Urals, China | UDEV
+        Subfamily VARIATRYPINAE Copper, 1978
+          Variatrypa COPPER, 1966b [*Desquamatia ajugata COPPER, 1965a; OD] | Europe, Urals, North America | UDEV
+            = Peetzatrypa RZHONSNITSKAIA, 1975 (synonym)
+            = Dentatrypa RZHONSNITSKAIA, 1968 (synonym)
+            = Lichenarotrypa WANG & RONG, 1986 (synonym)
+            = Posteratrypa RZHONSNITSKAIA, 1975 (synonym)
+          Anatrypa NALIVKIN, 1941 [*Orthis micans VON BUCH, 1840; OD] | Europe, Urals, North America | UDEV
+          Desquamatia ALEKSEEVA, 1960a [*Atrypa (Desquamatia) khavae ALEKSEEVA, 1960a; OD] | worldwide | LDEV-UDEV
+            = Cleiothyris PHILLIPS, 1841 (j.s.s., nom. oblit.)
+            = Synatrypa COPPER, 1966b (synonym)
+            = Carinatinella BIERNAT, 1964 (synonym)
+            = Tenuiatrypa RZHONSNITSKAIA, 1975 (synonym)
+            = Peshiatrypa XIAN in XIAN & JIANG, 1978 (synonym)
+            D. (Desquamatia) ALEKSEEVA, 1960a | worldwide | LDEV-UDEV
+            D. (Independatrypa) COPPER, 1973c [*Atrypa independensis WEBSTER, 1921; OD] | worldwide | MDEV
+            D. (Seratrypa) COPPER, 1967c [*Desquamatia (Neatrypa) STRUVE, 1966; OD] | Eurasia, North America | UDEV
+          Devonatrypa RZHONSNITSKAIA, 1964 [*P. malodalatrica; OD] | North America, Eurasia, Australia | MDEV-UDEV
+          Heckerella RZHONSNITSKAIA & SOKIRAN, 2000 [*Anatrypa heckeri NALIVKIN, 1941; OD] | China, Urals, Estonia, central Asia | UDEV
+          Pseudoatrypa COPPER, 1973c [*Atrypa devoniana WEBSTER, 1921; OD] | North America, Eurasia | UDEV
+          Radiatrypa COPPER, 1978 [*Atrypa gregeri ROWLEY, 1900; OD] | North America, Urals, Russian Platform | MDEV-UDEV
+            = Paratrypa L. I. MIZENS in G. A. MIZENS & L. I. MIZENS, 1997 (synonym)
+          Uralospira MIZENS, 1977b [*U. tenuicostata; OD] | Urals, central Asia, Altai-Salair | LDEV
+      Family ATRYPINIDAE McEwan, 1939
+        Subfamily ATRYPININAE McEwan, 1939
+          Atrypina HALL in HALL & CLARKE, 1893 [*Leptocoelia imbricata HALL, 1859b; OD] | North America, Eurasia | UORD-LDEV
+            A. (Atrypina) HALL in HALL & CLARKE, 1893 | North America, Eurasia | UORD-LDEV
+            A. (Atrypinopsis) RONG & YANG, 1981 [*A. biconnexa; OD] | southwestern China | UORD-LDEV
+          Gracianella JOHNSON & BOUCOT, 1967 [*G. lissumbra JOHNSON & BOUCOT, 1967; OD] | North America, Eurasia, Australia | LSIL-LDEV
+            = Claratrypa HAVLICEK, 1987b (synonym)
+            G. (Gracianella) JOHNSON & BOUCOT, 1967 | North America, Eurasia, Australia | LSIL-LDEV
+            G. (Guangyuania) SHENG, 1975 [*Guangyuania; OD] | southwestern China | LSIL-LDEV
+            G. (Sublepida) MIZENS & SAPELNIKOV, 1982 [*Terebratula sublepida DE VERNEUIL, 1845; OD] | southern and central Urals, central Asia, North America | USIL
+        Subfamily CLINTONELLINAE Poulsen, 1943
+          Clintonella HALL in HALL & CLARKE, 1893 [*C. vagabunda HALL in HALL & CLARKE, 1893; OD] | North America, Siberia, Kazakhstan, China | LSIL-LDEV
+            = Pronalivkinia RUKAVISHNIKOVA, 1977 (synonym)
+          Alispira NIKIFOROVA, 1961 [*Zygospira (Alispira) gracilis NIKIFOROVA, 1961; OD] | western Siberia, China, ?North America | LSIL
+          Anabaria LOPUSHINSKAYA, 1965 [*Catazyga rara NIKIFOROVA, 1961; OD] | Siberia | USIL
+          Athyrisinoides JIANG in XIAN & JIANG, 1978 [*A. shigianensis; OD] | southwestern China | LSIL-USIL
+            = Athyrisinoidea CHEN & WAN in CHEN, 1979 (synonym)
+            = Neoathyrisina CHEN, 1990 (synonym)
+          Beitaia RONG, XU, & YANG, 1974 [*B. modica; OD] | southern China | LSIL
+          Nalivkinia BUBLICHENKO, 1927 [*Atrypa gruenewaldtaeformis VON PEETZ, 1901; OD] | southern Siberia, Altai | LSIL-LDEV
+          Tibetatrypa COPPER & HOU, 1986 [*T. sainzaensii COPPER & HOU, 1986; OD] | southern Siberia, Altai | LSIL-LDEV
+          ?Uncitispira FU, 1982 [*U. sinica; OD] | northwestern China | USIL
+        Subfamily PLECTATRYPINAE Copper, 1996
+          Plectatrypa COPPER, 1930 [*Terebratula imbricata J. de C. SOWERBY, 1839; OD] | North America, Eurasia | UORD-USIL
+            P. (Plectatrypa) COPPER, 1930 | North America, Eurasia | UORD-USIL
+            P. (Gutnia) COPPER, 1996b [*G. capidula COPPER, 1996b; OD] | North America, Eurasia | LSIL-USIL
+          Sypharatrypa COPPER, 1982 [*S. honora COPPER, 1982; OD] | eastern North America, western Europe | UORD-LSIL
+          Xanthea COPPER, 1996b [*Atrypa imbricata var. lamellosa LINDSTROM, 1861; OD] | Europe | LSIL-USIL
+        Subfamily SPIRIGERININAE Rzhonsnitskaia, 1974
+          Spirigerina D'ORBIGNY, 1847 [*Terebratula marginalis DALMAN, 1828; SD ALEKSEEVA, 1960b] | worldwide | LSIL-LDEV
+            = Paraplectatrypa ZENG & others, 1993 (synonym)
+          ?Australispira PERCIVAL, 1991 [*A. disticha; OD] | Australia | UORD
+          Eospirigerina BOUCOT & JOHNSON, 1967a [*Zygospira putilla HALL in HALL & CLARKE, 1895; SD AMSDEN, 1974] | worldwide | UORD-LSIL
+            = Zanclorhyncha XU, 1979a (synonym)
+            = Eorhynchula LIANG, 1983a (synonym)
+            = Neorhynchula LIANG, 1983b (synonym)
+          Neospirigerina RZHONSNITSKAIA, 1975 [*Plectatrypa osa NALIVKIN, 1960; OD] | Siberia, Urals, Kazakhstan, central Asia | LDEV
+          ?Ogilviella LENZ, 1968 [*O. rotunda LENZ, 1968; OD] | northern Canada, Australia | LDEV
+            = Arctispira SMITH, 1980 (synonym)
+          ?Orarella RUKAVISHNIKOVA, 1982 [*O. multicostata; OD; nom. nud.] | Kazakhstan | UORD-LSIL
+          Pectenospira POPOV, NIKITIN, & SOKIRAN, 1999 [*P. pectenata; OD] | Kazakhstan, northwestern China | UORD
+          Qilianotryma XU HANKUI, 1979b [*Q. mirabile; OD] | China, central Asia | UORD-LSIL
+            = Euroatrypa ORADOVSKAYA in NIKIFOROVA, ORADOVSKAYA, & POPOV, 1982 (synonym)
+            = Ovalospira NIKIFOROVA (synonym)
+            = Orthocarina FU, 1982 (synonym)
+          Schachriomonia NIKIFOROVA, 1978 [*S. schachriomonica NIKIFOROVA, 1978; OD] | Kazakhstan, central Asia, Australia | UORD-LSIL
+          Sulcatospira XU, 1979c [*Zygospira (Sulcatospira) plicata XU, 1979c; OD] | China, Kazakhstan, central Asia, Altai | UORD-LSIL
+            = Antizygospira FU, 1982 (synonym)
+            = Ovalospira FU, 1982 (synonym)
+            = Taxospira FU, 1982 (synonym)
+            = Kuzgunia MISIUS, 1989 (synonym)
+    Superfamily PUNCTATRYPOIDEA Rzhonsnitskaia, 1960
+      Family PUNCTATRYPIDAE Rzhonsnitskaia, 1960
+        Subfamily PUNCTATRYPINAE Rzhonsnitskaia, 1960
+          Punctatrypa HAVLICEK, 1953 [*P. nalivkini; OD] | Eurasia, North America | LDEV-MDEV
+          Crassipunctatrypa MIZENS & RZHONSNITSKAIA, 1979 [*Punctatrypa crassiconcentrica MIZENS, 1977b; OD] | Urals, central Asia, Tian Shan | LDEV-MDEV
+          Fossatrypa MIZENS & RZHONSNITSKAIA, 1979 [*Punctatrypa fossa BREIVEL, 1959; OD] | eastern Urals, Carnic Alps, Czech Republic | LDEV-MDEV
+            = Aratenatrypa HAVLICEK, 1987a (synonym)
+          Sinopunctatrypa WANG, COPPER, & RONG, 1983 [*Punctatrypa (Sinopunctatrypa) saetulosa; OD] | southern China | LDEV-MDEV
+          Undatrypa COPPER, 1978 [*Terebratula munieri GRUENEWALDT, 1854; OD] | Urals, southwestern Europe, China, northern Canada | LDEV-MDEV
+            = Munieratrypa MIZENS & RZHONSNITSKAIA, 1979 (synonym)
+        Subfamily ATRYPINELLINAE Copper, new subfamily
+          Atrypinella KHODALEVICH, 1939 [*Atrypa (Atrypinella) biloba; OD] | Urals, central Asia, arctic Canada | LSIL-LDEV
+          ?Istokina BREIVEL & BREIVEL, 1988 [*?Spinatrypa bobrovkensis MIZENS, 1977a; OD] | Urals | LSIL
+          Limbatrypa COPPER, 1982 [*L. leptostriata; OD] | Urals | LSIL
+          Reticulatrypa SAVAGE, 1970 [*R. fairhillensis; OD] | Australia, ?Europe, ?Urals, ?northwestern Canada | LSIL-LDEV
+  Suborder ANAZYGIDINA Copper, 1996
+    Superfamily ANAZYGOIDEA Davidson, 1883
+      Family ANAZYGIDAE Davidson, 1883
+        Subfamily ANAZYGINAE Davidson, 1883
+          Anazyga DAVIDSON, 1882 [*Atrypa recurvirostra HALL, 1847; OD] | worldwide | UORD-LSIL
+            = Hallina WINCHELL & SCHUCHERT, 1892 (synonym)
+            = Nuria MISIUS, 1986 (synonym)
+          Zygatrypa COPPER, 1977a [*Zygospira paupera BILLINGS, 1866; OD] | North America, western Europe | UORD
+          Zygospira HALL, 1862 [*Producta modesta SAY in HALL, 1847; OD] | worldwide | UORD
+            = Pusilaguttia MISIUS, 1986 (synonym)
+
+  Suborder DAVIDSONIIDINA Copper, 1996
+    Superfamily DAVIDSONIOIDEA King, 1850
+      Family DAVIDSONIIDAE King, 1850
+        Davidsonia BOUCHARD-CHANTEREAUX, 1849 [*D. Verneuillii; OD] | Europe, central Asia, China, USA (Nevada) | LDEV-MDEV
+          = Quasidavidsonia HAVLICEK, 1987a (synonym)
+        Prodavidsonia HAVLICEK, 1956 [*P. dalejensis; OD] | western Europe, Urals | LDEV-MDEV
+        Rugodavidsonia COPPER, 1996a [*Davidsonia woodwardiana DE KONINCK, 1855; OD] | Europe, Urals, Australia, North America | LDEV-MDEV
+        Zeravshania MENAKOVA, 1983 [*Z. pachyvalvata MENAKOVA, 1983; OD] | central Asia, Urals (eastern slopes) | USIL-LDEV
+      Family CARINATINIDAE Rzhonsnitskaia, 1960
+        Carinatina NALIVKIN, 1930a [*Orthis arimaspa EICHWALD in VON BUCH, 1840; OD] | Europe, Urals, southern China | LDEV-MDEV
+          = Zejizneria SIEMIRADZKI, 1920 (synonym)
+          = Salairina ALEKSEEVA, 1970 (synonym)
+          = Kaplicona HAVLICEK, 1987a (synonym)
+          = Biconostrophia HAVLICEK, 1967b (synonym, possibly)
+          = Klukatrypa HAVLICEK, 1987a (synonym, possibly)
+        Biconostrophia HAVLICEK, 1956 [*B. spirifera HAVLICEK, 1956; OD] | Europe, Urals, Australia, North America | LDEV-MDEV
+          = Davidsonatrypa HAVLICEK, 1987a (synonym, possibly)
+          = Cherkesovena HAVLICEK, 1987a (synonym, possibly pseudopunctate)
+        Carinatrypa COPPER, 1973c [*Spinatrypa dysmorphostrota CRICKMAY, 1960; OD] | Eurasia, North America | LDEV-MDEV
+          = Hergetatrypa HAVLICEK, 1987a (synonym)
+        Eifelatrypa COPPER, 1973c [*Atrypa reticularis var. plana KAYSER, 1871; OD] | Europe, Urals, southern China | LDEV-MDEV
+        Mangkeluia XU Hankui, 1991 [*M. extensa; OD] | northwestern China (Xinjiang) | LDEV
+        Mogoliella ISHNAZAROV, 1972 [*M. sukokenica ISHNAZAROV, 1972; OD] | Uzbekistan, China (Xinjiang) | MDEV
+          = Sulciplicatatrypa ZHANG Fengming, 1983 (synonym, possibly)
+        ?Plesicarinatina MIZENS, 1977b [*Plectatrypa? carpulenta BREIVEL, 1959; OD] | Europe, Urals | USIL-MDEV
+      Subfamily CATAZYGINAE Copper, 1977
+        Catazyga HALL in HALL & CLARKE, 1893 [*Athyris headi BILLINGS, 1862; OD] | North America, Eurasia | UORD
+          = Orthonomaea HALL in HALL & CLARKE, 1893 (synonym)
+          = Septacatazyga DISTLER, 1972 (nom. nud.)
+          = Salairella SEVERGINA, 1984 (synonym)
+          = Eonalivkinia VLADIMIRSKAYA, 1985 (synonym)
+        Pentlandella BOUCOT, 1964b [*Rhynconella pentlandicus HASWELL, 1865; OD] | Europe, North America | UORD-LSIL
+      Subfamily TUVAELLINAE Alikhova, 1960
+        Tuvaella CHERNYSHEV, 1937 [*T. rackovskii; OD] | Tuva, Altai, Mongolia, Xinjiang, northeastern China | LSIL-USIL
+    Superfamily PALAFERELLOIDEA Spriestersbach, 1942
+      Family PALAFERELLIDAE Spriestersbach, 1942
+        Gruenewaldtia CHERNYSHEV, 1885 [*Terebratula latilinguis SCHNUR, 1851; OD] | Europe, Urals, Novaya Zemlya, Armenia, Uzbekistan, Siberia, arctic Canada | LDEV-MDEV
+          = Palaferella SPRIESTERSBACH, 1942 (synonym)
+      Family KARPINSKIIDAE Poulsen, 1943
+        Subfamily KARPINSKIINAE Poulsen, 1943
+          Karpinskia CHERNYSHEV, 1885 [*K. conjugula; OD] | southern Europe, Urals, central Asia, China (Xinjiang) | LDEV-MDEV
+          Crassatrypa MIZENS, 1977a [*Atrypa diversa SAPELNIKOV, 1968; OD] | Urals (eastern slopes) | USIL-LDEV
+          Eokarpinskia RZHONSNITSKAIA, 1964 [*Karpinskia nalivkini NIKIFOROVA, 1937b; OD] | Kazakhstan, Urals, ?arctic Canada | USIL-LDEV
+          Mimatrypa STRUVE, 1964a [*Terebratula prisca var. flabellata ROEMER, 1844; OD] | Eurasia, North America | LDEV-MDEV
+            = Toquimaella JOHNSON, 1967 (synonym)
+            = ?Megaplectatrypa ZHANG Yan, 1981a (synonym, possibly)
+          Neokarpinskia MIZENS, 1977b [*Karpinskia fedorovi var. ivdeli KHODALEVICH, 1937; OD] | Eurasia, North America | LDEV-MDEV
+            = Parakarpinskia ZHANG Yan, 1983b (synonym)
+        Subfamily VAGRANIINAE Alekseeva, 1995
+          Vagrania ALEKSEEVA, 1959 [*Atrypa kolymensis NALIVKIN, 1936; OD] | Europe, Urals, arctic Canada, southern China | LDEV-MDEV
+            = Denatrypa BREIVEL, 1959 (synonym)
+            = Totia RZHONSNITSKAIA & MENAKOVA (synonym, obj.)
+          Desatrypa COPPER, 1964 [*Atrypa desquamata SOWERBY, 1840b; OD] | Europe, Urals, arctic Canada, southern China | LDEV-MDEV
+            = Lisatrypa HAVLICEK, 1987a (synonym)
+          ?Weizhouella CHEN Yuanren, 1983 [*W. shuimoensis; OD] | southern China (Sichuan) | MDEV
+      Family SYMMATRYPIDAE Mizens, 1989
+        Symmatrypa MIZENS & SAPELNIKOV, 1975 [*S. piceaplicata; OD] | Urals (eastern slopes) | USIL
+  Suborder LISSATRYPIDINA Copper, 1996
+    Superfamily LISSATRYPOIDEA Twenhofel, 1914
+      Family LISSATRYPIDAE Twenhofel, 1914
+        Lissatrypa TWENHOFEL, 1914 [*L. atheroidea TWENHOFEL, 1914; OD] | worldwide | LSIL-MDEV
+          = Spondylobolus M'COY, 1851 (nom. oblit.)
+          = ?Loilemia REED, 1936 (synonym, possibly)
+          = Nanospira AMSDEN, 1949a (synonym)
+          = Lissatrypoidea BOUCOT & AMSDEN, 1958 (synonym)
+          = Nucleospira HALL, 1859b (type of Nucleospiridae; synonym concept)
+          = Buceqia HAVLICEK, 1984 (synonym)
+          = Solitudinella GODEFROID, 1991 (synonym)
+        Atrypellina MENAKOVA & NIKIFOROVA, 1986 [*Lissatrypa caudata NIKIFOROVA, 1949; OD] | central Asia, Urals | LSIL
+        Atrypoidea MITCHELL & DUN, 1920 [*Meristina(?) australis DUN, 1904; OD] | worldwide | LSIL-MDEV
+          = Attrypella KOZLOWSKI, 1929 (synonym)
+          = Lingatrypa MIZENS, 1985 (synonym)
+          = Globatrypa MIZENS & SAPELNIKOV, 1985 (synonym)
+        A. (Atrypoidea). subgenus | China, Urals, ?Aeronian; worldwide | LSIL-LDEV
+        A. (Lissatrypella) SAPELNIKOV & MIZENS, 1982 [*Atrypa kashorensis CHERNYSHEV, 1893; OD] | eastern Urals, central Asia, northern Canada, Czech Republic | USIL-LDEV
+        ?Aulacatrypa HAVLICEK, 1987b [*C. orbis; OD] | Czech Republic | USIL
+        ?Holynatrypa HAVLICEK, 1973 [*H. crucifera; OD] | Czech Republic | LDEV
+        Cromatrypa HAVLICEK, 1987b [*C. orbis; OD] | Silurian (Ludlow) | USIL
+        Levispira MIZENS, 1975b [*L. eifeliensis MIZENS, 1975b; OD] | Urals | LDEV-MDEV
+        Meifodia WILLIAMS, 1951 [*Hemithyris subundata M'COY, 1851; OD] | Newfoundland | USIL
+          = Tyrothyris OPIK, 1953 (synonym)
+        ?Tectatrypa MIZENS, 1973 [*Merista tectiformis CHERNYSHEV, 1893; OD] | Urals | USIL
+        Australina CLARKE, 1913 [*A. jachalensis; OD] | South America, northern Africa, Australia, Czech Republic, ?China | USIL
+        Cerasina COPPER, 1995 [*C. pycnata COPPER, 1995; OD] | North America | USIL
+        Radimatrypa HAVLICEK, 1990c [*R. zelaria; OD] | Czech Republic | LDEV-MDEV
+        Parmula MENAKOVA & BREIVEL, 1987 [*P. orbus NIKIFOROVA & MENAKOVA, 1987; OD] | Turkestan, Urals, Hudson Bay Lowlands, Canada | LSIL-USIL
+        ?Shrockia BOUCOT & SMITH, 1978 [*S. narogheli BOUCOT & SMITH, 1978; OD] | unknown | LDEV
+      Family SEPTATRYPIDAE Kozlowski, 1929
+        Subfamily SEPTATRYPINAE Kozlowski, 1929
+          Septatrypa KOZLOWSKI, 1929 [*S. secreta; OD] | Europe, Morocco, North America, Urals, central Asia, ?southern China | LSIL-LDEV
+            = Dubaria TERMIER, 1936 (synonym)
+            = Atrypopsis POULSEN, 1943 (synonym)
+            = Rhynchatrypa SIEHL, 1962 (synonym)
+            = Barkolia ZHANG Quan, 1981 (synonym)
+          S. (Septatrypa). subgenus | worldwide | LSIL-LDEV
+          S. (Hircinisca) HAVLICEK, 1960 [*Atrypa Sappho var. hircina BARRANDE, 1879b; OD] | Europe, Morocco, North America, Urals, central Asia, ?southern China | LSIL-LDEV
+          Becscia COPPER, 1995 [*B. scissura; OD] | ?United Kingdom, Urals | LSIL
+          ?Cerberatrypa HAVLICEK, 1990c [*C. cerberus HAVLICEK, 1990c; OD] | Czech Republic | LDEV-MDEV
+        Subfamily IDIOSPIRINAE Copper, new subfamily
+          Idiospira COPPER, 1956a [*Camerella panderi BILLINGS, 1859b; OD] | North America, Eurasia | UORD-LSIL
+          ?Webbyspira PERCIVAL, 1991 [*W. principalis; OD] | Australia | UORD
+    Superfamily GLASSIOIDEA Schuchert & LeVene, 1929
+      Family GLASSIIDAE Schuchert & LeVene, 1929
+        Glassia DAVIDSON, 1881a [*Atrypa obovata J. de C. SOWERBY, 1839; OD; typum invalidum, type revised to Glassia elongata DAVIDSON, 1881b] | western Europe, Urals, ?northern Canada | LSIL-USIL
+          = Cryptatrypa SIEHL, 1962 (synonym)
+        Karbous HAVLICEK, 1985a [*K. aperinus; OD] | Czech Republic, Urals, central Asia, ?China | LDEV-MDEV
+        ?Nanatrypa SAPELNIKOV & MIZENS, 1982 [*Lissatrypa (Nanatrypa) bisinuata SAPELNIKOV & MIZENS, 1982; OD] | Urals, central Asia, ?China | LDEV
+        Peratos COPPER, 1986b [*P. arrenus COPPER, 1986b; OD] | Europe, Urals (western slopes) | MDEV-UDEV
+        Trigonatrypa HAVLICEK, 1990c [*Meristella bolynensis HAVLICEK, 1956; OD] | Czech Republic | LDEV-MDEV
+    Superfamily PROTOZYGOIDEA Copper, 1986
+      Family PROTOZYGIDAE Copper, 1986
+        Protozyga HALL in HALL & CLARKE, 1893 [*Arypa exigua HALL, 1847; OD] | North America, Europe | UORD
+        Manespira COPPER, 1986b [*Hallina nicolleti WINCHELL & SCHUCHERT, 1892; OD] | North America, Europe | UORD
+        Xysila COPPER, 1995 [*X. astaca COPPER, 1995; OD] | North America, Ashgill; western Europe, Urals, ?Llandovery | UORD-LSIL
+      Family CYCLOSPIRIDAE Schuchert, 1913
+        Cyclospira HALL in HALL & CLARKE, 1893 [*Orthis bisulcata EMMONS, 1842; OD] | North America, Eurasia | UORD
+          = Tripleciella WILSON, 1932 (synonym)
+          = Auldospira WILLIAMS, 1962 (synonym)
+          = ?Cyclorhynchia BARANOV, 1994 (synonym, possibly)
+          = Cyclospira globosa ROZMAN, 1964a (synonym concept)
+        Rozmanospira POPOV, NIKITIN, & SOKIRAN, 1999 [*Oligorhynchia mica NIKITIN & POPOV, 1984; OD] | Kazakhstan | UORD
+
+Order ATHYRIDIDA Boucot, Johnson, & Staton, 1964
+Order ATHYRIDIDA Boucot, Johnson, & Staton, 1964
+  Suborder ATHYRIDIDINA Boucot, Johnson, & Staton, 1964
+    Superfamily ATHYRIDOIDEA Davidson, 1881
+      Family ATHYRIDIDAE Davidson, 1881
+        Subfamily ATHYRIDINAE Davidson, 1881
+          Athyris M'COY, 1844 [*Terebratula concentrica von Buch, 1834; SD] | cosmopolitan | USIL-MISS
+            = Cleiothyris AGASSIZ, 1846
+            = Spirigera D'ORBIGNY, 1847
+            = Spirithyris QUENSTEDT, 1868 in 1868-1871
+            = Euthyris QUENSTEDT, 1869 in 1868-1871
+          Actinoconchus M'COY, 1844 [*A. paradoxus; M] | Europe, North America, Middle East, China, Australia, Visean-Bashkirian; ?India | UDEV-LPERM
+          Alvarezites STRUVE, 1992 [*Athyris (Alvarezites) wolfarti; OD] | Germany (Eifelian) | MDEV
+          Atrythyris ALVAREZ, 1965 [*A. atrtyplicata; OD] | Germany, France, ?China | MDEV
+          Brimethyris ALVAREZ, RONG, & BOUCOT, 1998 [*Terebratula subconcentrica de Verneuil & d'Archiac, 1845; OD] | Spain | LDEV
+          Bruntonites STRUVE, 1992 [*Athyris (Bruntonites) mellingeni; OD] | Germany (Eifelian) | MDEV
+          Eifyris STRUVE, 1992 [*Terebratula eifliensis Schnur, 1853; OD] | Germany (Eifelian) | MDEV
+          ?Gonathyris BARANOV, 1994 [*G. ovata; OD] | eastern Siberia, Yakutsk | LDEV
+          Imacanthyris GRUNT, 1991 [*I. borlegensis; OD] | Mongolia | LDEV
+          Johnsonathyris SAVAGE, EBERLEIN, & CHURKIN, 1978 [*J. adrianensis; OD] | USA (Alaska) | UDEV
+          Lamellosathyris JIN & FANG, 1983 [*Spirifer lamellosa Leveille, 1835; OD] | ?Armenia, North America, Famennian; Elbourz, southwestern China (Yunnan), Europe, North America | UDEV-MISS
+          ?Meristospira GRABAU in GRABAU & SHERZER, 1910 [*M. michiganensis; OD] | USA (Michigan, Ohio), Canada (Ontario), ?China | MDEV
+          Pachyplax ALVAREZ & BRUNTON, 1990a [*P. transversa; OD] | northwestern Spain | LDEV
+          Protathyris KOZLOWSKI, 1929 [*P. praecursor; SD] | North America, Europe, Asia, Australia | USIL-LDEV
+        Subfamily ATHYRISININAE Grabau, 1931
+          Athyrisina HAYASAKA in YABE & HAYASAKA, 1920 [*A. squamosa; OD] | southern China (Sichuan, Guizhou, Guangxi, Yunnan), northwestern China (Western Qinling, southeastern Gansu, western Shaanxi) | LDEV-MDEV
+            = Kwangsia GRABAU, 1931a
+            = Plectospirifer GRABAU, 1931a
+            = Kwangsiella GRABAU, 1932a
+            = Pseudoathyrisina CHEN, 1979
+            = Athyrinopsis ZHANG Yan, 1983a
+          Parathyrisina WANG in WANG, YU, & WU, 1974 [*P. bella; OD] | southern China (Guangxi, Sichuan) | LDEV
+            = Athyrisinoides CHEN & WAN, 1978
+            = Athyrisinella CHEN & WAN in WAN, 1980
+            = Neoathyrisina CHEN, 1988b
+          Pseudohomeospira NIKIFOROVA, 1970 [*P. polaris; OD] | Russia (Arctic Russia, Vaigach, southern island of Novaya Zemlya, western Polar and Central Urals) | USIL
+          Squamathyris MODZALEVSKAYA, 1981 [*S. glacialis; OD] | Russia (Arctic Russia, Vaigach, Dolgii Island, southern island of Novaya Zemlya) | USIL
+        Subfamily CLEIOTHYRIDINAINAE Alvarez, Rong, & Boucot, 1998
+          Cleiothyridina BUCKMAN, 1906 [*Atrypa pectinifera de C. Sowerby, 1840 in 1840-1846; validated by ICZN Opinion 1041, 1976] | cosmopolitan | UDEV-UPERM
+            = Cliothyris HALL & CLARKE, 1893
+            = Cleiothyridellina WATERHOUSE, 1978
+            = Gerankalasiella GRETCHISHNIKOVA, 1996
+            = Kjarikiella GRETCHISHNIKOVA, 1996
+          Carteridina ALVAREZ, RONG, & BOUCOT, 1998 [*Spirigera prouti Swallow, 1860; OD] | USA (Missouri, New Mexico, Texas) | MISS
+          Crinisarina COOPER & DUTRO, 1982 [*Cleiothyridina reticulata Stainbrook, 1947; OD] | North America | UDEV-MISS
+          ?Deltachania WATERHOUSE, 1971 [*D. acanthatia; OD] | Canada (northern Yukon) | MISS
+          ?Himathyris WATERHOUSE, 1986b [*Athyris gerardi Diener, 1899; OD] | India, Spit | UPERM
+          Leiothycridina GRUNT, 1980 [*L. okensis; OD] | Belgium, England, France, Russia, Tian Shan, southern China, Japan | MISS
+          Pinegathyris GRUNT, 1980 [*Terebratula royssiana von Keyserling, 1846; OD] | Kanin Peninsula, Spitsbergen, Russian Platform, Kazanian | LPERM-UPERM
+          ?Rawdonia PEOU, 1979 [*R. nasharae; OD] | Australia (New South Wales) | MISS
+        Subfamily COMELICANIINAE Merla, 1930
+          Comelicania FRECH, 1901 [*?Spirifer megalotis Stache, 1878; SD] | Italy (southern Alps), Armenia | UPERM
+            = Spitispirifer WATERHOUSE & GUPTA, 1986
+            = Allathyris WATERHOUSE & GUPTA, 1986
+          Gruntallina WATERHOUSE, 1975 [*Comelicanella triangularis Grunt, 1965; OD] | Transcaucasus | UPERM
+        Subfamily DIDYMOTHYRIDINAE Modzalevskaya, 1979
+          Didymothyris RUBEL & MODZALEVSKAYA, 1967 [*Terebratula didyma Dalman, 1828; OD] | Estonia, ?Sweden, Wenlock-Ludlow; Gotland, Latvia, Podolia, Novaya Zemlya, Vaigach, Dolgii, Kotelni, Chernova uplift, western circumpolar, northern and central Urals, western Saian, ?Yukon; Salair, Altay, Ludlow, ?Pridoli | USIL
+          Buchanathyris TALENT, 1956 [*B. westoni; OD] | Australia (Victoria, New South Wales), ?China | LDEV
+          Collarothyris MODZALEVSKAYA, 1970 [*Meristellla canalicula Veniukov, 1899; OD] | Podolia, Estonia, Latvia, Novaya Zemlya, Dolgii, Vaigach, Chernyshev uplift, Bol'shezemel'skaia Tundra, western circumpolar, northern, and central Urals | USIL
+          Dogdathyris BARANOV, 1994 [*D. horridula; OD] | eastern Siberia, Yakutsk | LDEV
+          Glassina HALL & CLARKE, 1893 [*Terebratula laeviuscula de C. Sowerby, 1839; OD] | United Kingdom, Podolia, Gotland, Novaya Zemlya, Vaigach, ?Ontario | USIL
+          Greenfieldia GRABAU in GRABAU & SHERZER, 1910 [*G. whitfieldi; OD] | USA (Ohio, Michigan), Novaya Zemlya, Vaigach, Dolgii, Bol'shezeml'ia Tundra, China (?Yunnan) | USIL
+          ?Jarovathyris HAVLICEK, 1987b [*Atrypa canalicula Barrande, 1879b; OD] | Czech Republic (central Bohemia) | USIL-LDEV
+          Leptathyris SIEHL, 1962 [*L. gryphis; OD] | Germany, Bohemia, Salair, southern Siberia, southern China, USA (Nevada, Alaska), Canada, Emsian-Givetian; ?Poland, Famennian | LDEV-UDEV
+          Pseudoprotathyris MODZALEVSKAYA, 1979 [*Protathyris infantilis Kozlowski, 1929; OD] | Russia (Podolia), Bohemia, USA (Maryland), Arctic Canada | USIL-LDEV
+          Svetlania BARANOV, 1982 [*S. rara; OD] | eastern Siberia (Yakutsk) | LDEV-MDEV
+        Subfamily HELENATHYRIDINAE Dagys, 1974
+          Helenathyris ALEKSEEVA, 1969 [*H. plana; OD] | northeastern Russia (Cherskogo Mountains) | LDEV
+          Biernatella BALINSKI, 1977 [*B. polonica; OD] | Poland, western Russia | MDEV-UDEV
+          Eobiernatella BALINSKI, 1995b [*E. rackii; OD] | Poland, western Russia | MDEV-UDEV
+          Sphaerathyris BARANOV, 1994 [*S. repentina; OD] | eastern Siberia, Yakutsk | LDEV
+        Subfamily LOCHENGINAE Ching & Yang, 1977
+          Lochengia YOH, 1929 [*L. lochengensis Ching & Yang, 1977; SD] | southern China (Guangxi), Russia (eastern Urals), Ukraine (Donetsk) | MISS-LPERM
+            = Lochengia holoensis GRABAU, 1931a (nom. nud.)
+            = Cryptospirifer lochengensis GRABAU, 1931c (nom. nud.)
+            = Hexathyris GRUNT, 1980
+          Cryptospirifer GRABAU, 1931c [*C. omeishanensis Huang, 1933; SD] | southern China, Iran, Turkey, Armenia | LPERM
+          Galeatathyris JIN, 1983 [*G. galeata; OD] | southern China | MISS
+          Titanothyris CHING & HU, 1982 [*T. subplicata; OD] | southern China | LPERM
+        Subfamily PLICATHYRIDINAE Alvarez, 1990
+          Plicathyris KHALFIN, 1946 [*Terebratula Ezquerra de Verneuil & d'Archiac, 1845; OD] | northwestern Spain, France, Belgium, Pragian-Emsian; Kuznetsk, Altay, Salair, upper Givetian-lower Frasnian | LDEV-UDEV
+          Anathyrella ALVAREZ, 1990 [*Spirifera phalaena Phillips, 1841; SD] | cosmopolitan | LDEV-UDEV
+          Anathyris VON PEETZ, 1901 [*Spirifera phalaena Phillips, 1841; SD] | cosmopolitan | LDEV-MISS
+          Hexarhytis ALVAREZ, 1990 [*H. bonarensis; OD] | Spain, France, Transcaucasus, Saudi Arabia | LDEV-MDEV
+          Sulcathyris DURKOOP, 1970 [*S. periplicata; OD] | western Afghanistan, Iran | MDEV
+        Subfamily PRADOIINAE Garcia-Alcalde, 1986
+          Pradoia BOUCOT, JOHNSON, & STATON, 1965 [*Terebratula toreno de Verneuil & d'Archiac, 1845; OD] | Spain | LDEV-MDEV
+          ?Dichozygopleura RENOUF, 1972 [*D. dichozygopleura; OD] | France | LDEV
+          Guaxa GARCIA-ALCALDE, 1986 [*G. iberica; OD] | Spain | LDEV
+          Quadriloba ALVAREZ, RONG, & BOUCOT, 1999 [*Terebratula collettii de Verneuil, 1850; OD] | northwestern Spain | LDEV
+        Subfamily SPIRIGERELLINAE Grunt, 1965
+          Spirigerella WAAGEN, 1883 [*S. derbyi; SD] | Slovakia, Croatia, Hungary, Italy, Turkey, Iran, Pakistan, Nepal, Kashmir, western Malaysia, Timor, northeastern and southern China, Western Australia, Argentina | MISS-UPERM
+            = Juxathyris LIANG, 1990
+          Composita BROWN, 1845 [*Spirifer ambiguus Sowerby, 1822 in 1821-1822; OD] | cosmopolitan | UDEV-UPERM
+            = Seminula HALL & CLARKE, 1893 (non M'Coy, 1844)
+            = Gruntathyris GRETCHISHNIKOVA, 1996
+          Cardiothyris ROBERTS, 1971 [*C. bisulcata; OD] | northwestern Australia, USA (Missouri, Illinois) | MISS
+          Densalvus CARTER, 1991 [*Athyris crassicardinalis White, 1860; OD] | USA (Iowa, Missouri) | MISS
+          Araxathyris GRUNT, 1965 [*A. protea; OD] | Transcaucasus; southern Alps, Transcaucasus, Iran, southern China (Sichuan, Shaanxi), northwestern China (Qinghai), Thailand | UPERM
+          Composita BROWN, 1845 [*Spirifer ambiguus; OD] | cosmopolitan | UDEV-UPERM
+          Iniathyris BEZNOSOVA, 1963 [*I. topkensis; OD] | Russia (Kuznetsk basin), Kazakhstan, China, USA (Iowa) | MISS
+          Janiceps FRECH, 1901 [*Spirigera peracuta Stache, 1878; SD] | Italy (southern Alps), Armenia | UPERM
+          Nordathyris GRUNT, 1977a [*N. bulkanensis; OD] | northeastern Russia (Kolyma-Omolonsk massif) | MISS
+          Planalvus CARTER, 1971 [*P. gibberosa; OD] | France, Pragian, ?lower Emsian; North America, Tournaisian-Visean | LDEV-MISS
+          Posicomta GRUNT, 1986 [*P. gundarensis; OD] | Pamir, Tajikistan, southern Thailand | UPERM
+          Pseudopentagonia BEZNOSOVA, 1963 [*P. injensis; OD] | Kazakhstan, Russia (Kuznetsk basin) | MISS
+          ?Rectambitus XU & GRANT, 1994 [*Araxathyris bisulcatus Liao, 1980; OD] | southern China (Guizhou, Shaanxi) | UPERM
+          Septospirigerella GRUNT, 1965 [*S. baissalensis; OD] | Armenia, Iran, Transcaucasus, Thailand, Upper Permian; China (Sichuan), Upper Triassic | UPERM-UTRI
+          Tongzithyris CHING, LIAO, & FANG, 1974 [*T. episulcata; OD] | southern China | UPERM
+          Tulathyris GRUNT, 1976 [*Athyris voogdi von Peetz, 1893; OD] | Russia (Moscow syncline, Donetsk basin, northern Kyrgyzstan, Kuznetsk Basin), ?Kazakhstan, ?Verkhoyansk | MISS
+          Uldziathyris GRUNT, 1977b [*U. tikhonovi; OD] | western Mongolia | MISS
+        Subfamily XENOSARIINAE Cooper & Grant, 1976
+          Xenosaria COOPER & GRANT, 1976a [*X. exotica; OD] | USA (western Texas) | LPERM
+      Family DIPLOSPIRELLIDAE Schuchert, 1894
+        Subfamily DIPLOSPIRELLINAE Schuchert, 1894
+          Diplospirella BITTNER, 1890 [*Terebratula wissmanni Munster, 1841; OD] | Alps, Sicily, Carpathians, Caucasus, southeastern Pamir | UTRI
+          ?Amphitomella BITTNER, 1890 [*Terebratula hemisphaeriodiea von Klipstein, 1845; OD] | Alps | UTRI
+          Euractinella BITTNER, 1890 [*Terebratula contraplecta Braun in Munster, 1841; OD] | southern Alps | MTRI-UTRI
+          Pexidella BITTNER, 1890 [*Spirifer strohmayeri Suess, 1855; OD] | Carpathians, Alps, Dinarides, Balkans, Caucasus, Nepal, Pamir, Anisian-Norian; USA (southeastern Alaska), ?Chile | MTRI-UTRI
+          Anisactinella BITTNER, 1890 [*Terebratula quadriplecta Munster, 1841; OD] | Dinarides, Southern Alps, Lucania, Bakony Mountains, Carpathians, northwestern China (Qinghai) | MTRI-UTRI
+        Subfamily CLAVIGERINAE Waterhouse, 1975
+          Clavigera HECTOR, 1879 [*C. bisulcata Hector in Thomson, 1913; SD] | New Caledonia, New Zealand, Chile | UTRI
+            = Hectoria TRECHMANN, 1918
+            = Hectorina FINLAY, 1927 (nom. nov. pro Hectoria)
+            = Clavigerimania MARWICK, 1946 (lapsus pro Clavigera)
+          Majkopella MOISSEIEV in DAGYS, 1962 [*Athyris worobijevi Moisseiev, 1947a; OD] | Crimea, Carpathians, Balkans, Turkey, Caucasus, ?southern China (Sichuan) | UTRI
+          Misolia VON SEIDLITZ, 1913 [*M. misolica; OD] | Indonesia, Moluccas, Timor, Oman, ?India, ?China, northwestern Australia | UTRI
+          Oxycolpella DAGYS, 1962 [*Spirigera oxycolpos Suess, 1854; OD] | Slovakia, Bavaria, southern Austria, Hungary, Romania, Turkey, Iran, Himalayas, Pamir, southern and northwestern China, New Caledonia, New Zealand, northern Chile | UTRI
+            = Dictyonathyris XU, 1978 (nom. nud.)
+          ?Anomactinella BITTNER, 1890 [*Terebratula flexuosa Munster, 1841; OD] | southern Alps | MTRI
+          ?Pentactinella BITTNER, 1890 [*Terebratula quinquecostata Munster, 1841; SD] | southern Alps, southern Italy, Slovakia, Romania | MTRI-UTRI
+        Subfamily MISOLIINAE Dagys, 1996
+          ?Stolzenburgiella BITTNER, 1903 [*S. bukowskii; OD] | Dinaric Alps, Anisian; Slovakia, Ladinian; Malaysia, Triassic | MTRI
+          ?Uncinella WAAGEN, 1883 [*U. indica; M] | Pakistan, southern Thailand, Cambodia, ?Vietnam, ?China | LPERM
+        Subfamily OCHOTATHYRIDINAE Alvarez, Rong, & Boucot, 1998
+          Ochotathyris DAGYS, 1974 [*Oxycolpella ochotica Dagys, 1965; OD] | Russia (Primorya, Siberia), USA (Arctic Alaska), Norian; northwestern China, Qinghai, ?Upper Jurassic | UTRI-?UJUR
+          Dioristella BITTNER, 1890 [*Terebratula indistincta Beyrich, 1863; SD] | southern Alps, Carpathians, Caucasus, southeastern Pamir | UTRI
+          ?Qingthyris XU & LIU, 1983 [*Q. variabilis; OD] | northwestern China (Qilian Mountains) | MTRI
+          Spirigerellina DAGYS, 1974 [*S. pygmaea; OD] | Alps, Dinarids, Carpathians, Primorya, Caucasus, Nepal, Siberia, Kazakhstan, Mongolia, southern Qilian, Chaidam, northwestern China | LTRI-UTRI
+        Subfamily TETRACTINELLINAE Grunt, 1986
+          Tetractinella BITTNER, 1890 [*Terebratulites trigonella von Schlotheim, 1820 in 1820-1823; SD] | Alps, Dinarids, Carpathians, Balkans, Caucasus, Pamir, ?China | MTRI
+      Family HYATTIDINIDAE Sheehan, 1977
+          Hyattidina SCHUCHERT, 1913 [*Hyattella Hall & Clarke, 1893 (non Lendenfeld, 1891); *Atrypa congesta Conrad, 1842; OD] | Scotland, Ireland, ?Caradoc, Ashgill; North America, United Kingdom, Ireland, Norway, Russian Platform, Siberian Platform, Ludlow | UORD-USIL
+
+    Superfamily MERISTELLOIDEA Waagen, 1883
+      Family MERISTELLIDAE Waagen, 1883
+        Meristella HALL, 1859a, p. 78 [*Atrypa laevis VANUXEM, 1842, p. 120; SD MILLER, 1889, p. 354] | Silurian (?upper Pridoli), Lower Devonian (Lochkovian)–Middle Devonian (Eifelian); northeastern USA, North America, Morocco, Mauritania, France, Belgium, Poland, Bohemia, Altay, Kazakhstan, eastern Urals, Chinese Altay, southeastern Australia, Venezuela, Spain, Germany | LSIL-MDEV
+        Arctomeristina AMSDEN, 1978, p. 33 [*A. compressa; OD] | Silurian (Wenlock); North America, ?Russia (Tuva) | LSIL
+        Charionella BILLINGS, 1861, p. 148 [*Atrypa scitula HALL, 1843, p. 171; OD] | Lower Devonian (lower Emsian)–Upper Devonian (lower Frasnian); North America | LDEV-UDEV
+        Charionoides BOUCOT, JOHNSON, & STATON, 1964, p. 817 [*Meristella doris HALL, 1860a, p. 84; OD] | Lower Devonian (Emsian)–Middle Devonian (Eifelian); eastern North America | LDEV-MDEV
+        Hindella DAVIDSON, 1882, p. 130 [*Athyris umbonata BILLINGS, 1862, p. 144; OD] [=Cryptothyrella COOPER, 1942, p. 233] | Upper Ordovician (Ashgill)–Silurian (Llandovery); North America, Peru, Venezuela, Argentina, Sweden, Norway, Estonia, United Kingdom, Ireland, Czech Republic, southern Alps, Sardinia, Turkey, Altay-Sayan, Kazakhstan, Tuva, ?Thailand, southern and western China (Tibet), Burma | UORD-LSIL
+          = Cryptothyrella COOPER, 1942 (j.s.s.)
+        ?Imdentistella GRUNT, 1991, p. 68 [*I. khabatagaica; OD] | Lower Devonian (lower Emsian); Russia (Mongolia), eastern Gobi | LDEV
+        ?Meristelloides ISAACSON, 1977, p. 175 [*Meristella riskowskyi ULRICH, 1893, p. 64; OD] | Lower Devonian (Pragian)–Middle Devonian (Eifelian); Bolivia, Brazil, Peru, Argentina, South Africa | LDEV-MDEV
+        Meristina HALL, 1867b, p. 299 [*Meristella maria HALL, 1863a, p. 212; SD DALL, 1877, p. 49] [=Whitfieldia DAVIDSON, 1881b, p. 156] | Silurian (Llandovery)–Middle Devonian (Givetian); New Brunswick, Nova Scotia, Venezuela, Ireland, Novaya Zemlya, Siberia, North America, Podolia, Estonia, Lithuania, Bohemia, Gotland, United Kingdom, southeastern Australia, northern China (Xinjiang, Heilongjiang) | LSIL-MDEV
+          = Whitfieldia DAVIDSON, 1881b (j.s.s.)
+        Pentagonia COZZENS, 1846, p. 158 [*P. peersii; OD] [=Gonicoelia HALL, 1861, p. 101] | Lower Devonian (Emsian)–Middle Devonian; North America, Colombia, Venezuela | LDEV-MDEV
+        ?Plancella AMSDEN, 1985, p. 11 [*P. turkiensis; OD] | Lower Devonian (Pragian); USA (Oklahoma) | LDEV
+        ?Pseudomeristina GRUNT, 1991, p. 65 [*P. rozmanae; OD] | Silurian (Wenlock–Ludlow); Russia (Mongolia, Altay region) | LSIL
+      Subfamily WHITFIELDELLINAE Alvarez, Rong, & Boucot, 1998
+        Whitfieldella HALL & CLARKE, 1893, p. 58 [*Atrypa nitida HALL, 1843, table 14.5; OD] | Upper Ordovician (Ashgill)–Silurian, Lower Devonian (?Lochkovian); North America, Europe, Siberia, southern China | UORD-LDEV
+        Kozlenia HAVLICEK, 1987b, p. 241 [*K. kozlensis; OD] | Silurian (upper Llandovery–Wenlock); Bohemia | LSIL
+        Koigia MODZALEVSKAYA, 1985, p. 37 [*Hindella extenuata RUBEL, 1970, p. 48; OD] | Silurian (Llandovery); Estonia, eastern Siberia | LSIL
+        Tschatkalia NIKIFOROVA, 1964, p. 85 [*T. unica; OD] | Silurian (Llandovery–Wenlock); Fergana, Kazakhstan | LSIL
+      Family MERISTIDAE Hall & Clarke, 1895
+        Merista SUESS, 1851, p. 150 [*Terebratula herculea BARRANDE, 1847, p. 26; SD SUESS in DAVIDSON, 1856, p. 85] | Silurian (Llandovery)–Middle Devonian; southern Siberia, Altay, Canada, Venezuela, Mexico, USA, Bohemia, Poland, Kazakhstan, Inner Mongolia, Germany, Burma | LSIL-MDEV
+        Amerista BOUCOT & BLODGETT in BOUCOT, BLODGETT, & STEWART, 1997, p. 287 [*A. carillobravoi; OD] | Silurian (upper Wenlock–Ludlow); northeastern Mexico (Sierra Madre Oriental) | LSIL
+        Aulidospira WILLIAMS, 1962, p. 252 [*A. trippi; OD] | Middle Devonian; Eifel, Germany | MDEV
+        Camarium HALL, 1859, p. 42 [*C. typum; OD] | Lower Devonian (Lochkovian)–Upper Carboniferous (upper Bashkirian, ?lower Moscovian); USA, Germany, Bohemia, Gorno-Altay, Australia, Canadian Arctic Archipelago | LDEV-PENN
+          = Dicamara HALL & CLARKE, 1893 (j.s.s.)
+        Dicamaropsis AMSDEN, 1968, p. 85 [*Merista parva THOMAS, 1926, p. 400; OD] | Silurian (upper Llandovery–Wenlock); southwestern China (Sichuan), southern and central USA | LSIL
+        Tyrganiella KULKOV in ALEKSEEVA & others, 1970, p. 167 [*T. repentina; OD] [=?Parameristia SU, 1976, p. 206] | Lower Devonian (Lochkovian)–Upper Devonian (?Pragian); Russia (western Siberia, northeastern Salair), northern China | LDEV-UDEV
+      Subfamily CAMAROPHORELLINAE Schuchert, 1929
+        Camarophorella HALL & CLARKE, 1893, p. 215 [*Pentamerus lenticularis WHITE & WHITFIELD, 1862, p. 295; OD] | Upper Devonian (Famennian)–Lower Carboniferous (Tournaisian); North America | UDEV-MISS
+        Camarospira HALL & CLARKE, 1893, p. 82 [*Camarophoria eucharis HALL, 1867b, p. 368; OD] | Middle Devonian; North America, ?China | MDEV
+        ?Liocoelia SCHUCHERT & COOPER, 1931, p. 248 [*Pentamerus proximus BARRANDE, 1879b, p. 96; OD] | Silurian (upper Llandovery–Ludlow); Bohemia | LSIL
+      Subfamily ROWLEYELLINAE Alvarez & Brunton, 1995
+        Rowleyella WELLER, 1911, p. 447 [*Terebratula fabulites ROWLEY, 1900, p. 265; OD] | Lower Carboniferous (upper Tournaisian); USA (eastern Missouri and eastern Oklahoma) | MISS
+      Family TRIATHYRIDIDAE Alvarez, Rong, & Boucot, 1998
+        Triathyris BOUCOT, JOHNSON, & STATON, 1965, p. 663 [*Terebratula mucronata DE VERNEUIL, 1850, p. 171; OD] | Lower Devonian (upper Emsian); Spain, ?France, ?Morocco | LDEV
+        Septathyris BOUCOT, JOHNSON, & STATON, 1964, p. 819 [*Athyris aliena DREVERMANN, 1904, p. 258; OD] | Lower Devonian (Pragian–Emsian); Germany, Spain, northern Africa | LDEV
+    Superfamily NUCLEOSPIROIDEA Davidson, 1881
+      Family NUCLEOSPIRIDAE Davidson, 1881
+        Nucleospira HALL in DAVIDSON, 1858, p. 412 [*Spirifer ventricosus HALL, 1857a, p. 57; M] | Silurian (Llandovery)–Lower Permian (Sakmarian); cosmopolitan | LSIL-LPERM
+    Superfamily RETZIELLOIDEA Rzhonsnitskaya, 1974
+      Family RETZIELLIDAE Rzhonsnitskaya, 1974
+        Retziella NIKIFOROVA, 1937a, p. 57 [*Retzsia (Retziella) weberi; OD] [=Protathyrisina CHU, 1974, p. 457] | Silurian (upper Wenlock)–Lower Devonian (lower Emsian); China, northern Vietnam, southwestern Tian Shan, ?North Korea, ?central Pamir, ?Afghanistan, ?eastern Iran, ?New Zealand | LSIL-LDEV
+          = Protathyrisina CHU, 1974 (synonym)
+          = Stegospira FU, 1982 (synonym)
+          = Gannania FU, 1982 (synonym)
+        ?Argorhynx HAVLICEK, 1992, p. 110 [*Monticola prokopensis HAVLICEK, 1956, p. 541; OD] | Lower Devonian (upper Pragian); Prague basin (Bohemia) | LDEV
+        Gissarina MENAKOVA & NIKIFOROVA, 1986, p. 71 [*Parazyga ? argenis NIKIFOROVA, 1949, p. 19; OD] | Silurian (Pridoli); Tajikistan | LSIL
+        Metathyrisina RONG & YANG, 1981, p. 246 [*M. merita; OD] | Silurian (upper Aeronian); southwestern China (northeastern Guizhou) | LSIL
+        Molongia MITCHELL, 1921, p. 546 [*M. elegans; OD] | Silurian (Wenlock)–Lower Devonian (Lochkovian); Australia (New South Wales, Victoria, Queensland) | LSIL-LDEV
+        Qinlingia RONG, ZHANG, & CHEN, 1987, p. 71 [*Q. bisulcata; OD] | Lower Devonian (lower Lochkovian); China (northwestern Sichuan) | LDEV
+        ?Ufonicoelia HAVLICEK, 1992, p. 112 [*Monticola torleyi HAVLICEK, 1956, p. 576; OD] | Lower Devonian (upper Pragian–lower Emsian); Prague basin (Bohemia) | LDEV
+        ?Xerxespirifer COCKS, 1979, p. 40 [*X. iranicus; OD] | Silurian (?Wenlock); Iran | LSIL
+    Superfamily and Family UNCERTAIN
+      Apheathyris FU, 1982, p. 172 [*A. guyuanensis; OD] | Upper Ordovician (lower Caradoc); northern China (Shijie-zigou, Guyuan, Ningxia) | UORD
+  Suborder RETZIIDINA Boucot, Johnson, & Staton, 1964
+    Superfamily RETZIOIDEA Waagen, 1883
+      Family RETZIIDAE Waagen, 1883
+        Retzia KING, 1850, p. 137 [*Terebratula adrieni DE VERNEUIL & D'ARCHIAC, 1845, p. 471; OD] [=Trigeria BAYLE, 1878, pl. 13, obj.] | upper Silurian (?Ludlow), Lower Devonian–Lower Permian; North America, Belgium, Kazakhstan, Kuznetsk basin, Siberia, Verkhoyansk, northeastern and southern China, Spain, France, Germany | USIL-LPERM
+          = Trigeria BAYLE, 1878 (obj. synonym)
+        Acambona WHITE, 1865, p. 27 [*A. prima; OD] | Lower Carboniferous (upper Tournaisian–lower Visean); ?Belgium, ?Kazakhstan, ?Mongolia | MISS
+        Eumetria HALL, 1863b, p. 59 [*Retzia vera HALL, 1858a, p. 704; SD WAAGEN, 1883, p. 487] | Lower Carboniferous–Lower Permian; North America, Belgium, Kazakhstan, Kuznetsk basin, Siberia, Verkhoyansk, northeastern and southern China, ?Australia (New South Wales), Spitsbergen, USA (Maryland) | MISS-LPERM
+      Family NEORETZIIDAE Dagys, 1972
+        Neoretzia DAGYS, 1963, p. 130 [*Retzia superbescens BITTNER, 1890, p. 281; OD] [=Waldhemia superba SUESS in DAVIDSON, 1856, p. 48] | Middle Triassic (Anisian)–Upper Triassic (upper Norian); Slovakia, Austria, Hungary, Romania, Crimea, Iran, Caucasus, Himalayas, Pamir, southern and western China (Tibet) | MTRI-UTRI
+        Cassianospira DAGYS, 1972, p. 103 [*Retzia loczyi BITTNER, 1900, p. 29; OD] | Upper Triassic (Carnian); Italy, Hungary | UTRI
+        Hungarispira DAGYS, 1972, p. 102 [*Retzia aracanga BITTNER, 1900, p. 30; OD] | Upper Triassic (Carnian); Italy, Hungary | UTRI
+       Subfamily HUSTEDIINAE Grunt, 1986
+        Hustedia HALL & CLARKE, 1893, p. 120 [*Terebratula mormoni MARCOU, 1858, p. 51; OD] | Carboniferous (Tournaisian)–Permian (Tatarian); cosmopolitan | MISS-UPERM
+        Hustedtiella DAGYS, 1972, p. 100 [*H. planicosta; OD] | Lower Triassic; Russia (Primorya), Romania | LTRI
+        Schwagerispira DAGYS, 1972, p. 101 [*Retzia schwageri BITTNER, 1890, p. 21; OD] | Middle Triassic (Anisian)–Upper Triassic (Carnian); Slovakia, Hungary, Bulgaria, Romania, Primorya, China, Qinghai | MTRI-UTRI
+        Thedusia COOPER & GRANT, 1976b, p. 2806 [*Hustedia meekana trigonalis GIRTY, 1909, p. 396; OD] | Upper Carboniferous–Upper Permian (Capitanian); southern China (Guangxi), USA (western Texas) | PENN-UPERM
+       Subfamily PLECTOSPIRINAE Alvarez, Rong, & Boucot, 1998
+        Plectospira COOPER, 1942, p. 228 [*Terebratula ferita VON BUCH, 1835, p. 76; OD] | Silurian (upper Ludlow)–Middle Devonian (Givetian), ?Lower Carboniferous; Europe, Altay, Kuznetsk, China, Australia, North America, Verkhoyansk, Mongolia | USIL-MISS
+        Cooperispira ALVAREZ, RONG, & BOUCOT, 1998, p. 847 [*Terebratula subferita DE VERNEUIL, 1850, p. 174; OD] | Lower Devonian (Emsian); northwestern Spain | LDEV
+    Superfamily MONGOLOSPIROIDEA Alekseeva, 1981
+      Family MONGOLOSPIRIDAE Alekseeva, 1981
+        Mongolospira ALEKSEEVA, 1977, p. 63 [*M. turgensis; OD] [=Mongolispina ALEKSEEVA, 1981, p. 108, incorrect subsequent spelling] | Lower Devonian; northwestern Mongolia | LDEV
+    Superfamily RHYNCHOSPIRINOIDEA Schuchert, 1929
+      Family RHYNCHOSPIRINIDAE Schuchert, 1929
+        Rhynchospirina SCHUCHERT & LEVENE, 1929b, p. 121 [*Waldheimia formosa HALL, 1857a, p. 88; OD] [=Rhyncospira HALL, 1859b, p. 213, nom. nud.] | Silurian (Wenlock)–Upper Devonian (Frasnian); North America, Venezuela, Podolia, southwestern Urals, Mongolia, Gorno-Altay, western Qinling, Tibet | LSIL-UDEV
+          = Rhyncospira HALL, 1859b (nom. nud.)
+        Homoeospira HALL & CLARKE, 1893, p. 112 [*Rhynchospira evax HALL, 1863a, p. 213; SD HALL & CLARKE, 1894, p. 986] | Silurian (Wenlock)–Lower Devonian (Lochkovian); North America, ?Argentina, United Kingdom, Gotland, Bohemia, Estonia, Ukraine, Vaigach, ?China, Poland, Belgium | LSIL-LDEV
+        Homoeospirella AMSDEN, 1968, p. 90 [*H. costatula; OD] | Silurian (lower Llandovery–Wenlock), Lower Devonian (?Pragian); Wales, USA (Oklahoma, Arkansas, southern Oklahoma) | LSIL-LDEV
+        Leptospira BOUCOT, JOHNSON, & STATON, 1964, p. 814 [*Trematospira costata HALL, 1859a, p. 27; OD] | Lower Devonian (Lochkovian)–Upper Devonian (lower Frasnian); central and northeastern USA | LDEV-UDEV
+        Pseudoparazyga JOHNSON, 1970b, p. 181 [*Trematospira cooperi MERRIAM, 1940, p. 82; OD] | Lower Devonian; USA (Nevada) | LDEV
+        Trematospira HALL, 1859a, p. 27 [*Spirifer multistriatus HALL, 1857a, p. 59; SD HALL & CLARKE, 1893, p. 126; validated ICZN Opinion 1900, 1998b, p. 133] | Lower Devonian (Lochkovian–Pragian); North America | LDEV
+      Family PARAZYGIDAE Alvarez, Rong, & Boucot, 1998
+        Parazyga HALL & CLARKE, 1893, p. 127 [*Atrypa hirsuta HALL, 1857a, p. 168; SD HALL & CLARKE, 1894, p. 995] | Middle Devonian (Givetian); North America | MDEV
+  Suborder KONINCKINIDINA Harper, 1993
+    Superfamily KONINCKINOIDEA Davidson, 1853
+      Family KONINCKINIDAE Davidson, 1853
+        Koninckina SUESS in DAVIDSON, 1853b, p. 92 [*Producta leonhardi WISSMANN, 1841, p. 68; OD] [=Koninckia SUESS in WOODWARD, 1854, p. 231, nom. null.] | Upper Triassic; Italy (Dolomites), Dinaric Alps, Carpathians, Caucasus, Pamirs, Laos, China, Indonesia | UTRI
+        Amphiclina LAUBE, 1866, p. 28 [*Producta dubia MUNSTER, 1841, p. 68; OD] | Upper Triassic; Dolomites, Carpathians, Dinaric Alps, Balkans, Caucasus, Pamirs, Himalayas, Primorye region | UTRI
+        Amphiclinodonta BITTNER, 1888, p. 288 [*A. liasina; OD] | Upper Triassic–Lower Jurassic; Dolomites, Carpathians, Dinaric Alps, Austria, Pamirs | UTRI-LJUR
+        Carinokoninckina JIN & FANG, 1977, p. 59 [*Koninckina expansa BITTNER, 1890, p. 132; OD] [=Cienokoninckina XU, 1978, p. 283] | Upper Triassic; China | UTRI
+        Koninckella MUNIER-CHALMAS, 1880, p. 280 [*Leptaena liasiana BOUCHARD in DAVIDSON & MORRIS, 1847, p. 250; OD] | Middle Triassic–Lower Jurassic; France, Austria, Italy (Dolomites) | MTRI-LJUR
+        Koninckodonta BITTNER, 1893, p. 137 [*K. fuggeri; OD] | Lower Jurassic; Austria, France | LJUR
+        Lamellokoninckina JIN & FANG, 1977, p. 57 [*L. heqingensis; OD] | Upper Triassic; China | UTRI
+        Septamphiclina JIN & FANG, 1977, p. 57 [*S. qinhaiensis; OD] | Upper Triassic; China | UTRI
+  UNCERTAIN
+    Superfamily DAYIOIDEA Waagen, 1883
+      Family DAYIIDAE Waagen, 1883
+        Dayia DAVIDSON, 1881c [*Terebratula navicula J. DE C. SOWERBY, 1839; OD] | Ireland, United Kingdom, Baltic Basin, Ukraine, ?western slopes Urals | USIL-LDEV
+          = Daya KOKEN, 1896 (incorrect subsequent spelling)
+        Protozeuga TWENHOFEL in SAVAGE, 1913a [*Waldheimia? mawei DAVIDSON, 1881b; OD] | United Kingdom, Baltic Basin | USIL
+    Superfamily ANOPLOTHECOIDEA Schuchert, 1894
+      Family ANOPLOTHECIDAE Schuchert, 1894
+        Subfamily ANOPLOTHECINAE Schuchert, 1894
+          Anoplotheca SANDBERGER, 1855 [*Terebratula venusta SCHNUR, 1853; OD] | North America, Venezuela, Bolivia, Gotland, Kazakhstan, Australia | USIL-MDEV
+            = Hoplotheca BUCKEY, 1878 (j.s.s.)
+          Bifida DAVIDSON, 1882 [*Terebratula lepida D'ARCHIAC & DE VERNEUIL, 1842; OD] | Eurasia, North America | LDEV-MDEV
+            = Dahlispira HAVLICEK, 1998 (j.s.s.)
+          ?Butkovia BARANOV, 1987 [*B. eximia; OD] | northeastern Siberia (Kolyma) | LDEV
+          ?Dnestrina NIKIFOROVA & MODZALEVSKAYA, 1968 [*D. gutta; OD] | Podolia, Moldavia, western Europe | USIL
+          ?Coelospirella SU, 1976 [*C. dongbeiensis; OD] | Inner Mongolia, northern China, Kazakhstan, eastern Russia | USIL-LDEV
+        Subfamily COELOSPIRINAE Hall & Clarke, 1895
+          Coelospira HALL, 1863b [*Leptocoelia concava HALL, 1857a; OD] | North America, Venezuela, Argentina, Turkey, northern China, Australia | LDEV-MDEV
+          Coelospirina HAVLICEK, 1956 [*C. modica; OD] | Czech Republic, Germany, Gorno-Altay | LDEV
+          Navispira AMSDEN, 1983b [*Anoplotheca (Coelospira) saffordi FOERSTE, 1903; OD] | North America, Venezuela, Bolivia, Gotland, Kazakhstan, Australia | USIL-LDEV
+          Neocoelia HALL, 1894 [*Leptocoelia hemisphaerica HALL, 1857a; OD] | eastern North America | LDEV
+      Family KAYSERIIDAE Boucot, Johnson, & Staton, 1964
+        Kayseria DAVIDSON, 1882 [*Orthis lens PHILLIPS, 1841; OD] | Eurasia | MDEV
+      Family UNCERTAIN
+        ?Neocoelia MCKELLAR, 1966 [*N. boucoti; OD] | Australia (Queensland) | LDEV-MDEV
+    Superfamily UNCITOIDEA d'Orbigny, 1847
+      Family UNCITIDAE d'Orbigny, 1847
+        Uncites DEFRANCE in DE BLAINVILLE, 1825 [*Terebratulites Gryphus VON SCHLOTHEIM, 1820; OD] | Eurasia, western Europe, China, Vietnam | MDEV
+          U. (Uncites) | Eurasia, China, ?North America | MDEV
+          U. (Winterfeldia) SPRIESTERSBACH, 1942 [*U. paulinae WINTERFELD, 1895; OD] | western Europe | MDEV
+  Order, Suborder, and Family UNCERTAIN
+    Weibeia FU, 1982 [*W. spiriferoides; OD] | northern China (Shaanxi Province) | UORD
