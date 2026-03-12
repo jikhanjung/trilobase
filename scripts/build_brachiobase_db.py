@@ -580,6 +580,80 @@ def _build_queries():
          "FROM classification_edge_cache\n"
          "WHERE profile_id = :profile_id",
          '{"profile_id": "integer"}'),
+
+        # --- Profile diff ---
+        ("profile_diff", "Compare edges between two classification profiles",
+         "SELECT\n"
+         "    COALESCE(a.child_id, b.child_id) AS taxon_id,\n"
+         "    t.name AS taxon_name,\n"
+         "    t.rank AS taxon_rank,\n"
+         "    pa.name AS parent_a,\n"
+         "    pb.name AS parent_b,\n"
+         "    CASE\n"
+         "        WHEN b.child_id IS NULL THEN 'removed'\n"
+         "        WHEN a.child_id IS NULL THEN 'added'\n"
+         "        WHEN a.parent_id != b.parent_id THEN 'moved'\n"
+         "    END AS diff_status\n"
+         "FROM classification_edge_cache a\n"
+         "LEFT JOIN classification_edge_cache b\n"
+         "    ON a.child_id = b.child_id AND b.profile_id = :compare_profile_id\n"
+         "LEFT JOIN taxon t ON t.id = COALESCE(a.child_id, b.child_id)\n"
+         "LEFT JOIN taxon pa ON pa.id = a.parent_id\n"
+         "LEFT JOIN taxon pb ON pb.id = b.parent_id\n"
+         "WHERE a.profile_id = :profile_id\n"
+         "    AND (b.child_id IS NULL OR a.parent_id != b.parent_id)\n"
+         "\n"
+         "UNION ALL\n"
+         "\n"
+         "SELECT\n"
+         "    b.child_id AS taxon_id,\n"
+         "    t.name AS taxon_name,\n"
+         "    t.rank AS taxon_rank,\n"
+         "    NULL AS parent_a,\n"
+         "    pb.name AS parent_b,\n"
+         "    'added' AS diff_status\n"
+         "FROM classification_edge_cache b\n"
+         "LEFT JOIN classification_edge_cache a\n"
+         "    ON b.child_id = a.child_id AND a.profile_id = :profile_id\n"
+         "LEFT JOIN taxon t ON t.id = b.child_id\n"
+         "LEFT JOIN taxon pb ON pb.id = b.parent_id\n"
+         "WHERE b.profile_id = :compare_profile_id\n"
+         "    AND a.child_id IS NULL\n"
+         "\n"
+         "ORDER BY diff_status, taxon_rank, taxon_name",
+         '{"profile_id": "integer", "compare_profile_id": "integer"}'),
+
+        # --- Profile diff edges (for Diff Tree rendering) ---
+        ("profile_diff_edges", "Diff edges: base profile structure with change status vs compare",
+         "SELECT\n"
+         "    a.child_id,\n"
+         "    a.parent_id,\n"
+         "    a.parent_id AS parent_id_a,\n"
+         "    b.parent_id AS parent_id_b,\n"
+         "    CASE\n"
+         "        WHEN b.child_id IS NULL THEN 'removed'\n"
+         "        WHEN a.parent_id != b.parent_id THEN 'moved'\n"
+         "        ELSE 'same'\n"
+         "    END AS diff_status\n"
+         "FROM classification_edge_cache a\n"
+         "LEFT JOIN classification_edge_cache b\n"
+         "    ON a.child_id = b.child_id AND b.profile_id = :compare_profile_id\n"
+         "WHERE a.profile_id = :profile_id\n"
+         "\n"
+         "UNION ALL\n"
+         "\n"
+         "SELECT\n"
+         "    b.child_id,\n"
+         "    b.parent_id,\n"
+         "    NULL AS parent_id_a,\n"
+         "    b.parent_id AS parent_id_b,\n"
+         "    'added' AS diff_status\n"
+         "FROM classification_edge_cache b\n"
+         "LEFT JOIN classification_edge_cache a\n"
+         "    ON b.child_id = a.child_id AND a.profile_id = :profile_id\n"
+         "WHERE b.profile_id = :compare_profile_id\n"
+         "    AND a.child_id IS NULL",
+         '{"profile_id": "integer", "compare_profile_id": "integer"}'),
     ]
 
 
@@ -681,12 +755,166 @@ def _build_manifest():
                 "default_sort": {"key": "authors", "direction": "asc"},
                 "searchable": True,
             },
+            # === Tree Chart ===
+            "tree_chart": {
+                "type": "hierarchy",
+                "display": "tree_chart",
+                "title": "Tree",
+                "description": "Brachiopod taxonomy tree — radial or rectangular layout",
+                "icon": "bi-diagram-3",
+                "source_query": "radial_tree_nodes",
+                "hierarchy_options": {
+                    "id_key": "id",
+                    "parent_key": "parent_id",
+                    "label_key": "name",
+                    "rank_key": "rank",
+                },
+                "tree_chart_options": {
+                    "edge_query": "radial_tree_edges",
+                    "edge_params": {"profile_id": "$profile_id"},
+                    "color_key": "rank",
+                    "leaf_rank": "Genus",
+                    "on_node_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
+                    "rank_radius": {
+                        "_root": 0,
+                        "Phylum": 0.03,
+                        "Subphylum": 0.06,
+                        "Class": 0.10,
+                        "Order": 0.18,
+                        "Suborder": 0.28,
+                        "Superfamily": 0.40,
+                        "Family": 0.54,
+                        "Subfamily": 0.70,
+                        "Genus": 1.0,
+                    },
+                },
+            },
+            # === Profile Comparison (compound view) ===
+            "profile_comparison": {
+                "type": "compound",
+                "title": "Comparison",
+                "icon": "bi-arrow-left-right",
+                "controls": [
+                    {
+                        "type": "select",
+                        "param": "base_profile_id",
+                        "label": "From",
+                        "source_query": "classification_profiles_selector",
+                        "value_key": "id",
+                        "label_key": "name",
+                        "default": 1,
+                    },
+                    {
+                        "type": "select",
+                        "param": "compare_profile_id",
+                        "label": "To",
+                        "source_query": "classification_profiles_selector",
+                        "value_key": "id",
+                        "label_key": "name",
+                        "default": 2,
+                    },
+                ],
+                "default_sub_view": "diff_table",
+                "sub_views": {
+                    "diff_table": {
+                        "title": "Diff Table",
+                        "display": "table",
+                        "description": "Differences between two classification profiles",
+                        "source_query": "profile_diff",
+                        "searchable": True,
+                        "columns": [
+                            {"key": "taxon_name", "label": "Taxon", "sortable": True, "searchable": True, "italic": True},
+                            {"key": "taxon_rank", "label": "Rank", "sortable": True, "searchable": True},
+                            {"key": "parent_a", "label": "From Parent", "sortable": True, "searchable": True},
+                            {"key": "parent_b", "label": "To Parent", "sortable": True, "searchable": True},
+                            {"key": "diff_status", "label": "Status", "sortable": True, "searchable": True},
+                        ],
+                        "default_sort": {"key": "diff_status", "direction": "asc"},
+                        "row_color_key": "diff_status",
+                        "row_color_map": {
+                            "moved": "warning",
+                            "added": "success",
+                            "removed": "danger",
+                        },
+                        "on_row_click": {"detail_view": "taxon_detail_view", "id_key": "taxon_id"},
+                    },
+                    "diff_tree": {
+                        "title": "Diff Tree",
+                        "display": "tree_chart",
+                        "description": "Single merged tree with diff color coding",
+                        "source_query": "radial_tree_nodes",
+                        "hierarchy_options": {
+                            "id_key": "id",
+                            "parent_key": "parent_id",
+                            "label_key": "name",
+                            "rank_key": "rank",
+                        },
+                        "tree_chart_options": {
+                            "source_view": "tree_chart",
+                            "rank_radius": {
+                                "_root": 0,
+                                "Class": 0.06,
+                                "Order": 0.14,
+                                "Suborder": 0.24,
+                                "Superfamily": 0.36,
+                                "Family": 0.50,
+                                "Subfamily": 0.66,
+                                "Genus": 1.0,
+                            },
+                            "diff_mode": {
+                                "edge_query": "profile_diff_edges",
+                                "edge_params": {
+                                    "profile_id": "$base_profile_id",
+                                    "compare_profile_id": "$compare_profile_id",
+                                },
+                                "colors": {
+                                    "same": "#adb5bd",
+                                    "moved": "#fd7e14",
+                                    "added": "#198754",
+                                    "removed": "#dc3545",
+                                },
+                                "show_ghost_edges": False,
+                            },
+                        },
+                    },
+                    "side_by_side": {
+                        "title": "Side-by-Side",
+                        "display": "side_by_side",
+                        "description": "Two tree charts side by side for visual comparison",
+                        "source_query": "radial_tree_nodes",
+                        "hierarchy_options": {
+                            "id_key": "id",
+                            "parent_key": "parent_id",
+                            "label_key": "name",
+                            "rank_key": "rank",
+                        },
+                        "tree_chart_options": {
+                            "source_view": "tree_chart",
+                        },
+                    },
+                    "morph": {
+                        "title": "Animation",
+                        "display": "tree_chart_morph",
+                        "description": "Animated transition between two classification trees",
+                        "source_query": "radial_tree_nodes",
+                        "hierarchy_options": {
+                            "id_key": "id",
+                            "parent_key": "parent_id",
+                            "label_key": "name",
+                            "rank_key": "rank",
+                        },
+                        "tree_chart_options": {
+                            "source_view": "tree_chart",
+                        },
+                    },
+                },
+            },
             # === Detail views ===
             "taxon_detail_view": {
                 "type": "detail",
                 "title": "Taxon Detail",
                 "source_query": "taxon_detail",
-                "id_param": "taxon_id",
+                "source_param": "taxon_id",
                 "title_key": "name",
                 "subtitle_template": "{rank} — {author}, {year}",
                 "sections": [
