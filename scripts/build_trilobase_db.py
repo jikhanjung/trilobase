@@ -29,7 +29,7 @@ from pathlib import Path
 
 from db_path import find_canonical_db
 
-ASSERTION_VERSION = "0.3.0"
+ASSERTION_VERSION = "0.3.1"
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES = ROOT / "data" / "sources"
@@ -1490,6 +1490,110 @@ def _build_queries():
          '{"profile_id": "integer", "compare_profile_id": "integer"}'),
 
         # --- Profile diff edges (for Diff Tree rendering) ---
+        # --- P87: Timeline ---
+        ("timeline_geologic_periods", "Geologic time periods for timeline axis",
+         "SELECT code AS id, name, start_mya AS sort_order\n"
+         "FROM pc.temporal_ranges\n"
+         "WHERE start_mya IS NOT NULL\n"
+         "ORDER BY start_mya DESC",
+         None),
+
+        ("timeline_publication_years", "Distinct publication years for timeline axis",
+         "SELECT DISTINCT r.year AS year, r.year AS label\n"
+         "FROM reference r\n"
+         "JOIN assertion a ON a.reference_id = r.id\n"
+         "WHERE r.year IS NOT NULL\n"
+         "ORDER BY r.year",
+         None),
+
+        ("taxonomy_tree_by_geologic", "Taxa filtered by geologic time period (cumulative)",
+         "SELECT t.id, t.name, t.rank, t.author, t.year, t.temporal_code, t.is_valid\n"
+         "FROM taxon t\n"
+         "WHERE t.id IN (\n"
+         "    SELECT DISTINCT e.child_id FROM classification_edge_cache e WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
+         "    UNION\n"
+         "    SELECT DISTINCT e.parent_id FROM classification_edge_cache e WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id IS NOT NULL\n"
+         ")\n"
+         "AND (\n"
+         "    :timeline_value IS NULL\n"
+         "    OR t.temporal_code IN (\n"
+         "        SELECT tr.code FROM pc.temporal_ranges tr\n"
+         "        WHERE tr.start_mya >= (\n"
+         "            SELECT tr2.start_mya FROM pc.temporal_ranges tr2\n"
+         "            WHERE tr2.code = :timeline_value\n"
+         "        )\n"
+         "    )\n"
+         "    OR t.rank != 'Genus'\n"
+         ")\n"
+         "ORDER BY t.id",
+         '{"profile_id": "integer", "timeline_value": "string"}'),
+
+        ("taxonomy_tree_by_pubyear", "Taxa filtered by publication year (cumulative)",
+         "SELECT t.id, t.name, t.rank, t.author, t.year, t.temporal_code, t.is_valid\n"
+         "FROM taxon t\n"
+         "WHERE t.id IN (\n"
+         "    SELECT DISTINCT e.child_id FROM classification_edge_cache e WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
+         "    UNION\n"
+         "    SELECT DISTINCT e.parent_id FROM classification_edge_cache e WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id IS NOT NULL\n"
+         ")\n"
+         "AND (\n"
+         "    t.id IN (\n"
+         "        SELECT DISTINCT a.subject_taxon_id\n"
+         "        FROM assertion a\n"
+         "        JOIN reference r ON a.reference_id = r.id\n"
+         "        WHERE a.predicate = 'PLACED_IN'\n"
+         "        AND r.year <= :timeline_value\n"
+         "    )\n"
+         "    OR t.rank != 'Genus'\n"
+         ")\n"
+         "ORDER BY t.id",
+         '{"profile_id": "integer", "timeline_value": "integer"}'),
+
+        ("tree_edges_by_geologic", "Edges filtered by geologic time period",
+         "SELECT e.child_id, e.parent_id\n"
+         "FROM classification_edge_cache e\n"
+         "JOIN taxon t ON t.id = e.child_id\n"
+         "WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
+         "AND (\n"
+         "    :timeline_value IS NULL\n"
+         "    OR t.temporal_code IN (\n"
+         "        SELECT tr.code FROM pc.temporal_ranges tr\n"
+         "        WHERE tr.start_mya >= (\n"
+         "            SELECT tr2.start_mya FROM pc.temporal_ranges tr2\n"
+         "            WHERE tr2.code = :timeline_value\n"
+         "        )\n"
+         "    )\n"
+         "    OR t.rank != 'Genus'\n"
+         ")\n"
+         "AND e.parent_id IN (\n"
+         "    SELECT DISTINCT e2.child_id FROM classification_edge_cache e2 WHERE e2.profile_id = COALESCE(:profile_id, 1)\n"
+         "    UNION\n"
+         "    SELECT DISTINCT e2.parent_id FROM classification_edge_cache e2 WHERE e2.profile_id = COALESCE(:profile_id, 1) AND e2.parent_id IS NOT NULL\n"
+         ")",
+         '{"profile_id": "integer", "timeline_value": "string"}'),
+
+        ("tree_edges_by_pubyear", "Edges filtered by publication year",
+         "SELECT e.child_id, e.parent_id\n"
+         "FROM classification_edge_cache e\n"
+         "JOIN taxon t ON t.id = e.child_id\n"
+         "WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
+         "AND (\n"
+         "    t.id IN (\n"
+         "        SELECT DISTINCT a.subject_taxon_id\n"
+         "        FROM assertion a\n"
+         "        JOIN reference r ON a.reference_id = r.id\n"
+         "        WHERE a.predicate = 'PLACED_IN'\n"
+         "        AND r.year <= :timeline_value\n"
+         "    )\n"
+         "    OR t.rank != 'Genus'\n"
+         ")\n"
+         "AND e.parent_id IN (\n"
+         "    SELECT DISTINCT e2.child_id FROM classification_edge_cache e2 WHERE e2.profile_id = COALESCE(:profile_id, 1)\n"
+         "    UNION\n"
+         "    SELECT DISTINCT e2.parent_id FROM classification_edge_cache e2 WHERE e2.profile_id = COALESCE(:profile_id, 1) AND e2.parent_id IS NOT NULL\n"
+         ")",
+         '{"profile_id": "integer", "timeline_value": "integer"}'),
+
         ("profile_diff_edges", "Diff edges: base profile structure with change status vs compare",
          "SELECT\n"
          "    a.child_id,\n"
@@ -2351,6 +2455,75 @@ def _build_manifest():
                         "Family": 0.56,
                         "Subfamily": 0.70,
                         "Genus": 1.0,
+                    },
+                },
+            },
+
+            # === P87: Timeline (compound view) ===
+            "timeline": {
+                "type": "compound",
+                "title": "Timeline",
+                "icon": "bi-clock-history",
+                "controls": [],
+                "default_sub_view": "timeline",
+                "sub_views": {
+                    "timeline": {
+                        "title": "Timeline",
+                        "display": "tree_chart_timeline",
+                        "description": "Taxonomy tree animated over geologic time or publication year",
+                        "source_query": "taxonomy_tree_by_geologic",
+                        "hierarchy_options": {
+                            "id_key": "id",
+                            "parent_key": "parent_id",
+                            "label_key": "name",
+                            "rank_key": "rank",
+                        },
+                        "tree_chart_options": {
+                            "default_layout": "radial",
+                            "color_key": "rank",
+                            "leaf_rank": "Genus",
+                            "on_node_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
+                            "rank_radius": {
+                                "_root": 0,
+                                "Class": 0.08,
+                                "Order": 0.20,
+                                "Suborder": 0.32,
+                                "Superfamily": 0.44,
+                                "Family": 0.56,
+                                "Subfamily": 0.70,
+                                "Genus": 1.0,
+                            },
+                            "edge_query": "tree_edges_by_geologic",
+                            "edge_params": {"profile_id": "$profile_id"},
+                            "edge_id_key": "child_id",
+                            "edge_parent_key": "parent_id",
+                        },
+                        "timeline_options": {
+                            "param_name": "timeline_value",
+                            "default_step_size": 1,
+                            "axis_modes": [
+                                {
+                                    "key": "geologic",
+                                    "label": "Geologic Time",
+                                    "axis_query": "timeline_geologic_periods",
+                                    "value_key": "id",
+                                    "label_key": "name",
+                                    "order_key": "sort_order",
+                                    "source_query_override": "taxonomy_tree_by_geologic",
+                                    "edge_query_override": "tree_edges_by_geologic",
+                                },
+                                {
+                                    "key": "pubyear",
+                                    "label": "Publication Year",
+                                    "axis_query": "timeline_publication_years",
+                                    "value_key": "year",
+                                    "label_key": "label",
+                                    "order_key": "year",
+                                    "source_query_override": "taxonomy_tree_by_pubyear",
+                                    "edge_query_override": "tree_edges_by_pubyear",
+                                },
+                            ],
+                        },
                     },
                 },
             },
