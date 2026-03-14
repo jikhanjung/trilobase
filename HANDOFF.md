@@ -169,10 +169,11 @@ python -m scoda_engine.serve --db-path db/trilobase-0.3.0.db --mode admin --port
 
 ### P88: Timeline Mya 슬라이더 + FAD/LAD 스냅샷 ✅
 
-- Geologic 슬라이더를 시대 코드 기반 → Mya(million years ago) 기반 시점 스냅샷으로 전환
+- Geologic 슬라이더: 시대 코드 기반 누적 → Mya 기반 시점 스냅샷 (16 steps, 538.8~251.9)
+- Research 슬라이더: assertion reference year → genus 명명 연도(`t.year`) 누적 필터
 - `temporal_code_mya` 테이블 신규 생성 (31건: PaleoCore 27 + `/` 구분 코드 4)
 - UCAMB → UCAM 오타 수정 (Cyclagnostus)
-- 16개 축 step (538.8 LCAM ~ 251.9 End Permian)
+- scoda-engine: 축 전환 시 빈 트리 처리 버그 수정
 - **상세**: `devlog/20260314_124_p88_timeline_mya_slider.md`
 
 ### Taxonomy Management (R01 로드맵)
@@ -342,6 +343,9 @@ genus_locations (id, genus_id, country_id, region, is_type_locality, notes)
 -- taxon_reference: 4,173 records
 taxon_reference (id, taxon_id, reference_id, relationship_type,
                  assertion_id, match_confidence, match_method, notes, created_at)
+
+-- temporal_code_mya: 31 records — temporal_code → FAD/LAD Mya 매핑
+temporal_code_mya (code, fad_mya, lad_mya)
 
 -- Views
 synonyms         -- backward-compat VIEW over assertion WHERE predicate='SYNONYM_OF'
