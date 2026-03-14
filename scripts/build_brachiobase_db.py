@@ -19,7 +19,9 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-VERSION = "0.2.1"
+from db_path import find_paleocore_db
+
+VERSION = "0.2.2"
 
 # ---------------------------------------------------------------------------
 # Source file groups per classification profile
@@ -175,9 +177,16 @@ def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
         if rank is None:
             rank = default_leaf_rank
 
-        # Parse name and authority
+        # Parse name and authority; extract location and temporal_code from | fields
         clean = re.sub(r'\[.*?\]', '', line).strip()
-        clean = clean.split("|")[0].strip()
+        pipe_fields = clean.split("|")
+        clean = pipe_fields[0].strip()
+        location = pipe_fields[1].strip() if len(pipe_fields) > 1 else ""
+        temporal_code = pipe_fields[2].strip() if len(pipe_fields) > 2 else ""
+        # If only 2 fields, the second might be temporal_code (no location)
+        if len(pipe_fields) == 2 and re.match(r'^[A-Z]{2,}', pipe_fields[1].strip()):
+            temporal_code = pipe_fields[1].strip()
+            location = ""
 
         parts = clean.split(None, 1)
         if not parts:
@@ -219,6 +228,8 @@ def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
             "parent_rank": parent_rank,
             "status": status,
             "synonyms": [],
+            "location": location,
+            "temporal_code": temporal_code,
         })
 
     return placements
@@ -347,6 +358,14 @@ def process_source(dst, source_file, ref_id, taxon_index, new_taxa_cache):
                                  year = COALESCE(NULLIF(year, ''), ?)
                 WHERE id = ? AND (author IS NULL OR author = '' OR year IS NULL OR year = '')
             """, (p["author"], p["year"], child_id))
+
+        # Update temporal_code and location
+        if p.get("temporal_code"):
+            dst.execute("UPDATE taxon SET temporal_code = ? WHERE id = ? AND (temporal_code IS NULL OR temporal_code = '')",
+                        (p["temporal_code"], child_id))
+        if p.get("location"):
+            dst.execute("UPDATE taxon SET location = ? WHERE id = ? AND (location IS NULL OR location = '')",
+                        (p["location"], child_id))
 
         # Type species from raw entry
         ts_match = re.search(r'\[\*(.+?)\]', p.get("raw_entry", "") or "")
@@ -624,6 +643,121 @@ def _build_queries():
          '{"profile_id": "integer", "compare_profile_id": "integer"}'),
 
         # --- Profile diff edges (for Diff Tree rendering) ---
+        # --- Timeline ---
+        ("timeline_geologic_periods", "Geologic time periods for timeline axis (Mya steps)",
+         "SELECT fad_mya AS id, code AS name, -fad_mya AS sort_order\n"
+         "FROM temporal_code_mya\n"
+         "WHERE code IN ('LCAM','MCAM','UCAM','LORD','MORD','UORD',\n"
+         "               'LSIL','USIL','LDEV','MDEV','UDEV',\n"
+         "               'MISS','PENN','LPERM','UPERM',\n"
+         "               'LTRI','MTRI','UTRI','LJUR','MJUR','UJUR',\n"
+         "               'LCRET','UCRET','TERT','HOL')\n"
+         "UNION ALL\n"
+         "SELECT 0.0 AS id, 'Recent' AS name, 0.0 AS sort_order\n"
+         "ORDER BY sort_order",
+         None),
+
+        ("timeline_publication_years", "Distinct genus naming years for timeline axis",
+         "SELECT DISTINCT CAST(t.year AS INTEGER) AS year, CAST(t.year AS INTEGER) AS label\n"
+         "FROM taxon t\n"
+         "JOIN classification_edge_cache e ON e.child_id = t.id\n"
+         "  AND e.profile_id = COALESCE(:profile_id, 1)\n"
+         "WHERE t.rank = 'Genus' AND t.year IS NOT NULL\n"
+         "ORDER BY year",
+         '{"profile_id": "integer"}'),
+
+        ("taxonomy_tree_by_geologic", "Taxa filtered by geologic time (Mya snapshot)",
+         "WITH RECURSIVE filtered_genera AS (\n"
+         "    SELECT t.id\n"
+         "    FROM taxon t\n"
+         "    JOIN classification_edge_cache e ON e.child_id = t.id AND e.profile_id = COALESCE(:profile_id, 1)\n"
+         "    WHERE t.rank = 'Genus'\n"
+         "    AND (:timeline_value IS NULL OR t.temporal_code IN (\n"
+         "        SELECT tr.code FROM temporal_code_mya tr\n"
+         "        WHERE tr.fad_mya >= :timeline_value AND tr.lad_mya <= :timeline_value\n"
+         "    ))\n"
+         "), ancestors AS (\n"
+         "    SELECT id AS taxon_id FROM filtered_genera\n"
+         "    UNION\n"
+         "    SELECT e.parent_id\n"
+         "    FROM classification_edge_cache e\n"
+         "    JOIN ancestors a ON e.child_id = a.taxon_id\n"
+         "    WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id IS NOT NULL\n"
+         ")\n"
+         "SELECT t.id, t.name, t.rank, t.author, t.year, t.temporal_code, t.is_valid\n"
+         "FROM taxon t\n"
+         "WHERE t.id IN (SELECT taxon_id FROM ancestors)\n"
+         "ORDER BY t.id",
+         '{"profile_id": "integer", "timeline_value": "real"}'),
+
+        ("tree_edges_by_geologic", "Edges filtered by geologic time (Mya snapshot)",
+         "WITH RECURSIVE filtered_genera AS (\n"
+         "    SELECT t.id\n"
+         "    FROM taxon t\n"
+         "    JOIN classification_edge_cache e ON e.child_id = t.id AND e.profile_id = COALESCE(:profile_id, 1)\n"
+         "    WHERE t.rank = 'Genus'\n"
+         "    AND (:timeline_value IS NULL OR t.temporal_code IN (\n"
+         "        SELECT tr.code FROM temporal_code_mya tr\n"
+         "        WHERE tr.fad_mya >= :timeline_value AND tr.lad_mya <= :timeline_value\n"
+         "    ))\n"
+         "), ancestors AS (\n"
+         "    SELECT id AS taxon_id FROM filtered_genera\n"
+         "    UNION\n"
+         "    SELECT e.parent_id\n"
+         "    FROM classification_edge_cache e\n"
+         "    JOIN ancestors a ON e.child_id = a.taxon_id\n"
+         "    WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id IS NOT NULL\n"
+         ")\n"
+         "SELECT e.child_id, e.parent_id\n"
+         "FROM classification_edge_cache e\n"
+         "WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
+         "AND e.child_id IN (SELECT taxon_id FROM ancestors)\n"
+         "AND e.parent_id IN (SELECT taxon_id FROM ancestors)",
+         '{"profile_id": "integer", "timeline_value": "real"}'),
+
+        ("taxonomy_tree_by_pubyear", "Taxa filtered by naming year (cumulative)",
+         "WITH RECURSIVE filtered_genera AS (\n"
+         "    SELECT t.id\n"
+         "    FROM taxon t\n"
+         "    JOIN classification_edge_cache e ON e.child_id = t.id AND e.profile_id = COALESCE(:profile_id, 1)\n"
+         "    WHERE t.rank = 'Genus'\n"
+         "    AND t.year IS NOT NULL AND CAST(t.year AS INTEGER) <= :timeline_value\n"
+         "), ancestors AS (\n"
+         "    SELECT id AS taxon_id FROM filtered_genera\n"
+         "    UNION\n"
+         "    SELECT e.parent_id\n"
+         "    FROM classification_edge_cache e\n"
+         "    JOIN ancestors a ON e.child_id = a.taxon_id\n"
+         "    WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id IS NOT NULL\n"
+         ")\n"
+         "SELECT t.id, t.name, t.rank, t.author, t.year, t.temporal_code, t.is_valid\n"
+         "FROM taxon t\n"
+         "WHERE t.id IN (SELECT taxon_id FROM ancestors)\n"
+         "ORDER BY t.id",
+         '{"profile_id": "integer", "timeline_value": "integer"}'),
+
+        ("tree_edges_by_pubyear", "Edges filtered by naming year (cumulative)",
+         "WITH RECURSIVE filtered_genera AS (\n"
+         "    SELECT t.id\n"
+         "    FROM taxon t\n"
+         "    JOIN classification_edge_cache e ON e.child_id = t.id AND e.profile_id = COALESCE(:profile_id, 1)\n"
+         "    WHERE t.rank = 'Genus'\n"
+         "    AND t.year IS NOT NULL AND CAST(t.year AS INTEGER) <= :timeline_value\n"
+         "), ancestors AS (\n"
+         "    SELECT id AS taxon_id FROM filtered_genera\n"
+         "    UNION\n"
+         "    SELECT e.parent_id\n"
+         "    FROM classification_edge_cache e\n"
+         "    JOIN ancestors a ON e.child_id = a.taxon_id\n"
+         "    WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id IS NOT NULL\n"
+         ")\n"
+         "SELECT e.child_id, e.parent_id\n"
+         "FROM classification_edge_cache e\n"
+         "WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
+         "AND e.child_id IN (SELECT taxon_id FROM ancestors)\n"
+         "AND e.parent_id IN (SELECT taxon_id FROM ancestors)",
+         '{"profile_id": "integer", "timeline_value": "integer"}'),
+
         ("profile_diff_edges", "Diff edges: base profile structure with change status vs compare",
          "SELECT\n"
          "    a.child_id,\n"
@@ -909,30 +1043,110 @@ def _build_manifest():
                     },
                 },
             },
+            # === Timeline (compound view) ===
+            "timeline_view": {
+                "type": "compound",
+                "title": "Timeline",
+                "icon": "bi-clock-history",
+                "controls": [],
+                "default_sub_view": "timeline",
+                "sub_views": {
+                    "timeline": {
+                        "title": "Timeline",
+                        "display": "tree_chart_timeline",
+                        "description": "Taxonomy tree animated over geologic time or publication year",
+                        "source_query": "taxonomy_tree_by_geologic",
+                        "hierarchy_options": {
+                            "id_key": "id",
+                            "parent_key": "parent_id",
+                            "label_key": "name",
+                            "rank_key": "rank",
+                        },
+                        "tree_chart_options": {
+                            "default_layout": "radial",
+                            "color_key": "rank",
+                            "leaf_rank": "Genus",
+                            "on_node_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
+                            "rank_radius": {
+                                "_root": 0,
+                                "Phylum": 0.03,
+                                "Subphylum": 0.06,
+                                "Class": 0.10,
+                                "Order": 0.18,
+                                "Suborder": 0.28,
+                                "Superfamily": 0.40,
+                                "Family": 0.54,
+                                "Subfamily": 0.70,
+                                "Genus": 1.0,
+                            },
+                            "edge_query": "tree_edges_by_geologic",
+                            "edge_params": {"profile_id": "$profile_id"},
+                            "edge_id_key": "child_id",
+                            "edge_parent_key": "parent_id",
+                        },
+                        "timeline_options": {
+                            "param_name": "timeline_value",
+                            "default_step_size": 1,
+                            "axis_modes": [
+                                {
+                                    "key": "geologic",
+                                    "label": "Geologic Time",
+                                    "axis_query": "timeline_geologic_periods",
+                                    "value_key": "id",
+                                    "label_key": "name",
+                                    "order_key": "sort_order",
+                                    "source_query_override": "taxonomy_tree_by_geologic",
+                                    "edge_query_override": "tree_edges_by_geologic",
+                                },
+                                {
+                                    "key": "pubyear",
+                                    "label": "Publication Year",
+                                    "axis_query": "timeline_publication_years",
+                                    "value_key": "year",
+                                    "label_key": "label",
+                                    "order_key": "year",
+                                    "source_query_override": "taxonomy_tree_by_pubyear",
+                                    "edge_query_override": "tree_edges_by_pubyear",
+                                },
+                            ],
+                        },
+                    },
+                },
+            },
             # === Detail views ===
             "taxon_detail_view": {
                 "type": "detail",
                 "title": "Taxon Detail",
                 "source_query": "taxon_detail",
                 "source_param": "taxon_id",
-                "title_key": "name",
-                "subtitle_template": "{rank} — {author}, {year}",
+                "sub_queries": {
+                    "children": {"query": "taxon_children", "params": {"taxon_id": "id"}},
+                    "assertions": {"query": "taxon_assertions", "params": {"taxon_id": "id"}},
+                    "hierarchy": {"query": "genus_hierarchy", "params": {"taxon_id": "id"}},
+                },
+                "title_template": {"format": '<span class="badge bg-secondary me-2">{rank}</span> {name}'},
                 "sections": [
                     {
                         "title": "Classification",
+                        "type": "field_grid",
                         "fields": [
+                            {"key": "name", "label": "Name"},
                             {"key": "rank", "label": "Rank"},
                             {"key": "author", "label": "Author"},
                             {"key": "year", "label": "Year"},
-                            {"key": "parent_name", "label": "Parent"},
+                            {"key": "parent_name", "label": "Parent",
+                             "format": "link",
+                             "link": {"detail_view": "taxon_detail_view", "id_path": "parent_id"},
+                             "suffix_key": "parent_rank", "suffix_format": "({value})"},
                             {"key": "type_species", "label": "Type Species"},
+                            {"key": "temporal_code", "label": "Range"},
                         ],
                     },
                     {
-                        "title": "Children",
-                        "type": "table",
-                        "source_query": "taxon_children",
-                        "params": {"taxon_id": "{id}"},
+                        "title": "Children ({count})",
+                        "type": "linked_table",
+                        "data_key": "children",
+                        "condition": "children",
                         "columns": [
                             {"key": "name", "label": "Name", "italic": True},
                             {"key": "rank", "label": "Rank"},
@@ -942,10 +1156,10 @@ def _build_manifest():
                         "on_row_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
                     },
                     {
-                        "title": "Assertions",
-                        "type": "table",
-                        "source_query": "taxon_assertions",
-                        "params": {"taxon_id": "{id}"},
+                        "title": "Assertions ({count})",
+                        "type": "linked_table",
+                        "data_key": "assertions",
+                        "condition": "assertions",
                         "columns": [
                             {"key": "predicate", "label": "Type"},
                             {"key": "object_name", "label": "Object"},
@@ -953,14 +1167,6 @@ def _build_manifest():
                             {"key": "ref_year", "label": "Year"},
                             {"key": "assertion_status", "label": "Status"},
                         ],
-                    },
-                    {
-                        "title": "Classification Path",
-                        "type": "breadcrumb",
-                        "source_query": "genus_hierarchy",
-                        "params": {"taxon_id": "{id}"},
-                        "label_key": "name",
-                        "on_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
                     },
                 ],
             },
@@ -1258,6 +1464,38 @@ def main():
 
     print(f"\n[5/5] Writing views and SCODA metadata...")
     create_views(cur)
+
+    # Build temporal_code_mya mapping table
+    print("  Building temporal_code_mya table...")
+    pc_db = Path(find_paleocore_db())
+    conn.execute(f"ATTACH DATABASE '{pc_db}' AS pc")
+    conn.execute("""
+        CREATE TABLE temporal_code_mya AS
+        SELECT code, start_mya AS fad_mya, end_mya AS lad_mya
+        FROM pc.temporal_ranges
+        WHERE start_mya IS NOT NULL
+        UNION ALL SELECT 'TERT', 66.0, 2.58
+        UNION ALL SELECT 'HOL', 0.0117, 0.0
+        UNION ALL SELECT 'REC', 0.0117, 0.0
+    """)
+    # Also add any compound codes found in the data (e.g., LDEV-MDEV)
+    compound_codes = conn.execute("""
+        SELECT DISTINCT t.temporal_code FROM taxon t
+        WHERE t.temporal_code LIKE '%-%'
+        AND t.temporal_code NOT IN (SELECT code FROM temporal_code_mya)
+    """).fetchall()
+    for (code,) in compound_codes:
+        parts = code.split('-')
+        if len(parts) == 2:
+            fad = conn.execute("SELECT fad_mya FROM temporal_code_mya WHERE code = ?", (parts[0],)).fetchone()
+            lad = conn.execute("SELECT lad_mya FROM temporal_code_mya WHERE code = ?", (parts[1],)).fetchone()
+            if fad and lad:
+                conn.execute("INSERT INTO temporal_code_mya VALUES (?, ?, ?)", (code, fad[0], lad[0]))
+    n_tcm = conn.execute("SELECT COUNT(*) FROM temporal_code_mya").fetchone()[0]
+    conn.execute("DETACH DATABASE pc")
+    conn.commit()
+    print(f"  → {n_tcm} temporal_code_mya mappings")
+
     write_scoda_metadata(cur, version, all_ref_ids[0])
     conn.commit()
 
