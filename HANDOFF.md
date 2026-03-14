@@ -16,6 +16,8 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | Trilobase version | **0.3.1** (Mya timeline + temporal_code_mya) |
 | Brachiobase version | **0.2.2** (temporal code + timeline) |
 | Graptobase version | **0.1.0** (Treatise 1955/1970/2023) |
+| Chelicerobase version | **0.1.0** (Treatise 1955, Part P) |
+| Ostracobase version | **0.1.0** (Treatise 1961, Part Q) |
 | PaleoCore version | 0.1.1 |
 | taxon | 5,627 |
 | reference | 2,135 |
@@ -63,13 +65,20 @@ python scripts/build_all.py
 
 # 개별 빌드
 python scripts/build_trilobase_db.py          # → db/trilobase-0.3.1.db
-python scripts/build_paleocore_db.py           # → db/paleocore-0.1.1.db
-python scripts/build_trilobase_scoda.py        # → dist/trilobase-0.3.0.scoda
-python scripts/build_paleocore_scoda.py        # → dist/paleocore-0.1.1.scoda
-python scripts/validate_trilobase_db.py        # → 17/17 검증 통과
+python scripts/build_brachiobase_db.py        # → db/brachiobase-0.2.2.db
+python scripts/build_graptobase_db.py         # → db/graptobase-0.1.0.db
+python scripts/build_chelicerobase_db.py      # → db/chelicerobase-0.1.0.db
+python scripts/build_ostracobase_db.py        # → db/ostracobase-0.1.0.db
+python scripts/build_paleocore_db.py          # → db/paleocore-0.1.1.db
+python scripts/validate_trilobase_db.py       # → 17/17 검증 통과
 
-# Admin 모드로 실행
-python -m scoda_engine.serve --db-path db/trilobase-0.3.1.db --mode admin --port 8090
+# .scoda 패키지 빌드
+python scripts/build_trilobase_scoda.py       # → dist/trilobase-0.3.1.scoda
+python scripts/build_brachiobase_scoda.py     # → dist/brachiobase-0.2.2.scoda
+python scripts/build_graptobase_scoda.py      # → dist/graptobase-0.1.0.scoda
+python scripts/build_chelicerobase_scoda.py   # → dist/chelicerobase-0.1.0.scoda
+python scripts/build_ostracobase_scoda.py     # → dist/ostracobase-0.1.0.scoda
+python scripts/build_paleocore_scoda.py       # → dist/paleocore-0.1.1.scoda
 ```
 
 ## History (완료된 주요 작업)
@@ -192,6 +201,18 @@ python -m scoda_engine.serve --db-path db/trilobase-0.3.1.db --mode admin --port
 - 539 genera, 624 taxa, 3 classification profiles
 - temporal_code_mya 50건, Timeline 기능 포함
 - **상세**: `devlog/20260314_125_graptobase_v010.md`
+
+### Chelicerobase v0.1.0: 초기 빌드 ✅
+
+- Treatise Part P (Chelicerata, 1955) — Merostomata + Arachnida
+- 262 genera, 506 taxa, temporal_code 183 (70%)
+- Timeline 쿼리 포함
+
+### Ostracobase v0.1.0: 초기 빌드 ✅
+
+- Treatise Part Q (Ostracoda, 1961)
+- 782 genera, 926 taxa, temporal_code 504 (64%)
+- Timeline 쿼리 포함
 
 ### Taxonomy Management (R01 로드맵)
 

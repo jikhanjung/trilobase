@@ -1,0 +1,524 @@
+---
+reference: Størmer, L., Petrunkevitch, A. & Hedgpeth, J.W., 1955. Treatise on Invertebrate Paleontology, Part P, Arthropoda 2 — Chelicerata. Geological Society of America & University of Kansas Press
+scope:
+  - taxon: Chelicerata
+    coverage: comprehensive
+notes: |
+  Merostomata, Arachnida, Pycnogonida, and Palaeoisopus.
+  Genus-level classification with type species. Fifth printing 1992.
+---
+
+Class MEROSTOMATA Dana, 1852
+  North America and Asia. SYSTEMATIC DESCRIPTIONS Subclass XIPHOSURA Latreille, 1802 [nom] | LCAM-REC
+  Subclass XIPHOSURA Latreille, 1802
+    Order AGLASPIDA Walcott, 1911
+      Aglaspella RAASCH, 1939 [A] | CAM
+      Glypharthrus RAASCH, 1939 [Eurypterus thomasi WALTER, 1924] | CAM
+      Aglaspoides RAASCH, 1939 [A] | CAM
+      Uarthrus RAASCH, 1939 [as V-arthrus]
+      Family Aglaspididae Miller, 1877
+        Cyclopites RAASCH, 1952 [Cyelopina vulgaris RAASCH, 1939] | CAM
+        Craspedops RAASCH, 1939 [C] | UCAM
+        Setaspis RAASCH, 1939 [S] | UCAM
+      Family Strabopidae Gerhardt, 1932
+        Strabops BEECHER, 1901 [non JORDAN, 1904] | UCAM
+        Neostrabops CASTER & MACKE, 1952 [N] | UORD
+      Family Beckwithiidae Raasch, 1939
+        Beckwithia RESSER, 1931 [B] | SIL-REC
+    Order XIPHOSURIDA Latreille, 1802
+      Suborder SYNZIPHOSURINA Packard, 1886
+        Family Bunodidae Packard, 1886
+          Bunodes EICHW., 1859 [B] | USIL
+          Bunaia CLARKE, 1919 [B] | USIL
+        Family Neolimulidae Packard, 1886
+          Neolimulus WOODWARD, 1868 [N, falcatus] | USIL
+        Family Pseudoniscidae Packard, 1886
+          Pseudoniscus NIESZKOWSKI, 1859 [non Costa, 1882] | USIL
+          ?Cyamocephalus CURRIE, 1927 [C] | USIL
+          Bunodella MATTHEW, 1889 [non PFEFFER, 1889]
+        Family Weinberginidae Richter & Richter, 1929
+          Weinbergina RICHTER-R., 1929 [W] | CARB
+      Suborder LIMULINA Richter & Richter, 1929
+        Superfamily Belinuracea Zittel & Eastman, 1913
+          Neobelinuropsis ELLER, 1938 [Bellinuroopsis rossicus TSCHERNYSCHEW, 1933] | UDEV
+          Protolimulus PACKARD, 1886 [Prestwichia eriensis WILLIAMS, 1885] | LDEV
+        Superfamily Euproopacea Eller, 1938
+          Family Euproopidae Eller, 1938
+            Pringlia RAYMOND, 1944 [Prestwiehia birtwelli WOODWARD, 1872] | UCARB
+          Family Paleolimulidae Raymond, 1944
+            Paleolimulus DUNBAR, 1923 [P] | CARB
+          Family Liomesaspididae Raymond, 1944
+            Anacontium RAYMOND, 1944 [A] | PERM
+            Liomesaspis RAYMOND, 1944 [L] | PERM
+            Prolimulus FRITSCH, 1899 [P] | UDEV-PENN
+          Family Ellerddae Raymond, 1944
+            Elleria RAYMOND, 1944 [Euproiips morani ELLER, 1938] | UDEV-PENN
+        Superfamily Limulacea Zittel, 1885
+          Family Mesolimulidae Stjilrmer, 1952
+            Psammonlimulus LANGE, 1923 [P] | LTRI-UTRI
+            Limulitella STllIRMER, 1952 [L] | LTRI-UTRI
+          Family Limulidae Zittel, 1885
+            Subfamily Limulinae Zittel, 1885
+            Subfamily Tachypleinae Pocock, 1902
+              Tachypleus LEACH, 1819 [·Limulus gigas MULLER, 1785] | TERT
+              Carcinoscorpius POCOCK, 1902 [·Limulus rotundicaudatus LATREILLE, 1802] | REC
+          Family Uncertain pincombella CHAPMAN, 1932
+  Subclass EURYPTERIDA Burmeister, 1843
+    Superfamily Eurypteracea Burmeister, 1845
+      Family Hughmilleriidae KjellesvigWaering, 1951
+        Hughmilleria SARLE, 1902 [H] | UDEV
+      Family Pterygotidae Clarke & Ruedemann, 1912
+      Family Eurypteridae Burmeister, 1845
+        Eurypterus DE KAY, 1825 [11011 MABILLE, 1877] | SIL
+      Family Carcinosomatidae Stprmer, 1934
+      Family Mixopteridae Caster & Kjellesvig-W aering, 1955
+      Family Megalograptidae Caster & Kjellesvig.Waering, 1955
+        Megalograptus MILLER, 1874 [M] | ORD
+        Echinognathus WALC., 1882 [Eurypterus cleveland] | ORD
+    Superfamily Stylonuracea Diener, 1924
+      Family Stylonuridae Diener, 1924
+        Stylonurus PAGE, 1856 [S] | ORD
+        Drepanopterus LAURIE, 1892 [D]
+        Ctenopterus CLARKE & RUEDEMANN, 1912 [lOEuryp_ terus eestrotus CLARKE, 1907] | SIL
+        Jbournopterus CASTER & KJELLESVIG-WAERING, 1953 [·M]
+      Family Rhenopteridae Stprmer, 1951
+      Family Mycteropidae Stprmer, 1951
+Class UNCERTAIN Glyptoscorpius PEACH, 1882
+  Incertae Sedis Belinuropsis MATTHEW, 1909 [·B]
+Class ARACHNIDA Lamarck, 1801
+  Subclass LATIGASTRA Petrunkevitch, 1949
+    Order SCORPIONIDA Latreille, 1817
+      Suborder PROTOSCORPIONINA Petrunkevitch, 1949
+        Superfamily Palaeophonoidea Thorell & Lindstrom, 1885
+          Family Palaeophonidae Thorell & Lindstrom, 1885
+        Superfamily Mazonioidea Petrunkevitch, 1913
+          Family Dolichophonidae Petrunkevitch, 1953
+            Proscorpius WHITFIELD, 1885 [Palaeophonus osborni WHITF., 1885] | PENN
+          Family Mazoniidae Petrunkevitch, 1913
+      Suborder EUSCORPIONINA Petrunkevitch, 1949
+        Superfamily Palaeoscorpioidea Lehmann, 1944
+          Family Eoscorpiidae Scudder, 1884
+            Alloscorpius PETRUNKEVITCH, 1949 [Eoscorpius granulosus PETR., 1913] | DEV
+          Family Palaeoscorpiidae Lehmann, 1944
+          Family Archaeoctonidae Petrunkevitch, 1949
+            Eoctonus PETRUNKEVITCH, 1913 [emend] | PENN
+            Archaeoctonus Centromachus Superfamily SCORPIONOIDEA Leach, 1815 [nom] | CARB-REC
+        Superfamily Scorpionoidea Leach, 1815
+          Buthiscorpius PETRUNKEVITCH, 1953 [Anthracoscorpio buthi/ormis POCOCK, 1911] | CARB
+          Palaeopisthacanthus PETRUNKEVITCH, 1913 [P] | CARB
+          Compsoscorpius PETRUNKEVITCH, 1949 [C] | CARB
+          Typhloscorpius PETRUNKEVITCH, 1949 [T] | CARB
+          Europhthalmus PETRUNKEVITCH, 1949 [E] | CARB
+          Garnettius PETRUNKEVITCH, 1953 [Mazonia hungerfordi ELIAS, 1936] | CARB
+          Family Scorpionidae Leach, 1815
+          Family Buthidae C. L. Koch, 1837
+        Superfamily Cyclophthalmoidea Petrunkevitch, 1913
+          Family Cyclophthalmidae Petrunkevitch, 1913
+        Superfamily Isobuthoidea Petrunkevitch, 1913
+          Family Isobuthidae Petrunkevitch, 1913
+            Palaeobuthus PETRUNKEVITCH, 1915 [P, dislincIllS]
+        Superfamily Centromachoidea Petrunkevitch, 1953
+          Family Centromachidae Petrunkevitch, 1953
+        Superfamily Mesophonoidea Wills, 1910
+          Family Mesophonidae Wills, 1910
+    Order PSEUDOSCORPIONIDA Latreille, 1817
+      Suborder CHTHONIINA Beier, 1932
+        Family Chthoniidae Hansen, 1894
+        Family Dithidae Chamberlin, 1931
+          Heterolophus TOMOSVARY, 1884 [H] | REC
+      Suborder NEOBISIINA Beier, 1932
+        Superfamily Neobisioidea Beier, 1932
+          Family Neobisiidae Chamberlin, 1930
+        Superfamily Garypoidea Beier, 1932
+          Family Olpiidae Chamberlin, 1930
+            Garypinus DADAY, 1888 [OZpium dimidiatum L] | REC
+          Family Garypidae Hansen, 1894
+            Garypus L. KOCH, 1873 [Obisium beauvoisii SAVIG~Y, 1829] | MIO-REC
+            Geogarypus CHAMBERLIN, 1930 [Garypus minor L] | REC
+        Superfamily Feaelloidea Beier, 1932
+          Family Pseudogarypidae Chamberlin, 1923
+      Suborder CHELIFERINA Hagen, 1878
+        Superfamily Cheiridioidea Chamberlin, 1931
+          Family Cheiridiidae Chamberlin, 1924
+            Cheiridium MENGE, 1855 [·CheZi/er muscorum LEACH, 1817] | REC
+        Superfamily Cheliferoidea Chamberlin, 1931
+          Family Chernetidae Menge, 1855
+          Family Cheliferidae Stecker, 1874
+            Oligochelifer BEIER, 1937 [·DicheZa berendtii MENGE, 1854]
+            Oligowithius BEIER, 1937 [·Obisium sieboldi MENGE, 1854]
+            Pycnochelifer BEIER, 1937 [·Cheli/er kleemanni KOCH & BERENDT, 1854]
+    Order PHALANGIIDA Perty, 1833
+      Most Tertiary Phalangiida belong to the Palpatorina but at least one representative of the Laniatorina has been found. Suborder CYPHOPHTHALMINA Simon, 1879 [nom] | REC
+      Suborder CYPHOPHTHALMINA Simon, 1879
+      Suborder PALPATORINA Thorell, 1876
+        Superfamily Troguloidea Sundevall, 1833
+          Family Trogulidae Sundevall, 1833
+          Family Nemastomatidae Simon, 1872
+            Nemastoma C.L. KOCH, 1836 [Phalangt'um lugubr( MULLER, 1776] | REC
+          Family Ischyropsalidae Simon, 1879
+            Sabacon SIMON, 1879 [S] | REC
+        Superfamily Phalangioidea Thorell, 1876
+          Caddo BANKS, 1892 [C] | REC
+          Cheiromachus MENGE, 1854 [C]
+          Dicranopalpus DOLESCHALL, 1852 [D] | REC
+          Opilio HERBST, 1798 [Phalangium parietinum DEGEER, 1778] | REC
+          Phalangium LINNE, 1758 [P] | REC
+      Suborder LANIATORINA Thorell, 1876
+        Family Gonyleptidae Sundevall, 1833
+          Gonyleptes KIRBY, 1819 [G] | REC
+    Order ARCHITARBIDA Petrunkevitch, 1945
+      Family Architarbidae Karsch, 1882
+        Paratarbus PETRUNKEVlTCH, 1945 [P] | PENN
+        Hadrachne MELANDER, 1903 [H] | PENN
+        Discotarbus PETRUNKEVITCH, 1913 [D] | PENN
+        Phalangiotarbus HAASE, 1890 [Architarbus subovalis WOODWARD, 1872] | CARB
+        Goniotarbus PETRUNKEVITCH, 1945 [Geraphrynus tuberculatus POCOCK, 1911] | CARB
+        Mesotarbus PETRUNKEVITCH, 1949 [M] | CARB
+        Orthotarbus PETRUNKEVITCH, 1945 [Geratarbus minutus PETR., 1913] | CARB
+        Geratarbus SCUDDER, 1890 [G] | CARB
+        Ootarbus PETRUNKEVITCH, 1945 [0] | PENN
+        Metatarbus PETRUNKEVITCH, 1913 [OM]
+      Family Opiliotarbidae Petrunkevitch, 1945
+    Order ACARIDA Nitzsch, 1818
+      Suborder NOTOSTIGMATINA With, 1903
+      Suborder HOLOTHYRINA Reuter, 1909
+      Suborder TROMBIDIINA Duges, 1839
+        Superfamily Trombidioidea Leach, 1815
+          Family Eupodidae C.L.Koch, 1842
+          Family Bdellidae Duges, 1834
+          Family Erythraeidae Oudemans, 1802
+            Erythraeus LATREILLE, 1806 [Acarus phalangioides DEGEER, 1778] | REC
+            Arythaena MENGE, 1854 [A] | REC
+          Family Trombidiidae Leach, 1815
+          Family Anystidae Oudemans, 1902
+            Anystis VAN HEYDEN, 1826 [Trombidium cornigerum HERMANN] | REC
+          Family Cheyletidae Leach, 1815
+          Family Tetranychidae Donnadieu, 1875
+      Suborder PARASITINA Reuter, 1909
+        Superfamily Parasitoidea Oudemans, 1901
+          Family Phytoseiidae Berlese, 1916
+            Seius C.L. KOCH, 1836 [S] | REC
+        Superfamily Ixodoidea Leach, 1815
+          Family Ixodidae Leach, 1815
+            Dermacentor C.L. KOCH, 1844 [Acarus reticulatus FABRICIUS] | REC
+      Suborder ACARINA Leach, 1815
+        Superfamily Acaroidea Latreille, 1802
+          Family Acaridae Latreille, 1802
+        Superfamily Oribatoidea Duges, 1834
+          Family Belbidae Willmann, 1931
+            Gymnodamaeus KULCZYNSKI, 1902 [Damaeus bicostatus C.L] | REC
+            Ibites PAMPALONI, 1902 [B] | MIO
+          Family Camisiidae Sellnick, 1928
+            Camisia VAN HEYDEN, 1826 [Notaspis segnis HERMANN, 1804)] | REC
+          Family Carabodidae Willmann, 1931
+            Carabodes C.L. KOCH, 1836 [C] | REC
+            Otocepheus BERLEsE, 1904 [0] | REC
+            Tectocepheus BERLEsE, 1913 [Tegeocranus velatus MICHAEL, 1888] | REC
+            Cepheus C.L. KOCH, 1836 [C] | MIO
+            Carabodites PAMPALONI, 1902 [C] | REC
+            Scutoribates SELLNICK, 1919 [S] | REC
+          Family Ceratozetidae Jacot, 1925
+            Chamobates HULL, 1916 [Oribata cuspidata MICHAEL, 1884)] | REC
+          Family Cymbaeremeidae Willmann, 1931
+          Family Oribatidae Kramer, 1877
+            Caleremaeus BERLESE, 1910 [Notaspis monilipes MICHAEL, 1882] | REC
+            Ceratoppia BERLEsE, 1908 [Notaspis bipilis HERMANN, 1804] | REC
+            Lucoppia BERLEsE, 1908 [Zetes lucorum C.L] | REC
+            Oppia C.L. KOCH, 1836 [0] | REC
+            Eremaeus C.L. KOCH, 1836 [E] | REC
+            Suctobelba PAOLI, 1908 [Notaspis trigona MICHAEL, 1888] | REC
+            Gradidorsum SELLNICK, 1919 [G] | MIO
+          Family Galumnidae Grandjean, 1936
+            Galumna VAN HEYDEN, 1826 [·Notaspis alala HERMANN, 1804)] | REC
+          Family Haplozetidae Grandjean, 1936
+          Family Hypochthoniidae Berlese, 1910
+            Trhypochthonius BERLEsE, 1904 [Hypoehthonius teetorum BERLESE, 1896] | REC
+            Hermanniella BERLESE, 1908 [Hermannia gramtlata NICOLET, 1855] | REC
+          Family Liacaridae Willmann, 1931
+            Cultroribula BERLESE, 1908 [Notaspis juneta MICHAEL, 1885] | REC
+            Neoliodes BERLESE, 1888 [Notaspis theleproetus HERMANN, 1804] | REC
+            Platyliodes BERLESE, 1916 [Nothrus doderleinii BERLESE, 1883] | REC
+            Embolocarus SELLNICK, 1919 [E] | REC
+          Family Oribatellidae Jacot, 1925
+            Oribatella BANKS, 1895 [0] | REC
+            Tectoribates BERLESE, 1910 [Oribata tecta MICHAEL, 1883] | REC
+          Family Oribatulidae Jacot, 1929
+            Eporibatula SELLNICK, 1928 [Eremaeus rauschensis SELLNICK, 1928] | REC
+            Liebstadia OUDEMANS, 1906 [Notaspis similis MICHAEL, 1888J] | REC
+            Scheloribates BERLESE, 1908 [Zetes latipes C.L] | REC
+          Family Oripodidae Jacot, 1925
+            Oripoda BANKS, 1904 [0] | REC
+          Family Parakalummidae Grandjean, 1936
+            Neoribates BERLESE, 1914 [Oribates roubali BERLESE, 1900] | REC
+            Phenopelops PETRUNKEVITCH, 1955 [nom] | REC
+          Family Phthiracaridae Perty, 1841
+            Oribotritia JACOT, 1924 [Hoplophora decumana C.L] | REC
+      Suborder TETRAPODILINA Bremi, 1872
+  Subclass STETHOSTOMATA Petrunkevitch, 1949
+    Order HAPTOPODIDA Pocock, 1911
+      Family Plesiosironidae Pocock, 1911
+        Plesiosiro POCOCK, 1911 [P] | CARB
+    Order ANTHRACOMARTIDA Karsch, 1882
+      Family Anthracomartidae Haase, 1890
+        Coryphomartus PETRUNKEVITCH, 1945 [Anthracomartus triangularis PETR., 1913] | CARB
+        Maiocercus POCOCK, 1911 [Eophrynus carbonls HOWARD & THOMAS, 1896] | CARB
+        Cryptomartus PETRUNKEVITCH, 1949 [AnthrlUomartus hindi POCOCK, 1911] | CARB
+        Cleptomartus PETRUNKEVITCH, 1949 [C] | CARB
+        Anthracomartus KARSCH, 1882 [A] | CARB
+        Pleomartus PETRUNKEVITCH, 1945 [Anthracomartus trilobitus SCUDDER, 1884] | CARB
+        Promygale FRITSCH, 1899 [Kreischeria bohemica FRITSCH, 1899] | CARB
+        Oomartus PETRUNKEVITCH, 1953 [0] | CARB
+        Anthracophrynus ANDREE, 1913 [A] | CARB
+  Subclass SOLUTA Petrunkevitch, 1949
+    Order TRIGONOTARBIDA Petrunkevitch, 1949
+      Family Palaeocharinidae Hirst, 1923
+        Palaeocharinoides HIRST, 1923 [P]
+      Family Anthracosironidae Pocock, 1903
+      Family Eophrynidae Karsch, 1882
+        Subfamily Areomartinae Petrunkevitch, nov. Abdominal tergites smooth or granular, but not with regularly arranged rows of large tubercles. Carbo Areomartus PETRUNKEVITCH, 1913
+          Vratislavia FRITSCH, 1904 [Arehitarbus silesiaeus ROMER, 1876] | CARB
+          Anzinia PETRUNKEVITCH, 1953 [Krciseheria thellenini PRUVOST, 1919] | CARB
+        Subfamily Eophryninae Karsch, 1882
+          Pocononia PETRUNKEVITCH, 1953 [Trigonomartus whitei EWING, 1930] | PENN
+          Kreischeria GEINITZ, 1882 [K] | CARB
+          Petrovicia FRITSCH, 1904 [P] | PENN
+          Hemikreischeria FRITSCH, 1904 [Kreischeria getnitzi THEVENIN, 1902] | CARB
+          Stenotrogulus FRITSCH, 1904 [Eophrynus salmit STUR, 1877] | CARB
+          Acrokreischeria PETRUNKEVITCH, 1953 [Kreischeria verrtlcosa POCOCK, 1911] | CARB
+          Pleophrynus PETRUNKEVITCH, 1945 [P] | PENN
+          Eophrynus WOODWARD, 1871 [Curculioides prestviei BUCKLAND, 1837] | CARB
+      Family Trigonotarbidae Petrunkevitch, 1949
+      Family Trigonomartidae Petrunkevitch, 1949
+        Aphantomartus POCOCK, 1911 [A] | CARB
+        Lissomartus PETRUNKEVITCH, 1949 [Trigonomartus schucherti PETR., 1913] | PENN
+        Phrynornartus PETRUNKEVITCH, 1945 [Eophrynus waechteri GUTHORL, 1938] | CARB
+        Planomartus PETRUNKEVITCH, 1953 [AnthracoPocononia Acrokreischeria FIG] | CARB
+  Subclass CAULOGASTRA Pocock, 1893
+    Superorder LATISTERNA Petrunkevitch, 1949
+      Order PALPIGRADIDA Thorell, 1888
+        Family Eukoeneniidae Petrunkevitch, 1955
+        Family Sternarthronidae Haase, 1890
+          Sternarthron HAASE, 1890 [S]
+    Superorder CAMAROSTOMATA Petrunkevitch, 1949
+      Order THELYPHONIDA Latreille, 1804
+        Family Thelyphonidae Lucas, 1835
+          Geralinura SCUDDER, 1884 [G]
+      Order SCHIZOMIDA Petrunkevitch, 1945
+        Fossil Schizomida are known only from the Upper Tertiary. Family SCHIZOMIDAE Chamberlin, 1922 [=Schizonotidae THORELL, 1888] | REC
+        Family Schizomidae Chamberlin, 1922
+          Schizomus COOK, 1899 [pro Schizonotus THORELL, 1888 (non RATZEBURG, 1852)] | REC
+        Family Calcitronidae Petrunkevitch, 1945
+          Aracllllida Calcitro PETRUNKEVITCH, 1945 [C]
+          Onychothelyphonus PIERCE, 1950 [0]
+      Order KUSTARACHNIDA Petrunkevitch, 1913
+        Family Kustarachnidae Petrunkevitch, 1913
+    Superorder LABELLATA Petrunkevitch, 1949
+      Order PHRYNICHIDA Petrunkevitch, 1945
+        Family Phrynichidae Pocock, 1900
+          Phrynichus KARSCH, 1879 [Phalangium reniforme LINNE, 1758] | REC
+          Graeophonus SCUDDER, 1890 [G] | CARB
+          Protophrynus PETRUNKEVITCH, 1913 [-Po carbonanus] | PENN
+      Order ARANEIDA Clerck, 1757
+        Suborder LIPHISTIINA Pocock, 1892
+          Family Arthrolycosidae Fritsch, 1904
+            Eocteniza POCOCK, 1911 [·E] | CARB
+          Family Arthromygalidae Petrunkevitch, 1923
+            Protocteniza PETRUNKEVITCH, 1949 [P] | CARB
+            Eolycosa KdTA, 1885 [·E] | CARB
+        Suborder THERAPHOSINA Sundevall, 1830
+          Family Theraphosidae Thorell, 1869
+            Eodiplurina PETRUNKEVITCH, 1922 [E] | REC
+          Family Dipluridae Pocock, 1894
+        Suborder HYPOCHILINA Petrunkevitch, 1933
+        Suborder DIPNEUMONINA Latreille, 1817
+          Superfamily Hersilioidea Caporiacco, 1938
+            Family Urocteidae Simon, 1875
+              Paruroctea PETRUNKEVITCH, 1942 [P] | REC
+            Family Hersiliidae Thorell, 1869
+              Hersilia AUDOUIN, 1827 [H]
+              Gerdia MENGE, 1869 [G]
+          Superfamily Scytodoidea Caporiacco, 1938
+            Family Pholcidae Simon, 1874
+          Superfamily Zodarioidea Caporiacco, 1938
+            Family Zodariidae Simon, 1892
+            Family Spatiatoridae Petrunkevitch, 1942
+          Superfamily Lycosoidea Sundevall, 1833
+            Family Eresidae C.L.Koch, 1837
+            Family Amaurobiidae C.L.Koch, 1868
+            Family Psechridae Simon, 1892
+            Family Agelenidae C.L.Koch, 1837
+              Eocryphoeca PETRUNKEVITCH, 1946 [Tegenaria gracilipes KOCH & BERENDT, 1954] | REC
+              Myra O. P. CAMBRIDGE, 1876 [M] | REC
+            Family Insecutoridae Petrunkevitch, 1942
+              Insecutor PETRUNKEVITCH, 1942 [1] | REC
+            Family Pisauridae Simon, 1897
+            Family Lycosidae Sundevall, 1933
+              Lycosa LATREILLE, 1804 [Aranea tarentula ROSSI, 1790] | REC
+          Superfamily Araneoidea Leach, 1815
+            Family Archaeidae Koch & Berendt, 1854
+              Archaea KOCH & BERENDT, 1854 [A] | REC
+            Family Mimetidae Simon, 1895
+              Ero C.L. KOCH, 1837 [Aranea tuberculata DEGEER, 1778] | REC
+            Family Arthrodictynidae Petrunkevitch, 1942
+              Arthrodictyna PETRUNKEVITCH, 1942 [·A] | REC
+            Family Dictynidae Simon, 1874
+              Eolathys PETRUNKEVITCH, 1950 [·E] | REC
+            Family Micryphantidae Bertkau, 1885
+            Family Theridiidae Sundevall, 1833
+              Theridion WALCKENAER, 1805 [Araneus lineatus CLERCK, 1757] | REC
+              Flegia KOCH & BERENDT, 1854 [·F]
+              Eodipoena PETRUNKEVITCH, 1942 [E]
+              Nactodipoena PETRUNKEVITCH, 1942 [N] | REC
+              Steatoda SUNDEVALL, 1833 [Aranea bipunctata LINNE, 175S] | REC
+              Municeps PETRUNKEVITCH, 1942 [M]
+              Eomysmena PETRUNKEVITCH, 1942 [·E]
+            Family Adjutoridae Petrunkevitch, 1942
+              Adjutor PETRUNKEVITCH, 1942 [A]
+              Admissor PETRUNKEVITCH, 1942 [A]
+            Family Ephalmatoridae Petrunkevitch, 1950
+              Ephalmator PETRUNKEVITCH, 1950 [E] | REC
+            Family Linyphiidae Dahl, 1913
+              Linyphia LATREILLE, 1804 [Araneus triangularis CLERCK, 1757]
+              Custodda PETRUNKEVITCH, 1942 [Linyphia eheiraeantha KOCH & BERENDT, 1854]
+              Obnisus PETRUNKEVITCH, 1942 [0]
+              Eopopino PETRUNKEVITCH, 1942 [E]
+              Meditrina PETRUNKEVITCH, 1942 [M]
+              Malleator PETRUNKEVITCH, 1942 [M]
+              Impulsor PETRUNKEVITCH, 1942 [I]
+              Liticen PETRUNKEVITCH, 1942 [L]
+              Mystagogus PETRUNKEVITCH, 1942 [M]
+            Family Araneidae Leach, 1819
+              Subfamily Tetragnathinae Simon, 1892
+                Tetragnatha LATREILLE, 1804 [Aranea extensa LINNE, 1757]
+                Palaeopachygnatha PETRUNKEVITCH, 1922 [P] | REC
+                Palaeometa PETRUNKEVITCH, 1922 [·Theridium opertaneum SCUDDER, 1890] | REC
+              Subfamily Nephilinae Simon, 1892
+                Nephila LEACH, 1815 [Aranea maculata FABRICIUS, 1793] | REC
+              Subfamily Araneinae Simon, 1892
+                Epeira WALCKENAER, 1805 [·Aranea eornuta LINNE, 1758]
+                Tethneus SCUDDER, 1890 [T]
+                Eustaloides PETRUNKEVITCH, 1942 [IE] | REC
+              Subfamily Metinae Simon, 1892
+                Acrometa PETRUNKEVlTCH, 1942 [·A]
+                Theridiorneta PETRUNKEVITCH, 1942 [IT]
+              Subfamily Theridiosomatinae Simon, 1892
+                Elucus PETRUNKEVITCH, 1942 [E] | CARB
+            Family Archaeometidae Petrunkevitch, 1949
+              Arachnometa PETRUNKEVITCH, 1949 [A] | CARB
+              Eopholcus FRITSCH, 1904 [E] | CARB
+          Superfamily Zoropsidioidea Simon, 1892
+            Family Zoropsidae Simon, 1892
+              Adamator PETRUNKEVITCH, 1942 [A] | REC
+          Superfamily Thomisoidea Sundevall, 1833
+            Family Eusparassidae Petrunkeviteh, 1949
+              Subfamily Eusparassinae Petrunkevitch, 1949
+                Collactcus PETRUNKEVITCH, 1942 [C]
+                Caduceator PETRUNKEVITCH, 1942 [C]
+                Zachria L.KOCH, 1875 [Z] | REC
+                Eostaianus PETRUNKEVITCH, 1942 [E] | REC
+            Family Selenopidae F.P.Cambridge, 1900
+            Family Thomisidae SundevaU, 1833
+              Subfamily Stephanopsinae Simon, 1892
+                Syphax KOCH lit BERENDT, 1854 [·S]
+              Subfamily Thomisinae Sundevall, 1833
+                Thomisus WALCKENAER, 1805 [Aranea alba GMELlN, 1788] | REC
+                Misumena LATREILLE, 1804 [·Araneus vatius CLERCK, 1757] | REC
+              Subfamily Philodrominae Simon, 1892
+                Eothanatus PETRUNKEVITCH, 1950 [·E]
+                Medela PETRUNKEVITCH, 1942 [M]
+            Family Pyritaraneidae Petrunkevitch, 1953
+              Dinopilio FRITSCH, 1904 [·D] | CARB
+          Superfamily Clubionoidea Simon, 1895
+            Family Drassodidae Petrunkevitch, 1942
+              Captrix PETRUNKEVITCH, 1942 [·Textrix lineata KOCH & BERENDT, 1854]
+              Palaeodrassus PETRUNKEVITCH, 1922 [·Titanoeca ingenua SCUDDER, 1890]
+            Family Inceptoridae Petrunkevitch, 1942
+              Inceptor PETRUNKEVITCH, 1942 [J] | REC
+            Family Clubionidae Simon, 1895
+              Subfamily Clubioninae Simon, 1895
+                Clubiona LATREILLE, 1804 [Aranea holosericea LINNE, 1758 (=Araneus palliJulus CLERCK, 1757)] | REC
+                Eoversatrix PETRUNKEVITCH, 1922 [·Clubiana eversa SCUDDER, 1890] | REC
+                Eobumbratrix PETRUNKEVITCH, 1922 [·Clubiona latebrosa SCUDDER, 1890] | REC
+                Eostentatrix PETRUNKEVITCH, 1922 [·Clubiona ostentata SCUDDER, 1890] | REC
+              Subfamily Micariinae Simon, 1903
+                Ablator PETRUNKEVITCH, 1942 [Ocypete triguttata KOCH & BERENDT, 1854]
+            Family Parattidae Petrunkevitch, 1922
+              Parattus SCUDDER, 1890 [P] | REC
+          Superfamily Salticoidea F.P.Cambridge, 1900
+            Family Salticidae F.P. Cambridge, 1900
+              Subfamily Heliophaninae Simon, 1903
+                Parevophrys PETRUNKEVITCH, 1942 [P]
+              Subfamily Gorgopsininae Petrunkevitch, 1942
+              Subfamily Boethinae Simon, 1903
+                Eolinus PETRUNKEVITCH, 1942 [E] | REC
+                Cenattus PETRUNKEVITCH, 1942 [C] | REC
+                Attoides BRONGNIART, 1901 [A] | REC
+                Propetes MENGE, 1854 [P] | REC
+          Superfamily Dysderoidea C.L.Koch, 1837
+            Family Segestriidae Petrunkevitch, 1933
+              Segestria LATREILLE, 1804 [Aranea florentina ROSSI, 1790] | REC
+            Family Dysderidae C.L.Koch, 1837
+              Dysdera LATREILLE, 1804 [D] | REC
+            Family Oonopidae Simon, 1892
+              Orchestina SIMON, 1892 [·0] | REC
+          Superfamily Anyphaenoidea Bertkau, 1878
+            Family Anyphaenidae Bertkau, 1878
+          Superfamily Argyronetoidea Menge, 1869
+            Family Argyronetidae Menge, 1869
+        Suborder APNEUMONINA Dahl, 1913
+          Amphithomisus GOURRET, 1886 [A]
+          Anatone MENGE, 1854 [+A]
+          Androgeus KOCH & BERENDT, 1854 [A]
+          Antopia MENGE, 1854 [+A]
+          Athera MENGE, 1856 [A]
+          Cercidiella GOURRET, 1886 [+C]
+          Clubionella GOURRET, 1886 [·C]
+          Clya KOCH & BERENDT, 1854 [+C]
+          Clythia KOCH & BERENDT, 1854 [C]
+          Corynitis MENGE, 1854 [+C]
+          Entomocephalus HOLL, 1829 [+E]
+          Eresioides GOURRET, 1886 [+E]
+          Erithus MENGE, 1854 [E]
+          Hersilioides GOURRET, 1886 [H]
+          Idmonia MENGE, 1854 [·1]
+          Unoptes MENGE, 1854 [L, oculeus]
+          Lycosoides GoURRET, 1886 [+L]
+          See Trimeropus. Mastigusa MENGE, 1854 [+M]
+          Mizalia KOCH & BERENDT, 1854 [·M]
+          Onca MENGE, 1854 [0]
+          Opisthophylax MENGE, 1856 [+0]
+          Phalangopus MENGE, 1854 [·P] | REC
+          Protochersis GOURRET, 1886 [·P] | REC
+          Protolycosa GOURRET, 1886 [11011] | REC
+          Pseudothomisus GOURRET, 1886 [·P] | REC
+          Pytonyssa C.L. KOCH, 1837 [=GllapllOsa LATREILLE, 1804] | REC
+          Schellenbergia HEER, 1865 [·S]
+          Sphaeconia MENGE, 1854 [·S]
+          Sosybius KOCH & BERENDT, 1854 [·S]
+          Thyelia KOCH & BERENDT, 1854 [·T]
+          Lycosoldes GOURRET, 1886 [11011 LUCAS, 1846)]
+    Superorder ROSTRATA Petrunkevitch, 1949
+      Order SOLPUGIDA Leach, 1815
+        Family Galeodidae Pocock, 1897
+          Protosolpuga PETRUNKEVITCH, 1913 [P] | PENN
+    Superorder PODOGONA Cook, 1899
+      Order RICINULEIDA Thorell, 1892
+        Family Poliocheridae Scudder, 1884
+        Family Curculioididae Cockerell, 1916
+        Family Ricinoididae Ewing, 1929
+          Ricinoides EWING, 1929 [-Cryptostemma westermannii GUERIN, 1838] | REC
+          Amphitrogulus GOURRET, 1886 [-A]
+          Phalangillum GOURRET, 1886 [-Po hirsutum]
+          Phalangites MUNSTER, 1839 [-Po priscus]
+          Pleurolycosa FRITSCH, 1904 [-Arthrolycosa prolifera FRITSCH, 1899), placed in Araneida, is quite]
+      Order PANTOPODA Gerstaecker, 1863
+        Family Nymphonidae Wilson, 1878
+        Family Ammotheidae Dohrn, 1881
+        Family Tanystylidae Shimkevich, 1913
+        Family Pallenidae Wilson, 1878
+        Family Colossendeidae Hoek, 1881
+        Family Phoxichilidiidae Sars, 1891
+        Family Endeidae Norman, 1908
+        Family Pycnogonidae Wilson, 1878
+      Order PALAEOPANTOPODA Broili, 1930
+        Family Palaeopantopodidae Hedgpeth, nov. Characters of the order. L.Dev. Palaeopantopus BROILI, 1929

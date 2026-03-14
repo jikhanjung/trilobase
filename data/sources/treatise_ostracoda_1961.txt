@@ -1,0 +1,944 @@
+---
+reference: Moore, R.C., Scott, H.W. & others, 1961. Treatise on Invertebrate Paleontology, Part Q, Arthropoda 3 — Crustacea, Ostracoda. Geological Society of America & University of Kansas Press
+scope:
+  - taxon: Ostracoda
+    coverage: comprehensive
+notes: |
+  Ostracoda only (non-Ostracoda Crustacea in Part R).
+  Genus-level classification with type species.
+---
+
+Order OSTRACODA Family Leperditiidae Jones, 1856
+Order OSTRACODA Section PODOCOPA Sars, 1866
+  ?Subfamily Euprimitiinae Hessland, 1949 [=Eurychilinidae Ulrich & Bassler, 1923J ?Subfamily Primitiopsiinae Swartz, 1936]
+  Suborder PODOCOPA Sars, 1866
+Subclass OSTRACODA Latreille, 1806
+  Order LEPERDITIIDA Pokorny, 1953
+  Order BEYRICHIIDA Pokorny, 1953
+  Order PODOCOPIDA Pokorny, 1953
+    Suborder PLATVCOPA Sars, 1866
+  Order MVODOCOPIDA Pokorny, 1953
+    Suborder CLADOCOPA Sars, 1866
+      Family Bradoriidae Matthew, 1902
+        Bradoria MATTHEW, 1899 [B] | LCAM
+        Walcottella ULRICH & BASSLER, 1931 [W]
+      Family Beyrichonidae Ulrich & Bassler, 1931
+        Aluta MATTHEW, 1896 [A] | ORD
+        ?Eremos MOBERG & SEGERBERG, 1906 [E] | LORD
+        Sellula WIMAN, 1902 [S]
+        ?Cambria NECKAJA & IVANOVA, 1956 [C]
+        Polyphyma GROOM, 1902 [.P] | LCAM
+      Family Indianidae Ulrich & Bassler, 1931
+        Indiana MATTHEW, 1902 [·1] | LCAM
+        Dielymella ULRICH & BASSLER, 1931 [·D] | MCAM
+        ?Mononotella ULRICH & BASSLER, 1931 [·Primitia ?fusiformis MATTHEW, 1895] | CAM
+      Family Leperditiidae Jones, 1856
+        Upper Cambrian rocks of Oklahoma is probably a leperditiid, although indeterminable generically. As such, it is the oldest member of the order so far recorded. Leperditia ROUAULT, 1851 [-L] | LSIL
+        Hermannina KEGEL, 1933 [=ChelJroleperditia SWARTZ, 1949J] | ORD
+        Schrenckia GLEBOVSKAIA, 1949 [0Leperditia grandis 1b Hermonnino 10 2c Briortino Eoleperditio ,, 5] | SIL
+        Sibiritia ABUSHIK in MANDELSTAM et al., 1958 [.Leperditia wiluiensis SCHMIDT, 1873]
+      Family Isochilinidae Swartz, 1949
+        Isochilina JONES, 1858 [·Leperditia (lsochilina) ottawa JONES, 1858] | LORD
+        Aristozoe BARRANDE, 1868 [.A] | SIL
+        Dihogmochilina TEICHERT, 1937 [·1fochilina grandis var] | MORD-SIL
+        Swartzochilina SCOTT, 1956 [·Dihogmochilina straiterukensis SWARTZ, 1949] | USIL
+        Teichoehilina SWARTZ, 1949 [·lfOchilina ionesi WETHERBY, 1881] | MORD
+  Order PALAEOCOPIDA Henningsmoen, 1953
+    Apatobolbina ULRICH & BASSLER, 1923 [A] | ORD
+    Superfamily Beyrichiacea Matthew, 1886
+      Family Beyrichiidae Matthew, 1886
+        Beyrichia M'Coy, 1846 [oR] | LSIL
+        Bolbibollia ULRICH & BASSLER, 1923 [B]
+        Bolbineossia KESLING, HEANY, KAUFMANN, & ODEN, 1958 [B]
+        Bolbiprimitia KAY, 1940 [Halliella fissurella ULRICH & BASSLER, 1923] | SIL
+        Cornikloedenia HENNINGSMOEN, 1954 [Drepanellina ventralis ULRICH & BASSLER, 1923] | SIL
+        Ctenobolbinella KUMMEROW, 1953 [c] | MDEV
+        Dibolbina ULRICH & BASSLER, 1923 [D] | USIL
+        Dolichoscapha KESLING & EHLERS, 1958 [D]
+        Drepanellina ULRICH & BASSLER, 1923 [0D]
+        ?Halliella ULRICH, 1891 [OH]
+        Hibbardia KESLING, 1953 [Amphissites laC1'imoSlls SWARTZ & ORIEL, 1948]
+        Kloedenia JONES & HOLL, 1886 [OBeYI'icllia wilckensiana JONES, 1855] | MORD
+        Kyamodes JONES, 1888 [OK] | LDEV
+        Mesomphalus ULRICH & BASSLER, 1913 [·M] | LDEV
+        Phlycliscapha KESLING, 1953 [P]
+        Pseudobeyrichia SWARTZ & WHITMORE, 1956 [·P]
+        ?Saccarchites SWARTZ & WHITMORE, 1956 [S] | LDEV
+        Treposella ULRICH & BASSLER, 1908 [Beyrichia lyoni ULRICH, 1891]
+        ?Tribolbina LATHAM, 1932 [T] | MDEV
+        Welleriopsis SWARTZ & WHITMORE, 1956 [W] | LDEV
+        Zygobeyrichia ULRICH, 1916 [Z] | USIL
+        Zygobolba ULRICH & BASSLER, 1923 [Beyrichia decol'a BILLINGS, 1866] | ORD
+        Bonnemaia ULRICH & BASSLER, 1923 [B] | MORD
+        Mastigobolbina ULRICH & BASSLER, 1923 [M]
+    Superfamily Drepanellacea Ulrich & Bassler, 1923
+      Family Drepanellidae Ulrich & Bassler, 1923
+        Iatia QPIK, 1953 [oG] | LSIL
+        ?Plethobolbina ULRICH & BASSLER, 1923 [0P] | SIL
+        Drepanella ULRICH, 1890 [pro Depranella ULRICH, Ord]
+        Acantonodella ZASPELOVA, 1952 [•.1]
+        ?Kinnekullea HENNINGSMOEN, 1948 [·K]
+        Neodrepanella ZASPELQVA, 1952 [.Drepandla tricornis BATALINA] | MDEV
+        ?Nodella ZASPELOVA, 1952 [N] | ORD
+        Aechminella HARLTON, 1933 [.A] | MDEV
+        Beyrichiana KELLETT, 1933 [.B] | MISS-LPERM
+        Bicornella CORYELL & CUSKLEY, 1934 [·B] | PERM
+        Cornigella WARTHlN, 1930 [·C] | PERM
+        Mauryella ULRICH & BASSLER, 1923 [OM] | MISS
+      Family Aechminidae Boucek, 1936
+        Aechmina JONES & HOLL, 1869 [-A] | MORD
+        Aechminaria CORYELL & WILLIAMSON, 1936 [-A] | SIL
+        Lindsayella CORYELL & WILLIAMSON, 1936 [-L] | SIL
+        Paraechmina ULRICH & BASSLER, 1923 [-Cyt!lerina spinosa HALL, 1852 (non REUSS, 1846] | SIL-LDEV
+        Sigynus KESLING, 1953 [-S] | MDEV
+        Waldronites CORYELL & WILLIAMSON, 1942 [-Cornulina bispinosa CORYELL & WILLIAMSON, 1936] | SIL
+      Family Bolliidae Boucek, 1936
+        ?Bichilina SARV, 1959 [recorded by SARV as Bichilina NECKAJA, in coiL] | MORD
+        ?Jonesites CORYELL, 1930 [-Primitia excalJata JONES & HOLL, 1869]
+        Maratia KAY, 1940 [-M]
+        Tetrastorthynx KESLING, 1953 [·T]
+        Tmemolophus KESLING, 1953 [OT] | MORD
+        Ulrichia JONES, 1890 [OV] | MORD
+        Kirkbyella CORYELL & BOOTH, 1933 [·K]
+        Crescentilla BARRANDE, 1872 [·C] | MORD-UORD
+        Jrichia SCHMIDT, 1941 [.Primitia dillersa JONES & HOLL, 1886] | MORD-SIL
+        Pseudulrichia SCHMIDT, 1941 [.Leperditia billerta ULRICH, 1879] | MORD-SIL
+      Family Uncertain jonesella ULRICH, 1890
+        Iina BASSLER & KELLETT, 1934 [·SaUordellina muralis (ULRICH & BASSLER, 1923)] | MORD
+    Superfamily Hollinacea Swartz, 1936
+      Family Hollinidae Swartz, 1936
+        Hollina ULRICH & BASSLER, 1908 [·Ctenobolbina insolens ULRICH, 1908] | DEV
+        Abditoloculina KESLING, 1952 [·A] | MDEV
+        Adelphobolbina STOVER, 1956 [Ctenobolbina papillosa ULRtcH, 1891]
+        Bisacculus STEWART & HENDRIX, 1945 [B]
+        ?Ctenobolbina ULRICH, 1890 [.Beyrichia ciliata EMMONS, 1855] | MORD
+        Ctenoloculina BASSLER, 1941 [Tetradella cicatricosa WARTHIN, 1934]
+        ?Eohollina HARRIS, 1957 [Beyrichia j,'regtllal'is SPIVEY, 1939]
+        Falsipollex KESLING & McMILLAN, 1951 [·F]
+        Flaccivdum KESLING & PETERSON, 1958 [·Winchellalia Ie!mlaea KESLING & TABOR, 1952]
+        Hanaites POKORNY, 1950 [·Hallidla (Hanaites) giveliana]
+        Hollinella CORYELL, 1928 [·H]
+        Ruptivelum KESLING & WEISS, 1953 [.R]
+        ?Subtella ZASPELOVA, 1952 [5]
+        Tetrasacculus STEWART, 1936 [T] | MISS
+      Family Bassleratiidae E.A. Schmidt, 1941
+        Bellornatia KAY, 1934 [.B] | MORD
+        Lennukella JAANUSSON, 1957 [Drepanella etll'Opaea OPIK, 1437 J] | MORD
+        ?Steusloffia ULRICH & BASSLER, 1908 [·Strepttla linnarssoni KRAUSE, 1889] | LORD-MORD
+        Thomasatia KAY, 1934 [·T] | MORD
+      Family Chilobolbinidae Jaanusson, 1957
+        Chilobolbina ULRICH & BASSLER, 1923 [.Primitia delltifera BONNEMA, 1909] | MORD-SIL
+        Cystomatochilina JAANUSSON, 1957 [·Primitia (Vlrichia?) umbonata KRAUSE, 1892] | ORD
+        ?Family EURYCHILINIDAE Ulrich & Bassler, 1923 [nom] | LORD
+      Family Eurychilinidae Ulrich & Bassler, 1923
+        Eurychilina ULRICH, 1889 [·E] | LORD-LSIL
+        Coelochilina ULRICH & BASSLER, 1923 [Euryehilina aeqllalis ULRICH, 1890] | ORD-LSIL
+        Euprimites HESSLAND, 1949 [E] | LORD
+        Euprimitia ULRICH & BASSLER, 1923 [Primitia sanetipauli ULRICH, 1894] | ORD-LSIL
+        Laccochilina HESSLAND, 1949 [.Euryehilina estomda OPIK, 1935] | LORD-MORD
+        Laccoprimitia ULRICH & BASSLER, 1923 [Primitia eentralis ULRICH, 1890] | LORD-SIL
+        ?Tsitrella SARV, 1959 [·T] | LORD-MORD
+      Family Piretellidae Opik, 1937
+        Piretella QPIK, 1937 [P]
+        Bolbina HENNINGSMOEN, 1953 [Bollia ornata KRAUSE, 1896] | ORD
+        Bromidella HARRIS, 1931 [B] | MORD
+        Jla QPIK, 1937 [·P]
+        Oepikium AGNEW, 1942 [OBifiabellllm lenerttm QPIK, 1935] | LORD
+        Rakverella OPIK, 1937 [.R] | MORD
+        Uhakiella OPIK, 1937 [·U] | MORD
+        Quadrijugator KESLING & HUSSEY, 1953 [Bollia permarginata FOERSTE, 1917] | UORD
+        Ceratopsis ULRICH, 1894 [Beyl'ichia chambersi Rokverello 30 20 Oepikium Piretello 3b FIC.81] | MORD-UORD
+        Hesslandella HENNINGSMOEN, 1953 [Ctenentoma mac1'Oreticuiata HESSLAND, 1949] | LORD
+        Kiesowia ULRICH & BASSLER, 1908 [Beyriehia dissecta KRAUSE, 1892] | MORD
+        Protallinnella JAANUSSON, 1957 [Beyricllia grewing/(i BOCK, 1867]
+        Pseudorakverella SARV, 1959 [•.0] | MORD
+        Quadrilobella IVANovA, 1955 [.Q] | LORD
+        Rigidella OPIK, 1937 [·5teusloffia mitis OPIK, 1935] | LORD
+        Tallinnella OPIK, 1937 [·T] | LORD-UORD
+        Tallinnellina JAANUSSON, 1957 [·Tetradella teres HESSLAND, 1949] | LORD
+        Tetrada NECKAJA, 1958 [-Tetradella mernorabilis NECKAJA, 1953] | MORD-UORD
+        Zygobolboides SPIVEY, 1939 [-Z]
+      Family Sigmoopsidae Henningsmoen, 1953
+        Sigmoopsis HENNINGSMOEN, 1953 [Ceratopsis platyceras OPIK, 1937]
+        Carinobolbina HENNINGSMOEN, 1953 [-Ctenobolbina estona OPIK, 1937] | ORD
+        Distobolbina SARV, 1959 [-D]
+        ?Disulcina SARV, 1959 [-Ctenobolbina perita SARV, 20 Tall.innopsis 2b Zygobolboides lb ....] | MORD
+        Lomatobolbina JAANUSSON, 1957 [-Ctenobo/bina marnrnillata THORSLAND, 1940]
+        Oecematobolbina JAANUSSON, 1957 [-0] | MORD
+        Ogmoopsis HESSLAND, 1949 [·0] | LORD
+        ?Ordovieia NECKAJ A, 1956 [·0] | MORD
+        Polyceratella OPIK, 1937 [·Ulrichia kl/cI(eI"sian<l BONNEMA, 1909]
+        Pseudotallinnella SARV, 1959 [·P] | MORD-UORD
+        ?Reigiopsis SARV, 1959 [.R] | LORD
+        Sigmobolbina HENNINGSMOEN, 1953 [·Entomis oblonga STEUSLOFF var] | MORD
+        Winchellatia KAY, 1940 [·W] | MORD-UORD
+      Family Tetradellidae Swartz, 1936
+        Tetradella ULRICH, 1890 [.Beyrichia qlladrilirata HALL & WHITFIELD, 1875] | MORD-UORD
+        Dilobella ULRICH, 1890 [·D] | UORD
+        Forarnenella STUMBUR, 1956 [eEuprimitia parki] | UORD
+      Family Tvaerenellidae Jaanusson, 1957
+      Family Uncertain echinoprimitia HARRIS, 1957
+    Superfamily Kirkbyacea Ulrich & Bassler, 1906
+      Family Kirkbyidae Ulrich & Bassler, 1906
+        Kirkbya JONES, 1859 [-Dithyroearis permiana JONES, 1850J] | PENN
+        Coronakirkbya SOHN, 1954 [-C] | MISS
+      Family Amphissitidae Knight, 1928
+        Amphissites GlltTY, 1910 [·A] | PERM
+        Arcyzona KESLING, 1952 [.Amphissitu diad~matrlS VAN PELT, 1933]
+        Amphizona KESLING & COPELAND, 1954 [-A]
+        Chironiptrum KESLING, 1952 [-C.oiostathmicum]
+        Paegnium KESLING, 1957 [-P]
+        Reticestus KESLING & WEISS, 1953 [-R] | MISS
+      Family Cardiniferellidae Sohn, 1953
+        Cardiniferella SOHN, 1953 [-C] | MISS
+      Family Kelleitinidae Sohn, 1954
+        Kindlella SOHN, 1954 [-K]
+        ?Amphissella STOVER, 1956 [.A] | DEV
+      Family Scrobiculidae Posner, 1951
+      Family Placideidae Schneider, 1956
+        Semipetasus SOHN, 1954 [-So signatus] | PERM
+        Roundyella BRADFIELD, 1935 [Amphissiles simplicissimus KNIGHT, 1928] | MDEV
+    Superfamily Oepikellacea Jaanusson, 1957
+      Family Oepikellidae Jaanusson, 1957
+        Scrobicula POSNER, 1951 [Cylherella? scrobiculata JONES, KIRKBY & BRADY, 1884] | MDEV-UDEV
+        ?Bideirella STOVER, 1956 [B] | MDEV
+      Family Aparchitidae Jones, 1901
+        Aparchites JONES, 1889 [A] | LORD-MDEV
+        ?Cyathus ROTH & SKINNER, 1930 [C] | PENN
+        Macronotella ULRICH, 1894 [M] | LORD
+        ?Neoaparchites BOUCEK, 1936 [Primitia obsoleta JONES & HOLL, 1865] | PLEIS
+        ?Saccelatia KAY, 1940 [Aparchites arrectus ULRICH, 1894] | MORD
+    Superfamily Primitiopsacea Swartz, 1936
+      ?Mirochilina BOUCEK, 1936 [·M] | USIL
+      Sphenicibysis KESLING, 1952 [·S] | MDEV
+      Family Primitiopsidae Swartz, 1936
+        Subfamily Primitiopsinae Swartz, 1936
+          Figure Ill. Aporchites Family PRIBYLITIDAE Pokorny, 1958 [Materials for this family prepared by IVAR HESSLAND, Uni~ versity of Stockholm] | DEV
+      Family Pribylitidae Pokorny, 1958
+        Pribylites POKORNY, 1950 [·P]
+        Primitiopsis JONES, 1887 [P] | MORD
+        Clavofabella MARTINSSON, 1955 [·C]
+        Limbinaria SWARTZ, 1956 [L, multipunctata] | ORD
+        Primitiopsella POLENOVA, 1960 [pro Lepn-ditellina POLENOVA, 1955 (non NECKAJA, 1955») [·L]
+        Subfamily Leiocyaminae Martinsson, 1956
+          Amygdalella MARTINSSON, 1956 [-A] | SIL
+          ?Superfamily YOUNGIELLACEA Kellett, 1933 [nom] | UDEV
+    Superfamily Youngiellacea Kellett, 1933
+      Family Youngiellidae Kellett, 1933
+        Youngiella JONES & KIRKBY, 1895 [-Youngia rutidorsalis JONES & KIRKBY, 1886] | LCARB
+        ?Glyptopleuroides CRONEIS & GALE, 1938 [oG] | REC
+      Family Uncertain schweyerina ZASPELOVA, 1952
+    Superfamily Punciacea lIornibrook,1949
+      Family Punciidae Hornibrook, 1949
+        Manawa HORNIBROOK, 1949 [OM] | REC
+      Family Uncertain craspedobolbina KUMMEROW, 1923
+        The Kloedenellocopina are not a wholly natural group. They include both dimorphic and nondimorphic forms. The most conspicuous feature common to all is strong overlap of the smaller valve by the larger around all or a portion of the free margin. The Kloedenellacea show dimorphism by swelling of the posterior part of the female carapace. Dimorphism in the Paraparchitacea may be represented by a slight enlarge. ment of the posterior half of the carapace. Some specimens of an adult population show the greatest width to be medial, whereas other specimens of the same population show that the greatest width is behind the mid-length. These two types are probably dimorphs but further work on a large number of specimens is needed. Superfamily KLOEDENELLACEA Ulrich & Bassler, 1908 [nom]
+    Superfamily Kloedenellacea Ulrich & Bassler, 1908
+      Family Kloedenellidae Ulrich & Bassler, 1908
+        Dizygopleurinae EGORov, 1950j [Materials for this family prepared by 1] | LSIL
+        Kloedenella ULRICH & BASSLER, 1908 [·Kloedenia pennsylvanica JONES, 1889] | SIL-DEV
+        Dizygopleura ULRICH & BASSLER, 1923 [OD] | SIL
+        ?Eukloedenella ULRICH & BASSLER, 1923 [OE] | UORD
+        Geisina JOHNSON, 1936 [Beyrichiella gregaria ULRICH & BASSLER, 1906] | MISS-PERM
+        Hypotetragona MOREY, 1935 [-H] | MISS
+        Glyptopleurina CORYELL, 1928 [G] | MISS-PENN
+        ?Svantovites POKORNY, 1950 [S]
+        Knoxites EGOROV, 1950 [K] | LCARB
+        ?Pseudoleperditia SCHNEIDER, 1956 [P] | LCARB
+      Family Glyptopleuridae Girty, 1910
+      Family Beyrichiopsidae Henningsmoen, 1953
+        Knoxina CORYELL & ROGATZ, 1932 [·K] | PERM
+        ?Mennerella EGOROV, 1950 [.M] | DEV
+        ?Tambovia SAMOILOVA, 1951 [·T]
+      Family Lichviniidae posner in Egorov, 1950
+        Lichvinia POSNER in EGOROV, 1950 [.L] | CARB
+        Evlanella EGOROV, 1950 [·E] | DEV
+        Kalugia EGOROV, 1950 [·K] | DEV
+        ?Trinota Hou, 1955 [·T] | DEV
+      Family Miltonellidae Sohn, 1950
+        Miltonella SOHN, 1950 [·M] | PERM
+        Sanniolus SOHN, 1954 [OS] | PERM
+        ?Savagellites PRIBYL, 1953 [OKirkbya lindahli ULRICH, 1891] | MISS
+        Sansabella ROUNDY, 1926 [OS] | MISS
+    Superfamily Leperditellacea Ulrich & Bassler, 1906
+      Family Leperditellidae Ulrich & Bassler, 1906
+        Leperditella ULRICH, 1894 [.L] | MORD-UORD
+        ?Aparchitella IVANOVA, 1955 [·A] | ORD
+        Bonneprimites SWARTZ & WHITMORE, 1956 [·Primitia bonnnnai SWARTZ, 1936] | SIL
+        Conchoprimites HESSLAND, 1949 [·C] | LORD-MORD
+        Conchoprimitia QPIK, 1935 [·C] | LORD-MORD
+        Coryellina BRADFIELD, 1935 [·C] | MISS
+        Cryptophyllus LEVINSON, 1951 [·Eridoconcha oboloides ULRICH & BASSLER, 1923]
+        Ectoprimitia BOUCEK, 1936 [OPrimitia corrugata KRAUSE, 1892] | ORD
+        Eridoconcha ULRICH & BASSLER, 1923 [OE] | UORD
+        Hallatia KAY, 1934 [OH]
+        Haploprimitia ULRICH & BASSLER, 1923 [OPrimitia minutissima ULRICH, 1894] | LORD-UDEV
+        ?Kayina HARRIS, 1957 [OK] | MORD
+        Milleratia SWARTZ, 1936 [OBeyrichia cincinnatiensis MILLER, 1875] | MORD-UORD
+        Parahealdia CORYELL & CUSKLEY, 1934 [Op] | LDEV
+        Paraschmidlella SWARTZ, 1936 [·P] | ORD
+        Primitia JONES & HOLL, 1865 [·Beyrichia mundula JONES, 1885 (ICZN pend.)] | LORD-UDEV
+        Primitiella ULRICH, 1894 [·P] | LORD
+      Family Paraparchitidae Scott, 1959
+        Schmidtella ULRICH, 1892 [.S] | ORD
+        Sinoprimitia Hou, 1953 [.S] | LORD
+        Paraparchitella COOPER, 1946 [0P] | PENN
+        Proparaparchites COOPER, 1941 [0P] | MISS-PENN
+        Pseudoparaparchites KELLETT, 1933 [Op] | MISS-PENN
+        ?Samarella POLENOVA, 1952 [OS] | MDEV
+        Paraparchites ULRICH & BASSLER, 1906 [Op]
+        Dieranella ULRICH, 1894 [-D]
+        Editia BRAYER, 1952 [-E] | MISS
+        Haplobolbina HARRIS, 1957 [-H] | MORD
+        ?Karlsteinella BOUCEK, 1936 [-K] | USIL
+        Kayatia OPIK, 1953 [-K] | SIL
+        Kozlowskiella PRIBYL, 1953 [non BOUCOT, 1957] | MDEV
+        Nanopsis HENNINGSMOEN, 1954 [0Beyrichia nanella MOBERG & SEGERBERG, 1906] | LORD
+        Opikatia KAY, 1940 [00]
+        Pinnatulites HESSLAND, 1949 [-Primitiella procera KUMMEROW, 1924] | ORD
+        Piretopsis HENNINGSMOEN, 1953 [Op] | MORD
+        Polyzygia GURICH, 1896 [·P]
+        Pseudostrepula OPIK, 1937 [·Str~pula kuck"siana BONNEMA, 1909] | ORD
+        Sargentina CoRYELL & JOHNSON, 1939 [·S] | USIL
+        Strepula JONES & HOLL, 1886 [·S] | SIL
+    Suborder PODOCOPINA Sars, 1866
+      Superfamily Bairdiacea Sars, 1888
+        Family Bairdiidae Sars, 1888
+          ?Acratia DELo, 1930 [.A] | PENN
+          Bairdiacypris BRADFIELD, 1935 [11011 Bairdiocypris Triebelino Pseudocyproides Spinoboirdio 40 2d Boirdio]
+          Fabalicypris COOPER, 1946 [OF]
+          Bairdianella HARLTON, 1929 [0B] | PENN-LPERM
+          Bairdiolites CRONEIS & GALE, 1939 [0B] | MISS
+          Bairdoppilata CORYELL, SAMPLE & JENNINGS, 1935 [OB] | LCRET-TERT
+          Newsomites MORRIS & HILL, 1952 [N] | SIL
+          Pseudocyproides MORRIS & HILL, 1952 [P] | SIL
+          Spinobairdia MORRIS & HILL, 1952 [OS] | SIL
+          Triebelina VAN DEN BOLD, 1946 [T] | REC
+        Family Beecherellidae Ulrich, 1894
+          Beecherella ULRICH, 1891 [B]
+          Acanthoscapha ULRICH & BASSLER, 1923 [Beecherella nal,icllia ULRICH, 1891] | USIL
+          ?Ulrichella BOUCEK, 1936 [U] | USIL
+        Family Macrocyprididae Miiller, 1912
+          Macrocypris BRADY, 1867 [Cythere minna BAIRD, 1850]
+          Hastacypris CRO EIS & GUTKE, 1939 [OH] | LDEV
+          Pseudophanasymmetria SOHN & BERDAN, 1952 [OPhonassymelria foveala VAN VEEN, 1936]
+      Superfamily Cypridacea Baird, 1845
+        Family Cyprididae Baird, 1845
+          Subfamily Cypridinae Baird, 1845
+            Acocypris VAVRA, 1895 [A]
+            Advenocypris SCHNEIDER, 1956 [A]
+            Afrocypris SARS, 1924 [A]
+            Amplocypris ZALANYI, 1944 [A]
+            Astenocypris G. W. MULLER, 1912 [Leptocypris papyracea SARS, 1903]
+            Baturinella SCHNEIDER, 1956 [B]
+            Bradycypris SARS, 1924 [·Cypris in/tlmescens BRADY, 1907] | REC
+            Centrocypris VAVRA, 1895 [·C] | REC
+            Chrissia HARHfANN, 1957 [C.le"e1zo1·ij]
+            Cypricercus SARS, 1895 [·C]
+            Cypriconcha SARS, 1926 [Cypris barbala FORBES, 1893 J] | REC
+            Cyprinotus BRADY, 1886 [·C] | REC
+            Dolerocypria TRESSLER, 1937 [.D] | REC
+            Exuocypris MANDELSTAM, 1956 [·E]
+            Gesa HARTMANN, 1957 [·G]
+            Globocypris KLlE, 1939 [·G] | REC
+            Hemicyprinotus SCHNEIDER in MANDELSTAM et al., 1957 [·H]
+            Hemicypris SARS, 1903 [·Cyprinollts pyxidata MONIEZ, 1892]
+            Heterocypris CLAUS, 1893 [·CYP,·is ineongmellS RAMDQlHR, 1808] | REC
+            Homocypris SARS, 1924 [·H] | REC
+            Hungarocypris VAVRA, 1906 [·Notodromas madaraszi ORLEY, 1886] | REC
+            Isocypris G.W.MULLER, 1909 [°1] | REC
+            Kassinina MANDELSTAM, 1960 [pm Kassinia MA'.:DELSTAM, 1956 (non KHABAKOV, 1937)]
+            Liocypris SARS, 1924 [.L] | REC
+            Lycopterocypris MANDELSTAM, 1956 [·Cypris faba EGGER, 1910]
+            Mediocypris SCHNEIDER, 1956 [OM]
+            Megalocypris SARS, 1898 [·M] | REC
+            Moenocypris TRIEBEL, 1959 [OM]
+            Mongolianella MANDELSTAM, 1956 [OM]
+            Neocypridopsis KLlE, 1940 [·N] | REC
+            Neozonocypris KLlE, 1944 [·N] | REC
+            Oncocypria DADAY, 1908 [·0]
+            Pachycypris CLAUS, 1893 [·P] | REC
+            Oncocypris C.W.MULLER, 1898 [·0] | REC
+            Ioeeia MANDELSTAM, 1956 [OBairdia siliCllla minor JONES & HINDE, 1890] | MIO
+            Pseudocypretta KUE, 1932 [·P] | REC
+            Pseudocypris DADAY, 1908 [P] | REC
+            Pseudoeucypris SCHNEIDER in MANDELSTAM et al., 1957 [..P]
+            Rectocypris SCHNEIDER in MANDELSTAM et al., 1958 [R]
+            Scottia BRADY & NORMAN, 1889 [Cypris browniana JONES, 1850] | REC
+            Stenocypria G.W.MULLER, 1901 [Cypris fischeri LILLJEBORG, 1883] | REC
+            Suzinia SCHNEIDER, 1956 [Ilowaiskya transcaueasiea SUZtN, 1956] | EOC
+            Ussuriocypris MANDELSTAM, 1956 [U] | LCRET
+            Zonocypris G.W.MiiLLER, 1898 [Z] | REC
+          Subfamily Cypridopsinae Kaufmann, 1900
+            Cypridopsis BRADY, 1867 [Cypris vidtla O.F.MuLLER, 1776] | PERM
+            Cypretta VAVRA, 1895 [Cypridopsis (Cypretta) tentlicatlda] | REC
+            Cypridopsella KAUFMANN, 1900 [Monoctlltls villoSIIS JURINE, 1820] | REC
+            Cyprilla SARS, 1924 [C] | REC
+            Paracypridopsis KAUFMANN, 1900 [P] | REC
+            Potamocypris BRADY, 1870 [Bairdia Itlltoa BRADY, 1868] | UCRET-REC
+          Subfamily Disopontocypridinae Mandelstam, 1956
+            Disopontocypris MANDELSTAM, 1956 [Pontocypris oligocaenica ZALANYI, 1929]
+            Caspiocypris MANDELSTAM, 1956 [Bairdia candida LIVENTAL, 1929]
+            Caspiolla MANDELSTAM, 1960 [·Bairdia 30 3c o 0° 0 00° Cypridopsis Cypretto Cypridopsello 10 FIG]
+            Herpetocyprella DADAY, 1909 [·H] | REC
+            Ilyodromus SARS, 1895 [·Candolla stallleyana KING, 1855] | REC
+            Pontoniella MANDELSTAM, 1960 [.Paracypria aCllmillala ZALANYI, 1929]
+          Subfamily Candoninae Daday, 1900
+            Candona BAIRD, 1845 [·Cypris reptans BAIRD, 1835] | REC
+            Candonocypris SARS, 1894 [Cypris candonoides KING, 1855]
+            Microcypris KAUI'MANN, 1900 [M] | REC
+        Family Cyclocyprididae Kaufmann, 1900
+          Cyclocypris BRADY & NORMAN, 1889 [Cypris globosa SARS, 1863] | TERT-REC
+          Cyclocypria DOBBIN, 1941 [C] | REC
+          Cypria ZENKER, 1854 [Cypris exCltlpta FISCHER, 1854 (=Cypria punetata var] | REC
+          Physocypria VAVRA, 1898 [Op]
+          Eucandona DADAY, 1900 [Catldotla balatonica DADAY, 1894]
+          Arunella BRADY, 1913 [A] | REC
+          Candocypria FURTOS, 1933 [C] | REC
+          ?Candoniella SCHNEIDER, 1956 [C]
+          Candonopsis VAVRA, 1891 [Candona kings/eyi BRADY & ROBERTSON, 1870] | REC
+          Caspiollina MANDELSTAM, 1957 [·C]
+          Cryptocandona KAUFMANN, 1900 [.c] | REC
+          Fergania MANDELSTAM, in MANDELSTAM et al., 1957 [.F] | LCRET
+          Limnocypridea LYUBIMOVA, 1956 [.L]
+          Lineocypris ZALANYI, 1929 [.L] | TERT
+          Liventalina SCHNEIDER in MANDELSTAM et al., 1958 [.Herpetocypris dagadjikensis MARKOVA, 19561] | REC
+          Nannocandona EKMAN, 1950 [·N] | REC
+          Pachecoia ALMEIDA, 1950 [·P]
+          Paracandona HARTWIG, 1899 [·Candona euplectella BRADY & NORMAN, 1889] | REC
+          Parapontoparta HARTMANN, 1955 [·P] | REC
+          Pontoparta VAVRA, 1901 [·P] | REC
+          Pseudocandona KAUFMANN, 1900 [·Candona pubescens KOCH, 1837] | REC
+          ?Riocypris KLIE, 1936 [.R] | REC
+          Siphlocandona BRADY, 1910 [·Candona similis BAIRD, 1845] | REC
+          Thalassocypria HARTMANN, 1957 [·T] | REC
+          Thalassocypris HARTMANN, 1955 [·T] | REC
+          Thaminocypris ZALANYI, 1944 [T]
+          Tuberocypris SWAIN, 1947 [T]
+          Tuberocyproides SWAIN, 1947 [T] | TERT
+          Typhlocypris VEJDOVSKY, 1882 [Cypris eremita VEJDOVSKY, 1880] | REC
+        Family Ilyocyprididae Kaufmann, 1900
+          Subfamily Ilyocypridinae Kaufmann, 1900
+            Cyprideamorphella MANDELSTAM, 1956 [c] | LCRET
+            Iliocyprella DADAY, 1900 [llyocypris bradyi var]
+            Asia M. Ilyocyprimorpha MANDELSTAM, 1956 [°1]
+            Pelocypris KLIE, 1939 [Op] | PLEIS
+            Rhinocypris ANDERSON, 1940 [ol/yoeypris ittrassiea MARTIN, 1940]
+          Subfamily Cyprideinae Martin, 1940
+            Cypridea BOSQUET, 1852 [OCypris granulosa SOWERBY, 1836] | LCRET
+            Cultella LVUBIMOVA, 1959 [-C]
+        Family Notodromadidae Kaufmann, 1900
+          Notodromas LILJEBORG, 1853 [Cypris monacha O.F.MuLLER, 1776] | REC
+          Cyprois ZENKER, 1854 [Cypris marginata STRAUSS, 1821] | TERT
+          Newnhamia KING, 1855 [N] | REC
+        Family Paracyprididae Sars, 1923
+          Paracypris SARS, 1866 [P] | SIL
+          Aglaiella DADAY, 1910 [A] | REC
+          Aglaiocypris SYLVESTER-BRADLEY, 1946 [1947]
+          Paracypria SARS, 1910 [-Paracypris tmll] | REC
+          Phlyctenophora BRADY, 1880 [-Po ua/andica]
+          Pseudocypridina Morinina Pontocyprella LYUBIMOVA, 1955 [-Bairdia harris]
+        Family Pontocyprididae G. W. Miiller, 1894
+          Pontocypris SARS, 1866 [OCypris iermlata SARS, 1863] | DEV
+          Argilloecia SARS, 1866 [.A] | CRET
+          Bakunella SCHNEIDER in MANDELSTAM et al., 1958 [0Pontocypris dorsoarcllata ZALANYI, 1929] | PLEIS
+          Propontocypris SYLVESTER-BRADLEY, 1947 [0Pontocypris trigonella SARS, 1866] | PLEIS-REC
+          Subulacypris SCHNEIDER in MANDELSTAM et al., 1957 [OS]
+          Gutschickia SCOTT, 1944 [·W/zipplella ninevehensis \ 3e 2a ~~ 2d Aglaiella 2c ~] | PENN-LPERM
+          Hilboldtina SCOTT & SUMMERSON, 1943 [OH] | PENN
+          Palaeocypris BRONGNIART, 1876 [0P] | CARB
+          Ranapeltis BASSLER, 1941 [.R] | PERM
+      Superfamily Darwinulacea Brady & Norman, 1889
+        Family Darwinulidae Brady & Norman, 1889
+          Scabriculocypris ANDERSON, 1940 [.S] | JUR
+          Suchonella SPIZHARSKY, 1937 [·S]
+          Suchonellina SPIZHARSKY, 1937 [·Cythere (Cythere/la?) inornata M'Coy & JONES, 1850 (non M'Coy, 1844)]
+          Darwinula BRADY & ROBERTSON, 1885 [Polyeheles stel'ensOlli BRADY & ROBERTSON, 1870] | ORD
+          Darwinuloides MANDELSTAM, 1956 [Darwintlla o/'i/omIis MANDELSTAM, 1947] | PERM-TRI
+      Superfamily Cytheracea Baird, 1850
+        Family Cytheridae Baird, 1850
+          Cythere O. F. MULLER, 1785 [·C]
+          Camptocythere TRIEBEL, 1950 [·C] | JUR
+          Cnestocythere TRIEBEL, 1950 [·C]
+          Loxocythere HORNIBROOK, 1952 [·L] | UCRET
+        Family Acronotellidae Swartz, 1936
+          Acronotella ULRICH & BASSLER, 1923 [-A]
+          Sarsocythere TRESSLER & SMITH, 1948 [-So palt/xi~nsis]
+        Family Berounellidae Sohn & Berdan, 1960
+          Berounella BouCEK, 1936 [0B] | USIL-LDEV
+          ?Kirkbyellina KUMMEROW, 1939 [oK] | LCARB
+        Family Brachycytheridae Puri, 1954
+          Brachycythere ALEXANDER, 1933 [OCythere sphen· aides REUSS, 1854]
+          Alatacythere MURRAY & HUSSEY, 1942 [OCythereis (Pterygoeythereis?) alexanderi HOWE & LAW, 1936 (lion MORROW, 1934)]
+          Amphicythere TRIEBEL, 1954 [A] | JUR
+          ?Apatocythere TRIEBEL, 1940 [A] | CRET
+          Bosquetina KElT, 1857 [Cythe1'e pectinata BOSQUET, 1852]
+          Dictyocythere SYLVESTER-BRADLEY, 1956 [·Cythere retimgata JONES, 1885] | JUR
+          Digmocythere MANDELSTAM, 1958 [.Braehycythere russelli HOWE & LEA in HOWE & LAW, 1936]
+          Diogmopteron HILL, 1954 [.Brachycyrhere liinensis TRIEBEL, 1941]
+          Macrodentina MARTIN, 1940 [OM]
+          Polydentina MALZ, 1958 [OClithroeytheridea? steghawi KLINGLER, 1955] | LCRET
+          Pterygocythere HILL, 1954 [OCypridina a/ata BosQUET, 1847] | UCRET
+          Pterygocythereis BLAKE, 1933 [OCythereis ionesii BAIRD, 1850]
+        Family Bythocytheridae Sars, 1926
+          Miracythere HORNIBROOK, 1952 [OM] | EOC-REC
+          Cytheretta G.W.MULLER, 1894 [c]
+          Loculicytheretta RUGGIERI, 1954 [·Cythere pavonia BRADY, 1866]
+          Paracytheretta TRIEBEL, 1941 [·P] | UCRET-REC
+          Protocytheretta PURl, 1958 [·Cythere daniana BRADY, 1869] | REC
+        Family Cytherideidae Sars, 1925
+          Subfamily Cytherideinae Sars, 1925
+            Anomocytheridea STEPHENSON, 1938 [OCytheridea jlol'idana HOWE & HOUGH in HOWE et al., 1935] | MIO
+            Asciocythere SWAIN, 1952 [0Bytlloeypris /"Otundlls VANDERPOOL, 1928]
+            Clithrocytheridea STEPHENSON, 1936 [·Cytheridea garretti HOWE & CHAMBERS, 1935]
+            Cyamocytheridea OERTLI, 1956 [Bairdia punetatella BOSQUET, 1852] | MIO
+            Cyprideis JONES, 1857 [Candona lorosa JONES, 1850]
+            Dolocytheridea TRIEBEL, 1938 [Cytherina hilseana F] | LCRET
+            Galliaecytheridea OERTLI, 1957 [G]
+            Haplocytheridea STEPHENSON, 1936 [Cytllt'l'idea monlgomeryensis HOWE & CHAMBERS, 1935] | CRET
+            Heterocyprideis ELOFSON, 1941 [Cythere (Cytheridea) sorbyana JONES, 1857]
+            Kalyptovalva HOWE & LAURENCICH, 1958 [Cytheridea ot/ata BOSQUET, 1854]
+            Neocyprideis ApOSTOLESCU, 1956 [non HANAI, 1959] | EOC-MIO
+            Netrocytheridea HowE & LAURENCICH, 1958 [·Cypridina fusifo,.mis BOSQUET, 1847]
+            Nodophthalmocythere MALZ, 1958 [N] | CRET
+            Palaeocytheridella MANDELSTAM, 1958 [E,leythere obsel'l'ata SHARAPOVA, 1937]
+            Perissocytheridea STEPHENSON, 1938 [Cytlleridea matsoni STEPHENSON, 1935) [?=llyocytllere KLlE, 1939] | MIO
+            Pseudocytheridea SCHNEIDER, 1949 [Cytheridea? zalanyi SCHKEIDER] | MIO
+            Schuleridea SWARTZ & SWAIN, 1946 [·S]
+            Sphenocytheridea KElT, 1958 [So gracilis]
+            Vernoniella OERTLI, 1957 [·V]
+            Vetustocytheridea ApOSTOLESCU, 1956 [·Cytlle/·idea (Vetustocytheridea) guitrancourtensis]
+          Subfamily Cuneocytherinae Mandelstam, 1960
+            Cuneocythere LIENENKLAUS, 1894 [·C] | LCRET
+            Monsmirabilia ApOSTOLESCU, 1955 [.Bairdia per· forata BOSQUET, 1852 (non ROEMER, 1838) (=.Monsmirabilia] | EOC
+            Mirabilia ApOSTOLESCU, 1956 [0P]
+          Subfamily Eucytherinae Puri, 1954
+            Eucythere BRADY, 1868 [OCythere dedit'is NORMAN, 1865] | UCRET
+            Euryitycythere OERTLl, 1959 [0E]
+            Pyrocytheridea LYUBIMOVA, 1955 [P]
+            Rotundracythere MANDELSTAM, 1958 [·"Eucythere rotundata HORNIBROOK, 1952"] | EOC-REC
+            Krithe BRADY, CROSSKEY & ROBERTSON, 1874 [·Cythere (Cytllerideis) bartonensis JONES, 1857]
+            Parakrithe VAN DEN BOLD, 1958 [Cytluridea (Doloeytheridea) vermunti VAN DEN BOLD, 1946]
+          Subfamily Neocytherideidinae Puri, 1957
+            Neocytherideis PURl, 1952 [ON] | MIO-REC
+            Hulingsina PURl, 1958 [·H] | MIO-REC
+            Paracyprideis KLlE, 1929 [·Cytheridea fennica HIRSCHMANN, 1909]
+            Cytherissinella SCHNEIDER, 1956 [·C]
+            Lutkevichinella SCHNEIDER, 1956 [.L]
+        Family Cytheruridae G. W. Miiller, 1894
+          Cytherura SARS, 1866 [Cythere gibba G.F.MuLLER, 1785]
+          Cytheropteron SARS, 1866 [Cythe"e latissima NORMAN, 1865 (=C]
+          Eocytheropteron ALEXANDER, 1933 [Cytheropteran bilabatum ALEXANDER, 1929]
+          Kobayashiina HANAI, 1957 [-K]
+          Mehesella REYMENT, 1960 [-M]
+          Eucytherura G.W.MiiLLER, 1894 [-Cythere complexa BRADY, 1867]
+          Hernicytherura ELOFSON, 1941 [-Cythere cellulosa NORMAN, 1865]
+          Howeina HANAI, 1957 [-H]
+          Kangarina CORYELL & FIELDS, 1937 [-K] | MIO
+          Microcytherura G.W.MiiLLER, 1894 [OM]
+          Orthonotacythere ALEXANDER, 1933 [OCytheridea? hannai ISRAELSKY, 1929]
+          Metacytheropteron OERTLI, 1957 [OM]
+          Otocythere TRIEBEL & KLINGLER, 1959 [·0]
+          Paijenborchellina KuzNETsovA, 1957 [·P]
+          Paracytheridea G.W.MULLER, 1894 [·P] | PENN
+          Paracytheropteron RUGGIERI, 1952 [·Cytheropteron l"Olcaratllm SEGUENZA, 1880, =Paracytheridea (Paracyth~opteron)]
+          Procytheropteron LVUBIMOVA, 1955 [·P]
+          Semicytherura WAGNER, 1957 [·Cyt!w·e nigresans BAIRD, 1838]
+        Family Hemicytheridae Puri, 1953
+          Entocythere MARSHALL, 1903 [·E] | REC
+          Sphaeromicola PARIS, 1916 [·S] | REC
+          Hemicythere SARS, 1925 [OCythere villosa SARS, 1866] | EOC-REC
+          Aurila POKORNY, 1955 [OCythere convexa BAIRD, 1850 (=oCythere punctata MUNSTER, 1830)] | REC
+          Caudites CORYELL & FIELDS, 1937 [0e]
+          Elofsonella POKORNY, 1955 [Cythere concinna JONES, 1857] | PLEIS
+          Hemicytheria POKORNY, 1955 [Cypridina folliculosa REUSS, 1850]
+          Heterocythereis ELOFSON, 1941 [Cythere albomaculata BAIRD, 1838] | REC
+          Mutilus NEVIANI, 1928 [Cytkereis (Muti/us) laticancel/ata NEVIANI, 1928 (=Cythere retiformis TERQUEM,]
+          Nephokirkos HOWE, 1951 [N] | EOC
+          Nereina MANDELSTAM in MANDELSTAM et al., 1957 [N]
+          Pokornyella OERTLI, 1956 [Cythere limbata BosQUET, 1852]
+          Procythereis SKOGSBERG, 1928 [Cythereis (Proeythereis) torquata]
+          Tyrrhenocythere RUGGIERI, 1955 [·T]
+          Urocythere HOWE, 1951 [U]
+          Urocythereis RUGGIERI, 1950 [Cytherina fal'osa ROEMER, 1838] | MIO
+        Family Kliellidae Schafer, 1945
+          Kliella SCHAFER, 1945 [·K] | REC
+          Nannokliella SCHAFER, 1945 [N] | REC
+          Campylocythere EDWARDS, 1944 [OC]
+          Triginglymus BLAKE, 1950 [T]
+          Leguminocythereis HOWE, 1936 [L]
+          Acuticythereis EDWARDS, 1944 [A]
+          Basslerites HOWE in CORYELL & FIELDS, 1937 [non Basslerites TEICHERT, 1937 (=Rayella TEICHERT, 1939] | EOC
+        Family Leptocytheridae Hanai, 1957
+          Leptocythere SARS, 1925 [Cytllere pellucida BAIRD, 1850]
+          Callistocythere RUGGIERI, 1953 [Cythere littoralis MULLER, 1894]
+          Mesocythere HARTMANN, 1956 [M]
+        Family Limnocytheridae Klie, 1938
+          Limnocythere BRADY, 1868 [Cythere illOpinata BAIRD, 1843]
+          Afrocythere KLlE, 1935 [A]
+          Bisulcocypris PINTO & SAXGUlXETTI, 1958 [B]
+          Elpidium F. MULLER, 1881 [·E]
+          Gomphocythere SARS, 1924 [·Limnieythere obtusata SARS, 1910]
+          Leucocythere KAUFMANN, 1892 [.L] | REC
+          Paracythereis DELACHAUX, 1928 [non JENNINGS, 1936]
+          ?Pseudolimnocythere KLlE, 1938 [P] | REC
+          Theriosynoecum BRANSON, 1936 [Morrisonia wyolllingensis BRANSON, 1935] | CRET
+        Family Loxoconchidae Sars, 1925
+          Hirschmannia ELOFSON, 1941 [Cyllzere I'iridis O.F] | REC
+          ?Loxoconchella TRIEBEL, 1954 [Loxocollc!za 1,0110luliellsis BRADY, 1880]
+          Loxoconcha SARS, 1866 [Cytllere impressa BAIRD, 1850 (non M'Coy, 1844) (=C] | CRET-REC
+          Cytheromorpha HIRSCHMANN, 1909 [c] | TERT
+          ?Elofsonia WAGNER, 1957 [Loxoconclza baltica HIRSCHMANN, 1909]
+          ?Phlyctocythere KEIJ, 1958 [P]
+        Family Paradoxostomatidae Brady & Norman, 1889
+          Subfamily Paradoxostomatinae Brady & Norman, 1889
+            ?Boldella KElT, 1957 [B] | EOC
+            Cytherois MULLER, 1884 [C] | PLEIS-REC
+            Paracythere G. W. MULLER, 1894 [P] | REC
+            Paracytherois MULLER, 1894 [P] | REC
+            Sclerochilus SARS, 1866 [Cythere contorta NORMAN, 1862] | EOC
+            Xiphichilus BRADY, 1870 [Bythocythere tel1l/issimtl NORMAN, 1869] | REC
+          Subfamily Microcytherinae Klie, 1938
+            Microcythere MULLER, 1894 [M] | MIO
+            Cytheroma G. W. MULLER, 1894 [C]
+        Family Pectocytheridae Hanai, 1957
+          Pectocythere HANAI, 1957 [.P]
+          Arcacythere HORNIBROOK, 1952 [·A]
+          Dolocythere MERTENS, 1956 [.D]
+        Family Permianidae Schneider, 1947
+          Subfamily Progonocytherinae Sylvester-Bradley, 1948
+            Progonocythere SYLVESTER-BRADLEY, 1948 [·P] | MJUR
+            Acanthocythere SYLVESTER-BRADLEY, 1956 [·Cytlure sphaemlala JONES & SHERBORN, 1888]
+            Centrocythere MERTENS, 1956 [·C]
+            ?Gubkiniella KUZNETSOVA, 1956 [-G]
+            Lophocythere SYLVESTER-BRADLEY, 1948 [-Cytlzeridea ostreata JONES &] | MJUR
+            Neocythere MERTENS, 1956 [-N] | LCRET
+            Posteroprotocythere MANDELSTAM in MANDELSTAM et al., 1958 [·Ortlzonotacythere proparia SHARAPOVA] | CRET
+            Procytherettina MANDELSTAM in MANDELSTAM et al., 1958 [-Cythereis solus SHARAPOVA, 1939] | CRET
+            Unodentina MALZ, 1958 [-Macrodentina? spinosa SCHMIDT, 1955] | UJUR
+            Xenocythere SARS, 1925 [-CytlzC1'C ctmeiformis BRADY, 1868]
+          Subfamily Protocytherinae lyubimova in Lyubimova & Khabarova, 1955
+            Protocythere TRIEBEL, 1938 [Cytlzerina triplicata ROEMER, 1841] | LCRET
+            Aphelocythere TRIEBEL & KLINGLER, 1959 [.A]
+            Hutsonia SWAIN, 1946 [·H] | UJUR
+            Klieana MARTIN, 1940 [·K]
+            Looneyella PECK, 1951 [·Cytlz~r~ monticl/la JONES, 1893]
+            Pleurocythere TRIEBEL, 1951 [P]
+            Procytheridea PETERSON, 1954 [P] | REC
+        Family Psammocytheridae Klie, 1938
+          Psammocythere KLlE, 1936 [P]
+          Paraschuleridea SWARTZ & SWAIN, 1946 [P]
+          ?Parataxodonta MANDELSTAM, 1956 [P]
+          Schizocythere TRIEBEL, 1950 [.S] | PERM
+        Family Sinusuellidae Kashevarova, 1958
+          Sinusuella SPIZHARSKY, 1939 [·S] | PERM
+        Family Tomiellidae mandelstam in Yavorsky, 1956
+          Iniella MANDELSTAM in YAVORSKY, 1956 [Leperditia kuznetskiensis SPIZHARSKY, 1937J] | PERM
+          Suriekovella MANDELSTAM, 1958 [Iniella limbata MANDELSTAM, 1956J] | PERM
+          Tomiellina MANDELSTAM in YAVORSKY, 1956 [T] | PERM
+        Family Trachyleberididae Sylvester-Bradley, 1948
+          Trachyleberis BRADY, 1898 [-Cythere scabrocuneata BRADY, 1880] | TERT-REC
+          Actinocythereis PURl, 1953 [-Cythere exanthemata ULRICH & BASSLER, 1904] | EOC-REC
+          Ambocythere VAN DEN BOLD, 1957 [·A] | REC
+          Archicythereis HOWE, 1936 [Cythereis yazooensis HOWE & CHAMBERS, 1934]
+          Bradleya HORNIBROOK, 1952 [Cythere arata BRADY, 1880] | UCRET-REC
+          Buntonia HOWE, 1935 [·B] | UCRET
+          Carinocythereis RUGGIERI, 1956 [Cyt/Ie/'ina carinata ROEMER, 1838] | EOC-REC
+          Cativella CORYELL & FIELDS, 1937 [C] | MIO
+          Costa NEVIANI, 1928 [Cytherina edwards] | MIO-REC
+          Cythereis JONES, 1849 [Cytheril1a ciliata REUSS, 1846 (=*Cytllerina orl1atissima REUSS, 1846)] | CRET
+          Echinocythereis PURl, 1954 [Cythereis garretti HOWE & MCGUIRT, 1935] | UCRET-REC
+          Henryhowella PURl, 1957 [Cythere et'ax ULRICH & BASSLER, 1904] | MIO
+          Hermanites PURl, 1955 [Hermallia retiCtllata PURl, 1954] | EOC-MIO
+          Hirsutocythere HOWE, 1951 [H] | EOC-MIO
+          Idiocythere TRIEBEL, 1958 [°1]
+          Isocythereis TRIEBEL, 1940 [°1]
+          Leniocythere HOWE, 1951 [0L] | EOC
+          Murrayina PURl, 1954 [OM] | MIO
+          ?Normanicythere NEALE, 1959 [OCythere leioderma NORMAN, 1869] | PLEIS
+          Occultocythereis HOWE, 1951 [°0] | EOC
+          Orionina PURl, 1954 [OCy/here l'allghani ULRICH & BASSLER, 1904] | REC
+          Phacorhabdotus HOWE & LAURENCICH, 1958 [0P] | CRET
+          Platycythereis TRIEBEL, 1940 [OCyti/ereis excal'a/a CHAnlAX & SHERBORN, 1893] | LCRET
+          ?Protobuntonia GREKOFF, 1954 [.P] | UCRET
+          Puriana CoRYELL & FIELDS, 1953 [pI'O Favella CORYELL & FIELDS, 1937 (non JORGENSEN, 1925)]
+          Quadracythere HORNIBROOK, 1952 [Cythere !run· cula BRADY, 1898] | REC
+          ?Spongicythere HOWE, 1951 [·S] | EOC
+          ?Trachycythere TRIEBEL & KLINGLER, 1959 [·T]
+          Trachyleberidea BOWEN, 1953 [Cythereis prestwichiana JONES & SHERBORN, 1887] | TERT
+          Veenia BUTLER & JONES, 1957 [CYlhereis ozanana Plotycythereis Quodrocythere Phocorhobdotus 40 Spong icythere]
+        Family Xestoleberididae Sars, 1928
+          Microxestoleberis G.W.MULLER, 1894 [OM] | EOC-REC
+          Uroleberis TRIEBEL, 1958 [Eocytheropteron parnensis ApOSTOLESCU, 1955]
+          Absonocytheropteron PURl, 1957 [0A] | EOC
+          Aspidoconcha DE Vos, 1953 [A] | REC
+          Atjehella KINGMA, 1948 [A]
+          Bronsteiniana MANDELSTAM, 1956 [B] | TERT
+          Climacoidea PURl, 1956 [C]
+          Emphasia MANDELSTAM, 1956 [E]
+          Falunia GREKOFF & MoYES, 1955 [.F] | MIO
+          Gemmanella SCHNEIDER, 1956 [·G]
+          Glorianella SCHNEIDER, 1956 [G] | LTRI
+          Habrocythere TRIEBEL, 1940 [H] | LCRET
+          Hemicytheridea KINGMA, 1948 [H]
+          Hemikrithe VAN DEN BOLD, 1950 [OH] | REC
+          Juvenix KUZNETSOVA in MANDELSTAM et al., 1957 [T] | LCRET
+          Laocoonella DEVOS & STOCK, 1956 [OLaocoon commensalis DEVOS, 1953] | REC
+          Malldelstamia LYUBIMOVA, 1955 [OM]
+          Marslatourella MALz, 1959 [OM]
+          ?Mediocytherideis MANDELSTAM, 1956 [Cythet'idea apatoica SCHWEYER, 1949]
+          Microloxoconcha HARTMANN, 1954 [M] | REC
+          Monoceratella TEICHERT, 1937 [M] | ORD
+          Nannocythere SCHAFER, 1953 [N] | REC
+          Naviculina KATZ in MANDELSTAM et al., 1957 [N]
+          Paenula KUZNETsOVA in MANDELSTAM et al., 1957 [P]
+          Palaeocytheridea MANDELSTAM, 1947 [Po bakirol'i (non Elicythere denticlilata SHARAPOVA, 1937, invalid SD]
+          Pavloviella KUZNETSOVA in MANDELSTAM et al., 1957 [P] | LCRET
+          Pseudocythereis SKOGSBERG, 1928 [Cythel'eis (Pseudocythereis) spinifera] | REC
+          Pseudocytheromorpha PURl, 1957 [P]
+          Pseudocytherura DUBOWSKY, 1939 [P] | REC
+          Pseudokrithe MEHES, 1941 [P]
+          Pseudoloxoconcha G.W.MiiLLER, 1894 [P]
+          Pulviella SCHNEIDER in MANDELSTAM et aI., 1957 [.P] | LTRI
+          Rectocythere MALZ, 1958 [Clithrocyt/leridea? illglandijormis KLINGLER, 1955]
+          Redekea DEVOS, 1953 [R] | REC
+          Renngartenella SCHNEIDER in MANDELSTAM et al., 1957 [R] | TRI
+          Rubracea MANDELSTAM in MANDELSTAM et al., 1957 [R]
+          Ruttenella VAN DEN BOLD, 1946 [R]
+          Saida HORNIBROOK, 1952 [5]
+          Taxodiella KUZNETsoVA in MANDELSTAM et al., 1957 [OT] | LCRET
+          Thalmannia LERoy, 1939 [OT]
+          Segrnina MANDELSTAM in MANDELSTAM et al., 1957 [OCytheropteron lzwttlare LIENENKLAUS, 1894] | LCRET
+          Semicytheridea MANDELSTAM, 1956 [OCythere spirifera CHAPMAN & SHERBORN, 1893]
+          Speluncella SCHNEIDER, 1956 [°S] | LTRI
+          Stillina LAURENCICH, 1957 [°S] | MIO
+          Timiriasevia MANDELSTAM, 1947 [T]
+          Triassinella SCHNEIDER, 1956 [T] | LTRI
+          Tscherdynzeviana KASHEVAROVA, 1958 [T] | PERM
+          Velarocythere BROWN, 1957 [V] | LCRET
+          Paleozoic Bairdiacea. Superfamily HEALDIACEA Harlton, 1933 [nom] | DEV-LCRET
+      Superfamily Healdiacea Harlton, 1933
+        Family Healdiidae Harlton, 1933
+          Incisurella COOPER, 1941 [J] | MISS
+          Phreatura JONES & KIRKBY, 1886 [Op]
+          Robsoniella KUSNETSOVA in MANDELSTAM et al., 1956 [0R] | LCRET
+          Seminolites CORYELL, 1928 [-5] | MISS
+          Waylandella CORYELL & BILLINGS, 1932 [-W]
+          Bairdiocypris KEGEL, 1932 [OBylhocypris (Bairdiocypris) gerolsleinensis KEGEL, 1932] | SIL-DEV
+          Bairdites CORYELL & MALKIN, 1936 [OB] | MDEV
+          Bekena GIBSON, 1955 [OB] | DEV
+          Condracypris ROTH, 1929 [OC] | LDEV-MDEV
+          Coryellites KELLETT, 1936 [OCoryellina firma KELLETT, 1935] | MDEV
+          ?Cyrtocyprus CORYELL & WILLIAMSON, 1936 [C] | SIL
+          Cytherellina JONES & HOLL, 1869 [Beyrichia siliqlla JONES, 1855]
+          Healdianella POSNER, 1951 [H] | LCARB
+          ?Longiscula NECKAJA, 1958 [L]
+          ?Reversocypris PRIBYL, 1955 [R]
+          ?Silcnis NECKAJA, 1958 [OS]
+        Family Barychilinidae Ulrich, 1894
+          Trypetera KESLING, 1954 [OT]
+          ?Venula COOPER, 1941 [Primitiopsis? stria/lIS CRONEIS & FUNKHOUSER, 1938] | MISS
+        Family Cavellinidae Egorov, 1950
+          Cavellina CORYELL, 1928 [0c]
+          Chapmanites KROMMELBEIN, 1954 [0c] | MDEV
+          ?Menoeidina STEWART, 1936 [OM] | DEV
+          Paracavellina COOPER, 1941 [0P] | MISS
+          Platychilella COOPER, 1942 [pro Platycllilw COOPER, 1941 (non] | MISS
+          Tetratylus COOPER, 1941 [OT] | DEV
+          ?Voiganella SHARAPOVA & MANDELSTAM, 1956 [OVolganella magna SPIZHARSKY, 1956]
+          ?Voronina POLENOVA, 1952 [OV] | MORD
+          Krausella ULRICH, 1894 [·K] | MORD
+          ?Cooperatia TOLMACHOFF, 1937 [Cooperia gran/lm TOLMACHOFF, 1926] | LDEV
+          Janusella ROTH, 1929 [,] | LDEV
+          Pachydomella ULRICH, 1891 [P] | DEV
+          Tubulibairdia SWARTZ, 1936 [T] | SIL
+      Superfamily Quasillitacea Coryell & Malkin, 1936
+        Family Quasillitidae Coryell & Malkin, 1936
+          Quasillites CORYELL & MALKIN, 1936 [G] | DEV-MISS
+          Costatia POLENOVA, 1952 [C] | DEV
+          ?Euglyphella WARTHIN, 1934 [Slrepllla slgmoidalis JO:-:ES, 1890] | DEV
+          Graphiadactyllis ROTH, 1929 [0Kirkbya lindahli arkallsalla GlRTY, 1910] | MISS
+          Jcnningsina CORYELL & MALKIN, 1936 [Graphiodaclylus calclllllalllS VAN PELT, 1933]
+          ?Scalptina STOVER, 1956 [S]
+          Bufina CORYELL & MALKIN, 1936 [B] | DEV
+          ?Aurigerites ROUNDY, 1926 [A]
+          ?Bythocyproidea STEWART & HENDRIX, 1945 [·B]
+          Punctomosea STOVER, 1956 [TIIrallella cristata SWARTZ & ORIEL, 1948] | MDEV
+        Family Ropolonellidae Coryell & Malkin, 1936
+          Ropolonellus VAN PELT, 1933 [.B]
+          Rudderina CORYELL & MALKIN, 1936 [·R]
+          Varicobairdia POKORNY, 1950 [OBairdia (Varicobairdia) /(elll1eri)]
+        Family Uncertain unicornites POKORNY, 1950
+      Superfamily Thlipsuracea Ulrich, 1894
+        Family Thlipsuridae Ulrich, 1894
+          Eucraterellina WILSON, 1935 [·E] | LDEV
+          Eustephanella SWARTZ & SWAIN, 1942 [·EtlStephantlS eatastephanes SWARTZ & SWAIN, 1941] | MDEV
+          ?Favulella SWARTZ & SWAIN, 1941 [·Bythoeypris /avulosa JONES, 1889]
+          Hyphasmaphora VAN PELT, 1933 [·H] | MDEV
+          Octonaria JONES, 1887 [·0] | ORD
+          ?Ponderodictya CORYELL & MALKIN, 1936 [·Cythere/laU) bispinulatus STEWART, 1927 (=.Leperditia punctuli/era HALL, 1860)]
+          Rothella WILSON, 1935 [·DizygopletIYa recta ROTH, 1929] | SIL
+          Thlipsuropsis SWARTZ & WHITMORE, 1956 [OT] | USIL
+          Stibus SWARTZ & SWAIN, 1941 [OS]
+          Strepulites CORYELL & MALKIN, 1936 [OS] | MDEV
+          Thlipsurella SWARTZ, 1932 [OT] | SIL-USIL
+          Thlipsurina BASSLER, 1941 [non KUMMEROW, 1953]
+          Thlipsuroides MORRIS & HILL, 1951 [OT] | USIL
+          Thrallella STEWART & HENDRIX, 1945 [·T]
+    Suborder PLATYCOPINA Sars, 1866
+      Family Cytherellidae Sars, 1866
+        Cytherella JONES, 1849 [·Cythcrina ot/ata ROEMER, 1840]
+        ?Ankumia VAN VEEN, 1932 [·A] | CRET
+        ?Platella CORYELL & FIELDS, 1937 [.P] | MIO
+        Abursus LORANGER, 1954 [.A] | DEV
+        ?Altha NECKAJA, 1958 [.A]
+        Anchistrocheles BRADY & NORMAN, 1889 [-A] | REC
+        Artifactella CORYELL & BOOTH, 1933 [-A] | PENN
+        Bosquetia BRADY, CROSSKEY, & ROBERTSON, 1874 [B] | PLEIS
+        Daleiella BOUCEK, 1937 [Cythere corbtdoides Rothello Thlipsurello 30 3b lc Eucroterellino 4b] | SIL
+        Ellesmerina GLEBOVSKAJA & ZASPELOVA in GLEBOVSKAJA, 1948 [·E]
+        Healdiacypris BRADFIELD, 1935 [OH]
+        Macrocyproides SPIVEY, 1939 [OM] | MORD-UORD
+        Microcheilinella GElS, 1933 [OMieroch~ilus distor/us GElS, 1932] | SIL
+        Punctaparchites KAY, 1934 [OCylh~ropsis mgosus JONES, 1858] | MORD
+        Silenites CORYELL & BOOTH, 1933 [OS] | SIL
+  Order MYODOCOPIDA Sars, 1866
+    Family Entomozoidae PHbyl, 1951
+      Subfamily Entomozoinae Pribyl, 1951
+        Entomoprimitia Ku,,,, EROW, 1939 [!'rimi/i" hu//l/IgclIsis MATEHN, 1929 (="CYPl'idiJla lIi/idu ROE'IER, 1850)]
+        Pseudoentomozoe P'lIBYL, 1951 [.EII/omis p/eroides CANAVARI, 1899] | SIL
+        Vltavina BOUCEK, 1936 [OV] | USIL
+      Subfamily Bouciinae Pribyl, 1951
+        Like Entomozoinae, but with posteroventral sulcus in addition to nuchal furrow. U.Sil. Bouda AGNEW, 1942 [OBlIsslerella ol'l1l1/issimll BOUCEK, 1936.1] | ORD
+        Maternella RAIlIEN, 1954 [ORichlerina (?) coslala (RICHTER) var] | UDEV
+    Family Bolbozoidae Boucek, 1936
+    Superfamily Entomoconchacea Brady, 1868
+      Family Entomoconchidae Brady, 1868
+        Subfamily Entomoconchinae Brady, 1868
+          Entomoconchus M'Coy, 1839 [·E] | LCARB
+        Subfamily Oncotechmoninae Kesling, 1954
+          Oncotechmonus KESLING, 1954 [0] | MDEV
+      Family Cyprosinidae Whidborne, 1890
+    Superfamily Thaumatocypridacea G. W. Miiller, 1906
+      Family Thaumatocyprididae G. W. Miiller, 1906
+        Thaumatocypris G. W. MULLER, 1906 [·T] | REC
+    Superfamily Cypridinacea Baird, 1850
+      Family Cypridinidae Baird, 1850
+        Subfamily Cypridininae Baird, 1850
+          Cypridina MILNE EDWARDS, 1840 [-C] | REC
+          Azygocypridina SYLVESTER-BRADLEY, 1950 [-Crossophorus imperator BRADY, 1880] | REC
+          Codonocera BRADY, 1902 [-C] | REC
+          Gigantocypcis G. W. MULLER, 1895 [-G] | REC
+          Heterodesmus BRADY, 1865 [-H]
+          Macrocypridina SKOGSBERG, 1920 [·Cypridina eastan~a BRADY, 1897]
+          Monopia CLAUS, 1873 [·Cypridina monopia CLAUS, 1873]
+          Vargula SKOGSBERG, 1920 [·Cypridina norvegiea BAIRD, 1860] | CARB
+        Subfamily Philomedinae G. W. Muller, 1912
+          Philomedes LILJEBORG, 1853 [·P] | CARB
+          Pleoschisrna BRADY, 1890 [·P]
+          Pseudophilornedcs G. W. MULLER, 1894 [·P]
+      Family Cylindroleberididae G. W. Miiller, 1906
+        Cylindroleberis BRADY, 1867 [pro Asterope PHILIPPI, 1840 (non HUBNER, 1816]
+        Asteropteron SKOGSBERG, 1920 [.Asurope fusea G] | CARB
+        Carbo Cyprella OEKoNINCK, 1841 [·C] | DEV-CARB
+        Cypridinella JONES & KIRKBY, 1874 [·C] | DEV-CARB
+        Cypridella DEKoNINCK, 1841 [non VAVRA, 1895) [·C] | CARB
+      Family Rhombinidae Sylvester-Bradley, 1951
+      Family Sarsiellidae Brady & Norman, 1896
+        Sarsiella NORMAN, 1869 [·S] | REC
+        Rutiderma BRADY & NORMAN, 1896 [·R] | MDEV
+      Family Uncertain cyprosis JONES, 1881
+    Superfamily Halocypridacea Dana, 1852
+      Family Halocyprididae Dana, 1852
+        ?Discoidella CRONEIS & GALE, 1938 [OD]
+        Polycope SARS, 1866 [.P]
+        Polycopsis G. W. MULLER, 1894 [·Polycopt' comprt'ssa BRADY & ROBERTSON, 1869] | DEV
+        Parapolycope KLlE, 1936 [·P] | DEV
+    Suborder CLADOCOPINA Sars, 1866
+      Family Polycopidae Sars, 1866
+        Halocypris DANA, 1852 [·Conchae-cia inf/ata DANA, 1849] | REC
+        Conchoecia DANA, 1849 [·C]
+        Macroconchoecia GRANATA & CAPORIACCO, 1949 [·Conchoe-cia re-tieztlata MULLER, 1906] | REC
+        Euconchoecia G. W. MULLER, 1890 [·E]
+        Archiconchoecia G. W. MULLER, 1894 [·A]
+    Suborder UNCERTAIN Family BUREGIIDAE Polenova, 1953
+      Ampuloides POLENOVA, 1952 [·A] | MORD
+      Arcuaria NECKAJA, 1958 [·A] | MORD
+      Ballardina HARRIS, 1957 [•B] | MORD
+      Balticella THORSLUND, 1940 [·B] | ORD
+      Boucekites PRIBYL, 1951 [.B]
+      Brachycytheropteron K UZNETSOVA, 1960 [·Cytheropteron bicornutum ALEXANDER, 1933] | LCRET
+      Celechovites POKORNY, 1950 [·C]
+      Ceratocypris POULSEN, 1934 [·C] | DEV
+      Coeloenellina POLENOVA, 1952 [·C] | DEV
+      Craspedopyxion JAANUSSON, 1957 [.Primitia undulosa OPIK, 1937] | MORD
+      Ginella V. IVANovA, 1960 [(pro Pinella IVANovA, 1955) (non STEPHENSON, 1941)] | MORD
+      Hemiaechminoides MORRIS & HILL, 1952 [·H] | SIL
+      Hupehella Hou, 1955 [·H]
+      Ilmenoindivisia EGOROV, 1954 [·1] | CARB
+      Indivisia ZASPELOVA, 1954 [·1] | CARB
+      Ivaria NECKAJA, 1960 [(pro Glossopsis NECKAJA, 1953) (non BUSH, 1904] | ORD
+      Moorea JONES & KIRKBY in JONES & HOLL, 1869 [·M] | SIL
+      Paleocythere TOLMACHOFF, 1926 [·P] | MORD-UORD
+      Parapyxion JAANUSSON, 1957 [·Primitia wbotlata THORSLUND, 1948] | MORD-UORD
+      Platyrhomboides HARRIS, 1957 [·P] | ORD
+      Pseudonodellina POLENOVA, 1955 [0Nodel/a? parvula POLENOVA, 1953] | DEV
+      Pseudoperissocytheridea MANDELSTAM, 1960 [OProtocythere erassula MANDELSTAM, 1947] | MORD
+      Pyxion THORSLUND, 1948 [0Primitia carinata HADDING, 1913] | MORD
+      Rectella NECKAJA, 1958 [nom] | ORD
+      Reginacypris SCHNEIDER, 1960 [OCytherina abcissa REUSS, 1850] | MIO
+      Sigillium KuzNETsovA, 1960 [OS]
+      Steusloffina TEICHERT, 1937 [OS] | MORD
+      Antitomis GURICH, 1896 [A] | SIL
+      Aparchitdlina POLENOVA, 1955 [A] | DEV
+      Cuselina AMMON in REIS, SCHUSTER, KOEHNE & AMMON, 1910 [C] | PERM
+      Donellina EGOROV, 1950 [D] | DEV
+      Famenella POLENOVA, 1953 [.F] | MORD
+      Fidelitella V. IVANOVA, 1960 [pro Trilobella V] | MORD
+      Geffenites CORYELL & SOHN, 1938 [oG] | MISS
+      Gibba FUCHS, 1920 [OBeyrichia (gibba) spinosa] | DEV
+      Gipsella EGOROV, 1950 [oG] | DEV
+      Isocythere TERQUEM, 1885 [°1] | LCARB
+      Jonesina ULRICH & BASSLER, 1908 [.Beyrichia fastigiata JO:O:ES and KIRKBY, 1867] | LCARB
+      Nothozoe BARRANDE, 1872 [ON] | CAM
+      Novakina BOUCEK, 1936 [N] | SIL
+      Opisthoplax KUMMEROW, 1943 [·0] | SIL
+      Orthoconchoecia GRANATA & CAPORIACCO, 1949 [no type species designated] | REC
+      Paragraphylus CORYELL & ROZANSKY, 1942 [·P] | MISS
+      Parajonesites IVANOVA, 1955 [0P] | UORD
+      Pyxiprimitia SWARTZ, 1936 [·P]
+      Russia POLENOVA, 1952 [oGrat,ia (RlISsia) unicostala]
+      Sacculus NEVIANI, 1928 [non GOSSE, 1851]
+      Ilina POLENOVA, 1952 [.S] | TRI
+      Sulcoindivisa EGOROV, 1954 [OS] | TRI
+      Synaphe CHAPMAN, 1914 [non HUEBXER, 1825] | TRI
+      Tricornina BoucEK, 1936 [·T] | ORD
+      Trubinella PRIBYL, 1949 [Hippa latens BARRANDE, 1872 (non Hippa FABRICIUS, 1787)] | ORD
+      Lepiditta MATTHEW, 1886 [0L] | CAM
+      Actinoseta KORNICKER, 1958 [.A] | REC
+      Bodenia IVANOVA, 1959 [0B] | MORD
+      Citrella OERTLI, 1959 [OC] | ORD
+      Cyprideidae MARTIN, 1940 [nom] | ORD
+      Dolborella IVANOVA, 1959 [OD] | ORD
+      Eocypridina KESLING & PLOCH, 1960 [OE]
+      Fissocythere MALZ, 1959 [OF]
+      Gesoriacula OERTLI, 1959 [oG]
+      Incongruellina RUGGIERI, 1958 [o/] | MORD
+      Isobythocypris ApOSTOLESCU, 1959 [·1] | MORD
+      Lophodentina ApOSTLOESCU, 1959 [0L] | MORD
+      Pichottia OERTLI, 1959 [·P] | MORD
+      Platylophocythere OERTLI, 1959 [.P] | REC
+      Pteroleperditia HAMADA, 1959 [·Herrmannina ehlersi KESLING, 1958] | ORD-SIL
+      Rhysomagis KESLING, KAVARY, TAKAGI, TILLMAN, & WULF, 1959 [OR] | REC
+      Tanycypris TRIEBEL, 1959 [·Cypris madagascarensis G] | REC
+      Kiaeria GLEBOWSKAJA, 1949 [Leperditia kiaeri GLEBOWSKAJA, 1949J]
+      Bolliinae BOUCEK, 1936 [see Bolliidae]
+      Knoxidae EGOROV, 1950 [nom]
+      Perprimitiidae EGOROV, 1950 [nom]
+      Indivisiidae EGOROV, 1954 [nom]
+      Platycopa SARS, 1865 [see Platycopina]
+      Voiganellacea MANDELSTAM, 1956 [nom]
+      Aglaiocyprinae SCHNEIDER, 1960 [recte AglaiocypridinaeJ (USSR Treatise) tAglaiocypris [=tAglaia J]
+      Ellcyprinae SARS, 1925 [nom]
+      Herpetocyprellinae BRONSTEI'I, 1947 [nom]
+      Loxoella KUZNETSOVA, 1956 [-L]

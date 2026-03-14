@@ -39,31 +39,41 @@ jobs:
           pip install -e "./scoda-engine[dev]"
       - name: Run tests (gate)
         run: pytest tests/ -v
-      - name: Build .scoda packages
+      - name: Build all .scoda packages
         run: |
           mkdir -p dist
           python scripts/build_paleocore_scoda.py
           python scripts/build_trilobase_scoda.py
-      - name: Detect built filenames
+          python scripts/build_brachiobase_scoda.py
+          python scripts/build_graptobase_scoda.py
+          python scripts/build_chelicerobase_scoda.py
+          python scripts/build_ostracobase_scoda.py
+      - name: List built artifacts
         id: files
         run: |
-          echo "TRILOBASE=$(basename dist/trilobase-*.scoda)" >> $GITHUB_OUTPUT
-          echo "PALEOCORE=$(basename dist/paleocore-*.scoda)" >> $GITHUB_OUTPUT
+          echo "### Built packages:" >> $GITHUB_STEP_SUMMARY
+          for f in dist/*.scoda; do
+            echo "- $(basename $f) ($(stat -c%s $f | numfmt --to=iec) bytes)" >> $GITHUB_STEP_SUMMARY
+          done
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.inputs.version_tag }}
-          name: "Trilobase ${{ github.event.inputs.version_tag }}"
+          name: "SCODA Packages ${{ github.event.inputs.version_tag }}"
           body: |
-            ## Trilobase ${{ github.event.inputs.version_tag }}
+            ## SCODA Packages ${{ github.event.inputs.version_tag }}
 
             Built from commit: ${{ github.sha }}
 
             ${{ github.event.inputs.release_notes }}
 
-            ### Artifacts
-            - `${{ steps.files.outputs.TRILOBASE }}` — Trilobase SCODA package
-            - `${{ steps.files.outputs.PALEOCORE }}` — PaleoCore dependency package
+            ### Packages
+            - Trilobase — trilobite taxonomy (Jell & Adrain 2002)
+            - Brachiobase — brachiopod taxonomy (Treatise 1965 & 2000-2006)
+            - Graptobase — graptolite taxonomy (Treatise 1955/1970/2023)
+            - Chelicerobase — chelicerate taxonomy (Treatise 1955)
+            - Ostracobase — ostracod taxonomy (Treatise 1961)
+            - PaleoCore — shared reference data
           files: |
             dist/*.scoda
             dist/*.manifest.json
