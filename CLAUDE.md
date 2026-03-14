@@ -20,11 +20,15 @@ trilobase/
 ├── pytest.ini                        # pytest config (testpaths = tests)
 ├── requirements.txt                  # scoda-engine dependency
 ├── db/                               # Databases (git tracked, versioned filenames)
-│   ├── trilobase-0.3.0.db           # ★ 메인 DB (assertion-centric)
+│   ├── trilobase-0.3.1.db           # ★ 메인 DB (assertion-centric)
+│   ├── brachiobase-0.2.2.db        # Brachiopod DB (Treatise 1965 & 2000-2006)
+│   ├── graptobase-0.1.0.db         # Graptolite DB (Treatise 1955/1970/2023)
 │   ├── trilobase-canonical-0.2.6.db # Legacy canonical DB (보존용)
 │   └── paleocore-0.1.1.db           # PaleoCore reference DB
 ├── dist/                             # Generated artifacts (gitignored)
 │   ├── trilobase-{ver}.scoda        # Trilobase .scoda package
+│   ├── brachiobase-{ver}.scoda     # Brachiobase .scoda package
+│   ├── graptobase-{ver}.scoda      # Graptobase .scoda package
 │   ├── paleocore-{ver}.scoda        # PaleoCore .scoda package
 │   └── *_overlay.db                 # Overlay databases
 ├── data/                             # Source data files
@@ -37,6 +41,10 @@ trilobase/
 │   ├── build_trilobase_db.py        # Trilobase DB 빌드 → db/
 │   ├── build_trilobase_scoda.py     # trilobase.scoda → dist/
 │   ├── validate_trilobase_db.py     # DB 검증 (17 checks)
+│   ├── build_brachiobase_db.py      # Brachiobase DB 빌드 → db/
+│   ├── build_brachiobase_scoda.py   # brachiobase.scoda → dist/
+│   ├── build_graptobase_db.py       # Graptobase DB 빌드 → db/
+│   ├── build_graptobase_scoda.py    # graptobase.scoda → dist/
 │   ├── build_paleocore_db.py        # PaleoCore DB → db/
 │   ├── build_paleocore_scoda.py     # paleocore.scoda → dist/
 │   ├── build_all.py                 # 전체 빌드

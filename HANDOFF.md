@@ -13,7 +13,9 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 
 | Item | Value |
 |------|-------|
-| Trilobase version | **0.3.0** (assertion-centric 통합) |
+| Trilobase version | **0.3.1** (Mya timeline + temporal_code_mya) |
+| Brachiobase version | **0.2.2** (temporal code + timeline) |
+| Graptobase version | **0.1.0** (Treatise 1955/1970/2023) |
 | PaleoCore version | 0.1.1 |
 | taxon | 5,627 |
 | reference | 2,135 |
@@ -23,13 +25,13 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | genus_formations | 4,503 |
 | genus_locations | 4,849 |
 | taxon_reference | 4,173 |
-| ui_queries | 46 |
-| Tests | 118 passing |
+| ui_queries | 52 |
+| Tests | 117 passing |
 | Legacy canonical DB | `trilobase-canonical-0.2.6.db` (보존) |
 
 ## Database Status
 
-**Trilobase DB (trilobase-0.3.0.db) — assertion-centric 통합:**
+**Trilobase DB (trilobase-0.3.1.db) — assertion-centric 통합:**
 
 | Table/View | Records | Description |
 |------------|---------|-------------|
@@ -45,7 +47,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | provenance | — | Data provenance |
 | schema_descriptions | — | Table/column descriptions |
 | ui_display_intent | — | SCODA view type hints |
-| ui_queries | 46 | Named SQL queries |
+| ui_queries | 52 | Named SQL queries |
 | ui_manifest | 1 | Declarative view definitions (JSON) |
 | synonyms (view) | — | Backward-compat VIEW |
 | v_taxonomy_tree (view) | — | edge_cache 기반 트리 뷰 |
@@ -60,14 +62,14 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 python scripts/build_all.py
 
 # 개별 빌드
-python scripts/build_trilobase_db.py          # → db/trilobase-0.3.0.db
+python scripts/build_trilobase_db.py          # → db/trilobase-0.3.1.db
 python scripts/build_paleocore_db.py           # → db/paleocore-0.1.1.db
 python scripts/build_trilobase_scoda.py        # → dist/trilobase-0.3.0.scoda
 python scripts/build_paleocore_scoda.py        # → dist/paleocore-0.1.1.scoda
 python scripts/validate_trilobase_db.py        # → 17/17 검증 통과
 
 # Admin 모드로 실행
-python -m scoda_engine.serve --db-path db/trilobase-0.3.0.db --mode admin --port 8090
+python -m scoda_engine.serve --db-path db/trilobase-0.3.1.db --mode admin --port 8090
 ```
 
 ## History (완료된 주요 작업)
@@ -176,6 +178,21 @@ python -m scoda_engine.serve --db-path db/trilobase-0.3.0.db --mode admin --port
 - scoda-engine: 축 전환 시 빈 트리 처리 버그 수정
 - **상세**: `devlog/20260314_124_p88_timeline_mya_slider.md`
 
+### Brachiobase v0.2.2: Temporal Code + Timeline ✅
+
+- PDF에서 vol2 687/704 genus temporal code 자동 추출 (PyMuPDF)
+- 빌드 스크립트: `|` 구분 location/temporal_code 파싱 추가
+- `temporal_code_mya` 101건 + Timeline 쿼리 6개 + Timeline compound view
+- 3,960/4,664 genus (84.9%)에 temporal_code 보유
+- **상세**: `devlog/20260314_125_brachiobase_timeline.md`
+
+### Graptobase v0.1.0: 초기 빌드 ✅
+
+- Treatise Part V (Graptolithina) 3개 에디션 기반 빌드
+- 539 genera, 624 taxa, 3 classification profiles
+- temporal_code_mya 50건, Timeline 기능 포함
+- **상세**: `devlog/20260314_125_graptobase_v010.md`
+
 ### Taxonomy Management (R01 로드맵)
 
 - **Phase A: 최소 구조 보강** — `assertion.effective_year`, `reference.scope_type`, taxon opinion history UI
@@ -225,7 +242,7 @@ trilobase/                                 # Domain data, scripts, and tests onl
 ├── pytest.ini                             # pytest config (testpaths=tests)
 ├── requirements.txt                       # scoda-engine dependency
 ├── db/                                    # Canonical DBs (git tracked, versioned filenames)
-│   ├── trilobase-0.3.0.db                # ★ 현재 메인 DB (assertion-centric)
+│   ├── trilobase-0.3.1.db                # ★ 현재 메인 DB (assertion-centric)
 │   ├── trilobase-canonical-0.2.6.db      # Legacy canonical DB (보존용)
 │   ├── trilobase-assertion-*.db          # 이전 assertion DB 버전들 (보존용)
 │   └── paleocore-0.1.1.db               # PaleoCore reference DB
@@ -307,7 +324,7 @@ pytest tests/
 
 ## DB Schema
 
-### Trilobase DB (trilobase-0.3.0.db)
+### Trilobase DB (trilobase-0.3.1.db)
 
 ```sql
 -- taxon: 5,627 records — all taxa (Class~Genus + Subfamily + placeholders)
@@ -354,12 +371,12 @@ v_taxonomic_ranks -- edge_cache 기반 랭크 뷰
 
 -- SCODA tables
 artifact_metadata, provenance, schema_descriptions,
-ui_display_intent, ui_queries (46), ui_manifest (1)
+ui_display_intent, ui_queries (52), ui_manifest (1)
 ```
 
 **SQLite ATTACH usage (3-DB):**
 ```python
-conn = sqlite3.connect('db/trilobase-0.3.0.db')
+conn = sqlite3.connect('db/trilobase-0.3.1.db')
 conn.execute("ATTACH DATABASE 'dist/trilobase_overlay.db' AS overlay")
 conn.execute("ATTACH DATABASE 'db/paleocore-0.1.1.db' AS pc")
 ```
@@ -367,6 +384,6 @@ conn.execute("ATTACH DATABASE 'db/paleocore-0.1.1.db' AS pc")
 ## Notes
 
 - `data/sources/*.txt`가 assertion DB 빌드의 정규 소스
-- `db/trilobase-0.3.0.db`가 현재 메인 DB (`scripts/db_path.py:find_trilobase_db()`로 resolve)
+- `db/trilobase-0.3.1.db`가 현재 메인 DB (`scripts/db_path.py:find_trilobase_db()`로 resolve)
 - `db/trilobase-canonical-0.2.6.db`는 이전 canonical DB (taxonomic_ranks 기반, 보존용)
 - Original PDF reference: Jell & Adrain (2002)
