@@ -27,7 +27,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-from db_path import find_canonical_db
+from db_path import find_canonical_db, find_paleocore_db
 
 ASSERTION_VERSION = "0.3.1"
 
@@ -354,6 +354,8 @@ def copy_taxon(src, dst):
                            raw_entry, created_at)
         VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
     """, rows)
+    # Fix UCAMB → UCAM typo (Cyclagnostus)
+    dst.execute("UPDATE taxon SET temporal_code = 'UCAM' WHERE temporal_code = 'UCAMB'")
     return len(rows)
 
 
@@ -1491,107 +1493,116 @@ def _build_queries():
 
         # --- Profile diff edges (for Diff Tree rendering) ---
         # --- P87: Timeline ---
-        ("timeline_geologic_periods", "Geologic time periods for timeline axis",
-         "SELECT code AS id, name, start_mya AS sort_order\n"
-         "FROM pc.temporal_ranges\n"
-         "WHERE start_mya IS NOT NULL\n"
-         "ORDER BY start_mya DESC",
+        ("timeline_geologic_periods", "Geologic time periods for timeline axis (Mya steps)",
+         "SELECT fad_mya AS id, code AS name, -fad_mya AS sort_order\n"
+         "FROM temporal_code_mya\n"
+         "WHERE code IN ('LCAM','MCAM','UCAM','LORD','MORD','UORD',\n"
+         "               'LSIL','USIL','LDEV','MDEV','UDEV',\n"
+         "               'MISS','PENN','LPERM','UPERM')\n"
+         "UNION ALL\n"
+         "SELECT 251.9 AS id, 'End Permian' AS name, -251.9 AS sort_order\n"
+         "ORDER BY sort_order",
          None),
 
-        ("timeline_publication_years", "Distinct publication years for timeline axis",
-         "SELECT DISTINCT r.year AS year, r.year AS label\n"
-         "FROM reference r\n"
-         "JOIN assertion a ON a.reference_id = r.id\n"
-         "WHERE r.year IS NOT NULL\n"
-         "ORDER BY r.year",
-         None),
+        ("timeline_publication_years", "Distinct genus naming years for timeline axis",
+         "SELECT DISTINCT CAST(t.year AS INTEGER) AS year, CAST(t.year AS INTEGER) AS label\n"
+         "FROM taxon t\n"
+         "JOIN classification_edge_cache e ON e.child_id = t.id\n"
+         "  AND e.profile_id = COALESCE(:profile_id, 1)\n"
+         "WHERE t.rank = 'Genus' AND t.year IS NOT NULL\n"
+         "ORDER BY year",
+         '{"profile_id": "integer"}'),
 
-        ("taxonomy_tree_by_geologic", "Taxa filtered by geologic time period (cumulative)",
+        ("taxonomy_tree_by_geologic", "Taxa filtered by geologic time (Mya snapshot)",
+         "WITH RECURSIVE filtered_genera AS (\n"
+         "    SELECT t.id\n"
+         "    FROM taxon t\n"
+         "    JOIN classification_edge_cache e ON e.child_id = t.id AND e.profile_id = COALESCE(:profile_id, 1)\n"
+         "    WHERE t.rank = 'Genus'\n"
+         "    AND (:timeline_value IS NULL OR t.temporal_code IN (\n"
+         "        SELECT tr.code FROM temporal_code_mya tr\n"
+         "        WHERE tr.fad_mya >= :timeline_value AND tr.lad_mya <= :timeline_value\n"
+         "    ))\n"
+         "), ancestors AS (\n"
+         "    SELECT id AS taxon_id FROM filtered_genera\n"
+         "    UNION\n"
+         "    SELECT e.parent_id\n"
+         "    FROM classification_edge_cache e\n"
+         "    JOIN ancestors a ON e.child_id = a.taxon_id\n"
+         "    WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id IS NOT NULL\n"
+         ")\n"
          "SELECT t.id, t.name, t.rank, t.author, t.year, t.temporal_code, t.is_valid\n"
          "FROM taxon t\n"
-         "WHERE t.id IN (\n"
-         "    SELECT DISTINCT e.child_id FROM classification_edge_cache e WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
-         "    UNION\n"
-         "    SELECT DISTINCT e.parent_id FROM classification_edge_cache e WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id IS NOT NULL\n"
-         ")\n"
-         "AND (\n"
-         "    :timeline_value IS NULL\n"
-         "    OR t.temporal_code IN (\n"
-         "        SELECT tr.code FROM pc.temporal_ranges tr\n"
-         "        WHERE tr.start_mya >= (\n"
-         "            SELECT tr2.start_mya FROM pc.temporal_ranges tr2\n"
-         "            WHERE tr2.code = :timeline_value\n"
-         "        )\n"
-         "    )\n"
-         "    OR t.rank != 'Genus'\n"
-         ")\n"
+         "WHERE t.id IN (SELECT taxon_id FROM ancestors)\n"
          "ORDER BY t.id",
-         '{"profile_id": "integer", "timeline_value": "string"}'),
+         '{"profile_id": "integer", "timeline_value": "real"}'),
 
-        ("taxonomy_tree_by_pubyear", "Taxa filtered by publication year (cumulative)",
+        ("taxonomy_tree_by_pubyear", "Taxa filtered by naming year (cumulative)",
+         "WITH RECURSIVE filtered_genera AS (\n"
+         "    SELECT t.id\n"
+         "    FROM taxon t\n"
+         "    JOIN classification_edge_cache e ON e.child_id = t.id AND e.profile_id = COALESCE(:profile_id, 1)\n"
+         "    WHERE t.rank = 'Genus'\n"
+         "    AND t.year IS NOT NULL AND CAST(t.year AS INTEGER) <= :timeline_value\n"
+         "), ancestors AS (\n"
+         "    SELECT id AS taxon_id FROM filtered_genera\n"
+         "    UNION\n"
+         "    SELECT e.parent_id\n"
+         "    FROM classification_edge_cache e\n"
+         "    JOIN ancestors a ON e.child_id = a.taxon_id\n"
+         "    WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id IS NOT NULL\n"
+         ")\n"
          "SELECT t.id, t.name, t.rank, t.author, t.year, t.temporal_code, t.is_valid\n"
          "FROM taxon t\n"
-         "WHERE t.id IN (\n"
-         "    SELECT DISTINCT e.child_id FROM classification_edge_cache e WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
-         "    UNION\n"
-         "    SELECT DISTINCT e.parent_id FROM classification_edge_cache e WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id IS NOT NULL\n"
-         ")\n"
-         "AND (\n"
-         "    t.id IN (\n"
-         "        SELECT DISTINCT a.subject_taxon_id\n"
-         "        FROM assertion a\n"
-         "        JOIN reference r ON a.reference_id = r.id\n"
-         "        WHERE a.predicate = 'PLACED_IN'\n"
-         "        AND r.year <= :timeline_value\n"
-         "    )\n"
-         "    OR t.rank != 'Genus'\n"
-         ")\n"
+         "WHERE t.id IN (SELECT taxon_id FROM ancestors)\n"
          "ORDER BY t.id",
          '{"profile_id": "integer", "timeline_value": "integer"}'),
 
-        ("tree_edges_by_geologic", "Edges filtered by geologic time period",
+        ("tree_edges_by_geologic", "Edges filtered by geologic time (Mya snapshot)",
+         "WITH RECURSIVE filtered_genera AS (\n"
+         "    SELECT t.id\n"
+         "    FROM taxon t\n"
+         "    JOIN classification_edge_cache e ON e.child_id = t.id AND e.profile_id = COALESCE(:profile_id, 1)\n"
+         "    WHERE t.rank = 'Genus'\n"
+         "    AND (:timeline_value IS NULL OR t.temporal_code IN (\n"
+         "        SELECT tr.code FROM temporal_code_mya tr\n"
+         "        WHERE tr.fad_mya >= :timeline_value AND tr.lad_mya <= :timeline_value\n"
+         "    ))\n"
+         "), ancestors AS (\n"
+         "    SELECT id AS taxon_id FROM filtered_genera\n"
+         "    UNION\n"
+         "    SELECT e.parent_id\n"
+         "    FROM classification_edge_cache e\n"
+         "    JOIN ancestors a ON e.child_id = a.taxon_id\n"
+         "    WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id IS NOT NULL\n"
+         ")\n"
          "SELECT e.child_id, e.parent_id\n"
          "FROM classification_edge_cache e\n"
-         "JOIN taxon t ON t.id = e.child_id\n"
          "WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
-         "AND (\n"
-         "    :timeline_value IS NULL\n"
-         "    OR t.temporal_code IN (\n"
-         "        SELECT tr.code FROM pc.temporal_ranges tr\n"
-         "        WHERE tr.start_mya >= (\n"
-         "            SELECT tr2.start_mya FROM pc.temporal_ranges tr2\n"
-         "            WHERE tr2.code = :timeline_value\n"
-         "        )\n"
-         "    )\n"
-         "    OR t.rank != 'Genus'\n"
-         ")\n"
-         "AND e.parent_id IN (\n"
-         "    SELECT DISTINCT e2.child_id FROM classification_edge_cache e2 WHERE e2.profile_id = COALESCE(:profile_id, 1)\n"
-         "    UNION\n"
-         "    SELECT DISTINCT e2.parent_id FROM classification_edge_cache e2 WHERE e2.profile_id = COALESCE(:profile_id, 1) AND e2.parent_id IS NOT NULL\n"
-         ")",
-         '{"profile_id": "integer", "timeline_value": "string"}'),
+         "AND e.child_id IN (SELECT taxon_id FROM ancestors)\n"
+         "AND e.parent_id IN (SELECT taxon_id FROM ancestors)",
+         '{"profile_id": "integer", "timeline_value": "real"}'),
 
-        ("tree_edges_by_pubyear", "Edges filtered by publication year",
+        ("tree_edges_by_pubyear", "Edges filtered by naming year (cumulative)",
+         "WITH RECURSIVE filtered_genera AS (\n"
+         "    SELECT t.id\n"
+         "    FROM taxon t\n"
+         "    JOIN classification_edge_cache e ON e.child_id = t.id AND e.profile_id = COALESCE(:profile_id, 1)\n"
+         "    WHERE t.rank = 'Genus'\n"
+         "    AND t.year IS NOT NULL AND CAST(t.year AS INTEGER) <= :timeline_value\n"
+         "), ancestors AS (\n"
+         "    SELECT id AS taxon_id FROM filtered_genera\n"
+         "    UNION\n"
+         "    SELECT e.parent_id\n"
+         "    FROM classification_edge_cache e\n"
+         "    JOIN ancestors a ON e.child_id = a.taxon_id\n"
+         "    WHERE e.profile_id = COALESCE(:profile_id, 1) AND e.parent_id IS NOT NULL\n"
+         ")\n"
          "SELECT e.child_id, e.parent_id\n"
          "FROM classification_edge_cache e\n"
-         "JOIN taxon t ON t.id = e.child_id\n"
          "WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
-         "AND (\n"
-         "    t.id IN (\n"
-         "        SELECT DISTINCT a.subject_taxon_id\n"
-         "        FROM assertion a\n"
-         "        JOIN reference r ON a.reference_id = r.id\n"
-         "        WHERE a.predicate = 'PLACED_IN'\n"
-         "        AND r.year <= :timeline_value\n"
-         "    )\n"
-         "    OR t.rank != 'Genus'\n"
-         ")\n"
-         "AND e.parent_id IN (\n"
-         "    SELECT DISTINCT e2.child_id FROM classification_edge_cache e2 WHERE e2.profile_id = COALESCE(:profile_id, 1)\n"
-         "    UNION\n"
-         "    SELECT DISTINCT e2.parent_id FROM classification_edge_cache e2 WHERE e2.profile_id = COALESCE(:profile_id, 1) AND e2.parent_id IS NOT NULL\n"
-         ")",
+         "AND e.child_id IN (SELECT taxon_id FROM ancestors)\n"
+         "AND e.parent_id IN (SELECT taxon_id FROM ancestors)",
          '{"profile_id": "integer", "timeline_value": "integer"}'),
 
         ("profile_diff_edges", "Diff edges: base profile structure with change status vs compare",
@@ -2911,6 +2922,25 @@ def main():
     print("\n9. Creating compatibility views...")
     create_views(dst.cursor())
     dst.commit()
+
+    # 10b. Build temporal_code_mya mapping table
+    print("   Building temporal_code_mya table...")
+    pc_db = Path(find_paleocore_db())
+    dst.execute(f"ATTACH DATABASE '{pc_db}' AS pc")
+    dst.execute("""
+        CREATE TABLE temporal_code_mya AS
+        SELECT code, start_mya AS fad_mya, end_mya AS lad_mya
+        FROM pc.temporal_ranges
+        WHERE start_mya IS NOT NULL
+        UNION ALL SELECT 'USIL/LDEV', 433.4, 393.3
+        UNION ALL SELECT 'UCAM/LORD', 497.0, 470.0
+        UNION ALL SELECT 'UORD/LSIL', 458.4, 433.4
+        UNION ALL SELECT 'PENN/LPERM', 323.2, 272.95
+    """)
+    n_tcm = dst.execute("SELECT COUNT(*) FROM temporal_code_mya").fetchone()[0]
+    dst.execute("DETACH DATABASE pc")
+    dst.commit()
+    print(f"   → {n_tcm} temporal_code_mya mappings")
 
     # 11. SCODA metadata
     print("10. Creating SCODA metadata...")

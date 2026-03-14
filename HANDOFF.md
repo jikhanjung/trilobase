@@ -105,6 +105,10 @@ python -m scoda_engine.serve --db-path db/trilobase-0.3.0.db --mode admin --port
 - 60+ 레거시 스크립트 → `scripts/archive/`
 - **상세**: `devlog/20260311_121_trilobase_030_rename_consolidation.md`
 
+### P84: Tree Search + Watch ✅
+- 검색 노드 복구, Watch/Unwatch, Removed Taxa 목록 구현
+- **상세**: `devlog/20260311_P84_tree_search_and_watch.md`
+
 ### 설계 리뷰 문서
 - **R01**: 시간에 따라 변화하는 Taxonomy 관리 — `devlog/20260302_R01_taxonomy_management.md`
 - **R02**: Classification Profile 시각적 비교 — `devlog/20260302_R02_tree_diff_visualization.md`
@@ -152,12 +156,24 @@ python -m scoda_engine.serve --db-path db/trilobase-0.3.0.db --mode admin --port
 - ~~synonym manifest fix~~ ✅ genus_detail synonyms sub_query 추가, synonym_list → linked_table 전환
 - ~~fide matching 개선~~ ✅ et al./year suffix/initial prefix 처리 → 133건 추가 매칭 (총 566건)
 
-### P84: Tree Search 개선 + Watch 기능
+### P84: Tree Search 개선 + Watch 기능 ✅
 
-- **Search Nodes 수정** — 검색창 기능 복구, 뷰포트 내 노드 팝업
-- **Watch 기능** — 노드 우클릭 → Watch/Unwatch, Watch 목록 패널, 확대 렌더링(2×/1.5×)
-- **Removed Taxa 목록** — Diff Tree/Animation에서 제거된 taxa 표시
+- Search Nodes, Watch 기능, Removed Taxa 목록 구현 완료
 - **상세**: `devlog/20260311_P84_tree_search_and_watch.md`
+
+### P87: Timeline 뷰 ✅
+
+- Timeline compound view 구현 완료 (geologic / pubyear 축 모드)
+- ui_queries 6개 추가 (46 → 52)
+- **상세**: `devlog/20260314_123_p87_timeline_implementation.md`
+
+### P88: Timeline Mya 슬라이더 + FAD/LAD 스냅샷 ✅
+
+- Geologic 슬라이더를 시대 코드 기반 → Mya(million years ago) 기반 시점 스냅샷으로 전환
+- `temporal_code_mya` 테이블 신규 생성 (31건: PaleoCore 27 + `/` 구분 코드 4)
+- UCAMB → UCAM 오타 수정 (Cyclagnostus)
+- 16개 축 step (538.8 LCAM ~ 251.9 End Permian)
+- **상세**: `devlog/20260314_124_p88_timeline_mya_slider.md`
 
 ### Taxonomy Management (R01 로드맵)
 

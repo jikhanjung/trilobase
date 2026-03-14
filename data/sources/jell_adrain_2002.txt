@@ -126,7 +126,7 @@ Family AGNOSTIDAE
   Anglagnostus HOWELL, 1935b [Agnostus dux CALLAWAY, 1877] | Shineton Sh Fm, England | LORD
   Biciragnostus F. ERGALIEV in ERGALIEV & ERGALIEV, 2001 [biformis] | Zhumabaisk Fm, Kazakhstan | UCAM
   Connagnostus OPIK, 1967 [venerabilis] | Georgina Lst, Queensland, Australia | MUCAM
-  Cyclagnostus LERMONTOVA, 1940 [elegans] | Kharaulakh, Siberia, Russia | UCAMB
+  Cyclagnostus LERMONTOVA, 1940 [elegans] | Kharaulakh, Siberia, Russia | UCAM
     = Acmarhachis (j.s.s., fide PALMER, 1962)
   Distagnostus SHERGOLD, 1972 [ergodes] | Gola Beds, Queensland, Australia | UCAM
   Eolotagnostus ZHOU in ZHOU et al., 1982 [gansuensis] | Ermogou Fm, Gansu, China | UCAM

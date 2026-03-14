@@ -1,0 +1,284 @@
+---
+reference: Bulman, O.M.B., 1955. Graptolithina, with sections on Enteropneusta and Pterobranchia. In: Moore, R.C. (Ed.), Treatise on Invertebrate Paleontology, Part V. Geological Society of America and University of Kansas Press, pp. V1-V101
+scope:
+  - taxon: Graptolithina
+    coverage: comprehensive
+  - taxon: Enteropneusta
+    coverage: partial
+  - taxon: Pterobranchia
+    coverage: partial
+notes: |
+  Class-level treatment of Graptolithina with full genus-level descriptions.
+  Also covers Enteropneusta (Class) and Pterobranchia (Class) briefly.
+  Includes orders Dendroidea, Tuboidea, Camaroidea, Stolonoidea, Graptoloidea.
+  Temporal abbreviations used in text: L.Ord. = Lower Ordovician, M.Ord. = Middle Ordovician,
+  U.Ord. = Upper Ordovician, L.Sil. = Lower Silurian, U.Sil. = Upper Silurian,
+  Cam. = Cambrian, Tremadoc. = Tremadocian, Arenig. = Arenigian.
+---
+
+Class Graptolithina Bronn, 1846
+
+Order DENDROIDEA Nicholson, 1872
+  Family DENDROGRAPTIDAE Roemer in Frech, 1897
+    Dendrograptus HALL, 1858 [*Graptolithus hallianus] | | ?MCAM-LCARB
+      = Callodendrogratus DECKER, 1945
+      = ?Ophiograptus POULSEN, 1937
+    Callograptus HALL, 1865 [*C. elegans] | | UCAM-LCARB
+      = ?Odontocaulis LAPWORTH, 1881
+    Desmograptus HOPKINSON, 1875 [*Dictyograptus cancellatus] | | UCAM-LCARB
+      = Rhizograptus SPENCER, 1878
+      = Rhizograptus SPENCER, 1884 (nom. van.)
+    Dictyonema HALL, 1851 [*Gorgonia? retiformis] | | UCAM-LCARB
+      = Phylograpta ANGELIN, 1854
+      = Rhabdinopora EICHWALD, 1855
+      = Graptopora SALTER, 1858
+      = Dictyograptus HOPKINSON, 1875
+      = Damesograptus JAHN, 1892
+      = Dictyodendron (nom. van.)
+    Aspidograptus BULMAN, 1934 [*Clematograptus implicatus] | | UCAM-LORD
+    Licnograptus RUEDEMANN, 1947 [*L. elegans] | | LORD
+    Marsipogratus RUEDEMANN, 1936 [*M. bullatus] | | LORD
+      = ?Maripogratus ULRICH & RUEDEMANN, 1931 (nom. nud.)
+    Ptiogratus RUEDEMANN, 1908 [*P. percorrugatus] | | USIL-LORD
+    Reticulogratus WIMAN, 1901 [*Dictyonema tuberosum] | | LORD-USIL
+    Rhipidodendrum KOZLOWSKI, 1949 [*R. samsonowiczi] | | LORD
+    Syrrhipidograptus POULSEN, 1924 [*S. nathorsti] | | LORD
+  Family ANISOGRAPTIDAE Bulman, 1950
+    Anisograptus RUEDEMANN, 1937 [*A. matanensis] | | LORD
+    Adelograptus BULMAN, 1941 [*Bryograptus? hunnebergensis] | | LORD
+    Bryograptus LAPWORTH, 1880 [*B. kjerulfi] | | LORD
+    Clonograptus HALL & NICHOLSON, 1873 [*Graptolithus rigidus] | | LORD
+      = ?Herrmannograptus MONSEN, 1937
+    Radiograptus LAPWORTH MS in BULMAN, 1950 [*R. roseranus] | | LORD
+    Staurograptus EMMONS, 1855 [*S. dichotomus] | | LORD
+    Triograptus MONSEN, 1925 [*T. osloensis] | | LORD
+  Family ACANTHOGRAPTIDAE Bulman, 1938
+    Acanthograptus SPENCER, 1878 [*A. granti] | | ?UCAM-LORD
+      = Acanthograptus SPENCER, 1884 (nom. correct.)
+    Koremagruptus BULMAN, 1927 [*K. onniensis] | | UORD-MDEV
+    Palaeodictyota WHITFIELD, 1902 [*Inocaulis anastomotica] | | USIL
+    ?Ascograptus RUEDEMANN, 1925 [*A. similis] | | USIL
+    ?Haplograptus RUEDEMANN, 1933 [*H. wisconsinensis] | | UCAM-LORD
+  Family PTILOGRAPTIDAE Hopkinson, 1875
+    Ptilogratus HALL, 1865 [*P. plumosus] | | LORD-USIL
+      = ?Denticulograptus SCHMIDT, 1939
+    Mastigogratus RUEDEMANN, 1908 [*Dendrograptus tenuiramosus] | | UCAM-LORD
+    Chaunograptus HALL, 1883 [*Dendrograptus novellus] | | ?UCAM-LORD
+      = ?Thallograptus OPIK, 1928 (non RUEDEMANN, 1925)
+      = Hormograptus OPIK, 1930
+  Family INOCAULIDAE Ruedemann, 1947
+    Inocaulis HALL, 1851 [*I. plumulosa] | | LORD-USIL
+    Thallograptus RUEDEMANN, 1925 [non OPIK] [*Dendrogratus? succulentus] | | LORD-USIL
+    ?Diplosirograptus RUEDEMANN, 1925 [*D. goldringae] | | USIL
+    ?Medusaegraptus RUEDEMANN, 1925 [*M. mirabilis] | | USIL
+  Family CHAUNOGRAPTIDAE Bulman, nov.
+    Chaunograptus HALL, 1883 [*Dendrograptus novellus] | | ?UCAM-LORD
+    Mastigograptus RUEDEMANN, 1908 [*Dendrograptus tenuiramosus] | | UCAM-LORD
+    ?Ascograptus RUEDEMANN, 1925 [*A. similis] | | USIL
+    Ceramograptus HUDSON, 1915 [*C. ruedemanni] | | LORD
+    Coelograptus RUEDEMANN, 1947 [*Inocaulis problematica] | | USIL
+    Ruedemannograptus TERMIER, 1948 [pro Streptograptus RUEDEMANN, 1947 (non YIN, 1937)] | | LORD
+  ?Order DENDROIDEA Incertae Sedis
+    Cactograptus RUEDEMANN, 1908 [*C. crassus] | |
+
+Order TUBOIDEA Kozlowski, 1938
+  Family TUBIDENDRIDAE Kozlowski, 1949
+    Tubidendrum KOZLOWSKI, 1949 [*T. bulmani] | | LORD
+  Family IDIOTUBIDAE Kozlowski, 1949
+    Idiotubus KOZLOWSKI, 1949 [*I. typicalis] | | LORD
+    Calycotubus KOZLOWSKI, 1949 [*C. infundibulatus] | | LORD
+    Conitubus KOZLOWSKI, 1949 [*C. siculoides] | | LORD
+    Cyclograptus SPENCER, 1883 [*C. rotadentatus] | | MSIL
+    Dendrotubus KOZLOWSKI, 1949 [*D. wimani] | | LORD
+    Discograptus WIMAN, 1901 [*D. schmidti] | | LSIL
+    Galeograptus WIMAN, 1901 [*G. wennersteni] | | LSIL
+    ?Calyptograptus SPENCER, 1878 [nom. correct. SPENCER, 1884] [*C. cyathiformis] | | MSIL
+    ?Epigraptus EISENACK, 1941 [*E. bidens] | | LORD
+    ?Rhodonograptus POCTA, 1884 [*R. astericus] | | USIL
+
+Order CAMAROIDEA Kozlowski, 1938
+  Family BITHECOCOMARIDAE Bulman, nov.
+    Bithecocamara KOZLOWSKI, 1949 [*B. gladiator] | | LORD
+  Family CYSTICAMARIDAE Bulman, nov.
+    Cysticamara KOZLOWSKI, 1949 [*C. accollis] | | LORD
+    Flexicollicamara KOZLOWSKI, 1949 [*F. bryozoaeformis] | | LORD
+    Graptocamara KOZLOWSKI, 1949 [*G. hyperlinguata] | | LORD
+    Tubicamara KOZLOWSKI, 1949 [*T. coriacea] | | LORD
+
+Order STOLONOIDEA Kozlowski, 1938
+  Family STOLONODENDRIDAE Bulman, nov.
+    Stolonodendrum KOZLOWSKI, 1949 [*S. uniramosum] | | LORD
+
+Order GRAPTOLOIDEA Lapworth, 1875
+  Family DICHOGRAPTIDAE Lapworth, 1873
+    Section GONIOGRAPTI
+      Goniograptus M'COY, 1876 [*Didymograpsus thureau] | | LORD
+      Anomalograptus CLARK, 1924 [*A. reliquus] | | LORD
+      Brachiograptus HARRIS & KEBLE, 1932 [*B. etaformis] | | LORD
+      Loganograptus HALL, 1868 [*Graptolithus logani] | | LORD
+      Pterograptus HOLM, 1881 [*P. elegans] | | LORD
+      Sigmagraptus RUEDEMANN, 1904 [*S. praecursor] | | LORD
+      Trichograptus NICHOLSON, 1876 [*Dichograptus fragilis] | | LORD
+      Zygograptus HARRIS & THOMAS, 1941 [*Graptolithus abnormis] | | LORD
+    Section TEMNOGRAPTI
+      Temnograptus NICHOLSON, 1876 [*Dichograpsus multiplex] | | LORD
+      Calamagraptus CLARK, 1924 [*C. porrectus] | | LORD
+    Section SCHIZOGRAPTI
+      Schizograptus NICHOLSON, 1876 [*Dichograpsus reticulatus] | | LORD
+      Holograptus HOLM, 1881 [*H. expansus] | | LORD
+        = ?Rouvilligraptus BARROIS, 1893
+      Mimograptus HARRIS & THOMAS, 1940 [*M. mutabilis] | | LORD
+      Trochograptus HOLM, 1881 [*T. diffusus] | | LORD
+    Section DICHOGRAPTI
+      Dichograptus SALTER, 1863 [nom. correct. HALL, 1865] | | LORD
+    Section TETRAGRAPTI
+      Tetragraptus SALTER, 1863 [*Fucoides serra] | | LORD
+        = Graptolithus bryonoides HALL, 1858
+        = Etagraptus RUEDEMANN, 1904
+        = Pendeograptus BOUCEK & PRIBYL, 1951
+      Phyllograptus HALL, 1858 [*P. typus] | | LORD-MORD
+    Section DIDYMOGRAPTI
+      Didymograptus M'COY in SEDGWICK & M'COY, 1851 [*Graptolithus murchisoni] | | LORD-MORD
+        = Cladograptus GEINITZ, 1852
+        = Atopogratus HARRIS, 1926
+        = Expansograptus BOUCEK & PRIBYL, 1951
+        = Holmograptus KOZLOWSKI, 1954
+      Azygograptus NICHOLSON & LAPWORTH in NICHOLSON, 1875 [*A. lapworthi] | | LORD-MORD
+        = ?Nicholsonograptus BOUCEK & PRIBYL, 1951
+      Cardiograptus HARRIS & KEBLE, 1916 [*C. morsus] | | LORD
+      Dinemagruptus KOZLOWSKI, 1952 [*D. warkae] | | LORD
+      Isograptus MOBERG, 1892 [*Didymograptus gibberulus] | | LORD-MORD
+      Janograptus TULLBERG, 1880 [*J. laxatus] | | LORD
+      Maeandrograptus MOBERG, 1892 [*M. schmalenseei] | | LORD
+      Oncograptus T.S. HALL, 1914 [*O. upsilon] | | LORD
+      Parazygograptus KOZLOWSKI, 1954 [*P. erraticus] | | LORD
+      Skiagraptus HARRIS, 1933 [*Diplograptus igneus] | | LORD
+  Family CORYNOIDIDAE Bulman, 1944
+    Corynoides NICHOLSON, 1867 [*C. calicularis] | | MORD
+  Family CRYPTOGRAPTIDAE Hadding, 1915
+    Cryptograptus LAPWORTH, 1880 [*Diplograptus tricornis] | | LORD-MORD
+    Glossograptus EMMONS, 1855 [*G. ciliatus] | | LORD-MORD
+      = Glossograptus EMMONS, 1855; nom. conserv. proposed BULMAN, 1955, ICZN pend.
+    Lonchograptus TULLBERG, 1880 [*L. ovatus] | | LORD
+    Nanograptus HADDING, 1915 [*N. lapworthi] | | MORD
+  Family LEPTOGRAPTIDAE Lapworth, 1879
+    Leptograptus LAPWORTH, 1873 [*Graptolithus flaccidus] | | MORD-UORD
+    Amphigraptus LAPWORTH, 1873 [*Graptolithus divergens] | | MORD
+    Nemagraptus EMMONS, 1855 [*Graptolithus gracilis] | | MORD
+      = Nemagraptus EMMONS, 1855; nom. correct. LAPWORTH, 1873
+      = Stephanograptus GEINITZ, 1866
+      = Helicograptus HALL, 1868
+      = Coenograptus NICHOLSON, 1868
+    Pleurograptus NICHOLSON, 1867 [*Cladograptus linearis] | | MORD-UORD
+    Syndyograptus RUEDEMANN, 1908 [*S. pecten] | | MORD
+  Family DICRANOGRAPTIDAE Lapworth, 1873
+    Dicellograptus HOPKINSON, 1871 [*Didymograptus elegans] | | MORD-UORD
+    Dicranograptus HALL, 1865 [*Graptolithus ramosus] | | MORD-UORD
+    Peirograptus STRACHAN, 1954 [*P. fallax] | | UORD
+  Family DIPLOGRAPTIDAE Lapworth, 1873
+    Subfamily CLIMACOGRAPTINAE Frech, 1897
+      Climacograptus HALL, 1865 [*Graptolithus bicornis] | | LORD-LSIL
+        = ?Paraclimacograptus PRIBYL, 1947
+        = Pseudoclimacograptus PRIBYL, 1948
+    Subfamily DIPLOGRAPTINAE Lapworth, 1873
+      Diplograptus M'COY, 1850 [*Prionotus pristis] | | MORD-LSIL
+        = ?Mesograptus ELLES & WOOD, 1907
+      Amplexograptus ELLES & WOOD, 1907 [*Diplograptus perexcavatus] | | LORD-MORD
+      Glyptograptus LAPWORTH, 1873 [*Diplograptus tamariscus] | | LORD-LSIL
+      Orthograptus LAPWORTH, 1873 [*Graptolithus quadrimucronatus] | | MORD-LSIL
+        = ?Cystograptus HALL, 1865
+        = Glossograptus RUEDEMANN, 1947 (non EMMONS)
+        = Rectograptus PRIBYL, 1949
+    Subfamily PETALOGRAPTINAE Bulman, nov.
+      Petalograptus SUESS, 1851 [pro Diprion BARRANDE, 1850] [*Prionotus folium] | | LSIL
+      Cephalograptus HOPKINSON, 1869 [*Diplograptus cometa] | | LSIL
+  Family ?DIPLOGRAPTIDAE Incertae Sedis
+    Trigonograptus NICHOLSON, 1869 [*T. lanceolatus] | | LORD
+    Gymnograptus BULMAN, 1953 [*Diplograptus linnarssoni] | | LORD
+  Family LASIOGRAPTIDAE Bulman, nov.
+    Lasiograptus LAPWORTH, 1873 [*L. costatus] | | MORD-UORD
+    Hallograptus LAPWORTH, 1877 [*Graptolithus mucronatus] | | LORD-MORD
+    Neurograptus ELLES & WOOD, 1908 [*Lasiograptus margaritatus] | | MORD
+    Nymphograptus ELLES & WOOD, 1908 [*N. velatus] | | UORD
+    Plegmatograptus ELLES & WOOD, 1908 [*P. nebula] | | MORD
+  Family RETIOLITIDAE Lapworth, 1873
+    Subfamily ARCHIRETIOLITINAE Bulman, nov.
+      Archiretiiolites EISENACK, 1935 [*A. regimontanus] | | UORD
+      Orthoretiiolites WHITTINGTON, 1954 [*O. hami] | | MORD
+    Subfamily RETIOLITINAE Lapworth, 1873
+      Retiolites BARRANDE, 1850 [nom. conserv. ICZN Opinion 199] [*Gladiolites geinitzianus] | | LSIL-MSIL
+        = Gladiolites BARRANDE, 1850
+        = Gladiograptus LAPWORTH, 1875
+        = Dimykterograptus HABERFELNER, 1936
+        = Pseudoretiolites BOUCEK & MUNCH, 1944
+      Pseudoplegmatograptus PRIBYL, 1948 [*Retiolites obesus] | | LSIL
+      Stomatograptus TULLBERG, 1883 [*S. tornquisti] | | LSIL-MSIL
+        = ?Retiolites grandis SUESS, 1851
+    Subfamily PLECTOGRAPTINAE Boucek & Munch, 1952
+      Plectograptus MOBERG & TORNQUIST, 1909 [*Retiolites macilentus] | | MSIL-USIL
+      Gothograptus FRECH, 1897 [*Retiolites nassa] | | USIL
+      Holoretiolites EISENACK, 1951 [*Retiolites mancki] | | USIL
+      Paraplectograptus BOUCEK & MUNCH, 1948 [*Retiolites eiseli] | | ?LSIL
+      Spinograptus BOUCEK & MUNCH, 1952 [*Retiolites spinosus] | | USIL
+    Subfamily RETIOGRAPTINAE Boucek, 1933
+      Retiograptus HALL, 1859 [*R. geinitzianus] | | LORD-USIL
+  Family DIMORPHOGRAPTIDAE Elles & Wood, 1908
+    Dimorphograptus LAPWORTH, 1876 [*D. elongatus] | | LSIL
+      = ?Bulmanograptus PRIBYL, 1948
+    Akidograptus DAVIES, 1929 [*A. ascensus] | | LSIL
+    Rhaphidograptus BULMAN, 1936 [*Climacograptus tornquisti] | | LSIL
+      = ?Metadimorphograptus PRIBYL, 1948
+  Family MONOGRAPTIDAE Lapworth, 1873
+    Subfamily MONOGRAPTINAE Lapworth, 1873
+      Monograptus GEINITZ, 1852 [pro Lomatoceras BRONN, 1835] [*Lomatoceras priodon] | | LSIL-USIL
+        = Pomatograptus JAEKEL, 1889
+        = Pristiograptus JAEKEL, 1889
+        = Monoclimacis FRECH, 1897
+        = Spirograptus GURICH, 1908
+        = Demirastrites EISEL, 1912
+        = Streptograptus YIN, 1937
+        = Colonograptus PRIBYL, 1942
+        = Pernerograptus PRIBYL, 1942
+        = Globosograptus BOUCEK & PRIBYL, 1948
+        = Mediograptus BOUCEK & PRIBYL, 1932
+        = Cucullograptus URBANEK, 1954
+      Rastrites BARRANDE, 1850 [*R. peregrinus] | | LSIL
+        = ?Rastrograptus HOPKINSON & LAPWORTH, 1875
+      Barrandeograptus BOUCEK, 1933 [*Cyrtograptus pulchellus] | | LSIL
+    Subfamily CYRTOGRAPTINAE Boucek, 1933
+      Cyrtograptus CARRUTHERS, 1867 [*C. murchisoni] | | LSIL-USIL
+      Abiesgraptus HUNDT, 1935 [*A. multiramosus] | | USIL
+      Diversograptus MANCK, 1923 [*D. ramosus] | | LSIL
+      Linograptus FRECH, 1897 [*Dicranograptus posthumus] | | USIL
+        = Linograptus nilssoni RICHTER, 1875
+
+Graptolithina Incertae Sedis
+  Group GRAPTOVERMIDA Kozlowski, 1949
+    Graptovermis KOZLOWSKI, 1949 [*G. spiralis] | | LORD
+    ?Melanostrophus OPIK, 1930 [*M. fokini] | | LORD
+  Group GRAPTOBLASTI Kozlowski, 1949
+    Graptoblastus KOZLOWSKI, 1949 [*G. planus] | | LORD
+    Graptoblastoides KOZLOWSKI, 1949 [*G. nowaki] | | LORD
+  Group ACANTHASTIDA Kozlowski, 1949
+    Acanthastus KOZLOWSKI, 1949 [*A. luniewski] | | LORD
+
+Unrecognizable Genera
+  Birastrites GEINITZ, 1866
+  Buthograptus HALL, 1861
+  Conograptus RUEDEMANN, 1947
+  Ctenograptus NICHOLSON, 1876
+  Dawsonia NICHOLSON, 1873
+  Leveillites FOERSTE, 1923
+  Megalograptus MILLER, 1874
+  Nereograptus GEINITZ, 1852
+  Phycograptus GURLEY, 1896
+  Planktogratus YAKOVLEV, 1933
+  Procyrtograptus POULSEN, 1943
+  Protistograptus MCLAREN, 1915
+  Protovirgularia M'COY, 1850
+  Stelechograptus RUEDEMANN, 1947
+  Strophograptus RUEDEMANN, 1904
+  Thamnograptus HALL, 1859
+  Triaenograptus T.S. HALL, 1914
+  Triplograptus RICHTER, 1871
+  Udagraptus HEMMMANN, 1951
