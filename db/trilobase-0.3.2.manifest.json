@@ -1,0 +1,18 @@
+{
+  "hub_manifest_version": "1.0",
+  "package_id": "trilobase",
+  "version": "0.3.2",
+  "title": "Trilobase — assertion-centric trilobite taxonomy",
+  "description": "Trilobite taxonomy database built from canonical source data",
+  "license": "CC-BY-4.0",
+  "created_at": "2026-03-15T06:44:53.898779+00:00",
+  "provenance": [
+    "Jell, P.A., and Adrain, J.M., 2002, Available Generic Names for Trilobites",
+    "Adrain, J.M., 2011, Class Trilobita Walch, 1771",
+    "Moore, R.C. (Ed.), 1959, Treatise on Invertebrate Paleontology, Part O",
+    "Kaesler, R.L. (Ed.), 2004, Treatise on Invertebrate Paleontology, Part O, Revised"
+  ],
+  "filename": "trilobase-0.3.2.db",
+  "sha256": "23003d6730616d34c85a4298ee4020e91aa5a14543989f51e960b1ba2ebd96e7",
+  "size_bytes": 4833280
+}
