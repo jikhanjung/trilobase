@@ -1,0 +1,603 @@
+---
+reference: Teichert, C., Kummel, B., Sweet, W.C., Stenzel, H.B., Furnish, W.M., Glenister, B.F., Erben, H.K., Moore, R.C., & Nodine Zeller, D.E., 1964. Cephalopoda - General Features, Endoceratoidea, Actinoceratoidea, Nautiloidea, Bactritoidea. In: Moore, R.C. (ed.), Treatise on Invertebrate Paleontology, Part K, Mollusca 3. Geological Society of America and University of Kansas Press, Lawrence, Kansas. xxviii+519 p.
+scope:
+ - taxon: Nautiloidea
+ coverage: comprehensive
+ - taxon: Endoceratoidea
+ coverage: comprehensive
+ - taxon: Actinoceratoidea
+ coverage: comprehensive
+ - taxon: Bactritoidea
+ coverage: comprehensive
+notes: |
+ Treatise on Invertebrate Paleontology Part K (Mollusca 3 - Cephalopoda), 1964.
+ Covers nautiloid cephalopods: Endoceratoidea, Actinoceratoidea, Nautiloidea
+ (Orders: Ellesmerocerida, Orthocerida, Pseudorthocerida, Endocerida,
+ Tarphycerida, Oncocerida, Discosorida, Ascocerida, Barrandeocerida,
+ Nautilida), and Bactritoidea.
+ Does NOT cover Ammonoidea (Part L) or Coleoidea (Part M).
+ Systematic descriptions begin at K223.
+ NOTE: This file was extracted semi-automatically from the PDF.
+ Distribution text and temporal codes may require manual review.
+source_pdf: data/pdf/Treatise_Cephalopoda_1964.pdf
+format: TSF
+version: "0.1"
+---
+
+# ────────────────────────────────────────────────────────────
+# NAUTILOIDEA + BACTRITOIDEA - Systematic Descriptions (pages K223-K519)
+# ────────────────────────────────────────────────────────────
+
+ Subclass NAUTILOIDEA Agassiz,
+
+# ──────────────────────────────────────────────────────────
+# Order ELLESMEROCERIDA
+# ──────────────────────────────────────────────────────────
+
+      Albertoceras ULRICH & FOERSTE, 1936 [*A. walcotti] | Ord. (L. Canad., ?U. Canad.), N. Am. (widespread)-USSR(Sib.) | ORD
+      Bridgeoceras ULRICH, FOERSTE & MILLER, 1943 [*B. subannulatum] | ] L.Ord., N.Am.(Can.) | LORD
+      Burenoceras ULRICH & FOERSTE, 1931 [*B. pumilum] | L.Ord.(L.Canad.), USA (widespread) - ?China (Manchuria) | LORD
+      Caseoceras ULRICH, FOERSTE & MILLER, 1943 [*C. contraetum] | L.Ord.(L. Canad.), N.Am.(widespread) | LORD
+      Chepuloceras UNKLESBAY & YOUNG, 1956 [*C. inelegans] | ] L.Ord.(L.Canad.), USA(Va.) | LORD
+      Clarkoceras RUEDEMANN, 1905 [*Piloceras newton-winchelli CLARKE] | L.Ord.(L.Canad.), N.Am. (widespread) • IChina(Manchuria) - USSR(Sib.) | LORD
+      Conocerina ULRICH & FOERSTE, 1936 [*C. brevis] | L.Ord.(U.Canad.), USA(Ark.) | LORD
+      Cumberloceras ULRICH, FOERSTE & MILLER, 1943 [*C. buttsi] | Ord.(U.Canad.), USA(widespread) | ORD
+      Dakeoceras ULRICH & FOERSTE, 1931 [*D. normale] | L.Ord.(L.Canad.), USA(widespread) | LORD
+      Desioceras CECIONI, 1953 [*D. /loweri] | ] L.Ord., S.Am.(Arg.). Eremoceras HYATT, 1884, p. [*Cyrtoceras | LORD
+      Syphax BILLINGS, 1865 | L.Ord.(L.Canad.), N.Am.(widespread)·China (Hopeh Prov.-Manchuria) | LORD
+      Hemichoanella TEICHERT & GLENISTER, 1954 [*H. canningi] | L.Ord.(U.Canad.), W. Australia | LORD
+      Lebetoceras TEICHERT & GLENISTER, 1954 [*L. oepiki] | L.Ord.(U.Canad.), W.Australia | LORD
+      Mercurius BILLINGS, 1865 | L.Ord. (L.Canad.) , N.Am.(widespread) -USSR(Sib.).-- holotype, lat. view, X 1.5 | LORD
+      Loxochoanella TEICHERT & GLENISTER, 1954 | L.Ord.(U.Canad.) , W.Australia | LORD
+      Oelandoceras FOERSTE, 1932 [*'Cyrtoceras] | ] L.Ord.(Arenig.), Eu. (Baltic) | LORD
+      Quebecense WHITEAVES, 1898 [*'Ellesmeroceras robsonensis WALCOTT] | L.Ord., N.Am.(widespread) | LORD
+      Shantungendoceras SUN, 1937 [*'So conicum] | L.Ord., China(Shantung Prov.) | LORD
+      Smithvilloceras ULRICH, FOERSTE & MILLER, 1943 | L.Ord.(V.Canad.), USA (Ark.) | LORD
+      Ventroloboceras TEICHERT & GLENISTER, 1954 | L.Ord.(V.Canad.), W.Australia | LORD
+      Multicameroceras KOBAYASHI, 1933 | Ord. (L. Canad., ?V. Canad.), China (Manchuria)-USSR(Sib.) | ORD
+      Palaeoceras FLOWER, 1954 | U.Cam.(Trempealeauan), N.Am.(Tex.) | UCAM
+      Ruthenoccras KORDE, 1949 | ?U.Cam., USSR(Sib.). W Wonwonoceros Sinoeremoceros dae (p. KI46-KI47) | UCAM
+      Sinoeremoceras KOBAYASHI, 1933 | L.Ord.(L.Canad.), China(Manchuria) | LORD
+      Apocrinoceras TEICHERT & GLENISTER, 1954 | L.Ord.(V .Canad.), N.Am. (widespread)- Eu.(Est.)-USSR(Sib.)-W.Australia | LORD
+      Kyminoceras TEICHERT & GLENISTER, 1954 | L.Ord. (U .Canad.), N.Am. (widespread)-W.Australia | LORD
+      Murrayoceras FOERSTE, 1926
+      Murrayi BILLINGS, 1857 | M.Ord.( Chazy.- Blackriver.) , N.Am.(widespread) | MORD
+      Bathmoceras BARRANDE, 1867 | Ord.(Llandeil.} , ?U. Silo (Wenlock.), Eu. (Czech. - Baltoscandia- Port.) - Australia (N. Terr.)-S. Am. (Arg.)-?China | ORD
+    Family CYRTOCERINIDAE Flower,
+      Cyrtocerina BILLINGS, 1865 [*C. typica]
+
+# ──────────────────────────────────────────────────────────
+# Subclass ENDOCERATOIDEA / Order ENDOCERIDA
+# ──────────────────────────────────────────────────────────
+
+  Order ENDOCERIDA Teichert,
+    Thylacoceras TEICHERT & GLENISTER, 1952 [*To kimberleyense] | L.Ord.(U.Canado) , Asia(Inner Mongolia)-NW.Australia | LORD
+    Talassoceras BALASHOV, 1960 [*'T. kumyschtagense] | L.Ord., C.Asia | LORD
+    Anthoceras TEICHERT & GLENISTER, 1954 [*'A. decorum] | L.Ord.(M.Canad.-U.Canad.), N.Am.-NW. Australia-USSR(Sib.) | LORD
+    Campendoceras TEICHERT & GLENISTER, 1954 [*'C. gracile] | L.Ord. (U. Canad.), NW. Australia-?Eu.(Est.) | LORD
+    Clitendoceras ULRICH & FOERSTE, 1936 [*'C. say. lesi] | L.Ord.(M.Canad.-U.Canad.) , N.Am.-USSR(Sib.) | LORD
+    Cotteroceras ULRICH & FOERSTE, 1936 [*'C. compressum] | L.Ord.(M.Canad-U.Canad.), N.Am.(Mo.- Minn.-Va.)-USSR(Sib.) | LORD
+    Cyptendoceras ULRICH & FOERSTE, 1936 [*'C. ruedemanni] | L.Ord. (?mid. U. Canad.), N.Am.(widespread) | LORD
+    Lobendoceras TEICHERT & GLENISTER, 1954 [*'L. emanuelense] | L.Ord. (U. Canad.), NW. Australia·USSR (Sib.).-FIG. 107,4. "'L. emanuelense; 4a-c, ventral, dorsal, ant. views, XO.7 | LORD
+    Mcqueenoceras ULRICH & FOERSTE, 1936 [*'M. ieffersonense] | L.Ord.(U.Canad.), N.Arn.-USSR( ?Sib.) | LORD
+    Meniscoceras FLOWER, 1941 [*'M. coronense] | M.Ord.(M.Chazy.) , E.N.Am | MORD
+    Proendoceras FLOWER, 1955 | L.Ord.(M.Canad.), E.N.Am | LORD
+    Escharendoceras FLOWER, 1956 [*'E. eccentricum] | ] L.Ord.(M.Canad.), USA(Md.).-- dorsal views, Xl | LORD
+    Kirkoceras ULRICH & FOERSTE, 1936 [*'K. arcuatum] | ] L.Ord.(U.Canad.) , USA (Colo.) | LORD
+    Lobosiphon FLOWER, 1956 [*'L. inexpectans] | L.Ord.(U.Canad.) , USA (Colo.-?Tex.) | LORD
+    ?Mysticoceras ULRICH & FOERSTE, 1936 [*'M. vicinum] | ] L.Ord.(U.Canad.), SE. Can.-USA(Md.) | LORD
+    Oderoceras ULRICH, FOERSTE, & MILLER, 1943 [*'0. depressum] | L.Ord.(U.Canad.), USA (Md.) | LORD
+    Platysiphon FLOWER, 1956 [*'Po expansum] | ] L.Ord.(U.Canad.), USA(Md.) | LORD
+    Pliendoceras FLOWER, 1956 [*'Po concavum] | ] L.Ord.(U.Canad.), USA(Md.) | LORD
+    Retroclitendoceras FLOWER, 1956 [*'R. depressum] | L.Ord.(U. Canad.), USA(Md.) | LORD
+    Family PILOCERATIDAE Miller, 1889
+      Allopiloceras ULRICH & FOERSTE, 1936 | L.Ord.(V.Canad.), N.Am.-Australia(Tasm.).-- 1a-c, lat., adoral, dorsal views, XO.7 | LORD
+      Cassinoceras ULRICH & FOERSTE, 1936 | L.Ord. (V.Canad.), E .N. Am.-Spitz.-Arct. O. (Bear Is.) | LORD
+      ?Utoceras ULRICH, FOERSTE & MILLER, 1943 | ] L.Ord.(V.Canad.) , N.Am. - ?Australia (Tasm.) | LORD
+    Family ENDOCERATIDAE Hyatt, 1883
+      Cameroceras CONRAD, 1842 | , ?M.Sil., cosmop | SIL
+      Chazyoceras FLOWER, 1958 | M.Ord., Asia (Korea-Sib.) | MORD
+      Kotoceras KOBAYASHI, 1934 | M.Ord., Asia (Korea-Inner Mongolia-Sib.) | MORD
+      Proterovaginoceras RUEDEMANN, 1905 [*T. montrealense] | )-M.Ord.(Tren/on.) , Eu. (Norway-Sweden- Est.)-C.Asia | MORD
+      Liskeardia WILSON, 1939 | ] U.Ord., Can.(Que.) | UORD
+      Nanno CLARKE, 1894 | ] M.Ord., N.Am | MORD
+      Suecoceras HOLM, 1896 | M.Ord., Eu.(Swed.) | MORD
+      Tasmanoceras TEICHERT & GLENISTER, 1952 [*T. zeehanense] | or U.Ord., Australia (Tasm.) | UORD
+      Chihlioceras GRABAU, 1922 [*C. nathani GRABAU] | L.Ord., N.China | LORD
+      Manchuroceras OZAKI, 1927 [*Piloceras UJolungense KOBAYASHI] | L.Ord.(U.Canad.), USSR(Sib.)-E.Asia- Australia(Tasm.) | LORD
+      Hudsonoeeras FLOWER, 1956 | M.Ord.(Chazy.), N.Am | MORD
+      Cyrlendoceras REMELE, 1886 | hireus (HOLM), M.Ord., Swed.; 1a-e, dorsoventral sec., lat. view, transv. sec., XO.7 | MORD
+      Boreoceras MILLER & YOUNGQUIST, 1947 | ?U.Ord., Arctic Can | UORD
+      Cyclocyrlendoceras BALASHOV, 1961 | M.Ord., Eu.(Est.) | MORD
+      ?Cyrlovaginoceras KOBAYASHI, 1934 | -M.Ord., E.Asia-E.N.Am | MORD
+      Allotrioceras FLOWER, 1955 [*'A. bi/ureatum] | M.Ord.(Chazy.) , N.Am | MORD
+      Mirabiloceras FLOWER, 1955 [*'M. multitubulatum] | M.Sil., Can. (Ont.) | SIL
+  Order INTEJOCERIDA Balashov,
+    Evencoceras BALASHOV, 1960 | , ?M.Ord., USSR(Sib.) | MORD
+    Bajkaloceras BALASHOV, 1962 | M.Ord., China | MORD
+    Colpoceras HALL, 1850 | ] M.Ord., N.Am. (N.Y.) | MORD
+    Conoceras BRONN, 1837 | Ord., Eu.(Est.) | ORD
+    Hemipiloceras SHIMIZU & OBATA, 1936 | Ord., China | ORD
+    Kaipingoceras SHIMIZU & OBATA, 1937 | L.Ord., E.Asia | LORD
+    Linchengoceras OBATA, 1940 | M.Ord., Korea | MORD
+    Penhsioceras ENDO, 1932 | Penn. L M U Actinocerida introduced in successive epochs (dashed n each (solid lines) (Teichert, n) | 
+
+# ──────────────────────────────────────────────────────────
+# Subclass ACTINOCERATOIDEA / Order ACTINOCERIDA
+# ──────────────────────────────────────────────────────────
+
+  Order ACTINOCERIDA Teichert,
+    Family POLYDESMIIDAE Kobayashi,
+      Polydesmia LORENZ, 1906 [*P. canaliculata] | L.Ord., C. & E.Asia | LORD
+      Ordosoceras CHANG, 1959 [*0. sphaeriforme] | M.Ord., Inner Mongolia | MORD
+      Actinoceras BRONN, 1835 | Ord., USA (N.Y.) ; 1a,b, dorsoventral sec., transv. sec., X 0.7; 1c, lat. long. sec. through si- F Actinoceras , phuncle, X1.6; 1d, apical view of septum and siphuncle with radial canals, XO.75 | ORD
+      ?Leurorthoceras FOERSTE, 1921 | Ord., N.Am.-Eu.-Sib | ORD
+      Armenoceras FOERSTE, 1924 | Sil., N.Am.- Greenl.-N.Eu. (USSR) -Asia-Australia | SIL
+      Cyrtonybyoceras TEICHERT, 1933 [*'Orthoceras haesitans BILLINGS] | M.Ord.( Chazy.), N. Am. (Newf.)-E.Asia | MORD
+      Elrodoceras FOERSTE, 1924 [*'Cyrtoceras indianense MILLER] | M.Sil., N.Am.-Eu.(S.USSR) | SIL
+      Gonioceras HALL, 1847 [*'G. anceps]
+      Monocyrtoceras FOERSTE, 1924 [*'M. lentidilatatum] | -U.Ord., N.Am.-N.Eu.- C. & E.Asia-Tasm | UORD
+      Selkirkoceras FOERSTE, 1929 [*'So cuneatum] | Ord., W.N.Am.-Korea | ORD
+      Stolbovoceras BALASHOV, 1962 [*'So boreale] | M.Ord., USSR(Sib.) | MORD
+    Family GONIOCERATIDAE Hyatt,
+    Family HURONIIDAE Foerste &
+      Huronia STOKES, 1824 | -Sil., N.Am.-Green! | SIL
+    Family ORMOCERATIDAE Saemann,
+      Deiroceras HYATT, 1884 | Dev., Ger | DEV
+      ?Eskimoceras TROEDSSON, 1936 | , or ?U.Ord., N.Greenl | UORD
+      Orthonybyoceras SHIMIZU & OBATA, 1935 | -U.Ord., N.Am.-E.Asia, probably widespread | UORD
+      Troedssonoceras FOERSTE, 1928 | -U.Ord., N.Am | UORD
+      ?Aploceras D'ORBIGNY, 1849 | Carbo (Penn.), N. Am.-Eu. (Eng.-Ger.- PoI.-USSR) | 
+      Calhounoceras TROEDSSON, 1926 | or U.Ord., N.Greenl.-Arctic Can | UORD
+      Hopeioceras SHIMIZU & OBATA, 1936 | Ord., E.Asia | ORD
+      Subtofangoceras SHIMIZU & OBATA, 1936 | Ord., E.Asia. ORTHOCERIDA C. SWEET University] siderably depressed conchs are known. Sutures are invariably simple, generally directly tra~sverse, and, in only a few genera, notably smuous. Shell surf | ORD
+      Orthocera MODEER, 1789 [*'Nautilus radicula LINNE]
+      Orthoceros BRUNNICH, 1771 [*'Orthoceratites regularis SCHLOTHEIM]
+
+ Order ORTHOCERIDA Kuhn, 1940
+ Orthocerotoidea SHIMANSKIY, 1951 | L U Trias. L M U +---·1--- ------+----+--1-+---\--1-1 +_ -------j---f---1--11--+---J.--.-l i ----+---l--------+-------1---+----JI---+-----1~ r\ -I +_+__'~I -, I ~. I~I' -<iJ' 1.Jo\, -+ -0 ..... I ,.,. | TRIAS
+ Family ORTHOCERATIDAE M'Coy,
+ Subfamily ORTHOCERATINAE M'Coy, 1844
+ Orthoceras BRUGUIERE, 1789 [*Orthoceratites regularis SCHLOTHEIM] | M.Ord., Eu. (Est.-Lith.-USSR-Sweden) | MORD
+ Bifoveoceras BALASHOV, 1956 [*Orthoceras bifoveatum NOETLlNG] | ] M.Ord., Eu. (Est.-Norway-Sweden)-?Asia( ?China) | MORD
+ Subfamily MICHELINOCERATINAE Flower, 1945
+ Eotripteroceras FLOWER, 1943 | M.Ord., USA (N.Y.) | MORD
+ Hesperoceras MILLER & YOUNGQUIST, 1947 | L.Miss., USA (N.Mex.) | LMISS
+ Plagiostornoceras TEICHERT & GLENISTER, 1952 | -L.Dev., Eu.(Czech.)-Australia | LDEV
+ ?Sinoceras SHIMIZU & OBATA, 1935 | , ?Dev., China | DEV
+ Subfamily KIONOCERATINAE Hyatt in Zittel,
+ Kionoceras HYATT, 1884 | M.Sil., USA (Ohio) | SIL
+ Thoracoceras FISCHER DE WALDHEIM, 1844 | )-L.Perm., USA(?Ariz.- ?Kans.-Mo.-?Tex.)-Eu. (C. USSR-Belg.) | LPERM
+ Subfamily LEUROCYCLOCERATINAE Sweet,
+ Leurocycloceras FOERSTE, 1928 | ); M.Sil., N.Am. (I1I.-Ind.-N.Y.-Ohio-Wis.-Ont.)-Eu.(Czech.). -- ventral, dorsal, lat. views, XO.s | SIL
+ Bohemites ZHURAVLEVA, 1962 | Sil., Eu. (Czech. (Bohemia) ] | SIL
+ Metaspyroceras FOERSTE, 1932 | ruedemanni (FOERSTE), M.Sil., USA (Ohio) ; 2a-g, several specimens, XO.75 | SIL
+ Family SPHOOCERATIDAE Flower,
+ Sphooceras FLOWER, 1962 | M.Sil., Eu.(Czech.) | SIL
+ Sactorthoceras KOBAYASHI, 1934 | ] M.Ord., USA (N.Y.)-Asia(Korea)-Eu. (Norway) | MORD
+ Centroonoceras KOBAYASHI, 1934 | M.Ord., USA (N.Y.)-Asia(Korea) | MORD
+ Sigmocycloceras KOBAYASHI, 1934 | , ?L.Carb | LCARB
+ Lamellorthoceras TERMIER & TERMIER, 1950 | - M.Dev., Afr.(Algeria-Morocco) | MDEV
+ Gorgonoceras ZHURAVLEVA, 1961 [*G. visendum]
+ Troedssonella KOBAYASHI, 1935 [*Polygrammoceras endocel'Oides TROEDSSON] | M.Ord., Eu. (Sweden) | MORD
+ Buttsoceras ULRICH & FOERSTE, 1933 [*01'thoceras adamsi BUTTS] | L.Ord. (U. Canad.), N. Am. (Ala.-Texas-Utah -Idaho - N. Mex.-Que.) | LORD
+ Columenoceras BARSKOV, 1960 | Sil., Czech.(Bohemia) | SIL
+ ?Geisonocerina FOERSTE, 1935 | Dev., N.Am.-Eu.-Australia | DEV
+ Joachimoceras BARSKOV, 1960 | Sil., Czech.(Bohernia) | SIL
+ Jonesoceras BARSKOV, 1960 | Sil., Czech.(Bohemia) | SIL
+ Mesnaquaceras FLOWER, 1955 | Dev., N. Am. (Ill. - Ind.-Me.-Mich.-N.Y.-?Pa.- Wis.-Anticosti-Ont.-Que.) -Eu. (Norway) -Australia | DEV
+ Temperoceras BARSKOV, 1960 [*Orthoceras palemon BARRANDE] | M.Sil., USA (Ind.)-Eu.(Czech.) | SIL
+ Family CLINOCERATIDAE Flower,
+ Whiteavesites FOERSTE, 1929 | Ord., Can.(Man.) | ORD
+ Whitlieldoceras FOERSTE, 1932 | Ord., USA(Wis.); 2a,b, dorsal, right lat. views, Xl. F br tic lb Gospocyrtoceros Lyecoceros Porophrogmite | ORD
+ Family PARAPHRAGMITIDAE Flower
+ Paraphragmites FLOWER, 1943 [*P. ascoceroides] | M.Sil., Can. (Nova Scotia) | SIL
+ Cyrtocycloceras FOERSTE, 1936 [*Cyrtoceras urbanum BARRANDE] | M.Sil., Eu. (Czech.) | SIL
+ Gaspocyrtoceras FOERSTE, 1936 [*G. cooperi] | M.Sil., N.Am.(Wis.-Que.) | SIL
+ Lyecoceras MUTVEI, 1957 [*L. gotlandense] | M.Sil., Eu.(Sweden) | SIL
+ Pseudorthoceras GIRTY, 1911 [*Orthoceras knoxense MCCHESNEY] | - L.Perm., N.Am.-Eu.-Asia-Australia | LPERM
+ Mooreoceras MILLER, DUNBAR, & CONDRA, 1933 [*M. normale] | -L.Perm., N. Am.-Eu.-Asia-Australia | LPERM
+ ?Neocycloceras FLOWER & CASTER, 1935 [*N. obliquum] | Miss.), USA (Pa.)-Afr. (Morocco) | MISS
+ Subfamily SPYROCERATINAE Shimizu & Obata,
+ Spyroceras HYATT, 1884 | Dev., N.Am.(widespread) -Eu.(Czech.-Eng.-Ger.) | DEV
+ Allanoceras BARSKOV, 1959 | U.Sil., USSR(S.Ferghana) | USIL
+ Anastomoceras FLOWER, 1939 | L.Dev., USA(N.Y.) | LDEV
+ Cryptorthoceras FLOWER, 1939 | M.Dev., USA (N.y.).--FlG. 174,6. ·C. produeturn; Xl | MDEV
+ ?Cyrtospyroceras FLOWER, 1938 | Like Spyroeeras, but with cyrtocomc conch apex and ventral siphuncle: M.Dev., USA F - F (N.Y.) | MDEV
+ Cyrtothoracoceras TURNER, 1954 [*Cyrtoceras tuberculaturn M'Coy] | M.Dev., USA (N.Y.) | MDEV
+ Dolorthoceras MILLER, 1931 [*D. circulare] | exile (HALL), M.Dev., USA(N.Y.); XO.7 | MDEV
+ ?Eridites ZHURAVLEVA, 1961 [*E. astrovae] | M.Sil.(Wenlock,), USSR(Podolia) | SIL
+ Euloxoceras MILLER, DUNBAR, & CONDRA, 1933 [*E. greenei] | M.Dev., USA (N.Y.) | MDEV
+ Gordonoceras TEICHERT & GLENISTER, 1953 [*'G. bondi] | or M,Sil., Tasm | SIL
+ Lopingoceras SHIMANSKIY, 1962 [*'Orthoeeras lopingense STOYANOW] | Perm., Eu. (Yugo.-Aus.-USSR)-Asia(China) | PERM
+ Mitorthoceras GORDON, 1960 [*'M. perfilosum] | -Miss.-Okla.-Tex. - Utah) - Eu. (Ire.- Ger.) | MISS
+ Pseudocycloceras BARSKOV, 1959 [*'P. karanglense] | M.Sil., USSR(S.Ferghana) | SIL
+ Reticycloceras GORDON, 1960 [*'R. eroneisi] | (U.Miss.), USA(Ark. - Okla. - Utah) - Eu. (Belg.-Eng.) | UMISS
+ Sceptrites FLOWER, 1939 [*'Orthoeeras seeptrum HALL] | L.Perm., USSR(S. Urals) | LPERM
+ Tripteroceroides MILLER & FURNISH, 1940 [*T. knighti] | (Miss.) , USA (Ky.)-?Eu.(Ire.) | MISS
+ Subfamily CAYUTOCERATINAE Flower, 1939
+ Cayutoceras FLOWER, 1939 [*C. casteri] | U.Dev., USA(N.Y.)-Armenia-Australia.-- sec. of siphuncle, X 6 | UDEV
+ Arpaoceras ZHURAVLEVA, 1962 [*A. raphaeli] | Dev., Eu.(Armenian SSR) | DEV
+ Bradfordoceras FLOWER & CASTER, 1935 [*B. transversum] | U.Dev., USA(Pa.) | UDEV
+ Buchanoceras TEICHERT & GLENISTER, 1952 [*B. graviventrum] | - M.Dev., Australia(Victoria). -- of siphuncle, X3.5 | MDEV
+ ?Dnestroceras ZHURAVLEVA, 1961 [*D. incertum] | ] U.Sil.(U.Ludlov.), USSR(Podolia) | USIL
+ Metastromatoceras ZHURAVLEVA, 1957 [*M. formosum]
+ Stromatoceras TEICHERT & GLENISTER, 1953 [*S. eximium] | or M.Sil., Tasmania | SIL
+ Pseudactinoceras SCHINDEWOLF, 1943 [*P. promiscuum] | L.Carb.(Vise.) , Eu.(Ger.) | LCARB
+ Macroloxoceras FLOWER, 1957
+ Paraloxoceras FLOWER, 1939 | L.Carb.(Vise.) , Eu.(Belg.) | LCARB
+ Family MYSTERIOCERATIDAE Sweet,
+ Mysterioceras TEICHERT & GLENISTER, 1953 | or U.Ord., Tasm.-Eu. (USSR) | UORD
+ Stereoplasmoceras GRABAU, 1922 | M.Ord., Eu. (Norway)-Asia (China-Korea-S. Manchuria). -- 184,1. S. longicameratum SWEET, Norway; la, diagram. dorsoventral sec., X 1.3; 1b, lat. view, XO.7 (1 78) | MORD
+ Family PROTEOCERATIDAE Flower,
+ Gorbyoceras SHIMIZU & OBATA, 1935 | -U.Ord., widespread | UORD
+ Monomuchites WILSON, 1961 | Ord., N.Am.(N.Y.-Que.-Ont.) | ORD
+ Stereospyroceras FLOWER, 1955 [*S. champlainense] | M.Ord., USA(Vt.)-Eu. (Norway) | MORD
+ Tofangoceras KOBAYASHI, 1927 [*T. pauciannlllatllm] | M.Ord., USA(N.Y.)-Asia(S. Manchuria - Korea - Siberia) | MORD
+ Chicagooceras FOERSTE & SAVAGE, 1927 [*C. welleri] | ] M.Sil. N.Am.(Ill.-Ont.) | SIL
+ Cycoceras CRONEIS, 1926 | Carb. (Namur.), Eu.(Scot.-Ire.) | CARB
+ Dictyoceras EICHWALD, 1860 [*Orthoceras porosum EICHWALD] | Sil., Eu. (Est.) | SIL
+ Donacoceras FOERSTE, 1925 [*D. timiskamingense] | [Detailed morphology of conch interior unknown; gross form suggests relationship to Valcouroceratidae (Oncocerida), but siphuncle is too small and apparently is cylindricaL] U.Ord., Can. (Man.) | UORD
+ Heloceras EICHWALD, 1860 | Sil., Eu. (Est.- Czech.) | SIL
+ Neorthoceras SHIMIZU & OBATA, 1936 | Perm., Malay Arch.(Timor) | PERM
+ Subspyroceras SHIMIZU & OBATA, 1935 | ] M.Ord., USA(N.Y.) | MORD
+ Tienoceras CHAO, 1954 | Perm., China(Hunan) | PERM
+ Tretoceras SALTER, 1858 | ), and Dev., Eu.(Ger.) ] | DEV
+ Order ASCOCERIDA Kuhn, 1949
+ Ascoceracea KUHN, 1940 | -U.Sil | USIL
+ Family ASCOCERATIDAE Barrande,
+ Subfamily ASCOCERATINAE Barrande, 1867
+ Schuchenoceratidae MILLER, 1932 | -U.Sil | USIL
+ Ascoceras BARRANDE, 1847 | -U.Sil., Eu.-N.Am.-- 189,2; 191,2. A. collare LINDSTROM, U.SiI. (Ludlov.), Sweden(GotI.); 189,2, partially restored diagram. long. sec. of siphuncle, X8; 191,2, diagram. long. sec., X2 | USIL
+ Canadense BILLINGS, 1857 | U.Ord., N.Am.-Eu | UORD
+ Glossoceras BARRANDE, 1865 | -U.Sil., Eu | USIL
+ Lindstroemoceras MILLER, 1932 | U.Sil., Eu | USIL
+ Parascoceras MILLER, 1932 | U.Sil., Eu.(GotI.) | USIL
+ Anticostiense BILLINGS, 1866 | U.Ord., N.Am.-Eu | UORD
+ Subfamily PROBILLINGSITINAE Flower, 1941
+ Probillingsites FOERSTE, 1928 [*P. welleri] | M.Ord.-U.O'·d., N.Am.-?Eu | MORD
+ Family CHOANOCERATIDAE Miller,
+ Choanoceras LINDSTROM, 1890 [*C. mutabile]
+ Coanoceras FLOWER, 1941 | Sil., Eu.(Gotl.) | SIL
+ Family HEBETOCERATIDAE Flower,
+ Ecdyceras FLOWER, 1941 [*E. sinuiferum] | , ?U.Ord., N.Am | UORD
+ Montyoceras FLOWER, 1941 [*M. arcuatum] | M.Ord., N.Am | MORD
+ Subclass NAUTILOIDEA Agassiz,
+ Order ONCOCERIDA Flower in
+ Family GRACILOCERATIDAE Flower in
+ Graciloceras FLOWER, 1943 | -U.Ord., N.Am | UORD
+ Eorizoceras FLOWER, 1943 | M.Ord., N.Am.-- 199,1. eE. platyceroides, USA(N.Y.); 1a,b, ventral and lat. (venter left), Xl | MORD
+ Piersaloceras TEICHERT, 1930 | U.Ord., Eu.(Est.) | UORD
+ Ringoceras STRAND, 1934 | U.Ord., Eu.(Norway).-- 199,4. eR. praecurvum; 4a-d, dorsal, lat. (venter left), ventral, lat. (venter right), Xl | UORD
+ Family ONCOCERATIDAE Hyatt, 1884
+ Oncoceras HALL, 1847 [*0. constrictum] | -U.Ord., N.Am.-Eu | UORD
+ ?Asaphiceras FOERSTE, 1928 [*A. schucherti] | M.Sil., N.Am | SIL
+ Beloitoceras FOERSTE, 1924 [*Oncoceras pandion HALL] | -U.Ord., N.Am.- Eu | UORD
+ Centrorizoceras FOERSTE, 1930 [*C. slocomi] | M.Sil., N.Am | SIL
+ Dunleithoceras FOERSTE, 1924 [*Cyrtoceras dunleithense MILLER & GURLEY] | - M.Ord., USA(Ill.); 5a,b, lat. (venter left), apert. (venter left), Xl. [=Dunleitoceras BALA- SHOV, 1962 (nom. null.).] | MORD
+ Ehlersoceras FOERSTE, 1932 [*E. huronense] | M.Ord., N.Am.-- (venter left), ventral, Xl | MORD
+ Ekwanoceras FOERSTE & SAVAGE, 1927 [*E. breviconicum] | M.Sil., N.Am.( ?Ohio-Ont.) | SIL
+ Kentlandoceras FOERSTE, 1932 [*K. schrocki] | M.Ord., N.Am | MORD
+ Metarizoceras FOERSTE, 1930 [*'M. savagei] | M.Sil., N.Am.-- lat.(venter left), XI | SIL
+ Miamoceras FLOWER, 1946 [*'M. shideleri] | Ord., N.Am | ORD
+ Neumatoceras FOERSTE, 1935 [*'N. gibberosum] | Ord., USA(Wyo.) ; lat.(venter right), XI (orig., after 73) | ORD
+ Oocerina FOERSTE, 1926 [*'Cyrtoceras lentigradum BARRANDE] | lentigradum (BARRANDE), U.Sil., Czech.; 1a-c, ventral, lat. (venter left), septum (venter left), XO.75 | USIL
+ Oonoceras HYATT, 1884 [*'Cyrtoceras acinaas BARRANDE] | M.Ord.-M.sil., N.Am.-Eu | MORD
+ Paroocerina ZHURAVLEVA, 1961 [*'Po podolskensis] | -U.Sil., Eu.(Czech.-USSR) | USIL
+ Rizosceras HYATT, 1884 [*'Orthoceras indocile BARRANDE] | -U.Sil., N.Am.- Eu | USIL
+ Romingoceras FOERSTE, 1932 [*'R. josephianum] | M.Ord., N.Am | MORD
+ ?Vaupelia FLOWER, 1946 [*'V. russelli] | ] U.Ord., N.Am | UORD
+ Zittelloceras HYATT, 1884 [*'Cyrtoceras hal- Oocerino Asophiceros Z ittelloceros Ehlersoceros Oonoceros p. K] | M.Ord., N.Am.-?Eu.(Norway) | MORD
+ Allumettoceras FOERSTE, 1926 | Ord., N.Am.- Eu.(Est.-Norway) | ORD
+ Hadoccras STRAND, 1934 | Ord., Eu | ORD
+ Rasmussenoceras FOERSTE, 1932 | Ord., N.Am.-Green! | ORD
+ Valcouroceras FLOWER, 1943 | Ord., N.Am.-?Eu.(?Norway) | ORD
+ ?Actinomorpha FLOWER, 1943 | ?M.Ord., N.Am.(Wis. or Minn.) | MORD
+ Augustoceras FLOWER, 1946 | -U.Ord., N.Am.(Ky.-Ohio) | UORD
+ Kindleoceras FOERSTE, 1924 | -U.Ord., N.Am | UORD
+ Manitoulinoceras FOERSTE, 1924 | U.Ord., N.Am.(Ky.-Ohio- Ind.-Ont.) | UORD
+ Minganoceras FOERSTE, 1938 | M.Ord., N.Am | MORD
+ Staufferoceras FOERSTE, 1932 | - U.Ord., N.Am.(Ohio-Minn.) | UORD
+ Family DIESTOCERATIDAE Foerste,
+ Diestoceras FOERSTE, 1924 | , U.Ord., Eu. (Est.) - Green!. - USSR (Sib., Taimyr Penin.) | UORD
+ Dowlingoceras FOERSTE, 1928 | ] U.Ord., N.Am.- ?Eu.( ?Est.-?Norway) | UORD
+ Conradoceras FOERSTE, 1926 | M.Sil., Eu | SIL
+ Hexameroceras HYATT, 1884 | -U.Sil., N.Am.-Eu | USIL
+ Tetrameroceras HYATT, 1884 | -U.Sil., N. Am.-Eu | USIL
+ Trimeroceras HYATT, 1884 | M.Sil., Eu | SIL
+ Eotrimeroceras FOERSTE, 1928 | M.Sil., N.Am | SIL
+ Inversoceras HEDSTROM, 1917 | M.Sil., Eu.(Czech.-Sweden)-N.Am.(Wis.) | SIL
+ Pentarneroceras HYATT, 1884 | M.Sil., N.Am.-Eu | SIL
+ Stenogornphoceras FOERSTE, 1930 | M.Sil., N.Am.(IlI.rOhio) | SIL
+ Brevicoceras FLOWER, 1938 | M.Dev., N.Am. (N.Y.-Mich.-Iowa-Ont.) | MDEV
+ Aletoceras FLOWER, 1938 | M.Dev., N.Am | MDEV
+ Anglicornus FLOWER & CASTER, 1935 | Dev., N.Am.(Pa.-N.Y.) | DEV
+ Blastocerina FLOWER, 1940 [*E. nicholsi] | U.Dev., N.Am | UDEV
+ Exocyrtoceras FLOWER, 1938 [*E. exoticum] | M.Dev., N.Am.(N.Y.-Ohio-Mich.-Ont.) | MDEV
+ Foersteoceras RUEDEMANN, 1925 [*Trochoceras turbinatum HALL] | U.Sil., N.Am | USIL
+ Gonionaedyceras FLOWER, 1945 [*Trocho- 'ceras pandion HALL] | M.Dev., N. Am | MDEV
+ Gyronaedyceras FLOWER, 1945 [*Gyroceras validum HALL] | M.Dev., N.Am.(N.Y.-Wis.).-- 213,1. "G. validum (HALL), USA(N.Y.) ; lat. (venter convex), X0.33 | MDEV
+ Micronoceras FLOWER, 1938 [*M. delphicolum]
+ Mitroceras HYATT, 1894 [*Trochoceras gebhardi HALL]
+ Trochoceras HALL, 1852 [*Trochoceras cugenium HALL] | U.Sil., N.Am | USIL
+ Oxygonioceras FOERSTE, 1925 [*Trochoceras oxynotum BARRAlIlDE] | M.Sil., N.Am.-Eu.(Eng.-Czech.) | SIL
+ Stereotoceras FLOWER, 1950 [*S. oppletum] | ); U.Dev., N.Am.(N.Y.) | UDEV
+ Verticoceras FLOWER, 1936 [*V. ereetum] | -U.Dev., N.Am.-- USA(N.Y.); 2ap, ventral, lat. (venter right), XI | UDEV
+ Wissenbachia FOERSTE, 1926 [*Phragmoeeras orthogaster SANDBERGER &] | M.Dev., Eu.(Czech.-Ger;)-N.Am.(N.Y.) | MDEV
+ Family JOVELLANIIDAE Foord,
+ Jovellania BAYLE, 1879 [*Orthoeeratites buehi DEVERNEUIL] | L.Dev., Eu.(Fr.-Ger.) | LDEV
+ Laumontoceras FOERSTE, 1926 [*Orthoeeras laumonti BARRANDE] | ?L.Dev., Eu | LDEV
+ Mixosiphonoceras HYATT, 1900 [*Cyrtoceras desolatum BARRANDE] | ); ?L.Dev., Eu.(Sp.) | LDEV
+ Tripleuroceras HYATT, 1884 [*Orthoeeras arehiaei BARRANDE] | ); M.Dev., Eu. (Czech.-USSR)-N.Am. (Ont.) | MDEV
+ Psiaoceras SHIMANSKIY, 1957 [*Gomphoeeras hesperis EICHWALD] | hesperis (EICHWALD), L.Carb., USSR; la-e, dorsal, lat. (venter right), septum (venter down), XO.5. OVQceros '\ii~i'iii":::/ (::::::::::::::, Brevicocero '(/)/ 1b C:j I~\~~~J? (;';;- Wissenbochio Aleto | LCARB
+ Family NOTHOCERATIDAE Fischer,
+ Nothoceras BARRANDE, 1856 | M.Dev., Eu | MDEV
+ Blakeoceras FOERSTE, 1926 | ; M.Dev., Eu.(Czech.) | MDEV
+ Bolloceras FOERSTE, 1926 | -U.Dev., Eu. (Czech.)-N.Am.(N.Y.) | UDEV
+ Conostichoceras FOERSTE, 1926 | Dev., Australia | DEV
+ Cyrthoceratites D'ARCHIAC & DEVERNEUIL, 1842 | Dev., Eu | DEV
+ Lorieroceras FOERSTE, 1926 | L.Dev., Eu | LDEV
+ Metaphragmoceras FLOWER, 1938 | M.Dev., Eu.(Czech.)-N.Am.(N.Y.) | MDEV
+ Perimecoceras FOERSTE, 1926 | U.Sil., Eu | USIL
+ Family ACLEISTOCERATIDAE Flower
+ Acleistoceras HYATT, 1884 | M.Dev., N.Am. (widespread) | MDEV
+ Amphicyrtoceras FOERSTE, 1924 | M.Sil., N. Am. (Ohio-Ill.-Wis. -Ont.-Que.)- ?Eu. (?Czech.) | SIL
+ Anomeioceras FOERSTE, 1930
+ Austinoceras FOERSTE, 1934 | M.Sil., N.Am. (Ill.-Ohio) | SIL
+ Byronoceras FOERSTE & SAVAGE, 1927 | M.Sil., N.Am.(IlI.-?Ohio-?Can.) | SIL
+ Chadwickoceras FOERSTE, 1930 | M.Sil., N.Am | SIL
+ ?Clionyssiceras FOERSTE, 1930 | M.Sil., N.Am.-- lat. (venter right), Xl | SIL
+ Crateroceras FOERSTE & SAVAGE, 1927 | M.Sil., N.Am.(Wis.-?NW.Can.) | SIL
+ Ectocyrtoceras FOERSTE, 1930 | M.Sil., N.Am.(IlI.-Ont.-?Ohio) | SIL
+ Euryrizoceras FOERSTE, 1930 [*E. chadwicki] | M.Sil., N.Am.(IlI.- Ohio) | SIL
+ Galtoceras FOERSTE, 1934 [*Cyrtoceras arcticameratum HALL] | M.Sil., N.Am. (N.Y.-Ont.) | SIL
+ Gonatocyrtoceras FOERSTE, 1926 [*Cyrtoceras heteroelytum BARRANDE] | M.Dev. N.Am.(Ill.)-Eu.(Czech.) | MDEV
+ ?Grimsbyoceras FOERSTE, 1934 [*Cyrtoceras elitus BILLINGS] | M.Sil., N.Am. (Ont.-Ohio) | SIL
+ Hercocyrtoceras FOERSTE, 1927 [*Oncoceras amator BILLINGS] | M.Sil., N.Am.(Nova Scotia-Que.) | SIL
+ Perioidanoceras FOERSTE, 1930 [*P. rotundatum] | Sil., N.Am.(Ill.-?Que.) | SIL
+ Poteriocerina FOERSTE, 1926 [*Cyrtoceras lumbosum BARRANDE] | M.Dev., N.Am.(Man.-N.Y.-Mieh.)-Eu.(Czech.) | MDEV
+ Rhomboceras FOERSTE, 1934 [*R. welchi]
+ Slocomoceras FOERSTE, 1930 [*S. retrorsum] | M.Sil., N.Am | SIL
+ Streptoceras BILLINGS, 1866 [*S. janus] | M.Sil., N.Am | SIL
+ ?Tumidoceras FLOWER, 1949 [*T. lenturn] | M.Dev., N.Am | MDEV
+ Worthenoceras FOERSTE, 1930 [*W. elonga- Hercocyrtoceras Tumidoceras Grimsbyoceras Euryrizoceras CI ionyssicer] | M.Sil., N.Am.(IlI.-?Wis.-?Ohio) | SIL
+ Areiliaeoeeras FOERSTE, 1926
+ Family KAROCERATIDAE Teichert,
+ Karoceras ROUSSANOFF, 1909 [*Cyrtoceras laminare BARRANDE] | , ?L.Dev., Eu.(Czech.-?Novaya Zemlya) | LDEV
+ Osbornoceras FOERSTE, 1936 [*0. swinnertoni] | L.Sil., N.Am.(Ohio-?Man.) | LSIL
+ ?Amphoreopsis CRICK, 1904 | (Miss.), N.Am.-Eu., widespread.-- 224,5a-c. *P. fusiforme (SOWERBY), Eu. (Ire.); ventral, lat. and septum (venter right), XO.5 | MISS
+ ?Argocheilus SHIMANSKIY, 1961 [*Argoceras chinense SHIMANSKIY] | [May be slightly endogastric; type description and figure confusin'] L.Carb., China.-- | LCARB
+ Cyrtogomphus FLOWER, 1938 [*C. curvatus] | -U.Dev., N.Am.(N.Y.-Ont.)-Eu. (Ger.-Pol.) | UDEV
+ Lysagoroceras SCHONENBERG, 1952 [*L. angustum] | U.Dev., Eu | UDEV
+ ?Mecynoceras FOERSTE, 1926 [*Gomphoceras rex PACHT] | U.Dev., S.USSR | UDEV
+ Welleroceras MILLER & FURNISH, 1938 [*X. oncoceroides] | (Miss.) , N.Am.-Eu | MISS
+ Polyelasmoceras TEICHERT & GLENISTER, 1952 [*P. adtlnctlm]
+ Brachydomoceras TEICHERT & GLENISTER, 1952 [*B. erecttlm]
+ Coelocyrtoceras FOERSTE, 1926 [*Cyrtoceras l'entralisintlattlm SANDBERGER & SANDBERGER] | M.Dev., Eu | MDEV
+ Cyrtocheilus SHIMANSKIV, 1962 [*Cyrtoceras obliquum FOORD] | ); ?M.Dev., N.Am | MDEV
+ Evlanoceras ZHURAVLEVA, 1962 [*Pachtoceras evlanensis NALlVKIN] | U.Dev., USSR (Russian Platform) | UDEV
+ Hipparionoceras FLOWER, 1945 [*H. iowaense] | M.Dev., N. Am. (N.Y.-Pa.-Ind.-Iowa)-Eu. (Czech.) | MDEV
+ Macrodomoceras TEICHERT & GLENISTER, 1952 [*M. howitti] | M.Dev., Australia | MDEV
+ Pectinoceras TEICHERT & GLENISTER, 1952 [*Phragmoceras subtrigonum M'Cov]
+ Antonoceras SHIMANSKIY, 1957 | M.Dev., Australia.--Flc. 225,3. -P. mbtrigontlm (M'CoY); 3a-c, ventral, septum (venter down), lat. (venter left), XO.4 | MDEV
+ ?Turoceras ZHURAVLEVA, 1959 | Sil., USSR.--FIC. 226,1. -T. schnyrevae; 1a,b, lat. (venter right), lat. (venter left), XI; 1c, septum (venter down), X 3 | SIL
+ Wadeoceras TEICHERT, 1939 | Dev., W.Australia.--FIC. 225,6. -W. allstrale; lat. (venter right), X0.38. E P S GENERA DUBIA | DEV
+ Apioceras FAHRENKOHL, 1844 | Carb., USSR | CARB
+ Gomphoceras SOWERBY, 1839 | ] M.Dev., N.Am.--Flc. 227,2. -E. pandum (HALL), USA (N.Y.) ; lat. (venter right), Xl | MDEV
+ Pachtoceras FOERSTE, 1926 | ] M.Sil.• Eu | SIL
+ Nelirnenia LAPORTE, 1843 | M.Ord., Can.(Que.) | MORD
+ Pictetoceras FOERSTE, 1926 | Ord., USSR | ORD
+ Wetherbyoceras FOERSTE, 1926 | U.Ord., N.Am.(Ky.-Ohio-Tenn.). NAUTILOIDEA-D By CURT TE [United States Geolo MORPHOLOGY The Discosorida include conchs of medium to large size, which generally are straight breviconic to short cyrtoco | UORD
+ Subclass NAUTILOIDEA Agassiz,
+ Order DISCOSORIDA Flower in
+ Ruedemannoceras FLOWER, 1940 [*Cyrtoceras boycii WHITFIELD] | M.Ord., C.Australia | MORD
+ Kiaeroceras STRAND, 1934 [*K. frognoeyense] | U.Ord., N.Eu | UORD
+ Konglungenoceras SWEET, 1959 [*K. nortJegicZlm] | L.Sil., Eu.(Norway) | LSIL
+ Landeroceras FOERSTE, 1935 [*Diestoccras prolatum MILLER] | )Ord.(Bighorn Dol.), W.N.Am | ORD
+ Parryoceras SWEET & MILLER, 1957 [*P. euchari] | -U.Ord., N.Am.(Can., Arctic)-Eu. (Norway) | UORD
+ Broeggeroceras SWEET, 1958 [*B. contractum] | , ?U.Ord., Eu.(Norway) | UORD
+ Clarkesvillia FLOWER, 1946 [*C. halei] | U.Ord., USA(Ohio) | UORD
+ Faberoceras FLOWER, 1946 [*F. multicinctum] | -U.Ord., N.Am.-?Eu | UORD
+ Lavaloceras FLOWER, 1952 [*L. geniculatum] | M.Ord., N.Am. (E.Can.) | MORD
+ Reedsoceras FOERSTE, 1929 [*Cyrtoceras macrostomum HALL] | -U.Ord., E.N.Am | UORD
+ Simardoceras FLOWER, 1957 [*S. simardense] | M.Ord., Can.(Que.) | MORD
+ Sinclairoceras FLOWER, 1952 [*S. haha] | M.Ord., Can. (Que.) | MORD
+ Teichertoceras FOERSTE, 1933 [*T. husseyi] | -U.Ord., N.Am.-Greenl.-N.Eu | UORD
+ Family LOWOCERATIDAE Flower,
+ Lowoceras FOERSTE & SAVAGE, 1927 [*L. southamptonense] | M.Sil., N.Am.(N. Can.) | SIL
+ Family DISCOSORIDAE Miller, 1889
+ Discosorus HALL, 1852 [*D. conoideus] | M.Sil., Arct.N.Am.-E.N.Am | SIL
+ Endodiscosorus TEICHERT, 1931 [*E. /oerstei] | M.Sil., USA(Mich.-Iowa)-Can.(Lake Timiskaming-Lake Huron) | SIL
+ Kayoceras FOERSTE, 1934 [*Discosorus? biconoideus THOMAS] | M.Sil., USA (Iowa) | SIL
+ Stokesoceras FOERSTE, 1924 [*S. romingeri]
+ Endoplectoceras FOERSTE, 1924 [*Trochoceras secula BARRANDE] | U.Sil., USA(N.Y.) | USIL
+ ?Cayugoceras FLOWER, 1947 [*Gomphoceras? semiclausum BARRANDE] | Sil., Eu | SIL
+ Mesoceras BARRANDE, 1877 | M.Sil., Eu.(Czech.) | SIL
+ Greenlandoceras SHIMIZU & OBATA, 1935 | - ?Sil., N.Am.-Greenl.-N.Eu | SIL
+ Family TARPHYCERATIDAE Hyatt,
+ Tarphyceras HYATT, 1894 | L.Ord.(U.Canad.), N.Am.(widespread) | LORD
+ Kelloggi WHITFIELD, 1886 | L.Ord. (U.Canad.), N.Am.(widespread) | LORD
+ Moreauoceras CULLISON, 1944 [*Cyrtoceras Raei WHITFIELD] | L.Ord.(U.Canad.), USA(Mo.) | LORD
+ Eichwaldoceras BALASHOV, 1955 [*E. volchovense] | L.Ord.(Arenig.), Eu.(Balto- Scandia) | LORD
+ Pycnoceras HYATT, 1894 [*P. apertum] | Ord.(U. Canad.), N. Am. (widespread)-W.Australia | ORD
+ Family TROCHOLITIDAE Chapman,
+ Trocholites CONRAD, 1838 [*T. ammonitls] | Ord. (Richmond.), N. Am. (widespread)-Eu.(Balto-Scandia) | ORD
+ Hardmanoceras TEICHERT & GLENISTER, 1952 | Ord.(Chazy.), W.Australia | ORD
+ Litoceras HYATT, 1883 | )-M.Ord. (Chazy.), Can.(Newf.) | MORD
+ Trocholitoceras HYATT, 1894 | L.Ord.(U. Canad.) , N. Am. (widespread)-Australia (Tasm.- ?Victoria) | LORD
+ Family LITUITIDAE Phillips, 1848
+ Angelinoceras HYATT, 1894 [*Lituites latus ANGELIN in ANGELIN & LINDSTROM] | M.Ord.(Llanvirn.-Caradoc.}, Eu.(Balto-Scandia) | MORD
+ Cyclolituites REMELE, 1886 [*Lituites applanatus REMELE] | M.Ord.( Llandeil.}, Eu.(Balto- Scandia) | MORD
+ Rhynchorthoceras REMELE, 1881 [*Lituites]
+ Breynii BOLL, 1857 | M.Ord.( Llanvirn.-Caradoc.) , Eu. (Balto-Scandia-Pol.) | MORD
+ Trilacinoceras SWEET, 1958 | M.Ord.( Llanvirn.-Caradoc.) , Eu. (Balta- Scandia) | MORD
+ Tyrioceras STRAND, 1934 | Ord.( Ashgill.), Eu.(Balto-Scandia) | ORD
+ Family OPHIDIOCERATIDAE Hyatt,
+ Ophioceras BARRANDE, 1865 | U.Sil.{Wenlock·- Ludlov.), N.Am.-Eu.(widespread) | USIL
+ Subclass NAUTILOIDEA Agassiz,
+ Bickmorites FOERSTE, 1925 | -M.Sil., N.Am. (widespread)-?Eu. (Norway) | SIL
+ Gasconsoceras FOERSTE, 1936 | M.Dev., USA (Nev.) | MDEV
+ Laureloceras FLOWER, 1943 | M.Sil., N.Am.(Ind.-Tenn.-?Ont.) | SIL
+ Paquettoceras FOERSTE, 1932 | M.Ord., Can.(Ont.) | MORD
+ Family PLECTOCERATIDAE Hyatt
+ Plectoceras HYATT, 1884 | Ord., N. Am. (N. Y.-Wis.-Wyo.-Que.-Ont.-Labrador)-Greenl | ORD
+ Family URANOCERATIDAE Hyatt
+ Uranoceras HYATT, 1884 | Sil., Wis., III.; XO.3 | SIL
+ Jolietoceras FOERSTE, 1925 | Sil., USA (Ill.-Wis.) | SIL
+ Lechritrochoceras FOERSTE, 1926 | M.Sil., USA (Ill.-Ind.-N.Y,- Ohio-Tenn.-Wis.)-Eu.(Czech.) | SIL
+ Catyrephoceras FOERSTE, 1926 | M.Sil., Eu.(Eng.) | SIL
+ Leurotrochoceras FOERSTE, 1926 | M.Sil., USA(Iowa-IlI.) | SIL
+ Peismoceras HYATT, 1894 | -U.Sil., Eu.(Czech.) | USIL
+ Systrophoceras HYATT, 1894
+ Trochodictyoceras FOERSTE, 1926 | M.Sil., USA{III.) | SIL
+ Nephriticeras HYATT, 1884 [*B. incipiens] | M.Dev., N.Am.(N.Y.-Pa.-Ont.) | MDEV
+ Endoplanoceras FLOWER, 1938 [*E. gomphus] | M.Dev., USA(N.Y.) | MDEV
+ Lyrioceras FOERSTE, 1927 [*Gyroceras liratum HALL] | Dev., N. Am. (Mich. - N.Y.-?Pa.- ?Ont.) | DEV
+ Nephriticerina FOERSTE, 1927 [*N. alpenensis] | M.Dev., N. Am. (Md.-Mich.-N.Y.-Ohio-Pa.- ?Nev.-Man.- Ont.) | MDEV
+ Rhadinoceras HYATT, 1894 [*Nautilus cornulum HALL] | M.Dev., USA (N.Y.- ?Wis.) | MDEV
+ Sphyradoceras HYATT, 1884 [*Trochoceras clio HALL] | L.Dev., USA (N.Y.)-Can | LDEV
+ Triplooceras HYATT, 1884 [*Nautilus insperatus BARRANDE] | ) M.Dev., USA(N.Y.)-Eu.(Czech.) | MDEV
+ Family APSIDOCERATIDAE Hyatt,
+ Charactoceras FOERSTE, 1924 | U.Ord., N.Am.(Colo.- Ind.-Iowa-Minn.-N.Y.-Ohio-Anticosti Is.-Baffin Is.)- Green!. - Eu.(Est. - Norway) | UORD
+ Deckeroceras FOERSTE, 1935 | U.Ord., USA(lowa-Okla.) | UORD
+ Fremontoceras FOERSTE, 1935 [*~ t 1/.'/\\ \ .~~\-x 1>- /' \D - \] | -U.Ord., N.Am.(Colo.-N.Y.-Que.) | UORD
+ Subclass NAUTILOIDEA Agassiz,
+ Order NAUTILIDA Agassiz, 1847
+ Tainoceras HYATT, 1883 | )-Trias., N.Am.-Asia | TRIAS
+ Aulametacoceras MILLER & UNKLESBAY, 1942 | -U.Trias.(Carn.) , N.Am.-Eu.(Alps) | UTRIAS
+ Cooperoceras MILLER, 1945 [*Nautilus bidorsatus SCHLOTHEIM]
+ Gzheloceras RUZHENTSEV & SHIMANSKIY, 1954 [*G. uralense] | -L.Perm., USSR | LPERM
+ Hexagonites HAYASAKA, 1947 [*H. chechiangensis] | Perm., E.Asia(China) | PERM
+ Holconautilus MOJSISOVICS, 1902 [*Nautilus semicostatus BEYRICH] | }-U.Trias.(Carn.}, Eu.-E.Indies(Timor) | UTRIAS
+ Mojsvaroceras HYATT, 1883 [*Temnocheilus neumayri MOJSISOVICS] | Trias., Eu.-Asia(Tethys)-W. N.Am | TRIAS
+ Parametacoceras MILLER & OWEN, 1934 [*P. bellatulum] | (Penn.}, N.Am. - Eu.(USSR - Belg.). -- | PENN
+ Phaedrysmocheilus SHIMANSKIY & ERLANGER, 1955 [*Nautilus subaratus KEYSERLING] | L.Trias., USSR | LTRIAS
+ Pleuronautilus MOJSISOVICS, 1882 [*P. trinodosus] | -Trias., N.Am., Eu.-Asia-E.Indies | TRIAS
+ Tainionautilus MOJSISOVICS, 1902 [*Nautilus transitorius WAAGEN] | Perm., Pak. (Salt Range); 1a,b, XO.3 | PERM
+ Tanchiashanites CHAO, 1954 | Trias., Eu | TRIAS
+ Family RUTOCERATIDAE Hyatt, 1884
+ Hercoceratidae HYATT, 1884 | - L.Carb | LCARB
+ Rutoceras HYATT, 1884 | M.Dev., N.Am.- ?S.Am.(Bol.) - Eu | MDEV
+ Diademoceras FLOWER, 1949 | M.Dev., N.Am | MDEV
+ Duerleyoceras TURNER, 1954 | L.Carb., Eu | LCARB
+ Hindeoceras FLOWER, 1945 | M.Dev., N.Am.(Can.) | MDEV
+ Litogyroceras TEICHERT & GLENISTER, 1952 | M.Dev., SE. Australia | MDEV
+ Ptenoceras HYATT, 1894
+ Syrreghmatoceras SVERBILOVA, 1957 | M.Dev., N.Am.(N.Y.-IlI.) | MDEV
+ Threaroceras FLOWER, 1945 [*Trematoceras ohiocnse WHITFIELD] | -M.Dev., Eu | MDEV
+ Wellsoceras FLOWER, 1945 [*Temnocheiltts mttltitttbercttlatttm WAAGEN var. tastttbensis KRUGLOV] | M.Dev., N.Am.(Ohio-Ind.-Ont.) | MDEV
+ Sholakoceras RUZHENTSEV & SHIMANSKIY, 1954 [*S. bisulcatum] | )-Perm., N. Am.-Eu | PERM
+ Hettrekoceras RUZHENTSEV & SHIMANSKIY, 1954 [*Nautilus goliathlIS WAAGEN] | Perm., Eu.(USSR-Sicily)-Asia(Pak.)-E. Indies | PERM
+ Planetoceras HVATT, 1893 [*P. retardatum] | (Penn.), N. Am.-Eu. (Belg.-Ire.) | PENN
+ Tylodiscoceras MILLER &. COLLINSON, 1950 [*T. unicum] | Miss., N.Am.(Ky.-Tenn.) | MISS
+ Centrocerataceae SHIMANSKIY, 1962 | -Trias | TRIAS
+ Family TRIGONOCERATIDAE Hyatt,
+ Lispoceras HYATT, 1893 | (Miss.) , N.Am.(Mich.)-Eu | MISS
+ Pararineceras TURNER, 1954 | L.Carb., NW. Eu.(Ire.-Isle of Man-Eng.) | LCARB
+ Stroboceras HYATT, 1884 | (Miss.), N.Am.-Eu | MISS
+ Vestinautilus RYCKHOLT, 1852 | (Miss.), N.Am. - Eu | MISS
+ Family CENTROCERATIDAE Hyatt
+ Centroceras HYATT, 1884 [*Goniatites marcellensis VANUXEM] | M.Dev., Eu.(Ger.)-N.Am.(N.Y.-Ohio-Can.) | MDEV
+ Carlloceras FLOWER & CASTER, 1935 [*C. garlandensis] | Dev., N.Am | DEV
+ Diomgoceras HYATT, 1893 [*Nautilus planidorsa- Ius] | L.Carb., Eu | LCARB
+ Strophiceras HYATT, 1884 [*Gyroceras binodosum SANDBERGER & SANDBERGER] | M.Dev., Eu | MDEV
+ Domatoceras HYATT, 1891 [*Nautilus galeatllS MO] | (Penn')-Perm., N.Am.-Eu.-Afr.-Asia(China) -E.lndies-Australia | PENN
+ Paradomatoceras DELEPINE, 1937 [*P. applanatum] | Carb., Eu.(Holl.)-N.Afr.- (Morocco) | CARB
+ Parastenopoceras RUZHENTSEV & SHIMANSKIY, 1954 [*P. khvorovae] | ] L.Perm. (Artinsk.), S.USSR | LPERM
+ Permoceras MILLER & COLLINSON, 1953 | Perm., E.Indies | PERM
+ Syringoceras HYATT, 1894 | }-L.Perm | LPERM
+ Family AIPOCERATIDAE Hyatt, 1883
+ Aipoceras HYATT, 1884 | (Miss.), Eu.-N.Am | MISS
+ Librovitschieeras SHIMANSKIY, 1957 | Carb., Eu | CARB
+ Family SOLENOCHILIDAE Hyatt, 1893
+ Solenocheilidae HYATT, 1893 | , siphuncle, X5 (Furnish & Glenister, n); 321, U.Penn.(Missourian), USA (Iowa), outline, XO.5 (after White & St. John, 1868) | UPENN
+ Scyphoceras RUZHENTSEV & SHIMANSKIY, 1954 [*S. dionysi] | L.Perm., USSR (Urals) | LPERM
+ Mariceras RUZHENTSEV & SHIMANSKIY, 1954 [*M. lerum] | lerum, L.Perm.(Artinsk.), USSR(S.Urals); vent., lat., Xl (l53) | LPERM
+ Clydonautilus MOJSISOVICS, 1882 [*Nautilus norieus MOJSISOVICS] | Trias.(Carn.-Nor.), Eu.- Asia(India)-E.Indies(Timor) | TRIAS
+ Cosmonautilus HYATT & SMITH, 1905 [*C. dilleri] | Trias.(Carn.-Nor.}, N.Am.(Calif.-Mex.)- Asia(India) -E.Indies(Timor) | TRIAS
+ Coelogasteroceras HYATT, 1893 | -Perm., N.Am | PERM
+ Condraoceras MILLER, LANE, & UNKLESBAY, 1947 | )-L.Perm. (Eu.) | LPERM
+ Indonautilus MOJSISOVICS, 1902 | }-U.Trias.(Nor.}, N. Afr. (Egypt) -Asia (Himalayas-Israel) -E. Indies.-- | UTRIAS
+ Paranautilus MOJSISOVICS, 1902 | }-U.Trias. (Nor.), N.Am.-Eu.(Alps-Yugo.)-Asia(Pak.-Himalayas)-E.Indies | UTRIAS
+ Peripetoceras HYATT, 1894
+ Nannoceras HYATT, 1894 | }-Perm., Eu.(Eng.-Ger.-USSR)-Asia (China) | PERM
+ Permonautilus KRUGLOV, 1933 [*'Nautilus cornutus GOLOVKINSKY] | ] U.Perm., USSR | UPERM
+ Epphippioceratidae SHIMANSKIY, 1956 | )-L.Perm., N. Am.-Eu.-Asia(China) | LPERM
+ Megaglossoceras MILLER, DUNBAR & CONDRA, 1933 | Penn., N.Am. (Kans.-Neb.-Colo.-Mo.) | PENN
+ Family GONIONAUTILIDAE Kummel
+ Family SIBERIONAUTILIDAE Popov,
+ Family NAUTILIDAE de Blainville, 1825
+ Nautilus LINNE, 1758 | Oligo.-Ree., SW.Pac.- E.Indies-Australia-Eu. (USSR) | PALEOG
+ Carinonautilus SPENGLER, 1910 | U.Cret., Asia (India) | UCRET
+ Obinautilus KOBAYASHI, 1954 | Oligo., Japan | PALEOG
+ Strionautilus SHIMANSKIY, 1951 | -L.Cret., Eu.-N.Afr.(Tunisia) | LCRET
+ Pseudaganides SPATH, 1927
+ Xenocheilus SHIMANSKIY & ERLANGER, 1955 | -L.Cret.{Alb.) | LCRET
+ Paracenoceras SPATH, 1927 | -L.Cret.( Alb.), Eu.-E.Afr.- N. Afr.-Asia(Pak.)-W.Indies(Cuba) | LCRET
+ Aulaconautilus SPATH, 1927
+ Family CYMATOCERATIDAE Spath,
+ Deltocymatoceras KUMMEL, 1956 [*Nautilus leiotropis SCHLUTER] | Cret., Eu.-- XO.2 (ll5) | CRET
+ Epicymatoceras KUMMEL, 1956 [*Nautilus vaelsensis BINCKHORST] | Cret. (Maastricht.), Eu.(Ger.-Belg.) | CRET
+ Heminautilus SPATH, 1927 [*Nautilus saxbii MOR- RIS] | saxbii (MORRIS), L.Cret.(Apt.), Eng.; 2a,b, XO.5 (Il5) | LCRET
+ Paracymatoceras SPATH, 1927 | Jur., Eu.; 4a,b, X 0.5 | JUR
+ Procymatoceras SPATH, 1927 | U.Cret.(Senon.), Asia (Syria-Israel) -S.VSSR | UCRET
+ Family HERCOGLOSSIDAE Spath, 1927
+ Hercoglossa CONRAD, 1866 [*'Nautilus orbiculatus TUOMEV] | -Eoc., cosmop | PALEOG
+ Cimomia CONRAD, 1866 [*'Nautilus burtini GALE- OTTI]
+ Cymmomea CONRAD, 1868 | -Oligo., cosmop | PALEOG
+ Deltoidonautilus SPATH, 1927 | -Oligo., cosmop | PALEOG
+ Family ATURIIDAE Chapman, 1857
+ Megasiphonia D'ORBIGNY, 1849 | Cret., Lebanon, with rhyncholite preserved in ventral side of body chamber, Xl (p. K477). the bottom and, if the cephalopod possessed a shell, this very likely would become separated from the jaws. Se | CRET
+Class CEPHALOPODA Cuvier,
+ Rhyncolile BIGUET, 1819
+ Rhyndlolites ZIETEN, 1830 | hirllndo, M.Trias., Eu.(Fr.); 2a-h, upper (dorsal), lower (ventral), and lateral views of 2 specimens, X 2 | MTRIAS
+ Conchorhynchus OE BLAINVILLE, 1827 | -M.Trias., Eu.; ?L. Ter/.(Eoe.), Eu.(Belg.)-Afr.(Egypt) | MTRIAS
+ Rhynchoteuthis O'ORBIGNY, 1847
+ Hadrocheillls TILL, 1907 | ; U.Cret.(Cenoman.}, Asia(India) | UCRET
+ Palaeoteuthis O'ORBIGNY, 1849 | Jur.(Callov.} , Eu.(Fr.) | JUR
+ Hadrocheilus TILL, 1907 [*Hadrocheilus gibber TILL] | -Cret., Eu.(Ger.-USSR) | CRET
+ Leptocheilus TILL, 1907 | ) geyeri, U.Jur., Austria; dorsal side, X 2 | UJUR
+ Akidocheilus TILL, 1907 | Cret., Eu.(Fr.-USSR) | CRET
+ Tillicheilus SHIMANSKIY, 1947 | -L.Cret., Eu | LCRET
+ Cyclidia ROLLE, 1862 | (Mio.) , Eu.(Ger.). Peltarion EUDES-DESLONGCHAMPS & EUDES-DESLONG- CHAMPS, 1858, p. rep. unilobatl/m; SD R S A B B B B Ie XU (p. K481). TEICHERT, MOORE & ZELLER, hereinJ [non Peltarion JACQUINOT & LUC | NEOG
+ Rhynchidia LAUBE, 1870 | Trias., Eu.(Austria) | TRIAS
+ Scaphanidia ROLLE, 1862
+ Buchi MULLER, 1851 | Carb | CARB
+ Neptunoceras SHIMANSKIY, 1949 [*N. sakmarense] | Carb., S.USSR | CARB
+ Hedstroemoceras FOERSTE, 1930 [*H. haelluddense] | L.Ord. (Vaginaturn Ls.), Eu.(Sweden, bland Is.). TAXA DOUBTFULLY CLASSIFIABLE AS NAUTILOIDS This section is set apart for treatment of some puzzling fossils which have been considered by various autho | LORD
+ Family Uncertain (p. K484).
+ Family VOLBORTHELLIDAE Kiaer,
+ Family SALTERELLIDAE Poulsen, 1932
+ Salterella BILLINGS, 1861 | ] L.Cam., N. Am.(Mex.-USA-Can.-Greenl.)-Eu. (Eng.) -Asia | LCAM
+ Vologdinella BALASHOV, 1962 [*Orthoceras? antiquus VOLOGDIN] | M.Cam., USSR (Kazakhstan) . NAUTILOID TRACE FOSSILS The most authentic record of impressions and trails made by nautiloid cephalopods is from the Upper Ordovician of Ohio, USA. The following types, al | MCAM
+ Petalichnus S. A. MILLER, 1880 [*P. multipartitus] | U.Ord., N.Am. (Ohio). [See p. W219; interpreted as probable trilobite track.] These trace fossils (all included by HANTZSCHEL in Treatise Part W) are in need of restudy and modern analysis before thei | UORD
+ Dimeres BARRANDE, 1867 [*A. pyramidatum] | M.Sil. UNRECOGNIZABLE SUPPOSED NAUTILOID GENERA Achelois DEMoNTFORT, [*A. pyramidatum; M]. Described as straight, chambered, conical shell with central siphuncle, from Altdorf, Switz., hence probably | SIL
+ Amblyceras GLOCKNER, 1842 [*A. rittbergense]
+ Curvites PETTER, 1959
+ Deltoceras HYATT, 1894 [*D. planum] | L.Ord. (?V.Canad.), Can., ?Eu. [Type-specimen never illustrated.] [W. C. SWEET.] | LORD
+ Diadiploceras HYATT, 1884
+ Gyrocerus KING, 1844 [*H. convolvans] | Several species described from"Sil.," Ire. Nautilites PALLAS, [*N. complanatus; M]. Hand-sized smooth shell with depressed, evenly convex cross section, sharp keel, and undulating sutures. Age unknown | SIL
+ Parksoceras FOERSTE & SAVAGE, 1927 [*Orthoceras (Thoracoceras) lepidodendroides PARKS] | Perm., Ger. Remeleceras HYATT, [*R. depressum; M] [=Remeleoceras HYATT in ZITTEL, 1900 (nom. null.)]. Based on whorl fragments; whorl section with slightly impressed dorsal zone and sutures with broad | PERM
+ Ungeroceras STURGEON & MILLER, 1948 [*V. ungeri] | M.Penn., USA(Ohio). NAMES FOR HYPOTHETICAL NAUTILOID GENERA The following names proposed for nautiloid cephalopods are invalid because not based on actual specimens, living or fossil | PENN
+ Lituunculus BARRANDE, 1867
+ Protorthoceras NAEF, 1921
+ Teilhardoceras GRABAU, 1929
+ Arctinoceras FLOWER & KUMMEL, 1950 | Ord., Sweden. (See also JAANUSSON & MUTVEI, 1953, p. 19.) | ORD
+ Cyrtacleistoceras FLOWER, 1943 | J Ord., Can. (Newf.) | ORD
+ Endogomphus FLOWER, 1938
+ Engorthoceras FLOWER, 1962 [*"Orthoceras wortheni MEEK & WORTHEN"] | Dev. of Ohio. Genus designated as type of | DEV
+ Engorthoceratidae FLOWER, 1962 [*E. minimum (] | ] Sil.,? Eng. K K M N O P P A B C E | SIL
+ Kolyoceras TEICHERT, 1929
+ Kutorgoceras BALASHOV, 1961
+ Northoceras MEEK & HAYDEN, 1864
+ Orchadoceras FOERSTE, 1928 | Sil., Anticosti Is.) described under this name was only tentatively assigned to the genus, which was never formally described. Proterokaipingoceras OBATA, 1940. Mentioned in comparison with Neokaiping | SIL
+ Ptenacleistoceras FLOWER & KUMMEL, 1950 [*A. capucinus SCHLOTHEIM] | Miss., USA(Mo.) | MISS
+ ?Coeloceratoides DERVILLE, 1931 [*C. fragilis] | Carb., Fr. Coelonautilus FOORD in FOORD & CRICK, 1889 [nom. subst. pro Trematodiscus MEEK & WORTHEN, 1861 (non HAECKEL, 1860) J [=Discus KING, (obj.); Trematoceras HYATT, (non EICH- WALD, 1860) (obj.) | CARB
+ Elkoceras LINTZ & LOHR, 1958 [*E. vo/borthi] | Miss., Nev. Gyroceras DEKoNINCK, 1844. Originally used for Carboniferous nautiloids as nom. van. pro Gyroceratites MEYER, 1831 (ammonoid) (see MILLER, DUNBAR, CONDRA, 1933) | MISS
+ Pichyceras RUSCONI, 1955 [*P. jorusconii] | -Perm | PERM
+ Family BACTRITIDAE Hyatt, 1884
+ Bactritcs SANDBERGER, 1843 | Dev.(Ems.), Eu.(N.Fr.-Ger.) | DEV
+ Lobobactritcs SCHINDEWOLF, 1932 | )- U.Dev., Eu.(N. Fr.-S. Fr.-Ger.-PoI.-Czech.-USSR)- N. Afr. (Morocco)-Asia (China)-Australia-N. Am | UDEV
+ Pseudobactrites FERRONNIERE, 1921 | )-M.Dev. (basal Eifel.), Eu.(Fr.-Czech.-Ger.)-Asia(Turkey) | MDEV
+ Sicilioceras SHIMANSKIY, 1954 | M.Perm., Eu | PERM
+ Microbactrites SHIMANSKIY, 1954 | L.Perm., USSR | LPERM

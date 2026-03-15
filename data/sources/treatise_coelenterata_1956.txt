@@ -1,0 +1,836 @@
+---
+reference: Hill, D. & others, 1956. Treatise on Invertebrate Paleontology, Part F, Coelenterata. Geological Society of America & University of Kansas Press
+scope:
+  - taxon: Coelenterata
+    coverage: comprehensive
+notes: |
+  Coelenterate genera from 1956 Treatise. Includes corals (Rugosa, Tabulata, Scleractinia),
+  hydrozoans, stromatoporoids, and other coelenterates.
+  Major authors: D. Hill (Rugosa, Tabulata), J.W. Wells (Scleractinia),
+  H. Dighton Thomas (Alcyonaria), W.M. Furnish & B.F. Glenister (Conulata),
+  M. Lecompte (Stromatoporoidea), C.W. Steiner & others (Hydrozoa).
+---
+
+Class PROTOMEDUSAE Harrington & Moore, 1956
+  Order BROOKSELLIDA Harrington & Moore, 1956
+    Family BROOKSELLIDAE Walcott, 1898
+      Brooksella WALCOTT, 1896 [*B. alternata WALCOTT, 1896] | MCAM
+      Laotira WALCOTT, 1911 [*L. cambria WALCOTT, 1911] | MCAM
+      Medusinites GLAESSNER, 1940 [*Medusina asteroides SPRIGG, 1949] | PRECAM
+      Beltanella SPRIGG, 1947 [*B. gilesi SPRIGG, 1947] | PRECAM
+
+Class DIPLEUROZOA Harrington & Moore, 1956
+  Order DICKINSONIIDA Harrington & Moore, 1956
+    Family DICKINSONIIDAE Harrington & Moore, 1956
+      Dickinsonia SPRIGG, 1947 [*D. costata SPRIGG, 1947] | PRECAM
+
+Class SCYPHOZOA Goette, 1887
+  Subclass SCYPHOMEDUSAE Lankester, 1877
+    Order STAUROMEDUSIDA Haeckel, 1879
+      Family CONCHOPELTIDAE Harrington & Moore, 1956
+        Conchopeltis WALCOTT, 1876 [*C. alternata WALCOTT, 1876] | UORD
+    Order DISCOMEDUSIDA Haeckel, 1880
+      Family ACALEPHAE incertae sedis
+        Kirklandia CASTER, 1945 [*K. texana CASTER, 1945] | LCRET
+        Essexella FOSTER, 1979 [*E. asherae FOSTER, 1979] | PENN
+        Octomedusa MAAS, 1902 [*Medusites pilosus WALCOTT, 1898] | MCAM
+        Cannostomites MAAS, 1902 [*C. crassimarginatus MAAS, 1902] | MCAM
+
+  Subclass CONULATA Moore & Harrington, 1956
+    Order CONCHOPELTIDA Harrington & Moore, 1956
+      Family CONCHOPELTIDAE Harrington & Moore, 1956
+        Conchopeltis WALCOTT, 1876 [*C. alternata WALCOTT, 1876] | UORD
+    Order CONULARIIDA Miller & Gurley, 1896
+      Suborder CONULARIINA Miller & Gurley, 1896
+        Family CONULARIELLIDAE Kiderlen, 1937
+          Conulariella BOUČEK, 1939 [*C. insignis BOUČEK, 1939] | UORD
+        Family CONULARIIDAE Walcott, 1886
+          Conularia MILLER, 1821 [*C. quadrisulcata MILLER, 1821] | UCAM-LTRI
+            = Conularina SINCLAIR, 1940 (j.s.s.)
+          Metaconularia FOERSTE, 1928 [*Conularia manni HALL, 1876] | ORD-DEV
+          Paraconularia SINCLAIR, 1940 [*Conularia inaequicostata DE KONINCK, 1883] | ORD-PERM
+          Ctenoconularia SINCLAIR, 1940 [*Conularia byblis WHITE, 1876] | ORD-DEV
+          Calloconularia SINCLAIR, 1940 [*Conularia multicostata HALL, 1847] | ORD
+          Diconularia SINCLAIR, 1940 [*Conularia micronema HALL, 1876] | DEV
+          Neoconularia SUGIYAMA, 1942 [*Conularia lata HALL, 1876] | DEV-MISS
+          Reticulaconularia BOUČEK, 1939 [*Conularia ulrichi SINCLAIR, 1940] | ORD
+          Exoconularia SINCLAIR, 1940 [*Conularia eichwaldi VERNEUIL, 1845] | ORD-SIL
+          Climacoconus SINCLAIR, 1940 [*C. quadratus SINCLAIR, 1940] | DEV
+          Pseudoconularia BOUČEK, 1939 [*Conularia grandissima BARRANDE, 1867] | ORD-DEV
+          Archaeoconularia BOUČEK, 1939 [*Conularia insignis BARRANDE, 1855] | ORD-SIL
+          Eoconularia SINCLAIR, 1943 [*Conularia loculata WIMAN, 1905] | MORD-UORD
+        Family CONULARIOPSIDAE Sugiyama, 1942
+          Conulariopsis SUGIYAMA, 1942 [*Conulariopsis quadrata SUGIYAMA, 1942] | PERM
+
+      Suborder CONULARIINA incertae sedis
+        Archaeoconularia BOUČEK, 1939 [*Conularia insignis BARRANDE, 1855] | ORD-SIL
+
+Class HYDROZOA Owen, 1843
+  Order TRACHYLINIDA Haeckel, 1879
+    Suborder TRACHYMEDUSINA Haeckel, 1866
+      Family HYDRACTINIIDAE L. Agassiz, 1862
+        Hydractinia VAN BENEDEN, 1841 [*H. echinata FLEMING, 1828] | UCRET-REC
+      Family HYDROCERATINIDAE
+        Hydroceratina CHAPMAN, 1913 [*H. glabra CHAPMAN, 1913] | LORD
+    Suborder NARCOMEDUSINA Haeckel, 1879
+      Family HYDROMEDUSIDAE incertae sedis
+        Hydromedusa HARRINGTON & MOORE, 1956 [*H. marjumia HARRINGTON & MOORE, 1956] | MCAM
+
+  Order HYDROIDA Johnston, 1836
+    Suborder ATHECATA Hincks, 1868
+      Family CORYNIDAE Johnston, 1836
+        Coryne GAERTNER, 1774 [*C. squamata GAERTNER, 1774] | REC
+    Suborder THECATA Hincks, 1868
+      Family CAMPANULARIIDAE Johnston, 1836
+        Campanularia LAMARCK, 1816 [*Sertularia volubilis LINNE, 1758] | REC
+      Family SERTULARIIDAE Johnston, 1836
+        Sertularia LINNE, 1758 [*S. cupressina LINNE, 1758] | REC
+      Family PLUMULARIIDAE McCrady, 1859
+        Plumularia LAMARCK, 1816 [*Sertularia pluma LINNE, 1758] | REC
+      Family LAFOEIIDAE Hincks, 1869
+        Lafoea LAMOUROUX, 1821 [*L. cornuta LAMOUROUX, 1821] | REC
+
+  Order SPONGIOMORPHIDA Alloiteau, 1952
+    Family SPONGIOMORPHIDAE Frech, 1890
+      Spongiomorpha FRECH, 1890 [*S. ramosa FRECH, 1890] | UTRI
+      Stromatomorpha FRECH, 1890 [*S. typica FRECH, 1890] | UTRI
+
+  Order MILLEPORINA Hickson, 1901
+    Family MILLEPORIDAE Fleming, 1828
+      Millepora LINNE, 1758 [*M. alcicornis LINNE, 1758] | UCRET-REC
+      Axopora FROMENTEL, 1861 [*A. parisiensis FROMENTEL, 1861] | PALEOG
+    Family MILLEPORIDIIDAE Hickson, 1934
+      Milleporidium STEINMANN, 1903 [*M. remesi STEINMANN, 1903] | UJUR-LCRET
+
+  Order STYLASTERINA Hickson & England, 1905
+    Family STYLASTERIDAE Gray, 1847
+      Stylaster GRAY, 1831 [*S. roseus GRAY, 1831] | REC
+      Allopora EHRENBERG, 1834 [*A. oculina EHRENBERG, 1834] | REC
+      Astya GRAY, 1840 [*A. subviridis GRAY, 1840] | REC
+      Distichopora LAMARCK, 1816 [*Millepora violacea PALLAS, 1766] | REC
+      Errina GRAY, 1835 [*Millepora aspera LINNE, 1767] | PALEOG-REC
+      Stenohelia KENT, 1870 [*Labiopora madreporacea MOSELEY, 1879] | UCRET-REC
+      Conopora MOSELEY, 1879 [*C. tenuis MOSELEY, 1879] | REC
+      Crypthelia MILNE-EDWARDS & HAIME, 1849 [*C. pudica MILNE-EDWARDS & HAIME, 1849] | REC
+      Pliobothrus POURTALÈS, 1868 [*P. symmetricus POURTALÈS, 1868] | REC
+
+  Order STROMATOPOROIDEA Nicholson & Murie, 1878
+    Family ACTINOSTROMATIDAE Nicholson, 1886
+      Actinostroma NICHOLSON, 1886 [*A. clathratum NICHOLSON, 1886] | SIL-DEV
+      Densastroma LECOMPTE, 1951 [*Stromatopora pexisum LECOMPTE, 1951] | DEV
+      Plectostroma LECOMPTE, 1951 [*Actinostroma salairicum YAVORSKY, 1931] | DEV
+      Bifariostroma LECOMPTE, 1952 [*B. bifarium LECOMPTE, 1952] | DEV
+    Family CLATHRODICTYIDAE Kuhn, 1939
+      Clathrodictyon NICHOLSON & MURIE, 1878 [*C. vesiculosum NICHOLSON & MURIE, 1878] | SIL-DEV
+      Gerronostroma YABE & SUGIYAMA, 1930 [*G. elegans YABE & SUGIYAMA, 1930] | SIL-DEV
+      Anostylostroma PARKS, 1936 [*A. hamiltonense PARKS, 1936] | DEV
+      Atelodictyon LECOMPTE, 1951 [*A. fallax LECOMPTE, 1951] | DEV
+      Tienostroma LECOMPTE, 1952 [*Clathrodictyon crassum LECOMPTE, 1951] | DEV
+      Petridiostroma LECOMPTE, 1952 [*P. convexum LECOMPTE, 1952] | DEV
+      Ecclimadictyon NESTOR, 1964 [*E. fastigiatum NICHOLSON, 1886] | SIL
+    Family STROMATOPORELLIDAE Lecompte, 1951
+      Stromatoporella NICHOLSON, 1886 [*S. granulata NICHOLSON, 1886] | DEV
+      Trupetostroma PARKS, 1936 [*Stromatopora warreni PARKS, 1936] | DEV
+      Hermatostroma NICHOLSON, 1886 [*H. schlueteri NICHOLSON, 1886] | DEV
+      Simplexodictyon NESTOR, 1964 [*Clathrodictyon podolicum RIABININ, 1951] | SIL
+    Family SYRINGOSTROMATIDAE Lecompte, 1951
+      Syringostroma NICHOLSON, 1875 [*Stromatopora densum NICHOLSON, 1875] | SIL-DEV
+      Parallelostroma LECOMPTE, 1952 [*Syringostroma typicum ROSEN, 1867] | DEV
+      Coenostroma WINCHELL, 1867 [*C. monticuliferum WINCHELL, 1867] | DEV
+    Family STROMATOPORIDAE Nicholson, 1886
+      Stromatopora GOLDFUSS, 1826 [*S. concentrica GOLDFUSS, 1826] | ORD-DEV
+      Stachyodes BARGATZKY, 1881 [*S. ramosa BARGATZKY, 1881] | DEV
+      Amphipora SCHULZ, 1883 [*Caunopora ramosa PHILLIPS, 1841] | DEV
+      Idiostroma WINCHELL, 1867 [*I. caespitosum WINCHELL, 1867] | DEV
+    Family LABECHIIDAE Nicholson, 1879
+      Labechia MILNE-EDWARDS & HAIME, 1851 [*L. conferta MILNE-EDWARDS & HAIME, 1851] | ORD-SIL
+      Rosenella NICHOLSON, 1886 [*R. thetfordensis NICHOLSON, 1886] | ORD-SIL
+      Lophiostroma NICHOLSON, 1891 [*L. schmidtii NICHOLSON, 1891] | ORD-SIL
+      Stratodictyon YAVORSKY, 1929 [*S. ozakii YAVORSKY, 1929] | DEV
+    Family AULACERIDAE Kuhn, 1927
+      Aulacera PLUMMER, 1843 [*A. plummeri PLUMMER, 1843] | ORD-SIL
+    Family MILLEPORELLIDAE Yabe & Sugiyama, 1935
+      Milleporella ULRICH, 1911 [*M. alaskensis ULRICH, 1911] | SIL-DEV
+      Parallelopora BARGATZKY, 1881 [*P. ostiolata BARGATZKY, 1881] | DEV-CRET
+      Milleporidium STEINMANN, 1903 [*M. remesi STEINMANN, 1903] | UJUR-LCRET
+    Family MILLEPORIDIIDAE Hickson, 1934
+      Disjectopora WAAGEN & WENTZEL, 1887 [*D. irregularis WAAGEN & WENTZEL, 1887] | PERM-UTRI
+    Family ACTINOSTROMATIDAE incertae sedis
+      Synthetostroma LECOMPTE, 1951 [*S. actinostromoides LECOMPTE, 1951] | DEV
+
+  Order SIPHONOPHORIDA Haeckel, 1888
+    Family VELELLIDAE Eschscholtz, 1829
+      Velella LAMARCK, 1801 [*V. lata CHAMISSO & EYSENHARDT, 1821] | REC
+      Discalia RAFINESQUE, 1819 [*Medusa porpita LINNE, 1758] | REC
+
+Subclass CERIANTIPATHARIA Hartlaub, 1903
+  Order ANTIPATHARIA Milne-Edwards & Haime, 1857
+    Suborder ANTIPATHINA Milne-Edwards & Haime, 1857
+      Family ANTIPATHIDAE Gray, 1847
+        Antipathes PALLAS, 1766 [*A. spiralis PALLAS, 1766] | REC
+        Leiopathes HAIME, 1849 [*Antipathes glaberrima ESPER, 1794] | REC
+      Family SCHIZOPATHIDAE Brook, 1889
+        Schizopathes BROOK, 1889 [*Antipathes affinis BROOK, 1889] | REC
+
+Subclass OCTOCORALLIA Haeckel, 1866
+  Order STOLONIFERA Hickson, 1883
+    Suborder STOLONIFERINA Hickson, 1930
+      Family CLAVULARIIDAE Hickson, 1930
+        Clavularia QUOY & GAIMARD, 1833 [*C. viridis QUOY & GAIMARD, 1833] | REC
+      Family TUBIPORIDAE Ehrenberg, 1828
+        Tubipora LINNE, 1758 [*T. musica LINNE, 1758] | REC
+      Family CORNULARIIDAE Dana, 1846
+        Cornularia LAMARCK, 1816 [*C. cornucopiae LAMARCK, 1816] | REC
+        ?Epiphaxum LONSDALE, 1849 [*E. auloporoides LONSDALE, 1849] | SIL
+      Family TELESTIDAE Milne-Edwards & Haime, 1857
+        Telesto LAMOUROUX, 1812 [*T. aurantiaca LAMOUROUX, 1812] | REC
+
+  Order COENOTHECALIA Bourne, 1895
+    Family HELIOPORIDAE Moseley, 1876
+      Heliopora BLAINVILLE, 1830 [*Millepora coerulea PALLAS, 1766] | LCRET-REC
+      Polytremacis D'ORBIGNY, 1849 [*Heliopora blainvillei MICHELIN, 1846] | UCRET-PALEOG
+      Actinoareopsis POCTA, 1887 [*A. bohemica POCTA, 1887] | UCRET
+
+  Order ALCYONACEA Lamouroux, 1816
+    Suborder PROTOALCYONARIA Bayer, 1956
+      Family HAIMEIDAE Wright, 1882
+        Haimeia MILNE-EDWARDS & HAIME, 1850 [*H. asteria MILNE-EDWARDS & HAIME, 1850] | MISS
+    Suborder ALCYONIINA Lamouroux, 1816
+      Family ALCYONIIDAE Lamouroux, 1812
+        Alcyonium LINNE, 1758 [*A. digitatum LINNE, 1758] | REC
+      Family NEPHTHEIDAE Gray, 1862
+        Nephthea AUDOUIN, 1826 [*N. chabrolii AUDOUIN, 1826] | REC
+
+  Order GORGONACEA Lamouroux, 1816
+    Suborder SCLERAXONIA Studer, 1887
+      Family BRIAREIDAE Gray, 1859
+        Briareum BLAINVILLE, 1830 [*Gorgonia asbestina PALLAS, 1766] | REC
+      Family SUBERGORGIIDAE Gray, 1859
+        Subergorgia GRAY, 1857 [*Gorgonia suberosa PALLAS, 1766] | REC
+      Family MELITODIDAE Gray, 1870
+        Melitodes VERRILL, 1864 [*Gorgonia ochracea LINNE, 1758] | REC
+      Family CORALLIIDAE Lamouroux, 1812
+        Corallium LAMARCK, 1801 [*Isis nobilis LINNE, 1758] | REC
+    Suborder HOLAXONIA Studer, 1887
+      Family PLEXAURIDAE Gray, 1859
+        Plexaura LAMOUROUX, 1812 [*P. flexuosa LAMOUROUX, 1812] | REC
+        Eunicea LAMOUROUX, 1816 [*Gorgonia mammosa LAMOUROUX, 1816] | REC
+        Plexaurella VALENCIENNES, 1855 [*P. dichotoma VALENCIENNES, 1855] | REC
+        Muricea LAMOUROUX, 1821 [*M. spicifera LAMOUROUX, 1821] | REC
+      Family GORGONIIDAE Lamouroux, 1812
+        Gorgonia LINNE, 1758 [*G. flabellum LINNE, 1758] | REC
+        Leptogorgia MILNE-EDWARDS & HAIME, 1857 [*Gorgonia viminalis PALLAS, 1766] | REC
+        Lophogorgia MILNE-EDWARDS & HAIME, 1857 [*Gorgonia palma PALLAS, 1766] | REC
+        Pterogorgia EHRENBERG, 1834 [*Gorgonia citrina ESPER, 1788] | REC
+      Family ELLISELLIDAE Gray, 1859
+        Ellisella GRAY, 1858 [*Gorgonia elongata PALLAS, 1766] | REC
+        Junceella VALENCIENNES, 1855 [*Gorgonia juncea PALLAS, 1766] | REC
+        Ctenocella VALENCIENNES, 1855 [*Gorgonia pectinata PALLAS, 1766] | REC
+      Family ISIDIDAE Lamouroux, 1812
+        Isis LINNE, 1758 [*I. hippuris LINNE, 1758] | REC
+        Keratoisis WRIGHT, 1869 [*Isis gracilis DANA, 1846] | REC
+        Acanella GRAY, 1870 [*Mopsea arbuscula JOHNSON, 1862] | REC
+      Family CHRYSOGORGIIDAE Verrill, 1883
+        Chrysogorgia DUCHASSAING & MICHELOTTI, 1864 [*C. desbonni DUCHASSAING & MICHELOTTI, 1864] | REC
+      Family PRIMNOIDAE Gray, 1857
+        Primnoa LAMOUROUX, 1812 [*Gorgonia lepadifera LINNE, 1758] | REC
+        Narella GRAY, 1870 [*N. regularis GRAY, 1870] | REC
+        Thouarella GRAY, 1870 [*Primnoa antarctica VALENCIENNES, 1846] | REC
+
+  Order PENNATULACEA Verrill, 1865
+    Suborder SESSILIFLORAE Kükenthal, 1915
+      Family VERETILLIDAE Herklots, 1858
+        Veretillum CUVIER, 1798 [*V. cynomorium CUVIER, 1798] | REC
+        Cavernularia VALENCIENNES, 1850 [*C. malabarica VALENCIENNES, 1850] | REC
+        Lituaria VALENCIENNES, 1855 [*L. phalloides VALENCIENNES, 1855] | REC
+      Family RENILLIDAE Gray, 1860
+        Renilla LAMARCK, 1816 [*R. americana LAMARCK, 1816] | REC
+      Family KOPHOBELEMNIDAE Gray, 1860
+        Kophobelemnon ASBJORNSEN, 1856 [*K. stelliferum ASBJORNSEN, 1856] | REC
+      Family ANTHOPTILIDAE Kölliker, 1880
+        Anthoptilum KÖLLIKER, 1880 [*A. murrayi KÖLLIKER, 1880] | REC
+      Family FUNICULINIDAE Gray, 1870
+        Funiculina LAMARCK, 1816 [*Pennatula quadrangularis PALLAS, 1766] | REC
+      Family PROTOPTILIDAE Kölliker, 1872
+        Protoptilum KÖLLIKER, 1872 [*P. thomsoni KÖLLIKER, 1872] | REC
+    Suborder SUBSELLIFLORAE Kükenthal, 1915
+      Family UMBELLULIDAE Kölliker, 1880
+        Umbellula CUVIER, 1798 [*U. encrinus CUVIER, 1798] | REC
+      Family CHUNELLIDAE Kükenthal, 1902
+        Chunella KÜKENTHAL, 1902 [*C. gracillima KÜKENTHAL, 1902] | REC
+      Family PENNATULIDAE Ehrenberg, 1834
+        Pennatula LINNE, 1758 [*P. phosphorea LINNE, 1758] | REC
+        Pteroëides HERKLOTS, 1858 [*P. griseum HERKLOTS, 1858] | REC
+        Sarcoptilus GRAY, 1860 [*Pennatula grandis GRAY, 1860] | REC
+      Family VIRGULARIIDAE Verrill, 1868
+        Virgularia LAMARCK, 1816 [*Pennatula mirabilis MÜLLER, 1776] | UCRET-REC
+        Stylatula VERRILL, 1864 [*S. elegans VERRILL, 1864] | REC
+        Scytalium HERKLOTS, 1858 [*S. sarsii HERKLOTS, 1858] | REC
+
+Subclass ZOANTHARIA de Blainville, 1830
+  Order RUGOSA Milne-Edwards & Haime, 1850
+    Suborder STREPTELASMATINA Wedekind, 1927
+      Family STREPTELASMATIDAE Nicholson, 1889
+        Streptelasma HALL, 1847 [*S. corniculum HALL, 1847] | MORD-UORD
+        Grewingkia DYBOWSKI, 1873 [*Cyathophyllum buceros EICHWALD, 1856] | MORD-UORD
+        Kenophyllum DYBOWSKI, 1873 [*K. subcylindricum DYBOWSKI, 1873] | UORD
+        Helicelasma NEUMAN, 1969 [*H. simplex NEUMAN, 1969] | MORD
+        Deiracorallium DYBOWSKI, 1873 [*D. articulum DYBOWSKI, 1873] | MORD-UORD
+      Family STAURIIDAE Milne-Edwards & Haime, 1850
+        Stauria MILNE-EDWARDS & HAIME, 1850 [*S. astreiformis MILNE-EDWARDS & HAIME, 1850] | SIL
+        Cyathactis SOSHKINA, 1955 [*Cyathophyllum typus REGNELL, 1941] | USIL
+        Craterophyllum FOERSTE, 1909 [*C. verticillatum FOERSTE, 1909] | USIL
+      Family LACCOPHYLLIDAE Grabau, 1928
+        Laccophyllum SIMPSON, 1900 [*Heliophyllum acuminatum HALL & WHITFIELD, 1873] | DEV
+      Family STREPTELASMATIDAE incertae sedis
+        Lambeophyllum OKULITCH, 1938 [*L. profundum OKULITCH, 1938] | LORD-MORD
+        Primitophyllum KALJO, 1956 [*P. primum KALJO, 1956] | LORD
+      Family AMPLEXIDAE Chapman, 1893
+        Amplexus SOWERBY, 1814 [*A. coralloides SOWERBY, 1814] | DEV-PERM
+        Amplexoides SOSHKINA, 1928 [*A. borealis SOSHKINA, 1928] | MISS
+      Family HAPSIPHYLLIDAE Grabau, 1928
+        Hapsiphyllum SIMPSON, 1900 [*Amplexus calcariforme HALL, 1882] | DEV
+        Sychnoelasma SIMPSON, 1900 [*Heliophyllum rursum HALL, 1882] | DEV
+      Family ZAPHRENTIDAE Milne-Edwards & Haime, 1850
+        Zaphrentis RAFINESQUE, 1820 [*Z. phrygia RAFINESQUE, 1820] | DEV
+        Heliophyllum HALL, 1846 [*H. halli MILNE-EDWARDS & HAIME, 1851] | DEV
+        Heterophrentis BILLINGS, 1875 [*Zaphrentis prolifica BILLINGS, 1858] | DEV
+        Amplexizaphrentis VAUGHAN, 1906 [*Zaphrentis enniskilleni MILNE-EDWARDS & HAIME, 1851] | MISS
+        Zaphrentoides STUCKENBERG, 1895 [*Zaphrentis parallelus FISCHER VON WALDHEIM, 1837] | MISS
+        Caninia MICHELIN in GERVAIS, 1840 [*C. cornucopiae MICHELIN, 1840] | MISS
+      Family METRIOPHYLLIDAE Hill, 1939
+        Metriophyllum MILNE-EDWARDS & HAIME, 1850 [*M. bouchardi MILNE-EDWARDS & HAIME, 1850] | DEV
+      Family COMBOPHYLLIDAE Soshkina, 1928
+        Combophyllum MILNE-EDWARDS & HAIME, 1850 [*C. osismorum MILNE-EDWARDS & HAIME, 1850] | DEV
+      Family HADROPHYLLIDAE Nicholson, 1889
+        Hadrophyllum MILNE-EDWARDS & HAIME, 1850 [*H. orbignyi MILNE-EDWARDS & HAIME, 1850] | DEV
+      Family MENOPHYLLIDAE Soshkina, 1928
+        Menophyllum MILNE-EDWARDS & HAIME, 1850 [*M. tenuimarginatum MILNE-EDWARDS & HAIME, 1850] | DEV
+      Family HALLIIDAE Chapman, 1893
+        Hallia MILNE-EDWARDS & HAIME, 1850 [*Strombodes insignis HALL, 1843] | SIL-DEV
+      Family PALAEOCYCLIDAE Dybowski, 1873
+        Palaeocyclus MILNE-EDWARDS & HAIME, 1849 [*Cyclolites porpita LINNE, 1767] | SIL
+      Family PTYCHOPHYLLIDAE Dybowski, 1873
+        Ptychophyllum MILNE-EDWARDS & HAIME, 1850 [*P. stokesi MILNE-EDWARDS & HAIME, 1850] | SIL-DEV
+      Family CHONOPHYLLIDAE Holmes, 1887
+        Chonophyllum MILNE-EDWARDS & HAIME, 1850 [*C. perfoliatum GOLDFUSS, 1826] | SIL
+      Family TRYPLASMATIDAE Etheridge, 1907
+        Tryplasma LONSDALE, 1845 [*Astroceriurn venustum HALL, 1852] | SIL
+        Pholidophyllum LINDSTRÖM, 1871 [*P. loveni LINDSTRÖM, 1871] | SIL
+        Enterolasma SIMPSON, 1900 [*Streptelasma strictum HALL, 1843] | SIL
+        Dalmanophyllum LANG & SMITH, 1927 [*D. turbinatum LANG & SMITH, 1927] | SIL
+
+    Suborder COLUMNARIINA Rominger, 1876
+      Family COLUMNARIIDAE Milne-Edwards & Haime, 1850
+        Columnaria GOLDFUSS, 1826 [*C. alveolata GOLDFUSS, 1826] | ORD-SIL
+        Favistella HALL, 1847 [*F. stellata HALL, 1847] | UORD-SIL
+      Family ARACHNOPHYLLIDAE Dybowski, 1873
+        Arachnophyllum DANA, 1846 [*A. pentagonum DANA, 1846] | SIL-DEV
+        Acervularia SCHWEIGGER, 1819 [*Madrepora luxurians LINNE, 1758] | SIL-DEV
+        Phillipsastrea D'ORBIGNY, 1849 [*Astrea hennahii LONSDALE, 1840] | DEV
+        Iowaphyllum STUMM, 1949 [*Acervularia inequalis STUMM, 1949] | DEV
+        Pachyphyllum MILNE-EDWARDS & HAIME, 1850 [*P. bouchardi MILNE-EDWARDS & HAIME, 1850] | DEV
+        Macgeea WEBSTER, 1889 [*M. solitaria WEBSTER, 1889] | DEV
+      Family ENDOPHYLLIDAE Torley, 1933
+        Endophyllum MILNE-EDWARDS & HAIME, 1851 [*E. bowerbanki MILNE-EDWARDS & HAIME, 1851] | DEV
+        Spongophyllum MILNE-EDWARDS & HAIME, 1851 [*S. sedgwicki MILNE-EDWARDS & HAIME, 1851] | SIL-DEV
+        Disphyllum DE FROMENTEL, 1861 [*Diphyphyllum caespitosum GOLDFUSS, 1826] | DEV
+        Thamnophyllum PENECKE, 1894 [*Diphyphyllum caespitosum GOLDFUSS, 1826] | DEV
+
+    Suborder CYSTIPHYLLINA Nicholson, 1889
+      Family CYSTIPHYLLIDAE Milne-Edwards & Haime, 1850
+        Cystiphyllum LONSDALE, 1839 [*C. siluriense LONSDALE, 1839] | SIL-DEV
+        Cystiphylloides CHAPMAN, 1893 [*Cystiphyllum aggregatum BILLING, 1859] | SIL-DEV
+        Mesophyllum SCHLÜTER, 1889 [*Cyathophyllum defectum SCHLÜTER, 1889] | DEV
+        Microplasma DYBOWSKI, 1873 [*M. gotlandicum DYBOWSKI, 1873] | SIL
+      Family DIGONOPHYLLIDAE Wedekind, 1923
+        Digonophyllum WEDEKIND, 1923 [*D. schulzi WEDEKIND, 1923] | DEV
+        Dialytophyllum HILL, 1939 [*D. coelophylloides HILL, 1939] | DEV
+      Family GONIOPHYLLIDAE Dybowski, 1873
+        Goniophyllum MILNE-EDWARDS & HAIME, 1850 [*G. pyramidale MILNE-EDWARDS & HAIME, 1850] | SIL
+        Calceola LAMARCK, 1799 [*C. sandalina LAMARCK, 1799] | DEV
+        Rhizophyllum LINDSTRÖM, 1866 [*R. gotlandicum LINDSTRÖM, 1866] | SIL
+
+    Suborder STREPTELASMATINA incertae sedis
+      Family LITHOSTROTIONIDAE D'Orbigny, 1852
+        Lithostrotion FLEMING, 1828 [*L. striatum FLEMING, 1828] | MISS
+        Lonsdaleia M'COY, 1849 [*L. floriformis M'COY, 1849] | MISS
+        Orionastraea SMITH, 1916 [*O. phillipsi SMITH, 1916] | MISS
+        Nemistium SMITH, 1928 [*N. edmondsi SMITH, 1928] | MISS
+        Thysanophyllum NICHOLSON & THOMSON, 1876 [*Diphyphyllum orientale ETHERIDGE, 1900] | MISS
+        Diphyphyllum LONSDALE, 1845 [*D. concinnum LONSDALE, 1845] | MISS
+        Palaeosmilia MILNE-EDWARDS & HAIME, 1848 [*P. murchisoni MILNE-EDWARDS & HAIME, 1848] | MISS
+        Dibunophyllum THOMSON & NICHOLSON, 1876 [*Cyathophyllum bipartitum M'COY, 1849] | MISS
+        Aulophyllum MILNE-EDWARDS & HAIME, 1850 [*Clisiophyllum fungites FLEMING, 1828] | MISS
+        Clisiophyllum DANA, 1846 [*C. keyserlingi M'COY, 1849] | MISS
+        Koninckophyllum THOMSON & NICHOLSON, 1876 [*K. magnificum THOMSON & NICHOLSON, 1876] | MISS
+        Carruthersella GARWOOD, 1913 [*C. compacta GARWOOD, 1913] | MISS
+        Aulina SMITH, 1917 [*A. rotiformis SMITH, 1917] | MISS
+      Family CYATHOPHYLLIDAE Milne-Edwards & Haime, 1850
+        Cyathophyllum GOLDFUSS, 1826 [*C. dianthus GOLDFUSS, 1826] | SIL-DEV
+        Campophyllum MILNE-EDWARDS & HAIME, 1850 [*C. flexuosum MILNE-EDWARDS & HAIME, 1850] | DEV
+        Dohmophyllum WEDEKIND, 1927 [*D. difficile WEDEKIND, 1927] | DEV
+        Xystriphyllum HILL, 1939 [*X. dunstani HILL, 1939] | DEV
+        Tabulophyllum FENTON & FENTON, 1924 [*T. rectum FENTON & FENTON, 1924] | DEV
+        Stringophyllum WEDEKIND, 1922 [*Cyathophyllum acanthicum FRECH, 1885] | DEV
+        Sociophyllum BIRENHEIDE, 1962 [*Diphyphyllum elongatum SCHLÜTER, 1881] | DEV
+      Family PHILLIPSASTREIDAE Roemer, 1883
+        Phillipsastrea D'ORBIGNY, 1849 [*Astrea hennahii LONSDALE, 1840] | DEV
+        Peneckiella SOSHKINA, 1939 [*P. kunthi SOSHKINA, 1939] | DEV
+        Frechastraea SCRUTTON, 1968 [*Phillipsastrea pentagona GOLDFUSS, 1826] | DEV
+      Family LONSDALEIIDAE Chapman, 1893
+        Lonsdaleia M'COY, 1849 [*L. floriformis M'COY, 1849] | MISS-PERM
+      Family AULOPHYLLIDAE Dybowski, 1873
+        Aulophyllum MILNE-EDWARDS & HAIME, 1850 [*Clisiophyllum fungites FLEMING, 1828] | MISS
+      Family CLISIOPHYLLIDAE Nicholson, 1889
+        Clisiophyllum DANA, 1846 [*C. keyserlingi M'COY, 1849] | MISS
+        Dibunophyllum THOMSON & NICHOLSON, 1876 [*Cyathophyllum bipartitum M'COY, 1849] | MISS
+
+    Suborder RUGOSA incertae sedis
+      Family PALAECYCLIDAE Dybowski, 1873
+        Palaeocyclus MILNE-EDWARDS & HAIME, 1849 [*Cyclolites porpita LINNE, 1767] | SIL
+      Family POLYCOELIIDAE Roemer, 1883
+        Polycoelia KING, 1849 [*P. profunda GEINITZ, 1842] | PERM
+      Family PLEROPHYLLIDAE Koker, 1924
+        Plerophyllum HINDE, 1890 [*P. australe HINDE, 1890] | PERM
+        Euryphyllum HILL, 1937 [*E. reidi HILL, 1937] | PERM
+
+  Order HETEROCORALLIA Schindewolf, 1941
+    Family HETEROPHYLLIIDAE M'Coy, 1849
+      Heterophyllia M'COY, 1849 [*H. grandis M'COY, 1849] | MISS
+      Hexaphyllia STUCKENBERG, 1904 [*H. mirabilis STUCKENBERG, 1904] | MISS
+      Oligophylloides POČTA, 1902 [*O. pachythecus POČTA, 1902] | DEV
+      Mariaephyllum POČTA, 1902 [*M. bohemicum POČTA, 1902] | DEV
+
+  Order SCLERACTINIA Bourne, 1900
+    Suborder ASTROCOENIINA Vaughan & Wells, 1943
+      Family THAMNASTERIIDAE Vaughan & Wells, 1943
+        Thamnasteria LESAUVAGE, 1823 [*T. dendroidea LESAUVAGE, 1823] | LJUR-UCRET
+        Astraeomorpha REUSS, 1854 [*A. crassisepta REUSS, 1854] | UJUR-UCRET
+        Fungiastraea ALLOITEAU, 1952 [*F. irregularis ALLOITEAU, 1952] | UJUR
+        Centrastraea MILNE-EDWARDS & HAIME, 1848 [*C. micrommata MILNE-EDWARDS & HAIME, 1848] | UJUR
+        Dimorphastraea D'ORBIGNY, 1850 [*D. coalescens D'ORBIGNY, 1850] | UJUR-UCRET
+        Dimorpharaea DE FROMENTEL, 1861 [*Agaricia bernensis DE LORIOL, 1872] | UJUR-UCRET
+        Comoseris D'ORBIGNY, 1849 [*Agaricia irradians D'ORBIGNY, 1850] | UJUR-UCRET
+        Microsolena LAMOUROUX, 1821 [*M. porosa LAMOUROUX, 1821] | LJUR-UCRET
+      Family ASTROCOENIIDAE Koby, 1890
+        Astrocoenia MILNE-EDWARDS & HAIME, 1848 [*A. pulchella MILNE-EDWARDS & HAIME, 1848] | UTRI-PALEOG
+        Stephanocoenia MILNE-EDWARDS & HAIME, 1848 [*S. intersepta MILNE-EDWARDS & HAIME, 1848] | UCRET-REC
+        Stylocoenia MILNE-EDWARDS & HAIME, 1848 [*Astrea emarciata LAMARCK, 1816] | UCRET-PALEOG
+      Family POCILLOPORIDAE Gray, 1842
+        Pocillopora LAMARCK, 1816 [*P. acuta LAMARCK, 1816] | PALEOG-REC
+        Stylophora SCHWEIGGER, 1819 [*S. pistillata ESPER, 1797] | UCRET-REC
+        Seriatopora LAMARCK, 1816 [*S. subulata LAMARCK, 1816] | PALEOG-REC
+        Madracis MILNE-EDWARDS & HAIME, 1849 [*M. asperula MILNE-EDWARDS & HAIME, 1849] | PALEOG-REC
+      Family ACTINASTRAEIDAE Alloiteau, 1952
+        Actinastrea D'ORBIGNY, 1849 [*A. goldfussi D'ORBIGNY, 1849] | LJUR-UCRET
+
+    Suborder FUNGIINA Verrill, 1865
+      Family CYCLOLITIDAE Milne-Edwards & Haime, 1849
+        Cyclolites LAMARCK, 1801 [*Madrepora elliptica LAMARCK, 1801] | UCRET
+        Micrabacia MILNE-EDWARDS & HAIME, 1849 [*Fungia coronula GOLDFUSS, 1826] | UCRET
+      Family SIDERASTREIDAE Vaughan & Wells, 1943
+        Siderastrea de BLAINVILLE, 1830 [*Astrea radians PALLAS, 1766] | PALEOG-REC
+        Pseudosiderastrea YABE & SUGIYAMA, 1935 [*P. tayamai YABE & SUGIYAMA, 1935] | REC
+        Coscinopora MILNE-EDWARDS & HAIME, 1849 [*Agaricia roemeri MILNE-EDWARDS & HAIME, 1848] | UCRET
+      Family AGARICIIDAE Gray, 1847
+        Agaricia LAMARCK, 1801 [*A. agaricites LAMARCK, 1801] | PALEOG-REC
+        Pavona LAMARCK, 1801 [*Madrepora cristata ELLIS & SOLANDER, 1786] | PALEOG-REC
+        Leptoseris MILNE-EDWARDS & HAIME, 1849 [*L. fragilis MILNE-EDWARDS & HAIME, 1849] | PALEOG-REC
+      Family FUNGIIDAE Dana, 1846
+        Fungia LAMARCK, 1801 [*Madrepora fungites LINNE, 1758] | PALEOG-REC
+        Cycloseris MILNE-EDWARDS & HAIME, 1849 [*Fungia cyclolites LAMARCK, 1816] | PALEOG-REC
+        Podabacia MILNE-EDWARDS & HAIME, 1849 [*Agaricia crustacea PALLAS, 1766] | REC
+        Lithophyllon REHBERG, 1892 [*Fungia undulata REHBERG, 1892] | REC
+        Polyphyllia QUOY & GAIMARD, 1833 [*P. pelvis QUOY & GAIMARD, 1833] | REC
+        Herpolitha ESCHSCHOLTZ, 1825 [*Madrepora limax HOUTTUYN, 1772] | REC
+        Halomitra DANA, 1846 [*Fungia pileus LAMARCK, 1816] | REC
+      Family MICRABACIIDAE Vaughan, 1905
+        Micrabacia MILNE-EDWARDS & HAIME, 1849 [*Fungia coronula GOLDFUSS, 1826] | UCRET
+        Stephanophyllia MICHELIN, 1841 [*S. elegans MICHELIN, 1841] | PALEOG-REC
+      Family PORITIDAE Gray, 1842
+        Porites LINK, 1807 [*P. polymorphus LINK, 1807] | PALEOG-REC
+        Goniopora de BLAINVILLE, 1830 [*G. pedunculata QUOY & GAIMARD, 1833] | UCRET-REC
+        Alveopora de BLAINVILLE, 1830 [*Madrepora daedalea FORSKÅL, 1775] | PALEOG-REC
+        Poritipora FELIX, 1891 [*P. quenstedti FELIX, 1891] | UJUR
+
+    Suborder FAVIINA Vaughan & Wells, 1943
+      Superfamily FAVIICAE Gregory, 1900
+        Family FAVIIDAE Gregory, 1900
+          Subfamily FAVIINAE Gregory, 1900
+            Favia OKEN, 1815 [*Madrepora fragum ESPER, 1795] | UCRET-REC
+            Favites LINK, 1807 [*Favia pentagona ESPER, 1795] | UCRET-REC
+            Goniastrea MILNE-EDWARDS & HAIME, 1848 [*Astrea retiformis LAMARCK, 1816] | UCRET-REC
+            Platygyra EHRENBERG, 1834 [*P. lamellina EHRENBERG, 1834] | PALEOG-REC
+            Leptoria MILNE-EDWARDS & HAIME, 1848 [*Madrepora phrygia ELLIS & SOLANDER, 1786] | PALEOG-REC
+            Oulophyllia MILNE-EDWARDS & HAIME, 1848 [*Madrepora crispa LAMARCK, 1816] | REC
+            Plesiastrea MILNE-EDWARDS & HAIME, 1848 [*Astrea versipora LAMARCK, 1816] | PALEOG-REC
+            Montastrea MILNE-EDWARDS & HAIME, 1848 [*Astrea cavernosa LAMARCK, 1816] | UCRET-REC
+            Solenastrea MILNE-EDWARDS & HAIME, 1848 [*S. turonensis MILNE-EDWARDS & HAIME, 1848] | UCRET-REC
+            Cyphastrea MILNE-EDWARDS & HAIME, 1848 [*Astrea microphthalma LAMARCK, 1816] | UCRET-REC
+            Diploastrea MATTHAI, 1914 [*Astrea heliopora LAMARCK, 1816] | UCRET-REC
+            Leptastrea MILNE-EDWARDS & HAIME, 1848 [*L. roissyana MILNE-EDWARDS & HAIME, 1848] | PALEOG-REC
+            Hydnophora FISCHER VON WALDHEIM, 1807 [*H. demidovii FISCHER VON WALDHEIM, 1807] | UCRET-REC
+            Ogilviastraea WELLS, 1937 [*O. pratti WELLS, 1937] | UJUR-UCRET
+            Bikiniastrea WELLS, 1954 [*B. marshallensis WELLS, 1954] | REC
+            Antiquastrea VAUGHAN, 1919 [*Heterastraea cellulosa DUNCAN, 1863] | UCRET-PALEOG
+            Placocoenia ORB., 1849 [*Astrea macrophthalma GOLDF., 1829] | UCRET
+          Subfamily AGATHIPHYLLIIINAE Vaughan & Wells, 1943
+            Agathiphyllia REUSS, 1854 [*A. explanata REUSS, 1854] | UCRET
+            Cricocyathus QUENST., 1881 [*Leptaxis REUSS, 1868] | PALEOG
+          Subfamily TRACHYPHYLLIINAE Wells, nov.
+            Antillophyllia VAUGHAN, 1932 [*Antillia lonsdaleii DUNCAN, 1864] | PALEOG-REC
+            Indophyllia GERTH, 1921 [*I. cylindrica GERTH, 1921] | PALEOG
+            Trachyphyllia MILNE-EDWARDS & HAIME, 1848 [*Turbinolia geoffroyi AUDOUIN, 1826] | PALEOG-REC
+            Callogyra VERRILL, 1902 [*C. formosa VERRILL, 1902] | REC
+            Moseleya QUELCH, 1884 [*M. latistellata QUELCH, 1884] | REC
+        Family RHIZANGIIDAE d'Orbigny, 1851
+          Rhizangia MILNE-EDWARDS & HAIME, 1848 [*Astrea brevissima DESHAYES, 1834] | UCRET-REC
+          Culicia DANA, 1846 [*C. stellata DANA, 1846] | PALEOG-REC
+          Cryptangia MILNE-EDWARDS & HAIME, 1848 [*C. woodii MILNE-EDWARDS & HAIME, 1848] | PALEOG-REC
+          Astrangia MILNE-EDWARDS & HAIME, 1848 [*A. michelini MILNE-EDWARDS & HAIME, 1848] | PALEOG-REC
+          Colangia POURTALÈS, 1871 [*C. immersa POURTALÈS, 1871] | REC
+          Cladangia MILNE-EDWARDS & HAIME, 1851 [*Astrea semispherica DEFRANCE, 1826] | PALEOG-REC
+          Arctangia WELLS, 1937 [*Thecocyathus nathorsti LINDSTRÖM, 1900] | LCRET
+        Family OCULINIDAE Gray, 1847
+          Subfamily OCULININAE Gray, 1847
+            Oculina LAMARCK, 1816 [*O. virginea LINNE, 1758] | UCRET-REC
+            Archohelia VAUGHAN, 1919 [*A. limonensis VAUGHAN, 1919] | PALEOG
+            Sclerhelia MILNE-EDWARDS & HAIME, 1850 [*Sclerhelia hirtella MILNE-EDWARDS & HAIME, 1850] | REC
+            Cyathelia MILNE-EDWARDS & HAIME, 1849 [*Cyathohelia axillaris ELLIS & SOLANDER, 1786] | UCRET-REC
+            Diplhelia MILNE-EDWARDS & HAIME, 1850 [*Oculina raristella DEFRANCE, 1825] | PALEOG-REC
+            Madrepora LINNE, 1758 [*M. oculata LINNE, 1758] | PALEOG-REC
+            Neohelia MOSELEY, 1881 [*N. porcellana MOSELEY, 1881] | REC
+            Bathelia MOSELEY, 1881 [*B. candida MOSELEY, 1881] | REC
+            Haplohelia REUSS, 1864 [*H. gracilis REUSS, 1864] | PALEOG
+          Subfamily GALAXEINAE Vaughan & Wells, 1943
+            Galaxea OKEN, 1815 [*Madrepora fascicularis LINNE, 1767] | PALEOG-REC
+            Simplastrea UMBGROVE, 1939 [*S. vesicularis UMBGROVE, 1939] | REC
+            Acrhelia MILNE-EDWARDS & HAIME, 1849 [*Oculina horrescens DANA, 1846] | REC
+            Bantamia YABE & EGUCHI, 1943 [*B. gerthii YABE & EGUCHI, 1943] | NEOG
+        Family MEANDRINIDAE Gray, 1847
+          Subfamily MEANDRININAE Gray, 1847
+            Meandrina LAMARCK, 1801 [*M. pectinata LAMARCK, 1801] | PALEOG-REC
+            Pachygyra MILNE-EDWARDS & HAIME, 1848 [*Lobophyllia labyrinthica MICHELIN, 1846] | UCRET
+            Ctenella MATTHAI, 1928 [*C. chagius MATTHAI, 1928] | REC
+            Strotogyra WELLS, 1937 [*Rhipidogyra undulata REUSS, 1854] | UCRET
+            Phyllosmilia FROMENTEL, 1862 [*Turbinolia bascheii DEFRANCE, 1828] | UCRET
+            Diplotenium GOLDF., 1827 [*D. cordatum GOLDF., 1827] | UCRET
+            Aulosmilia ALLOITEAU, 1952 [*Trochosmilia archiaci FROMENTEL, 1862] | UCRET
+            Flabellosmilia OPPENHEIM, 1930 [*Flabellum bisinuatum REUSS, 1854] | UCRET
+            Nefophyllia WELLS, 1937 [*Platysmilia anguata REUSS, 1854] | UCRET
+          Subfamily DICHOCOENIINAE Vaughan & Wells, 1943
+            Barysmilia MILNE-EDWARDS & HAIME, 1848 [*Dendrophyllia brevicaulis MICHELIN, 1841] | UCRET-REC
+            Dichocoenia MILNE-EDWARDS & HAIME, 1848 [*D. stokesi MILNE-EDWARDS & HAIME, 1848] | UCRET-REC
+            Dendrogyra EHRENBERG, 1834 [*D. cylindrus EHRENBERG, 1834] | PALEOG-REC
+            Orbignygyra ALLOITEAU, 1952 [*Diploria neptuni ALLOITEAU, 1952] | UCRET
+            Scalariogyra GERTH, 1923 [*S. escharoides GERTH, 1923] | PALEOG
+        Family MERULINIDAE Verrill, 1866
+          Boninastraea YABE & SUGIYAMA, 1935 [*B. boninensis YABE & SUGIYAMA, 1935] | REC
+          Merulina EHRENBERG, 1834 [*Madrepora ampliata ELLIS & SOLANDER, 1786] | REC
+          Clavarina VERRILL, 1864 [*Merulina scrabicula DANA, 1846] | REC
+          Scapophyllia MILNE-EDWARDS & HAIME, 1848 [*S. cylindrica MILNE-EDWARDS & HAIME, 1848] | REC
+        Family MUSSIDAE Ortmann, 1890
+          Mussismilia ORTMANN, 1890 [*M. harttii VERRILL, 1868] | REC
+          Isophyllia MILNE-EDWARDS & HAIME, 1851 [*Madrepora sinuosa ELLIS & SOLANDER, 1786] | REC
+          Isophyllastraea MATTHAI, 1928 [*Astraea rigida DANA, 1846] | REC
+          Mycetophyllia MILNE-EDWARDS & HAIME, 1848 [*M. lamarckiana MILNE-EDWARDS & HAIME, 1848] | REC
+          Mussa OKEN, 1815 [*Madrepora angulosa PALLAS, 1766] | REC
+          Symphyllia MILNE-EDWARDS & HAIME, 1848 [*Meandrina sinuosa QUOY & GAIMARD, 1833] | PALEOG-REC
+          Lobophyllia BLAINVILLE, 1830 [*Madrepora corymbosa FORSKÅL, 1775] | PALEOG-REC
+          Acanthastrea MILNE-EDWARDS & HAIME, 1848 [*A. echinata DANA, 1846] | PALEOG-REC
+          Acanthophyllia WELLS, 1937 [*Caryophyllia deshayesiana MICHELIN, 1850] | PALEOG-REC
+          Antillia DUNCAN, 1863 [*A. dentata DUNCAN, 1863] | PALEOG
+          Syzygophyllia REUSS, 1860 [*S. brevis REUSS, 1860] | PALEOG
+          Homophyllia BRUEGGEMANN, 1877 [*Caryophyllia australis MILNE-EDWARDS & HAIME, 1849] | REC
+          Cyclomissa WELLS, 1937 [*C. concinna WELLS, 1937] | PALEOG
+        Family PECTINIIDAE Vaughan & Wells, 1943
+          Echinophyllia KLUNZINGER, 1879 [*Madrepora aspera ELLIS & SOLANDER, 1786] | PALEOG-REC
+          Oxypora SAVILLE-KENT, 1871 [*Trachypora VERRILL, 1864] | REC
+          Mycedium OKEN, 1815 [*Madrepora elephantotus PALLAS, 1766] | REC
+          Pectinia OKEN, 1815 [*Madrepora lactuca PALLAS, 1766] | REC
+        Family ANTHEMIPHYLLIIDAE Vaughan, 1907
+          Anthemiphyllia POURTALÈS, 1878 [*A. patera POURTALÈS, 1878] | REC
+          Bathytrochus GRAVIER, 1915 [*B. hexagonus GRAVIER, 1915] | REC
+      Superfamily FAVIICAE incertae sedis
+        Family MONTLIVALTIIDAE Dietrich, 1926
+          Montlivaltia LAMOUROUX, 1821 [*M. caryophyllata LAMOUROUX, 1821] | UTRI-UCRET
+          Thecosmilia MILNE-EDWARDS & HAIME, 1848 [*T. annularis MILNE-EDWARDS & HAIME, 1848] | UTRI-UCRET
+          Complexastraea D'ORBIGNY, 1849 [*Lithodendron irregulare MICHELIN, 1843] | UJUR
+          Confusastraea D'ORBIGNY, 1849 [*Astrea elegans GOLDFUSS, 1826] | UJUR-UCRET
+          Latomeandra D'ORBIGNY, 1849 [*Astraea plicata GOLDFUSS, 1826] | LJUR-UCRET
+
+    Suborder CARYOPHYLLIINA Vaughan & Wells, 1943
+      Superfamily CARYOPHYLLIICAE Gray, 1847
+        Family CARYOPHYLLIIDAE Gray, 1847
+          Subfamily THECOCYATHINAE Vaughan & Wells, 1943
+            Thecocyathus MILNE-EDWARDS & HAIME, 1848 [*Cyathophyllum tintinnabulum GOLDF., 1826] | LJUR-UCRET
+            Discocyathus MILNE-EDWARDS & HAIME, 1848 [*Cyclolites eudesii MICHELIN, 1840] | UJUR-UCRET
+          Subfamily CARYOPHYLLIINAE Gray, 1847
+            Caryophyllia LAMARCK, 1801 [*Madrepora cyathus LINNE, 1758] | LJUR-REC
+            Antillocyathus WELLS, 1937 [*Placocyathus maensis VAUGHAN, 1925] | PALEOG
+            Coenocyathus MILNE-EDWARDS & HAIME, 1848 [*C. cylindricus MILNE-EDWARDS & HAIME, 1848] | PALEOG-REC
+            Dendrocyathus ALLOITEAU, 1952 [*Dactylosmilia cenomana ORB., 1850] | UCRET
+            Cyathoceras MOSELEY, 1881 [*C. cornu MOSELEY, 1881] | REC
+            Oxysmilia DUCHASSAING, 1870 [*Lophosmilia rotundifolia MILNE-EDWARDS & HAIME, 1849] | REC
+            Lophosmilia MILNE-EDWARDS & HAIME, 1848 [*Caryophyllia cenomana MILNE-EDWARDS & HAIME, 1848] | UCRET-REC
+          Subfamily TURBINOLIIINAE Milne-Edwards & Haime, 1848
+            Sphenotrochus MILNE-EDWARDS & HAIME, 1848 [*Turbinolia crispata LAMARCK, 1816] | PALEOG-REC
+            Bothrophoria FELIX, 1909 [*B. ornata FELIX, 1909] | UCRET
+            Conocyathus ORB., 1849 [*C. sulcata ORB., 1849] | PALEOG
+            Trematotrochus T.-WOODS, 1879 [*Conocyathus fenestratus T.-WOODS, 1878] | PALEOG
+            Turbinolia LAMARCK, 1816 [*T. sulcata LAMARCK, 1816] | PALEOG
+            Notocyathus T.-WOODS, 1880 [*N. viola DANA, 1846] | PALEOG-REC
+            Platytrochus MILNE-EDWARDS & HAIME, 1848 [*Turbinolia stokesii LEA, 1833] | UCRET-REC
+            Kionotrochus DENNANT, 1906 [*K. suteri DENNANT, 1906] | REC
+            Cylindrophyllia YABE & EGUCHI, 1937 [*C. minima YABE & EGUCHI, 1937] | PALEOG
+            Peponocyathus GRAVIER, 1915 [*P. variabilis GRAVIER, 1915] | PALEOG-REC
+            Tropidocyathus MILNE-EDWARDS & HAIME, 1848 [*Flabellum lessoni MICHELOTTI, 1842] | PALEOG-REC
+            Holcotrochus DENNANT, 1902 [*H. scriptus DENNANT, 1902] | PALEOG
+          Subfamily DESMOPHYLLINAE Vaughan & Wells, 1943
+            Desmophyllum EHRENBERG, 1834 [*D. dianthus EHRENBERG, 1834] | UCRET-REC
+            Lophelia ORB., 1849 [*Madrepora prolifera PALLAS, 1766] | UCRET-REC
+            Gemmulatrochus DUNCAN, 1878 [*G. simplex DUNCAN, 1878] | REC
+            Dactylotrocus WELLS, 1954 [*Tridacophyllia cervicornis MOSELEY, 1881] | REC
+          Subfamily PARASMILIINAE Vaughan & Wells, 1943
+            Parasmilia MILNE-EDWARDS & HAIME, 1848 [*Madrepora centralis MANTELL, 1822] | LCRET-REC
+            Edwardsosmilia ALLOITEAU, 1949 [*Trochosmilia faujasi MILNE-EDWARDS & HAIME, 1849] | UCRET
+            Smilotrochus MILNE-EDWARDS & HAIME, 1851 [*Trochosmilia tuberosa MILNE-EDWARDS & HAIME, 1850] | UCRET-PALEOG
+            Rennensismilia ALLOITEAU, 1952 [*Turbinolia didyma GOLDF., 1826] | UCRET
+            Anomocora STUDER, 1878 [*A. fecunda POURTALÈS, 1871] | REC
+            Dasmosmilia POURTALÈS, 1880 [*Trochosmilia lymani POURTALÈS, 1871] | REC
+            Goniocorella WELLS, 1937 [*Coelocoenia dumosa ALCOCK, 1902] | REC
+            Solenosmilia DUNCAN, 1873 [*S. variabilis DUNCAN, 1873] | PALEOG-REC
+          Subfamily EUSMILIINAE Milne-Edwards & Haime, 1857
+            Euphyllia DANA, 1846 [*Caryophyllia glabrescens CHAMISSO & EYSENHARDT, 1821] | PALEOG-REC
+            Plerogyra MILNE-EDWARDS & HAIME, 1848 [*P. laxa MILNE-EDWARDS & HAIME, 1848] | REC
+            Progyrosmilia WELLS, 1937 [*P. torulosa WELLS, 1937] | PALEOG
+            Eusmilia MILNE-EDWARDS & HAIME, 1848 [*Madrepora fastigiata PALLAS, 1766] | REC
+            Gyrosmilia MILNE-EDWARDS & HAIME, 1851 [*Manicina interrupta EHRENBERG, 1834] | PALEOG-REC
+        Family FLABELLIDAE Bourne, 1905
+          Flabellum LESSON, 1831 [*F. pavoninum LESSON, 1831] | UCRET-REC
+          Conosmilia DUNCAN, 1865 [*C. elegans DUNCAN, 1865] | PALEOG
+          Placotrochus MILNE-EDWARDS & HAIME, 1848 [*P. laevis MILNE-EDWARDS & HAIME, 1848] | PALEOG-REC
+          Monomyces EHRENBERG, 1834 [*M. anthophyllum EHRENBERG, 1834] | UCRET-REC
+          Gardineria VAUGHAN, 1907 [*Haplophyllia hawaiiensis VAUGHAN, 1907] | REC
+          Adkinsella WELLS, 1933 [*A. edwardsensis WELLS, 1933] | LCRET
+        Family GUYNIIDAE Hickson, 1910
+          Onchotrochus DUNCAN, 1870 [*O. serpentinus DUNCAN, 1870] | UCRET
+          Guynia DUNCAN, 1873 [*G. annulata DUNCAN, 1873] | REC
+          Stenocyathus POURTALÈS, 1871 [*S. vermiformis POURTALÈS, 1871] | REC
+          Schizocyathus POURTALÈS, 1874 [*S. fissilis POURTALÈS, 1874] | REC
+        Family RHIPIDOGYRIDAE Koby, 1904
+          Rhipidogyra MILNE-EDWARDS & HAIME, 1848 [*Lobophyllia flabellum MICHELIN, 1843] | LJUR-LCRET
+          Aplosmilia ORB., 1849 [*Lobophyllia semisulcata MICHELIN, 1843] | LJUR
+          Kologyra WELLS, 1937 [*Pachygyra tuberosa ORB., 1850] | LJUR
+          Acanthogyra OGILVIE, 1897 [*A. columnaris OGILVIE, 1897] | LJUR
+          Codonosmilia KOBY, 1888 [*C. elegans KOBY, 1888] | LJUR
+          Cymosmilia KOBY, 1894 [*C. conferta KOBY, 1894] | LJUR
+          Phytogyra ORB., 1849 [*P. magnifica ORB., 1849] | LJUR
+          Psammogyra FROMENTEL, 1862 [*Pachygyra cottaldina ORB., 1850] | LJUR
+          Placogyra KOBY, 1904 [*P. felixi KOBY, 1904] | LJUR
+
+    Suborder DENDROPHYLLIINA Vaughan & Wells, 1943
+      Family DENDROPHYLLIIDAE Gray, 1847
+        Palaeopsammia WANNER, 1902 [*P. multiformis WANNER, 1902] | UCRET
+        Wadeopsammia WELLS, 1933 [*Trochosmilia nodosa WADE, 1926] | UCRET
+        Balanophyllia WOOD, 1844 [*B. calyculus WOOD, 1844] | PALEOG-REC
+        Endopachys LONSDALE, 1845 [*Turbinolia maclurii LEA, 1833] | PALEOG-REC
+        Notophyllia DENNANT, 1899 [*N. semivestita DENNANT, 1899] | NEOG-REC
+        Rhizopsammia VERRILL, 1869 [*R. pulchra VERRILL, 1869] | REC
+        Cladopsammia LACAZE-DUTHIERS, 1897 [*C. rolandi LACAZE-DUTHIERS, 1897] | REC
+        Dendrophyllia BLAINVILLE, 1830 [*Madrepora ramea LINNE, 1758] | PALEOG-REC
+        Lobopsammia MILNE-EDWARDS & HAIME, 1848 [*Lithodendron cariosum GOLDF., 1827] | PALEOG-REC
+        Stereopsammia MILNE-EDWARDS & HAIME, 1850 [*S. humilis MILNE-EDWARDS & HAIME, 1850] | PALEOG
+        Trochopsammia MILNE-EDWARDS & HAIME, 1848 [*T. infundibulum POURTALÈS, 1878] | REC
+        Heteropsammia MILNE-EDWARDS & HAIME, 1848 [*H. michelini MILNE-EDWARDS & HAIME, 1848] | PALEOG-REC
+        Duncanopsammia WELLS, 1936 [*Dendrophyllia axifuga MILNE-EDWARDS & HAIME, 1848] | REC
+        Enallopsammia MICHELOTTI, 1871 [*Coenopsammia scillae SEGUENZA, 1864] | PALEOG-REC
+        Thecopsammia POURTALÈS, 1868 [*T. socialis POURTALÈS, 1868] | REC
+        Reussopsammia WELLS, 1937 [*Stereopsanmia granulosa REUSS, 1864] | PALEOG
+        Stichopsammia FELIX, 1885 [*S. gyrosa FELIX, 1885] | PALEOG
+        Endopsammia MILNE-EDWARDS & HAIME, 1848 [*E. philippinensis MILNE-EDWARDS & HAIME, 1848] | REC
+        Astroides QUOY & GAIMARD, 1827 [*Madrepora calycularis PALLAS, 1766] | PALEOG-REC
+        Tubastraea LESSON, 1834 [*T. coccinea LESSON, 1834] | PALEOG-REC
+        Turbinaria OKEN, 1815 [*Madrepora crater PALLAS, 1766] | PALEOG-REC
+        Bathypsammia POURTALÈS, 1871 [*Thecopsammia tintinnabulum POURTALÈS, 1868] | REC
+        Enallopsammia MICHELOTTI, 1871 [*Coenopsammia scillae SEGUENZA, 1864] | PALEOG-REC
+        Thecopsammia POURTALÈS, 1868 [*T. socialis POURTALÈS, 1868] | REC
+
+    Scleractinia incertae sedis
+      Lamellofungia ALLOITEAU, 1952 [*L. rennensis ALLOITEAU, 1952] | UCRET
+      Morchellastraea ALLOITEAU, 1941 [*Astrea coniformis MICHELIN, 1843] | UCRET
+      Pleuropodia DENNANT, 1903 [*P. otwayensis DENNANT, 1903] | NEOG
+      Pseudoseris ALLOITEAU, 1952 [*P. senessi ALLOITEAU, 1952] | UCRET
+      Siniastraea AVNIMELECH, 1947 [*Aspidiscus labyrinthica HOPPE, 1922] | LJUR
+      Stylastraea FROMENTEL, 1860 [*S. sinemuriensis FROMENTEL, 1860] | LJUR
+      Trigerastraea ALLOITEAU, 1952 [*Isastraea trigeri FROMENTEL, 1857] | UCRET
+      Tubicora LATHAM, 1929 [*T. somaliensis LATHAM, 1929] | PALEOG
+      Valloria VIDAL, 1874 [*V. egozcuei VIDAL, 1874] | UCRET
+
+  Order TABULATA Milne-Edwards & Haime, 1850
+    Family CHAETETIDAE Milne-Edwards & Haime, 1850
+      Subfamily LICHENARIINAE Okulitch, 1936
+        Lichenaria WINCHELL & SCHUCHERT, 1895 [*L. typa WINCHELL & SCHUCHERT, 1895] | MORD
+      Subfamily TETRADIINAE Nicholson, 1879
+        Tetradium DANA, 1848 [*T. fibratum SAFFORD, 1856] | MORD-UORD
+        Paleoalveolites OKULITCH, 1935 [*Tetradium carterense BASSLER, 1932] | MORD
+      Subfamily CHAETETINAE Milne-Edwards & Haime, 1850
+        Chaetetes FISCHER in EICHWALD, 1829 [*C. cylindraceus FISCHER, 1837] | ORD-PERM
+        Dania MILNE-EDWARDS & HAIME, 1849 [*D. huronica MILNE-EDWARDS & HAIME, 1849] | SIL
+        Hattonia JONES, 1927 [*H. etheridgei JONES, 1927] | SIL
+        Litophyllum ETHERIDGE, 1899 [*Amplexopora konincki ETHERIDGE & FOORD, 1884] | DEV
+        Pachytheca SCHLÜTER, 1885 [*P. stellimicans SCHLÜTER, 1885] | DEV
+
+    Family SYRINGOPHYLLIDAE Počta, 1902
+      Subfamily BILLINGSARIINAE Okulitch, 1936
+        Billingsaria OKULITCH, 1936 [*Columnaria parva BILLINGS, 1859] | MORD-UORD
+      Subfamily SYRINGOPHYLLINAE Počta, 1902
+        Cerioid or with coenenchyme
+        Lyopora NICHOLSON & ETHERIDGE, 1878 [*Palaepora? favosa M'COY, 1850] | MORD
+        Calapoecia BILLINGS, 1865 [*C. anticostiensis BILLINGS, 1865] | MORD-SIL
+        Sarcinula LAMARCK, 1816 [*Madrepora organum LINNE, 1758] | MORD-SIL
+        Nyctopora NICHOLSON, 1879 [*N. billingsi NICHOLSON, 1879] | MORD-UORD
+        Saffordophyllum BASSLER, 1950 [*S. deckeri BASSLER, 1950] | MORD
+        ?Foerstephyllum BASSLER, 1950 [*Columnaria? halli NICHOLSON, 1879] | MORD
+
+    Family HELIOLITIDAE Lindström, 1876
+      Subfamily PLASMOPORINAE Wentzel, 1895
+        Propora MILNE-EDWARDS & HAIME, 1849 [*Porites tubulatus LONSDALE, 1839] | ORD-SIL
+        Plasmoporella KIAER, 1899 [*P. convexotabulata KIAER, 1899] | UORD
+        Diplopöra QUENST., 1879 [*Heliolites grayi MILNE-EDWARDS & HAIME, 1851] | SIL
+        Plasmopora MILNE-EDWARDS & HAIME, 1849 [*Porites petallijormis LONSDALE, 1839] | SIL-DEV
+        ?Cyrtophyllum LINDSTRÖM, 1882 [*C. densum LINDSTRÖM, 1882] | SIL
+      Subfamily PROHELIOLITINAE
+        Proheliolites KIAER, 1897 [*Heliolites dubius SCHMIDT, 1858] | UORD-SIL
+      Subfamily HELIOLITINAE Lindström, 1876
+        Heliolites DANA, 1846 [*Astrea porosa GOLDF., 1826] | SIL-DEV
+        Stelliporella WENTZEL, 1895 [*S. lamellata WENTZEL, 1895] | SIL
+        Cosmiolithus LINDSTRÖM, 1899 [*C. ornatus LINDSTRÖM, 1899] | SIL
+        Paeckelmannopora WEISSERMEL, 1939 [*P. macrophthalma WEISSERMEL, 1939] | DEV
+      Subfamily COCCOSERIDINAE Kiaer, 1899
+        Coccoseris EICHWALD, 1855 [*C. ungerni EICHWALD, 1855] | UORD-SIL
+        Acidolites LANG-S.-T., 1940 [*Acantholithus lateseptatus LINDSTRÖM, 1899] | SIL
+        Pycnolithus LINDSTRÖM, 1899 [*P. bifidus LINDSTRÖM, 1899] | SIL
+        Protaraea MILNE-EDWARDS & HAIME, 1851 [*Porites? vetusta HALL, 1847] | MORD-SIL
+        Trochiscolithus KIAER, 1904 [*T. micraster KIAER, 1904] | MORD-UORD
+        Protrochiscolithus TROEDSSON, 1928 [*P. kiaeri TROEDSSON, 1928] | UORD
+        Paleoporites KIAER, 1899 [*P. estonicus KIAER, 1899] | SIL
+      Subfamily PALAEOPORITINAE Kiaer, 1899
+        (Like Coccoseridinae, but septa and walls of tabularia and coenenchymal tubules perforate)
+
+    Family FAVOSITIDAE Dana, 1846
+      Subfamily FAVOSITINAE Dana, 1846
+        Favosites LAMARCK, 1816 [*F. gothlandicus LAMARCK, 1816] | UORD-DEV
+        Palaeofavosites TWENHOFEL, 1914 [*Favosites asper ORB., 1850] | UORD-SIL
+        Parafavosites ORLOV, 1930 [*P. ferganensis ORLOV, 1930] | SIL
+        Gephuropora ETHERIDGE, 1920 [*Favosites duni ETH., 1920] | DEV
+        Fossopora ETHERIDGE, 1903 [*F. wellingtonensis ETHERIDGE, 1903] | SIL-DEV
+        Somphopra LINDSTRÖM, 1883 [*S. daedala LINDSTRÖM, 1883] | SIL
+        Laceripora EICHWALD, 1854 [*L. cribrosa EICHWALD, 1854] | SIL
+        Desmidopora NICHOLSON, 1886 [*D. alveolaris NICHOLSON, 1886] | SIL
+        Scoliopora LONSDALE, 1839 [*S. denticulata MILNE-EDWARDS & HAIME, 1851] | DEV
+        Caliapora SCHLÜTER, 1889 [*Alveolites battersbyi MILNE-EDWARDS & HAIME, 1851] | DEV
+        Schizophorites GERTH, 1921 [*S. dubiosus GERTH, 1921] | PERM
+        Pseudofavosites GERTH, 1921 [*P. stylifer GERTH, 1921] | PERM
+        Stylonites GERTH, 1921 [*S. porosus GERTH, 1921] | PERM
+        ?Plasmadictyum WILSON, 1926 [*P. irregulare WILSON, 1926] | UORD
+        Emmonsia MILNE-EDWARDS & HAIME, 1851 [*Favosites emmonsii HALL, 1851] | DEV
+        Romingerella AMSDEN, 1949 [*Thecia major ROMINGER, 1876] | SIL-DEV
+      Subfamily PACHYPORINAE Gerth, 1921
+        Thamnopora STEININGER, 1831 [*T. madreporacea STEININGER, 1831] | SIL-PERM
+        Striatopora HALL, 1851 [*S. flexuosa HALL, 1851] | SIL-DEV
+        Acacaciapora MOORE & JEFFORDS, 1945 [*Michelinia subcylindrica MATHER, 1915] | PERM
+        Heterocoenites GERTH, 1921 [*H. variabilis GERTH, 1921] | SIL-DEV
+        ?Trachypora MILNE-EDWARDS & HAIME, 1851 [*T. davidsoni MILNE-EDWARDS & HAIME, 1851] | UDEV
+        ?Taouzia TERMIER, 1948 [*T. chouberti TERMIER, 1948] | MDEV
+      Subfamily ALVEOLITINAE Duncan, 1872
+        Alveolites LAMARCK, 1801 [*A. suborbicularis LAMARCK, 1801] | SIL-DEV
+        Planalveolites LANG & SMITH, 1939 [*Alveolites fougti MILNE-EDWARDS & HAIME, 1851] | SIL
+        Coenites EICHWALD, 1829 [*C. juniperinus EICHWALD, 1829] | SIL-DEV
+      Subfamily THECINAE Hill & Stumm, 1956
+        Thecia MILNE-EDWARDS & HAIME, 1849 [*Porites expatiatus LONSDALE, 1839] | SIL
+        Catenippora LAMARCK, 1816 [*C. escharoides LAMARCK, 1816] | ORD-SIL
+        Labyrinthites LAMBE, 1906 [*L. chidlensis LAMBE, 1906] | ORD-SIL
+      Subfamily MICHELINIINAE
+        Michelinia DE KONINCK, 1841 [*Calamopora tenuisepta PHILLIPS, 1836] | DEV-PERM
+        Beaumontia MILNE-EDWARDS & HAIME, 1851 [*Columnaria laxa M'COY, 1849] | MISS
+        Cleistopora NICHOLSON, 1888 [*Michelinia geometrica MILNE-EDWARDS & HAIME, 1851] | DEV
+        Araeopora NICHOLSON & ETHERIDGE, 1879 [*A. australis NICHOLSON & ETHERIDGE, 1879] | DEV
+        Squameophyllum SMYTH, 1933 [*S. spumans SMYTH, 1933] | MISS
+      Subfamily PALAEACINAE Počta, 1902
+        Pleurodictyum GOLDFUSS, 1829 [*P. problematicum GOLDFUSS, 1829] | DEV
+        Antholites DAVIS, 1887 [*A. speciosus DAVIS, 1887] | DEV
+
+    Family HALYSITIDAE Milne-Edwards & Haime, 1850
+      Halysites FISCHER, 1828 [*Tubipora catenularia LINNE, 1767] | ORD-SIL
+      Catenipora LAMARCK, 1816 [*C. escharoides LAMARCK, 1816] | ORD-SIL
+      Labyrinthites LAMBE, 1906 [*L. chidlensis LAMBE, 1906] | ORD-SIL
+      Arcturia WILSON, 1931 [*A. complexa WILSON, 1931] | ORD
+      Microcyathus HINDE, 1896 [*Hydnopora? cyclostoma PHILLIPS, 1836] | MISS
+      Vaughania GARWOOD, 1913 [*V. cleistoporoides GARWOOD, 1913] | MISS
+      ?Oculinella YAKOVLEV, 1939 [*O. gerthi YAKOVLEV, 1939] | LPERM
+      ?Yavorskia FOMICHEV, 1931 [*Y. barasensis FOMICHEV, 1931] | MISS
+      Trachypsammia GERTH, 1921 [*T. dendroïdes GERTH, 1921] | PERM
+      Palaecis HAIME in M.EDW., 1857 [*P. cuneiformis MILNE-EDWARDS & HAIME, 1857] | DEV-PERM
+
+    Family AULOPORIDAE Milne-Edwards & Haime, 1851
+      Subfamily AULOPORINAE Milne-Edwards & Haime, 1851
+        Aulopora GOLDFUSS, 1829 [*A. serpens GOLDFUSS, 1829] | SIL-PERM
+        Auloporella GRUBBS, 1939 [*A. typa GRUBBS, 1939] | SIL
+        Aulocystis SCHLÜTER, 1885 [*A. cornigera SCHLÜTER, 1885] | DEV
+        Chonostegites MILNE-EDWARDS & HAIME, 1851 [*C. clappi MILNE-EDWARDS & HAIME, 1851] | DEV
+        Plexituba STAINBROOK, 1946 [*P. contexta STAINBROOK, 1946] | DEV
+        Monotubella YAKOVLEV, 1939 [*M. permiensis YAKOVLEV, 1939] | PERM
+        Aulohelia GERTH, 1921 [*A. irregularis GERTH, 1921] | PERM
+        Remesia KETTNER, 1937 [*R. tubulosa KETTNER, 1937] | DEV
+        Pseudoromingeria YABE & SUGIYAMA, 1941 [*P. kotoi YABE & SUGIYAMA, 1941] | PERM
+        Romingeria NICHOLSON, 1879 [*Calamopora infundibulfera GOLDFUSS, 1829] | DEV
+        Bainbridgia BALL & GROVE, 1940 [*B. typicalis BALL & GROVE, 1940] | SIL
+        Diorychopora DAVIS, 1887 [*D. tenuis DAVIS, 1887] | SIL
+        Aulocaulis FENTON & FENTON, 1937 [*Aulopora expansa FENTON-F., 1924] | DEV
+      Subfamily SYRINGOPORINAE Nicholson, 1879
+        Syringopora GOLDFUSS, 1826 [*S. ramulosa GOLDFUSS, 1826] | SIL-PERM
+        Reuschia KIAER, 1930 [*R. aperta KIAER, 1930] | UORD
+        Eofletscheria BASSLER, 1950 [*Columnaria incerta BILLINGS, 1859] | MORD
+        Syringolites HINDE, 1879 [*S. huronensis HINDE, 1879] | SIL
+        Cladochonus M'COY, 1847 [*C. tenuicollis M'COY, 1847] | DEV-PERM
+        Cannapora HALL, 1852 [*C. junciformis HALL, 1852] | SIL
+        Thecostegites MILNE-EDWARDS & HAIME, 1849 [*Harmodites bouchardi MICHELIN, 1846] | DEV
+        Roemeria MILNE-EDWARDS & HAIME, 1851 [*Calamopora infundibulfera GOLDFUSS, 1829] | DEV
+        Syringoporella KETTNER, 1937 [*Syringopora moravica ROEMER, 1883] | DEV
+        Multithecopora YOH, 1927 [*M. penchiensis YOH, 1927] | MISS
+        Hayasakaia LANG-S.-T., 1940 [*Tetrapora elegantula YABE-H., 1915] | PERM
+
+    Order TABULATA incertae sedis
+      Asteriophyllum PORFIRIEV, 1937 [*A. aenigmaticum PORFIRIEV, 1937] | MDEV
+      Celechopora PRADÁČOVÁ, 1938 [*C. robustus PRADÁČOVÁ, 1938] | DEV
+      Cylindropora EICHWALD, 1829 [*C. serpuloides EICHWALD, 1829] | SIL
+      Dendropora MICHELIN, 1846 [*D. explicita MICHELIN, 1846] | DEV
+      Dictyopora STEININGER, 1849 [*D. reticulata STEININGER, 1849] | DEV
+      Donetzites DAMPEL, 1940 [*D. milleporoides DAMPEL, 1940] | MISS
+      Latepora RAFINESQUE, 1819 [*L. alba RAFINESQUE, 1819] | DEV
+      Linipora TROOST, 1840 [*L. rotunda TROOST, 1840] | SIL
+      Protopora GREENE, 1904 [*Romingeria cystoides GRABAU, 1901] | MISS
+      Salpingium SMYTH, 1928 [*S. palinorum SMYTH, 1928] | MISS
+      Tetraporella SOKOLOV, 1947 [*Labyrinthites? monticularioides TROEDSSON, 1928] | UORD
+      Troedsssonites SOKOLOV, 1947 [*Syringopora conspirata TROEDSSON, 1928] | UORD
+      Vaughanites PAUL, 1937 [*Syringopora favositoides VAUGHAN, 1915] | MISS
+
+  Zoantharia incertae sedis
+    Cylicupora STEININGER, 1849 [*C. jasciculata STEININGER, 1849] | DEV
+    Discophyllum HALL, 1847 [*D. peltatum HALL, 1847] | ORD
+    Favositella MANSUY, 1912 [*F. columnaris MANSUY, 1912] | DEV
+    Kazania STUCKENBERG, 1895 [*K. elegantissima STUCKENBERG, 1895] | MISS
+    Khmeria MANSUY, 1914 [*K. problematica MANSUY, 1914] | PERM
+    Lamellopora OWEN, 1844 [*L. infundibularia OWEN, 1844] | SIL
+    Mezenia STUCKENBERG, 1895 [*M. rozeni STUCKENBERG, 1895] | MISS
+    Mortieria DE KONINCK, 1841 [*M. vertebralis DE KONINCK, 1841] | MISS
+    Patinula EICHWALD, 1829 [*P. lithuana EICHWALD, 1829] | ORD
+    Siphonaxis DYBOWSKI, 1873 [*S. tubiferus DYBOWSKI, 1873] | SIL
+    Spongarium LONSDALE, 1839 [*S. edwardsii LONSDALE, 1839] | SIL
+    Sycidium SANDBERGER, 1849 [*S. reticulatum SANDBERGER, 1849] | DEV
+
+Subphylum CTENOPHORA Eschscholtz, 1829
+  Rangea GÜRICH, 1930 [*R. schneiderhohni GÜRICH, 1930] | PRECAM
+  Xenusion POMPECKJ, 1927 [*X. auerswaldae POMPECKJ, 1927] | LCAM

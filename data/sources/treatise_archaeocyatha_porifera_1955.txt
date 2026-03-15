@@ -1,0 +1,899 @@
+---
+reference: Moore, R.C. (ed.), 1955. Treatise on Invertebrate Paleontology, Part E: Archaeocyatha and Porifera. Geological Society of America and University of Kansas Press
+scope:
+  - taxon: Archaeocyatha
+    coverage: comprehensive
+  - taxon: Porifera
+    coverage: comprehensive
+notes: |
+  Archaeocyatha section by Vladimir J. Okulitch; Porifera section by M.W. de Laubenfels.
+  75 archaeocyathan genera total (LCAM-MCAM). 778 poriferan genera total (LCAM-REC).
+  Temporal ranges translated from source abbreviations: L.Cam.=LCAM, M.Cam.=MCAM,
+  U.Cam.=UCAM, Ord.=LORD-UORD, Sil.=LSIL-USIL, Dev.=LDEV-UDEV, Carb.=MISS-PENN,
+  Perm.=LPERM-UPERM, Trias.=TRIAS, Jur.=JUR, Cret.=CRET, L.Cret.=LCRET,
+  U.Cret.=UCRET, Tert.=TERT, Rec.=REC.
+---
+
+Phylum ARCHAEOCYATHA Vologdin, 1937
+  Class MONOCYATHEA Okulitch, 1943
+    Order MONOCYATHIDA Okulitch, 1935
+      Family MONOCYATHIDAE Bedford & Bedford, 1934
+        Monocyathus BEDF.-B., 1934 [*M. porosus] | S.Austral. | LCAM-MCAM
+        Rhabdocnema OK., 1937 [pro Rhabdocyathus TOLL, 1899; *Rhabdocyathus sibiricus TOLL, 1899] | | LCAM-MCAM
+          = Rhabdocyathus TOLL, 1899 (j.o.s., fide OK., 1937; non BROOKS, 1893)
+        Rhabdocyathella VOL., 1937 [*R. beileyi] | Asia | MCAM
+        ?Tunkia BEDF.-B., 1936 [*T. incerta] | S.Austral. | LCAM
+      Family RHIZACYATHIDAE Bedford & Bedford, 1939
+        Rhizacyathus BEDF.-B., 1939 [*Protopharetra radix BEDF.-B., 1937] | | LCAM-MCAM
+        Bacatocyathus VOL., 1940 [*B. kazakhevici] | Asia | MCAM
+    Order ARCHAEOPHYLLIDA Okulitch, 1943
+      Family ARCHAEOPHYLLIDAE Vologdin, 1931
+        Archaeophyllum VOL., 1931 [*A. edelsteini] | Sib. | LCAM
+        Butovia VOL., 1937 [*B. serrata] | Asia | LCAM
+  Class ARCHAEOCYATHEA Okulitch, 1943
+    Order AJACICYATHIDA Bedford & Bedford, 1939
+      Family AJACICYATHIDAE Bedford & Bedford, 1939
+        Ajacicyathus BEDF.-B., 1939 [*Archaeocyathus ajax TAYLOR, 1910] | N.Am.-Eu.-Asia-Austral. | LCAM
+          = Ventriculocyathellus VOL. (j.s.s.)
+          = Archaeocyathellus SIMON, 1943 (j.s.s.; non FORD, 1873)
+        Archaeocyathellus FORD, 1873 [*A. renselaericus] | N.Am.-Eu.-Asia-Austral. | LCAM
+          = Protocyathus FORD, 1878 (j.o.s.)
+        Densocyathus VOL., 1937 [*D. sanachtycolensis] | Sib. | MCAM
+        Nevadacyathus OK., 1943 [*Archaeocyathus septaporus OK., 1935] | Nev. | LCAM
+        Orbicyathus VOL., 1937 [*O. mongolicus] | Asia | MCAM
+        Pluralicyathus OK., 1950 [pro Polycyathus VOL., 1928; *Polycyathus heterovallum VOL., 1928] | N.Am.-Eu.-Asia-Austral. | LCAM
+        Septocyathus VOL., 1937 [*S. pedaschenkoi] | Asia | MCAM
+          = ?Ajacicyathus BEDF.-B., 1939 (j.s.s.)
+        Tumulocyathus VOL., 1937 [*T. pustulatus] | Sib. | MCAM
+        Urcyathus VOL., 1940 [*U. asteroides] | Asia | MCAM
+      Family DICTYOCYATHIDAE Taylor, 1910
+        Dictyocyathus BORN., 1891 [*D. tenerimus] | | LCAM-MCAM
+          = Alphacyathus BEDF.-B., 1939 (j.s.s.)
+        Dokidocyathus TAYLOR, 1910 [*D. simplicissimus] | | LCAM-MCAM
+        Spirillicyathus BEDF.-B., 1937 [*S. tenuis] | Austral. | LCAM-MCAM
+          = Spiralicyathus BEDF.-B., 1936 (j.o.s.)
+      Family BICYATHIDAE Vologdin, 1933
+        Bicyathus VOL., 1933 [*B. ertaschkensis] | Asia | MCAM
+        Vacuocyathus OK., 1950 [pro Coelocyathus VOL., 1933] | | MCAM
+      Family ETHMOPHYLLIDAE Okulitch, 1943
+        Ethmophyllum MEEK, 1868 [*E. whitney] | Austral. | LCAM
+        Ethmocoscinus SIMON, 1939 [*Coscinocyathus papillipora BEDF.-B., 1934] | Austral. | LCAM
+        Thalamocyathus GORDON, 1920 [*Archaeocyathus trachealis TAYLOR, 1910] | Eu.-Asia-Austral.-Antarct. | LCAM
+        Cadniacyathus BEDF.-B., 1937 [*C. asperatus] | Austral. | LCAM-MCAM
+        Annulocyathus VOL., 1940 [*A. pulcher] | Sib. | MCAM
+        Clathrocyathus VOL., 1932 [*C. firmus] | Sib. | MCAM
+        Tercyathus VOL., 1932 [*T. duplex] | Sib. | MCAM
+        Leptosocyathus VOL., 1937 [*L. curvicepium] | Asia | MCAM
+        Sajanocyathus VOL., 1937 [*S. ussowi] | Sib. | MCAM
+        Spirillicyathus BEDF.-B., 1937 [*S. tenuis] | Austral. | LCAM-MCAM
+      Family COSCINOCYATHIDAE Taylor, 1910
+        Coscinocyathus BORN., 1884 [*C. tuba] | cosmop. | LCAM-MCAM
+          = Coscinoptycha TAYLOR, 1910 (j.s.s.)
+          = Turracyathus VOL., 1937 (j.s.s.)
+        Coscinocoscinus BEDF.-B., 1937 [*C. cornucopiae] | Sib. | MCAM
+        Coscinocyathellus VOL., 1937 [*C. parvus] | Sib. | MCAM
+        Sigmocyathus BEDF.-B., 1936 [*Coscinocyathus didymotechus TAYLOR, 1910] | | LCAM-MCAM
+          = Hemistillicidocyathus TING, 1937 (j.s.s.)
+          = Salairocyathus VOL., 1937 (j.s.s.)
+        Dictyocoscinus BEDF.-B., 1936 [*D. beltanum] | | LCAM
+        Polycoscinus BEDF.-B., 1937 [*P. contortum] | | LCAM
+          = ?Coscinocyathus BORN., 1884 (j.s.s.)
+        Pycnoidocoscinus BEDF.-B., 1936 [*P. pycnoideum] | Austral. | LCAM
+        Tabulacyathus VOL., 1932 [*T. taylori] | Sib.-Austral. | LCAM-MCAM
+    Order METACYATHIDA Bedford & Bedford, 1936
+      Family ARCHAEOCYATHIDAE Taylor, 1910
+        Archaeocyathus BILL., 1861 [*A. atlanticus] | cosmop. | LCAM
+          = Spirocyathus HINDE, 1889 (j.s.s.)
+          = Retecyathus VOL., 1932 (j.s.s.)
+          = Flindersicyathus BEDF.-B., 1936 (j.s.s.)
+          = ?Protopharetra BORN., 1884 (j.s.s.)
+        Arancyathus VOL., 1937 [*A. ratschkovskyi] | Sib. | LCAM
+        Archaeopharetra BEDF.-B., 1936 [*A. typica] | Austral. | LCAM-MCAM
+        Copleicyathus BEDF.-B., 1937 [*C. confertus] | Austral. | LCAM-MCAM
+        Metaldetes TAYLOR, 1910 [*M. cylindricus] | N.Am.-Eu.-Asia-Austral. | LCAM
+          = Metacyathus BEDF.-B., 1934 (j.s.s.)
+        Protopharetra BORN., 1884 [*P. polymorpha] | cosmop. | LCAM-MCAM
+      Family PYCNOIDOCYATHIDAE Okulitch, 1950
+        Pycnoidocyathus TAYLOR, 1910 [*P. synapticuosus] | | LCAM
+          = Cambrocyathus OK., 1937 (j.s.s.)
+        Ardrossacyathus BEDF.-B., 1937 [*A. endotheca] | Austral. | LCAM
+        Dendrocyathus OK. & ROOTS, 1947 [*D. unexpectans] | B.C. | LCAM
+        Echinocyathus TERM.-T., 1950 [*E. goundafensis] | N.Afr. | LCAM
+        Loculicyathus VOL., 1931 [*Coscinocyathus regularis TOLL, 1899] | Sib. | LCAM-MCAM
+          = Loculicyathus TOLL, 1899 (preocc.)
+        Metethmophyllum OK., 1943 [*Ethmophyllum meeki WALC., 1891] | N.Am. | LCAM
+        Paranacyathus BEDF.-B., 1937 [pro Paracyathus BEDF.-B., 1936] | Austral. | LCAM-MCAM
+        Sigmofungia BEDF.-B., 1936 [*S. flinderi] | Austral. | LCAM
+        Spirillicyathus BEDF.-B. [see Ethmophyllidae above]
+      Family METACOSCINIDAE Bedford & Bedford, 1936
+        Metacoscinus BEDF.-B., 1934 [*M. reteseptatum] | Austral. | LCAM
+        Altaicyathus VOL., 1932 [*A. notabilis] | Sib.-Mongolia | MCAM
+        Archaeosycon TAYLOR, 1910 [*Archaeocyathus billingsi WALC., 1886] | N.Am. | LCAM-MCAM
+        Claruscyathus VOL., 1932 [*C. cumfundus] | Sib.-Antarct. | LCAM-MCAM
+          = Eucyathus VOL., 1937 (j.s.s.)
+        Paracoscinus BEDF.-B., 1936 [*P. mirabile] | Austral. | LCAM
+    Order ACANTHINOCYATHIDA Okulitch, 1935
+      Family ACANTHINOCYATHIDAE Bedford & Bedford, 1934
+        Acanthinocyathus BEDF.-B., 1936 [pro Acanthocyathus BEDF.-B., 1934; *Acanthocyathus apertus BEDF.-B., 1934] | Austral. | LCAM
+        Pinacocyathus BEDF.-B., 1934 [*P. spicularis] | Austral. | LCAM
+    Order HETAIRACYATHIDA Okulitch, 1943
+      Family RADIOCYATHIDAE Okulitch, 1937
+        Radiocyathus OK., 1937 [pro Heterocyathus BEDF.-B., 1934; *Hetairacyathus minor BEDF.-B., 1937] | Austral. | LCAM
+    Order SYRINGOCNEMIDA Okulitch, 1935
+      Family SYRINGCNEMATIDAE Taylor, 1910
+        Syringocnema TAYLOR, 1910 [*S. favus] | N.Am.-Asia-Austral. | LCAM-MCAM
+          = Beticocyathus SIMON, 1939 (j.s.s.)
+        Syringocyathus VOL., 1937 [*S. aspectabilis] | Asia | MCAM
+        Tubocyathus VOL., 1937 [*T. smolianinovae] | Asia | MCAM
+  Class ANTHOCYATHEA Okulitch, 1943
+    Order ANTHOMORPHIDA Okulitch, 1935
+      Family ANTHOMORPHIDAE Okulitch, 1935
+        Anthomorpha BORN., 1884 [*A. margarita] | Eu.-Austral. | LCAM
+    Order SOMPHOCYATHIDA Okulitch, 1943
+      Family SOMPHOCYATHIDAE Okulitch, 1935
+        Somphocyathus TAYLOR, 1910 [*S. coralloides] | Austral. | LCAM
+
+# Classification uncertain (Archaeocyatha)
+# Atikokania WALC., 1912 — Precambrian, Can.
+# Haguia WALC., 1899 — MCAM, NW.Wyo.
+# Matthewcyathus OK., 1943 — MCAM, N.B., Can.
+# Trachyum BILL. — LORD, Newf.
+# Uranosphaera BEDF.-B., 1934 — LCAM, Austral.
+# Wilbernicyathus WILSON, 1950 — UCAM, Tex.
+# Yakovlevia VOL., 1931 — LCAM-MCAM, Sib.
+
+Phylum PORIFERA Grant, 1872
+  Class DEMOSPONGEA Sollas, 1875
+    Order KERATOSIDA Grant, 1861
+      Family SPONGIIDAE Gray, 1867
+        Spongia LINNÉ, 1759 [*S. officinalis] | cosmop. | REC
+        Verongia BOW., 1845 [*V. fistularis] | cosmop. | REC
+        Heteromeyenia POTTS, 1881 [*H. repens] | cosmop. | TERT-REC
+      Family HALICLONIDAE de Laubenfels, 1932
+        Haliclona GRANT, 1841 [*Spongia oculata LINNÉ, 1759] | cosmop. | LORD-REC
+        Reniera NARDO, 1847 [*R. aquaeductus] | cosmop. | MORD-REC
+        Petrosia VOSMAER, 1865 [*Reniera dura SCHMIDT, 1862] | cosmop. | TERT-REC
+        Climacospongia HINDE, 1884 [*C. radiata] | Sil., Tenn. | LSIL
+        Petrosites HOWELL & LANDES, 1936 [*P. humilis] | L.Ord., Wis. | LORD
+      Family DESMACIDONTIDAE Gray, 1867
+        Desmacion BOW., 1862 [*Spongia fruticosa MONTAGU, 1818] | cosmop. | TERT-REC
+      Family HAPLISTIIDAE de Laubenfels, nov.
+        Haplistion Y.-Y., 1877 [*H. armstrongi] | M.Ord., Wales-L.Carb., Scot. | MORD-LCAM
+        Lasiocladia HINDE, 1884 [*L. compressa] | L.Dev.-L.Carb., Belg. | LDEV
+      Family WAPKIIDAE de Laubenfels, nov.
+        Wapkia WALC., 1920 [*W. grandis] | Can. | MCAM
+      Family HAZELIIDAE de Laubenfels, nov.
+        Hazelia WALC., 1920 [*H. palmata] | Can. | MCAM
+      Family TAKAKKAWIIDAE de Laubenfels, nov.
+        Takakkawia WALC., 1920 [*T. lineata] | Can. | MCAM
+      Family UNCERTAIN (Keratosida)
+        Eurydiscites SOLLAS, 1880 [*E. irregularis] | Cret., Eng. | CRET
+        Toriscodermia WISNIOWSKI, 1886 [no species] | Jur., Eu. | JUR
+        Esperites CARTER, 1871 [*E. giganteus] | L.Cret., Eng. | LCRET
+    Order HAPLOSCLERIDA Topsent, 1898
+      Family SPONGILLIDAE Gray, 1867
+        Spongilla LAM., 1815 [*Spongia lacustris LINNÉ, 1759] | cosmop. | JUR-REC
+        Meyenia CARTER, 1881 [*M. fluviatilis] | cosmop. | TERT-REC
+      Family TEDANIIDAE Ridley & Dendy, 1886
+        Tedania GRAY, 1867 [*Halichondria anhelans LIEBERKÜHN, 1859] | cosmop. | REC
+        Acarnus GRAY, 1867 [*A. innominatus] | cosmop. | TERT-REC
+        Melonanchora CARTER, 1874 [*M. elliptica] | cosmop. | TERT-REC
+        Forcepia CARTER, 1874 [*F. colonensis] | cosmop. | TERT-REC
+      Family CLADORHIZIDAE de Laubenfels, 1936
+        Cladorhiza SARS, 1872 [*C. abyssicola] | cosmop. | TERT-REC
+        Chondrocladia W.THOMP., 1873 [*C. vergata] | cosmop. | TERT-REC
+      Family AMPHILECTIDAE de Laubenfels, 1936
+        Amphilectus VOSMAER, 1880 [*Isodictya gracilis BOW., 1866] | cosmop. | TERT-REC
+        Hamacantha GRAY, 1867 [*Halichondria johnsoni BOW., 1864] | cosmop. | TERT-REC
+      Family HAMPTONIIDAE de Laubenfels, nov.
+        Hamptonia WALC., 1920 [*H. bowerbanki] | Can. | MCAM
+      Family ACARNIIDAE de Laubenfels, nov.
+        Acarnia GRAY, 1867 [*Hymeniacidon cliftoni BOW., 1864] | Cret., Eng. | CRET
+        Acanthoraphis HINDE, 1884 [*A. intertextus] | cosmop. | CRET-REC
+    Order POECILOSCLERIDA Topsent, 1898
+      Family MYXILLIDAE Hentschel, 1923
+        Myxilla SCHMIDT, 1862 [*Halichondria rosacea LIEBERKÜHN, 1859] | cosmop. | TERT-REC
+        Iophon GRAY, 1867 [*Halichondria scandens BOW., 1866] | cosmop. | TERT-REC
+      Family UNCERTAIN (Poecilosclerida)
+        Ophiodesia SCHRAM., 1936 [*O. solivaga] | Jur., Eu. | JUR
+        Makiyama DELAUB., nom. nov. [pro Sagarites MAKIYAMA, 1931] | Jur., Japan | JUR
+        Oppligera DELAUB., nom. nov. [pro Subularia OPPL., 1921] | Jur., Eu. | JUR
+    Order HADROMERIDA Topsent, 1898
+      Family SPIRASTRELLIDAE Hentschel, 1909
+        Spirastrella SCHMIDT, 1868 [*S. cunctatrix] | cosmop. | TERT-REC
+        Latrunculia DE BOCAGE, 1869 [*L. cratera] | cosmop. | TERT-REC
+        Ditraenella HINDE-H., 1892 [*D. oamaruensis] | N.Z. | TERT-REC
+      Family SUBERITIDAE Ridley & Dendy, 1886
+        Suberites NARDO, 1833 [*Alcyonium domunculum OLIVI, 1792] | cosmop. | TERT-REC
+        Gomphites CARTER, 1871 [*G. parfitti] | Eu. | LCRET
+        Rhopaloconus SOLLAS, 1880 [*R. tuberculatus] | Eu. | CRET
+      Family PIRANIIDAE de Laubenfels, nov.
+        Pirania WALC., 1920 [*P. muricata] | Can. | LCAM-LSIL
+      Family CLIONIDAE Gray, 1867
+        Cliona GRANT, 1826 [*C. celata] | cosmop. | LDEV-REC
+        Clionolithes CLARKE, 1908 [*C. fimbriata] | N.Am. | LDEV-PENN
+        Clionoides FENTON-F., 1932 [*C. thomasi] | Dev., Iowa | LDEV
+        Filuroda SOLLE, 1938 [*Clionolithes reptans CLARKE, 1908] | Dev., Eu. | LDEV
+      Family SOLLASELLIDAE Lendenfeld, 1888
+        Sollasella LENDENFELD, 1888 [*S. digitata] | SW.Pac. | REC
+        Atractosella HINDE, 1887 [*A. siluriensis] | M.Sil., Eng. | LSIL
+        Belemnospongea MILLER, 1889 [*B. fascicularis] | Carb., U.S.A. | MISS-PENN
+        Opetionella ZITTEL, 1878 [*O. radians] | Jur., Eu. | JUR
+        Trichospongia BILL., 1865 [*T. sericea] | Ord., Can. | LORD-UORD
+        Rhizopsis SCHRAM., 1920 [*R. horrida] | U.Cret., Eu. | UCRET
+      Family CORRALIOIDAE de Laubenfels, nov.
+        Corralia WALC., 1920 [*Corralia undulata WALC., 1920] | Can. | MCAM
+    Order EPIPOLASIDA Sollas, 1888
+      Family CHOIIDAE de Laubenfels, nov.
+        Choia WALC., 1920 [*C. carteri] | Que.-B.C.-Utah-Wales | MCAM
+      Family TETHYIDAE Gray, 1867
+        Tethya LAM., 1914 [*Alcyonium aurantium PALLAS, 1766] | cosmop. | TERT-REC
+      Family UNCERTAIN (Epipolasida)
+        Sentinella WALC., 1920 [*S. draco] | Can. | MCAM
+    Order CHORISTIDA Sollas, 1888
+      Family ANCORINIDAE Gray, 1867
+        Ancorina SCHMIDT, 1862 [*A. cerebrum] | cosmop. | CRET-REC
+        Theneopsis SCHRAM., 1910 [pro Tethyopsis ZITTEL, 1878] | Cret., Eu. | CRET
+        Stelletta SCHMIDT, 1862 [*S. grubii] | cosmop. | CRET-REC
+        Stolleya SCHRAM., 1899 [*S. microtulipa] | Cret., Eu. | CRET
+        Discophinea KOLB, 1909 [*D. unica] | Jur., Eu. | JUR
+      Family GEODIIDAE Gray, 1867
+        Geodia LAM., 1815 [*G. gibberosa] | cosmop. | CARB-REC
+        Erylus GRAY, 1867 [*Stelletta mammillaris SCHMIDT, 1862] | cosmop. | CRET-REC
+        Geoiopsis SCHRAM., 1899 [*G. cretacea] | Eu. | CRET
+        Geodites CARTER, 1871 [*G. haldonensis] | cosmop. | CRET-TERT
+        Rhaxella HINDE, 1890 [*R. perforata] | U.Jur., Eng. | UJUR
+      Family CRANIELLIDAE de Laubenfels, 1936
+        Craniella SCHMIDT, 1870 [*Alcyonium cranium MÜLLER, 1876] | N.Z. | CRET-TERT
+        Megaloraphium SCHRAM., 1910 [*M. auriforme] | Eu. | UCRET
+        Polyretia SCHRAM., 1910 [*P. seriatopora] | U.Cret., Eu. | UCRET
+        Tetillopsis SCHRAM., 1910 [*T. dorinzi] | U.Cret., Eu. | UCRET
+      Family SCOLIORAPHIDIDAE Zittel, 1879
+        Scolioraphis ZITTEL, 1878 [*S. cerebriformis] | U.Cret., Eu. | UCRET
+        Helminthophyllum SCHRAM., 1936 [*H. feifeli] | Jur., Ger. | JUR
+      Family OPHIRAPHIDITIDAE Schrammen, 1903
+        Ophiraphidites CARTER, 1876 [*O. tortuosus] | cosmop. | CRET-REC
+        Heteroraphidites SCHRAM., 1901 [*H. spongiosus] | U.Cret.-Tert. | UCRET-TERT
+        Rhabdospongia SOLLAS, 1873 [*R. communis] | L.Cret., Eu. | LCRET
+        Eulerapeha SCHRAM., 1936 [*E. incrustans] | Jur., Eu. | JUR
+    Order CARNOSIDA Carter, 1875
+      Family HALINIDAE de Laubenfels, 1936
+        Halina BOW., 1858 [*H. bucklandi] | cosmop. | CRET-REC
+        Calthropella SOLLAS, 1888 [*C. simplex] | cosmop. | CRET-REC
+        Triptolemma DELAUB., nom. nov. [pro Triptolemus SOLLAS, 1888] | cosmop. | TERT-REC
+        Pachastrella SCHMIDT, 1868 [*P. monilifera] | cosmop. | CRET-REC
+        Propachastrella SCHRAM., 1910 [*Pachastrella primaeva ZITTEL, 1878] | U.Cret., Eu. | UCRET
+        Paropseites POÇA, 1884 [*P. hindei] | Cret., Eu. | CRET
+        Corticium SCHMIDT, 1862 [*C. candelabrum] | cosmop. | TERT-REC
+        Plakina SCHULZE, 1880 [*P. monolopha] | cosmop. | CRET-REC
+        Youngella DELAUB., nom. nov. [pro Chlamys Y.-Y., 1877] | Carb., Scot. | MISS-PENN
+        Acanthastrella SCHRAM., 1924 [*A. penniculosa] | Cret., Eu. | CRET
+        Acanthophora SOLLAS, 1873 [*A. hartogii] | L.Cret., Eu. | LCRET
+    Order LITHISTIDA Schmidt, 1870
+      Suborder RHIZOMORINA Zittel, 1878
+        Family KALIAPSIDAE de Laubenfels, 1936
+          Kaliapsis BOW., 1869 [*K. cidarisi] | Ind.O.-Pac.O. | REC
+          Corallistes SCHMIDT, 1870 [*C. typus] | cosmop. | CRET-REC
+          Heteromeyenia POTTS, 1881 [*H. repens] | Tert.-Rec. | TERT-REC
+        Family SCYTALIIDAE de Laubenfels, nov.
+          Scytalia ZITTEL, 1878 [*Jerea turbinata RÖMER, 1864] | Jur.-Cret., Eu. | JUR-CRET
+          Coelocorypha ZITTEL, 1878 [*Siphonocoelia nidulif era RÖMER, 1864] | Jur.-Cret. | JUR-CRET
+          Stachyspongia ZITTEL, 1878 [*Siphonocoelia spica RÖMER, 1864] | Jur., Eu. | JUR
+          Yrrhiza DELAUB., nom. nov. [pro Rhizinia KOLB, 1910] | Jur., Eu. | JUR
+          Chondriophyllum SCHRAM., 1924 [*Verriculina tenuis RÖMER, 1864] | U.Cret., Eu. | UCRET
+          Aulosoma SCHRAM., 1924 [*Spongia radiciformis PHILL., 1835] | U.Cret., Ger. | UCRET
+          Rhabdotum SCHRAM., 1924 [*R. columna] | U.Cret., Eu. | UCRET
+          Polyrhizophora LINCK, 1883 [*P. jurassica] | Jur., Eu. | JUR
+        Family CHONELLIDAE Schrammen, 1924
+          Chonella ZITTEL, 1878 [*Cupulospongia tenuis RÖMER, 1861] | Cret.-Mio., Eu.-N.Afr. | CRET-MIO
+          Platychonia ZITTEL, 1878 [*Spongies vagane QUENST., 1858] | U.Jur.-Tert., Eu. | UJUR-TERT
+          Discostroma ZITTEL, 1878 [*Tragos intricatum QUENST., 1878] | Jur., Eu. | JUR
+          Patanophyma OPPL., 1915 [*P. polyporum] | Jur., Eu. | JUR
+          Leiochonia SCHRAM., 1901 [*L. cryptoporosa] | Eu. | UCRET
+          Amphichondrium SCHRAM., 1924 [*Verriculina convoluta QUENST.] | U.Cret., Eu. | UCRET
+          Pseudoscytalia SCHRAM., 1924 [*Spongia terebrata PHILL., 1835] | Eu. | CRET
+          Chonellopsis SCHRAM., 1936 [*C. striata] | Jur., Eu. | JUR
+        Family ASTROBOLIIDAE de Laubenfels, nov.
+          Astrobolia ZITTEL, 1878 [*Astreorospongia laevis RÖMER, 1861] | U.Cret.-Tert., Eu. | UCRET-TERT
+          Phlyctia POMEL, 1872 [*P. expansa] | N.Afr. | TERT
+          Pliobolia POMEL, 1872 [*P. vermiculata] | U.Cret.-Mio., N.Afr. | UCRET-MIO
+          Cytoracia POMEL, 1872 [*Stellispongia grandis RÖMER, 1864] | Jur.-Cret., Eu. | JUR-CRET
+        Family JEREOPSIDAE de Laubenfels, nov.
+          Jereopsis POMEL, 1872 [*J. inequalis] | Cret.-Tert., Eu.-Alg. | CRET-TERT
+          Hyalospongia ZITTEL, 1878 [*Tragos patella GOLDF., 1833] | U.Jur., Eu. | UJUR
+          Pachysalax SCHRAM., 1910 [*P. processifer] | U.Cret., Eu. | UCRET
+          Pomelia ZITTEL, 1878 [*P. schmidti] | ?Mio., N.Afr.-Rec., Fla. | MIO-REC
+        Family LEIODORELLIDAE Schrammen, 1924
+          Leiodorella ZITTEL, 1878 [*L. expansa] | Jur., Eu. | JUR
+          Amphistabula SCHRAM., 1924 [*A. aequabile] | Cret., Eu. | CRET
+          Epistomella ZITTEL, 1878 [*Spongites elivosa QUENST., 1843] | Jur., Eu. | JUR
+          Pyrgochonia ZITTEL, 1878 [*Tragos acetabulum GOLDF., 1833] | U.Jur., Eu. | UJUR
+          Verriculina ZITTEL, 1878 [*Manon micrammata RÖMER, 1841] | Cret.-Mio., Eu. | CRET-MIO
+          Scythophymia POMEL, 1872 [*S. erassa] | Tert., Alg. | TERT
+          Pleurophymia POMEL, 1872 [*P. cotyle] | Tert., Alg. | TERT
+          Amphithelion ZITTEL, 1878 [*Manon macrommata RÖMER, 1841] | Cret., Eu. | CRET
+          Bothrolemma SCHRAM., 1936 [*Platychonia oculifera KOLB, 1910] | Jur., Eu. | JUR
+          Stichophymia POMEL, 1872 [*Manon turbinatum RÖMER, 1841] | Tert., Alg. | TERT
+          Sycophymia MORET, 1924 [nom. null.] | | CRET
+          Macandrewia GRAY, 1859 [*M. azorica] | Cret.-Rec. | CRET-REC
+        Family PLINTHODERMATIIDAE de Laubenfels, nov.
+          Plinthodermatium SCHRAM., 1910 [*P. exile] | U.Cret., Ger. | UCRET
+        Family NEOPELTIDAE Sollas, 1888
+          Neopelta SCHMIDT, 1880 [*N. imperfecta] | Rec., N.Atl. | REC
+          Trachynoton DELAUB., nom. nov. [pro Trachynotus on BELL, 1862] | U.Cret., Ger. | UCRET
+        Family SCLERITODERMATIDAE Sollas, 1888
+          Scleritorma SCHMIDT, 1879 [*S. paccardi] | Cret.-Rec., cosmop. | CRET-REC
+        Family UNCERTAIN (Rhizomorina)
+          Pemmates DUNIKOWSKI, 1885 [*P. verrucosa] | Carb.-Perm., Eu. | MISS-UPERM
+          Nipterella HINDE, 1889 [*Calathium paradoxicum BILL., 1865] | Cam.-Ord. | LCAM-MORD
+          Bolidium ZITTEL, 1878 [*Amorphispongia palmata RÖMER, 1864] | Cret., Eu. | CRET
+          Tragalimus POMEL, 1872 [*Dimorpha balanus COURT., 1861] | Cret., Fr. | CRET
+          Orecia DELAUB., nom. nov. [pro Cytorea POMEL, 1872] | Cret., Eu. | CRET
+          Oncodona DELAUB., nom. nov. [pro Oncophora SCHRAM., 1924] | U.Cret., Ger. | UCRET
+          Multipocula DELAUB., nom. nov. [pro Polypora SCHRAM., 1901] | Cret., Ger. | CRET
+          Verricospongia ORB., 1849 [*Manon sparsum REUSS, 1829] | U.Cret., Eu. | UCRET
+          Microrhizophora KOLB, 1910 [*M. pentagona] | Jur., Eu. | JUR
+          Oncocladia KOLB, 1910 [*O. sulcata] | Jur., Eu. | JUR
+          Allomera POMEL, 1872 [*A. obovata] | Mio., N.Afr. | MIO
+          Perimera POMEL, 1872 [*Polystoma boletiformis COURT., 1861] | Cret., Eu. | CRET
+          Pleuromera POMEL, 1872 [*P. inaequalis] | Mio., N.Afr. | MIO
+          Plococonia POMEL, 1872 [*Spongia contortolobata MICH., 1847] | Cret., Eu. | CRET
+          Pocillospongia COURT., 1861 [*P. pyriformis] | Cret., Eu. | CRET
+          Heteroithelion SCHRAM., 1924 [*Verriculina cup-ula] | Cret., Ger. | UCRET
+      Suborder MEGAMORINA Zittel, 1878
+        Family PLEROMIDAE Sollas, 1888
+          Pleroma SOLLAS, 1888 [*P. turbinatum] | Rec., E.Ind. | REC
+          Nematinion HINDE, 1884 [*N. calyculum] | Jur.-Rec., Eu. | JUR-REC
+        Family DORYDERMATIDAE Moret, 1926
+          Doryderma ZITTEL, 1878 [*D. roemeri HINDE, 1883] | Carb.-U.Cret., Eu. | MISS-UCRET
+          Brochodora SCHRAM., 1910 [*B. ramusculus] | Cret., Eu. | CRET
+          Homalodora SCHRAM., 1910 [*Spongia ramosa MANTELL, 1822] | U.Cret., Eu. | UCRET
+          Valhalla DELAUB., nom. nov. [pro Asteroderma SCHRAM., 1901] | Cret., Eu. | CRET
+        Family HELOBRACHIIDAE Schrammen, 1910
+          Helobrachium SCHRAM., 1910 [*H. consecatum] | U.Cret., Ger. | UCRET
+          Placonella HINDE, 1883 [*P. perforata] | Rec., N.Atl. | REC
+          Amphilectella SCHRAM., 1901 [*A. piriformis] | Cret., Eu. | CRET
+        Family ISORAPHINIIDAE Schrammen, 1924
+          Isoraphinia ZITTEL, 1878 [*Siphonocoelia texta RÖMER, 1864] | Cret., Eu. | CRET
+          Heloraphinia SCHRAM., 1936 [*H. arborescens] | Jur., Ger. | JUR
+          Pachycothon SCHRAM., 1901 [*P. giganteum] | Jur.-Cret., Eu. | JUR-CRET
+        Family UNCERTAIN (Megamorina)
+          Megarhiza SCHRAM., 1901 [*M. dubia] | Cret., Eu. | CRET
+      Suborder TETRACLADINA Zittel, 1878
+        Family AULOCOPIIDAE de Laubenfels, nov.
+          Aulocopium OSWALD, 1847 [*A. aurantium] | Ord.-Sil., Eu. | LORD-USIL
+          Dendroclonella RAUFF, 1895 [*D. rugosa] | U.Sil., Tenn. | USIL
+          Allosaccus RAY-O., 1940 [*A. prolixus] | Ord., Tenn.-Va. | LORD-UORD
+          Exchopora RAY-O., 1940 [*Calathium canadense BILL., 1865] | Ord., Can.-Ill. | LORD-UORD
+          Hudsenospongia RAY-O., 1940 [*H. cyclostoma] | M.Ord., N.Y.-Vt.-Can. | MORD
+          Psarodictyon RAY-O., 1940 [*P. magnificum] | Ord., N.Y. | LORD-UORD
+          Rhopalocoelia RAY-O., 1940 [*R. clarkii] | Ord., N.Y.-Tenn. | LORD-UORD
+          Aulocopina BILL., 1874 [*A. granti] | Sil., Can. | LSIL-USIL
+          Aulocopella RAUFF, 1895 [*A. winnipegensis] | Ord., Can. | LORD-UORD
+          Protachilleum ZITTEL, 1877 [*P. kayseri] | Sil., Arg. | LSIL
+          ?Defordia KING, 1943 [*D. defuncta] | Perm., Tex. | LPERM-UPERM
+          ?Pseudovirgula GIRTY, 1908 [*P. tenuii] | Perm., Tex. | LPERM-UPERM
+        Family ARCHAEOSCYPHIIDAE Rauff, 1894
+          Archaeoscyphia HINDE, 1889 [*Archaeocyathus minganensis BILL., 1859] | Ord., Can. | LORD-UORD
+          Nevadocoelia BASSLER, 1927 [*N. wistae] | M.Ord., Nev. | MORD
+          Patellispongia BASSLER, 1927 [*P. oculata] | M.Ord., Nev. | MORD
+          Hespercoelia BASSLER, 1927 [*H. typicalis] | M.Ord., Nev. | MORD
+          Lissocoelia BASSLER, 1927 [*L. ramosa] | M.Ord., Nev. | MORD
+          Calycocoelia BASSLER, 1927 [*C. typicalis] | M.Ord., Nev. | MORD
+          Ozarkocoelia CULLISON, 1944 [*O. irregularis] | Ord., U.S.A. | LORD-UORD
+        Family CHENENDOPORIDAE Schrammen, 1910
+          Chenendopora LAMX., 1821 [*C. fungiformis] | U.Cret., Eu. | UCRET
+          Trachyssycon ZITTEL, 1878 [*Plocoscyphia muricata RÖMER, 1864] | Cret., Eu. | CRET
+          Turonia MICH., 1849 [*T. variabilis] | U.Cret., Eu. | UCRET
+          Calymmatina ZITTEL, 1878 [*C. rimosa] | U.Cret., Eu. | UCRET
+          Pachycalymma SCHRAM., 1901 [*P. subglobosa] | Cret., Eu. | CRET
+          Kalpinella HINDE, 1884 [*K. pateraeformis] | U.Cret., Eng. | UCRET
+          Marginospongia DELAUB., nom. nov. [pro Virgula GIRTY, 1908] | Perm., Tex. | LPERM-UPERM
+          ?Virgula DELAUB., nom. nov. [pro Virgula GIRTY, 1908] | Perm., Tex. | LPERM-UPERM
+          ?Stylopegma KING, 1943 [*S. dulce] | L.Perm., Tex. | LPERM
+        Family HALLIRHOIDAE de Laubenfels, nov.
+          Hallirhoa LAMX., 1821 [*H. costata] | U.Cret., Eu. | UCRET
+          Siphonia PARKINSON, 1822 [*Choanites konigii MANTELL, 1822] | Jur.-Cret., Eu. | JUR-CRET
+          Phymatella ZITTEL, 1878 [*Eudea tumescens RÖMER, 1864] | U.Cret., Eu. | UCRET
+          Bathotheca OPPL., 1915 [*Batotheca avata OPPL., 1915] | Jur. | JUR
+          Carterella SCHRAM., 1901 [*C. tuberosa] | U.Cret., Eu. | UCRET
+          Callopegma ZITTEL, 1878 [*C. acaule] | U.Cret., Ger. | UCRET
+          Sontheimia KOLB., 1910 [*S. parasitica] | Jur., Eu. | JUR
+          Asterocalyx MORET, 1926 [*A. hausetensis] | U.Cret., Fr. | UCRET
+          Bolospongia HINDE, 1884 [*B. globata] | Jur.-Cret., Eu. | JUR-CRET
+          Thecosiphonia ZITTEL, 1878 [*Lymnorea nobilis RÖMER, 1858] | U.Cret.-Tert. | UCRET-TERT
+          Pseudoplocoscyphia SCHRAM., 1901 [*P. moeandrina] | U.Cret., Ger. | UCRET
+        Family PLINTHOSELLIDAE Schrammen, 1910
+          Plinthosella ZITTEL, 1878 [*P. squamosa] | Cret., Eu. | CRET
+          Pycnodesma SCHRAM., 1910 [*P. globosum] | U.Cret., Eu. | UCRET
+          Phymaplectia HINDE, 1884 [*P. irregularis] | U.Cret., Eng. | UCRET
+          Zittellea DELAUB., nom. nov. [pro Spongodiscus ZITTEL, 1878] | Cret., Eu. | CRET
+          ?Monarchopemmatites DELAUB., 1947 [*Pseudopemmatites skinneri KING, 1943] | Perm., Tex. | LPERM-UPERM
+        Family ASTROCLADIIDAE Schrammen, 1910
+          Astrocladia ZITTEL, 1878 [*Asterospongia laevis RÖMER, 1861] | U.Cret.-Tert., Eu. | UCRET-TERT
+          Microdendron SCHRAM., 1901 [*M. ramulosum] | U.Cret. | UCRET
+          Ingentilotus DELAUB., nom. nov. [pro Dactylotus SCHRAM., 1910] | Cret., Ger. | CRET
+          Myrmeciophytum SCHRAM., 1910 [*Stellispongia verrucosa RÖMER, 1864] | U.Cret., Ger. | UCRET
+        Family AULAXINIIDAE de Laubenfels, nov.
+          Aulaxinia ZITTEL, 1878 [*Siphonocoelia sulcifera RÖMER, 1864] | U.Cret., Ger.-Eng. | UCRET
+          Rhopalospongia HINDE, 1884 [*Polypothecia gregaris BENNETT, 1831] | L.Cret., Eng. | LCRET
+        Family JEREIDAE de Laubenfels, nov.
+          Jerea LAMX., 1821 [*J. pyriformis] | Cret., Eu. | CRET
+          Polyierea FROM., 1856 [*Jerea gregaria MICH., 1847] | Cret., Eu. | CRET
+          Dichojerea RÖMER, 1872 [*Polyierea dichotoma RÖMER, 1864] | Cret., Eu. | CRET
+          Bolojerea RAUFF, 1933 [*B. glebula] | U.Cret., Eu. | UCRET
+          Jereomorpha MORET, 1925 [*J. cenomanensis] | U.Cret., Fr. | UCRET
+          Placoscytus SCHRAM., 1910 [pro Sollasella SCHRAM., 1901] | Jur.-Cret. | JUR-CRET
+          Nelumbia POMEL, 1872 [*Polytema cupula COURT., 1861] | Cret., Eu. | CRET
+          ?Anthracosycon GIRTY, 1908 [*A. fiscus] | Perm., Eu. | LPERM-UPERM
+          ?Laubenfelsia KING, 1943 [*L. regularis] | Perm., Tex. | LPERM-UPERM
+          Acrochordonia SCHRAM., 1901 [*A. ramosa] | U.Cret., Ger. | UCRET
+        Family DISCODERMIIDAE Schrammen, 1910
+          Discodermia BOCAGE, 1869 [*D. polydisca] | cosmop. | LCRET-REC
+          Racodiscula ZITTEL, 1878 [*Corallistes asteroides CARTER, 1873] | Cret.-Rec. | CRET-REC
+          Theonella GRAY, 1868 [*T. swinhoei] | Tert.-Rec., cosmop. | TERT-REC
+          Ragadinia ZITTEL, 1878 [*Cupulospongia rimosa RÖMER, 1864] | Cret., Eu. | CRET
+          Phyllodermia SCHRAM., 1924 [*P. spinosa] | U.Cret., Ger. | UCRET
+          Pseudojerea MORET, 1926 [*P. massiliensis] | U.Cret., Fr. | UCRET
+          Lerouxia MORET, 1926 [*L. galloprovincialis] | U.Cret., Fr. | UCRET
+          Dactylocalycites CARTER, 1871 [*D. callodiscus] | L.Cret.-Tert. | LCRET-TERT
+          Stelletites CARTER, 1871 [*S. haldonensis] | L.Cret., Eu. | LCRET
+          Eustrobilus SCHRAM., 1910 [*E. callosus] | U.Cret., Eu. | UCRET
+          Cladodermia SCHRAM., 1924 [*Discodermia colostia SCHRAM., 1912] | Cret., Eu. | CRET
+          Leiophyllum SCHRAM., 1924 [*L. panniculorum] | U.Cret., Fr. | UCRET
+          Polyrhipidium SCHRAM., 1924 [*P. cristagalli] | U.Cret., Ger. | UCRET
+          Colosolacis SCHRAM., 1910 [*C. plicata] | U.Cret., Ger. | UCRET
+          Rhoptrum SCHRAM., 1910 [*R. scytariforme] | U.Cret., Ger. | UCRET
+          ?Pachycornea POÇA, 1907 [*P. erecta] | U.Cret., Eu. | UCRET
+        Family PHYMARAPHINIIDAE Schrammen, 1910
+          Thamnospongia HINDE, 1884 [*T. glabra] | U.Cret.-Tert., Eu. | UCRET-TERT
+          Pholidocladia HINDE, 1884 [*P. dichotoma] | Cret., Eu. | CRET
+          Phymaraphinia HINDE, 1884 [*P. infundibuliformis] | Cret., Ger. | CRET
+          Prokaliapsis SCHRAM., 1901 [*P. cylindrica] | Cret., Ger. | CRET
+          Cycloclema SCHRAM., 1910 [*Rhagadinia compressa HINDE, 1883] | U.Cret., Eu. | UCRET
+          Lopadophorus SCHRAM., 1910 [*Oculispongia janus RÖMER, 1864] | U.Cret., Ger. | UCRET
+          Astrolemma SCHRAM., 1924 [*A. semiglobosum] | U.Cret., Ger. | UCRET
+          Mastophorus SCHRAM., 1924 [*M. arboreus] | U.Cret., Ger. | UCRET
+          Paraspelaeum SCHRAM., 1924 [*P. obductum] | U.Cret., Ger. | UCRET
+      Suborder EUTAXICLADINA Rauff, 1893
+        Family ASTYLOSPONGIIDAE Rauff, 1893
+          Astylospongia RÖMER, 1860 [*Siphonia praemorsa GOLDF., 1826] | Ord.-Sil., cosmop. | LORD-USIL
+          Astylomanon RAUFF, 1894 [*Palaomanon cratera RÖMER, 1860] | Sil., Tenn. | LSIL-USIL
+          Microspongia MILLER-D., 1878 [*M. gregaria] | Ord.-Sil., cosmop. | LORD-USIL
+          Neohindia SCHRAM., 1901 [*N. cylindrica] | U.Cret., Ger. | UCRET
+          Ozotrachelus DELAUB., nom. nov. [pro Pachytrachelus SCHRAM., 1910] | U.Cret., Ger. | UCRET
+          Carpomanon RAUFF, 1894 [*C. glandulosum] | Sil., Tenn. | LSIL-USIL
+          Caryospongia RAUFF, 1894 [*Siphonia juglans QUENST., 1878] | Ord.-Sil., cosmop. | LORD-USIL
+          Cyathospongia HALL, 1882 [*C. excrescens] | Sil., N.Y. | LSIL-USIL
+          Rhytidoderma SCHRAM., 1936 [*R. berckhemeri] | Jur., Ger. | JUR
+          Steliella HINDE, 1889 [*S. billingsi] | M.Ord. | MORD
+        Family GIGNOUXIIDAE de Laubenfels, nov.
+          Gignouxia MORET, 1926 [*G. niciensis] | U.Cret., Fr. | UCRET
+          Iouea DELAUB., nom. nov. [pro Phalangium LINNÉ, 1758] | Cret., Ger. | CRET
+          Phrissospongia MORET, 1926 [*P. glandiformis] | U.Cret., Fr. | UCRET
+        Family CHIASTOCLONELLIDAE de Laubenfels, nov.
+          Dicranoclonella SCHRAM., 1936 [*D. praecursor] | Jur., Ger. | JUR
+          Leiocarenus SCHRAM., 1936 [*L. papillosus] | Jur., Ger. | JUR
+          Kyphoclonella KOLB, 1910 [*K. multiformis] | Jur.-Cret., Eu. | JUR-CRET
+          Cladodia MORET, 1925 [*C. kiliani] | Cret., Fr. | CRET
+          Exodictydia MORET, 1926 [*E. canalifera] | Cret., Fr. | CRET
+          Regnardia MORET, 1926 [*R. lapparenti] | U.Cret., Fr. | UCRET
+          Vetulina SCHMIDT, 1879 [*V. stalactites] | Tert.-Rec., Eu. | TERT-REC
+          Pachynion ZITTEL, 1878 [*Jerea scripta RÖMER, 1864] | Cret., Eu. | CRET
+          Coscinospongia BOW., 1869 [*C. heteroformis] | Cret.-Rec., cosmop. | CRET-REC
+        Family PSEUDOVERRUCULINIDAE de Laubenfels, nov.
+          Pseudoverriculina MORET, 1926 [*P. niciensis] | U.Cret., Fr. | UCRET
+        Family CHIASTOCLONELLIDAE (continued)
+          Chiastoclonella RAUFF, 1894 [*C. headi] | Ord.-Sil., Eu. | LORD-USIL
+      Suborder ANOMOCLADINA Zittel, 1878
+        Family CYLINDROPHYMATIDAE Schrammen, 1936
+          Cylindrophyma ZITTEL, 1878 [*Scyphia milleporata GOLDF., 1833] | Jur., Eu. | JUR
+          Melonella ZITTEL, 1878 [*Siphonia radiata QUENST., 1858] | M.Jur.-U.Jur. | JUR
+          Didymosphaera LINCK, 1883 [*D. steinmanni] | Jur., Ger. | JUR
+          Heliospongia GIRTY, 1908 [*H. ramosa] | Carb.-Perm., Kan. | MISS-UPERM
+          Coeliocladia GIRTY, 1908 [*C. spinosa] | Carb., Kan. | MISS-PENN
+          Linochone SCHRAM., 1936 [*L. rimosa] | Jur., Eu. | JUR
+          Cosciodiscus SCHRAM., 1936 [*C. suevicus] | Jur., Eu. | JUR
+        Family EOSPONGIIDAE de Laubenfels, nov.
+          Eospongia BILL., 1861 [*E. roemeri] | Cam.-Sil., Can.-E.Asia | LCAM-USIL
+          Calathium BILL., 1865 [*C. formosum] | Cam.-Ord., Can.-E.Asia | LCAM-MORD
+          Trachyum BILL., 1865 [*T. cytaiforme] | Cam.-Sil., Can. | LCAM-USIL
+          Edriaspongia MILLER, 1889 [*E. basalis] | Ord., Ill. | LORD-UORD
+          Anthradiella MILLER, 1889 [*A. mammulata] | Ord., Ill.-E.Asia | LORD-UORD
+          Zittelella MILLER, 1889 [*Z. typicalis] | M.Ord., Can. | MORD
+          Dystactospongia MILLER, 1883 [*D. insolens] | Ord.-Sil., Ohio | LORD-USIL
+          Strotaspongia MILLER, 1889 [*S. musculosa] | Ord., U.S.A. | LORD-UORD
+          Heterospongia ULR., 1889 [*H. subramosa] | L.Sil., Ohio-Ky. | LSIL
+          Saccspongia ULR., 1889 [*S. rudis] | Ord.-Sil., Ky. | LORD-USIL
+          Pycnopegma RAUFF, 1895 [*P. pileum] | Ord.-Sil., U.S.A. | LORD-USIL
+          Anomalonella RAUFF, 1895 [*A. zitteli] | Ord.-Sil., U.S.A. | LORD-USIL
+        Family MASTOSIIDAE de Laubenfels, nov.
+          Mastasia ZITTEL, 1878 [*M. wetsleri] | Jur., Ger. | JUR
+        Family UNCERTAIN (Anomocladina)
+          Hippalimus LAMX., 1821 [*H. fungoides] | U.Cret., Eu. | UCRET
+          Polysiphoneuda FROM., 1860 [*Siphonia abscula MICH., 1847] | U.Cret., Eu. | UCRET
+          Siphonocoelia FROM., 1860 [*Scyphia elegans GOLDF., 1833] | U.Jur., Eu. | UJUR
+          Cupulina COURT., 1861 [*C. pocillum] | Cret., Fr. | CRET
+          Platispongia COURT., 1861 [*P. speculum] | U.Jur., Eu. | UJUR
+          Polystoma COURT., 1861 [*P. irregulare] | Cret., Eu. | CRET
+          Asterospongia RÖMER, 1864 [*A. laevis] | Cret., Ger. | CRET
+          Discodermites SOLLAS, 1880 [*D. cretaceus] | Cret., Eu. | CRET
+          Hyalodermia OPPL., 1921 [*H. porata] | Jur., Eu. | JUR
+          Ocellaria DE CARBONNIÉRE, 1801 [*O. nuda] | U.Cret., Eu. | UCRET
+          Olkenbachia SOLLE, 1938 [*O. hirsuta] | Dev., Eu. | LDEV
+          Ortmannispongia QUENST., 1936 [pro Ortmannia SCHRAM., 1924] | Jur., Eu. | JUR
+          Sphaerospongia SCHRAM., 1936 [*S. nuda] | Cret., Eu. | CRET
+          Stromatidium GIRTY, 1908 [*S. typicale] | Perm., Tex. | LPERM-UPERM
+          Timidella DELAUB., nom. nov. [pro Timorella GERTH, 1909] | Perm., E.Ind. | LPERM-UPERM
+          Adrianella PARONA, 1933 [*A. distefanoi] | Perm., Eu. | LPERM-UPERM
+          Arbuscula PARONA, 1933 [*A. contortiplicata] | Perm., Eu. | LPERM-UPERM
+          Cladolithosia POMEL, 1872 [no species] | Cret., Eu. | CRET
+          Cymochlaenia POMEL, 1872 [*Chenendopora complanata ORB., 1850] | Cret., Eu. | CRET
+          Diacyparia POMEL, 1872 [*Chenendopora rugosa ORB., 1849] | Cret., Eu. | CRET
+          Elasmolimus POMEL, 1872 [*Dimorpha prolifera COURT., 1861] | Cret., Eu. | CRET
+          Hypothyra POMEL, 1872 [*Scyphia trilobata MICH., 1847] | Cret., Eu. | CRET
+          Ischadia POMEL, 1872 [*I. typica] | Tert., N.Afr. | TERT
+          Orospecion POMEL, 1872 [*Manon pulvinarium GOLDF., 1833] | Cret., Eu. | CRET
+          Pachypsecia POMEL, 1872 [*P. subannulata] | Jur., N.Afr. | JUR
+          Physocalpia POMEL, 1872 [*Scyphia mamillata COURT., 1861] | Cret., Fr. | CRET
+          Placojerea POMEL, 1872 [*Jerea desnoyersii MICH., 1847] | Cret., Eu. | CRET
+          Plethosiphonia POMEL, 1872 [*P. oroides] | Mio., Alg. | MIO
+          Polythyra POMEL, 1872 [*Scyphia perforata COURT., 1861] | Cret., Eu. | CRET
+          Pterocalpia POMEL, 1872 [*Scyphia alata COURT., 1861] | Cret., Fr. | CRET
+          Rhagospecion POMEL, 1872 [*Cnemidium conglobatum REUSS, 1841] | Cret., Eu. | CRET
+          Rhizostele POMEL, 1872 [*Rhizospongia clavata COURT., 1861] | Cret., Eu. | CRET
+          Scythophymia POMEL, 1872 [*C. crassa] | Tert., Alg. | TERT
+          Trachycinclis POMEL, 1872 [*Spongia ramosa MANTELL, 1822] | Tert., Alg. | TERT
+          Glyphalimus POMEL, 1872 [*Dimorpha balanus COURT., 1861] | Cret., Eu. | CRET
+  Class HYALOSPONGEA Vosmaer, 1886
+    Order LYSSAKIDA Zittel, 1877
+      Family HYALONEMATIDAE Gray, 1857
+        Hyalonema GRAY, 1832 [*H. sieboldi] | Eoc.-Rec., cosmop. | EOC-REC
+      Family PHERONEMATIDAE Gray, 1872
+        Pheronema LEIDY, 1868 [*P. annae] | Cret.-Rec., cosmop. | CRET-REC
+        Semperella GRAY, 1868 [*Hyalonema schultzei SEMPER, 1868] | Cret.-Rec., cosmop. | CRET-REC
+      Family EUPLECTELLIDAE Gray, 1867
+        Euplectella OWEN, 1841 [*E. aspergillum] | Mio.-Rec., cosmop. | MIO-REC
+        Regadrella SCHMIDT, 1880 [*R. phoenix] | U.Cret.-Rec., cosmop. | UCRET-REC
+        Proeuplectella MORET, 1936 [*P. fragilis] | U.Cret., Fr. | UCRET
+      Family SYMPAGELLIDAE Schulze, 1887
+        Caulophacus SCHULZE, 1886 [*C. elegans] | Eoc.-Rec. | EOC-REC
+      Family LANUGINELLIDAE Schulze, 1887
+        Crateromorpha CARTER, 1872 [*C. meyeri] | Eoc.-Rec. | EOC-REC
+      Family STAURACTINELLIDAE de Laubenfels, nov.
+        Stauractinella ZITTEL, 1877 [*S. jurassica] | Jur. | JUR
+      Family PROTOSPONGIIDAE Hinde, 1887
+        Protospongia SALTER, 1864 [*P. fenestrata] | L.Cam.-Ord., NW.Eu.-N.Am.-China | LCAM-MORD
+        Cyathophycus WALC., 1879 [*C. reticulatus] | Ord., N.Y.-Can. | LORD-UORD
+        Phormosella HINDE-H., 1892 [*P. ovata] | Ord., Eng. | LORD-UORD
+        Megastylia RUED., 1934 [*M. calyciformis] | L.Ord., N.Y. | LORD
+        Diagoniella RAUFF, 1894 [*Protospongia coronata DAWSON-H., 1889] | Ord., Can. | LORD-UORD
+        Plectoderma HINDE, 1884 [*P. scitulum] | U.Sil., Scot. | USIL
+        Palaeosaccus HINDE, 1893 [*P. dawsoni] | Ord., Que. | LORD-UORD
+        Stephanella HINDE, 1891 [*S. sancta] | Cam.-Ord., Can. | LCAM-MORD
+        Kiwetinokia WALC., 1920 [*K. utahensis] | Cam.-Ord., Can.-Idaho-Utah | LCAM-MORD
+      Family LEPTOMITIDAE de Laubenfels, nov.
+        Leptomitus WALC., 1886 [*L. zitteli] | L.Cam.-M.Cam., Vt.-B.C. | LCAM-MCAM
+        Halichondrites DAWSON-H., 1889 [*H. confusus] | Cam.-Ord., Can. | LCAM-MORD
+        Lasiothrix DAWSON-H., 1889 [*L. curvicostata] | M.Ord., Can. | MORD
+      Family TEGANIIDAE de Laubenfels, nov.
+        Teganium RAUFF, 1894 [*T. subisphaericum] | Ord., N.Y. | LORD-UORD
+        Polyplectella RUED., 1925 [*P. mira] | N.Y. | LORD-UORD
+        Foerstella RUED., 1925 [*F. rotunda] | N.Y. | LORD-UORD
+        Sycodictyia RUED., 1925 [*S. rara] | N.Y. | LORD-UORD
+      Family HOLASTERELLIDAE de Laubenfels, nov.
+        Holasterella CARTER, 1879 [*H. wrighti] | L.Carb., Eire | MISS
+        Astroconia SOLLAS, 1881 [*A. granti] | Sil., Eng.-Can. | LSIL-USIL
+        Rhakistella WELLER, 1931 [*R. alba] | Penn., Ill. | PENN
+        Spiractinella HINDE, 1887 [*Holasterella wrighti CARTER, 1880] | Carb., Eng. | MISS-PENN
+        Acanthactinella HINDE, 1887 [*Holasterella benniei HINDE, 1884] | Carb., Eng. | MISS-PENN
+      Family DICTYOSPONGIIDAE Hall, 1882
+        Dictyospongia HALL-C., 1898 [*Dictyophyton sceptrum HALL, 1890] | Sil.-Carb., N.Y. | LSIL-PENN
+        Cyathodictya HALL-C., 1900 [*Cyathophycus reticulatus HALL-C., 1879] | Sil.-Dev., Iowa-N.Y. | LSIL-MDEV
+        Hydriodictya HALL, 1884 [*Dictyophyton patulum HALL, 1884] | Dev., N.Y. | LDEV-UDEV
+        Lebedictya HALL-C., 1900 [*L. crinita] | Carb., Ind. | MISS-PENN
+        Thamnodictya HALL, 1884 [*Dictyophyton newberryi HALL, 1864] | Dev. | LDEV-UDEV
+        Ozospongia CLARKE, 1918 [*O. johnstoni] | Dev., N.Y. | LDEV-UDEV
+        Aglithodictya HALL-C., 1900 [*A. nummulina] | U.Dev., Pa. | UDEV
+        Griphodictya HALL-C., 1900 [*G. epiphanes] | Dev.-Carb., Fr.-Ind. | LDEV-PENN
+        Heterodictella HALL, 1884 [*E. implexa] | Carb., Pa. | MISS-PENN
+        Ceratodictya HALL-C., 1898 [*C. annulata] | Dev.-Carb., N.Y.-Pa.-Ohio | LDEV-PENN
+        Mastodictya HALL-C., 1898 [*Dictyospongia osculata HALL-C., 1898] | Dev., Ind. | LDEV-UDEV
+        Corticospongia CASTER, 1939 [*C. bradfordensis] | U.Dev., Pa. | UDEV
+        Actinodictya HALL, 1890 [*A. placenta] | Dev., N.Y.-Pa. | LDEV-UDEV
+        Arystidictyon HALL-C., 1900 [*A. elegans] | Dev. | LDEV-UDEV
+        Cleodictyia HALL-C., 1884 [*C. gloriosa] | Carb., Ind.-Pa. | MISS-PENN
+        Hallodictyia HALL-C., 1900 [*H. acienis] | Dev., N.Y. | LDEV-UDEV
+        Iowaspongia THOMAS, 1923 [*I. annulata] | U.Dev., Iowa | UDEV
+        Rhombodictyon WHITF., 1886 [*R. reniforme] | Dev., N.Y. | LDEV-UDEV
+        Sphaerodictya HALL-C., 1900 [*S. subsphaeria] | Dev., N.Y. | LDEV-UDEV
+        Acloeodictya HALL-C., 1900 [*A. marispu] | Dev. | LDEV-UDEV
+        Phragmodictya WHITF., 1882 [*Dictyophyton cattiliformis WHITF., 1881] | Carb., Ind. | MISS-PENN
+        Pseudohydnoceras REIMANN, 1934 [*P. erraticum] | Dev., N.Y. | LDEV-UDEV
+        Dictyorhabdus WALC., 1892 [*D. priscus] | Dev., Colo. | LDEV-UDEV
+        Prismodictya HALL-C., 1898 [*Dictyophyton telum HALL, 1884] | U.Dev.-L.Carb., N.Y.-Ind. | UDEV-MISS
+        Helicodictya HALL-C., 1898 [*H. trypania] | U.Dev., N.Y.-Pa. | UDEV
+        Ithacadictya CASTER, 1939 [*I. cornelli] | Dev., N.Y. | LDEV-UDEV
+        Acanthodictya DAWSON-H., 1889 [*A. hispida] | Ord., Can. | LORD-UORD
+        Clathrospongia HALL-C., 1900 [*C. abacus] | U.Dev., N.Y. | UDEV
+        Thysanodictya HALL-C., 1900 [*Dictyophyton halli HALL, 1890] | Dev., N.Y. | LDEV-UDEV
+        Dictyophyton HALL, 1863 [*D. flitextile] | Dev., Eng. | LDEV-UDEV
+        Hydnoceras CONRAD, 1842 [*H. tuberosum] | U.Dev.-Carb., N.Y.-Pa.-Fr. | UDEV-MISS
+        Hydnocerina CLARKE, 1918 [*H. armstrongi] | Dev., Pa. | LDEV-UDEV
+        Botryodictya HALL-C., 1900 [*Dictyophyton ramosum LESQ., 1884] | U.Dev., Pa. | UDEV
+        Gongylospongia HALL-C., 1898 [*G. marshi] | U.Dev., N.Y. | UDEV
+        Rhabdosispongia HALL-C., 1900 [*Dictyophyton amalthaea HALL, 1890] | Dev.-Carb. | LDEV-PENN
+        Roemerisponia HALL-C., 1900 [*Dictyophyton gerolsteinense RÖMER, 1883] | M.Dev., Ger. | MDEV
+        Uphantena VANUXEM, 1842 [*U. chemungensis] | U.Dev.-Carb., N.Y.-Pa.-Fr. | UDEV-MISS
+        Physospongia HALL, 1882 [*P. dawsoni] | Carb., Ind. | MISS-PENN
+        Clepsydrospongia HALL-C., 1900 [*C. matutina] | Dev., N.Y. | LDEV-UDEV
+        Corphyta POMEL, 1872 [no species] | ?Age, ?loc. | CRET
+      Family BRACHIOSPONGIIDAE Beecher, 1889
+        Brachiospongia MARSH, 1867 [*Scyphia digitata OWEN, 1858] | Ord.-Sil., Ky.-Scot. | LORD-USIL
+        Colpospongia LAMONT, 1935 [*C. lineata] | Ord., Scot. | LORD-UORD
+        Pattersonia MILLER, 1882 [*P. difficilis] | Ord.-Sil., Ohio-N.Y. | LORD-USIL
+        Oncosella RAUFF, 1894 [*O. catinus] | Sil., Eng. | LSIL-USIL
+      Family MULTIVASCULATIDAE de Laubenfels, nov.
+        Multivascuatus HOWELL & VAN HOUTEN, 1940 [*M. ovatus] | U.Cam., Wyo. | UCAM
+      Family VAUXIIDAE de Laubenfels, nov.
+        Vauxia WALC., 1920 [*V. gracilenta] | Can. | MCAM
+      Family AMPHISPONGIIDAE Rauff, 1894
+        Amphispongia SALTER, 1861 [*A. oblonga] | U.Sil., Scot. | USIL
+      Family TITUSVILLIIDAE Caster, 1939
+        Titusvillia CASTER, 1939 [*T. drakei] | L.Carb.-Rec., Pa. | MISS-REC
+        Armstrongia CLARKE, 1920 [*Ceratodictya oryx CLARKE, 1918] | U.Dev. | UDEV
+        Protoarmstrongia CASTER, 1941 [*P. ithacensis] | U.Dev., N.Y. | UDEV
+        Sclerothamnus MARSHALL, 1875 [*S. clausi] | Rec., E.Ind. | REC
+    Order DICTYIDA Zittel, 1877
+      Family EURYPLEGMATIDAE de Laubenfels, nov.
+        Euryplegma SCHULZE, 1886 [*E. auriculare] | cosmop. | REC
+      Family HEXACTINELLIDAE Schmidt, 1870
+        Hexactinella CARTER, 1885 [*H. ventilabrum] | cosmop. | CRET-REC
+        Tretodictyon SCHULZE, 1886 [*T. tubulosum] | Jur.-Cret., cosmop. | JUR-REC
+        Prohexactinella MORET, 1927 [*P. cenomanensis] | U.Cret. | UCRET
+        Andreaca SCHRAM., 1902 [*A. hexagonalis] | Cret., Ger. | CRET
+        Pycnocalyptra SCHRAM., 1936 [*P. calyx] | Jur., Ger. | JUR
+        Pachycylus SCHRAM., 1936 [*P. formosus] | Jur., Ger. | JUR
+        Polyopesia RAUFF, 1933 [*P. angustata] | U.Cret., Eu. | UCRET
+        Xenoschrammenum DELAUB., nom. nov. [pro Amphiblastrum SCHRAM., 1936] | Jur., Ger. | JUR
+      Family EUBROCHIDIDAE de Laubenfels, nov.
+        Eubrochis SCHRAM., 1902 [*E. senonica] | U.Cret., Ger. | UCRET
+        Oxyrhizium SCHRAM., 1912 [*O. eximium] | Cret., Ger. | UCRET
+        Habrosium SCHRAM., 1912 [*H. convolutum] | Cret., Ger. | UCRET
+        Wollemannia SCHRAM., 1912 [*W. araneosa] | Cret., Ger. | UCRET
+      Family STAURODERMATIDAE Zittel, 1877
+        Stauroderma ZITTEL, 1877 [*Scyphia buchi GOLDF., 1833] | Jur., Eu. | JUR
+        Tremadictyon ZITTEL, 1877 [*Scyphia reticulatum GOLDF., 1833] | U.Jur., Eu. | UJUR
+        Stauronema SOLLAS, 1877 [*S. carteri] | Jur., Eu. | JUR
+        Saynospongia MORET, 1927 [*Elasmoierea palmicea DUMORTIER, 1871] | Jur., Fr. | JUR
+        Paracraticularia SCHRAM., 1936 [*Scyphia procumbens GOLDF., 1833] | Jur., Eu. | JUR
+        Placotrema HINDE, 1884 [*P. cretaceum] | Cret., Eng. | CRET
+        Cincliderma HINDE, 1884 [*C. quadratum] | Cret., Eng. | CRET
+        Eubrochus SOLLAS, 1876 [*E. claurus] | Cret., Eu. | CRET
+        Polyschema OPPL., 1915 [*P. hersbargense] | Jur., Switz. | JUR
+        Feifia SCHRAM., 1936 [*F. gigas] | Jur., Eu. | JUR
+        Zittelospongia MALFATTI, 1901 [*Z. meandrijormis] | Tert. | TERT
+        Psephostyllogus SCHRAM., 1936 [*P. diligans] | U.Cret., Ger. | UCRET
+        Placochlaenia POMEL, 1872 [*P. protuberans] | Mio., N.Afr. | MIO
+        Purisiphonia BOW., 1869 [*P. colarkei] | ?U.Jur., ?L.Cret., Austral. | JUR-LCRET
+      Family LEPTOPHRAGMATIDAE Schrammen, 1912
+        Leptophragma ZITTEL, 1878 [*Scyphia murchisoni GOLDF., 1833] | Jur.-Cret., Eu. | JUR-CRET
+        Laocaetis POMEL, 1872 [*L. crassipes] | Jur.-Tert., Eu.-Alg. | JUR-TERT
+        Stephinia HINDE, 1884 [*S. convoluta] | Cret., Eu. | CRET
+        Sphenaulax ZITTEL, 1878 [*Spongies costata GOLDF., 1833] | Jur., Eu. | JUR
+        Sestrodictyon HINDE, 1884 [*S. convolutum] | L.Cret., Switz. | LCRET
+        Thyroidium DELAUB., nom. nov. [pro Thyridium SCHRAM., 1936] | Jur., Ger. | JUR
+      Family EMPLOCIDAE de Laubenfels, nov.
+        Emploca SOLLAS, 1883 [*E. ovata] | M.Jur., Eng. | JUR
+      Family POLYTHYRIDIDAE Schrammen, 1912
+        Polythyris SCHRAM., 1912 [*P. cuneata] | M.Ord.-U.Cret. | MORD-UCRET
+        Ubiquiradius DELAUB., nom. nov. [pro Actinocyclus SCHRAM., 1912] | Cret., Eu. | CRET
+        Ecblastesia RAUFF, 1933 [*E. intrinsecuscostata] | Cret., Eu. | CRET
+        Okulitchina WILSON, 1948 [*O. magna] | M.Ord., Can. | MORD
+      Family POLYSTIGMATIIDAE Schrammen, 1912
+        Polystigmatium SCHRAM., 1912 [*P. striatopunctatum] | U.Cret., Ger. | UCRET
+      Family PLEUROSTOMATIDAE de Laubenfels, nov.
+        Pleurostoma RÖMER, 1840 [*P. radiatum] | Jur.-Eoc., Eu. | JUR-EOC
+        Guettardiscyphia FROM., 1860 [pro Guettardia MICH., 1847] | Cret.-Eoc., Eu. | CRET-EOC
+        Koleostoma MORET, 1927 [*K. godeti] | Cret., Fr. | CRET
+        Lopanella POÇA, 1883 [*K. godeti] | U.Cret., Czech. | UCRET
+        Petalope POÇA, 1883 [*P. auriformis] | U.Cret., Czech. | UCRET
+        Erineum SCHRAM., 1936 [*E. minutum] | U.Cret., Eu. | UCRET
+        Caesaria QUENST., 1857 [*Scyphia articulata GOLDF., 1833] | U.Jur., Eu. | UJUR
+        Rhodanospongia MORET, 1927 [*R. robusta] | Jur., Fr. | JUR
+        Gevreya MORET, 1927 [*G. synthetica] | Jur., Fr. | JUR
+        Walcottella DELAUB., nom. nov. [pro Rhopalicus SCHRAM., 1936] | U.Cret., Ger. | UCRET
+      Family POROSPONGIIDAE Schrammen, 1936
+        Porospongia ORB., 1849 [*Manon marginatum GOLDF., 1833] | Jur.-U.Cret., Eu. | JUR-UCRET
+        Mimetosia RAUFF, 1933 [*M. alata] | U.Cret., Eu. | UCRET
+        Multiloqua DELAUB., nom. nov. [pro Polyphemus SCHRAM., 1936] | Jur., Eu. | JUR
+      Family MYLIUSIIDAE de Laubenfels, nov.
+        Myliusia GRAY, 1859 [*M. callocyathus] | Jur.-Rec. | JUR-REC
+    Order LYCHNISKIDA Schrammen, 1902
+      Family VENTRICULITIDAE Smith, 1848
+        Ventriculites MANTELL, 1822 [*V. radiatus] | M.Cret.-U.Cret., Eu. | MCAM-UCRET
+        Cephalites SMITH, 1849 [*C. perforatus] | Cret., Eng. | CRET
+        Calathiscus SOLLAS, 1883 [*C. variolatus] | Jur., Eng. | JUR
+        Rhizopoterion ZITTEL, 1878 [*Scyphia cervicornis GOLDF., 1833] | Cret., Eu. | CRET
+        Leiostracosia SCHRAM., 1902 [*L. punctata] | U.Cret., Ger. | UCRET
+        Lychniscaulus SCHRAM., 1936 [*L. vannus] | Jur., Ger. | JUR
+        Etalloniella OPPL., 1926 [pro Etallonia OPPL., 1915] | Jur., Eu. | JUR
+        Napaeana DELAUB., nom. nov. [pro Eudictyon SCHRAM., 1902] | U.Cret., Eu. | UCRET
+        Pleuropyge SCHRAM., 1912 [*P. plana] | Jur., Eu. | JUR
+        Ventriculites s.s. [*V. striatus] | M.Cret.-U.Cret., Eu. | CRET
+        Lepidaspongia F. A. RÖMER, 1862 [*L. denticulata] | Cret., Eu. | CRET
+        Licmosinion POMEL, 1872 [*L. cymoria] | L.Cret., Alg. | LCRET
+        Astropegma POMEL, 1872 [*Ventriculites stellata RÖMER, 1864] | L.Cret., Alg. | LCRET
+        Plectodermatium SCHRAM., 1902 [*P. fragilis] | Cret., Ger. | CRET
+        Microblastidium SCHRAM., 1902 [*M. decurrens] | Cret., Ger. | CRET
+        Desmoderma SCHRAM., 1936 [*D. evestigata] | Cret., Fr. | CRET
+        Rhizopoterionopsis LACHASSE, 1943 [*R. caillauensisi] | Cret., Fr. | CRET
+        Rhizocheton LACHASSE, 1943 [*R. jacobi] | Cret., Fr. | CRET
+        Pachyteichisma ZITTEL, 1878 [*P. carteri] | U.Jur., Eu. | UJUR
+        Trochobolus ZITTEL, 1878 [*T. crassicosta] | U.Jur., Ger. | UJUR
+        Pachyrachis SCHRAM., 1936 [*P. labyrinthica] | Jur., Eu. | JUR
+      Family COELOSCYPHIIDAE de Laubenfels, nov.
+        Coeloscyphia TATE, 1865 [*C. sulcata] | Cret., Ire. | CRET
+        Sestrocladia HINDE, 1884 [*S. furcata] | Cret., Eng. | CRET
+      Family POLYBLASTIDIIDAE Schrammen, 1912
+        Polyblastidium ZITTEL, 1878 [*P. luxurians] | Jur.-Cret., Eu. | JUR-CRET
+        Phlyctaenium ZITTEL, 1878 [*Martospongia cylindracea QUENST., 1878] | Jur., Ger. | JUR
+      Family COELOPTYCHIIDAE Zittel, 1877
+        Coeloptychium GOLDF., 1833 [*C. agaricoides] | U.Cret., Eu. | UCRET
+        Myrmecioptychium SCHRAM., 1912 [*M. bodei] | U.Cret., Ger. | UCRET
+      Family CAMEROSPONGIIDAE Schrammen, 1912
+        Camerospongia ORB., 1849 [*Scyphia fungiformis GOLDF., 1833] | Cret.-Tert., Eu. | CRET-TERT
+        ?Polygonatium SCHRAM., 1936 [*P. sphaeoroides] | Jur., Ger. | JUR
+        Tremabolites ZITTEL, 1878 [*Manon megastoma RÖMER, 1841] | U.Cret., Eu. | UCRET
+        Toulminia ZITTEL, 1878 [*Cephalites catenifer SMITH, 1848] | Jur.-Cret., Eu. | JUR-CRET
+      Family CYPELLIIDAE Schrammen, 1936
+        Cypellia POMEL, 1872 [*Scyphia rugosa GOLDF., 1833] | U.Jur., Ger. | UJUR
+        Porocypellia POMEL, 1872 [*Scyphia pyriformis GOLDF., 1833] | Jur., Eu. | JUR
+        Ophrystoma ZITTEL, 1878 [*Porospongia micromata RÖMER, 1864] | Cret., Eu. | CRET
+        Cavispongia QUENST., 1878 [*Spongites cylindrata QUENST., 1843] | Jur., Eu. | JUR
+        Discophyma OPPL., 1915 [*Stauroderma etalloni OPPL., 1907] | Jur., Eu. | JUR
+        Placotelia OPPL., 1907 [*Porostoma marconi FROM., 1859] | Jur., Eu. | JUR
+        Sporadopyge SCHRAM., 1936 [*S. speciosa] | U.Cret., Eu. | UCRET
+      Family ONCOTOECHIDAE Schrammen, 1912
+        Oncotoechus SCHRAM., 1912 [*O. cavernosus] | U.Cret., Ger. | UCRET
+      Family CALLODICTYIDAE Zittel, 1877
+        Callodictyon ZITTEL, 1878 [*C. infundibulum] | U.Cret., Eu. | UCRET
+        Marshallia ZITTEL, 1878 [*Pleurostoma tortuosum RÖMER, 1864] | Jur., Eu. | JUR
+        Pleurope ZITTEL, 1878 [*Pleurostoma lacunosum RÖMER, 1864] | Cret., Eu. | CRET
+        Piosima HINDE, 1884 [*Ventriculites simplex SMITH, 1848] | Cret., Eng. | CRET
+        ?Sclerokalia HINDE, 1884 [*S. cunningtoni] | Cret., Eng. | CRET
+      Family COSCINOPORIDAE Zittel, 1877
+        Coscinopira GOLDF., 1833 [*C. infundibuliformis] | U.Cret., Eu. | UCRET
+        Cinclidella SCHRAM., 1912 [*C. solitaria] | Cret., Ger. | UCRET
+        Balantionella SCHRAM., 1902 [*B. elegans] | U.Cret., Ger. | UCRET
+      Family BECKSIIDAE Schrammen, 1912
+        Plocoscyphia REUSS, 1846 [*Spongus labyrinthicus MANTELL, 1822] | Jur.-U.Cret., Eu. | JUR-UCRET
+        Gyrispongia QUENST., 1878 [*G. subruta] | U.Cret., Ger. | UCRET
+        Cyclostigma SCHRAM., 1902 [*Plocoscyphia acinosa SCHRAM., 1902] | Cret., Eu. | CRET
+        Coscinobolus SCHRAM., 1936 [*K. incrustans] | Cret., Ger. | CRET
+        Becksia SCHLÜTER, 1868 [*B. soekelandi] | U.Cret., Ger.-Fr. | UCRET
+        Callicylix SCHRAM., 1912 [*C. farreides] | Cret. | CRET
+      Family CALYPTRELLIDAE Schrammen, 1912
+        Calyptrella SCHRAM., 1912 [*C. bertae] | U.Cret., Ger. | UCRET
+        Kentrosia SCHRAM., 1912 [*K. incrustans] | Cret., Ger. | CRET
+        Sarophora SCHRAM., 1912 [*S. armata] | Cret., Ger. | UCRET
+        Plectascus SCHRAM., 1912 [*Dendrospongia clathrata SCHRAM., 1864] | Cret., Eu. | UCRET
+    Order HETERACTINIDA Hinde, 1888
+      Family CHANCELLORIIDAE de Laubenfels, nov.
+        Chancelloria WALC., 1920 [*C. eros] | Can.-B.C. | MCAM
+      Family ASTRAEOSPONGIIDAE de Laubenfels, nov.
+        Astraeospongia RÖMER, 1854 [*Blumenbachium meniscus RÖMER, 1848] | Sil.-Dev., Eu.-N.Am. | LSIL-UDEV
+        Eiffelia WALC., 1920 [*E. globosa] | M.Cam., B.C. | MCAM
+        Hyalostelia ZITTEL, 1879 [*Hyalonema smithi Y.-Y., 1877] | Carb., Ill.-Eng. | MISS-PENN
+        Leptopoterion ULR., 1889 [*L. mammiferum] | Ord., Ohio | LORD-UORD
+        Tholiasterella HINDE, 1887 [*T. gracilis] | Carb.-Eng.-Scot.-Ger. | MISS-PENN
+      Family ASTERACTINELLIDAE de Laubenfels, nov.
+        Asteractinella HINDE, 1887 [*A. expansa] | L.Cam.-Perm. | LCAM-UPERM
+        Wewokella GIRTY, 1912 [*W. solida] | U.Penn., Okla.-Tex. | PENN
+        Talpaspongia R. H. KING, 1943 [*T. clavata] | L.Perm., Tex. | LPERM
+        Antrispongia QUENST., 1878 [*A. dilabyrinthica] | ?Euretidae, ?Calyptrellidae | JUR
+        Baccispongia QUENST., 1878 [*B. baccata] | Jur., Ger. | JUR
+        Crucispongia QUENST., 1878 [*C. annulata] | Jur., Ger. | JUR
+        Textispongia QUENST., 1878 [*T. coarctata] | Jur., Ger. | JUR
+        Chirospongia MILLER, 1889 [*C. wenti] | M.Ord., U.S.A. | MORD
+        Lysactinella GIRTY, 1896 [*L. gebhardi] | L.Dev., U.S.A. | LDEV
+        Nepheliospongia CLARKE, 1900 [*N. typica] | ?Vaselike, U.Dev., ?N.Y. | UDEV
+        Pachylepisma SCHRAM., 1902 [*P. robusta] | Cret., Ger. | UCRET
+  Class CALCISPONGEA de Blainville, 1834
+    Order SOLENIDA de Laubenfels, nov.
+      Family CAMAROCLADIIDAE de Laubenfels, nov.
+        Camaracladia MILLER, 1889 [*C. dichotoma] | Cam.-Ord. | LCAM-MORD
+    Order LEBETIDA de Laubenfels, nov.
+      Family GRANTIIDAE Dendy, 1892
+        Protosycon ZITTEL, 1878 [*Scyphia punctata GOLDF., 1833] | U.Jur., Ger. | UJUR
+      Family LEUCONIIDAE Vosmaer, 1886
+        Leuconia GRANT, 1834 [*Spongia nivea GRANT, 1826] | L.Jur.-Rec., cosmop. | LJUR-REC
+        Protoleucon BOLK., 1923 [*P. pavlovi] | Cret.-Tert., U.S.S.R. | CRET-TERT
+    Order PHARETRONIDA Zittel, 1878
+      Suborder CHALARINA de Laubenfels, nov.
+        Family SESTROSTOMELLIDAE de Laubenfels, nov.
+          Sestrostomella ZITTEL, 1878 [*S. robusta] | Trias.-Cret., Eu. | TRIAS-CRET
+          Trachysinia HINDE, 1884 [*T. aspera] | M.Jur., Eu. | JUR
+          Trachytila WELTER, 1910 [*T. tuberosa] | L.Cret., Fr. | LCRET
+          Winwoodia RICHARDSON & THACKER, 1920 [*W. pytium] | M.Jur., Eu. | JUR
+          Thamnonema SOLLAS, 1883 [*T. pisiforme] | M.Jur., Eu. | JUR
+        Family STELLISPONGIIDAE de Laubenfels, nov.
+          Stellispongia ORB., 1849 [*Cnemidium variabile MÜNSTER, 1841] | Trias.-Jur., ?Cret., Eu.-Peru | TRIAS-CRET
+          Endostoma RÖMER, 1864 [*Scyphia foraminosum GOLDF., 1833] | Cret., Eu. | CRET
+          Enaulofungia FROM., 1861 [*E. corallina] | Jur.-Cret., Eu. | JUR-CRET
+          Inobilia HINDE, 1884 [*I. inclusa] | M.Jur., Eng. | JUR
+          Synopella ZITTEL, 1878 [*Lymnorea sphaerica MICH., 1847] | Cret., Eu. | CRET
+          Blastinia ZITTEL, 1878 [*Achilleum costatum GOLDF., 1833] | Jur., Eu. | JUR
+          Euzittelia ZEISE, 1874 [*E. magnica] | Jur.-Cret., Eu. | JUR-CRET
+          Limnorea GOLDF., 1833 [pro Lymnorea LAMX., 1821] | M.Jur., Eu. | JUR
+          Epitheles FROM., 1860 [*Myrmecium hemisphaericum GOLDF., 1833] | Jur., Fr. | JUR
+          Diasterofungia FROM., 1861 [*D. insignis] | M.Jur., Eu. | JUR
+          Blastinoidea RICHARDSON & THACKER, 1920 [*B. frithica] | M.Jur., Eng. | JUR
+          Steinmanella WELTER, 1910 [*S. latidorsa] | Cret., Ger. | CRET
+          Diaplectia HINDE, 1884 [*D. auricula] | M.Jur., Eng.-Fr. | JUR
+        Family ELASMOSTOMATIDAE de Laubenfels, nov.
+          Elasmostoma FROM., 1860 [*Tragos acutimargo RÖMER, 1839] | Jur.-Cret., Eu. | JUR-CRET
+          Elasmoierea FROM., 1860 [*E. sequana] | Jur.-L.Cret., Ger.-Fr. | JUR-LCRET
+        Family PHAETROSPONGIIDAE de Laubenfels, nov.
+          Phaetrospongia SOLLAS, 1877 [*P. strahani] | U.Cret., Kent | UCRET
+        Family LELAPIIDAE Dendy & Row, 1913
+          Lelapia GRAY, 1867 [*L. australis] | Rec., Austral. | REC
+          Corynella ZITTEL, 1878 [*Scyphia foraminosa GOLDF., 1833] | Jur., Eu. | JUR
+          Conoecia FROM., 1860 [*Siphonocoelia crassa FROM., 1861] | L.Cret., Fr.-Ger. | LCRET
+          Oculospongia OK., 1860 [*O. neocomiensis] | L.Cret., Fr. | LCRET
+          Pachytilodia ZITTEL, 1878 [*Scyphia infundibuliformis GOLDF., 1833] | L.Cret.-U.Cret., Eu. | LCRET-UCRET
+          Pachymura WELTER, 1910 [*P. goldfuszi] | L.Cret., Ger. | LCRET
+          Himatella ZITTEL, 1878 [*Tragos milleporata MÜNSTER, 1841] | Trias., Switz. | TRIAS
+        Family DISCOCOELIIDAE de Laubenfels, nov.
+          Discocoelia FROM., 1861 [*Scyphia cymosa MICH., 1847] | M.Jur. | JUR
+          Peronidella HINDE, 1893 [pro Peronella FROM., 1860] | Trias.-Cret., Eu.-?E.Indies | TRIAS-CRET
+          Eusiphonella ZITTEL, 1878 [*Scyphia bronni GOLDF., 1833] | Jur.-U.Cret., Eu. | JUR-UCRET
+          Raphidonema HINDE, 1884 [*R. farringdonense] | L.Cret., Eng. | LCRET
+          ?Trocalia HINDE, 1900 [*T. pezica] | Eoc., Austral. | EOC
+        Family ELASMOCELIIDAE de Laubenfels, nov.
+          Elasmocelia RÖMER, 1864 [*E. orbiculata] | Jur.-Cret., Eu. | JUR-CRET
+      Suborder STEREINA de Laubenfels, nov.
+        Family POROSPHAERIDAE de Laubenfels, nov.
+          Porosphaera STEINM., 1878 [*Millepora globularis PHILL., 1829] | Cret., Czech. | CRET
+          Porosphaerella WELTER, 1910 [*P. subglobosa] | L.Cret., Ger. | LCRET
+          Petrostroma DÖD., 1892 [*P. schulzei] | Cret.-Rec., Ger.-Japan | CRET-REC
+          Plectoninia HINDE, 1900 [*P. halli] | Cret., Ger.-Austral.-S.Pac. | CRET
+          Aplosphecion POMEL, 1872 [*A. radiciforme] | Tert., Alg. | TERT
+          Cnemicopanon POMEL, 1872 [*Monotheles punctata RÖMER, 1864] | Cret., Ger. | CRET
+          Coeloconia POMEL, 1872 [*Scyphia cylindrica GOLDF., 1833] | Tert., Alg. | TERT
+          Dyoconia POMEL, 1872 [*D. pomeli] | Tert., Alg. | TERT
+          Trachyphlyctia POMEL, 1872 [*Spongia helvelloides RAUFF, 1893] | Cret., Ger. | CRET
+          Trachyspecion POMEL, 1872 [*Spongia stellata LAMX., 1821] | Cret., Ger. | CRET
+          Astrofungia GREGORIO, 1883 [*A. cidariformis] | ?Age, Italy | TERT
+          Myrmecidium VINASSA, 1920 [pro Myrmecium GOLDF., 1833] | Jur., Eu. | JUR
+          Molengraffia VINASSA, 1920 [*M. regularis] | ?Trias., E.Indies | TRIAS
+          Alasonia SIRKOVA, 1938 [*A. remesi] | Jur., Czech. | JUR
+          Aphlebospongia SIRKOVA, 1938 [*A. remesi] | Jur., Czech. | JUR
+        Family BACTRONELLIDAE de Laubenfels, nov.
+          Bactronella HINDE, 1884 [*B. pusillum] | Jur.-Eoc., Ger.-Eu. | JUR-EOC
+    Order THALAMIDA de Laubenfels, nov.
+      Family SEBARGASIIDAE Girty, 1908
+        Sebargasia STEINM., 1882 [*S. carbonaria] | U.Carb.-Cret., Sp. | PENN-CRET
+        Amblysiphonella STEINM., 1882 [*A. barroisi] | U.Carb.-Perm., Eu.-N.Am.-Japan-Peru-E.Ind. | PENN-UPERM
+        Girtycoelia R. H. KING, 1908 [pro Heterocoelia GIRTY, 1908] | Penn., Kan.-Tex. | PENN
+        Discosiphonella INAE, 1936 [*D. manchuriensis] | Carb., Manch. | MISS-PENN
+        Thalamopira F. A. RÖMER, 1840 [*T. cribosa] | Jur., Ger.-Fr. | JUR
+      Family BARRROISIIDAE de Laubenfels, nov.
+        Barroisia CHALMAS, 1882 [*Tubipora anastomosans MANTELL, 1822] | Cret., Berksh. | CRET
+        Trachysinia HINDE, 1884 [*Verticillites d'orbigny] | Jur.-Cret., Eng.-Fr.-Ger. | JUR-CRET
+        Welteria VINASSA, 1920 [*W. repleta] | Trias., E.Indies | TRIAS
+      Family CYSTOTHALAMIIDAE Girty, 1908
+        Cystothalamia GIRTY, 1908 [*C. nodulifera] | Perm., Tex. | LPERM-UPERM
+        Cystauletes R. H. KING, 1943 [*C. mammilosus] | L.Perm., Tex. | LPERM
+      Family CELYPHIIDAE de Laubenfels, nov.
+        Celyphia POMEL, 1872 [*Manon submarginata MÜNSTER, 1841] | Trias., Eu. | TRIAS
+        Thaumastocoelia REUSS, 1882 [*T. cassiana] | Perm.-Trias., Eu. | LPERM-TRIAS
+        Enoplocoelia STEINM., 1882 [*Scyphia armata KLIPSTEIN, 1845] | Perm.-Trias. | LPERM-TRIAS
+        Henricellum WILCKENS, 1937 [*H. insigne] | Trias., E.Indies | TRIAS
+        Girtycoelia R. H. KING, 1942 [*G. typica] | Penn., Kan.-Tex. | PENN
+        ?Imperatoris GREGORIO, 1930 [*I. marconi] | Perm., Eu. | LPERM-UPERM
+        Sollasia STEINM., 1882 [*S. ostiolata] | Carb., Sp. | MISS-PENN
+      Family CRYPTOCOELIIDAE Steinmann, 1882
+        Cryptocoelia STEINM., 1882 [*C. zitteli] | Perm.-Cret. | LPERM-CRET
+      Family SPHAEROCOELIIDAE Steinmann, 1882
+        Sphaeracoelia STEINM., 1882 [*Thalamopora michelini SIMONOWITSCH, 1871] | U.Cret., Eu. | UCRET

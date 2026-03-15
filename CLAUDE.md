@@ -36,7 +36,7 @@ trilobase/
 │   ├── paleocore-{ver}.scoda        # PaleoCore .scoda package
 │   └── *_overlay.db                 # Overlay databases
 ├── data/                             # Source data files
-│   ├── sources/                     # ★ assertion DB 빌드 소스 (*.txt)
+│   ├── sources/                     # ★ taxonomic source files (*.txt)
 │   ├── trilobite_genus_list.txt     # Cleaned genus list (canonical version)
 │   ├── trilobite_family_list.txt
 │   ├── adrain2011.txt
