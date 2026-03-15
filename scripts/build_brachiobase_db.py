@@ -21,7 +21,7 @@ from pathlib import Path
 
 from db_path import find_paleocore_db
 
-VERSION = "0.2.4"
+VERSION = "0.2.5"
 
 # ---------------------------------------------------------------------------
 # Source file groups per classification profile
@@ -1528,43 +1528,6 @@ def main():
         SELECT code, start_mya AS fad_mya, end_mya AS lad_mya
         FROM pc.temporal_ranges
         WHERE start_mya IS NOT NULL
-        -- Mesozoic (not in paleocore temporal_ranges)
-        UNION ALL SELECT 'TRIAS',  251.9,  201.4
-        UNION ALL SELECT 'TRI',    251.9,  201.4
-        UNION ALL SELECT 'LTRI',   251.9,  247.2
-        UNION ALL SELECT 'LTRIAS', 251.9,  247.2
-        UNION ALL SELECT 'MTRI',   247.2,  237.0
-        UNION ALL SELECT 'MTRIAS', 247.2,  237.0
-        UNION ALL SELECT 'UTRI',   237.0,  201.4
-        UNION ALL SELECT 'UTRIAS', 237.0,  201.4
-        UNION ALL SELECT 'UTRIA',  237.0,  201.4
-        UNION ALL SELECT 'JUR',    201.4,  145.0
-        UNION ALL SELECT 'LJUR',   201.4,  174.7
-        UNION ALL SELECT 'MJUR',   174.7,  163.5
-        UNION ALL SELECT 'UJUR',   163.5,  145.0
-        UNION ALL SELECT 'CRET',   145.0,   66.0
-        UNION ALL SELECT 'LCRET',  145.0,  100.5
-        UNION ALL SELECT 'UCRET',  100.5,   66.0
-        -- Cenozoic extras
-        UNION ALL SELECT 'PALEOG',    66.0,  23.03
-        UNION ALL SELECT 'PALEOGENE', 66.0,  23.03
-        UNION ALL SELECT 'NEOG',    23.03,   2.58
-        UNION ALL SELECT 'NEOGENE', 23.03,   2.58
-        UNION ALL SELECT 'NEO',     23.03,   2.58
-        UNION ALL SELECT 'MIO',     23.03,   5.33
-        UNION ALL SELECT 'MIOC',    23.03,   5.33
-        UNION ALL SELECT 'MIOCENE', 23.03,   5.33
-        UNION ALL SELECT 'PLIO',     5.33,   2.58
-        UNION ALL SELECT 'PLIOC',    5.33,   2.58
-        UNION ALL SELECT 'PLEI',     2.58,   0.0117
-        UNION ALL SELECT 'PLE',      2.58,   0.0117
-        UNION ALL SELECT 'EOC',     56.0,   33.9
-        UNION ALL SELECT 'EOCENE',  56.0,   33.9
-        UNION ALL SELECT 'OLIG',    33.9,   23.03
-        UNION ALL SELECT 'PALEOCENE', 66.0,  56.0
-        UNION ALL SELECT 'TERT',    66.0,   2.58
-        UNION ALL SELECT 'HOL',     0.0117, 0.0
-        UNION ALL SELECT 'REC',     0.0117, 0.0
     """)
     # Also add any compound codes found in the data (e.g., LDEV-MDEV)
     compound_codes = conn.execute("""

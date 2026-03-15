@@ -1636,12 +1636,6 @@ def main():
         SELECT code, start_mya AS fad_mya, end_mya AS lad_mya
         FROM pc.temporal_ranges
         WHERE start_mya IS NOT NULL
-        UNION ALL SELECT 'TERT', 66.0, 2.58
-        UNION ALL SELECT 'HOL', 0.0117, 0.0
-        UNION ALL SELECT 'REC', 0.0117, 0.0
-        UNION ALL SELECT 'CAM', 538.8, 485.4
-        UNION ALL SELECT 'MSIL', 433.4, 427.4
-        UNION ALL SELECT 'LCARB', 358.9, 323.2
     """)
     # Also add any compound codes found in the data (e.g., MCAM-LCARB)
     compound_codes = conn.execute("""

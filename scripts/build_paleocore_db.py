@@ -25,13 +25,14 @@ SOURCE_DB = find_trilobase_db()
 DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'db', 'paleocore.db')
 
 # Tables to extract (order matters for FK dependencies)
+# Note: temporal_ranges is NOT copied from source — it is defined inline
+# in insert_temporal_ranges() so paleocore controls the full time period list.
 DATA_TABLES = [
     'countries',
     'geographic_regions',
     'cow_states',
     'country_cow_mapping',
     'formations',
-    'temporal_ranges',
     'ics_chronostrat',
     'temporal_ics_mapping',
 ]
@@ -258,7 +259,7 @@ def insert_artifact_metadata(conn):
     metadata = [
         ('artifact_id', 'paleocore'),
         ('name', 'PaleoCore'),
-        ('version', '0.3.0'),
+        ('version', '0.1.2'),
         ('schema_version', '1.0'),
         ('created_at', str(date.today())),
         ('description',
@@ -295,6 +296,113 @@ def insert_provenance(conn):
             "VALUES (?, ?, ?, ?, ?, ?)", s
         )
     return len(sources)
+
+
+def insert_temporal_ranges(conn):
+    """Insert temporal range codes (Paleozoic through Recent).
+
+    Defined inline — not copied from any source DB — so paleocore owns
+    the authoritative list of geological time period codes.
+
+    ICS 2020 boundary ages (Ma). Epoch column uses Lower/Middle/Upper
+    to match the SCODA temporal code convention (L/M/U prefix).
+    """
+    conn.execute(CREATE_TABLE_SQL['temporal_ranges'])
+    rows = [
+        # Paleozoic — Cambrian
+        ('LCAM',  'Lower Cambrian',        'Cambrian',       'Lower',         538.8,  509.0),
+        ('MCAM',  'Middle Cambrian',        'Cambrian',       'Middle',        509.0,  497.0),
+        ('UCAM',  'Upper Cambrian',         'Cambrian',       'Upper',         497.0,  485.4),
+        ('LMCAM', 'Lower-Middle Cambrian',  'Cambrian',       'Lower-Middle',  538.8,  497.0),
+        ('MUCAM', 'Middle-Upper Cambrian',  'Cambrian',       'Middle-Upper',  509.0,  485.4),
+        ('CAM',   'Cambrian',               'Cambrian',       None,            538.8,  485.4),
+        # Paleozoic — Ordovician
+        ('LORD',  'Lower Ordovician',       'Ordovician',     'Lower',         485.4,  470.0),
+        ('MORD',  'Middle Ordovician',      'Ordovician',     'Middle',        470.0,  458.4),
+        ('UORD',  'Upper Ordovician',       'Ordovician',     'Upper',         458.4,  443.8),
+        ('LMORD', 'Lower-Middle Ordovician','Ordovician',     'Lower-Middle',  485.4,  458.4),
+        ('MUORD', 'Middle-Upper Ordovician','Ordovician',     'Middle-Upper',  470.0,  443.8),
+        ('ORD',   'Ordovician',             'Ordovician',     None,            485.4,  443.8),
+        # Paleozoic — Silurian
+        ('LSIL',  'Lower Silurian',         'Silurian',       'Lower',         443.8,  433.4),
+        ('MSIL',  'Middle Silurian',        'Silurian',       'Middle',        433.4,  427.4),
+        ('USIL',  'Upper Silurian',         'Silurian',       'Upper',         433.4,  419.2),
+        ('LUSIL', 'Lower-Upper Silurian',   'Silurian',       'Lower-Upper',   443.8,  419.2),
+        ('SIL',   'Silurian',               'Silurian',       None,            443.8,  419.2),
+        # Paleozoic — Devonian
+        ('LDEV',  'Lower Devonian',         'Devonian',       'Lower',         419.2,  393.3),
+        ('MDEV',  'Middle Devonian',        'Devonian',       'Middle',        393.3,  382.7),
+        ('UDEV',  'Upper Devonian',         'Devonian',       'Upper',         382.7,  358.9),
+        ('LMDEV', 'Lower-Middle Devonian',  'Devonian',       'Lower-Middle',  419.2,  382.7),
+        ('MUDEV', 'Middle-Upper Devonian',  'Devonian',       'Middle-Upper',  393.3,  358.9),
+        ('EDEV',  'Early Devonian',         'Devonian',       'Early',         419.2,  393.3),
+        ('DEV',   'Devonian',               'Devonian',       None,            419.2,  358.9),
+        # Paleozoic — Carboniferous
+        ('MISS',  'Mississippian',          'Carboniferous',  'Mississippian', 358.9,  323.2),
+        ('LCARB', 'Lower Carboniferous',    'Carboniferous',  'Lower',         358.9,  323.2),
+        ('PENN',  'Pennsylvanian',          'Carboniferous',  'Pennsylvanian', 323.2,  298.9),
+        ('UCARB', 'Upper Carboniferous',    'Carboniferous',  'Upper',         323.2,  298.9),
+        ('CARB',  'Carboniferous',          'Carboniferous',  None,            358.9,  298.9),
+        # Paleozoic — Permian
+        ('LPERM', 'Lower Permian',          'Permian',        'Lower',         298.9,  272.95),
+        ('MPERM', 'Middle Permian',         'Permian',        'Middle',        272.95, 259.51),
+        ('UPERM', 'Upper Permian',          'Permian',        'Upper',         259.51, 251.9),
+        ('PERM',  'Permian',               'Permian',        None,            298.9,  251.9),
+        # Mesozoic — Triassic
+        ('LTRI',   'Lower Triassic',        'Triassic',       'Lower',         251.9,  247.2),
+        ('LTRIAS', 'Lower Triassic',        'Triassic',       'Lower',         251.9,  247.2),
+        ('MTRI',   'Middle Triassic',       'Triassic',       'Middle',        247.2,  237.0),
+        ('MTRIAS', 'Middle Triassic',       'Triassic',       'Middle',        247.2,  237.0),
+        ('UTRI',   'Upper Triassic',        'Triassic',       'Upper',         237.0,  201.4),
+        ('UTRIAS', 'Upper Triassic',        'Triassic',       'Upper',         237.0,  201.4),
+        ('UTRIA',  'Upper Triassic',        'Triassic',       'Upper',         237.0,  201.4),
+        ('TRIAS',  'Triassic',              'Triassic',       None,            251.9,  201.4),
+        ('TRI',    'Triassic',              'Triassic',       None,            251.9,  201.4),
+        # Mesozoic — Jurassic
+        ('LJUR',  'Lower Jurassic',         'Jurassic',       'Lower',         201.4,  174.7),
+        ('MJUR',  'Middle Jurassic',        'Jurassic',       'Middle',        174.7,  163.5),
+        ('UJUR',  'Upper Jurassic',         'Jurassic',       'Upper',         163.5,  145.0),
+        ('JUR',   'Jurassic',               'Jurassic',       None,            201.4,  145.0),
+        # Mesozoic — Cretaceous
+        ('LCRET', 'Lower Cretaceous',       'Cretaceous',     'Lower',         145.0,  100.5),
+        ('UCRET', 'Upper Cretaceous',       'Cretaceous',     'Upper',         100.5,   66.0),
+        ('CRET',  'Cretaceous',             'Cretaceous',     None,            145.0,   66.0),
+        # Cenozoic — Paleogene
+        ('PALEOCENE', 'Paleocene',          'Paleogene',      'Paleocene',      66.0,   56.0),
+        ('EOC',       'Eocene',             'Paleogene',      'Eocene',         56.0,   33.9),
+        ('EOCENE',    'Eocene',             'Paleogene',      'Eocene',         56.0,   33.9),
+        ('OLIG',      'Oligocene',          'Paleogene',      'Oligocene',      33.9,   23.03),
+        ('PALEOG',    'Paleogene',          'Paleogene',      None,             66.0,   23.03),
+        ('PALEOGENE', 'Paleogene',          'Paleogene',      None,             66.0,   23.03),
+        # Cenozoic — Neogene
+        ('MIO',     'Miocene',              'Neogene',        'Miocene',        23.03,   5.33),
+        ('MIOC',    'Miocene',              'Neogene',        'Miocene',        23.03,   5.33),
+        ('MIOCENE', 'Miocene',              'Neogene',        'Miocene',        23.03,   5.33),
+        ('PLIO',    'Pliocene',             'Neogene',        'Pliocene',        5.33,   2.58),
+        ('PLIOC',   'Pliocene',             'Neogene',        'Pliocene',        5.33,   2.58),
+        ('NEO',     'Neogene',              'Neogene',        None,             23.03,   2.58),
+        ('NEOG',    'Neogene',              'Neogene',        None,             23.03,   2.58),
+        ('NEOGENE', 'Neogene',              'Neogene',        None,             23.03,   2.58),
+        # Cenozoic — Quaternary
+        ('PLEI',    'Pleistocene',          'Quaternary',     'Pleistocene',     2.58,   0.0117),
+        ('PLE',     'Pleistocene',          'Quaternary',     'Pleistocene',     2.58,   0.0117),
+        ('HOL',     'Holocene',             'Quaternary',     'Holocene',        0.0117, 0.0),
+        ('HOLOCENE','Holocene',             'Quaternary',     'Holocene',        0.0117, 0.0),
+        ('REC',     'Recent',               'Quaternary',     'Holocene',        0.0117, 0.0),
+        # Legacy / informal
+        ('TERT',    'Tertiary',             'Cenozoic',       None,             66.0,   2.58),
+        # Indeterminate
+        ('INDET',   'Indeterminate',        None,             None,             None,   None),
+    ]
+    for i, (code, name, period, epoch, start_mya, end_mya) in enumerate(rows, start=1):
+        uid = f'scoda:strat:temporal:code:{code}'
+        conn.execute(
+            "INSERT INTO temporal_ranges "
+            "(id, code, name, period, epoch, start_mya, end_mya, uid, uid_method, uid_confidence) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'code', 'high')",
+            (i, code, name, period, epoch, start_mya, end_mya, uid)
+        )
+    return len(rows)
 
 
 def insert_schema_descriptions(conn):
@@ -353,7 +461,7 @@ def insert_schema_descriptions(conn):
 
         # --- temporal_ranges ---
         ('temporal_ranges', None,
-         'Geological time period codes and age ranges (28 records)'),
+         'Geological time period codes and age ranges (Paleozoic–Recent)'),
         ('temporal_ranges', 'id', 'Primary key'),
         ('temporal_ranges', 'code',
          'Short code: LCAM, MCAM, UCAM, LORD, MORD, UORD, etc.'),
@@ -864,6 +972,12 @@ def create_paleocore(source_db, output_path):
         note = f" (dropped: {', '.join(drop)})" if drop else ""
         print(f"  {table}: {count:,} records{note}")
         total_records += count
+
+    # temporal_ranges: defined inline (full Paleozoic–Recent coverage)
+    count = insert_temporal_ranges(dst_conn)
+    print(f"  temporal_ranges: {count:,} records (inline)")
+    total_records += count
+
     dst_conn.commit()
     dst_conn.execute("PRAGMA foreign_keys = ON")
 
