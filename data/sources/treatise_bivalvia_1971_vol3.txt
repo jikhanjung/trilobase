@@ -1,0 +1,72 @@
+---
+reference: Stenzel, H.B., 1971. Treatise on Invertebrate Paleontology, Part N, Mollusca 6, Bivalvia, Volume 3 (Oysters). Geological Society of America and University of Kansas.
+scope:
+  - taxon: Bivalvia (Ostreina: Gryphaeidae, Ostreidae, Chondrodontidae)
+    coverage: comprehensive
+notes: |
+  Covers Order Ostreina (oysters) only. Pages 149-264 extracted. ~43 genus entries.
+  Many pages consist of detailed morphological descriptions and figures with limited
+  systematic content.
+---
+
+ Family GRYPHAEIDAE Vyalov, 1936
+ Suborder OSTREINA Ferussac, 1822
+ Subfamily GRYPHAEINAE Vyalov, 1936
+ Deltoideum ROLLIER, 1917 [*Ostrea SIIblamellosa DUNKER]
+ Izisingeri NILSSON, 1832 | Trias.(Rlzaet.) -11/1'., Eu.(Mesogaean region) | TRIAS
+ Pernostrea MUNIER-CHALMAS, 1864 [*Perna bachelieri D'ORBIGNY]
+ Subfamily PYCNODONTEINAE Stenzel, 1959
+ Pycnodonte FISCHER DE WALDHEIM, 1835 [*P. (C.) eostei COQUAND] | -Mio., worldwide | NEOG
+ Labrostrea VVALOV, 1945
+ Subfamily EXOGYRINAE Vyalov, 1936
+ Aetostreon BAYLE, 1878 [*Gryphaea latissima LAMARCK] | L.Cret.(Valangin.-Alb.) , Eu.(Spain- France-Eng.-Switz.) -Afr. (E. Afr.-Madagascar)- Caucasus | LCRET
+ Amphidonte FISCHER DE WALDHEIM, 1829 | , USSR; L.Cret.(up.Alb.), N.Am.(Texas) | LCRET
+ Ceratostreon BAYLE, 1878 | ); Cret.(Neocom.-Senon.), Eu.-N. Afr | CRET
+ Nanogyra BWRLEN, 1958 [*Cryphaea nana J. SOWERBY]
+ Planospirites LAMARCK, 1801 | ] U.Cret.(Cenoman.-Turon.), N. Am. (Mexico-Texas-N.Mexico-Colo.-Minn.-Va. subsurface) -Eu. (Eng.-France-Ger.-Czech.-Pol.-Hung.- ( ... , ld inae) (p. N1l22-N1l24). N1124 Bivalvia-O USSR-Spain-Port.-Sar | UCRET
+ Vultogryphaea VYALOV, 1936 [*Exogyl'a tttl'kestanensis BOBKovA]
+ Acutostrea VYALOV, 1936
+ Anulostrea VYALOV, 1936
+ Curvostrea VYALOV, 1936
+ Fatina VYALOV, 1936
+ Ferganea VYALOV, 1936
+ Kokanostrea VYALOV, 1936
+ Quadrostrea VYALOV, 1936
+ Vultogryphaea VYALOV, 1936
+ Family OSTREIDAE Rafinesque, 1815
+ Subfamily OSTREINAE Rafinesque, 1815
+ Acutostrea VYALOV, 1936
+ Crassostrea SACCO, 1897 | -Rec., worldwide | REC
+ Saccostrea DOLLFUS & DAUTZENBERG, 1920 | -Rec., circumglobal in tropical climates | REC
+ Striostrea VYALOV, 1936 | ); Rec., SE.Afr.-Madag.-C.Am. (W. coast-Baja Calif.-Panama) | REC
+ Ostroea TOLMER, 1928 | -Rec., worldwide except in polar regions. [Thne is some confusion concerning the type species of | REC
+ Anodontostua SUTER., 1917 | -Rec., cosmop | REC
+ Gorizdrella VYALOV, 1936 [*Ostrea cubitw DrSHAYES] | Eoc.(Alaisk'). Mesogean region (N.Afr.-C.Asia) | PALEOG
+ Ferganea VYALOV, 1936
+ Kafirnigania GEKKER, OSIPOVA, & BELSKAYA, 1962 | Eoc.(Turkestan.) (=up.Lutet. +Aullers.). Rumania (Transylv.) -C.Asia.--FlG. Jl21,I. ·S. buhsii (GREWINGK), USSR (Fergana); la-d, both valves, post. view, left side, right side, umbonal view, XO.7 (Ste | PALEOG
+ Flemingostrea VREDENBURG, 1916 | ? hemiglobosa (ROMANOVSKIY, 1884) (=Ostrea gigantica Cox, 1938 (non SOL- ANDER, 1766), =Ostrea (Solidostrea) (VYALOV, 1948c), Eoc. (Suzakian Stage); la,b, Tash Kurghan, N. Afghan., LV ant., ext., XO.5 | PALEOG
+ Kokanostrea VYALOV, 1936 [*Ostrea kokanensis SOKOLOV] | Eoc.(Turkestan.} (upLutet. + AUtlers), C.Asia | PALEOG
+ Odontogryphaea IHERING, 1903 [*Gryphaea consors var. rostrigera IHERING] | rostrigera (IHERING), Eoc., Arg. (Patagonia, Chubut Terr.); 1, LV int.; 2. RV int.; 3a-c, both valves, oblique left ventral view, oblique right ant. view, ant. view, all XO.75 (Ihering, 1903) | PALEOG
+ Subfamily LOPHINAE Vyalov, 1936
+ Lopha RODING, 1798
+ Dendoslraea SDWERBY, 1839
+ Dendroslraea SWAINSDN, 1840
+ Aleelryouia STRAUSZ, 1928
+ Aleelryossia SALISBURY & EDWARDS, 1959 | -Rec., trop. and partly subtrop., worldwide | REC
+ Agerostrea VVALOV, 1936 | Cret.( Campan.-Maastricht.) , worldwide | CRET
+ Anomiostrea HABE & KOSUGE, 1966
+ Curvostrea VYALOV, 1936
+ Margostrea VYALOV, 1936 | " U.Cret.( Santon.), Eu.(France) | UCRET
+ Pulvinostrea VVALOV, 1936 | Eoc., Afr.(Egypt) | PALEOG
+ Quadrostrea VVALOV, 1936
+ Lithiotis GUMBEL, 1871
+ Palaeostrea GRABAU, 1936
+ Superfamily Praecardiacea HORNES, 1884
+ Sdikia DE GREGORIO, 1884 [*Ostrea (Sdikia?) bonfornellensis] | (*-'1-'15) 1953, Lal'l'iparous oysters from the tropical west Pacific: Rec. Oceanogr. Works Japan, new ser., v. I, p. 66-72 (Dec.). Walne, P. R. (*-'1-'16) 1963, Breeding of the Chilean oyster (Ostrea | REC
+ Family CHONDRODONTIDAE Freneix,
+ Lithiotis GUMBEL, 1874
+ Cochlearites REIS, 1903 | Teyler's Oysters Rostellum Rostellum cht, U.Cret.(Maastricht), St. Pietersberg south of d by FAVJAS (l799[ ?1802J) (Stenzel, n; courtesy of s Museum. Haarlem. Netherlands). Nomenclatural Clarifi known | UCRET
+ Rastellum FAUJAS, 1799
+ Arcostrea CHARLES & MAUBEUGE, 1951
+ Arctaostrea HAAS, 1938
+ Arctostraea JOURDY, 1924

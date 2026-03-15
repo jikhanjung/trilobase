@@ -1,0 +1,288 @@
+---
+reference: Hess, H. & Messing, C.G. (eds.), 2011. Treatise on Invertebrate Paleontology, Part T (Revised), Echinodermata 2 (Crinoidea), Volume 3. Paleontological Institute, University of Kansas.
+scope:
+  - taxon: Crinoidea (Subclass Articulata: Holocrinida, Encrinida, Isocrinida, Comatulida, Roveacrinida, Bourgueticrinida, Millericrinida, Cyrtocrinida)
+    coverage: comprehensive
+notes: |
+  Part T Revised vol 3 covers Subclass Articulata (post-Paleozoic Crinoidea).
+  Pages 53-265 extracted. ~125 genus entries. Uses Title Case author format (2011).
+---
+
+Subclass Articulata
+  Stomatocrinoidea Wachsmuth & Springer, 1880
+class of the phylum Brachiopoda. Although
+Order Holocrinida
+Family Holocrinidae Jaekel, 1918
+  Holocrinus Wachsmuth & Springer, 1887 [*Encrinus beyrichi Picard, 1883]
+  Moenocrinus Hildebrand, 1926 [*M. deeckei]
+  Tollmannicrinus Klikushin, 1992 [*Entro­ chus saklibelensis Kristan-Tollmann, 1975]
+Order Encrinida
+Family Encrinidae
+  Encrinus Lamarck, 1801 [*E. liliiformis]
+  Cassianocrinus Laube, 1865 [*Encrinus (Cassiano­ crinus) tetarakontadactylus Laube, 1865,]
+Family Ainigmacrinidae
+  Ainigmacrinus Hagdorn, 1988 [*A. calycono­ dalis] | LTRIAS
+Family Dadocrinidae
+  Cremacrinus Jaekel, 1918
+Family Traumatocrinidae
+  Vostocovacrinus Yeltisheva & Polyarnaya, 1986 [*V. boreus] | LTRIAS
+Order Isocrinida
+suborder Isocrinina, such as endotomous
+Suborder Pentacrinitina
+Family Pentacrinitidae Gray, 1842
+  Pentacrinites Blumenbach, 1804 [*P. fossilis]
+Family Eocomatulidae
+Suborder Isocrinina
+suborder Comatulidina. Isocrinina share
+family Isocrinidae. All Triassic and Jurassic
+  Balanocrininae Roux, 1981 | PALEOG
+Family Isocrinidae Gislén, 1924
+Subfamily Isocrininae Gislén, 1924
+  Neocrinus Thomson, 1864 [*Pentacrinus decorus Thomson, 1864]
+Subfamily Balanocrininae
+subfamily solely on the basis of the columnal
+subfamily Balanocrininae, although the facets
+  Percevalicrinus Klikushin, 1977 [*Picteticrinus beaugrandi de Loriol in de Loriol & Pellat, 18]
+  Cainocrinus Forbes, 1852 | CRET
+Family Cainocrinidae Simms, 1988
+  Cainocrinus Forbes, 1852 [*C. tintinnab­ ulum]
+  Nielsenicrinus Rasmussen, 1961 [*Pentacrinus obsoletus Nielsen, 1913] | PALEOG
+Family Isselicrinidae
+Subfamily Isselicrininae
+  Isselicrinus Rovereto, 1914 [*I. insculptus]
+  Doreckicrinus Rasmussen, 1961 [*Pentacrinus miliaris Nielsen, 1913]
+  Praeisselicrinus Klikushin, 1977 [*Isselicrinus atabekjani Klikushin, 1973]
+Subfamily Diplocrininae
+  Cenocrinus Thomson, 1864 [*Isis asteria Linné, 1767]
+Subfamily Metacrininae
+Subfamily UNCERTAIN
+Family Proisocrinidae
+Order Comatulida
+Suborder Comatulidina
+Family PARACOMATULIDAE
+  Paracomatula Hess, 1951 [*P. helvetica]
+Superfamily Atelecrinoidea
+superfamily Paracomatuloidea but listed no
+family from the Paracomatuloidea, ostensibly
+Family Atelecrinidae Bather, 1899
+Family Solanocrinitidae
+  Solanocrinites Goldfuss, 1829 [*S. costatus]
+  Pachyantedon Jaekel, 1891 [*P. beyrichi] | CRET
+Family Decameridae
+  Coelometra Rasmussen, 1978 [*Antedon campichei de Loriol, 1879 in 1877–1879]
+  Pseudoantedon Valette, 1933 [*P. icauensis]
+Family Thiolliericrinidae
+  Argoviacrinus Hess & Spichiger, 2001 [*A. rarissimus]
+  Burdigalocrinus Jaekel, 1918 [*B. lorioli]
+  Loriolicrinus Jaekel, 1918 [*Thiolliericrinus insuetus de Loriol, 1891] | CRET
+Superfamily Comasteroidea
+family Comasteridae A. H. Clark, 1908h, p. 135]
+Family Comasteridae
+family is based chiefly on A. H. Clark (1931
+Subfamily Comasterinae
+subfamily Comanthinae was renamed
+subfamily approaches monophyly except
+  Comaster Agassiz, 1836 [*Alecto multifida Müller, 1841]
+  Clarkcomanthus Rowe & others, 1986 [*Comanthus luteofuscum H. L. Clark, 1915]
+  Oxycomanthus Rowe & others, 1986 [*Comanthus (Vania) parvicirra beta comanthi­ pinna Gislén, 19]
+Subfamily Comatulinae
+  Comatula Lamarck, 1816 [*C. solaris]
+Subfamily Capillasterinae
+  Davidaster Hoggett & Rowe, 1986 [*Acti­ nometra rubiginosa Pourtalès, 1869]
+Subfamily Phanogeniinae
+subfamily name derives from Phanogenia, the
+Subfamily UNCERTAIN
+  Rowemissia Messing, 2001 [*Comaster (?) scitulus A. H. Clark, 1911b]
+Superfamily Uintacrinoidea
+Family Uintacrinidae
+  Uintacrinus Grinnell, 1876 [*U. socialis] | CRET
+Family Marsupitidae
+Family Mariametridae
+Family Colobometridae
+Family Eudiocrinidae
+Family Himerometridae
+Family Zygometridae
+Family Tropiometridae
+Family Asterometridae
+  Sinometra Yulin, 1984 [*S. acuticirra]
+Family Calometridae
+  Kiimetra Shibata & Oji, 2007 [*K. miocenica]
+Family Charitometridae
+Family Conometridae Gislén, 1924
+  Bruennichometra Rasmussen, 1961 [*Antedon danica Nielsen, 1913]
+  Moanametra Eagle, 2001 [*M. torehinaensis]
+  Vicetiametra Malaroda, 1950 [*V. albertinii]
+Family Pseudoconometridae
+family was proposed by Eagle (2001) for a
+  Pseudoconometra Eagle, 2001 [*P. coroman­ delensis] | PALEOG
+Family Pterocomidae
+Family Ptilometridae
+Family Thalassometridae
+Superfamily Notocrinoidea
+Family Notocrinidae
+  Notocrinus Mortensen, 1917 [*N. virilis]
+  Glenotremites Goldfuss, 1829 [*G. paradoxus]
+  Schlueterometra Rasmussen, 1961 [*S. voigti]
+Family Aporometridae
+Superfamily Antedonoidea
+Family Antedonidae Norman, 1865
+Subfamily Antedoninae
+  Ctenantedon Meyer, 1972 [*C. kinziei]
+Subfamily Bathymetrinae
+Subfamily Heliometrinae
+  Allionia Michelotti, 1861 [*A. oblita]
+Subfamily Isometrainae
+subfamily Isometrinae A. H. Clark, 1917,
+  Isometrinae Kraepelin, 1891 [*Antedon chal­ lengeri A. H. Clark, 1907f]
+Subfamily Perometrinae
+Subfamily Thysanometrinae
+Subfamily UNCERTAIN
+  Anisometra John, 1939 [*A. frigida]
+  Athrypsometra Messing & White, 2001 [*Psathyrometra mira A. H. Clark, 1909j]
+  Kempometra John, 1938 [*K. grisea]
+Family Pentametrocrinidae
+  Thaumatocrinus Carpenter, 1883 [*T. reno­ vatus]
+Family Zenometridae
+Superfamily UNCERTAIN
+Family Jaekelometridae
+Family Atopocrinidae
+Superfamily and Family
+  Microcrinus Emmons, 1858 [*M. conoideus]
+Suborder Bourgueticrinina
+Family Bourgueticrinidae
+  Volvola Lhwyd, 1699 | PALEOG
+  Democrinus Perrier, 1883 [*D. parfaiti]
+  Dunnicrinus Moore, 1967 [*D. mississip­ piensis]
+Family Bathycrinidae Bather, 1899
+Subfamily Bathycrininae
+  Bathycrinus Thomson, 1872 [*B. grac­ ilis]
+  Cingocrinus Mironov, 2000 [*C. radicatus]
+  Discolocrinus Mironov, 2008 [*D. thieli]
+Subfamily Caledonicrininae
+Family Phrynocrinidae
+Subfamily Phrynocrininae
+Subfamily Porphyrocrininae
+Family Septocrinidae
+  Septocrinus Mironov, 2000 [*S. disjunctus]
+  Rouxicrinus Mironov & Pawson, 2010 [*R. vestitus]
+Suborder Guillecrinina
+Family Guillecrinidae
+Order Millericrinida
+Family Millericrinidae
+  Ailsacrinus Taylor, 1983 [*A. abbreviatus]
+  Angulocrinus Rollier, 1911 [*Millericrinus nodotianus d’Orbigny, 1841 in 1840–1841]
+  Liliocrinus Rollier, 1911 [*Millericrinus poly­ dactylus d’Orbigny, 1841 in 1840–1841, p]
+  Orbignycrinus Biese, 1935 [*Miller­ icrinus cupuliformis d’Orbigny, 1841 in 1840– 1841,]
+  Pomatocrinus Desor, 1845 [*Encrinites mespiliformis von Schlotheim, 1820]
+superfamily Hyocrinacea), but Jäger (1995) placed
+Family Apiocrinitidae
+  Apiocrinites Miller, 1821 [*A. rotundus]
+Family Neodadocrinidae
+family for the 2 species of Neodadocrinus, N.
+  Pustulocrinus Hess, 2006 [*P. iguana] | JUR
+Family BANGTOUPOCRINIDAE
+Subfamily Bangtoupocrininae
+  Bangtoupocrinus Stiller, 2000 [*B. kokeni]
+Subfamily Silesiacrininae
+Family UNCERTAIN
+  Amaltheocrinus Klikushin, 1984 [*Apio­ crinites amalthei Quenstedt, 1852]
+  Carinacrinus Hess, 2006 [*C. hagdorni]
+  Catinicrinus Hess, 2006 [*C. jaegeri]
+  Rotacrinus Hess, 2006 [*R. canalis] | JUR
+  Serracrinus Hess, 2006 [*S. planus]
+  Souticrinus Nicosia, 1991 [*S. farinacciae] | JUR
+Order Hyocrinida
+suborder Hyocrinina suppressed. A single
+Family Hyocrinidae Carpenter, 1884
+  Hyocrinus Thomson, 1876 [*H. bethelli­ anus]
+  Calamocrinus Agassiz, 1890 [*C. diomedae]
+  Gephyrocrinus Koehler & Bather, 1902 [*G. grimaldii]
+  Laubiericrinus Roux, 2004 [*L. pentagonalis]
+Order Cyrtocrinida
+Suborder Cyrtocrinina
+Family Eugeniacrinitidae
+  Eugeniacrinites Miller, 1821 [*E. quinquangu­ laris]
+  Lonchocrinus Jaekel, 1907 [*Eugeniacrinus dumortieri de Loriol, 1882 in 1882–1889]
+  Remisovicrinus Arendt, 1974 [*R. taprak­ ensis]
+Family Gutticrinidae
+Family Hoyacrinidae
+  Hoyacrinus Delogu & Nicosia, 1986 [*H. sincerus] | JUR
+Family Phyllocrinidae Jaekel, 1907
+  Apsidocrinus Jaekel, 1907 [*A. remesi]
+  Nerocrinus Manni & Nicosia, 1999 [*N. petri]
+suborder Cyrtocrinina, superfamily Eugeniacrinitoidea), proposed by Manni and Nicosia (1999),
+  Ticinocrinus Hess, 2006 [*T. coronatus]
+Family Proholopodidae Žitt, 1974
+  Proholopus Jaekel, 1907 [*Eugeniacrinus holopiformis Remeš, 1902] | CRET
+Family Psalidocrinidae Žitt, 1978
+Family Sclerocrinidae Jaekel, 1918
+  Sclerocrinus Jaekel, 1891 [*S. stramber­ gensis]
+  Cyrtocrinus Jaekel, 1891 [*Eugeniacrinites nutans Goldfuss, 1829 in 1826–1844]
+  Gammarocrinites Quenstedt, 1858 [*Euge­ niacrinites compressus Goldfuss, 1829 in 1826– 1844, p]
+  Neogymnocrinus Hess, 2006 [*Gymnocrinus richeri Bourseau, Améziane-Cominardi, & Roux, 19]
+  Pilocrinus Jaekel, 1907 [*Eugeniacrinus mous­ soni Desor, 1845]
+  Torynocrinus Seeley, 1866
+  Koninckocrinus Seeley, 1864 [*T. canon]
+Family UNCERTAIN
+  Ancepsicrinus Salamon & Gorzelak, 2010 [*A. parvus] | JUR
+  Capsicocrinus Delogu & Nicosia, 1987 [*C. souti]
+  Castaneacrinus Hess, 2006 [*C. selliformis] | JUR
+  Fusicrinus Hess, 2006 [*F. simmsi] | JUR
+Family Plicatocrinidae
+  Sacariacrinus Nicosia, 1991 [*S. altineri]
+Family Tetracrinidae Nicosia, 1991
+family to the suborder Eudesicrinina Manni
+family of Cyrtocrinina (Quenstedticrinidae
+  Arzocrinus Hess, 2006 [*A. lenticularis]
+Family Quenstedticrinidae
+Suborder Holopodina
+Family Holopodidae Zittel, 1879
+Family Cotyledermatidae
+  Cotylederma Quenstedt, 1852 [*C. lineati Quenstedt, 1858] | JUR
+Family Eudesicrinidae Bather, 1899
+Family Hemibrachiocrinidae
+  Hemibrachiocrinus Arendt, 1968 [*H. manes­ terensis]
+  Brachiomonocrinus Arendt, 1974 [*B. simplex]
+Family Pseudosaccocomidae
+Order Roveacrinida
+Family Roveacrinidae Peck, 1943
+  Roveacrinus Douglas, 1908 [*R. alatus]
+  Discocrinus Peck, 1943 [*D. catastomus]
+  Hyalocrinus Destombes, 1985 [*H. bulliensis] | CRET
+  Orthogonocrinus Peck, 1943 [*O. apertus] | CRET
+  Platelicrinus Destombes & Breton, 2001 [*P. campaniensis] | CRET
+  Plotocrinus Peck, 1943 [*P. hemisphericus] | CRET
+  Poecilocrinus Peck, 1943 [*P. dispandus]
+  Roveacrinoides Rasmussen, 1971 [*R. nudus]
+  Styracocrinus Peck, 1955 [*Drepanocrinus peracutus Peck, 1943]
+Family Axicrinidae Hess, new family
+Family Saccocomidae
+Subfamily Saccocominae
+  Saccocoma Agassiz, 1836 [*Comatula tenella Goldfuss, 1831 in 1826–1844]
+Subfamily Applinocrininae
+  Applinocrinus Peck, 1973 [*Saccocoma cretacea Bather, 1924] | CRET
+Family Somphocrinidae
+  Somphocrinus Peck, 1948 [*S. mexicanus]
+Order UNCERTAIN
+Family Cyclocrinidae
+Family Lanternocrinidae
+Family Leocrinidae
+Family Qingyanocrinidae
+  Qingyanocrinus Stiller, 2000 [*Cyclocyclicus kueichounensis Dubatolova & Shao, 1959]
+Family Tulipacrinidae
+Order and Family UNCERTAIN
+  Taurocrinus Klikushin, 1984 [*T. tauricus]
+  Acariaeocrinus Biese, 1935 [*Microcrinus liasinus Terquem & Piette, 1865]
+  Flabellocrinites Klipstein, 1845 [*F. cassianus] | LTRIAS
+  Tauriniocrinus Rovereto, 1939 [*Penta­ crinus gastaldi Michelotti, 1847]
+Subclass UNCERTAIN
+  Archaeoisocrinus Webster & Jell, 1999 [*A. occiduaustralis]
+  Waikaripites Eagle, 2005 [*W. tekumi] | PALEOG
+  Alecto Leach, 1815 [*A. horrida]
+  Astropodium Lhwyd, 1699
+  Pogocrinus Gagnebin, 1930 [*P. raafensis] | TRIAS
+Order uncertain),
+family Comasteridae, with description of new genera
+family Mariametridae. Biological Society of Washington, Proceedings 26:141–144.
+family Antedonidae, with the diagnoses of nine new
+  Murray Expedition, 1933 | CRET

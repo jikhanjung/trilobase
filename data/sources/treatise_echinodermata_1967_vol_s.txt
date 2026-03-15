@@ -1,0 +1,255 @@
+---
+reference: Moore, R.C. (ed.), 1967. Treatise on Invertebrate Paleontology, Part S, Echinodermata 1 (Echinozoa). Geological Society of America and University of Kansas.
+scope:
+  - taxon: Echinodermata (Cystoidea, Blastoidea, Eocrinoidea, Paracrinoidea, Edriasteroidea)
+    coverage: comprehensive
+notes: |
+  Part S covers Echinozoa excluding Echinoidea and Holothuroidea. Pages 198-655
+  extracted. ~235 genus entries. Includes Cystoidea (Rhombifera, Diploporita),
+  Blastoidea, Eocrinoidea, Paracrinoidea, and Edriasteroidea.
+---
+
+ Order RHOMBIFERA Zittel, 1879
+ Family GLYPTOCYSTITIDAE Bather,
+ Family CYSTOBLASTIDAE Jaekel, 1899
+ Hesperocystis SINCLAIR, 1945 [*H. deckeri]
+ Family RHOMBIFERIDAE Kesling,
+ Rhombifera BARRANDE, 1867 | U.Ord., Eu.(Czech.) | UORD
+ Family CHEIROCRINIDAE Jaekel, 1899
+ Cheirocrinus EICHWALD, 1856 [*Cyathoerinus penniger EICHWALD] | Ord., USSR - Est. - Scand. - Belg.-Scot | ORD
+ ?Homocystites BARRANDE, 1887 | -M.Ord., Eu. (Boh.-Port.-USSR) -N.Am. (N.Y.- Mich.-Ont.-Que.-Wis.) | MORD
+ ?Leptocystis JAEKEL, 1899 [*Homoeystites tertius BARRANDE] | -L.Sil., Eu.(Boh.-Scot.-USSR).-- (Leningrad area); 3a,b, lat and aboral, X3; 3e, lat., oral part of theca, X3 | LSIL
+ Gonocrinlls EICHWALD, 1859 | ] L.Ord., Eu. (USSR-Norway-Sweden)-?Asia(Burma) | LORD
+ Erinocystis JAEKEL, 1899 [*E. sculpta] | L.Ord., VSSR-Est.-Norway | LORD
+ ?Eutretocystis PHLEGER, 1935 [*E. similis] | L.Ord., Eu.(VSSR) | LORD
+ Glaphyrocystis JAEKEL, 1899 [*G. woehrmanni] | U.Ord., Est | UORD
+ Proctocystis REGNELL, 1945 [*P. monstruosa] | L.Ord., Sweden-VSSR | LORD
+ Prunocystites FORBES, 1848 [*P. fletcheri] | U.Sil., Eu.(Eng.) | USIL
+ Pleurocystites BILLINGS, 1854 [*P. squamo- SItS]
+ Pleurocystis HESSE, 1909 | -U.Ord., Eu.(Brit.-Belg.) -N.Am.- ?China | UORD
+ Amecystis ULRICH & KIRK, 1921 | ] M.Ord., N.Am.(Ont.- Minn.-Mich.-Pa.-Ky.) | MORD
+ Regulaecystis DEHM, 1932 [*R. pleurocystoides] | L.Dev., Ger | LDEV
+ Subfamily CALLOCYSTITINAE Bernard, 1895
+ Callocystites HALL, 1852
+ Coelocystis SCHUCHERT, 1903 [*Hemicosm (]
+ Sphaerocystites HALL, 1859 [*S. mldti/asci· attlS] | J L.Dev., N.Am.(Pa.-Md.-W.Va.) | LDEV
+ Subfamily APIOCYSTITINAE Jaekel, 1899
+ Apiocystites FORBES, 1848
+ Lepadocystis CARPENTER, 1891
+ Lepocrinites CONRAD, 1840 [*L. gebhal'dii] | -LDev., Eu.(Eng.)-N. Am.(Va.-W. Va.-Md.- N.Y.) | 
+ Lipsanocystis EHLERS & LEIGHLEY, 1922 [*L. tral'ersellsis] | M.Dev., USA (Mich.) | MDEV
+ Tetracystis SCHUCHERT, 1904 | -L.Dev., N.Am. (Tenn.-W.Va.) | LDEV
+ Subfamily STAUROCYSTINAE Jaekel, 1899
+ Staurocystis HAEKEL, 1896 | U.Sil.(Wenlock), Eu.(Eng.) | USIL
+ Pseudocrinites PEARCE, 1842
+ Trimerocystis SCHUCHERT, 1904 | Dev., Eu.(Eng.)-N.Am.(W.Va.-Md.-Pa.) | DEV
+ Family HEMICOSMITIDAE Jaekel, 1918
+ Corylocrinus KOENEN, 1886 [*C. pyriformis] | ] U.Ord., Eu.(Fr.-Alps-Port.- USSR)-N.Afr.(Alg.)-Asia(1nJia) | UORD
+ Family CARYOCRINITIDAE Bernard,
+ Caryocrinites SAY, 1825 | Ord-M.Sil., Asia (Burma)-Eu. (Sweden-Norway) - N. Am. (Ont.-N.Y.-Ky.-Ind.- Tenn.-Mo.-Iowa) | ORD
+ Juglandocrinus KOENEN, 1886 [*J. crassus] | U.Ord.(Caradoc), Fr | UORD
+ Heterocystites HALL, 1851 [*H. armat/ls] | ] M.Sil., USA (N.Y.) | SIL
+ Family POLYCOSMITIDAE Jaekel, 1918
+ Polycosmites JAEKEL, 1918 | M.Ord., Eu.(Boh.) | MORD
+ Family STICHOCYSTIDAE Jaekel, 1918
+ Caryocystidae JAEKEL, 1918 [*Caryocystis angelini HAECKEL] | -U.Ord. Key to Genera of Caryocystitidae 1. Theca suhavate; peristome and periproct protuberant from opposing sides of top of theca, hath directed upward ........ Orocystites Theca elongate; periproct | UORD
+ Amorphocystites JAEKEL, 1896
+ Amorphocystis JAEKEL, 1899 | , ?U.Ord., Asia(China)-Eu.(Sweden-Est.-?Wales) - ?N. Am. (USA) | UORD
+ Helioerinum HAECKEL, 1896 | Ord.-U.O,·d., Asia(Burma) Eu.(Est.-Sweden-Ger.- Czech.)-N.Afr.(Alg.) | ORD
+ ?Ulrichocystis BASSLER, 1950 | ] M.Ord., USA(Tenn.) | MORD
+ Echinosphaerites WAHLENBERG, 1818 [*Echinils allrantillm GYLLENHAAL]
+ Delltocystis BATHER, 1889
+ Citrocystis HAECKEL, 1896 | -U.Ord., Asia (Burma-China) - Eu. (USSR-Est.-Sweden-Norway- Pol.-Ger.-Belg.-Brit.-Boh.)-N.Am. (USA) | UORD
+ Arachnocystites NEUMAYR, 1889 [*Echinosphaerites in/allStlis BARRANDE] | M.Ord., Eu.(Boh.) | MORD
+ Order DIPLOPORITA Miiller,
+ Glyptosphaerites MULLER, 1854 | -U.Ord., Eu. (USSR- Sweden-N.Ger.-Boh.) | UORD
+ Dactylocystis JAEKEL, 1899 [*D. schmidti] | M.Ord., Eu.(Est.).-- "D. schmidti; 4a, lat., X3; 4b, part of ambulacrum en!. to show diplopore arrangement. [See also Fig. 33,6.] | MORD
+ Estonocystis JAEKEL, 1918 [*E. antropoffi] | M.Ord., Eu.(Est.) | MORD
+ Revalocystis JAEKEL, 1918 [*Dactylocystis mickwitzi JAEKEL] | U.Ord., Eu.(Est.) | UORD
+ Eumorphocystis BRANSON & PECK, 1940 [*E. n1llltiporata] | Ord., USA (Okla.) | ORD
+ Regnellicystis BASSLER, 1950 | " M.Ord., USA(Va.) | MORD
+ Pyrocystites BARRANDE, 1887 [*'Eehinus pomum GYLLENHAAL] | -U.Ord., Asia(China)-Eu.(USSR- Sweden-Norway-Eng.-Wales-Italy) | UORD
+ Archegocystis JAEKEL, 1899 [*'Pyroeystites? desideratus BARRANDE] | M.Ord., Boh | MORD
+ ?Barbieria TERMIER & TERMIER, 1950 [*'B. stitensis] | ) M.Ord., N.Afr.(Alg.) | MORD
+ Carpocystites OEHLERT, 1887 [*'C. soyei] | L.Dev., Fr. C lb Pochycolix Allo FIG 143 Aristocystitidae (1-3 5); Sphaer phaeronitida S245 | LDEV
+ Codiacystis JAEKEL, 1899
+ Craterina BARRANDE, 1887 [*Craterina bohemiea Lepidocolix ocys-tites ronitidae (4) (p S243 S254 S256) S246 ] | M.Ord., Boh | MORD
+ Eucystis ANGELIN, 1878 | Dev., ?Asia(Yunnan) -Eu. (Brit.-Sweden-Ger.-Boh.- Fr.)-N.Afr.(Morocco) | DEV
+ Paleosphaeronites PROKOP, 1964 | ] L.Ord., Eu.(Boh.) | LORD
+ Proteocystites BARRANDE, 1887 [*T. kolihai] | Dev., Boh | DEV
+ Aristocystites BARRANDE, 1887 [*A. bohemiellS]
+ Amphoracystis HAECKEL, 1896 [*Delllocyst- (p. 5254] | M.Ord.(D,), Boh | MORD
+ ?Baculocystites BARRANDE, 1887 [*B. simplex] | M.Ord.(D,), Boh | MORD
+ Calix ROUAULT, 1851 [*C. sedgwieki] | -U.Ord., Eu.(Boh.-Fr.- Port.-Spain) | UORD
+ Holocystites HALL, 1864 [*Caryoeystites cylindriCtim HALL] | (la-d), M.Sil.(Cedarville Dol.), Ohio (l e); la, lat., plates classed as primary indicated by letters A, B, C, D, in successive rings aborally, XI (Foerste, 1917); 1b-d, lat., 3 thecae, XO.8; Ie, lat. | SIL
+ Sinocystis REED, 1917
+ Trematocystis JAEKEL, 1899 [*Holoeystites subglobosus S. A. MILLER] | ] M.Sil., E.C. N.Am | SIL
+ Asteroblastus EICHWALD, 1862 [*A. stellatus EICHWALD] | , ?M.Ord., Eu.(USSR)- ?N.Afr.(Morocco) | MORD
+ Asterocystis HAECKEL, 1896 [*Asteroblastus tuberculatus SCHMIDT] | Most diplopores in the adoral part of theca below 00, all interambulacraL L.Ord., Eu.(USSR-Est.).-- 155,1. A. globttla JAEKEL, Est.; la, plate diagram; Ib, aboral, X4 [I-Vas used here by JAEKEL for ra | LORD
+ Metasterocystis JAEKEL, 1918 [*M. micropelta] | L.Ord., Eu.(USSR) | LORD
+ Family MESOCYSTIDAE Bather, 1899
+ Mesocystis BATHER, 1899
+ Mesites HOFFMAN, 1866 | L.Ord., Eu.(USSR) | LORD
+Class PARACRINOIDEA Regnell,
+ Order VARICATA Jaekel, 1900
+ Family MALOCYSTITIDAE Bather, 1899
+ Malocystites BILLINGS, 1857 | "] M.Ord., N.Am. (Que.-N.Y.) | MORD
+ Wellerocystis FOERSTE, 1920 | M.Ord., USA (Mo.) | MORD
+ Amygdalocystites E. BILLINGS, 1854 [*S. praedicta] | M.Ord., N.Am.(Ont.-Que.-Ky.).--FtG. I58,Ia-h. °A. florealis, Hull Ls., Ont.; Ia,b, lat., theca and fragment with pinnules, X I; Ie-e, 3 lat., X; If, theca with detail of plate (left) and arm (right), | MORD
+ Order BRACHIATA Jaekel, 1900
+ Comarocystites BILLINGS, 1854 | M.Ord., N.Am. (Ont.-Mo.) | MORD
+ Billingsocystis BASSLER, 1950 [*A. grcwingkii] | M.Ord., USA(Ky.) | MORD
+Class EDRIOBLASTOIDEA Fay,
+ Order PENTACYSTIDA Jaekel,
+ Family ASTROCYSTITIDAE Bassler,
+Class PARABLASTOIDEA Hudson,
+ Family BLASTOCYSTIDAE Jaekel,
+ Blastocystis JAEKEL, 1918 [*B. rossica] | M.Ord.(Chazy.), N. Am. (Que.-N.Y.) | MORD
+Class Blastoidea Say, 1825
+ Order Spiraculata Jaekel, 1918
+ Family Asteroblastidae 
+ Family Blastoidocrinidae 
+ Family Codasteridae (hydrospire slits exposed)
+ Family Pentremitidae (hydrospire slits covered)
+ Family Nucleocrinidae (lacking hydrospire plate)
+ Family Orbitremitidae (hydrospire plate present)
+ Family Pentephyllidae (stemless, large subpentagonal theca)
+ Order Parablastida (large number of thecal plates)
+ Order Radiolata 
+ Suborder Fissiculata (hydrospire slits exposed)
+ Family Orophocrinidae (spiracular slits present)
+ Family Codasteridae (hydrospire slits exposed)
+ Order Coronata 
+Class Blastoidea SAY, 1825
+ Order Fissiculata JAEKEL, 1918
+ Family Zygocrinidae BATHER, 1899
+ Family Phaenoschismidae ETHERIDGE
+ Family Nymphaeoblastidae WANNER, n. fam. (ten
+ # INCERTAE SEDIS
+ Order Spiraculata JAEKEL, 1918
+ Suborder Troostoblastida BATHER, 1899
+ Family Eleutherocrinidae BATHER, 1899
+ Suborder Granatoblastida BATHER, 1899
+ Family Nucleocrinidae BATHER, 1899
+ Family Orbitremitidae BATHER, 1899
+ Family Pentephyllidae BATHER, 1899
+ Suborder Pentremitida MATSUMOTO, 1929
+ Family Pentremitidae D'ORBIGNY, 1851
+Class Cystoidea VON BUCH, 1846
+ Subclass Hydrophoridea VON ZITTEL, 1903
+ Subclass Blastoidea SAY, 1825
+ Order Parablastoidea HUDSON, 1907
+ Order Eublastoidea BATHER, 1899
+Class BLASTOIDEA Say, 1825
+ Order FISSICULATA Jaekel, 1918
+ Phaenoschisma ETHERIDGE & CARPENTER, 1882 | (Miss.) , Eu.-N.Am | MISS
+ Hadroblastus FAY, 1962 | L.Miss., USA(N.Mex.-Ark.- Okla.) | LMISS
+ Hyperoblastus FAY, 1961 | Dev., N.Am | DEV
+ Microblastus EYKEREN, 1942
+ Neoschisma WANNER, 1924 | timorense WANNER, Perm., Timor; B-ray view, x3.3 | PERM
+ Notoblastus BROWN, 1941 | L.Carb., Eu.(USSR)-Asia(Japan) | LCARB
+ Pleuroschisma REIMANN, 1945 | Dev., USA(N.Y.)-Can.(Ont.) | DEV
+ Polydeltoideus REIMANN & FAY, 1961 [*Palydeltaide/lS elladat/lS] | Sil., USA(Okla.)-?Czech | SIL
+ Agmoblastus FAY, 1961 [*H. gracile] | Penn., N.Am | PENN
+ Indoblastus WANNER, 1924 [*1. granulatllS] | Perm., E.Indies(Timor) | PERM
+ Nannoblastus WANNER, 1924 [*N. pyramidatus] | Perm., E.Indies (Timor) | PERM
+ Paracodaster YAKOVLEV, 1940 [*P. mi1oradovitschi] | L.Perm., Eu. (USSR) | LPERM
+ Family OROPHOCRINIDAE Jaekel,
+ Orophocrinus VON SEEBACH, 1864 [*Pentremites stelliformis OWEN & SHUMARD] | Perm., E.Indies(Timor) | PERM
+ Cryptoschisma ETHERIDGE & CARPENTER, 1886 [*'Pentremites sehultzii DE VERNEUIL & D'ARCHIAC] | Dev., Spain | DEV
+ Order SPIRACULATA Jaekel, 1918
+ Family TROOSTICRINIDAE Bather,
+ Troosticrinus SHUMARD, 1866 [*Pentremites reinwardti TROOST] | Sil., N.Am | SIL
+ Metablastus ETHERIDGE & CARPENTER, 1886 [*Pentremites lineatus SHUMARD] | Miss., N.Am.(Ill.-Iowa·lnd.- Mo.-Ky.) | MISS
+ Schizotrernites REIMANN, 1945 [*S. kopfi] | Dev., N.Am.-?Ger | DEV
+ Family DIPLOBLASTIDAE Fay, 1964
+ Diploblastus FAY, 1961 [*'Granatoerinus glaber MEEK & WORTHEN] | Miss., N.Am. (Ill.-Mo.-Ky.-Ala.) | MISS
+ Granatocrinus HALL, 1862 | Miss., N.Am.(Ky.-Ind.-Tenn.) | MISS
+ Family GRANATOCRINIDAE Fay, 1961
+ Carpenteroblastus ROWLEY, 1901 | Miss., N.Am.(Mo.-?Ky.) | MISS
+ Cribroblastus HAMBACH, 1903 | Miss., N.Am.(IlI.-Mo.) | MISS
+ Dentiblastus MACURDA, 1964 | L.Carb., Eu.(Eng.) | LCARB
+ Mesoblastus ETHERIDGE & CARPENTER, 1886 | Carb., Eu.(Belg.-Eng.-Ger.)-?China | CARB
+ Monadoblastus FAY, 1961 | Miss., N.Am.(N.Mex.) | MISS
+ Monoschjzoblastus CLINE, 1936 [*Granatocrinus rofei ETHERIDGE & CARPENTER] | L.Carb., Eu.(Eire) | LCARB
+ Ptychoblastus FAY, 1960 | Miss., N.Am.(Mo.) | MISS
+ Tanaoblastus FAY, 1961 | Miss., N.Am.(Mo.-Mont.- ?Ariz.-Alta.) | MISS
+ Acenrrorremites ETHERIDGE & CARPENTER, 1883 | L.Carb., Eu. (Eng.) | LCARB
+ Auloblastus BEAVER, 1961 | M.Miss., N.Am. (Mo.) | MISS
+ Deltoblastus FAY, 1961 [*5chizoblastus delta elongatus WANNER] | Perm., E.lndies(Timor)-?Eu.(?Sicily) | PERM
+ Orbiblastus MACURDA, 1965 [*Orbiblaslus hoskynae MACURDA] | Miss., N.Am.(Ark.) | MISS
+ Strongyloblastus FAY, 1962 [*Strongyloblastus pelalus FAY] | MDev., USA (N.Y.) | 
+ Family NUCLEOCRINIDAE Bather,
+ Nucleocrinus CONRAD, 1842 [*N. elegans] | Dev., N.Am.(N.Y.-Iowa-Mich.-Ont.) | DEV
+ Elaeacrinus ROEMER, 1851 [*E. verneuili] | Dev., N.Am.(Ohio-Ind.-Ky.- Mo.) | DEV
+ Placoblastus FAY, 1961 [*ElaeacrillllS abavalus BARRIS] | Dev., N. Am. (iowa-Mich.-N. Y.-Ind.-Ohio).-- (BARRIS), M. Oev., USA (Mich.) ; 280,2a,b, oral, EA interambulacral views, X1.1; 281,1a-d, oral, D-ray, aboral views, plate layout, X 1.3; 281,le, cross se | DEV
+ Family PENTREMITIDAE d'Orbigny,
+ Belocrinus MUNIER-CHALMAS, 1881 [*Bele1>lnocrilllls cottaldi MUNIER-CHALMAS] | L.Dev., Eu. (NW.Fr.) | LDEV
+ Calycoblastus WANNER, 1924 [*C. tricavatus] | Perm., E.Indies (Timor)-Australia(New S. Wales) | PERM
+ Cordyloblastus FAY, 1961 [*Pentremites Belocrinus Ambolostoma : a] | Dev., Eu.(Ger.-Spain) | DEV
+ Devonoblastus REIMANN, 1935 | Dev., N. Am. (N.Y.-?Ind.-Ont.) -?Asia(?China) | DEV
+ Eleutherocrinus SHUMARD & YANDELL, 1856 | Dev., N.Am.(Ky.-Ind.-N.Y.-Ont.) | DEV
+ Petaloblastus FAY, 1961 [*Pentremites ovalis GOLDFUSS] | L.Carb., Eu.(Ger.) | LCARB
+ Family ORBITREMITIDAE Bather, 1899
+ Doryblastus FAY, 1961 [*Mesoblastus melonianus SCHMIDT] | M.Miss., Ger | MISS
+Class Eocrinoidea Jaekel, 1918
+ Family EOCRINIDAE Jaekel, 1918
+Class EOCRINOIDEA Jaekel, 1918
+ Family LICHENOIDIDAE Jaekel, 1918
+ Family RHOPALOCYSTIDAE Ubaghs,
+ Rhopalocystis UBAGHS, 1963 | L.Ord., Morocco | LORD
+ Family PALAEOCYSTITIDAE Ubaghs,
+ Palaeocystites BILLINGS, 1858 [*Actil1ocril1lls lel2l1iradiallIS HALL] | M.Ord., N.Am | MORD
+ Family ASCOCYSTITIDAE Ubaghs,
+ Ascocystis BATHER, 1889
+ Family MACROCYSTELLIDAE Bather,
+ Macroeystella CALLAWAY, 1877 | Ord., Eng.-Ger. (Bavaria)-? Fr.- ?Greenl | ORD
+ Family SPRINGEROCYSTIDAE Bassler,
+ Springerocystis BASSLER, 1950 [*5. longicollis] | M.Ord., N.Am | MORD
+ Bockia GEKKER, 1938 [*B. neglecta] | -M.Ord., USSR- ?Sweden | MORD
+ ?Columbocystis BASSLER, 1950 [*C. typica] | ] M.Ord., N.Am.-- 315,la. *C. typica, Blackriv., USA(Va.) ; slightly oblique lat. view, X2 | MORD
+ Family CRYPTOCRINITIDAE Bassler,
+ Lysocystites S. A. MILLER, 1889
+ Ecltinocystites HALL, 1864 [*Echinocystites 110dosus HALL] | Sil., N.Am | SIL
+ Family RHIPIDOCYSTIDAE Jaekel,
+ Rhipidocystis JAEKEL, 1900 | -M.Ord., USSR | MORD
+ Family LINGULOCYSTIDAE Ubaghs,
+ Lapillocystites BARRANDE, 1887 | ] M.Cam., Boh | MCAM
+ Pareocrinus YAKOVLEV, 1956 | Cam., USSR(Sib.) | CAM
+ Pilocystites BARRANDE, 1887 | ] M.Cam., Boh | MCAM
+ ?Trachelocrinus ULRICH, 1929
+Class Stylophora Gil1 & Caster, 1960, Order C
+ Stylophora GILL & CASTER, 1960 | -MDev. o t e e a f c a a o i o t t f f r t m c p S547 africanus REED in South Africa; and 5) Victoriacystis sp. aff. V. wilkinsi GILL & CASTER in Victoria, Australia. The Australocystidae contain Aust | 
+ Order CORNUTA Jaekel, 1901
+ Family CERATOCYSTIDAE Jaekel, 1901
+ Family COTHURNOCYSTIDAE Bather,
+ Phyllocystis THORAL, 1935 [*P. blayaci] | Ord., USA (Nev.)-Eu.(France)-N. Afr. (Morocco) | ORD
+ Order MITRATA Jaekel, 1918
+ Family MITROCYSTITIDAE Ubaghs,
+ Family PARANACYSTIDAE Caster, 1954
+ Paranacystis CASTER, 1954 [*P. petrii] | L.Dev., S.Am.(Parana, Brazil) | LDEV
+ Family PELTOCYSTIDAE Ubaghs,
+ Family LAGYNOCYSTIDAE Jaekel, 1918
+ Peltocystis THORAL, 1935 [*P. cornu/a] | L.Ord., Fr | LORD
+ Lagynocystis JAEKEL, 1918 [*Allomalocystites pyramidalis BARRANDE] | M.Ord., Boh.--354,1-5. *L. pyramidalis (BARRANDE), Sarka Sh.; 1-4, lower, upper, right lateral and ant. faces; 5, cross section of theca, X3 (Ubaghs, n) | MORD
+ Family KIRKOCYSTIDAE Caster, 1952
+ Placocystitidae GILL & CASTER, 1960 [*A. cornuttls] | ] L.Dev., USA (N.Y.) | LDEV
+ Rhenocystis DEHM, 1932 [*R.latipedunctllat{l]
+ Family AUSTRALOCYSTIDAE Caster,
+ Victoriacystis GILL & CASTER, 1960 [*V. wilkinsi]
+ Dalejocystis PROKOP, 1963 | M.Dev., Boh | MDEV
+ Anomocystis JAEKEL, 1918
+Class Homostelea Gill & Caster, 1960
+ Order Cincta Jaekel, 1918
+ Order CINCTA Jaekel, 1918
+ Family TROCHOCYSTITIDAE Jaekel,
+ Family GYROCYSTIDAE Jaekel, 1918
+Class Homoiostelea Gill & Caster, 1960
+ Order SOLUTA Jaekel, 1901
+ Dendrocystites BARRANDE, 1887
+ Sedgwicki BARRANDE, 1867 | M.Ord., En.(Boh.), q'lestionable elsewhere | MORD
+ Heckericystis GILL & CASTER, 1960 | M.Ord. (Kuekers), £st | MORD
+ Family GIRVANICYSTIDAE Caster,
+ Rutroclypeus WITHER, 1933 [*R. junori] | L.Dev., Australia(Victoria) | LDEV
+ Syringocrinus BILLINGS, 1859 | ] M.Ord., Can.(Ont.) | MORD
+ Belemnocystites MILLER & GURLEY, 1894 [*B. wet/zerbyi] | ] M.Ord., USA(Ky.) | MORD

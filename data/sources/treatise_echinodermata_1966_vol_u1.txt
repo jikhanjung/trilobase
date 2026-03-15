@@ -1,0 +1,837 @@
+---
+reference: Moore, R.C. (ed.), 1966. Treatise on Invertebrate Paleontology, Part U, Echinodermata 3, Volume 1 (Asterozoa; Echinozoa partial). Geological Society of America and University of Kansas.
+scope:
+  - taxon: Echinodermata (Asterozoa: Stelleroidea; Echinozoa: Echinoidea partial)
+    coverage: comprehensive
+notes: |
+  Part U vol 1 covers Subphylum Asterozoa (Class Stelleroidea: Somasteroidea,
+  Asteroidea, Ophiuroidea) and Echinoidea (Perischoechinoidea, Euechinoidea
+  partial). Pages 69-396 extracted. ~818 genus entries.
+---
+
+Class STELLEROIDEA Lamarck,
+ Order GONIACTINIDA Spencer,
+ Family CHINIANASTERIDAE Spencer,
+ Chinianaster THORAL, 1935 | L.Ord., S.Fr | LORD
+ Family VILLEBRUNASTERIDAE Fell,
+ Family PLATASTERIIDAE Caso, 1945
+ Lepidasterina RUEDEMANN, 1916 [*L. gracilis] | -Rec | REC
+ Family PALASTERISCIDAE Gregory,
+ Platanaster SPENCER, 1919 [*P. ordovicus] | M.Ord., Eng. (Shrops.) | MORD
+ Palasteriscus STURTZ, 1886 [*P. devonicus] | L.Dev., Ger | LDEV
+ Family LUIDIIDAE Verrill, 1899
+ Luidia FORBES, 1839 [*L. fragillissima (]
+ Petalaster GRAY, 1840 | ; Rec | REC
+ Order PAXILLOSIDA Perrier,
+ Suborder HEMIZONINA Spencer,
+ Family PETRASTERIDAE Spencer, 1951
+ Family LEPIDASTERIDAE Gregory,
+ Family PALASTERINIDAE Gregory,
+ Palaeosolaster STURTZ, 1899 [*P. gregoryi] | L.Dev., Ger | LDEV
+ Trichasteropsis ECK, 1879 [*Asterias cilicia QUENSTEDT] | Trias., Ger | TRIAS
+ Suborder DIPLOZONINA Spencer
+ Family ASTROPECTINIDAE Gray, 1840
+ Subfamily ASTROPECTININAE Gray, 1840
+ Astropecten GRAY, 1840 [*Asterias aranciaca LINNE] | }-Rec | REC
+ Advenaster HESS, 1955 [*A. inermis] | L.Jur.(Bajoc.}, Switz | LJUR
+ Plesiastropecten PEYER, 1944 | Rec | REC
+ Bathybiaster DANIELSSON & KOREN, 1883 | Rec | REC
+ Dipsacaster ALCOCK, 1893 | Rec | REC
+ Koremaster FISHER, 1913 | Rec | REC
+ Leptychaster SMITH, 1876 | Rec. P G P | REC
+ Family GONIOPECTINIDAE Verrill,
+ Subfamily CTENODISCINAE Sladen, 1889
+ Ctenodiscus MULLER & TROSCHEL, 1842 | Rec | REC
+ Suborder CRIBELLINA Fisher, 1911
+ Patagiaster FISHER, 1906 | Rec | REC
+ Persephonaster WOOD-MASON & ALCOCK, 1891 | Rec | REC
+ Plutonaster SLADEN, 1885 | Rec | REC
+ Subfamily CRASPIDASTERINAE Fisher, 1916
+ Pectinidiscus LUDWIG, 1900 | Rec | REC
+ Subfamily GONIOPECTININAE Verrill, 1889
+ Prionaster VERRILL, 1889 | Rec | REC
+ Porcellanaster WYVILLE-THOMSON, 1877 [*P. cewlellS] | Rec.-- | REC
+ Abyssaster MADSEN, 1961 [*Hyphalaster tara WOOD- MASON & ALCOCK] | Rec | REC
+ Lysaster BELL, 1909 [*L.lorioli] | Rec | REC
+ Sidonaster KOEHLER, 1909 [*5. vaneyi] | Rec | REC
+ Styracaster SLADEN, 1883 [*5. horrid1lS] | Rec | REC
+ Thoracaster SLADEN, 1883 [*T. cylindrat1lS] | -Rec | REC
+ Benthopecten VERRILL, 1884 [*B. spinosus] | , Rec | REC
+ Acontiaster DODERLEIN, 1921 [*A. bandanus] | Rec | REC
+ Cheiraster STUDER, 1883 [*C. gazellae] | Rec | REC
+ Gaussaster LUDWIG, 1910 [*G. vanhoOeni] | Rec | REC
+ Nearchaster FISHER, 1911 [*Acantharchaster aciculosus FISHER] | Rec | REC
+ Pectinaster PERRIER, 1885 [*P. filholi] | Rec | REC
+ Pontaster SLADEN, 1885 [*Astropecten tenuispinus DUREN & KOREN] | Rec | REC
+ Order VALVATIDA Perrier, 1884
+ Suborder PUSTULOSINA Spencer,
+ Pustulosa SPENCER, 1951 [*P. niagarensis] | M.Sil., N.Am | SIL
+ ?Australaster SCHUCHERT, 1914 [*Palaeaster (Monaster) giganteus ETHERIDGE]
+ Subfamily HUDSONASTERINAE Schuchert, 1914
+ Protopalaeaster HUDSON, 1912 [*P. narrawayi] | Ord., N.Am.-Eng.-Turkestan | ORD
+ Subfamily COCCASTERINAE Spencer & Wright,
+ Subfamily SILURASTERINAE Spencer & Wright,
+ Neopalaeaster SCHUCHERT, 1915 [*Palaeaster craw- /ordsvillensis S. A. MILLER] | Miss., N.Am | MISS
+ Mesopalaeasterinae SCHUCHERT, 1915 | -UDev. Large numbers of Devonaster found at Saugerties, N.Y. (RUEDEMANN, 1915) show various stages of development. The earliest has stellate aboral ossicles, as in Petraster. In the next, the aboral s | 
+ Subfamily MESOPALAEASTERINAE Schuchert,
+ Arisaigaster SPENCER, 1953 | -U.Sil., E.Can.-Scot.-Eng | USIL
+ Devonaster SCHUCHERT, 1914 [*Palaeaster eucharis HALL] | - U.Dev., N.Am | UDEV
+ Subfamily LEPIDACTININAE Spencer, 1918
+ Lepidactis SPENCER, 1918 [*'L. wenlocki] | Sil., Eng | SIL
+ Spaniaster SCHONDORF, 1907 | L.Dev., W.Eu | LDEV
+ Subfamily CLARKEASTERINAE Spencer &
+ Rhenaster SCHONDORF, 1909 [*R. schwerdi]
+ Trimeraster SCHONDORF, 1909 [*T. partJulus]
+ Eostella LEHMANN, 1957 [*E. hunsrueckiana]
+ Hunsrueckaster LEHMANN, 1957 [*H. peregrinus]
+ Promopalaeasteridae SCHUCHERT, 1914 [*Palaeaster granulosus MEEK] | -Sil., N.Am.-Scot.-Australia | SIL
+ Anorthaster SCHUCHERT, 1914 [*Palaeaster miamiensis S. A. MILLER] | Ord., USA (Ohio). ?Kyraster LEHMANN, ["K. inermis; OD]. Single known specimen badly preserved, may belong in this family. L.DetJ., Ger. [Explanation: Adamb, adambulacral; Amb, ambulacral; MAP, mouth-a | ORD
+ Family EOACTINIDAE Spencer, 1919
+ Eoactis SPENCER, 1914 [*E. simplex] | L.Sil., Eng.-N.Am | LSIL
+ Yarravaster SPENCER, 1950 [*Caractacaster yart"aensis WITHERS & KEEBLE] | -Rec. Family MONASTERIDAE Schuchert, 1915 Disc large, tumid; arms club-shaped, with steep lateral borders formed by inferomarginaIs, which are visible in aboral aspect and Monaster Aspidaster anderast | REC
+ Monaster ETHERIDGE, 1892 [*Palaeaster clarkei DE KONINCK] | Permo-Carb., Australia(New S. Wales) | CARB
+ Aspidaster DE LORIOL, 1884 [*A. delgadoi] | }-U.Cret.(Dan.) , Eu | UCRET
+ Hadranderaster SPENCER, 1907 [*Pentaceros abbreviatus SPENCER] | U.Jur.(Ox/ord.}, Ger | UJUR
+ Podosphaeraster A. M. CLARK, 1962 | Rec | REC
+ Valettaster LAMBERT, 1914 [*0. hispidus] | }- U.Cret.(Maastricht.}, Eu | UCRET
+ Acodontaster VERRILL, 1899 [*Gnathaster elongatlls SLADEN] | Rec. Valettaster Sphaeraster A E H [ m s p p d C F f l c r s A e o m f l g t l th o F t a t c t m c g | REC
+ Asterodon PERRIER, 1891 [*Goniodiscus singul~ris MULLER & TROSCHEL] | Rec | REC
+ Eurygonias FARQUAR, 1913 [*E. hylacanthus] | Rec | REC
+ Hoplaster PERRIER, 1882 [*H. spinosus] | Rec. The position of this family is altogether doubtful | REC
+ Chaetaster MULLER & TROSCHEL, 1840 [*Asterias subulata LAMARCK] | Rec | REC
+ Family ARCHASTERIDAE Viguier, 1878
+ Archaster MULLER & TROSCHEL, 1840 [*A. typicus] | , Rec | REC
+ Family GONIASTERIDAE Forbes, 1841
+ Subfamily GONIASTERINAE Forbes, 1841
+ Recurvaster BRUNNICH-NIELSEN, 1943 [*Metopaster teilhardi DE LORIOL] | )-Eoc., NW.Eu | PALEOG
+ Sphaeriodiscus FISHER, 1910 [*Stephanaster bottrgtteti PERRIER] | , Rec | REC
+ Cladaster VERRILL, 1899 [*C. mdis] | Rec | REC
+ Iconaster SLADEN, 1889 [*Astrogonium longimanum MOBIUS] | Rec | REC
+ Plinthaster VERRILL, 1899 [*Pentagonaster perrieri SLADEN] | Rec | REC
+ Toraster A. M. CLARK, 1952 [*Astrogonium tuberculatum GRAY] | Rec | REC
+ Tosia GRAY, 1840 [*T. australis] | Rec | REC
+ Tosiaster VERRILL, 1914 [*Tosia arcticus VERRILL] | Rec. e v o C a o R | REC
+ Subfamily CHITONASTERINAE Fisher, 1911
+ Chitonaster SLADEN, 1889 [*C. cataphractus] | Rec | REC
+ Subfamily ANTHENOIDlNAE Fisher, 1919
+ Atelorias FISHER, 1911 [*A. anacanthus] | Rec | REC
+ Ogmaster VON MARTENS, 1865 [*Goniodiscus capella MULLER & TROSCHEL] | Rec | REC
+ Stellaster GRAY, 1840 [*S. childreni (] | Rec | REC
+ Subfamily HIPPASTERIlNAE Verrill, 1899
+ Hippasteria GRAY, 1840 [*H. europaea (] | Rec | REC
+ Subfamily NECTRDNAE Perrier, 1894
+ Nectria GRAY, 1840 [*Asterias ocelli/era LAMARCK] | Rec | REC
+ Subfamily PSEVDARCHASTERINAE Sladen,
+ Subfamily PYCINASTERINAE Spencer
+ Pycinaster SPENCER, 1907 [*Goniaster (Goniodiscus) angustatus FORBES] | -Mio., W.Eu | NEOG
+ Calliaster GRAY, 1840 [*C. childreni] | , Rec | REC
+ Calliderma GRAY, 1847 [*C. emma] | , Rec | REC
+ Cenomanaster WRIGHT, 1951 [*Jacobella cenomanensis MERCIER] | Cret. (Cenoman.), Fr | CRET
+ Comptonia GRAY, 1840 [*C. elegans] | Cret. (Santon.), Eng.-?Egypt-?Can | CRET
+ Cottreauaster WRIGHT, 1951 [*Spenceraster lamarei COTTREAU]
+ Crateraster SPENCER, 1913 [*Asterias quinqueloba GOLDFUSS] | Cret.( V .Alb.-Campan.), Eu.-N.Am | CRET
+ Forbesiaster DE LORIOL, 1909 [*F. wrighti] | Cret.(Santon.), Egypt | CRET
+ Mastaster MERCIER, 1935 [*M. villersensis] | Cret.( Cenoman.- Turon.), Eng.-Fr | CRET
+ Miopentagonaster MERCIER, 1935 [*M. calloviensis] | Jur.( Callov.j, Fr | JUR
+ Nymphaster SLADEN, 1889 [*Nymphaster protentus SLADEN] | )-Mio., NW.Eu | NEOG
+ Pachyaster DE LORIOL, 1909 [*P. aegyptiacus]
+ Teichaster SPENCER, 1913 [*T. favosus] | )-Mio., Eu | NEOG
+ Tylasteria VALETTE, 1930 [*Asterias jurensis GOLDFUSS] | )- L.Cret.(Alb.), Eu | LCRET
+ Amphiaster VERRILL, 1868 [*A. insignis] | Rec | REC
+ Astroceramus FISHER, 1906 [*A. callimorphtiS] | Rec | REC
+ Gigantaster DODERLEIN, 1924 [*G. weberi] | Rec | REC
+ Gilbertaster FISHER, 1906 [*1. superbus] | Rec | REC
+ Litonotaster VERRILL, 1889 [*Pentagonaster intermeditiS PERRIER] | Rec | REC
+ Lydiaster KOEHLER, 1909 [*L. johannae] | Rec | REC
+ Mahabissaster MACAN, 1938 [*M. zengi] | Rec | REC
+ Mariaster A. H. CLARK, 1916 [*1ohannaster giganteus GOTO] | Rec | REC
+ Notiocerarnus FISHER, 1940 [*N. anomalus] | Rec | REC
+ Peltaster VERRILL, 1899 [*P. hebes] | Rec | REC
+ Progoniaster DODERLEIN, 1924 [*P. atavus] | Rec. P R S S e o G t i s p P o O A A A B C C G G H M N P P P U63 | REC
+ Pseudogoniodiscaster LIVINGSTONE, 1930 [*P. wardi] | Rec | REC
+ Rosaster PERRIER, 1894 [*Pentagonaster alexandri PERRIER] | Rec | REC
+ Sibogaster DODERLEIN, 1924 [*S. digitatus] | Rec | REC
+ Styphlaster H. L. CLARK, 1938 [*S. notabilis] | Rec | REC
+ Family OREASTERIDAE Fisher, 1911
+ Anthaster DODERLEIN, 1915 [*Oreaster valvulatus MULLER & TROSCHEL] | Rec | REC
+ Asterodiscus GRAY, 1847 [*A. elegans] | Rec | REC
+ Culcita AGASSIZ, 1836 [*Asterias discoidea LAMARCK] | Rec | REC
+ Goniodiscaster H. L. CLARK, 1909 [*Asterias pleyadella LAMARCK] | Rec | REC
+ Monachaster DODERLEIN, 1916 [*Goniodisctls sanderi MEISSNER] | Rec | REC
+ Paulia GRAY, 1840 [*P. hon'ida] | Rec | REC
+ Pentaster DODERLEIN, 1935 [*Asterias obtusata BORY DE SAINT VIN- CENT] | Rec | REC
+ Pseudanthenea OODERLEIN, 1916 [*Anthenea grayi PERRIER] | Rec | REC
+ Pseudoreaster VERRILL, 1899 [*Asterias obtusangulus LAMARCK] | Rec | REC
+ Austrofromia H. L. CLARK, 1921 [*Fmmia polypora H. L. CLARK] | Rec | REC
+ Bunaster DODERLEIN, 1896 [*B. ritteri] | Rec | REC
+ Certonardoa H. L. CLARK, 1921 [*Scytaster semiregularis MULLER & TROSCHEL] | Cret.(Santon.), Egypt | CRET
+ Cistina GRAY, 1840 [*C. columbiae] | Rec | REC
+ Copidaster A. H. CLARK, 1948 [*C.lymani] | Rec | REC
+ Dissogenes FISHER, 1913 [*D. styracia] | Rec | REC
+ Ferdina GRAY, 1840 [*F. flavescens GRAY] | Rec | REC
+ Gomophia GRAY, 1840 [*G. egyptiaca] | Rec | REC
+ Leiaster PETERS, 1852 [*L. coriaceus] | Rec | REC
+ Linckia NARDO, 1834 [*L. typus (] | , Rec | REC
+ Nardoa GRAY, 1840 [*Asterias I'ariolata RETZIUS] | Rec | REC
+ Narcissia GRAY, 1840 [*N. tenerifJae (] | Rec | REC
+ Neoferdina LIVINGSTONE, 1931 [*Ophidiaster (Pharia) pyramidatus] | Rec | REC
+ Plenardoa H. L. CLARK, 1921 [*Linckia semiseriata MARTENS] | Rec | REC
+ Pseudophidiaster H. L. CLARK, 1916 [*P. rhysus] | Rec | REC
+ Siadenia DE LORIOL, 1909 [*Nardoa? fourteaui DE LORIOL] | Cret.(Santon.), Egypt | CRET
+ Family RADIASTERIDAE Fisher, 1916
+ Radiaster PERRIER, 1881 [*R. elegans] | Rec | REC
+ Order SPINULOSIDA Perrier, 1884
+ Family LEPYRIACTINIDAE Spencer &
+ Lepyriactis SPENCER, 1927 [*L. nudus] | L.Sil., Scot | LSIL
+ Family SCHUCHERTIIDAE Schuchert,
+ Helianthaster ROEMER, 1863 [*H. rhenanus] | L.Dev.-UDel'" Ger | LDEV
+ Hystrigaster LEHMANN, 1957 [*H. hor] | L.Dev., Ger | LDEV
+ Family SOLASTERIDAE Perrier, 1884
+ Cuenotaster THIERY, 1920 [*Leucaster involutllS KOEHLER] | Rec | REC
+ Lophaster VERRILL, 1878 [*Solaster jl/rcijer DUBEN & KOREN] | Rec | REC
+ Rhipidaster SLADEN, 1889 [*R. vannipes] | Rec | REC
+ Family TROPIDASTERIDAE Wright,
+ ?Plumaster WRIGHT, 1861
+ Korethraster THOMSON, 1873
+ Remaster PERRIER, 1894
+ Family PYTHONASTERIDAE Sladen,
+ Subfamily PYTHONASTERINAE Siaden, 1889
+ Subfamily MYXASTERINAE Perrier, 1894
+ Myxaster PERRIER, 1885
+ Family PTERASTERIDAE Perrier, 1875
+ ?Lophopteraster VERRILL, 1895
+ Diplopteraster VERRILL, 1880
+ Euretaster FISHER, 1940
+ Hymenaster THOMSON, 1873 | -Rec. This suborder includes a variety of isolated families, of which some are clearly ~ery primitive, but their geological record IS poor | REC
+ Family ASTERINIDAE Gray, 1840
+ Subfamily ASTERININAE Gray, 1840
+ Asterina NARDO, 1834 [*Asterias minuta (] | Rec | REC
+ Allopatiria VERRILL, 1913 [*Patiria ocelli/era GRAY] | Rec | REC
+ Asterinopsis VERRILL, 1914 [*Asterias penicillaris LAMARCK] | Rec | REC
+ Disasterina PERRIER, 1875 [*D. abnormalis] | Rec | REC
+ Manasterina H. L. CLARK, 1938 [*M. longispina] | Rec | REC
+ Nepanthia GRAY, 1840 [*Nepanthia maculata GRAY] | Rec | REC
+ Paranepanthia FISHER, 1917 [*Nepanthia platydisca FISHER] | Rec | REC
+ Pseudonepanthia A. H. CLARK, 1916 [*P. gotoi] | Rec | REC
+ Tegulaster LIVINGSTONE, 1933 [*T. emburyi] | Rec | REC
+ ?Socomia GRAY, 1840 | Rec | REC
+ Subfamily ANSEROPODINAE Fisher, 1903
+ Anseropoda NARDO, 1834 [*Asterias membranacea RETZIUS] | Rec | REC
+ Kampylaster KOEHLER, 1920 [*K. incurvattlS] | Rec | REC
+ Mirastrella FISHER, 1940 | Rec. A a T S G m a d G A C L M P S T o s t w e e P A C D M | REC
+ Subfamily TREMASTERINAE Fisher, 1903
+ Tremaster VERRILL, 1879 [*T. mirabilis] | Rec | REC
+ Stegnaster SLADEN, 1889 [*Pteraster inflatus HUT- TON] | Jur.( Bajoc.), Switz | JUR
+ Family GANERIIDAE Sladen, 1889
+ Ganeria GRAY, 1847 [*G. /alklandica] | Rec | REC
+ Aleutiaster A. H. CLARK, 1939 [*A. schafferi] | Rec | REC
+ Cycethra BELL, 1881 [*C. simplex (] | Rec | REC
+ Leilaster A. H. CLARK, 1938 [*Korethraster radians PERRIER] | Rec | REC
+ Magdalenaster KOEHLER, 1907 [*M. arcticus] | Rec | REC
+ Perknaster SLADEN, 1889 [*P. /uscus SLADEN] | Rec | REC
+ Scotiaster KOEHLER, 1908 [*S. inornatus] | Rec | REC
+ Tarachaster FISHER, 1913 [*T. tenuis] | Rec | REC
+ Family PORANIIDAE Perrier, 1894
+ Asteropsis MULLER & TROSCHEL, 1840 [*Asterias carini/era LAMARCK] | Rec | REC
+ Chondraster VERRILL, 1895 [*Porania grandis VER- RILL] | Rec | REC
+ Dermasterias PERRIER, 1875 [*D. inermis (] | Rec. Diclidaster FI<;. 62. Valvasteridae (p. U70). Petricia GRAY, [*P. punetata (=*Asterias vernieina LAMARCK, 1816); ODJ. Ree | REC
+ Poraniella VERRILL, 1914 [*P. regularis]
+ Poranisca VERRILL, 1914 [*P. lepida] | Rec. Tylaster DANIELSSON & KOREN, [*T. willei; ODJ. Ree | REC
+ Family ECHINASTERIDAE Verrill, 1867
+ Cribraster PERRIER, 1891 [*C. sladeni]
+ Rhopiella FISHER, 1940 [*R. koelzleri]
+ Family VALVASTERIDAE Viguier, 1878
+ Family ACANTHASTERIDAE Staden,
+ Acanthaster GERVAIS, 1841 [*A. echinus (] | Rec | REC
+ Family MITHRODIIDAE Viguier, 1879
+ Mithrodia GRAY, 1840 [*M. spinulosa (] | Rec | REC
+ Family METRODIRIDAE Sladen, 1889
+ Family CNEMIDACTINIDAE Spencer,
+ Cnemidactis SPENCER, 1918 [*Urasterella girvanensis SCHUCHERT] | -U.Ord., Can.-Scot | UORD
+ Family URASTERELLIDAE Schuchert,
+ Protasteracanthion STURTZ, 1886 | Ord. - Permocarb., Can.-Scot.-Ger.-USSR.-- 6a, oral side of arm, X2; 6b, aboral side, X5 | ORD
+ Bohemaster JAEKEL, 1923 [*B. primula] | L.Ord., Czech | LORD
+ Phillipsaster SPENCER, 1950 [*Palaeaster coronella SALTER] | Sil., Eng.-E.Can.-Australia | SIL
+ Subfamily PROTARTHRASTERINAE Spencer,
+ Subfamily CALLIASTERELLINAE Schondorf,
+ Subfamily ARTHRASTERINAE Spencer, 1918
+ Arthraster FORBES, 1848 [*A. dixoni] | U.Cret.(Turon.-Maastrieht.} , Eng.-Fr.-- arm, Xl; 8b,e, top and side of marginal, X2; 8d, cross section of arm, X2 | UCRET
+ Family COMPSASTERIDAE Schuchert,
+ Compsaster WORTHEN & MILLER, 1883 [*C. formosus] | Dev.-L. fur. (Bathon.), Eng.-Ger.-N. Am | DEV
+ Family HELIASTERIDAE Viguier, 1878
+ Family ZOROASTERIDAE Sladen, 1889
+ Zoroaster WYVILLE THOMSON, 1873 [*Z. fulgens]
+ Bythiolophus FISHER, 1916 [*B. aeanthinus] | Rec | REC
+ Family ASTERIIDAE Gray, 1840
+ Subfamily ASTERnNAE Gray, 1840
+ Notasteriinae FISHER, 1923 [*A. rubens] | ) , Rec., cosmop | REC
+ Adelasterias KOEHLER, 1914 [*Diplasterias papillosa KOEHLER] | Rec | REC
+ Aphanasterias FISHER, 1923 [*A. pycnopodia] | Rec | REC
+ Caimanaster A. M. CLARK, 1962 [*C. acutus] | Rec | REC
+ Carlasterias DA COSTA, 1952 [*Mortensenia lusitanica DA COSTA] | Rec | REC
+ Coscinasterias VERRILL, 1867 [*C. muricata] | Rec | REC
+ Cosmasterias SLADEN, 1889 | Rec | REC
+ Cryptasterias VERRILL, 1914 | Rec | REC
+ Displasterias PERRIER, 1888
+ Koehleraster FISHER, 1922 | Rec | REC
+ Distolasterias PERRIER, 1896 | Rec | REC
+ Gastraster PERRIER, 1894 [*Stichaster ntltrix STUDER] | Rec | REC
+ Icasterias FISHER, 1923 [*Asterias panopla STUX- BERG] | Rec | REC
+ Kenrickaster A. M. CLARK, 1962 [*K. pedicellaris] | Rec | REC
+ Leptasterias VERRILL, 1866 [*Asteracanthion mtlelleri SARS] | Rec | REC
+ Marthasterias JULLIEN, 1878 [*M. joliacea (] | Rec | REC
+ Perissasterias H. L. CLARK, 1923 [*P. polyacantha H. L. CLARK] | Rec. P P S S S S S S S S T T U P P L | REC
+ Psalidaster FISHER, 1940 [*P. m01'dax] | Rec | REC
+ Pseudechinaster H. E. S. CLARK, 1962 [*P. rtlbens] | Rec | REC
+ Smilasterias SLADEN, 1889 [*Asterias (S.) scalprifera SLADEN] | Rec | REC
+ Stenasterias VERRILL, 1914 [*Asterias (Leptasterias) macropora VERRILL] | Rec | REC
+ Stephanasterias VERRILL, 1871 [*Asteracanthion albtlltls STIMPSON] | Rec | REC
+ Stichaster MULLER & TROSCHEL, 1840 [*S. striattls (] | Rec | REC
+ Stichastrella VERRILL, 1914 [*Asterias rosea O. F. MULLER] | Rec | REC
+ Uniophora GRAY, 1840 [*U. globifera (] | Rec | REC
+ Urasterias VERRILL, 1909 [*Asteracantllion linckii MULLER & TROSCHEL] | Rec | REC
+ Subfamily PEDICELLASTERINAE Fisher, 1918
+ Ampheraster FISHER, 1923 [*Sporasterias marianus LUDWIG] | Rec | REC
+ Anteliaster FISHER, 1923 [*A. coscinactis] | Rec | REC
+ Hydrasterias SLADEN, 1889 | Rec | REC
+ Peranaster FISHER, 1923 [*Pedicellaster chiropho1"lls FISHER] | Rec | REC
+ Tarsaster SLADEN, 1889 [*T. stoic/wides] | Rec | REC
+ Subfamily LABIDIASTERINAE Verrill, 1914
+ Rathbunaster FISHER, 1906 [*R. californicus] | Rec | REC
+ Subfamily PYCNOPODIINAE Stimpson, 1862
+ Pycnopodia STIMPSON, 1862 [*Asterias helianthoides BRANDT] | Rec | REC
+ Lysastrosoma FISHER, 1922 [*L. anthosticta] | Rec | REC
+ Subfamily NEOMORPHASTERINAE Fisher,
+ Family BRISINGIDAE Sars, 1875
+ Astrocles FISHER, 1917 [*A. aetinodetus]
+ Astrolirus FISHER, 1917 [*Brisinga panamensis LUD- WIG] | Rec | REC
+ Astrostephane FISHER, 1917 [*Brisinga moluccana FISHER] | Rec | REC
+ Belgieella LUDWIG, 1903 [*B. racowitzana] | Rec | REC
+ Brisingaster DE LORIOL, 1883 [*B. robillardi] | Rec | REC
+ Brisingella FISHER, 1917 [*Brisinga fragilis FISHER] | Rec | REC
+ Brisingenes FISHER, 1917 [*Brisinga mimica FISHER] | Rec. Colpaster SLADEN, ["'C. seutigerulus; OD]. Ree | REC
+ Craterobrisinga FISCHER, 1916 [*'Brisinga panopla FISHER]
+ Freyella PERRIER, 1885 [*'Freyella spinosa PERRIER]
+ Freyellaster FISHER, 1918 [*Freyella feeunda FISHER] | Rec | REC
+ Hymenodiscus PERRIER, 1884 [*H. agassizi]
+ Odinia PERRIER, 1885 [*'Odinia semieoronata PER- RIER]
+ Odinella FISHER, 1940 [*0. nutrix] | L.Cret.(Neoeom.) , Switz | LCRET
+ Cribellites TATE, 1864 [*'C. earbonarius] | Carb., Eire | CARB
+ Cupulaster FRITSCH, 1893 | U.Cret.(Turon.), Czech | UCRET
+ Palmasterias SAVI & MENEGHINI, 1851 [*R. ulzligi]
+ Subclass OPHIUROIDEA Gray,
+ Order STENURIDA Spencer, 1951
+ Family PRADESURIDAE Spencer, 1951
+ Pradesura SPENCER, 1951 [*Palaeura jacobi THORAL] | L.Ord.(L.Arenig.), S.Fr | LORD
+ Family PHRAGMACTINIDAE Spencer,
+ Family RHOPALOCOMIDAE Spencer &
+ Ptilonaster HALL, 1868 | U.Dev., VSA(N.Y.) | UDEV
+ Family BDELLACOMIDAE Spencer &
+ Bdellacoma SALTER, 1857 | Dev., Eng.-Ger | DEV
+ Family EOPHIURIDAE Schondorf, 1910
+ Eophiura JAEKEL, 1903 [*E. bohemica SCHUCHERT] | L.Ord.( V.Arenig.) , Czech | LORD
+ Family PALAEURIDAE Spencer, 1951
+ Family STENASTERIDAE Schuchert,
+ Stenaster BILLINGS, 1858 [*S. salleri (] | Ord., Can.-Eu.-W.Asia | ORD
+ Family ENCRINASTERIDAE Schuchert,
+ Cheiropterasteridae SPENCER, 1930 | -L.Carb. Typical forms first discovered in the Lower Devonian of Germany were assigned to Aspidosoma or Encrinaster and thought to have affinities with Asteroidea. SCHONDORF showed that they differed | LCARB
+ Encrinaster HAECKEL, 1866 [*Aspidosoma arnoldi GOLDFUSS] | -L.Carb., Eng.-Scot.- Ger | LCARB
+ Cheiropteraster STURTZ, 1890 [*C. giganteus] | L.Dev., Ger | LDEV
+ Crepidosoma SPENCER, 1930 [*C. wenlocki] | , ?L.Dev., Scot.-Ger | LDEV
+ Euzonosoma SPENCER, 1930 [*E. orbitoides] | Dev., Scot.-Ger.-USA (N.Y.-lll.) | DEV
+ Loriolaster STURTZ, 1886 [*L. mirabilis] | U.Ord.-U.DetJ., Scot.-N.Am | UORD
+ Urosoma SPENCER, 1930 | M.Ord.-U.DetJ., Eu.-N.Am | MORD
+ Family PROTASTERIDAE S. A. Miller,
+ Bohemura JAEKEL, 1903 | - L.Carb., Eu.-W.Asia | LCARB
+ Drepanaster WHIDBORNE, 1898 | - L.Carb., N.Am.-Eng.-Scot | LCARB
+ ?Inyoaster PHLEGER, 1936 | Ord., Calif | ORD
+ Mastigophiura LEHMANN, 1957
+ Family LAPWORTHURIDAE Gregory,
+ Hallaster STURTZ, 1886 | -L.Dev., N.Am.- Scot | LDEV
+ Miospondylus GREGORY, 1897 | L.Dev., Ger | LDEV
+ Family FURCASTERIDAE Stiirtz, 1900
+ Furcaster STURTZ, 1886 | -Miss., Eu.-N.Am.-Australia | MISS
+ Tremataster WORTHEN & MILLER, 1883 [*'T. diffieilis] | Miss., USA (Ill.) | MISS
+ Family KLASMURIDAE Spencer, 1925
+ Klasmura RUEDEMANN, 1916 [*'K. mirabilis] | U.Dev., USA(N.Y.) | UDEV
+ Family OPHIOCANOPIDAE Mortensen,
+ Suborder OPHIOMYXINA Fell, 1962
+ Family OPHIOMYXIDAE Ljungman,
+ Subfamily OPHIOMYXINAE Ljungman, 1866
+ Ophiomyxa MULLER & TROSCHEL, 1840 [*'Ophiura pentagona LAMARCK] | Rec | REC
+ Neoplax BELL, 1884 [*'N. ophiodes] | Rec | REC
+ Ophiodera VERRILL, 1899 [*'Ophiomyxa serpentaria LYMAN] | Rec | REC
+ Ophiohyalus MATSUMOTO, 1915 | Rec | REC
+ Ophiohymen H. L. CLARK, 1911 [*'0. gymnodisCtls] | Rec | REC
+ Ophiolycus MORTENSEN, 1933 [*'0. inermis] | Rec | REC
+ Ophiosciasma LYMAN, 1878 | Rec | REC
+ Ophiostiba MATSUMOTO, 1915 [*'0. hidekii] | Rec | REC
+ Ophiostyracium H. L. CLARK, 1911 | Rec | REC
+ Ophiosyzygus H. L. CLARK, 1911 | Rec. Kentrospandylus [Explanation: Amb, ambulacral; MAP, mouth-angle plate.] (p. U90) | REC
+ Subfamily OPHIOBYRSINAE Matsumoto, 1915
+ Ophiobyrsa LYMAN, 1878 [*0. rtldis] | Rec | REC
+ Astrogymnotes H. L. CLARK, 1914 [*A. catasticta] | Rec | REC
+ Ophiobrachion LYMAN, 1883 [*0. 1Il1cillatus] | Rec | REC
+ Ophiobyrsella VERRILL, 1899 [*Oplliobyrsa serpens LYMAN] | Rec. ./ f ,; J i /-t· / .~~ iJ,/\\';1""" .","" \ l I \ t I : \ I \. z p | REC
+ Family EOSPONDYLIDAE Spencer &
+ Kentrospondylus LEHMANN, 1957 [*K. decadacty- Ius] | LDev., Ger | 
+ Family ONYCHASTERIDAE Miller, 1889
+ Onychaster MEEK & WORTHEN, 1868 [*0. flexi/is] | (Miss.) , N. Am.-Eng.-Scot | MISS
+ Ophiophrixus H. L. CLARK, 1911 [*0. acanthintls] | Rec | REC
+ Ophioschiza H. L. CLARK, 1911 [*0. mOllacantha] | Rec. y p 1,2, Onye haster vm 3, Gorgonoe hd-horizontal du L - lateral attachment 1m-lateral muscl pb-podial basin dg - dorsaI groove dh- distal hinge dm-dorsal muscle vg - ventral groove d n- dorsal n | REC
+ Family ASTERONYCHIDAE MiilIer &
+ Asteronyx MULLER & TROSCHEL, 1842 [*A.loveni] | , Rec | REC
+ Astrodia VERRILL, 1899 [*A. tenttispina] | Rec. y eephalus 3£ vm ph-proximal hinge vm-ventral muscle attachment umbbell le attachment v n- ventral nose vd-vertical dumbbell onocephalidae (p. U90-U91) | REC
+ Family ASTEROSCHEMATIDAE Verrill,
+ Asteroschema OERSTED & LUTKEN, 1856 [*Asterias oligactes PALLAS] | Rec | REC
+ Astrobrachion DODERLEIN, 1927 [*Op/liocreas constricttls FARQUAR] | Rec | REC
+ Astrocharis KOEHLER, 1904 [*A.] | Rec. | REC
+ Ophiuropsis STUDER, 1884 [*O.lymani] | Rec | REC
+ Astracme DODERLEIN, 1927 [*Astrophyton mucronatum LYMAN] | Rec | REC
+ Astroboa DODERLEIN, 1911 [*Astrophyton clavatum LYMAN] | Rec | REC
+ Astrochlamys KOEHLER, 1911 [*A. b1'lmeus] | Rec | REC
+ Astrocnida LYMAN, 1872 [*Trichaster isidis DUCH- ASSAING] | Rec | REC
+ Astroconus DODERLEIN, 1911 [*Astrophyton australe VERRILL] | Rec | REC
+ Astrocrius DODERLEIN, 1927 [*Astrotoma sobrintlS MATSUMOTO] | Rec | REC
+ Astrodendrum DODERLEIN, 1911 [*Gorgonocephalus sagaminus DODERLEIN] | Rec | REC
+ Astroglymna DODERLEIN, 1927 [*Astrophyton sculptum DODERLEIN] | Rec | REC
+ Astrogomphus LYMAN, 1869 [*A. vallatus] | Rec | REC
+ Astrohelix DOOERLEIN, 1930 [*Astrotoma bellator KOEHLER] | Rec | REC
+ Astrophyton FLEMING, 1828 [*A. expanmm] | Rec | REC
+ Astrospartus DOOERLEIN, 1911 [*Euryale mediterralleus RISSO] | Rec | REC
+ Astrothrombus H. L. CLARK, 1909 | Rec. A A C O S T c c w s t h G w r c t b E A A A S T p | REC
+ Astrotoma LYMAN, 1875 [*A. agassizii] | Rec | REC
+ Ophiocrene BELL, 1894 [*0. oenigma] | Rec | REC
+ Family EURYALIDAE Gray, 1840
+ Euryale OKEN, 1815 [*Euryale asperum LAMARCK] | Rec | REC
+ Asterostegus MORTENSEN, 1933 [*A. tuberculatus] | Rec | REC
+ Sthenocephalus KOEHLER, 1898 [*S. indicus] | In Aganaster (Miss.) the radial shields are fused in pairs and cover most of the disc except the center, which is occupied by a centrale and a primary circlet, as in some early Mesozoic ophiurids. Ste | MISS
+ Chilophiurida MATSUMOTO, 1915 | -Rec. The above is MATSUMOTO'S diagnosis, applicable to the Recent forms. As here arranged, the suborder includes also the primitive transitional Paleozoic genera which lack fully developed radial shi | REC
+ Family OPHIURINIDAE Gregory, 1897
+ Ophiurina STURTZ, 1890 [*0. lymani] | L.Dev., Ger | LDEV
+ Ophiaulax UBAGHS, 1941 [*Protaster decheni DE- WALQUE] | Dev., Belg.-Fr | DEV
+ Stephanoura UBAGHS, 1941 [*S. belgica]
+ Family OPHIURIDAE Lyman, 1865
+ Subfamily AGANASTERINAE Sturtz, 1900
+ Subfamily OPHIURINAE Lyman, 1865
+ Ophiura LAMARCK, 1801 [*Asterias ophiura LINNE] | -Rec., cosmop | REC
+ Anophiura H. L. CLARK, 1939 [*A. simplex] | Rec | REC
+ Anthophiura H. L. CLARK, 1911 [*A. axiologa] | Rec. Aplocoma D'ORBIGNY, ["Acroura agassizi MUNSTER, 1831; OD]. Arms moderately long. Dorsal and ventral shields small and well separated. [A doubtful genus.] L./ur., Eng.-Ger.-- A. leckenbyi (FORBES) | REC
+ Aspidophiura MATSUMOTO, 1915 [*A. watasei] | Rec | REC
+ Aspidura AGASSIZ, 1835 [*Ophiura loricata GOLD- FUSS] | Rec | REC
+ Cholaster WORTHEN & MILLER, 1883 [*C. peculiaris] | Miss., USA (Ill.) | MISS
+ Dictenophiura H. L. CLARK, 1923 [*Ophiura carnea LUTKEN] | Rec | REC
+ Euvondria FELL, 1961 [*E. floretta] | Rec. Geocoma D'ORBIGNY, ["Ophiura carinata MUNSTER in GOLDFUSS, 1833; OD]. Radial shields large, reaching almost to center of disc. L./ur., | REC
+ Hornalophiura H. L. CLARK, 1915 [*Ophioglypha inornata LYMAN] | Rec | REC
+ Ophiochorus H. L. CLARK, 1939 [*0. granulatlls] | Rec | REC
+ Ophiocrossota H. L. CLARK, 1928 [*Ophioglypha multispina LrUNGMAN] | Rec | REC
+ Ophiocten LUTKEN, 1955 [*0. kroyeri (] | Rec | REC
+ Ophionotus BELL, 1902 [*0. victoriae] | Rec | REC
+ Ophiophycis KOEHLER, 1901 [*0. mirabilis] | Rec | REC
+ Ophiopyrgoides H. L. CLARK, 1939 [*Op] | Rec. Ophiosteira BELL, [*0. antarctica; OD] [=Ophiomages KOEHLER, 1923]. Re~ | REC
+ Ophiotjalfa MORTENSEN, 1915 [*0. vlVlpara] | Rec | REC
+ Ophiotypa KOEHLER, 1897 [*0. simplex] | Rec | REC
+ Ophiuraster H. L. CLARK, 1939 [*0. pmssllS] | Rec. | REC
+ Ophiuroglypha HERTZ, 1926 [*Ophioglypha lymam LJUNGMAN] | Rec. | REC
+ Ophiurolepis MATSUMOTO, 1915 [*Op/uolepu cannata STUDER] | Rec | REC
+ Subfamily OPHIOLEPIDINAE Ljungman, 1867
+ Amphipholizona H. L. CLARK, 1915 [*A. delicata] | Rec | REC
+ Ophiocrates KOEHLER, 1904 [*O.lenta] | Rec | REC
+ Ophiolipus LYMAN, 1878 [*0. agassizii] | Rec | REC
+ Ophiomidas KOEHLER, 1904 [*0. alattls KOEHLER] | Rec | REC
+ Ophiomusium LYMAN, 1869 [*0. eburneum] | -Rec., cosmop | REC
+ Ophiophyllum LYMAN, 1878 [*0. petilun] | Rec | REC
+ Ophiosphalma H. L. CLARK, 1941 [*Ophionlllsium planum LnlAN] | Rec | REC
+ Ophioteichus H. L. CLARK, 1938 [*0. parvispinum] | Rec | REC
+ Ophiothyreus LJUNGMAN, 1871 [*0. goesi] | Rec | REC
+ Ophiotitanos SPENCER, 1907 [*0. tenuis]
+ Ophiozonella MATSUMOTO, 1915 [*Ophiozona longispina H. L. CLARK] | Rec | REC
+ Ophiozonoida H. L. CLARK, 1915 [*0. picta] | Rec | REC
+ Family OPHIOLEUCIDAE Matsumoto,
+ Ophiocirce KOEHLER, 1904 [*0. inutilis] | Rec | REC
+ Ophiernus LYMAN, 1878 [*0. vallincola] | Rec | REC
+ Ophiopallas KOEHLER, 1904 [*0. paradoxa] | Rec | REC
+ Ophioperla KOEHLER, 1912 [*O.ludwigi (] | Rec | REC
+ Ophiopyren LYMAN, 1878 [*Ophipyren longispinus LYMAN] | Rec | REC
+ Ophiotrochus LYMAN, 1878 [*0. panniculus] | Rec | REC
+ Family OPHIOCOMIDAE Ljungman,
+ Ophiarthrum PETERS, 1851 [*0. elegans] | Rec | REC
+ Ophiocomella A. H. CLARK, 1939 [*0. caribbaea] | Rec | REC
+ Ophiomastix MULLER & TROSCHEL, 1842 [*Ophiu."a annulosa LAMARCK] | Rec | REC
+ Ophiopteris E. A. SMITH, 1877 [*0. antipodum] | Rec | REC
+ Family OPHIONEREIDIDAE Ljungman,
+ Ophiodesmus ZIESENHENNE, 1940 [*0. amphilogus] | Rec | REC
+ Ophiodoris KOEHLER, 1904 [*Ophiodoris malignus KOEHLER] | Rec | REC
+ Ophioplax LYMAN, 1878 [*O.ljungmani] | -Rec | REC
+ Ophioderma MULLER & TROSCHEL, 1840 [*Asterias longicauda RETZIUS] | Rec | REC
+ Distichophis ELY, 1942 [*D. clarki] | Rec | REC
+ Ophiarachna MULLER & TROSCHEL, 1842 [*Ophiura incrassata LAMARCK] | Rec. Ophiopetro | REC
+ Ophiochaeta LUTKEN, 1869 [*0. hirsuta] | Rec | REC
+ Ophiochasma GRUBE, 1868 [*0. adspersa (] | Rec | REC
+ Ophioconis LUTKEN, 1869 [*Pectinura forbesi HEL- LER] | Rec | REC
+ ?Ophiopetra HESS, 1962 [*0. lithographica]
+ Pectinura FORBES, 1843 [*Po vestita] | Rec | REC
+ Schizoderma NIELSEN, 1932 [*T. fragilis] | - Rec | REC
+ Family OPHIACANTHIDAE Perrier,
+ Ophiacantha MULLER & TROSCHEL, 1842 [*0. spinulosa 1842 (] | Rec | REC
+ Glaciacantha FELL, 1961 [*G. jason] | Rec | REC
+ Ophialcaea VERRILL, 1899 [*Ophiacantha tl/berclIlosa LYMAN] | Rec | REC
+ Ophientrema VERRILL, 1899 [*Op/liacantha scolopendrica LYMAN] | Rec | REC
+ Ophioblenna LUTKEN, 1859 [*0. antillensis] | Rec | REC
+ Ophiocamax LYMAN, 1878 [*0. vitrea] | Rec | REC
+ Ophiocopa LYMAN, 1883 [*0. spatula] | Rec | REC
+ Ophiodaces KOEHLER, 1922 [*0. inanis] | Rec. p | REC
+ Ophiodelos KOEHLER, 1931 [*0. insignis] | Rec | REC
+ Ophiodictys KOEHLER, 1922 [*0. uncinatus] | Rec | REC
+ Ophiogema KOEHLER, 1922 [*0. punctata] | L.Cret.(Alb.), Australia | LCRET
+ Ophiolebes LYMAN, 1878 [*Ophiolebes scorteus Ly- MAN] | Rec | REC
+ Ophiologimus H. L. CLARK, 1911 [*0. hexactis] | Rec | REC
+ Ophiomedea KOEHLER, 1906 [*0. duplicata] | Rec | REC
+ Ophiomitra LYMAN, 1869 [*Ophiomitra valida Ly- MAN] | Rec | REC
+ Ophiomyces LYMAN, 1869 [*Ophiomyces Irutectosus LYMAN] | Rec | REC
+ Ophiomytis KOEHLER, 1904 [*0. weberi] | Rec | REC
+ Ophiophthalmus MATSUMOTO, 1917 [*Ophiacantha cataleimmoida H. L. CLARK] | Rec | REC
+ Ophiopinna HESS, 1960 [*Geocoma elegans HEL- LER] | ) , M.Jur.(Callov.), Fr.-Switz | MJUR
+ Ophioplinthaca VERRILL, 1899 [*Ophiomitra dipsacos LYMAN] | Rec. Ophioprium H. L. CLARK, [*Ophiacantha curvicornis LYMAN, 1883; OD]. Ree | REC
+ Ophioripa KOEHLER, 1922 [*0. marginata] | Rec | REC
+ Ophiosparte KOEHLER, 1922 [*0. gigas] | Rec | REC
+ Ophiothauma H. L. CLARK, 1938 [*0. heptactis] | Rec | REC
+ Ophiotholia LYMAN, 1880 [*0. stIpplicans] | Rec | REC
+ Ophiotrema KOEHLER, 1896 [*0. alberti] | Rec | REC
+ Family HEMIEURYALIDAE Verrill, 1899
+ Hemieuryale VON MARTENS, 1867 [*H. pustulata] | Rec | REC
+ Ophiogyptis KOEHLER, 1905 [*0. nodosa] | Rec | REC
+ Ophioleila A. H. CLARK, 1949 [*0. elegans]
+ Ophiomoeris KOEHLER, 1904 [*Ophiomoeris spinosa KOEHLER] | Rec | REC
+ Ophioplus VERRILL, 1899 [*Hemieuryale tuberculosa LYMAN] | Rec | REC
+ Quironia A. H. CLARK, 1934 [*Q. johnsoni] | , Victoria; Rec. Suborder GNATHOPHIURINA Matsumoto, 1915 [nom. Irans!. et correct. SPENCER & WRIGHT, herein (ex | REC
+ Gnathophiurida MATSUMOTO, 1915 | , Rec | REC
+ Family AMPHILEPIDIDAE Matsumoto,
+ Ophiochytra LYMAN, 1880 [*0. epigrw] | Rec | REC
+ Family OPHIACTIDAE Matsumoto, 1915
+ Ophiactis LUTKEN, 1856 [*0. krebsii (] | Rec | REC
+ Hemipholis LYMAN, 1865 [*Ophiura elongata SAY] | Rec | REC
+ Ophiodaphne KOEHLER, 1931 [*0. materna] | Rec | REC
+ Ophiopholis MULLER & TROSCHEL, 1840 [*Ophiolepis scolopendrica MULLER & TROSCHEL] | Rec | REC
+ Family AMPHIURIDAE Ljungman, 1867
+ Amphiura FORBES, 1843 [*A. chiajii] | Rec | REC
+ Amphicontus HILL, 1940 [*A. minulus] | Rec | REC
+ Amphilimna VERRILL, 1899 [*Ophiocnida olivacea LYMAN] | Rec | REC
+ Amphilycus MORTENSEN, 1933 [*A. androphorus] | Rec | REC
+ Amphiocnida VERRILL, 1899 [*Ophiocnida putnami LYMAN] | Rec | REC
+ Amphioncus H. L. CLARK, 1939 [*A. platydiscw] | , Venezuela; Rec. A C D Id Ie p | REC
+ Anamphiura H. L. CLARK, 1939 [*A. t'alida] | Rec | REC
+ Ctenamphiura VERRILL, 1899 [*Amphiura maxima LYMAN] | Ophiopinno R), U.Jur., Fr. (p. U99) | UJUR
+ Gymnodia FELL, 1962 [*Amphiodia tabogae NIEL- SEN] | Rec | REC
+ Icalia FELL, 1962 [*Amphiura denticulata KOEH- LER] | Rec | REC
+ Monamphiura FELL, 1962 [*Amphiura alba MOR- TENSEN] | Rec | REC
+ Nannophiura MORTENSEN, 1933 [*N. lagani] | - Rec | REC
+ Ophiocnida LYMAN, 1865 [*Ophiolepis hispida LE- CONTE] | ; Rec | REC
+ Ophiomonas DJAKONOV, 1952 [*0. bathybia] | Rec | REC
+ Ophionephthys LUTKEN, 1869 [*0. limicola] | Rec | REC
+ Ophiophragmus LYMAN, 1865 [*Amphiura wurdemanii LYMAN] | Rec | REC
+ Pandelia FELL, 1962 [*Amphiura hinemoae MOR- TENSEN] | Rec | REC
+ Paracrocnida MORTENSEN, 1940 [*P. persica] | Rec | REC
+ Silax FELL, 1962 [*Aphiura verrilli LYMAN] | Rec | REC
+ Unioplus FELL, 1962 [*Amphioplus falcatus MOR- TENSEN] | Rec | REC
+ Family OPHIOTHRICIDAE Ljungman,
+ Ophiothrix MULLER & TROSCHEL, 1840 [*Ophiura rosula FLEMING] | ; Rec. A G L M O O O O p | REC
+ Amphiophiothrix H. L. CLARK, 1946 [*Ophiothrix demessa LYMAN] | Rec | REC
+ Ophiocnemis MULLER & TROSCHEL, 1842 [*Ophiura marmorata LAMARCK] | Rec | REC
+ Ophiogymna LJUNGMAN, 1866 [*0. elegans] | Rec | REC
+ Ophiophthirius DODERLEIN, 1898 [*0. actinometrae] | Rec | REC
+ Ophiopsammium LYMAN, 1874 [*0. semperi] | Rec | REC
+ Ophiopteron LUDWIG, 1888 [*0. elegans] | Rec | REC
+ Ophiotrichoides LUDWIG, 1882 [*0. lymani] | Rec. GENERIC NAMES OF INDETERMINATE OR UNRECOGNIZABLE STATUS APPLIED TO FOSSIL OPHIUROIDEA | REC
+ Acroura AGASSIZ, 1836 [*Ophiura prisca MUNSTER in GOLDFUSS] | Trias., Ger | TRIAS
+ Ataxaster JAEKEL, 1903 [*A. pygmaeus] | Mio., Pol.-Crimea | NEOG
+ Dolicharthra BERRY, 1938 [*D. bemelenica] | U.Cret.(Maastricht.} | UCRET
+ Ophiaxina MULLER, 1950 [*0. intercarinata] | U.Cret.(Campan.}, Riigen | UCRET
+ Ophioma POMEL, 1887 [*Ophioma juliensis] | Plio., Algeria | NEOG
+ Ophiotrigonum HESS, 1960 [*0. oxfordiense] | M.Jur.(Oxford.}, Switz | MJUR
+ Ophiurella AGASSIZ, 1836 [*Ophil/ra speciosa MUN- STER in GOLDFUSS]
+ Ophiuriocoma VALETTE, 1929 [*0. maunoti]
+ Platyarthra BERRY, 1938 [*P. jekerica] | Oligo., Hung | PALEOG
+ Schizospondylus MULLER, 1950 [*5. jasnlundiana] | Cret.(Campan.), Riigen | CRET
+ Transspondylus MULLER, 1950 [*T. bl/bnotfi] | Cret. (Campan.), Riigen | CRET
+ Xenura SCHONDORF, 1938 [*X. kobl/ldi] | Cam. (Olellellus ZOlle), USA (Calif.-W. Nev.) | CAM
+Class EDRIOASTEROIDEA Billings, 1858
+ Sttomatocystites POMPECKJ, 1896 [*S. pentangularis] | Cam., N. Am. (Newf.)-Eu. (Baltic-Czech.-?Fr.) | CAM
+ Walcottidiscus BASSLER, 1935 [*W. typiealis] | M.Cam.(Burgess Sh.), Can.(B.C.) | MCAM
+ Xenocystites BASSLER, 1936 [*X. earteri]
+ Family CYATHOCYSTIDAE Bather,
+ Cyathothecidae JAEKEL, 1927 | -L.Sil | LSIL
+ Cyathocystis F. SCHMIDT, 1879 [*C. plautinae] | Ord., Eu.(Est.)-N. Am. (Okla.-Tenn.) | ORD
+ Cyathotheca JAEKEL, 1927 [*C. sueciea] | , L.Sil., Eu. (Swed.-USSR) | LSIL
+ Family HEMICYSTITIDAE Bassler,'
+ Hemicystites HALL, 1852 [*H. parasltlcus] | , ?Miss., N.Am.-Eu.(Fr.-Czech.) | MISS
+ Anglidiscus REGNELL, 1950 [*Lepidodiscus fistulosus ANDERSON] | L.Carb., Eu.(Eng.) | LCARB
+ Bassleridiscus FISHER, 1951 [*B. mohawkensis] | -U.Ord., N.Am | UORD
+ Cincinnatidiscus BASSLER, 1935 [*Agelacrinus (Hemicystites) stellatus HALL] | stellatus (HALL), U.Ord. (Maysvill.), USA(OhiD) ; adoral view, X9 | UORD
+ Cystaster HALL, 1871 [*C. granulatus (] | U.Ord., USA(Ohio-Ky.) | UORD
+ Lebetodiscus BATHER, 1908 [*Agelacrinites dicksoni BILLINGS] | M.Ord., N.Am.(Can.) | MORD
+ Pyrgocystis BATHER, 1915 [*P. sardesoni] | L.Ord.-M.DefJ. Eu. (USSR-Norway-Czech.-Br.I.-Got!.) -N.Am. (USA) | LORD
+ Streptaster HALL, 1872 [*Agelacrinus vorticellatus HALL] | U.Ord., USA (Ohio-Tenn.-?Ky.) | UORD
+ Timeischytes EHLERS & KESLING, 1958 [*T. megapinacotus] | M.Dev., USA(Mich.) | MDEV
+ Family AGELACRINITIDAE Clarke,
+ Agelacrinites VANUXEM, 1842 [*A. hamiltonensis]
+ Haplocystites ROEMER, 1855 | -L.Miss., N.Am.(N.Y.-Mo.-Iowa- Ont.)-Eu.(Ger.) | LMISS
+ Cooperidiscus BASSLER, 1935
+ Discocystis GREGORY, 1897 [*'Agelacrinus kaskaskiensis HALL] | ] Miss., USA(Ala.-Ky.-IlI.-Mo.- Iowa) | MISS
+ Thresherodiscus FOERSTE, 1914 [*'T. ramosus] | M.Ord., Can. (Ont.) | MORD
+ Family EDRIOASTERIDAE Bather,
+ Edrioaster BILLINGS, 1858
+ Edriocystis HAECKEL, 1896 | Ord., N. Am. (Ont.·Que.-Ky.-Mich.-Minn.-N. Y.)- Eu.(N.Wales) | ORD
+ Dinocystis BATHER, 1898 | E U.Dev., Eu.(Belg.) | UDEV
+ Family EUCLADIIDAE Gregory, 1896
+ Family SOLLASINIDAE Fedotov, 1926
+ Family VOLCHOVIIDAE Gekker, 1938
+ Volchovia GEKKER, 1938 | - U.Ord., Eu. (USSR-Norway)-N. Am. (Ohio).-- (reconsrr.); all Xl | UORD
+ Rhenosquama R. RICHTER, 1930 | MDev.(Couvin.), Eu.(Ger.) | 
+Class CYCLOCYSTOIDEA Miller & Gurley, 1895
+ Cyclocystoides SALTER & BILLINGS, 1858
+ Savagella FOERSTE, 1920 | -MDev., N.Am.(IlI.- ...... Cyclocystoi - Mich.-Ohio-N. Y.-Ont.-Que.)-Eu.(Eng.-Scot.-Gotl.- Belg.-Ger.) | 
+Class Echinoidea Leske, 1778
+ Subclass Perischoechinoida M'Coy, 1849
+ Order Bothriocidaroida Zittel, 1879
+ Order Echinocystitoida Jackson, 1912
+ Order Palaechinoida Haeckel, 1866
+ Order Cidaroida Claus, 1880
+ Subclass Euechinoidea Bronn, 1860
+ Order Echinothurioida Claus, 188
+ Order Diadematoida Duncan, 188
+ Order Pedinoida Mortensen, 1939
+ Order Pygasteroida Durham & Me
+ Order Salenioida Delage & Her
+ Order Hemicidaroida Beurlen,
+ Order Phymosomatoida Morten
+ Order Arbacioida Gregory, 190
+ Order Temnopleuroida Morten
+ Order Echinoida Claus, 1876
+ Order Plesiocidaroida Duncan,
+ Order Orthopsida Mortensen, 1942
+ Order Holectypoida Duncan, 18
+ Suborder Holectypina Duncan
+ Suborder Echinoneina H. L. C
+ Suborder Conoclypina Haeckel
+ Order Clypeasteroida A. Agassiz,
+ Suborder Clypeasterina A. Agas
+ Suborder Laganina Mortensen,
+ Suborder Scutellina Haeckel, 1
+ Suborder Rotulina Durham, 1
+ Order Cassiduloida Claus, 1880
+ Order Holasteroida Durham & M
+ Order Spatangoida Claus, 1876
+ Suborder Toxasterina Fischer,
+ Suborder Hemiasterina Fischer,
+ Suborder Micrasterina Fischer,
+ Suborder Asterostomatina Fisch
+ Order Neolampadoida Philip, 19
+ Bather F. A., 1909
+ Suborder Glyphostomes Endocycles, regular
+ Suborder Glyphostomes EXDcycles, periproct
+ Subclass Palechinida (or Palaeoechinoidea)
+ Subclass Autechinida (or Euechinoidea)
+ Order Desmosticha (=Cidaronia)
+ Order Anthosticha (=Clypeastronia)
+ Suborder Conoclyparia (=Holectypida)
+ Order Petalosticha (=Spatangonia)
+ Order Megalopoda (referred to echinoids with
+ Echinoidea LESKE, 1778
+ Euechinoidea BRONN, 1860
+ Pseudoechinoidea MORTENSEN, 1935
+ Diadematacea DUNCAN, 1889
+ Echinacea CLAUS, 1876
+ Gnathostomata ZITTEL, 1879
+ Arbacioida GREGORY, 1900
+ Bothriocidaroida ZITTEL, 1879
+ Brachygnata LAMBERT, 1915
+ Cassiduloida CLAUS, 1880
+ Cidaroida CLAUS, 1880
+ Clypeasteroida A. AGASSIZ, 1873
+ Diadematoida DUNCAN, 1889
+ Echinoida CLAUS, 1876
+ Echinocystitoida JACKSON, 1912
+ Echinothurioida CLAUS, 1880
+ Hemicidaroida BUERLEN, 1937
+ Holasteroida DURHAM & MELVILLE, 1957
+ Megalopoda MACBRIDE & SPENCER, 1938
+ Phymosomatoida MORTENSEN, 1904
+ Plesiocidaroida DUNCAN, 1889
+ Pygasteroida DURHAM & MELVILLE, 1957
+ Spatangoida CLAUS, 1876
+ Stereosomata DUNCAN, 1889
+ Temnopleuroida MORTENSEN, 1942
+ Amphisternata MORTENSEN, 1907
+ Aspidodiademina MORTENSEN, 1939
+ Calycina GREGORY, 1900
+ Cassidulina CLAUS, 1880
+ Diademina DUNCAN, 1889
+ Echinina CLAUS, 1876
+ Holectypina DUNCAN, 1889
+ Laganina MORTENSEN, 1948
+ Meridosternata MORTENSEN, 1907
+ Orthopsina MORTENSEN, 1942
+ Pedinina MORTENSEN, 1939
+ Protosternata MORTENSEN, 1907
+ Rotulina DURHAM, 1955
+ Scutellina HAECKEL, 1896 | -Miss. (K) | MISS
+ Family Uncertain (2). Dev. (K)
+ Family Uncertain (2). ?Sil., L.Carb. (K)
+ Family Uncertain (1). U.Jur.(Oxford.). (FE)
+ Family Uncertain (3). U.Jur.-U.Cret. (FE)
+ Family Uncertain (I).
+ Family Uncertain (2). L.Cret.-Mio. (FE-P)
+ Family Uncertain (2). L.Cret.(Hauteriv.)-U.
+ Subfamily Uncertain (1). ?L.Mio. (D)
+ Family Uncertain (2). V.Eoe.-Oligo. (D)
+ Family Uncertain (9). Jur.-Rec. (K)
+ Family Uncertain (7). Cret.-Eoe. (D-W)
+Class ECHINOIDEA Leske, 1778
+ Echini GOLDFUSS, 1820 | Ord | ORD
+ Family BOTHRIOCIDARIDAE Klem,
+ Bothriocidaris EICHWALD, 1859 | Ord., Eng | ORD
+ Family ECHINOCYSTITIDAE Gregory,
+ Echinocystites THOMSON, 1861 | Sil., Eng | SIL
+ Pronechinus KIER, 1965 | Perm., Turkey | PERM
+ Perischocidaris NEUMAYR, 1881 | L.Carb., Ire | LCARB
+ Family LEPIDESTHIDAE Jackson, 1896
+ Lepidesthes MEEK & WORTHEN, 1868
+ Family LEPIDOCENTRIDAE Loven,
+ Lepidocenrrus MULLER, 1857 | coreyi, Miss., USA (Ind.); lat. view, interamb. column central, XO.8 | MISS
+ Meekechinus JACKSON, 1912 | Perm., USA(Kans.) | PERM
+ Albertechinus STEARN, 1956 | Dev., Can.--FlG. 226,4. 'OA. montanus; part of crushed surface showing narrow amb and adjoining interambs, X 1 | DEV
+ Aulechinus BATHER & SPENCER, 1934 | Ord., Eng | ORD
+ Deneechinus JACKSON, 1929 | Ord., Eng | ORD
+ Eothuria MACBRIDE & SPENCER, 1938 | Ord., Scot.(Girvan) | ORD
+ Hyattechinus JACKSON, 1912 | (Miss.) , Eu.-N.Am | MISS
+ Koninckocidaris DOLLO & BUISSERET, 1888 [*'K. cotteaui] | Carb., N.Am.-/Eu | CARB
+ Lepidechinoides OLSSON, 1912 [*'L. ithacensis] | Dev., N.Am | DEV
+ Lepidechinus HALL, 1861 [*'L. imbricatus] | Miss., N.Am.-Eu | MISS
+ Myriastiches SOLLAS, 1899 [*'M. gigas] | Sil., Eng | SIL
+ Palaeodiscus SALTER, 1857 [*'P. ferox] | Sil., Pholidechinus Pholidocidoris Eng | SIL
+ Pholidechinus JACKSON, 1912 [*P. brauni] | Miss., USA (Ind.) | MISS
+ Porechinus DEHM, 1961 [*P. porosus]
+ Devonocidaris THOMAS, 1920 [*D. jacksoni THOMAS] | Dev., Ger | DEV
+ Order PALAECHINOIDA Haeckel,
+ Family PALAECHINIDAE M'Coy, 1849
+ Palechtintls FISCHER DE WALDHEIM, 1848 | (Miss.), Eu.-N.Am | MISS
+ Lovenechinus JACKSON, 1912 [*Oligoporus missouriensis JACKSON] | Carbo (Miss.), Eu.-N. Am.-China.-- 232,1. *L. missouriensis (JACKSON), USA (Mo.); la, aboral view of into mold, XO.5; Ib, amb and interamb plates, X 1.3 | MISS
+ Maccoya POMEL, 1869 [*Palaechinus gigas M'CoY] | (Miss.), Eu.-N.Am | MISS
+ Family CRAVENECHINIDAE Hawkins,
+ Gotlandechinus REGNELL, 1956 | Sil., Sweden | SIL
+ Xenechinus KIER, 1958 [*X. parvus] | ?Sil., Eng | SIL
+ Xysteria POMEL, 1883 [*Palaechinus konigii M'CoY] | Dev. Corbo Archoeocidoridoe 1o•••AI•••• ....s.••• Miocidoridae •••.e•••• Cidoridoe Cidorinoe Histocidorinoe Rhobdocidorinoe Stereocidorinoe Goniocidorinoe Ctenocidorinoe Diplocidoridoe Psychocidoridoe | DEV
+ Order CIDAROIDA Claus, 1880
+ Lepidocidaris MEEK & WORTHEN, 1873 | Miss., N. Am | MISS
+ Nortonechinus THOMAS, 1920 | UDev., N.Am.(Iowa) | 
+ Polytaxicidaris KIER, 1958 [*P. dyeri] | Miss., N.Am.(Ind.) | MISS
+ ?Silurocidaris REGNELL, 1956 [*S. clava/a] | U.Sil., Sweden | USIL
+ ?Xenocidaris SCHULTZE, 1866 | Dev., N.Am. (lowa) | DEV
+ Miocidaris DOOERLEIN, 1887 | -L.Jur., Eu.-Asia | LJUR
+ Anaulocidaris ZITTEL, 1879 | Trias.( Carn.) , Eu | TRIAS
+ Dicydocidaris FELL, 1950 | Trias.(Carn.), N.Z | TRIAS
+ Triadocidaris DOOERLEIN, 1887 | Trias.( Carn.) , Eu | TRIAS
+ Family CIDARIDAE Gray, 1825
+ Subfamily HISTOCIDARINAE Mortensen, 1928
+ Histocidaris MORTENSEN, 1903 [*Cidarites multiceps QUENSTEDT] | Oligo., N.Z.; Mia., N.A£r.; Ree., IndoPac.-Carib | PALEOG
+ Poriocidaris MORTENSEN, 1909 [*Porocidaris purpurata WYVILLE THOMSON] | Rec., Atl.- Ilnd.O | REC
+ Procidaris POMEL, 1883 [*Cidaris edwardsi WRIGHT] | -M.Jur., Eu | MJUR
+ Subfamily CTENOCIDARINAE Mortensen, 1928
+ Ctenocidaris MORTENSEN, 1910 [*C. speciosa] | Rec., Antarctic | REC
+ Aporocidaris AGASSIZ & CLARK, 1907 [*Porocidaris milleri A. AGASSIZ] | Rec., Antarctic (littoral)-Pac. (abyssal) | REC
+ Austrocidaris H. L. CLARK, 1907 [*Temnocidaris canaliculata A. AGASSIZ]
+ Temnocidaris COTTEW, 1863 [*Cidaris nutrix WYVILLE THOMSON] | , Patagonia; Rec., subantarctic | REC
+ Homalocidaris MORTENSEN, 1928 [*Austrocidaris gigantea H. L. CLARK] | Rec., Antarctic | REC
+ Notoeidaris MORTENSEN, 1909 [*Goniocidaris mortenseni KOEHLER] | ; Rec., Antarctic | REC
+ Ogmocidaris MORTENSEN, 1921 [*0. benhami] | ] Rec., N.Z | REC
+ Rhynchocidaris MORTENSEN, 1909 [*R. triplapara] | Rec., Antarctic | REC
+ Subfamily GONIOCIDARINAE Mortensen, 1928
+ Psilocidaris MORTENSEN, 1927 [*P. echinulata] | Rec.,lndon. (abyssal) | REC
+ Rhopalocidaris MORTENSEN, 1927 [*Cidaris hirsutispinus DE MEIJERE] | Rec., Japan-Indon | REC
+ Schizocidaris MORTENSEN, 1903 [*5. assimilis] | Rec., Indon | REC
+ Subfamily STEREOCIDARINAE Lambert, 1900
+ Stereocidaris POMEL, 1883 [*Cidaris eretosa MANTELL] | ; Rec., Indo-W.Pac. incl. SE. Afr., but not yet known from Australasia, where it may be expected). [Note on synonymy: Typocidaris POMEL, 1883, p. III (type, Cidaris malum A. GRASSE) is arinae), (Stere | REC
+ Anomocidaris AGASSIZ & CLARK, 1907 [*C. pyrsacant/wi OD] | Cret., Eng.; 3a,b, test, aboral, lat., XO.7 (l73) | CRET
+ Temnocidaris COTTEAU, 1863 [*T. magnifica] | Cret., Eu | CRET
+ Subfamily RHABDOCIDARINAE Lambert, 190n
+ Rhabdocidaris DESOR, 1855 [*Cidaris orbignylb Temnocidaris .~ -- Ie Rhabdocidarinae) (2) (p. V328] | -- (AGASSIZ), Jur., Fr.; la, test, lat., XO.75; 1b,c, spines, XO.75 | JUR
+ Megacidaris THIERY, 1928 [*Cidarites horrida MERIAN]
+ Parhabdocidaris THIERY, 1928 [*Rhabdocidaris varusensis COTTEAU] | , Australia; Rec., Australia (5 of 6 species), IndoPac | REC
+ Plococidaris MORTENSEN, 1909 [*Cidarites verticillata LAMARCK] | ; Rec., IndoPac. (but not N.Z.) | REC
+ Porocidaris DESOR, 1855 [*Cidarites schmidelii MUNSTER] | Eoc., Eu.-N.Afr | PALEOG
+ Prionocidaris A. AGASSIZ, 1863 [*Cidarites pistillaris LAMARCK] | (Sardinia-Malta)-Australia; Rec., IndoPac. (but not N.Z.) | REC
+ Subfamily CIDARINAE Gray, 1825
+ Cidaris LESKE, 1778 [*Echinus cidaris LINNE] | Rec., Atl.-Medit.-1nd.O.--. [It is unfortunate that the primary type of the order and family, Cidaris cidaris (LINNE), should belong to a small group of Atlantic forms characterized by the presence of | REC
+ Alpicidaris LAMBERT, 1910
+ Balanocidaris LAMBERT, 1910 [*Cidaris glandifera MUNSTER] | Cret., Fr.; 2a,b, spines, XO.9 | CRET
+ Calocidaris H. L. CLARK, 1907 [*Dorocidaris micans MORTENSEN] | Rec., W.lndies | REC
+ Centtocidaris A. AGASSIZ, 1904 [*Goniocidaris doederleini A. AGASSIZ] | , ?Mio., Eu | NEOG
+ Eucidaris POMEL, 1883 [*Cidarites metularia LAMARCK] | ; Rec., trop. and subtrop | REC
+ Kionocidaris MORTENSEN, 1932 [*K. striata] | Rec., Natal. ld | REC
+ Lissocidaris MORTENSEN, 1939 [*L. tusca] | Rec., Ind.O. (Maldive Is.) | REC
+ Paracidaris POMEL, 1883 [*Cidarites florigemma PHILLIPS] | Trias. (Rhaet.)-U.JlIr.(Portland.), Eu | TRIAS
+ Plegiocidaris POMEL, 1883 [*Echinus coronatus VON SCHLOTHEIM] | }-U.Jur., Eu | UJUR
+ Tretocidaris MORTENSEN, 1903 | Rec., trop. Atl. c n p P Diploeidaris Tetraeidaris ridae (p. U339) | REC
+ Family PSYCHOCIDARIDAE Ikeda,
+ Psychocidaris IKEDA, 1935
+ Anisocidaris THIERY, 1928 [*Cidaris bajoeensis COTTEAU] | Jur.(Bajoe.), Eu | JUR
+ Caenocidaris THIERY, 1928 [*Cidaris eueumifera AGASSIZ] | M.Jur.(Bajoc.), Eu | MJUR
+ Merocidaris THIERY, 1928 [*Cidaris honorinae COTTEAU] | Jur.( Bajoc.-Kimmeridg.), Eu | JUR
+ Sardocidaris LAMBERT, 1907 [*S. piae] | ; Mio., Eu | NEOG
+ Tylocidaris POMEL, 1838 [*Cidaris clavigera KONIG] | U.Cret., Eu. (Eng.- Fr.-Oenm.); L.Eoe., N.Am | UCRET
+ Family DIPLOCIDARIDAE Gregory,
+ Diplocidaris OESOR, 1855 [*Cidaris gigantea AGASSIZ] | - L.Cret., Eu | LCRET
+ Tetracidaris COTTEAU, 1872 [*T. reynesi] | L.Cret. (Neoeom.), Eu | LCRET
+ Lanternarius REGNELL, 1956 [*L. latens] | Sil., Sweden (Gotl.) | SIL
+ Subfamily ECHINOTHURIINAE Thomson, 1872
+ Echinothuria WOODWARD, 1863 [*E. floris] | Cret. (Senon.), Eng | CRET
+ Calveriosoma MORTENSEN, 1934 [*Calveria hystrix THOMSON] | Rec., N.Atl.-N.Pac. (160- 1,800 m.) | REC
+ Hapalosoma MORTENSEN, 1903 [*Asthenosoma pellucidum A. AGASSIZ] | Rec., Indon.-Japan (shelf-archibenthal) | REC
+ Hygrosoma MORTENSEN, 1903 [*Phormosoma petersii A. AGASSIZ] | Rec., IndoPac.-Atl. (300- 2,300 m.) | REC
+ Tromikosoma MORTENSEN, 1903 [*T. koeh- Jeri] | Po rophormosomo Tromikoso Asthenosom Colveriosomo radial margin of ambo Rec., IndoPac.-Ati. (deep water only, 850-3,500 m.) | REC
+ Subfamily PHORMOSOMATINAE Mortensen,
+ Phormosoma THOMSON, 1872 | Rec., IndoPac.-Atl. (shelf-abys- H P Phormosomo Hopolosomo Sperosomo Aroeosomo omo mo ), (Phormosomatinae) (1-2) (p. U346-U348). sal) | REC
+ Hemiphormosoma MORTENSEN, 1934 | Rec., Indon. (4,000 m.) | REC
+ Paraphormosoma MORTENSEN, 1934 | Rec., Indon.(archibenth.) | REC
+ Subfamily PELANECHININAE Groom, 1887
+ Pelanechinus KEEPING, 1878 [*Hemipedina corallina WRIGHT]
+ Family DIADEMATIDAE Gray, 1855
+ Diadema GRAY, 1825 [*'Echinometra setosa LEsKE] | , Rec., IndoPac.-Atl | REC
+ Centrostephanus PETERS, 1855 [*'Diadema longispina PHILIPPI] | , Rec., IndoPac.-Atl | REC
+ Chaetodiadema MORTENSEN, 1903 [*'C. granulatum] | Rec., IndoW. Pac | REC
+ Echinothrix PETERS, 1853 [*'Echinus calamaris PALLAS] | Rec., Indo- W.Pac | REC
+ Eodiadema DUNCAN, 1889 [*'E. granulatum WILSON] | L.Jur., Eu | LJUR
+ Eremopyga AGASSIZ & CLARK, 1908 [*'G. mauritiense] | Rec., China-Indon | REC
+ Kamptosoma MORTENSEN, 1903 [*'Phormosoma asterias A. AGASSIZ]
+ Palaeodiadema POMEL, 1887 [*Pseudodiadema fragile WILTSHIRE] | Cret.(Cenoman.-Senon.), Eu.-N.Afr | CRET
+ Pedinothuria GREGORY, 1897 | , ?U.Jur.(Sequan.), Eu.(Ger.-Fr.) | UJUR
+ Family LISSODIADEMATIDAE Fell,
+ Lissodiadema MORTENSEN, 1903 | Rec., lndon.-Hawaii (littoral).-- L. purpureum (AGASSIZ & CLARK), Hawaii; 3a-c, test, lat., aboral, oral, X4.3; 3d, spine, X4.3. s f f t A p s p M m t a c m v w s a w R A E P | REC
+ Family MICROPYGIDAE Mortensen,
+ Micropyga A. AGASSIZ, 1879
+ Aspidodiadema A. AGASSIZ, 1878 [*Hemicidaris bat11el1s COTTEAU] | Rec., IndoPac.-Carib.(archibenthal) | REC
+ Ancyloddaris MILLER, 1929 [*A. speneeri]
+ Endeodiadema DE LORIOL, 1890 [*E. lepidum]
+ Engelia TORNQUIST, 1908 [*Cidaris laqueata QUENSTEDT]
+ Helodiadema MORTENSEN, 1939 | L.Cret., N.Am | LCRET
+ Heteropedina MICHALET, 1895
+ Macrodiadema LAMBERT, 1897 [*M. cip/yensis] | Cret., Fr | CRET
+ Order PEDINOIDA Mortensen,
+ Family PEDINIDAE Pomel, 1883
+ Pedina L. AGASSIZ, 1838 [*P. sltblaevis]
+ Propedina LAMBERT & THIERY, 1925 [*Stereopedina iameghinoi] | Jur. (Pliensbach.-Oxford.), Eu.-Madag | JUR
+ Caenopedina A. AGASSIZ, 1869 [*C. eubensis]
+ Diademopsis DESOR, 1855 [*EchinttS se/'ialis L. AGASSIZ] | )-U.Jur.(Kimmeridg.) , Eu. (Fr.-Eng.-Ger.- Switz.-Italy)-N.Afr | UJUR
+ Hemipedina WRIGHT, 1855 [*Pedina etheridgei WRIGHT]
+ Miopedina POMEL, 1883 | Jur.(Toarc.), Eng.; 2a, apical system (holotype), X7.5; 2bod, test, lat., aboral, oral, X 4.2 | JUR
+ Leiopedina COTTEAU, 1866
+ Loriolipedina LAMBERT, 1910 [*Echinus oli me con ada enl for der Sen oli 2a]
+ Pseudorthopsis SANCHEZ ROIG, 1949 [*Echinopedina cubensis COTTEAU] | Eoc., Cuba | PALEOG
+ Pseudopedina COTTEAU, 1858 [*Pedina bakeri Plesiechinus]
+ Leptocidaris QUENSTEDT, 1858 [*L. triceps] | Jur.( Oxford.), Ger. The following genera have earlier been associated with the Pedinidae, but are here excluded from the family as it now seems probable that the tubercles are crenulate. Dumblea CRAG | JUR
+ Farquharsonia CURRIE, 1927 [*'F. somaliensis] | Cret. Members of this order have been discussed by HAWKINS (1911; 1918; 1920), while the reasons for establishing it as a separate order are given by DURHAM & MELVILLE and MELVILLE | CRET
+ Family PYGASTERIDAE Lambert, 1900
+ Pygaster J. L. R. AGASSIZ, 1836 [*'Clypeus semisulcatus PHILLIPS] | M.Jur. (Bajoc.}-V. eret. (Cenoman.), Eu | MJUR
+ Plesiechinus POMEL, 1883 [*'Pygaster macrostoma WRIGHT]
+ Family Uncertain (1) (p. U366-U367).

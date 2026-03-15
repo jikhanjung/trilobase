@@ -1,0 +1,572 @@
+---
+reference: Moore, R.C. (ed.), 1966. Treatise on Invertebrate Paleontology, Part U, Echinodermata 3, Volume 2 (Echinozoa: Echinoidea continued; Holothuroidea). Geological Society of America and University of Kansas.
+scope:
+  - taxon: Echinodermata (Echinozoa: Euechinoidea; Holothuroidea)
+    coverage: comprehensive
+notes: |
+  Part U vol 2 covers Euechinoidea (continued from vol 1) and Holothuroidea.
+  Pages 9-308 extracted. ~562 genus entries.
+---
+
+ Family ACROSALENIIDAE Gregory,
+ Acrosalenia L. AGASSIZ, 1840 [*A. spinosa] | Cret.(Hettang.), Eu.-E. Afr.-Madag | CRET
+ Heterosalenia COTTEAU, 1861 [*H. martini]
+ Monodiadema DE LORIOL, 1890 [*M. cotteaui]
+ Polysalenia MORTENSEN, 1932 [*P. notabilis] | Cret.( Senon.), Sweden | CRET
+ Pseudosalenia COTTEAU, 1859 [*P. f]
+ Perisalenia VALETTE, 1906 | , M.Cret., Eu.-Asia Minor(Lebanon)-C.Am.(Honduras). -- system, X3.3; 2b-d, test, aboral, oral, lat., XI.3 | CRET
+ Recrosalenia CURRIE, 1925 [*R. somaliensis]
+ Family SALENIIDAE L. Agassiz, 1838
+ Subfamily SALENIINAE L. Agassiz, 1838
+ Salenocidaris A. AGASSIZ, 1869 | Rec., IndoPac.-Atl. (200-300 m.) | REC
+ Trisalenia LAMBERT, 1895 [*Salenia loveni COTTEAU]
+ Subfamily HYPOSALENIINAE Mortensen, 1934
+ Hyposalenia DESOR, 1856 [*Echinus acanth· oides DESMOULINS] | Cret.(Senon.), Eu | CRET
+ Idiocidaris DE LORIOL, 1909 [*1. lamberti] | M.Cret.(Cenoman.), Asia Minor.--Flc. 279,3. '1. lamberti, Syria; 3a, test, aboral, X 1.3; 3b,c, apical system, amb detail, X5.3; 3d, interamb, X5.3 | CRET
+ Glyphopneustes POMEL, 1869 | M.Cret., N.Afr.--FIC. 278,1. ·G. problematiCtis (COTTEAU), Cenoman., Alg.; la, interamb, x5.3; lb, amb adoral, X8; lc, amb adoral, XIO (35, modified); Jd, apical system, X8; Ie, amb plates, detail, X3 | CRET
+ Goniophorus L. ACASSIZ, 1838 | M.Cret.( Alb.- Cenoman.), Eu.-N.Am | CRET
+ Poropeltaris QUENSTEDT, 1875 [*P. scltlptopunctata]
+ Family HEMICIDARIDAE Wright, 1857
+ Cidaropsis COTTEAU, 1863 [*Hemieidaris minor AGASSIZ]
+ Gymnocidaris L. AGASSIZ, 1838 [*Hemieidaris diademata AGASSIZ]
+ Hemitiaris POMEL, 1883 [*Hemicidaris stramonium L. AGASSIZ] | U.Jur., Eu | UJUR
+ Hessotiara POMEL, 1883 [*Diadema floreseens AGASSIZ] | Jur.(Hettang.-Oxford.} , Eu | JUR
+ Heterodiadema COTTEAU, 1864 [*Hemicidaris libyca DESOR] | U.Cret.( Cenoman.- Turon.}, S.Eu.-N.Afr.-Tex | UCRET
+ Plesiocidaris POMEL, 1883 [*Hemicidaris aipina L. AGASSIZ] | -U.Jur., Eu.-N.Afr | UJUR
+ Pseudocidaris ETALLON, 1859 [*Hemicidaris thlll"manni L. AGASSIZ] | mammosa (AGASSIZ), U.Jur.(Oxfurd.), Fr.; la, test with spines, XLI; Ib, amb, X4; lc,d, spines, X 1.7 | UJUR
+ Acrocidaris L. AGASSIZ, 1840 [*A. nobilis] | Cret. (Cenoman.), Eu.-Crimea-Mex | CRET
+ Dumblea CRAGIN, 1893 | Cret.(Washitan.), USA(Tex.)-Mex | CRET
+ Loriolia NEUMAYR, 1881 [*Arbacia richeriana COTTEAU] | L.Cret. (Neocom.), Fr.; ?Apt., USA (Tex.) | LCRET
+ Pedinopsis COTTEAU, 1863 [*P. meridanensis] | ; U.Cret.(Austin.), USA(Tex.) | UCRET
+ Tetragramma L. AGASSIZ, 1840 | Cret. (Cenoman.), S. Eu.-N. Afr.-Asia Minor-lndia-N.Am | CRET
+ Tiaromma POMEL, 1883 [*Pseudodiadema normanniae COTTEAU]
+ Colpotiara POMEL, 1883
+ Trochodiadema DE LORIOL, 1900 | Cret. (T"ron.) , Eu | CRET
+ Family PHYMOSOMATIDAE PomeI,
+ Phymosoma HAIME, 1853 [*Cidaris koenigi MANTELL] | }-Eoc., Eu.-N.Afr.- Madag.-India-N. Am.-S. Am | PALEOG
+ Acanthechinus DUNCAN & SLADEN, 1882 [*A. nodulostls]
+ Aeolopneustes DUNCAN & SLADEN, 1882 [*A. delorioli]
+ Eurypneustes DUNCAN & SLADEN, 1882 [*E. grandis]
+ Gauthieria LAMBERT, 1888 [*Cyphosoma radiala SORIGNET] | Cret. (Senon.), Fr.; Ia-c, test, aboral, oral, lat., X1.3; ld, amb, X3.3; Ie, interamb, X3.3.-- VSA(N.J.); If,g, test, aboral, oral (holotype), X2 | CRET
+ Glyptocidaris A. AGASSIZ, 1853 [*G. erenulm'is] | ; Plio., N.Am.(Ore.)-S.]apan; Ree., N.]apan. Glyptocyphus POMEL, 1883, p. [*Cyplzosoma difficilis L. AGASSIZ; 00, M]. Test small, low, wheel-shaped. Amb plates polyporous, with primary tubercles reduc | NEOG
+ Hemithylus ARNAUD, 1895 [*TlzyleehintlS rejalldryi COTTEAU] | Cret., Eu | CRET
+ Jacquiertia MERCIER, 1936 [*/. minuta MOR- TENSEN & MERCIER]
+ Lambertechinus COSSMAN, 1899 [*Asteropsis lapparenti COTTEAU]
+ Actinopsis LAMBERT, 1897 | Cret., Eu | CRET
+ Leptechinus GAUTHIER, 1889 [*Cyphosoma heinzi PERON & GAUTHIER] | )-L.Cret.(Neocom.), Eu.- N.Afr | LCRET
+ Micropsis COTTEAU, 1856
+ Narindechinus LAMBERT, 1933 | Eoc., Madag | PALEOG
+ Pleurodiadema DE LORIOL, 1870 [*Cypllosoma cribrum L. AGASSIZ]
+ Euporopllyma GAUTHIER, 1901 | )-Oligo., Eu.-N. Afr.-S.Afr.-N.Am | PALEOG
+ Rachiosoma POMEL, 1883 [*Cypllosoma delamatTei DESHAYES] | L.Cret.-U.Cre/., Eu.-N.Afr.-N.Am | LCRET
+ Thylechinus POMEL, 1883 [*Cypllosoma said PERON & GAUTHIER] | }-Oligo., Eu.-N.Afr.-India-Peru | PALEOG
+ Family STOMECHINIDAE Pomel, 1883
+ Stomechiens POMEL, 1883 [*Echinus bigmnularis LAMARCK] | Cret.(Neocom.), Eu.- SW. USSR(Turkmenia)-N. Afr.-NE. Afr | CRET
+ Circopeltis POMEL, 1883 [*Leiosoma meridanensis COTTEAU] | -Eoc., Eu | PALEOG
+ Diplechinus LAMBERT, 1931 [*D. hebbriensis]
+ Diplotagma SCHLUTER, 1870 [*D. altum] | Cret., Eu | CRET
+ Echinotiara POMEL, 1883 [*Echinodiadema bruni COTTEAU] | Cret. (Maastricht.), Eu.-N.Afr.-NE.Afr | CRET
+ Jeannetia MERCIER, 1936
+ Phymechinus DESOR, 1856 | Cret., Eu | CRET
+ Polycyphus L. AGASSIZ & DESOR, 1846 [*Eehinus varialaris LAMARCK]
+ Thierychinus LAMBERT, 1910 [*T. delallnayi]
+ Tiarechinopsis LAMBERT, 1936 [*T. besail'lei]
+ Triadechinus ARNOLD & H. L. CLARK, 1927 [*T. mllltipol'lls] | ?Cret., Jamaica | CRET
+ Trochalosoma LAMBERT, 1897 [*Leiosoma rttgoSllm COTTEAU] | U.Cret.-Sel1ol1., Fr | UCRET
+ Order ARBACIOIDA Gregory,
+ Arbacina GRECORY, 1900 | )-Rec | REC
+ Family ARBACIIDAE Gray, 1855
+ Arbacia GRAY, 1835 | and post-Plio. extension across Atlantic) | NEOG
+ Acropeltis L. AGASSIZ, 1840 [*A. lIIichale/i]
+ Arbaciella MORTENSEN, 1910 [*A. elegans] | Rec., W.Afr | REC
+ Arbia COOKE, 1948 [*CoelopleIIrtIS aldrichi W. B. CLARK] | , USA (Miss.) | MISS
+ Atopechinus THIERY, 1928 [*A. cellensis]
+ Baueria NOETLING, 1885 [*B. geomell'ica] | -Eoc., Eu.-N. Afr.-Asia Minor-N. Am.-Carib | PALEOG
+ Coelopleurus L. AGASSIZ, 1840 [*C. equis (] | ; Rec., species mainly deep-water | REC
+ Cottaldia DESOR, 1856 [*Echinus benettiae KONIG] | Cret. (Cenoman.), Eu.-N.Afr.-?W.Afr | CRET
+ Dialithocidaris A. AGASSIZ, 1898 [*D. gemmilera] | Jur.( Callov.- Tithon.), Eu.-N.Afr.-AsiaMinor | JUR
+ Goniopygus L. AGASSIZ, 1838 [*G. peltatus] | )-Eoc., Eu.-Asia-N. Afr.-N.Am.-S.Am | PALEOG
+ Habrocidaris A. AGASSIZ & H. L. CLARK, 1906 [*Podocidaris scutata A. AGASSIZ] | Cret., Brazil | CRET
+ Magnosia MICHELIN, 1858 [*Ecllintls nodulosus GOLDFUSS] | Cret. (ColOmal1.), Eu.-N. Afr.-Asia Minor | CRET
+ Pleiocyphus POMEL, 1883
+ Podocidaris A. AGASSIZ, 1869 | Rec., Malaya-Hawaii-Carib | REC
+ Pygmaeocidaris DODERLEIN, 1905 | -Rec. t m E G (p. V412-V413) | REC
+ Family GLYPHOCYPHIDAE Duncan,
+ Dictyopleurus DUNCAN & SLADEN, 1882 [*D. ziczac] | Eoc., Asia(W.Pak.) | PALEOG
+ Hemidiadema L. AGASSIZ, 1846 [*H. rugoslim] | Cret. (Cenoman.), W. Eu | CRET
+ Radiocyphus COTTEAU, 1890 [*R. vilanovae] | Eoc., W. Eu | PALEOG
+ Arbacina POMEL, 1869 [*Echinus monilis DESMAREST] | -Plio., Eu.-W.A£r | NEOG
+ Asterechinus MORTENSEN, 1942 [*A. elegans] | Rec., Indonesia | REC
+ Brochopleurus FOURTAU, 1920 [*Temnechinus stel/ulatus DUNCAN & SLADEN] | ; M.Mio.(Torton.} , Asia W.Pak.)-N.A£r.(Egypt) | NEOG
+ Erbechinus JEANNEY, 1935 [*E. erbi] | , Java; Rec., Indonesia (Kei Is.) | REC
+ Genocidaris A. AGASSIZ, 1869 | Rec., Carib.-E.Atl.-Medit | REC
+ Glyptechinus DE LORIOL, 1873 [*G. granll/aris]
+ Hypsiechinus MORTENSEN, 1903 [*H. coronatus] | Rec., N.Atl. (800-1350 m.) | REC
+ Irenechinus FELL, 1964 [*I. hentyi] | ; L.Mio., Australia | NEOG
+ Lamprechinus DODERLEIN, 1905 [*L. nitidus] | Rec., W.Pac.- IndoPac | REC
+ Leiocyphus COTTEAU, 1866 [*Arbacia conjuncta L. AGASSIZ]
+ Leptopleurus LAMBERT & THIERY, 1910
+ Lepidopleurus DUNCAN & SLADEN, 1885 [*Lepidopleurus hemisphaerieus DUNCAN & SLADEN] | Mio.(Gaj.} , W.Pak.-Egypt | NEOG
+ Martinechinus JEANNET, 1937 | -Pleist., Timor | HOL
+ Microcyphus L. AGASSIZ, 1846 [*M. macalatus] | } , Timor; Rec., W.Pac.-Indo- Pac | REC
+ Paradoxechinus LAUBE, 1869 [*P. novus] | -Mio., Australia-Eu | NEOG
+ Printechinus KOEHLER, 1927 | , Java; Rec., Ind.O.-Indonesia | REC
+ Prionechinus A. AGASSIZ, 1879 | -Rec., N.Z.-Australia-S.Am.-subantarctic Is | REC
+ Pseudodicoptella JEANNET, 1935 | Plio., Indon | NEOG
+ Salmacis L. AGASSIZ, 1841 | ; Rec., W. Pac.-IndoPac | REC
+ Scolechinus LAMBERT & THIERY, 1925 | -L.Mio., N.Afr | NEOG
+ Temnechinus FORBES, 1852 | Plio., Eng | NEOG
+ Temnotrema A. AGASSIZ, 1863 | , Indonesia; Rec., W.Pac.-IndoPac. (Red Sea to Hawaii, Japan to Australia) | REC
+ Trigonocidaris A. AGASSIZ, 1869 | Eoc., W.Eu.-N.Afr.-- (BITTNER), N.Italy; amb plates, X? | PALEOG
+ Zeuglopleurus GREGORY, 1889 [*2. cos/ula- /IIS]
+ Family TOXOPNEUSTIDAE Troschel,
+ Cyrtechinus MORTENSEN, 1942 [*Psammechinus verruculatus LUTKEN] | Rec., trop. W.Pac.-IndoPac | REC
+ Goniopneustes DUNCAN, 1889 [*Amblypneustes pentagonw A. AGASSIZ] | Rec., China Sea | REC
+ Gymnechinus MORTENSEN, 1903 [*Echinw robillardi DE LORIOL] | -Rec., trap.subtrop., Americas (E.coast-W.coast), Cape Verde Ib Toxopneustes Scoliechinus Schize Is | REC
+ Nudechinus CLARK, 1912 [*N. scotiop1'emnus] | M.Mio.(Helvet.-To1'ton.}, N.Afr | NEOG
+ Pseudoboletia TROSCHEL, 1869 [*P. stenostoma] | Rec., S.Japan | REC
+ Schizechinus POMEL, 1869 [*Anapesus tuberculatlls POMEL] | duciei (WRIGHT), Mio., Malta; test, oral, XO.7 | NEOG
+ Scoliechinus ARNOLD & CLARK, 1927 [*S. axiologus] | ?Cret., S T p s ae (p. U427-U429). Jamaica | CRET
+ Tripneustes L. AGASSIZ, 1841 [*Echinus ventrj· COSllS LAMARCK] | -Rec., IndoPac.-Carib | REC
+ Gagaria DUNCAN, 1889 [*Micropsis venustuLa DUNCAN & SLADE"I] | Oligo., N.Am | PALEOG
+ Order ECHINOIDA Claus, 1876
+ Family ECHINIDAE Gray, 1825
+ Echinus LINNE, 1758 [*E. esculenttlS] | -Rec., Eu.- Atl.-Medit.-IndoPac | REC
+ Atactus POMEL, 1883 [*Psammechinus fischeri COTTEAU] | Plio., Rhodes | NEOG
+ Dermechinus MORTENSEN, 1942 [*Echinus horridus A. AGASSIZ] | Rec., IndoPac | REC
+ Gracilechinus FELL & PAWSON, 1965 [*EchintiS gracilis A. AGASSIZ] | ; Rec., Atl.-Medit.-IndoPac | REC
+ Hypechinus DESOR, 1856 [*Ecllinus patagonensis D'ORBIGNY] | -Plio., Patagonia | NEOG
+ Isechinus LAMBERT, 1903 [*Toxopneustes praecursor ORTMANN] | Mio., Patagonia | NEOG
+ Loxechinus DESOR, 1856 [*EchinllS albus MOLINA] | Rec., Chile- S.Peru | REC
+ Parechinus MORTENSEN, 1903 | Rec., S.Afr | REC
+ Psammechinus L. AGASSIZ & DESOR, 1846
+ Psammechinus MORTENSEN, 1903 | -Rec., N.AtI.-Medit | REC
+ Sterechinus KOEHLER, 1901 | Rec., Antarctic | REC
+ Stirechinus DESOR, 1856 | -Italy (Sicily)-Malta; Rec., S.AtI.-W.Atl | REC
+ Family ECHINOMETRIDAE Gray, 1825
+ Echinometra GRAY, 1825 | -Rec., trop. Atl.-IndoPac | REC
+ Anthocidaris LUTKEN, 1864 | Rec., Japan-China | REC
+ Caenocentrotus H. L. CLARK, 1912 | Rec., Galapagos-Peru-Chile. [Almost all tests deformed aborally by the parasitic crab Fabia chilensis, which inhabits the rectum.) | REC
+ Colobocentrotus BRANDT, 1835 | Rec., cosmop. [=Colobocentms GRAY, 1840, p. 52 (nom. van.).] | REC
+ Echinostrephus A. AGASSIZ, 1863 | Rec., trop. Indo- @ @ Heterocent @ Strongylocentrotus Selenechinus , ,~ ~ ~ Hel ioc idoris Echinostrephus z d Pac | REC
+ Evechinus VERRILL, 1871 [*Echinus tuberculatus LAMARCK] | -Rec., N.Z.- Kermadec Is | REC
+ Pachycentrotus H. L. CLARK, 1912 [*Sphaerechinus australiae A. AGASSIZ] | ] Rec., S.Australia | REC
+ Podophora L. AGASSIZ, 1840 [*Echinus atratus LINNE] | Rec., ?Philippine Is | REC
+ Zenocentrotus A. H. CLARK, 1931 [*2. kellersi] | ] Mio-Rec | NEOG
+ Strongylocentrotus BRANDT, 1835 [*S. chlorocentrotus (] | MULLER), Rec., Arctic circumpolar; 8a, valve of globiferous pedicellaria, X 62; 8b, amb plate, X6.7 | REC
+ Allocentrotus MORTENSEN, 1942 [*Strongylocentrotus fragilis JACKSON] | Rec., W.N.Am.(Vancouver to L.Calif.) | REC
+ Hemicentrotus MORTENSEN, 1942 [*Sphaerechinus pulcherrimus A. AGASSIZ] | Rec., Japan-N.China | REC
+ Family PARASALENIIDAE Mortensen,
+ Parasalenia A. AGASSIZ, 1863 [*P. g1'atiosa] | ; Rec., Indo-Pac,- W.Pac | REC
+ Diplosalenia MORTENSEN, 1942 [*Parasalenia gosseleti COTTEAU]
+ Spaniocyphus POMEL, 1883 [*Echinus jallax L. AGASSIZ] | -U.Cret., Eu, | UCRET
+ Trochoechinus DE LORIOL, 1909 [*Psammechinus zumoOeni DE LORIOL] | ), Asia Minor; Mio., Malta, | NEOG
+ Family TIARECHINIDAE Gregory,
+ Tiarechinus NEUMAYR, 1881 [*T. princeps] | Trias., Eu | TRIAS
+ Order ORTHOPSIDA Mortensen,
+ Family ORTHOPSIDAE Duncan, 1889
+ Orthopsis COTTEAU, 1864 [*Cidarites miliaris O'ARCHIAC]
+ Steplzanopsis LAMBERT, 1900 | Cret. (Senon.), Eu.-Asia-Afr.-N.Am | CRET
+ Brochechinus LAMBERT & THIERY, 1908 [*B. elisae]
+ Dubarechinus LAMBERT, 1937 [*D. despujolsi]
+ Orthocidaris COTTEW, 1862 [*Hemieidaris itiermis A. GRAS] | L.Cret., Eu | LCRET
+ Scaptodiadema DE LORIOL, 1891 [*5. matheyi]
+ Besairecidaris LAMBERT, 1936 [*B. ankarensis]
+ Bramus DE GREGORIO, 1930 [*B. simplex] | Perm., Sicily | PERM
+ Crinocidaris DE GREGORIO, 1930 [*C. zmiCtls]
+ Firmacidaris LAMBERT, 1937 [*Sphaerotiaris precincta LAMBERT]
+ Ombria QUENSTEDT, 1873 [*Cidaris bothryoides KLEIN]
+ Pleurocidaris POMEL, 1883
+ Protocidaris DE GREGORIO, 1930 [*P. bencontestus] | Perm., Sicily. Radiolus (auctt.). Name used in binomial manner for unidentifiable fossil spines, comparable with Otolithus. Permissible under Article 17 of R V t m l l t o HOLECTY By CAROL D. WAGNER a | PERM
+ Rhabdechinus LAMBERT, 1910 [*Cidaris belone D'ORBIGNY]
+ Vernius DE GREGORIO, 1930 [*V. elaboratus] | -Rec. YPOIDS nd J. WYATT DURHAM rnia (Berkeley)] all trend from simple primaries throughout to reduced plates adorally and for an increasing distance adapically is notable. The pattern of association | REC
+ Order HOLECTYPOIDA Duncan,
+ Suborder HOLECTYPINA Duncan,
+ Family HOLECTYPIDAE Lambert, 1899
+ Holectypus DESOR, 1842 [*Discoidea depressa AGASSIZ]
+ Temnholectypus LAMBERT & THIERY, 1925 | Cret. (Senon.), Eu.-N.Am | CRET
+ Coenholectypus POMEL, 1883 [*Holectypus macropygus DESOR] | Cret. (Cenoman. - Senon.), Iran - Arabia- Spain | CRET
+ Discholectypus POMEL, 1883 [*Holectypus meslei GAUTHIER] | L.Cret., Alg.-S.Fr | LCRET
+ Metholectypus HAWKINS, 1923 [*M. trechmanni] | Cret., Jamaica. Family ANORTHOPYGIDAE Wagner & Durham, n. fam. Apical system ethmolytic; peristome transversely elongate; periproct variable in outline. Gret.(Alb.-Genoman.} | CRET
+ Anorthopygus COTTEAU, 1869 [*Nucleolites orbicularis GRATELOUP] | Cret.(Alb.- Cenoman.), Eu.-N.Am | CRET
+ Family DISCOIDIDAE Lambert, 1899
+ Discoides PARKINSON, 1811 [*Echinites subi/culus LESKE] | Cret. (Apt.-Turon.) , Eu.-N. Am | CRET
+ Camerogalerus QUENSTEDT, 1873 [*Galerites cylindricus LAMARCK] | U.Cret.(Cenoman.), Eu | UCRET
+ Dixonia WAGNER & DURHAM, 1964 [*Discoidea dixoni FORBES in DIXON] | Cret. (Apt.-Turon.), Eu | CRET
+ Hawkensia LAMBERT, 1928
+ Ctlbae HAWKINS, 1913 | -Rec | REC
+ Echinoneus LESKE, 1778 [*E. eyclostomus] | ] Oligo.-Ree., Eu.-W.Indies- IndoPac.-Australia | PALEOG
+ Micropetalon A. AGASSIZ & H. L. CLARK, 1907 [*M. purpureum]
+ Paleoechinoneus GRANT & HERTLEIN, 1938 [*P. hannai] | Cret., USA (Calif.)-Mex. G G P a olectypoida chinoneina U445 | CRET
+ Family CONULIDAE Lambert, 1911
+ Galeraster COTTEAU, 1890 [*G. australiae] | Cret.-Eoe., sunken; tubercles perforate, crenulate. Eoe., Australia-Fr | CRET
+ Globator AGASSIZ, 1840 [*G. nucleus] | Cret.-Eoe., Eu.-Medit.-Madagascar-India-W.Indies-Brazil-USA | CRET
+ Pygopyrina POMEL, 1883 [*Desorella ieattnensis COTTEAU] | Cret. (Cenoman.), Eu.-Asia | CRET
+ Family GALERITIDAE Gray, 1825
+ Family CONOCLYPIDAE Zittel, 1879
+ Conoclypus AGASSIZ, 1839 | -India- ?Brazil; Mio., Italy | NEOG
+ Oviclypeus DAMES, 1877 [*0. lorioli]
+ Family OLIGOPYGIDAE Duncan, 1889
+ Oligopygus DE LORIOL, 1887 [*0. wetherbyi] | wetherbyi, U.Eoc., USA (Fla.) ; 5a-e, aboral, oral, lat., XO.7. Bonaireaster PIJPERS, 1933, p. [*B. rtltteni; aD]. Test rounded pentagonal, orally flat; ambulacra petaloid, pores conjugate; periproct | PALEOG
+ Haimea MICHELIN, 1851 [*H. eaillalld] | Eoc., W.Indies-Senegal | PALEOG
+ Microlampas COTTEAU, 1889 [*M. eonicllS]
+ Ovulechinus LAMBERT, 1918 [*0. pilltla] | Cret.( Senon.), Fr | CRET
+ Protolampas LAMBERT, 1918 [*Eehinolampas arnaudi COTTEAU]
+ Amblypygus L. AGASSIZ, 1840 [*A. dilata· tus AGASSIZ & OESOR] | -Oligo., Circummedit.-Madag.-India-W.Indies- USA (Fla.-Calif.) | PALEOG
+ Echinogalerus KONIG, 1825 [*Eehinites pelti/ormis WAHLENBERG] | U.Cret.( Cenoman.-Senon.}, Eu.-N. Am.(Baja Calif.) | UCRET
+ Family CLYPEASTERIDAE L. Agassiz,
+ Clypeaster LAMARCK, 1801 [*C. rosaceus (]
+ Anomalanthus BELL, 1884
+ Laganidea POMEL, 1887
+ Dactylanthus LAMBERT, 1912
+ Oxclypeina LAMBERT & THIERY, 1913
+ Oxypleura POMEL, 1887
+ Paratina POMEL, 1887 | (Allvers')-Rec., worldwide | REC
+ Family ARACHNOIDIDAE Duncan,
+ Subfamily ARACHNOIDINAE Duncan, 1889
+ Arachnoides LESKE, 1778 | -Rec.. IndoPac | REC
+ Subfamily AMMOTROPHINAE Durham, 1955
+ Suborder LAGANINA Mortensen,
+ Monostychia LAUBE, 1869 [*M. australis]
+ Scutellinoides DURHAM, 1955 [*Scutellina patella TATE]
+ Family FIBULARIIDAE Gray, 1855
+ Fibularia LAMARCK, 1816 [*F. ovulum] | )-Rec., worldwide as fossil, living IndoPac. only | REC
+ Cyamidia LAMBERT & THIERY, 1914 [*Echinocyanws nummulilica DUNCAN & SLADEN] | Eoc., India-Pak.-Australia | PALEOG
+ Echinocyamus VAN PHELSUM, 1774 [*Echinocyamw pusillllS MULLER] | )-Rec., worldwide as fossil, living Eu.-IndoPac | REC
+ Eoscutum LAMBERT, 1914 [*Porpitella dondeuxi LAMBERT] | Eoc., Eu | PALEOG
+ Fibulaster LAMBERT & THIERY, 1914 [*Sismondia miclzelini COTTEAU] | Eoc., Eu | PALEOG
+ Lenicyamidia BRUNNSCHWEILER, 1962 [*L. compta] | L.Eoc., Australia | PALEOG
+ Mortonia GRAY, 1852 [*FibuZaria australis DESMOULlNS] | Rec., IndoPac | REC
+ Porpitella POMEL, 1883 [*Scutellina Izayesiana L. AGASSIZ] | Eoc., Eu | PALEOG
+ Scutellina L. AGASSIZ, 1841 [*S. nummuZaria (] | Eoc., Eu.-N.Afr | PALEOG
+ Togocyamus OPPENHEIM, 1915 [*'Eellinocyamlls (Togocyamlls) seefriedi] | Paleoc., Fr.W.Afr | PALEOG
+ Family LAGANIDAE A. Agassiz, 1873
+ Echinodiscus LAMBERT & THIERY, 1914 [*'F. gracilis] | -Rec., IndoPac, | REC
+ Hupea POMEL, 1883 [*'Laganum decagonale POMEL] | -Rec., Malaysia-Polynesia | REC
+ Rumphia DESOR, 1858 [*Laganllm rostratum L. AGASSIZ] | Mio.-Ree., IndoPac | NEOG
+ Sismondia DESOR, 1858 [*Selltella occitana DEFRANCE] | -Mio., IndoPac.-Australia | NEOG
+ Family NEOLAGANIDAE Durham, 1954
+ Cubanaster SANCHEZ ROIG, 1952 [*Jacksonaster torrei LAMBERT]
+ Sanchezella DURHAM, 1954 [*Jacksonaster sancltezi LAMBERT]
+ Wythella DURHAM, 1954 [*Laganum eldridgei TWITCHELL] | U.Eoc., Gulf Mex | PALEOG
+ Suborder SCUTELLINA Haecke1,
+ Family SCUTELLIDAE Gray, 1825
+ Parmulechinus LAMBERT, 1910 [*Stenaster labrei LAMBERT] | - L.Mio., Eu | NEOG
+ Periarchus CONRAD, 1866 [*Sismondia alta CONRAD]
+ Family EOSCUTELLIDAE Durham,
+ Family DENDRASTERIDAE Lambert,
+ Dendraster L. AGASSIZ, 1847 [*D. excentricus (] | -Rec., USA(GulfCalif.-Puget Sound) | REC
+ Scaphechinus A. AGASSIZ, 1863 [*S. mirabilis (] | - Rec., Japan-Formosa | REC
+ Echinarachnius GRAY, 1825 [*Setttella parma LAMARCK] | ; Rec., NE.N.Am | REC
+ Kewia NISIYAMA, 1935 [*Scutella blancoensis KEW] | -Mio., N.Am.-N.Pac | NEOG
+ Nipponaster DURHAM, 1952 [*Astrodapsis nipponicus NISIYAMA] | -Plio.," Japan- ?Sakhalin-?Kamchatka | NEOG
+ Vaquerosella DURHAM, 1955 [*Scutella andersoni TWITCHELL] | L.Mio., USA(Calif.)-Mexico(BajaCalif.) | NEOG
+ Monophoraster LAMBERT & THIERY, 1921 [*Monophora darwini DESOR] | Mio., Arg.-Chile | NEOG
+ Iheringiella BERG, 1898 [*Scutella patagoniensis DESOR]
+ Iheringina LAHILLE, 1899 [*K. pirabensis] | Mio., Arg | NEOG
+ Family MELLITIDAE Stefanini, 1911
+ Encope L. AGASSIZ, 1840 [*E. grandis]
+ Echinoglyctls GRAY, 1855
+ Ravenellia LUTKEN, 1864 [*L. richardsoni (] | Mio-Rec., N. Am.-S. Am.-W. Indies | NEOG
+ Mellitella DUNCAN, 1889 [*Encope stokesii L. AGASSIZ] | (neotropical); Rec., E. Pac. (tropical).-- F o nozoa Eehinoidea 3a,b, aboral, oral views, XO.8, XO.6; 3c, plates of oral surface (interamb. stippled), XO.8 (6, 51, 136g). e (p. U489). Euechinoidea Gna | REC
+ Family ASTRICLYPEIDAE Stefanini,
+ Astriclypeus VERRILL, 1867 | manni, Rec., S. Japan; 2a-c, aboral, oral views, plates of oral surface (interamb. stippled), XO.5 (51,136g). [See also FIG. 336,lm.) | REC
+ Amphiope L. AGASSIZ, 1840 | ; Mio., Angola-India | NEOG
+ Echinodiscus LESKE, 1778 | bisperforattts, Rec., IndoPac.; 3a-c, aboral, oral, lat. views, X 0.7; 3d, plates of oral surface (interamb. stippled), XO.6. [See also Figs. 348,6; 354,2.) | REC
+ Family ABERTELLIDAE Durham, 1955
+ Abertella DURHAM, 1953
+ Family SCUTASTERIDAE Durham,
+ Scutaster PACK, 1909 | L.Mio., USA(Calif.) | NEOG
+ Scutulum TOURNOUER, 1869 [*S. parisiense] | Oligo., Fr | PALEOG
+ Suborder ROTULINA Durham,
+ Family ROTULIDAE Gray, 1855
+ Rotula SCHUMACHER, 1817 [*R. multiloba (] | - Rec., W.Afr | REC
+ Heliophora L. AGASSIZ, 1840 [*Ec1] | -Rec., W.Afr | REC
+ Rotuloidea ETHERIDGE, 1872 [*R. fimbriata] | - Plio., W.Afr | NEOG
+ Proescutella POMEL, 1883 [*Scutella cailliaudi COTTEAU] | ] M.Eoc., Fr | PALEOG
+ Runa L. AGASSIZ, 1841 [*R. comptoni] | Mio., Italy | NEOG
+ Tournoueraster LAMBERT, 1914 [*Scutella decemfissus DESMOULlNS] | L.Oligo., Fr | PALEOG
+ Order CASSIDULOIDA Claus,
+ Family GALEROPYGIDAE Lambert,
+ Galeropygus COTTEAU, 1856 [*Hyboclypus agariciformis WRIGHT]
+ Hybodypus L. AGASSIZ, 1839 [*H. gibberu- Ius]
+ Hyboclybus SISMONDA, 1842
+ Family CLYPEIDAE Lambert, 1898
+ Clypeus LESKE, 1778 [*C. plotii]
+ Crotoclypeus POMEL, 1883
+ Astrolampas POMEL, 1883 [*Pygurus productus L. AGASSIZ] | Cret.(Valangin.-Cenoman.), Eu.- Syria | CRET
+ Bothryopneustes FOURTAU, 1924 [*B. lamberti]
+ Pseudopygurus LAMBERT, 1911 [*P. letteroni]
+ Pygurus L. AGASSIZ, 1839 [*Echinolampas montmollini L. AGASSIZ] | AGASSIZ), L.Cret. (Neocom.), Fr.; 385,2, phyllode, enlarged; 387,1, aboral, X I. P. (Mepygurus) POMEL, 1883, p. 65 [*Pygurtls michelini COTTEAU, 1849, p. 70 (=Pygurtls depresstls AGASSIZ, 1847, p. 162 | LCRET
+ Catopygus L. AGASSIZ, 1836 | Cret.(Senon.), cosmop | CRET
+ Clypeopygus D'ORBIGNY, 1856 [*H. pomeranllm] | Cret.( Neocom .-Cenoman.), Eu.-Afr | CRET
+ Hypopygurus GAUTHIER, 1889 [*H. galldryi]
+ Pygopistes POMEL, 1883 | U.Cret.(Cenoman.), Afr | UCRET
+ Pygorhynchus L. AGASSIZ, 1839 | L.Cret.(Neocom.-Alb.), Eu.-Afr.-N.Am | LCRET
+ Echinolampas GRAY, 1825
+ Palaeolampas BELL, 1880
+ Merolampas POMEL, 1883 | -Rec., cosmop | REC
+ Arnaudaster LAMBERT, 1918 [*A. gauthieri LAMBERT] | Cret.(Cenoman.), Fr | CRET
+ Conolampas A. AGASSIZ, 1883 [*Conoclypus sigsbei A. AGASSIZ] | AGASSIZ), Rec., W. Indies; 1a,b, aboral, oral, Xl | REC
+ Parapygus POMEL, 1883 [*Botriopygus cotteauanus D'ORBIGNY] | Cret.(Turon.- Senon.), Eu.-Afr | CRET
+ Plesiolampas DUNCAN & SLADEN, 1882 [*P. elongata] | - Eoc., India-Afr.-Eu.-Tasmania | PALEOG
+ Family FAUJASIIDAE Lambert, 1905
+ Australanthus BITTNER, 1892 | U.Eoc., Australia | PALEOG
+ Domechinus KIER, 1962 | Cret. (Maastricht.), USA | CRET
+ Eurypetalum KIER, 1962 | Cret.(Senon.- Euechinoidea Atelosto Hordouinio mata Cassiduloida U511 p. U512-U513). Echinodermata Echin Petolobrissus Maastriclzt') , Eu | CRET
+ Lefortia COSSMANN, 1901 | Cret. (Senon.), Eu.-India-Afr.-N.Am | CRET
+ Archiacia L. AGASSIZ, 1847 [*A. sandalina] | Cret.(Neocom.-Cenoman.), Eu.- Afr | CRET
+ Stigmatopygus D'ORBIGNY, 1856 [*S. galeatllS] | Cret.(Cenoman.-Senon.), Eu.- Afr | CRET
+ Hypsopygaster BAJARUNAS, 1915 | Paleoc.(Danian), USSR | PALEOG
+ Ochetes POMEL, 1883
+ Rhyncholampas A. AGASSIZ, 1869 [*Cassidulus marmilli L. AGASSIZ in AGASSIZ & DESOR] | -Rec., cosmop | REC
+ Family PLIOLAMPADIDAE Kier, 1962
+ Daradaster TESSIER, 1952 | Paleoe-- Eoc., Asia(lndia)-Eu.-.·\fr.-N..-\m | PALEOG
+ Ilarionia DAMES, 1878 | Eoc., Eu.-Asia(lndia)-Afr | PALEOG
+ Neocatopygus DUNCAN & SLADEN, 1882 [*CafopygliS frigeJ'i COQUAND] | Paleoc., India | PALEOG
+ Ottiliasfer PENECKE, 1885
+ Santeelampas COOKE, 1959
+ Studeria DUNCAN, 1891
+ Hypselolampas CLARK, 1917
+ Family APATOPYGIDAE Kier, 1962
+ Apatopygus HAWKINS, 1920 [*Nllcleolites "eans EDWARDS] | -Rec., .Z.-Australia | REC
+ Echinanthus LESKE, 1778 [*E. ol'atus LESKE (op. cit.] | -Rec | REC
+ Family COLLYRITIDAE d'Orbigny,
+ Cardiopelta POMEL, 1883 | Cret. (Va/angin.), Eu. Cydolampas Po" EL, 1883, p. 51 [o,Disaster vo/tzii AGASSIZ, 1839, p. 8; SD LAMBERT & THIERY, 1924, p. 391]. Ambulacra faintly petaloid, pores small, round; adorally pores increa | CRET
+ Grasia MICHELIN, 1854 | Jur.( Oxford.), Fr | JUR
+ Orbignyana EBRAY, 1860 [*P. auberti]
+ Pygomalus POMEL, 1883 [*Spatangites ovalis LESKE] | Jur.( Sinemur.-Oxford.}, Eu | JUR
+ Pygorhytis POMEL, 1883 [*Disaster ringens AGASSIZ] | Jur.( Bajoc.-Oxford.}, Eu. (Fr.-Caucasus) | JUR
+ Family DISASTERIDAE A. Gras, 1848
+ Disaster AGASSIZ, 1836 [*Nucleolites granuloms GOLDFUSS] | }-L.Cret.(Neocom.}, Eu.-N. Afr | LCRET
+ Cardiolampas POMEL, 1883 [*Collyrites friburgensis OOSTER]
+ Corthya POMEL, 1883 [*Disaster hemisphaeri- CllS GRAS]
+ Dialyaster POMEL, 1883 [*MetaporinllS gueymardi GRAS]
+ Metaporinus AGASSIZ, 1844 [*M. michelini]
+ Thecaporinlls EBRAY, 1859 [*0. bassae] | Jur.( Oxford.}, Eu | JUR
+ Tithonia POMEL, 1883 [*Nt/cleolites convexus CATULLO] | )-L.Cret.(Neocom.), Eu.-N.Afr | LCRET
+ Family HOLASTERIDAE Pictet, 1857
+ Holaster AGASSIZ, 1836 [*Spatangus nodulOUIS GOLDFUSS] | (Eoc.) , cosmop | PALEOG
+ Cardiaster FORBES, 1850 [*SpatangtlS cordiformis WOODWARD] | ), ?Tert., cosmop.(nearly worldwide) | NEOG
+ Cibaster POMEL, 1883 [*Cardiaster bourgeoisan liS D'ORBIGNY]
+ Oolaster LAUBE, 1869 | Cret.(Turon.)-Paleog.( Dan.), Eu.-Asia Minor- Madag.-N.Am | CRET
+ Entomaster GAUTHIER, 1888 [*E. rotlSseli] | Cret.( Senon.), Alg | CRET
+ Ganbirretia GAUTHIER, 1903 [*G. dot/l'illei]
+ Garumnaster LAMBERT, 1907 [*G. michaleti]
+ Guettaria GAUTHIER, 1888 [*G. angladei] | Cret. (Cenoman. - Senon.). N. Afr.- Madag.; Senon., Timor | CRET
+ Hemipneustes AGASSIZ, 1836 [*Spatangus radiatus LAMARCK] | Cret.( Senon.-Maastricht.). Eu.-N.Afr.- Madag.-India | CRET
+ Infulaster DESOR, 1858 [*Cardiaster hagenowi D'ORBIGNY] | U.Cret.(Turon.-Coniac.) , Eu | UCRET
+ Ismidaster BOEHM, 1927 [*1. toulai] | Cret.( Senon.), Asia Minor | CRET
+ Jeronia SEUNES, 1888 [*j. pyrenaica]
+ Labrotaxis CASEY, 1960 [*Holaster (Labrotaxis) cantianus] | Cret.( Senon.), Madag.-- | CRET
+ Lampadocorys POMEL, 1883 [*Holaster sulcaltlS COTTEAU] | Cret.(Cenoman.- Senon.), Eu. (Fr.-Italy)-N.Afr | CRET
+ Messaoudia LAMBERT, 1917 [*Holaster pyriformis PERON & GAUTHIER] | Cret. (Cenoman.), Alg | CRET
+ Offaster DESOR, 1858 [*Ananchytes pilula LAMARCK] | Cret. (Campan.)-Paleag. (Dan.). Eu | CRET
+ Opisopneustes GAUTHIER, 1889 [*0. cossani] | U.Cret.(5enon.), Tunisia | UCRET
+ Paronaster AIRAGHI, 1906 [*P. ettpltliformis] | Cret., Italy | CRET
+ Pseudananchys POMEL, 1883 [*Ananchytes algiris COQUAND] | Cret.(Aib.-5enon.), Medit. Iran | CRET
+ Pseudholaster POMEL, 1883 [*Hoiaster bicarinatlts AGASSIZ]
+ Rispolia LAMBERT, 1917 [*Nltcleoiites wbtrigonatlts CATULLO] | U.Cret.( Campan.-Maastricht.}, Italy-N.Afr.(Alg.-Tunisia)-Madag | UCRET
+ Scagliaster MUNIER-CHALMAS, 1891 [*Ananchytes concavttS CATULLO] | Like Echinocorys except ambulacrum III sunken; some larger tubercles above ambitus; aboral side low, arched, orally Rat or concave; U.Cret., Italy | UCRET
+ Stegaster POMEL, 1883 [*Cardiaster gillieroni DE LORIOL] | U.Cret. (5enon.), Eu.-N.Afr.-Madag | UCRET
+ Stereopneustes DE MEIJERE, 1902 [*5. relictus] | U.Cret.(Tltl'On.-5enon.}. Eu.(Fr.- Eng.) | UCRET
+ Taphraster POMEL, 1883 [*Holaster campicheanlts (D'ORBIGNY)] | L.Cret. (Neocom.), Switz | LCRET
+ Tholaster SEUNES, 1890 [*Gibbaster mtmieri SEUNES] | U.Cret.( Maastriclzt.}, Eu.(Fr.-Belg.).-- | UCRET
+ Titanaster SZORENYI, 1929 [*T. labiostoma] | Eoc., Eu | PALEOG
+ Toxopatagus POMEL, 1883 [*HemipnettStes italicttS MANZONI] | (Mio.), Eu.-Iran-Madag.-W.Indies | NEOG
+ Family URECHINIDAE Duncan, 1889
+ Urechinus A. AGASSIZ, 1879 [*U. naresianus] | ] Rec., Atl.-N.Pac.- Antarctic | REC
+ Chelonechinus BATHER, 1934 [*C. suvae]
+ Family CALYMNIDAE Mortensen, 1907
+ Pilematechinus A. AGASSIZ, 1904 | ) Rec., Panama- Antarctica | REC
+ Plexechinus A. AGASSIZ, 1896 | Rec., N.Atl.-Antarctica-Sulu Sea-Gulf Calif | REC
+ Sternopatagus DE MEIJERE, 1902 | Rec., Timor Sea | REC
+ Calymne THOMSON, 1877 | Rec., Bermuda | REC
+ Pourtalesia A. AGASSIZ, 1869
+ Phyale KOCH, 1847 | Rec., cosmop | REC
+ Ceratophysa POMEL, 1883 [*Pourtalesia ceratopyga A. AGASSIZ] | Rec., Antarctic-S. Ind. O.-Chile | REC
+ Cystocrepis MORTENSEN, 1907 [*Echinoerepis setigera A. AGASSIZ] | ] Rec., Panama | REC
+ Echinocrepis A. AGASSIZ, 1879 [*E. cuneata] | Rec., Antarctic | REC
+ Echinosigra MORTENSEN, 1907 [*Pourtalesia phiale THOMSON] | ] Rec., cosmop | REC
+ Spatagocystis A. AGASSIZ, 1879 [*5. challengeri] | Rec., Antarctic-S.Ind.O | REC
+ Family STENONASTERIDAE Lambert,
+ Family Uncertain (2-3,5) (p. V539-V543).
+ Brightonia KIER, 1957 [*B. maefadyeni]
+ Corechinus KONGIEL, 1936 [*C. pulatJiensis]
+ Menuthiaster LAMBERT, 1896 [*M. eOlleaui]
+ Nordenskjoeldaster LAMBERT, 1910 [*N. an/are/iells]
+ Order SPATANGOIDA Claus, 1876
+ Family TOXASTERIDAE Lambert,
+ Echinospatagus D'ORBIGNY, 1853 [*Cyclaster 111centinus COTTEAU] | Cret. (Senon.), N.Am | CRET
+ Douvillaster LAMBERT, 1917
+ Hypsaster POMEL, 1883 [*Epiaster vatonnei COQUAND] | Cret.(Apt.- Turon.), Medit | CRET
+ Isaster DESOR, 1858 | Paleoc.(Dan.), Eu. (Fr.) | PALEOG
+ Isomicraster LAMBERT, 1901 | U.Cret.(Turon.-Senon.), Eu.-N.Afr.-Madag., Mex | UCRET
+ Isopatagus MORTENSEN, 1948 | ] Rec., Indonesia | REC
+ Mokotibaster LAMBERT, 1933 | U.Cret.(Maastricht.) , Madagascar | UCRET
+ Palmeraster SANCHEZ ROIG, 1949 | U.Eoc., Cuba | PALEOG
+ Polydesmaster LAMBERT, 1920 | ] U.Cret.(Cenoman.). Eu.(Fr.) | UCRET
+ Family HEMIASTERIDAE Clark, 1917
+ Hemiaster AGASSIZ, 1847 [*Spatangus bulo BRONGNIART] | )-Paleoc., Eu | PALEOG
+ Cheopsia FOURTAU, 1908 [*C. rnortenseni] | Eoc., Egypt | PALEOG
+ Heterolampas COHEC, 1862 [*H. rnaresi] | Cret. (Senon.), N.AfI | CRET
+ Holcopneustes COTTEAU, 1889 [*Trachyaster M - mouth A - anus \ J1-' " • Q(l III v'\ U560 Echinodermata Echin G] | gourdoni (COTTEAU), Eoc., Spain; 4a,b, aboral, lat., X 1.5; 4c, apical disc, X 4.3. "'..,,. " ogus etolum eridae (p. U565) Euechinoidea A telostomata Spa | PALEOG
+ Hypsopatagus POMEL, 1869 | -Oligo.; Eu.-Asia(India) | PALEOG
+ Isopetalum LAMBERT, 1911 [*Hemiaster riOl] | Oligo., Italy | PALEOG
+ Homoeaster POMEL, 1883 [*H. tunetanus] | Cret., N.Afr.--FtG. 450,4. *H. tunetanus; 4a-c, aboral, adoral, lat., X I; 4d, apical region, enlarged (l36h) | CRET
+ Lambertiaster GAUTHIER, 1892 [*L. douvillei] | Cret.(Senon.), N.Afr.(Tunisia)-N.Am. (Tex.).-- oral, lat., X I | CRET
+ Leiostomaster LAMBERT, 1920 [*L. gentili] | Cret.(Senon.), N.Afr. (Alg.)- N.Am.(Tex.) | CRET
+ Ornithaster COTTEAU, 1886 | Cret., Medit.-Iran-Madagascar | CRET
+ Family PERICOSMIDAE Lambert, 1905
+ Family SCHIZASTERIDAE Lambert,
+ Schizaster L. AGASSIZ, 1836 [*5. studeri] | -Rec., cosmop | REC
+ Abatus TROSCHEL, 1851 [*Spatanglls (Tripy- Ills) cavernoms PHILIPPI] | ; Rec., Antarctic | REC
+ Amphipneustes KOEHLER, 1900 [*A. lorioli] | -Rec., cosmop.-- aboral, Xl (I36i) | REC
+ Diploporaster MORTENSEN, 1950 [*D. barbatus] | Rec., Red Sea-Ind.O.-- aboral, Xl | REC
+ Faorina GRAY, 1851 [*F. chinensis] | Rec., W.Pac.-IndO.-- of Tonkin; 2a-c, aboral, oral, post., XI | REC
+ Hemigymnia ARNAUD, 1898 [*H. aturica] | Paleoc. (Dan.), Fr | PALEOG
+ Linthia DESOR, 1853 [*L. insignis] | )- Plio., cosmop | NEOG
+ Moira A. AGASSIZ, 1872 [*Spatangtts atropos LAMARCK] | -Rec., N.Am | REC
+ Periaster D'ORBIGNY, 1853 [*Spatangus elatus DESMOULINS] | )-Eoc., Medit.-- 2a-d, aboral, oral, lat., post., X 1.5; 2e, apical system, XI0 | PALEOG
+ Peribrissus POMEL, 1869 [*P. saheliensis] | Mio., Medit | NEOG
+ Prenaster DESOR, 1853 [*P. alpinus] | Eoc., cosmop | PALEOG
+ Proraster LAMBERT, 1895 | Cret.( Cenoman.-Senon.), cosmop | CRET
+ Schizopneustes THIERY, 1907 | Paleoc.(Dan.), SW.Fr | PALEOG
+ Family AEROPSIDAE Lambert, 1896
+ Aceste WYVILLE THOMSON, 1877 [*A. bellidilera] | ] Rec., cosmop | REC
+ Family MICRASTERIDAE Lambert,
+ Brissopneustes COTTEAU, 1887 [*B. vilanot'ae] | )-Eoc., Eu.-India-Madag | PALEOG
+ Family BRISSIDAE Gray, 1855
+ Brissus GRAY, 1825 [*'Spatangus brissus unicolor LESKE] | -Rec., cosmop | REC
+ Arcaechinus KIER, 1957 [*A. al/radl/ensis]
+ Brissopatagus COTTEAU, 1863 [*B. cal/monti] | Eoc., cosmop | PALEOG
+ Cionobrissus A. AGASSIZ, 1879 [*C. revinetllS]
+ Diplodetus SCHLUTER, 1900 [*D. brevistella] | )- Eoc., Eu.-Afr.(Madag.) | PALEOG
+ Eupatagus L. AGASSIZ, 1847 [*E. valenciennesi] | -Rec., cosmop | REC
+ Fourtaunia LAMBERT, 1902 | -Oligo., N.Afr | PALEOG
+ Gualtieria AGASSIZ, 1847
+ Gualtiera QUENSTEDT, 1874 | - Oligo., Eu.-N.Afr | PALEOG
+ Herreraster SANCHEZ ROIG, 1951 | J Oligo., Cuba | PALEOG
+ Yroschelia DUNCAN & SLADEN, 1883 | Mio., India | NEOG
+ Idiobryssus CLARK, 1939 | J Rec., Pac.O | REC
+ Lajanaster SANCHEZ ROIG, 1926 | -Mio., Cuba | NEOG
+ Lissospatangus MORTENSEN, 1950 [*M. gentili] | Rec., Au· stralia | REC
+ Megapneustes GAUTHIER, 1898 [*M. grandis] | Eoc., Egypt | PALEOG
+ Meoma GRAY, 1851 [*M. grandis] | Rec., Caribbean and Panamanian faunas | REC
+ Pharaonaster LAMBERT, 1920 [*Macropnett- Spotongomorpho s r / p a b N P P p g lb stes ammon AGASSIZ] | Eoc., N.Afr.-?N.Am | PALEOG
+ Plagiobrissus POMEL, 1883 [*R. jullieni] | -Rec., cosmop | REC
+ Radiobrissus FOURTAU, 1913 [*R. gneOensis]
+ Rhynobrissus A. AGASSIZ, 1872 [*R. pyramidalis] | Rec., Pac.-W.Australia | REC
+ Spatagobrissus CLARK, 1923 [*5. mirabilis] | Rec., S.Afr | REC
+ Spatangomorpha BOEHM, 1882 [*5. eximia] | -Plio., India-Java | NEOG
+ Stomaporus COTTEAU, 1888 [*5. hispanicus] | Eoc., Spain | PALEOG
+ Trachypatagus POMEL, 1869 [*T. oranensis] | -Mio., Medit | NEOG
+ Family SPATANGIDAE Gray, 1825
+ Spatangus GRAY, 1825 [*5patagus purpureus MULLER] | -Rec., cosmop | REC
+ Hemimaretia MORTENSEN, 1950 [*Mal'etia eletJata DODERLEIN] | Eoc., Baltic region | PALEOG
+ Maretia GRAY, 1855 [*Spatangus planulattts LAMARCK] | hofJmanni (GOLDFUSS), Oligo., Ger.; 1a,b, aboral, lat., XI | PALEOG
+ Paramaretia MORTENSEN, 1950 [*P. multituberculata] | U.Eoc., Hung | PALEOG
+ Family LOVENIIDAE Lambert, 1905
+ Lovenia DESOR, 1847 | -Rec., cosmop | REC
+ Breynia DESOR, 1847 | -Rec., Medit.-India-W. Pac | REC
+ Chuniola GAGEL, 1903 | Mio., Ger | NEOG
+ Echinocardium GRAY, 1825 | -Rec., cosmop | REC
+ Homolampas A. AGASSIZ, 1874
+ Pseudolovenia AGASSIZ & CLARK, 1907 [*P. hirsuta]
+ Verbeekia FRITSCH, 1877 [*V. dubia]
+ Family ASTEROSTOMATIDAE Pictet,
+ Asterostoma AGASSIZ, 1847 [*A. excentricllm] | -Mio., Antilles | NEOG
+ Argopatagus A. AGASSIZ, 1879 [*A. vitreus] | Rec., Pac. O.-lnd.O | REC
+ Brissolampas POMEL, 1883 [*Paleopneustes conicus DAMES] | Mio., Italy-Cuba.-- | NEOG
+ Brissomorpha LAUBE, 1871 [*B. fuchsi] | Mio., Austria - Algeria - Indonesia | NEOG
+ Cleistechinus DE LORIOL, 1882 [*C. canaverii] | Mio., Italy | NEOG
+ Delopatagus KOEHLER, 1907 [*D. brucei] | ] Rec., Antarctic | REC
+ Elipneustes KOEHLER, 1914 [*EurypnetlStes denudatus KOEHLER] | J Rec., Antarctic | REC
+ Heterobrissus MANZONI & MAZZETTI, 1877 [*H. montesi] | -Rec., trop. seas | REC
+ Megapetalus CLARK, 1929 [*M. lovenioides] | Mio., N.Am. (Calif.) | NEOG
+ Palaeobrissus A. AGASSIZ, 1883 [*P. hilgardi] | Rec., AntilIes | REC
+ Palaeotropus LOVEN, 1872 [*P. josephinae] | Rec., trop. At!'-- X1.5 (l75c); 2d, apical region, en! | REC
+ Paleopneustes A. AGASSIZ, 1873 | ; Rec., Gulf Mexico-Carib | REC
+ Paleotrema KOEHLER, 1914 | Rec., IndoPac | REC
+ Peripatagus KOEHLER, 1895 [*P. cinctus] | Rec., Azores | REC
+ Platybrissus GRUBE, 1865 [*P. roemeri] | -Rec., IndoPac | REC
+ Pygospatangus COTTEAU, 1888 | Eoc., Spain | PALEOG
+ Barnumia COOKE, 1953 | J Cret. (?Campan.), Guatemala | CRET
+ Cestobrissus LAMBERT, 1912 | Eoc., SW.Fr | PALEOG
+ Cottreaucorys LAMBERT, 1920 | Cret. (Maastricht.), N. Afr. (Alg.) | CRET
+ Enichaster DE LORIOL, 1882 | p g Barnumia Oligo., Italy | PALEOG
+ Gonzalezaster SANCHEZ ROIG, 1952 | Upper Eoc., Cuba | PALEOG
+ Homoeopetalus ARNOLD & H. L. CLARK, 1934
+ Family UncertJin (p. U625, U627).
+ Mazzettia LAMBERT & THIERY, 1915
+ Family NEOLAMPADIDAE Lambert,
+ Neolampas A. AGASSIZ, 1869 [*N. roslellata] | ] Rec., China Sea | REC
+ Aphanopora DE MEIJERE, 1902 [*A. ecllinobrissoides]
+ Notolampas PHILIP, 1963 [*N. f/oseulus] | L.Mio., Australia | NEOG
+ Paehyclypeus COTTEAU, 1873 [*G. peroni] | ] Jur.( Oxford.-Kimmeridg.}, Eu | JUR
+ Bathyspatus POMEL, 1883
+ Brissoides LESKE, 1778
+ Cardiopatagus POMEL, 1883
+ Cassis PARKINSON, 1811
+ Cataproctus LAMBERT, 1931
+ Coenocentrotus CLARK, 1912
+ Corystus POMEL, 1883
+ Diegocorys LAMBERT & THIERY, 1925
+ Discogalerus QUENSTEDT, 1873
+ Echinonaus DE LA BECHE, 1822
+ Mecostobrissus LAMBERT, 1912
+ Mengaudia LAMBERT, 1917
+ Neopatagus SANCHEZ-ROIG, 1953
+ Nucleolus VON MARTENS, 1866
+ Oligopodia DUNCAN, 1889
+ Ova GRAY, 1825
+ Pleraster QUENSTEDT, 1874
+ Proechinus CUENOT, 1891
+ Tingitanaster LAMBERT & THIERY, 1925
+ Trichaelina BARROIS, 1887 | -Rec. TION TION OF HOLOTHUROIDS PAWSON nstitution] and according to MADSEN several Cambrian fossils discovered and described by WALCOTT as holothuroids should now be interpreted as coelenterates and a | REC
+ Order Arthrochirotida Seilacher, 1961
+ Order Dendrochirotida Brandt, 1835
+ Order Apodida Brandt, 1835
+ Palaeocucumaria LEHMANN, 1958
+ Palaeocllcumaria FRENTZEN, 1964 | -Rec | REC
+ Protholothuria GIEBEL, 1857
+ Order APODIDA Brandt, 1835
+ Family STICHOPITIDAE Frizzell &
+ Cucumarites DEFLANDRE-RIGAUD, 1952 [*Cucumaria jeijeli MORTENSEN] | - Pleist., Eu | HOL
+ Tetravirga FRIZZELL & EXLINE, 1956 [*T. imper/ora/a] | -Penn., N.Am.-Eu | PENN
+ Calclamna FRIZZELL & EXLINE, 1956 [*C. germanica]
+ Costigerites DEFLANDRE-RIGAUD, 1961 [*C. piveteaui] | -Eoc., Eu | PALEOG
+ Parvioctoidus DEFLANDRE-RIGAUD, 1961 [*P. spinoStls]
+ Petropegia SUMMERSON & CAMPBELL, 1958 [*P. radiata] | Penn., N.Am | PENN
+ Thuroholia GUTSCHICK, 1954 [*T. croneisi] | Ord., N.Am | ORD
+ Family ETHERIDGELLIDAE Frizzell &
+ Etheridgella CRONEIS, 1932 [*E. porosa] | Penn., N.Am | PENN
+ Frizzellus HAMPTON, 1958 [*E. irregularis] | -Jur., Eu | JUR
+ Palaeocucumaria LEHMANN, 1958 [*P. hunsrueckiana] | L.Dev., Eu | LDEV
+ Family ACHISTRIDAE Frizzell &
+ Achistrulidac DEI'LANDRE-RIGAUD, 1961 | - Cret | CRET
+ Achistrum ETHERIDGE, 1881 [*A. nichol- A F s n t C ecord soni] | -Cret., Eu.- Egypt-N.Am | CRET
+ Family CALCLYRIDAE Frizzell & Exline,
+ Family PRISCOPEDATIDAE Frizzell
+ Staurocumites DEFLANDRE-RIGAUD, 1952 [*S. bartensteini]
+ Family EXLINELLIDAE Deflandre-
+ Schlumbergerites DEFLANDRE-RIGAUD, 1961 [*5. sievertsae]
+ Family THEELIIDAE Frizzell & Exline,
+ Theelia SCHLUMBERGER, 1891 [*Chirodota undulata SCHLUMBERGER]
+ Chiridotella DEFLANDRE-RIGAUD, 1961 [*A. spinosa] | Trias., Eu | TRIAS
+ Auricularites DEFLANDRE-RIGAUD, 1950 [*A. parviradiatus]
+ Stueria SCHLUMBERGER, 1888 [*5. elegans] | -Pleist., Eu.-Egypt | HOL
+ Family PROTOCAUDINIDAE Deflandre.
+ Theeliidae FRIZZELL & EXLINE, 1956 | -Jur | JUR
+ Protocaudina CRONEIS, 1932 [*Cheirodota? traquairii ETHERIDGE] | -Perm., Eu.-N.Am | PERM
+ Microantyx KORNICKER & IMBRIE, 1958 [*M. permiana] | , ?Trias., N.Am.-Eu.-- (Ind.); 2a,b, upper and lower views; X90. Unnamed genus "Protocaudina" ("P." mortenselli DEFLANDRE-RIGAUD, 1946, p. 514; "P." paueispinosa DEFLANDRE-RIGAUD, 1961, p. 106). Wheel | TRIAS
+ Family PALEOCHIRIDOTIDAE Frizzell
+ Paleochiridota CRONEIS, 1932 [*R. martini] | Miss., N.Am | MISS
+ Family SYNAPTITIDAE Frizzell &
+ Synaptellidae DEFLANDRE-RIGAUD, 1961 | -Pleist | HOL
+ Synaptites DEFLANDRE-RIGAUD, 1949 [*5ynapta eocoena SCHLUMBERGER] | oligocaenicus (SPANDEL), Oligo., Ger.: X 195. R S a f o C C F f i C S z | PALEOG
+ Rigaudites FRIZZELL & EXLINE, 1957 [*5yn· aptites cuvillieri DEFLANDRE-RIGAUD] | -Oligo., Eu.- N.Am | PALEOG
+ Family CALCANCORIDAE Frizzell &
+ Calcancora FRIZZELL & EXLINE, 1956 [*c. mississippiensis] | -Pleist., Eu.-N.Am.-S.Am | HOL
+ Calcancoroidea FRIZZELL & EXLINE, 1956 [*C. spandeli] | Oligo., Eu.-- views; X 130 | PALEOG
+ Family CALCANCORELLIDAE Frizzell

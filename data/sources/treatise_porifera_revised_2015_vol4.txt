@@ -1,0 +1,384 @@
+---
+reference: Selden, P.A. (ed.), 2015. Treatise on Invertebrate Paleontology, Part E (Revised), Porifera, Volume 4 (Hypercalcified Porifera). University of Kansas Paleontological Institute, liii + 1223 p.
+scope:
+  - taxon: Hypercalcified Porifera
+    coverage: comprehensive
+notes: |
+  Covers hypercalcified sponges: chaetetid demosponges (Hadromerida, Agelasida, etc.),
+  calcareous sponges (Calcarea: Murrayonida, Lithonida, Baerida), Sphinctozoa, Inozoa.
+  Also includes Stromatoporoidea (continued in vol. 5).
+  Authors: Debrenne, Hartman, Kershaw, Kruse, Nestor, Rigby, Senowbari-Daryan, Stearn,
+  Stock, Vacelet, Webby, West, Willenz, Wood, Zhuravlev. Pages 262-470 extracted.
+---
+
+Class DEMOSPONGIAE Sollas, 1885
+  Order Hadromerida Topsent, 1894
+    Family ACANTHOCHAETETIDAE Fischer,
+    Family SUBERITIDAE Schmidt, 1870
+    Family SPIRASTRELLIDAE Ridley & Dendy,
+  Order CHONDROSIDA Boury-Esnault &
+    Family CHONDRILLIDAE Gray, 1872
+  Order POECILOSCLERIDA Topsent, 1928
+    Family MERLIIDAE Kirkpatrick, 1908
+  Order HALICHONDRIDA Gray, 1867
+  Order AGELASIDA Hartman, 1980b
+    Family ASTROSCLERIDAE Lister, 1900
+    Family MILLEPORELLIDAE Yabe & Sugiyama,
+    Family ACTINOSTROMARIIDAE Hudson,
+  Order HAPLOSCLERIDA Topsent, 1928
+    Family CALCIFIBROSPONGIIDAE Hartman,
+    Family EUZKADIELLIDAE Reitner, 1987a
+    Family NEWELLIDAE Wood, Reitner, &
+  Order Dictyoceratida Minchin, 1900
+    Family VaceletIidae Reitner & Engeser,
+Class CALCAREA Bowerbank, 1864
+    Family BURGUNDIIDAE Dehorne, 1920
+  Subclass CALCINEA Bidder, 1898
+  Order MURRAYONIDA Vacelet, 1981
+    Family MURRAYONIDAE Dendy & Row,
+    Family PARAMURRAYONIDAE Vacelet, 1967a
+  Subclass CALCARONEA Bidder, 1898
+  Order LITHONIDA Vacelet, 1981
+    Family MINCHINELLIDAE Dendy & Row,
+  Order BAERIIDA Borojevic, Boury-Esnault, &
+    Family PETROBIONIDAE Borojevic, 1979
+    Family Lepidoleuconidae Vacelet, 1967a
+      Acanthochaetetes Fischer, 1970 [*A. seunesi] | | UJUR
+      Willardia Willenz & Pomponi, 1996 [*W. caicosensis Willenz & Pomponi, 1996, p. 208] | | HOL
+    Family SUBERITIDAE Schmidt, 1870
+      Calcisuberites Reitner & Schlagintweit, 1990 [*C. stromatoporoides] | | UCRET
+      Chaetetes (Boswellia) Sokolov, 1939 [*Chaetetes boswelli Heritsch, 1932, p. 221]
+      Chaetetes (Pseudoseptifer) Fischer, 1970 [*Chaetetes beneckei Haug, 1883, p. 174] | | UJUR
+      Chaetetopsis Neumayr, 1890 [*C. crinata] | | UJUR
+      Spheciospongia Marshall, 1892
+      Calcispirastrella Reitner, 1992 [*C. sphinctozoides] | | LCRET
+    Family CHONDRILLIDAE Gray, 1872
+      Chondrillidae Gray, 1872 [*C. crustans] | | UJUR
+    Family MERLIIDAE Kirkpatrick, 1908
+      Merlia Kirkpatrick, 1908 [*M. normani] | | REC
+      Neuropora Bronn, 1825 [*Chrysaora spinosa Lamouroux, 1821, p. 83]
+      Stromatoaxinella Wood & Reitner, 1988 [*Chaetetes irregularis Michelin, 1847 in 1840– 1847, p. 306] | | UCRET
+    Family ASTROSCLERIDAE Lister, 1900
+      Astroscleridae Lister, 1900 | | REC
+      Astrosclera Lister, 1900 [*A. willeyana]
+      ?Cassianochaetetes Engeser & Taylor, 1989 [*Catenipora orbignyanus Klipstein, 1845 in 1843– 1845, p. 288] | | UTRIAS
+      Ceratoporella Hickson, 1912
+      Ceratopora Hickson, 1911 [*Ceratopora nicholsoni Hickson, 1911, p. 200]
+      Goreauiella Hartman, 1969 [*G. auriculata Hartman, 1969, p. 17] | | HOL
+      Hispidopetra Hartman, 1969 [*H. miniana]
+      ?Spherolichaetetes Gautret & Razgallah, 1987 [*S. spheroides] | | PERM
+      Stromatospongia Hartman, 1969 [*S. vermicola Hartman, 1969, p. 3] | | REC
+      ?Milleporella Deninger, 1906 [*M. sardoa]
+      Parastromatopora Yabe & Sugiyama, 1935 [*Stromatopora japonica Yabe, 1903, p. 2] | | UJUR
+      Promillepora Dehorne, 1920 [*P. pervinquieri]
+      Actostroma Hudson, 1958 [*A. damesini Hudson, 1958, p. 92] | | UJUR
+      Blastoporella Cuif & Ezzoubair, 1991 [*Blastochaetetes karachensis Cuif & Fischer, 1974, p. 11] | | TRIAS
+      Kemeria Cuif & Ezzoubair, 1991 [*K. pachytheca] | | TRIAS
+      Keriocoelia Cuif, 1974 [*K. conica] | | TRIAS
+      Sclerocoelia Cuif, 1974 [*S. hispida]
+      Sobralispongia Schmid & Werner, 2005 [*S. densespiculata] | | PENN
+      Calcifibrospongia Hartman, 1979 [*C. actinostromarioides]
+    Family Vaceletiidae was first recognized,
+      Vaceletia Pickett, 1982 [*Neocoelia crypta Vacelet, 1977b, p. 509] | | CRET
+      Burgundia Dehorne, 1916 [*B. trinorchii Dehorne, 1916, p. 431]
+      Atrochaetetes Cuif & Fischer, 1974 [*A. tamnifer Cuif & Fischer, 1974, p. 8, fig. 2]
+      Bauneia Peterhans, 1927 [*Monotrypa multitabulata Deninger, 1906, p. 63] | | JUR
+      Blastochaetetes Dietrich, 1919 [*Chaetetes capilliformis Michelin, 1844 in 1840–1847, p. 112]
+      Meandripetra Dieci & others, 1977 [*M. zardinii] | | TRIAS
+      Ptychochaetetes Koechlin, 1947 [*P. ramosus Koechlin, 1947, p. 4–6, pl. 1,1–2, pl. 2,1–4] | | TRIAS
+      Ptychochaetetes (Varioparietes) Bodergat, 1975 [*P. (V.) resurgens] | | NEOG
+  Subclass CALCINEA Bidder, 1898
+    Lithonida Vacelet, 1981 | | JUR
+    Minchinellidae Dendy & Row, 1913
+    Minchinella Kirkpatrick, 1908 [*M. lamellosa]
+    Monoplectroninia Pouliquen & Vacelet, 1970 [*M. hispida] | | HOL
+    Petrostroma Stearn, 1991 | | JUR
+    Plectroninia Hinde, 1900 [*P. halli]
+  Order BAERIDA Borojevic,
+    Adriatella Milan, 1969 [*A. poljaki Milan, 1969, p. 181] | | UTRIAS
+    Aphralysia Garwood, 1914 [*A. carbonaria Garwood, 1914, p. 269] | | CARB
+    Atelostroma Dong & Wang, 1983 [*A. jurassicum Dong & Wang, 1983, p. 418] | | UJUR
+    Axiotubullina Dong & Wang, 1983 [*A. columna] | | UJUR
+    Baastadiostroma Brood, 1972 [*B. typicum] | | TRIAS
+    Circopora Waagen & Wentzel, 1887 [*C. foveolata Waagen & Wentzel, 1887, p. 958–960] | | PERM
+    Crimestroma Yavorsky, 1947 [*C. borissiaki] | | LJUR
+    Dongqiastroma Dong & Wang, 1983 [*D. lamellatum] | | UJUR
+    Dongqiastromaria Dong & Wang, 1983 [*D. grossa] | | UJUR
+    Desmopora Yavorsky, 1947 [*D. listrigonorum] | | UJUR
+    Ellipsactinia Steinmann, 1878 [*E. ellipsoidea Steinmann, 1878, p. 117] | | LJUR
+    Incrustospongia Molineux, 1994 [*I. meandrica Molineux, 1994, p. 980–981] | | PENN
+    Jillua Krumbeck, 1913 [*J. tubifera] | | UTRIAS
+    Komia Korde, 1951 [*K. abundans] | | PENN
+    Lithopora Tornquist, 1900 [*L. koeneni] | | TRIAS
+    Milleporidium Steinmann, 1903 [*H. remesi] | | UJUR
+    Millestroma Gregory, 1898 [*M. nicholsoni Gregory, 1898, p. 341] | | UCRET
+    Palaeoaplysina K rotow, 1888 [*P. laminaeformis] | | PENN
+    Palaeomillepora Gabilly & Lafuste, 1957 [*P. liasica] | | LJUR
+    Paratubuliella Dong & Wang, 1983 [*P. pertabulata] | | UJUR
+    Paronaria Termier & Termier, 1984 [*Parkeria provali Parona in Parona, Crema, & Prever, 1909, p. 161] | | UJUR
+    Sarawakia Hashimoto, 1973 [*S. ellipsactinoides Hashimoto, 1973, p. 211] | | MJUR
+    Scaniostroma Brood, 1972 [*S. gracilis] | | CARB
+    Siphostroma Steiner, 1932 [*S. arzieri Steiner, 1932, p. 99] | | CRET
+    Sphaeractinia Steinmann, 1878 [*S. diceratina] | | UJUR
+    Stromatoporellata Bakalow, 1910 [*S. mammillaris] | | UTRIAS
+    Stromatorhiza Bakalow, 1906 [*Thamnaraea? granulosa Koby, 1888, p. unknown] | | JUR
+    Stromatostroma Bakalow, 1910 [*S. triassicum] | | TRIAS
+    Tauripora Yavorsky, 1947 [*T. astroites Yavorsky, 1947, p. 16–17] | | PERM
+    Tosastroma Yabe & Sugiyama, 1935 [*T. tokunagai Yabe & Sugiyama, 1935, p. 185] | | UJUR
+    Xizangstromatopora Dong, 1981 [*X. densata Dong, 1981, p. 119] | | UJUR
+    Yezoactinia Hashimoto, 1960 [*Y. shotombestuensis Hashimoto, 1960, p. 96] | | UJUR
+    Cerkesia Moiseev, 1944 [*C. robinsoni Moiseev, 1944, p. 25] | | UTRIAS
+    Elephantaria Oppenheim, 1930 [*E. lindstroemi Oppenheim, 1930, p. 2] | | CARB
+    Neostroma Tornquist, 1901 [*N. sumatraense] | | CRET
+    Porosphaera Steinmann, 1878 [*Millepora globularis Phillips, 1829, p. 155] | | CARB
+    Thalaminia Steinmann, 1878 [*Ceriopora crispa Goldfuss, 1826, p. 38] | | UJUR
+Class And Orde
+  Poriticae Gray, 1842
+  Disjectoporidae Tornquist, 1901 | | PERM
+  Disjectopora Waagen & Wentzel, 1887 [*D. milleporaeformis Waagen & Wentzel, 1887, p. 948]
+  Arduorhiza Wentzel, 1889 [*Carterina pyramidata Waagen & Wentzel, 1887, p. 945–947] | | PERM
+  Cancellistroma Wu, 1991 [*C. ramosa] | | PERM
+  Irregulatopora Waagen & Wentzel, 1887 [*I. undulata Waagen & Wentzel, 1887, p. 952] | | PERM
+  Spinostella Termier & Termier, 1980 [*S. praecursor] | | PERM
+  Cliefdenella Webby, 1969
+  Amblysiphonelloides Rigby & Potter, 1986 | | ORD
+  Celyphia Pomel, 1872 | | SIL
+  Solenolmia Pomel, 1872 | | TRIAS
+  Le Maitre, 1935 | | LJUR
+  Endostoma Roemer, 1864
+  Subclass Ceractinomorpha Lévi, 1953
+  Order Agelasida Verrill, 1907
+  Order Vaceletida Finks & Rigby, 2004d
+  Subclass Tetractinomorpha Lévi, 1953
+  Order Hadromerida Topsent, 1898
+  Subclass Calcinea Bidder, 1898
+  Order Clathrinida Hartman, 1958
+  Order Murrayonida Vacelet, 1981
+  Subclass Calcaronea Bidder, 1898
+  Order Leucosolenida Hartman, 1958
+  Order Sycettida Bidder, 1898
+  Order Stellispongiida Finks & Rigby, 2004d
+  Order Sphaerocoeliida Wendt, 1979
+  Order Lithonida Döderlein, 1892
+    Eudea Lamouroux, 1821 | | CAM
+    Trachytila Welter, 1911 | | CRET
+    Eudea Lamouroux, 1821 | | CAM
+    Broglio Lorica & others, 1991 | | CRET
+Class Demospongiae Sollas, 1885
+  Order Agelasida Verrill, 1907
+    Family Angullongiidae Webby & Rigby, 198
+      Angullongia Webby & Rigby, 1985
+      Amblysiphonelloides Rigby & Potter, 1986
+      Belubulaia Webby & Rigby, 1985
+      Nibiconia Rigby & Webby, 1988
+    Family Phragmocoeliidae Ott, 1974
+      Phragmocoelia Ott, 1974
+      Radiothalamos Pickett & Rigby, 1983
+    Family Intrasporeocoeliidae Fan & Zhang,
+      Intrasporeocoelia Fan & Zhang, 1985
+      Rhabdactinia Yabe & Sugiyama, 1934
+    Family Cryptocoeliidae Steinmann, 1882
+      Cryptocoelia Steinmann, 1882 | | CAM
+    Family Palermocoeliidae Senowbari-Daryan
+    Family Thaumastocoeliidae Ott, 1967
+      Subfamily Thaumastocoeliinae Ott, 1967
+        Thaumastocoelia Steinmann, 1882
+        ?Calymenospongia Elliott, 1963
+        ?Follicatena Ott, 1967
+        Henricellum Wilckens, 1937
+        Porefieldia Rigby & Potter, 1986
+        ?Solenocoelia Cuif, 1973
+        Sollasia Steinmann, 1882
+      Subfamily Enoplocoeliinae Senowbari-Dar
+        Enoplocoelia Steinmann, 1882
+        Girtyocoelia Cossmann, 1909
+        Girtyocoeliana Rigby & others, 2005
+    Family Amphorithalamiidae Senowbari-Dar
+    Family Polyedridae Termier & Termier, 197
+    Family Aphrosalpingidae Myagkova, 1955b
+      Subfamily Fistulospongiinae Termier & Term
+        ?Fistulosponginina Termier & Termier, 1977
+        Cystothalamiella Rigby & Potter, 1986
+      Subfamily Vesicocauliinae Senowbari-Dary
+        Vesicocaulis Ott, 1967
+      Subfamily Palaeoschadinae Myagkova, 195
+    Family Glomocystospongiidae Rigby, Fan, &
+    Family Sebargasiidae de Laubenfels, 1955
+      ?Sebargasia Steinmann, 1882
+      Amblysiphonella Steinmann, 1882
+      Chinaspongia Belyaeva, 2000
+      Polycystocoelia Zhang, 1983
+      Stylocoelia Wu, 1991
+    Family Olangocoeliidae Bechstädt & Bran
+    Family Cliefdenellidae Webby, 1969
+      Cliefdenella Webby, 1969
+      Khalfinaea Webby & Lin, 1988
+      Rigbyetia Webby & Lin, 1988
+    Family Guadalupiidae Girty, 1908a
+      ?Cystauletes King, 1943
+      Discosiphonella Inai, 1936
+      Praethalamopora Russo, 1981
+    Family Tabasiidae Senowbari-Daryan, 2005
+  Order Verticillitida Termier & Termier, 1977
+    Family Solenolmiidae Engeser, 1986
+      Subfamily Solenolmiinae Engeser, 1986
+        Solenolmia Pomel, 1872
+        ?Adrianella Parona, 1933
+        ?Cryptocoeliopsis Wilckens, 1937
+        ?Deningeria Wilckens, 1937
+        Hormospongia Rigby & Blodgett, 1983
+        ?Polysiphonaria Finks, 1997
+        Polythalamia Debrenne & Wood, 1990
+        Preverticillites Parona, 1933
+        Sahraja Moiseev, 1944
+        ?Seranella Wilckens, 1937
+      Subfamily Battagliinae Senowbari-Daryan
+    Family Colospongiidae Senowbari-Daryan,
+      Subfamily Colospongiinae Senowbari-Dar
+        Colospongia Laube, 1865
+        Blastulospongia Pickett & Jell, 1983
+        Subascosymplegma Deng, 1981
+      Subfamily Corymbospongiinae Senowbari-
+        Corymbospongia Rigby & Potter, 1986
+        Lichuanospongia Zhang, 1983
+        Neoguadalupia Zhang, 1987
+      Subfamily Kashanelliinae Senowbari-Darya
+    Family Gigantothalamiidae Senowbari-Dary
+    Family Tebagathalamiidae Senowbari-Darya
+      Graminospongia Termier & Termier, 1977
+    Family Annaecoeliidae Senowbari-Daryan,
+    Family Cheilosporitiidae Fischer, 1962
+    Family Salzburgiidae Senowbari-Daryan &
+    Family Cribrothalamiidae Senowbari-Darya
+    Family Verticillitidae Steinmann, 1882
+      Subfamily Verticillitinae Steinmann, 1882
+        Verticillites Defrance, 1829
+        Boikothalamia Reitner & Engeser, 1985
+        Marinduqueia Yabe & Sugiyama, 1939
+        ?Menathalamia Reitner & Engeser, 1985
+        Stylothalamia Ott, 1967
+        Vaceletia Pickett, 1982
+    Family Vaceletidae (see discussion, p. 273
+      Vascothalamia Reitner & Engeser, 1985
+      ?Wienbergia Clausen, 1982
+      Subfamily Polytholosiinae Seilacher, 1962
+        Polytholosia Rauff, 1938
+        ?Ascosymplegma Rauff, 1938
+        ?Tetraproctosia Rauff, 1938
+      Subfamily Fanthalamiinae Senowbari-Dary
+      Subfamily Polysiphospongiinae Senowbari-
+  Order Hadromerida Topsent, 1898
+    Family Celyphiidae de Laubenfels, 1955
+      Celyphia Pomel, 1872
+      Montanaroa Russo, 1981
+      Tongluspongia Belyaeva, 2000
+      Uvanella Ott, 1967
+    Family Ceotinellidae Senowbari-Daryan in
+      Ceotinella Pantic, 1975
+    Family Polysiphonidae Girty, 1908a
+  Subclass Lithistida Schmidt, 1870
+  Order Tetralithistida Lagneau-Hérenger, 196
+    Suborder Tetracladina Zittel, 1878
+    Family Radiocelliidae Senowbari-Daryan &
+Class Calcarea Bowerbank, 1869
+  Subclass Calcinea Bidder, 1898
+  Order Sphaerocoeliida Vacelet, 1979b
+    Family Sphaerocoeliidae Steinmann, 1882
+      Sphaerocoelia Steinmann, 1882
+      Sphinctonella Hurcewicz, 1975
+      Thalamopora Roemer, 1840
+      Tremacystia Hinde, 1884
+  Order Lithonida Döderlein, 1892
+    Family Minchinelliidae Dendy & Row, 191
+Class Hexactinellida Schmidt, 1870
+  Subclass Hexasterophora Schulze, 1887
+  Order Hexactinosa Schrammen, 1903
+    Family Craticulariidae Rauff, 1893
+      Subfamily Caseariinae Schrammen, 1937
+        Casearia Quenstedt, 1858
+        Dracolychnos Wu & Xiao, 1989
+Class Heteractinida de Laubenfels, 1955
+  Order Octactinellida Hinde, 1887
+    Family Nuchidae Pickett, 2002
+      Nucha Pickett & Jell, 1983
+      Jawonya Kruse, 1987
+      Wagima Kruse, 1987
+Class Demospongiae Sollas, 1885
+  Order Agelasida Verrill, 1907
+    Family Catenispongiidae Finks, 1995
+      Catenispongia Finks, 1995
+      Ossiminus Finks, 1995
+      Stratispongia Finks, 1995
+    Family Virgolidae Termier & Termier in H.
+      Subfamily Virgolinae Termier & Termier in H
+        Dactylocoelia Cuif, 1979
+        Keriocoelia Cuif, 1974
+        Reticulocoelia Cuif, 1973
+        Sclerocoelia Cuif, 1974
+      Subfamily Preeudinae Rigby & Senowbari-D
+      Subfamily Pseudohimatellinae Rigby & Seno
+      Subfamily Parahimatellinae Rigby & Senow
+    Family Sphaeropontiidae Rigby & Senowbar
+    Family Exotubispongiidae Rigby & Senowba
+    Family Sestrostomellidae de Laubenfels, 195
+      Sestrostomella Zittel, 1878
+      Brevisiphonella Russo, 1981
+      Himatella Zittel, 1878
+      Polysiphonella Russo, 1981
+      Trachytila Welter, 1911
+      Winwoodia Richardson & Thacker, 1920
+    Family Pharetrospongiidae de Laubenfels, 19
+      Subfamily Pharetrospongiinae de Laubenfel
+        Pharetrospongia Sollas, 1877
+      Subfamily Leiofungiinae Finks & Rigby, 20
+        Aulacopagia Pomel, 1872
+        Elasmopagia Pomel, 1872
+        Loenopagia Pomel, 1872
+    Family Auriculospongiidae Termier & Termi
+      Subfamily Auriculospongiinae Rigby & Seno
+        Auriculospongia Termier & Termier, 1974
+      Subfamily Daharelliinae Rigby & Senowbar
+      Subfamily Gigantospongiinae Rigby & Seno
+      Subfamily Spinospongiinae Rigby & Senow
+      Subfamily Acoeliinae Wu, 1991
+        ?Acoelia Wu, 1991
+    Family Stellispongiellidae Wu, 1991
+      Subfamily Stellispongiellinae Wu, 1991
+        Stellispongiella Wu, 1991
+      Subfamily Prestellispongiinae Rigby & Seno
+      Subfamily Estrellospongiinae Rigby & Seno
+    Family Preperonidellidae Finks & Rigby, 200
+      Subfamily Preperonidellinae Finks & Rigby,
+        Bisiphonella Wu, 1991
+      Subfamily Permocorynellinae Rigby & Seno
+      Subfamily Precorynellinae Termier & Term
+        Stollanella Bizzarini & Russo, 1986
+      Subfamily Heptatubispongiinae Rigby & Se
+    Family Fissispongiidae Finks & Rigby, 2004d
+      Fissispongia King, 1938
+    Family Maeandrostiidae Finks, 1971
+      Stylopegma King, 1943
+Class Calcarea Bowerbank, 1869
+  Subclass Calcinea Bidder, 1898
+  Order Stellispongiida Finks & Rigby, 2004d
+    Family Stellispongiidae de Laubenfels, 1955
+      Subfamily Stellispongiinae de Laubenfels, 1
+        Blastinoidea Richardson & Thacker, 1920
+        Conocoelia Zittel, 1878
+        Diaplectia Hinde, 1884
+        Euzittelia Zeise, 1897
+        ?Heteropenia Pomel, 1872
+        Pachymura Welter, 1911
+        Pachytilodia Zittel, 1878
+        Steinmanella Welter, 1911
+        Trachypenia Pomel, 1872
+        Trachysinia Hinde, 1884
+        Trachysphecion Pomel, 1872
+      Subfamily Holcospongiinae Finks & Rigby,
+        Holcospongia Hinde, 1893
+        Calicia Dullo & Lein, 1980
+        Eudea Lamouroux, 1821
+        Mammillopora Bronn, 1825
+        Tretocalia Hinde, 1900
+        ?Corynospongia Deng, 1990
+Class Archaeocyatha Bornemann, 1884.

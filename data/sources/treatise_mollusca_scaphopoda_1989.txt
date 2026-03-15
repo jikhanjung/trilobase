@@ -1,0 +1,861 @@
+---
+reference: Moore, R.C. & Teichert, C. (eds.), 1989. Treatise on Invertebrate Paleontology, Part I, Mollusca 1 (Revised). Geological Society of America and University of Kansas, 374 p.
+scope:
+  - taxon: Scaphopoda
+    coverage: comprehensive
+  - taxon: Amphineura (Polyplacophora)
+    coverage: comprehensive
+  - taxon: Monoplacophora
+    coverage: comprehensive
+  - taxon: Gastropoda
+    coverage: comprehensive
+notes: |
+  Covers four molluscan classes: Scaphopoda (pp. 60-71), Amphineura/Polyplacophora
+  (pp. 72-99), Monoplacophora (pp. 100-187), and Gastropoda (pp. 194-374).
+  Pages 60-374 extracted.
+---
+
+Class SCAPHOPODA Bronn, 1862
+ Family DENTALIIDAE Gray, 1834
+ Dentale DACOSTA, 1778 [*D. entalis LINNE] | -U.Cret., N.Am.-S.Am.-Eu.-Asia | UCRET
+ Prodentalium YOUNG, 1942 [*Po raymondi] | raymondi, Penn., USA(N.Mex.); XO.5 (Young, 1942). Family SIPHONODENTALIIDAE Simroth, 1894 [Gadilinae STOLlCZKA, 1868; Siphonopoda G. O. SARS, 1878; | PENN
+ Siphonopodidae SIMROTH, 1894 [*Dentalium ovulum] | ; Tert., N. Am.-W. Indies-Eu.; Ree., Eu.-N. Am.-S. Am.-W. Indies-Afr.-E.Indies | NEOG
+ Loxoporus JEFFREYS, 1883 [*Ditrupa dentalina Guppy] | L.Cret.-Ree., eosmop | LCRET
+ ?Throopella GREGER, 1933 [*T. typal. Shell tapering at each end] | U.Dev., N.Am | UDEV
+Class AMPHINEURA von Ihering,
+ Polyplaxiphorae MENKE, 1828 | Cret | CRET
+ Family CHELODIDAE Bergenhayn, 1943
+ Gotlandochiton BERGENHAYN, 1955 [*G. interplieatus] | Sil., Swed | SIL
+ Scanochiton BERGENHAYN, 1943 [*S. jugatus] | Cret., Eu.(Swed.) | CRET
+ Olingechiton BERGENHAYN, 1943 [*0. triangulatus] | U.Cret., Eu.(Swed.) | UCRET
+ Haeggochiton BERGENHAYN, 1955 [*H. haeggi] | Cret., Eu.(Swed.) | CRET
+ Septemchiton BERGENHAYN, 1955 [*S. vermiformis] | ] U.Ord. Eu.(S.Scot.).-- | UORD
+ Order NEOLORICATA Bergenhayn,
+ Isoplacophora COTTON & WEEDING, 1939
+ Protochitonidae ASHBY, 1925 [*Chiton ca] | L.Carb., Eu.(Belg.-Ire.) | LCARB
+ Priscochiton DALL, 1882 [*Chiton canadensis BtLL- INGS] | M.Ord., N.Am. (Que.) | MORD
+ Family HANLEYIDAE Bergenhayn, 1955
+ Hanleya GRAY, 1857 [*H. debilis (] | , Norway; Rec., sub-Arctic seas | REC
+ Family CHORIPLACIDAE Cotton &
+ Choriplax PILSBRY, 1894
+ Subterenochiton IREDALE & HULL, 1924
+ Family ISCHNOCHITONIDAE Dall,
+ Ischnochiton GRAY, 1847
+ Diktuonus ASHBY, 1931 [*lschnochiton (H.) cariosus CARPENTER in PILS- BRY] | (Victoria); Pleist., USA (Calif.); Ree., cosmop. I. (Ischnochiton). U.Eoe.-Ree., cosmop | HOL
+ Lepidozona PILSBRY, 1892 [*Chiton mertensii MID- DENDORFF] | -Rec., Eu.- Carib.-W.N.Am.-Japan | REC
+ Craspedochilus G.O.SARS, 1878 | )- Norway; Rec., cosmop. (temperate and colder seas) | REC
+ Oligochiton BERRY, 1922 [*0. lioplax] | Oligo., Can. T s Stenoplox Lepidozona Oligochiton Lepidochitono idozona x chitonidae, Ischnochitonidae) (p. /55-/58). (B.C.) | PALEOG
+ Cyanoplax PILSBRY, 1892 [*'Chiton hartwegii CAR- PENTER] | ); Rec., E.Pac. (N.Am.-S.Am. coasts) | REC
+ Basiliochiton BERRY, 1918 [*'Mopalia heathii PILS- BRY] | Rec., NE.Pac.(N.Am. W. coast) | REC
+ Tonidna THIELE, 1906 | Rec | REC
+ Schizoplax DALL, 1878 [*'Chiton brandtii MIDDEN- DORFF] | Rec., Okhotsk Sea-Aleutian I | REC
+ Family CALLOCHITONIDAE Plate,
+ Callochiton GRAY, 1847 [*'Chiton laevis MONTAGU] | (Victoria); Rec., Antarct.-S.Afr.-Austral.-N.Z.- Medit.-G.Brit | REC
+ Family CALLISTOPLACIDAE Pilsbry,
+ Nuttallochiton PLATE, 1899 [*Schizochiton hyadesi ROCHEBRUNE] | ) ; Rec., Eu.(Medit.)-Japan-NE.Pac | REC
+ Ceratozona DALL, 1882 [*Chiton guildingi REEVE] | Rec., Carib.-C.Am | REC
+ Family CHAETOPLEURIDAE Plate,
+ Chaetopleura SHUTTLEWORTH, 1853 [*Chiton peruvianus LAMARCK] | ) ; Rec., nearly all temperate and warm temperate seas | REC
+ Calloplax THIELE, 1909 | Rec., W. Atl | REC
+ Family MOPALIIDAE Dall, 1889
+ Mopalia GRAY, 1847 | -Rec., W.USA-N.Pac | REC
+ Plaxiphora GRAY, 1847
+ Euplacifora JOHNSTON, 1891 | -Rec., AustraL-N.Z.-Antarctic | REC
+ Symmetrogephyrus MIDDENDORFF, 1847 | ; Rec., Arctic (circumboreal) | REC
+ Family SCHIZOCHITONIDAE Dall,
+ Schizochiton GRAY, 1847 | cimolia), Rec., Austral., head and tail valves, X I | REC
+ Loricella PILSBRY, 1893 [*Lorica angasi H. ADAMS &. ANGAS] | (Victoria); Rec., Austral.-Celebes | REC
+ Family CHITONIDAE Rafinesque, 1815
+ Tonicinae BERGENHAYN, 1930 | -Rec. The family includes the more highly specialized chitons comprising several diverse groups of species. The well-marked pectination of the insertion plates is considered at present to be the commo | REC
+ Chiton LINNE, 1758 [*C. tuberculatlls]
+ Yfachyodon DALL, 1892 [*Chiton janierensis GRAY] | -Rec., cosmop | REC
+ Ilowensis HEDLEY & HULL, 1912 | Rec., S.Austral | REC
+ Tonieia GRAY, 1847 | Rec., Austral.-E.Pac | REC
+ Onithochiton GRAY, 1847 | Rec., S.Afr.- Austral.-N.Z | REC
+ Enoplochiton GRAY, 1847 | (Paris Basin); Rec.. W.S.Am. Suborder ACANTHOCHITONINA Bergenhayn, 1930 [=Opsichitonia DAlt, 1889 (partim); Mesoplacophora PILS· BRY, 1893 (partim); Chitonina THIELE, 1910 (partim); | REC
+ Isoplacophora COTTON & WEEDING, 1939 [*'Chiton fascicularis LINNE] | -Rec. Recent authors divide this assemblage into subfamilies, which are not recognized here since no approach to unanimity in defining them yet exists. Many genera have been assigned to the family, th | REC
+ Acanthochiton IREDALE, 1915
+ Acanthocheus LEACH, 1819 [*'Chiton laqueatus SOWERBY] | ); Rec., cosmop. (nearly all seas except N.Pac.) | REC
+ Augasia SCUDDER, 1882
+ Bassethullia PILSBRY, 1928 [*'Chiton strigatus SOWERBY] | (Italy); Rec., IndoPac.-Austral.-N.Z | REC
+ Cryptochiton MIDDENDORFF, 1847 | Mio., Austral.(Victoria) | NEOG
+ Dichachiton MIDDENDORFF, 1848 | larvaeformis (BURROW), Rec., Austral.; 1a,b, juvenile and adult animals, X I (20·); Ic-f, valves (Ie, head; Id,e, tail, If, juvenile tail), XZ (ZO·) | REC
+ Family AFOSSOCHITONIDAE Ashby,
+ # INCERTAE SEDIS
+ Allochiton FUCINI, 1912 [*A. gemmellaroi] | ] L.Jur., Eu.(Sicily) | LJUR
+ Lavenachiton COTTON & GODFREY, 1940 [*Ischnochiton (Radsiella) cliltonensis ASHBY & COTTON] | ] M.Mio., Austral. (Victoria) | NEOG
+ Lirachiton ASHBY & COTTON, 1939 [*Acanthochiton (Lirachiton) inexpectus ASHBY & COTTON] | ] L.Plio., Austral.(Victoria) | NEOG
+ Family Uncertain (p.172-I74).
+ Duslia JAHN, 1893 [*D. insignis] | L.Sil., Bohemia | LSIL
+ Permochiton IREDALE & HULL, 1926 [*Po australiantis] | Permo-Carb., Austral.(NSW) | CARB
+ Solenocaris YOUNG & YOUNG, 1868 [*S. solenoides] | Sil., Scot | SIL
+ Sulcochiton RYCKHOLT, 1862 | L.Carb., Belg | LCARB
+ Trachypleura JAECKEL, 1900 [*T. triadomarchica] | Rec. O [ I t g l F [ h e b s v p F c R g d w REFERE POLYPLACOPHORA The following publications relating to the Polyplacophora have been selected from a much longer list. They are considered to be t w | REC
+ Order NEOMENIIDA Simroth, 1893
+ Family NEOMENIIDAE von Ihering, 1876
+ Family PRONEOMENIIDAE Simroth,
+ Family LEPIDOMENIIDAE Pruvot, 1890
+ Family GYMNOMENIIDAE Odhner, 1921
+Class MONOPLACOPHORA Wenz
+ Order TRYBLIDIOIDEA Lemche,
+ Family PALAEACMAEIDAE Grabau &
+ ?Scenella BILLINGS, 1872 [*5. reticulata] | Cam., N.Am.-NE.Asia | CAM
+ Palaeacmaea HALL & WHITFIELD, 1872 [*P. typical. Low conical shell with subcentral apex] | Cam., N.Am.-NE.Asia | CAM
+ Family TRYBLIDIIDAE Pilsbry in
+ Subfamily PROPLININAE Knight & Yochelson,
+ Subfamily TRYBLIDIINAE Pilsbry in
+ Bipulvina YOCHELSON, 1958 [*B. croftsae] | L.Ord., N.Am | LORD
+ Tryblidium LINDSTROM, 1880 [*T. reticulatum] | , M.Sil., N. Am.-Eu | SIL
+ ?Helcionopsis ULRICH & SCOFIELD, 1897 [*'H. striatum ULRICH in ULRICH & SCOFIELD] | U.Ord., N.Am.-Eu | UORD
+ Subfamily ARCHAEOPHIALINAE Knight &
+ Archaeophiala PERNER, 1903 [*'Patella antiquissima HISINGER]
+ Scapha HEDSTROM, 1923 | Ord., Eu | ORD
+ ?Micropileus WILSON, 1951 [*'M. obesus] | Ord., N.Am | ORD
+ ?Calloconus PERNER, 1903 | L.Dev., Eu.-- X 1.3 | LDEV
+ Subfamily DRAHOMIRINAE Knight & Yochelson,
+ Subfamily NEOPILININAE Knight & Yochelson,
+ Family CYRTONELLIDAE Knight &
+ Cyrtonellopsis YOCHELSON, 1958 [*C. huzzahensis] | L.Ord., N.Am | LORD
+ Cyrtonella HALL, 1879 [*Cyrtolites? mitella HALL] | -Dev., N.Am | DEV
+ Macroscenella WILSON, 1951 [*Metoptoma superba BILLINGS] | - L.Sil | LSIL
+ Family ARCHINACELLIDAE Knight,
+ Archinacella ULRICH & SCOFIELD, 1897 | -L.Sil., N.Am.-Eu.-- lb, apertural view; Ie, posterior side looking obliquely toward aperture; all X 1.3 | LSIL
+ ?Ptychopeltis PERNER, 1903 [*H. recurvus var. eZongatus] | M.Ord., Eu | MORD
+ ?Pollicina HOLZAPFEL, 1895 [*Cyrtolithes cornicl/-]
+ Zurn EICHWALD, 1860 | M.Ord., Eu | MORD
+ Family CAMBRIDIIDAE Horny, 1957
+ Cambridium HOUNY, 1957 [*c. nikiforovae] | L.Cam., N.Asia.-- *C. nikiforol'ae, Sib.; 6a,b, dorsal and right side views of steinkern showing internal markings, X2 | LCAM
+ ?Bagenovia RADUGIN, 1937 [*B. sajanica HORNY] | ] L.Cam., C.Asia | LCAM
+ Stenothecoides RESSER, 1938 [*Stenotheca elongata WALCOTT (after HORNY)] | -M.Cam., N.Am., Asia | MCAM
+ Acoela THIELE, 1926
+ Archaeogastropoda THIELE, 1925
+ Azygobranchia SPENGEL, 1881
+ Basommatophora KEFERSTEIN, 1864
+ Cephalaspidea FISCHER, 1883
+ Ctenobranchia SCHWEIGGER, 1820
+ Diotocardia MORCH, 1865
+ Entomotaeniata COSSMANN, 1896
+ Euthyneura SPENGEL, 1881
+ Gymnoglossa GRAY, 1853
+ Gymnosomata DEBLAINVILLE, 1824
+ Heteropoda LAMARCK, 1812
+ Mesogastropoda THIELE, 1925
+ Neogastropoda WENZ, 1938
+ Neurobranchia KEFERSTEIN, 1864
+ Opisthobranchia MILNE EDWARDS, 1848
+ Platypoda GRAY, 1857
+ Pleurocoela THIELE, 1926
+ Ptenoglossa GRAY, 1853
+ Pteropoda CUVIER, 1804
+ Pulmonata CUVIER, 1817
+ Scutibranchia CUVIER, 1817
+ Siphonostomata DEBLAINVILLE, 1824
+ Streptoneura SPENGEL, 1881
+ Taenioglossa F.H.TROSCHEL, 1848
+ Tectibranchia CUVIER, 1817
+ Thalassophila GRAY, 1850
+ Thecosomata DEBLAINVILLE, 1824
+ Toxoglossa TROSCHEL, 1848
+ Zygobranchia SPENGEL, 1881 | -Rec. (CX) | REC
+ Family Uncertain (7). L.Ord.-U.Trias. (KN-
+ Family Uncertain (1). Perm. (KN-BA-YO)
+ Order Uncertain (3)." 0Dev., L.Carb.(Miss.)-Rec.
+ Suborder Bellerophontina Ulrich & Scofield,
+ Superfamily Helcionellacea Wenz, 1938
+ Superfamily Bellerophontacea M'Coy, 18
+ Suborder Macluritina Cox & Knight, 1960
+ Superfamily Macluritacea Fischer, 1885
+ Superfamily Euomphalacea deKoninck,
+ Suborder Pleurotomariina Cox & Knight, 1
+ Superfamily Pleurotomariacea Swainson,
+ Superfamily Trochonematacea Zittel, 18
+ Superfamily Fissurellacea Fleming, 1822
+ Suborder Patellina von Ihering, 1876
+ Superfamily Patellacea Rafinesque, 1815
+ Superfamily Cocculinacea Thiele, 1909
+ Suborder Trochina Cox & Knight, 1960
+ Superfamily Platyceratacea Hall, 1859
+ Superfamily Microdomatacea Wenz, 193
+ Superfamily Anomphalacea Wenz, 1938
+ Superfamily Oriostomatacea Wenz, 193
+ Superfamily Trochacea Rafinesque, 181
+ Suborder Neritopsina Cox & Knight, 1960
+ Superfamily Neritacea Rafinesque, 1815
+ Superfamily Murchisoniacea Koken, 189
+ Superfamily Clisospiracea S. A. Miller, 1
+ Superfamily Pseudophoracea S. A. Miller
+ Superfamily Craespedostomatacea Wenz,
+ Superfamily Palaeotrochacea Knight, 19
+ Superfamily Amberleyacea Wenz, 1938
+ Order Caenogastropoda Cox, 1959
+ Superfamily Loxonematacea Koken, 1889
+ Superfamily Cerithiacea Fleming, 1822
+ Superfamily Cyclophoracea Gray, 1847
+ Superfamily Rissoacea Adams & Adams,
+ Superfamily Subulitacea Lindstrom, 1884
+ Subclass Opisthobranchia Milne Edwards, 1
+ Superfamily Pyramidellacea d'Orbign
+ Order Pleurocoela Thiele, 1925
+ Superfamily Acteonacea d'Orbigny, 1
+ Superfamily Pelagiellacea Knight, 1956
+Class GASTROPODA Cuvier, 1797
+ Family HELCIONELLIDAE Wenz, 1938
+ Helcionella GRABAU & SHIMER, 1909 | subrugosa (D'ORBIGNY), L.Cam., N.Y.; 3a,b, individuals showing extremes in variation, X3.3 | LCAM
+ Family COREOSPIRIDAE Knight, 1947
+ Latouchella COBBOLD, 1921 | Cam., N.Am.-Eu.-NE.Asia | CAM
+ Coreospira SAITO, 1936 | rugosa, L.Cam., Korea; 4a,b, left side, anterior, both X 10 | LCAM
+ Cycloholcus KNIGHT, 1947 | -L.Trias. c Although the soft parts of bellerophont n gastropods have never been observed, their a shells are very similar in many respects to b those of the pleurotomarians and show sigr nificant hom | LTRIAS
+ Family CYRTOLITIDAE S. A. Miller,
+ Cloudia KNIGHT, 1947 | Cam., N.Am | CAM
+ Cyrtolites CONRAD, 1838 | M.Ord.-L.Si/., N.Am.-Eu | MORD
+ Cyrtodiscus PERNER, 1903 | Ord., N.Am.-Eu.- Asia | ORD
+ ?Procarinaria PERNER, 1911 | Sil., Eu | SIL
+ Family SINUITIDAE DaD in
+ Subfamily BUCANELLINAE Koken, 1925
+ Bucaniellidae KOKEN, 1925 | -M.Perm | PERM
+ Owenella ULRICH & SCOFIELD, 1897 | Cam., N.Am | CAM
+ Sinuella KNIGHT, 1947 | Cam., N.Am | CAM
+ Bucanella MEEK, 1871 | L.Ord.-D~t", F P S A Ptomatis (p.lIn). N.Am.-Eu | LORD
+ Sinuitina KNIGHT, 1945
+ Sinuitidae DALL, 1913 | -M.Dev | MDEV
+ Anwnochilus KNIGHT, 1947 | Cam., N.Am | CAM
+ Crenistriella KNIGHT, 1945
+ Subfamily EUPHEMITINAE Knight, 1956
+ Euphemites WARTHIN, 1930 | }-Perm., Eu.- N.Am.-S.Am.-N.Afr.-Asia | PERM
+ Warthia WAAGEN, 1880 | -M.Perm., Eu.-SE.Asia | PERM
+ Family BELLEROPHONTIDAE M'Coy,
+ Subfamily TROPIDODISCINAE Knight, 1956
+ Chalarostrepsis KNIGHT, 1948 | Cam., N.Am | CAM
+ Tropidodiscus MEEK & WORTHEN, 1866 [*Belleraphon curvilineatus CONRAD] | -Dev., N.Am.-S.Am.-Eu.-Asia | DEV
+ Subfamily BUCANlINAE Ulrich
+ Bucaniidae ULRICH & SCOFIELD, 1897 | -Dev. Tribe BUCANIIDES Ulrich & Scofield, 1897 [nom. transl. KNIGHT, BATTEN & YOCHELSON. herein (ex | DEV
+ Bucaniidae ULRICH & SCOFIELD, 1897 | L.Ord., N.Am | LORD
+ Bucania HALL, 1847 [*Bellerophon sulcatintts EM- MONS] | -Sil., N.Am.- Eu.-NE.Asia | SIL
+ Kokenospira BASSLER, 1915 [*Bucaniella esthona KOKEN] | -U.Ord., N.Am.-Eu | UORD
+ Coelocyclus PERNER, 1903 [*Bellerophon (Coelocyc- Ius) rarissimus] | -M.Dev., N.Am.- Eu | MDEV
+ Salpingostominae KOKEN, 1925 | -Sil | SIL
+ Salpingostoma C. F. ROEMER, 1876 [*Bellerophon megalostoma EICHWALD] | -Sil., N.Am.-Eu | SIL
+ Tremanotus HALL, 1865 [*T. alplleus] | -M.Sil., N.Am.-Eu.- Austral | SIL
+ Subfamily CARINAROPSINAE Ulrich & Scofield,
+ Sphenosphaera KNIGHT, 1945 [*Bellerophon clausus ULRICH in ULRICH & SCOFIELD] | -M.Sil., N.Am.-Eu | SIL
+ Phragmosphaera KNIGHT, 1945 [*P. miranda] | Dev., N.Am | DEV
+ Gyrospira BOUCOT, 1956 [*G. tourteloti] | ?Dev., S.Am | DEV
+ Subfamily PTEROTHECINAE Wenz, 1938
+ Pterothecidae WENZ, 1938 | Dev. Trends initiated in the Carinaropsinae seem to be perfected in this subfamily, possibly as a result of adaptation to creeping pira Carinaropsis Phragmosphaera ontidae-earinaropsinae) (p. 1I80). P | DEV
+ Pterotheca SALTER, 1853 [*Atrypa transversa PORT- LOCK] | Ord., N.Am.-Eu | ORD
+ Cyclotheca TEICHERT, 1935 [*Pterotheea bohemiea BARRANDE] | Sil., Eu | SIL
+ Aspidotheca TEICHERT, 1935 [*A. sehrieli] | L.Dev., Eu | LDEV
+ Pedasiola SPRIESTERSBACH, 1919 [*P. rhenana] | M.Dev., Eu | MDEV
+ Subfamily BELLEROPHONTINAE M'Coy, 1851
+ Cymbularia KOKEN, 1896 [*c. galeata] | galeata, Ord., Est.; la-e, left, apertural and anterior sides, X 1.3 | ORD
+ Liljevallospira KNIGHT, 1945 [*Bellerophon tubulosus LINDSTROM] | M.Sil.; Eu | SIL
+ Prosoptychus PERNER, 1903 [*Bellerophon (Prosoptyehus) plebeius] | Sil., Eu | SIL
+ Ptychosphaera PERNER, 1903 [*P. constricta] | U.Sil., Eu | USIL
+ Subfamily KNIGHTITINAE Knight, 1956
+ # INCERTAE SEDIS
+ Euphernitella TASCH, 1953 [*E. emrichi] | Penn., Kan | PENN
+ Suborder MACLURITINA Cox &
+ Family ONYCHOCHILIDAE Koken,
+ Subfamily ONYCHOCIDLINAE Koken, 1925
+ Onychochilidae KOKEN, 1925 | -L.Dev | LDEV
+ Matherella WALCOTT, 1912 | Cam., N.Am.-NE.Asia | CAM
+ Matherellina KOBAYASHI, 1937 | L.Ord., NE.Asia | LORD
+ Onycochilus COSSMANN, 1915 | M.Sil., N.Am.-Eu | SIL
+ Sinistracirsa COSSMANN, 1908 | L.Dev., Eu | LDEV
+ Subfamily SCAEVOGYRINAE Wenz, 1938
+ Scaevogyridae WENZ, 1938 | Cam., N.Am.-NE.Asia | CAM
+ Antispira PERNER, 1903 | M.Ord., Eu | MORD
+ Versispira PERNER, 1903 [*'Temnodiscus rugifer KOKEN] | M.Ord.,Eu | MORD
+ Family MACLURITIDAE Fischer, 1885
+ Lecanospira BUTTS, 1926 [*'Ophileta compacta SAL- T c w s o a L L Bornesello Moclurites Moclurite TER] | L.Ord., N.Am. L. (Lecanospira). Upper sutures within deep angular grooves; umbilical slope of whorls flat or slightly concave; growth lines prosocyrt on base of whorls | LORD
+ Macluritella KIRK, 1927 [*M. stantoni] | L.Ord., N.Am. M. (Macluritella). Whorls slightly disjunct, base flat | LORD
+ Palliseria WILSON, 1924 [*P. robusta] | M.Ord., N.Am | MORD
+ Arctomphalus TOLMACHOV, 1926 | Dev., N.Am.-Eu | DEV
+ Family HELICOTOMIDAE Wenz, 1938
+ Orospira BUTTS, 1926 [*0. bigranosa] | Ord., N.Am | ORD
+ Polhemia CULLISON, 1944 [*P. taneyensis] | L.Ord., N.Am | LORD
+ Ophiletina ULRICH & SCOFIELD, 1897 [*0. sublaxaJ. Coiled approximately in a plane] | M.Ord., N.Am.-Eu | MORD
+ ?Colpomphalus COSSMANN, 1916
+ Family EUOMPHALIDAE de Koninck,
+ Lesueurilla KOKEN, 1898 | Ord., N. Am.-Eu | ORD
+ Poleumita CLARKE & RUEDEMANN, 1903 | ] L.Sil., N.Am.-Eu | LSIL
+ Sinutropis PERNER, 1903 | Sil., S Eu | SIL
+ Micromphalus KNIGHT, 1945 | -Miss., N. Am | MISS
+ Phanerotinus J.DEC.SOWERBY, 1844 | -M.Perm., N.Am | PERM
+ Anisostoma KOKEN, 1889 [*Straparollus pulchellus D'ORBIGNY] | -U.Trias., Eu | UTRIAS
+ ?Coelodiscus BROSAMLEN, 1909 [*Euomphalus minutus ZIETEN] | )-M.Jur.(Bai·) , Eu | MJUR
+ ?Weeksia STEPHENSON, 1941 [*Pseudomalaxis amplificata WADE] | F p b o r f s t o B a w b c g b d t c f O O D B U.Cret., N.Am | UCRET
+ Family OMPHALOTROCHIDAE Knight,
+ Omphalolrochacea KNIGHT, 1945 [*Platyschisma? mccoyi WALCOTT] | Dev., N.Am.-Eu | DEV
+ Discotropis YOCHELSON, 1956 [*D. publicus] | , ?U.Trias. N.Am.-Eu.-- | UTRIAS
+ Babylonites YOCHELSON, 1956 [*B. carinatus] | M.Perm., N.Am | PERM
+ Family SINUOPEIDAE Wenz, 1938
+ Sinuopeinae WENZ, 1938 | -M.Perm | PERM
+ Subfamily SINUOPEINAE Wenz, 1938
+ Subfamily PLATYSCHISMATINAE Knight, 1956
+ Umbospira PERNER, 1903 [*'V. nigricans] | Sil., Eu | SIL
+ Pycnotrochus PERNER, 1903 [*'P. "iator] | (Miss.}, Eu.-N.Am.-Austral | MISS
+ Subfamily TURBONELLININAE Knight, 1956
+ Turbomaria PERNER, 1907 [*'Pleurotomaria radttla DEKoNINCK] | Sil., Eu | SIL
+ ?Keeneia ETHERIDGE, 1902 [*'K. platyschismoides] | Perm., Austral | PERM
+ Family RAPHISTOMATIDAE Koken,
+ Raphistomidae KOKEN, 1896 | - M.Perm. c Turbonelli Plotyschismo Chepultopecio Sinuopeo Turbomorio | PERM
+ Subfamily OPHILETINAE Knight, 1956
+ Schizopea BUTTS, 1926 [*S. washburnei] | Ord., N.Am | ORD
+ Subfamily RAPlllSTOMATINAE Koken, 1896
+ Scalites EMMONS, 1842 [*S. angulatus] | M.Ord., N.Am | MORD
+ Raphistoma HALL, 1847 [*Maclurea striatus EMMONS] | -Sil., N.Am.-Eu | SIL
+ Pararaphistoma VOSTAKOVA, 1955 [*Helicites qualteriatus SCHLOTHElM] | Ord., Eu.-N. Am | ORD
+ Buechelia C. SCHLUTER, 1894 [*B. goldfussi] | M.Dev., Eu.-N.Am | MDEV
+ Subfamily LIOSPffiINAE Knight, 1956
+ Liospira ULRICH & SCOFIELD, 1897 [*Pleurotomm'ia micula HALL] | -Sil., N.Am.-Eu.-NE. Asia | SIL
+ Trepospira ULRICH & SCOFIELD, 1897 [*Pleurotomaria sphaerulata CONRAD] | -M.Perm., N.Am.- S.Am.-Eu.-N.Afr. T. (Trepospira) [=Kansana TASCH, 1953 (137, Am.-S.Am.-Eu.-N.Afr | PERM
+ Subfamily OMOSPIRINAE Wenz, 1938
+ Hypselentoma WELLER, 1929 [*Pleurotomaria perhumerosa MEEK] | Penn., N.Am | PENN
+ Family EOTOMARIIDAE Wenz, 1938
+ Subfamily EOTOMARIINAE Wenz, 1938
+ Ptychomphalinae WENZ, 1938 | U.Cam.-L.lur.(Lias.) | UCAM
+ Taeniospira ULRICH & BRIDGE, 1931 [*T. eminencensis] | Cam., N. Am | CAM
+ Eocryptaulina FOERSTE, 1936 | -L.Perm., N.Am.-Eu.- Asia-Austral | LPERM
+ Oehlertia PERNER, 1907
+ Spiroscala KNIGHT, 1945 [*So pagoda] | )-M.Perm., N.Am.-Eu.-Austral | PERM
+ Shwedagonia BATTEN, 1956 [*So elegans] | Perm., cosmop | PERM
+ Euzone KOKEN, 1896 [*E. alauna] | Trias.(Carn.), Eu | TRIAS
+ Luciellina KITTL, 1900 [*L. contracta] | Trias. (Carn.) , Eu. (Hung.-Aus.) | TRIAS
+ Ptychomphalus AGASSIZ, 1839 [*Helicina compressa J.SOWERBV]
+ Eotomariinae WENZ, 1938 | -M.Perm | PERM
+ Eotomaria ULRICH & SCOFIELD, 1897 [*E. canalifera ULRICH in ULRICH & SCOFIELD] | -Sil., N. Am.-Eu.-NE.Asia | SIL
+ Glabrocingulum THOMAS, 1940 | }-M.Perm., Eu.-E.Asia-N.Am.-S. Am | PERM
+ Subfamily AGNESIINAE Knight, 1956
+ Hesperiella HOLZAPFEL, 1889 | -U.Carb., Eu | UCARB
+ Subfamily NEILSONIINAE Knight, 1956
+ Neilsonia THOMAS, 1940 | )-M.Perm., N.Am.-Eu.-SE. Asia | PERM
+ Apachella WINTERS, 1956 | -M.Perm., cosmop | PERM
+ Pareuryalox HAAS, 1953
+ Family LOPHOSPIRIDAE Wenz, 1938
+ Lophospirinae WENZ, 1938 | -M.Trias | MTRIAS
+ Subfamily LOPHOSPIRINAE Wenz, 1938
+ Loxoplocus FISCHER, 1885 [*Murchisonia tropidophora WHITEAVES] | -Sil., N.Am.-Eu.-NE.Asia | SIL
+ Longstaffia COSSMANN, 1908 [*Pleurotomaria tt/bulosa LINDSTROM] | M.Sil., Eu | SIL
+ Subfamily RVEDEMANNIINAE Knight, 1956
+ Ruedernannia FOERSTE, 1914 | -Dev., N.Am.-Eu | DEV
+ Family LUCIELLIDAE Knight, 1956
+ Rhornbella BRIDGE & CLOUD, 1947 | L.Ord., N.Am | LORD
+ Prosolariurn PERNER, 1903 | Sil., Eu | SIL
+ Epiptychia PERNER, 1907 | L E s s B U P Rhombella L.Dev., Eu | LDEV
+ Echinodrrus RYCKHOLT, 1860 | L.Carb., Eu | LCARB
+ Brachytornaria KOKEN, 1925 | M.Ord., Eu | MORD
+ Family GOSSELETINIDAE Wenz, 1938
+ Subfamily GOSSELETININAE Wenz, 1938
+ Stenoloron OEHLERT, 1888 | M.Sil.-L. Del'., Eu | SIL
+ Platyloron OEHLERT, 1888 | Sil.-M.D~I'" Eu | SIL
+ Umbotropis PERNER, 1903
+ ?Triangularia FRECH, 1894
+ Rufilla KOKEN, 1896 | Trias. (Carn.), Eu | TRIAS
+ Subfamily COELOZONINAE Knight, 1956
+ Latitaenia KOKEN, 1925 | -U.Ord., Eu | UORD
+ Euryzone KOKEN, 1896 | -M.Dev., Eu.-SE.Asia-N.Am | MDEV
+ Conotoma PERNER, 1907 | U.Sil., Eu | USIL
+ Coelozone PERNER, 1907 | U.Sil., Eu | USIL
+ Pleurorima PERNER, 1907 | U.Sil., Eu | USIL
+ Planozone PERNER, 1907 | L.Dev., Eu | LDEV
+ Crenilunula KNIGHT, 1945 | -U.Sil., Eu | USIL
+ Family PORTLOCKIELLIDAE Batten,
+ Shansiella YIN, 1932 | ( Miss.)-L. Penl1., E. Asia-N. Am.-Eu.-N. Afr | MISS
+ Tapinotomaria BATTEN, 1956 | L.Perm.-M.Per7ll., N.Am | LPERM
+ Catantostoma SANDBERGER, 1842 | ] M.Dev., Eu.-rIG. 128,1. ·C. clathratum, Ger.; la, side, showing both trema and inhalant orifice below; lh, side, showing 'exhalant trema; X 4. o st z a th c Po I M b s g m Conotoma ae--Coelozoninae) | MDEV
+ Family PORCELLIIDAE Broili
+ Kokenella KITTL, 1891 [*Porcellia fischeri HORNES] | )-U.Trias. (Nor.). Eu.-Timor | UTRIAS
+ Glyptotomaria KNIGHT, 1945 [*G. apiarium] | -M.Perm., N.Am | PERM
+ Discotomaria BATTEN, 1956 | -M.Perm., N.Am | PERM
+ Euryalox COSSMANN, 1897 [*Pleurotomaria juvaviea KOKEN] | }; U.Trias.(Nor.}, Eu.-E.Indies(Timor) | UTRIAS
+ Codinella KITTL, 1899 [*Troclltls generelli STOP- PANI] | M.Trias.(Ladin.} , Eu | MTRIAS
+ Family POLYTREMARIIDAE Wenz,
+ Polytremariinae WENZ, 1938 [*Pleurotomaria eatenata oEKoNINCK] | Perm., Eu | PERM
+ Family LAUBELLIDAE Cox, n. fam.
+ Family SCHIZOGONIIDAE Cox, n. fam.
+ Schizogonium KOKEN, 1889 [*Pleurotomaria sealaris MUNSTER] | M.Trias.(Ladin.), Eu | MTRIAS
+ Pseudoschizogonium KUTASSY, 1937 [*Po turriculatum] | U.Trias.(Carn.} , Eu | UTRIAS
+ Family ZYGITIDAE Cox, n. fam.
+ Family KITTLIDISCIDAE Cox, n. fam.
+ Kittlidiscus HAAS, 1953 [*Pleurotomaria bronni KLiPSTEIN] | M.Trias.( Ladin.} , Eu | MTRIAS
+ Family TEMNOTROPIDAE Cox, n. fam.
+ Pleurotomaria DEFRANCE, 1826
+ Leptomaria E. EUDES-DESLONGCHAMPS, 1864 | }-U.Cret.(Dan.), cosmop | UCRET
+ Stuorella KITTL, 1891 | (Cam.) , Eu | CAM
+ Perotrochus P.FISCHER, 1885 | -Japan; Rec., Japan-S.Afr | REC
+ Family TROCHOTOMIDAE Cox, n. fam.
+ Family SCISSURELLIDAE Gray, 1847
+ Woodwardia CROSSE & FISCHER, 1861 | - Rec., cosmop | REC
+ Sinezona FINLAY, 1927 | -Rec., Eu.-N.Am.-Australasia.-- | REC
+ Family HALIOTIDAE Rafinesque, 1815
+ Haliotis LINNE, 1758
+ Haleotis BINKHORST, 1861 [*H. iris MARTYN] | , Mio.-Ree., cosmop. H. (Haliotis). Shell elongate and narrow, with apex very eccentric, almost marginal; ornament of spiral cords, almost obsolete on latter half of last whorl except on abapical side | NEOG
+ Spirotomaria KOKEN, 1925 [*Plet/rotomaria rudissima KOKEN] | Ord., Eu | ORD
+ Trachybembix J.BOHM, 1895 [*Plet/rotomaria it/nonis KITTL] | ) M.Trias. (Ladin.), Eu | MTRIAS
+ Trochonematidae ZITTEL, 1895 | -M.Perm. The Trochonematacea and Trochonematidae have usually been made a catchall for several heterogeneous groups of fossil Notohaliotis Haliotidae) (p.1222-1223). gastropods of the Paleozoic and Me | PERM
+ Family TROCHONEMATIDAE Zittel,
+ Trochonema SALTER, 1859 | -U.Ord., N.Am.-Eu.-NE.Asia. A $pirotomorio Ptychozone amily Uncertain) (p.1223) | UORD
+ Cyclobathmus KNIGHT, 1940 | M.Perm., N. Am.-Eu.-NC.Asia | PERM
+ Family FISSURELLIDAE Fleming, 1822
+ Subfamily EMARGlNULINAE Gray, 1834
+ Emarginula LAMARCK, 1801 [*E. conical [] | , Rec., Eu.-N.Am.-S.Am.-Australasia | REC
+ Loxotoma FISCHER, 1885 [*Emargil1l1la neocomiel1sis D'ORBIGNY] | ADMIS), Rec., E.Indies; 5a,b, X2 | REC
+ Puncturella LOWE, 1827 [*Patella noaclzina LINNE] | -Rec., Eu.- N.Pac | REC
+ Rimula DEFRANCE, 1827 [*R. blainlJilli] | Cret.-Ree., Eu.-N.Am.-S.Am.-Indo- Pac | CRET
+ Zeidora A.ADAMS, 1860 | -Rec., Eu.-W.Atl.-Pac | REC
+ Subfamily DIODORINAE Wenz, 1938
+ Diodora GRAY, 1821 [*D. lincol~ensis COTTON] | Rec., Austral | REC
+ Megathura PILSBRY, 1890 | -Rec., Japan-W.N.Am | REC
+ Pseudofissurella HABER, 1932 [*Fissurella corallensis BUVIGNIER]
+ Subfamily FISSURELLINAE Fleming, 1822
+ Amblychilepas PILSBRY, 1890 [*Fissurella grata DESHAYES] | Rec., S.Atl.-S. Pac | REC
+ Cosmetalepas IREDALE, 1924 [*FissU/:ella concatenata CROSSE & FISCHER] | -Rec., Austral | REC
+ Fissurellidea D'ORBIGNY, 1841 [*F. megatrema] | -Rec., Eu.-S.Am.-Austral | REC
+ Lucapina G.B.SOWERBY, 1835 [*Fis- SIIrella cancellata G.B.SOWERBY] | -Rec., W.Indies-W.N.Am | REC
+ Maclzrocllisma SWA'NSON, 1840 [*M. prodttcta A.ADAMS] | Rec., IndianO.- SW.Pac | REC
+ Suborder PATELLINA von Ihering,
+ Metoptoma PHILLIPS, 1836 [*'M. oblonga] | , ?Cret., Eu | CRET
+ ?Phryx BLASCHKE, 1905 | Trias., Eu.-Asia | TRIAS
+ Family ACMAEIDAE Carpenter, 1857
+ Scurriopsis GEMMELLARO, 1879 | M.Trias.-V.lur., Eu., N.Afr | MTRIAS
+ Conorhytis COSSMANN, 1907
+ Hamptoniella WENZ, 1938 [*Umbrella? hamptollensis MORRIS & LYCETT]
+ Acmaea ESCHSCHOLTZ, 1833 [*A. mitra] | -Rec., W.N.Am | REC
+ Pectinodonta DALL, 1882 [*P. arcuala] | Rec., Atl.-Japan | REC
+ Scurria GRAY, 1847 [*Patella Sct/rra LESSON] | Rec., W.S.Am | REC
+ Family PATELLIDAE Rafinesque, 1815
+ Subfamily PATELLINAE Ra/inesque, 1815
+ Subfamily NACELLINAE Thiele, 1929
+ Nacella SCHUMACHER, 1817 | , Rec., Eu.- Afr.-Pac | REC
+ Family LEPETIDAE DaH, 1869
+ Lepeta GRAY, 1847 | -Rec., Eu.-N. Atl | REC
+ Cellana H.ADAMS, 1869 | -Rec., S.Pac.-IndoPac | REC
+ Family COCCULINIDAE Dall, 1882
+ Iothia GRAY, 1850 [*Patella IlIlva MULLER] | -Rec., Eu | REC
+ Punctolepeta HABE, 1958 [*Po millllta] | Rec., Japan. Addisonio Cocculina (p. 1236) ~- ..~~ u:r!b ~ Cocculinella | REC
+ Family LEPETELLIDAE Dall, 1881
+ Suborder TROCHINA Cox &
+ Family HOLOPEIDAE Wenz, 1938
+ Subfamily HOWPEINAE Wenz, 1938
+ Holopeidae WENZ, 1938 | -UDev | 
+ Straparollina BILLINGS, 1865 [*S. pdagica] | L.Ord., N.Am.-Eu | LORD
+ Holopea HALL, 1847 [*H. symmetrica] | -Dev., N.Am.- Eu | DEV
+ Globonema WENZ, 1938 [*Nematotrochus bicarinatus (WAHLENBERG) KOKEN] | Ord., Eu | ORD
+ ?Threavia LAMONT, 1946 [*T. gulosa] | Ord., Eu | ORD
+ Raphispira PERNER, 1903 [*R. plena] | Sil., N.Am.-Eu | SIL
+ Subfamily GYRONEMATINAE Knight, 1956
+ Antitrochus WHIDBORNE, 1891 [*A. arietinus] | M.Dev., Eu.-- Y A R C ? t t p c t u g c o s l e p u g b v g t | MDEV
+ Yunnania MANSUY, 1912 [*Y. termze1'l] | - M.Perm., SE.Asia.-N.Am.-Eu | PERM
+ Araeonema KNIGHT, 1933 [*A. virgatum] | Carb.), N.Am.-Eu | CARB
+ Rhabdotocochlis KNIGHT, 1933 [*R. rugata] | -M.Perm., N.Am | PERM
+ Cinclidonema KNIGHT, 1945 [*C. texanllm] | Perm., N. Am.-S. Am.-Eu.-SE. Asia | PERM
+ ?Omphalonema GRABAU, 1936 [*0. multispiralis] | L.Perm., NE.Asia | LPERM
+ Family PLATYCERATIDAE Hall, 1859
+ Naticonema PERNER, 1903 [*N. similare] | -U.Sil., Eu.-N.Am | USIL
+ Cyclonema HALL, 1852 [*Pleurotomaria bilix CON- RAD] | -U.Sil., N.Am.-Eu | USIL
+ Platyceras CONRAD, 1840 [*Pileopsis vetusta J.DEC. SOWERBY] | -L.Dev., N.Am.-Eu | LDEV
+ Ptychospirina PERNER, 1907 [*Hoiopea mima PERNER] | Sil.-L.De"., Eu.-N.Am | SIL
+ ?Himantonia PERNER, 1911 [*Nerita amoena PER- NER]
+ Microdominae WENZ, 1938 | Ord.-M.Pcrm | ORD
+ Family MICRODOMATIDAE Wenz, 1938
+ Daidia WILSON, 1951 [*Eunema cerithioides SALTER] | M.Ord., N.Am | MORD
+ Episfaxis KNIGHT, 1937 [*Cosmina complaans PERNER]
+ Pagodea PERNER, 1903 [*P. concomitans]
+ Microdoma MEEK & WORTHEN, 1867 [*M. conicum]
+ Pleurotrochus SHERZER & GRABAU, 1909 | - L.Perm., N.Am.-Eu.-N.Asia | LPERM
+ Family ELASMONEMATIDAE Knight,
+ Elasmonema FISCHER, 1885
+ Anomphalidae WENZ, 1938 | -M.Perm. Turbocheilus Tychonia Strapa | PERM
+ Family ANOMPHALIDAE Wenz, 1938
+ Pycnomphalus LINDSTROM, 1884 [*P. obesus] | Sil., N.Am.-Eu | SIL
+ Isonema MEEK & WORTHEN, 1866 [*1. depressum MEEK & WORTHEN] | L.Dev., N.Am | LDEV
+ Anomphalus MEEK & WORTHEN, 1867 [*A. rotulus] | (U.Carb.}, N.Am.- Eu.-NE.Asia-SE.Asia | UCARB
+ ?Sosiolytes GEMMELLARO, 1889 | Perm., Eu | PERM
+ ?Eiselia DIETZ, 1911 | M.Perm., Eu. Supedamily ORIOSTOMATACEA Wenz,1938 [nom. Ironsl. KNIGHT, BATTEN &. YOCHELSON, herein (ex | PERM
+ Orioslomalidae WENZ, 1938 | , ?Trias | TRIAS
+ Family ORIOSTOMATIDAE Wenz, 1938
+ Morphotropis PERNER, 1903 | U.Sil., Eu.-- | USIL
+ Beraunia KNIGHT, 1937 | U.Sil.-L.DetJ., Eu | USIL
+ Oriostoma MUNIER-CHALMAS, 1876
+ Family TUBINIDAE Knight, 1956
+ Semitubina COSSMANN, 1918
+ Tubina OWEN, 1859 | L.Dev., Eu | LDEV
+ Meandrella PERNER, 1903 | L.Dev., Eu | LDEV
+ ?Colubrella KOKEN, 1896 | Trias.(Nor.) , Eu | TRIAS
+ Family TROCHIDAE Rafinesque, 1815
+ Subfamily PROCONULINAE Cox, n. subfam.
+ Dimorphotectus COSSMANN, 1918 | M.Trias.(Carn.}-L./ur., Eu.- N.Z | MTRIAS
+ Muricotrochus COSSMANN, 1918 | )-U.Jur. (Kimm.), Eu | UJUR
+ Subfamily CmLODONTINAE Wenz, 1938
+ Pseudoclanculus COSSMANN, 1918 | (Cam.), Eu | CAM
+ Wilsoniconcha WENZ, 1939 | -U.Jur.(Raurac.), Eu.-- | UJUR
+ Chilodonta ETALLON, 1862 | U.Jur.( Oxford.)-U.Cr~t. (Maastricht.), Eu | UJUR
+ Agathodonta COSSMANN, 1918
+ Eosolariella HAAS, 1953 | U.Trias., Eu.-S.Am | UTRIAS
+ Atira STEWART, 1926 | Cret., N.Am | CRET
+ Garramites STEPHENSON, 1941 | Cret., N.Am | CRET
+ Margarites GRAY, 1847 | )-Rec., Eu.-N.Am.- Arct | REC
+ Ius A.ADAMS & ANGAS, 1867 | Rec., S. Afr.-Austral | REC
+ Olivia CANTRAINE, 1835
+ Hcliciclla COSTA, 1861
+ Seguenzia JEFFREYS, 1876 | Eoc.- Rcc., Eu.-W.Ad.-S.Pac | PALEOG
+ Tibatrochus NOMURA, 1940 | Mio., SE.Eu | NEOG
+ Subfamily ANGARIINAE Thiele, 1924
+ Praxidice RAFINESQUE, 1815 | -Rec., Eu.-Afr.-IndoPac.-Australasia. -- Indies; XO.7. A. (Nudangarita) BEETS, [OA. (N.) ardjunoi). Small, whorls nearly smooth, not noded but with irregular flange or keel below suture. Neog., Borneo | REC
+ Calliomphalus COSSMANN, 1888 | )- Mio., Eu.-N.Am | NEOG
+ Pseudoninella SACCO, 1896 | )-Mio., Eu | NEOG
+ Puruninella BEETS, 1943 | Eoc., E.Indies | PALEOG
+ Subfamily MONODONTINAE Cossmann, 1916
+ Ozodochilus COSSMANN, 1918 | Jur.(Kimm.), Eu | JUR
+ Cochleochilus COSSMANN, 1918 | Jur. (Portland.) , Eu | JUR
+ Monodonta LAMARCK, 1799
+ Labio OKEN, 1815 | -Rec., Eu.- IndoPac.-Australasia | REC
+ Trochocochlea MORCH, 1852 | )-Rec., Eu.-Afr.Atl | REC
+ Bankivia KRAUSS, 1848 | -Rec., Australasia | REC
+ Bathybembix CROSSE, 1893 | -Rec., Japan-W.N.Am.- E.Atl | REC
+ Chrysostoma SWAINSON, 1840 | -Rec., IndoPac.-N.Z | REC
+ Diloma PHILIPPI, 1845 | Rec., W.S.Am.-Pac | REC
+ Clelandella WINCKWORTH, 1932 | )- Rec., Eu.-Atl.-IndoPac | REC
+ Lesperonia TOURNOUER, 1874 | Oligo., Eu | PALEOG
+ Pictiformes KOLESNIKOV, 1939 | Mio.(Sarmat.), SW.Asia | NEOG
+ Tegula LESSON, 1835 | -Rec., N.Am.-S.Am.-Pac | REC
+ Thalotia GRAY, 1847 | Mio., E.Indies | NEOG
+ Turcica A.ADAMS, 1854 | -Rec., N.Am.-Japan-Austr. Bonkiv Lesperonio Archaeogastropoda Proelittorino I Pochydontello Islipio Chrysostomo Turcica /255 Bothybembix Beruouo Tholotio io a_Trochina_Trochacea dontinae) (p.1252-1256 | REC
+ Turcicula DALL, 1881 | Rec., Carib | REC
+ Subfamily GIBBULINAE Stoliczka, 1868
+ Gibbula RISSO, 1826 | - Rec., Eu.-S.Am | REC
+ Houdasia COSSMANN, 1902 | Eoc., Eu | PALEOG
+ Norrisia BAYLE, 1880 | - Rec., W.N.Am | REC
+ Trochinella IREDALE, 1937 | Rec., Pac | REC
+ Subfamily CALLIOSTOMATINAE Thiele, 1924
+ Ius NARDO, 1840 | -Rec., Medit | REC
+ Falsimargarita POWELL, 1951 | Rec., Antarct | REC
+ ?Kishinewia KOLESNIKOV, 1935 | Mio.(Sarmat.), SW. Asia | NEOG
+ Metaconulus COSSMANN, 1918 | -Oligo., Eu.-N.Afr | PALEOG
+ Photinula ADAMS & ADAMS, 1854 | Mio.(Sarmat.), SW.Asia | NEOG
+ Subfamily TROCInNAE Rafinesque, 1815
+ Trochus LINNE, 1758 | Mio.- Ru., Afr.-IndoPac.-Austral | NEOG
+ Clanculus MONTFORT, 1810 | )-Rec., Eu.-Indo- Pac.-Australasia | REC
+ Subfamily UMBONllNAE Pilsbry, 1886
+ Umbonium LINK, 1807 | Mio., Japan | NEOG
+ Callumbonella THIELE, 1924 | Rec., E.Atl | REC
+ Isanda ADAMS & ADAMS, 1854 | Rec., IndoPac | REC
+ Subfamily SOLARIELLINAE Powell, 1951
+ Solariella WOOD, 1842 | Mio.-R~c., Eu.-Ad.- IndoPac.-Arct.-E.Asia-W.Indies. S. (Solariella). Umbilicus bounded by a beaded spiral rib. V.Cr~t.-Ru., cosmop | NEOG
+ Monilea SWAINSON, 1840 | Plio.- R~c., W.Pac.-S.Pac | NEOG
+ Cidarina DALL, 1909 | Pleist.-Ree., W.N.Am | HOL
+ ?Lirularia DALL, 1909
+ Family ATAPHRIDAE Cossmann, 1918
+ Ataphrus GABB, 1869 | M.Trias.( Ladin.} , S.Tyrol | MTRIAS
+ Trochodon SULEY, 1861 | -Rec., W.N.Am | REC
+ Minolia A.ADAMS, 1860 | -Rec., W.Pac.-N.Z | REC
+ ?Zeminolia FINLAY, 1927 | plicatula (MURDOCH & SUTER), Rec., N.Z.; X5 | REC
+ Subfamily HALISTYLINAE Keen, 1958
+ Halistylus DALL, 1890 | Pleist.-Ree., N.Am.-S.Am | HOL
+ Family STOMATELLIDAE Gray, 1840
+ Trochopsidea WENZ, 1938 | -M.Jur. (Ba;.), Eu | MJUR
+ Pseudostomatella THIELE, 1924 | Rec., IndoPac | REC
+ Stomatia HELBLING, 1779 [*Stomatdla montrouzieri (?] | Rec., IndoPac | REC
+ Family TURBINIDAE Rafinesque, 1815
+ Subfamily ASTRAEINAE Davies, 1933
+ Coelobolma COSSMANN, 1918 | -Rec., Australasia | REC
+ Subfamily LIOTIINAE Adams & Adams, 1854
+ Eucycloscala COSSMANN, 1895 | }-U.Cret.(Dan.}, Eu.- N.Am | UCRET
+ Scaevola GEMMELLARO, 1879
+ Liotia GRAY, 1847 | -Rec., E.Indies-W.Indies- N.Am.-S.Am | REC
+ Arene ADAMS & ADAMS, 1854 | -Rec., W.lndies-W.N.Am | REC
+ Eccliseogyra DALL, 1892 | Rec., E.N.Am | REC
+ Liotina FISCHER, 1885 | -Rec., Eu.-N.Afr.-E.Afr.- IndoPac.-Australasia | REC
+ ?Nernrac CLARK & DURHAM, 1946 | Eoc., S.Am | PALEOG
+ Pareuchelus BOETTGER, 1907 | excellens (BOETTGER), M.Mio., Hung.; XIO | NEOG
+ Subfamily HELICOCRYPTINAE Cox, n. subfam.
+ Subfamily PETROPOMINAE Cox, n. subfam.
+ Petropoma GABB, 1877
+ Subfamily TURBININAE Rafinesque, 1815
+ Turbo LINNE, 1758 | ·Rec., Eu.- IndoPac | REC
+ Iwraldi ROBERTSON, 1958 | )-Rec., Eu.- N.Afr.-S.Afr | REC
+ Subfamily COLLONIINAE Cossmann, 1916
+ Collonia GRAY, 1850 | -Plio., Eu.- N.Am | NEOG
+ Gelasinostoma GARDNER, 1947 | - Plio., E.N.Am | NEOG
+ Otollonia WOODRING, 1928 | Mio., W.Indies | NEOG
+ Otomphalus COSSMANN, 1902 | Eoc., Eu | PALEOG
+ Subfamily HOMALOPOMATINAE Keen,
+ Homalopoma CARPENTER, 1864 [*Collonia pieta PEASE] | -Rec., Eu.-N. Afr.-N.Am.-S.Am | REC
+ Anadema ADAMS & ADAMS, 1854 [*Omphalius ca~­ lata A.ADAMS]
+ Charisma HEDLEY, 1915 [*C. compacta] | )-Plio., ?R~e., Eu.-E.Indies-W.Indies-S.Am | NEOG
+ Leptocollonia POWELL, 1951 [*L. thi~/~i] | Rec., S.Atl.- ?S.Afr | REC
+ Leptothyra PEASE, 1869 [*L. costata] | Rec., Hawaii | REC
+ Modleria JEFFREYS, 1865 | Plio.-Ru., Eu.-N.Am | NEOG
+ ?Rangimata MARWICK, 1928 | M.Eoc.(Bortonian}, N.Z.-- X3 | PALEOG
+ Vexinia COSSMANN, 1918 | Eoc., Eu | PALEOG
+ Pleuratella MOORE, 1867
+ Pterocheilos MOORE, 1867
+ Turboidea SEELEY, 1861
+ Family CYCLOSTREMATIDAE Fischer,
+ Subfamily SKENEINAE Thide, 1929
+ Tcinostomopsis CHAVAN, 1954
+ Conjectura FINLAY, 1927 | Rec., N .Z | REC
+ Crossea A.ADAMS, 1865 | - Rec., S.Pac.-IndoPac | REC
+ Daronia A.ADAMS, 1861 | Rec., Indo- Pac | REC
+ ?Ganesa JEFFREYS, 1883 | Rec., Atl | REC
+ Kaawatina BARTRUM & POWELL, 1928 | Plio., N.Z | NEOG
+ Lissotesta IREDALE, 1915 | Rec., Australasia | REC
+ Lophocochlias PILSBRY, 1921 | Rec., Hawaii | REC
+ Munditidla KURODA & HABE, 1954 | -Mio., Eu.-E.Indies | NEOG
+ ?Pakistania EAMES, 1952 | Eoc., Asia | PALEOG
+ Philorene OLIVER, 1915 | Rec., S.Afr | REC
+ Pygmaerota HABE, 1958 | Rec., Japan | REC
+ Rhodinoliotia TOMLIN & SHACKLEFORD, 1915 | -Rec., Eu.-W.Atl | REC
+ Subfamily CYCLOSTREMATINAE Fischer, 1885
+ Cyclostrema MARRYAT, 1818 | -Rec., circumtropic | REC
+ Brookula IREDALE, 1912 | Rec., E.lndies | REC
+ Coronadoa BARTSCH, 1946 | Rec., W.N.Am | REC
+ Munditia FINLAY, 1927 | -Rec., Australasia | REC
+ Parviturbo PILSBRY & MCGINTY, 1945 | -Rec., Java-Austral.-IndoPac.-- | REC
+ Family PHASIANELLIDAE Swainson,
+ Tasmocrossea DELL, 1952 | Rec., Australasia. --FtG. 177,7. °T. benthicola; X25 | REC
+ Zalipais IREDALE, 1915 | Rec. Australasia | REC
+ Family VELAINELLIDAE Vasseur, 1880
+ Family ORBITESTELLIDAE Iredalc, 1917
+ Tricolia RISSO, 1826 | -Rec., Eu.-Carib.-N.Am.-- X2 | REC
+ ?Pseudophasianus COSSMANN, 1918 | Eoc., Eu | PALEOG
+ Suborder NERITOPSINA Cox &
+ ?Helisalia LASERON, 1954 | (Miss.) Dirachis WHlDBORNE, (·D. atavus]. With moderately high spire; two teeth on inner lip; outer lip convex, prosocline; ornament of spiral cords. M.D~v., Eu | MISS
+ Littorinides KNIGHT, 1937 [*Littorina solida DEKoNINCK] | L.Carb., Eu.-- | LCARB
+ Family NERITOPSIDAE Gray, 1847
+ Subfamily NATICOPSINAE S.A.MiIler, 1889
+ Fedaiella KITTL, 1894 [*Naticopsis meeki KNIGHT] | M.Dev.-Trias, cosmop | MDEV
+ Dicosmos CANAVARI, 1890 [*D. pulcher] | )- U.Trias.(Carn.) , Eu.-Indonesia | UTRIAS
+ Planospirina KITTL, 1899 [*Nerita esinensis STOP- PANI] | esinensis, M.Trias.(Ladin.), S. Tyrol; IOa-c, apertural, abapertural, and apical views, X I | MTRIAS
+ ?Vernelia J.BOHM, 1895 | M.Trias.( Ladin.) , Eu | MTRIAS
+ ?Frombachia BLASCHKE, 1905 | M.Trias.( Carn.) , Eu | MTRIAS
+ Haliotimorpha BLASCHKE, 1905 | Trias. (Carn.), Eu | TRIAS
+ Subfamily NERITOPSINAE Gray, 1847
+ Neritopsidae GRAY, 1847 | Carb., Eu | CARB
+ Trachydomia MEEK & WORTHEN, 1866 | -- Penn., 111.; X 1.3 | PENN
+ Trachyspira GEMMELLARO, 1889 | M.Perm., N.Am.- Eu.-NE.Asia | PERM
+ Hungariella KUTASSY, 1933 | Trias. (Nor.), Eu | TRIAS
+ Seisia KUTASSY, 1934 | Cret.( Senon.) , Eu.-- | CRET
+ Rhynchidia LAUBE, 1868 | Trias.- Rcc., cosmop | TRIAS
+ Family DAWSONELLIDAE Wenz, 1938
+ Family NERITIDAE Rafinesque, 1815
+ Subfamily NERITINAE Rafinesque, 1815
+ Cryptonerita KITTL, 1894 [*C. elliptical [] | (Cam.), Eu | CAM
+ Oncochilus ZITTEL, 1882 [*Natica globulosa KLIP- STEIN] | -Cret., cosmop | CRET
+ Neritoma MORRIS, 1849 [*Nerita sinuosa J.SOWERBY] | Jur.( Oxford.-Portland.), Eu | JUR
+ Trachynerita KITTL, 1894 [*T. fornoensis (] | M.Trias.(Anis.)-M.fur.(Bathon.), cosmop | MTRIAS
+ Delphinulopsis LAUBE, 1868 [*D. arietina (] | Trias.(Carn.), Eu | TRIAS
+ Trochonerita COSSMANN, 1907 [*Nerita mammaeformis P'ORBIGNY]
+ Otostoma D'ARCHIAC, 1859 | -Paleoc., cosmop | PALEOG
+ Tournouerella MUNIER-CHALMAS, 1887 | Cret., Eu | CRET
+ Nerita LINNE, 1758 | -Rec., Eu.-IndoPac | REC
+ Cymostyla MARTENS, 1887 | )-Eoc., cosmop | PALEOG
+ Neritina LAMARCK, 1816
+ Chernites GISTEL, 1848 | Rec., IndoPac | REC
+ Neritodryas MARTENS, 1869 | Rec., IndoPac | REC
+ Neritoplica OPPENHEIM, 1892 | )-Paleoc., Eu | PALEOG
+ Septaria FERUSSAC, 1807 | ] Rec., IndoPac | REC
+ Elea FITZINGER, 1833 [*'Nerita cariosus WOOD] | Plio., SW.Asia | NEOG
+ Subfamily NERITILIINAE Baker, 1923
+ Neritilia MARTENS, 1879 [*'Neritina rttbida PEASE] | Rec., tropics | REC
+ Subfamily SMARAGDIINAE Baker, 1923
+ Smaragdia ISSEL, 1869 [*'Nerita viridis LINNE] | -Rec., Carib.-IndoPac | REC
+ ?Magadis MELVILL & STANDEN, 1899 [*'M. eumerintha] | Rec., Austral | REC
+ Pisulina NEVILL & NEVILL, 1869 [*'Po adamsiana] | Rec., India | REC
+ Family HELICINIDAE Latreille, 1825
+ Dimorphoptychia SANDBERGER, 1871 | )-Paleoc., Eu | PALEOG
+ Subfamily HELICININAE Latreille, 1825
+ Helicina LAMARCK, 1799
+ Euneritella WAGNER, 1905
+ Ampliata WAGNER, 1907 | -Rec., C.Am.-S.Am | REC
+ Weinlandella BAKER, 1954 | Rec., Ecuador | REC
+ Ceratopoma MOLLENDORFF, 1893 | Rec., Pads | REC
+ Hemipoma WAGNER, 1905 | - Rec., Polynesia | REC
+ Pleuropoma MOLLENDORFF, 1893 | -Rec., Pac | REC
+ Sphaeroconia WAGNER, 1909 | -Rec., Pads | REC
+ Schasicheila SHUTTLEWORTH, 1852
+ Sturanya WAGNER, 1905 | Rec., Philippines | REC
+ Subfamily HENDERSONnNAE Baker, 1926
+ Hendersonia WAGNER, 1905 | , Pleist.-Ru., N.Am.-- apertural view and operculum, X3 | HOL
+ Miluna WAGNER, 1905
+ Waldemaria WAGNER, 1905 | Rec., Japan. [n m a m S E | REC
+ Subfamily PROSERPININAE Gray, 1847
+ Subfamily STOASTOMATINAE C. B. Adams,
+ Stoastoma C.B.ADAMS, 1849 | Rec., Cuba | REC
+ Subfamily CERATODISCINAE Pilsbry, 1927
+ Lucidella SWAINSON, 1840 | -Rec., W. Indies | REC
+ Subfamily PROSERPINELLINAE Baker, 1923
+ Proserpinella BLAND, 1865 | Rec., Mex | REC
+ Ceres GRAY, 1856 | Rec., N.S.Am | REC
+ Family DEIANIRIDAE Wenz, 1938
+ Family PHENACOLEPADIDAE Thiele,
+ Family HYDROCENIDAE Troschel, 1856
+ Hypodema DE KONINCK, 1853 | Carb., Eu. Platyostomella ETHERIDGE, JR., [OLittorina seotoburdigalensis ETHERIDGE, 1878] [=Platystomella LINDSTROM, 1884 (obj.)]. Genus based on SE.Asia-Pac | CARB
+ Family TITISCANIIDAE Bergh, 1890
+ Titiscania BERGH, 1890 | L.Carb., Eu | LCARB
+ Catinella STACHE, 1877 | M.Perm., Eu | PERM
+ Neritomopsis WAAGEN, 1880 | M.Perm., Eu | PERM
+ Proboscidia MERLA, 1931 | -U.Trias. This suborder has been erected for reception of the superfamily Murchisoniacea. It is thought that this was a stock derived from the Archaeogastropoda and still retaining certain features of | UTRIAS
+ Murchisoniidae KOKEN, 1896 | Trias | TRIAS
+ Family MURCHISONnDAE Koken, 1896
+ ?Protospira RUEDEMANN, 1916 [*P. minuta] | -Sil., N.Am | SIL
+ Morania HORNY, 1953 [*Murchisonia maia HALL] | Sil., Eu | SIL
+ Ectomaria KOKEN, 1896 [*Murchisonia nieszkowskii F. SCHMIDT] | Ord., N.Am.-Eu | ORD
+ Catazone PERNER, 1907 [*Murchisonia (Catazone) cuneus] | Sil., Eu | SIL
+ Biangularia SPITZ, 1907 [*Pleurotomaria (Biangularia) frechi]
+ Ptychocaulus PERNER, 1907 [*Murchisonia tJerneuili KOKEN] | ] L.Dev., Eu | LDEV
+ Vetotuba ETHERIDGE, JR., 1890 [*Scoliostoma serpens KAYSER] | -Dev., N.Am.-Eu.- Austral | DEV
+ Aclisoides DONALD, 1898 | (Miss.), N.Am.-Eu.-NC.Asia | MISS
+ Micrentoma DONALD, 1898 [*Aclisina nana DE KON- INCK] | L.Carb., Eu | LCARB
+ Goniasrna TOMLIN, 1930 [*Murchisonia lasallensis WORTHEN] | )- M.Perm., N.Am.-S.Am.-Eu | PERM
+ Cibecuia WINTERS, 1956 [*C. cedarensis] | or Trias., N.Am | TRIAS
+ Trypanocochlea TOMLIN, 1931 [*Verania cerithioides KOKEN] | U.Trias.(Carn.), Aus | UTRIAS
+ Family PLETHOSPIRIDAE Wenz, 1938
+ Plelhospirinae WENZ, 1938 | Trias | TRIAS
+ Subfamily PLETHOSPIRINAE Wenz, 1938
+ Diplozone PERNER, 1907 | -L.Dev., Eu | LDEV
+ Clisospiridae MILLER, 1889 | -M.Dev. These curious gastropods are not well known or understood, and there is not much evidence as to their systematic posi- ?ARCHAEOGASTROPODA Superfamilies of Doubtful Subordinal Position | MDEV
+ Subfamily PITIIODEINAE Wenz, 1938
+ ?Gyrodoma ETHERIDGE, JR., 1898 | ] Dev., Austral | DEV
+ Platyzona KNIGHT, 1945 | -M.Perm., N.Am.-Eu | PERM
+ Wortheniopsis J.BOHM, 1895 | }-U.Trias.(Nor.) , Eu | UTRIAS
+ Family CLISOSPIRIDAE S. A. Miller,
+ Subfamily CLISOSPIRINAE S. A. Miller, 1889
+ Clisospiridae S.A.MILLER, 1889 | -Sil | SIL
+ Mimospira KOKEN, 1925 | helmhackeri erately deep; outer lip and strongly prosocline; base and L.Ord., Eu | LORD
+ Clisospira BILLINGS, 1865 | -Sil., N.Am.-Eu.-NE.Asia | SIL
+ Subfamily PROGALERINAE Knight, 1956
+ ?Procrucibulum PERNER, 1911 | L.Dev., Eu | LDEV
+ ?Paragalerus PERNER, 1903 | Dev., Eu | DEV
+ Progalerus HOLZAPFEL, 1895 | M.Dev., Eu | MDEV
+ Family PLANITROCHIDAE Knight, 1956
+ Raphistomina ULRICH & SCOFIELD, 1897 | -Sil., N.Am.-Eu | SIL
+ Trochomphalus KOKEN, 1925 | Ord., Eu | ORD
+ Planitrochus PERNER, 1903 | U.Sil., Eu | USIL
+ Horologium PERNER, 1907
+ Perneritrochus COSSMANN, 1909 | U.Sil., Eu | USIL
+ Family PSEUDOPHORIDAE S. A. Miller,
+ Siluriphorus COSSMANN, 1918 | M.Sil., Eu | SIL
+ Palaeonustus PERNER, 1903 | L.Dev., Eu | LDEV
+ Eotrochus WHITFIELD, 1882 [*V. infrasilurica] | M.Miss., N.Am | MISS
+ Craspedostoma LINDSTROM, 1884 [*C. degan/ulum] | Sil., Eu | SIL
+ Spirina KAYSER, 1889 [*Natica lirata PHILLIPS] | -M.Dev., Eu. N D Crospedostomo Brochidium | MDEV
+ Dichostasia YOCHELSON, 1956 | Perm., N.Am | PERM
+ Bathyclides STRAND, 1928 | Trias.( Carn.-Nor.}, Eu | TRIAS
+ Ventricaria KOKEN, 1896 | Trias.( Carn.-Nor.), Eu | TRIAS
+ Pirper DEGREGARIO, 1886
+ Family CROSSOSTOMATIDAE Cox,
+ Palaeocollonia KITTL, 1899 | M.Trias.( Ladin.), Eu | MTRIAS
+ Family PALAEOTROCHIDAE Knight,
+ Turbonopsis GRABAU & SHIMER, 1909 | L.Dev., N.Am | LDEV
+ Palaeotrochus HALL, 1879 | L.Dev.• N.Am | LDEV
+ Family PARATURBINIDAE Cossmann,
+ Chartronella COSSMANN, 1902 | Trias.-V·lur.(Portl.) , Eu., S.Am | TRIAS
+ Family PLATYACRIDAE Wenz, 1938
+ Platyacra ZITTEL, 1882 [*Trochus impressus SCHAF- HAUTL] | impressa (SCHAFHAUTL), U.Trias.(Nor.), Bavaria; X 1.3 | UTRIAS
+ Lepidotrochus KOKEN, 1894 [*L. bittneri] | *Lepidotrochus bittneri, M.Trias., Aus.; X 1.3. la U Ci W ( p sl e ( C C Ha D c a p | MTRIAS
+ Family CIRRIDAE Cossmann, 1916
+ Acrosolarium KOREN, 1896 | Trias.( Nor.), Eu | TRIAS
+ Spirocirrus COSSMANN, 1916
+ Auseria FUCINI, 1895
+ Sororcula HAAS, 1953 | Trias., Peru | TRIAS
+ Aristerella DUBAR, 1948 | L.Jur.(M.Lias.}, N.Afr | LJUR
+ Family AMBERLEYIDAE Wenz, 1938
+ Eunemopsis KITTL, 1891 | }-U.Trias.(Carn.), Eu | UTRIAS
+ Tectospira PICARD, 1904 | M.Trias., Eu | MTRIAS
+ Riselloidea COSSMANN, 1909 [*Risellopsis subdis}lIncta COSSMANN] | - L.Cret.( Neocom.) , Eu | LCRET
+ Family NODODELPHINULIDAE Cox,
+ Trochacanthus DACQUE, 1936 [*Trochus tuberculatocinctus MUNSTER in GOLDFUSS] | tuberculatocinctus (MUNSTER), U.Cret.(Senon.), Ger.; Xl | UCRET
+ Metriomphalus COSSMANN, 1916 [*Turbo davoustii O'ORBIGNY] | -U.Cret. (Senon.), Eu.-Asia | UCRET
+ Conchula STEININGER, 1849 [*C. cylindracea] | M.Dev., Eu | MDEV
+ Cyclora HALL, 1845 [*C. minuta] | Ord., N.Am | ORD
+ Geinitzia DIETZ, 1911 [*G. carinata] | Perm., Eu | PERM
+ Kebina VOLOGDIN, 1955 | Sil., Eu | SIL
+ Ozarkina ULRICH & BRIDGE, 1931 [*Ozarkispira typica ULRICH & BRIDGE] | L.Ord., N.Am | LORD
+ Ozarkocanus HELLER, 1956 [*0. prearcuatus] | ] L.Ord., S.Am | LORD
+ Pondia ODER, 1932 [*P. powelli] | L.Ord., N.Am. Procancellaria WILCKENS, [*P. parkiana]. Ovate, with low spire, anomphalous; whorls convex; ornament cancellating collabral and spiral grooves, the former feebly prosocline; aperture ova | LORD
+ Pythmenerna LAMONT & GILBERT, 1945 [*Euomphalus praenantius PHILLIPS] | Sil., Eu. T U t p s e o h f w S a f t s v W b t p t C Whe~ the Treatise was first conceived, the seDlor author, whose field of special study is the gastropods of the Paleozoic, undertook to cover all | SIL
+ Trochotremaria RYCKHOLT, 1860 [*V. aspersus]
+ Umbomtrochus COSSMANN, 1918 | - U.Jur. d th s th th a ia s c s t p i o w c p F d o s M L G Although the sinus in the Loxonematacea does not culminate in a slit or notch, as in he Murchisoniacea, it is thought to have erved as an e | UJUR
+ Family LOXONEMATIDAE Koken, 1889
+ Girvania LONGSTAFF, 1924 [*G. excavata] | Ord., Eu | ORD
+ Stylonema PERNER, 1907 [*Loxonema (Stylonema) potens] | -L.Dev., Eu | LDEV
+ Aulacostrepsis PERNER, 1907 [*A. simplex] | L.Dev., Eu | LDEV
+ Katoptychia PERNER, 1907 [*K. alba] | L.Dev., Eu | LDEV
+ Palaeozygopleura HORNY, 1955 | -L.Carb., Eu | LCARB
+ Pseudozygoplcurinae KNIGHT, 1930 | )-M.Perm. The presence or absence of the pseudozygopleurid type of protoconch can be determined only on specimens in which this part of the shell is exceptionally well preserved, although the shape of | PERM
+ ?Tmetonema LONGSTAFF, 1912 | ] L.Carb., Eu | LCARB
+ ?Knightella LONGSTAFF, 1933 | -U.Carb., Eu | UCARB
+ ?Eoptychia LONGSTAFF, 1933 | Carb., Eu | CARB
+ Palaeostylus MANSUY, 1914 | -M.Perm., N.Am.-SE.Asia | PERM
+ ?Hemizyga GIRTY, 1915 [*H. (Hyphantozyga) gracilis] | -M.Perm., N.Am | PERM
+ Cyclozyga KNIGHT, 1930 [*C. mirabilis] | Penn., N.Am | PENN
+ ?Spiromphalus HAYASAKA, 1939 [*S. yabei] | Perm., NE.Asia | PERM
+ Family ZYGOPLEURIDAE Wenz, 1938
+ Kittliconcha BONARELU, 1927 [*Zygopleura (Kittliconcha) cassiana] | A A H T G c a c b b A K Trias.-(Ladin.) , Eu.-S.Am | TRIAS
+ Tyrsoecus KITTL, 1892 [*Tyrsoecus cassiani Cox (nom. nov.)]
+ Coronaria KOKEN, 1892 | )-U.Jur.(Raurac.), cosmop | UJUR
+ Goniospira COSSMANN, 1895 [*Turritella armata MUNSTER] | M.Trias., Eu.- ?Asia | MTRIAS
+ Rigauxia COSSMANN, 1885
+ Family TURRITELLIDAE Woodward,
+ Procerithiurn COSSMANN, 1902 | }-U.Jur.( Portland), cosmop | UJUR
+ Spanionerna WHIDBORNE, 1891 | - Rec | REC
+ Turritella LAMARCK, 1799 | Indies-Japan; Mio., S.Eu.-N.Afr.-trop. & subtrop. Am | NEOG
+ Acanthonema SHERZER & GRABAU, 1908 | L.Dev., N.Am | LDEV
+ Orthonerna MEEK & WORTHEN, 1862 | }-M.Perm., N.Am.-Eu | PERM
+ Family PROCERITHIIDAE Cossmann,
+ Cyclophoridae GRAY, 1847 | M.Dev., Eu | MDEV
+ Family CYCLOPHORIDAE Gray, 1847
+ Subfamily DENDROPUPINAE Wenz, 1938
+ Dendropupa OWEN, 1861 | -Penn., N.Am | PENN
+ Family VIVIPARIDAE Gray, 1847
+ Family HYDROBIIDAE Stimpson, 1865
+ Hydrobia HARTMANN, 1821 | )-Rec., cosmop | REC
+ Family SUBULITIDAE Lindstrom, 1884
+ Subfamily SUBULITINAE Lindstrom, 1884
+ Subulitidae LINDSTROM, 1884 | -M.Perm | PERM
+ Subulites EMMONS, 1842 [*C. tortilis] | -U.Sil., N.Am.-Eu.- NC.Asia | USIL
+ Bulimorpha WHITFIELD, 1882 | Miss., N.Am | MISS
+ Leptoptygma KNIGHT, 1936 | (U.Carb.), N.Am.-NE.Asia | UCARB
+ ?Sinospira YIN, 1932 [*C. iulminula] | ] U.Carb., E.Asia | UCARB
+ Subfamily SOLENISCINAE Wenz, 1938
+ Soleniscidae WENZ, 1938 [*Platyostoma? tumida MEEK & WORTHEN] | -- Penn., Tex.; apertural view with window showing development and resorption of columellar fold and filling of earlier whorls, X 1.3 | PENN
+ Soleniscus MEEK & WORTHEN, 1861 [*S. typicus] | }-M.Perm., N.Am.-Eu.-NE.Asia-SE.Asia.-- view with window showing columella, X 1.3; 3b, apertural view with broken lip exposing columella, X2.7 | PERM
+ ?Procerithiopsis MANSUY, 1914 [*P. ambigua] | L.Perm., SE.Asia-- with window showing columellar folds, X 6 | LPERM
+ Cylindritopsis GEMMELLARO, 1889 [*C. ollalis] | M.Perm., Eu.-Asia | PERM
+ Family MEEKOSPIRIDAE Knight, 1956
+ ?Auriptygma PERNER, 1903 [*A. fortior] | }-L.Perm., N.Am.-S.Am.-Eu.-SE.Asia | LPERM
+ Girtyspira KNIGHT, 1936 [*Bulimella canaliculata HALL] | }- M.Perm., N.Am.-Eu | PERM
+ Family STREPTACIDIDAE Knight, 1931
+ Family ACTEONIDAE d'Orbigny, 1842
+ Acteonina D'ORBIGNY, 1850 [*Chemnitzia carbona.ria DEKoNINCK]
+ Actaeonina FISCHER, 1883 | L.Carb., Eu | LCARB
+ Order PLEUROCOELA Thiele, 1925
+ Family PELAGIELLIDAE Knight, 1956
+ Pelagiella MATTHEW, 1895 [*Cyrtolites atlantoides MATTHEW] | atlantoides (MATTHEW), L.Cam., N.B.; X4. GENERIC NAMES ASSIGNED TO PALEOZOIC FOSSILS IMPROPERLY REGARDED AS GASTROPODA AND MONOPLACOPHORA Anticalyptraea QUINSTEDT, [=Autodetus LINDSTROM, 1884] (worm) | LCAM
+ Archaeonassa FENTON & FENTON, 1937
+ Barella HEDSTROM, 1930
+ Charruia RUSCONI, 1955
+ Chuaria WALCOTT, 1899
+ Coleolus HALL, 1879
+ Conchopeltis WALCOTT, 1879
+ Halophiala KOKEN, 1925
+ Hyolithellus BILLINGS, 1871
+ Hyolithes EICHWALD, 1840
+ Matthevia WALCOTT, 1885
+ Mobergella HEDSTROM, 1923
+ Paoshanella YIN, 1937
+ Polyopea CLARK, 1925
+ Salterella BILLINGS, 1865
+ Scenellopsis RESSER, 1938
+ Stenotheca SALTER, 1872
+ Stenothecoides RESSER, 1938
+ Tentaculites SCHLOTHEIM, 1820
+ Watsonella GRABAU, 1900 | Picard, Edmund 1904, Beitrag zur Kenntniss der Glossophoren der mitteldeutschen Trias.: Kon. preuss. geol. Landesanst., Jahrb., v. 22, p. 445-540, pI. 9-14 (Berlin). Pilsbry, H. A. 1934, Notes on the | TRIAS
+ Acevina RUSCONI, 1952 [*?Helcionella (Acevina) cuyunchensis] | Perm., USA(Tex.) | PERM
+ Lamellopspira BATTEN, 1958 [*L. conical Pleurotomariacea] | Perm., Austral | PERM
+ Planikeenia FLETCHER, 1958 [*P. minor] | Perm., Austral | PERM
+ Randomia MATTHEW, 1899 [*R. aurorae] | M.Cam., Newfoundland | MCAM
+ Strotostoma FLETCHER, 1958 [*S. rylstonensis] | Perm., Austral | PERM
+ Walnichollsia FLETCHER, 1958 | Perm., Austral. REFERENCES Batten, R. L., 1958, Permian Gastropoda of the Southwestern United States: 2. Pleurotomariacea: Portlockiellidae, Phymatopleuridae, and Eotomariidae: Am. Mus. Nat. Hist., Bu | PERM

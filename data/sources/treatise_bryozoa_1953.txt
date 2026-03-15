@@ -1,1032 +1,952 @@
 ---
-reference: Bassler, R.S., 1953. Treatise on Invertebrate Paleontology, Part G, Bryozoa. Geological Society of America & University of Kansas Press
+reference: Moore, R.C. (ed.), 1953. Treatise on Invertebrate Paleontology, Part G, Bryozoa. Geological Society of America and University of Kansas Press, 253 p.
 scope:
   - taxon: Bryozoa
     coverage: comprehensive
 notes: |
-  Bryozoan genera from 1953 Treatise.
-  Covers Cyclostomata, Ctenostomata, Cheilostomata, and Phylactolaemata.
-  Authored primarily by R.S. Bassler (Cyclostomata, Ctenostomata)
-  and R.S. Bassler (Cheilostomata based on Canu & Bassler works).
+  Covers Phylum Bryozoa: Class Gymnolaemata (Ctenostomata, Cyclostomata, Trepostomata,
+  Cryptostomata, Cheilostomata) and Class Phylactolaemata. PDF pages 43-266.
+  Includes section on generic names applied to bryozoans but belonging to other phyla.
 ---
 
-Order CYCLOSTOMATA Busk, 1852
-  Suborder TUBULIPORINA Milne-Edwards, 1838
-    Family STOMATOPORIDAE Pergens & Meunier, 1886
-      Stomatopora BRONN, 1849 [*Alecto dichotoma LAMOUROUX, 1821] | ORD-REC
-      Actinopora D'ORBIGNY, 1850 [*Diastopora lamourouxi HAIME, 1854] | LJUR
-      Ceriocava HAIME, 1854 [*Pustulopora corymbosa LAMOUROUX, 1821] | LJUR
-      Proboscina AUDOUIN, 1826 [*Tubulipora confluens AUDOUIN, 1826] | ORD-REC
-      Reptomultisparsa D'ORBIGNY, 1853 [*Diastopora ingens D'ORBIGNY, 1851] | LJUR-REC
-    Family DIASTOPORIDAE Gregory, 1899
-      Diastopora LAMOUROUX, 1821 [*D. foliacea LAMOUROUX, 1821] | LJUR-REC
-      Berenicea LAMOUROUX, 1821 [*B. prominens LAMOUROUX, 1821] | LJUR-REC
-      Mesenteripora BLAINVILLE, 1830 [*Millepora meandrina WOOD, 1812] | LJUR-UCRET
-    Family ONCOUSOECIIDAE Canu, 1919
-      Oncousoecia CANU, 1919 [*Tubulipora lobulata CANU, 1909] | LJUR-REC
-      Filisparsa D'ORBIGNY, 1853 [*Idmonea gracilis D'ORBIGNY, 1839] | LJUR-UCRET
-    Family PLAGIOECIIDAE Canu, 1918
-      Plagioecia CANU, 1918 [*Diastopora patina LAMARCK, 1816] | LJUR-REC
-      Microecia CANU, 1918 [*Berenicea gracilis D'ORBIGNY, 1853] | LJUR-UCRET
-    Family TUBULIPORIDAE Johnston, 1838
-      Tubulipora LAMARCK, 1816 [*Tubipora serpens LINNE, 1758] | UCRET-REC
-      Idmidronea CANU & BASSLER, 1920 [*Idmonea atlantica FORBES in JOHNSTON, 1847] | UCRET-REC
-      Exidmonea DAVID & POUYET, 1974 [*Idmonea disticha GOLDFUSS, 1826] | LJUR-UCRET
-    Family MECYNOECIIDAE Canu, 1918
-      Mecynoecia CANU, 1918 [*Entalophora proboscidea MILNE-EDWARDS, 1838] | UCRET-REC
-      Entalophora LAMOUROUX, 1821 [*E. cellarioides LAMOUROUX, 1821] | LJUR-REC
-    Family TERVIIDAE Canu, 1904
-      Tervia JULLIEN, 1882 [*Tubulipora irregularis MENEGHINI, 1844] | REC
-    Family DIAPEROECIIDAE Canu, 1918
-      Diaperoecia CANU, 1918 [*Tubulipora intricaria BUSK, 1860] | UCRET-REC
-    Family FRONDIPORIDAE Busk, 1875
-      Frondipora BLAINVILLE, 1830 [*Millepora verrucosa LAMOUROUX, 1821] | UCRET-REC
-    Family THEONOIDAE Busk, 1859
-      Theonoa LAMOUROUX, 1821 [*T. chlatrata LAMOUROUX, 1821] | UCRET-REC
-  Suborder CERIOPORINA Bassler, 1913
-    Family CERIOPORIDAE Busk, 1859
-      Ceriopora GOLDFUSS, 1827 [*C. micropora GOLDFUSS, 1829] | LJUR-REC
-      Heteropora BLAINVILLE, 1830 [*Ceriopora cryptopora GOLDFUSS, 1826] | LJUR-REC
-      Clausitrypa D'ORBIGNY, 1849 [*C. laminata D'ORBIGNY, 1849] | LJUR-UCRET
-    Family CAVIDAE D'Orbigny, 1854
-      Cava D'ORBIGNY, 1854 [*C. lamellosa D'ORBIGNY, 1854] | UCRET
-    Family FASCICULIPORIDAE D'Orbigny, 1852
-      Fasciculipora D'ORBIGNY, 1839 [*F. americana D'ORBIGNY, 1839] | LJUR-UCRET
-    Family MULTISPARSIDAE Bassler, 1935
-      Multisparsa D'ORBIGNY, 1853 [*M. ramosa D'ORBIGNY, 1853] | LJUR
-  Suborder CANCELLATA Gregory, 1899
-    Family HORNERIDAE Gregory, 1899
-      Hornera LAMOUROUX, 1821 [*H. frondiculata LAMOUROUX, 1821] | UCRET-REC
-      Retihornera CANU & BASSLER, 1922 [*Hornera denticulata BUSK, 1856] | UCRET-REC
-    Family LICHENOPORIDAE Smitt, 1867
-      Lichenopora DEFRANCE, 1823 [*Discoporella hispida FLEMING, 1828] | LJUR-REC
-      Discoporella GRAY, 1848 [*Discopora flos D'ORBIGNY, 1852] | UCRET-REC
-  Suborder ARTICULATA Busk, 1859
-    Family CRISIIDAE Johnston, 1838
-      Crisia LAMOUROUX, 1812 [*Sertularia eburnea LINNE, 1758] | UCRET-REC
-      Crisidia MILNE-EDWARDS, 1838 [*Crisia cornuta LINNE, 1758] | REC
-      Crisiella GABB & HORN, 1862 [*C. americana GABB & HORN, 1862] | UCRET
-      Filicrisia D'ORBIGNY, 1853 [*Crisia geniculata MILNE-EDWARDS, 1838] | UCRET-REC
-    Family CRISINIIDAE D'Orbigny, 1853
-      Crisina D'ORBIGNY, 1839 [*Crisia irregularis HAIME, 1854] | LJUR-UCRET
-  Suborder RECTANGULATA Waters, 1887
-    Division ACTINOSTEGA Levinsen, 1909
-      Family HETEROPORIDAE Waters, 1880
-        Heteropora BLAINVILLE, 1830 [*Ceriopora cryptopora GOLDFUSS, 1826] | LJUR-REC
-    Division PSEUDOSTEGA Levinsen, 1909
-      Family CYTIDIDAE Bassler, 1953
-        Cytis HALL, 1851 [*C. decipiens HALL, 1851] | UORD
-  Suborder FISTULIPORINA Simpson, 1897
-    Family FISTULIPORIDAE Ulrich, 1882
-      Fistulipora M'COY, 1849 [*F. minor M'COY, 1849] | UORD-PERM
-      Buscopora BASSLER, 1929 [*Lichenalia concentrica HALL, 1883] | MDEV
-      Carinella HALL & SIMPSON, 1887 [*Callopora heterotrypa NICHOLSON, 1874] | SIL
-      Cheilotrypa ULRICH, 1884 [*C. hispida ULRICH, 1884] | UORD
-      Chilotrypa HALL & SIMPSON, 1887 [*Callopora hispida HALL, 1883] | LDEV
-      Coelocaulis HALL & SIMPSON, 1887 [*C. venusta HALL & SIMPSON, 1887] | LDEV
-      Cyclopelta HALL & SIMPSON, 1887 [*Lichenalia concentrica HALL, 1887] | LDEV
-      Cyclotrypa ULRICH, 1896 [*Fistulipora communis ULRICH, 1882] | UORD-SIL
-      Dyscritella GIRTY, 1911 [*Callopora miliaria ULRICH & BASSLER, 1904] | MISS-PERM
-      Eridopora ULRICH, 1882 [*E. macrostoma ULRICH, 1882] | MDEV
-      Eridotrypa ULRICH, 1893 [*Fistulipora simulatrix ULRICH, 1890] | LORD-UORD
-      Favositella HALL & SIMPSON, 1887 [*Lichenalia stellata HALL, 1881] | MDEV
-      Fistuliphragma BASSLER, 1929 [*Lichenalia spinulifera ROMINGER, 1866] | MDEV
-      Lichenalia HALL, 1884 [*L. concentrica HALL, 1884] | LDEV-MDEV
-      Meekopora ULRICH, 1889 [*M. clausa ULRICH, 1889] | MISS-PERM
-      Pinacotrypa ULRICH, 1882 [*Fistulipora elegans ROMINGER, 1866] | LDEV
-      Selenopora HALL, 1886 [*Lichenalia circularipunctata HALL, 1885] | LDEV
-      Streblascopora BASSLER, 1952 [*Fistulipora delicata ROMINGER, 1866] | MDEV
-      Strotopora ULRICH, 1882 [*S. crenulata ULRICH, 1882] | SIL-MDEV
-    Family CYSTODICTYONIDAE Ulrich, 1884
-      Cystodictya ULRICH, 1882 [*Sulcopora lineata ULRICH, 1878] | UORD-PERM
-      Coscinella HALL & SIMPSON, 1887 [*C. elegantula HALL & SIMPSON, 1887] | LDEV
-      Dichotrypa ULRICH, 1882 [*Dichotrypa flabellum ROMINGER, 1866] | MDEV
-      Prismopora HALL, 1883 [*P. triquetra HALL, 1883] | UORD-PERM
-      Sulcoretepora D'ORBIGNY, 1849 [*S. parallela D'ORBIGNY, 1850] | MDEV-PERM
-      Taeniopora NICHOLSON, 1874 [*T. exigua NICHOLSON, 1874] | MORD-PERM
-    Family HEXAGONELLIDAE Crockford, 1947
-      Hexagonella WAAGEN & WENTZEL, 1886 [*Gorgonella ramosa WAAGEN & WENTZEL, 1886] | MISS-PERM
-      Meekoporella DUNCAN, 1939 [*Cystodictya lativia ULRICH, 1890] | MISS
-    Family ACTINOSTOMIDAE Nicholson, 1874
-      Actinostoma NICHOLSON, 1874 [*A. trentonense NICHOLSON, 1874] | LORD-UORD
-    Family CONSTELLARIIDAE Ulrich, 1896
-      Constellaria DANA, 1846 [*Cellepora constellata VANUXEM, 1842] | MORD-UORD
-      Stellipora HALL, 1847 [*S. antheloidea HALL, 1847] | MORD-SIL
-    Family STELLATOSPONGIIDAE Bassler, 1952
-      Selenotrypa BASSLER, 1952 [*Monticulipora arbuscula ULRICH, 1882] | UORD
-  Suborder TREPOSTOMATA Ulrich, 1882
-    Family AMPLEXOPORIDAE Simpson, 1897
-      Amplexopora ULRICH, 1882 [*A. septosa ULRICH, 1882] | MORD-UORD
-      Anaphragma ULRICH & BASSLER, 1904 [*Amplexopora mirabile ULRICH, 1893] | MORD
-      Atactopora ULRICH, 1879 [*A. hirsuta ULRICH, 1879] | UORD
-      Atactoporella ULRICH, 1883 [*A. typicalis ULRICH, 1883] | UORD
-      Batostomella ULRICH, 1882 [*B. varians ULRICH, 1882] | UORD
-      Leptotrypa ULRICH, 1883 [*L. minima ULRICH, 1883] | LORD-SIL
-      Stigmatella ULRICH & BASSLER, 1904 [*Atactopora catenulata ULRICH, 1895] | MORD-UORD
-    Family ATACTOTOECHIDAE Duncan, 1939
-      Atactotoechus DUNCAN, 1939 [*Callopora multitabulata ULRICH, 1890] | LDEV-MDEV
-      Leioclema ULRICH, 1882 [*L. punctatum ULRICH, 1882] | MORD-PERM
-    Family BATOSTOMELLIDAE Miller, 1889
-      Batostomella ULRICH, 1882 [*B. varians ULRICH, 1882] | UORD
-      Anisotrypa ULRICH, 1883 [*A. symmetrica ULRICH, 1883] | UORD
-      Leptotrypella VINASSA, 1920 [*Callopora multitabulata ULRICH, 1890] | LDEV-MDEV
-      Lioclema ULRICH, 1882 [*L. punctatum ULRICH, 1882] | MORD-PERM
-      Tabulipora YOUNG, 1883 [*T. urei YOUNG, 1883] | MISS-PERM
-    Family STENOPORIDAE Waagen & Wentzel, 1886
-      Stenopora LONSDALE, 1844 [*S. tasmaniensis LONSDALE, 1844] | MISS-PERM
-      Nematotrypa BASSLER, 1929 [*Monticulipora cylindrica ULRICH, 1890] | UORD
-      Rhombocladia ROGERS, 1900 [*Millepora dichotoma GOLDFUSS, 1829] | MISS-PERM
-    Family TREMATOPORIDAE Miller, 1889
-      Trematopora HALL, 1852 [*T. tuberculosa HALL, 1852] | LORD-UORD
-      Acanthoclema HALL, 1886 [*Trematopora alternata HALL, 1881] | SIL-LDEV
-      Batostoma ULRICH, 1882 [*B. implicatum ULRICH, 1882] | MORD-UORD
-      Bythopora MILLER & DYER, 1878 [*Chaetetes meeki NICHOLSON, 1875] | MORD-UORD
-      Homotrypa ULRICH, 1882 [*H. curvata ULRICH, 1882] | MORD-UORD
-      Homotrypella ULRICH, 1886 [*H. instabilis ULRICH, 1886] | MORD-UORD
-      Mesotrypa ULRICH, 1893 [*M. discoidea ULRICH, 1893] | MORD-UORD
-      Parvohallopora SINGH, 1979 [*Monticulipora ramosa D'ORBIGNY, 1850] | MORD-UORD
-      Peronopora NICHOLSON, 1881 [*P. vera NICHOLSON, 1881] | MORD-UORD
-      Prasopora NICHOLSON & ETHERIDGE, 1877 [*P. grayae NICHOLSON & ETHERIDGE, 1877] | MORD-UORD
-    Family HALLOPORIDAE Bassler, 1911
-      Hallopora BASSLER, 1911 [*Chaetetes dalei EDWARDS & HAIME, 1851] | MORD-UORD
-      Callopora HALL, 1852 [*C. elegantula HALL, 1852] | MORD-MDEV
-      Calopora HALL, 1852 [*Chaetetes lycoperdon SAY, 1826] | LORD-UORD
-      Dekayella ULRICH, 1882 [*D. ulrichi NICHOLSON, 1881] | MORD-UORD
-      Heterotrypa NICHOLSON, 1879 [*H. frondosa D'ORBIGNY, 1850] | MORD-UORD
-      Monticulipora D'ORBIGNY, 1849 [*Calamopora petropolitana PANDER, 1830] | MORD-UORD
-    Family ESTHONIOPORIDAE Bassler, 1953
-      Esthoniopora BASSLER, 1911 [*E. lessnikovae BASSLER, 1911] | LORD
-    Family HETEROTRYPIDAE Ulrich, 1890
-      Heterotrypa NICHOLSON, 1879 [*H. frondosa D'ORBIGNY, 1850] | MORD-UORD
-      Dekayia MILNE-EDWARDS & HAIME, 1851 [*D. aspera MILNE-EDWARDS & HAIME, 1851] | MORD-UORD
-      Petigopora ULRICH, 1893 [*Chaetetes petropolitanus NICHOLSON, 1874] | MORD-UORD
-    Family MONTICULIPORIDAE Nicholson, 1881
-      Monticulipora D'ORBIGNY, 1849 [*Calamopora petropolitana PANDER, 1830] | MORD-UORD
-      Aspidopora ULRICH, 1882 [*A. areolata ULRICH, 1882] | UORD
-      Diplotrypa NICHOLSON, 1879 [*D. petropolitana NICHOLSON, 1879] | LORD-UORD
-      Orbignyella ULRICH & BASSLER, 1904 [*Chaetetes lamellosa D'ORBIGNY, 1849] | MORD-UORD
-      Peronopora NICHOLSON, 1881 [*P. vera NICHOLSON, 1881] | MORD-UORD
-  Suborder CRYPTOSTOMATA Vine, 1884
-    Family ARTHROSTYLIDAE Ulrich, 1882
-      Arthrostylus ULRICH, 1882 [*A. tenuis ULRICH, 1882] | UORD-SIL
-      Arthroclema BILLINGS, 1862 [*A. pulchellum BILLINGS, 1862] | MORD-SIL
-      Helopora HALL, 1852 [*H. fragilis HALL, 1852] | MORD-UORD
-      Nematopora ULRICH, 1888 [*N. lineata ULRICH, 1888] | LORD-UORD
-      Sceptropora ULRICH, 1888 [*S. facula ULRICH, 1888] | MORD-UORD
-    Family RHINIDICTYDAE Ulrich, 1893
-      Rhinidictya ULRICH, 1882 [*R. nicholsoni ULRICH, 1882] | MORD-UORD
-      Escharopora HALL, 1847 [*E. recta HALL, 1847] | MORD-UORD
-      Pachydictya ULRICH, 1882 [*P. robusta ULRICH, 1882] | MORD-UORD
-      Phaenopora HALL, 1852 [*P. explanata HALL, 1852] | MORD-SIL
-      Stictopora HALL, 1847 [*S. fenestrata HALL, 1847] | MORD-UORD
-      Stictoporella ULRICH, 1889 [*S. interstincta ULRICH, 1889] | MORD
-    Family PTILODICTYIDAE Zittel, 1880
-      Ptilodictya LONSDALE, 1839 [*P. lanceolata GOLDFUSS, 1829] | MORD-UORD
-      Clathropora HALL, 1852 [*C. frondosa HALL, 1852] | UORD-SIL
-      Graptodictya ULRICH, 1882 [*G. perelegans ULRICH, 1882] | MORD
-      Phyllodictya ULRICH, 1882 [*P. frondosa ULRICH, 1882] | MORD-SIL
-      Trigonodictya ULRICH, 1893 [*T. conciliatrix ULRICH, 1893] | UORD
-    Family RHABDOMESIDAE Vine, 1884
-      Rhabdomeson YOUNG & YOUNG, 1874 [*R. gracile YOUNG & YOUNG, 1874] | MISS-PERM
-      Acanthocladia KING, 1849 [*Keratophytes anceps SCHLOTHEIM, 1820] | MISS-PERM
-      Ascopora TRAUTSCHOLD, 1876 [*A. nodosa TRAUTSCHOLD, 1876] | MISS-PERM
-      Bactropora HALL & SIMPSON, 1887 [*Trematopora granistriata HALL, 1879] | LDEV-MDEV
-      Hyphasmopora ETHERIDGE, 1875 [*Rhabdomeson nodosum PHILLIPS, 1841] | MISS-PERM
-      Nikiforovella NECHAYEV, 1894 [*N. cribrifera NECHAYEV, 1894] | MISS-PERM
-      Rhombopora MEEK, 1872 [*Rhabdomeson lepidodendroides MEEK, 1871] | LORD-PERM
-      Saffordotaxis BASSLER, 1952 [*Helopora divaricata ULRICH, 1882] | MORD-UORD
-      Streblotrypa ULRICH, 1890 [*S. nicklesi ULRICH, 1890] | MISS-PERM
-    Family FENESTELLIDAE King, 1849
-      Fenestella LONSDALE, 1839 [*Gorgonia antiqua GOLDFUSS, 1826] | UORD-PERM
-      Archimedes LESUEUR, 1842 [*A. wortheni HALL, 1857] | MISS-PERM
-      Banastella CROCKFORD, 1944 [*B. quadrata CROCKFORD, 1944] | PERM
-      Exfenestella MOROZOVA, 1974 [*Fenestella plebeia M'COY, 1844] | MISS
-      Helicopora CLAYPOLE, 1883 [*H. loomisi CLAYPOLE, 1883] | MDEV
-      Hemitrypa PHILLIPS, 1841 [*H. oculata PHILLIPS, 1841] | LDEV-PERM
-      Isotrypa HALL, 1886 [*I. conjunctiva HALL, 1886] | MDEV
-      Loculipora HALL, 1886 [*L. ambigua HALL, 1886] | MDEV
-      Lyropora HALL, 1857 [*L. subquadrans HALL, 1857] | MISS-PENN
-      Minilya CROCKFORD, 1944 [*M. duplaris CROCKFORD, 1944] | PERM
-      Phyllopora KING, 1849 [*Retepora ehrenbergi GEINITZ, 1846] | MISS-PERM
-      Polypora M'COY, 1844 [*P. dendroides M'COY, 1844] | MORD-PERM
-      Ptilopora M'COY, 1844 [*P. pluma M'COY, 1844] | SIL-PERM
-      Ptiloporella HALL, 1885 [*Ptilopora nodosa HALL, 1874] | LDEV-MDEV
-      Ptiloporina CONDRA, 1903 [*P. tenuissima CONDRA, 1903] | PENN-PERM
-      Rectifenestella MOROZOVA, 1974 [*Fenestella retiformis SCHLOTHEIM, 1820] | MISS-PERM
-      Semicoscinium PROUT, 1859 [*S. rhomboideum PROUT, 1860] | MISS-PERM
-      Septopora PROUT, 1859 [*S. cestriensis PROUT, 1859] | MISS-PERM
-      Synocladia KING, 1849 [*Retepora virgulacea PHILLIPS, 1836] | MISS-PERM
-      Tectulipora HALL, 1884 [*T. clausa HALL, 1884] | MDEV
-      Unitrypa HALL, 1882 [*U. lata HALL, 1882] | SIL-LDEV
-    Family ACANTHOCLADIIDAE Zittel, 1880
-      Acanthocladia KING, 1849 [*Keratophytes anceps SCHLOTHEIM, 1820] | MISS-PERM
-      Diploporaria NICKLES & BASSLER, 1900 [*D. marginalis NICKLES & BASSLER, 1900] | MISS-PERM
-      Penniretepora D'ORBIGNY, 1849 [*Gorgonia pluma PHILLIPS, 1836] | LDEV-PERM
-      Pinnatopora VINE, 1884 [*P. similis VINE, 1884] | MISS-PERM
-      Ramiporalia SIMPSON, 1897 [*Synocladia biseriata SWALLOW, 1858] | MISS-PERM
-      Synocladia KING, 1849 [*Retepora virgulacea PHILLIPS, 1836] | MISS-PERM
-      Thamniscus KING, 1849 [*Retepora dubius SCHLOTHEIM, 1820] | LDEV-PERM
-
-Order CTENOSTOMATA Busk, 1852
-  Family ALCYONIDIIDAE Johnston, 1838
-    Alcyonidium LAMOUROUX, 1813 [*A. gelatinosum LINNE, 1761] | UCRET-REC
-  Family FLUSTRELLIDRIDAE Bassler, 1953
-    Flustrella GRAY, 1848 [*Alcyonidium hispidum FABRICIUS, 1780] | REC
-  Family VESICULARIIDAE Johnston, 1838
-    Vesicularia J.V. THOMPSON, 1830 [*Sertularia spinosa LINNE, 1767] | REC
-    Amathia LAMOUROUX, 1812 [*A. lendigera LINNE, 1758] | UCRET-REC
-    Bowerbankia FARRE, 1837 [*Bowerbankia imbricata ADAMS, 1798] | UCRET-REC
-    Buskia ALDER, 1856 [*B. nitens ALDER, 1856] | REC
-    Mimosella HINCKS, 1851 [*Mimosa gracilis HINCKS, 1851] | REC
-  Family NOLELLIDAE Harmer, 1915
-    Nolella GOSSE, 1855 [*N. stipata GOSSE, 1855] | REC
-  Family VICTORELLIDAE Hincks, 1880
-    Victorella KENT, 1870 [*V. pavida KENT, 1870] | REC
-    Arachnidium HINCKS, 1859 [*A. hippothooides HINCKS, 1859] | REC
-  Family TEREBRIPORIDAE D'Orbigny, 1847
-    Terebripora D'ORBIGNY, 1847 [*T. irregularis D'ORBIGNY, 1847] | UCRET-REC
-    Spathipora FISCHER, 1866 [*S. sertum FISCHER, 1866] | UCRET-REC
-  Family IMMERGENTIIDAE Silén, 1946
-    Immergentia SILÉN, 1946 [*I. californica SILÉN, 1946] | REC
-  Family PENETRANTIIDAE Silén, 1946
-    Penetrantia SILÉN, 1946 [*P. concharum SILÉN, 1946] | REC
-  Family VINELLIDAE Ulrich & Bassler, 1904
-    Vinella ULRICH, 1890 [*V. repens ULRICH, 1890] | UORD
-    Allonema ULRICH & BASSLER, 1904 [*Ascodictyon miriabile ULRICH, 1889] | UORD-MDEV
-    Ascodictyon NICHOLSON & ETHERIDGE, 1877 [*A. stellatum NICHOLSON & ETHERIDGE, 1877] | UORD-MDEV
-    Ropalonaria ULRICH, 1882 [*R. venosa ULRICH, 1882] | MORD-UORD
-    Rhopalonaria ULRICH, 1893 [*R. venosa ULRICH, 1882] | LORD-PERM
-  Family ELAEODICTYDAE Vine, 1884
-    Elaeodictyon VINE, 1884 [*E. dwightense VINE, 1884] | SIL
-
-Order CHEILOSTOMATA Busk, 1852
-  Suborder ANASCA Levinsen, 1909
-    Division INOVICELLATA Jullien, 1888
-      Family AETEIDAE Smitt, 1867
-        Aetea LAMX., 1812 [*Sertularia anguina LINNE, 1758] | UCRET-REC
-          = Anguinaria LAMARCK, 1816
-          = Filicella SEARLES WOOD, 1844
-          = Salpingia COPPIN, 1848
-          = Aeteophis BOECK, 1862
-          = Cercaropora FISCHER, 1866
-    Division SCRUPARIINA Silén, 1941
-      Family SCRUPARIIDAE Busk, 1852
-        Scruparia OKEN, 1815 [*Sertularia chelata LINNE, 1758] | UCRET-REC
-          = Unicellaria BLAINVILLE, 1830
-          = Scruparia GRAY, 1848
-        Brettia DYSTER, 1858 [*B. pellucida] | REC
-        Bugulella VERRILL, 1879 [*B. fragilis] | REC
-        Eucratea LAMX., 1812 [*Sertularia loricata LINNE, 1758] | UCRET-REC
-          = Loricaria LAMX., 1821 (non LINNE)
-          = Notamia FLEMING, 1828 (non RAF., 1819 obj.)
-          = Gemicellaria BLAINV., 1830 (obj.)
-          = Loricula TEMPLETON, 1836 (non CURTIS, 1833 obj.)
-          = Grammellaria VAN BENEDEN, 1845 (obj.)
-      Family LABIOSTOMELLIDAE Silén, 1942
-        Labiostomella SILÉN, 1942 [*Brettia gisleni SILÉN, 1941] | REC
-    Division MALACOSTEGA Levinsen, 1902
-      Family MEMBRANIPORIDAE Busk, 1854
-        Membranipora BLAINV., 1830 [*Flustra membranacea LINNE, 1767] | UCRET-REC
-          = Nitscheina NICHTINA CANU, 1900
-        Acanthodesia CANU-B., 1920 [*Flustra savartii AUDOUIN, 1826] | UCRET-REC
-        Adenifera CANU-B., 1917 [*Biflustra armata HASWELL, 1880] | UCRET-REC
-        Biflustra D'ORB., 1852 [*B. ramosa] | UCRET-REC
-        Calloporina CANU-B., 1927 [*Cellarina clavata D'ORB., 1851] | UCRET
-        Cellarinidra CANU-B., 1927 [*Cellarina clavata D'ORB., 1851] | UCRET
-        Conopeum GRAY, 1848 [*Flustra lacroixii AUDOUIN, 1826] | UCRET-REC
-          = Foratella CANU, 1900 (obj.)
-          = Normanella COSSMAN, 1920
-          = Normandia DUVERGIER, 1921
-        Craspedomella CANU-B., 1929 [*C. typica] | PALEOG
-        Cupuladria CANU-B., 1919 [*Membranipora canariensis BUSK, 1859] | NEOG-REC
-        Desmacystis OSBURN, 1950 [*Membranipora sandalia ROBERTSON, 1900] | REC
-        Exostesia BROWN, 1948 [*E. diomatataia] | REC
-        Gregarinidra BARROSO, 1949 [*Membranipora gregaria HELLER, 1867] | REC
-        Heliodoma CALVET, 1907 [*H. implicata] | REC
-        Otionella CANU-B., 1917 [*O. perforata] | UCRET-PALEOG
-        Pseudostega BRYDONE, 1918 [*P. cantiana] | UCRET
-        Quadricellaria D'ORB., 1851 [*Q. elegans] | UCRET
-      Family ELECTRIDAE Lagaaij, 1952
-        Electra LAMX., 1816 [*Flustra verticillata ELLIS-S., 1786] | UCRET-REC
-          = Annulipora GRAY, 1848
-          = Electrina D'ORB., 1852
-          = Reptelectrina D'ORB., 1852
-        Aspidelectra LEV., 1909 [*Lepralia melotontha BUSK, 1852] | REC
-        Herpetopora LANG, 1914 [*H. anglica] | UCRET-REC
-        Heterooecium HINCKS, 1892 [*Membranipora amplectens HINCKS, 1881] | REC
-        Mystriopora LANG, 1915 [*M. moeckleri] | UCRET-REC
-        Pyripora D'ORB., 1849 [*Criserpia pyriformis MICH., 1847] | UCRET-REC
-          = Pyriflustrella D'ORB., 1853
-          = Rhammatopora LANG, 1915
-        Taphrostoma CANU, 1908 [*T. spinosum] | PALEOG
-        Tendra NORDMAN, 1839 [*T. zostericola] | REC
-      Family HINCKSINIDAE Canu & Bassler, 1927
-        Hincksina NORMAN, 1903 [*Membranipora flustroides HINCKS, 1880] | UCRET-REC
-        Filiflustrella D'ORB., 1853 [*Reptoflustrella D'ORB., 1853] | UCRET-REC
-        Acanthoporella DAVIS, 1934 [*Cauloramphus triangularis CANU-B., 1923] | REC
-        Acanthoporidra DAVIS, 1934 [*Membranipora angusta ULR., 1901] | REC
-        Akatopora DAVIS, 1934 [*A. clausentina] | PALEOG
-        Alderina NORMAN, 1903 [*Membranipora imbellis HINCKS, 1860] | UCRET-REC
-        Allantopora LANG, 1914 [*Hippothoa irregularis GABB-H., 1860] | PALEOG-REC
-        Ammatophora NORMAN, 1903 [*Membranipora nodulosa HINCKS, 1880] | UCRET-REC
-        Amphibluestrum GRAY, 1848 [*A. membranaceum] | UCRET-REC
-        Aplousina CANU-B., 1927 [*A. gigantea] | UCRET-REC
-      Family FLUSTRIDAE Smitt, 1867
-        Flustra LINNE, 1761 [*Eschara foliacea LINNE, 1758] | UCRET-REC
-          = Flustrina VAN BENEDEN, 1849 (non D'ORB., 1852)
-        Carbasea GRAY, 1848 [*Flustra carbasea ELLIS-S., 1786] | REC
-        Chartella GRAY, 1848 [*Flustra papyracea ELLIS-S., 1786] | REC
-        Retiflustra LEV., 1909 [*Retepora cornea BUSK, 1852] | REC
-        Sarsiflustra JULLIEN, 1903 [*Flustra abyssicola SARS, 1872] | REC
-        Spiralaria BUSK, 1861 [*S. florea] | REC
-          = Spiralis LEV., 1909
-        Terminoflustra SILÉN, 1942 [*Flustra barleei BUSK, 1860] | REC
-      Family CALLOPORIDAE Norman, 1903
-        Callopora GRAY, 1848 (non HALL, 1851) [*Flustra lineata LINNE, 1758] | UCRET-REC
-          = Dermatopora HAG., 1851
-        Alderina NORMAN, 1903 [*Membranipora imbellis HINCKS, 1860] | UCRET-REC
-        Amphiblestrum GRAY, 1848 [*A. membranaceum] | UCRET-REC
-        Copidozoum HARMER, 1926 [*Membranipora plana HINCKS, 1880] | REC
-        Crassimarginatella CANU, 1900 [*Membranipora crassimarginata HINCKS, 1880] | UCRET-REC
-        Doryporella NORMAN, 1903 [*Lepralia spathulifera SMITT, 1867] | REC
-        Flustrellaria D'ORB., 1853 [*F. fragilis] | UCRET
-        Foveolaria BUSK, 1884 [*F. elliptica] | REC
-        Frurionella CANU-B., 1925 [*F. parvipora] | UCRET
-        Hapsidopora LANG, 1917 [*H. arcuata] | UCRET
-        Larnacicus NORMAN, 1903 [*Membranipora cornigera BUSK, 1860] | REC
-        Marginaria ROEMER, 1841 [*M. elliptica] | UCRET
-        Marssonopora LANG, 1914 [*Cellepora dispersa HAG., 1839] | UCRET
-        Membraniporidra CANU-B., 1917 [*M. porrecta] | UCRET-REC
-        Mollia LAMX., 1816 [*Eschara patellaria MOLL, 1803] | UCRET-REC
-        Parellisina OSBURN, 1940 [*Membranipora curvirostris HINCKS, 1862] | REC
-        Periporosella CANU-B., 1917 [*P. tantilla] | UCRET-PALEOG
-        Pithodella MARSSON, 1887 [*P. cincta] | UCRET
-        Planicellaria D'ORB., 1851 [*P. oculata] | UCRET
-        Pyriporella CANU, 1911 [*P. ameghinoi] | UCRET
-        Pyrulella HARMER, 1926 [*Membranipora pyrula HINCKS, 1881] | REC
-        Ramphonotus NORMAN, 1894 [*R. minax BUSK, 1860] | UCRET-REC
-          = Rhynchotella CANU, 1900
-        Retevirgula BROWN, 1945 [*Membranipora acuta HINCKS, 1885] | REC
-        Solenophragma MARSSON, 1887 [*S. baculinum] | UCRET
-        Stamenocella CANU-B., 1917 [*S. mediaviculifera] | UCRET-NEOG
-        Tegella LEV., 1909 [*Flustra unicornis FLEMING, 1828] | UCRET-REC
-        Tylopora LANG, 1917 [*T. lorea] | UCRET
-        Valdemunitella CANU, 1900 [*Membranipora valdemunita HINCKS, 1885] | REC
-      Family CHAPERIIDAE Jullien, 1888
-        Chaperia JULLIEN, 1881 [*C. australis] | PALEOG-REC
-        Patsyella BROWN, 1948 [*Monoporella capensis dentata WATERS, 1887] | PALEOG-REC
-      Family HIANTOPORIDAE MacGillivray, 1895
-        Hiantopora MACGILL., 1887 [*Lepralia ferox MACGILL., 1868] | UCRET-REC
-          = Membrostega JULLIEN, 1903 (obj.)
-        Tremogasterina CANU, 1911 [*T. problematica] | UCRET-REC
-        Tremopora ORTMANN, 1890 [*T. dendracantha] | NEOG-REC
-      Family ARACHNOPUSIIDAE Jullien, 1888
-        Arachnopusia JULLIEN, 1886 [*Lepralia monoceros BUSK, 1854] | PALEOG-REC
-        Anexechona OSBURN, 1950 [*A. ancorata] | REC
-        Exechonella CANU-B., 1927 [*Hiantopora magna MACGILL., 1895] | REC
-      Family ONYCHOCELLIDAE Jullien, 1881
-        Onychocella JULLIEN, 1882 [*O. marioni] | MJUR-REC
-          = Reptocelleporaria D'ORB., 1852
-          = Peristeichisma KOSCHIN., 1885
-        Collura JULLIEN, 1881 [*Eschara athulia D'ORB., 1851] | UCRET
-        Distefanella CIPOLLA, 1922 [*D. altavillae] | NEOG
-        Floridina JULLIEN, 1881 [*Mollia antiqua SMITT, 1885] | UCRET-REC
-        Hoplocheilina CANU, 1911 [*Eschara oculifera REUSS, 1872] | UCRET
-        Ogiva JULLIEN, 1881 [*Eschara actea D'ORB., 1851] | UCRET
-        Ogivalia JULLIEN, 1881 [*Vincularia elegans D'ORB., 1839] | UCRET-REC
-        Rhebasia JULLIEN, 1881 [*Eschara dorilas D'ORB., 1851] | UCRET
-        Semieschara D'ORB., 1852 [*S. flabellata] | UCRET
-        Smittipora JULLIEN, 1881 [*Vincularia abyssicola SMITT, 1874] | UCRET-REC
-          = Diplopholeos
-          = Rectonychocella
-          = Velumella CANU-B., 1917
-        Thyracella VOIGT, 1930 [*Eschara vigelius PERGENS, 1893] | UCRET
-      Family MICROPORIDAE Hincks, 1880
-        Micropora GRAY, 1848 (non EICHW.) [*M. coriacea] | UCRET-REC
-          = Flustra coriacea ESPER, 1791
-          = Reptocharinella D'ORB., 1853
-          = Penelamia JULLIEN, 1888 (obj.)
-        Aechmella CANU-B., 1917 [*A. filimargo] | UCRET-NEOG
-        Andreella JULLIEN, 1888 [*Micropora uncifera BUSK, 1884] | REC
-        Caleschara MACGILL., 1880 [*Eschara denticulata MACGILL., 1868] | PALEOG-REC
-        Dimorphostylus VOIGT, 1928 [*D. tetrastichus] | UCRET
-        Floridnella CANU-B., 1917 [*F. vicksburgica] | UCRET-REC
-        Gargantua JULLIEN, 1888 [*Cellepora bidens BUSK (non HAG., 1851)] | UCRET-REC
-        Homalostega MARSSON, 1887 [*Cellepora convexa HAG., 1839] | UCRET
-        Hoplitaechmella VOIGT, 1949 [*Cellepora vespertilio HAG., 1839] | UCRET
-        Monsella CANU, 1900 [*Planicellaria eocena MEUNIER & PERGENS, 1886] | PALEOG
-        Nematoporella CANU-B., 1927 [pro Nematopera DUVERGIER, 1921] | NEOG
-        Opaeophora BROWN, 1948 [pro Foraminella LEV., 1909 (non SOWERBY, 1835)] | REC
-        Rosseliana JULLIEN, 1888 [*Flustra rosselii AUDOUIN, 1826] | PALEOG-REC
-        Selenaria BUSK, 1854 [*S. maculata] | PALEOG-REC
-        Selenariopsis MAPLE., 1913 [*S. gabrieli] | REC
-        Sterachmella LAGAAIJ, 1952 [*S. buski] | NEOG
-        Stichomicropora VOIGT, 1949 [*S. sicki] | UCRET
-        Vibracella WATERS, 1891 [*Cellepora trapezoidea REUSS, 1848] | UCRET-REC
-      Family LUNULITIDAE Lagaaij, 1952
-        Lunulites D'ORB., 1852 [non BUSK, 1859] | NEOG-REC
-          = Pavolunulites D'ORB., 1852
-          = Reptolunulites D'ORB., 1852
-          = Oligotresium GABB-H., 1862
-          = Lunularia BUSK, 1884
-          = Dimiclausa GREGORIO, 1890
-        Discoporella D'ORB., 1852 [*D. umbellata] | NEOG-REC
-          = Discoflustrella D'ORB., 1853
-        Hemiseptella LEV., 1909 [*Vincularia labiata BUSK, 1852] | REC
-        Corynostylus CANU-B., 1927 [*Stichoporina protecta D'ORB., 1853] | UCRET
-      Family CALPENSIIDAE Canu & Bassler, 1923
-        Calpensia JULLIEN, 1888 [*Membranipora impressa MOLL, 1803] | NEOG-REC
-          = Cellepora nobilis ESPER, 1796
-          = Membranipora calpensis BUSK, 1854
-      Family STEGINOPORELLIDAE Bassler, nov.
-        Steginoporella SMITT, 1873 [*S. elegans] | PALEOG-REC
-        Gaudryanella CANU, 1907 [*G. variabilis] | REC
-    Division COILOSTEGA Levinsen, 1902
-      Family ONYCHOCELLIDAE Jullien, 1881
-        Onychocella JULLIEN, 1882 [*O. marioni] | MJUR-REC
-      Family MICROPORIDAE Hincks, 1880
-        Micropora GRAY, 1848 [*M. coriacea] | UCRET-REC
-    Division PSEUDOSTEGA Levinsen, 1909
-      Family ASPIDOSTOMATIDAE Jullien, 1888
-        Aspidostoma HINCKS, 1881 [*A. crassum] | UCRET-REC
-        Crateropora LEV., 1909 [*C. falcata] | REC
-        Euritina CANU, 1900 [*Eschara eurita D'ORB., 1851] | UCRET-PALEOG
-        Macropora MACGILL., 1895 [*M. centralis] | REC
-      Family SETOSELLIDAE Levinsen, 1909
-        Setosella HINCKS, 1877 [*Membranipora vulnerata BUSK, 1860] | REC
-        Lagarozoum HARMER, 1926 [*L. profundum] | PALEOG-REC
-        Setosinella CANU-B, 1933 [*S. prolifica] | REC
-      Family COTHURNICELLIDAE Bassler, 1935
-        Cothurnicella W. THOMPSON, 1858 [pro Chlidonia LAMX., 1824 (non HUBNER, 1816)] | REC
-      Family ALYSIDIIDAE Levinsen, 1909
-        Alysidium BUSK, 1852 [*A. parasiticum] | REC
-        Catenariopsis MAPLE., 1899 [*C. morningtonensis] | REC
-        Catenicula O'DONOGHUE, 1924 [*C. corbulifera] | REC
-    Division CELLULARINA Smitt, 1867
-      Family FARCIMINARIIDAE Busk, 1884
-        Farciminaria BUSK, 1852 [*F. aculeata] | PALEOG-REC
-        Columnella LEV., 1914 [pro Columnaria LEV., 1909 (non GOLDF., 1826)] | REC
-        Didymozoum HARMER, 1923 [pro Didymia BUSK, 1852 (non LEPELETIER & SERVILLE, 1825)] | REC
-        Farciminellopsis SILÉN, 1952 [*F. gracilis] | REC
-        Farciminellum HARMER, 1926 [*Farciminaria hexagona BUSK, 1884] | REC
-        Kenella LEV., 1909 [*Flustra feriata BUSK, 1884] | REC
-        Nellia BUSK, 1852 [*N. oculata] | PALEOG-REC
-      Family CELLARIIDAE Hincks, 1880
-        Cellaria ELLIS-S., 1786 [*Eschara fistulosa LINNE, 1758] | UCRET-REC
-          = Salicornaria SCHWEIGGER, 1819
-          = Farcimia FLEMING, 1828 (non POURTALÈS, 1870)
-          = Salicornia BLAINV., 1830
-          = Melicerita JULLIEN, 1888 (non M.EDW., 1836)
-        Atelestozoum HARMER, 1926 [*A. obliquum] | REC
-        Cryptostomaria CANU-B., 1927 [*C. crassatina] | REC
-        Dimorphocellaria VOIGT, 1930 [*Cellaria goldfussi REUSS, 1847] | UCRET
-        Escharicellaria VOIGT, 1924 [*E. polymorpha] | UCRET
-        Euginoma JULLIEN, 1882 [*E. vermiformis] | REC
-        Hemisylus VOIGT, 1928 [*H. virgula] | UCRET
-        Mawsonella LIVINGSTONE, 1928 [*Cellaria membranacea THORNELEY, 1924] | REC
-        Melicerita M.EDW., 1836 (non JULLIEN, 1888) [*M. charlesworthii MORRIS, 1843] | UCRET
-        Mesostomaria CANU-B., 1927 [*M. stricutoramea] | REC
-        Pseudocellaria LIVINGSTONE, 1928 [*Aspidostoma obliquum THORNELEY, 1924] | REC
-        Stomhypselosaria CANU-B., 1927 [*S. condylata] | PALEOG
-        Syringotrema HARMER, 1926 [*S. auriculatum] | REC
-      Family MEMBRANICELLARIIDAE Levinsen, 1909
-        Membranicellaria LEV., 1909 [*Melicerita dubia BUSK, 1885] | REC
-        Dictuonia JULLIEN, 1881 [*Eschara aceste D'ORB., 1851] | UCRET
-      Family COSCINOPLEURIDAE Canu, 1913
-        Coscinopleura MARSSON, 1887 [*Eschara elegans HAG., 1840] | UCRET-PALEOG
-      Family BUGULIDAE Gray, 1848
-        Bugula OKEN, 1815 [*Sertularia neritina LINNE, 1758] | UCRET-REC
-          = Acamarchis LAMX., 1816
-          = Bugulina GRAY, 1848
-          = Avicella VAN BENEDEN, 1848
-          = Ornithopera D'ORB., 1852
-        Camptoplites HARMER, 1923 [*Bugula bicornis BUSK, 1881] | REC
-        Caulibugula VERRILL, 1900 [pro Stirparia GOLDSTEIN, 1880 (non LEUCKHARDT, 1841)] | REC
-          = Stirpariella HARMER, 1923
-        Dendrobeania LEV., 1909 [*Flustra murrayana JOHNSTON, 1847] | REC
-        Eupaxia HASENBANK, 1932 [*E. incarnata] | REC
-        Halophila GRAY, 1843 [*H. johnstoniae] | REC
-        Himantozoum HARMER, 1923 [*Bugula mirabilis BUSK, 1884] | REC
-        Kinetoskias DANIELSSEN, 1868 [*K. smitti] | REC
-        Semibugula KLUGE, 1929 [*S. birdi] | REC
-        Semikinetoskias SILÉN, 1942 [*S. dubni] | REC
-        Sessilbugula OSBURN, 1950 [*S. translucens] | REC
-        Watersia LEV., 1909 [*Flustra militaris WATERS, 1887] | REC
-      Family BICELLARIELLIDAE Levinsen, 1909
-        Bicellariella LEV., 1909 [pro Bicellaria BLAINV., 1830 (non MACQUART, 1823)] | REC
-        Bicellarina LEV., 1909 [*Bicellaria ciliata LINNE, 1758] | REC
-        Bugulopsis VERRILL, 1880 [*Cellularia peachi BUSK, 1851] | REC
-        Cornucopina LEV., 1909 [*Bicellaria grandis BUSK, 1852] | REC
-        Dimetopia BUSK, 1852 [*D. cornuta] | REC
-          = Bifrons BUSK, 1852
-        Dimorphozoum LEV., 1909 [*Flustra nobilis HINCKS, 1891] | REC
-        Erymophora HASTINGS, 1943 [*Brettia gracilis NICHOLS, 1911] | REC
-        Klugella HASTINGS, 1943 [*Flustra echinata KLUGE, 1914] | REC
-        Petalostegus LEV., 1909 [*Catenaria bicornis BUSK, 1884] | REC
-        Stolonella HINCKS, 1883 [*S. clausa] | REC
-      Family BEANIIDAE Canu & Bassler, 1927
-        Beania JOHNSTON, 1840 [*B. mirabilis] | PALEOG-REC
-        Chaunosia BUSK, 1867 [*Diachoris hirtissima HELLER, 1867] | REC
-        Diachoris BUSK, 1852 [*D. crotali] | REC
-          = Diachosereis ORTMANN, 1889
-      Family SCRUPOCELLARIIDAE Levinsen, 1909
-        Scrupocellaria VAN BENEDEN, 1845 [*Sertularia scruposa LINNE, 1758] | PALEOG-REC
-          = Crisina VAN BENEDEN, 1850 (non D'ORB., 1853)
-          = Licornia VAN BENEDEN, 1850
-          = Savignella VAN BENEDEN, 1850
-        Amastigia BUSK, 1852 [*A. nuda] | REC
-          = Caberiella LEV., 1909
-          = Anderssonia KLUGE, 1914
-          = Anderiola STRAND, 1928
-        Caberea LAMX., 1816 [*C. dichotoma] | PALEOG-REC
-        Canda LAMX., 1816 [*C. arachnoides] | PALEOG-REC
-        Menipea LAMX., 1812 [*Cellaria cirrata ELLIS-S., 1786] | REC
-        Notoplites HARMER, 1923 [*N. rostratus] | REC
-        Plicopora MACGILL., 1895 [*P. daedala] | REC
-        Rhabdozoum HINCKS, 1882 [*R. wilsoni] | REC
-        Tricellaria FLEMING, 1828 [*Cellaria ternata ELLIS-S., 1786] | REC
-          = Cellarina VAN BENEDEN, 1848
-          = Ternicellaria D'ORB., 1849
-      Family EPISTOMIIDAE Gregory, 1903
-        Epistomia FLEMING, 1828 [*Sertularia bursaria LINNE, 1758] | REC
-        Synnotum PIEPER, 1881 [*Gemellaria avicularis PIEPER, 1881] | REC
-    Division CRIBRIMORPHA Lang, 1916
-      Family CRIBRILINIDAE Hincks, 1880
-        Cribrilina GRAY, 1848 [*Lepralia punctata HASSALL, 1841] | PALEOG-REC
-        Acanthocella CANU-B., 1917 [*Cribrilina tubulifera HINCKS, 1881] | PALEOG-REC
-        Collarina JULLIEN, 1886 [*Lepralia cribrosa WATERS, 1879 (non HELLER, 1867)] | UCRET-REC
-        Colletosia JULLIEN, 1886 [*Lepralia endlicheri REUSS, 1874] | NEOG
-        Corbulipora MACGILL., 1895 [*C. ornata] | NEOG
-        Costula JULLIEN, 1886 [*Escharella arge D'ORB., 1852] | UCRET
-        Cribralaria SILÉN, 1942 [*C. curvirostris] | REC
-        Cribrilaria CANU-B., 1929 [*Eschara radiata MOLL, 1803] | PALEOG-REC
-        Escharipora D'ORB., 1852 [*E. inornata] | UCRET
-        Figularia JULLIEN, 1886 [*Lepralia figularis JOHNSTON, 1847] | PALEOG-REC
-        Jolietina JULLIEN, 1886 [*Cribrilina lateromargината BUSK, 1884] | REC
-        Jullienula BASSLER, nom. nov. [pro Lyrula JULLIEN, 1886 (non WOLLARTON, 1878)] | REC
-        Lepralina KUHN, 1925 [*L. auriculata] | NEOG
-        Membraniporella SMITT, 1873 [*Lepralia nitida JOHNSTON, 1838] | UCRET-REC
-        Metracolposa CANU-B., 1917 [*M. robusta] | PALEOG
-        Mumiella JULLIEN, 1888 [*Semiescharipora mumia D'ORB., 1852] | UCRET
-        Pleuroschizella CANU, 1918 [*P. anaticulа] | UCRET
-        Puellina JULLIEN, 1886 [*Cribrilina gattyae BUSK, 1854] | REC
-        Reginella JULLIEN, 1886 [*Cribrilina furcata HINCKS, 1882] | REC
-        Reptescharipora D'ORB., 1853 [*R. meudonensis] | UCRET
-        Scorpiodina JULLIEN, 1886 [*Lepralia scorpioides MANZONI, 1869] | REC
-      Family MYAGROPORIDAE Lang, 1916
-        Myagropora LANG, 1916 [*M. muscipula] | UCRET
-      Family OTOPORIDAE Lang, 1916
-        Otopora LANG, 1916 [*O. auricula] | UCRET
-        Anaptopora LANG, 1916 [*A. disjuncta] | UCRET
-        Anotopora LANG, 1916 [*A. inaurita] | UCRET
-      Family CTENOPORIDAE Lang, 1916
-        Ctenopora LANG, 1916 [*C. pecten] | UCRET
-      Family THORACOPORIDAE Lang, 1916
-        Thoracopora LANG, 1916 [*T. costata] | UCRET
-      Family TARACTOPORIDAE Lang, 1916
-        Taractopora LANG, 1916 [*T. confusa] | UCRET
-      Family LAGYNOPORIDAE Lang, 1916
-        Lagynopora LANG, 1916 [*L. lagena] | UCRET
-        Canupora KUHN, 1930 [*C. prima] | UCRET
-        Hexacanthopora LANG, 1916 [*H. sexspinosa] | UCRET
-        Prodromopora LANG, 1916 [*P. praecursor] | UCRET
-        Leptocheilopora LANG, 1916 [*L. tenuilabrosa] | UCRET
-      Family CALPIDOPORIDAE Lang, 1916
-        Calpidopora LANG, 1916 [*C. diota] | UCRET
-        Graptoporella BASSLER, nov. [pro Graptopora LANG, 1916 (non SALTER, 1858; nec ULR., 1882)] | UCRET
-        Rhabdopora LANG, 1916 [*R. virgata] | UCRET
-      Family DISHELOPORIDAE Lang, 1916
-        Dishelopora LANG, 1916 [*D. biscuspis] | UCRET
-        Hystricopora LANG, 1916 [*H. horrida] | UCRET
-      Family RHACHEOPORIDAE Lang, 1916
-        Rhacheopora LANG, 1916 [*R. suta] | UCRET
-        Diancopora LANG, 1916 [*D. ancora] | UCRET
-        Diceratopora LANG, 1916 [*D. bivia] | UCRET
-        Geisopora LANG, 1916 [*G. protecta] | UCRET
-        Prosotopora LANG, 1916 [*P. arrecta] | UCRET
-      Family ANDRIOPORIDAE Lang, 1916
-        Andriopora LANG, 1916 [*A. homunculus] | UCRET
-        Aeolopora LANG, 1916 [*A. distincta] | UCRET
-        Angelopora LANG, 1916 [*A. nuntia] | UCRET
-        Argopora LANG, 1916 [*A. segnis] | UCRET
-        Auchenopora LANG, 1916 [*A. guttur] | UCRET
-        Corymboporella LANG, 1917 [pro Corymbopora LANG, 1916 (non MICH., 1846)] | UCRET
-        Distansescharella D'ORB., 1853 [*Cellepora familiaris HAG., 1839] | UCRET-PALEOG
-        Eucheilopora LANG, 1916 [*E. labiosa] | UCRET
-        Hippiopora LANG, 1916 [*H. equestris] | UCRET
-        Holostegopora LANG, 1916 [*H. epmsonensis] | UCRET
-        Hybopora LANG, 1916 [*H. gibba] | UCRET
-        Kankapora LANG, 1916 [*K. kankensis] | UCRET
-        Monoceratopora LANG, 1916 [*M. unicornis] | UCRET
-        Nannopora LANG, 1916 [*Reptescharella pygmaea D'ORB., 1852] | UCRET-PALEOG
-        Oligotopora LANG, 1916 [*O. novaki] | UCRET
-        Pancheilopora LANG, 1916 [*P. magnilabrosa] | UCRET
-        Polyceratopora LANG, 1916 [*P. euglypha] | UCRET
-        Tricolpopora LANG, 1916 [*T. trisinnuata] | UCRET
-        Trilophophora LANG, 1916 [*T. trifida] | UCRET
-        Schistacanthopora LANG, 1916 [*S. fissa] | UCRET
-      Family PELMATOPORIDAE Lang, 1916
-        Pelmatopora LANG, 1916 [*P. pero] | UCRET-NEOG
-        Batrachopora LANG, 1916 [*B. ranunculus] | UCRET
-        Haplocephalopora LANG, 1916 [*H. uniceps] | UCRET
-        Ichnopora LANG, 1916 [*I. vestigium] | UCRET
-        Murinopsia JULLIEN, 1886 [*Semiescharipora galeata BEISSEL, 1887] | UCRET
-        Pachydera MARSSON, 1887 [*P. grandis] | UCRET
-        Sandalopora LANG, 1916 [*S. soccata] | UCRET
-        Phractoporella LANG, 1916 [*P. hydra] | UCRET
-        Polycephalopora LANG, 1916 [*P. hydra] | UCRET
-        Tricephalopora LANG, 1916 [*T. triceps] | UCRET
-        Coelopora LANG, 1917 [pro Antropora LANG, 1916 (non NORMAN, 1903)] | UCRET
-        Morphasmopora LANG, 1916 [*Cribrilina jukesbrownei BRYDONE, 1906] | UCRET
-        Gephyrotes NORMAN, 1903 [*Escharipora figularis nitidopunctata SMITT, 1868] | UCRET-REC
-        Decurtaria JULLIEN, 1886 [*Semiescharipora cornuta BEISSEL, 1865] | UCRET-NEOG
-      Subfamily OPISTHORITHOPORINAE Lang, 1916
-        Opisthorithopora LANG, 1916 [*Reptescharella flabellata D'ORB., 1852] | UCRET
-      Subfamily FRANCOPORINAE Lang, 1916
-        Francopora LANG, 1916 [*F. canui] | UCRET
-        Baptopora LANG, 1916 [*B. immersa] | UCRET
-      Subfamily KELESTOMINAE Lang, 1922
-        Kelestoma MARSSON, 1887 [*K. elongatum] | UCRET-PALEOG
-      Subfamily DIACANTHOPORINAE Lang, 1922
-        Diacanthopora LANG, 1916 [*D. bispinosa] | UCRET
-      Subfamily CASTANOPORINAE Lang, 1916
-        Castanopora LANG, 1916 [*C. castanea] | UCRET-PALEOG
-        Anornithopora LANG, 1916 [*A. involucris] | UCRET
-        Carydiopora LANG, 1916 [*C. nucula] | UCRET
-        Disteginopora D'ORB., 1852 [*Eschara horrida D'ORB., 1850] | UCRET
-        Steginopora D'ORB., 1853 [*S. ornata] | UCRET
-        Stichocados MARSSON, 1887 [*S. verruculous] | UCRET
-        Ubaghsia JULLIEN, 1886 [*Steginopora reticulata UBAGHES, 1865] | UCRET
-      Subfamily PNICTOPORINAE Lang, 1922
-        Pnictopora LANG, 1916 [*P. suffocata] | UCRET
-      Subfamily TRICEPHALOPORINAE Lang, 1922
-        Tricephalopora LANG, 1916 [*Cribrilina triceps MARSSON, 1887] | UCRET
-    Family PORINIDAE D'Orbigny, 1852
-      Porina D'ORB., 1852 [*Eschara gracilis LAMARCK, 1816] | UCRET-REC
-        = Acropora REUSS, 1869 (non OKEN, 1815)
-        = Acroporina STRAND, 1928
-      Beisselina CANU, 1913 [*Eschara striata GOLDF., 1826] | UCRET-REC
-      Columnotheca MARSSON, 1887 [*C. cribrosa] | UCRET
-      Gastropella CANU-B., 1917 [*G. ventricosa] | PALEOG
-      Kymella CANU-B., 1917 [*Cyclicopora polaris WATERS, 1904] | REC
-      Magnea VIG., 1949 [*M. pileata] | NEOG
-      Pachythecella CANU-B., 1930 [*P. nigra] | PALEOG-REC
-      Rotiporina BRYDONE, 1930 [*Acropora producta HAG., 1840] | UCRET
-    Family CYCLICOPORIDAE Hincks, 1884
-      Cyclicopora HINCKS, 1884 [*C. praelonga] | PALEOG-REC
-      Aptonella CANU-B., 1928 [*A. violacea] | REC
-      Cyclocolposa CANU-B., 1920 [*C. perforata] | NEOG
-      Houzeauina PERGENS, 1889 [*Eschara parallela REUSS, 1869] | PALEOG
-      Taenioporina MARSSON, 1887 [*T. arachnoidea GOLDF., 1826] | UCRET
-    Family HIPPOTHOIDAE Levinsen, 1909
-      Hippothoa LAMX., 1821 [*H. divaricata] | UCRET-REC
-        = Celleporella GRAY, 1848
-        = Hippothoida VINE, 1893
-        = Diazeuxia JULLIEN, 1888
-      Chorizopora HINCKS, 1880 [*Flustra brongniartii AUDOUIN, 1828] | REC
-      Dacryoporella LANG, 1934 [pro Dacryopora LANG, 1914 (non TERQUEM, 1885)] | UCRET
-      Diplotresis CANU-B., 1933 [*Microporella sparsiporosa ULR.-B., 1907] | PALEOG
-      Haplopoma LEV., 1909 [*Flustra impressa AUDOUIN, 1826] | NEOG-REC
-      Harmeria NORMAN, 1903 [*Lepralia scutulata BUSK, 1855] | REC
-      Hincksispora OSBURN, 1952 [*Mucronella spinifera HINCKS, 1880] | REC
-      Trypostega LEV., 1909 [*Lepralia venusta NORMAN, 1864] | PALEOG-REC
-    Family EUTHYROIDIDAE Levinsen, 1909
-      Euthyroides HARMER, 1903 [*Carbasea episcopalis BUSK, 1852] | REC
-    Family UMBONULIDAE Canu, 1904
-      Umbonula HINCKS, 1880 [pro Umbonella HINCKS, 1880 (non ADAMS, 1865)] | PALEOG-REC
-        = Cellepora verrucosa ESPER, 1791
-      Hippopleurifera CANU-B., 1927 [*Eschara sedgwicki M.EDW., 1838] | NEOG-REC
-    Family PETRALIIDAE Levinsen, 1909
-      Petralia MACGILL., 1869 [*P. undata] | REC
-      Coleopora LANG, 1916 [*C. verrucosa] | NEOG-REC
-      Cycloperiella CANU-B., 1920 [*C. rubra] | NEOG-REC
-      Discopora LAMARCK, 1816 [*Cellepora verrucosa LAMARCK, 1816] | UCRET-REC
-        = Micropetriella STACH, 1936
-      Hippopetraliella STACH, 1939 [*Lepralia dorsiporosa BUSK, 1884] | REC
-      Robertsonidra OSBURN, 1952 [*Schizoporella oligopus ROBERTSON, 1896] | REC
-      Sinupetraliella STACH, 1936 [*Petralia litoralis LIVINGSTONE, 1932] | NEOG-REC
-      Utinga MARCUS, 1949 [*Mucronella castanea BUSK, 1884] | REC
-    Family GIGANTOPORIDAE Bassler, 1935
-      Gigantopora RIDLEY, 1881 [*G. lyncoides] | UCRET-REC
-      Cosciniopsis CANU-B., 1927 [*C. coelatus] | PALEOG-REC
-      Cylindroporella HINCKS, 1877 [*Lepralia tubulosa NORMAN, 1868] | REC
-      Dightonia BROWN, 1948 [*D. inarmata] | REC
-      Gephyrophora BUSK, 1884 [*G. polymorpha] | PALEOG-REC
-      Hemicosciniopsis VIG., 1949 [*H. incrustans] | NEOG
-      Pachystomaria MACGILL., 1895 [*P. parvipuncia] | NEOG-REC
-      Schizoropsis CANU-B., 1917 [*S. convexa] | PALEOG
-      Spiroporina STOLICZKA, 1864 [*S. vertebralis] | REC
-      Stenopsella BASSLER, 1952 [pro Stenopsia CANU-B., 1917 (non RAE., 1815)] | REC
-      Tessaradoma NORMAN, 1868 [*Pustulipora gracilis SARS, 1850] | REC
-      Tremotoichos CANU-B., 1917 [*T. rectifurcatum] | PALEOG
-    Family STOMACHETOSELLIDAE Canu & Bassler, 1917
-      Stomachetosella CANU-B., 1917 [*S. crassicollis] | PALEOG-REC
-      Cigclisula CANU-B., 1927 [*Escharoides occlusa BUSK, 1884] | REC
-      Diastosulla CANU-B., 1927 [*Myriozoum marionense BUSK, 1884] | REC
-      Enoplostomella CANU-B., 1917 [*E. defixa] | REC
-      Leiosella CANU-B., 1917 [*L. rostrifera] | UCRET
-      Metradolium CANU-B., 1917 [*M. dissimile] | PALEOG
-      Metrocrypta CANU-B., 1917 [*M. bucculenta] | UCRET
-      Ochetosella CANU-B., 1917 [*O. jacksonica] | UCRET
-      Pachyegis OSBURN, 1952 [*Porella princeps NORMAN, 1903] | REC
-      Posterula JULLIEN, 1903 [*Escharoides sarsi SMITT, 1867] | REC
-      Ragionula CANU-B., 1927 [*Eschara rosacea BUSK, 1856] | REC
-    Family SCHIZOPORELLIDAE Jullien, 1903
-      Schizoporella HINCKS, 1877 [*Lepralia unicornis JOHNSTON, 1847] | UCRET-REC
-        = Schizopodrella CANU-B., 1917 (obj.)
-      Arthropoma LEVINSEN, 1909 [*Flustra cecilii AUDOUIN, 1826] | PALEOG-REC
-      Characodoma MAPLE., 1900 [*C. halli] | REC
-      Cribella JULLIEN, 1903 (non FORBES, 1840) [*C. nova] | REC
-      Dakaria JULLIEN, 1903 [*D. chevreuxi] | PALEOG-REC
-      Emballotheca LEV., 1909 [*Lepralia quadrata MACGILL., 1880] | PALEOG-REC
-      Escharina M.-EDW., 1836 [*Eschara vulgaris MOLL, 1803] | PALEOG-REC
-        = Mastigophora HINCKS, 1880
-        = Schizonella CANU-B., 1920 (obj.)
-      Gemelliporidra CANU-B., 1927 [*G. typica] | REC
-      Hippodiplosia CANU, 1916 [*H. verrucosa] | NEOG
-      Schismoporella GREGORY, 1893 [*Cellepora schizogaster REUSS, 1847] | REC
-      Schizobrachiella CANU-B., 1920 [*Hemeschara sanguinea NORMAN, 1868] | REC
-      Schizomavella CANU-B., 1917 [*Lepralia auriculata HASSALL, 1842] | PALEOG-REC
-      Schizoporellopsis MAPLE., 1898 [*S. abnormis] | REC
-      Sphenella DUVERGIER, 1924 [*S. polymorpha] | REC
-      Stellatopora LIVINGSTONE, 1929 [*S. splendida] | REC
-      Stephanotrema VIG., 1949 [*Dakaria stricta DUVERGIER, 1920] | NEOG
-      Stylopoma LEV., 1909 [*Eschara spongites PALLAS, 1766] | NEOG-REC
-      Systemostoma MARSSON, 1887 [*S. asperulum] | UCRET
-    Family HIPPOPORINIDAE Bassler, 1935
-      Hippoporina NEVIANI, 1895 [*Cellepora pertusa ESPER, 1796] | UCRET-REC
-      Aimulosia JULLIEN, 1888 [*A. australis] | REC
-      Bactridium REUSS, 1848 [*B. hagenowi] | UCRET-REC
-      Balantiostoma MARSSON, 1887 [*Cellepora marsupium HAG., 1846] | UCRET
-      Buffonellodes STRAND, 1928 [pro Buffonella JULLIEN, 1888 (non KEFERSTEIN, 1868)] | UCRET-REC
-      Chiastosella CANU-B., 1934 [*Schizoporella daedala MACGILL., 1882] | REC
-      Clithriellum BROWN, 1948 [*C. oamurense] | REC
-      Gemelliporella CANU-B., 1920 [*G. vorax] | NEOG
-      Gemelliporina BASSLER, 1936 [*Gemellipora glabra SMITT, 1872] | NEOG-REC
-      Hippadenella CANU-B., 1917 [*Flustra margaritifera QUOY & GAYMARD, 1833] | NEOG-REC
-      Hippomenella CANU-B., 1917 [*Lepralia mucronelliformis WATERS, 1899] | PALEOG-REC
-      Hippomonavella CANU-B., 1934 [*Lepralia praeclara MACGILL., 1895] | REC
-      Hippoporella CANU, 1917 [Lepralia hippopus SMITT, 1867] | PALEOG-REC
-        = Hippoponella CANU-B., 1920 (obj.)
-      Hippoporidra CANU-B., 1927 [*Cellepora edax BUSK, 1861] | NEOG-REC
-        = Hippotrema CANU-B., 1927
-      Hipposera VIG., 1949 [*Hippodiplosia formosa DUVERGIER, 1923] | NEOG
-      Hippothyris OSBURN, 1952 [*H. emplasta] | REC
-      Lacerna JULLIEN, 1888 [*L. hosteensis] | PALEOG-REC
-      Pseudoflustra BIDENKAP, 1897 [*Flustra solida SIMPSON, 1853] | REC
-      Stephanosella CANU-B., 1917 [*Eschara biaperta MICH., 1845] | PALEOG-REC
-        = Buffonellaria CANU-B., 1927
-      Strophiella JULLIEN, 1919 [*S. tuberigera] | REC
-      Trypocella MAPLE., 1902 [*T. excavata] | REC
-    Family EXOCHELLIDAE Bassler, 1935
-      Exochella JULLIEN, 1888 [*Mucronella tricuspis HINCKS, 1881] | UCRET-REC
-      Bathosella CANU-B., 1917 [*Mucronella aspera ULR., 1901] | UCRET-PALEOG
-      Didymosella CANU-B., 1917 [*Lepralia larvalis MACGILL., 1869] | PALEOG-REC
-      Escharoides M.EDW., 1836 [*Cellepora coccinea ABILDGAARD, 1805] | PALEOG-REC
-      Romancheina JULLIEN, 1888 [*R. martiali] | PALEOG-REC
-      Trypematella CANU-B., 1920 [*T. papulifera] | REC
-      Calloporina CANU-B., 1923 [*Hippoporina circumcincta NEVIANI, 1896] | PALEOG-REC
-    Family MICROPORELLIDAE Hincks, 1880
-      Microporella HINCKS, 1877 [*Eschara ciliata PALLAS, 1766] | NEOG-REC
-      Fenestrulina JULLIEN, 1888 [*Cellepora malusii AUDOUIN, 1826] | NEOG-REC
-      Stephanopora KIRKPATRICK, 1888 [*S. cribrispinata] | REC
-    Family EURYSTOMELLIDAE Levinsen, 1909
-      Eurystomella LEV., 1909 [*Lepralia foraminigera HINCKS, 1883] | REC
-    Family MUCRONELLIDAE Levinsen, 1902
-      Mucronella HINCKS, 1880 [*Lepralia peachi JOHNSTON, 1847] | PALEOG-REC
-      Bryocryptella CANU-B., 1907 [*Cryptella torquata JULLIEN, 1903] | REC
-      Codonellina CANU-B., 1934 [pro Codonella CANU-B., 1927 (non HAECKEL, 1873)] | REC
-      Cryptostomella BASSLER, nom. nov. [pro Cryptostoma MARSSON, 1887 (non BLAINV., 1818)] | UCRET
-      Cyphonella KOSCHINSKY, 1885 [*C. nodosa] | UCRET
-      Cystisella CANU-B., 1917 [*Eschara saccata BUSK, 1856] | PALEOG
-      Hemicyclopora NORMAN, 1894 [*Lepralia polita HINCKS, 1880] | NEOG-REC
-      Hemismittina VIG., 1949 [*Porella regularis REUSS, 1865] | NEOG
-      Jaculina LEV., 1909 [*J. blanchardi] | REC
-      Malleatia JULLIEN, 1903 [*M. rara] | REC
-      Marguetta JULLIEN, 1903 [*M. pulchra] | PALEOG-REC
-      Palmicellaria ALDER, 1864 [*P. elegans] | REC
-      Parasmittina OSBURN, 1952 [*Lepralia jeffreysi NORMAN, 1876] | NEOG-REC
-      Phoceana JULLIEN, 1903 [*P. columnaris] | REC
-      Plagiosmittia CANU-B., 1917 [*P. regularis] | PALEOG
-      Porella GRAY, 1848 [*P. cervicornis] | PALEOG-REC
-        = Millepora compressa SOWERBY, 1805
-        = Marsilea COSSMAN, 1920
-        = Levinsenula COSSMAN, 1920
-      Rhamphostomella VON LORENZ, 1886 [*R. costata] | REC
-      Rimulostoma VIG., 1949 [*Peristomella costulata DUVERGIER, 1920] | NEOG
-      Schizosmittina VIG., 1949 [*S. planovicellata] | NEOG
-      Smittina NORMAN, 1903 [pro Smittia HINCKS, 1879 (non HOLMGREN, 1869)] | PALEOG-REC
-      Smittinella CANU-B., 1934 [*Eschara tatei T.-WOODS, 1877] | REC
-      Smittoidea OSBURN, 1952 [*Lepralia reticulata JOHNSTON, 1847] | NEOG-REC
-      Vibraculina NEVIANI, 1895 [*V. conti] | NEOG
-    Family TUBUCELLARIIDAE Busk, 1884
-      Tubucellaria D'ORB., 1853 [*Cellaria cereoides ELLIS-S., 1786] | PALEOG-REC
-      Siphonicytara BUSK, 1884 [*S. serrulata] | REC
-      Tubiporella LEV., 1909 [*Lepralia magnirostris MACGILL., 1883] | REC
-      Tubitrabecularia CANU-B., 1934 [*Eschara elevata T.-WOODS, 1876] | REC
-      Tubucella CANU-B., 1917 [*Eschara mammillaris M.EDW., 1836] | PALEOG
-    Family RETEPORIDAE Smitt, 1867
-      Retepora LAMARCK, 1801 [*Millepora cellulosa LINNE, 1767] | PALEOG-REC
-        = Elzenopora KING, 1848 (obj.)
-      Bulbipora MACGILL., 1895 [*B. areolata] | REC
-      Caberoides CANU, 1908 [*C. canaliculata] | PALEOG
-      Diplonotos CANU-B., 1930 [*D. costulatum] | REC
-      Hippellozoon CANU-B., 1917 [*Retepora novaezelandiae WATERS, 1895] | REC
-      Hippopozoon CANU-B., 1929 [*H. typicum] | PALEOG
-      Iodictyum HARMER, 1933 [*Retepora phoenicea BUSK, 1854] | REC
-      Lepralianella LEV., 1916 [*Cellepora ramulosa contigua SMITT, 1867] | REC
-      Phidolopora GABB-H., 1862 [*P. labiata] | REC
-      Plagiopora MACGILL., 1895 [*P. disticha] | REC
-      Psileschara BUSK, 1860 [*P. maderensis BUSK, 1861] | REC
-      Psilosecos CANU-B., 1933 [*Escharinella muralis GABB-H., 1862] | PALEOG
-      Reteporella BUSK, 1884 [*R. flabellata] | UCRET-REC
-      Reteporellina HARMER, 1933 [*Retepora denticulata BUSK, 1884] | UCRET-REC
-      Rhynchozoon HINCKS, 1895 [*Lepralia bispinosum JOHNSTON, 1847] | UCRET-REC
-      Schizoretepora GREGORY, 1893 [*Retepora tessellata HINCKS, 1878] | REC
-      Schizotheca HINCKS, 1877 [*Lepralia fissa BUSK, 1856] | REC
-      Sertella JULLIEN, 1903 [*Retepora beaniana KING, 1846] | UCRET-REC
-        = Elliptipora CANU-B., 1920
-      Sparsiporina D'ORB., 1852 [*Retepora elegans REUSS, 1848] | REC
-      Triphyllozoon CANU-B., 1917 [*Retepora monilifera MACGILL., 1860] | REC
-      Uniretepora D'ORB., 1849 [*Retepora granulosa MICH., 1847] | REC
-    Family ADEONIDAE Jullien, 1903
-      Adeona LAMX., 1812 [*A. grisea LAMX., 1816] | REC
-        = Retepordilina D'ORB., 1853
-        = Multiporina GABB-H., 1862 (non D'ORB., 1852)
-        = Dictyopora MACGILL., 1868 (obj.)
-        = Reptadeonella NEVIANI, 1895
-        = Heckelia NEVIANI, 1895
-      Adeonella BUSK, 1884 [*A. polymorpha] | PALEOG-REC
-      Adeonellopsis MACGILL., 1886 [*A. foliacea] | PALEOG-REC
-      Bracebridgia MACGILL., 1886 [*Mucronella pyriformis BUSK, 1884] | PALEOG-REC
-        = Poristoma CANU, 1907
-      Calvetina LEV., 1909 [*Teichopora clavata GREGORY, 1893] | PALEOG
-      Inversiula JULLIEN, 1888 [*I. nutrix] | NEOG-REC
-      Laminopora MICH., 1842 [*L. contorta] | NEOG-REC
-        = Tremadeona CANU-B., 1920
-      Meniscopora GREGORY, 1893 [*M. bigibbera] | PALEOG
-      Schizostomella CANU-B., 1927 [pro Schizostoma CANU, 1907 (non LEA, 1842)] | PALEOG-REC
-      Schizotremopora VIG., 1949 [*Meniscopora irregularis CANU, 1915] | NEOG
-      Smittistoma CANU, 1907 [*Eschara mortisagum STOLICZKA, 1862] | PALEOG
-      Teichopora GREGORY, 1893 [*T. clavata GREGORY, 1893] | PALEOG
-      Trigonopora MAPLE., 1902 [*T. vermicularis] | NEOG-REC
-    Family CHEILOPORINIDAE Bassler, 1936
-      Cheiloporina CANU-B., 1923 [*Hippoporina circumcincta NEVIANI, 1896] | PALEOG-REC
-      Cheilopora LEV., 1909 [*Discopora sincera SMITT, 1867] | REC
-      Cianotremella CANU, 1911 [*C. gigantea] | UCRET
-      Cryptosula CANU-B., 1925 [*Eschara pallasiana MOLL, 1803] | UCRET-REC
-      Cucullipora MACGILL., 1895 [*C. tetrasticha] | REC
-      Diploecium KIRKPATRICK, 1888 [*D. simplex] | REC
-      Enantiosula CANU-B., 1930 [*E. manica] | REC
-      Hippopodinella CANU-B., 1934 [*H. adpressa] | REC
-      Pollaploecium MAPLE., 1909 [*P. gilbertensis] | REC
-      Tetraplaria TENISON WOODS, 1878 [*T. australis] | PALEOG-REC
-      Tremoschizodina DUVERGIER, 1921 [*T. pisciformis] | NEOG
-      Veleroa OSBURN, 1952 [*V. veleronis] | REC
-      Watersipora NEVIANI, 1895 [*Lepralia cucullata BUSK, 1854] | NEOG-REC
-    Family PARMULARIIDAE Maplestone, 1912
-      Parmularia MACGILL., 1887 [*Eschara obliqua MACGILL., 1868] | REC
-      Bathystomella STRAND, 1928 [pro Bathystoma MANZONI, 1887 (non FITZINGER, 1874)] | REC
-    Family PHYLACTELLIPORIDAE Bassler, nov.
-      Phylactellipora BASSLER, nom. nov. [pro Phylactella CANU-B., 1929 (ref. 31, p. 407) (non HINCKS, 1867)] | UCRET-REC
-      Phylactella HINCKS, 1880 [*Lepralia labrosa BUSK, 1854] | PALEOG-REC
-      Cheilonella KOSCHINSKY, 1885 [*C. gigas] | PALEOG
-      Hippolyrula VIG., 1949 [*Peristomella crassilabiata DUVERGIER, 1920] | NEOG
-      Phylactellina STACH, 1936 [*P. cowandillensis] | REC
-      Pleurolyrula VIG., 1949 [*Perigastrella lata DUVERGIER, 1920] | NEOG
-      Pleuromucrum VIG., 1949 [*P. saucatsensis] | NEOG
-      Tremolyrula VIG., 1949 [*T. incrustans] | NEOG
-    Family PHYLACTELLIDAE Canu & Bassler, 1917
-      Lagenipora HINCKS, 1877 [*L. socialis] | UCRET-REC
-      Hemiphylactella VIG., 1949 [*H. pulchra] | NEOG
-      Hippophylactella VIG., 1949 [*Phylactella aquitanica DUVERGIER, 1920] | NEOG
-      Nimba JULLIEN, 1903 [*N. praetexta] | REC
-      Nimbella JULLIEN, 1903 [*N. limbata] | REC
-      Perigastrella CANU-B., 1917 [*Discopora coccinea labiata SMITT, 1867] | UCRET-REC
-      Psilopsella CANU-B., 1927 [*P. uniseriata] | REC
-      Temachia JULLIEN, 1882 [*T. opulenta] | REC
-      Teuchopora NEVIANI, 1895 [*Alecto castrocariensis MANZONI, 1875] | REC
-    Family CREPIDACANTHIDAE Levinsen, 1909
-      Crepidacantha LEV., 1909 [*C. poissoni crinispina LEV., 1909] | UCRET-REC
-      Mastigophorella HINCKS, 1877 (non FELDER, 1875) [*Lepralia hyndmanni JOHNSTON, 1847] | PALEOG-REC
-      Pachycraspedon KOSCHINSKY, 1885 [*P. clarum] | UCRET
-      Schizobathysella CANU-B., 1917 [*S. accifera] | PALEOG
-    Family CELLEPORIDAE Busk, 1852
-      Cellepora LINNE, 1767 [*C. pumicosa LINNE, 1767] | PALEOG-REC
-      Acanthionella CANU-B., 1917 [*Escharipora typica GABB-H., 1862] | UCRET
-      Aulopocella MAPLE., 1903 [pro Solenopora DYBOWSKI, 1877] | NEOG
-      Costazia NEVIANI, 1895 [*Cellepora costazii AUDOUIN, 1826] | PALEOG-REC
-      Dentiporella LEV., 1909 [*Cellepora dentiportata BUSK, 1884] | REC
-      Dittosaria BUSK, 1866 [*D. wetherelli] | PALEOG
-      Gemellipora SMITT, 1872 [*G. eburnea] | NEOG-REC
-      Holoporella WATERS, 1909 [*Cellepora descostilsii CANU-B., 1917] | PALEOG-REC
-      Kleidionella CANU-B., 1917 [*K. grandis] | UCRET
-      Monocerina NEVIANI, 1900 [*Cellepora monoceros REUSS, 1847] | NEOG
-      Omalosecosa CANU-B., 1925 [*Cellepora ramulosa LINNE, 1767] | NEOG-REC
-      Osthimosia JULLIEN, 1888 [*O. evexa] | REC
-      Schismopora MACGILL., 1888 [*Cellepora coronopus SEARLES WOOD, 1850] | UCRET-REC
-      Tegminula JULLIEN, 1882 [*T. venusta] | REC
-      Trematooecia OSBURN, 1940 [*Lepralia turrita SMITT, 1873] | REC
-    Family PASYTHEIDAE Davis, 1934
-      Pasythea LAMX., 1812 [*Cellaria tulipfera ELLIS-S., 1786] | PALEOG-REC
-    Family SAVIGNYELLIDAE Levinsen, 1909
-      Savignyella LEV., 1909 [*Eucratea lafontii AUDOUIN, 1826] | REC
-        = Catenarella STRAND, 1928 (obj.)
-      Cheilidozoum MAPLE., 1900 [*Catenicella harveyi W. THOMPSON, 1858] | REC
-      Halysisis NORMAN, 1909 [*S. diaphana BUSK, 1860] | REC
-    Family SCLERODOMIDAE Levinsen, 1909
-      Sclerodomus LEV., 1909 [*Bifaxaria denticulatus BUSK, 1884] | REC
-      Cellarinella WATERS, 1904 [*C. foveolata] | REC
-      Systenopora WATERS, 1904 [*S. contracta] | REC
-    Family ONCHOPORIDAE Levinsen, 1909
-      Onchopora BUSK, 1852 [*O. sinclairi] | REC
-      Calwellia W. THOMPSON, 1859 [*C. bicornis] | REC
-      Ichthyaria BUSK, 1884 [*I. oculata] | REC
-      Onchoporella BUSK, 1884 [*Carbasea bombycina BUSK, 1852] | REC
-      Onchoporoides ORTMANN, 1890 [*Carbasea moseleyi BUSK, 1884] | REC
-    Family EUTHYRISELLIDAE Bassler, nov.
-      Euthyrisella BASSLER, 1936 [pro Euthyris HINCKS, 1882 (non QUENST., 1869)] | REC
-      Neocothyris BREYNALL, 1921 [Euthyris woosteri MACGILL., 1891] | REC
-      Pleurotoichus LEV., 1909 [*Euthyris clathratus HARMER, 1902] | REC
-      Urceolipora MACGILL., 1881 [*U. nana] | REC
-    Family BIFAXARIIDAE Busk, 1884
-      Bifaxaria BUSK, 1884 [*B. submucronata] | REC
-    Family BITECTIPORIDAE MacGillivray, 1895
-      Bitectipora MACGILL., 1895 [*B. lineata] | REC
-    Family NEPHROPORIDAE Marsson, 1887
-      Nephropora MARSSON, 1887 [*N. elegans] | UCRET
-    Family PLATYGLENIDAE Marsson, 1887
-      Platyglena MARSSON, 1887 [*P. clava] | UCRET
-    Family PROSTOMARIIDAE MacGillivray, 1895
-      Prostomaria MACGILL., 1895 [*P. gibbericollis] | REC
-    Family MAMILLOPORIDAE Canu & Bassler, 1927
-      Mamillopora SMITT, 1873 [*M. cupula] | PALEOG-REC
-      Anoteropora CANU-B., 1927 [*A. magnicapitata] | REC
-      Ascosia JULLIEN, 1882 [*A. pandora] | REC
-      Discoflustrellaria CANU-B., 1925 [*D. porosa] | PALEOG
-      Discosella CANU, 1925 [*D. porosa] | PALEOG
-      Fedora JULLIEN, 1882 [*F. edwardsi] | REC
-        = Fedorella SILÉN, 1947
-      Kionidella KOSCHINSKY, 1885 [*K. excelsa] | PALEOG
-      Prattia D'ARCHIAC, 1847 [*P. glandulosa] | PALEOG
-      Stenosipora CANU-B., 1927 [*Stichoporina protecta KOSCHINSKY, 1885] | PALEOG
-    Family ORBITOLIPORIDAE Canu & Bassler, 1923
-      Orbitulipora STOLICZKA, 1861 [*O. haidingeri] | PALEOG
-      Atactoporidra CANU-B., 1929 (non ULR., 1879) [*Manon bredaniana MORREN, 1828] | PALEOG
-      Batopora REUSS, 1867 [*B. stoliczkai] | PALEOG
-      Bicupularia REUSS, 1864 [*B. lenticularis] | REC
-      Hagenowinella CANU, 1900 [*Cellepora vaginata HAG., 1851] | UCRET
-      Lateroflustrellaria CANU-B., 1927 [*L. hexagona] | UCRET
-      Schizorthosecos CANU-B., 1917 [*Orbitolites interstitia LEA, 1833] | PALEOG
-      Stichopora HAG., 1846 [*S. clypeata] | UCRET
-      Stichoporina STOLICZKA, 1862 [*S. reussi] | PALEOG
-      Sphaeropora HASSALL, 1881 [*S. fossa] | NEOG-REC
-    Family CONESCHARELLINIDAE Levinsen, 1909
-      Conescharellina D'ORB., 1852 [*C. angustata] | UCRET-REC
-      Bipora WHITELEGGE, 1887 [*Eschara umbonata HASWELL, 1881] | REC
-      Crucescharellina SILÉN, 1947 [*C. japonica] | REC
-      Flabellipora D'ORB., 1852 [*F. elegans] | PALEOG
-      Trochosodon CANU-B., 1927 [*T. linearis] | REC
-    Family FUSICELLARIIDAE D'Orbigny, 1851
-      Fusicellaria D'ORB., 1851 [*F. pulchella] | UCRET
-    Family MYRIOZOIDAE Smitt, 1867
-      Myriozoum DONATI, 1750 [Millepora truncata PALLAS, 1766] | NEOG-REC
-        = Myriopora BLAINV., 1830
-        = Myriopolina EHR., 1830
-        = Leieschara SARS, 1862
-      Myriozoella LEV., 1909 [*Myriozoum crustaceum SMITT, 1868] | REC
-    Family LEKYTHOPORIDAE Levinsen, 1909
-      Lekythopora MACGILL., 1883 [*L. hystrix] | REC
-      Actisecos CANU-B., 1927 [*A. regularis] | REC
-      Catadysis CANU-B., 1927 [*Schizoporella challengeriana WATERS, 1887] | REC
-      Orthoporidra CANU-B., 1927 [pro Orthopora LANG, 1916 (non HALL, 1886)] | REC
-      Poecilopora MACGILL., 1886 [*P. anomala] | REC
-      Turritigera BUSK, 1884 [*T. stellata] | REC
-    Family CATENICELLIDAE Busk, 1852
-      Catenicella BLAINV., 1834 [pro Catenaria LAMX., 1824 (non ZEDER, 1800)] | PALEOG-REC
-      Calpidium BUSK, 1852 [*C. ornatum] | REC
-      Catenicellopsis J.B. WILSON, 1880 [*C. delicatula] | REC
-      Claviporella MACGILL., 1895 [*Claviporella vespertilio STACH, 1935] | REC
-      Cornuticella CANU-B., 1927 [*Catenicella cornuta BUSK, 1852] | REC
-      Costaticella MAPLE., 1899 [*Catenicella lineata MACGILL., 1895] | REC
-      Cribricellina CANU-B., 1927 [pro Cribricella LEVINSEN, 1909 (non FORBES, 1840)] | REC
-      Digenopora MAPLE., 1899 [*D. retroversa MACGILL., 1895] | REC
-      Ditaxipora MAPLE., 1895 [*Catenicella internodia WATERS, 1881] | REC
-      Pterocella LEV., 1909 [*Catenicella alata W. THOMPSON, 1858] | REC
-      Scuticella LEV., 1909 [*Catenicella plagiostoma BUSK, 1852] | REC
-      Strongylopora MAPLE., 1899 [*Catenicella pulchella MAPLE., 1880] | REC
-      Strophipora MACGILL., [*Catenicella harveyi W. THOMPSON, 1858] | REC
-      Vittaticella MAPLE., 1895 [*V. elegans BUSK, 1852] | REC
-    Family CATENICELLIDAE Busk, 1852
-      Strophipora MACGILL. [*Catenicella harveyi W. THOMPSON, 1858] | REC
-
+Phylum BRYOZOA Ehrenberg, 1831
+Class GYMNOLAEMATA Allman,
+ Order CTENOSTOMATA Busk,
+ Suborder CARNOSA Gray, 1841
+ Family ALCYONIDIIDAE Johnston, 1849
+ Benedinipora PERGENS, 1888
+ Lobiancopora PERGENS, 1888
+ Family FLUSTRELLIDRIDAE Bassler,
+ Elzerina LAMX., 1816 | Rec | REC
+ Family VICTORELLIDAE Hincks, 1880
+ Paludicella GERVAIS, 1836
+ Victorella SAVILLE-KENT, 1870
+ Family ARACHNIDIIDAE Hincks, 1880
+ Arachnoidea MOORE, 1903
+ Family NOLELLIDAE Harmer, 1915
+ Family VESICULARIIDAE Hincks, 1880
+ Vesicularia J. V. THOMPSON, 1830 [*Sertularia spinosa LINNE]
+ Suborder STOLONIFERA Ehlers,
+ Family WALKERIIDAE Bassler, nov.
+ Walkeria FLEMING, 1823 [*Sertttlaria lIl'a LI""f] | Rec | REC
+ Monastesia JULLIEN, 1888
+ Family MIMOSELLIDAE Hincks, 1851
+ Parrella EHR., 1838 [*Lagenella repens FARRE] | Rec | REC
+ Family BUSKIIDAE Hincks, 1880
+ Buskia ALDER, 1857
+ Family TRITICELLIDAE Sars, 1874
+ Triticella DALYELL, 1848
+ Family ROPALONARIIDAE Bassler, nov.
+ Ropalonaria ULR., 1879 [*R. venosa] | -Perm.-- 4a, incrusting Streptelasma, X I; 4b, X25 | PERM
+ Family VINELLIDAE Ulrich & Bassler,
+ Vinella ULR., 1890 [*V. repells] | Ord.-C'·et | ORD
+ Condranerna BASSLER, 1952 | - Perm | PERM
+ Marcusodietyon BASSLER, 1952 [*Heteronema pris- Cl/m BASSLER] | priscum (BASSLER), L.Ord., Est.; 7a, on brachiopod, X 10; 7b, one colony growing over another, X25. Vinelloidea CANU, [*V. c1'llssolensis]. Like Vinella but stolons twisted, not regularly arranged. /u | LORD
+ Family ASCODICTYIDAE Miller, 1889
+ Family TEREBRIPORIDAE d'Orbigny,
+ Spathipora FISCHER, 1866 [*5. sertum] | Mio-Rec | NEOG
+ Family PENETRANTIIDAE Silen, 1946
+ Family IMMERGENTIIDAE Silen, 1946
+ Order CYCLOSTOMATA Busk,
+ Suborder ARTICULATA Busk, 1859
+ Family CRISIIDAE Johnston, 1847
+ Crisiona CANU-B., 1928 [*C. baculifera] | -Rec | REC
+ Filierisia D'ORB., 1853 [*Crisia genieulata M.EDw.]
+ Family PHACELOPORIDAE Miller, 1889
+ Suborder TUBULOPORINA Milne-
+ Family DIASTOPORIDAE Gregory, 1899
+ Diastopora LAMX., 1821 [*D. /oliacea] | -Rec | REC
+ Atelesopora CANU-B., 1923 [*A. reptans] | Tert | NEOG
+ Berenicea LAMX., 1821 [*B. prominens] | -Rec | REC
+ Bidiastopora D'ORB., 1849 [*Diastopora cervicorllis MICH.] | -Cret | CRET
+ Cellulipora D'ORB., 1849 [*C. ornata D'ORB.] | U.Cret | UCRET
+ Corynotrypa BASSLER, 1911 [*Hippothoa delicatula JAMES] | -Cret | CRET
+ Diastoporina ULR., 1890 [*D. flabellata). B'foliate f1abelliform zoarium with prostrate immersed subtubula] | Ord | ORD
+ Kukersella TOOTS, 1952 [*K. bassleri). Like] | Ord | ORD
+ Osburnostylus BASSLER, 1952 | Ord | ORD
+ Reptomultisparsa D'ORB., 1853 | - Cret | CRET
+ Retelea D'ORB., 1853 [*R. pulchella). Possibly same as Reticulipora. U.Cret | U.Cret | UCRET
+ Rhipidopora MARSSON, 1887 | U.Cret | UCRET
+ Rosacilla ROEMER, 1840 | Cret., Ger | CRET
+ Sagenella HALL, 1851 [*S. membranacea (] | Sil | SIL
+ Semifascipora D'ORR., 1853 [*S. plumatus) [] | U.Cret | UCRET
+ Epidictyon MARSSON, 1887 | Cret | CRET
+ Spiropora LAMX., 1821 [*S. elegans] | -Rec | REC
+ Stomatopora BRONN, 1825 | -Rec | REC
+ Voigtopora BASSLER, 1952 | U.Cret | UCRET
+ Family TUBULIPORIDAE Johnston, 1838
+ Criserpia M.EDW., 1838 [*Retieulipora cultrata O'ORB.] | Cret | CRET
+ Biidmonea CALVET, 1903 [*B. fayalensis] | Rec | REC
+ Biretepora O'ORB., 1849 [*Retepora distieha GOLDF.] | U.Cret | UCRET
+ Bitubigera D'ORB., 1853 [*Idmonea biseriata PHIL- C C C C C Centroneo ae (p. G44-G48). L1PI] | Oligo | PALEOG
+ Clavicava D'ORB., 1854 [*C. eompressa] | L.Cret.-- 17,1. *C. eompressa, Neocom., Fr.; X 10 | LCRET
+ Clavitubigera O'ORB., 1853 [*C. eonvexa] | U.Cret | UCRET
+ Crisinella HALL, 1883 [*Crisina? serobieulata HALL] | Dev | DEV
+ Crisisina D'ORS., 1850 [*C. eenomana] | Cret.-Ree | CRET
+ Erkosonea CANU-B., 1920 [*Tdmollea maxillaris LONSD.]
+ Platonea CANU-B., 1920 [*Reptotubigera philippsae HARMER] | -Rec | REC
+ Reptofascigera O'ORB., 1853 [*R. altemataJ. Like Bitubigera but adnate zooecia in biserial rows. U.Cret | U.Cret | UCRET
+ Retecava O'ORB., 1854 [*Retepora clathrata GOLOF.]
+ Semitubigera O'ORB., 1853 [*S. lameliosaJ. Adnate lamina with zooecia in biserial rows. Cret.-Eoc | -Eoc | PALEOG
+ Tennysonia BUSK, 1867 [*T. steliataJ. Erect branching stalks with straight uniserial lines of apertures ] | -Rec | REC
+ Tretonea CANU-B., 1920 [*T. levisJ. Like Tennysonia but both sides bear mesopore-like kenozooecia and fro] | Eoc | PALEOG
+ Family MULTISPARSIDAE Bassler, 1935
+ Atractosoecia CANU-B., 1922 [*Berenicea edwardsi CANU] | Jur.-- Fr.; surface with ovicell, X 10 | JUR
+ Family ONCOUSOECIIDAE Canu, 1918
+ Penciletta GRAY, 1848 [*Tubipora penecillata FABRI- CIUS] | Rec., Atl | REC
+ Proboscina AUOOUIN, 1826 [*P. boryiJ [] | -Rec | REC
+ Family TERVIIDAE Canu & Bassler, 1920
+ Tervia JULLIEN, 1882 [*T. solida] | -Rec | REC
+ Lagonoecia CANU-B., 1920 [*Idmollea millleana D'ORB.] | Eoc | PALEOG
+ Prosthenoecia CANU, 1918 [*Reptotubigera lateralis D'ORB.] | Eoc | PALEOG
+ Family ENTALOPHORIDAE Reuss, 1869
+ Entalophora LAMX., 1821 [*E. cellarioides] | -Rec | REC
+ Anguisia JULLIEN, 1882 [*A. t'errucosa] | Rec | REC
+ Bientalophoni BORG, 1944 [*Pttswlopora regularis MACGILL.] | Rec., Austral. Bisidmonea D'ORB., ["B. antiqua (=Spiropara tetragona LAMX., 1821)]. Tetragonal branches with ovicells at angled edges; zooecia partly closed by facets, leaving small orbicular aperture | REC
+ Cardioecia CANU-B., 1922 [*Bidiastopora neocomiensis D'ORB.] | L.Cret | LCRET
+ Cisternifera WALFORD, 1894 [*'C. illconstans] | Jur | JUR
+ Clypeina MICH., 1844 [*'C. marginoporella] | -Eoc., Fr | PALEOG
+ Exochoecia CANU-B., 1920 [*'E. rugosa] | Jur | JUR
+ Microecia CANU, 1918 [*Berenicea sarniensis NOR- MAN] | -Rec | REC
+ Nematifera CANU-B., 1922 [*'Elea reticulata D'ORB.] | Cret | CRET
+ Peripora D'ORB., 1850 [*Po ligeriensis (Pustulopora pseudospiralis MICH.] | Cret | CRET
+ Family DIAPEROECIIDAE Canu, 1918
+ Lekythionia CANU-B., 1920 [*Reticlllipora dichotoma GABB-H.]
+ Stigmatoechos MARSSON, 1887 [*S. punctatus] | Cret | CRET
+ Ybselosoecia CANU-L., 1933 [*Pustulopora palmata BUSK] | Tert.-Ree | NEOG
+ Family PLAGIOECIIDAE Canu, 1918
+ Desmatelesia CANU-L., 1933 [*Tubulipora coerulea CANU-B.] | Mio.-Ree | NEOG
+ Desmeplagioecia CANU-B., 1920 [*Diastopora lineata MACGILL.] | Cret.-Ree | CRET
+ Laterotubigera D'ORB., 1853 [*L. eenomana] | Cret | CRET
+ Liripora MACGILL., 1887 [*Diastopora faseieulata MAcGILL.] | Cret.-Ree | CRET
+ Stathmepora CANU-B., 1922 [*S. flabellata] | Cret.-Pleisto | CRET
+ Terebellaria LAMX., 1821 [*T. ramosissima]
+ Tubigera D'ORB., 1853 [*T. antiqua (] | Cret | CRET
+ Family HASTINGSIIDAE Borg, 1944
+ Family FRONDIPORIDAE Busk, 1875
+ Paraquataia RUSCONI, 1948 [*P. tellechea] | ?Ord., Arg | ORD
+ Family THEONOIDAE Busk, 1859
+ Actinopora D'ORB., 1853 [*A. regularis (] | -Rec | REC
+ Conotubigera D'ORB., 1853 [*C. irregularis] | Cret | CRET
+ Kololophos GREGORY, 1896 [*Constellaria terquemi HAIME] | M.Jur.-- zoarium, Xl; 6b, surface, XI0 | MJUR
+ ?Locularia HAMM, 1881 [*L. semipatina] | Cret | CRET
+ ?Patenaria HAMM, 1881 [*P. depressa] | -Rec | REC
+ Seguenziella NEVIANI, 1900 [*Patinella manzonii SEGUENZA] | (Plio.), Italy. a v p d t a ( D p s s f i a z a a t g r b l t a o p s o t s E H C | NEOG
+ Suborder CANCELLATA Gregory,
+ Family HORNERIDAE Gregory, 1899
+ Crassohornera WATERS, 1887 [*'C. waipukurensis] | arbuscula REUSS, Eoc. (Barton.), Italy; 2a,b, front, back with ovicell, X 10. Harnera | PALEOG
+ Family CYTIDIDAE d'Orbigny, 1854
+ Bicavea D'ORB., 1853 [*Faseiculipora umula D'ORB.] | U.Cret | UCRET
+ Cyrtopora HAG., 1851 [*C. elegans] | Cret | CRET
+ Heterocrisina GABB-H., 1860 [*'H. abbottii]
+ Hypocytis ORTMANN, 1890 [*'H. asteriseus] | U.Cret.-- 2a,b, edge, back, X 10; 2e, front, X5.-- ovicell, XIO | UCRET
+ Plethopora HAG., 1851 [*'Po verrueosa] | U.Cret | UCRET
+ Plethoporella CANU-B., 1922 [*'Montieulipora ramulosa n'ORB.] | U.Cret.-- (n'ORB.), Maastr., Fr.; 2a, surface, X5; 2b, ovicell, XIO; 2e, zoarium, Xl; 2d, long. sec., X5 (2a,b,d, 137; 2c, 202) | UCRET
+ Retenoa GREGORY, 1909 [*Frondipora campicheana O'ORB.] | L.Cret | LCRET
+ Sernicytella BASSLER, 1934 [*5emicytis disparili.< S S Id Desmeporo Diseoeytis Ie Ib O'ORB.] | Cret | CRET
+ Stephanodesma HAMM, 1881 [*5. bifurcata] | Cret | CRET
+ Tetrapora QUENST., 1858 [*T. stteviea). Jur.] | U.Cret | UCRET
+ Family PETALOPORIDAE Gregory, 1899
+ Cavarinella MARSSON, 1887 [*Cavaria ramosa HAG.] | U.Cret | UCRET
+ Codocochlea HAG., 1851 [*C. torquata] | U.Cret | UCRET
+ Crisina D'ORB., 1853 [*C. normaniana] | Cret | CRET
+ Grammanotosoecia CANU-B., 1922 [*G. contorta] | Cret | CRET
+ Hernicellaria D'ORB., 1850 [*H. ramosaJ [] | Cret | CRET
+ Multicavea D'ORB., 1853 [*M. magnificaJ [] | Cret | CRET
+ Multizonopora D'ORB., 1853 [*Heteropora ramosa s ROEMER]
+ Family PSEUDIDMONEIDAE Borg, 1944
+ Family CALVETIIDAE Borg, 1944
+ Suborder CERIOPORINA Hagenow,
+ Family HETEROPORIDAE Waters, 1880
+ Heteropora BLAINV., 1830 [*Ceriopora cryptopora GOLDF.] | -Cret | CRET
+ Biflabellaria PERGENS, 1894 [*B. apathyiJ. Zoarium f1abelliform] | Cret | CRET
+ Canalipora HAG., 1850 | Cret | CRET
+ Ceriopora GOLDF., 1827 | -Mio | NEOG
+ Cerioporella LEV., 1925 | Cret. (Dan.), Ger.-Denm | CRET
+ Defraneiopora HAMM, 1881 | Cret | CRET
+ Filicava D'ORB., 1854 [*G. africana] | Cret | CRET
+ Heteroporella BUSK, 1859 [*H. radiata] | -Plio | NEOG
+ Neofungella BORG, 1933 [*Chrysaora spinosa LAMX.] | -Mio | NEOG
+ Seminodierescis O'ORB., 1854 [*S. nodosa] | Cret | CRET
+ Sparsicytis FILLIOZAT, 1907 [*Plethopora (Monticulipora) cervicornis O'ORB.] | Cret | CRET
+ Spinopora BLAINV., 1830 [*Ceriopora mitra GOLDF.] | U.Cret.-- .~".. . ..- .•... . ~ ..•. -.. ~~·.IO· I,': . •• • '....". . •~:~: .~i tt····~'~~···~~2a..I···· • •••••.1. f..~. I 'I', , •~ 1. .:".•.••~.,.:..••.•• . •·•·•.."··1·. . .., •-tr.:.·'I.I,ro"OO | UCRET
+ Family CORYMBOPORIDAE Smitt, 1866
+ Dartevillea BORG, 1944 [*D. cylindrical. Cylindrical peduncle arising from a disc with ovicell at top. Re] | Rec., S.Atl | REC
+ Fungella HAG., 1851 [*'F. dujardini] | Cret.--FIG, 35,1. "'F. dujal'dini, Maastr., Holl.; la, zoarium, Xl; 1b,c, surface, tang. sec., X10 | CRET
+ Family TRETOCYCLOECIIDAE Canu,
+ Family CAVIDAE d'Orbigny, 1854
+ Haplooecia GREGORY, 1896 [*Millepora straminea PHILLIPS] | -Cret | CRET
+ Zonopora D'ORB., 1849 [*Ceriopora spira{zs GOLDF.. 1827] | Cret | CRET
+ Family LEIOSOECIIDAE Canu & Bassler,
+ Leiosoecia CANU-B., 1920 [*Multiereseis parvieella GABB-H.]
+ Chilopora HAIME, 1854 [*C. guernoni] | -Cret | CRET
+ Parleiosoecia CANU-B., 1920 [*P. jacksoniea]
+ Family LICHENOPORIDAE Smitt, 1866
+ Lichenopora DEFRANCE, 1823 [*L. turbinata] | -Rec | REC
+ Stellipora HAG., 1851 [*Stellipora bosquetiana HAG.] | L.Cret.(Apt.), Fc. Actinotaxia HAMM, [*A. magna]. ?Like Stelloeat/ea but compound (unfigured). U.Cret, Holl | LCRET
+ Conocavea CALVET, 1911 [*C. richardi] | Rec | REC
+ Cuvilliera PFENDER, 1934 [*C. egyptiensis]
+ Disporella GRAY, 1848 [*D. hispida]
+ Favosipora MACGILL., 1885 [*F. rugosa MACGILL.] | Rec., SW.Pac | REC
+ Flosculipora MACGILL., 1887 [*F. pygmaea] | Rec | REC
+ Stellocavea D'ORB., 1853 [*S. francqana] | Cret | CRET
+ Trochiliopora GREGORY, 1909 [*T. humei] | Cret | CRET
+ Family CLAUSIDAE d'Orbigny, 1854
+ Cryptoglena MARSSON, 1887 [*C. adspersa] | U.Cret.--F1G. 39,3. "C. adspersa, Camp., Ger.; 3a,b, surface, edge, X25 | UCRET
+ Reptoclausa D'ORB., 1853 [*R. neoeomiensis] | L.Cret | LCRET
+ Suborder SALPINGINA Hagenow,
+ Family ELEIDAE d'Orbigny, 1852
+ Elea D'ORB., 1853 [*Bidiastopora lamellosa O'ORB.] | U.Cret | UCRET
+ Cyclocites CANU-B., 1922 [*C. primogenitum). Like Melieeritites but facet-orifice circular] | Jur | JUR
+ Foricula D'ORB., 1853 [*F. pyrenaiea). Cylindrical solid stems] | U.Cret.-- Xl; 2b,e, surface, transv. sec., XIO | UCRET
+ Meliceritella LEV., 1925 [*Hornera steenstrupi PER- GENS & MEUNIER] | Cret | CRET
+ Family SEMICEIDAE Buge, 1952
+ Semicea D'ORB., 1854 [*F. regularis] | Cret | CRET
+ Family LOBOSOECIIDAE Canu &
+ Lobosoecia CANU-B., 1922 [*'Pttstulopora semiclatlsa MICH.] | Cret | CRET
+ Family REPTARIIDAE Simpson, 1897
+ Reptaria ROLLE, 1851 | stoloni/era, Dev.(Hamilton), N.Y.; X5 | DEV
+ Clonopora HALL, 1883 | L.Dev | LDEV
+ Hederella HALL, 1883 | -Penn. H. (Hederella) | PENN
+ Hernodia HALL, 1883
+ Family CERAMOPORIDAE Ulrich, 1882
+ Ceramopora HALL, 1851 [*C. imbricata] | -Dev | DEV
+ Anolotichia ULR., 1890 [*A. ponderosa] | -Sil | SIL
+ ?Archaeotrypa FRITZ, 1947 [*A. prima] | U.Cam | UCAM
+ Bolopora LEWIS, 1926 [*B. undosa] | L.Ord | LORD
+ Ceramophylla ULR., 1893 [*C./rondosa] | -Sil. Coeloclemo | SIL
+ Cheiloporella ULR., 1882 [*Fistulipora flabellata ULR.] | Ord | ORD
+ Coeloclema ULR., 1882 [*Diamesopora vaupeli ULR.] | -Sil | SIL
+ Crepipora ULR., 1882 [*C. simttlans ULR.] | - Sil | SIL
+ Scenellopora ULR., 1882 [*S. aspera ULR.] | Ord | ORD
+ Family FISTULIPORIDAE Ulrich, 1882
+ Cheilotrypidae MOORE-D., 1944 [*F. minor] | -Perm | PERM
+ Cycloidotrypa CHAPMAN, 1920 [*C. austmlis] | - Perm | PERM
+ Eridopora ULR., 1882 | -Perm | PERM
+ Fistuliphragma BASSLER, 1934 | -Miss | MISS
+ Fistulocladia BASSLER, 1929 [*F. typicalis] | Perm | PERM
+ Fistulotrypa BASSLER, 1929 [*F. ramosa] | -Perm.-- X20 | PERM
+ Liehenotrypa ULR., 1886 [*L. cavernosa (] | Dev | DEV
+ Selenopora HALL, 1886 [*Lichenalia circincta HALL] | Dev.-- 51,3. *S. circincta (HALL), Onond., Falls Ohio, Ky.-Ind.; surface, X20 | DEV
+ Strotopora ULR., 1889 [*S. joveolata Uu.] | -Miss | MISS
+ Family HEXAGONELLIDAE Crockford,
+ Hexagonella WAAG.-W., 1886 [*H. ramasa] | Perm | PERM
+ Coscinotrypa HALL-S., 1887 [*Coseinillm eribrifarme PROUT] | -Perm | PERM
+ Evactinopora MEEK-W., 1865 [*E. radiata] | Miss | MISS
+ Meekopora ULR., 1889 [*Fistulipora? clausa ULR.] | -Perm | PERM
+ Phractopora HALL, 1883 [*P. eristataJ. Like Glyptopora but junction angles celluliferous] | -Miss | MISS
+ Prismopora HALL, 1883 [*P. triquetra] | -Perm | PERM
+ Scalaripora HALL, 1883 [*S. sealariformis] | M.Dev | MDEV
+ Family GONIOCLADllDAE Nikiforova,
+ Goniocladia ETH., 1876 [*Carinella eellulifera ETH.] | -Perm | PERM
+ Order TREPOSTOMATA Ulrich,
+ Suborder AMALGAMATA Ulrich &
+ Aspidopora ULR., 1882 | -Sil | SIL
+ Atactoporella ULR., 1883 [*A. typicalis] | Ord | ORD
+ Diazipora VINASSA, 1920 | M.Ord | MORD
+ Homotrypa ULR., 1882 [*H. instabilis] | - Sil | SIL
+ Peronoporella CUMINGS-G., 1913 [*P. dubia] | Ord | ORD
+ Prasopora NICH.-E., 1877 | Ord | ORD
+ Family HETEROTRYPIDAE Ulrich, 1890
+ Heterotrypa NIGH., 1879 | Ord | ORD
+ Atactopora ULR., 1879 | Ord | ORD
+ Cyphotrypa ULR.-B., 1904 | -Dev | DEV
+ Dekayella ULR., 1882 [*D. aspera] | Ord | ORD
+ Eridocampylus DUNCAN, 1939 [*E. ulriehi] | M.Dev | MDEV
+ Eridotrypella DUNCAN, 1939 [*Batostomella obliqua ULR.] | M.Dev | MDEV
+ Leptotrypa ULR., 1883 [*L. minima] | Ord | ORD
+ Petigopora ULR., 1882 [*P. gregaria ULR.] | Ord | ORD
+ Stigmatella ULR.-B., 1904 [*S. crenulata] | Ord | ORD
+ Family ATACTOTOECHIDAE Duncan,
+ Atactotoechus DUNCAN, 1939 | Dev | DEV
+ Anomalotoechus DUNCAN, 1939 | M.Dev | MDEV
+ Family BATOSTOMELLIDAE Miller,
+ Batostomella ULR., 1882 [*Chaetetes gracilis NICH.] | Ord | ORD
+ Batostomellina VINASSA, 1920 [*Trematopora granutifera HALL]
+ Canutrypa BASSLER, 1952 [*C. franeqana] | Dev | DEV
+ Eridbtrypa ULR., 1893 | Ord.-- X20; 5e, long. sec., X20 | ORD
+ Esthoniopora BASSLER, 1911 [*E. communis] | Ord.-- lc,d, sees., X20 | ORD
+ Geinitzella WAAG.-W., 1886 [*Coralliolites columnaris SCHLOTH.] | Ord | ORD
+ Family STENOPORIDAE Waagen &
+ Amphiporella GIRTY, 1911 [*A. maculosa] | Miss | MISS
+ Anisotrypa ULR., 1883 [*A. symmetrical. Hollow or solid branches. Zooeeial walls with indistinct monilae] | Miss | MISS
+ Chondraulus DUNCAN, 1939 [*'C. granosus] | Miss | MISS
+ Diplostenopora ULR..-B., 1912 [*'Escharopora siluriana WELLER] | Dev | DEV
+ Dyoidophragma DUNCAN, 1939 [*'D. typiealis] | M.Dev.-- 67,4. "'D. typiealis, Traverse, Mich.; 4a,b, tang. sees., X20, X50; 4e,d, long. sees., X50, X20 | MDEV
+ Dyscritella GIRTV, 1911 [*'D. robusta] | Miss | MISS
+ Eostenopora DUNCAN, 1939 [*'E. picta]
+ Koninckopora LEE, 1912 [*'Calamopora infiata DE- • Colloclodio {po GI0l] | Carb | CARB
+ Leioclema ULR., 1882 [*Callopora punetata HALL] | -Perm | PERM
+ Mierocampylus DUNCAN, 1939 [*M. typieus] | M.Dev | MDEV
+ Pycnopora GIRTY, 1911 [*P. regularis] | Miss | MISS
+ Stenocladia GIRTY, 1911 | Miss | MISS
+ Stenodiseus CROCKFORD, 1945 | Perm | PERM
+ Stenophragmidium BASSLER, 1952 [*Stenophragma lobatum Munro] | Carb | CARB
+ Stenoporella BASSLER, 1936 | Miss | MISS
+ Stereotoechus DUNCAN, 1939 [*S. typicus]
+ Trachytoechus DUNCAN, 1939 [*T. typicus]
+ Family CONSTELLARIIDAE Ulrich, 1890
+ Dianulites EICHW., 1829 [*D. fastigiatusj [] | Ord | ORD
+ Suborder INTEGRATA Ulrich &
+ Family AMPLEXOPORIDAE Miller, 1889
+ Amplexopora DLR., 1882 [*A. cingulata] | Ord | ORD
+ Discotrypa ULR., 1882 | -Dev | DEV
+ Petalotrypa ULR., 1889 | - Carb | CARB
+ Rhombotrypa ULR.-B., 1904 | -Dev | DEV
+ Family HALLOPORIDAE Bassler, 1911
+ Halloporina BASSLER, 1913 [*Hallopora tenuispinosa BASSLER] | Ord | ORD
+ Family TREMATOPORIDAE Miller, 1889
+ Anaphragma ULR.-B., 1904 [*A. mirabileJ. Like Batostoma but diaphragms entirely absent and walls crenulate ] | Ord | ORD
+ Diplotrypa NICH., 1879 [*Favosites petropolitanus PANDER] | Ord | ORD
+ Phragmopora VINASSA, 1920 [*Hemiphragma multiporatum BASSLER] | M.Ord.-- 78,3. *P. mawlata (BASSLER), Est.; 3a,b, sees., X20. Phrogmoporello lc lb oridae (p. G1l5) | MORD
+ Polyteicus POCTA, 1902 [*Monotrypa novaki PER- NER] | Ord | ORD
+ Family PHYLLOPORINIDAE Ulrich,
+ Bashkiriella NIKIF., 1939 [*B. ornata] | Ord | ORD
+ Chainodictyon FOERSTE, 1887 [*C. laxum] | -Perm | PERM
+ Chasmatoporella NEKH., 1936 [*C. metzi] | Ord | ORD
+ Moorephylloporina BASSLER, 1952 [*M. typical. Like Phylloporina but fenestrules polygonal] | M.Ord | MORD
+ Thamnocella SIMPSON, 1897 | -Sil | SIL
+ Sardesonina BASSLER, 1952 [*Phylloporina corticosa ULR.] | Ord.-5il.--- N.Y.; la,b, back, front, X 10; Ie, zoarium, X I; Jd, front, X20 (la,e, 149; Ib,d, 222) | ORD
+ Trepostomina BASSLER, 1952 [*T. erassa] | M.Ord | MORD
+ Order CRYPTOSTOMATA Vine,
+ Family FENESTELLIDAE King, 1850
+ Fenestella LONSD., 1839 [*Fenestella antiqua LONSD.] | -Perm | PERM
+ Archimedes OWEN, 1838 [*Fenestella (Archimedes) wortheni HALL] | -Perm | PERM
+ Bicorbis CONDRA-E., 1945 [*Bicorbula arizonica CONDRA-E.] | ), M.Perm., Ariz.; long. sec., X20 | PERM
+ Cervella CHRONIC, 1949 [*C. cervoidea] | Perm | PERM
+ Fenestepora FREDERIKS, 1915 [*Fenestella jabensis WAAGEN & PICHL] | Carb., Russ | CARB
+ Fenestralia PROUT, 1858 [*F. sanctiludovici] | F Hemi Helicoporo Fenestrolio Enolloporo biperforata, M.Dev., N.Y.; 8a,b, back, front, X20 ( 162) | MDEV
+ Fenestrellina D'ORB., 1849 [*Fenestella crassa Mc- COY] | -Perm | PERM
+ Helicopora CLAYPOLE, 1881 [*H. latispiralis] | -Dev | DEV
+ Hemitrypa PHILLIPS, 1841 [*H. oculata] | -Perm | PERM
+ Lyropora HALL, 1857 [*Fenestella (Lyropora) subquadrans]
+ Dictyoretmon WHITF., 1909 | subquadrans HALL, U.Miss.(Chest.), Ill.; 4a, zoarium, Xl; 4b, front, X20; 4c, back, showing a thickened edge, X10 | UMISS
+ Lyroporella SIMPSON, 1895 [*Fenestella (Lyropora) quincuncialis HALL] | Miss | MISS
+ Pseudoisotrypa PRANTL, 1932 [*P. bohemica] | Carb | CARB
+ Ptiloporina HALL, 1885 [*Fenestella (Ptiloporina) conica HALL-S.] | Dev | DEV
+ Reteporina D'ORB., 1849 [*Retepora prisca GOLDF.] | Dev | DEV
+ Seriopora POCTA, 1894 [*S. petala] | -Perm | PERM
+ Utropora POCTA, 1894 [*U. nobilis] | Dev., Czech | DEV
+ Family ACANTHOCLADIIDAE Zittel,
+ Filites POCTA, 1894 [*F. eribrosus. Resembles Penniretepora. Dev.• Czech. Ichthyorachis McCoy] | -Carb | CARB
+ Penniretepora D'ORB., 1849 [*Retepora pluma PHIL- LIPS] | -Perm | PERM
+ Pteropora EICHW., 1855 [*P. pennula] | Ord | ORD
+ Samaria STUCK., 1888 [*S. volgensis] | L.Carb., Russ | LCARB
+ Septopora PROUT, 1859 [*S. eestriensis] | -Perm | PERM
+ Synocladia KING, 1849 [*Retepora virgulacea PHIL- LIPS] | -Perm | PERM
+ Syncladiopsis GREGORIO, 1930 [*S. elegans] | Perm., Sicily | PERM
+ Family ARTHROSTYLIDAE Ulrich, 1888
+ Arthroclema BILL., 1862 [*A. pulehellum] | Ord | ORD
+ Arthrostyloecia BASSLER, 1952 [*A. nitida] | -Sil | SIL
+ Hemuhichostylus BASSLER, 1952 [*H. lineata] | Ord | ORD
+ Nematopora ULR., 1888 [*Trematopora minuta HALL] | -Sil | SIL
+ Pesnastylus CROCKFORD, 1941 [*P. humei] | Sil | SIL
+ Sceptropora DLR., 1888 [*S. jacula] | Ord | ORD
+ Ulrichostylus BASSLER, 1952 [*Helopora divaricatus DLR.] | Ord | ORD
+ Family RHABDOMESIDAE Vine, 1883
+ Rhabdomeson Y.-Y., 1874 [*Millepora gracilis PHIL- LIPS] | -Perm | PERM
+ Acanthoclema HALL, 1886 [*Trematopora alternata HALL] | -Miss | MISS
+ Bactropora HALL-S., 1887 [*Trematopora? granistriata HALL] | -Miss | MISS
+ Hyphasmopora ETH., 1875 [*H. buskii] | -Perm | PERM
+ Linotaxis BASSLER, 1952 [*Orthopora? magna Mc- NAIR] | U.Dev | UDEV
+ Megacanthopora MOORE, 1929 [*M. fallaeis] | Penn | PENN
+ Nemataxis HALL, 1886 [*N. fibrosus] | Dev | DEV
+ Nemataxidra BASSLER, 1952 [*N. piercensis] | Ord | ORD
+ Nematotrypa BASSLER, 1911 [*N. gracilis] | Ord | ORD
+ Nicklesopora BASSLER, 1952 [*Rhombopora elegantula VLR.] | Miss | MISS
+ Ottoseetaxis BASSLER, 1952 [*0. bipartitus] | Ord | ORD
+ Saffordotaxis BASSLER, 1952 [*Rhombopora incrassata ULR.] | Miss | MISS
+ Spirillopora GURICH, 1896 [*S. anguillata] | Perm | PERM
+ Streblocladia CROCKFORD, 1944 [*S. excavata] | Perm.-- back, X20. S S Rhom :' 50 Soffordotoxis Tropidoporo V Streblotrypo | PERM
+ Streblotrypa VINE, 1885 [*S. nicklesi] | Miss. (Chest.), Ill.: 6a, zoarium, Xl; 6b, surface, X20; 6c, long. sec., X20 | MISS
+ Syringoclemis GIRTY, 1911 [*S. biserialis] | Miss | MISS
+ Tropidopora HALL, 1886 | Dev | DEV
+ Family PTILODICTYIDAE Zittel, 1880
+ Clathropora HALL, 1852 | -Dev | DEV
+ Escharopora HALL, 1847 [*E. recta] | Ord | ORD
+ Family STICTOPORELLIDAE Nickles &
+ Stictoporella ULR., 1882 [*S. interstineta (] | Ord | ORD
+ Coscinella HALL-S., 1887 [*C. elegantula] | Dev | DEV
+ Hdiottypa ULR., 1883 [*H. bi/olia] | Miss | MISS
+ Intrapora HALL, 1883 [*1. puteolata] | Ord | ORD
+ Taeniodictya ULR., 1888 [*T. intel'polata] | -Miss | MISS
+ Family RHINIDICTYIDAE Ulrich, 1895
+ Rhinidictya ULR., 1882 [*R. nicholsoni] | Ord | ORD
+ Eurydictya ULR., 1889 [*E. monti/era ULR.] | Ord | ORD
+ Euspilopora ULR., 1889 [*E. serrata ULR.] | Dev | DEV
+ Goniotrypa ULR., 1889 [*G. bilateralis] | Ord | ORD
+ Pachydictya ULR., 1882 [*P. robusta] | -Sil | SIL
+ Phyllodictya ULR., 1882 [*P. /rondosa] | Ord | ORD
+ Timanodictya NIKIF., 1938 [*Coscinium diehotoma STUCK.] | - Perm | PERM
+ Timanotrypa NIKIF., 1938 [*T. joliata] | Carb., Russ | CARB
+ Trigonodictya ULR., 1893 [*Paehydietya eoneiliatrix ULR.] | -Sil | SIL
+ Family SULCORETEPORIDAE Bassler,
+ Acrogenia HALL, 1883 [*A. prolijera] | Dev | DEV
+ Ceramella HALL-S., 1887 [*C. seidaeea] | Dev | DEV
+ Dichotrypa DLR., 1889 [*D. foliata DLR.] | -Miss | MISS
+ Semiopora HALL, 1883 [*S. bistigmata] | Dev | DEV
+ Taeniopora NICH., 1874 [*T. exigua] | Dev | DEV
+ Family RHINOPORIDAE Miller, 1889
+ Stictotrypa ULR., 1890 [*Stictopora similis HALL] | Sil | SIL
+ Family CYCLOPORIDAE Ulrich, 1890
+ Cyclopora PROUT, 1860 [*C. fungia] | -Miss | MISS
+ Proutella ULR., 1889 [*Cyclopora discoidea PROUT] | Miss.-- | MISS
+ Family ACTINOTRYPIDAE Ulrich, 1890
+ Family WORTHENOPORIDAE Ulrich,
+ Family PALESCHARIDAE Miller, 1889
+ Paleschara HALL, 1874 [*P. incrtlstans] | -Dev | DEV
+ Order CHEILOSTOMATA Busk,
+ Suborder ANASCA Levinsen, 1909
+ Family AETEIDAE Smitt, 1867
+ Family SCRUPARIIDAE Busk, 1852
+ Scruparia OKEN, 1815 | Budding at distal end in front, just proximal to opesium; ovicell on dwarfed zooecium, Rec | REC
+ Bugulella VERRILL, 1879 [*B. tragilis] | Rec., N.Atl | REC
+ Eucratea LAMX., 1812 [*Sertularia loricata LINNE]
+ Lorictda TEMPLETON, 1836 | labiata NOVAK, Cret.(Cenom.), Czech.; 2a, XI; 2b, XIO | CRET
+ Family LABIOSTOMELLIDAE Silen,
+ Labiostomella SILEN, 1942 [*Brettia gisleni SILEN] | Rec., W.Pac | REC
+ Family MEMBRANIPORIDAE Busk, 1854
+ Acanthodesiidae VIG., 1949 | -Rec | REC
+ Membranipora BLAINV., 1830 [*Flustra membranacea LINNE] | -Rec | REC
+ Adenifera CANU-B., 1917 [*Biflustra armata HAS- WELL] | -Rec.-- 4a, X25; 4b, avicularium, X50 | REC
+ Biflustra O'ORB., 1852 [*B. ramosa] | Cret | CRET
+ Conopeum GRAY, 1848 [*Flustra lacroixii AUDOUIN] | -Rec | REC
+ Cupuladria CANU-B., 1919 [*Membranipora canariensis BUSK] | Mio-Rec | NEOG
+ Gregarinidra BARBOSA, 1949 [*Membranipora gregaria HELLER] | Rec | REC
+ Otionella CANU-B., 1917 [*0. per/orata] | -Eoc | PALEOG
+ Quadricellaria D'ORB., 1851 [*Q. elegans] | Cret.-- | CRET
+ Synaptacella MAPLE., 1911 [*S. asymmetrical. Zooecia ovoid] | Tert | NEOG
+ Trochopora D'ORB., 1849 [*Lunulites conica DE- FRANCE] | -Mio | NEOG
+ Vinucularia DEFRANCE, 1829 [*V. tragilis] | -Rec | REC
+ Family ELECTRIDAE Lagaaij, 1952
+ Electra LAMX., 1816 [*Flustra verticillata ELLIS-S.] | -Rec | REC
+ Herpetopora LANG, 1914 [*H. anglica] | Cret.-Olig | CRET
+ Heterooecium HINCKS, 1892 [*Membranipora am- Cellorinidro Heliodomo (p. G155-G157). dae Cupul Conopeum Acant]
+ Mystriopora LANG, 1915 [*M. mockleri] | -Tert | NEOG
+ Pyripora D'ORB., 1849 [*Criserpia pyrifol'mis MICH.] | Cret.-Ree | CRET
+ Taphrostoma CANU, 1908 [*T. spinosum]
+ Tretosina CANU-B., 1927 [*T. areifera] | Tert | NEOG
+ Family FLUSTRIDAE Smitt, 1867
+ Carbasea GRAY, 1848 [*Flustra carbasea ELLlS-S.]
+ Chartella GRAY, 1848 [*Flustra papyracea ELLIS-S.] | Rec | REC
+ Spiralaria BUSK, 1861 [*S. florea] | Rec., SW.Pac | REC
+ Terminollustra SILEN, 1942 [*Flustra barlai BUSK] | Rec., At!' | REC
+ Family HINCKSINIDAE Canu & Bassler,
+ Hincksina NORMAN, 1903 [*Membranipora flustroides HINCKS] | -Rec | REC
+ Cranosina CANU-B., 1933 [*Membranipora coronata HINCKS] | -Rec | REC
+ Cribrendoecium CANU-B., 1917 [*C. tenuicostulatum] | Eoc | PALEOG
+ Pseudolepralia SILEN, 1942 [*P. ellisinae] | Rec | REC
+ Setosellina CALVET, 1906 [*S. roulei] | -Rec | REC
+ Family CALLOPORIDAE Norman, 1903
+ Alderina NORMAN, 1903 [*Membranipora imbellis HINCKS] | - Rec | REC
+ Amphiblestrum GRAY, 1848 [*'.4. membranaceum (] | -Rec | REC
+ Copidozoum HARMER, 1926 | Rec | REC
+ Doryporella NORMAN, 1903 | Rec., N.Atl | REC
+ Flustrellaria O'ORB., 1853 | Cret | CRET
+ Hapsidopora LANG, 1917 | Cret | CRET
+ Larnacicus NORMAN, 1903 [*M. elliptical. Cret.] | Rec | REC
+ Marssonopora LANG, 1914 [*Cellepora dispersa HAG.] | Cret | CRET
+ Parellisina OSBURN, 1940 [*Membranipora curvirostris HINCKS] | Rec | REC
+ Periporosella CANU-B., 1917 [*P. tantilla] | -Eoc | PALEOG
+ Pithodella MARSSON, 1887 [*P. cincta] | Cret | CRET
+ Planicellaria D'ORB., 1851 [*P. oculata] | Cret.-- | CRET
+ Pyriporella CANU, 1911 [*Po ameghinoi] | Cret | CRET
+ Stamenocella CANU-B., 1917 [*S. mediaviculifera] | -Mio | NEOG
+ Tegella LEV., 1909 [*Flustra unicornis FLEMING] | -Rec | REC
+ Tylopora LANG, 1917 [*T. lorea] | Cret | CRET
+ Valdemunitella CANU, 1900 [*Membranipora valdemunita HINCKS] | Rec | REC
+ Family CHAPERIIDAE Jullien, 1888
+ Chaperia JULLIEN, 1881 [*C. australis (?]
+ Chaperiopsis UTTLEY, 1949 | -Rec | REC
+ Patsyella BROWN, 1948 [*Monoporella capensis dentata WATERS] | -Rec | REC
+ Family HIANTOPORIDAE MacGillivray,
+ Hiantopora MACGILL., 1887 [*Lepralia ferox MAC- GILL.] | -Rec | REC
+ Family ARACHNOPUSIIDAE Jullien,
+ Anexechona OSBURN, 1950 [*A. ancorata] | Rec | REC
+ Hippexechonella VIG., 1949 [*Cyclicopora grandis DUVERGIER] | Mio | NEOG
+ Family ONYCHOCELLIDAE Jullien,
+ Onychocella JULLIEN, 1882 [*0. marioni] | -Rec | REC
+ Distefanella CIPOLLA, 1922 [*D. altavillae] | - Rec | REC
+ Semieschara D'ORB., 1852 [*S. flabellata] | -Rec | REC
+ Thyracella VOIGT, 1930 [*Eschara vigelius PERGENS] | Cret | CRET
+ Family MICROPORIDAE Hincks, 1880
+ Micropora GRAY, 1848 [*M. conacea (] | -Rec | REC
+ Andreella JULLIEN, 1888 [*Mieropora unci/era BUSK] | Rec | REC
+ Caleschara MACGILL., 1880 [*Eschara denticulata MACGILL.] | -Rec | REC
+ Floridinella CANU-B., 1917 [*F. vicksburgica] | -Rec | REC
+ Gargantua JULLIEN, 1888 [*'Cellepora bidens BUSK (non HAG.] | -Rec | REC
+ Hoplitaechmella VOIGT, 1949 [*Cellepora vespertilio HAG.] | Cret | CRET
+ Monsella CANU, 1900 [*Planicellaria eocena MEUN- IER & PERGENS] | Paleoc | PALEOG
+ Nematoporella CANU-B., 1927 [*Nematopora ovata DUVERGlER] | Mio | NEOG
+ Rosseliana JULLIEN, 1888 [*Flustra rosselii AUDou- IN] | -Rec | REC
+ Selenaria BUSK, 1854 [*S. maculata] | -Rec | REC
+ Selenariopsis MAPLE., 1913 [*S. gabrzeli] | Tert., Austral | NEOG
+ Steraechmella LAGAAIJ, 1952 [*S. buski (] | -Plio | NEOG
+ Family LUNULITIDAE Lagaaij, 1952
+ Lunulites LAMARCK, 1816 [*L. radiatus] | -Eoc | PALEOG
+ Family CALPENSIIDAE Canu & Bassler,
+ Calpensia JULLIEN, 1888 [*Membranipora impressa MOLL] | -Rec | REC
+ Corynostylus CANU-B., 1919 [*C. labiatus] | Mio | NEOG
+ Hemiseptella LEV., 1909 [*Vincularia labiata BUSK] | - Rec | REC
+ Poricellaria D'ORB., 1852 [*P. alata] | -Rec | REC
+ Verminaria JULLIEN, 1888 [*Membranipora oblonga BUSK] | Plio | NEOG
+ Family STEGINOPORELLIDAE Bassler,
+ Steginoporella SMITT, 1873 [*S. elegans] | -Rec | REC
+ Labioporella HARMER, 1926 [*Labiopora crenulata LEV.] | -Rec | REC
+ Manzonella JULLIEN, 1888 [*Membranipora exilis MANZONI] | Plio | NEOG
+ Opaeophora BROWN, 1948 [*Haploporella lepida HINCKS] | Rec | REC
+ Puncturiella LEV., 1925 [*P. gudumensis] | Cret | CRET
+ Thairopora MACGILL., 1882 [*Membranipora dispar MACGILL.] | -Plio | NEOG
+ Family ASPIDOSTOMATIDAE Jullien,
+ Euritina CANU, 1900 [*Eschara eurita n'ORB.] | -Eoc | PALEOG
+ Megapora HINCKS, 1877 [*Lepralia ringens BUSK] | Rec | REC
+ Monoporella HINCKS, 1881 [*Haploporella nodulifera HINCKS] | -Rec | REC
+ Odontionella CANU-B., 1917 [*Membranipora Mans HINCKS] | -Rec | REC
+ Rhagasostoma KOSCHINSKY, 1885 [*R. hexagonum] | -Mio | NEOG
+ Family SETOSELLIDAE Levinsen, 1909
+ Setosella HINCKS, 1877 [*Membranipora vulnerata BUSK] | Rec | REC
+ Setosinella CANU-B, 1933 [*S. prolifica] | Tert | NEOG
+ Family COTHURNICELLIDAE Bassler,
+ Cothurnieella W. THOMPSON, 1858 [*C. daedala (] | Rec | REC
+ Family ALYSIDIIDAE Levinsen, 1909
+ Alysidium BUSK, 1852 [*A. parasiticum] | Rec | REC
+ Catenariopsis MAPLE., 1899 [*C. morni11gtonensis] | Tert | NEOG
+ Family CELLARIIDAE Hincks, 1880
+ Cellaria ELLIS-S., 1786 [*Eschara fistulosa LINNE]
+ Atelestozoum HARMER, 1926 [*A. obliquumJ. Bifoliate. Zooecia with elevated verIical walls marking off angula]
+ Dimorphocellaria VOIGT, 1930 [*Cellaria goldfussi REUSS] | Cret | CRET
+ Escharicellaria VOIGT, 1924 [*E. polymorpha] | Cret | CRET
+ Hemistylus VOIGT, 1928 [*H. virgula] | -Plio.-- X25 | NEOG
+ Mesostomaria CANU-B., 1927 [*M. strictoramae] | -Rec | REC
+ Dictuonia JULLIEN, 1881 [*Eschara aceste O'ORB.] | Cret | CRET
+ Omoiosia CANU-B., 1927 [*Vincularia maorica STOL- ICZKA] | -Rec | REC
+ Family COSCINOPLEURIDAE Canu,
+ Family FARCIMINARIIDAE Busk, 1884
+ Farciminaria BUSK, 1852 [*F. aculeata] | Rec | REC
+ Columnella LEV., 1914 [*Columnaria borealis LEV.] | Rec | REC
+ Didymozoum HARMER, 1923 [*'Didymia simplex BUSK] | Rec | REC
+ Farciminellum HARMER, 1926 [*Farciminaria hexagona BUSK] | Rec | REC
+ Kenella LEV., 1909 [*Flustra biseriata BUSK] | Rec., E.Indies | REC
+ Nellia BUSK, 1852 [*N. ocrdata] | -Rec | REC
+ Family BUGULIDAE Gray, 1848
+ Caulibugula VERRILL, 1900 [*C. armata]
+ Dendrobeania LEV., 1909 [*Flustra murrayana JOHNSTON]
+ Euoplozoum HARMER, 1923 [*Cellularia cirrata BusK]
+ Eupaxia HASENBANK, 1932 [*E. incarnata]
+ Halophila GRAY, 1843 [*H.]
+ Semibugula KLUGE, 1929 [*S. biruliJ. Arct.]
+ Semikinetoskias SILEN, 1942 [*S. dubia]
+ Sessibugula OSBURN, 1950 [*S. translucens]
+ Family BICELLARIELLIDAE Levinsen,
+ Cornucopina LEV., 1909 [*Bicellaria grandis BusK]
+ Corynoporella HINCKS, 1888 [*C. tenuisJ. Slender]
+ Petalostegus LEV., 1909 [*Catenaria bicornis BusK]
+ Family BEANIIDAE Canu & Bassler, 1927
+ Chaunosia BUSK, 1867 [*Diachoris hirtissima HEL- LER]
+ Stolonella HINCKS, 1883 [*S. clausal. Like Beania m o c p S Petalostegus ~~ a Beania aniidae (p. G181]
+ Caberea LAMX., 1816 [*C. dichotoma] | -Rec | REC
+ Cabereopsis HASENBANK, 1932 [*C. elongata] | Rec., IndianO | REC
+ Canda LAMX., 1816 [*C. arachnoides] | - Rec | REC
+ Jubella JULLIEN, 1882
+ Maplestonia MACGILL., 1885 | Rec | REC
+ Menipea LAMX., 1812
+ Monartron CANU-B., 1929
+ Notoplites HARMER, 1923 | Rec., E.Indies | REC
+ Plicopora MACGILL., 1895 | Tert.--- 139,4. ·P. daedala, SW.Pac.; 4a,h, front, back, X25 | NEOG
+ Rhabdozoum HINCKS, 1882
+ Tricellaria FLEMING, 1828 | Rec | REC
+ Family EPISTOMIIDAE Gregory, 1903
+ Epistomia FLEMING, 1828
+ Family CRIBRILINIDAE Hincks, 1880
+ Cribrilina GRAY, 1848 | -Rec.-- Costula Mumiello Membraniporello e (p. G184-G186). X37.5 | REC
+ Acanthocella CANU-B., 1917 [*Cribrilina tubuli/era HINCKS] | -Rec | REC
+ Collarina JULLEN, 1886 [*Lepralia eribrosa WATERS] | Mio.--- X25 | NEOG
+ Corbulipora MACGILL., 1895 [*C. ornata] | -Mio | NEOG
+ Cribrilaria CANU-B., 1929 [*Eschara radiata MOLL] | -Rec | REC
+ Escharipora D'ORB., 1852 [*E. inornata] | Cret.-- | CRET
+ Flgularia JULLIEN, 1886 [*Lepralia figularis JOHN- STON] | -Rec | REC
+ Jolietina JULLIEN, 1886 [*Cribrilina lateromarginata BusK] | Rec | REC
+ Lepralina KUHN, 1925 [*L. auriculata] | -Rec | REC
+ Mumiella JULLIEN, 1888 [*Semiescharipora mumia D'ORB.] | Cret | CRET
+ Pleurosehizella CANU, 1918 [*P. anaticula] | Eoc | PALEOG
+ Puellina JULLIEN, 1886 [*Cribrilina gattyae BusK] | -Rec | REC
+ Reginella JULLIEN, 1886 [*Cribrilina /urcata HINCKS] | Cret | CRET
+ Scorpiodina JULLIEN, 1886 [*Lepralia scorpioides MANZONI] | Tert | NEOG
+ Family MYAGROPORIDAE Lang, 1916
+ Myagropora LANG, 1916 [*M. muscipula]
+ Family OTOPORIDAE Lang, 1916
+ Otopora LANG, 1916 [*0. auricula]
+ Anaptopora LANG, 1916 [*A. disjuncta]
+ Thoracopora LANG, 1916 [*T. costata]
+ Family THORACOPORIDAE Lang, 1916
+ Family CTENOPORIDAE Lang, 1916
+ Family TARACTOPORIDAE Lang, 1916
+ Taractopora LANG, 1916 [*T. con/usa]
+ Family LAGYNOPORIDAE Lang, 1916
+ Lagynopora LANG, 1916 [*L. lagena]
+ Canupora KUHN, 1930 [*C. prima]
+ Hexacanthopora LANG, 1916 [*H. sexspinosa]
+ Prodromopora LANG, 1916 [*P. praecursor]
+ Family CALPIDOPORIDAE Lang, 1916
+ Calpidopora LANG, 1916 [*C. diota]
+ Rhabdopora LANG, 1916 [*R. virgata]
+ Family DISHELOPORIDAE Lang, 1916
+ Dishelopora LANG, 1916 [*D. biscuspis]
+ Family RHACHEOPORIDAE Lang, 1916
+ Rhacheopora LANG, 1916 [*R.]
+ Diancopora LANG, 1916 [*D. ancora]
+ Prosotopora LANG, 1916 [*P. arrecta]
+ Family ANDRIOPORIDAE Lang, 1916
+ Andriopora LANG, 1916 [*A. homunculus] | Cret | CRET
+ Aeolopora LANG, 1916 [*A. distincta] | Cret | CRET
+ Argopora LANG, 1916 [*A.] | Cret | CRET
+ Auchenopora LANG, 1916 [*A. guttur] | Cret | CRET
+ Eucheilopora LANG, 1916 [*E. labiosa] | Cret | CRET
+ Hippiopora LANG, 1916 [*H. equestris] | Cret | CRET
+ Holostegopora LANG, 1916 [*H. epsomensis] | Cret | CRET
+ Hybopora LANG, 1916 [*H. gibba] | Cret | CRET
+ Kankapora LANG, 1916 [*K. kankensis] | Cret | CRET
+ Monoceratopora LANG, 1916 [*M. unicornis] | Cret | CRET
+ Nannopora LANG, 1916 [*Reptescharella pygmaea D'ORB.] | -Eoc | PALEOG
+ Oligotopora LANG, 1916 [*0. novaki (] | Cret | CRET
+ Pancheilopora LANG, 1916 [*P. magnilabrosa] | Cret | CRET
+ Trilophopora LANG, 1916 [*T. trifida] | Cret | CRET
+ Schistacanthopora LANG, 1916 [*S. fissa] | Cret., Maastr., Fr. [Schistacanthoporinae LANG, 1916] | CRET
+ Family PELMATOPORIDAE Lang, 1916
+ Subfamily FRANCOPORINAE Lang, 1916
+ Francopora LANG, 1916 [*P. canui] | Cret.-- | CRET
+ Baptopora LANG, 1916 | Cret | CRET
+ Subfamily OPISTHORNITHOPORINAE Lang,
+ Subfamily KELESTOMINAE Lang, 1922
+ Gephyrotes NORMAN, 1903 [*Eseharipora figularis nitidopunctata SMITT] | -Rec | REC
+ Subfamily PELMATOPORINAE Lang, 1916
+ Batrachopora LANG, 1916 [*B. ranunculus] | Cret | CRET
+ Decurtaria JULLIEN, 1886 [*Semiescharipora cornuta BEISSEL] | -Mio | NEOG
+ Ichnopora LANG, 1916 [*I. vestigium] | Cret | CRET
+ Murinopsia JULLIEN, 1886 [*Semiescharipora galeaftt BEISSEL] | Cret | CRET
+ Pachydera MARSSON, 1887 [*P. grandis] | Cret | CRET
+ Sandalopora LANG, 1916 [*S. soccata] | Cret | CRET
+ Subfamily TRICEPHALOPORINAE Lang, 1922
+ Coelopora LANG, 1917 [*Antropora cavernostl LANG] | -Rec | REC
+ Haplocephalopora LANG, 1916 [*H. tmicepsJ. Erect] | Cret | CRET
+ Phractoporella LANG, 1917 [*Phractopora constrata LANG] | Cret | CRET
+ Polycephalopora LANG, 1916 [*P. hydra] | Cret | CRET
+ Subfamily DIACANTHOPORINAE Lang, 1922
+ Diacanthopora LANG, 1916 [*D. bispinosa] | Cret | CRET
+ Subfamily CASTANOPORINAE Lang, 1916
+ Anornithopora LANG, 1916 [*A. involucris] | Cret | CRET
+ Hesperopora LANG, 1916 [*H. occidentalis] | -Eoc | PALEOG
+ Phrynopora LANG, 1916 [*P. bllfo] | Cret | CRET
+ Rhiniopora LANG, 1916 [*R. as/JeJ·a] | Cret | CRET
+ Stichocados MARSSON, 1887 [*S. vel'ruculosus] | Cret | CRET
+ Subfamily PNICTOPORINAE Lang, 1922
+ Pnictopora LANG, 1916 [*P. sutfocata] | Cret | CRET
+ Suborder ASCOPHORA Levinsen,
+ Family PORINIDAE d'Orbigny, 1852
+ Porina D'ORB., 1852 [*Eschal'a gracilis LAMARCK] | -Rec.-- X25 | REC
+ Beisselina CANU, 1913 [*Eschal'a striata GOLDF.] | -Eoc | PALEOG
+ Beisselinopsis VOIGT, 1951 [*E. hiltermanni] | Cret.. Ger | CRET
+ Columnotheca MARSSON, 1887 [*C. cribrosa] | Cret.-- | CRET
+ Gastropella CANU-B., 1917 [*G. ventricosa] | Paleoc | PALEOG
+ Family CYCLICOPORIDAE Hincks, 1884
+ Cyclicopora HINCKS, 1884 [*C. praelonga (] | -Rec | REC
+ Aptonella CANU-B., 1928 [*A. violacea] | Rec | REC
+ Cyclocolposa CANU-B., 1920 [*C. per/orata] | Mio-Plio | NEOG
+ Kymella CANU-B., 1917 [*Cyclicopora polaris WA- TERS] | Rec | REC
+ Magnea VIG., 1949 [*M. pileata] | Mio.-- Beisselino Columnotheco Porino Cyclocolposo poridae (p. G193-G195). Toenioporino Trypostega Hippothoa Euthyroides Diplotresis FG. 146. Hippothoidae, Euthyroididae | NEOG
+ Taenioporina MARSSON, 1887 | Cret | CRET
+ Family HIPPOTHOIDAE Levinsen, 1909
+ Hippothoa LAMX., 1821 | -Rec | REC
+ Dacryoporella LANG, 1934 [*Mieroporella sparsiporosa ULR.-B.] | Eoc | PALEOG
+ Haplopoma LEV., 1909 | - Rec., Red Sea | REC
+ Harmeria NORMAN, 1903 [*'Lepralia scutulata BUSK] | Rec | REC
+ Trypostega LEV., 1909 [*Lepralia venusta NORMAN] | -Rec | REC
+ Family EUTHYROIDIDAE Levinsen,
+ Euthyroides HARMER, 1903 [*Carbasea episcopalis BUSK]
+ Family UMBONULIDAE Canu, 1904
+ Umbonula HINCKS, 1880 [*Cellepora verrucosa ESPER] | - Rec | REC
+ Hippopleurifera CANU, 1927 [*Eschara sedgwicki M.EDw.] | -Rec | REC
+ Family PETRALIIDAE Levinsen, 1909
+ Petralia MACGILL., 1869 [*P. undata] | Rec | REC
+ Cycloperiella CANU-B., 1920 [*C. rubra] | -Rec | REC
+ Hippopetraliella STACH, 1939 [*Lepralia dorsiporosa BUSK] | Rec. H. (Hippopetraliella). Rim smooth. SW.Pac.-- dorsiporosa (BUSK), SW. Pac.; X25. H. (Serripetraliella) STACH, 1936 [*S. chuakensis Ilastingsae] | REC
+ Hippopodina LEV., 1909 [*Lepralia feegeensis BUSK] | -Rec | REC
+ Pachycleithonia CANU-B., 1930 [*'P. nigraJ. Primary orifice (aperture closed by operculum) distinct at surface. ] | -Rec | REC
+ Robertsonidra OSBURN, 1952 [*Schizoporella oligopus ROBERTSON] | Rec., E.Pac | REC
+ Sinupetraliella STACH, 1936 [*Petralia litoralis LIV- INGSTONE] | -Rec | REC
+ Utinga MARCUS, 1949 [*Mucronella castanea BUSK] | Rec | REC
+ Family GIGANTOPORIDAE Bassler, 1935
+ Gigantopora RIDLEY, 1881 [*G. lyncoides] | -Rec | REC
+ Cylindroporella HINCKS, 1877 [*Lepralia tubulosa NORMAN] | Rec | REC
+ Dightonia BROWN, 1948 [*D. inarmata] | Tert | NEOG
+ Gephyrophora BUSK, 1884 [*G. polymorpha] | -Rec | REC
+ Hemicosciniopsis VIG., 1949 [*H. incrustans] | Mio | NEOG
+ Pachystomaria MACGILL., 1895 [*P. parvipuncta] | Tert | NEOG
+ Schizaropsis CANU-B., 1917 [*5. convexa] | Eoc | PALEOG
+ Semihaswellia CANU-B., 1917 [*Porina proboscidea WATERS] | -Rec | REC
+ Stenopsella BASSLER, 1952 [*Porina fenestrata SMITT] | -Rec | REC
+ Tessaradoma NORMAN, 1868 [*Pustulipora gracilis SARS] | Rec.-- 149,6. *T. gracilis (SARS), N.AtI.; X37.5 | REC
+ Tremotoichos CANU-B., 1917 [*T. rectifurcatum] | Eoc | PALEOG
+ Family STOMACHETOSELLIDAE Canu
+ Diastosula CANU-B., 1927 [*Myriozoum marionense BUSK] | Rec | REC
+ Enoplostomella CANU-B., 1917 [*E. defixa] | - Rec | REC
+ Leiosella CANU-B., 1917 [*L. rostrifera] | -Rec | REC
+ Metradolium CANU-B., 1917 [*M. dissimile] | Eoc.-- 150,7. *M. dissimile, Claib., N.Car.; X25 | PALEOG
+ Metrocrypta CANU-B., 1917 [*M. bucculenta] | Eoc.-- | PALEOG
+ Ochetosella CANU-B., 1917 [*0. jack] | Eoc | PALEOG
+ Pachyegis OSBURN, 1952 [*Porella princeps NOR- MAN] | Rec., N.Pac | REC
+ Posterula JULLIEN, 1903 [*Escharoides sarsi SMITT] | Rec | REC
+ Ragionula CANU-B., 1927 [*Eschara rosacea BUSK] | Rec | REC
+ Schizemiella CANU-B., 1917 [*S. claibornica] | Eoc | PALEOG
+ Family SCHIZOPORELLIDAE Jullien,
+ Arthropoma LEV., 1909 | -Rec.-- X25 | REC
+ Characodoma MAPLE., 1900 [*D. chevreuxi] | Tert | NEOG
+ Emballotheca LEV., 1909 [*Lepralia quadrata MAC- GILL.] | - Rec | REC
+ Gemelliporidra CANU-B., 1927 [*G. typical. Zoaria multilamellar. Zooecia very large] | -Rec | REC
+ Schismoporella GREGORY, 1893 [*Cellepora schizogaster REUSS] | Tert | NEOG
+ Schizomavella CANU-B., 1917 [*Lepralia auriculata HASSELL] | -Rec | REC
+ Sphenella DUVERGIER, 1924 | Mio | NEOG
+ Stephanotrema VIG., 1949 [*Dakaria stricta DUVER- GIER] | -Rec | REC
+ Systenostoma MARSSON, 1887
+ Family HIPPOPORINIDAE Bassler, 1935
+ Aimulosia JULLIEN, 1888 [*A. australis] | -Rec | REC
+ Bactridium REUSS, 1848 [*B. hagenowi] | -Rec | REC
+ Chiastosella CANU-B., 1934 [*Schizoporella daedala MACGILL.] | -Rec.-- 153,7. *C. daedala (MACGILL.), SW.Pac.; 7a,b, X25, X20 | REC
+ Clithriellurn BROWN, 1948 [*C. oamurense] | Tert | NEOG
+ Gernelliporella CANU-B., 1920 [*G. vorax CANu-B.] | -Plio | NEOG
+ Gernelliporina BASSLER, 1936 [*Gemellipora glabra SMITT] | -Rec | REC
+ Hippomenella CANU-B., 1917 [*Lepralia mucronelliformis WATERS] | -Rec | REC
+ Hippoporella CANU, 1917 [*Cellepora edax BUSK] | -Rec | REC
+ Hipposera VIG., 1949 [*Hippodiplosia formosa Du- VERGlER] | Mio | NEOG
+ Trypocella MAPLE., 1902 [*T. excavata] | Tert | NEOG
+ Family EXOCHELLIDAE Bassler, 1935
+ Bathosella CANU-B., 1917 [*Mucronella aspera ULR.] | -Eoc | PALEOG
+ Family MICROPORELLIDAE Hincks,
+ Microporella HINCKS, 1877 [*Eschara ciliata PALLAS] | -Rec | REC
+ Stephanopora KIRKPATRICK, 1888 [*S. cribrispinata] | Rec | REC
+ Family EURYSTOMELLIDAE Levinsen,
+ Family MUCRONELLIDAE Levinsen,
+ Mucronella HINCKS, 1880 [*Lepralia peachi JOHNS- TON] | -Rec | REC
+ Bryocryptella COSSMAN, 1906 [*Cryptella torquata JULLIEN] | Rec | REC
+ Codonellina CANU-B., 1934 [*'Lepralia galeata BUSK] | Rec | REC
+ Cyphonella KOSCHINSKY, 1885 [*'C. nodosa] | Eoc | PALEOG
+ Cystisella CANU-B., 1917 [*Eschara saccata BUSK] | - Rec | REC
+ Hemismittina VIG., 1949 [*Porella regularis REUSS] | Mio., Ger | NEOG
+ Jaculina JULLIEN, 1903 [*f. blanchardi] | Rec | REC
+ Marguetta JULLIEN, 1903 [*M. pulchra] | -Rec | REC
+ Palmicellaria ALDER, 1864 [*P. elegans] | Mio-Rec | NEOG
+ Plagiosmittia CANU-B., 1917 [*P. regularis] | -Oligo | PALEOG
+ Rhamphostomella VON LORENZ, 1886 [*R. costata] | Mio | NEOG
+ Schizosmittina VIG., 1949 [*5. planovicellata] | Tert | NEOG
+ Smittina NORMAN, 1903 [*Lepralia landsborol'ii JOHNSTON] | -Rec | REC
+ Smittinella CANU-B., 1934 [*Eschara tatei T.-WooDS] | Tert | NEOG
+ Smittoidea OSBURN, 1952 [*Lepralia reticulata JOHN- STON] | -Rec | REC
+ Family TUBUCELLARIIDAE Busk, 1884
+ Tubucellaria D'ORB., 1853 [*Cellaria cereoides EL- LIS-S.] | -Rec.-- XI0 | REC
+ Siphonicytara BUSK, 1884 | Rec | REC
+ Tubiporella LEV., 1909 | -Rec | REC
+ Tubitrabecularia CANU-B., 1934 | Tert | NEOG
+ Tubucella CANU-B., 1917 | Eoc., Fr | PALEOG
+ Family RETEPORIDAE Smitt, 1867
+ Caberoides CANU, 1908 [*C. canaliculata] | Eoc | PALEOG
+ Diplonotos CANU-B., 1930 [*D. costulatum] | Rec | REC
+ Hippopozoon CANU-B., 1929 [*H. typicum] | Eoc | PALEOG
+ Phidolopora GABB-H., 1862 [*P.labiata] | - Rec | REC
+ Psileschara BUSK, 1860 [*P. maderensis BUSK] | Rec | REC
+ Reteporella BUSK, 1884 [*R. flabellata] | Rec | REC
+ Reteporellina HARMER, 1933 [*Retepora denticulata BUSK] | Rec | REC
+ Schizoretepora GREGORY, 1893 [*Retepora tessellata HINCKS] | Rec | REC
+ Sertella JULLIEN, 1903 [*Retepora beaniana KING] | Rec | REC
+ Sparsiporina D'ORB., 1852 [*Retepora elegans REUSS] | Tert | NEOG
+ Triphyllozoon CANU-B., 1917 [*Retepora granulosa MICH.] | Rec | REC
+ Family ADEONIDAE Jullien, 1903
+ Adeona LAMX., 1812 [*A. grisea LAMX.]
+ Multiporina GABB-H., 1862
+ Dictyopora MACGILL., 1868 | -Rec | REC
+ Adeonella BUSK, 1884 [*A. polymorpha] | -Rec | REC
+ Adeonellopsis MACGILL., 1886 [*0. turbinataJ. Tert.] | -Rec | REC
+ Calvetina CANU, 1908 [*C. ventricosa] | Eoc | PALEOG
+ Dimorphocella MAPLE., 1903 | Tert | NEOG
+ Duvergiera VIG., 1949 [*Meniscopora? patens Du- VERGlER] | Mio | NEOG
+ Laminopora MICH., 1842 [*L. contorta] | -Rec | REC
+ Schizotremopora VIG., 1949 [*Meniscopora irregularis CANU] | Mio | NEOG
+ Teichopora GREGORY, 1893 [*T. clavata] | Eoc | PALEOG
+ Family CHEILOPORINIDAE Bassler,
+ Cheilopora LEV., 1909 [*Discopora sincera SMITT] | Rec.-- 163,7. *C. sincera (SMITT), N.Atl.; X2; | REC
+ Cianotremella CAND, 1911 [*C. gigantea] | Cret | CRET
+ Cucullipora MACGILL., 1895 [*C. tetrasticha] | Tert | NEOG
+ Diploecium KIRKPATRICK, 1888 [*D. simplex] | Rec | REC
+ Hippopodinella BARROSO, 1926 | -Rec | REC
+ Pollapioecium MAPLE., 1909 | Rec | REC
+ Tremoschizodina DUVERGIER, 1921 | pisci/ormis, Mio.(Helv.), Fr.; X25 | NEOG
+ Veleroa OSBURN, 1952 | Rec., E.Pac | REC
+ Family PARMULARIIDAE Maplestone,
+ Parmularia MACGILL., 1887 | -Rec | REC
+ Bathystomella STRAND, 1928 | Cret | CRET
+ Phylactella CANU-B., 1929 | -Rec | REC
+ Cheilonella KOSCHINSKY, 1885 | Eoc | PALEOG
+ Hippolyrula VIG., 1949 | Mio | NEOG
+ Pleurolyrula VIG., 1949 | Mio | NEOG
+ Pleuromucrum VIG., 1949 | Mio | NEOG
+ Family PHYLACTELLIDAE Canu &'
+ Phylactella HINCKS, 1880 [*'Lepralia labrosa BUSK] | -Rec | REC
+ Hippophylactella VIG., 1949 [*'Phylactella aqttitanica OUVERGIER] | Mio | NEOG
+ Nimba JULLIEN, 1903 [*'N. praetexta] | Rec | REC
+ Nimbella JULLIEN, 1103 [*'N. limbata] | Rec | REC
+ Psilopsella CANU-B., 1927 [*P. uniseriata] | Rec | REC
+ Temachia JULLIEN, 1882 [*T. opulenta] | Rec., E.At!' | REC
+ Teuchopora NEVIANI, 1895 [*Alecto castrocariensis MANZONI] | Plio | NEOG
+ Crepidacantha LEV., 1909 [*C. poissoni erinispina LEV.] | -Rec | REC
+ Family CELLEPORIDAE Busk, 1852
+ Tegminulidae VIG., 1949 | -Rec. WATERS divided the family into groups pased on apertural characters, as holostomatous (without sinus) and schizostomatous (with sinus); CANU & BASSLER added a c1ithridiate (keyhole) group. VIGNE | REC
+ Cellepora LINNE, 1767 [*C. pumicosa] | -Rec | REC
+ Aulopocella MAPLE., 1903 [*Solenopora tubuli/era MAPLE.] | Rec | REC
+ Holoporella WATERS, 1909 [*Cellepora descostilsii AUDOUlN] | -Rec | REC
+ Kleidionella CANU-B., 1917 [*K. grandis] | -Oligo.-- grandis, Claib., N.Car.; X25 | PALEOG
+ Monocerina NEVIANI, 1900 [*Cellepora monoceros REUSS] | Mio., Aus | NEOG
+ Ornalosecosa CANU-B., 1925 [*Cellepora ramulosa LINNE] | Plio-Rec | NEOG
+ Schismopora MACGILL., 1888 [*Cellepora coronopus SEARLES WOOD] | -Rec | REC
+ Tegminula JULLIEN, 1882 [*T. venusta] | Schismoporo Rec | REC
+ Family PASYTHEIDAE Davis, 1934
+ Pasythea LAMX., 1812 [*Cellaria tulipifera ELLlS-S.] | Rec | REC
+ Dittosaria BUSK, 1866 [*D. wetherelli] | Eoc | PALEOG
+ Family CATENICELLIDAE Busk, 1852
+ Catenicella BLAINV., 1834 [*C. savignii (] | ) Rec | REC
+ Catenicellopsis J. B. WILSON, 1880 [*C. delicatula] | Rec | REC
+ Claviporella MACGILL., 1895 [*Catenicella geminata W. THOMPSON] | -Rec | REC
+ Cribricellina CANU-B., 1927 [*Catenicella rufa MAC- GILL.] | -Rec | REC
+ Digenopora MAPLE., 1899 [*D. compta (] | Tert | NEOG
+ Pterocella LEV., 1909 [*Catenicella alata W. THOMP- SON] | -Rec | REC
+ Family SAVIGNYELLIDAE Levinsen,
+ Savignyella LEV., 1909 [*Eltcl'atea lafontii AUDOUlN]
+ Chelidozoum STACH, 1935 [*Claviporella vespertilio MACGILL.]
+ Euteleia MARCUS, 1938 [*E. evelinae]
+ Family SCLERODOMIDAE Levinsen,
+ Cellarinella WATERS, 1904 [*C. favealata]
+ Family ONCHOPORIDAE Levinsen, 1909
+ Onchopora BUSK, 1852 [*0. sinclairi]
+ Calwellia W. THOMPSON, 1859 [*C. bicornis]
+ Onchoporoides ORTMANN, 1890 [*Carbasea moseleyi BUSK]
+ Family EUTHYRISELLIDAE Bassler, nov.
+ Pleurotoichus LEV., 1909 [*Euthyris clathratus HAR- MER]
+ Urceolipora MACGILL., 1881 [*U. nana]
+ Family BIFAXARIIDAE Busk, 1884
+ Family BITECTIPORIDAE MacGillivray,
+ Bitectipora MACGILL., 1895 [*B. lineata]
+ Family NEPHROPORIDAE Marsson,
+ Nephropora MARSSON, 1887 [*N. elegans]
+ Family PLATYGLENIDAE Marsson, 1887
+ Platyglena MARSSON, 1887 [*P. clava]
+ Family PROSTOMARIIDAE MacGillivray,
+ Family MAMILLOPORIDAE Canu &
+ Mamillopora SMITT, 1873 [*M. cupula] | - Rec | REC
+ Ascosia JULLIEN, 1882 [*A. pandora] | Rec | REC
+ Discoflustrellaria D'ORB., 1853 [*D. clypeiformis] | Cret.-- X5 | CRET
+ Discosella CANU, 1925 [*D. porosa] | Eoc., Fr.-Belg | PALEOG
+ Fedora JULLIEN, 1882 [*F. edwardsi] | Rec | REC
+ Fedorella SILEN, 1947 [*F. minima] | Rec | REC
+ Kionidella KOSCHINSKY, 1885 [*K. excelsa] | - Oligo | PALEOG
+ Prattia D'ARCHIAC, 1847 [*P. glandulosa] | Eoc | PALEOG
+ Stenosipora CANU-B., 1927 [*Stichoporina protecta KOSCHINSKY] | Eoc | PALEOG
+ Family ORBITULIPORIDAE Canu &
+ Orbitulipora STOLICZKA, 1861 [*0. haidingeri] | -Oligo | PALEOG
+ Bicupularia REUSS, 1864 [*B. lent:cularis] | Tert | NEOG
+ Schizorthosecos CANU-B., 1917 [*Orbitolites interstitia LEA] | Eoc | PALEOG
+ Sphaeropora HASWELL, 1881 [*5. fossa] | -Rec | REC
+ Conescharellina D'ORB., 1852 [*C. angustata] | -Rec | REC
+ Crucescharellina SILEN, 1947 [*C. japonica] | Rec | REC
+ Trochosodon CANU-B., 1927 [*T. linearis] | Rec | REC
+ Family FUSICELLARIIDAE d'Orbigny,
+ Family MYRIOZOIDAE Smitt, 1867
+ Myriozoum DONATI, 1750 | -Rec | REC
+ Myriozoella LEV., 1909 [*Myriozoum erustaceum SMITT] | Rec | REC
+ Family LEKYTHOPORIDAE Levinsen,
+ Actisecos CANU-R, 1927 | Rec | REC
+ Catadysis CANU-R, 1927 | Rec | REC
+ Orthoporidra CANU-R, 1927 [*Orthopora compacta WATERS] | Rec | REC
+ Poecilopora MACGILL., 1886 [*P. anomala] | Rec | REC
+ Turritigera BUSK, 1884 | Rec | REC
 Class PHYLACTOLAEMATA Allman, 1856
-  Cristatella CUVIER, 1798 | UCRET-REC
-  Fredericella ALLMAN, 1884 | REC
-  Hyalinella JULLIEN, 1885 | REC
-  Australella ANNANDALE, 1910 | REC
-  Lophopodella ROUSSELET, 1904 | REC
-  Lophopus DUMORTIER, 1835 | REC
-  Pectinatella LEIDY, 1852 | REC
-  Plumatella LAMARCK, 1816 | REC
-  Rhabdopleura ALLMAN, 1867 | REC
+ Acerviclausa GABB-H., 1860 | Angularia BUSK, ,l881 (no species), Rec | REC
+ Anellina GREGORIO, 1930 | Aprutinopora PARaNA, 1909, Cret., Italy | CRET
+ Archaeopora EICHW., 1860 | ), L.Carb., E.Asia | LCARB
+ Bauneia PETERHANS, 1927
+ Buccula EICHW., 1860 | Buskia REUSS, 1864 (non ALDER, 1857), Oligo., Ger. :j;, | PALEOG
+ Buskia T.WOODS, 1877
+ Cambroporella KORDA, 1950
+ Ceidmonea PERGENS, 1892 | Ceidmonea PERGENS, 1892, Cret., Hall | CRET
+ Celleporaria LAMX., 1821 | , 1821, Rec., SW.Pac | REC
+ Celleporina GRAY, 1848 | Celleporina GRAY, 1848 (?=Costazia), Rec., At! | REC
+ Cdleporina D'ORB., 1852 | , 1852 (non GRAY, 1848), Rec., Atl | REC
+ Cellomma STECHOW, 1921 | ), Rec., SE. Atl | REC
+ Cellularia PALLAS, 1766 | Cellularia PALLAS, 1766, Rec., At! | REC
+ Codeschara BUSK, 1860 | ), Rec | REC
+ Cumulipora MUNSTER, 1835 | Cumulipora MUNSTER, 1835, Tert., Ger | NEOG
+ Cupularia BLAINV., 1830 | Miss., Ky | MISS
+ Dioptropora MARSSON, 1887 | Dioptropora MARSSON, 1887 (?cheilostome), Cret., Ger | CRET
+ Disteiehia SHARPE, 1853 | Disteiehia SHARPE, 1853, Sil., Portugal | SIL
+ Ennallipora GABB-H., 1862
+ Eschara LINNE, 1758 | Eschara LINNE, 1758, Rec | REC
+ Escharella GRAY, 1848 | Escharella GRAY, 1848, Rec., N.Ati | REC
+ Escharella D'ORB., 1852 | , 1852 (non GRAY, 1848), Cret., Holi | CRET
+ Escharellina D'ORB., 1852
+ Escharinella D'ORB., 1852
+ Escharopsia GREGORIO, 1882 | Escharopsia GREGORIO, 1882, Cret., Italy | CRET
+ Escharopsis VERRILL, 1879 | , (membraniporoid cheilostome), Cret., Fr | CRET
+ Filiflustrina D'ORB., 1853 | , 1853, Cret., Fr. Flabellaria GRAY, (non LAMARCK, 1816). Ree., Fr | CRET
+ Flabellina GREGORIO, 1930 | , 1902), Perm., Italy | PERM
+ Flustrella EHR., 1839 | , 1839, Cret | CRET
+ Flustrella D'ORB., 1852 | , 1839, nee GRAY, 1848), Cret., Fr | CRET
+ Flustrina D'ORB., 1852 | , 1852 (non VAN BENEDEN, 1850), Cret., Fr | CRET
+ Glauconome GOLDF., 1829 | , 1829, Tert., Ger. (based on unrecognizable Vineularia-type of bryozoan). Hemeschara BUSK, [=Hemiesehara REuss, 1869] (unilamellar ascophoran cheilostome), Ree | NEOG
+ Herentia GRAY, 1848
+ Heterotrypella VIN'ASSA, 1921 | Heterotrypella VIN'ASSA, 1921 (undefined), Ord | ORD
+ Holopora POCTA, 1902 | Holopora POCTA, 1902, Dev., Czech | DEV
+ Kemniella STECHOW, 1921
+ Latereschara D'ORB., 1853 | , 1853, Cret., Fr | CRET
+ Lepralia JOHNSTON, 1838
+ Liriozoaria VAN BENEDEN, 1849 | , (no type) (unplaced Membraniporidae), Cret.-Ree | CRET
+ Mesosecos FAURA SANS & CANU, 1916
+ Microstoma GRAY, 1848
+ Millestwma GREGORY, 1898 | Millestwma GREGORY, 1898; Cret., Egypt. M M M M M M M N N N N P P P P P P P P R R R R R R S S S S S S S S S S S S S T | CRET
+ Monopora CANU, 1910 | , 1882), Trias., Aus | TRIAS
+ Multescharellina D'ORB., 1852 | , 1852, Cret., Ger | CRET
+ Multescharinella D'ORB., 1852
+ Multinodicrescis D'ORB., 1854 | , 1886) (monticuliporoid), Dev., Russ | DEV
+ Palaeoflustra JULLIEN, 1896 | Palaeoflustra JULLIEN, 1896, Carb., Fr | CARB
+ Patinella GRAY, 1848
+ Petalotrypella VINASSA, 1920 | Petalotrypella VINASSA, 1920, Trias., Timor | TRIAS
+ Poikilia JULLIEN, 1903 | Polyeschara REuss, 1867, Oligo., Ger | PALEOG
+ Porellina D'ORB., 1851 | Pseudostromatopora SIMIONISCU, 1927, Cret., RumanIa | CRET
+ Pumiscaria GABB-H., 1862
+ Reptescharellina U'ORB., 1852 | , 1852, Cret., Fr | CRET
+ Reptoflustra D'ORB., 1851
+ Reptoflustrella D'ORB., 1852 | , 1852, Cret., Fr | CRET
+ Reptolatereschara U'ORB., 1852 | , 1852, Rec., SE.Atl | REC
+ Reptonodierescis D'ORB., 1854 | , 1854, Jur., Fr | JUR
+ Reptoporina U'ORB., 1852 | , 1852 (membraniporoid cheilostome), Cret., Fr | CRET
+ Semicelleporaria U'ORB., 1853
+ Semiescharella D'ORB., 1853
+ Semiescharellina D'ORB., 1852 | , 1852 (type lost), Cret., Fr | CRET
+ Semiescharinella D'ORB., 1852 | , 1852, Cret., Fr | CRET
+ Semiflustra U'ORB., 1853 | , 1853, Rec., E.Indies | REC
+ Semiflustrella D'ORB., 1853 | , [?=Callopora], Cret., Fr | CRET
+ Semiporina U'ORB., 1852 | , (non MACQUART, 1835), Cret., Holi | CRET
+ Sphaerostyomella YABE & SUGIYAMA, 1935 | Sphaerostyomella YABE & SUGIYAMA, 1935, Perm., Japan | PERM
+ Spirella HAG., 1851 | , [? =Rhinidietya], Ord., N.Y. | ORD
+ Tata VAN BENEDEN, 1849 | , 1849) [ ?=Diplotrypa], Dev., Czech | DEV
+ Tuberculopora RINGUEBERG, 1886 | Tuberculopora RINGUEBERG, 1886, Sil., N.Y | SIL
+ Vaginopora DEFRANCE, 1828
+ Astroporites LAMBE, 1896 | Chaetetes FISCHER, (tabulate coral), Dev.- Carbo | DEV
+ Crisioides MICH., 1846 | , 1846 (?auloporoid coral), Carb., Belg | CARB
+ Cymbalopora HAG., 1851 | , 1851 (foraminifer), Cret., Holl | CRET
+ Mastopora EICHW., 1860 | , 1860 (?sponge related to Pasceo· Ius), Ord., Bait | ORD
+ Melobesia LAMX., 1812 | , 1812 (calcareous alga), Rec., Fr | REC
+ Omniretepora D'ORB., 1849 | , 1849 (?cladoporoid tabulate coral), Dev., Ky.-Ind. O P P R R S REFEREN The following list of publications relating t are judged by the writer to be most helpful cerning this group of organisms and i | DEV
+ Vetofistula ETH., 1917 [*V. mirabilis] | mirabilis], Dev., Austral | DEV
+ Vincularina D'ORB., 1851 | , 1851, Cret., Fr | CRET
+ Zeapora PENECKE, 1893 | -Miss | MISS
+ Paronipara CAPEDER, 1904 | , (foraminifer), Penn., III | PENN
+ Rhabdinopora EICHW., 1855 | , 1855 (graptolite), Ord., Bait | ORD
+ Rhaphidopora NICH.-F., 1886 | , 1886 (?tabulate coral related to Chaetetes), Dev., Ger | DEV
+ Sertularia LINNE, 1758 | 1-427; Tert., 1852, p. 1-196. 1850-52, Paleontologie fran,aise; description des animaux invertebres; terrain cretace: tome 5, Bryozoaires, p. 1-1192, pis. 600-800 (Masson, Paris). Ortmann, A. E. 1890, | NEOG

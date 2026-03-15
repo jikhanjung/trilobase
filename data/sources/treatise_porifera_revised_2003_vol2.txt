@@ -1,0 +1,77 @@
+---
+reference: Kaesler, R.L. (ed.), 2003. Treatise on Invertebrate Paleontology, Part E (Revised), Porifera, Volume 2 (Introduction to the Porifera). University of Kansas and Geological Society of America, 375 p.
+scope:
+  - taxon: Porifera
+    coverage: classification summary only
+notes: |
+  Volume 2 contains an introduction and classification summary for all Porifera.
+  Covers Demospongea, Hexactinellida, Heteractinida, Calcarea.
+  Genus-level systematic descriptions are in volumes 3-5.
+  Pages 41-100 extracted (classification hierarchy only, no genus entries).
+---
+
+Class Demospongea Sollas, 1875
+ Subclass Clavaxinellida Lévi, 1956 (54)
+ Order Protomonaxonida Finks & Rigby, he
+ Order Clavulina Vosmaer, 1887
+ Subclass Choristida Sollas, 1880
+ Order Plakinida Reid, 1968
+ Order Pachastrellida Reid, herein (13)
+ Order Ancorinida Reid, 1968
+ Order Craniellida Reid, 1968
+ Order Uncertain (12)
+ Subclass Tetractinomorpha Lévi, 1953 (30)
+ Order Streptosclerophorida Dendy, 1924
+ Suborder Eutaxicladina Rauff, 1894
+ Order Hadromerida Topsent, 1898
+ Subclass Ceractinomorpha Lévi, 1953 (479;9
+ Order Dictyoceratida Minchin, 1900
+ Order Dendroceratida Minchin, 1900
+ Order Verongida Bergquist, 1978
+ Order Halichondrida Topsent, 1898
+ Order Poecilosclerida Topsent, 1928
+ Order Haplosclerida Topsent, 1898
+ Order Sigmatosclerophorida Burton, 1956
+ Order Agelasida Verrill, 1907
+ Order Vaceletida Finks & Rigby, herein** (
+ Order Lithistida Schmidt, 1870
+ Suborder Orchocladina Rauff, 1895
+ Order Tetralithistida Lagneau-Hérenger, 19
+ Suborder Tetracladina Zittel, 1878
+ Suborder Dicranocladina Schrammen, 19
+ Suborder Pseudorhizomorina Schrammen
+ Suborder Didymmorina Rauff, 1893
+ Order Megalithistida Reid, herein (28)
+ Suborder Helomorina Schrammen, 1924
+ Suborder Megamorina Zittel, 1878
+ Order Axinellida Bergquist, 1967
+ Order Uncertain (1)
+ Order Monolithistida Lagneau-Hérenger, 1
+ Suborder Megarhizomorina Schrammen,
+ Suborder Sphaerocladina Schrammen, 19
+ Order Spirosclerophorida Reid, 1963
+ Suborder Rhizomorina Zittel, 1878
+ Suborder Uncertain (26)
+Class Hexactinellida Schmidt, 1870
+ Subclass Amphidiscophora Schulze, 1887
+ Order Amphidiscosa Schrammen, 1924
+ Order Reticulosa Reid, 1958
+ Order Hemidiscosa Schrammen, 1924
+ Subclass Hexasterophora Schulze, 1887
+ Order Lyssacinosa Zittel, 1877
+ Order Hexactinosa Schrammen, 1903
+ Order Lychniscosa Schrammen, 1903
+ Order Uncertain (15)
+Class Heteractinida de Laubenfels, 1955
+ Order Octactinella Hinde, 1887
+Class Calcarea Bowerbank, 1864
+ Subclass Calcinea Bidder, 1898
+ Order Clathrinida Hartman, 1958
+ Order Murrayonida Vacelet, 1981
+ Subclass Calcaronea Bidder, 1898
+ Order Leucosolenida Hartman, 1958
+ Order Sycettida Bidder, 1898
+ Order Stellispongiida Finks & Rigby, herei
+ Order Sphaerocoeliida Vacelet, 1979
+ Order Lithonida Doederlein, 1892
+Class Uncertain (13)

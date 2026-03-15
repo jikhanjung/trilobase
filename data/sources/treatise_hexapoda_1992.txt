@@ -1,0 +1,2827 @@
+ ---
+reference: Carpenter, F.M. (ed.), 1992. Treatise on Invertebrate Paleontology, Part R, Arthropoda 4, Volume 3 & 4 (Hexapoda). Geological Society of America and University of Kansas.
+scope:
+  - taxon: Hexapoda (Insecta)
+    coverage: comprehensive
+notes: |
+  Covers Class Insecta: Subclass Apterygota and Subclass Pterygota including all
+  major orders (Ephemeroptera through Hymenoptera). Pages 25-524 extracted.
+  ~2272 genus entries, 239 families.
+---
+
+Onychocampodea PIERCE, 1951
+ Onychojapyx PIERCE, 1950 | -Plio., USA (Arizona): | NEOG
+ Plioprojapyx PIERCE, 1951 | -Plio., USA (Arizona) | NEOG
+Class INSECTA Linne, 1758
+ Lepidodasypus DURDEN, 1978 [*L. sharovi] | Trias.-Holo | TRIAS
+ Family MACHILIDAE Grassi, 1888
+ Praemachilis SILVESTRI, 1905 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Triassomachilis SHAROV, 1948 [*T. uralensis] | Trias., USSR (European RSFSR) | TRIAS
+ Lepidotrix MENGE, 1854 [*L] | Oligo., Europe (Baltic) | PALEOG
+ Lepisma LINNE, 1758
+ Allocrotelsa SILVESTRI, 1935 [*'Blanchardia pu] | Carb., Europe (France).-- and b hind wings X2 5 (Carpenter new) costal brace~ a Protereisma c Proteteisma Family PROTEREISMATIDAE Lameere, 1917 [nom. correct. TILLYAtlD. 1932b. ex Protereismidae L'IME | CARB
+ Recter SELLARDS, 1909 | Perm., USA (Kansas, Oklahoma), ?Europe (Germany).-- b, base of hind wing, both X3.5; c, reconstruction, dorsal view, X1.5 (all Carpenter, 1933a) | PERM
+ Misthodotes SELLARDS, 1909 [*'Dromeus obtusus SELLARDS] | Perm., USA (Kansas, Oklahoma), USSR (Asian RSFSR) | PERM
+ Family JARMILIDAE Demoulin, 1970
+ Oboriphlebia HUBBARD & KUKALOVA-PECK, 1980 [*'0. tertia] | Perm | PERM
+ Palingeniopsis MARTYNOV, 1932 [*'P. praecox] | Perm., USSR (European RSFSR) | PERM
+ Hexagenites SCUDDER, 1880 [*'H. weyenberghi] | Jur.. Europe (Germany) | JUR
+ Family BAETIDAE Leach, 1815
+ Baetis LEACH, 1815
+ Cleon LEACH, 1815 [*E. kuzlauskasi] | -Cret., USSR (Asian RSFSR) | CRET
+ Cinygma EATON, 1885 [*E. dewalschei] | Oligo., Europe (Baltic) | PALEOG
+ Miocoenogenia TSHERNOVA, 1962 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Succinogenia DEMOULIN, 1965 | Jur.-Holo | JUR
+ Leptophlebia WESTWOOD, 1840 | Oligo.. Europe (Baltic) | PALEOG
+ Cretoneta TSHERNOVA, 1971 | -Cret., USSR (Asian RSFSR) | CRET
+ Paraleptophlebia LESTAGE, 1917 | Jur.- Holo | JUR
+ Ephemerella WALSH, 1862
+ Philolimnias HONG, 1979 [*P. sinica] | Jur.-Holo | JUR
+ Behningia LESTAGE, 1930
+ Archaeobehningia TSHERXOVA, 1977 | Oligo., USA (Montana)-Holo | PALEOG
+ Family EPHEMERIDAE Leach, 1815
+ Ephemera LINNE, 1758 | Mio.-Holo | NEOG
+ Ephoron WILLIAMSON, 1802
+ Asthenopodichnium THENIUS, 1979 | Mio., Europe (Ausrria). Family PALINGENIIDAE Selys-Longchamps, 1888 [Palingeniidae SELYs-LoNGCHAMPS, 1888, p. 147] Main veins of fore wings arranged in pairs, converging at wing margin; crossveins num | NEOG
+ Palingenia BURMEISTER, 1839
+ Mesogenesia TSHERNOVA, 1977
+ Aphelophlebodes PIERCE, 1945 | Jur., USSR (Asian RSFSR) | JUR
+ Mesoplectopteron HANDLIRSCH, 1918 | Trias., Europe (Germany) | TRIAS
+ Parabaetis HAUPT, 1956 | -Perm | PERM
+ Dictyoneura GOLDENBERG, 1854 | Carb., Europe (Germany) | CARB
+ Microdictya BRONGNIART, 1893 | Carb., Europe (France) | CARB
+ Schmidtopteron BRAUCKMANN & HAHN, 1978 [*'S. adictyon] | Carb., Europe (Germany) | CARB
+ Stenodictya BRONGNIART, 1893 | Carb., Europe (France) | CARB
+ Lithomantis WOODWARD, 1876 [*A. kiefferi] | Carb., England, Europe (Holland, Czechoslovakia) | CARB
+ Eugereon DOHRN, 1866 [*E. boeekingi] | Perm., Europe (Germany) | PERM
+ Peromaptera BRONGNIART, 1893 [*P. filholi] | Carb., Europe (France) | CARB
+ Sandiella CARPENTER, 1970 [*5. readi] | Carb., USA (New Mexico) | CARB
+ Valdeania TEIXEIRA, 1941 [*'Dictyoneura goldenbergi BRONGNIART] | Perm., Europe (Czechoslovakia), USA (Oklahoma) | PERM
+ Lycodemas CARPENTER & RICHARDSON, 1971 [*'L. adolescens] | Carb., USA (lllinois) | CARB
+ Madera CARPENTER, 1970 [*'M. mamayi] | Carb., USA (New Mexico) | CARB
+ Notorachis CARPENTER & RICHARDSON, 1971 [*'N. woljJorum] | Carb., USA (lllinois) | CARB
+ Graphiptilus BRONGNIART, 1893 | Carb., Europe (France, Belgium, Germany, Czechoslovakia, Holland), England, USA (Tennessee) | CARB
+ Tchirkovaea M. D. ZALESSKY, 1931 | Carb., USSR (Asian RSFSR) | CARB
+ Paimbia SINITSHENKOVA, 1979 | Carb., Europe (France, Belgium, Germany) | CARB
+ Adolarryia KUKALOVA-PECK & RICHARDSON, 1983 | Carb., USA (Illinois) | CARB
+ Bolropruvostia STRAND, 1929 | Carb., Europe (Germany, France, Czechoslovakia) | CARB
+ Larryia KUKALOVA-PECK & RICHARDSON, 1983 | Carb., USA (Illinois) | CARB
+ Mazorhairos KUKALOVA-PECK & RICHARDSON, 1983 | Carb., USSR (Kazakh) | CARB
+ Thesoneura CARPENTER, 1944 | Carb., USA (lIIinois) | CARB
+ Mecynostomata METCALF, 1952 | Carb., Europe (France) | CARB
+ Fouquea BRONGNIART, 1893 [*S. packardi] | Carb., Europe (France) | CARB
+ Mcluckiepteron RICHARDSON, 1956 | Carb., USA (lllinois) | CARB
+ Palaeoptilus BRONGNIART, 1893 | Carb., Europe (France) | CARB
+ Paradunbaria SHAROV & SINITSHENKOVA, 1977 | Perm., USSR (Asian RSFSR) | PERM
+ Permiakovia MARTYNOV, 1940 | Perm., USSR (European and Asian RSFSR) | PERM
+ Elmoboria CARPENTER, 1976 | Perm., USA (Kansas) | PERM
+ Oboria KUKALOVA, 1960 | Carb., USA (Illinois) | CARB
+ Lithoneura CARPENTER, 1938 | Carb., USA (IIIinOiS) | CARB
+ Permothemis MARTYNOV, 1934 | Perm., USSR (European RSFSR) | PERM
+ Althansia GUTHORL, 1934 | Carb., 'Europe (Germany) | CARB
+ Ametretus HANDLIRSCH, 1911 | Carb., USA (Illinois) | CARB
+ Amousus HANDLIRSCH, 1911 | Carb., Eutope (Germany) | CARB
+ Anthracosta PRUVOST, 1930 | Carb., Europe (Czechoslovakia) | CARB
+ Boltonocosta CARPENTER, 1986 | Carb., Europe (Czechoslovakia) | CARB
+ Compsoneura BRONGNIART, 1893 | Carb., Europe (France) | CARB
+ Diexodus HANDLIRSCH, 1911 | Carb., Europe (Germany) | CARB
+ Eurydicryella CARPENTER, 1986 | Carb., USA (Rhode Island) | CARB
+ Idoptilus WOOTTON, 1972 | Carb., England | CARB
+ Jongmansia LAURENTIAUX, 1950 | Carb., Europe (France) | CARB
+ Monsteropterum KUKALOVA-PECK, 1972 | Carb., USA (Illinois) | CARB
+ Palapteris GUTHORL, 1940 | Carb., Europe (France) | CARB
+ Platephemera SCUDDER, 1867 | Carb., England | CARB
+ Rochdalia WOODWARD, 1913 | Carb.. England | CARB
+ Saarlandia GUTHORL, 1930 [*5. jlexsubcostata] | Carb., CSA (Illinois) | CARB
+ Brodioptera COPELAND, 1957 [*B. cumberlandensis] | Carb., Canada (Nova Scotia) | CARB
+ Sphecoptera BRONGNIART, 1893 [*S. gracilis] | Carb., Europe (France) | CARB
+ Mischoptera BRONGNIART, 1893 [*Woodwardia nigra BROGNIART] | Carb., Europe (France), USA (Illinois) | CARB
+ Psilothorax BRONGNIART, 1893 [*Woodwardia longicauda BRONGNIART] | Carb., Europe (France). ~ Aspidohymenidae and Mi Mischoptera | CARB
+ Ivahymen MARTYNOV, 1932 [*1. constrictus] | Perm., USSR (European RSFSR) | PERM
+ Actinohymen CARPENTER, 1962 [*A. russelli]
+ Alexahymen KUKALOVA-PECK, 1972 [*A. maruska] | Perm., Europe (Czechoslovakia).-- | PERM
+ Calohymen CARPENTER, 1947 [*c. permianus] | Perm., USA (Oklahoma) | PERM
+ Sylvohymen MARTYNOV, 1940 | Perm., USSR (Asian RSFSR), USA (Oklahoma) | PERM
+ Moravohymen KUKALOVA-PECK, 1972 [*M. vitreus] | Perm., Europe (Czechoslovakia) | PERM
+ Family BRODIIDAE Handlirsch, 1906
+ Ancoptera KUKALOVA-PECK, 1975 [*A. permiana] | Perm., Europe (Czechoslovakia) | PERM
+ Vorkutia ROHDENDORF, 1947 [*v. tshernovi] | Perm., Europe (Czechoslovakia) | PERM
+ Hana KUKALOVA-PECK, 1991 [*H. filia] | Perm., Europe (Czechoslovakia) | PERM
+ Arcioneura KUKALOVA-PECK, 1975 [*A.juveniles] | Perm., Europe (Czechoslovakia) | PERM
+ Anconeura KUKALOVA-PECK, 1975 [*A. havlatai] | Perm | PERM
+ Cauloptera KUKALOVA-PECK, 1975 [*c. colora/a] | Perm., Europe (Czechoslovakia) | PERM
+ Diaphanoptera BRONGNIART, 1893 [*P. macu- /osum] | Carb., Eutope (France) | CARB
+ Prochoroptera HANDLIRSCH, 1911 [*P. ca- /opteryx] | Carb., USA (Illinois) | CARB
+ Family ELMOIDAE Tillyard, 1937
+ Parelmoa CARPENTER, 1947 [*P. reve/ata] | Perm., USA (Oklahoma) | PERM
+ Pseudelmoa CARPENTER, 1947 [*P. amp/a] | Perm., USA (Oklahoma) | PERM
+ Phaneroneura CARPENTER, 1947 | Perm., USSR (Asian RSFSR) | PERM
+ Asthenohymen TILLYARD, 1924 [*P. maculifera] | Perm., USA (Kansas, Oklahoma), South Africa (Natal) | PERM
+ Meganeuropsis CARPENTER, 1939 | Perm., USA (Kansas) | PERM
+ Tupus SELLARDS, 1906 | , Europe (France), England, USA (Georgia); Perm., USSR (European and Asian RSFSR), USA (Kansas, Oklahoma, Arizona) | PERM
+ Paralogopsis HANDLIRSCH, 1911 | Carb., USA (Pennsylvania, Illinois) | CARB
+ Petrotypus ZALESSKY, 1950 | Perm., USSR (Asian RSFSR) | PERM
+ Truemania BOLTON, 1934
+ Tillyardia BOLTON, 1922 | Perm., USSR (Asian RSFSR). [ v c p a s r l r a p f s W d S a m o t m p N m f a o T o c t t t t t r t w e e a Order ODONATA Fabricius, 1793 | PERM
+ Odonata FABRICIUS, 1793 | Perm., USA (Kansas) | PERM
+ Ditaxineurella MARTYNOV, 1940 [*P. minuta] | Perm., USSR (Asian RSFSR) | PERM
+ Permolestes MARTYNOV, 1932 [*P] | Perm., USSR (European RSFSR) | PERM
+ Protomyrmeleon GEINITZ, 1887 [*P. brunonis] | Jur., Europe (Germany), USSR (Kazakh) | JUR
+ Batkenia PRITYKINA, 1981 [*'8. pusil/a] | Trias., USSR (Kirghiz) | TRIAS
+ Terskeja PRITYKINA, 1981 [*'T. paula] | ] Trias., USSR (Kirghiz) | TRIAS
+ Triadophlebia PRITYKINA, 1981 | Trias., USSR (Kirghiz) | TRIAS
+ Cladophlebia PRITYKINA, 1981 [*'G. paf"t/ula] | Trias., USSR (Kirghiz) | TRIAS
+ Neritophlebia PRITYKINA, 1981 [*'N. elegans] | Trias., USSR (Kirghiz) | TRIAS
+ Nonymophlebia PRITYKINA, 1981 [*'N. venosa] | Trias., USSR (Kirghiz) | TRIAS
+ Paurophlebia PRITYKINA, 1981 | Trias., USSR (Kirghiz) | TRIAS
+ Triadotypus GRAUVOGEL & LAURENTIAUX, 1952 [*T. gllillallmei] | Trias., Europe (France), USSR (Kirghiz) | TRIAS
+ Mitophlebia PRITYKINA, 1981 | Trias., USSR (Kirghiz) | TRIAS
+ Zygophlebia PRITYKINA, 1981 | Trias., USSR (Kirghiz) | TRIAS
+ Cyrtophlebia PRITYKINA, 1981 | Trias., USSR (Kirghiz) | TRIAS
+ Mixophlebia PRITYKINA, 1981 | Trias., Z a l X b ~ dae, and Xamenophlebiidae (p. 72) | TRIAS
+ Zygophlebiella PRITYKINA, 1981 [*Heterophlebia eximia HAGEN] | Trias., USSR (Kirghiz) | TRIAS
+ Turanophlebia PRITYKINA, 1968 [*T. martynovi] | Jur., USSR (Kazakh) | JUR
+ Bathmophlebia PRITYKINA, 1970 [*B. unica] | Jur., USSR (Kirghiz) | JUR
+ Caraphlebia CARPENTER, 1969 [*G. antarctica] | Jur., Antarctica (South Vicroria Land). Ferganophlebia PRITYKINA, 1970, p. ['OF. insignis; OD]. Little-known genus, based on fragment of fore wing; CUP smoothly curved; cells between CUP and M uncommo | JUR
+ Hypsophlebia PRITYKINA, 1970 [*H. scalaris] | Jur., USSR (Kirghiz) | JUR
+ Sagulia PRITYKINA, 1970 [*5. ansinervis] | Jur., USSR (Kirghiz) | JUR
+ Sarytashia PRITYKINA, 1970 [*5. gracilis] | Jur., USSR (Kirghiz) | JUR
+ Sogdophlebia PRITYKINA, 1970 [*5. singularis] | Jur., USSR (Kirghiz) | JUR
+ Heterophlebia BRODIE, 1849 [*Agrion buckmani BRODIE] | Jur., England, Europe (Germany) | JUR
+ Clydonophlebia COWLEY, 1942 [*Heterophlebia megapolitana HANDLlRSCH] | Jur., Europe (Germany) | JUR
+ Erichschmidtia PRITYKINA, 1968 [*E. nigrimontana] | Jur., USSR (Kazakh) | JUR
+ Systellothemis HANDLIRSCH, 1939 [*S. reticulata] | Jur., Europe (Germany) | JUR
+ Campterophlebia BODE, 1905 | Jur., Europe (Germany) | JUR
+ Hypsomelana PRITYKINA, 1968 | Jur., USSR (Kazakh) | JUR
+ Hypsothemis PRITYKINA, 1968 | Jur., USSR (Kazakh) | JUR
+ Melanohypsa PRITYKINA, 1968 | Jur., USSR (Kazakh) | JUR
+ Nacholonda PRITYKINA, 1977
+ Euthemis PRITYKINA, 1968 | Jur | JUR
+ Turanothemis PRITYKINA, 1968 | Jur., USSR (Kazakh) | JUR
+ Triassolestodes PRITYKINA, 1981 [*T. asiaticus] | Trias., USSR (Asian RSFSR) | TRIAS
+ Acrophlebia COWLEY, 1942 [*A. brevistigma] | Jur., Europe (Germany) | JUR
+ Dialothemis COWLEY, 1942 | Jur., Europe (Germany) | JUR
+ Ensphingophlebia BODE, 1953 [*H. giganteus] | Jur., Europe (Germany) | JUR
+ Isophlebiodes PRITYKINA, 1968 | Jur., USSR (Kazakh) | JUR
+ Kazachophlebia PRITYKINA, 1968 [*P. dobbertinensis] | Jur., Europe (Germany) | JUR
+ Pycnothemis HANDLIRSCH, 1939 [*P. densa] | Jur., Europe (Germany) | JUR
+ Rhabdothemis HANDLIRSCH, 1939 [*R. strigivena] | Jur., USSR (Tadzhik) | JUR
+ Temnostigma HANDLIRSCH, 1939 [*T. singulare] | Jur., England | JUR
+ Necygomphus COWLEY, 1942 | Jur., Europe (Germany) | JUR
+ Palaeogomphus HANDLIRSCH, 1939 | Jur., Europe (Germany) | JUR
+ Phthitogomphus COWLEY, 1942 | Jur., Europe (Germany) | JUR
+ Family GOMPHIDAE Rambur, 1842
+ Gomphus LEACH, 1815 | Jur., Europe (Ger- A G N P l w a v s a l s c o p A B many) | JUR
+ Aeschnopsis HANDLIRSCH, 1939 | Jur., Europe (Germany) | JUR
+ Family AESHNIDAE Leach, 1815
+ Aeshna FABRICIUS, 1775 | , USA (Colorado), Europe (France); Mio., Europe (France)-Holo | NEOG
+ Baissaeschna PRITYKINA, 1977 | Oligo., USSR (Kazakh)-Holo | PALEOG
+ Epacantha MARTYNOV, 1929 [*E. magnifica] | Oligo., USSR (Kazakh) | PALEOG
+ Gobiaeschna PRITYKINA, 1977 [*G. occulta] | Cret., Asia (Mongolia) | CRET
+ Gomphaeschna SELYS-LONGCHAMPS, 1871 [*L. latum] | Cret., USSR (Asian RSFSR) | CRET
+ Morbaeschna NEEDHAM, 1907 [*Aeshna muensteri GERMAR] | Jur., Europe (Germany) | JUR
+ Necracantha MARTYNOV, 1929 [*N. composita] | Oligo., USSR (Kazakh) | PALEOG
+ Oligaeschna PITON & THEOBALD, 1939 [*0. jungi] | Oligo., Europe (France) | PALEOG
+ Oligoaeschna SELYS-LONGCHAMPS, 1889 | , Europe (France); Plio., Japan-Holo | NEOG
+ Oplonaeschna SELYS-LONGCHAMPS, 1883 | Oligo., USSR (Kazakh) | PALEOG
+ Triaeschna CAMPION, 1916 [*T. gossi] | -Cret | CRET
+ Aeschnidium WESTWOOD, 1854 [*A. bubas] | Jur., England, Europe (Germany) | JUR
+ Family AKTASSIIDAE Pritykina, 1968
+ Aktassia PRITYKINA, 1968 [*A. magna]
+ Petalura LEACH, 1815
+ Cymatophlebiopsis HANDLIRSCH, 1939
+ Libellulium WESTWOOD, 1854
+ Cordulia LEACH, 1815
+ Croatcordulia KIAUTA, 1969 | Mio., Europe (Yugoslavia) | NEOG
+ Miocordulia KENNEDY, 1931 | Mio., USA (Washington) | NEOG
+ Family LIBELLULIDAE Leach, 1815
+ Libellula LINNE, 1758 | , Europe (Germany, France); Mio., Europe (Germany)-Holo | NEOG
+ Celithemis HAGEN, 1861 | Mio., Europe (Germany)-Holo | NEOG
+ Lithemis FRASER, 1951 | Mio., Europe (Germany) | NEOG
+ Oligocaemia FRASER, 1951 | Mio., Europe (Germany) | NEOG
+ Trameobasileus ZEUNER, 1938 | Mio., Libellulium Oligocaemia Heme Aeschnidium Aeschnidiidae, Aktassiidae, Petalutidae, C (p. 82-8 Family HEMEROSCOPIDAE Pritykina, 1977 [Hemeroscopidae PRITYKINA, 1977, p. 89] Related to Cordulegasrr | NEOG
+ Hemeroscopus PRITYKINA, 1977 [*H. baissicus] | Cret., USSR (Asian RSFSR) | CRET
+ Elattogomphus BODE, 1953 [*E.latus] | Jur., Europe (Germany) | JUR
+ Lithogomphus BEIER, 1952 [*L. munzenbergianus] | Mio., Europe (Germany) | NEOG
+ Necrogomphus CAMPION, 1923 [*Gomphus petri/actus HAGEN in SELYS-LONGCHAMPS & HAGEN] | Jur., Europe (Spain) | JUR
+ Protopaltothemis PONGRACZ, 1928 [*P. hageni] | Mio., Europe (Yugoslavia) | NEOG
+ Sinaeschnidia HONG, 1965 [*5. heishankowensis] | Jur., China (Zhejiang) | JUR
+ Strongylogomphus BODE, 1953 [*5. grasselianus] | Oligo.-Holo | PALEOG
+ Coenagrion KIRBY, 1890
+ Argia RAMBUR, 1842 | Oligo., USA (Colorado)-Holo | PALEOG
+ Enallagma CHARPENTIER, 1840 | , USA (Colorado); Pleist., USA (California)-Holo | HOL
+ Hesperagrion CALVERT, 1902 | Oligo., USA (Colorado)-Holo | PALEOG
+ Family LESTIDAE Calvert, 1901
+ Oligolestes SCHMIDT, 1958 [*Lestes grandis STATZ] | Eoc.-Holo | PALEOG
+ Megapodagrion SELYS-LONGCHAMPS, 1885
+ Lithagrion SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Miopodagrion KENNEDY, 1925 | Oligo., USA (Colorado) | PALEOG
+ Oligoargiolestes KENNEDY, 1925 | Eoc.-Holo | PALEOG
+ Pseudolestes KIRBY, 1900
+ Amphipteryx SELYS-LONGCHAMPS, 1853 | Jur., Europe (Germany) | JUR
+ Auliella PRITYKINA, 1968 | Jur., USSR (Kazakh) | JUR
+ Euphaea SELYS-LONGCHAMPS, 1840
+ Indophaea FRASER, 1929 | Oligo., USA (Oregon) | PALEOG
+ Eosagrion HANDLIRSCH, 1920 | ] Jur., Europe (Germany) | JUR
+ Eothaumatoneura PONGRACZ, 1935
+ Megasemum MANEVAL, 1936 | Oligo., Europe (Ftance) | PALEOG
+ Protothore COCKERELL, 1930 | Jur., Europe (Germany) | JUR
+ Magnasupplephlebia ZESSIN, 1982
+ Mesonetopsis PING, 1935 | Trias., Australia (New South Wales) | TRIAS
+ Orthaeschnites HAUPT, 1956 | Eoc., Europe (Germany). Palaeophlebia BRAUER, REDTENBACHER, & GANGL- BAUER, 1889, p. 6 {*P. synlestoides; OD}. Littleknown wing fragment. jur., USSR (Asian RSFSR). Samarura BRAUER, REDTENBACHER, & GAN | PALEOG
+ Sieblosia HANDLIRSCH, 1907 | } Oligo., Europe (Germany).--FlG. 54,1. *S. jucunda (HAGEN); fore(?) wing, X 1.8 (Hagen, 1858a) | PALEOG
+ Syrrhoe BODE, 1953 [*8. kliveri] | Carb., Europe (France) | CARB
+ Cryptovenia BOLTON, 1912 [*c. moyseyi] | } Perm., USSR (European RSFSR) | PERM
+ Erasipterella BRAUCKMANN, 1983 [*E. piesbergensis] | Carb., Europe (Germany) | CARB
+ Gerephemera SCUDDER, 1880 [*G. simplex] | Carb., Europe (Germany) | CARB
+ Litophlebia HUBBARD & RIEK, 1978 | } Perm., USA (Kansas) | PERM
+ Piroutetia MEUNIER, 1907 | Carb., Europe (Belgium) | CARB
+ Protagrion BRONGNIART, 1893 | Carb., USA (Pennsylvania) | CARB
+ Rectineura BOLTON, 1934 | } Trias., Europe (Germany) | TRIAS
+ Severinula PRUVOST, 1930 [*Palaeodictyopteron (collective group) higginsi HANDLIRSCH] | Carb., USA (Illinois) | CARB
+ Titanoptera BRONGNIART, 1893 [*T. maculata] | } Trias., South Africa | TRIAS
+ Wulasua TAN, 1980 [*W. maculata] | Carb.-Holo. Fifteen existing orders are generally recognized in this division, including about 11 percent of the existing species of insects. The orders are usually grouped into two categories, the or | CARB
+ Order PERLARIA Latreille, 1802
+ Perlopsis MARTYNOV, 1940 | Perm., USSR (Asian RSFSR) | PERM
+ Siberioperla SINITSHENKOVA, 1983 | Jur., USSR (Asian RSFSR) | JUR
+ Family EUSTHENIIDAE Tillyard, 1921
+ Eusthenia WESTWOOD, 1832 | } Perm., Australia (New South Wales) | PERM
+ Taeniopteryx PICTET, 1841 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Brachyptera NEWPORT, 1848 [*M. maaki] | Jur., USSR (Tadzhik) | JUR
+ Perlariopsis PING, 1928 | Cret., China | CRET
+ Sinonemoura PING, 1928 | Cret., China | CRET
+ Family LEUCTRIDAE Klapalek, 1905
+ Leuctra STEPHENS, 1836 | Jur.-Holo | JUR
+ Noronemoura TILLYARD, 1923 | , USSR (Asian RSFSR); Cret., China (Inner Mongolia) | CRET
+ Family PERLODIDAE Klapalek, 1912
+ Perlodes BANKS, 1903 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Isoperla BANKS, 1906 | Jur., USSR (Asian RSFSR) | JUR
+ Family PERLIDAE Latreille, 1802
+ Perla GEOFFROY, 1762 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Sinoperla PING, 1928
+ Euxenoperla RIEK, 1973 [*E. simplex] | , South Africa; Trias., Australia (Queensland) | TRIAS
+ Uralonympha ZALESSKY, 1939 [*v. varica] | Perm., USSR (European RSFSR) | PERM
+ Family PAOLIIDAE Handlirsch, 1906
+ Paolia SMITH, 1871 [*P. vetusta] | Carb., USA (Indiana), Europe (The Netherlands) | CARB
+ Family STYGNIDAE Handlirsch, 1906
+ Blattinopsis GIEBEL, 1867 | , Europe (Germany, France), USA (Ohio); Perm., Europe (Germany, Czechoslovakia) | PERM
+ Glaphyrokoris RICHARDSON, 1956 [*G. pusilla] | Carb., USA (Illinois) | CARB
+ Cymbopsis KUKALOVA, 1965 [*c. exeelsa] | Perm., Europe (Czechoslovakia) | PERM
+ Fabreciella CARPENTER, 1934 [*F. pennsylvaniea] | Carb., USA (Pennsylvania) | CARB
+ Lemmatophora SELLARDS, 1909 | Perm., USA (Kansas) | PERM
+ Artinska SELLARDS, 1909 | Perm., USA (Kansas) | PERM
+ Lecorium SELLARDS, 1909 | Perm., USA (Kansas) | PERM
+ Lisca SELLARDS, 1909 [*'M. macu/atum] | Perm., USA (Kansas) | PERM
+ Liomopterum SELLARDS, 1909 | Perm., USA (Kansas) | PERM
+ Liomopterina RIEK, 1973 [*L. exp/e- IUs] | Perm., USSR (Asian RSFSR) | PERM
+ Liomoptoides RIEK, 1973 [*L. simi/is] | Perm., USSR (Asian RSFSR) | PERM
+ Semopterum CARPENTER, 1950 [*5. venosum] | Perm., USA (Kansas) | PERM
+ Tapopterum CARPENTER, 1950 [*T. celsum] | Perm., USA (Kansas) | PERM
+ Phenopterum CARPENTER, 1950 [*Lepium elongatum SELLARDS] | Perm., USA (Kan- B C MA Liomopterites Paraliomopterum Tapopterum 7~ Semopterum~ 2~ dae (p. 109-111). sas) | PERM
+ Family SKALICIIDAE Kukalova, 1964
+ Family PROBNIDAE Sellards, 1909
+ Probnis SELLARDS, 1909 [*P. speciosa] | Perm., USA (Kansas) | PERM
+ Stereopterum CARPENTER, 1950 [*S. rotundum] | Perm., USA (Kansas) | PERM
+ Sylvaphlebia MARTYNOV, 1940 [*S. tuberculata] | Perm., USSR (Asian RSFSR) | PERM
+ Parasylviodes MARTYNOV, 1940 [*P. tetrac1adus] | Perm., USSR (Asian RSFSR) | PERM
+ Sylvaella MARTYNOV, 1940 [*S. paurovenosa] | Perm., USSR (Asian RSFSR) | PERM
+ Sylviodes MARTYNOV, 1940 [*S. perloides] | Perm., USSR (Asian RSFSR) | PERM
+ Chelopterum CARPENTER, 1950 [*c. peregrinum] | Perm., USA (Kansas) | PERM
+ Demopterum CARPENTER, 1950 [*D. gracile] | Perm., USA (Kansas) | PERM
+ Family IDELIIDAE Zalessky, 1929
+ Rachimentomon ZALESSKY, 1939 [*R. reticulatum] | Perm., USSR (Asian RSFSR).--FIGo 70,5. "'R. reticulatum; whole specimen, X2 (Zalessky, 1939) | PERM
+ Sylvidelia MARTYNOV, 1940 [*'S. latipennis] | Perm., USSR (Asian RSFSR) | PERM
+ Euryptilon MARTYNOV, 1940 [*'E. blattoides]
+ Narkema HANDLIRSCH, 1911 [*'N. taeniatum]
+ Herbstiala SCHMIDT, 1953 [*H. herbsti] | Carb., Europe (Germany) | CARB
+ Cacurgus HANDLIRSCH, 1911 [*c. spilopterus] | Carb., USA (Illinois) | CARB
+ Heterologus CARPENTER, 1944 [*H. langfordorum] | Carb., USA (Illinois) | CARB
+ Protodicryon MELANDER, 1903 [*P. pulchripenne] | Carb., USA (Illinois) | CARB
+ Spilomastax HANDLIRSCH, 1911 | Carb., USA (Illinois) | CARB
+ Family OMALIIDAE Handlirsch, 1906
+ Omalia VAN BENEDEN & COEMANS, 1867 | Carb., Europe (Belgium) | CARB
+ Anthrakoris RICHARDSON, 1956
+ Coselia BOLTON, 1922 | Carb., England | CARB
+ Family GERARIDAE Scudder, 1885
+ Anepitedius HANDLIRSCH, 1911 | Carb., USA (Illinois) | CARB
+ Nacekomia RICHARDSON, 1956 | Carb., USA (Illinois), | CARB
+ Epideigma HANDLIRSCH, 1911 [*E. elegans] | Carb., USA (Illinois) | CARB
+ Cymenophlebia PRUVOST, 1919 [*c. carpentieri] | Carb., Europe (France) | CARB
+ Adeloneura CARPENTER, 1938 [*A. thompsoni] | Carb., Europe (Germany) | CARB
+ Homocladus CARPENTER, 1966 [*'H. grandis] | Perm., USA (Kansas) | PERM
+ Paracladus CARPENTER, 1966 [*'P. retardatus] | Perm., USA (Kansas) | PERM
+ Spargopteron KUKALOVA, 1965 [*'5. latericius] | Perm., Europe (Czechoslovakia) | PERM
+ Tococladus CARPENTER, 1966 [*T. rallus] | Perm., USA (Kansas) | PERM
+ Opisthocladus CARPENTER, 1976 [*0. arcuatus] | Perm., USA (Kansas) | PERM
+ Heteroptilon CARPENTER, 1976 [*H. costale] | Perm., USA (Kansas) | PERM
+ Herdina CARPENTER & RICHARDSON, 1971 [*H. mirijicus] | Carb., USA (IIlinois) | CARB
+ Psoroptera CARPENTER, 1976 [*P. cubitalia] | Perm., USA (Kansas) | PERM
+ Strephoneura MARTYNOV, 1940 [*S. robusta] | Perm., USSR (Asian RSFSR) | PERM
+ Melinophlebia HANDLIRSCH, 1911 | Carb., USA (Illinois) | CARB
+ Pericalyphe HANDLIRSCH, 1911 | Carb., USA (Illinois) | CARB
+ Silphion HANDLIRSCH, 1911 | Carb., USA (Illinois) | CARB
+ Family TOMIIDAE Martynov, 1936
+ Tomia MARTYNOV, 1936
+ Protodiamphipnoa BRONGNIART, 1893 | Carb., Europe (France) | CARB
+ Stenoneura BRONGNIART, 1893 | Carb., Europe (France) | CARB
+ Homalophlebia BRONGNIART, 1893 | Carb., Europe (France). Family ISCHNONEURIDAE Handlirsch, 1906 [Ischnoneuridae HANDLIRSCH. 1906b, p. 133] [=Stenoneurellldae HANDLIRSCH. 1919b, p. 560) Related to Stenoneuridae. Fore wing with vein SC | CARB
+ Ischnoneura BRONGNIART, 1893 | Carb., Europe (France) | CARB
+ Protophasma BRONGNIART, 1878 | Carb., Eutope (Ftance). Family UNCERTAIN The following genera, apparently belonging to the order Protorthoptera, are too poorly known to permit assignment to families | CARB
+ Acridites GERMAR, 1842 [*A. singularis] | Carb., USSR (Asian RSFSR) | CARB
+ Ampeliptera PRUVOST, 1927 [*A. limburgica] | Carb., Europe (Holland) | CARB
+ Anegertus HANDLIRSCH, 1911 [*A. cubitalis] | Carb., USSR (Asian RSFSR) | CARB
+ Atava SELLARDS, 1909 [*A. ovata] | Carb., USA (Illinois) | CARB
+ Balduriella MEUNIER, 1925 [*B. latissima] | Carb., Europe (Germany) | CARB
+ Boutakovia PRUVOST, 1934 [*B. saleei] | /Perm., Africa (Zaire) | PERM
+ Cacurgellus PRUVOST, 1919 [*c. barryi] | Carb., USA (Illinois) | CARB
+ Eoblattina BOLTON, 1925 [*E. complexa] | Carb., USA (Illinois) | CARB
+ Hemeristia DANA, 1864 [*H. occidentalis] | Carb., USA (Illinois) | CARB
+ Heterologellus SCHMIDT, 1962 [*H. teichmuellerae] | Carb., Europe (Germany) | CARB
+ Heterologopsis BRAUCKMANN & KOCH, 1982 [*'H. ruhrensis] | Perm., USSR (European RSFSR) | PERM
+ Kelleropteron BRAUCKMANN & HAHN, 1980 [*'K. kaelberbesgense] | Carb., Europe (Germany) | CARB
+ Khosarophlebia MARTYNOV, 1940 [*'K. sylvaensis] | Carb., Europe (France) | CARB
+ Lecopterum SELLARDS, 1909 [*'L. delicosum] | Perm., USA (Kansas) | PERM
+ Limburgina LAURENTIAUX, 1950 [*'L. antiqua] | Carb., Europe (Netherlands) | CARB
+ Macrophlebium GOLDENBERG, 1869 [*'M. hol/ebeni] | Carb., USA (Illinois) | CARB
+ Miamia DANA, 1864 [*'M. bronsoni] | Carb., USSR (Asian RSFSR), Brazil (Parana Basin), USA (Missouri) | CARB
+ Narkeminopsis WHALLEY, 1979 [*'N. eddi] | Carb., England | CARB
+ Protoperla BRONGNIART, 1893 [*P. westwoodi] | Carb., Europe (France) | CARB
+ Prototettix GIEBEL, 1856 [*Gryllacris lithanthraca GOLDENBERG] | Carb., Europe (England) | CARB
+ Rhipidioptera BRONGNIART, 1893 [*R. elegans] | Carb., USA (Illinois). S S S T [ p n t c w c s a n b n l v f | CARB
+ Sellardsiopsis ZALESSKY, 1939 [*5. conspicua] | Carb.-Holo. These are primitive orchopteroids, probably most closely related to the Isoptera among existing orders (McKITTRICK, 1965). The order is now a relatively small one, containing less than 4,0 | CARB
+ Order ISOPTERA Brulle, 1832
+ Mastotermes FROGGATT, 1896 | /Mio., Mexico (Chiapas)-Holo | NEOG
+ Miotermes VON ROSEN, 1913 | } Mio., Europe (Germany, Yugoslavia) | NEOG
+ Spargotermes EMERSON, 1965 | /Plio., Brazil | NEOG
+ Kalotermes HAGEN, 1853 | /Mio., Mexico (Chiapas)-Holo | NEOG
+ Cryptotermes BANKS, 1906 | Oligo., Europe (Baltic) | PALEOG
+ Eotermes STATZ, 1939 | Oligo., Europe (Germany) | PALEOG
+ Neotermes HOLMGREN, 1911 | Eoc., Europe (France)-Holo | PALEOG
+ Proelectrotermes VON ROSEN, 1913 | Oligo., Europe (Baltic) | PALEOG
+ Prokalotermes EMERSON, 1933 | Cret.-Holo | CRET
+ Hodotermes HAGEN, 1853 | Oligo., Eutope (Baltic)-Holo | PALEOG
+ Cretatermes EMERSON, 1967
+ Termopsis HEER, 1849 [*0. bauckhorni]
+ Zootermopsis EMERSON, 1933 | Oligo., USA (Colorado)-Holo. Family RHINOTERMITIDAE Froggatt, 1896 [Rhinotermicidae FROGGATT. 1896, p. 518] Wings commonly reticulate; vein R much reduced; RS unbranched; M usually approaching very cl | PALEOG
+ Rhinotermes HAGEN, 1858
+ Coptotermes WASMANN, 1896 | jMio., Dominican Republic, Mexico (Chiapas)-Holo | 
+ Heterotermes FROGGATT, 1896 | Mio.-Holo | NEOG
+ Termes LINNE, 1758
+ Gnathamitermes LIGHT, 1932 | Mio., USA (California)-Holo | NEOG
+ Macroeermes HOLMGREN, 1909 | Mio., Europe (Yugoslavia)-Holo. Family UNCERTAIN The following genera, apparently belonging to the order Isoptera, are too poorly known to permit family assignment | NEOG
+ Architermes HAUPT, 1956 | Plio., Europe (Germany) | NEOG
+ Metatermiees ARMBRUSTER, 1941 | Oligo.- Holo | PALEOG
+ Chaeteessa BURMEISTER, 1838 | Oligo., USA (Colorado) | PALEOG
+ Family MANTEIDAE Saussure, 1859
+ Mantis LINNE, 1758 [*E. permiana] | Perm., USA (Kansas) | PERM
+ Ortelytron KUKALOVA, 1965 | Perm., Europe (Czechoslovakia) | PERM
+ Austrelytron KUKALOVA, 1966 | Perm., Australia (New South Wales) | PERM
+ Phyllelytron KUKALOVA, 1966 | Perm., Australia (New South Wales) | PERM
+ Uralelytron ROHDENDORF, 1939 | } Perm., USSR (Asian RSFSR) | PERM
+ Megelytron TILLYARD, 1931 [*M. robustum] | Perm., USA (Kansas) | PERM
+ Planelytron KUKALOVA, 1965 [*P. planum] | Perm., Europe (Czechoslovakia) | PERM
+ Permelytron TILLYARD, 1931 [*P. schucherti] | Perm., USA (Kansas) | PERM
+ Blattelytron TILLYARD, 1931 [*8. permianum] | Perm., USA (Kansas).-- 1931) | PERM
+ Parablattelytron TILLYARD, 1931 [*P. sub- [Permelyuidae TILLYARD] | Perm., USA (Kansas), | PERM
+ Elytrathrix KUKALOVA, 1966 [*E. hirsuta] | Perm., Australia (New South Wales). s l P L ~.=-=::~ '~"M CUA Planelytron philidae, and Labidelytridae (p. 147-148). Family LABIDELYTRIDAE Kukalova-Peck, 1988 [Labidelyrridae KUKALOVA-PECK, 1988, p. 3 | PERM
+ Stenelytridae KUKALOVA, 1966 | Perm | PERM
+ Labidelytron KUKALOVA-PECK, 1988 [*Stene/ytron enervatum KUKALOVA] | Perm., Australia (New South Wales) | PERM
+ Xenelytron KUKALOVA, 1966 | Perm | PERM
+ Dermelyrron KUKALOVA, 1966 | Perm., Australia (New South Wales) | PERM
+ Chanoselytron KUKALOVA, 1966 | Perm., Australia (New South Wales). Family UMENOCOLEIDAE Chen & T'an, 1973 [Umenocoleidae CHEN & rAN, 1973, p. 174) Elytron apparently only slightly convex, elongate, with well-developed longitudinal | PERM
+ Umenocoleus CHEN & TAN, 1973 [*U. sinuatus] | Cret., China (Kansu) | CRET
+ Crasselytron KUKALOVA, 1965 [*c. convexum] | Perm., Europe (Czechoslovakia) | PERM
+ Rugelytron KUKALOVA, 1965 [*R. fuscum] | Perm., Europe (Czechoslovakia) | PERM
+ Venelytron KUKALOVA, 1965 [*V. tuberculatum] | Jur. Protodiplatys MARTYNOV 1925b p 573 {*P fot'- yidae (p. 152-153). Asiodiplatys segments; tegmina broad, not extending beyond second abdominal segment; cerci about half as long as body, with no mor | JUR
+ Pygidicrana SERVILLE, 1831
+ Labidura LEACH, 1815 | , Argentina; Mio., Europe (Germany)-Holo | NEOG
+ Labiduromma SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Forficula LINNE, 1758 | , Europe (Italy); Mio., Eutope (Germany) -Holo. Suborder UNCERTAIN The following genera, apparently belonging to the order Dermaptera, are too poorly Labiduromma Turanoderma Pygidicranidae and Labidur | NEOG
+ Mesoforficula PING, 1935 | Jur., China (Xinjiang) | JUR
+ Sinolabia ZHOU & CHEN, 1983 [*0. williamsoni] | Carb., Europe (France).-- X1.6 (Carpenter, new) | CARB
+ Jasvia ZALESSKY, 1934 [*j. reticulata] | Perm., USSR (Asian RSFSR) | PERM
+ Macroedischia SHAROV, 1968 [*M. elongata] | Perm., USSR (Asian RSFSR) | PERM
+ Paroedischia CARPENTER, 1966 [*P. recta] | Perm., USA (Kansas) | PERM
+ Sylvoedischia SHAROV, 1968 [*S. uralica] | Perm., USSR (Asian RSFSR) | PERM
+ Tettoedischia SHAROV, 1968 [*T. minuta] | Perm., USSR (Asian RSFSR) | PERM
+ Uraloedischia SHAROV, 1968 [*V. permiensis] | Perm., USSR (Asian RSFSR) | PERM
+ Jubilaeus SHAROV, 1968 [*J. beybienkoi] | Perm., USSR (Asian RSFSR) | PERM
+ Anelcana CARPENTER, 1987 [*Parelcana dilatata] | Perm., USA (Kansas) | PERM
+ Petrelcana CARPENTER, 1966 [*P. elongata] | Perm., USA (Kansas) | PERM
+ Family ELCANIDAE Handlirsch, 1906
+ Panorpidium WESTWOOD, 1854 [*'Elcana brii HANDLIRSCH 1906b 414 OD} F t B ~: I CUA \ MP Archelcana Permoraphid] | Jur., England, Europe (Germany, Switzerland), USSR (Kazakh) | JUR
+ Family KAMIIDAE Sharov, 1968
+ Kargalaria SHAROV, 1968 [*K. maculata] | Perm., USSR (Asian RSFSR) | PERM
+ Family VITIMIIDAE Sharov, 1968
+ Vitimia SHAROV, 1968 [*V. evoluta]
+ Fergania SHAROV, 1968 | Trias., USSR (Kirghiz).-- both X2.8 (Sharov, 1968) | TRIAS
+ Provitimia SHAROV, 1968 [*P. pectinata] | -Jur | JUR
+ Bintoniella HANDLIRSCH, 1939 [*B. brodiei] | Jur., England | JUR
+ Probintoniella SHAROV, 1968 [*P. triassica] | Trias., USSR (Kirghiz) | TRIAS
+ Ferganopterodes SHAROV, 1968 | Trias., USSR (Kirghiz) | TRIAS
+ Ferganopterus SHAROV, 1968 [*'T. madygenicus] | Trias., USSR (Kirghiz) | TRIAS
+ Xenopterum RIEK, 1955 [*'X. crosbyi] | Trias., Australia (Queensland) | TRIAS
+ Family TETTAVIDAE Sharov, 1968
+ Tettavus SHAROV, 1968 [*'Pinegia /enestrata MARTYNOV] | Perm., USSR (Asian RSFSR) | PERM
+ Madygenia SHAROV, 1968 [*'M] | Trias., USSR (Kirghiz) | TRIAS
+ Tettigonia LINNE, 1758
+ Anabrus HALDEMANN, 1852 | Oligo., USA (Colorado)-Holo. Arctolocusta ZEUNER, 1937, p. 157 {*LoeuJta groenlandiea HEER, 1883, p. 146; OD}. Littleknown fore wing, female. SHAROV, 1968. Eoe., Greenland | PALEOG
+ Eodecticus PONGRACZ, 1928 | Mio., Europe (Austria) | NEOG
+ Lipotactes BRUNNER, 1898 | Oligo., USA (Colorado). Nymphomorpha HENRIKSEN, 1922b, p. 13 {*N. medialis; OD}. Little-known hind wing. ZEUNER, 1939. Eoe., EutOpe (Denmark) | PALEOG
+ Orchelimum SERVILLE, 1839 | Oligo., USA (Colorado)-Holo | PALEOG
+ Orphania FISCHER, 1853 | Mio., EutOpe (Austria, Germany)-Holo | NEOG
+ Pseudotettigonia ZEUNER, 1937
+ Rammea ZEUNER, 1931 | Mio., EutOpe (Germany). Tettigoides RIEK, 1952b, p. 20 {*T. peetinata; OD}. ElyttOn very nartOw, with long SC; RS arising at midwing; M nearly parallel to R. {Family position uncertain.} ?Eoe., Austra | NEOG
+ Family HAGLIDAE Handlirsch, 1906
+ Albertoilus KEVAN & WIGHTON, 1981 [*A. cervirufi] | Jur., USSR (Kirghiz, Tadzhik) | JUR
+ Archaeohagla LIN, 1965 [*A. sinensis] | )Jur., China (Inner Mongolia) | JUR
+ Archihagla SHAROV, 1968 [*A. zeuneri] | Trias., USSR (Kirghiz) | TRIAS
+ Cyrtophyllites OPPENHEIM, 1888 [*c. rogeri] | Jur., Europe (Germany) | JUR
+ Eospilopteron COCKERELL, 1915 [*E. ornatum] | Jur., USSR (Kirghiz) | JUR
+ Jurassobatea ZEUNER, 1937 | Jur., Europe (Germany) | JUR
+ Liassophyllum ZEUNER, 1935 [*L. abbreviatum] | Jur., England | JUR
+ Neohagla RIEK, 1955 | Trias., Australia (Queensland) | TRIAS
+ Nipponohagla FUJIYAMA, 1978 | Cret., Japan | CRET
+ Notopamphagopsis CABRERA, 1928 | Jur., USSR (Kazakh) | JUR
+ Paratshorkuphlebia SHAROV, 1968 [*P. multivenosa] | Jur., USSR (Kirghiz) | JUR
+ Procyrtophyllites ZEUNER, 1935 [*P. britannicus] | Trias., Australia (New South Wales, Queensland) | TRIAS
+ Proisfaroptera SHAROV, 1968 [*P. martynovi] | Trias., USSR (Kirghiz).-- X3.0 (Sharov, 1968) | TRIAS
+ Prophalangopseides SHAROV, 1968 [*P. vitimicus]
+ Protshorkuphlebia SHAROV, 1968 [*P. triassica] | Trias., USSR (Kirghiz) | TRIAS
+ Pycnophlebia DEICHMULLER, 1886 | } Jur., Europe (Germany) | JUR
+ Sinohagla LIN, 1965 [*S. anthoides] | Jur., USSR (Tadzhik) | JUR
+ Turkestania SHAROV, 1968 [*T. deviata] | Trias., USSR (Kirghiz) | TRIAS
+ Zalmona GIEBEL, 1856 [*Z. brodiei] | } Jur., Europe (Germany) | JUR
+ Zeunerophlebia SHAROV, 1968 [*Z. gigas] | Trias., USSR (Kirghiz) | TRIAS
+ Phasmomima SHAROV, 1968 [*P. complexum]
+ Phasmomimella KEVAN & WIGHTON, 1981 [*P. paskapoensis] | Paleoc., Canada (Alberta). Phasmomimoides SHAROV, 1968, p. 180 ["P. Related to the Haglidae. Male: fore wing tegminous, each tegmen with a longitudinal line of folding; tegmina at rest forming a boxli | PALEOG
+ Family GRYLLIDAE Latreille, IS02a
+ Macrelcana KARNY, 1932 [*Gryllacris ungeri HEER] | Jur., USSR (Kazakh); Cm., USSR (Asian RSFSR) | JUR
+ Gryllus LINNE, 1758 [*A. multilineatus] | Oligo., England | PALEOG
+ Baissogryllus SHAROV, 1968 [*8. sibiricus] | Jur., USSR (Asian RSFSR) | JUR
+ Eneopterotrypus ZEUNER, 1937 [*E. chopardi] | Oligo., England | PALEOG
+ Gryllavus SHAROV, 1968 [*G. madygenicus] | Trias., USSR (Kirghiz) | TRIAS
+ Heterotrypus SAUSSURE, 1878 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Karataogryllus SHAROV, 1968 [*K. gryllotalpiformis] | Jur., USSR (Kazakh) | JUR
+ Liassogrylloides BODE, 1953 [*L. basifastigatus] | ] Jur., Europe (Germany). Lithogryllites COCKERELL, 1908p, p. 64 [*L. lutzii; OD]. Little-known genus, based on apterous male probably immature ZWNER 1939 Oligo M P P e (p. 173-175) | JUR
+ Madasumma WALKER, 1869 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Paroecanthus SHAROV, 1968 [*P. caucasicus] | Mio., USSR (Asian RSFSR) | NEOG
+ Proecanthus SHAROV, 1968 [*P. anatolicus]
+ Gryllotalpa LATREILLE, 1802 | , Europe (Germany); Plio., Europe (Germany)-Holo | NEOG
+ Neocunilla KIRBY, 1906 | 106) Male: fore wing with vein e submarginal; precostal area long, as in Oedischiidae; R o b c a w f l e o S i i c a b p G P G M i t f H L M origin of RS; RS with only 3 terminal branches; branches of | 
+ Proparagryllacris RIEK, 1956 [*'P]
+ Gryllacrimima SHAROV, 1968 [*'G] | Body structure discussed under family, Trias., USSR (Kirghiz) | TRIAS
+ Mesogryllacris RIEK, 1955 [*'M. giganteus]
+ Lithymnetoides KEVAN & WIGHTON, 1983 [*'Lithymnetes laurenti THEOBALD] | Oligo., Europe (France) | PALEOG
+ Mesoedischia SHAROV, 1968 [*'M. madygenica] | J Trias., USSR (Tadzhik) | TRIAS
+ Termitidium WESTWOOD, 1854 [*T. ignotum] | J Jur., England | JUR
+ Thuringopteryx KUHN, 1937 [*T. gimmi] | Jur., England, Europe (Germany), USSR (Kazakh, Tadzhik, Kirghiz, Asian RSFSR) | JUR
+ Praelocustopsis SHAROV, 1968 [*P. mirabilis] | Trias., USSR (Asian RSFSR) | TRIAS
+ Locustavus SHAROV, 1968 [*L. madygensis] | Trias., USSR (Kirghiz).-- (Sharov, 1968) | TRIAS
+ Ferganopsis SHAROV, 1968 [*F.lanceolatus] | Trias., USSR (Kirghiz) | TRIAS
+ Family EUMASTACIDAE Burr, 1899
+ Eumastax BURR, 1899
+ Archaeomastax SHAROV, 1968 [*A. jurassicus] | Cret., USSR (Kazakh) | CRET
+ Taphacris SCUDDER, 1890 [*T. reliquata] | -Eoc. Promastax HANDLIRSCH, 1910b, p. 97 ["P. arehaieus; OD}. Little-known genus, based on distal fragment of fore wing. Branches of RS arising in distal third of wing; RS with 3 terminal c Locustopsi | PALEOG
+ Promastacoides KEVAN & WIGHTON, 1981 [*P. albertae]
+ Family TETRIGIDAE Rambur, 1838
+ Tetrix LATREILLE, 1802 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Archaeoteuix SHAROV, 1968 | Cret., USSR (Asian RSFSR) | CRET
+ Prototetrix SHAROV, 1968 | Cret., USSR (Asian RSFSR) | CRET
+ Succinotettix PITON, 1938 | Cret.-Holo | CRET
+ Tridactylus OLIVIER, 1789
+ Monodactyloides SHAROV, 1968 | Cret., USSR (Asian RSFSR) | CRET
+ Monodactylus SHAROV, 1968
+ Family ACRIDIDAE Latreille, 1825
+ Acrida LINNE, 1758
+ Bryodema FIEBER, 1853 | Mio., Europe (Hungary)-Holo | NEOG
+ Heeracris ZEUNER, 1937 | Eoc., Europe (France) | PALEOG
+ Miocaenacris ZEUNER, 1931 | Mio., Europe (Germany) | NEOG
+ Nanthacia SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Oedipoda LATREILLE, 1829 | Mio., Europe (Hungary)-Holo | NEOG
+ Proschistocerca ZEUNER, 1937 | Oligo., England | PALEOG
+ Protocatanops ZEUNER, 1931 | , USA (Wyoming); Oligo., USA (Colorado). Family UNCERTAIN The following genera, apparently belonging to the Orthoptera, suborder Caelifera, are too poorly known to permit assignment to families | PALEOG
+ Chresmoda GERMAR, 1839 | Trias. TILLYARD (in TILLYARD & DUNSTAN, 1916) originally placed the genus Mesotitan in the Protorrhoptera, but he later (TILLYARD, 192 5c) transferred it to the Protohemiptera, where it was also place | TRIAS
+ Mesotitanodes SHAROV, 1968 | Trias., USSR (Kirghiz) | TRIAS
+ Prototitan SHAROV, 1968 | Trias., USSR (Kirghiz) | TRIAS
+ Ultratitan SHAROV, 1968 | Trias., USSR (Kirghiz). -FIG. 116,a,b. -P. /ibel/u/oides; a, fore and hind wings, X 1.6 (Sharov, 1968) | TRIAS
+ Gigatitan SHAROV, 1968 | Trias., USSR (Kirghiz).-- b, fore wing, XO.6; c, hind wing, XO.6; d, foreleg, X2.0; e, head, antennae, pronotum, Xl (all Sharov, 1968) | TRIAS
+ Nanotitan SHAROV, 1968 | Trias., USSR (Kirghiz) | TRIAS
+ Ootitan SHAROV, 1968 | Trias., USSR (Kirghiz).-- 1968). Order PHASMATODEA Brunner, 1893 [nom. correct. BRVES, MELANDER, & CARPENTER, 1954, p. 102, pro | TRIAS
+ Phasmodea BRUNNER, 1893 | } Trias | TRIAS
+ Xiphopterum SHAROV, 1968 | ] Trias., AUStralia (New South Wales) | TRIAS
+ Paraplana SHAROV, 1968 | Jur. Aerophasma MARTYNOV, 1928a, p. 320 {"A. prynadai; OD], Fore wing with dense covering of hair; MA with 2 branches. SHAROV, 1968; VISH- NIAKOVA, 1980b.}ur., USSR (Kazakh) | JUR
+ Prochresmoda SHAROV, 1968 | Trias., USSR (Kirghiz) | TRIAS
+ Cretophasma SHAROV, 1968 [*c. raggei] | Cret., USSR (Kazakh) | CRET
+ Family PHASMATIDAE Leach, 1815
+ Phasma LICHTENSTEIN, 1796
+ Pseudoperla PICTET, 1854 [*P. gracilipes] | Oligo., Europe (Baltic) | PALEOG
+ Family PHYLLIIDAE Brunner, 1893
+ Chresmodella BODE, 1953
+ Family EMBIIDAE Burmeister, 1838
+ Embia LATREILLE, 1829 | Oligo., Europe (Baltic) | PALEOG
+ Family PSOCIDIIDAE Tillyard, 1926
+ Dichentomum TILLYARD, 1926
+ Pentapsocidium TILLYARD, 1926 | Perm., USA (Kansas), USSR (European RSFSR), Australia (New South Wales) | PERM
+ Permopsocus TILLYARD, 1926 [*L. permianum] | Perm., USA (Kansas) | PERM
+ Archipsyllodes VISHNIAKOVA, 1976 | Cret., USSR (Asian RSFSR) | CRET
+ Archipsyllopsis VISHNIAKOVA, 1976 | Cret., USSR (Asian RSFSR) | CRET
+ Eopsylla VISHNIAKOVA, 1976 [*c. per- Lophiocypha Cyphoneura Archipsylla RS1 +2 ~~ : R53+4 Lophioneura ~'"~S3 ] | Perm., Australia (New South Wales) | PERM
+ Family TROGHDAE Enderlein, 1911
+ Bebiosis ENDERLEIN, 1911 [*B. pertinens] | Oligo., Europe (Baltic) | PALEOG
+ Empheria HAGEN, 1854 [*E. reticulata] | Oligo., Europe (Baltic) | PALEOG
+ Lepidopsocus ENDERLEIN, 1903
+ Thylacella ENDERLEIN, 1911 [*T. eversiana] | Pleist., Africa | HOL
+ Family PSYLLIPSOCIDAE Kolbe, 1884
+ Pachytroctes ENDERLEIN, 1905
+ Palaeotroctes ENDERLEIN, 1911
+ Juccinica HAGEN, 1882 | Oligo., Europe (Baltic) | PALEOG
+ Psylloneura ENDERLEIN, 1903 | Mio., Burma-Holo | NEOG
+ Sphaeropsocus HAGEN, 1882 | Oligo., Europe (Baltic) | PALEOG
+ Liposcelis MOTSCHULSKY, 1852 | Oligo | PALEOG
+ Amphientomum PICTET, 1854 | Oligo., Europe (Baltic) | PALEOG
+ Family EPIPSOCIDAE Pearman, 1936
+ Family PSOCIDAE Leach, 1815
+ Psocus LATREILLE, 1796 | Oligo., Europe (Baltic), England-Holo | PALEOG
+ Copostigma ENDERLEIN, 1903 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Trichadenotecnum ENDERLEIN, 1909 | Oligo.-Holo | PALEOG
+ Mesopsocus KOLBE, 1880
+ Elipsocus HAGEN, 1866 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Philotarsus KOLBE, 1880 | Oligo.-Holo | PALEOG
+ Pseudocaecilius ENDERLEIN, 1903 | Oligo., Europe (Baltic). Ptenolasia Palaeopsocus Amphientomum ~~ " \~ 1b~ Amphienromidae, Pseudocaeciliidae, | PALEOG
+ Palaeopsocus KOLBE, 1883 [*Psoeus tener HAGEN in PICTET & HAGEN] | Oligo., Europe (Baltic) | PALEOG
+ Polypsocus HAGEN, 1866
+ Caecilius CURTIS, 1837 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Kolbea BERTKAU, 1883 | Oligo., Europe (Baltic)-Holo. P in k P P S R CUA Surijokocypha Parelectrentomum 4b~ ~ ~ Electrentomum ~ Polypsocidae, and Uncertain (p. 198-200) | PALEOG
+ Ptenolasia ENDERLEIN, 1911 [*Caeeilius pilosus HAGEN] | Oligo., Europe (Baltic) | PALEOG
+ Parapsocus SCUDDER, 1890 [*P. disjunetus] | Perm., USSR (Asian RSFSR) | PERM
+ Order ANOPLURA Leach, 1815
+ Vilvia ZALESSKY, 1933 [*V. densinervosa] | } Perm., USSR (European RSFSR) | PERM
+ Pseudobiella CARPENTER, 1970 [*P. fasciata] | Carb., USA (New Mexico) | CARB
+ Amboneura CARPENTER, 1980 | Carb., USA (Pennsylvania) | CARB
+ Caloneurella CARPENTER, 1934 [*M. pusil- Ius] | Carb., USA (Pennsylvania) | CARB
+ Archaemioptera GUTHORL, 1939 [*A. carbonaria] | Carb., Europe (Germany) | CARB
+ Eodelopterum SCHMIDT, 1962 [*E. priscum] | Carb., Europe (Germany) | CARB
+ Saaromioptera GUTHORL, 1963 [*S.jordani] | Carb., Europe (Germany).-- 130,5. *S. jordani; fore(?) wing, XII (Guthorl, 1963) | CARB
+ Tychtodelopterum MARTYNOVA, 1958 [*T. relictum] | Perm., USSR (Asian RSFSR) | PERM
+ Miomatoneurella MARTYNOVA, 1958 [*M. reducta] | Perm., Europe (Czechoslovakia) | PERM
+ Family AEOLOTHRIPIDAE Uzel, 1895
+ Family THRIPIDAE Stephens, 1829
+ Thrips LINNE, 1761 | Oligo., Europe (Baltic) | PALEOG
+ Anaphothrips UZEL, 1895 | Oligo., Europe (France)-Holo | PALEOG
+ Gerontothrips PRIESNER, 1949 | Oligo., Europe (Baltic) | PALEOG
+ Hercinothrips BAGNALL, 1932 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Homothrips BAGNALL, 1915 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Lipsanothrips PRIESNER, 1930 | Oligo., Europe (Baltic) | PALEOG
+ Oxythrips UZEL, 1895 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Praedendrothrips PRIESNER, 1924 [*P. cylindricornis] | Oligo., Europe (Baltic) | PALEOG
+ Selenothrips KARNY, 1911 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Taeniothrips SERVILLE, 1843 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Telothrips PRIESNER, 1930 [*T. klebsi] | Oligo.-Holo | PALEOG
+ Heterothrips HOOD, 1908 [*E. hystrix] | Oligo., Europe (Baltic) | PALEOG
+ Hemithrips BAGNALL, 1923 [*H./emoralis] | Oligo., Europe (Baltic, Germany) | PALEOG
+ Opadothrips PRIESNER, 1924 [*O./ritschianus] | Oligo.-Holo | PALEOG
+ Merothrips ZIMMERMANN, 1900 | Oligo., Europe (Baltic)-Holo. P i e a C E a p a d P C H L N | PALEOG
+ Praemerothrips PRIESNER, 1930 [*P. hoodi] | Oligo., Europe (Baltic). Family UNCERTAIN The following genera, apparently belongng to the order Thysanoptera, suborder Terebrantia, are too poorly known to permit assignment to families | PALEOG
+ Calothrips OUSTALET, 1873 [*c. scudderi] | Oligo., Europe (Baltic) | PALEOG
+ Phlaeothrips HALIDAY, 1836 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Cephenothrips PRIESNER, 1930 [*c. laticeps] | Oligo., Europe (Baltic)-Holo | PALEOG
+ Liotrichothrips BAGNALL, 1929 [*L. hystrix] | Oligo., Europe (Baltic) | PALEOG
+ Necrothrips PRIESNER, 1924 [*N. nanus] | Oligo., Europe (Baltic) | PALEOG
+ Proleeuwenia PRIESNER, 1924 | Oligo., Europe (Baltic) | PALEOG
+ Schlechtendalia BAGNALL, 1929 | Oligo., Europe (Baltic) | PALEOG
+ Symphyothrips HOOD & WILLIAMS, 1915 | Oligo., Europe (Baltic)- Holo | PALEOG
+ Treherniella WATSON, 1923 | Jur | JUR
+ Liassothrips PRIESNER, 1949
+ Order HEMIPTERA Linne, 1758
+ Siksteliana BECKER-MIGDISOVA & WOOTTON, 1965 [*S. popovi] | Trias., USSR (Kirghiz) | TRIAS
+ Palaeonrina BUTLER, 1873 [*P. oolitica]
+ Fletcheriana EVANS, 1956 [*F. triassica] | } Trias., Australia (New South Wales) | TRIAS
+ Ijacossus BECKER-MIGDISOVA, 1950 | } Jur., USSR (Asian RSFSR) | JUR
+ Palaeocossus OPPENHEIM, 1885 | Jur., USSR (Asian RSFSR) | JUR
+ Phragmatoecites OPPENHEIM, 1885 [*'T. pomerantsevae] | Jur., USSR (Asian RSFSR) | JUR
+ Austroprosboloides RIEK, 1973 [*'A. vandijki] | Perm., South Africa | PERM
+ Falsia BECKER-MIGDISOVA, 1946 | Perm., USSR (Asian RSFSR) | PERM
+ Cicadoprosbole BECKER-MIGDISOVA, 1947 | } Trias., USSR (Kirghiz) | TRIAS
+ Teuigarcta WHITE, 1845 | Eoc., Scotland | PALEOG
+ Family CICADIDAE Leach, 1815
+ Davispia COOPER, 1941 [*D. bearcreekensis] | Paleoc., USA (Montana) | PALEOG
+ Platypedia UHLER, 1888 | Oligo., USA (Colorado)-Holo | PALEOG
+ Tibicen LATREILLE, 1825 | Oligo., USA (Colorado)-Holo | PALEOG
+ Tymocicada BECKER-MIGDISOVA, 1954 [*T. gorbunovi] | Mio., USSR (Asian RSFSR) | NEOG
+ Anaprosbole BECKER-MIGDISOVA, 1960 [*A. ivensis] | } Perm., USSR (European RSFSR) | PERM
+ Anomaloscytina DAVIS, 1942 [*A. metapteryx] | } Perm., Australia (New South Wales) | PERM
+ Mesonirvana EVANS, 1956 [*M. abrupta] | Trias., Australia (Queens1and) | TRIAS
+ Triassoscelis EVANS, 1956 | Trias., Australia (Queensland) | TRIAS
+ Triassoscytina EVANS, 1956 | } Trias., Australia (Queensland) | TRIAS
+ Triassoscytinopsis EVANS, 1956 [*T. stenulata] | Trias., Australia (Queensland) | TRIAS
+ Tychtoscytina BECKER-MIGDISOVA, 1952 [*T. kuznetskiensis] | Trias.-Holo | TRIAS
+ Biturritia GODING, 1930 | } Trias., USSR (Kirghiz) | TRIAS
+ Cicadella DUMERIL, 1806 | Jur., Europe (Spain) | JUR
+ Agallia CURTIS, 1833 | - Mio., Europe (Germany)-Holo | NEOG
+ Batrachomorphus LEWIS, 1834 | Eoc., USA (Wyoming)-Holo | PALEOG
+ Coelidia GERMAR, 1821 | Trias., Australia (Queensland) | TRIAS
+ Euscelis BRULLE, 1832 | , Europe (Germany); Mio., USA (Califomia)-Holo | NEOG
+ Gypona GERMAR, 1821 | Oligo., Europe (Germany) | PALEOG
+ Homopterulum HANDLIRSCH, 1907 | Jur., England | JUR
+ Idiocerus LEWIS, 1834 | Oligo., Europe (Germany)-Holo | PALEOG
+ Jascopus HAMILTON, 1971 | Cret., Canada (Manitoba) | CRET
+ Jassites HANDLIRSCH, 1907 | Jur., England | JUR
+ Jassopsis SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Jassus FABRICIUS, 1803 | Mio., USSR (Asian RSFSR) | NEOG
+ Macropsis LEWIS, 1834 | Oligo., Europe (Germany)-Holo | PALEOG
+ Mesojassoides OMAN, 1937 | Cret., USA (Colorado) | CRET
+ Phlepsius FIEBER, 1866 | Mio., USA (California)-Holo | NEOG
+ Protochlorotettix PIERCE, 1963 | Mio., USA (California) | NEOG
+ Tetigonia BLANCHARD, 1852 | Oligo., Europe (Germany)-Holo | PALEOG
+ Tettigella CHINA & FENNAH, 1945 | , Europe (Germany); Mio., USA (Colorado)-Holo | NEOG
+ Typhlocyba GERMAR, 1833 | Trias.-Holo | TRIAS
+ Eurymela LE PELETIER & SERVILLE, 1828 | Trias., Australia (Queensland) | TRIAS
+ Membracis FABRICIUS, 1775
+ Ceresopsis BECKER-MIGDISOVA, 1958 | Trias., USSR (Kirghiz) | TRIAS
+ Darniopsis BECKER-MIGDISOVA, 1958 | Trias., USSR (Kirghiz) | TRIAS
+ Minuta BECKER-MIGDISOVA, 1958 [*M. heteropterata] | Trias., USSR (Kirghiz) | TRIAS
+ Sphongophoriella BECKER-MIGDISOVA, 1958 [*S. reticulata] | Trias., USSR (Kirghiz) | TRIAS
+ Family AETALIONIDAE Spinola, 1850
+ Aetalion LATREILLE, 1810 | -Trias | TRIAS
+ Eoscarterella EVANS, 1956 [*E. media] | Trias., Australia (Queensland) | TRIAS
+ Belmontocarta EVANS, 1958 [*B. perfecta] | Perm., Australia (New South Wales) | PERM
+ Eoscartoides EVANS, 1956 [*E. bryani] | Trias., Australia (Queensland) | TRIAS
+ Alotrifidus EVANS, 1956 [*A. interruptus] | Trias., Australia (Queensland) | TRIAS
+ Cercopites SCUDDER, 1890 [*c. calliscens SCUDDER] | Eoc., USA (Wyoming), Canada (British Columbia) | PALEOG
+ Clastoptera GERMAR, 1839 [*D. veter] | Eoc., Scotland | PALEOG
+ Palaphrodes SCUDDER, 1890 [*P. irregularis SCUDDER] | Oligo., USA (Colorado) | PALEOG
+ Palecphora SCUDDER, 1890 [*P. communis SCUDDER] | Oligo., USA (Colorado) | PALEOG
+ Philagra STAL, 1863 [*P. fletcheri] | Eoc., Canada (British Columbia) | PALEOG
+ Sinophora MELICHAR, 1902 [*S. maculosa] | } Trias., Australia (Queensland) | TRIAS
+ Trifidella EVANS, 1956 | Trias., Australia (Queensland) | TRIAS
+ Family IPSVICIIDAE Tillyard, 1919
+ Permocentrus EVANS, 1956 | Perm., Australia (New South Wales) | PERM
+ Atitizon HANDLIRSCH, 1939
+ Eojassus HANDLIRSCH, 1939
+ Liojassus HANDLIRSCH, 1939
+ Family HYLICELLIDAE Evans, 1956
+ Hylicella EVANS, 1956 | Trias., Australia (Queensland) | TRIAS
+ Pereboridae ZALESSKV, 1930 | BECKER- MIGDISOVA, 1962b, Perm.-Trias, | PERM
+ Pereboria ZALESSKY, 1930
+ Crosbella EVANS, 1956 | Trias., Australia (Queensland) | TRIAS
+ Family LOPHOPIDAE Stal, 1866
+ Lophops SPINOLA, 1838
+ Family CIXIIDAE Spinola, 1838
+ Cixius LATREILLE, 1804 [*A. fulgoroides] | Trias., USSR (Kitghiz) | TRIAS
+ Boreocixius BECKER-MIGDISOVA, 1955 [*B. sibiricus] | , USSR (Kirghiz); Jur., USSR (Kazakh, Tadzhik) | JUR
+ Diaplegma SCUDDER, 1890 [*D. abductum SCUDDER] | Eoc., USA (Colorado) | PALEOG
+ Hyalesthes SIGNORET, 1865 [*H. obsoletus] | , USSR (Kirghiz); Jur., USSR (Kazakh) | JUR
+ Oeclixius FENNAH, 1963 [*0. amphion] | Mio., Mexico (Chiapas) | NEOG
+ Oliarites SCUDDER, 1890 [*Mnemosyne terrentula SCUDDER] | } Eoc., USA (Wyoming) | PALEOG
+ Oliarus STAL, 1862 [*0. defectuosa THEOBALD] | Perm., USSR (Asian RSFSR) | PERM
+ Family ACHILIDAE Still, 1866
+ Achilus KIRBY, 1819
+ Elidiptera SPINOLA, 1839 | Oligo., USA (Colorado)-Holo | PALEOG
+ Protepiptera USINGER, 1939 [*'Po kaweckii] | Trias.-Holo | TRIAS
+ Ricania GERMAR, 1818 [*'c. lithinus] | Eoc., USA (Colorado) | PALEOG
+ Eobladina HAUPT, 1956 [*'E. antiqua] | Eoc., Europe (Germany) | PALEOG
+ Hammapteryx SCUDDER, 1890 [*'H. reticulata] | Eoc., USA (Colorado, Wyoming), Europe (Denmark, France), England | PALEOG
+ Neoricania CARPENTER, 1990 [*'Eoricania reticulata HAUPT] | Mio., Australia (Queensland) | NEOG
+ Nogodina STAL, 1859 [*D. scudderi] | Eoc., USA (Colorado) | PALEOG
+ Tritophania JACOBI, 1937 [*T. patruelis] | Oligo., Europe (Baltic) | PALEOG
+ Family FULGORIDAE Latreille, 1807
+ Fulgora LINNE, 1767 [*c. oce/latum] | } Eoc., USA (Wyoming) | PALEOG
+ Eucophora SPINOLA, 1839 | Eoc., Canada (British Columbia)-Holo | PALEOG
+ Lystra FABRICIUS, 1803 | } Eoc., USA (Wyoming)-Holo | PALEOG
+ Nyktalos METCALF, 1952 [*Nyctophylax uhleri SCUDDER] | Oligo., Europe (Baltic)-Holo | PALEOG
+ Family FLATIDAE Spinola, 1838
+ Flata FABRICIUS, 1798 | Eoc., USA (Wyoming); Oligo USA (Colorado) Holo u g e p A A C L ". M Elasmocelidium Netutela CUA Issidae and Dictyopharidae (p. 240- 241) | PALEOG
+ Ficarasites SCUDDER, 1890 | Tert. (epoch unknown), Argentina. Holo | NEOG
+ Poekilloptera LATREILLE, 1796 | Oligo., England-Holo | PALEOG
+ Thaumastodadius COCKERELL & SANDHOUSE, 1921 | Eoc., USA (Wyoming) | PALEOG
+ Family ARAEOPIDAE Metcalf, 1938
+ Araeopus SPINOLA, 1839 | Mio., USSR (Asian RSFSR) | NEOG
+ Chloriona FIEBER, 1866 | Mio., USSR (Asian RSFSR)-Holo | NEOG
+ Liburnia STAL, 1866 | Mio., Burma-Holo | NEOG
+ Family ISSIDAE Spinola, 1838
+ Issus FABRICIUS, 1803 | Jur., USSR (Kazakh); Europe (Germany).-- X6.3 (Becker-Migdisova, 1962b) | JUR
+ Issites HAUPT, 1956 | Eoc., Europe (Germany). Mesotubilustrium BECKER-MIGDISOVA, 1949b, p. 35 {·M. asiaticum; OD}. Similar to Elasmocelidium, but RS arising near midwing. Jur" USSR (Kazakh) | JUR
+ Tetragonidium BODE, 1953 | Cret.-Holo | CRET
+ Dictyophara GERMAR, 1833 | Mio., USSR (Asian RSFSR)-Holo | NEOG
+ Florissantia SCUDDER, 1890 [*F. elegans] | Oligo., USA (Colorado) | PALEOG
+ Netutela EMELJANOV, 1983 [*N. annunciator]
+ Bekkerscytina EVANS, 1958 [*B. primitiva] | Perm., Australia (New South Wales) | PERM
+ Eoscytina EVANS, 1958 [*E. migdisovae] | Perm., Australia (New South Wales) | PERM
+ Maripsocus ZALESSKY, 1939 [*M. ambiguus] | Perm., USA (Kansas), USSR (Asian RSFSR) | PERM
+ Permopsyllopsis ZALESSKY, 1939 [*S. grandis] | Perm., USA (Kansas) | PERM
+ Tshekardaella BECKER-MIGDISOVA, 1960 [*T. tshekardaensis] | Perm., USSR (Asian RSFSR) | PERM
+ Uraloscytina ZALESSKY, 1939 [*U. prosbolioides] | } Perm., USSR (Asian RSFSR) | PERM
+ Eupincombea DAVIS, 1942 [*E. postica] | Perm., Australia (New South Wales) | PERM
+ Clavopsyllidium DAVIS, 1942 [*G. minutum] | Perm., Australia (New South Wales) | PERM
+ Permaphidopsis BECKER-MIGDISOVA, 1960 [*P. sojanensis] | Perm., Australia (New South Wales) | PERM
+ Permopsyllidops DAVIS, 1942 [*P. stanleyi] | Perm., Australia (New South Wales) | PERM
+ Propatrix BECKER-MIGDISOVA, 1960 [*P. psyl/oides] | Perm., USSR (European RSFSR) | PERM
+ Psocopsyllidium DAVIS, 1942 [*P. media] | Perm., Australia (New South Wales) | PERM
+ Psocoscytina DAVIS, 1942 [*P. bifida] | Perm., Australia (New South Wales) | PERM
+ Triassothea EVANS, 1956 [*T. analis] | Trias., Australia (Queensland). ----- Psocoscytina CUA G J (Genaphididae HANDLIRSCH, 1907, p. 643] [ w F C A P a c m l a w a { M M CUA CUA -------------.:1. RS Triassothea | TRIAS
+ Genaphis HANDLIRSCH, 1907 [*'Aphis valdensis] | ] Cret., Canada (Manitoba) | CRET
+ Alloambria RICHARDS, 1966 [*'A. caudata] | Cret., Canada (Manitoba) | CRET
+ Pseudambria RICHARDS, 1966 [*'P. longirostris] | Cret | CRET
+ Palaeoaphis RICHARDS, 1966 | Cret., Canada (Manitoba) | CRET
+ Ambaraphis RICHARDS, 1966 | Cret | CRET
+ Tajmyraphis KONONOVA, 1975 | Cret., USSR (Asian RSFSR) | CRET
+ Jantardakhia KONONOVA, 1975 | Cret., USSR (Asian RSFSR), | CRET
+ Khatangaphis KONONOVA, 1975 | Cret., USSR (Asian RSFSR) | CRET
+ Retinaphis KONONOVA, 1975 | Cret., USSR (Asian RSFSR) | CRET
+ Family MINDARIDAE Tullgren, 1909
+ Nordaphis KONONOVA, 1977
+ Hormaphis OSTEN-SACKEN, 1861
+ Electrocornia HEIE, 1972 | -Oligo | PALEOG
+ Schizoneurites COCKERELL, 1915 | Oligo., Europe (Baltic), England | PALEOG
+ Antonaphis KONONOVA, 1977
+ Tajmyrella KONONOVA, 1976
+ Family THELAXIDAE Baker, 1920
+ Thelaxes WESTWOOD, 1840
+ Palaeothelaxes HEIE, 1967 | Oligo., Europe (Baltic) | PALEOG
+ Family ANOECIIDAE Tullgren, 1909
+ Anoecia KOCH, 1857
+ Berendtaphis HEIE, 1971 | Oligo.-Holo | PALEOG
+ Pemphigus HARTIG, 1839 | Mio.jPlioc., Europe (Germany)- Bolo | NEOG
+ Germaraphis HEIE, 1967 | Cret.-Holo | CRET
+ Drepanosiphum KOCH, 1855 | Oligo., Europe (France) | PALEOG
+ Aniferella RICHARDS, 1966 | Cret., Canada (Alberta) | CRET
+ Balticaphis HEIE, 1967 | Oligo., Europe (Baltic) | PALEOG
+ Balticomaraphis HEIE, 1967 | Oligo., Europe (Baltic) | PALEOG
+ Conicaudus HEIE, 1972 | } Cret., Mongolia | CRET
+ Electrocallis HEIE, 1967 | Oligo., Europe (Baltic) | PALEOG
+ Megantennaphis HEIE, 1967 | Oligo., Europe (Baltic) | PALEOG
+ Megapodaphis HEIE, 1967 | Oligo., Europe (Baltic) | PALEOG
+ Mengeaphis HEIE, 1967 | Oligo., Europe (Baltic) | PALEOG
+ Oligocallis HEIE, 1967 | Oligo., Europe (Baltic) | PALEOG
+ Oryctaphis SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Palaeophyllaphis HEIE, 1967 | Oligo., Europe (Baltic) | PALEOG
+ Palaeosiphon HEIE, 1967 | Oligo., Europe (Baltic) | PALEOG
+ Siphonophoroides BUCKTON, 1883 [*S. antiqua]
+ Amalancon SCUDDER, 1890 | , Europe (Denmark); Oligo., USA (Colorado) | PALEOG
+ Stemaphis HEIE, 1972 [*S. electricola] | Oligo., Europe (Baltic) | PALEOG
+ Zymus HEIE, 1972 [*2. succinicola] | Oligo., Europe (Baltic) | PALEOG
+ Family APHIDIDAE Latreille, 1802
+ Aphis LINNE, 1758
+ Aphidocallis KONONOVA, 1977 [*A. caudatus] | Cret., USSR (Asian RSFSR). B D P a c m P L L e w i s a a A A b w t | CRET
+ Baltichaitophorus HEIE, 1967 [*8. jutlandicus] | Eoc., Europe (Denmark) | PALEOG
+ Pseudamphorophora HEIE, 1967 [*P. succini] | Oligo., Europe (Baltic) | PALEOG
+ Family LACHNIDAE Koch, 1857
+ Lachnus BURMEISTER, 1835
+ Longistigma WILSON, 1909 | Oligo.-Holo | PALEOG
+ Aleyrodes LATREILLE, 1796 [*c. rotundata MARTYNOV] | Perm., USSR (European RSFSR) | PERM
+ Sojanopsylla BECKER-MIGDISOVA, 1960 [*5. brevipennis] | Perm., USSR (European and Asian RSFSR) | PERM
+ Scytoneurella ZALESSKY, 1939 [*5. major] | Perm., USSR (Asian RSFSR) | PERM
+ Family PSYLLIDAE Latreille, 1807
+ Psylla GEOFFREY, 1762 | Mio., USSR (European RSFSR)-Holo | NEOG
+ Catopsylla SCUDDER, 1890 [*c. prima] | Oligo., USA (Colorado) | PALEOG
+ Liadopsylla HANDLIRSCH, 1920 [*L. geinitzi] | Jur., Europe (Germany), USSR (Asian RSFSR) | JUR
+ Livilla CURTIS, 1836 | Oligo., England-Holo | PALEOG
+ Necropsylla SCUDDER, 1890 [*N. rigida] | Mio., USSR (European RSFSR)-Holo | NEOG
+ Strophingia ENDERLEIN, 1914 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Trioza FORSTER, 1848 | Mio., USSR (European RSFSR)-Holo | NEOG
+ Family COCCIDAE Fallen, 1814
+ Ochyrocoris MENGE, 1856 [*0. electrina] | Cret.-Holo | CRET
+ Margarodes GUILDING, 1829 [*A. crenata] | Oligo., Europe (Baltic) | PALEOG
+ Electrococcus BEARDSLEY, 1969 [*E. canadensis] | Oligo.- Holo | PALEOG
+ Pseudococcus WESTWOOD, 1840
+ Puto SIGNORET, 1875 | Oligo., Europe (Baltic)-Holo. Family UNCERTAIN The following genera, apparently belonging to the suborder Homoptera, are too poorly known to permit assignment to families | PALEOG
+ Anconatus BUCKTON, 1883 [*A. dorsuosus] | Oligo., USA (Colorado). A A A A A B B B B C C nitsyni; OD}. Little-known genus, based on incomplete specimens; apparently related to Ellinaphis. [Originally placed in Palaeoaphididae, but transferred | PALEOG
+ Aphidioides MOTSCHULSKY, 1856 [*A. succi/era] | Oligo., Europe (Baltic) | PALEOG
+ Aphidulum HANDLIRSCH, 1939 [*A. pusillum] | Perm., Australia (New South Wales) | PERM
+ Beaconiella EVANS, 1963 [*B./ennahi] | Trias., Australia (New South Wales). Beloptesis HANDLIRSCH, 1906b, p. 625 ["B. oppenheimi; OD}. Fore wing markedly triangular, nearly as broad as long; venation apparently as in Limacodites. Hind wing | TRIAS
+ Bemaea SCHLEE, 1970 [*B. neocomica] | Trias., Australia (Queensland) | TRIAS
+ Cicadellium WESTWOOD, 1854 | Jur., USSR (Kirghiz) | JUR
+ Dysmorphoscartella RIEK, 1973 | Oligo., USA (Colorado) | PALEOG
+ Elecrromyzus HEJE, 1972 | Cret., USSR (Asian RSFSR) | CRET
+ Eochiliocycla DAVIS, 1942 [*E. angusta] | Perm., Australia (New South Wales) | PERM
+ Eocicada OPPENHEIM, 1888 [*E. microcephala] | Jur., Europe (Germany) | JUR
+ Eopsyllidium DAVIS, 1942 [*E. delicatulum] | Eoc., Canada (British Columbia) | PALEOG
+ Gryllites GERMAR, 1842 [*G. dubius] | Oligo., England | PALEOG
+ Heidea SCHLEE, 1970 [*R. cretacica] | Jur., England | JUR
+ Hylaeoneura LAMEERE & SEVERIN, 1897 [*R. lignei] | Jur., USSR (Kirghiz) | JUR
+ Larssonaphis HEIE, 1967 [*L. obnubila] | Oligo., Europe (Baltic) | PALEOG
+ Liassocicada BODE, 1953 [*L. antecedens] | Jur., Europe (Germany) | JUR
+ Lithecphora SCUDDER, 1890 [*L. unicolor SCUDDER] | Eoc., USA (Wyoming), Europe (France, Germany) | PALEOG
+ Locrites SCUDDER, 1890 [*L. copei SCUDDER] | , USA (Colorado); Mio., Eutope (Croatia). Margaroptilon HANDURSCH, 1906b, p. 499 ["M. woodwardi HANDURSCH, 1906b, p. 499; SD CAR- PENTER, herein]. Little-known wings, with numerous small maculations; | NEOG
+ Mesocicadella EVANS, 1956 [*M. venosa] | ] Trias., Australia (Queensland) | TRIAS
+ Mesojassula EVANS, 1956 [*M. marginata] | Trias., M Tychticola Mesocicadella Mesodiphthera Kisylia Shuraboprosbole Uncertain (p. 256-259). Australia (Queensland) | TRIAS
+ Mesoledra EVANS, 1956 [*Mesojassus pachyneurus HANDURSCH] | Trias., Australia (Queensland) | TRIAS
+ Palaeoforda KONONOVA, 1977 [*P. tajmyrensis]
+ Parafulgoridium HANDLIRSCH, 1939 [*Fulgoridium simplex GEINITZ]
+ Parajassus BODE, 1953 [*P. hattoifensis] | Perm., USSR (Asian RSFSR) | PERM
+ Prolystra OPPENHEIM, 1888 [*P.lithographica] | Perm., USSR (Asian RSFSR) | PERM
+ Sbenaphis SCUDDER, 1890 [*5. quesneli] | Eoc., Canada (British Columbia). Shuraboprosbole BECKER-MIGDISOVA, 1949b, p. 23 [*5. plachutai; OD). Little-known genus, based on wing fragment. Basal stem of R only about half as long as R+M; RS aris | PALEOG
+ Tipuloidea WIELAND, 1925 [*T. rhaetica] | Trias., Argentina | TRIAS
+ Triassoaphis EVANS, 1956 [*T. cubitus] | Trias., Australia (Queensland) | TRIAS
+ Triassocotis EVANS, 1956 [*T. australis] | Jur., USSR (Kazakh) | JUR
+ Tychticola BECKER-MIGDISOVA, 1952 | Perm., USSR (Asian RSFSR) | PERM
+ Archicercopis HANDLIRSCH, 1939 | Jur., Eutope (Germany) | JUR
+ Cicadocoris BECKER-MIGDISOVA, 1958 | Trias., USSR (Kirghiz) | TRIAS
+ Eocercopis HANDLIRSCH, 1939 | Jur., Europe (Germany) | JUR
+ Heterojassus EVANS, 1961 | Trias., Australia (Queensland) | TRIAS
+ Heteroscytina EVANS, 1956 | Trias., Australia (Queensland) | TRIAS
+ Hexascytina WOOTTON, 1963 | Trias., USSR (Kirghiz) | TRIAS
+ Plaryscytinella EVANS, 1956 | Trias., Australia (New South Wales) | TRIAS
+ Triassocoecus EVANS, 1963 | Trias., Australia (New South Wales) | TRIAS
+ Triscytina EVANS, 1956 | Trias., Australia (New South Wales) | TRIAS
+ Anosmus HANDLIRSCH, 1939 | Jur., Europe (Germany) | JUR
+ Corynecoris BODE, 1953 | Jur., Europe (Germany) | JUR
+ Diatillus HANDLIRSCH, 1920 | Jur., Europe (Germany) | JUR
+ Ensphingocoris BODE, 1953 | Jur., Europe (Germany) | JUR
+ Entomecoris BODE, 1953 | Jur., Europe (Germany) | JUR
+ Eurynotis BODE, 1953 | Jur., Europe (Germany) | JUR
+ Macropterocoris BODE, 1953 [*M. obtusus] | Jur., Europe (Germany) | JUR
+ Progonocoris HANDLIRSCH, 1939 [*P. pictus] | Jur., Europe (Germany) | JUR
+ Somatocoris BODE, 1953 [*S. conservatus] | Mio.- Holo | NEOG
+ Enicocephalus WESTWOOD, 1838 [*D. constrictus] | Mio., Burma | NEOG
+ Paenicotechys STYS, 1969 [*Enicocephalus jossilis COCKERELL] | Mio., Burma | NEOG
+ Family ENICOCORIDAE Popov, 1980
+ Family DIPSOCORIDAE Dohm, 1859
+ Dipsocoris HALIDAY, 1855
+ Ceratocombus SIGNORET, 1852 | Jur | JUR
+ Cuneocoris HANDLIRSCH, 1920 [*c. geinitzi] | Jur., Europe (Germany) | JUR
+ Family GERRIDAE Leach, 1815
+ Gerris FABRICIUS, 1794 | Oligo., USA (Colorado), Canada (British Columbia), Europe (France)-Holo | PALEOG
+ Metrobates UHLER, 1871 | Oligo., USA (Colorado)-Holo | PALEOG
+ Telmatrechus SCUDDER, 1890 [*Hygrotrechus stali SCUDDER] | Eoc.-Holo | PALEOG
+ Hydrometra LATREILLE, 1796 | Oligo.-Holo | PALEOG
+ Velia LATREILLE, 1804 | Oligo., Europe (France)-Holo | PALEOG
+ Palaeovelia SCUDDER, 1890 [*P. spinosa] | Oligo., USA (Colorado) | PALEOG
+ Stenovelia SCUDDER, 1890 [*5. nigra] | Oligo., USA (Colorado). Family NOTONECTIDAE Latreille, 1802 [Notonectidae LATREILLE, iS02a, p. 253J Aquatic species, similar to the Naucoridae, but forelegs raptorial, and hind tarsi without claws. fu | PALEOG
+ Notonecta LINNE, 1758 [*A. cunipes] | Jur., USSR (Kazakh) | JUR
+ Enithares SPINOLA, 1837 [*L. tomiensis] | Jur., USSR (Asian RSFSR) | JUR
+ Nepidium WESTWOOD, 1854 [*N. stolones] | Jur., Europe (Germany) | JUR
+ Family NAUCORIDAE Leach, 1815
+ Naucoris GEOFFROY, 1762 | Jur., Europe (Germany) | JUR
+ Apopnus HANDLIRSCH, 1920
+ Diplonychus LAPORTE, 1832 | Jur., USSR (Kirghiz) | JUR
+ Mesorrephes POPOV, 1971 [*M. striata] | Mio., Europe (Germany) | NEOG
+ Lethocerus MAYR, 1853 [*Nepa primordialis GERMAR] | , USSR (Asian RSFSR); Mio., Europe (Czechoslovakia)-Holo. Mesonepa HANDLIRSCH, 1906b, p. 637 [*Nepa primordialis GERMAR, 1839, p. 206; SO Popov, 1971, p. 116]. Similar to Belostoma, but fore S S Belos | NEOG
+ Scarabaeides GERMAR, 1839 [*S. deperditus] | Jur., Europe (Germany) | JUR
+ Family NEPIDAE Latreille, 1802
+ Nepa LINNE, 1758 [*S. lepyroniopsis] | Jur., USSR (Kirghiz) | JUR
+ Family CORIXIDAE Leach, 1815
+ Corixa GEOFFROY, 1762 [*A. lata] | / Cret., USSR (Asian RSFSR) | CRET
+ Family ARADIDAE Brulle, 1835
+ Mezira AMYOT & SERVILLE, 1843 [*S. t'asnitsyni] | } Oligo., Europe (Germany). Saldonia PoPov, 1973, p. 704 [*S. t'asnitsyni; OD}. Pronotum transverse; RS close to front margin of tegmen; membrane not present on tegmen; scutellum small, shorter than c | PALEOG
+ Family COREIDAE Leach, 1815
+ Coreus FABRICIUS, 1794 | Oligo., Europe (France)-Holo | PALEOG
+ Achrestocoris SCUDDER, 1890 [*A. cinerarius] | Oligo., USA (Colorado) | PALEOG
+ Anasa AMYOT & SERVILLE, 1843 [*B.femoralis] | Mio., Europe (Germany) | NEOG
+ Heeria SCUDDER, 1890 [*H. gulosa] | Oligo., USA (Colorado) | PALEOG
+ Hypselonotus HAHN, 1833 | Mio., Europe (Germany)-Holo | NEOG
+ Jadera STAL, 1860 [*K. asiatica] | Jur., USSR (Kazakh) | JUR
+ Phthinocoris SCUDDER, 1890 [*P. colligatus] | Oligo., USA (Colorado) | PALEOG
+ Spartocera LAPORTE, 1832 | Mio., Europe (Croatia)-Holo | NEOG
+ Syromastes LATREILLE, 1829 | , Europe (Germany); Mio., Europe (Germany)-Holo | NEOG
+ Family ALYDIDAE Stal, 1872
+ Alydus FABRICIUS, 1803 | Oligo., USA (Colorado)-Holo | PALEOG
+ Daclera SIGNORET, 1862 [*H. bucculatus] | Jur., USSR (Kazakh) | JUR
+ Orthriocorisa SCUDDER, 1890 [*0. longipes] | Jur.-Holo | JUR
+ Lygaeus FABRICIUS, 1794 | , USA (Colorado), Europe (France, Germany); Mio., Europe (France, Germany, Croatia)-Holo | NEOG
+ Aphanus LAPORTE, 1832 | Oligo., Europe (Germany, France)- Holo | PALEOG
+ Catopamera SCUDDER, 1890 [*c. augheyi] | Mio., Europe (Germany) | NEOG
+ Chilacis FIEBER, 1864 | Oligo., Europe (Germany)-Holo | PALEOG
+ Cholula DISTANT, 1882 | Eoc., USA (Wyoming)-Holo | PALEOG
+ Cophocoris SCUDDER, 1890 [*c. tenebricosus] | Oligo., USA (Colorado) | PALEOG
+ Coptochromus SCUDDER, 1890 [*C. manium] | Oligo., USA (Colorado) | PALEOG
+ Cryptochromus SCUDDER, 1890 [*c. letatus] | Oligo., USA (Colorado) | PALEOG
+ Ctereacoris SCUDDER, 1890 [*c. primigenus] | Oligo., USA (Colorado) | PALEOG
+ Diniella BERGOTH, 1893 | Oligo., Europe (France, Germany)-Holo | PALEOG
+ Drymus FIEBER, 1860 | Oligo., Europe (Germany)-Holo | PALEOG
+ Eucorites SCUDDER, 1890 [*E. serescens] | Oligo., USA (Colorado) | PALEOG
+ Geocoris FALLEN, 1814 | Oligo., USA (Colorado)-Holo | PALEOG
+ Heterogaster SCHILLING, 1829 | Oligo., USA (Colorado)-Holo | PALEOG
+ Linnaea SCUDDER, 1890 [*L. carcerata] | Oligo., USA (Colorado) | PALEOG
+ Lithochromus SCUDDER, 1890 [*L. gardneri] | Oligo., USA (Colorado) | PALEOG
+ Lithocoris SCUDDER, 1890 [*L. evulsus] | Jur., USSR (Kazakh) | JUR
+ Lygaeosoma SPINOLA, 1837 [*M. laiyangenis] | Mio., USA (California) | NEOG
+ Necrochromus SCUDDER, 1890 [*N. cockerelli] | Oligo., USA (Colorado) | PALEOG
+ Phrudopamera SCUDDER, 1890 [*P. wilsoni] | Oligo., USA (Colorado) | PALEOG
+ Pionosomus FIEBER, 1860 [*P. paraile/us] | Oligo., Europe (France) | PALEOG
+ Procoris SCUDDER, 1890 [*P. bechleri] | Oligo., USA (Colorado) | PALEOG
+ Procrophius SCUDDER, 1890 [*P. communis] | Mio., USA (California) | NEOG
+ Procymus USINGER, 1940 [*P. cockerelli] | Oligo., USA (Colorado) | PALEOG
+ Prolygaeus SCUDDER, 1890 [*P. inundatus] | Oligo., Europe (Germany)-Holo | PALEOG
+ Rhyparochromus HAHN, 1826 | Oligo., Europe (Germany)-Holo | PALEOG
+ Stenopamera SCUDDER, 1890 [*S. tenebrosa] | Oligo., USA (Colorado) | PALEOG
+ Tiromerus SCUDDER, 1890 [*T. torpe] | Oligo., USA (Colorado) | PALEOG
+ Trapezonotus FIEBER, 1860 | Oligo., Europe (Germany), USA (Colorado)-Holo | PALEOG
+ Family BERYTIDAE Fieber, 1851
+ Berytus FABRICIUS, 1803
+ Megalomerium FIEBER, 1859 | Oligo.-Holo | PALEOG
+ Pyrrhocoris FALLEN, 1814 | Oligo., USA (Colorado)-Holo | PALEOG
+ Family CYDNIDAE Billberg, 1820
+ Cydnus FABRICIUS, 1803 | Oligo., Europe (Germany, France)-Holo | PALEOG
+ Crocistethus FIEBER, 1860 | Eoc., USA (Wyoming)-Holo | PALEOG
+ Necrocydnus SCUDDER, 1890 [*N. amyzonus SCUDDER] | , USA (Wyoming); Oligo., USA (Colorado) | PALEOG
+ Procydnus SCUDDER, 1890 [*P. quietus SCUDDER] | , USA (Wyoming); Oligo., USA (Colorado) | PALEOG
+ Sehirus AMYOT & SERVILLE, 1843 | Oligo., Europe (Germany)-Holo | PALEOG
+ Stenopelta SCUDDER, 1890 [*Aethus punctulatus SCUDDER] | Eoc., Europe (Denmark) | PALEOG
+ Thlibomenus SCUDDER, 1890 [*T. petreus] | Oligo., USA (Colorado) | PALEOG
+ Family SCVTELLERIDAE Leach, 1815
+ Scutellera LAMARCK, 1801
+ Coptosoma LAPORTE, 1832 | Oligo., Europe (Germany)-Holo | PALEOG
+ Tectocoris HAHN, 1834 | Jur | JUR
+ Pachymeridium GEINITZ, 1880 [*P. dubium]
+ Apsicoria HANDLIRSCH, 1939 [*A]
+ Cathalus HANDLIRSCH, 1939 [*c. alutaceus] | Jur., Europe (Germany) | JUR
+ Hypocimex HANDLIRSCH, 1939 [*H. membranaceus] | Jur., Europe (Germany) | JUR
+ Psychrocoris HANDLIRSCH, 1920 | Jur., Europe (Germany) | JUR
+ Sisyrocoris HANDLIRSCH, 1920 | Jur., Europe (Germany) | JUR
+ Family PENTATOMIDAE Leach, 1815
+ Pentatoma OLIVIER, 1789 | , Europe (Germany, Balric); Mio., Europe (Croaria, Germany)-Holo | NEOG
+ Acanthosoma CURTIS, 1824 | , Europe (Germany); Mio., Europe (Croaria, France)-Holo | NEOG
+ Arma HAHN, 1832 | Oligo., Europe (Germany)-Holo | PALEOG
+ Asopus BURMEISTER, 1834 | Eoc., Europe (France)-Holo | PALEOG
+ Brachypelta AMYOT & SERVILLE, 1843 | Oligo., Europe (Germany, Czechoslovakia)-Holo | PALEOG
+ Cacoschistus SCUDDER, 1890 | Eoc., USA (Colorado) | PALEOG
+ Doryderes AMYOT & SERVILLE, 1843 | Eoc., Europe (France)-Holo. E E E H L M M N N P P P P P P P P | PALEOG
+ Eurydema LAPORTE, 1832 | /Plio., Europe (France)-Holo | NEOG
+ Eurygaster LAPORTE, 1832 | Oligo., Europe (France)-Holo | PALEOG
+ Eysarcoris HAHN, 1834 | , Europe (Germany); Tert. (epoch unknown), ]apan-Holo | NEOG
+ Halys FABRICIUS, 1803 | Oligo., Europe (France) | PALEOG
+ Mesohalys BEIER, 1952 | Mio., Europe (Croatia) | NEOG
+ Nezara AMYOT & SERVILLE, 1843 | /Plio., Europe (France) | NEOG
+ Pachycoris BURMEISTER, 1835 | Mio., Europe (Germany)-Holo | NEOG
+ Palomena MULSANT &REY, 1866 | Mio., Europe (France)-Holo | NEOG
+ Pentatomites SCUDDER, 1890 | Mio., Europe (Croatia)-Holo | NEOG
+ Poliocoris KIRKALDY, 1910 | Oligo., USA (Colorado) | PALEOG
+ Polioschistus SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Poteschistus SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Pycanum AMYOT & SERVILLE, 1843 | Eoc., Europe (France)-Holo | PALEOG
+ Teleocoris KIRKALDY, 1910 | Oligo., USA (Colorado) | PALEOG
+ Teleoschistus SCUDDER, 1890 | , Europe (Denmark); Oligo., USA (Colorado) | PALEOG
+ Tetyra FABRICIUS, 1803 | Mio., Europe (Germany)-Holo | NEOG
+ Thnetoschistus SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Tiroschistus SCUDDER, 1890 | Oligo.-Holo | PALEOG
+ Anrhocoris FALLEN, 1814 | Oligo., Europe (Germany)-Holo | PALEOG
+ Family NABIDAE Costa, 1852
+ Nabis LATREILLE, 1802 | Jur., USSR (Kazakh). n R E E H L M P P | JUR
+ Family REDUVIIDAE Latreille, 1807
+ Reduvius FABRICIUS, 1775
+ Eothes SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Evagoras BURMEISTER, 1843 | Mio., Europe (Germany)-Holo | NEOG
+ Harpactor LAPORTE, 1832 | Mio., Europe (Germany, Croatia)-Holo | NEOG
+ Limnacis GERMAR, 1856 | Oligo., USA (Colorado) | PALEOG
+ Pirates BURMEISTER, 1835 | Mio., Europe (Germany)-Holo | NEOG
+ Poliosphageus KIRKALDY, 1910 [*P. psyehrus] | Oligo., USA (Colorado) | PALEOG
+ Proptilocerus WASMANN, 1933 [*P. doloms] | Oligo., Europe (Baltic) | PALEOG
+ Prostemma LAPORTE, 1832 | Mio., Europe (Germany)-Holo | NEOG
+ Rhinocoris HAHN, 1833 | Oligo., Europe (Germany)-Holo | PALEOG
+ Stenopoda LAPORTE, 1832 | Mio., Europe (Germany)-Holo | NEOG
+ Tagalodes SCUDDER, 1890 [*T. inermis] | Oligo., USA (Colorado) | PALEOG
+ Family TINGIDAE Laporte, 1833
+ Tingis FABRICIUS, 1803 | , USA (Colorado); Mio., Europe (Croatia)-Holo | NEOG
+ Cantacader AMYOT & SERVILLE, 1843 | Oligo., Europe (England)-Holo | PALEOG
+ Dictyla STAL, 1874 | , USA (Colorado), Europe (Czechoslovakia); Mio., Europe (Germany)-Holo | NEOG
+ Eotingis SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Phamoma FIEBER, 1844 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Family MIRIDAE Hahn, 1831
+ Miris FABRICIUS, 1794
+ Aporema SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Calocoris FIEBER, 1858 | Oligo., Europe (Germany)-Holo | PALEOG
+ Capsus FABRICIUS, 1803 | Oligo., USA (Colorado)-Holo | PALEOG
+ Carmelus DISTANT, 1884 | Oligo., USA (Colorado)-Holo | PALEOG
+ Closterocoris UHLER, 1890 | Oligo., USA (Colorado)-Holo | PALEOG
+ Fulvius STAL, 1862 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Fuscus DISTANT, 1884 | Oligo., USA (Colorado)-Holo | PALEOG
+ Hadronema UHLER, 1872 | Oligo., USA (Colorado)-Holo | PALEOG
+ Jordanofulvius CARVALHO, 1954 | Oligo., Europe (Baltic) | PALEOG
+ Lygus HAHN, 1831 | Jur., USSR (Kazakh) | JUR
+ Phytocoris FALLEN, 1814 | Oligo., Europe (Baltic, France)-Holo | PALEOG
+ Poecilocapsus REUTER, 1875 | , Europe (France)- Mio., Europe (Croatia, Germany) | NEOG
+ Deraiocoris BODE, 1953 | Jur., Europe (Germany) | JUR
+ Dichaspis BODE, 1953 | Jur., Europe (Germany) | JUR
+ Electrocoris USINGER, 1942 | Oligo., Europe (Baltic). Triassocoris O P P P P P R S S T T T | PALEOG
+ Engerrophorus BODE, 1953 [*E. nitidus]
+ Engynabis BODE, 1953 [*E. tenuis]
+ Eogerridium BODE, 1953 [*E. gracile]
+ Etirocoris SCUDDER, 1890 [*E. infernalis] | Oligo., USA (Colorado) | PALEOG
+ Euraspidium BODE, 1953 [*E. granulosum]
+ Hadrocoris HANDLIRSCH, 1939 [*H. ocutellaris]
+ Heteronella EVANS, 1961 [*H. marksei] | Trias., Austtalia (Queensland) | TRIAS
+ Ischnocoris BODE, 1953 [*I. bitoratus] | Oligo., Europe (France) | PALEOG
+ Liasocoris WENDT, 1940 [*L. hainmulleri]
+ Megalocoris BODE, 1953 [*M. laticlavus]
+ Pronabis BODE, 1953 [*P. utroquelaesus]
+ Protocoris HEER, 1852 [*P. planus] | Oligo., USA (Colorado) | PALEOG
+ Stiphroschema BODE, 1953 [*S. longealatum]
+ Tenor SCUDDER, 1890 [*c. speluncae] | Oligo., USA (Colorado) | PALEOG
+ Trachycoris BODE, 1953 [*T. abbreviatus] | Trias., Australia (Queensland) | TRIAS
+ Docimus SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Prosigara SCUDDER, 1890 | Perm | PERM
+ Tshekardocoleus ROHDENDORF, 1944 [*T. magnus] | Perm., USSR (Asian RSFSR) | PERM
+ Retelytron KUKALOYA, 1965 [*R. conopeum]
+ Uralocoleus ZALESSKY, 1947 [*u. splendens] | Perm., Europe (Czechoslovakia) | PERM
+ Family CUPEDIDAE Lacordaire, 1857
+ Cupes FABRICIUS, 1801 | , Europe (Baltic); Plio., Europe (Germany)-Holo | NEOG
+ Anaglyphites PONOMARENKO, 1964 [*A. clavatus] | Jur., USSR (Kazakh) | JUR
+ Cupoides MOTSCHULSKY, 1856 [*G. tessellatus] | Mio., Europe (Czechoslovakia) | NEOG
+ Moltenocupes ZEUNER, 1961 [*M. townrowi] | Trias., South Africa | TRIAS
+ Nococupes PONOMARENKO, 1964 [*N. picturatus] | , Europe (Germany), USSR (Asian RSFSR, Kazakh); Cret., USSR (Asian RSFSR) | CRET
+ Sinocupes LIN, 1976 [*5. validus] | Perm., USSR (Asian RSFSR, Kazakh) | PERM
+ Simmondsia DUNSTAN, 1923 [*S. subpyriformis] | Trias., Australia (Queensland), USSR (Kirghiz) | TRIAS
+ Ademosynoides DUNSTAN, 1923 [*Ademosyne minor HANDLIRSCH] | Jur., USSR (Kazakh) | JUR
+ Grammositus DUNSTAN, 1923 [*Grammositum bilineatus] | Jur., USSR (Kirghiz) | JUR
+ Platycrossos DUNSTAN, 1923 [*Ademosyne tumida TILLYARD in TILLYARD & DUNSTAN] | Trias., Australia (Queensland) | TRIAS
+ Polysitus DUNSTAN, 1923 [*Polysitum punctatus] | Jur., USSR (Kirghiz, Kazakh) | JUR
+ Shepherdia DUNSTAN, 1923 [*S. quadrivittata] | -Jur. Tricoleus PONOMARENKO, 1969b, p. 139 ["T. punctatus; OD}. Elytron with RS terminating at apex. ]ur., USSR (Kazakh) | JUR
+ Micromalthus LE CONTE, 1878 | Trias.-Holo | TRIAS
+ Family CARABIDAE Latreille, 1802
+ Carabus LINNE, 1758
+ Agacoides MOTSCHULSKY, 1856 [*A. carinulatus] | Oligo., Europe (Baltic) | PALEOG
+ Arthropterus M'LEAY, 1838 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Carabites HEER, 1852 [*G. punctatolineatum] | Cret., USSR (Asian RSFSR) | CRET
+ Elaphrotites HAUPT, 1956 [*E. densus] | , USSR (Kazakh); Cret., USSR (Asian RSFSR) | CRET
+ Neothanes SCUDDER, 1890 [*Cychrus testeus SCUDDER] | Jur., USSR (Kazakh) | JUR
+ Paussoides MOTSCHULSKY, 1856 [*P. mengei] | Oligo., Europe (Baltic). Protorabus PONOMARENKO, 1977b, p. 72 {·P. planus; OD}. Clypeus not reaching base of antennae; fore coxal cavities open; metepisternum forming parr of wall of middle coxal cavi | PALEOG
+ Protoscalidion SCHAUFUSS, 1888 | Trias., USSR (Kirghiz) | TRIAS
+ Trechoides MOTSCHULSKY, 1856 | Trias., USSR (Kirghiz) | TRIAS
+ Family DYTISCIDAE Leach, 1815
+ Dytiscus LINNE, 1758
+ Agabus LEACH, 1817 | Mio., Europe (Czechoslovakia)-Holo. Angaragabus PONOMARENKO, 1963b, p. 128 {.A. jurassicus; OD}. Larva with head flat; mandibles twice as long as basal width; fourth antennal segment without processes | NEOG
+ Colymbetes SCHELLENBERG, 1806 | Mio., USSR (European ~SFSR)-Holo | NEOG
+ Copelatus ERICHSON, 1832 | Mio., USSR (European RSFSR)-Holo. Cretodytes PONOMARENKO, 1977b, p. 40 {·C.latipes; OD}. Little-known genus. Hind tibiae much shorter than femora. {Family assignment doubtful.} Cm., USSR (Kazakh). • | NEOG
+ Cybister CURTIS, 1827 | Mio., USSR (European and Asian RSFSR2-Holo | NEOG
+ Graphoderus DEJEAN, 1833 | Mio., USSR (European RSFSR)-Holo. • | NEOG
+ Hydroporus SCHELLENBERG, 1806 | Mio., USSR (European.RSFSR)-Holo | NEOG
+ Methles SHARP, 1882 | Mio., USSR (European RSFSR)-Holo | NEOG
+ Miodytiscus WICKHAM, 1911 | Oligo., USA (Colorado). l i SC C A 200 { P M P F (Gyrinidae LATREILLE, 1810, p. 141) | PALEOG
+ Family GYRINIDAE Latreille, 1810
+ Gyrinus GEOFFROY, 1762 [*Gyrinus atavus HEER] | Cret., USSR (Kazakh) | CRET
+ Gyrinoides MOTSCHULSKY, 1856 [*G. limbatus] | Oligo., Europe (Germany) | PALEOG
+ Schistomerus PALMER, 1957 [*5. californense] | Jur. Parahygrobia PONOMARENKO, 1977b, p. 20 {"P. natans; 00]. Urogomphi slightly shorter than abdomen. jur., USSR (Asian RSFSR) | JUR
+ Coptoclava PING, 1928 | , USSR (Asian RSFSR); Cret., China (Shandong) | CRET
+ Pseudohydrophilus DEICHMULLER, 1886 | Jur. Liadytes PONOMARENKO, 1963b, p. 129 {"L. avus; 00). Pronotum not covering scutellum. PONO- MARENKO, 1977b. jur., USSR (Asian RSFSR) | JUR
+ Hydrophilus GEOFFROY, 1762 | Oligo., USA (Colorado) | PALEOG
+ Escheria HEER, 1847 | , USSR (Kazakh); Cret., USSR (Asian RSFSR) | CRET
+ Family SCYDMAENIDAE Leach, 1815
+ Scydmaenus LATREILLE, 1802
+ Clidicus LAPORTE, 1833 | Oligo., Europe (Baltic) | PALEOG
+ Euconnus THOMSON, 1859 | Oligo., Europe (Baltic) | PALEOG
+ Scydmaenoides MOTSCHULSKY, 1856
+ Family PTILIIDAE Heer, 1843
+ Microptilium MATTHEWS, 1872 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Family SILPHIDAE Latreille, 1807
+ Silpha LINNE, 1758
+ Eosilphites HAUPT, 1950 | ) Eoc., Europe (Germany) | PALEOG
+ Mesecanus NEWTON, 1982 | Oligo., USA (Colorado) | PALEOG
+ Palaeosilpha FLACH, 1890 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Ptomascopus KRAATZ, 1877 | Jur.-Holo | JUR
+ Staphylinus LINNE, 1758
+ Abolescus TIKHOMIROVA, 1968
+ Abscondus TIKHOMIROVA, 1968 | Oligo., USA (Colorado) | PALEOG
+ Archodromus TIKHOMIROVA, 1968
+ Bembicidiodes SCHAUFUSS, 1888 | Oligo., Europe (Baltic) | PALEOG
+ Globoides TIKHOMIROVA, 1968 | Oligo., USA (Colorado) | PALEOG
+ Lathrobium GRAVENHORST, 1802 | Oligo., Europe (Baltic)-Holo. Lithoplanes SCUDDER, 1886a, p. 81, nom. subst. pro | PALEOG
+ Erinnys OUSTALET, 1874 | ) Oligo., Europe (France) | PALEOG
+ Mesotachinus TIKHOMIROVA, 1968
+ Mesozytelus TIKHOMIROVA, 1968
+ Micropeplus LATREILLE, 1809 | Oligo., USA (Colorado). Oxypoda MANNERHEIM p SEEVERS | PALEOG
+ Palaeopsenius SEEVERS, 1971 | Mio., Mexico (Chiapas) | NEOG
+ Paracyptus SEEVERS, 1971 | Mio., Mexico (Chiapas) | NEOG
+ Porrhodromus TIKHOMIROVA, 1968 | Jur., USSR (Kazakh) | JUR
+ Protactus HEER, 1847 | ) Mio., Europe (Germany) | NEOG
+ Protostaphylinus LIN, 1976 | Oligo., Europe (Baltic) | PALEOG
+ Seniaulus HEYDEN & HEYDEN, 1866 | Jur., USSR (Kazakh) | JUR
+ Tachyporoides TIKHOMIROVA, 1968 | Jur., USSR (Kazakh) | JUR
+ Trigites HANDLIRSCH, 1907
+ Triga SCUDDER, 1900 | Oligo., USA (Colorado) | PALEOG
+ Tunicopterus TIKHOMIROVA, 1968 | Jur., USSR (Kazakh) | JUR
+ Family PSELAPHIDAE Latreille, 1802
+ Pselaphus HERBST, 1792
+ Batrisus AUBE, 1833 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Bryaxis KUGELANN, 1794 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Bythinus LEACH, 1817 | Oligo., Europe (Baltic) | PALEOG
+ Euplectus LEACH, 1817 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Eupsinoides MOTSCHULSKY, 1856 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Faronus AUBE, 1844 [*P. spectrum] | Oligo., Europe (Baltic) | PALEOG
+ Tmesiphoroides MOTSCHULSKY, 1856 [*T. cariniger] | Oligo., Europe (Baltic) | PALEOG
+ Tychus LEACH, 1817 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Tyrus AUBE, 1833 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Family LUCANIDAE Latreille, 1806
+ Ceruchites STATZ, 1952 [*G. hahnei] | Oligo., Europe (Germany) | PALEOG
+ Dorcasoides MOTSCHULSKY, 1856 [*D. bilobus] | Oligo., Europe (Baltic) | PALEOG
+ Paleognathus WAGA, 1883 [*P. succini] | Oligo., Europe (Baltic) | PALEOG
+ Acanthocnemus PERRIS, 1866 [*A. sukatshevae] | Cret., USSR (Asian RSFSR) | CRET
+ Family PASSALIDAE Leach, 1815
+ Scarabaeus LINNE, 1758 [*A.fugitivus] | , Europe (Germany); Cret., USSR (Asian RSFSR) | CRET
+ Heliocopris HOPE, 1837 | Mio., Japan-Holo | NEOG
+ Holcoribeus NIKRITIN, 1977 [*H. vittatus] | } Cret., USSR Plagiocyphon Holcoribeus Lucanidae, Acanthocnemidae, Scarabae (Asian RSFSR) | CRET
+ Proteroscarabeus GRABAU, 1923
+ Family HELODIDAE Le Conte, 1861
+ Helodes LATREILLE, 1796 | Oligo., Europe (Baltic) | PALEOG
+ Dascillus LATREILLE, 1796 | Oligo.-Holo | PALEOG
+ Ptilodactyla ILLIGER, 1807
+ Ptilodactyloides MOTSCHULSKY, 1856 | Oligo., Europe (Baltic) | PALEOG
+ Family DRYOPIDAE Erichson, 1848
+ Dryops OLIVIER, 1791 | Oligo., Europe (Baltic) | PALEOG
+ Potamophilites HAUPT, 1956 | Eoc., Europe (Germany). Family ARTEMATOPIDAE Lacordaire, 1857 [ArtematOpidae LACORDAIRE. 1857, p. 260] Small beetles; antennae moniliform or filiform, rarely pectinate; fore coxae transverse or projec | PALEOG
+ Artematopus PERTY, 1832 | Oligo., Europe (Baltic) | PALEOG
+ Protartematopus CROWSON, 1973 | Oligo | PALEOG
+ Electrapate IABLOKOV-KHNZORIAN, 1962 | Oligo., Europe (Baltic) | PALEOG
+ Family BUPRESTIDAE Leach, 1815
+ Buprestis LINNE, 1758 | } Eoc., Europe (Germany) | PALEOG
+ Brachyspathus WICKHAM, 1917 | Oligo., USA (Colorado) | PALEOG
+ Chlorodema HAUPT, 1950 | Eoc., Europe (Germany) | PALEOG
+ Eoanthaxites HAUPT, 1950 | Eoc., Europe (Germany) | PALEOG
+ Eochalcophora HAUPT, 1950 | Eoc., Europe (Germany). Eolampetis PONGRAcZ, 1935, p. 561 {*E. weigelti; OD}. Little-known genus, based mainly on elytron. HAUPT, 1950; OBENBERGER, 1957. Eoc" Europe (Germany). F G M M P R S T h b c e | PALEOG
+ Fuesslinia HEER, 1847 | {Family assignment doubtfuL} Mio., Europe (Germany) | NEOG
+ Glaphyroptera HEER, 1852 | {Family assignment doubtfuL} Jur., Europe (Switzerland) | JUR
+ Mesostigmodera ETHERIDGE & OLLIFF, 1890 | Trias., Australia (Queensland) | TRIAS
+ Microjulodis HAUPT, 1950
+ Protogenia HEER, 1847 | Mio., Europe (Germany) | NEOG
+ Rhabdoglyptus HAUPT, 1950 | Eoc., Europe (Germany) | PALEOG
+ Taenionotus HAUPT, 1950 | Jur | JUR
+ Praelaterium DOLIN, 1973 | Jur., USSR (Kirghiz) | JUR
+ Elaterocoleus DOLIN, 1973 | Jur., USSR (Kirghiz) | JUR
+ Family ELATERIDAH Leach, 1815
+ Elater LINNE, 1758
+ Abrotus DOLIN, 1980 [*A. sepultus] | Jur., USSR (Kazakh) | JUR
+ Adiagnostus DOLIN, 1980 [*A. cardiophorinus] | Jur., USSR (Kazakh) | JUR
+ Adocetus SCUDDER, 1900 [*A. buprestoides] | Eoc., USA (Wyoming) | PALEOG
+ Ageratus DOLIN, 1980 [*A. ponomarenkoi] | Jur., USSR (Kazakh) | JUR
+ Agriotes ESCHSCHOLTZ, 1829 | /Mio., Mexico (Chiapas)-Holo | NEOG
+ Alaodima DOLIN, 1980 [*A. grandis] | Jur., USSR (Kazakh) | JUR
+ Archeonus DOLIN, 1980 [*A. abbreviatus] | Jur., USSR (Kazakh) | JUR
+ Codemus DOLIN, 1980 [*c. synaptoides] | Jur., USSR (Kazakh) | JUR
+ Compsoferus DOLIN, 1980 [*c. priscus] | Oligo., USA (colorado) | PALEOG
+ Cryptocardius DOLIN, 1980 [*c. mirabilis] | Jur., USSR (Kazakh) | JUR
+ Desmatus DOLIN, 1975 [*D. lapidarius] | Oligo., Europe (Baltic) | PALEOG
+ Eopyrophorus HAUPT, 1950 [*E. mixtus] | Eoc., Europe (Germany) | PALEOG
+ Ganestrius DOLIN, 1976 [*G. stibicki] | Jur., USSR (Kazakh) | JUR
+ Glyphonyx CANDEZE, 1863 | /Mio., Mexico (Chiapas)-Holo | NEOG
+ Graciolacon DOLIN, 1980 [*G. aeternus] | Jur., USSR (Kazakh) | JUR
+ Hypnomorphus DOLIN, 1975 [*H. rohdendorfi] | Jur., USSR (Kazakh) | JUR
+ Idiomerus DOLIN, 1980 [*1. inflatus] | Jur., USSR (Kazakh) | JUR
+ Idiomorphus DOLIN, 1980 [*1. singularis] | Jur., USSR (Kazakh) | JUR
+ Lapidiconides DOLIN, 1980 [*L. excellens] | Jur., USSR (Kazakh) | JUR
+ Lapidostenus DOLIN, 1980 [*L. infossus]
+ Lithocoelus DOLIN, 1975
+ Litholacon DOLIN, 1980
+ Lithomerus DOLIN, 1980
+ Lithoptychus DOLIN, 1980
+ Lithosomus DOLIN, 1980 | Oligo., USA (Colorado) | PALEOG
+ Micragrypnites DOLIN, 1973
+ Mionelater BECKER, 1963 | IMio., Mexico (Chiapas) | 
+ Necrocelus DOLIN, 1980
+ Negastrioides DOLIN, 1980 | Oligo., Europe (Baltic) | PALEOG
+ Paragrypnites DOLIN, 1980
+ Parahypnomorphus DOLIN, 1980 | Oligo., Europe (Baltic) | PALEOG
+ Platyelata DOLIN, 1980
+ Plesiorhaphes DOLIN, 1980
+ Protagrypnus DOLIN, 1973
+ Protocardiophorus DOLIN, 1976
+ Protoquasimus DOLIN, 1976
+ Pseudocardiophorites DOLIN, 1976
+ Sinoelaterium PING, 1928 | Oligo., Europe (Baltic) | PALEOG
+ Family EUCNEMIDAE Latreille, 1824
+ Eucnemis AHRENS, 1812
+ Potergites BRITTON, 1960 [*P. senectus] | Cret.-Holo | CRET
+ Cerophytum LATREILLE, 1809 [*A. communis] | Oligo.-Holo | PALEOG
+ Cantharis LINNE, 1758
+ Cacomorphocerus SCHAUFUSS, 1892 [*c. cerambyx] | Oligo., Europe (Baltic) | PALEOG
+ Family LYCIDAE Castelnau, 1840
+ Lycus FABRICIUS, 1787 [*M. pectinicornis] | Oligo., Europe (Baltic) | PALEOG
+ Family TRIXAGIDAE Seidlitz, 1888
+ Trixagus KUGELANN, 1794
+ Palaeothroscus IABLOKOV-KHNZORIAN, 1962 [*P. sosnovskyi] | Oligo., Europe (Baltic) | PALEOG
+ Throscites IABLOKOV-KHNZORIAN, 1962 [*T. tschirscherini] | Oligo., Europe (Baltic) | PALEOG
+ Family MELYRIDAE Leach, 1815
+ Melyris FABRICIUS, 1775 | Oligo., USA (Colorado) | PALEOG
+ Family DERMESTIDAE Latreille, 1807
+ Dermestes LINNE, 1758
+ Cryprorhopalum GUERIN-MENEVILLE, 1838 | Mio., USA (California) | NEOG
+ Family ANOBIIDAE Westwood, 1838
+ Anobium FABRICIUS, 1775
+ Eucrada LE CONTE, 1861 | Oligo., USA (Colorado) | PALEOG
+ Stichtoprychus FALL, 1905 | /Mio., Mexico (Chiapas)-Holo | NEOG
+ Venablesia BRITTON, 1960 | Eoc., England | PALEOG
+ Xyletinites HEYDEN & HEYDEN, 1866 | Oligo.-Holo | PALEOG
+ Bostrychus GEOFFROY, 1762 | Oligo., USA (Colorado) | PALEOG
+ Family TROGOSSITIDAE Latreille, 1802
+ Trogossita OLIVIER, 1790
+ Family CLERIDAE Klug, 1842
+ Clems GEOFFROY, 1762
+ Orthrius GORHAM, 1876 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Family NITIDULIDAE Latreille, 1802
+ Nitidula FABRICIUS, 1775 [*c. hirtus] | Jur., USSR (Kazakh) | JUR
+ Omositoidea SCHAUFUSS, 1892 [*0. gigantea] | -Plio., Sumatra | NEOG
+ Family CUCUJIDAE Latreille, 1802
+ Cucujus FABRICIUS, 1775
+ Lithocoryne SCUDDER, 1900 [*L. gravis] | Adults and larvae mainly fungivorous, occurring in such diverse environments as flowering plants, stored food products, and nests of social insects, Cret.-Holo | CRET
+ Cryptophagus HERBST, 1792 [*N. rhetica] | Oligo.-Holo | PALEOG
+ Endomychus PANZER, 1795
+ Phymaphoroides MOTSCHULSKY, 1856 | Cret.-Holo. Lathridius [BECK), 1817, p. 14, nom. subst. pro | CRET
+ Latridius HERBST, 1793 [*S. inflata] | Cret., USSR (Asian RSFSR). Family MYCETOPHAGIDAE Leach, 1815 [Mycetophagidae LEACH, 1815. p. 110J Small, oval beetles, with pubescent body; antennae with 11 segments and with a club of 2 or 3 segments | CRET
+ Mycetophagus HELLWIG, 1792
+ Crowsonium ABDULLAH, 1964 [*c. succinum] | Oligo. Circaeus IABLOKOV-KHNZORIAN, 1961b, p. 209 [*1. borisjaki; aD). Antennae with 11 segments, with 5 distal segments forming a club; first 4 club segments transverse, and fifth large and long. c t | PALEOG
+ Family COLYDIIDAE Erichson, 1848
+ Tenebrio LINNE, 1758
+ Anthracohelops HAUPT, 1950 [*A. gigas] | Trias., Australia (Queensland) | TRIAS
+ Family SALPINGIDAE Leach, 1815
+ Neopolypria ABDULLAH, 1964 | Oligo., Europe (Baltic) | PALEOG
+ Family PYTHIDAE Mulsant, 1856
+ Pytho LATREILLE, 1796 | Oligo., USA (Colorado) | PALEOG
+ Family ALLECULIDAE Seidlitz, 1891
+ Allecula FABRICIUS, 1801
+ Hymenorus MULSANT, 1851 | /Mio., Mexico (Chiapas)-Holo | NEOG
+ Isomira MULSANT, 1856 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Jurallecula MEDVEDEV, 1969 | Jur., USSR (Kazakh) | JUR
+ Mycetocharoides SCHAUFUSS, 1888 | Oligo.-Holo | PALEOG
+ Pyrochroa GEOFFROY, 1762
+ Palaeopyrochroa ABDULLAH, 1965 | Oligo., Europe (Baltic) | PALEOG
+ Family MELANDRYIDAE Leach, 1815
+ Melandrya FABRICIUS, 1801
+ Abderina SEIDLITZ, 1898 [*A. helmsi] | Oligo., Europe (BaIcic) | PALEOG
+ Archaeoxylita NIKITSKY, 1977 [*A. zherichini] | Eoc., USA (Colorado) | PALEOG
+ Pseudohallomenus NIKITSKY, 1977 [*P. cretaceous] | Cret., USSR (Asian RSFSR) | CRET
+ Family SCRAPTIIDAE Latreille, 1807
+ Scraptia LATREILLE, 1807 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Anaspis GEOFFROY, 1762 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Archescraptia ABDULLAH, 1964 [*A. emarginata] | Oligo., Europe (Baltic) | PALEOG
+ Palaeoscraptia ABDULLAH, 1964 [*P. elongata] | Oligo., Europe (Baltic) | PALEOG
+ Scraptiomima MEDVEDEV, 1969 [*5. brachycornis] | Jur.-Holo | JUR
+ Mordella LINNE, 1758 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Praemordella SHCHEGOLEVA-BAROVSKAYA, 1929 [*P. martynovi] | Jur., USSR (Kazakh) | JUR
+ Family OEDEMERIDAE Latreille, 1810
+ Oedemera OLIVIER, 1789
+ Eumecoleus HAUPT, 1950 [*E. tenuis] | } Oligo., USA (Colorado) | PALEOG
+ Family ANTHICIDAE Latreille, 1825
+ Anthicus PAYKULL, 1798 | Oligo., USA (Colorado) | PALEOG
+ Macratria NEWMAN, 1838 | Eoc.-Holo | PALEOG
+ Cerambyx LINNE, 1758
+ Aenictosoma SCHAUFUSS, 1892 | Oligo., Europe (Baltic) | PALEOG
+ Anelaphus LINSLEY, 1936 | Oligo., USA (Colorado)-Holo | PALEOG
+ Arhopalus SERVILLE, 1834 | Oligo., USA (Colorado)- Holo | PALEOG
+ Dorcadionoides MOTSCHULSKY, 1856 | Oligo., Europe (Baltic) | PALEOG
+ Eocallidium HAUPT, 1950
+ Grammoptera SERVILLE, 1835 | Oligo., USA (Colorado)- Holo. H M M P P P P P P P P P P P S S | PALEOG
+ Hylurgops LE CONTE, 1876 | Oligo., USA (Colorado)-Holo | PALEOG
+ Mesosites DEICHMULLER, 1881 | Mio., Europe (Czechoslovakia) | NEOG
+ Palaeoasemum ABDULLAH, 1967 | Oligo., Europe (Baleic) | PALEOG
+ Palaeoncoderes PITON & THEOBALD, 1937 | Oligo., USA (Colorado) | PALEOG
+ Parmenops SCHAUFUSS, 1892 | Oligo., Europe (Baltic) | PALEOG
+ Phymatodes MULSANT, 1839 | Oligo., USA (Colorado)-Holo | PALEOG
+ Pidonia MULSANT, 1863 | Oligo., USA (Colorado)- Holo | PALEOG
+ Prolamioides PITON & THEOBALD, 1937 | Oligo., Europe (Colorado) | PALEOG
+ Protospondylis LINSLEY, 1942 | Oligo., USA (Colorado) | PALEOG
+ Psapharochrus THOMSON, 1864 | Oligo., USA (Colorado)- Holo | PALEOG
+ Saperda FABRICIUS, 1775 | Trias.-Holo | TRIAS
+ Chrysomela LINNE, 1758
+ Acassidites HAUPT, 1950 | Eoc., Europe (Germany) | PALEOG
+ Airaphilus REDTENBACHER, 1858 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Cerambyomina MEDVEDEV, 1968 | Jur., USSR (Kazakh) | JUR
+ Chrysomelites HEER, 1865 | Oligo., USA (Colorado) | PALEOG
+ Electrolema SCHAUFUSS, 1892 | Oligo., Europe (Baltic) | PALEOG
+ Eochrysomela HAUPT, 1950 | Eoc., Europe (Germany) | PALEOG
+ Eodonacia HAUPT, 1956 | Eoc., Europe (Germany). E E G O O P P P P P P P P S | PALEOG
+ Eoeumolpinus HAUPT, 1950 | } Eoc., Europe (Germany) | PALEOG
+ Gonocelis HAUPT, 1950 | Oligo., Europe (France) | PALEOG
+ Oposispa UHMANN, 1939 | Oligo., Europe (Baltic) | PALEOG
+ Paracassida HAUPT, 1956 | Oligo., USA (Colorado) | PALEOG
+ Profidia GRESSITT, 1963 | /Mio., Mexico (Chiapas) | NEOG
+ Protanisodera QUIEL, 1910 | Oligo., Europe (Baltic) | PALEOG
+ Protoscelis MEDVEDEV, 1968 | Jur., USSR (Kazakh) | JUR
+ Protosceloides MEDVEDEV, 1968 | Jur., USSR (Kazakh) | JUR
+ Pseudomegamerus MEDVEDEV, 1968 | Jur., USSR (Kazakh) | JUR
+ Sucinagonia UHMANN, 1939 | Oligo., Europe (Balric) | PALEOG
+ Family ANTHRIBIDAE Billberg, 1820
+ Anthribus GEOFFROY, 1762 | Oligo., USA (Colorado) | PALEOG
+ Family EOBELIDAE Arnoldi, 1977
+ Eobelus ARNOLDI, 1977 | Jur., USSR (Kazakh) | JUR
+ Ampliceps ARNOLDI, 1977 | Jur., USSR (Kazakh) | JUR
+ Belonotaris ARNOLDI, 1977 | Jur., USSR (Kazakh) | JUR
+ Distenorrhinus ARNOLDI, 1977 | Jur., USSR (Kazakh) | JUR
+ Eccoptarthrus ARNOLDI, 1977 | Jur., USSR (Kazakh) | JUR
+ Eccoptothorax ARNOLDI, 1977 | Jur., USSR (Kazakh) | JUR
+ Nanophydes ARNOLDI, 1977 | Jur., USSR (Kazakh) | JUR
+ Oxycorynoides ARNOLDI, 1977 | Jur., USSR (Kazakh) | JUR
+ Paroxycoynoides ARNOLDI, 1977 | Jur., USSR (Kazakh) | JUR
+ Probelopsis ARNOLDI, 1977 | Jur., USSR (Kazakh) | JUR
+ Probelus ARNOLDI, 1977 | Jur., USSR (Kazakh) | JUR
+ Procurculio ARNOLDI, 1977 | Jur., USSR (Kazakh) | JUR
+ Scelocamptus ARNOLDI, 1977 | Cret.-Holo, | CRET
+ Attelabus LINNE, 1758
+ Car BLACKBURN, 1897 | Oligo., USA (Colorado) | PALEOG
+ Involvulus SCHRANK, 1798 | Oligo., USA (Colorado) | PALEOG
+ Family APIONIDAE Schoenherr, 1833
+ Apion HERBST, 1797 | , Europe (Baltic); Mio,/Plio., Mexico (Chiapas)-Holo | NEOG
+ Phyllobius SCHOENHERR, 1824 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Family CURCULIONIDAE Latreille, 1802
+ Curculio LINNE, 1758 | Oligo., Europe (Baltic) | PALEOG
+ Anthribites HEER, 1847 | -Mio., Europe (Germany) | NEOG
+ Antliarhinites HEER, 1865 | Eoc., USA (Colorado, Wyoming) | PALEOG
+ Camptorrhinites BRITTON, 1960 | Eoc., England | PALEOG
+ Cenocephalus CHAPUIS, 1866 | } Oligo., Europe (Baltic) | PALEOG
+ Cleonolithus BASSI, 1841 | Mio., Burma | NEOG
+ Cryptorhynchus ILLIGER, 1807 | /Mio., Mexico (Chiapas)-Holo | NEOG
+ Cryptorrhynchites HAUPT, 1950 | Eoc., Europe (Germany) | PALEOG
+ Dorotheus KUSCHEL, 1959 | Cret., Chile | CRET
+ Eccoptus DEJEAN, 1821 | /Mio., Mexico (Chiapas)-Holo | NEOG
+ Electrotribus HUSTACHE, 1942 | Oligo., USA (Colorado) | PALEOG
+ Erirrhinites BRITTON, 1960 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Hylescierites SCHEDL, 1947 | Oligo., Europe (Baltic) | PALEOG
+ Hylesinites GERMAR, 1813 | Oligo., Europe (Baltic) | PALEOG
+ Korystina BRITTON, 1960 | Oligo., USA (Colorado) | PALEOG
+ Lithopissodes BEIER, 1952 | Oligo., Europe (Austria) | PALEOG
+ Lutago BRITTON, 1960 | Oligo., USA (Colorado) | PALEOG
+ Mononychites HAUPT, 1956 [*N. inquilinus] | Oligo., USA (Colorado) | PALEOG
+ Oligocryptus CARPENTER, 1986 [*Eucryptus sectus SCUDDER] | Oligo., Europe (Baltic) | PALEOG
+ Phloeosinites HAGEDORN, 1906 [*P. rehi] | Oligo., Europe (Baltic) | PALEOG
+ Pissodes GERMAR, 1817 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Pissodites BRITTON, 1960 [*P. argillosus] | Oligo., USA (Colorado) | PALEOG
+ Pliocleonus GERSDORF, 1976 [*P. gibbosus] | Plio., Europe (Germany) | NEOG
+ Polydrosus GERMAR, 1817 | Plio., Europe (France)-Holo | NEOG
+ Pristorhynchus HEER, 1847 [*P. ellipticus] | Mio., Europe (Germany) | NEOG
+ Rhyncolus GERMAR, 1824 [*R. longirostre SCUDDER] | Eoc., USA (Colorado) | PALEOG
+ Sitonitellus CARPENTER, 1986 [*Sitonites egregius HAUPT] | Oligo., USA (Colorado) | PALEOG
+ Synommatus WOLLASTON, 1873 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Taphramites SCHEDL, 1947 [*T. gnathotrichus] | Oligo., Europe (Baltic) | PALEOG
+ Taphrorychus EICHHOFF, 1878 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Taylorius BRITTON, 1960 [*T.litoralis] | Oligo., Europe (Baltic) | PALEOG
+ Tillyardiopsis DUNSTAN, 1923 | Oligo., USA (Colorado) | PALEOG
+ Xylechinites HAGEDORN, 1906 | Oligo., Europe (Baltic). SUBORDERS AND FAMILIES UNCERTAIN The following extinct genera are based on species known only from isolated elytra or body fragments. Their family relationships and in many in | PALEOG
+ Actea GERMAR, 1842 | Jur., Europe (Switzerland) | JUR
+ Agrilium WESTWOOD, 1854 | Jur., England. Allognosis HANDLIRSCH, 1906b, p. 450 (*Nebria niteus GEINITZ, 1894, p. 74; OD). Little-known A A A A A A A A A A A A A A A A A A A A A | JUR
+ Allopliosilpha GERSDORF, 1970 | Jur., Europe (Germany) | JUR
+ Amblycephalonius BODE, 1953 | Jur., Europe (Germany) | JUR
+ Amphoxyne BODE, 1953 | Jur., Europe (Germany) | JUR
+ Anancaeon HANDLIRSCH, 1939 | Jur., England | JUR
+ Anobichnium LINCK, 1949 | Trias., Europe (Germany) | TRIAS
+ Anomerus HANDLIRSCH, 1939 | Jur., Europe (Germany) | JUR
+ Anypostatus HANDLIRSCH, 1939 | Trias., Australia (Queensland) | TRIAS
+ Aphodiites HEER, 1865 | Jur., Europe (Switzerland) | JUR
+ Apicasia BODE, 1953 | Jur., Europe (Germany) | JUR
+ Apioderes HANDLIRSCH, 1939 | Jur., Europe (Germany) | JUR
+ Apiopyrenides BODE, 1953 | Jur., England | JUR
+ Aposphinctus BODE, 1953 | Jur., Europe (Germany) | JUR
+ Apsychus HANDLIRSCH, 1939 | Jur., Europe (Germany) | JUR
+ Aptilotitus CARPENTER, 1986 [*A. angusticollis] | Cret., Greenland | CRET
+ Ataktosites HAUPT, 1956 [*A. palustris] | Eoc., Europe (Germany) | PALEOG
+ Auchenophorites CARPENTER, 1986 [*Auchenophorus sculpturatus BODE] | Jur., Europe (Germany) | JUR
+ Bareus HANDLIRSCH, 1939 [*B. strigipennis] | Jur., Europe (Germany) | JUR
+ Barocephalus CARPENTER, 1986 [*Barycephalus nudatus BODE] | Jur., Europe (Germany) | JUR
+ Bellingera HEER, 1852 [*Bellingera laticol/is HEER] | Jur., England | JUR
+ Blapsium WESTWOOD, 1854 [*B. egertoni] | Jur., England | JUR
+ Blaptoides FRITSCH, 1901 [*B. dubius] | Jur., England | JUR
+ Bothynophora HEER, 1865 | Jur., Europe (Switzerland) | JUR
+ Brachinites FRITSCH, 1882 [*B. truncatus] | Cret., Europe (Czechoslovakia) | CRET
+ Brachylaimon BODE, 1953 [*B. striatus] | Jur., Europe (Germany) | JUR
+ Brachytrachelites BODE, 1953 [*B. striatus] | Jur., England | JUR
+ Buprestites HEER, 1847 | , Europe (France, Germany); Mio., Europe (Germany) | NEOG
+ Buprestium WESTWOOD, 1854 [*B. gorgus] | Jur., England | JUR
+ Byrrhydium HEER, 1865 [*8. arcuatum HEER] | Jur., Europe (Switzerland) | JUR
+ Callistaspis HAUPT, 1950 [*c. punctatus] | Eoc., Europe (Germany) | PALEOG
+ Camaricopterus BODE, 1953 [*c. ovalis] | Jur., Europe (Germany) | JUR
+ Carabidium WESTWOOD, 1854 [*c. dejeanianum] | Jur., USSR (Asian RSFSR) | JUR
+ Cardioides BODE, 1953 [*c. incisus] | Jur., Europe (Germany) | JUR
+ Caryosoma HAUPT, 1950 [*c. rugosus] | } Eoc., Europe (Germany) | PALEOG
+ Cerambycinus GERMAR, 1839 [*c. dubius] | Jur., Europe (Germany) | JUR
+ Chrysomelidium HANDLIRSCH, 1907 [*Chrysomelites simplex FRITSCH] | Jur., England | JUR
+ Cistelites HEER, 1865 [*c. insignis] | Jur., Europe (Switzerland) | JUR
+ Clathropenna FUJIYAMA, 1973 [*c. rugosa] | Trias., Japan | TRIAS
+ Clinomerus CARPENTER, 1986 [*Catomerus laticol/is HAND- L1RSCH]
+ Coilotrachelus BODE, 1953
+ Coreoeicos BODE, 1953 | Cret., USSR (Asian RSFSR) | CRET
+ Cricotrachelites BODE, 1953
+ Critoderma CARPENTER, 1986
+ Critotrachelus CARPENTER, 1986
+ Cryptauchenia BODE, 1953
+ Cryptocephalites HAUPT, 1956 | Eoc., Europe (Germany) | PALEOG
+ Ctenicerium WESTWOOD, 1854
+ Curculidium HANDLIRSCH, 1907 | - Plio., Argentina (Jujuy) | NEOG
+ Curculiopsis HANDLIRSCH, 1907 | Cret., Greenland. C C D D D D D D D D D D D D D | CRET
+ Curculium WESTWOOD, 1854
+ Cyphospheron BODE, 1953
+ Diachoristes BODE, 1953
+ Diatrypamene BODE, 1953
+ Dicyphelus CARPENTER, 1986
+ Diphymation BODE, 1953
+ Diplocelides BODE, 1953
+ Diplothece BODE, 1953
+ Ditomoptera GERMAR, 1839
+ Dysmorphus BODE, 1953
+ Ecthlimma HANDLIRSCH, 1939
+ Elateridopsis ZALESSKY, 1929 | Perm., USSR (European RSFSR) | PERM
+ Elaterina GARDINER, 1961
+ Elaterites HEER, 1847 | Mio., Spitsbergen | NEOG
+ Elytrulum HANDLIRSCH, 1907 | Cret., Greenland. Enamma HANDLIRSCH, 1906b, p. 451 {"E. striatum; OD}. Little-known genus. jur., Europe (Germany) | CRET
+ Entomocantharus BODE, 1953
+ Eoallognosis HAUPT, 1950 | Eoc., Europe (Germany) | PALEOG
+ Eocassida HAUPT, 1950 | Eoc., Europe (Germany) | PALEOG
+ Eogaleruca HAUPT, 1956 | Eoc., Europe (Germany) | PALEOG
+ Eohelaeus HAUPT, 1950 | Eoc., Europe (Germany) | PALEOG
+ Eomelasoma HAUPT, 1956 | Eoc., Europe (Germany) | PALEOG
+ Episcepes BODE, 1953 | Trias., Australia (Queensland, New South Wales) | TRIAS
+ Euenarrhrus BODE, 1953
+ Eumolpites HEER, 1865
+ Eurynotellus CARPENTER, 1986
+ Eurysphinctus BODE, 1953
+ Eusarcantarus BODE, 1953 | Trias., Europe (France) | TRIAS
+ Gasrrodelus BODE, 1953
+ Gasrroratus BODE, 1953
+ Grasselites BODE, 1953
+ Gyrinites HEER, 1852
+ Halocoleus HAUPT, 1950 | Jur., England | JUR
+ Harpalidium WESTWOOD, 1854 | Jur., England | JUR
+ Heeriaopsis CARPENTER, 1986 | Jur., England | JUR
+ Helopides ROEMER, 1876 | Trias., Europe (Germany) | TRIAS
+ Helopidium WESTWOOD, 1854 | Jur., England | JUR
+ Helopium WESTWOOD, 1854 | Jur., England | JUR
+ Hemidonacia HAUPT, 1956 | Eoc., Europe (Germany) | PALEOG
+ Hexameristus BODE, 1953 | Jur., England | JUR
+ Hydrobiites HEER, 1865 | Jur., Europe (Germany), England | JUR
+ Hydroicetes BODE, 1953 | Jur., Europe (Germany) | JUR
+ Hydrophilites HEER, 1865 | Jur., England | JUR
+ Laimocenos BODE, 1953 | Jur., Europe (Germany) | JUR
+ Lamiites FRITSCH, 1889 | Jur., England | JUR
+ Latridiites HEER, 1865 | Jur., Europe (Switzerland) | JUR
+ Leptomites BODE, 1953 | Jur., Europe (Germany) | JUR
+ Leptosolenophorus BODE, 1953 | Jur., Europe (Germany) | JUR
+ Leptynticus BODE, 1953 | Jur., Europe (Germany) | JUR
+ Liassocarabites BODE, 1953 | Jur., Europe (Germany) | JUR
+ Loxocamarotus BODE, 1953 | Jur., Europe (Germany) | JUR
+ Loxostelidotus BODE, 1953 | Jur., Europe (Germany) | JUR
+ Macrorrachelites BODE, 1953 | Jur., Europe (Germany) | JUR
+ Masselytron HANDLIRSCH, 1939 | Jur., Europe (Germany) | JUR
+ Megacentrus HEER, 1852 | Jur., Europe (Switzerland) | JUR
+ Megachorites BODE, 1953 | Jur., Europe (Germany). M l i BODE 1953 227 {"M il OD}. Little-known genus. jur., Europe (Germany) | JUR
+ Melanocantharis BODE, 1953
+ Melolonthites HEER, 1847 | Trias., Japan | TRIAS
+ Mesalocistus BODE, 1953
+ Mesolobites CARPENTER, 1986 | Trias., Australia (Queensland) | TRIAS
+ Mesoncus CARPENTER, 1986
+ Loxoncus BODE, 1953
+ Mesorylites BODE, 1953
+ Metacupes GARDINER, 1961 | Trias., England. Metagrilium HANDLIRSCH, 1906b, p. 553 {"M. westwoodi; OD}. Little-known genus. WESTWOOD, 1854. jur., England | TRIAS
+ Micranthaxia HEER, 1852
+ Mikrocarpides BODE, 1953
+ Mimemala STRAND, 1936
+ Mimohelops HAUPT, 1950 | Trias., Europe (Sweden). Nannoodes HANDLIRSCH, 1906b, p. 446 {"N. pseudocistela; 00). Little-known genus.jur., Europe (Germany). Nebrioides HANDLIRSCH, 1906b, p. 455 {"Nebria dobbertinensis GEINITZ, 1 | TRIAS
+ Nitidulites HEER, 1865 | , USSR (Kazakh); Cret., USSR (Asian RSFSR) | CRET
+ Oligovarus CARPENTER, 1986 | Oligo., Europe (Germany) | PALEOG
+ Omogongylus BODE, 1953
+ Onkedodimus HANDLIRSCH, 1939
+ Ooidellus CARPENTER, 1986
+ Ooides BODE, 1953 [*'Ooides denudatus BODE]
+ Ooperiglyptus BODE, 1953 [*'0. contractus]
+ Ooperioristus BODE, 1953 [*'0. applanatus]
+ Opiselleipon BODE, 1953 [*'0. gravis]
+ Otiorrhynchites HAUPT, 1956 [*'0. densepunctatus] | Eoc., Europe (Germany) | PALEOG
+ Oxycephalites BODE, 1953 [*'0. curculioides]
+ Oxytoroptera HANDLIRSCH, 1939 [*'0. mediocris]
+ Pachypleurites HAUPT, 1952 [*'P. nodosus] | Perm., Europe (Germany) | PERM
+ Palaeobelostoma MEUNIER, 1896 [*'P. hartingi]
+ Palaeotrachys BODE, 1953 [*'P. laticollis]
+ Paleobuprestis WALKER, 1938 | Trias., USA (Arizona) | TRIAS
+ Paleoipidus WALKER, 1938 [*'P. perforatus] | Trias., USA (Arizona) | TRIAS
+ Paleoscolytus WALKER, 1938 [*'P. divergens] | Trias., P P P P P P P P P P P P P P Paracurculium HANDLIRSCH, 1906b, p. 455 ["'Curculionites punctatus GEINITZ, 1894, p. 77; OD}. Little-known genus. luI'., Europe (Germany). Paradoggeria HANDLIRSCH, | TRIAS
+ Parakeleusticus HAUPT, 1950 [*'P. posthumus] | Eoc., Europe (Germany). Parandrexis MARTYNOV, 1926a, p. 19 ["'P. parvula; OD}. Little-known genus. MEDVEDEV, 1969. lur., USSR (Kazakh). Parasilphites HANDLIRSCH, 1906b, p. 547 [·Silphites angusticolli | PALEOG
+ Parnosoma CARPENTER, 1986
+ Paropiophorus HAUPT, 1950 [*'P. nitidulus] | Trias., USSR (Kirghiz). Periboloptera HANDLIRSCH, 1939, p. ["'P. rotunda; OD}. Little-known genus.lur., Europe (Germany) | TRIAS
+ Peridosoma CARPENTER, 1986 [*'Perosoma praecisum BODE]
+ Petrorophus HEER, 1852 [*'P. truncatus]
+ Phanerogramma COCKERELL, 1915 [*'Gyriniles minimus HEER]
+ Pholipheron BODE, 1953
+ Phytoplesion BODE, 1953 [*'P. ovatus]
+ Pimeliodes FRITSCH, 1901 [*'P. parvus] | Jur., Europe (Germany) | JUR
+ Pleuralocista BODE, 1953 [*P. insculpta] | Jur., Europe (Germany) | JUR
+ Pliosilpha GERSDORF, 1969 [*P. strausi] | Jur., Europe (Switzerland) | JUR
+ Proheuristes BODE, 1953 [*P. striatus] | Jur., England | JUR
+ Prosynactus BODE, 1953 [*P. scissus] | Jur., England | JUR
+ Prototoma HEER, 1852 [*P. striata] | Trias., Australia (Queensland) | TRIAS
+ Pseudosilphites ZEUNER, 1930 [*P. triassicus] | Jur., Europe (Germany) | JUR
+ Reeveana DUNSTAN, 1923 [*R. minor] | Trias., Australia (Queensland) | TRIAS
+ Rhabdotus BODE, 1953 [*R. cingulatus] | Jur., Europe (Germany) | JUR
+ Rhinohelaeites HAUPT, 1950 [*R. longipes] | ) Eoc., Europe (Germany) | PALEOG
+ Rhomaleus BODE, 1953 [*R. ornatus] | Jur., Europe (Germany) | JUR
+ Rhysopsalis BODE, 1953 | Jur., Europe (Germany) | JUR
+ Scalopoides BODE, 1953 | Jur., England | JUR
+ Sideriosemion BODE, 1953 [*'5. punctolineatum] | Cret., Europe (Czechoslovakia) | CRET
+ Sitonites HEER, 1865 [*'5. melanarius] | Jur., Europe (Switzerland) | JUR
+ Spalacoides BODE, 1953 [*'5. simplex] | Jur., Europe (Germany) | JUR
+ Sphaericites BODE, 1953 [*'5. concameratus] | Jur., Europe (Germany) | JUR
+ Sphaerocanrharis BODE, 1953 [*'Elater redtenbacheri GIEBEL] | Jur., England | JUR
+ Streblocardioides BODE, 1953 [*'5. striatus] | Jur., Europe (Germany) | JUR
+ Srrongylites HEER, 1865 [*'5. stygicus HEER] | Jur., Europe (Switzerland) | JUR
+ Synromopterus BODE, 1953 [*'5. latus] | Jur., Europe (Germany) | JUR
+ Telephorium WESTWOOD, 1854 [*'T. abgarus] | Jur., England | JUR
+ Tentyridium WESTWOOD, 1854 [*'T. peleus] | Jur., England | JUR
+ Tetragonides BODE, 1953 [*'T. magnus] | Jur., Europe (Germany) | JUR
+ Tetragonotrachelus BODE, 1953 [*'T. grac- T T T T T T T T T T T T T T T T T U V ilis] | Jur., Europe (Germany) | JUR
+ Theornithion BODE, 1953 [*'T. striatum] | Jur., Europe (Germany) | JUR
+ Thurmannia HEER, 1852 [*'T. punctata] | Jur., USSR (Asian RSFSR) | JUR
+ Tolype BODE, 1953 [*'T. rotundata] | Jur., Europe (Germany) | JUR
+ Trapezotrachelus BODE, 1953 [*'T.longus] | Trias., USSR (Ukraina) | TRIAS
+ Trichelepturgetes BODE, 1953 [*'T. procerus] | Jur., Europe (Germany) | JUR
+ Tricyrtus BODE, 1953 [*'T. tenuistriatus] | Jur., Europe (Germany) | JUR
+ Trigonocephalites BODE, 1953 [*'T. sulcatus] | Jur., Europe (Germany) | JUR
+ Tripsalis BODE, 1953 [*'T. praecisa] | Jur., Europe (Germany) | JUR
+ Trixagites HEER, 1865 [*'T. floralis] | Jur., Europe (Switzerland) | JUR
+ Trochiscites BODE, 1953 [*'T. capitapertus] | Jur., Europe (Germany) | JUR
+ Trochmalus BODE, 1953 | Jur., Europe (Germany) | JUR
+ Tryoniopsis DUNSTAN, 1923 [*'T. punctata] | Jur., England | JUR
+ Umkomaasia ZEUNER, 1961 [*'U. depressa] | Trias., South Africa | TRIAS
+ Velenovskya FRITSCH, 1889 [*'V. inornata] | Cret., Europe (Czechoslovakia) | CRET
+ Wollastonia HEER, 1852 [*W. ovalis]
+ Xyloeconites HAUPT, 1950 [*X. proavus] | Eoc., Eutope (Germany). Xylotupia HANDLIRSCH, 1906b, p. 557 ["X. brodiei; OD). Little-known genus. lur., England | PALEOG
+ Zetemenos BODE, 1953 [*Z. sexlineatus] | , USA (Wyoming); Oligo., USA (Colorado), Europe (Germany). HEYDEN, 1859b; SCUDDER, 1893a | PALEOG
+ Family Curculionidae (sensu latu)
+ Family MENGEIDAE Pierce, 1907
+ Triaena MENGE, 1866 | Oligo., Europe (Baltic) | PALEOG
+ Elenchus CURTIS, 1831 | /Mio., Dominican Republic | NEOG
+ Myrmecolax WESTWOOD, 1861 | Perm.-Holo. The Neuroptera include, in the suborder Sialodea, apparently the most primitive of living holometabolous insects. Precise relationships between the N europtera and Mecoptera are uncertain; | PERM
+ Sialina HAGEN, 1861 | Oligo.-Holo | PALEOG
+ Corydalus LATREILLE, 1802
+ Chauliodes LATREILLE, 1796 | Oligo., Europe (Baltic)-Holo. Family UNCERTAIN The genus described below, apparently belonging to the order Neuroptera, suborder Sialodea, is too poorly known to permit family assignment | PALEOG
+ Nematophlebia COCKERELL, 1915 [*N.plicata]
+ Raphidia LINNE, 1758 | Oligo., Europe (Baltic), USA (Colorado)-Holo | PALEOG
+ Family INOeELLIIDAE Navas, 1913
+ Inocellia SCHNEIDER, 1843 [*A. oligoneura] | Perm., USSR (European and Asian RSFSR) | PERM
+ Tychtobius MARTYNOVA, 1958 [*T. brevicostatus] | Perm., USSR (Asian RSFSR) | PERM
+ Sialidopsis ZALESSKY, 1926 [*5. kargalensis] | Perm., USSR (European RSFSR) | PERM
+ Mesomylina BODE, 1953 [*M. exornata] | Jur., Europe (Germany) | JUR
+ Family SISYRIDAE Banks, 1905
+ Sisyra BURMEISTER, 1839 [*Sisyra relicta HAGEN in PICTET & HAGEN] | Eoc.-Holo | PALEOG
+ Hemerobius LINNE, 1758
+ Megalomus RAMBUR, 1842 | Eoc., Europe (Denmark)-Holo | PALEOG
+ Prolachlanius KRUGER, 1923 [*Hemerobius resinatus HAGEN in PICTET & HAGEN] | Oligo., Europe (Baltic) | PALEOG
+ Prophlebonema KRUGER, 1923 [*P. resinata] | Oligo., Europe (Baltic) | PALEOG
+ Prospadobius KRUGER, 1923 [*Hemerobius moestus HAGEN in PICTET & HAGEN] | Jur., USSR (Kazakh) | JUR
+ Family CHRYSOPIDAE Hagen, 1866
+ Chrysopa LEACH, 1815 [*'Paleochrysa creedei CARPENTER] | Oligo., USA (Colorado) | PALEOG
+ Cimbrochrysa SCHLUTER, 1982 [*'c. moleriensis] | Eoc., Europe (Denmark) | PALEOG
+ Dyspetochrysa ADAMS, 1967 [*'Tribochrysa vetuscula SCUDDER] | Oligo., USA (Colorado) | PALEOG
+ Nothochrysa MACLACHLAN, 1868 | Oligo., Europe (Germany)-Holo | PALEOG
+ Paleochrysa SCUDDER, 1890 [*'P. stricta] | Oligo., USA (Colorado) | PALEOG
+ Archeosmylus RIEK, 1953 [*'A. peetinatus] | , Australia (New South Wales); Trias., Australia (Queensland) | TRIAS
+ Family OSMYLIDAE Leach, 1815
+ Osmylus LATREILLE, 1802 [*'E. balli] | Trias | TRIAS
+ Mesoberotha CARPENTER, 1991 [*Proberotha superba] | Trias., Australia (Queensland).-- (Riek, 1955) | TRIAS
+ Proberothella RIEK, 1955 [*P. e/ongata] | Cret.-Holo | CRET
+ Berotha WALKER, 1860 [*B. enigmatica] | Cret., Lebanon | CRET
+ Proberotha KRUGER, 1923 [*P. prisca] | Jur.-Holo | JUR
+ Coniopteryx CURTIS, 1834 [*A. prisca] | Oligo., Europe (Baltic) | PALEOG
+ Archiconiopteryx ENDERLEIN, 1909 [*A. liasina] | Jur., Europe (Germany) | JUR
+ Archiconis ENDERLEIN, 1930 [*A. electrica] | Oligo., Europe (Baltic) | PALEOG
+ Glaesoconis MEINANDER, 1975 [*G. cretica] | Cret., USSR (Asian RSFSR), Lebanon | CRET
+ Heminiphetia ENDERLEIN, 1930 [*H.jritschi] | Oligo.-Holo | PALEOG
+ Nemoptera LATREILLE, 1802 | Oligo., USA (Colorado, Montana) | PALEOG
+ Kalligramma WALTHER, 1904 | Jur., Europe (Germany), USSR (Kazakh) | JUR
+ Psychopsis NEWMAN, 1842 | Cret., USSR (Kazakh) | CRET
+ Grammapsychops MARTYNOVA, 1954 | } Cret., USSR (Asian RSFSR) | CRET
+ Propsychopsis KRUGER, 1923 [*0. spillerae] | Oligo., Europe (Baltic). Triassopsychops TIllYARD, 1922b, p. 467 {"T. superba; OD). Fore wing triangular in shape, almost as broad as long; crossveins not forming d fi it i T i A t li (Q l d) / ~,-_ / | PALEOG
+ Petropsychops RIEK, 1956 [*P. superba] | Jur., Europe (Germany) | JUR
+ Family NYMPHIDAE Rambur, 1842
+ Nymphes LEACH, 1814 [*M. hageni] | Jur., Europe (Germany) | JUR
+ Sialium WESTWOOD, 1854 [*S. sipylus] | Jur., Europe (Germany) | JUR
+ Sogjuta MARTYNOVA, 1958 [*S. speciosa] | Fore wing as in Chrysoleonites but more oval; costal area nearly uniform in width; RS with fewer branches, Trias., USSR (Kirghiz) | TRIAS
+ Myrmeleon LINNE, 1767
+ Dendroleon BRAUER, 1866 | Oligo.-Holo | PALEOG
+ Ascalaphus FABRICIUS, 1775 [*Ascalaphus proavus HAGEN] | Oligo., Europe (Germany) | PALEOG
+ Neadelphus MACLEOD, 1970 | Jur., USSR (Kazakh) | JUR
+ Epigambria HANDLIRSCH, 1939 | } Jur., Europe (Germany) | JUR
+ Glottidia BODE, 1953 | Jur., Europe (Germany) | JUR
+ Hondelagia BODE, 1953 | Jur., Europe (Germany) | JUR
+ Liassopsychops BODE, 1953 | Jur., Europe (Germany) | JUR
+ Lithosmylidia RIEK, 1955 | Trias., Australia (Queensland) | TRIAS
+ Loxophleps HANDLIRSCH, 1939 | Jur., Europe (Germany) | JUR
+ Megapolysroechus TILLYARD, 1933 | Jur., England | JUR
+ Melamnous HANDLIRSCH, 1939 | Jur., Europe (Germany) | JUR
+ Melaneimon HANDLIRSCH, 1939 [*M. dobbertinianus] | Jur., Europe (Germany) | JUR
+ Palaeoleon RICE, 1969 [*P. ferrogeneticus] | Jur., England | JUR
+ Parasisyra ZALESSKY, 1933 [*P. kargalica] | Perm., USSR (European RSFSR) | PERM
+ Parhemerobius BODE, 1953 [*P. dilatatus] | Jur., Europe (Germany) | JUR
+ Petrushevskia MARTYNOVA, 1958 [*P. borisi] | } Trias., USSR (Kirghiz) | TRIAS
+ Trichophlebia BODE, 1953 [*T. multistriata] | Perm., USA (Kansas) | PERM
+ Archoglossopterum MARTYNOVA, 1958 [*'A. shoricum] | Perm., USSR (European RSFSR) | PERM
+ Family JURINIDAE Zalessky, 1929
+ Jurina ZALESSKY, 1929 [*J. scutulata] | Perm., USSR (Asian RSFSR) | PERM
+ Permoberothella RIEK, 1953 [*P. perplexa] | Perm., Australia (New South Wales) | PERM
+ Protojurina MARTYNOVA, 1958 [*P. cellulosa] | Perm., USSR (Asian R$FSR) | PERM
+ Surijoka MARTYNOVA, 1958 [*5. grandicella] | Perm., USSR (Asian RSFSR).--F1G. 199,7. *U. sibiricum; fore wing, X3.5 (Martynova, 1952a) | PERM
+ Mesojurina MARTYNOVA, 1943 [*M. sogjutensis] | Jur., USSR (Kirghiz) | JUR
+ Microptysma MARTYNOVA, 1958 | Perm., USSR (Asian RSFSR) | PERM
+ Microptysmodes MARTYNOVA, 1958 [*c. be/montensis] | Perm., USSR (European RSFSR) | PERM
+ Cladochoristella RIEK, 1955 | Trias | TRIAS
+ Prorhyacophila RIEK, 1955 | Trias., Australia (Queensland), USSR (Kirghiz) | TRIAS
+ Liassophila TILLYARD, 1933
+ Epididontus HANDLIRSCH, 1939
+ Karataulius SUKATSHEVA, 1968
+ Liadoptilia HANDLIRSCH, 1939
+ Liadotaulius HANDLIRSCH, 1939
+ Metarchitaulius HANDLIRSCH, 1939
+ Palaeotaulius HANDLIRSCH, 1939
+ Parataulius HANDLIRSCH, 1939
+ Phryganeidiuffi WESTWOOD, 1854 | Jur | JUR
+ Dysoneura SUKATSHEVA, 1968
+ Prosepididontus HANDLIRSCH, 1920 [*P. calopteryx] | Cret.-Holo | CRET
+ Rhyacophila PICTET, 1834 | Oligo.-Holo. G1ossosoma CURTIS, 1834, p. 216. Holo | PALEOG
+ Electragapetus ULMER, 1912 [*E. scitulus] | Oligo., Europe (Baltic) | PALEOG
+ Palaeohydrobiosis BOTOSANEANU & WICHARD, 1983 [*P. siberambra] | Cret | CRET
+ Electralberta BOTOSANEANU & WICHARD, 1983 [*E. cretacica] | Oligo., Europe (Baltic)-Holo | PALEOG
+ Electracanthinus ULMER, 1912 [*E. klebsi] | , USA (Kentucky); Oligo., Europe (Baltic) | PALEOG
+ Prophiloptamus SUKATSHEVA, 1973 [*P. asiaticus] | Oligo.- H l | PALEOG
+ Hydroptila DALMON, 1819
+ Agraylea CURTIS, 1834 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Electrotrichia ULMER, 1912 | Oligo., Europe (Baltic) | PALEOG
+ Palaeagapetus ULMER, 1912 | Cret.-Holo | CRET
+ Polycentropus CURTIS, 1835 | Oligo., USA (Colorado)-Holo | PALEOG
+ Archaeoneuredipsis ULMER, 1912 | Oligo., Europe (Baltic) | PALEOG
+ Archaepolycentra BOTOSANEANU & WICHARD, 1983 | Oligo., Europe (Baltic)-Holo. N N P P T t a w o a e P A L [ a m a c s t u o H D | PALEOG
+ Nyctiophylacodes ULMER, 1912 | Oligo., Europe (Baltic).--F1G. 202,8. "N. curtula; hind wing, X12 (Ulmer, 1912) | PALEOG
+ Nyctiophylax BRAUER, 1865
+ Phylocentropus BANKS, 1907 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Plectrocnemia STEPHENS, 1836 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Tinodes CURTIS, 1834 | Oligo.-Holo | PALEOG
+ Psychomyia PICTET, 1834
+ Archaeotinodes ULMER, 1912 | Oligo.-Holo | PALEOG
+ Hydropsyche PICTET, 1834 | Oligo., Europe (Baltic), USA (Colorado)-Holo | PALEOG
+ Diplectrona WESTWOOD, 1840 | Oligo., Europe (Baltic)-Holo. R CUA Electropsilotes SC I Prosepididontus ~~::::;~;::======~M1 M2 Palaeocrunoecia Electracanthinus Archaeotinodes Prosepididontidae, Glossosomatidae, Phi Odontoceridae, | PALEOG
+ Electrodiplectrona ULMER, 1912 | Oligo., Europe (Baltic).-- X5.5 (Ulmer, 1912) | PALEOG
+ Potamyia BANKS, 1900 | Oligo., Europe (Baltic)-Holo. o radial cell ~---===~ Electrocerum Electragapetus Nyctiophylacodes Electrocrunoecia lopotamidae, Polycentropodidae, Psychomyidae, d Helicopsychidae (p. 363-368). Family | PALEOG
+ Taymyrelectron BOTOSANEANU & WICHARD, 1983 | Eoc.-Holo | PALEOG
+ Phryganea LINNE, 1758 | , Europe (Germany), USA (Colorado); Mio., Europe (Germany, France), USSR (Asian RSFSR)-Holo | NEOG
+ Oligotricha RAMBUR, 1842 | Larval cases of sand, Oligo.-Holo | PALEOG
+ Molanna CURTIS, 1834 | Oligo.- Bolo | PALEOG
+ Calamoceras BRAUER, 1865 | Oligo., Europe (Baltic) | PALEOG
+ Georgium FISCHER, 1964 | Oligo.-Holo | PALEOG
+ Odontocerus LEACH, 1815
+ Electrocerum ULMER, 1912 | Oligo., Europe (Baltic) | PALEOG
+ Electropsilotes ULMER, 1912 | Oligo., Europe (Baltic) | PALEOG
+ Marilia MULLER, 1880 | Cret.-Holo | CRET
+ Leptocerus LEACH, 1815 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Praeathripsodes BOTOSANEANU & WICHARD, 1983 [*P. jantar] | Oligo., Europe (Baltic)-Holo | PALEOG
+ Triplectides KOLENATI, 1858 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Family GOERIDAE Ulmer, 1903
+ Goera STEPHENS, 1829 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Silo CURTIS, 1830 | Eoc.-Holo | PALEOG
+ Limnophilus LEACH, 1815 [*Eopteryx florissantius COCKERELL] | Oligo.-Holo | PALEOG
+ Lepidostoma RAMBUR, 1842
+ Archaeocrunoecia ULMER, 1912 [*A. tenuicornis] | Oligo., Europe (Baltic) | PALEOG
+ Electraulax ULMER, 1912 [*E. breviuscula] | Oligo., Europe (Baltic) | PALEOG
+ Elecrrocrunoecia ULMER, 1912 [*E. turbata] | Oligo., Europe (Baltic) | PALEOG
+ Maniconeurodes ULMER, 1912 [*M. conventzi] | Oligo., Europe (Baltic) | PALEOG
+ Palaeolepidostoma ULMER, 1912 [*Trichostomum proavum HAGEN in PICTET & HAGEN] | Oligo.-Holo | PALEOG
+ Brachycentrus CURTIS, 1834 | Oligo.-Holo | PALEOG
+ Beraea STEPHENS, 1833
+ Bereodes EATON, 1867 | Oligo.-Holo | PALEOG
+ Helicopsyche VON SIEBOLD, 1856 | Oligo., Europe (Baltic) | PALEOG
+ Palaeohelicopsyche ULMER, 1912 | Oligo., Europe (Baltic) | PALEOG
+ Adelomyia ULMER, 1912 | Oligo., Europe (Baltic) | PALEOG
+ Archiptilia HANDLIRSCH, 1939 | ] Jur., Europe (Germany) | JUR
+ Aulacomyia ULMER, 1912 | Oligo., Europe (Baltic) | PALEOG
+ Calamodontus BOTOSANEANU & WICHARD, 1983 | Oligo., USA (Colorado) | PALEOG
+ Folindusia BERRY, 1927 | ] Jur., Europe (Germany) | JUR
+ Metauichopteridium HANDLIRSCH, 1939 [*M. con] | } Jur., Europe (Germany) | JUR
+ Ocnerites OPPENHEIM, 1885 [*0. macroceraticus] | } Oligo., Europe (Germany) | PALEOG
+ Ogmomyia ULMER, 1912 [*0. cuspidata] | } Jur., Europe (Germany) | JUR
+ Perissomyia ULMER, 1912 [*P. su] | Oligo., Europe (Baltic) | PALEOG
+ Pseudoberaeodes ULMER, 1912 [*P. mira] | Jur., Europe (Germany) | JUR
+ Sphaleropalpus ULMER, 1912 [*5. pumicatus] | Oligo., Europe (Balric) | PALEOG
+ Stenoptilomyia ULMER, 1912 [*5ericostoma hyalinum HAGEN in PICTET & HAGEN] | Oligo., Europe (Baltic) | PALEOG
+ Tipulidites WIELAND, 1925 [*T. afjinis] | Trias., Sourh America (Argenrina). Trichopterella COCKERELL, 1924b, p. 140 [*T. torta; OD}. Little-known wing. eret., Asia (Mongolia) | TRIAS
+ Trichopteridium GEINITZ, 1880 [*T. gracile] | Paleoc., England- Holo. P S U a a a o f E D E | PALEOG
+ Parasabatinca WHALLEY, 1978 [*P. aftimacrai] | Cret., Lebanon | CRET
+ Sabatinca WALKER, 1863 [*U. sukatshevae] | , Europe (Baltic); Mio., Burma-Holo. Undopteryx SKALSKI, 1979a, p. 91 [*U. sukatshevae; OD]. Similar to Sabatinca (recent), but vein R forked in hind wing. SKALSKI, 1979b. Cm., USSR (Asian RSFSR) | NEOG
+ Eriocrania ZELLER, 1851
+ Dyseriocrania SPULER, 1910 | Mio., Burma-Holo | NEOG
+ Electrocrania KUSNEZOV, 1941 [*E. immensipalpa] | Oligo.-Holo | PALEOG
+ Incurvaria HAWORTH, 1828
+ Adelites REBEL, 1934 [*A. electreella] | } Oligo., Europe (Baltic) | PALEOG
+ Prophalonia REBEL, 1935 [*P. gigas] | Paleoc.-Holo | PALEOG
+ Family COSSIDAE Leach, 1815
+ Cossus FABRICIUS, 1793 [*A.] | Oligo., USA (Colorado) | PALEOG
+ Xyleutites KOZHANCHIKOV, 1957 [*X. miocenicusl 00). Radial cell of fore wing elongate] | Mio., USSR (European RSFSR) | NEOG
+ Family TORTRICIDAE Latreille, 1802
+ Tortrix LINNE, 1758 | Oligo., USA (Colorado)-Holo | PALEOG
+ Electresia KUSNEZOV, 1941 [*E. zaluskii] | Oligo., Europe (Baltic) | PALEOG
+ Family TINEIDAE Latreille, 1810
+ Tinea LINNE, 1758
+ Architinea REBEL, 1934 [*A. balticella] | Oligo., Europe (Baltic) | PALEOG
+ Dysmasiites KUSNEZOV, 1941 [*D. carpenteri] | Oligo., Europe (Baltic) | PALEOG
+ Ethmia HUBNER, 1819 | Oligo., USA (Colorado)-Holo | PALEOG
+ Glessoscardia KUSNEZOV, 1941 [*G. gerasimovi] | Oligo., Europe (Baltic) | PALEOG
+ Martynea KUSNEZOV, 1941 [*M. rebeli] | Oligo., Europe (Baltic) | PALEOG
+ Monopibaltia SKALSKI, 1974 [*M. ignitella] | - Oligo., England | PALEOG
+ Proscardiites KUSNEZOV, 1941 [*P. mar- Xyle Dysmasiites Simulotenia Cossidae] | Oligo., Europe (Baltic) | PALEOG
+ Scardiites KUSNEZOV, 1941 [*'P. meyricki] | Oligo., Europe (Baltic) | PALEOG
+ Simulotenia SKALSKI, 1977 [*'5. intermedia] | Oligo., Europe (Baltic) | PALEOG
+ Tillyardinea KUSNEZOV, 1941 [*'T. eocaenica] | Oligo., Europe (Baltic) | PALEOG
+ Tineolarnima REBEL, 1934 [*'T. aurella] | Oligo., Europe (Baltic) | PALEOG
+ Tineosemopsis SKALSKI, 1974 [*'T. decurtatus] | Oligo., Europe (Baltic) | PALEOG
+ Family PSYCHIDAE Boisduval, 1828
+ Psyche SCHRANK, 1801 | Mio., Europe (Germany)-Holo | NEOG
+ Sterrhopteryx HUBNER, 1825 | } Oligo | PALEOG
+ Prolyonetia KUSNEZOV, 1941 [*P. cockerelli] | Oligo.- Holo | PALEOG
+ Oecophora LATREILLE, 1796
+ Borkhausenites REBEL, 1934 [*B. bacho/eni] | Oligo., Europe (Baltic) | PALEOG
+ Depressarites REBEL, 1935 [*D. levipalpella] | Oligo., Europe (Baltic). G M N P S h w a E A w a H C h a | PALEOG
+ Glesseumeyrickia KUSNEZOV, 1941 [*G. henrikseni] | Oligo., Europe (Baltic) | PALEOG
+ Microsymmocites SKALSKI, 1977 [*M. kuznetzovi] | Oligo., Europe (Baltic) | PALEOG
+ Neoborkhausenites SKALSKI, 1977 [*Borkhausenites incertella REBEL] | Oligo., Europe (Baltic) | PALEOG
+ Paraborkhausenites KUSNEZOV, 1941 [*Borkhausenites vicinella REBEL] | Oligo., Europe (Baltic) | PALEOG
+ Schiffermuelleria HUBNER, 1826 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Family ELACHISTIDAE Stainton, 1854
+ Elachista TREITSCHKE, 1833
+ Anybia STAINTON, 1854 | Oligo., Europe (Baltic)-Holo. Family COPROMORPHIDAE Meyrick, 1905 [Copromorphidae MEYRICK. 1905, p. 606) Wings broad, venation not reduced, or wings deeply cleft, hind wing divided into at least 6 plu | PALEOG
+ Copromorpha MEYRICK, 1886 | Oligo.-Holo | PALEOG
+ Symmoca HUBNER, 1825
+ Oegoconiites KUSNEZOV, 1941 | Oligo., Europe (Baltic) | PALEOG
+ Family ZYGAENIDAE Latreille, 1809
+ Zygaena FABRICIUS, 1775 | Mio., Europe (Germany)-Holo | NEOG
+ Zygaenites BURGEFF, 1951 | Mio., Europe (Germany). s e a L o P G P h v a L T H n w o L r H P T | NEOG
+ Family PYRALIDAE Latreille, 1809
+ Pyralis LINNE, 1758
+ Glendotricha KUSNEZOV, 1941 | Oligo., Europe (Baltic) | PALEOG
+ Pyralites HEER, 1856 | Eoc.-Holo | PALEOG
+ Thyris LASPEYRES, 1803 | Eoc., USA (Colorado) | PALEOG
+ Family HESPERIIDAE Leach, 1815
+ Hesperia FABRICIUS, 1793 [*P. abdita] | Oligo., Europe (France) | PALEOG
+ Papilio LINNE, 1758 | Pleist.-Holo | HOL
+ Luehdorfia KRUGER, 1878 | Mio., Europe (Germany). -- FIG, 207,2. "T. ruminianus; fore and hind wings, X2 (Scudder, 1875a) | NEOG
+ Family PIERIDAE Boisduval, 1836
+ Pieris SCHRANK, 1801
+ Aporia HUBNER, 1819 | Mio., Europe (Yugoslavia) | NEOG
+ Oligodonta F. M. BROWN, 1976 | Oligo., USA (Colorado) | PALEOG
+ Pontia FABRICIUS, 1807 | Mio., Europe (Germany)-Holo. S [ w t b H N A A C E J L L N N Stolopsyche SCUDDER, 1889, p. 467 {"S. libytheoides; OD}. Similar to Pieris (recent) but with longer labial palpi and shorter basal antenna | NEOG
+ Aglais DALMAN, 1816 | Mio., USSR (Asian RSFSR)-Holo | NEOG
+ Apanthesis SCUDDER, 1889 | Oligo., USA (Colorado), | PALEOG
+ Chlorippe DOUBLEDAY, 1844 | Oligo., USA (Colorado)-Holo | PALEOG
+ Eugonia HUBNER, 1819 | Mio., Europe (Yugoslavia)-Holo | NEOG
+ Jupitellia CARPENTER, 1986
+ Jupiteria SCUDDER, 1889 | Oligo., Europe (France) | PALEOG
+ Neorinopis BUTLER, 1873 | Oligo., Europe (France) | PALEOG
+ Nymphalites SCUDDER, 1889 | Oligo., USA (Colorado) | PALEOG
+ Vanessa FABRICIUS, 1807 | Mio., USSR (European RSFSR)- Holo. R b o a Small to large moths. Antennae simple or pectinate; maxillary palpi commonly with I segment; ocelli usually absent. Wings broad, venation very diverse. In fo | NEOG
+ Family GEOMETRIDAE Leach, 1815
+ Lycaena FABRICIUS, 1807 | Oligo., Europe (France) | PALEOG
+ Lithopsyche BUTLER, 1889 | -Oligo., England | PALEOG
+ Riodinella DURDEN & ROSE, 1978 | Oligo.-Holo | PALEOG
+ Libythea FABRICIUS, 1807
+ Barbarothea SCUDDER, 1892 | Oligo., USA (Colorado) | PALEOG
+ Prolibythea SCUDDER, 1889 | Oligo., USA (Colorado) | PALEOG
+ Family LYCAENIDAE Leach, 1815
+ Geometra LINNE, 1758 [*G. repens KERNBACH] | Oligo., USA (Colorado)-Holo | PALEOG
+ Family CTENUCHIDAE Kirby, 1837
+ Ctenucha KIRBY, 1837
+ Oligamatites KUSNEZOV, 1928 [*0. martynovi] | Oligo., USSR (Kazakh) | PALEOG
+ Arctiites REBEL, 1898 [*A. deletus] | Mio., Europe (Italy) | NEOG
+ Argyresthites REBEL, 1934 [*A. succinella] | Oligo., Europe (Baltic) | PALEOG
+ Cerurites KERNBACH, 1967 [*c. wagneri] | Plio., Europe (Germany) | NEOG
+ Chionaemopsis COCKERELL & LEVEQUE, 1931 [*c. quadrifasciatus] | Eoc., USA (Colorado) | PALEOG
+ Epinomeuta REBEL, 1935 [*E. truncatipennella] | Oligo., Europe (Baltic) | PALEOG
+ Eriocranites KERNBACH, 1967 [*E. hercynieus] | Plio., Europe (Germany) | NEOG
+ Gallerites KERNBACH, 1967 [*G. keleri] | -Oligo., England | PALEOG
+ Lycaenites REBEL, 1898 [*L. gabbroensis] | - Oligo., Europe (France), England | PALEOG
+ Scythropites REBEL, 1935 [*S. balticella] | Oligo., Europe (Baltic) | PALEOG
+ Sphingidites KERNBACH, 1967 [*S. weidneri] | Plio., Europe (Germany) | NEOG
+ Symmocites KUSNEZOV, 1941 [*S. rohdendorfi] | } Oligo., Europe (Baltic). Suborder UNCERTAIN The following genera, apparently belonging to the order Lepidoptera, are too poorly known to allow assignment to suborders | PALEOG
+ Noctuites HEER, 1849 [*N. effossus HEER] | , Europe (Yugoslavia); Plio., Europe (Germany) | NEOG
+ Stigmellites KERNBACH, 1967 [*S. heringi] | Plio., Europe (Germany). Order MECOPTERA Packard, 1886 | NEOG
+ Mecoptera COMSTOCK &. COMSTOCK, 1895 [*A. kaltanica] | Perm., USSR (Asian RSFSR) | PERM
+ Megachorista MARTYNOVA, 1958 | Perm., USSR (Asian RSFSR) | PERM
+ Pinnachorista MARTYNOVA, 1958 | Perm., USSR (Asian v s v d 2~ RS Eomerope Tomiochorista Cycloptera Pinnachorista Tomiochoristidae, Permopanorpidae, and Eomer- 82-384). RSFSR) | PERM
+ Cydorista MARTYNOVA, 1958 | Perm., USSR (Asian RSFSR) | PERM
+ Cydoptera MARTYNOVA, 1958 | Perm., USSR (Asian RSFSR) | PERM
+ Kaltanochorista MARTYNOVA, 1958 [*M. proavita] | Perm., USSR (Asian RSFSR) | PERM
+ Asiachorista MARTYNOVA, 1958 [*A. neuburgae] | Perm., USSR (Asian RSFSR), Brazil | PERM
+ Stigmorista MARTYNOVA, 1958 [*S. captiosa] | Perm., USSR (Asian RSFSR) | PERM
+ Sylvopanorpa MARTYNOV, 1940 [*S. carpenteri] | ] Perm., USSR (Asian RSFSR) | PERM
+ Xenochorista RIEK, 1953 [*X. splendida] | Perm., USA (Kansas) | PERM
+ Tychtopsyche MARTYNOVA, 1958 [*T. beljanini] | Perm., USSR (European RSFSR) | PERM
+ Nannochoristella RIEK, 1953 | Perm., Australia (New South Wales) | PERM
+ Neochoristella RIEK, 1953 | Perm., Australia (New South Wales) | PERM
+ Panorpa LINNE, 1758 | Oligo., USA (Colorado) | PALEOG
+ Panorpodes MACLACHLAN, 1875 | -Jur. Neorthophlebia HANDLIRSCH, 1906b, p. 479 {"'N. maculipennis; OD} {=Mesobittacus HANDLIRSCH, 1939, p. 88 (type, M. minutus); Pleobittacus BODE, 1953, p. 289 (type, P. retrojlexus)}. SC not quite | JUR
+ Auxobiuacus BODE, 1953 | } Trias., USSR (Asian RSFSR) | TRIAS
+ Haplobiuacus BODE, 1953
+ Protobiuacus TILLYARD, 1933 | Trias., Australia (Queensland); jur., England, Europe (Germany), ?China (Xinjiang) | TRIAS
+ Family BITTAeIDAE Handlirsch, 1906
+ Bittacus LATREILLE, 1805 [*P. avitus] | Eoc., USA (Colorado) | PALEOG
+ Chorista KWG, 1836 | } Perm., | PERM
+ Permotipula TILLYARD, 1929 [*B. po/yneura] | Perm., Australia (New South Wales), USSR (Asian RSFSR).-- Xll (Tillyard, 1935d) | PERM
+ Choristotanyderus RIEK, 1953 [*c. nanus] | } Eoc., Europe (Denmark) | PALEOG
+ Dobbertinia HANDLIRSCH, 1920 [*D. reticulata] | } Eoc., Europe (Denmark) | PALEOG
+ Mesotanyderus RIEK, 1955 [*M. jonesi] | Trias., Australia (Queensland) | TRIAS
+ Neoparachorista RIEK, 1955 [*N. perkinsi] | Trias., Australia (Queensland) | TRIAS
+ Parabittacus HANDLIRSCH, 1939 [*P. analis] | Jur., Europe (Germany) | JUR
+ Parorthophlebia BODE, 1953 [*P. grasselensis] | Jur., Europe (Germany) | JUR
+ Permotanyderus RIEK, 1953 [*P. ableptus] | Perm., Australia (New South Wales) | PERM
+ Pronotiothauma WILLMANN, 1978 [*Thaumatomerope neuropteroides RASNITSYN in PONOMARENKO & RASNITSYN] | } Trias., USSR (Kirghiz) | TRIAS
+ Xenochoristella RIEK, 1955 [*x. hillae] | Perm., Australia (New South Wales) | PERM
+ Xenopanorpa RIEK, 1955 [*X. didymovena] | Oligo., Europe (Baltic)-Holo.-- FIG, 216. P. klebsiana DAMPF; lateral view, X30 (Dampf, 1911) | PALEOG
+ Order DIPTERA Linne, 1758
+ Haplotipula BODE, 1953 | Jur., Europe (Germany) | JUR
+ Leptotipuloides CARPENTER, 1986 | Jur., Europe (Germany) | JUR
+ Liassotipula TILLYARD, 1933 | Jur., England | JUR
+ Ozotipula BODE, 1953 [*E. geinitzi] | Oligo.-Holo | PALEOG
+ Tanyderus PHILIPPI, 1865
+ Maeroehile LOEW, 1850 [*M. spectrum] | Oligo., Europe (Baltic) | PALEOG
+ Family TIPULIDAE Leach, 1815
+ Tipula LINNE, 1758 | , Europe (France); Mio., Europe (Germany)- Holo | NEOG
+ Adelphomyia BERGROTH, 1891 | Oligo., England, Europe (Baltic)-Holo | PALEOG
+ Amoeha OSTEN-SACKEN, 1859 | Oligo., USA (Colorado)-Holo | PALEOG
+ Atarba OSTEN-SACKEN, 1869 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Ceratoeheilus WESCHE, 1910 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Cladoneura SCUDDER, 1894 [*c. willistoni] | Oligo., USA (Colorado) | PALEOG
+ Cladura OSTEN-SACKEN, 1859 | Oligo., USA (Colorado)-Holo | PALEOG
+ Cylindrotoma MACQUART, 1834 [*c. bastini] | Oligo., Europe (Baltic)-Holo | PALEOG
+ Dicranomyia STEPHENS, 1829 | Oligo., England, USA (Colorado)-Holo | PALEOG
+ Dieranoptyeha OSTEN-SACKEN, 1859 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Eleetrolabis ALEXANDER, 1931 [*E. extincta] | Oligo., Europe (Baltic) | PALEOG
+ Elephanromyia OSTEN-SACKEN, 1859 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Empeda OSTEN-SACKEN, 1869 | Oligo., England-Holo | PALEOG
+ Erioeera MACQUART, 1838 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Gonomyia MEIGEN, 1818 | Oligo., England-Holo | PALEOG
+ Helius LEPELETIER & SERVILLE, 1828 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Hexatoma LATREILLE, 1809 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Holorusia LOEW, 1863 | Oligo., England-Holo | PALEOG
+ Limnobia MEIGEN, 1818 | Oligo., England, Europe (Germany, France)-Holo | PALEOG
+ Limnocema SCUDDER, 1894 [*L. marcescens SCUDDER] | Oligo., USA (Colorado) | PALEOG
+ Limnophila MACQUART, 1834 | Oligo., England, Europe (Baltic)-Holo | PALEOG
+ Manapsis SCUDDER, 1894 [*M. anomala] | Oligo., USA (Colorado) | PALEOG
+ Megistocera WIEDEMANN, 1828 | Oligo., England-Holo | PALEOG
+ Mongoma WESTWOOD, 1881 | Oligo., England-Holo | PALEOG
+ Ormosia RONDANI, 1856 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Oryctogma SCUDDER, 1894 [*0. sackenii] | Oligo., Europe (Baltic)-Holo | PALEOG
+ Pilaria SINTENIS, 1889
+ Polymera WIEDEMANN, 1821 [*P. rediviva] | , Canada (Alberta); Oligo., Europe (Baltic)-Holo | PALEOG
+ Rhabdomastix SKUSE, 1889 [*R. extinctus] | Oligo., USA (Colorado) | PALEOG
+ Ripidia RONDANI, 1856 [*5. simplex] | Eoc., Scotland | PALEOG
+ Tanymera ALEXANDER, 1931 [*T. fritschi] | Oligo., Europe (Baltic) | PALEOG
+ Tanysphyra LOEW, 1850 [*T. gracilis] | Oligo., Europe (Baltic) | PALEOG
+ Thaumastoptera MIK, 1866 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Trentepohlia BIGOT, 1854 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Trichocera MEIGEN, 1803 | Oligo., Europe (Germany)-Holo | PALEOG
+ Trichoneura LOEW, 1850 [*T. vulgaris] | Oligo., Europe (Baltic)- Holo | PALEOG
+ Tricyphona ZETTERSTEDT, 1837 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Ula HALIDAY, 1833 | , England, Europe (Baltic); Mio., Mexico-Holo. Cre ~ ==::::::-,.1 ~: Euphlebotomus Libanochlites Rhaetomyia c::::::~:~~S Tanyderophryne CU M ~~0 AL'h~"tL55~d".u ~~\-~ ~~--- ~ rc I en Ipes Psychodidae, | NEOG
+ Brunettia ANNANDALE, 1910 [*E. tertiaria] | Mio., Burma | NEOG
+ Nemopalpus MACQUART, 1840 | j Mio., Dominican Republic-Holo | NEOG
+ Pericoma WALKER, 1856 | Cret., Lebanon | CRET
+ Phlebotomus RONDANI & BERTE, 1840 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Telmatoscopus EATON, 1904 | Jur., USSR (Kazakh) | JUR
+ Family DIXIDAE van der Wulp, 1877
+ Dixa MEIGEN, 1818 | Oligo., England, Europe (Baltic, France)- Holo | PALEOG
+ Paradixa TONNOIR, 1924 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Family CULICIDAE Billberg, 1820
+ Culex LINNE, 1758 | Oligo., England-Holo | PALEOG
+ Anopheles MEIGEN, 1818 | Oligo., Europe (Germany)-Holo | PALEOG
+ Chaoborus LICHTENSTEIN, 1800 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Chironomaptera PING, 1928 [*Samarura gregaria GRABAU] | Cret., China (Shandong), Mongolia | CRET
+ Mansonia BLANCHARD, 1901 | Oligo., Europe (Baltic)- Holo | PALEOG
+ Mochlonyx LOEW, 1844 [*A. tschernovskiji] | Trias., USSR (Kirghiz) | TRIAS
+ Cretodiamesa KALUGINA, 1976 [*G. taimyrica] | Cret., USSR (Asian RSFSR) | CRET
+ Cricotopus VAN DER WULP, 1874 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Diamesa WALTL, 1837 [*E] | Cret., USSR (Asian RSFSR) | CRET
+ Eurycnemus VAN DER WULP, 1874 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Libanochlites BRUNDIN, 1976 [*L. neocomicus] | Cret., Europe (Lebanon) | CRET
+ Merriocnemus VAN DER WULP, 1874 | Cret., Canada (Manitoba)-Holo | CRET
+ Nomochirus COLLADO, 1926 [*N. sampelayoi] | Oligo., England-Holo | PALEOG
+ Sendelia DUISBERG, 1868 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Smittia HOLMGREN, 1869 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Spaniotoma PHILIPPI, 1865 | Cret., Canada (Manitoba)-Holo | CRET
+ Tanypus MEIGEN, 1803 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Tanytarsus VAN DER WULP, 1874 | Cret.-Holo | CRET
+ Ceratopogon MEIGEN, 1803 | , Canada (Manitoba), USSR (Asian RSFSR); Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Atrichopogon KIEFFER, 1906 | Cret., Canada (Manitoba)-Holo | CRET
+ Atriculicoides REMM, 1976 [*A. macrophthalmus] | Cret., USSR (Asian RSFSR) | CRET
+ Baeohelea WIRTH & BLANTON, 1970
+ Culicoides LATREILLE, 1809 | , USSR (Asian RSFSR); Mio., USA (California)-Holo | NEOG
+ Dasyhelea KIEFFER, 1913 | , Canada (Manitoba); Mio., USA (California)-Holo | NEOG
+ Eohelea PETRUNKEVITCH, 1957 [*E. stridulans] | Oligo., Europe (BaItic) | PALEOG
+ Johannsenomyia MALLOCH, 1915 | Mio., Burma, USA (California)-Holo | NEOG
+ Lasiohelea KIEFFER, 1921 | Cret., Canada (Manitobal-Holo | CRET
+ Miopalpomyia PIERCE, 1966 [*M. shilo] | Mio., USA (CaIifornia). N N P P P a M B s S N r R C v R a a b | NEOG
+ Neoculicoides PIERCE, 1966 [*N. jeanneae] | Mio., USA (California) | NEOG
+ Neopalpomyia PIERCE, 1966 [*N.freyi] | Mio., USA (California) | NEOG
+ Paraculicoides PIERCE, 1966 [*P. rouseae] | Mio., USA (California) | NEOG
+ Parapalpomyia PIERCE, 1966 [*P. ryshkoffi] | Mio., USA (California) | NEOG
+ Proroculicoides BOESEL, 1937 [*P. depressus] | Cret., Canada (Manitoba) | CRET
+ Family SIMULIIDAE Newman, 1835
+ Simulium LATREILLE, 1802 [*R. necopinata] | Trias., USSR (Kirghizl | TRIAS
+ Blepharocera MACQUART, 1843
+ Paltostomopsis COCKERELL, 1915 | Trias., USSR (Kirghiz) | TRIAS
+ Pleciofungivora ROHDENDORF, 1938 [*P. latipennis]
+ Allactoneurites ROHDENDORF, 1938 [*A.jurassicus] | Trias., USSR (Kirghiz) | TRIAS
+ Eohesperinus ROHDENDORF, 1946 [*E. martynovi]
+ Eopachyneura ROHDENDORF, 1946 [*E. trisectoralis] | Trias., USSR (Kirghiz) | TRIAS
+ Pleciofungivorella ROHDENDORF, 1946 [*P. binerva]
+ Polyneurisca ROHDENDORF, 1946 [*P. abdominalis]
+ Archibio HANDLIRSCH, 1939 [*A. mycetophi/inus] | Jur., USSR (Kazakh) | JUR
+ Paritonida ROHDENDORF, 1946 | Jur | JUR
+ Paraxymyia ROHDENDORF, 1946 | Jur., USSR (Kazakh) | JUR
+ Mesoplecia ROHDENDORF, 1938 | Jur., USSR (Kazakh) | JUR
+ Mesopleciella ROHDENDORF, 1946 | Jur | JUR
+ Protobibio ROHDENDORF, 1946 | Jur., USSR (Kazakh) | JUR
+ Protoscatopse ROHDENDORF, 1946 | Jur., USSR (Kazakh) | JUR
+ Family SCATOPSIDAE Newman, 1835
+ Scatopse GEOFFROY, 1762
+ Family BIBIONIDAE Newman, 1835
+ Bibiodes COQUILLETT, 1904 | Oligo., USA (Colorado)-Holo | PALEOG
+ Bibiodites COCKERELL, 1915 | , New Zealand (North Otago); Plio., Europe (Germany)-Holo | NEOG
+ Hesperinus WALKER, 1848 | Oligo., USA (Colorado)-Holo | PALEOG
+ Lithosomyia CARPENTER, 1986 | Mio., Europe (Croatia) | NEOG
+ Penthetria MEIGEN, 1803 | , Europe (Germany), USA (Colorado, Montana); Mio., Europe (Croatia)-Holo | NEOG
+ Plecia WIEDEMANN, 1828 | , Scotland; Oligo., Europe (Germany, France), England, USA (Colorado)-Holo | PALEOG
+ Family SCIARIDAE Billberg, 1820
+ Sciara MEIGEN, 1803 | , Europe (Baltic, France, Germany), England, USA (Colorado); Mio., Burma, Europe (Germany)-Holo | NEOG
+ Lycoriella FREY, 1942 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Protosciara QUIEVREUX, 1938 [*P. alsatica] | ] Oligo., Europe (Baltic) | PALEOG
+ Pseudosciara SCHINER, 1866 [*R. semibrachyptera] | Oligo., Europe (Baltic) | PALEOG
+ Trichosia WINNERTZ, 1867 | Paleoc.-Holo | PALEOG
+ Mycetophila MEIGEN, 1803 | Oligo., USA (Colorado), England, Europe (France, Croatia)-Holo | PALEOG
+ Acnemia WINNERTZ, 1863 | Oligo., Europe (France)-Holo | PALEOG
+ Allodia WINNERTZ, 1863 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Aneura MARSHALL, 1896 [*A. tipuliformis] | Oligo., Europe (Baltic)-Holo | PALEOG
+ Austrolocymmerus FREEMAN, 1954 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Brachypeza WINNERTZ, 1863 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Bradysia WINNERTZ, 1867 [*8. petiolata] | Oligo., Europe (Baltic)-Holo | PALEOG
+ Cordyla MEIGEN, 1803 [*D. hissa] | Oligo., Europe (Baltic) | PALEOG
+ Ditomyia WINNERTZ, 1846 | Oligo., Europe (Germany)-Holo | PALEOG
+ Oocosia WINNERTZ, 1863 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Ectrepesthoneura ENDERLEIN, 1910 | , USA (Colorado), Europe (Baltic, Germany, France); Mio., Europe (Croatia)-Holo | NEOG
+ Gnoriste MEIGEN, 1818 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Leia MEIGEN, 1818 | Oligo., USA (Colorado), Europe (Baltic, Germany, France)-Holo | PALEOG
+ Leptomorphus CURTIS, 1831 | , USA (Colorado); Oligo., Europe (Baltic)-Holo | PALEOG
+ Loewiella MEUNIER, 1894 [*L. incompleta] | Oligo., Europe (Baltic) | PALEOG
+ Manota WILLISTON, 1896 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Mycetophaetus SCUDDER, 1892 [*M. intermedius] | Mio., Europe (Germany) | NEOG
+ Neoempheria OSTEN-SACKEN, 1878 | Oligo., Europe (Baltic, France)-Holo | PALEOG
+ Neuratelia RONDANI, 1856 [*P. distineta] | Oligo., Europe (Baltic) | PALEOG
+ Paraleia ARMBRUSTER, 1938 [*P. rhymosides] | Mio., Europe (Germany) | NEOG
+ Phronia WINNERTZ, 1863 | Oligo., England, Europe (Baltic, France)-Holo | PALEOG
+ Phthinia WINNERTZ, 1863 | Oligo., Europe (Germany)-Holo | PALEOG
+ Plaryura MEIGEN, 1803 | /Mio., Dominican Republic-Holo | NEOG
+ Proallodia ARMBRUSTER, 1938 [*P. rhymosides] | Mio., Europe (Germany) | NEOG
+ Proapemon MELANDER, 1949 [*P. in/ernus] | Oligo., USA (Colorado) | PALEOG
+ Proapolephthisa ARMBRUSTER, 1938 [*P. manotides] | Oligo., Europe (Baltic) | PALEOG
+ Proceroplatus EDWARDS, 1925 | /Mio., Dominican Republic-Holo | NEOG
+ Prodelopsis ARMBRUSTER, 1938 [*P. epicyptides] | Mio., Europe (Germany) | NEOG
+ Prodocosia ARMBRUSTER, 1938 [*P. rondaniellides] | Mio., Europe (Germany) | NEOG
+ Proepicypta ARMBRUSTER, 1938 [*P. obesa] | Mio., Europe (Germany) | NEOG
+ Prohadroneura ARMBRUSTER, 1938 [*P. dziedzickides] | Mio., Europe (Germany) | NEOG
+ Proleia ARMBRUSTER, 1938 [*P. landrocki] | Mio., Europe (Germany) | NEOG
+ Promycetomyia ARMBRUSTER, 1938 [*P. neoempherides] | Oligo., Europe (Baltic) | PALEOG
+ Pronovakia ARMBRUSTER, 1938 [*P. incerta] | Mio., Europe (Germany) | NEOG
+ Prophronia ARMBRUSTER, 1938 [*P. dynatosomides] | Mio., Europe (Germany) | NEOG
+ Prophthinia ARMBRUSTER, 1938 [*P. coe- P P R S S S S T R t B O R b R b losides] | -Eoc., Australia (Queensland) | PALEOG
+ Protrichonra ARMBRUSTER, 1938 [*P. delopsides] | Mio., Europe (Germany) | NEOG
+ Rymosia WINNERTZ, 1863 | Oligo., England, Europe (Baltic, Germany)-Holo | PALEOG
+ Sciophila MEIGEN, 1818 | Oligo., USA (Colorado), Europe (Germany)-Holo | PALEOG
+ Symmerus WALKER, 1848 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Synapha MEIGEN, 1818 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Tetragoneura WINNERTZ, 1846 [*O./ungivoroides] | Trias., USSR (Kirghiz) | TRIAS
+ Family ANISOPIDAE Knab, 1912
+ Sylvicola HARRIS, 1776 | , England, Europe (Baltic); Mio., Europe (Croatia)-Holo | NEOG
+ Asarcomyia SCUDDER, 1890 [*A. cadaver] | Eoc., USA (Wyoming) | PALEOG
+ Olbiogaster OSTEN-SACKEN, 1886 | , England, Europe (Germany); Eoc., USA (Colorado)-Holo | PALEOG
+ Thiras GIEBEL, 1856 [*T. westwoodi] | Cret.-Holo | CRET
+ Cecidomyia MEIGEN, 1803 | - Plio., China (Manchuria)-Holo | NEOG
+ Bryocrypta KIEFFER, 1896 | Oligo., Europe (Baltic)- Holo | PALEOG
+ Cretocatocha GAGNE, 1977 | Cret., Canada (Alberta) | CRET
+ Cretocordylomyia GAGNE, 1977 | Cret., Canada (Manitoba) | CRET
+ Cretomiastor GAGNE, 1977 | Cret., Canada (Alberta, Manitoba) | CRET
+ Crecowinnertzia GAGNE, 1977 | Oligo., Europe (Baltic)- Holo | PALEOG
+ Epidosis LOEW, 1850 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Frirenia KIEFFER, 1894 | Oligo., Europe (Baltic)- Holo | PALEOG
+ Lasioptera MEIGEN, 1818 | Oligo., Europe (Baltic)- Holo. Lithomyza SCUDDER, 1877a, p. 746 ['"L. eondita; aD}. Little-known genus, apparently similat co Anarete (recent), but wings broader beyond middle and tapering more basall | PALEOG
+ Meunieria KIEFFER, 1904 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Monardia KIEFFER, 1895 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Monodicrana LOEW, 1850 | Mio., Burma-Holo. Family UNCERTAIN The following genera, apparently belonging to the order Diptera, suborder Nema- Cretomiastor Cretowinnertzia Cr Cecidom tocera, are too poorly known to permit family | NEOG
+ Amblylexis BODE, 1953 | Jur., Europe (Germany) | JUR
+ Amianta BODE, 1953 | Jur., Europe (Germany) | JUR
+ Amphipromeca BODE, 1953 | Jur., Europe (Germany) | JUR
+ Apisrogrypotes BODE, 1953 | , England; Cret., Mongolia, China (Liaoning) | CRET
+ Cormophora BODE, 1953 | Jur., Europe (Germany) | JUR
+ Cynomides BODE, 1953 | Jur., Europe (Germany) | JUR
+ Ellipes BODE, 1953 | Jur., Europe (Germany) | JUR
+ Empidocampe BODE, 1953 | ] Eoc., Canada (British Columbia) | PALEOG
+ Propexis BODE, 1953 | Jur., Europe (Germany) | JUR
+ Sphallonymphites BODE, 1953 | Jur., Europe Suborder BRACHYCERA Zetterstedt, 1842 [Brachycera ZETTERSTEDT, 1842, p. 1] Antennae of adults shorter than thorax, commonly consisting of less than 6 segments (total) and terminating in a | JUR
+ Protobrachyceron HANDLIRSCH, 1920
+ Archisargus ROHDENDORF, 1938
+ Palaeostratiomyia ROHDENDORF, 1938
+ Family XYLOPHAGIDAE Fallen, 1810
+ Chrysothemis LOEW, 1850 [*c. speciosa] | Oligo., Europe (Baltic) | PALEOG
+ Trecela CARPENTER, 1986
+ Electra LOEW, 1850 [*Electra formosa] | Oligo., Europe (Baltic) | PALEOG
+ Family XYLOMYIDAE Verrall, 1909
+ Xylomya RONDANI, 1861 | Oligo., USA (Colorado)-Holo | PALEOG
+ Solva WALKER, 1859 | Cret.-H% | CRET
+ Stratiomys GEOFFROY, 1762 | Oligo., England, Europe (Germany)-Holo | PALEOG
+ Beris LATREILLE, 1802 | Oligo., USA (Colorado)-Holo | PALEOG
+ Cacosis WALKER, 1851 | Oligo., Europe (Baltic)-Holo. C C H L M N O P R S | PALEOG
+ Cretaceogaster TESKEY, 1971 [*c. pygmaeus] | Cret., Canada (Manitoba) | CRET
+ Cyphomyia WIEDEMANN, 1819 [*H. bifurcata] | Oligo., Europe (Baltic) | PALEOG
+ Lasiopa BRULLE, 1832 | Oligo., USA (Colorado)-Holo | PALEOG
+ Moyamyia MELANDER, 1949 [*M. limigena] | Eoc., USA (Colorado)-Holo | PALEOG
+ Oxycera MEIGEN, 1803 | Oligo., USA (Colorado)-Holo | PALEOG
+ Protoberis COCKERELL, 1915 [*P. obliteratus] | Oligo., USA (Colorado)- Holo | PALEOG
+ Sargus FABRICIUS, 1798 [*E. avia] | Jur., USSR (Kazakh) | JUR
+ Atherix MEIGEN, 1803
+ Succinatherix STUCKENBERG, 1974 | Jur.-Holo | JUR
+ Rhagio FABRICIUS, 1775 | Oligo., Europe (Baltic, France), USA (Colorado)-Holo | PALEOG
+ Archirhagio ROHDENDORF, 1938
+ Bolbomyia LOEW, 1850 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Chrysopilus MACQUART, 1826 | Oligo., Europe (Baltic, Germany), England, USA (Colorado)-Holo | PALEOG
+ Dialysis WALKER, 1850 | Oligo., USA (Colorado)-Holo | PALEOG
+ Ija KOVALEV, 1981 [*I. problematica]
+ Jurabrachyceron KOVALEV, 1981 [*j. abbreviatum]
+ Palaeobolbomyia KOVALEV, 1982 [*P. sibirica]
+ Palaeoptiolina KOVALEV, 1982 [*P. scobloi]
+ Protorhagio ROHDENDORF, 1938 [*P. capitatus] | Oligo., Europe (Baltic).- Rhagionempis ROHDENDORF, 1938, p. 34 ["R, tabanicornis; 00]. Little-known genus, apparently similar to Ussatchovia. ROHDENDORF, 1962a, 1964; KOVALEV, 1982.jur., USSR (Kazakh) | PALEOG
+ Symphoromyia FRAUENFELD, 1867 | Oligo., Europe (Baltic, France)-Holo | PALEOG
+ Ussatchovia KOVALEV, 1982 [*U. jurassica]
+ Family TABANIDAE Leach, 1815
+ Tabanus LINNE, 1758 | , USA (Colorado); Plio., Europe (Germany)-Holo | NEOG
+ Chrysops MEIGEN, 1800 | , Europe (France); Oligo., England-Holo | PALEOG
+ Silvius MEIGEN, 1820 | Oligo., Europe (Baltic), USA (Colorado)-Holo | PALEOG
+ Family ACROCERIDAE Leach, 1815
+ Acrocera MEIGEN, 1803
+ Archocyrtus USSATCHOV, 1968 [*A. gibbosus]
+ Glaesoncodes HENNIG, 1968 [*v. electrica] | Oligo., Europe (Baltic) | PALEOG
+ Nemestrina LATREILLE, 1809
+ Archinemestrius ROHDENDORF, 1968 [*A. karatavicus] | Jur., USSR (Kazakh) | JUR
+ Hirmoneura MEIGEN, 1820 | Oligo., USA (Colorado)-Holo | PALEOG
+ Neorhynchocephalus LICHTWARDT, 1909 [*P. jurassica] | Oligo., USA (Colorado)-Holo | PALEOG
+ Protonemestrius ROHDENDORF, 1968 [*P. martynovi]
+ Rhagionemestrius USSATCHOV, 1968 [*R. rapidus] | Jur., USSR (Kazakh).-- 232,6. *R. rapidus; whole insect, X6 (Ussatchov, 1968) | JUR
+ Family BOMBYLIIDAE Latreille, 1802
+ Bombylius LINNE, 1758 [*A. scopulicornis] | Oligo., Europe (Baltic) | PALEOG
+ Dischistus LOEW, 1855 | Oligo., Europe (France)-Holo | PALEOG
+ Dolichomyia WIEDEMANN, 1830 | Oligo., USA (Colorado)-Holo | PALEOG
+ Exoprosopa MACQUART, 1840 | Oligo., Europe (France)-Holo | PALEOG
+ Geron MEIGEN, 1820 | Oligo., USA (Colorado) | PALEOG
+ Glabellula BEZZI, 1902 | /Mio., Dominican Republic-Holo | NEOG
+ Glaesamictus HENNIG, 1966 [*8. hafniensis] | Oligo., Europe (France) | PALEOG
+ Paracorsomyza HENNIG, 1966 [*P. crassirostns] | Oligo., Europe (Baltic) | PALEOG
+ Proglabellula HENNIG, 1966 [*'P. electrica] | Oligo., Europe (Germany), England-Holo | PALEOG
+ Tithonomyia EVENHUIS, 1984 [*'Protophthiria atra MELANDER] | Oligo., USA (Colorado) | PALEOG
+ Usia LATREILLE, 1802 [*'V. cladurus] | Oligo., USA (Colorado) | PALEOG
+ Villa LIOY, 1864 | , Europe (France); Mio., Europe (ltaly)-Holo | NEOG
+ Family THEREVIDAE Newman, 1835
+ Thereva LATREILLE, 1796 [*'Thereva magnicornis MEUNIER] | Oligo., Europe (Baltic) | PALEOG
+ Nebricus COQUILLETT, 1894 | Oligo., USA (Colorado)-Holo | PALEOG
+ Paraclia ENDERLEIN, 1936 | Oligo., Europe (Germany)-Holo | PALEOG
+ Psilocephala ZETTERSTEDT, 1838 | , Europe (Baltic), USA (Colorado); Mio., Burma-Holo | NEOG
+ Rueppellia KERTESZ, 1909 | Oligo., USA (Colorado)-Holo | PALEOG
+ Family MYDIDAE Latreille, 1806
+ Mydas FABRICIUS, 1794 | Jur | JUR
+ Protomphrale ROHDENDORF, 1938 [*P. martynovi] | Jur., USSR (Kazakh) | JUR
+ Family ASILIDAE Latreille, 1804
+ Asilus LINNE, 1758 [*A. fusculus] | [Family assignment doubtfuL} Eoc., USA (Colorado) | PALEOG
+ Ceraturgus WIEDEMANN, 1824 | Oligo., USA (Colorado)-Holo | PALEOG
+ Cophura OSTEN-SACKEN, 1887 | Oligo., USA (Colorado)- Holo | PALEOG
+ Dioctria MEIGEN, 1803 | Oligo., USA (Colorado)- Holo | PALEOG
+ Holopogon LOEW, 1847 | Mio., USA (Montana)-Holo | NEOG
+ Leptogaster MEIGEN, 1803 | , USA (Colorado); Mio., Europe (Croaria)-Holo | NEOG
+ Lestomyia WILLISTON, 1883 | Oligo., USA (Colorado)-Holo | PALEOG
+ Machimus LOEW, 1849 | Oligo., Europe (France)-Holo | PALEOG
+ Microstylum MACQUART, 1838 | Oligo., USA (Colorado)-Holo | PALEOG
+ Palaeomolobra HULL, 1962 [*Senoprosopis antiquus JAMES] | Oligo., USA (Colorado) | PALEOG
+ Philonicus LOEW, 1849 | Oligo., USA (Colorado)-Holo | PALEOG
+ Proctacanthus MACQUART, 1838 | Oligo., England-Holo | PALEOG
+ Pseudophrisson DURRENFELDT, 1968 [*P. primus] | Plio., Europe (Germany) | NEOG
+ Saropogon LOEW, 1847 [*S. anomala] | Eoc., USA (Wyoming) | PALEOG
+ Taracticus LOEW, 1872 | Jur | JUR
+ Eremochaetus USSATCHOV, 1968 [*E. asilicus] | Jur., USSR (Kazakh) | JUR
+ Pareremochaetus USSATCHOV, 1968 [*P. minor] | Jur., USSR (Kazakh) | JUR
+ Protempis USSATCHOV, 1968
+ Family EMPIDIDAE Latreille, 1804
+ Empis LINNE, 1758
+ Acallomyia MELANDER, 1927 | MELANDER, 1949, Oligo., USA (Colorado)-Holo. A A C C C C D D Trichinites "- Protempis M3+4 idae, and Empididae (p. 428-430) | PALEOG
+ Archichrysotus NEGROBOV, 1978 | A microphorine with 2 terminal branches on vein M, Cret., USSR (Asian RSFSR) | CRET
+ Archiplatypalpus KOVALEV, 1974 | Cret., USSR (Asian RSFSR) | CRET
+ Chelifera MACQUART, 1823 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Chelipoda MACQUART, 1823 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Cretomicrophorus NEGROBOV, 1978 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Drapetis MEIGEN, 1822 | , Europe (Baltic, Spain); Mio., Europe (Germany)-Holo | NEOG
+ Hybos MEIGEN, 1803 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Leptopeza MACQUART, 1827 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Micrempis MELANDER, 1927 | Cret., Europe (Lebanon) | CRET
+ Microphorus MACQUART, 1827 | , Canada (British Columbia); Oligo., Europe (Baltic)-Holo | PALEOG
+ Oedalea MEIGEN, 1820 | Oligo., Europe (Baltic) | PALEOG
+ Plarypalpus MACQUART, 1827 | Eoc., USA (Colorado) | PALEOG
+ Ragas WALKER, 1837 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Rhamphomyia MEIGEN, 1822 | , USA (Colorado); Oligo., USA (Colorado), Europe (Baltic, Germany)-Holo | PALEOG
+ Tachydromia MEIGEN, 1803 | Oligo., Europe (Baltic, France)-Holo | PALEOG
+ Tachypeza MEIGEN, 1830 | Oligo., Europe (Baltic), USA (Colorado)- Holo | PALEOG
+ Timalphes MELANDER, 1927 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Trichinites HENNIG, 1970 | Cret., Europe (Lebanon) | CRET
+ Trichopeza RONDANI, 1856 | Oligo., Europe (France, Germany, Baltic)-Holo, Acha1cus LOEw, 1857, p. 30. {Generic assignment offossils doubtful.} MEUNIER, 1907-1908. Oligo" Europe (Baltic)-Holo, | PALEOG
+ Anepsiomyia BEZZI, 1902 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Argyra MACQUART, 1834 | Oligo., Europe (Baltic)-Holo, | PALEOG
+ Campsicnemus HALIDAY, 1832 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Chrysotus MEIGEN, 1824 | Oligo., Europe (Baltic, Roumania)-Holo | PALEOG
+ Diaphorus MEIGEN, 1824 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Gheynius MEUNIER, 1907 [*G. bifurcatuJ] | Oligo., Europe (Baltic) | PALEOG
+ Gymnoptemus LOEW, 1857 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Hercostomus LOEW, 1857 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Lyroneurus LOEW, 1857 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Oncopygus LOEW, 1873 | Oligo., Europe (Germany)-Holo | PALEOG
+ Palaeochrysotus MEUNIER, 1907 [*P. horriduJ MEUNIER] | Oligo., Europe (Baltic) | PALEOG
+ Poecilobothrus MIK, 1878 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Prochrysotus MEUNIER, 1907 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Prosystenus NEGROBOV, 1976 [*P. zherichini] | /Eoc., USSR (Asian RSFSR) | PALEOG
+ Retinitus NEGROBOV, 1978 [*R. nervOJUJ]
+ Sciapus ZELLER, 1842 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Systenus LOEW, 1857 | Oligo., Europe (Baltic)-Holo. T W X X w f o b s t l p E P C E v R a L S A P | PALEOG
+ Thrypticus GERSTACKER, 1864 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Wheelerenomyia MEUNIER, 1907 [*W. eocenica] | Eoc.-Holo | PALEOG
+ Platypeza MEIGEN, 1803
+ Callomyia MEIGEN, 1804 [*E. fortis] | Cret.-Holo | CRET
+ Sciadocera WHITE, 1917
+ Archiphora SCHMITZ, 1929 [*P. canadambra] | Cret., Canada (Alberta) | CRET
+ Phora LATREILLE, 1796 | Oligo., USA (Colorado), Europe (Baltic)-Holo | PALEOG
+ Anevrina LIOY, 1864 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Aphiochaeta BRUES, 1903 | Oligo., Europe (Baltic), USA (Colorado)-Holo | PALEOG
+ Conicera MEIGEN, 1830 [*H. dubitatis] | Oligo., Europe (Baltic)-Holo. Hypoceridites BRUES, 1939a, p. 428 [*H. dubitatis; OD) Tibiae with isolated bristles near | PALEOG
+ Family PHORIDAE Newman, 1835
+ Palaeophora ROHDENDORF, 1951 [*Archiphora ancestrix] | Oligo., Europe (Balcic) | PALEOG
+ Megaselia RONDANI, 1856 | Oligo., Europe (Baleic)-Holo | PALEOG
+ Paraspiniphora MALLOCH, 1912 | Oligo., Europe (Balcic)-Holo | PALEOG
+ Phalacritophora ENDERLEIN, 1912 | Oligo., Europe (Balcic) | PALEOG
+ Triphleba RONDANI, 1856 | Cret.-Holo | CRET
+ Ironomyia WHITE, 1917 | Oligo.-Holo | PALEOG
+ Pipunculus LATREILLE, 1802
+ Cephalosphaera ENDERLEIN, 1936 | Oligo., Europe (Baleic)-Holo | PALEOG
+ Metanephrocerus ACZEL, 1948 | Oligo., Europe (Balcic)-Holo | PALEOG
+ Protonephrocerus COLLIN, 1931 | Oligo., USA (Colorado)-Holo | PALEOG
+ Verrallia MIK, 1899 | Oligo., Europe (Balcic)-Holo | PALEOG
+ Family SYRPHIDAE Leach, 1815
+ Syrphus FABRICIUS, 1775 | , USA (Colorado), Europe (Baltic); Mio., Europe (Croatia), USA (Montana)-Holo | NEOG
+ Archalia HULL, 1945 | Oligo., USA (Colorado) | PALEOG
+ Archisyrphus HULL, 1960 | Mio., USA (Moneana) | NEOG
+ Asarcina MACQUART, 1842 | Eoc., USA (Wyoming)-Holo | PALEOG
+ Cacogaster HULL, 1945 | Oligo., USA (Colorado) | PALEOG
+ Cheilosia MEIGEN, 1822 | , USA (Wyoming, Colorado); Oligo., Europe (Baleic, France, Germany), USA (Colorado)-Holo | PALEOG
+ Cheilosialepta HULL, 1945 | Oligo., Europe (Baleic) | PALEOG
+ Chrysogaster MEIGEN, 1800 | Oligo., USA (Colorado)-Holo | PALEOG
+ Doliomyia HULL, 1945 | Oligo., Europe (Baltic) | PALEOG
+ Eoxylota HULL, 1945 [*Xylota pulchra MEUNIER] | Oligo., Europe (Baltic) | PALEOG
+ Epistrophe WALKER, 1852 | Oligo., Europe (Germany)-Holo | PALEOG
+ Eristalis LATREILLE, 1804 | Oligo., Europe (France)-Holo | PALEOG
+ Megaxylota HULL, 1945 [*M. magnifemur] | Oligo., Europe (Baltic) | PALEOG
+ Merodon MEIGEN, 1803 | Oligo., USA (Colorado)-Holo | PALEOG
+ Myiolepta NEWMAN, 1838 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Palaeoascia MEUNIER, 1893 [*P. uniappendiculata] | Oligo., Europe (Baltic) | PALEOG
+ Palaeoeristalis HULL, 1945 [*P. tesselatus] | Oligo., Europe (Baltic) | PALEOG
+ Pipiza FALLEN, 1810 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Platycheirus LEPELETIER & SERVILLE, 1825 | , USA (Colorado); Mio., Europe (Croatia)-Holo | NEOG
+ Protochrysotoxum HULL, 1945 [*P. sphinx] | Oligo., USA (Colorado) | PALEOG
+ Protorhingia HULL, 1945 [*P. carpenteri] | Oligo., Europe (Baltic) | PALEOG
+ Pseudosphegina HULL, 1945 [*P. dichoptica]
+ Ptilocephala HULL, 1945 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Rhingia SCOPOLI, 1763 | Oligo., USA (Colorado)-Holo | PALEOG
+ Sphegina MEIGEN, 1822 [*S. biappendiculata] | Oligo., Europe (Baltic) | PALEOG
+ Temnostoma LEPELETIER & SERVILLE, 1828 | Oligo., Europe (Germany)-Holo | PALEOG
+ Xylotosyrphus HULL, 1945 [*X. pulchrafenestra] | Oligo.-Holo | PALEOG
+ Conops LINNE, 1758 [*P. tertiaria] | Oligo., Europe (Baltic) | PALEOG
+ Family OTITIDAE Aldrich, 1932
+ Otites LATREILLE, 1804
+ Melieria ROBINEAU-DESVOIDY, 1830 | Oligo., USA (Colorado)-Holo | PALEOG
+ Scholastes LOEW, 1873 | /Pleist., England-Holo | HOL
+ Stenomyites COCKERELL, 1915 [*S. fuscipennis] | Mio.-Holo, | NEOG
+ Tephrites LATREILLE, 1804 | Mio., USSR (European RSFSR)-Holo. Family RICHARDIIDAE Loew, 1868 (Richardiidae LOEW, 1868, p. 2) Similar to Otitidae, but cell below vein CUP without pointed apex; costal break present. Larvae apparen | NEOG
+ Richardia ROBINEAU-DESVOIDY, 1830 [*P. inermis] | Oligo.- Holo, | PALEOG
+ Cypselosoma HENDEL, 1913
+ Cypselosomatites HENNIG, 1965 [*G. succini] | Oligo., Europe (Baltic).-- 1965). Family PSEUDOPOMYZIDAE McAlpine, 1966 (Pseudopomyzidae McALPINE, 1966, p. 683) Similar to Cypselosomatidae but with the postvertical bristles convergent. Larvae sapro | PALEOG
+ Pseudopomyza STROBL, 1893 [*E. kuehmei] | Oligo., Europe (Baltic) | PALEOG
+ Family MICROPEZIDAE Loew, 1862
+ Micropeza MEIGEN, 1803
+ Calobata MEIGEN, 1803 | Oligo., Europe (Germany)-Holo | PALEOG
+ Electrobata HENNIG, 1965 [*E. myrmecia] | Oligo., Europe (Baltic) | PALEOG
+ Megamerina RONDANI, 1861 [*P. spinosa] | Oligo., Europe (Baltic) | PALEOG
+ Family DIOPSIDAE Billberg, 1820
+ Family PSILIDAE Walker, 1853
+ Psila MEIGEN, 1803 [*E succini] | Oligo., Europe (Balric) | PALEOG
+ Family SEPSIDAE Walker, 1833
+ Sepsis FALLEN, 1810 | Oligo., Europe (Balric)-Holo | PALEOG
+ Prororygma HENNIG, 1965 | Oligo., Europe (Baltic) | PALEOG
+ Themira ROBINEAU-DESVOIDY, 1830 | Paleoc.-Holo | PALEOG
+ Dryomyza FALLEN, 1820 | Oligo., Europe (Baltic) | PALEOG
+ Prodryomyza HENNIG, 1965 | Oligo., Europe (Baltic) | PALEOG
+ Family SCIOMYZIDAE Fallen, 1820
+ Sciomyza FALLEN, 1820 | Oligo., Europe (Baltic) | PALEOG
+ Prophaeomyia HENNIG, 1965 | Oligo., Europe (Balric) | PALEOG
+ Prosalticella HENNIG, 1965 | Oligo., Europe (Baltic) | PALEOG
+ Sepedonites HENNIG, 1965 [*S. baltica] | Oligo.-Holo | PALEOG
+ Chamaemyia MEIGEN, 1803
+ Procremifania HENNIG, 1965 [*P. electrica] | Oligo.-Holo | PALEOG
+ Lauxania LATREILLE, 1804
+ Chamaelauxania HENNIG, 1965 [*c. JUCcini] | Oligo., Europe (Baltic).-- (Hennig, 1965) | PALEOG
+ Hemilauxania HENNIG, 1965 [*H. incurviseta] | Oligo., Europe (Baltic) | PALEOG
+ Sapromyza FALLEN, 1810 | Oligo.-Holo | PALEOG
+ Heleomyza FALLEN, 1810 | Oligo., Europe (Germany, France)-Holo | PALEOG
+ Chaetohelomyza HENNIG, 1965 [*c. e1ectrica] | Oligo., Europe (Baltic) | PALEOG
+ Electroleria HENNIG, 1965 [*Leria alacriJ MEUNIER] | Oligo., Europe (Baltic) | PALEOG
+ Heteromyiella HENDEL, 1910 | Oligo., USA (Colorado)-Holo | PALEOG
+ Heteromyza FALLEN, 1820 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Protosuillia HENNIG, 1965 [*Heleomyza media MEUNIER] | Oligo., Europe (Baltic) | PALEOG
+ Suillia ROBINEAU-DESVOIDY, 1830 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Trixoscelis RONDANI, 1856 | Oligo.-Holo | PALEOG
+ Chyromya ROBINEW-DESVOIDY, 1830
+ Gephyromyiella HENNIG, 1965 [*G. electrica] | Oligo.-Holo | PALEOG
+ Palloptera FALLEN, 1820 [*P. electrica] | Oligo.-Holo | PALEOG
+ Lonchaea FALLEN, 1820 [*G. electrica] | Oligo.-Holo | PALEOG
+ Piophila FALLEN, 1810
+ Mycetaulus LOEW, 1845 [*P. extinctum] | Oligo.-Holo | PALEOG
+ Opomyza FALLEN, 1820 | Oligo., Europe (Germany)-Holo | PALEOG
+ Family CLUSIIDAE Frey, 1921
+ Clusia HALIDAY, 1838 [*Agromyza meunieri HENDEL] | Oligo., Europe (Baltic) | PALEOG
+ Acartophthalmus CZERNY, 1902 | Oligo., Europe (Baltic) | PALEOG
+ Family ODINIIDAE Hendel, 1918
+ Protodinia HENNIG, 1965 | Oligo.-Holo | PALEOG
+ Agromyza FALLEN, 1810 | Oligo., USA (Colorado)-Holo. P n e i b v o o d o p f N A | PALEOG
+ Phytomyza FALLEN, 1810 | , Europe (France) HERING, Oligo., Europe (France)-Holo | PALEOG
+ Family CARNIDAE Frey, 1921
+ Carnus NITZSCH, 1818
+ Meoneurites HENNIG, 1965 | /Mio.-Holo | NEOG
+ Periscelis LOEW, 1858 | Oligo.-Holo. Neurochaeta McALPINE, 1978, p. 278. Holo | PALEOG
+ Anthoclusia HENNIG, 1965 | Oligo., Europe (Baltic) | PALEOG
+ Anthomyza FALLEN, 1810 | Oligo., Europe (Germany)-Holo | PALEOG
+ Protanthomyza HENNIG, 1965 | Larvae saprophagous, as far as known, in fermenting tree sap, Oligo.-Holo | PALEOG
+ Aulacigaster MACQUART, 1835 | Oligo., Europe (Baltic) | PALEOG
+ Family ASTEIIDAE Rondani, 1856
+ Asteia MEIGEN, 1830 | Oligo., Europe (Baltic) | PALEOG
+ Family CAMILLIDAE Frey, 1921
+ Camilla HALIDAY, 1836
+ Protocamilla HENNIG, 1965 | Oligo.-Holo | PALEOG
+ Diastata MEIGEN, 1830
+ Pareuthychaeta HENNIG, 1965 | Oligo.-Holo | PALEOG
+ Drosophila FALLEN, 1823 | Oligo., South America (Colombia)-Holo | PALEOG
+ Curtonotum MACQUART, 1842 | Oligo., Europe (France)-Holo | PALEOG
+ Electrophortica HENNIG, 1965 | Oligo., Europe (Baltic) | PALEOG
+ Family MILICHIIDAE Schiner, 1864
+ Milichia MEIGEN, 1830
+ Phyllomyza FALLEN, 1810 [*P. sueeineum] | Oligo.-Holo | PALEOG
+ Cryptochaetum RONDANI, 1875
+ Phanerochaetum HENNIG, 1965 [*P. tuxeni] | Oligo.-Holo | PALEOG
+ Chloropa MEIGEN, 1803 | Oligo., Europe (Germany)-Holo | PALEOG
+ Hippelates LOEW, 1863 | Oligo., England-Holo | PALEOG
+ Oscinella BECKER, 1910 | Oligo., Europe (Germany)-Holo | PALEOG
+ Protoscinella HENNIG, 1965 [*P. eleetrieus] | Oligo.-Holo | PALEOG
+ Scatophaga FABRICIUS, 1803 | Oligo., Europe (Germany)-Holo | PALEOG
+ Norellisoma HENDEL, 1910 | Pleist.-Holo | HOL
+ Gasterophilus LEACH, 1817
+ Cobboldia BRAUER, 1887 | Pleist., USSR (Asian RSFSR)-Holo | HOL
+ Family MUSCIDAE Latreille, 1802
+ Musca LINNE, 1758
+ Fannia ROBINEAU-DESVOIDY, 1830 | Oligo.-Holo | PALEOG
+ Glossina WIEDEMANN, 1830 | Cret.-Holo | CRET
+ Calliphora ROBINEAU-DESVOIDY, 1830 | Oligo.-Holo. H L i e m A A A A B D E E | PALEOG
+ Hippobosca LINNE, 1758
+ Lynchia WEYENBERGH, 1881 | } Eoc., USA (Colorado) | PALEOG
+ Adipterites TOWNSEND, 1938 | Mio., Eutope (Germany) | NEOG
+ Anrhracida GERMAR, 1849 | Mio., Burma | NEOG
+ Dipterites HEER, 1849 | Oligo., Europe (Baltic) | PALEOG
+ Eoasilidea BODE, 1953 | Eoc., USA (Colorado) | PALEOG
+ Epidia WEYENBERGH, 1869
+ Homoeoprychopteris BODE, 1953
+ Liassonympha BODE, 1953
+ Lithexorista TOWNSEND, 1921 | Eoc., USA (Wyoming) | PALEOG
+ Lithohypoderma TOWNSEND, 1916 | Eoc., USA (Colorado, Utah) | PALEOG
+ Lithotachina TOWNSEND, 1921 [*Echinomya antiqua HEER] | Mio., Europe (Germany) | NEOG
+ Muscidites HEYDEN & HEYDEN, 1866 [*M. deperditus] | Oligo., Europe (Germany) | PALEOG
+ Pachyuronympha ROHDENDORF, 1964 [*P. karatauensis] | Jur., USSR (Kazakh) | JUR
+ Protocyrrus ROHDENDORF, 1938 [*P.jurassicus] | Jur., USSR (Kazakh) | JUR
+ Remalia GIEBEL, 1856 [*R. sphinx] | Jur., England | JUR
+ Syrphopsis ZEUNER, 1931 [*5. globosiceps] | Mio., Europe (Germany) | NEOG
+ Vinculomusca TOWNSEND, 1938 [*Musca vinculata SCUDDER] | Trias.- Holo | TRIAS
+ Family XYELIDAE Newman, 1835
+ Xyela DALMAN, 1819 | Oligo., Europe (Germany)-Holo | PALEOG
+ Angaridyela RASNITSYN, 1966 [*A. vitimica]
+ Anomoxyela RASNITSYN, 1966 [*Anaxyela incerta RASNITSYN]
+ Archexyela RIEK, 1955 [*A. crosbyi] | Trias., Australia (Queensland) | TRIAS
+ Asioxyela RASNITSYN, 1964 [*A. smilodon] | Trias., USSR (Kirghiz). B Archexyela Chaetoxyela Angaridyela e (p. 449-451) | TRIAS
+ Baissoxyela RASNITSYN, 1969 | Cret., USSR (Asian RSFSR) | CRET
+ Ceroxyela RASNITSYN, 1966 [*c. do/ichocera] | Cret., USSR (Kazakh) | CRET
+ Chaetoxyela RASNITSYN, 1966 [*c. hirsuta] | Cret., USSR (Kazakh) | CRET
+ Enneoxyela RASNITSYN, 1966 [*E. crassicauda] | Jur., USSR (Kazakh) | JUR
+ Eoxyela RASNITSYN, 1965 [*E. sco/iura] | Jur., USSR (Kazakh) | JUR
+ Euryxyela RASNITSYN, 1964 [*E. euryptera] | Trias., USSR (Kirghiz) | TRIAS
+ Ferganoxyela RASNITSYN, 1969 [*P. sogdiana] | Trias., USSR (Kirghiz) | TRIAS
+ Gigantoxyela RASNITSYN, 1966 [*G. quadrifurcata] | Cret., USSR (Kazakh) | CRET
+ Kirghizoxyela RASNITSYN, 1966 [*K. mirabilis] | Jur., USSR (Kirghiz, Asian RSFSR) | JUR
+ Lithoxyela RASNITSYN, 1969 [*L.fenestra/is] | Trias., USSR (Kirghiz) | TRIAS
+ Lydoxyela RASNITSYN, 1966 [*L. excel/ens] | Jur., USSR (Kazakh) | JUR
+ Madygella RASNITSYN, 1969 [*M. ana/oga] | Trias., USSR (Kirghiz) | TRIAS
+ Madygenius RASNITSYN, 1969 [*M. extraradius] | Trias., USSR (Kirghiz) | TRIAS
+ Megaxyela ASHMEAD, 1898
+ Microxyelecia RASNITSYN, 1969 [*M. brachycera] | Jur., USSR (Kazakh) | JUR
+ Nigrimonricola RASNITSYN, 1966 [*N. /ongicornis] | Jur., USSR (Asian RSFSR) | JUR
+ Oryctoxyela RASNITSYN, 1969 [*0. anoma/a] | Trias., USSR (Kirghiz) | TRIAS
+ Sirecomima RASNITSYN, 1969 [*S. xiphophora] | Trias., USSR (Kirghiz) | TRIAS
+ Spathoxyela RASNITSYN, 1969 [*Eoxyelafossilis RASNITSYN]
+ Triassoxyela RASNITSYN, 1964 [*'T. foveolata] | Trias., USSR (Kirghiz) | TRIAS
+ Uroxyela RASNITSYN, 1966 [*'U. sicicauda]
+ Xiphoxyela RASNITSYN, 1969 | Trias., USSR (Kirghiz) | TRIAS
+ Xyelinus RASNITSYN, 1964 | Trias., USSR (Kirghiz) | TRIAS
+ Xyelisca RASNITSYN, 1969 | Jur., USSR (Kazakh) | JUR
+ Xyelites RASNITSYN, 1966 | Cret., USSR (Kazakh) | CRET
+ Xyelula RASNITSYN, 1969 | Fore wing with pterostigma very broad; R strongly curved; basal section of RS more than twice as long as basal section of M.Jur., USSR (Kazakh) | MJUR
+ Xyelotoma RASNITSYN, 1968 | Jur., USSR (Kazakh) | JUR
+ Pseudoxyela RASNITSYN, 1968 | Cret., USSR (Kazakh).-- | CRET
+ Xyelocerus RASNITSYN, 1968 | Jur., USSR (Kazakh) | JUR
+ Tenthredo LINNE, 1758 | Oligo., USA (Colorado); Europe (Germany, France)-Holo. A C C D D Xyelocerus Juralyda Sogutia Palaeotaxonus Trichiosomites , Xyelydidae, Pamphiliidae, Cephidae, and Uncer- 4-463) | PALEOG
+ Athalia LEACH, 1817 | Oligo.,-USA (Colorado)-Holo | PALEOG
+ Caliroa COSTA, 1859 | Oligo., USA (Colorado)-Holo | PALEOG
+ Cladius ILLIGER, 1807 | Oligo., USA (Colorado)-Holo | PALEOG
+ Dolerus PANZER, 1801 | , Europe (Germany); Mio., Europe (France)- Holo | NEOG
+ Eohemichroa ZHELOCHOVTZEV & RASNITSYN, 1972 [*Hemichroa eophila COCKERELL] | Oligo., USA (Colorado) | PALEOG
+ Eriocampa HARTIG, 1837 | Oligo., USA (Colorado), Europe (France)-Holo | PALEOG
+ Fenusa LEACH, 1817 | Oligo., USA (Colorado)-Holo | PALEOG
+ Florissantinus ZHELOCHOVTZEV & RASNITSYN, 1972 [*F. angulatus] | Oligo., USA (Colorado)-Holo | PALEOG
+ Hoplocampa HARTIG, 1837 | Oligo., Europe(Germany), USA (Colorado)-Holo | PALEOG
+ Leucempria ENSLIN, 1913 | Oligo., Europe (Germany)-Holo | PALEOG
+ Mesoneura HARTIG, 1837 [*N. typica] | Oligo., USA (Colorado) | PALEOG
+ Pseudosiobla ASHMEAD, 1898 | Oligo., USA (Colorado)-Holo | PALEOG
+ Selandria LEACH, 1817 [*T. fortis] | Oligo., Europe (Baltic) | PALEOG
+ Family ARGIDAE Konow, 1890
+ Arge SCHRANK, 1802 | Oligo., USA (Colorado)-Holo | PALEOG
+ Family CIMBICIDAE Kirby, 1837
+ Cimbex OLIVIER, 1790 | Oligo., USA (Colorado)-Holo | PALEOG
+ Eopachylosticta MALAISE, 1945 [*Amasis byrami COCKERELL] | Eoc., USA (Colorado). Trichiosomites BRUES, 1908b, p. 259 [*T. obliviosus; OD}. Similar to Zeraea (recent); cell 3r long; cell lcua only a little longer than cell lrm. Antennae with 6 segments. Oligo" | PALEOG
+ Blasticotoma KWG, 1834 | Oligo., USA (Colorado)-Holo | PALEOG
+ Family DIPRIONIDAE Rohwer, 1911
+ Diprion SCHRANK, 1802 | Oligo., USA (Colorado)-Holo. Family XYELYDIDAE Rasnitsyn, 1968 (Xyelydidae RASNITSYN, 1968, p. 192) Fore wing: vein SC with 2 branches, posterior branch joining R basad of origin ofRS; crossvein Im-cu | PALEOG
+ Xyelyda RASNITSYN, 1968 | Jur., USSR (Kazakh) | JUR
+ Mesolyda RASNITSYN, 1963 | Jur., USSR (Kazakh) | JUR
+ Prolyda RASNITSYN, 1968 | Jur., USSR (Kirghiz) | JUR
+ Strophandria RASNITSYN, 1968 | Jur., USSR (Kazakh). Family PARAPAMPHILIIDAE Rasnitsyn, 1968 (Parapamphiliidae RASNITSYN, 1968, p. 191) Fore wing with vein SC apparently absent; area between R and costal margin broad, widest at orig | JUR
+ Parapamphilius RASNITSYN, 1968 | Jur., USSR (Kazakh). Family PAMPHILIIDAE Cameron, 1890 (Pamphiliidae CAMERON, 1890, p. 84) Fore wing with vein SC absent or obsolescent; RS unbranched; crossvein 2r-rs present. Antennae with at least | JUR
+ Pamphilius LATREILLE, 1802
+ Acocus SCUDDER, 1892 [*j. udensis] | Jur., USSR (Kazakh) | JUR
+ Family CEPHIDAE Newman, 1835
+ Cephus LATREILLE, 1802 [*E. stralendorffi] | Oligo., Europe (Baltic) | PALEOG
+ Janus STEPHENS, 1835 | Oligo., USA (Colorado)-Holo | PALEOG
+ Mesocephus RASNITSYN, 1968 [*M. sibiricus] | Jur., USSR (Kazakh) | JUR
+ Gigasirex RASNITSYN, 1968 [*G. longipes] | Jur., USSR (Kazakh) | JUR
+ Liasirex RASNITSYN, 1968 [*L. sogdianus] | Jur., USSR (Kazakh) | JUR
+ Protosirex RASNITSYN, 1969 [*P. xyelopterus] | Jur., USSR (Kazakh) | JUR
+ Karatavites RASNITSYN, 1963 [*K. angustus] | Jur., USSR (Kazakh) | JUR
+ Family SEPULCIDAE Rasnitsyn, 1968
+ Sepulca RASNITSYN, 1968 [*S. mirabilis] | Jur., USSR (Kazakh) | JUR
+ Sepulenia RASNITSYN, 1968 | Jur., USSR (Kazakh). A B D K Karatavites ae, and Sepulcidae (p. 458-459) | JUR
+ Anasyntexis RASNITSYN, 1968 | Jur., USSR (Kazakh) | JUR
+ Brachysyntexis RASNITSYN, 1969 | Jur., USSR (Kazakh) | JUR
+ Dolichostigma RASNITSYN, 1968
+ Kempendaja RASNITSYN, 1968
+ Kulbastavia RASNITSYN, 1968 [*'Anaxyela macrura RASNITSYN]
+ Sphenosyntexis RASNITSYN, 1969 [*'Anaxyela antonovi RASNITSYN]
+ Syntexyela RASNITSYN, 1968 [*Anaxyela media RASNITSYN]
+ Urosyntexis RASNITSYN, 1969 [*Syntexyela magna RASNITSYN] | -Cret | CRET
+ Praesirex RASNITSYN, 1968 [*P. hirtus] | Jur.- Eoc Megura >e> <~ ~\~~ rl 1~~~ Praeoryssus Shurabisca Pseudosiricidae, Siricidae | JUR
+ Myrmicium WESTWOOD, 1854 [*M. heeri]
+ Pseudosirex WEYENBERGH, 1873 [*E. berryi]
+ Formicium WESTWOOD, 1854 [*F. brodei] | Eoc., England | PALEOG
+ Shurabisca RASNITSYN, 1968 [*S. liassica]
+ Family SIRICIDAE Billberg, 1820
+ Sirex LINNE, 1761 | Mio., Europe (Yugoslavia)- Holo | NEOG
+ Aulisca RASNITSYN, 1968 [*A. odontura] | Eoc., Europe (France) | PALEOG
+ Eoxeris MAA, 1949 [*Urocerus klebsi BRUES] | Oligo., Europe (Baltic) | PALEOG
+ Megaulisca RASNITSYN, 1968 [*M. grossa]
+ Megura RASNITSYN, 1968 [*M. magnifica]
+ Microryssus RASNITSYN, 1968 [*M. brachyurus]
+ Praeoryssus RASNITSYN, 1968 [*P. venosus]
+ Asiephialtites RASNITSYN, 1975 | Jur., USSR (Kazakh) | JUR
+ Karataviola RASNITSYN, 1975 | Jur., USSR (Kazakh) | JUR
+ Leptephialtites RASNITSYN, 1975 [*L. caudatus] | Jur., USSR (Kazakh) | JUR
+ Mesephialtites RASNITSYN, 1975 [*M. paurocerus] | Jur., USSR (Kazakh) | JUR
+ Micrephialtites RASNITSYN, 1975 [*M. minor]
+ Parephialtites RASNITSYN, 1975 [*'P. reduetus]
+ Sessiliventer RASNITSYN, 1975 [*'5. temporalis]
+ Stephanogaster RASNITSYN, 1975 [*'S. magna]
+ Symphyogaster RASNITSYN, 1975 [*'5. eylindriea]
+ Symphytopterus RASNITSYN, 1975 [*'5. nigrieornis]
+ Trigonalopterus RASNITSYN, 1975 [*'T. braehyeerus]
+ Family STEPHANIDAE Leach, 1815
+ Stephanus PANZER, 1805
+ Electrostephanus BRUES, 1933 [*'E. brevieornis] | Oligo., Europe (Baltic) | PALEOG
+ Megalyra WESTWOOD, 1832 [*'8. karataviea]
+ Cleistogaster RASNITSYN, 1975 [*'c. buriatiea]
+ Microcleistogaster RASNITSYN, 1975 [*M. parvula] | Jur., USSR (Kazakh) | JUR
+ Maimetsha RASNITSYN, 1975 [*M. arctica] | Cret | CRET
+ Stigmaphron KOZLOV, 1975 [*5. orphne]
+ Allocotidus MUESEBECK, 1963 [*A. bruesi] | Cret., USA (Alaska) | CRET
+ Elasmomorpha KOZLOV, 1975 [*E. melpomene] | Cret., USSR (Asian RSFSR) | CRET
+ Hippocoon KOZLOV, 1975 [*H. evadne] | Cret.- Holo. Hipp Maimetshidae, Stigmaphroni | CRET
+ Megaspilus WESTWOOD, 1829 | , USSR (Asian RSFSR); Oligo., Europe (Baltic)-Holo | PALEOG
+ Lagynodes FORSTER, 1841 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Lygocerus FORSTER, 1856 [*P. penniger] | Jur | JUR
+ Mesoserphus KOZLOV, 1968 [*M. karatavicus] | Jur., USSR (Asian RSFSR) | JUR
+ Family SERPHITIDAE Brues, 1937
+ Serphites BRUES, 1937 [*S. paradoxus] | Cret., Canada (Maniroba) | CRET
+ Proctotrupes LATREILLE, 1796 | Oligo., Europe (Baltic), USA (Colorado)- Holo | PALEOG
+ Cryptoserphus KIEFFER, 1907 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Family HELORIDAE Forster, 1856
+ Helorus LATREILLE, 1802 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Protohelorus KOZLOV, 1968 [*P. mesozoicus] | Jur., USSR (Kazakh) | JUR
+ Family DIAPRIIDAE Haliday, 1833
+ Diapria LATREILLE, 1796 [*A. superba] | Oligo., Europe (Baltic), USA (Colorado)-Holo | PALEOG
+ Galesimorpha BRUES, 1910 [*G. wheeleri] | Oligo., England | PALEOG
+ Miota FORSTER, 1856 | Oligo., England-Holo | PALEOG
+ Pantolyta FORSTER, 1856 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Paramesius WESTWOOD, 1832 | Oligo., USA (Colorado)-Holo | PALEOG
+ Zygota FORSTER, 1856 [*P. tubuliforme] | Oligo., Europe (Baltic) | PALEOG
+ Scelio LATREILLE, 1805
+ Aneurobaeus KIEFFER, 1912 [*A. rugosus] | } Oligo., Europe (Baltic) | PALEOG
+ Baryconus FORSTER, 1856 [*B. cephalotes] | ] Oligo., Europe (Baltic) | PALEOG
+ Ceratobaeoides DODD, 1913 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Chromoteleia ASHMEAD, 1893 | Oligo., Europe (Baltic)- Holo | PALEOG
+ Dissolcus ASHMEAD, 1893 [*E. stigmatica] | Oligo., Europe (Baltic) | PALEOG
+ Hadronotoides DODD, 1913 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Hadronotus FORSTER, 1856 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Hoploteleia ASHMEAD, 1893 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Macroteleia WESTWOOD, 1835 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Palaeogron MASNER, 1969 [*P. oxyura] | Oligo., USA (Colorado) | PALEOG
+ Parabaeus KIEFFER, 1910 [*P. depressus] | Oligo., Europe (Baltic) | PALEOG
+ Proteroscelio BRUES, 1937 [*P. antennalis] | Cret., Canada (Manitoba) | CRET
+ Pseudobaeus PERKINS, 1910 [*S. clavata] | Oligo., Europe (Baltic)-Holo. Sembilanocera BRUES, 1940b, p. 70 ["S. clavata; OD). Related to Baeus (recent), but antennae of female with 9 segments and strongly clubbed. Wing veins present but reduce | PALEOG
+ Sparasion LATREILLE, 1802 | ] Oligo., Europe (Baltic) | PALEOG
+ Praeaulacus RASNITSYN, 1972 [*P. ramosus] | Jur., USSR (Kazakh) | JUR
+ Evanigaster RASNITSYN, 1972 [*E. petiolatus] | Jur., USSR (Kazakh) | JUR
+ Evaniops RASNITSYN, 1972 [*E. rostratus] | Jur., USSR (Kazakh) | JUR
+ Praeaulacinus RASNITSYN, 1972 [*P. parvus] | Jur., USSR (Kazakh) | JUR
+ Praeaulacites RASNITSYN, 1972 [*P. pachygaster] | Jur., USSR (Kazakh). P P w s v v h s C s w p l A m c p g w w | JUR
+ Praeaulacon RASNITSYN, 1972 [*P. elongatum] | Jur., USSR (Kazakh) | JUR
+ Praeaulicops RASNITSYN, 1972 [*P. lucidus] | Jur., USSR (Kazakh). Family CRETEVANIIDAE Rasnitsyn, 1975 [Cretevaniidae RASNITSYN, 1975, p. 83] Similar to Aulacidae and Evaniidae. Fore wing with costal area relatively broad; basal section of vein | JUR
+ Cretevania RASNITSYN, 1975 [*c. minor] | Jur., USSR (Kazakh) | JUR
+ Family EVANIIDAE Leach, 1815
+ Evania FABRICIUS, 1775 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Family AULACIDAE Shuckard, 1841
+ Aulacus JURINE, 1807
+ Aulacostethus PHILIPPI, 1873 | Oligo., Europe (Baltic), USA (Colorado)-Holo | PALEOG
+ Baissa RASNITSYN, 1975 [*8. anomala] | Mio., Burma | NEOG
+ Kotujella RASNITSYN, 1975 [*K. crucis] | Cret.-Holo | CRET
+ Ichneumon LINNE, 1758 | Oligo., USA (Colorado), England, Europe (France)-Holo | PALEOG
+ Absyrtus HOLMGREN, 1858 | Oligo., USA (Colorado)-Holo | PALEOG
+ Acoenites LATREILLE, 1810 [*A. perplexa] | ] Oligo., England | PALEOG
+ Amblyteles WESMAEL, 1845 | Oligo., USA (Colorado)-Holo | PALEOG
+ Anomalon PANZER, 1804 | Oligo., USA (Colorado), EuriJpe (France)-Holo | PALEOG
+ Astiphromma FORSTER, 1868 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Barylypa FORSTER, 1868 | Oligo., USA (Colorado)-Holo | PALEOG
+ Campoplex GRAVENHORST, 1829 [*c. minor] | Oligo., England-Holo | PALEOG
+ Cremastus GRAVENHORST, 1829 | Oligo., England, Europe (France)-Holo | PALEOG
+ Cubocephalus RATZEBURG, 1848 | Oligo., Europe (Germany)-Holo | PALEOG
+ Demophorus THOMSON, 1890 [*E grandis] | Oligo., USA (Colorado)-Holo | PALEOG
+ Exetastes GRAVENHORST, 1829 | , USA (Colorado), Europe (Germany); Pleist., Asia (Mongolia)-Holo | HOL
+ Exochus GRAVENHORST, 1829 | Oligo., USA (Colorado)-Holo | PALEOG
+ Glypta GRAVENHORST, 1829 | Oligo., USA (Colorado)-Holo | PALEOG
+ Hellwigia GRAVENHORST, 1823 | Oligo., USA (Colorado)-Holo | PALEOG
+ Hemiteles GRAVENHORST, 1829 | Oligo., USA (Colorado), Europe (Germany)-Holo | PALEOG
+ Hiatensor BRUES, 1910 | Oligo., USA (Colorado) | PALEOG
+ Holomeristus FORSTER, 1868 | Oligo., England-Holo. H H I L L L L M | PALEOG
+ Horogenes FORSTER, 1868 | Oligo., Europe (Germany)-Holo | PALEOG
+ Hypsicera LATREILLE, 1829 | Oligo., England-Holo | PALEOG
+ Itoplectis FORSTER, 1868 | Oligo., England-Holo | PALEOG
+ Labrorychus FORSTER, 1868 | Oligo., USA (Colorado)-Holo | PALEOG
+ Lampronota CURTIS, 1832 | Oligo., USA (Colorado)-Holo | PALEOG
+ Lapton NEES, 1815 | Oligo., USA (Colorado)-Holo | PALEOG
+ Lithotorus SCUDDER, 1890 | Oligo., USA (Colorado) | PALEOG
+ Melanichneumon THOMSON, 1893 | Oligo., USA (Colorado)-Holo | PALEOG
+ Mesochorus GRAVENHORST, 1829 | Oligo., USA (Colorado)-Holo | PALEOG
+ Mesoleptus GRAVENHORST, 1829 | Oligo., USA (Colorado) | PALEOG
+ Mesostenus GRAVENHORST, 1829 | Oligo., USA (Colorado)-Holo | PALEOG
+ Nemeritis HOLMGREN, 1858 | Oligo., Europe (France)-Holo | PALEOG
+ Netelia GRAY, 1860 | Oligo., USA (Colorado)-Holo | PALEOG
+ Olesicampe FORSTER, 1868 | , Europe (France); Mio., Europe (Yugoslavia)-Holo | NEOG
+ Orthocentrus GRAVENHORST, 1829 | Oligo., USA (Colorado)-Holo | PALEOG
+ Orthopelma TASCHENBERG, 1865 | Oligo., Europe (France) | PALEOG
+ Phaenolobus FORSTER, 1868 | , USA (Colorado); Oligo., Europe (Germany)-Holo | PALEOG
+ Pimpla FABRICIUS, 1804 | , USA (Colorado), Europe (Denmark); Oligo., USA (Colorado)-Holo | PALEOG
+ Plectiscidea VIERECK, 1914 | Eoc., USA (Colorado)-Holo | PALEOG
+ Polysphincta GRAVENHORST, 1829 | Oligo., USA (Colorado), England-Holo | PALEOG
+ Porizon FALLEN, 1813 | Oligo., Europe (France)-Holo | PALEOG
+ Protarchus FORSTER, 1868 | Oligo., Europe (Germany)-Holo | PALEOG
+ Rhyssa GRAVENHORST, 1829 | Oligo., USA (Colorado)-Holo | PALEOG
+ Scambus HARTIG, 1838 | Oligo., USA (Colorado)-Holo | PALEOG
+ Stenomacrus FORSTER, 1868 | Oligo., Europe (Baltic), USA (Colorado)-Holo | PALEOG
+ Stilpnus GRAVENHORST, 1829 | Cret., USSR (Asian RSFSR), Asia (Mongolia) | CRET
+ Tanychorella RASNITSYN, 1975 | Oligo., Europe (Baltic), USA (Colorado)-Holo | PALEOG
+ Trogus PANZER, 1806 | Oligo., USA (Colorado)-Holo | PALEOG
+ Tryphon FALLEN, 1813 | Cret | CRET
+ Ichneumonomima RASNITSYN, 1975
+ Family BRACONIDAE Latreille, 1829
+ Beacon FABRICIUS, 1805 | Oligo., USA (Colorado), Europe (Germany)-Holo | PALEOG
+ Agathis LATREILLE, 1804 | Oligo., Europe (Germany)-Holo | PALEOG
+ Aphidius NEES, 1818 | Oligo., Europe (Baltic, France)-Holo | PALEOG
+ Ascogaster WESMAEL, 1835 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Aspicolpus WESMAEL, 1838 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Aspilota FORSTER, 1862 | Oligo., Europe (Germany)-Holo | PALEOG
+ Austrohelcon TURNER, 1918 | Oligo., Europe (Baltic)-Holo. L Protoibalia Ichneumonomima Protimaspis Ichneumonomimidae, Cynipidae, Ibaliidae (p. 477-482) | PALEOG
+ Blacus NEES, 1818 | Oligo., England | PALEOG
+ Cantharoctonus VIERECK, 1912 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Chelonohelcon BRUES, 1933 | Oligo., Europe (Baltic) | PALEOG
+ Chelonus PANZER, 1806 | Oligo., USA (Colorado)-Holo | PALEOG
+ Clinocentrus HALIDAY, 1833 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Coeloreuteus ROMAN, 1910 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Colastes HALIDAY, 1833 | Oligo., England | PALEOG
+ Diaeretus FORSTER, 1862 | Oligo., Europe (France)-Holo | PALEOG
+ Digastrotheca BRUES, 1933 | Oligo., Europe (Baltic).-- 1933) | PALEOG
+ Diodontogaster BRUES, 1933 | Oligo., Europe (Baltic) | PALEOG
+ Diospilites BRUES, 1933 | Oligo., England | PALEOG
+ Diospilus HALIDAY, 1833 | , Canada (Manitoba); Oligo., USA (Colorado), England-Holo. Prochremylus Diospilites Palaeoblacus Braconida | PALEOG
+ Doryctes HALIDAY, 1836 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Doryctomorpha ASHMEAD, 1901 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Ecphylus FORSTER, 1862 | ?Mio., Mexico (Chiapas)-Holo | NEOG
+ Elasmosomites BRUES, 1933 | Oligo., Europe (Baltic) | PALEOG
+ Electrohelcon BRUES, 1933 | Eoc., USA (Colorado) | PALEOG
+ Eobraconus RASNITSYN, 1985 | Cret., Mongolia | CRET
+ Eocardiochiles BRUES, 1933 | Oligo., Europe (Baltic) | PALEOG
+ Ephedrus HALIDAY, 1833 | Oligo., Europe (Baltic, France)-Holo | PALEOG
+ Eubazus NEES, 1814 | Oligo., Europe (Baltic), USA (Colorado)-Holo | PALEOG
+ Eumacrocentrus ASHMEAD, 1901 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Euphorus NEES, 1834 | Oligo., USA (Colorado)-Holo | PALEOG
+ Hecabolus HALIDAY, 1834 [*H. braconiformis] | Oligo., Europe (France) | PALEOG
+ Hormiellus ENDERLEIN, 1912 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Hormiopterus GIRAUD, 1869 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Iphiaulax FORSTER, 1862 [*M. inopinata] | Oligo., Europe (Baltic) | PALEOG
+ Meteorus HALIDAY, 1835 | Oligo., Europe (Baltic, Germany)-Holo | PALEOG
+ Microctonus WESMAEL, 1835 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Microgaster LATREILLE, 1804 | Oligo., USA (Colorado)-Holo | PALEOG
+ Microplitis FORSTER, 1862 | Oligo., USA (Colorado), Europe (France)-Holo | PALEOG
+ Microtypus RATZEBURG, 1848 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Miracoides BRUES, 1933 [*M. proteus] | Oligo., Europe (Baltic) | PALEOG
+ Neoblacus ASHMEAD, 1901 | , Canada (Manitoba); Oligo., Europe (Baltic)-Holo | PALEOG
+ Oligoaphidius PEREZ, 1940 | Oligo., Europe (France) | PALEOG
+ Oligoneuroides BRUES, 1910 | Oligo., USA (Colorado) | PALEOG
+ Onychoura BRUES, 1933 [*0. petiolata] | Oligo., Europe (Baltic) | PALEOG
+ Opius WESMAEL, 1835 | Oligo., England-Holo | PALEOG
+ Orgilus HALIDAY, 1833 [*P. aeuleatus] | Oligo., Europe (Germany) | PALEOG
+ Palaeorhyssalus BRUES, 1933 [*P. dubitosis] | Oligo., Europe (Baltic) | PALEOG
+ Parasyrrhizus BRUES, 1933 [*P.ludens] | Oligo., Europe (Germany)-Holo | PALEOG
+ Phanerotoma WESMAEL, 1838 | Oligo., USA (Colorado), England-Holo | PALEOG
+ Polystenus FORSTER, 1862 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Praon HALIDAY, 1833 | Oligo., Europe (France)-Holo | PALEOG
+ Prochremylus BRUES, 1933 | Oligo., Europe (Baltic) | PALEOG
+ Promonolexis BRUES, 1933 | Oligo., Europe (Baltic) | PALEOG
+ Propraon BRUES, 1933 [*P. eellularis] | Oligo., Europe (Baltic) | PALEOG
+ Protephedrus PEREZ, 1940 [*P. tertiarius] | Oligo., Europe (France) | PALEOG
+ Pygostolus HALIDAY, 1833 | , Canada (Manitoba); Oligo., Europe (Baltic)-Holo | PALEOG
+ Rhaconotus RUTHE, 1854 | Oligo., USA (Colorado)-Holo | PALEOG
+ Rhysiopolis DALLA TORRE, 1898 | Oligo., Europe (France)-Holo | PALEOG
+ Rhyssalus HALIDAY, 1833 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Rogas NEES, 1818 | Oligo., Europe (Baltic, Germany), USA (Colorado)-Holo | PALEOG
+ Semirhytus SZEPLIGETI, 1902 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Sigalphus LATREILLE, 1802 | Oligo., England-Holo | PALEOG
+ Sinobracon HONG, 1974 [*S. speeiosus]
+ Snellenius WESTWOOD, 1882 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Spathius NEES, 1818 | Oligo., Europe (Germany)-Holo | PALEOG
+ Tanycarpa FORSTER, 1862 | Oligo., Europe (Germany)-Holo | PALEOG
+ Taphaeus WESMAEL, 1835 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Triaspis HALIDAY, 1835 | Oligo., Europe (Baltic), England-Holo | PALEOG
+ Trioxys HALIDAY, 1833 | Oligo., Europe (France)-Holo | PALEOG
+ Urosigalphus ASHMEAD, 1889 | Oligo., USA (Colorado)-Holo | PALEOG
+ Xenarcha FORSTER, 1862 | Oligo., England-Holo | PALEOG
+ Family CYNIPIDAE Leach, 1815
+ Cynips LINNE, 1758
+ Andricus HARTIG, 1840 | Oligo., England-Holo | PALEOG
+ Aulacidea ASHMEAD, 1897 | Oligo., Europe (Baltic), USA (Colorado)-Holo | PALEOG
+ Diplolepis GEOFFROY, 1762 | Oligo., England-Holo, | PALEOG
+ Protimaspis KINSEY, 1937 [*P. eostalis]
+ Family FIGITIDAE Forster, 1869
+ Figites LATREILLE, 1802 | Oligo., USA (Colorado), Europe (Germany)-Holo | PALEOG
+ Family IBALUDAE Forster, 1869
+ Ibalia LATREILLE, 1802
+ Protoibalia BRUES, 1910 [*P. eonvexa] | eonvexa; OD}, Similar to Ibalia (recent), but fore wing with cell 3r much shorter and broader, Oligo., USA (Colorado) | PALEOG
+ Family AGAONTIDAE Walker, 1871
+ Agaon DALMAN, 1818
+ Tetrapus MAYR, 1885 | Oligo., USA (Colorado)-Holo | PALEOG
+ Family TORYMIDAE Walker, 1833
+ Torymus DALMAN, 1820 | Oligo., Europe (Baltic, France), USA (Colorado)-Holo | PALEOG
+ Monodontomerus WESTWOOD, 1833 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Neopalachia BOUCEK, 1978 | /Mio., Dominican Republic-Holo | NEOG
+ Palaeotorymus BRUES, 1910 | Oligo., USA (Colorado) | PALEOG
+ Zophodetus GRISSELL, 1980 | /Mio., Dominican Republic | NEOG
+ Family CHALCIDAE Leach, 1815
+ Chalcis FABRICIUS, 1789 | Oligo., USA (Colorado)-Holo | PALEOG
+ Family EURYTOMIDAE Walker, 1833
+ Eurytoma ILUGER, 1807 | Oligo., England, Europe (Germany), USA (Colorado)-Holo | PALEOG
+ Bruesisca HEQUIST, 1961 | Oligo., Europe (France) | PALEOG
+ Heydeniopsis HEQUIST, 1961 | Oligo., Europe (Baltic) | PALEOG
+ Ormyrodes BRUES, 1907 | Oligo., USA (Colorado)-Holo | PALEOG
+ Family ENCYRTIDAE Forster, 1856
+ Encyrrus LATREILLE, 1809 | Oligo., Europe (Germany)-Holo | PALEOG
+ Propelma TRJAPITZIN, 1963 | Oligo., Europe (Baltic) | PALEOG
+ Family EULOPHIDAE Haliday, 1833
+ Trichogramma WESTWOOD, 1833
+ Enneagmus YOSHIMOTO, 1975 | Cret., Canada (Manitoba) | CRET
+ Family MYMARIDAE HaHday, 1833
+ Mymar CURTIS, 1832
+ Alaptus WESTWOOD, 1839 | ?Mio., Mexico-Holo | NEOG
+ Anaphes HALIDAY, 1833 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Archaeromma YOSHIMOTO, 1975 | Cret., Canada (Manitoba, Alberta) | CRET
+ Arescon WALKER, 1846 | Oligo., Europe (Baltic)- Holo | PALEOG
+ Carpenteriana YOSHIMOTO, 1975 | ] Cret., Europe (Germany). G L M M O P P P T s l g s o D T B | CRET
+ Gonatocerus NEES, 1834 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Litus HALIDAY, 1833 | / Mio., Mexico (Chiapas)-Holo | NEOG
+ Macalpinia YOSHIMOTO, 1975 | Oligo., Europe (Baltic) | PALEOG
+ Ooctonus HALIDAY, 1833 | ?Mio., Mexico-Holo | NEOG
+ Protooctonus YOSHIMOTO, 1975 | Cret., Canada (Manitoba) | CRET
+ Triadomerus YOSHIMOTO, 1975 | Cret.-Holo | CRET
+ Tetracampe FORSTER, 1841
+ Baeomorpha BRUES, 1937 | Cret., Canada (Manitoba, Alberta) | CRET
+ Bouceklytus YOSHIMOTO, 1975 [*8. arcuodens] | Cret., Canada (Manitoba) | CRET
+ Distylopus YOSHIMOTO, 1975 [*D. bisegmentus] | Jur. Karataus RASNITSYN, 1977a, p. 103 ["K. pedalis; OD). Fore wing with basal segment of RS long, directed toward wing base; crossvein 1r-rs absent; crossvein 2r-m closer to 2m-cu than to 2r-rs; cell | JUR
+ Bethylonymus RASNITSYN, 1975 [*8. curtipes]
+ Arthrogaster RASNITSYN, 1975 [*A. seticornis]
+ Bethylonymellus RASNITSYN, 1975
+ Leptogastrella RASNITSYN, 1975 [*L. leptogastra]
+ Family CHRYSIDIDAE Latreille, 1802
+ Chrysis LINNE, 1761 [*H. rasnitsyni] | Cret., USSR (Asian RSFSR) | CRET
+ Omalus PANZER, 1801 [*P. carpenteri] | Cret., Canada (Manitoba) | CRET
+ Protamisega EVANS, 1973 [*P. khatanga] | Cret., USSR (Asian RSFSR) | CRET
+ Protochrysidis CARPENTER, 1986 [*Protochrysis succinalis] | Oligo., Europe (Baltic) | PALEOG
+ Family SCOLEBYTHIDAE Evans, 1963
+ Scolebythus H. E. EVANS, 1963
+ Cretabythus EVANS, 1973 | } Cret., USSR {Asian RSFSR) | CRET
+ Family BETHYLIDAE Forster, 1856
+ Bethylus LATREILLE, 1802
+ Apenesia WESTWOOD, 1874 | Mio., Burma-Holo | NEOG
+ Archaepyris EVANS, 1973 | Cret., USSR (Asian RSFSR) | CRET
+ Artiepyris KIEFFER, 1913 | Mio., Burma | NEOG
+ Bethylopteron BRUES, 1933 | ) Oligo., Europe (Baltic) | PALEOG
+ Calyoza WESTWOOD, 1837 | Oligo., Europe {Baltic)-Holo. ~ ~ _ C C ~ RSRW M ----. \ ~ ...__..;':;_""c,:;:~ ___====_.:>'.. m •• m • ...' Archaepyris L.. Celonophamia Pristapenesia Palaeobethylus Bethylidae (p. 487-488) | PALEOG
+ Celonophamia EVANS, 1973 | Cret., USSR {Asian RSFSR) | CRET
+ Epyris WESTWOOD, 1832 | , Europe (Baltic), England, USA (Colorado); Mio., Burma- Holo | NEOG
+ Eupsenella WESTWOOD, 1874 | Oligo., Europe (Baltic)- Holo | PALEOG
+ Holepyris KIEFFER, 1904 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Homoglenus KIEFFER, 1904 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Isobrachium FORSTER, 1856 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Laelius ASHMEAD, 1893 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Misepyris KIEFFER, 1913 | Oligo., Europe (Baltic) | PALEOG
+ Parapristocera BRUES, 1933 | Oligo., Europe (Baltic) | PALEOG
+ Perisierola KIEFFER, 1914 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Pristapenesia BRUES, 1933 | Oligo., Europe (Baltic) | PALEOG
+ Prosierola KIEFFER, 1905 | Oligo., Europe (France)-Holo | PALEOG
+ Rhabdepyris KIEFFER, 1904 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Scleroderma LATREILLE, 1809 | Mio., Burma-Holo | NEOG
+ Uromesitius BRUES, 1933 | Oligo., Europe (Baltic) | PALEOG
+ Family DRYINIDAE Haliday, 1833
+ Dryinus LATREILLE, 1804 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Ampulicomorpha ASHMEAD, 1893 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Avodryinus PONOMARENKO, 1981 | Cret., USSR (Asian RSFSR) | CRET
+ Dicondylus CURTIS, 1829 | Oligo., Europe (Baltic) | PALEOG
+ Thaumatodryinus PERKINS, 1905 | Oligo., Europe (Baltic)-Holo. Family BAISSODIDAE Rasnitsyn, 1975 [Baissodidae RASNITSYN. 1975. p. 122) Little-known family, possibly related to the Sphecidae. Female: antennae with 12 segments; mesono | PALEOG
+ Baissodes RASNITSYN, 1975 | Cret., England | CRET
+ Oryctobaissodes RASNITSYN, 1975 | Cret., USSR (Asian RSFSR) | CRET
+ Trichobaissodes RASNITSYN, 1975 | Cret., USSR (Asian RSFSR) | CRET
+ Family TIPHIIDAE Leach, 1815
+ Tiphia FABRICIUS, 1775 | Oligo., Europe (France)-Holo | PALEOG
+ Protomutilla BISCHOFF, 1917 | Oligo., Europe (Baltic) | PALEOG
+ Family MUTILLIDAE Latreille, 1802
+ Mutilla LINNE, 1802
+ Falsiformica RASNITSYN, 1975 | Cret., USSR (Asian RSFSR) | CRET
+ Family FORMICIDAE Latreille, 1802
+ Formica LINNE, 1758 | Oligo., Europe (Baltic) | PALEOG
+ Ameghinoia VIANA &. HAEDO ROSSI, 1957 | /Mio., Argentina | NEOG
+ Aphaenogaster MAYR, 1853 | , Europe (Baltic), USA (Colorado); Mio., Europe (France)-Holo | NEOG
+ Archaeopone DWSSKY, 1975 | Oligo., USA (Colorado) | PALEOG
+ Armaniella DWSSKY, 1983 | Cret., USSR (Asian RSFSR) | CRET
+ Asymphylomyrmex WHEELER, 1914 | Oligo., Europe (Baltic) | PALEOG
+ Brachyponera EMERY, 1901 | Oligo., Europe (France)-Holo | PALEOG
+ Bradoponera MAYR, 1868 | Mio., USSR (European RSFSR) | NEOG
+ Camponotus MAYR, 1861 | Oligo., USA (Colorado) | PALEOG
+ Cerapachys SMITH, 1857 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Cretomyrma DWSSKY, 1975 | Cret., USSR (Asian RSFSR) | CRET
+ Dolichoderus LUND, 1831 | Oligo., Europe (Baltic, France), England, USA (Colorado)-Holo | PALEOG
+ Dolichomyrma DWSSKY, 1975 | Cret., USSR (Kazakh) | CRET
+ Drymomyrmex WHEELER, 1914 | Oligo., Europe (Baltic) | PALEOG
+ Electroponera WHEELER, 1914 | Oligo., Europe (Baltic) | PALEOG
+ Emplastus DONISTHORPE, 1920 | Eoc., USA (Colorado, Wyoming, Utah) | PALEOG
+ Eomyrmex HONG, 1974 | Oligo., USA (Colorado) | PALEOG
+ Gesomyrmex MAYR, 1868 | Oligo., Europe (Baltic, France)-Holo | PALEOG
+ Glaphyromyrmex WHEELER, 1914 | Oligo., Europe (Baltic, France) | PALEOG
+ Gnamptogenys ROGER, 1863 | jMio., Dominican Republic-Holo | 
+ Iridomyrmex MAYR, 1862 | Oligo., Europe (Baltic, France), USA (Colorado)-Holo | PALEOG
+ Kotshkorkia DLUSSKY, 1981 | Mio., USSR (Kirghiz) | NEOG
+ Lasius FABRICIUS, 1805 | , Europe (Baltic, France), USA (Colorado); Mio., Europe (France, Croatia), USSR (European RSFSR)-Holo | NEOG
+ Leptomyrmex MAYR, 1862 | jMio., Dominican Republic-Holo | 
+ Leptomyrmula EMERY, 1912 | Mio., Europe (Italy) | NEOG
+ Leptothorax MAYR, 1855 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Leucotaphus DONISTHORPE, 1920 | Oligo., England | PALEOG
+ Liometopum MAYR, 1861 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Myrmica LATREILLE, 1804 | Oligo., Europe (Baltic) | PALEOG
+ Odontomachus LATREILLE, 1804 | jMio., Dominican Republic-Holo | 
+ Oecophylla F. SMITH, 1860 | , Europe (Baltic, France); Mio., Europe (Italy)-Holo | NEOG
+ Oligomyrmex MAYR, 1867 | , Europe (Baltic, France); Mio., Europe (France)-Holo. ~ ; ~~ C . . unoslvespa 1m-cu RS+M~ ~~2r-m ~ ~1 Lisponema 2r-rs ~~ _~ l~RS , --.::::: Pompilopterus 2r-rs Cretosphex Formicidae, Pompilidae, Sphe | NEOG
+ Pachycondyla F. SMITH, 1858 | , Europe (Balric, France), England; Mio., USSR (European RSFSR)-Holo | NEOG
+ Palaeomyrmex DWSSKY, 1975 [*P. zherichini] | Cret., USSR (Asian RSFSR) | CRET
+ Parameranoplus WHEELER, 1914 [*P. primaevus] | Oligo., Europe (Baltic) | PALEOG
+ Paraneuretus WHEELER, 1914 [*P. tornquisti] | Oligo., USA (Colorado)-Holo | PALEOG
+ Pityomyrmex WHEELER, 1914 [*P. tornquisti] | Oligo., Europe (Baltic, France)- Holo | PALEOG
+ Pogonomyrmex MAYR, 1868 | , Europe (Italy); Pleist., Australia (Victoria)-Holo | HOL
+ Poneropsis HEER, 1867 | , England, Europe (Germany); Mio., USSR (European RSFSR) | NEOG
+ Poneropterus DWSSKY, 1983 [*P. sphecoides] | Cret., USSR (Asian RSFSR) | CRET
+ Prenolepis MAYR, 1861 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Prionomyrmex MAYR, 1868 [*P. longiceps] | Oligo., Europe (Baltic) | PALEOG
+ Prodimorphomyrmex WHEELER, 1914 [*P. primigenius] | Oligo., Europe (Baltic) | PALEOG
+ Protamblyopone DWSSKY, 1981 [*P. inversa] | Mio., USSR (Kirghiz) | NEOG
+ Protaneuretus WHEELER, 1914 [*P. JUccineus] | Oligo., USA (Colorado). P P P P R S S S T | PALEOG
+ Pseudoarmania DWSSKY, 1983 [*P. rasnitsyni] | Mio., USA (Nevada) | NEOG
+ Pseudolasius EMERY, 1887 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Pseudomyrmex LUND, 1831 | Oligo., USA (Colorado)-Holo | PALEOG
+ Rhopalomyrmex MAYR, 1868 [*R. pygmaeus] | Oligo., Europe (Baltic) | PALEOG
+ Sicilomyrmex WHEELER, 1914 [*Gesomyrmex corniger EMERY] | Mio., Europe (Italy) | NEOG
+ Solenopsis WESTWOOD, 1840 [*S. freyi] | Cret., USA (New Jersey) | CRET
+ Stenamma WESTWOOD, 1840 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Stigmomyrmex MAYR, 1868 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Stiphromyrmex WHEELER, 1914 [*S. robustus] | Oligo., Europe (Baltic) | PALEOG
+ Syntaphus DONISTHORPE, 1920 [*S. wheeleri] | Oligo., England | PALEOG
+ Tetraponera F. SMITH, 1852 | /Mio., Dominican Republic-Holo | NEOG
+ Vollenhovia MAYR, 1865 | Oligo., Europe (Baltic)-Holo | PALEOG
+ Family EUMENIDAE Leach, 1815
+ Eumenes LATREILLE, 1802 | , USA (Wyoming); Oligo., Europe (Germany)- Holo | PALEOG
+ Ancistrocerus WESMAEL, 1836 | Eoc., Europe (France)-Holo | PALEOG
+ Eunortonia CARPENTER, 1986 | Oligo., USA (Colorado), Europe (France)-Holo | PALEOG
+ Rygchium SPINOLA, 1806 | Eoc., Europe (France)-Holo | PALEOG
+ Family VESPIDAE Leach, 1815
+ Vespa LINNE, 1758 | Oligo., Europe (Baltic), USA (Colorado) | PALEOG
+ Polistes LATREILLE, 1802 | , Europe (Germany, France); Mio., Europe (Germany)-Holo | NEOG
+ Polybia LEPELETIER, 1836 | Oligo., England-Holo | PALEOG
+ Family POMPILIDAE Leach, 1815
+ Pompilus FABRICIUS, 1798 | Oligo., Europe (Baltic, France)- Holo | PALEOG
+ Anoplius DUFOUR, 1834 | Oligo., Europe (Germany)-Holo | PALEOG
+ Cryptocheilus PANZER, 1806 | Oligo., USA (Colorado)-Holo | PALEOG
+ Pepsis FABRICIUS, 1805 | Oligo., USA (Colorado)-Holo | PALEOG
+ Pompilopterus RASNITSYN, 1975
+ Priocnemis SCHIODTE, 1837 | Oligo., Europe (Germany)-Holo | PALEOG
+ Family SPHECIDAE Leach, 1815
+ Sphex LINNE, 1758 | , Europe (Germany); Mio., Europe (Germany, Yugoslavia)-Holo | NEOG
+ Angarosphex RASNITSYN, 1975 | Cret., USSR (Asian RSFSR) | CRET
+ Cerceris LATREILLE, 1802 | Oligo., Europe (France)-Holo | PALEOG
+ Chalybion DAHLBOM, 1844 | Cret., Europe (Germany) | CRET
+ Gorytes LATREILLE, 1804 | } Mio., Europe (Italy) | NEOG
+ Lisponema EVANS, 1969 | Cret., Canada (Manitoba) | CRET
+ Mellinus FABRICIUS, 1790 | Oligo., USA (Colorado)-Holo | PALEOG
+ Passaloecus SHUCKARD, 1837 | Oligo., USA (Colorado), Europe (France)-Holo | PALEOG
+ Philoponites COCKERELL, 1915 | Oligo., USA (Colorado), Europe (Baltic)-Holo | PALEOG
+ Pittoecus EVANS, 1973 | Oligo., USA (Colorado)-Holo | PALEOG
+ Sceliphron KWG, 1801 | , England; Mio., Europe (France)-Holo | NEOG
+ Taimyrisphex EVANS, 1973 | Cret., USSR (Asian RSFSR) | CRET
+ Tracheliodes MORAWITZ, 1866 | Oligo., Europe (Baltic), USA (Colorado)-Holo | PALEOG
+ Family ANDRENIDAE Latreille, 1802
+ Family HALICTIDAE Ashmead, 1899
+ Halictus LATREILLE, 1804 | ] Oligo., USA (Colorado) | PALEOG
+ Family MELITfIDAE Schenk, 1860
+ Melitta KIRBY, 1802 | Oligo., Europe (Baltic) | PALEOG
+ Family MEGACHILIDAE Kirby, 1837
+ Dianthidium COCKERELL, 1900 | Oligo., USA (Colorado)-Holo | PALEOG
+ Heriades SPINOLA, 1808 | Oligo., USA (Colorado) | PALEOG
+ Lithurge LATREILLE, 1825 | Mio., Europe (Germany)-Holo | NEOG
+ Osmia PANZER, 1806 | Eoc.- Holo | PALEOG
+ Anthophora LATREILLE, 1803 | Oligo., USA (Colotado)-Holo | PALEOG
+ Anthophorites HEER, 1849 | , Europe (France); Mio., Croatia | NEOG
+ Celliforma BROWN, 1934 | Eoc.-Holo | PALEOG
+ Apis LINNE, 1758 [*c. humilis] | Oligo., Europe (Baltic) | PALEOG
+ Plebeia SCHWARZ, 1938 [*P. hirsutus] | Oligo., Europe (Baltic) | PALEOG
+ Tetralonia SPINOLA, 1839 | , Mexico (Chiapas); Mio., Europe (Sicily), Burma-Holo | NEOG
+ Xylocopa LATREILLE, 1802 | , Europe (Germany); Mio., Europe (Germany)-Holo. i A a B C C C C D I P Family UNCERTAIN The following genera, apparently belonging to the order Hymenoptera, suborder Apocrita, are too poorly known to | NEOG
+ Baissobius RASNITSYN, 1975 [*B. parous] | ) Cret., Europe (Germany) | CRET
+ Cretopone DWSSKY, 1975 [*c. magna] | Cret., USSR (Kazakh) | CRET
+ Cretosphex RASNITSYN, 1975 [*c. incertus] | Cret., USSR (Asian RSFSR) | CRET
+ Curiosivespa RASNITSYN, 1975 [*c. curiosa] | Oligo., Europe (Germany) | PALEOG
+ Iscopinus KOZLOV, 1974 [*1. baissicus] | ) Oligo., Europe (Germany) | PALEOG
+ Proctotrypites MEUNIER, 1918 [*P. rottensis] | Oligo., Europe (Germany) | PALEOG
+ Vitimosphex RASNITSYN, 1975 [*V. incompletus] | Cret., USSR (Asian RSFSR). Suborder UNCERTAIN The following genera, apparently belonging to the order Hymenoptera, are too poorly known to permit assignment to suborders | CRET
+ Proapocritus RASNITSYN, 1975 [*P. praecursor] | ] Perm., South Africa | PERM
+ Apheloneura CARPENTER, 1976 [*A. minutissima] | ] Perm., USA (Kansas) | PERM
+ Climaconeura PRUVOST, 1912 [*c. remauxi] | Carb., Europe (France) | CARB
+ Crosaphis EVANS, 1971 [*c. anomala] | ] Trias., Australia (Queensland) | TRIAS
+ Ctenostematopteryx HAUPT, 1952 [*c. thuringiaca] | Perm., Europe (Germany) | PERM
+ Elmothone CARPENTER, 1976 [*E. martynovae] | ] Perm., USA (Kansas) | PERM
+ Eopanorpella SCHMIDT, 1962 [*E. ernsti] | } Perm., USSR (European RSFSR) | PERM
+ Gelasopteron CARPENTER, 1976 [*G. gracile] | } Perm., USA (Kansas) | PERM
+ Geroneura MATTHEW, 1889 [*G. wilsoni] | } Perm., USSR (Asian RSFSR) | PERM
+ Ignotala RIEK, 1973 [*1. mirifica] | Carb., Europe (Germany) | CARB
+ Lemmatophoropsis ZALESSKY, 1935 [*L. sibirica] | } Perm., USSR (Asian RSFSR) | PERM
+ Megoniella RIEK, 1973 [*M. multinerva] | } Trias., Australia (New South Wales) | TRIAS
+ Metropatorites KELLER, 1934 [*M. kassenbergensis] | Carb., Europe (Germany) | CARB
+ Micropalemomum SCHMIDT, 1962 [*M. minisculum] | Carb., Europe (Germany) | CARB
+ Mixotermes STERZEL, 1881 [*M.lagauensis] | Carb., Europe (Germany) | CARB
+ Mononeura BECKER-MIGDISOVA, 1951 [*M. angustipennis] | } Perm., USA (Kansas) | PERM
+ Ocellia OLFERS, 1907 | } Perm., USSR (Asian RSFSR) | PERM
+ Palaeomantisca MARTYNOV, 1940 | } Perm., USSR (Asian RSFSR) | PERM
+ Paraulacus PING, 1928
+ Perielytron ZALESSKY, 1943 | Perm., Europe (Czechoslovakia) | PERM
+ Permonka RIEK, 1973 | Perm., USA (Kansas) | PERM
+ Protoblauinopsis LAURENTIAUX, 1953
+ Protoblattinopsidae LAURENTIAUX, 1966 | Carb., Europe (Germany) | CARB
+ Redactineura RIEK, 1973 | ] Perm., South Africa | PERM
+ Reprehensa BODE, 1953 | ] Jur., Europe (Germany) | JUR
+ Saurophthirus PONOMARENKO, 1976 | Cret., USSR (Asian RSFSR) | CRET
+ Scalaeoptera BOLTON, 1922 | Carb., England | CARB
+ Sheimia MARTYNOVA, 1958 | Carb., Europe (France) | CARB
+ Tillyardites HANDLIRSCH, 1937 | ] Perm., Australia (New South Wales) | PERM
+ Trachopteryx CARPENTER, 1976 | Perm., USA (Kansas) | PERM
+ Trichorthophlebia HANDLIRSCH, 1939 | Perm., USSR (Asian RSFSR) | PERM
+ Xeroptera BOLTON, 1922 | Carb., England. Subclass PTERYGOTA Order UNCERTAIN The following genera, apparently belonging to the subclass Pterygota, are too poorly known to permit assignment to orders | CARB
+ Merlebachia WATERLOT, 1934 | Carb., Europe (France) | CARB
+ Pteronepionites BOLTON, 1921 | Carb., England | CARB

@@ -1,0 +1,706 @@
+---
+reference: Cox, L.R., Newell, N.D., et al., 1969. Treatise on Invertebrate Paleontology, Part N, Mollusca 6, Bivalvia, Volume 1. Geological Society of America and University of Kansas.
+scope:
+  - taxon: Bivalvia (Palaeotaxodonta, Cryptodonta, Pteriomorphia, Palaeoheterodonta, Heterodonta partial)
+    coverage: comprehensive
+notes: |
+  Covers Subclasses Palaeotaxodonta, Cryptodonta, Pteriomorphia, and Palaeoheterodonta
+  plus part of Heterodonta. Pages 263-527 extracted. ~644 genus entries.
+---
+
+ Subclass Palaeotaxodonta Korobkov, 1954
+ Order Nuculoida Dall, 1889
+ Superfamily Ctenodontacea Wohrmann, 18
+ Superfamily Nuculacea Gray, 1824
+ Superfamily Nuculanacea H. Adams & A.
+ Subclass Cryptodonta Neumayr, 1884
+ Order Solemyoida Dall, 1889
+ Superfamily Solemyacea H. Adams & A. A
+ Order Praecardioida Newell, 1965
+ Superfamily Praecardiacea Homes, 1884
+ Subclass Pteriomorphia Beurlen, 1944
+ Order Arcoida Stoliczka, 1871
+ Superfamily Cyrtodontacea Ulrich, 1894
+ Superfamily Arcacea Lamarck, 1809
+ Superfamily Limopsacea Dall, 1895
+ Order Mytiloida Ferussac, 1822
+ Superfamily Mytilacea Rafinesque, 1815
+ Superfamily Pinnacea Leach, 1819
+ Order Pterioida Newell, 1965
+ Suborder Pteriina Newell, 1965
+ Superfamily Ambonychiacea S. A. Miller,
+ Superfamily Pteriacea Gray, 1847
+ Superfamily Pectinacea Rafinesque, 1815
+ Superfamily Anomiacea Rafinesque, 1815
+ Superfamily Limacea Rafinesque, 1815
+ Suborder Ostreina Ferussac, 1822
+ Subclass Palaeoheterodonta Newell, 1965
+ Order Modiomorphoida Newell, new order .m
+ Superfamily Modiomorphacea Miller, 1877
+ Superfamily Cycloconchacea Ulrich, 1884
+ Order Unionoida Stoliczka, 1871
+ Superfamily Archanodontacea Weir, new s
+ Superfamily Anthracosiacea Amalitsky, 189
+ Superfamily Unionacea Fleming, 1828
+ Order Trigonioida Dall, 1889
+ Superfamily Trigoniacea Lamarck, 1819
+ Subclass Heterodonta Neumayr, 1884
+ Order Veneroida H. Adams & A. Adams, 18
+ Superfamily Babinkacea Horny, 1960
+ Superfamily Lucinacea Fleming, 1828
+ Superfamily Chamacea Lamarck, 1809
+ Superfamily Leptonacea Gray, 1847
+ Superfamily Chlamydoconchacea Dal1, 188
+ Superfamily Cyamiacea Philippi, 1845
+ Superfamily Carditacea Fleming, 1820
+ Superfamily Cardiacea Lamarck, 1809
+ Superfamily Tridacnacea Lamarck, 1819
+ Superfamily Mactracea Lamarck, 1809
+ Superfamily Solenacea Lamarck, 1809
+ Superfamily Dreissenacea Gray in Turton,
+ Superfamily Gaimardiacea Hedley, 1916
+ Superfamily Arcticacea Newton, 1891
+ Superfamily Glossacea Gray, 1847
+ Superfamily Corbiculacea Gray, 1847
+ Superfamily Veneracea Rafinesque, 1815
+ Order Myoida Stoliczka, 1870
+ Suborder Myina Stoliczka, 1870
+ Superfamily Myacea Lamarck, 1809
+ Superfamily Gastrochaenacea Gray, 1840
+ Suborder Pholadina H. Adams & A. Adams
+ Superfamily Pholadacea Lamarck, 1809
+ Order Hippuritoida Newel1, 1965
+ Superfamily Megalodontacea Morris & Lyc
+ Superfamily Hippuritacea Gray, 1848
+ Subclass Anomalodesmata Dal1, 1889
+ Order Pholadomyoida Newel1, 1965
+ Superfamily Edmondiacea King, 1850
+ Superfamily Pholadomyacea Gray, 1847
+ Superfamily Pandoracea Rafinesque, 1815
+ Superfamily Poromyacea Dal1, 1886
+ Order Conocardioida Neumayr, 1891
+ Superfamily Conocardiacea Miller, 1889
+Class BIVALVIA Linne, 1758
+ Nuculoida DALL, 1889 | -Rec | REC
+ Order NUCULOIDA Dall, 1889
+ Family CTENODONTIDAE Wohrmann,
+ Clinopistha MEEK & WORTHEN, 1870 [*C. radiata var. levis] | -Carb., N.Am | CARB
+ Praectenodonta PHILIP, 1962 [*Palaeoneilo raricostae CHAPMAN] | -LDev., cosmop | 
+ Superfamily NUCULACEA Gray,
+ Family PRAENUCULIDAE McAlester,
+ Praenucula PFAB, 1934 | M.Ord., Eu. (Czech.) | MORD
+ Cardiolaria MUNIER-CHALMAS, 1876 | - Sil., Eu.-N.Am | SIL
+ Deceptrix FUCHS, 1919 | -Dev., Eu | DEV
+ Ledopsis BEUSHAUSEN, 1884 | L.Dev., Eu.(Ger.) | LDEV
+ Similodonta SOOT-RYEN, 1964 | -Sil., N.Am.-Eu | SIL
+ Family NUCULIDAE Gray, 1824
+ Brevinucula THIELE, 1934 [*Nucula guineensis THIELE] | Mio.- Ree., Afr.-N.Am | NEOG
+ Nuculoma COSSMANN, 1907 [*Nucula castor N P P P T [ o O F [ [ D'ORBIGNY]
+ Nuculopsis GIRTY, 1911 [*Nueula ventricosa HALL] | · Perm., Eu.-N.Am.-N.Z.-Asia | PERM
+ Palaeonucula QUENSTEDT, 1930 [*Nucula hammeri DEFRANCE] | Trias.-fur., Eu.-Asia-N.Am | TRIAS
+ Ptychostolis TULLBERG, 1881 [*P. nordenskioldi]
+ Family MALLETIIDAE Adams & Adams,
+ Nucularia CONRAD, 1869 [*Malletia pacifica DALL] | - Rec., cosmop | REC
+ Ctenodontella KHALFIN, 1940 [*C. macrodiformis] | L.Dev., USSR(Sib.) | LDEV
+ Dysodonta MANSUY, 1913 [*D. deprati] | Sil., SE.Asia(N.Vietnam) | SIL
+ Ekstadia SOOT-RYEN, 1964 [*E. tricarinata] | Sil., Eu.(Swed.) | SIL
+ Koenenia BEUSHAUSEN, 1884 [*Cucullaea lasii ROEMER] | LDev., Eu. (Ger.) | 
+ Myoplusia NEUMAYR, 1884 [*Leda bilunata BARRANDE] | M.Ord., Eu.(Czech.) | MORD
+ Palaeoneilo HALL & WHITFIELD, 1869 [*Nuculites constricta CONRAD]
+ Gomodon HERRICK, 1888 [*P. klipsteiniana] | Ord.-Mesoz., cosmop | ORD
+ Quadratonucula DICKINS, 1963 [*Q. australiensis] | Perm., Australia | PERM
+ Saturnia SEGUENZA, 1877 [*Nucula pusio PHILIPPI] | Rec., cosmop. (deep oceans) | REC
+ Sluha BARRANDE, 1881 [*S. expanstts] | U.Ord., Eu.(Czech.) | UORD
+ Family NUCULANIDAE Adams &
+ Adrana ADAMS & ADAMS, 1858 | - Rec., cosmop | REC
+ Costatoleda ROTH YON TELEGD, 1914 | Oligo., Eu. (Hungary) | PALEOG
+ Dacryomya AGASSIZ, 1840
+ Ezonuculana NAGAO, 1938 | Cret., Japan | CRET
+ Hilgardia HARRIS & PALMER, 1946 [*Leda multilineata CONRAD] | Eoc., N.Am | PALEOG
+ Mesosaccella CHAYAN, 1946 | Penn., VSA(Tex.-Okla.Kans.) | PENN
+ Portlandia MORCH, 1857 [*Nucula arctica GRAY] | -Rec., cosmop | REC
+ Pristigloma DALL, 1900 [*Glomus nitens JEFFREYS] | Rec., cosmop. Ryderia WILTON, 1830, p. [*Leda renevtert OPPEL; SD Cox, 1936]. Pallial sinus very wide, shallow; shell-shaped like Nuculana. Rostrum very long and narrow. lur., Eu | REC
+ Sarepta ADAMS, 1860 [*S. speciosa] | Rec., Indo-Pac | REC
+ Veteranella PATTE, 1926 [*Nuculana (V.) strenua] | Perm., Australia | PERM
+ Zealeda MARWICK, 1924 | -Rec., N.Z | REC
+ Family ISOARCIDAE Keen,
+ Order SOLEMYOIDA Dall, 1889
+ Family SOLEMYIDAE Adams & Adams,
+ Solemya LAMARCK, 1818 [*'Solemya primaeva PHILLIPS] | Rec., Medit.-W.AtI. Fossil distribution uncertain | REC
+ Adulomya KURODA, 1931 [*'A. uchimuraensis] | Mio., Japan | NEOG
+ Order PRAECARDIOIDA Newell,
+ Family PRAECARDIIDAE Homes, 1884
+ Subfamily PRAECARDnNAE Homes, 1884
+ Praecardium BARRANDE, 1881
+ Pararca HALL, 1885 | )-Dev., N. Am.(N.Y.-Mich.-Ont.) | DEV
+ Buchiola BARRANDE, 1881 | ; UDev., Eu.-N.Am | 
+ Eopteria BILLINGS, 1865 | U.Sil.(F,), Boh | USIL
+ Siava BARRANDE, 1881 | Sil., E.Eu | SIL
+ Subfamily CARDIOLINAE Fischer, 1886
+ Opisthocoelus BF.USHAUSEN, 1895 | Dev., Ger.-Belg | DEV
+ Subfamily DEXIOBIINAE Newell & LaRocque,
+ Dexiobia WINCHELL, 1863 | Miss.(Kinderhook.), C.USA | MISS
+ Family ANTIPLEURIDAE Neumayr,
+ Subfamily ANTIPLEURINAE Neumayr, 1891
+ Antipleura BARRANDE, 1881 | M.Sil. (E.), Boh | SIL
+ Soror BARRANDE, 1881 | M.Sil.(E.), Boh | SIL
+ Hercynella KAYSER, 1878 | -U.Dev., Eu.-USA-MDrocco-Australia | UDEV
+ Silurina BARRANDE, 1881 | )-Dev.(F,), Boh | DEV
+ Vlasta BARRANDE, 1881 | (OntoO); M.Sil.(E.), Boh | SIL
+ Shanina REED, 1915 | Ord., India | ORD
+ Shaninopsis ISBERG, 1934 [*S prona] | U.Ord.(U.Leptaena Ls.), Swed | UORD
+ Vevoda BARRANDE, 1881 | )-Dev.(F,), Boh | DEV
+ Family BUTOVICELLIDAE KHZ, 1965
+ Order ARCOIDA Stoliczka, 1871
+ Family CYRTODONTIDAE Ulrich, 1894
+ Cyrtodonta BILLINGS, 1858 | ; L.Sil.(Llandovery) , Eu | LSIL
+ ?Cyprieardites CONRAD, 1841 | ; ?Sil.(Niagar.) , USA(Ind.) | SIL
+ Matheria BILLINGS, 1858 [*P. knappanum] | )-Sil.(Niagar.) , N.Am. (Que.-Minn.- Wis.-Ill.) | SIL
+ Thorslundia ISBERG, 1934 [*T. bellistriata] | U.Ord.(U.Leptaena Ls.), Sweden | UORD
+ Vanuxemia BILLINGS, 1858 [*V. inconstans] | ; U.Ord.(U.Leptaena Ls.), Sweden | UORD
+ Vigorniella REED, 1934 [*V. regia] | Sil.(Downton., Stage 1,9), Eng | SIL
+ Superfamily ARCACEA Lamarck,
+ Family ARCIDAE Lamarck, 1809
+ Subfamily ARCINAE Lamarck, 1809
+ Area LINNE, 1758 [*A. noae]
+ Areoptera HEILPRIN, 1887 [*A. quadrisuleata J. DEC. SOWERBY] | U.Cret.-Ree., cosmop. in warm waters | UCRET
+ Barbatia GRAY, 1842 [*A. barbata LINNE] | barbata LINNE, 1758; SD GRAY, 1857) [=Modioli/ormia DESHAYES, (type, Area obliquaria NYST, 1847; OD, Eoc., Fr.); | PALEOG
+ Granoarea CONRAD, 1862 | savignyarea; OD, Rec., GulfAden); | REC
+ Asperarea SACCO, 1898 | 34 (type, Area bistrigata DUNKER; OD, Rec., W.Pac.); | REC
+ Barbarea DALL, BARTSCH & REHDER, 1938 [*Area gradata BRODERIP & SOWERBY] | , Jur.-Ree., cosmop | JUR
+ Subfamily ANAOARINAE Reinhart, 1935
+ Anadara GRAY, 1847 [*Area antiquata LINNE] | ); Oligo.-Ree., cosmop | PALEOG
+ Bentharca VERRILL & BUSH, 1898 [*Maerodon asperula OALL]
+ Larkinia REINHART, 1935 [*Anadara larkinii NEL- SON] | , Mio.-Ree., E.Pac.-Carib. . (Arcin e5 Arcldae . N254, N256). nae) (p | NEOG
+ Samacar IREDALE, 1936 [*Area strabo HEDLEY] | ?Pleist.- Ree., Australia | HOL
+ Scapharca GRAY, 1847 [*Area inaequivalvis BRU- GUIERE] | Oligo.-Ree., cosmop | PALEOG
+ Senilia GRAY, 1842 [*Area senilis LINNE]
+ Family PARALLELODONTIDAE Dall,
+ Subfamily PARALLELODONTINAE Dall, 1898
+ Parallelodon MEEK & WORTHEN, 1866 [*Macrodon rugosus BUCKMAN] | L.Ord.(Tremadoe.)- V.lllr., cosmop | LORD
+ ?Carbonarca MEEK & WORTHEN, 1870 | Penn., USA(IlI.) | PENN
+ ?Curvirostrum BUCKMAN, 1882
+ Macrodontella ASSMANN, 1916 | Trias., Ger | TRIAS
+ Subfamily GRAMMATODONTINAE Branson,
+ ?Cucullopsis CHAO, 1927 [*C. quadrata] | U.Carb.(Ural.), China | UCARB
+ Cucullaria CONRAD, 1869 [*Area heterodonta DE- SHAYES]
+ Nemodon CONRAD, 1869 [*Area (Maerodon) eufalensis GABB] | U.Cret., N.Am | UCRET
+ Catella HEALEY, 1908 [*Grammatodon (C.) laticlava] | U.Trias.(Rhaet.), Burma; lur., Sweden | UTRIAS
+ Paragrammatodon NOMURA & NUNO, 1940 | Rec., Japan | REC
+ Porterius CLARK, 1925 | -Rec., NW.USA-Eu.-Japan | REC
+ Family CUCULLAEIDAE Stewart, 1930
+ Cucullaea LAMARCK, 1801 | inversidentata, Jur., B.C.); Archaeodon CRICK- MAY, (type, A. phylarcht/s, JUL, B.C.); | JUR
+ Cucullastis FINLAY & MARWICK, 1937 | Rec., IndoPac | REC
+ Lopatinia SCHMIDT, 1872 [*L. petschorae KEYSER- LING] | Cret., USSR | CRET
+ Megacucullaea RENNIE, 1936 [*Cucullaea kraussi TATE] | ), India; L.Cret.(Neocom.), E.Afr.-S.Afr.- Madag | LCRET
+ Family NOETIIDAE Stewart, 1930
+ Subfamily NOETIINAE Stewart, 1930
+ Noetia GRAY, 1857 [*N. triangularis (] | Mio-Rec., W. Eu.-W.Atl.-Carib.-E.Pac | NEOG
+ Arginopsis MACNEIL, 1938 [*Scapharca sullanensis WOODS] | Arginopsis MACNEIL, 1938 [*Scapharca sullanensis WOODS, 1822; OD] [=Samanoetia MACNEIL, 1940 (pro Arginella MACNEIL, 1938) (type, Arca samanensis OLSSON, 1929, U.Eoc., Peru) (non | PALEOG
+ Arginella FORSIUS, 1926 | U.Eoc., Peru | PALEOG
+ Noetiopsis MACNEIL, 1938 [*N. woodringi] | Eoc., Panama | PALEOG
+ Protonoetia MACNEIL, 1938 [*Anadara nigeriensis NEWTON]
+ Subfamily STRIARCINAE MacNeil, 1938
+ Striarca CONRAD, 1862 [*Area centenaria SAY] | U.Cret.-Ree. USA-Eu.-Australia.-- la,b, LV ext., RV int., X2 (Glenn, 1904) | UCRET
+ Arcopsis KOENEN, 1885 [*Area limopsis KOENEN] | bivia, Rec., Queensl.)]. Similar to Striarca but with ligament short, confined to shallow, triangular resilifer below beaks. Paleog.(Dan.) -Ree., Eu.-N.Am.-IndoPac. A. (Arcopsis). Surface costellate. | REC
+ Vetoarca STEPHENSON, 1947 [*'V. hindsana] | Cret., Gulf Mex | CRET
+ Subfamily TRINACRlINAE MacNeil, 1937
+ Trinaeria MAYER, 1868 [*'Trigonoeoelia crassa DES- HAYES] | Eoc., Eu.- N.Am | PALEOG
+ Linter STEPHENSON, 1937 [*'L. aeutata] | Cret., N.Am | CRET
+ Superfamily LIMOPSACEA Dall,
+ Family LIMOPSIDAEl Dall, 1895
+ Limopsis SASSI, 1827 | , Cret., Aachen); Cnisma MAYER, (type, Peetuneulus nueulatus LA- MARCK, 1807; M); Limopsilla THIELE, 1923, p. 289 (type, Limopsis pumilio SMITH, 1904; OD); | CRET
+ ?Lissareula THIELE, 1923
+ Loringella IREDALE, 1929 | M.Jur.-Ree., cosmop. L. (Limopsis). Surface without radial ornamentation, inner margins not crenulate. M./ur.-Ree., cosmop | MJUR
+ Empleconia DALL, 1908
+ Lissarca SMITH, 1877 [*Arca (L.) rubrofusca] | -Rec., SW.Pac.-Antarctic.-- LV ext., RV int., XIO | REC
+ Nipponolimopsis HABE, 1951 [*Limopsis nipponica YOKOYAMA] | Rec., Japan | REC
+ ?Nucunella D'ORBIGNY, 1850 [*Slalagmium nyslii GALEOTTl] | Trias., Alps | TRIAS
+ Family GLYCYMERIDIDAE Newton,
+ Subfamily GLYCYMERIDINAE Newton, 1922
+ Manaia FINLAY & MARWICK, 1937 [*Glyeymeris concava MARSHALL] | - Tert., Eu.-N.Z.-Calif | NEOG
+ Felicia MABILLE & ROCHEBRUNE, 1889 [*F. jousseaumi] | ] Rec., S.Am.(Beagle Channel, Cape Horn) | REC
+ Melaxinaea IREDALE, 1930 [*M. labyrintha] | Rec., W.Pac.-- OM. labyrintha; 3a,b, LV ext., int., XI (Iredale, 1930) | REC
+ Subfamily ARCULLAEINAE Newell,
+ Arcullaea VOKES, 1946 | L.Cret., Lebanon | LCRET
+ Peruarca OLSSON, 1944 | Cret., Peru | CRET
+ Postligata GARDNER, 1916 | Cret., USA(Md.) | CRET
+ Manzanella GIRTY, 1909 | Perm.(San Andres-Kaibab-?Yeso), SW. USA | PERM
+ Huxleyia A. ADAMS, 1860
+ Philobrya CARPENTER, 1872 | Rec., Japan-S. Australia-E. Afr.-W. Am | REC
+ Nucinella WOOD, 1851 [*A. nitens] | )-Rec., Eu.-S.Afr.-E.Afr.-Australia-N. Z.-W.N.Am.-W.Mex.-Carib | REC
+ Aupouria POWELL, 1937 [*A. parvula] | Plio.-Ree., N.Z | NEOG
+ Cosa FINLAY, 1927 [*Hoehstetteria eostata BERNARD]
+ Cratis HEDLEY, 1914 [*C. progressa] | L.Mio.-Ree., N.Z.- Australia | NEOG
+ Order MYTILOIDA Ferussac, 1822
+ Family MYTILIDAE Rafinesque, 1815
+ Subfamily MYTILINAE Rafinesque, 1815
+ Mytilus LINNE, 1758 [*M. edulis] | -Rec., N.Am.-N.Eu.-S.Am.- S.Australia-N.Z.-Kerguelin Is | REC
+ Antetrichomya IREDALE, 1951 [*A. problematica] | Tert., Australia. Arcomytilus AGASSIZ in J. SOWERBY, 1842, p. 318 [*Mytilus peetinatus J. SOWERBY, (non Modiola peetinata LAMARCK, 1819), =Mytilus ;ubpeetinatus D'ORBIGNY, 1850; OD]. Wedgeshaped, post | NEOG
+ Aulacomya MORCH, 1853 [*Mytilus magellanicus CHEMNITZ] | Mio.-Ree., S.Am.-S.Afr.-N.Z.--- ext., Xl. Brachidontes SWAINSON, 1840, p. 384 [·Modiola suleata LAMARCK, (non 1805) (=Mytilus citrinus RODING, 1798, =.Area modiolus LINNE, 1767); M] [=Braehyodontes AU | NEOG
+ ?Coxesia MENDES, 1952 | Perm.(Corumbatai) , S.Am. (S.Brazil) | PERM
+ Ischadium JUKES-BROWNE, 1905
+ Limnoperna ROCHEBRUNE, 1882 | ; U.Cret., USA(Tex.) | UCRET
+ Mauricia HARRIS, 1919 | -Mio., N.Am. (USA)-Eu | NEOG
+ Mytella SOOT-RYEN, 1955 [*MylilllS chorus MOLINA] | Mio.-Ree., W.N.Am.-S.Am | NEOG
+ Septifer RECLUZ, 1848 [*Mytilus biloeularis LINNE] | Trias.-Ree., cosmop | TRIAS
+ Trichomya IHERING, 1900 [*Mytilus hirsutus LAMARCK] | M.Tert.-Ree., W.Pac | NEOG
+ Subfamily CRENELLINAE Adams & Adams, 1857
+ Crenella BROWN, 1827 [*MytiluJ deeussatus MONTAGU] | , Rec., cosmop | REC
+ Arcoperna CONRAD, 1865 | , ?Rec., N.Eu.-NE.Am.-Afr | REC
+ Gregariella MONTEROSATO, 1883 | -Rec., Medit.-N. Am.-Australia | REC
+ Lioberus DALL, 1898 [*Modiola castanea SAY] | Rec., SE.N.Am | REC
+ Musculus RODING, 1798 [*Mytilus discors LINNE] | -Rec., cosmop | REC
+ Rhynchomytilus ROLLIER, 1914 [*Mytilus studeri OPPEL & WAAGEN]
+ Solamen IREDALE, 1924 [*S. rex] | Rec., Australia-W.N.Am | REC
+ Subfamily LITHOPHAGINAE Adams & Adams,
+ Lithophaga RODING, 1798 [*L. mytuloides (]
+ Lithodomus CUVIER, 1816 [*Modiola plumula HANLEY] | , Rec., cosmop | REC
+ Subfamily MODIOLINAE Keen, 1958
+ Dacrydium TORELL, 1859 | Plio.-Ree., cosmop. D. (Dacrydium). Anterior adductor on thickened support; no grooved teeth. Ree., Arctic-Antarctic | NEOG
+ Fluviolanatus IREDALE, 1924
+ Idasola IREDALE, 1915
+ Lecompteus POEL, 1959 | -Cret., Eu.-Afr.-Asia | CRET
+ Modiolula SACCO, 1898 | Rec., Eu.-NE. Pac | REC
+ ?Mytilops HALL, 1883 [*Modiola precedens HALL] | U.Dev., USA (N.Y.) | UDEV
+ Notobotula FLEMING, 1959 [*Botula (N.) molina FLEMING]
+ ?Phthonia HALL, 1870 [*Cypricardites sectifrons CONRAD] | M.Dev., USA (N.Y.) | MDEV
+ Stavelia GRAY, 1858 [*Mytilus tortus DUN- KER] | Rec., Pac | REC
+ Terua DALL, BARTSCH, & REHDER, 1938 [*T. pacifica] | e t u e p p l t m T M P Perm., N.Am | PERM
+ Family MYSIDIELLIDAE Cox, 1964
+ Protopis KITTL, 1904 [*Opis (Protopis) triptycha] | )-U.Trias.(Carn.), Eu.(S. Alps-Balkans)' Timor | UTRIAS
+ Superfamily PINNACEA Leach,
+ Family PINNIDAE Leach, 1819
+ Pinna LINNE, 1758 [*P. rudis] | -Rec., cosmop. [It has been maintained that P. muricata LINNE should be accepted as type species of Pinna by Linnean tautonymy, as Concha Pinna HASSELQUIST was cited by LINNE in its syn p onymYi but a | REC
+ Quantulopinna IREDALE, 1939 [*P. incurva GMELlN] | -Rec., fossil forms cosmop., living ones worldwide in tropical or subtropical seas | REC
+ Atrina GRAY, 1842 [*Pinna nigra DILLWYN] | , Rec. in tropical and warm temperate seas | REC
+ Curvula RAFINESQUE, 1819
+ Oxisma RAFINESQUE, 1819 [*0. bifida] | -Perm., Eu.-USSR(Sib.)-N.Am.-S.Am | PERM
+ Stegoconcha J. BOHM, 1907 [*Pinna granulata J. SOWERBY] | --- (KRENKEL), U.Jur.(U. Kimmeridg.), Tanganyika; RV ext., XO.5 (Cox, n) | UJUR
+ Streptopinna VON MARTENS, 1880 [*Pinna saccata LINNE] | Rec., IndoPac | REC
+ Order PTERIOIDA Newell, 1965
+ Suborder PTERIINA Newell, 1965
+ Ambonychia HALL, 1847 | - U.Ord., E.N.Am.-Eu | UORD
+ Allonychia ULRICH, 1893 | Ord., USA (Ohio Valley) | ORD
+ Ambonychiopsis ISBERG, 1934 | )-M.Sil.(Niag.), N.Am.-Eu | SIL
+ Amphicoelia HALL, 1865
+ Anomalocoelia ISBERG, 1934 [*A. transplicata] | U.Ord., Eu | UORD
+ Anomalodonta S. A. MILLER, 1874 [*A. gigantea] | ] U.Ord., E.N.Am | UORD
+ Byssopteria HALL, 1883 [*B. radiata] | ] U.Dev.(Chemung.), USA(Pa.) | UDEV
+ Elasmodophora ISBERG, 1934 | ) , ?M.Sil. (Niag.) , E. N. Am. - Sweden - Norway - Scot.-Ire.- USSR-Korea | SIL
+ ?Congeriomorpha STOYANOW, 1948 [*C. andrusovi] | U.Dev., USA(Ariz.) | UDEV
+ Gosseletia BARROIS, 1882 [*G. devonica] | -M.Dev., W.Eu.-N.Am | MDEV
+ Nathorstella KAYSER, 1901 [*N. semiplicata] | Dev., Spitz | DEV
+ Opisthoptera MEEK, 1872 [*Ambonychia casei MEEK &] | , USA(Ohio Valley); L.Sil.(Uandov.), Scot | LSIL
+ ?Palaeocardia HALL, 1865 [*P. cordi/ormis]
+ Paramytilarca ISBERG, 1934 [*P. levis] | -U.Ord., Sweden | UORD
+ Praeanomalodonta ISBERG, 1934 | U.Ord.(Boda Ls.), Sweden(Dalarna) | UORD
+ Psilonychia ULRICH, 1895 | U.Ord., N.Am | UORD
+ Stappersella MAILLIEUX, 1920
+ Family MYALINIDAE Frech, 1891
+ Myalina DE KONINCK, 1842 [*A. lata] | Perm.(Moran), USA(Tex.); LV ext., XO.7 | PERM
+ Liebea WAAGEN, 1881 [*Mytilus squamosus SOWER- BY] | Perm., E.Hemis., widespread | PERM
+ Myalinella NEWELL, 1942 [*Myalina meeki DUN- BAR] | -- (DUNBAR), L.Perm.(Big Blue), USA(Kans.); LV, X2. ?Pachymytilus ZITTEL, [*Mitylus petasus D'ORBIGNY, 1850; SO COSSMANN, 1915]. Large, mytiliform, with terminal beaks; test very thick, especially nea | LPERM
+ Promyalina KITTL, 1904 [*P. hindi] | ; L.Trias., cosmop | LTRIAS
+ Pseudomyalina DICKINS, 1956 [*P. obliqua] | L.Perm.(Coolkilya) , W.Australia | LPERM
+ Pseudopachymytilus KRUMBECK, 1923 [*P. timorensis]
+ Septimyalina NEWELL, 1942 [*Myalina perattenuata MEEK & HAYDN] | (Visean)-L.Perm. (Wolfcamp.), USA-W.Eu | LPERM
+ Anthraconaia TRUEMAN & WEIR, 1946
+ Anthracomya SALTER, 1861 | Carb.(Westphal.-Stephan.), W.Eu.-USSR(Donetz)- N.Am.(E.Can.) | CARB
+ Anthraconauta PRUVOST, 1930 [*M. magniforma] | -Perm., USSR (Sib.) | PERM
+ ?Dictys KHAFLIN, 1950 [*D. inflatus] | Perm., USSR(Sib.) | PERM
+ ?Kinerkaellina KHALFIN, 1950 [*Kinerkaella (K.) imitabilis] | Carb., USSR(W.Sib.).-- | CARB
+ Naiadites DAWSON, 1860 [*N. earbonarius] | Carb., Eu.-N.Am. (Namur., G.Brit., Westphal. A,B, W.Eu., USSR, Donetz) | CARB
+ ?Orthonaiadites KHALFIN, 1950 [*0. triangularis] | Carb., USSR(W.Sib.) | CARB
+ Lunulacardium MUNSTER, 1840 [*L. semistriatum] | -L.Carb., N.Am.-Eu | LCARB
+ Maminka BARRANDE, 1881 | (D,)-Sil.(E,.•), Boh | SIL
+ Mila BARRANDE, 1881 [*M. cornplexa] | )-Dev.(F,), Boh | DEV
+ Spanila BARRANDE, 1881 [*S. discipulus]
+ ?Conocardiopsis BEUSHAUSEN, 1895 | ; ?Dev., Ger | DEV
+ Stolidotus HEDE, 1915 [*S. siluricus] | Sil., Sweden | SIL
+ Tenka BARRANDE, 1881 [*T. bohemica] | (D,)- Sil.(E.) , Boh | SIL
+ Tetinka BARRANDE, 1881 [*T. sagitta] | , ?Sil., Ger | SIL
+ Family MONOPTERIIDAE Newell, new
+ Monopteria MEEK & WORTHEN, 1866 [*Gervillia longispina Cox] | , ?L.Perm., USA (Midcontinent- SW.) | LPERM
+ Superfamily PTERIACEA Gray, 1847
+ Family PTERINEIDAE Miller, 1877
+ Pterinea GOLDFUSS, 1826 [*P. laevis] | -L.Dev., cosmop | LDEV
+ Actinodesma SANDBERGER, 1850 [*A. mallei/orme] | Dev., Eu.-USA | DEV
+ Actinopterinia ISBERG, 1934 [*A. semicircularis] | M.Ord., Sweden | MORD
+ Ahtioconcha QPIK, 1930 [*A. auris] | Ord.(Kukruse Stage), NE. Est | ORD
+ ?Alnifia TERMIER & TERMIER, 1950 [*A. clariondi] | M.Ord.(Uandeil.), Morocco | MORD
+ ?Anderkenia KHALFIN, 1958 [*A. ledaemorpha] | Perm.(Corumbatai) , S.Brazil | PERM
+ Leptodesma HALL, 1883 [*L. potens] | -Perm., cosmop | PERM
+ Limoptera HALL & WHITFIELD, 1869 | -M.Dev., W.Eu.-USA | MDEV
+ Merismopteria ETHERIDGE, 1892 | Perm., Australia- ?India | PERM
+ Newsomella FOERSTE, 1909
+ ?Palaeopinna HALL, 1883 | -M.Dev., N.Am | MDEV
+ ?Palaeopteria WHITEAVES, 1897 | U.Ord., Can.(Man.) | UORD
+ Pteronitina KHALFIN, 1958 [*Avicula BASSLER] | Sil., Caradoc., USSR(Kazakhstan). p. xii [*Avicula BASSLER, 1915] (non RONDANI, | SIL
+ Ptychopteria HALL, 1883 [*P. eugenia (] | UDev., USA | 
+ Family PTERIIDAE Gray, 1847
+ Aviculae GOLDFUSS, 1820 [*Mytilus hirundo LINNE] | Trias.-Ree., fossil forms cosmop., Ree. in warm seas | TRIAS
+ Pinctada RODING, 1798 [*Mytilus margaritiferus LINNE]
+ Margarita LEACH, 1814 [*P. petersi] | -Rec., pantrop., espec. Indo- Pac | REC
+ Pteroperna MORRIS & LYCETT, 1853 [*Gervillia costatula EUDES-DESLONGCHAMPS] | costatula (EUDES-DESLONG- CHAMPS), M.Jur.(Bathon.), Eng.; RV int., Xl (Cox, n) | MJUR
+ Family BAKEVELLIIDAE King, 1850
+ Bakevellia KING, 1848 [*Avicula antiqua VON MUNSTER in GOLDFUSS] | -Cret., cosmop | CRET
+ Aguilerella CHAVAN, 1951 [*Perna kobyi DE LORIOL] | Jur.(Toarc.-Oxford.) , Eu.-Asia-N. Afr | JUR
+ Aguileria WHITE, 1887 [*A. cumminsi] | Jur.( Bathon.-Oxford.) , Eng.-France | JUR
+ Hoernesia LAUBE, 1866 [*Mytulites socialis VON SCHLOTHEIM] | Trias.-M.fur., Eu.-Asia | TRIAS
+ Kobayashites HAYAMI, 1959 [*K. hemicylindricus]
+ Langsonella PATTE, 1926 [*Gervilleia (Cultriopsis) elongata MANSUY] | Trias., Tonkin-Malaya | TRIAS
+ Panis STEPHENSON, 1952 [*P. cunei/armis] | Cret., N.Am.-S.Am | CRET
+ Phelopteria STEPHENSON, 1952 [*Pteria? dalli STEPHENSON] | Cret., N.Am.-Eu.-W.Afr | CRET
+ Pseudoptera MEEK, 1873 [*Avicula anomala J. DE C. SOWERBY] | Cret., Eu.-N.Am.-Japan | CRET
+ Tenuipteria STEPHENSON, 1955 [*lnoceramus argenteus CONRAD] | U.Cret.(Owl Creek), USA(Mo.) | UCRET
+ Family CASSIANELLIDAE Ichikawa,
+ Cassianella BEYRICH, 1862 | Trias., S.Tyrol; 4a, LV ext.; 4b, LV ligamental area with one pit; 4c, valves in juxtaposition, ligamental areas with 2 pits; all Xl | TRIAS
+ Burckhardtia FRECH, 1907 | Trias.(Carn.), Mex | TRIAS
+ Hoernesiella GUGENBERGER, 1934 | Trias.(Carn.), Carinthia.--FtG. C43,3a. °H. carinthiaca; LV, X l.--FtG. C43,3b. H. han'ida GUGENBERGER; LV. X 1 (both Gugenberger, 1934) | TRIAS
+ Lilangina DIENER, 1906 | Trias. (Carn.), Kashmir | TRIAS
+ Family PERGAMIDIIDAE Cox,
+ Pergamidia BITTNER, 1891 [*P. eumenea]
+ Semuridia MELVILLE, 1956 [*5. iacksoni (] | L.Jur.(L.Lias.- 5inemur.), Eng | LJUR
+ Datta HEALEY, 1908 [*D. oscillaris] | U.Trias.(Rlzaet.), Burma | UTRIAS
+ Family INOCERAMIDAE Giebel, 1852
+ Inoceramus J. SOWERBY, 1814 [*I. cuvierii] | Cret., cosmop | CRET
+ ?Trachyceramus HEINZ, 1932 [*E. typica] | Cret.(Turon .-Senon.), cosmop | CRET
+ Mylitoides CONRAD, 1874 [*Inoceramus lobatus AUERBACH & FREARS] | Cret., cosmop | CRET
+ Aphanaia DE KONINCK, 1877 [*Inoceramus mitchellii M'Coy] | Perm., Australia | PERM
+ Lenella KOSCHELKINA, 1962 [*L. tiungensis] | ?Oligo. (base of Patagonian Molasse), Patagonia | PALEOG
+ Parainoceramus VORONETZ, 1936 [*P. bulkurensis] | -Jur., cosmop | JUR
+ Retroceramus KOSCHELKINA, 1957 [*Inoceramus retrorsus KEYSERLING] | ) - U.Jur. (Kimmeridg.), cosmop | UJUR
+ Sergipia MAURY, 1925 [*Inoceramus (Sergipia) posidonomyaformis] | ] Cret., S.Am.(Brazil) | CRET
+ Sphenoceramus J. BOHM, 1915 [*Inoceramus cardissoides GOLDFUSS] | U.Cret.(Senon.), cosmop | UCRET
+ Steinmannia FISCHER, 1886 [*Posidonia bronnii VOLTZ]
+ ?Turkmenia KRIMHOLTZ, 1936 [*T. balk- Ilanensis] | L.Cret.(L.Barrem.) , Turkmenia | LCRET
+ Volviceramus STOLICZKA, 1871 [*Inoceramus involutus J. DE C. SOWERBY] | U.Cret.(5enon.), Eu.-N.Am | UCRET
+ Family ISOGNOMONIDAE Woodring,
+ Isognomon LIGHTFOOT, 1786 [*Ostrea perna LINNE] | -Rec., cosmop | REC
+ Crenatula LAMARCK, 1803 | -Rec., IndoPac.-Australia-W.S.Am | REC
+ Gervilleioperna KRUMBECK, 1923 | L.Jur.(M.Lias.), Timor | LJUR
+ ?Leproconcha GIEBEL, 1856 | M.Jur.(Bajoc.), Eng | MJUR
+ Mulletia P. FISCHER, 1886 [*Perna mulleti DESHAYES in LEYMERIE] | L.Cret., Eu.-S.Am | LCRET
+ Pachyperna OPPENHEIM, 1900 [*P. laverdana] | Eoc., France-N.ltaly | PALEOG
+ Waagenoperna TOKUYAMA, 1959 [*Eden-] | -U.Trias., Eu.-Asia(Japan) | UTRIAS
+ Family PULVINITIDAE Stephenson,
+ Pulvinites DEFRANCE, 1824 [*P. adansoni] | Cret. (Cenoman.-Maastricht.), France-Lebanon-N.Am | CRET
+ Hypotrema D'ORBIGNY, 1853 [*Pulvinites rupellensis D'ORBIGNY] | U.Jur.( Oxford.), Eu. (France) | UJUR
+ Family MALLEIDAE Lamarck, 1819
+ Bouleigmus BASSE, 1933 [*B. douvillei] | U.Cret., Madag | UCRET
+ Eligmus J. A. EUDES-DESLONGCHAMPS, 1856 [*E. polytypus]
+ Eligma HUEBNER, 1816 [*Pseudoheligmus? jamaicensis TRECHMANN] | Jur. (Bathon.-Callov.), Eu.-Asia-N. Afr.-E. Afr.-Madag | JUR
+ Heligmina DOUVILLE, 1907 [*Ostrea uncinata LAMARCK] | (France); ?Eoc., Egypt | PALEOG
+ Pseudoheligmus DOUVILLE, 1904 [*P. morgani] | Eoc., Iran-Eu.(France) | PALEOG
+ Stefaniniella TAVANI, 1939 [*S. colosii] | U.Cret.(U. Cenoman.), Somaliland | UCRET
+ Vulsella ROVING, 1798 [*V. major (] | deperdita LAMARCK, M.Eoc., France; la,b, LV ext., LV int., Xl (Deshayes, 1832) | PALEOG
+ Pterinopecten HALL, 1883 [*P. undosus] | -U.Dev., cosmop | UDEV
+ Dunbarella NEWELL, 1938 [*Aviculopectell whitei MEEK] | -Penn., N.Am.- Eu | PENN
+ Limanomia GRAY, 1850 [*L. grayialla] | Dev.(Frasn.) , Eu. (N. France) -USSR (Novaya Zemlya). [?Senior subjective synonym of Lyriopecten HALL.].-- LV ext., Xl (Cox, n) | DEV
+ Family LEIOPECTINIDAE Krasilova,
+ Acanthopecten GIRTY, 1903 | -U.Perm., cosmop | UPERM
+ Asoella TOKUYAMA, 1959 | U.Trias.(Nor.), Japan | UTRIAS
+ Etheripecten WATERHOUSE, 1963 | Perm., N.Z.; la,b, RV ext., LV ext., X2 | PERM
+ Eumorphotis BITTNER, 1901 | -U.Trias., cosmop | UTRIAS
+ Girtypecten NEWELL, 1938 [*Avimlopecten]
+ Sliblaqlteatw GIRTY, 1908 [*G. wangl] | Perm. (Gltadalltp.), USA(Tex.-Wyo.) | PERM
+ Leptochondria BITTNER, 1891 [*Pecten (L.) aeolicw] | Trias., cosmop | TRIAS
+ Otapiria MARWICK, 1935 [*Pseudomonotis marshalli TRECHMANN] | Jur.(Tithon.), N.Z | JUR
+ ?Oxypteria WAAGEN, 1907 [*Aviculopecten (0.) biltneri] | Trias. (Carn.) , Eu.(S.Tyrol) | TRIAS
+ Subfamily STREBLOCHONDRIINAE Newell,
+ Pleuronectites VON SCHLOTHEIM, 1820 [*P. laevigatus] | Trias., Eu.(Ger.-France- S.Alps) | TRIAS
+ Subfamily CHAENOCARDIINAE S. A. Miller,
+ Obliquipecten HIND, 1903 [*0. laevis] | -L.Perm., N.Am.-Eu.-- ext., LV ext., Xl. lb | LPERM
+ Subfamily EUCHONDRIINAE Newell, 1938
+ Euchondria MEEK, 1874 [*Pecten neglectus GEINITZ] | Miss.-U.P~rm., N.Am.-Eu.-Japan | MISS
+ Crenipecten HALL, 1883 [*C. er~nulatus]
+ Family DELTOPECTINIDAE Diekins,
+ Deltopecten ETHERIDGE, JR., 1892 [*Pect~n illawar~nsis MORRIS]
+ Family PSEUDOMONOTIDAE Newell,
+ Pseudomonotis VON BEYRICH, 1862 | (Viscan)-U.Perm., widely distributed in northern hemisphere | UPERM
+ Family POSIDONIIDAE Frech, 1909
+ Posidonia BRONN, 1828 | (Cam.), Eu.(Yugosl.) | CAM
+ Aulacomydla FURLANI, 1910 | U.Jur.(Kimmeridg.) , Afr. Somalil.)-Eu.(Dalmat.-Ger.)-S. USA-Mex.-?Japan. -FIG. C68,8. ·A. problematica (FURLANI), Dalmat., RV ext., Xl (Furlani, 1910). ositra DE GREGORIO, 1886, p. 11 [·Posidonia orn | UJUR
+ Daonella MOJSISOVICS, 1874 [*Halobia lommeli WISSMANN] | Trias., cosmop | TRIAS
+ Didymotis GERHARDT, 1897 [*D. variabilis] | Jur. (L. Lias.-M. Lias.), Eu.(Italy-Spain) | JUR
+ Halobia BRONN, 1830 | (chiefly)-U.Trias., cosmop | UTRIAS
+ Posidonotis LOSACCO, 1942 [*P. dainellii] | M.Jur.(Aalen.), Eu. (Italy) | MJUR
+ Pseudodidymotis GILLET, 1924 [*P. lamberti] | L.Cret., Eu.(France) | LCRET
+ Veldidenella ALMA, 1926 [*V. dieneri] | U.Trias., Eu.(Aus.) | UTRIAS
+ Family OXYTOMIDAE Ichikawa, 1958
+ Oxytoma MEEK, 1864 [*Avicula muensteri BRONN] | -U.Cret., cosmop | UCRET
+ ?Avicularca VON BUBNOFF, 1921 [*Avicula cardiiformis VON MUNSTER] | Trias., Eu.(S.Alps) | TRIAS
+ Cyrtorostra BRANSON, 1930 [*C. varicostata] | Perm., widely distributed in northern hemisphere.-- Wyo.; 5a,b, RV int., ext., X3. [NEWELL) | PERM
+ Maccoyella ETHERIDGE, JR., 1892 [*Avicula barklyi MOORE] | -L.Cret., Australia-N.Z.- Patagonia | LCRET
+ Pseudavicula HUDLESTON, 1890 [*Lucina anomala MOORE] | L.Cret., Australia | LCRET
+ Family ENTOLIIDAE Korobkov, 1960
+ Entolium MEEK, 1865 [*Pecten demissus PHILLIPS] | -U.Cret., cosmop | UCRET
+ Pernopecten WINCHELL, 1865 | -U.Perm., cosmop | UPERM
+ Synclonema FISCHER, 1886 | ] U.Cret., N.Am.-- C71,l. -S. rigida (HALL & MEEK), USA (Neb.); 1a,b, LV ext., RV ext., X8. [HERT- LEIN] [Sincyclonema is rcketcd as an incorrect original spelling (Code. Art. 32a).J 1 The: right valv | UCRET
+ Family PECTINIDAE Rafinesque, 1815
+ Lentipecten MARWICK, 1928 | Plio., Eu.-N.Z | NEOG
+ Adamussium THIELE, 1934 | Rec., Antarctic | REC
+ Korobkovia GLIBERT & VAN DE POEL, 1965 | U.Mio.(Auvers.), Eu. (Belg.-Neth.-Ger.) | NEOG
+ Propeamussium DE GREGORIO, 1884 | -Rec., cosmop. P. (Propeamussium) [=Propeamusium DALL, (nom. van.); Propreamusium JACKSON, 1890 (nom. null.); Paramusium VERRILL, 1897 (type, Amusium dalli E. A. SMITH, 1885); | REC
+ Paramussium DE GREGORIO, 1898 [*Pecten lens J. SOWERBY] | -Rec., cosmop | REC
+ Eburneopecten CONRAD, 1865 | -Oligo., E. N.Am | PALEOG
+ Ciclopecten SEGUENZA, 1877 | Plio., Italy | NEOG
+ Cyclopecten VERRILL, 1897 | Rec., Australia | REC
+ Palliolurn MONTEROSATO, 1884 | -Rec. P. (Palliolurn) [=Pseudamussium AUCTT. (non Psettdamussium MaRcH, 1853); | REC
+ Pseudoammussiltm GEMMELLARO, 1887
+ Pseudomuseum B. L. CLARK, 1918 | ) incomparabile (RISSO), Rec., MediI.; 2a,b, LV ext., RV ext., X2 | REC
+ Catillopecten IREDALE, 1939 | - Rec., W.N.Am.-Japan-N.Eu.-Australia | REC
+ Antijanira BITTNER, 1901 [*'Pecten (A.) hungaricus] | U.Trias., Eu.(Hung.) | UTRIAS
+ Chlamys RODING, 1798 [*'Pecten islandicus MULLER] | -Rec., cosmop. C. (Chlamys) [=Clamys LEACH, (nom. null.); Chalmys DOLLFus & DAUTZENBERG, 1886 (nom. null.); Actinochlamys ROVERETO, (type, Chlamys virgulata ROVERETO, 1898); Myochlamys VON IHERING, 19 | REC
+ Zygochlamys VON IHERING, 1907
+ Mimachlamys IREDALE, 1929
+ Talochlamys IREDALE, 1929
+ Coralichlamys IREDALE, 1939 [*'Ostrea opercularis LINNE] | -Rec., cosmop | REC
+ Plagiopecten G. D. HANNA, 1924
+ Haumea DALL, BARTSCH & REHDER, 1938
+ Volachlamys IREDALE, 1939 [*Pecten athleta ZITTEL] | -Rec., cosmop. (tropic, subtropic, warm temperate) | REC
+ Lissopecten VERRILL, 1897 [*Pecten sollingensis VON KOENEN] | ; Plio., Iran; Quat., E.Afr | NEOG
+ Inaequipecten UGOLINI, 1906 [*'Pecten bowersi ARNOLD] | , Plio., W.Atl | NEOG
+ Hinnites DEFRANCE, 1821 [*'H. corteysii (] | - Rec., cosmop. (tropic-warm temperate) | REC
+ Prohinnites GILLET, 1922 [*'Hinnites leymerii DE- SHAYES in LEYMERIE] | Cret. (Valangin.·Apt.), Eu.-Mex.-S.Am | CRET
+ Philippia VON TEPPNER, 1922 [*Pecten caurinus GOULD] | -Rec., N.Eu.-Medit | REC
+ Neithea DROUET, 1825 [*Pecten aequicostatus LA- MARCK] | ), ?L.Eoc., Switz., cosmop | PALEOG
+ ?Ventalium DE GREGORIO, 1930 [*V. insignis] | J L.Jur.(Lias.), Sicily | LJUR
+ Weyla J. BOHM, 1922 [*Pecten alatus VON BUCH] | L.Jur.(Lias.), N.Am.-S. Am.-N.Afr.-Medit | LJUR
+ Pseudopecten BAVLE, 1878 | L.Jur.(Sinemur.- Domer.), Eu | LJUR
+ Eopecten DOUVILLE, 1897
+ Velatopecten ROLLIER, 1906 | )- L.Cret.(Alb.), cosmop | LCRET
+ ?Mclearnia CRICKMAY, 1930 | ) L.Cret., Can.(B.C.) | LCRET
+ Family MONOTIDAE P. Fischer, 1887
+ Monotis BRONN, 1830 [*Peetinites salinarius VON SCHLOTHEIM] | U.Trias., Aus.-Yugosl.(Dalmat.)-Sicily | UTRIAS
+ Family BUCHIIDAE Cox, 1953
+ ?Bittneria BROILI, 1904 [*Avicula? etflata BROILI] | Trias., Eu.(S.Tyrol.).-- (BROILI); 5a,b, LV ext. and ant. views, Xl | TRIAS
+ Hokonuia TRECHMANN, 1918 [*H. limaeformis] | (Cam.), N.Z | CAM
+ Malayomaorica JELETZKY, 1963 [*Aucella malayomaorica KRUMBECK] | Jur.(Kimmeridg.), Indonesia-N.Z | JUR
+ Paraucellina PAVLOV, 1907 [*P. krasnopolskii] | Cret.(Cenoman.), USSR | CRET
+ Family PLICATULIDAE Watson, 1930
+ Micatula CARPENTER, 1859 [*P. polymorpha BELLARDI] | , Rec., trop. only | REC
+ Atreta ETALLON, 1862 [*Ostrea blandina D'ORBIGNY] | }- U.Cret.(Campan.), Eu.-N.Am | UCRET
+ Family SPONDYLIDAE Gray, 1826
+ Spondylus LINNE, 1758 [*S. gaederopus] | , Rec., pantropie | REC
+ Family TERQUEMIIDAE Cox, 1964
+ Terquemia TATE, 1867 [*Carpenteria peetiniformis EUDES - DESLONG- CHAMPS] | -U.Jur. (Kimmeridg.), Eu.-Greenl | UJUR
+ Enantiostreon BITTNER, 1901 [*E. hungarieum] | Trias. (Rhaet.), Eu. (Ger.-N. Alps-S. Alps-Hung.- Spain)-China | TRIAS
+ ?Gerlus DE GREGORIO, 1930 [*Plaeunopsis hystrix GEMMELLARO] | U.Trias., Sicily | UTRIAS
+ Newaagia HERTLEIN, 1952 [*Spondy· Ius obliquus VON MUNSTER] | (Cam.), USA(Tex.)-Eu.(Ger.- N.Alps-S.Alps)-Asia(Iran) | CAM
+ ?Placunopsis MORRIS & LVCETT, 1853 [*P. fibrosa LAUBE] | - U.Cret.(Maastricht.), cosmop. (note 2) | UCRET
+ Family DIMYIDAE P. Fischer, 1886
+ Dimya ROUAULT, 1850 | -Rec., Eu.-Carib.-Indon.-Australia-N. Z.-IndoPac.-E.Pac | REC
+ Family ANOMIIDAE Rafinesque, 1815
+ Anomia LINNE, 1758 [*A. ephippium]
+ Fenestella RODING, 1798 [*A. gregaria BAYAN] | -Rec., Eu.-Afr.- Asia-N.Am | REC
+ Enigmonia IREDALE, 1918 [*Anomia rosea GRAY] | -Rec., Eu.-IndoPac | REC
+ ?Isomonia DAUTZENBERG & FISCHER, 1897 [*Monia alberti DAUTZENBERG & FISCHER] | Rec., Medit | REC
+ Placuna LIGHTFOOT, 1786 [*Anomia placenta LINNE] | -Rec., Eu.-IndoPac | REC
+ Placunanomia BRODERIP, 1832 [*P. eumingii] | -Rec., E.N.Am.-W.C.Am.- W.N.Am | REC
+ Pododesmus PHILIPPI, 1837 [*P. decipiens (] | Mio.-Ree., Japan-N.Am.- S.Am | NEOG
+ Superfamily LIMACEA Rafinesque,
+ Family LIMIDAE Rafinesque, 1815
+ Lima BRUGUIERE, 1797 [*L. alba CUVIER] | -Rec., cosmop. [Although the year 1798 is usually cited as that of the publication of CUVIER'S Tablt'au eUm~ntaire de l'his/oire naturelle des animaux, the title page of which bears the date "An 6," i | REC
+ Acesta ADAMS & ADAMS, 1858 [*Ostrea excavata FABRICIUS] | -Rec., cosmop | REC
+ Badiotella BITTNER, 1890 [*B. schaurothiana BITTNER] | M.Trias.(Ladin.), S. Tyrol | MTRIAS
+ Ctenostreon EICHWALD, 1862 [*Ostracites pectiniformis VON SCHLOTHEIM]
+ ?Pseudoctenostreon BURCKHARDT, 1930 | Cret.(Neocom.), cosmop | CRET
+ Divarilima POWELL, 1958 [*Lima sydneyensis HEDLEY] | Rec., E. Australia-Kermadek Is | REC
+ Elimata DICKENS, 1963 [*E. guppyi] | Perm., W. Australia-W. Eu.-Greenl.-SW. USA.-- Australia; LV ext., X3 | PERM
+ Limaria LINK, 1807 [*L. inflata (] | - Rec., cosmop | REC
+ Limatula WOOD, 1839 [*Pecten subauriculata MONTAGU]
+ ?Linatulina HERRICK, 1889 [*Ostrea strigilata BROCCHI] | -Rec., cosmop | REC
+ Mysidioptera SALOMON, 1895 [*M. ornata] | -U.Trias., cosmop | UTRIAS
+ Plagiostoma J. SOWERBY, 1814 [*P. giganteum] | Cret., cosmop | CRET
+ ?Roncania DE GREGORIO, 1896 [*R. prima] | U.Eoc., N.Italy | PALEOG
+ Serania KRUMBECK, 1923 [*S. seranensis] | Trias., E.Indies(Ceram) | TRIAS
+ Tirolidia BITTNER, 1895 | -U.Trias., Eu.(S.Alps) | UTRIAS
+ Suborder OSTREINA Ferussac,
+ ?Aristerella ULRICH, 1894 | )-Miss., USA (Mo.) | MISS
+ Byssodesma ISBERG, 1934 | U.Ord., Sweden | UORD
+ Callodonta ISBERG, 1934 | U.Ord., Sweden | UORD
+ Colpomya ULRICH, 1894 | )-Sil.(U. Medin.), E.N.Am | SIL
+ ?Cymatonota ULRICH, 1893
+ Physetomya ULRICH, 1893 | U.Ord., E.N.Am | UORD
+ ?Dipleurodonta ISBERG, 1934 | U.Ord.(Richmond.), N. Am.-Sweden(Boda Ls.) | UORD
+ ?Eurymyella WILLIAMS, 1912
+ Goniophora PHILLIPS, 1848 | )-L.Perm., cosmop | LPERM
+ Guerangeria OEHLERT, 1880 | L.Dev., W.Fr.-- | LDEV
+ ?Hippomya SALTER, 1864 | Ord., Eng.-- 7a,b, dorsal and ventral view of both valves, XO.7; 7c, LV lat. view, XO.7 | ORD
+ ?Liromytilus LAROCQUE, 1950 | Dev., Can.(Manitoba) | DEV
+ Megambonia HALL, 1859 | ); M.Dev., USA(N.Y.} | MDEV
+ ?Modiolodon NECHAEV, 1894 | Perm., USSR(Krasnowidowo, Volga R.) | PERM
+ Modiolopsis HALL, 1847
+ Orthonotella MILLER, 1882
+ Lithobia KOKEN, 1902 [*P. obliquus] | Ord., cosmop | ORD
+ Paraphtonia KHALFIN, 1958 [*P. imitabilis] | M.Ord., USSR (Sib.) | MORD
+ Pholadomorpha FOERSTE, 1914 [*Modiolopsis pholadiformis HALL] | U.Ord., USA(Ohio-N.Y.)-Can.(Quebec) | UORD
+ ?Radiatodonta DAHMER, 1921 [*R. goslariensis] | L.Dev., Eu.(Ger.).-- Ss., near Drecktalskopf; LV int. mold, Xl. Cycloconcha | LDEV
+ Redonia ROUAULT, 1851 [*R. deshayesiana] | ] Ord. (Uandeil.), Eu. (France-Boh.- Spain)-N.Afr | ORD
+ Semicorallidomus ISBERG, 1934 [*S. whitfieldi] | U.Ord., Sweden | UORD
+ Spathella HALL, 1885 [*S. typica] | -Miss., N.Am.-Eu | MISS
+ Sphenotomorpha WILLIAMS & BREGER, 1916 [*S. rigidula] | L.Dev., USA(Maine)- Brazil | LDEV
+ ?Tanaodon KIRK, 1927 [*T. louderbacki] | M.Dev., E.Australia- China | MDEV
+ Tylophora DAHMER, 1936 [*Goniophora convoluta DREVERMANN] | L.Dev., Eu.(Ger.) | LDEV
+ Family CYCLOCONCHIDAE Ulrich,
+ Actinodonta PHILLIPS, 1848 [*A. cuneata] | M.Ord., G.Brit | MORD
+ Family LAMELLODONTIDAE Vogel,
+ Lamellodonta VOGEL, 1962 | M.Cam., Spain | MCAM
+ Family ALLODESMATIDAE Dall, 1895
+ ?Ischyrodonta ULRICH, 1890 | U.Ord., E.N.Am | UORD
+ Family CARYDIIDAE Haffer, 1959
+ Carydiuffi BEUSHAUSEN, 1895 [*C. gregarium] | -U.Dev., Eu.(Ger.-Belg.) | UDEV
+ Order UNIONOIDA Stoliczka,
+ Family ARCHANODONTIDAE Weir,
+ Neamnigenia KHALFIN, 1950 [*N. beZjanini] | ] L.Perm., USSR(Sib.) | LPERM
+ Family ANTHRACOSIIDAE Amalitsky,
+ Anthracosia KING, 1856 [*A. beaniana] | Carb.(Westphal. B), W.Eu.-USSR(Donetz) | CARB
+ Anthracosphaerium TRUEMAN & WEIR, 1946 [*Carbonicola exigua DAVIES & TRUEMAN]
+ Carbonicola DAVIES & TRUEMAN, 1927 [*Unio acutus J. SOWER- BY] | U.Carb.(Westphal. A, B), W.Eu.-USSR (Donetz) | UCARB
+ Carbonicola AMALITSKY, 1892
+ Anthracosia AMALITSKY, 1892
+ Palaeomutela AMALITSKY, 1892 [*'P. verneuilli] | Perm., Eu.(USSR)-S.Afr.-E.Afr | PERM
+ Pseudocardinia MARTINSON, 1959
+ Kija LEBEDEV, 1958 [*K. tjazhinensis] | -U.Jur., C.Asia | UJUR
+ Okribella KAKHADZE, 1942 [*0. elliptica] | M.Jur.(Bathon.}, USSR (Georgia) | MJUR
+ ?Sibireconcha LEBEDEV, 1958 [*5. lankovien- ? ? ? [ [ g e ly p m sis] | M.Jur., USSR(W.Sib.-E.Sib.-Transbaikal)- China | MJUR
+ ?Tutuella RAGOZIN, 1938 [*T. chachlovi] | -M.Jur., USSR(Sib.)-C.Asia- E.Asia | MJUR
+ ?Utschamiella RAGOZIN, 1938 [*U. tungussica] | -M.Jur.(mainly Lias.), USSR (Sib.)-C.Asia-E.Asia | MJUR
+ ?Nyassa HALL & WHITFIELD, 1869 [*N. arguta] | MDev., N.Am.- Eu.(Ger.) | 
+ Family MARGARITIFERIDAE Haas,
+ Family UNIONIDAE Fleming, 1828
+ Subfamily DNIONINAE Fleming, 1828
+ Arcidopsis SIMPSON, 1900 [*Unio lanceolata LEA] | Rec., India | REC
+ Balwantia PRASHAD, 1919 [*Anodonta soleniformis BENSON] | Rec., E.India | REC
+ Caelatura CONRAD, 1853 [*Unio aegyptiaca CAIL- LlAUD] | -Rec., Afr | REC
+ Cafferia SIMPSON, 1900 [*Vnio caffer KRAUSS] | -Rec., S.Afr | REC
+ Canthyria SWAINSON, 1840 [*Vnio spinosus LEA] | Rec., N.Am | REC
+ Ctenodesma SIMPSON, 1900 [*Vnio borneensis] | Rec., Australia | REC
+ Cuneopsis SIMPSON, 1900 [*Vnio celti/ormis HEuDE] | Mio.-Ra., E.Asia | NEOG
+ Diaurora COCKERELL, 1903 [*Vnio auroreus HEUDE] | Rec., China | REC
+ Elongaria HAAS, 1913 [*Unio trompi DROUET & CHAPER] | Rec., W.Pac.(Borneo).-- D21,5. "E. (N.) trompi (DROUET & CHAPER); 5a-c, LV ext., RV int., LV int., both valves dorsal, X I (Haas) | REC
+ Ensidens FRIERSON, 1911 [*Unio ingallsianus LEA] | Rec., SE.Asia | REC
+ Gonidea CONRAD, 1857 [*Anodonta "andalli TRASK] | -Rec., N.Am | REC
+ Heudeana FRIERSON, 1922 [*Unio mllrinus HEUDE] | Rec., China | REC
+ Hyriopsis CONRAD, 1853 [*Unio delphinus GRUNER] | -Rec., Eu.-E.Asia-SE.Asia | REC
+ Stenelasma HERRMANNSEN, 1849 | Rec., N.Am | REC
+ Leguminaia CONRAD, 1865 [*Monocondylaea mardinensis LEA] | Rec., SW.Asia(Iraq) | REC
+ Mesafra HAAS, 1936 [*Caelatura mesafricana PILS- BRY & BEQUAERT] | Rec., C.Afr | REC
+ Nephronaias FISCHER & CROSSE, 1893 [*Unio plicatulus CHARPENTIER] | Rec., C.Am | REC
+ Nitia PALLARY, 1924 [*Unio teretiusculus PHILIPPI] | Rec., C.Afr.-NE.Afr | REC
+ Oxynaia HAAS, 1913 [*Unio jourdyi MORLET] | Rec., SE.Asia | REC
+ Palindonaia MODELL, 1950 [*Unio solandri J. DE C. SOWERBY] | (Gosau)-Eoc., Eu | PALEOG
+ Paranodonta KOBAYASHI & SUZUKI, 1936 [*P. otai]
+ Plethobasus SIMPSON, 1900 [*Unio aesopus GREEN] | -Rec., N.Am | REC
+ Plicatounio KOBAYASHI & SUZUKI, 1936 [*P. naktongensis] | Rec., W.Pac.(Borneo) | REC
+ Prohyriopsis HAAS, 1914 [*Vnio stolatus MARTENS] | Rec., W.Indon.(Sumatra) | REC
+ Protelliptio RUSSELL, 1934 [*Unio biornatus Rus- SELL] | L.Cret., N.Am | LCRET
+ Protunio HAAS, 1913 [*Unio messageri BAVAY & DAUTZENBERG] | Rec., SE.Asia | REC
+ Ius MARTENS, 1902 [*P. craSStIS DROUET] | Rec., SE.Asia | REC
+ Scabies HAAS, 1911 [*Unio scobinatus LEA] | Rec., E.Asia | REC
+ Shistodesmus SIMPSON, 1900 [*Unio lampreyanus BAIRD & ADAMS] | Rec., China | REC
+ Sulcatula LEROY, 1940 [*S. tungurensis] | Mio., China | NEOG
+ Trapezoideus SIMPSON, 1900 [*Vnio foliacea GOULD] | Rec., S.Asia-SE.Asia | REC
+ Uniomerus CONRAD, 1853 [*Vnio tetralasmus SAY] | Rec., N.Am | REC
+ Unionea HAAS, 1955 [*Vnic fabagina DESHAYES & JULLlEN] | Rec., SE.Asia | REC
+ Virgus SIMPSON, 1900 [*Unio beccariantts TAPPER- ONE CANEFRI] | Rec., N.Guinea | REC
+ Subfamily QUADRULINAE Haas, 1929
+ Amblema RAFINESQUE, 1819 [*A. costata RAFINES- QUE]
+ Baryosta L. AGASSIZ, 1846 [*Unio dombeyana VALENCIENNES] | -Rec., N.Am.- C.Am | REC
+ Cyclonaias PILSBRY, 1922 [*Obliquaria tubereulata RAFINESQUE] | Pleist.-Ree., N.Am | HOL
+ Discornya SIMPSON, 1900 [*Unio radulostls DROUET & CHAPER] | Plio., N.Am | NEOG
+ Megalonaias UTTERBACK, 1915 [*Unio heros SAY]
+ Megalonoidea MACNEIL, 1935 [*M. poreata] | Mio., N.Am | NEOG
+ Rhombunio GERMAIN, 1911 [*Unio biesianus HEUDE] | (John Day)- Rec., Eu.-?E.Asia | REC
+ Psoronaias CROSSE & FISCHER, 1893 [*Unio psoricus MORELET] | Rec., C.Am | REC
+ Quincuncina ORTMANN, 1922 [*Q. burkei WALKER] | Rec., N.Am | REC
+ Sulcatapex YEN, 1945 [*5. eretaceus] | L.Cret., N.Am | LCRET
+ Subfamily ANODONTINAE Ortmann, 1910
+ Anodonta LAMARCK, 1799 [*Mytilus cygneus LINNE]
+ Anodota PETRBOK, 1930 [*A. dejecta LEWIS] | -Rec., holarctic | REC
+ Cristaria SCHUMACHER, 1817 [*Dipsas plicatus LEACH] | Rec., E.Asia-SE.Asia | REC
+ Leptanodonta WENZ, 1927 [*Dreissenomya unionides WENZ] | L.Plio. (U.Maeot.), Eu.(Rumania) | NEOG
+ Simpsonella COCKERELL, 1903 [*Anodonta purpurea VALENCIENNES] | Rec., Philip | REC
+ Subfamily ALASMIDONTINAE Frierson, 1927
+ Alasmidonta SAY, 1818 [*Monodonta undulata SAY] | -Rec., N.Am | REC
+ Arcidens SIMPSON, 1900 | -Rec., N.Am | REC
+ Arkansia ORTMANN & WALKER, 1912 | Rec., N.Am | REC
+ Lasmigona RAFINESQUE, 1831 | -Rec., N.Am | REC
+ ?Megadomus SWAINSON, 1840 [*Unio kolasii Lasmigona M p t a c L l D MODELL] | Rec., N. Am | REC
+ Subfamily LAMPSILINAE Ortmann, 1912
+ Actinonaias CROSSE & FISCHER, 1893 [*Unio sapotalensis LEA] | -Rec., N.Am.(Mex.) | REC
+ Carunculina SIMPSON, 1900 [*Unio texasensis LEA] | Rec., N.Am.--FtG. D45,l. ·C. parva texasensis (LEA); la,b, RV ext., LV int., Xl | REC
+ Conchodromus HAAS, 1930 | Rec., N.Am | REC
+ Conradilla ORTMANN, 1921 | Rec., N.Am | REC
+ Cyprogenia L. AGASSIZ, 1852 | Rec., N.Am | REC
+ Dysnomia L. AGASSIZ, 1852 [*Unio penitus CON- RAD] | Rec., N.Am | REC
+ Glebula CONRAD, 1853 [*Unio rotundata LAMARCK] | Rec., N.Am | REC
+ Ligumia SWAINSON, 1840 [*Unio recta LAMARCK] | -Rec., N.Am | REC
+ Micromya L. AGASSIZ, 1852 [*Unio jabalis LEA] | Rec., N.Am | REC
+ Obliquaria RAFINESQUE, 1820 [*0. (Quadrula) reflexa] | -Rec., N.Am | REC
+ Pachynaias CROSSE & FISCHER, 1893 [*Unio spheniopsis MORELET] | Rec., C.Am | REC
+ Symphinota VILLA, 1841 | -Rec., N.Am | REC
+ Subfamily HYRllNAE Ortmann, 1911
+ Callonaia SIMPSON, 1900 [*'Castalia dupre] | Rec., S.Am.(Brazil) | REC
+ Diplodon SPIX, 1827 | -Rec., N.Am.-S.Am | REC
+ Ecuadorea MARSHALL & BOWLES, 1932 | , Rec., S.Am | REC
+ Eodiplodon MARSHALL, 1928 | Rec., Australia | REC
+ ?Pseudohyria MACNEIL, 1936 | Cret., Asia(Inner Mongol.). Chel idonopsis Lamproscapha Haasica Ihe | CRET
+ Triplodon SPIX, 1827 [*T. rugosum] | -Rec., S.Am | REC
+ Family MUTELIDAE Swainson, 1840
+ Mutela SCOPOLI, 1777 [*Mytilus dubius GMELIN] | -Rec., Afr | REC
+ Diplodontites MARSHALL, 1922 [*D. cookei] | Rec., S.Am | REC
+ Haasica STRAND, 1932 [*Plagiodon balzani IHERING] | Rec., S.Am | REC
+ Iheringella PILSBRY, 1893 [*Plagiodon isocardioides LEA] | Rec., S.Am | REC
+ Euphira PAETEL, 1875 [*Iridina spekei WOODWARD] | Rec., Afr | REC
+ Monocondylaea D'ORBIGNV, 1835 | -Rec., S.Am | REC
+ Pseudospatha SIMPSON, 1900 [*Spatha tanganyicensis E. A. SMITH] | Rec., S.Am | REC
+ Family ETHERIIDAE Swainson, 1840
+ Etheria LAMARCK, 1807 [*E. semilunata LAMARCK]
+ Aetheria OKEN, 1818 [*Mulleria Zobata FERUS- SAC] | -Rec., Afr.-Ind.O. (Madag.) | REC
+ Mijllera LEACH, 1814
+ Acostea GRAY, 1854 [*Mulleria dalyi E. A. SMITH] | Rec., S.Am | REC
+ Unionites WISSMANN, 1841 [*U. muensteri]
+ Unionina DIENER, 1923 | -U.Trias., Eu.-Asia-Arctic O.(Spitz.-Bear 1.)- N.Z | UTRIAS
+ Palaeopharus KITTL, 1907 | Trias., Bear Is.(Arctic)-Eliesmereland-Japan | TRIAS
+ ?Trisulcus HITCHCOCK, 1865 [*T. laqueatus] | Trias., USA(Mass.) | TRIAS
+ Unionella ETHERIDGE, 1888 [*U. bowralensis] | U.Trias.(Wianamatta Ser.), New S. Wales | UTRIAS
+ Order TRIGONIOIDA Dall, 1889
+ Lyrodesma CONRAD, 1841 [*L. planum] | -U.Ord., E.N.Am.-Eu | UORD
+ Family MYOPHORIIDAE Bronn, 1849
+ Costatoria WAAGEN, 1906 [*Donax costata ZENKER] | -U.Trias., cosmop | UTRIAS
+ ?Cytherodon HALL & WHITFIELD, 1873 [*Nueulites appressus CONRAD] | -Perm., cosmop | PERM
+ Hefteria DAHMER, 1948 [*Car.dinia carinata ROEMER] | L.Dev., Eu.(Ger.) | LDEV
+ Heminajas NEUMAYR, 1891 [*Myophoria fissidentata WeHRMANN] | -U.Trias., Eu. (Aus.-Hung.) | UTRIAS
+ Lyriomyophoria KOBAVASHI, 1954 | -U.Trias.(Rlzaet.), Eu.-Asia-N.Afr.-N.Z | UTRIAS
+ Neoschizodus GIEBEL, 1855 | -U.Trias., cosmop | UTRIAS
+ Schizodus DE VERNEUIL & MURCHISON, 1844 | -Perm., cosmop | PERM
+ Toechomya CLARKE, 1899 | M.Dev., Eu | MDEV
+ Family TRIGONIIDAE Lamarck, 1819
+ Trigonia BRUGUIERE, 1789
+ Lyrodon GOLDFUSS, 1837 | Cret. (Cenoman.), cosmop.-- (Toarc.), France(Alsace); LV ext., XO.7 (Bayle, 1878). T. (Frenguelliella) LEANZA, 1942, p. 164 [·T. inexspectata JAWORSKI, 1915, p. 377; OD]. Trigonally ovate, umbones les | CRET
+ Agonisca FLEMING, 1963 | Cret.(Alb.-Maastricht.}, Eu.-Asia-W.N.Am | CRET
+ Austrotrigonia SKWARKO, 1963
+ Eotrigonia COSSMANN, 1912 [*Trigonia smeei J. DE C. SOWERBY] | -Mio., Australia | NEOG
+ Iotrigonia VAN HOEPEN, 1929 [*1. erassitesta] | Cret., S.Afr.- Asia-S.Am.-Australia-N.Z.-Antarctic | CRET
+ Linotrigonia VAN HOEPEN, 1929 [*L. linijera] | -U.Cret., cosmop | UCRET
+ Megatrigonia VAN HOEPEN, 1929 [*M. obesa] | )-L.Cret., S.Afr.-E. Afr.-1ndia-S.Am | LCRET
+ Mesotrigonia FRENEIX, 1958 [*M. tarameahensis] | U.Cret.(Senon.), N.Caledonia | UCRET
+ Microtrigonia NAKANO, 1957 [*M. amanoi] | U.Cret. (Maastricht.) , Japan.-- (Nakano, 1957) | UCRET
+ Minetrigonia KOBAYASHI & KATAYAMA, 1938 [*Trigonia hegiensis SAEKI] | U.Trias., Japan-B.C.-S.Am | UTRIAS
+ Myophorella BAYLE, 1878 [*M. nodulosa BAYLE] | )-L.Cret. (Neocom.) , cosmop | LCRET
+ Neotrigonia COSSMANN, 1912 [*Trigonia pectinata LAMARCK] | -Rec., Australia | REC
+ Pacitrigonia MARWICK, 1932 [*P. sylvesteri] | U.Cret.(U.Senon.), S. Am.-N. Z | UCRET
+ Praegonia FLEMING, 1962 [*P. coombsi] | M.Trias. (Ladin.) , N.Z | MTRIAS
+ Pterotrigonia VAN HOEPEN, 1929 [*P. cristata] | )-U.Cret., cosmop | UCRET
+ ?Quoiecchia CRICKMAY, 1930 [*Q. aliciae] | L.Cret., B.C | LCRET
+ Rutitrigonia VAN HOEPEN, 1929 [*R. peregrina] | )-U.Cret., cosmop | UCRET
+ Scaphotrigonia DIETRICH, 1933 [*Trigonia nallis LAMARCK] | ; M.Jur.?(Calloll'), USA(Calif.) | MJUR
+ Sphenotrigonia RENNIE, 1936 [*Trigonia (Sphenotrigonia) jrommurzei] | L.Cret.(Neocom.), S.Afr | LCRET
+ Vaugonia CRICKMAY, 1930 | )-U.Jur.(Portland.), cosmop | UJUR
+ Yaadia CRICKMAY, 1930 [*T. kodairai] | L.Cret., B.C | LCRET
+ Sainschandia MARTINSON, 1957 [*S. seulpturensis] | U.Cret.( Cenoman.-Turon.), SE. Mongolia | UCRET
+ Anopisthodon R. A. PHILIPPI, 1899 [*Trigonia? obesa] | Cret., S.Am.(Chile) | CRET
+ Aulacopleurum R. A. PHILIPPI, 1899 [*Trigonia? trapezoidea] | Cret., S.Am.(Chile) | CRET

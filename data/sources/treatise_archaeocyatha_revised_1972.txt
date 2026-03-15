@@ -1,0 +1,784 @@
+---
+reference: Hill, D. (ed.), 1972. Treatise on Invertebrate Paleontology, Part E (Revised), Volume 1, Archaeocyatha. Second Edition. Geological Society of America and University of Kansas, 158 p.
+scope:
+  - taxon: Archaeocyatha
+    coverage: comprehensive
+notes: |
+  Covers Phylum Archaeocyatha: Class Regulares (Orders Monocyathida, Ajacicyathida,
+  and others) and Class Irregulares (Orders Archaeocyathida, Syringocnemidida, etc.).
+  All Cambrian; predominantly Lower Cambrian.
+  Author: Dorothy Hill. Pages 79-188 extracted.
+  Note: Old scan PDF with broken line wrapping; text joined at paragraph level for extraction.
+---
+
+Phylum ARCHAEOCYATHA Bornemann, 1884
+  Order Monocyathida Okulitch, 1935
+    Suborder Monocyathina Okulitch, 1935
+    Suborder Globosocyathina Okuneva, 1969
+    Suborder Capsulocyathina Zhuravleva, 1964
+  Order Putapacyathida Vologdin, 1962
+    Suborder Dokidocyathina Vologdin, 1957
+    Superfamily Erbocyathacea Vologdin & Zhuravleva, 1956
+    Superfamily Pretiosocyathacea Rozanov, 1969
+    Superfamily Hupecyathellacea Rozanov, 1969
+    Superfamily Bosceculcyathacea Krasnopeeva, 1959
+    Superfamily Tumulocyathacea Krasnopeeva, 1953
+    Superfamily Annulocyathacea Krasnopeeva, 1953
+    Superfamily Sigmocyathacea Krasnopeeva, 1953
+    Superfamily Tercyathacea Vologdin, 1937
+    Suborder Nochoroicyathina Zhuravleva, 1956
+    Superfamily Nochoroicyathacea Zhuravleva, 1956
+    Superfamily Kordecyathacea Missarzhevskiy, 1961
+    Superfamily Lenocyathacea Zhuravleva, 1956
+    Superfamily Fansycyathacea Korshunov & Rozanov, 1969
+    Superfamily Piamaecyathacea Zhuravleva, 1960
+    Suborder Coscinocyathina Zhuravleva, 1955
+    Superfamily Coscinocyathacea Taylor, 1910
+    Superfamily Clathricoscinacea Rozanov, 1964
+    Superfamily Anaptyctocyathacea Debrenne, 1970
+    Superfamily Alataucyathacea Zhuravleva, 1955
+    Superfamily Rozanovicyathacea Korshunov, 1969
+    Superfamily Mrassucyathacea Vologdin, 1960
+  Order Thalassocyathida Vologdin, 1962
+  Order Archaeocyathida Okulitch, 1935
+    Suborder Archaeocyathina Okulitch, 1935
+    Suborder Archaeosyconina Zhuravleva, 1950
+  Order Syringocnemidida Okulitch, 1935
+  Order Kazakhstanicyathida Konyushkov, 1967
+  Order Aphrosalpingida Myagkova, 1955
+  Order Palaeoschadida Myagkova, 1955
+  Order Conoidocyathida Vologdin, 1964
+  Order Cribricyathida Vologdin, 1964
+  Order Vologdinophyllida Radugin, 1964
+    Superfamily Vologdinophyllacea Radugin, 1964
+    Superfamily Akademiophyllacea Radugin, 1964
+  Order Archaeophyllida Okulitch, 1943
+Phylum ARCHAEOCYATHA Bornemann, 1884
+  Archaeocyathinae TAYLOR, 1910
+  Cyathospongia OKULITCH, 1935
+  Archaeocyathi R. BEDFORD & W. R. BEDFORD, 1936
+  Archaeocyatha VOLOGOIN, 1937
+  Pleospongia OKULITCH, 1943
+  Archaeocyathi KRASNOPEEVA, 1955
+  Euarchacocyathi ZHURAVLEVA, 1960 | | LCAM
+Class REGULARES Vologdin, 1937
+  Regularia VOLOGDIN, 1937
+  Monocyatha OKULITCH, 1943
+  Septoidea KRASNOPEEVA, 1953
+  Monocyathea OKULITCH, 1955
+  Monocyatha OKULITCH, 1943
+  Order MONOCYATHIDA Okulitch, 1935
+    Monocyathina OKULITCH, 1935 | | LCAM
+    Archaeolynthida ZHURAVLEVA, 1957 | | LCAM
+    Suborder MONOCYATHINA Okulitch, 1935
+      Monocyathina OKULITCH, 1935 | | LCAM
+    Family MONOCYATHIDAE Bedford & Bedford, 1934
+      Rhabdocnemidae OKULITCH, 1943
+      Rhabdocyathidae VOLOGDIN, 1931 | | LCAM
+      Archaeolynthidae ZHURAVLEVA, 1949 [*Monoeyathus porosus R. BEDFORD & W. R. BEDFORD] | | LCAM
+      Rhabdocyathellidae ZHURAVLEVA, 1963 [*Monoeyathus porosus R. BEDFORD & W. R. BEDFORD] | | LCAM
+      Archaeolynthus TAYLOR, 1910 [*Monoeyathus porosus R. BEDFORD & W. R. BEDFORD]
+      Monoeyathus R. BEDFORD & W. R. BEDFORD, 1934
+      Rhabdoenema OKULITCH, 1937
+      Rhabdoeyathus VON TOLL, 1899
+      Rhabdoeyathella VOLOGDIN, 1937
+      Rhabdolynthus ZHURAVLEVA, 1960 [*R. eonieus] | | LCAM
+    Family TUMULIOLYNTHIDAE Rozanov, 1966
+      Tumuliolynthus ZHURAVLEVA, 1963 [*Rhabdocyathus tubexternus VOLOGDIN] | | LCAM
+    Family ETHMOLYNTHIDAE Zhuravleva, 1963
+      Ethmolynthinae ZHURAVLEVA, 1963 [*E. rosanovi] | | LCAM
+      Ethmolynthus ZHURAVLEVA, 1963 [*E. rosanovi] | | LCAM
+    Family CRYPTOPOROCYATHIDAE Zhuravleva, 1960
+      Cryptoporocyathus ZHURAVLEVA, 1960 [*C. junieanensis] | | LCAM
+    Family GLOBOSOCYATHIDAE Okuneva, 1969
+      Capsolynthidae OKUNEVA, 1969 [*C. helenae] | | LCAM
+    Suborder GLOBOSOCYATHINA Okuneva, 1969
+    Family CAPSOLYNTHIDAE Okuneva, 1969
+      Globosocyathina OKUNEVA, 1969 | | LCAM
+      Globosocyathidae OKUNEVA, 1969 [*G. bel/us] | | LCAM
+      Ko YUSHKOV, & ROZANOV, 1964 | | LCAM
+      Capsulocyathus VOLOGDIN, 1962 [*c. capstlli/er (not figured]
+    Family CAPSULOCYATHIDAE Zhuravleva, 1964
+    Suborder CAPSULOCYATHINA Zhuravleva, 1964
+      Rhabdocyathella VOLOGDIN, 1937
+    Family FRANSUASAECYATHIDAE Debrenne, 1964
+      Fransuasaecyathidae DEBRENNE, 1964 [*F. subtumulatus] | | LCAM
+      Fransuasaecyathus ZHURAVLEVA, 1960 [*F. subtumulatus] | | LCAM
+    Family URALOCYATHELLIDAE Zhuravleva, 1964
+      Uralocyathellidae ZHURAVLEVA, 1964 [*U.] | | LCAM
+      Uralocyathella ZHURAVLEVA in ZHURAVLEVA, KRAS- NOPEEVA, & CHERNYSHEVA, 1960 [*U. repinae] | | LCAM
+    Family URALOCYATHIDAE Zhuravleva in Vologdin, 1956
+      Uralocyathidae ZHURAVLEVA in VOLOGDIN, 1956 [*Coelocyathus kidr] | | LCAM
+      Vacuocyathidae VOLOGDIN, 1962 [*Coelocyathus kidr] | | LCAM
+      Vacuocyathus OKULITCH, 1950 [*Coelocyathus kidr]
+      Coelocyathus SCHLUTER, 1886 | | LCAM
+      Uralocyathus ZHURAVLEVA, 1950 | | LCAM
+      Velicyathus DEBRENNE, 1964 [*V. levillaini] | | LCAM
+  Order PUTAPACYATHIDA Vologdin, 1962
+    Putapacyathida VOLOGDIN, 1962 | | LCAM
+    Putapacyathidae R. BEDFORD & I. BEDFORD, 1936 [*P. regularis] | | LCAM
+    Putapacyathacea DEBRENNE, 1970 [*P. regularis] | | LCAM
+    Putapacyathus R. BEDFORD & J. BEDFORD, 1936 [*P. regularis]
+    Alphacyathus R. BEDFORD & J. BEDFORD, 1939
+    Aptocyathidae KONYUSHKOV in ZHURAVLEVA, KONYUSHKOV, & ROZANOV, 1964 | | LCAM
+    Aptocyathacea DEBRENNE, 1970 | | LCAM
+    Family APTOCYATHIDAE Konyushkov, 1964
+      Aptocyathella KONYUSHKOV in ZHURAVLEVA, KON- YUSHKOV, & ROZANOV, 1964 [*A. prima] | | LCAM
+      Chabakovicyathus KONYUSHKOV in ZHURAVLEVA, KONYUSHKOV, & ROZANOV, 1964 [*C. tumulatus] | | LCAM
+      In ZHURAVLEVA, KONYUSHKOV, & ROZANOV, 1964 [*G. lebedensis] | | LCAM
+    Family GERBICANICYATHIDAE Belyaeva, 1969
+      Gerbicanicyathidae BELYAEVA, 1969 [*G. emili] | | CAM
+      Gerbicanicyathus BELYAEVA, 1969 [*G. emili] | | LCAM
+      Ajacicyathina R. BEDFORD & J. BEDFORD, 1939
+      Acanthocyathina OKULITCH, 1935
+      Loculicyathina ZHURAVLEVA, 1955
+      Nochoroicyathida ZHURAVLEVA in VOLOGDIN, 1956
+      Bosceculida KRASNOPEEVA, 1960
+    Suborder DOKIDOCYATHINA Vologdin, 1957
+      Acanthinocyathida R. BEDFORD & W. R. BEDFORD, 1936
+      Acanthinocyathina R. BEDFORD & W. R. BEDFORD, 1936
+      Acanthocyathina OKULITCH, 1935
+      Dokidocyathidae R. BEDFORD & W. R. BEDFORD, 1936 | | LCAM
+      Dokidocyalhacea DEBRENNE, 1970 | | LCAM
+      Dokidocyathus TAYLOR, 1910 | | LCAM
+      Incurvocyathus ROZANOV in ROZANOV & MIS- SARZHEVSKIY, 1966 [*1. voronovae] | | LCAM
+      Acanthinocyathidae R. BEDFORD & W. R. BEDFORD, 1936
+      Acamhocyathidae R. BEDFORD & W. R. BEDFORD, 1934
+      Acanthinocyathus R. BEDFORD & W. R. BEDFORD, 1936 [*Acanthocyathus apertus R. BEDFORD & W. R. BEDFORD]
+      Acanthocyathus R. BEDFORD & W. R. BEDFORD, 1934
+      Acantinocyathus ZHURAVLEVA, KONYUSHKOV, & ROZANOV, 1964 | | LCAM
+    Family SOANICYATHIDAE Rozanov, 1964
+      Soanicyathidae ROZANOV in ZHURAVLEVA, KONYUSHKOV, & ROUNOV, 1964 [*S. admirandus] | | LCAM
+      Soanicyathus ROZANOV in ZHURAVLEVA, KONYUSH- KOV, & ROZANOV, 1964 [*S. admirandus] | | LCAM
+      Zhuravlevaecyathus ROZANOV in ZHURAVLEVA, KONYUSHKOV, & ROZANOV, 1964 [*Z. pulchellus] | | LCAM
+    Family KIDRJASOCYATHIDAE Rozanov, 1964
+      Kidrjasocyathus ROZANOV, 1960 [*K. uralensis] | | LCAM
+      Kidrjassocyathus ROZANOV, 1960 | | LCAM
+      Tchojacyathus ROZANOV, 1960 [*T. validus] | | LCAM
+    Family KALTATOCYATHIDAE Rozanov, 1964
+      Kahatocyathidae ROZANOV in ZHURAVLEVA, KONYUSHKOV, & ROZANOV, 1964 [*K. kaschinae] | | LCAM
+      Kaltatocyathus ROZANOV in ZHURAVLEVA, KONYUSH- KOV, & ROZANOV, 1964 [*K. kaschinae] | | LCAM
+      Papillocyathus ROZANOV in ZHURAVLEVA, KONYUSH' KOV, & ROZANOV, 1964 [*P. vacuus] | | LCAM
+      Sekwicyathus HANDFIELD, 1971 [*S. nahanniensis] | | LCAM
+      Ajacicyathina R. BF,DFORD & J. BEDFORD, 1939
+      Boscekulcyathina KRASNOPEEVA, 1969 | | LCAM
+      Schidertycyathina KRASNOPEEVA, 1969 | | LCAM
+      Ajacicyathidae R. BEDFORD & J. BEDFORD, 1939
+      Somphocyathidae OKULJTCH, 1935
+      Archaeocyathellidae SIMON, 1939
+      Ajacicyathus R. BEDFORD & J. BEDFORD, 1939 [*Archaeocyathus ajax TAYLOR]
+      Somphocyathus TAYLOR, 1910
+      Ventriculocyathus VOLOGDIN, 1931
+      Ascocyathus VOLOGDIN, 1960
+      Sclerocyathus VOLOGDIN, 1960 | | LCAM
+      Ajacicyathellus DEBRENNE, 1959 [*A. hollardi] | | LCAM
+      Archaeocyathellus FORD, 1873
+      Dentatocyathus OKUNEVA, 1967 | | LCAM
+      Loculicyathus VOLOGOIN, 1931
+      Mikhnocyathus MASLOV, 1957
+      Zolaeyatlllls VOLOG- DIN, 1962 | | LCAM
+      Nevadacyathus OKULITCH, 1943 [*Archaeoeyathus septapol'lfs OKULITCH] | | LCAM
+      Orbiasterocyathus ZHURAVLEVA in REPINA, KHO- MENTOVSKIY, ZHURAVLEVA, & ROUNOV, 1964
+      Orbicyathus VOLOGDIN, 1937 [*0. mongolicw]
+      Pachecocyathus RINCON, 1971 [*P. cabanasi]
+      Protocyathus FORD, 1878 [*P. rarus] | | LCAM
+      Serratocyathus VOLOGDIN, 1960 [*S. eehinatus]
+      Eehinoeyathus VOLOGDIN, 1960 | | LCAM
+      Eehinoeyathus TERMIER & TERMIER, 1950 [*Arehaeoeyathus subtilis VOLOGDIN] | | LCAM
+      Subtilocyathus VOLOGDIN, 1960 [*Arehaeoeyathus subtilis VOLOGDIN] | | LCAM
+      Urcyathus VOLOGDIN, 1940 [*U. asteroides] | | LCAM
+    Family ROBUSTOCYATHIDAE Debrenne, 1964
+      Robustocyathidae DEBRENNE, 1964 [*Archaeocyathus robustus VOLOGDIN]
+      Robustocyathus ZHURAVLEVA, 1960 [*Archaeocyathus robustus VOLOGDIN]
+      Leecyathus VOLOGDIN, 1957 | | LCAM
+      Afiacyathus VORONIN, 1962 [*A. lativallum] | | LCAM
+      Carpicyathus OSADCHAYA, in ZHURAVLEVA, ZARDOROZHNAYA, OSADCHAYA, POKROVSKAYA, RODI- ONOVA, & FONIN, 1967 [*C. mystieus]
+      Gorskinocyathus VOLOGDIN, 1960 [*Arehaeoeyathus gorskinensis VOLOGDIN] | | LCAM
+      Halysicyathus DEBRENNE, 1965 [*H. multilureus] | | LCAM
+      Inessocyathus DEBRENNE, 1964 [*Arehaeoeyathus spatiosus BORNEMANN] | | LCAM
+      Rotundocyathus VOLOGDIN, 1960 | | LCAM
+      Stapicyathus OEBRENNE, 1964 [*Arehaeoeyathus stapipora TAYLOR] | | LCAM
+      Arehaeoeyathellus (Stapieyathus) OEBRENNE, 1964 [*Arehaeoeyathus stapipora TAYLOR] | | LCAM
+      Turgidocyathus VOLOGDIN, 1960 | | LCAM
+    Family TENNERICYATHIDAE Rozanov in Zhuravleva, Korshunov, & Rozanov, 1969
+      Tennericyathus ROZANOV in ZHURAVLEVA, KORSHU- NOV, & ROZANOV, 1969
+      Cadniacyathus R. BEDFORD & J. BEDFORD, 1937
+    Family ETHMOCYATHIDAE Debrenne, 1969
+      Ethmopectinidae DURENNE, 1970
+      Ethmocyathus R. BEDFORD & W. R. BEDFORD, 1934
+      Ethmopectinlls DEBRENNE, 1970 | | LCAM
+    Family COMPOSITOCYATHIDAE Zhuravleva, 1967
+      Compositocyathus ZHURAVLEVA, 1960 | | LCAM
+    Family CYCLOCYATHELLIDAE Zhuravleva, 1960
+      Cyclocyathellidae ZHURAVLEVA in KHALFIN, 1960
+      Cyclocyathellidae ZHURAVLEVA, 1959
+      Cyclocyathella VOLOGDIN MS in ZHURAVLEVA, 1960
+      Leptoeyathus VOLOGDIN, 1937
+      Leptoeyathus EDWARDS & HAIME, 1850 | | LCAM
+      Cycloeyathus SIMON, 1939
+      Cycloeyathus VOLOGDIN, 1931 | | LCAM
+      Cycloeyathus EDWARDS & HAIME, 1850 | | LCAM
+      Cycloeyathus DUNCAN & THOMPSON, 1867 | | LCAM
+      Cycloeyathella VOLOGDIN in ZHURAVLEVA, 1960 | | LCAM
+      Cyathocricus DEBRENNE, 1969 [*Archaeoeyathus traeheodentatus R. BEDFORD & W. R. BEDFORD]
+      Leptosocyathus VOLOGDIN, 1937 [*L. eurviseptum (=Leptoeyathus eurviseptatus VOLOG- .~~D' 2 j] | | LCAM
+      Gordonicyathus ZHURAVLEVA, 1959 [*Thalamocyathus gerassimovensis KRASNOPEEVA] | | LCAM
+      Gordonifungia ROZANOV in REPINA, KHOMEN- TOVSKIY, ZHURAVLEVA, & ROZANOV, 1964 [*G. batinensis] | | LCAM
+      Hemithalamocyathus TING, 1937 [*Archaeocyathus sibiricus VON TOLL] | | LCAM
+      Svetlanocyathus MISSARZHEVSKIY & ROZANOV, 1962 [*5. primus] | | LCAM
+      Taylorcyathus VOLOGDIN, 1955 [*Cyclocyathus subtersiensis VOLOGDIN] | | LCAM
+      Tersicyathus VOLOGDIN, 1955 | | LCAM
+    Family CHANKACYATHIDAE Yakovlev, 1959
+      Chankacyathidae YAKOVLEV, 1959 [*C. stracholJi] | | LCAM
+      Chankacyathus YAKOVLEV, 1959 [*C. stracholJi] | | LCAM
+      See OKUNEVA, 1969 | | LCAM
+    Family ETHMOPHYLLIDAE Okulitch, 1943
+      Ethmophyllidae OKULITCH, 1943 | | LCAM
+      Ethmophyllum MEEK, 1868 | | LCAM
+      Degeletticyathus ZHURAVLEVA in ZHURAVLEVA, KORSHUNOV, & ROZANOV, 1969 [*'Ethmophyllum? galusehkoi ZHURAVLEVA]
+      Mackenziecyathus HANDFIELD, 1971 [*'M. bukryi] | | LCAM
+      Palmericyathus HANDFIELD, 1971 | | LCAM
+      Salopicyathus VOLOGDIN, 1962 | | LCAM
+      Salopicyathus VOLOGDIN, 1958 | | LCAM
+      Zonacyathus R. BEDFORD & J. BEDFORD, 1937
+    Superfamily ERBOCYATHACEA Vologdin & Zhuravleva, 1956
+      Erbocyathidae VOLOGDIN & ZHURAVLEVA, in VOLOGDJN, 1956
+    Family ERBOCYATIIIDAE Vologdin & Zhuravleva in Vologdin, 1956
+      Erbocyathidae VOLOGDIN & ZHURAVLEVA, in VOLOGDIN, 1956
+      Polycyathidae VOLOGDIN, 1928
+      Polycyathus VOLOGDIN, 1928 [*'Polycyathus heterovallum VOLOGDIN]
+      Polycyathus DUNCAN, 1876 [*'Polycyathus heterovallum VOLOGDIN]
+      Pluralicyathus OKULITCH, 1950
+      Polycyathus VOLOGDIN, 1928
+      Krasnopeevaecyathus ROZANOV, in REPINA, KHO- MENTOVSKIY, ZHURAVLEVA, & ROZANOV, 1964 | | LCAM
+      Krishnanicyathus VOLOGDIN, 1964
+      Neoeyatlltls VOLOGDIN, 1960
+      Schidertycyathellus KONYUSHKOV, 1967 | | LCAM
+      Tegerocyathella KONYUSHKOV, 1967 | | LCAM
+      Tegerocyathus KRASNOPEEVA, 1953 | | LCAM
+    Family SAJANOCYATHIDAE Vologdin, 1956
+      Sajanocyathidae VOLOGDIN, 1956 | | LCAM
+      Sajanoeyalhus VOLOGDIN, 1937
+      Sayanoeyatlllls VOLOGDIN, 1937
+      Sajanaeyatlllls DEBRENNE, 1964 | | LCAM
+      Leioeyathus VOLOGDIN, 1959 | | LCAM
+    Superfamily PRETIOSOCYATHACEA Rozanov, 1969
+      Ptttiosooyathacta ROZANOV, 1969 [*P. subli/is] | | LCAM
+    Family PRETIOSOCYATHIDAE Rozanov, 1969
+      Ptetiosocyathidae ROZANOV, 1969 [*P. subli/is] | | LCAM
+      Pretiosocyathus ROZANOV, in ROZANOV & MIS- SARZHEVSKIY, 1966 [*P. subli/is]
+    Family ROBERTOCYATHIDAE Rozanov, 1969
+      Robenocyathidae ROZANOV, 1969 | | LCAM
+      Robertocyathus ROZANOV, 1969 | | LCAM
+      Urcyathella ZHURAVLEVA, 1961 | | LCAM
+    Family PEREGRINICYATHIDAE Zhuravleva, 1967
+    Superfamily HUPECYATHELLACEA Rozanov, 1969
+    Family HUPECYATHELLIDAE Rozanov, 1969
+      Hupecyathellidae ROZANDV, 1969 | | LCAM
+      Bosceculida KRASNOPHVA, 1960
+      Boscekulida KRASNOPEEVA, 1969
+      Boscekulcyathina KRASNOPHVA, 1969
+      Schidenycyathina KRASNOPEEVA, 1969
+    Family BOSCECULCYATHIDAE Krasnopeeva, 1959
+      Bosceculcyathidae KRASNOPEEVA, 1959 | | LCAM
+      Bosceculcyathus KRASNOPEEVA, 1959 [*B. agyrekensis] | | LCAM
+    Family SCHIDERTYCYATHIDAE Krasnopeeva, 1969
+      Schidertycyathidae KRASNOPEEVA, 1969
+      Schidertycyathus KRASNOPEEVA, 1959 [*S. borucaevi]
+      Sehidertieyathus DEBRENNE, 1964 | | LCAM
+      Syringocyathus VOLOGDIN, 1940 [*S. aspeetabilis]
+      Syringocyathus VOLOGDIN, 1937
+    Superfamily TUMULOCYATHACEA Krasnopeeva, 1953
+      Tumulocyathidae KRASNOPEEVA, 1953 | | LCAM
+    Family TUMULOCYATHIDAE Krasnopeeva, 1953
+      Tumulocyathus VOLOGDIN, 1937 [*T. puslllialus] | | LCAM
+      Dailycyathus DEBRENNE, 1970 [*Paranacya- Ih"s margarita BEDFORD]
+      Tumulocyathellus ZHURAVLEVA, 1960 [*Tllml/locyatlllls admirabilis VOLOGDIN] | | LCAM
+    Family SANARKOCYATHIDAE Hill, new family [Sanarkocyathidae HILL, herein] [= ?Sanaricyathidae Roz· ANOV, 1969
+      Sanaricyotlws ROUNOV, 1969 | | LCAM
+      Sanarkocyathus ZHURAVLEVA, 1963
+      Sanaricyalhus ROZANOV, 1969
+    Family VOLOGDINOCYATHIDAE Yaroshevich, 1957
+      Vologdinocyathidae YAROSHEVICH, 1957 | | LCAM
+    Superfamily ANNULOCYATHACEA Krasnopeeva, 1953
+      Annulocyathidae KRASNOPHVA, 1953
+    Family ANNULOCYATHIDAE Krasnopeeva, 1953
+      Annulocyathidae KRASNOPEEVA, 1953 | | LCAM
+      Annulocyathus VOLOGDIN, 1937 | | LCAM
+      Kijacyathus ZHURAVLEVA, 1959 | | LCAM
+    Family KIJACYATHIDAE Zhuravleva, 1964
+      Annulojungia KRASNO- PEEVA, 1954 | | LCAM
+    Family GLORIOSOCYATHIDAE Rozanov, 1969
+      Gloriosocyathidae ROZANOV, 1969 | | LCAM
+      Porocyathus ZHURAVLEVA in VOLOGDIN, 1957
+      Porocyathidae ZHURAVLEVA MS in VOLOGDIN, 1957
+      Gloriosocyathus ROZANOV, 1969 | | LCAM
+      Ringifungia KORSHUNOV in ZHURAVLEVA, KORSHU- NOV & ROZANOV, 1969 | | LCAM
+      Rossocyathella ZHURAVLEVA, 1960 | | LCAM
+      Russocyathus ZHURAVLEVA, 1955 | | LCAM
+      Cordilleracyathus HANDFIELD, 1971 [*C. blussoni]
+      Squamosocyathus ZHURAVLEVA, 1960 [*S. taumatus] | | LCAM
+      Yukonocyathus HANDFIELD, 1971 [*Y. franeesi] | | LCAM
+    Superfamily SIGMOCYATHACEA Krasnopeeva, 1953
+      Sigmocyathidae KRASNOPEEVA, 1953 | | LCAM
+      Sigmocyathus R. BEDFORD & J. BEDFORD, 1936 [*Coscinoeyathus didymoteiehus TAYLOR]
+      Hemistillieidoeyathus TING, 1937 | | LCAM
+      Sygmoeyathus KRAS- NOPEEVA, 1953 | | LCAM
+    Superfamily TERCYATHACEA Vologdin, 1937
+      Tercyathidae VOLOGDIN, 1937 | | LCAM
+    Family TERCYATHIDAE Vologdin, 1937
+      Tereyathidae VOLOGDIN, 1937 [*T. duplex VOLOGDIN] | | LCAM
+      Tercyathus SIMON, 1939 [*T. duplex VOLOGDIN] | | LCAM
+      Tereyathus VOLOGDIN, 1932 | | LCAM
+      Clathricyathus SIMON, 1939 [*C. firm us VOLOGDIN]
+      Clathrieyathus VOLOG- DIN, 1932 | | LCAM
+      Clathroeyathus VOLOGDIN, 1937 | | LCAM
+      Nochoroicyathus ZHURAVLEVA, 1951 [*N. mirabilis]
+      Howellicyathus VOLOGDIN, 1962 | | LCAM
+    Superfamily NOCHOROICYATHACEA Zhuravleva, 1956
+    Family NOCHOROICYATHIDAE Zhuravleva, 1956
+    Suborder NOCHOROICYATHINA Zhuravleva, 1956
+      Nochoroicyathidae ZHURAVLEVA in VOLOCDIN, 1956 | | LCAM
+      Trininaecyathidae DEBRENNE, 1964 | | LCAM
+      Trininaecyathus ZHURAVLEVA, 1960 [*T. macroporus] | | LCAM
+      Bronchocyathidae BEDFORD & J. BEDFORD, 1936 [*Archaeocyathus trachealis TAYLOR] | | LCAM
+      Thalamocyathidae ZHURAVLEVA, 1951 [*Archaeocyathus trachealis TAYLOR] | | LCAM
+      Thalamocyathus GORDON, 1920 [*Archaeocyathus trachealis TAYLOR]
+      Bronchocyathus R. BEDFORD & J. BEDFORD, 1936
+      Cricopectinus DEBRENNE, 1970 [*C. dentu- Ius]
+      Cyathocricus DEBRENNE, 1969 [*Bronchocyathus sigmoideus BEDFORD & J. BEDFORD] | | LCAM
+      Glaessnericyathus DEBRENNE, 1970 [*Bronchocyathus sigmoideus BEDFORD & J. BEDFORD] | | LCAM
+    Family ETHMOPECTINIDAE Debrenne, 1970
+      Elhmopectinidae DEBRENNE, 1970 [*E. walteri] | | LCAM
+      Ethmopectinus DEBRENNE, 1970 [*E. walteri]
+      Ethmocyathus R. BEDFORD & W. R. BEDFORD, 1934
+    Family FORMOSOCYATHIDAE Rozanov, 1963
+      Formosocyalhidae ROZANOV, 1963 [*F. bulynnikovi] | | LCAM
+      Heckericyathus ZHURAVLEVA, 1960 [*Ethmophyllum heckeri ZHURAVLEVA]
+    Superfamily KORDECYATHACEA Missarzhevskiy, 1961
+    Family KORDECYATHIDAE Missarzhevskiy, 1961
+      Kordecyathus MISSARZHEVSKIY, 1961 | | LCAM
+    Superfamily LENOCYATHACEA Zhuravleva, 1956
+      Lenocyathidae ZHURAVLEVA in VOLOGDIN, 1956 | | LCAM
+    Family LENOCYATHIDAE Zhuravleva, 1956
+      Lenocyathidae ZHURAVLEVA in VOLOGDIN, 1956 | | LCAM
+      Lenocyathus ZHURAVLEVA in ZHURAVLEVA & ZELENOV, 1955 [*L. IenaiclIs] | | LCAM
+      Japhanicyathus KORSHUNOV, in ZHURAVLEVA, KOR- SHUNOV, & ROZANOV, 1969 [*'. genlll'osus] | | LCAM
+    Family GEOCYATHIDAE Debrenne, 1964
+      Geocyathidae DEBRENNE, 1964 | | LCAM
+      Geocyathus ZHURAVLEVA, 1960
+    Family FALLOCYATHIDAE Rozanov, 1969
+      Fallocyathidae ROZANQV in ZHURAVLEVA, KORSHUNOV, & ROZANOV, 1969
+    Superfamily FANSYCYATHACEA Korshunov & Rozanov, 1969
+      Jakutocyathus ZHURAVLEVA, 1960
+      Kotuyicyathus ZHURAVLEVA, 1960
+      Fansycyathidae KORSHUNOV & ROZANOV in ZHURAVLEVA, KORSHUNOY, & ROZANOV, 1969 | | LCAM
+      Piamaecyathacea E91 & ROZANOV, 1969 [*F. dubius] | | LCAM
+    Family FANSYCYATHIDAE Korshunov & Rozanov, 1969
+      Fansycyathus KORSHUNOV & ROZANOV in ZHURA- VLEVA, KORSHUNOV, & ROZANOV, 1969 [*F. lermontolJae] | | LCAM
+    Family CARINACYATHIDAE Krasnopeeva, 1953
+      See ROZANOV, 1969 [*C. loeulatus] | | LCAM
+      Carinacyathus VOLOGDIN, 1932 [*C. loeulatus] | | LCAM
+      Carinoeyathus VOLOGDIN, 1937 [*A. eyrenolJi] | | LCAM
+      Angaricyathus ZHURAVLEVA, 1965 [*A. eyrenolJi] | | LCAM
+    Superfamily PIAMAECYATHACEA Zhuravleva, 1960
+      Piamaecyathidae ZHURAVLEVA, 1960 | | LCAM
+    Family PIAMAECYATHIDAE Zhuravleva, 1960
+      Piamaecyathidae ZHURAVLEVA, 1960 [*P. sajanieus] | | LCAM
+      Piamaecyathus ZHURAVLEVA, 1960 [*P. sajanieus] | | LCAM
+      Piamaecyathellus ROZANOV in REPINA, KHOMEN- TOVSKIY, ZHURAVLEVA, & ROZANOV, 1964 [*P. simplex] | | LCAM
+    Family BOTOMOCYATHIDAE Zhuravleva, 1955
+      Botomocyathidae ZHURAVLEVA, 1955 | | LCAM
+    Suborder COSCINOCYATHINA Zhuravleva, 1955
+    Family COSCINOCYATHIDAE Taylor, 1910
+      Asterocyathidae VOLOCDIN, 1956
+      Erismacoscinidae DEBRENNE, 1964
+      Coscinocyathus BORNEMANN, 1884
+      See DEBRENNE, 1964
+      Asterocyathellus VOLOGDIN, 1962
+    Superfamily COSCINOCYATHACEA Taylor, 1910
+      Coscinocyathidae TAYLOR, 1910 | | LCAM
+      Erismacoscinacea DEBRENNE, 1964 | | LCAM
+      Erismacoscinidae DEBRENNE, 1964 | | LCAM
+      Botomocyathus ZHURAVLEVA, 1955 | | LCAM
+      Asterocyathus VOLOGDIN, 1940 | | LCAM
+      Coscinoteichus DEBRENNE, 1964 [*C. minimiportls (=c. microporosllS DEBRENNE] | | LCAM
+      Erismacoseinus DEBRENNE, 1959 [*E. maroeanllS]
+      Geniculicyathus DEBRENNE, 1960 [*G. varius] | | LCAM
+      Pluralicoscinus DEBRENNE, 1963 [*P. alanisensis] | | LCAM
+      Retecoscinus ZHURAVLEVA, 1960 [*Coscinocyathus retetabulae VOLOGDIN] | | LCAM
+      Rozanovicoscinus DEBRENNE, 1970 [*R. fonini] | | LCAM
+    Family STILLICIDOCYATHIDAE Ting, 1937
+      Stillicidocyathidae TING, 1937 [*Coscinocya- E95 ~t ~ ~.. I a ~.... ~] | | LCAM
+      Salairocyathidae ZHURAVLEVA in VOLOGDIN, 1956 [*Coscinocya- E95 ~t ~ ~.. I a ~.... ~] | | LCAM
+      Stillicidocyathus TING, 1937 [*Coscinocya- E95 ~t ~ ~.. I a ~.... ~]
+      Salairocyathus VOLOGDIN, 1940 [*So zenko- E96 Archaeocyatha-Regulares [Coscinocyathellidae Z] | | LCAM
+      Coscinocyathellidae ZHURAVLEVA in VOLOCDIN, 1956 | | LCAM
+    Family COSCINOCYATHELLIDAE Zhuravleva, 1956
+      Coscinocyathellus VOLOGDIN, 1940 | | LCAM
+    Family AGYREKOCYATHIDAE Konyushkov, 1967
+      Agyrekocyathus KONYUSHKOV, 1967 | | LCAM
+      Tannuolacyathidae DEBRENNE, 1964 | | LCAM
+      Tannuolacyathus VOLOGDIN, 1957 | | LCAM
+    Superfamily CLATHRICOSCINACEA Rozanov, 1964
+    Family CLATHRICOSCINIDAE Rozanov, 1964
+      Clathricoscinus ZHURAVLEVA, 1955
+      Alataucyathacea E97 ZHURAVLEVA, 1955 | | LCAM
+    Superfamily ANAPTYCTOCYATHACEA Debrenne, 1970
+      Anaptyctocyathacea DEBRENNE, 1970 | | LCAM
+    Family ANAPTYCTOCYATHIDAE Debrenne, 1970
+      Anaptyctocyathidae DEBRENNE, 1970 [*Coscinoeyathus eribripora R. BEDFORD & W. R. BEDFORD] | | LCAM
+      Anaptyctocyathus DEBRENNE, 1969 [*Coscinoeyathus eribripora R. BEDFORD & W. R. BEDFORD]
+      Alataueyathus ZHURAVLEVA, 1955 [*Coscinoeyathus eribripora R. BEDFORD & W. R. BEDFORD]
+    Superfamily ALATAUCYATHACEA Zhuravleva, 1955
+      Alataucyathidae ZHURAVLEVA, 1955 | | CAM
+      Sigmocoscinacea DEBRENNE, 1970 | | CAM
+    Family ALATAUCYATHIDAE Zhuravleva, 1955
+      Alataucyathidae ZHURAVLEVA, 1955 [*A. jaroschevitsehi] | | LCAM
+      Alataucyathus ZHURAVLEVA, 1955 [*A. jaroschevitsehi] | | LCAM
+    Family ETHMOCOSCINIDAE Zhuravleva, 1957
+      Ethmocoscinidae ZHURAVLEVA in VOLOGDIN, 1957 | | LCAM
+      Tumulocoscininae ZHURAVLEVA, 1960 [*Coscinoeyathus papi] | | LCAM
+      Ethmocoscinus SIMON, 1939 [*Coscinoeyathus papillipora R. BEDFORD & W. R. BEDFORD] | | LCAM
+      Asterotumulus KASHINA in REPINA, KHOMENTOVS- KIY, ZHURAVLEVA, & ROZANOV, 1964 [*A. reeeptori] | | LCAM
+    Superfamily ROZANOVICYATHACEA Korshunov, 1969
+      Coscinoptyeha TAYLOR, 1910
+      Coscinoptyeha MEYRICK, 1881
+      Tumulocoscinus ZHURAVLEVA, 1960 | | LCAM
+      Sigmocoscinidae R. BEDFORD & J. BEDFORD, 1939
+      Sigmocoscinus R. BEDFORD & J. BEDFORD, 1936
+      Schumnyieyathus ZHURAVLEVA, 1968 | | LCAM
+      Rozanovicyathacea KORSHUNOV in ZHURAVLEVA, KORSHUNOV, & ROZANOV, 1969
+    Family ROZANOVICYATHIDAE Korshunov, 1969
+      Rozanovicyathidae KORSHVNOV in ZHURAVLEVA, KORSHUNOV, & ROZANOV, 1969
+      Rozanovieyathus KORSHUNOV in ZHURAVLEVA, KORSHUNOV, & ROZANOV, 1969 | | LCAM
+    Family POROCOSCINIDAE Debrenne, 1964
+      Porocoscinidae DEBRENNE, 1964 | | LCAM
+      Porocoscinus DEBRENNE, 1964
+    Superfamily MRASSUCYATHACEA Vologdin, 1960
+      Mrassucyathidae VOLOGDIN in ZHURAVLEVA, KRASNOPEEVA, & CHERNYSHEVA, 1960
+    Family MRASSUCYATHIDAE Vologdin, 1960
+      Mrassucyathidae VOLOGDIN in ZHURAVLEVA, KRASNOPEEVA, & CHERNYSHEVA, 1960 | | LCAM
+      Mrassocyathidae VOLOGDIN, 1956 | | LCAM
+      Mrassucyathus KRASNOPEEVA in ZHURAVLEVA, KRASNOPEEVA, & CHERNYSHEVA, 1960
+      Mrassocyathus KRASNOPEEVA in VOLOGDIN, 1956 | | CAM
+      Mrassocyathus KRASNOPEEVA, 1960 | | CAM
+    Family KASYRICYATHIDAE Zhuravleva, 1961
+      Kasyricyathidae ZHURAVLEVA, 1961 | | LCAM
+      Kasyricyathus ZHURAVLEVA, 1961 | | LCAM
+      Orienticyathus BELYAEVA, 1969 | | LCAM
+    Family POLYCOSCINIDAE Debrenne, 1964
+      Polycoscinidae DEBRENNE, 1964 [*P. contortus]
+      Polycoscinus R. BEDFORD & J. BEDFORD, 1937 [*P. contortus]
+      Erugatocyathus DEBRENNE, 1969 [*Coscinocyathus papillatus R. BEDFORD & W. R. BEDFORD] | | LCAM
+      Tomocyathus ROZANOV, 1960 [*T. operosus] | | LCAM
+    Family CALYPTOCOSCINIDAE Debrenne, 1964
+      Calyptocoscinus DEBRENNE, 1964 | | LCAM
+  Order ARCHAEOCYATHIDA Okulitch, 1935
+    Metacyathina R. BEDFORD & W. R. BEDFORD, 1936
+    Spirocyathida ZHURAVLEVA, 1950
+    Metacyathida OKULITCH, 1955
+    Dictyocyathida VOLOGDIN, 1956
+    Bicyathida VOLOGDIN, 1956
+    Bicyathina VOLOGDIN, 1962
+    Chouberticyathida DEBRENNE, 1970
+    Archaeopharetrida DEBRENNE, 1970
+    Metaldetida DEBRENNE, 1970
+    Paracoscinida DEBRENNE, 1970
+    Bacatocyathus VOLOGDIN, 1940 [*B. kazakevici]
+    Bacatocyathus VOLOGDIN, 1940 [*B. kazakevici]
+    Cysticyathus ZHURAVLEVA, 1955 | | LCAM
+    Batschatocyathus VOLOGDIN, 1956 | | LCAM
+    Batchatocyathus ZHURAVLEVA, 1960 | | LCAM
+    Thalassocyathus VOLOGDIN, 1957 [*T. acutatus] | | LCAM
+  Order THALASSOCYATHIDA Vologdin, 1%2 Class IRREGULARES Vologdin, 1937
+    Thalassocyathida VOLOGDIN, 1962
+    Rhizacyathida ZHURAVLEVA, 1955
+    Rhizacyathus R. BEDFORD & J. BEDFORD, 1939 | | LCAM
+    Membranacyathus ROZANOV, 1960 [*M. repinae] | | LCAM
+    Anthocyathea OKULITCH, 1955
+    Anthocyatha OKULITCH, 1943
+    Family BACATOCYATHIDAE Zhuravleva, 1960
+      Thalassocyathidae VOLOGDIN, 1962
+    Suborder ARCHAEOCYATHINA Okulitch, 1935
+      Archaeocyathida ZHURAVI.EVA, 1950
+      Metaldetida DEBRENNE, 1970 | | LCAM
+      Paranacyathida DEBRENNE, 1970 | | LCAM
+    Family ARCHAEOPHARETRIDAE Debrenne, 1970
+      Archaeopharetridae DEBRENNE, 1970 | | LCAM
+      Archaeopharetrida DEBRENNE, 1970 | | LCAM
+      Archaeopharetra R. BEDFORD & W. R. BEDFORD, 1936 [*A. typiea]
+    Family BICYATHIDAE Vologdin, 1937
+      Bicyathidae VOLOGDIN, 1937 [*B. angustus] | | LCAM
+      Terektigocyathidae VOLOGDIN, 1962 [*B. angustus] | | LCAM
+      Bicyathus VOLOGDIN, 1939 [*B. angustus]
+      Potekhinoeyathus VOLOGDIN, 1957
+      Terektigoeyathus VOLOGDIN, 1962
+      Poteehinocyathus ZHURAVLEVA, KONYUSHKOV, & ROZANOV, 1964
+      Tereetigoeyathus ZHURAVLEVA, KONYUSHKOV, & ROZANOV, 1964 | | LCAM
+    Family DICTYOCYATHIDAE Taylor, 1910
+      Dictyocyathidae TAYLOR, 1910
+      Chouberticyathida DEBRENNE, 1970
+      Dictyocyathus BORNEMANN, 1891 [*D. tenerrimus]
+      Eehinoeyathus VOLOGDIN, 1960 | | LCAM
+      Agaslrocyathus DEBRENNE, 1964
+      Chouberticyathus DEBRENNE, 1964 | | LCAM
+      Pinacocyathus R. BEDFORD & W. R. BEDFORD, 1934
+    Family PROTOPHARETRIDAE Vologdin, 1957
+      Protopharetridae VOLOGDIN, 1957 [*P. polymorpha] | | CAM
+      Volvacyathus DEBRENNE, 1960 [*V_ proteus]
+      Metacyathidae R. BEDFORD & W. R. BEDFORD, 1934
+      Cambrocyathidae OKULITCH, 1937
+      Metaldetida DEBRENNE, 1970
+      Metaldetinae DEBRENNE, 1964
+      Paranacyathida DEBRENNE, 1970
+      Paranacyathidae DE'RENNE, 1970
+      Metaldetes TAYLOR, 1910 [*M. cylindricus]
+      Metacyathus R. BEDFORD & W. R. BEDFORD, 1934
+      Bedfordcyathus VOLOGDIN, 1957
+      Ardrossacyathus R. BEDFORD & J. BEDFORD, 1937 [*A. endotheca] | | LCAM
+      Cambrocyathellus ZHURAVLEVA, 1960 [*C. tschuranicus]
+      Cambrocyathus OKULITCH, 1937 [*Archaeocyathus profundus BILLINGS] | | LCAM
+      Dendrocyathus OKULITCH & ROOTS, 1947 [*D. unexpectans] | | LCAM
+      Metafungia R. BEDFORD & W. R. BEDFORD, 1934 [*M. reticulata]
+      Metethmophyllum OKULITCH, 1943 | | LCAM
+      Okulitchicyathus ZHURAVLEVA, 1960 | | LCAM
+      Paranacyathus R. BEDFORD & J. BEDFORD, 1937 [*Paracyathus parvus R. BEDFORD & W. R. BEDFORD]
+      Paracyathus R. BEDFORD & W. R. BEDFORD, 1936 [*Paracyathus parvus R. BEDFORD & W. R. BEDFORD]
+      Paracyathus EDWARDS & HAIME, 1848 [*Paracyathus parvus R. BEDFORD & W. R. BEDFORD]
+      See DEBRENNE, 1970 [*S. tenuis]
+      Spirillicyathus R. BEDFORD & J. BEDFORD, 1937 [*S. tenuis]
+      Spiralicyathus R. BEDFORD & J. BEDFORD, 1937
+    Family ARCHAEOFUNGIIDAE Vologdin, 1962
+      Bdtanacyathidac DEBRENNE, 1970 | | LCAM
+      Archaeofungia TAYLOR, 1910
+      See DEBRENNE, 1970 [*B. ioniClls]
+      Beltanacyathus R. BEDFORD & J. BEDFORD, 1936 [*B. ioniClls]
+      Sigmofungidae R. BEDFORD & W. R. BEDFORD, 1936 | | LCAM
+      Sigmofungia R. BEDFORD & W. R. BEDFORD, 1936 [*S. flindersi]
+      Sygmojllngia KRASNOPEEVA, 1955
+      Sigmojllngia R. BEDFORD & W. R. BEDFORD, 1936
+      Flindersicyathidae R. BEDFORD & J. BEDFORD, 1939
+      Pycnoidocyathidae OKULITCH, 1950
+      Syringsellidae KRASNOI'EEVA, 1961
+      Pycnoidocyathus TAYLOR, 1910 [*P. synapliCIt/oms]
+      Flindersicyatlltls R. BEDFORD & J. BED- FORD, 1937
+      Spirocyathelia VOLOGDIN, 1939
+      Syringsella KRASNOPEEVA, 1961 | | LCAM
+      Copleicyathidae R. BEDFORD & J. BEDFORD, 1937 | | LCAM
+      Copleicyathus R. BEDFORD & J. BEDFORD, 1937
+    Family PRISMOCYATHIDAE Fonin, 1960
+      Prismocyathidae FONIN, 1960 | | CAM
+      Prismocyathus FONIN, 1960 | | LCAM
+    Family PROTOCYCLOCYATHIDAE Vologdin, 1956
+      Protocyclocyathus VOLOGDIN, 1955 | | LCAM
+      Fenestrocyathus HANDFIELD, 1971
+    Family ARCHAEOCYATHIDAE Hinde, 1889
+      Archaeocyathinae HINDE, 1889 | | LCAM
+      Spirocyathidae TAYLOR, 1910 | | LCAM
+      Archaeocyathus BILLINGS, 1861
+      Retecyathus SIMON, 1939
+      Retecyathus VOLOGDIN, 1932
+    Family TABELLAECYATHIDAE Fonin, 1963
+      Tabellaecyathidae FONIN, 1963
+      Tabellaecyathus FONIN, 1963
+      Cambronanus FONIN, 1963
+    Family ANTHOMORPHIDAE Okulitch, 1935
+      Anthomorphida OKULITCH, 1935 | | LCAM
+      Anthomorphina OKULITCH, 1935 [*A. margarita] | | LCAM
+      Anthomorpha BORNEMANN, 1884 [*A. margarita]
+      Araneocyathus SIMON, 1941
+      Araneocyathus VOLOGDIN, 1940
+      Araneocyathus VOLOGDIN, 1937
+      Nellicyathus FONIN in REPINA, KHOMEN- TOVSKIY, ZHURAVLEVA, & ROZANOV, 1964
+      Utukcyathus VOLOGDIN in DEBRENNE, 1964 | | LCAM
+      Tollicyathus CHERNYSHEVA, 1960 [*T. ischensis] | | LCAM
+      Voznesenskicyathus RODIONOVA in ZHURAVLEVA, ZADOROZHNAYA, OSADCHAYA, POKROVSKAYA, RODIO- NOVA, & FONIN, 1967 [*V. florens]
+    Suborder ARCHAEOSYCONINA Zhuravleva, 1950
+      Archaeosyconiina ZHURAVLEVA, 1960
+      Archaeosyconida ZHURAVLEVA, 1950
+      Tabulacyathida VOLOGDIN, 1956
+      Tabulocyathida VOLOGDIN, 1956
+      Paracoscinida DEBRENNE, 1970
+    Family ARCHAEOSYCONIDAE Zhuravleva, 1950
+      Archaeosyconidae ZHURAVLEVA, 1950
+      Archaeosycon TAYLOR, 1910 [*ArchaeocyathtlS bi/lingsi WALCOTT] | | LCAM
+      Hupecyathus DEBRENNE, 1964 | | LCAM
+      Sphinctocyathus ZHURAVLEVA, 1960
+    Family TABULACYATHIDAE Vologdin, 1956
+      Tabulocyathidae VOLOGDIN, 1956
+      Tabulacyathus VOLOGDIN, 1932
+      Tabuloeyathtls VOLOGDIN, 1956
+      Abakanicyathus KONYUSHKOV in ZHURAVLEVA, KONYUSHKOV & ROZANOV, 1964 | | LCAM
+      Tabulacyathellus MISSARZHEVSKIY in REPINA, KHO- MENTOVSKIY, ZHURAVLEVA, & ROZANOV, 1964 | | LCAM
+      Dictyocoscinidae R. BEDFORD & W. R. BEDFORD, 1936 | | LCAM
+      Dictyocoscinus R. BEDFORD & W. R. BEDFORD, 1936 | | LCAM
+      Metacoscinidae R. BEDFORD & W. R. BEDFORD, 1936 | | LCAM
+      Paracoscinidae DEBRENNE, 1970 | | LCAM
+      Metacoscinus R. BEDFORD & W. R. BEDFORD, 1934
+      Batenevia KRASNOPEEVA, 1961 | | LCAM
+      Claruscoscinus HANDFIELD, 1971
+      Claruscyathus VOLOGDIN, 1932
+      Eucyathw VOLOGDIN, 1937
+      Coscinocyathella VOLOGDIN, 1957
+      Coscinocyathellw VOLOGDIN, 1937
+      Flindersicoscinus DEBRENNE, 1970
+      Pycnoidocyathidae OKULITCH, 1950 | | LCAM
+      Gabrielsocyathus DEBRENNE, 1964 | | LCAM
+      Paracoscinus R. BEDFORD & W. R. BEDFORD, 1936
+    Family PYCNOIDOCOSCINIDAE Debrenne, 1970
+      Pycnoidocoscinus R. BEDFORD & W. R. BEDFORD, 1936
+      Beticocyathus SIMON, 1939 [*B. betiellS] | | LCAM
+      Fragilicyathus BELYAEVA, 1969 [*F. zhuravlevae] | | LCAM
+  Order SYRINGOCNEMIDIDA Okulitch, 1935
+    Family SYRINGOCNEMIDIDAE Taylor, 1910
+      Syringocnemina OKU- LITCH, 1935
+      Syringocnemida ZHURAVLEVA, 1950
+      Syringocnemidae TAYLOR, 1910
+      Syringocnema TAYLOR, 1910 [*5. favus]
+Class Uncertain Pseudosyringocnema HANDFIELD, 1971
+  Pseudosyringocnema HANDFIELD, 1971 | | LCAM
+  Tubocyathus VOLOCDIN, 1937 | | LCAM
+  Tubicyatlllls VOLOCDIN, 1940 | | LCAM
+  Prismocyatllus FONIN, 1960 | | LCAM
+    Family SYRINGOCOSCINIDAE Vologdin & Yazmir, 1967
+      Syringocoscinus VOLOCDIN & YAZMIR, 1967 | | LCAM
+Class UNCERTAIN Order KAZAKHSTANICYATHIDA Konyushkov, 1967
+    Family KAZAKHSTANICYATHIDAE Konyushkov, 1967
+      Kazakhstanicyathidae KONYUSHKOV, 1967 | | LCAM
+      Kazakhstanicyathus KONYUSHKOV, 1967
+  Order UNCERTAIN Family ACANTHOPYGRIDAE Handfield, 1971
+    Acanthopyrgidae HANDFIELD, 1971
+    Vesiculoidae VOLOGDIN, 1931 [*M.yorkei] | | LCAM
+    Metaldetimorpha R. BEDFORD & J. BEDFORD, 1937 [*M.yorkei] | | LCAM
+    Nostrocyathus FONIN in VOLOGDIN & FONIN, 1966 [*N. aculeatus] | | LCAM
+    Poletaevacyathus VOLOGDIN, 1959 [*P. obrutchevi] | | LCAM
+    Rhizacyathus R. BEDFORD & J. BEDFORD, 1939 [*Protopharetra radix R. BEDFORD & J. BED- FORD] | | LCAM
+    Tersia VOLOGDIN, 1931 [*T. filiform a] | | LCAM
+    Tersiella VOLOGDIN, 1962 [*Tersia nodosa VOLOGDIN] | | LCAM
+    Usloncyathus FONIN in VOLOGDIN & FONIN, 1966 [*U. miculus] | | LCAM
+    Cavocyathus FONIN in VOLOGDIN & FONIN, 1966 [*C. pusilis] | | LCAM
+    Exocyathus R. BEDFORD & J. BEDFORD, 1937 [*E. australis] | | LCAM
+    Falsocyathus FONIN in VOLOGDIN & FONIN, 1966 [*F. vastulus] | | LCAM
+    Kameschkovia VOLOGDIN, 1957 [*K. perforata] | | LCAM
+    Kameschkovia VOLOGDIN, 1956 [*L. Order Uncertain E133 and the Poletaevacyathidae (135. VOL] | | LCAM
+    Labyrinthomorpha VOLOGDIN, 1931 [*L. Order Uncertain E133 and the Poletaevacyathidae (135. VOL]
+    Tanchocyathus VOLOGDIN, 1963 | | LCAM
+    Binatocyathus VOLOGDIN, 1963 | | LCAM
+    Tunkia R. BED- FORD & J. BEDFORD, 1936 | | LCAM
+Class APHROSALPINGOIDA Myagkova, 1955
+  Aphrosalpingoida MYAGKOVA, 1955
+  Aphrosalpingidea VOLOGDIN & MYAGKOVA, 1962 [*A. text]
+  Order APHROSALPINGIDA Myagkova, 1955
+    Aphrosalpingiformes MYAGKOVA, 1955 [*A. textilis]
+    Family APHROSALPINGIDAE Myagkova, 1955
+      Aphrosalpinx MYAGKOVA, 1955 [*A. textilis] | | USIL
+    Family NEMATOSALPINGIDAE Myagkova in Vologdin, 1956
+      Nematosalpingidae MYGAKOVA in VOLOGDIN, 1956 [*N. dichotomica] | | USIL
+      Nematosalpinx MYAGKOVA, 1955 [*N. dichotomica] | | USIL
+  Order PALAEOSCHADIDA Myagkova, 1955
+    Palaeoschadiformes MYAGKOVA, 1955 [*P. crassimuralis] | | USIL
+    Family PALAEOSCHADIDAE Myagkova,1955
+      Palaeoschadidae MYAGKOVA, 1955 [*P. crassimuralis] | | USIL
+      Palaeoschada MYAGKOVA, 1955 [*P. crassimuralis] | | USIL
+Class CRIBRICYATHEA Vologdin, 1961
+  Cribricyathea VOLOGDIN, 1961
+  Cribricyathea VOLOGDIN, 1964
+  Cribrocyathea VOLOGDIN, 1962
+  Cribricyathida VOLOGDIN, 1964 | | LCAM
+  Order CRIBRICYATHIDA Vologdin, 1964
+    Pubericyathus VOLOGDIN, 1964 [*P. phialiformis] | | LCAM
+  Order CONOIDOCYATHIDA Vologdin, 1964
+    Conoidocyathida VOLOGDIN, 1964 [*C. artus]
+    Family CONOIDOCYATHIDAE Vologdin, 1964
+      Conoidocyathidae VOLOGDIN, 1964 [*C. artus]
+      Conoidocyathus VOLOGDIN, 1964 [*C. artus] | | LCAM
+      Azyricyathus VOLOGDIN, 1964 [*A. transseptatus]
+    Family CRIBRICYATHIDAE Vologdin, 1964
+      Cribticyathidae VOLOGDIN, 1964 [*C. longus] | | LCAM
+      Cribricyathus VOLOGDIN, 1964 [*C. longus] | | LCAM
+      Apocyathus VOLOGDIN, 1964 [*A. ovalis] | | LCAM
+    Family PYXIDOCYATHIDAE Vologdin, 1964
+      Pyxidocyathus VOLOGDIN, 1964 [*P. gracilis] | | LCAM
+      Pixidocyathus VOLOGDIN, 1966 | | LCAM
+      Puxidocyathus VOLOGDIN, 1966 [*L. pubescens] | | LCAM
+      Longicyathus VOLOGDIN, 1964 [*L. pubescens] | | LCAM
+      Lageniyfathus VOLOGDIN, 1964 [*L. clathratus] | | LCAM
+      Lomatiocyathus VOLOGDIN, 1964 [*L. clathratus] | | LCAM
+      Thecocyathus VOLOGDIN, 1964 [*T. tetragonus] | | LCAM
+      Thecocyathys VOLOGDIN, 1964 | | LCAM
+      Thecicyathus VOLOGDIN, 1966 | | LCAM
+      Lagenicyathus VOLOGDIN, 1964 [*L. lamellifer]
+      Peripteratocyathus VOLOGDIN, 1964 [*P. cirratus] | | LCAM
+      Radicicyathus VOLOGDIN, 1964 [*R. canaliculatus] | | LCAM
+    Family CAPILLICYATHIDAE Vologdin, 1964
+      Capillicyathidae VOLOGDIN, 1964 [*C. fimbriatus] | | LCAM
+  Order VOLOGDINOPHYLLIDA Radugin, 1964
+    Vologdinophylloidea RADUGIN, 1964
+    Akademiophylloidea RADUGIN, 1964
+    Pterocyathida YANKAUSKAS, 1969
+    Pterocyathidae YANKAUSKAS, 1965 | | LCAM
+    Superfamily VOLOGDINOPHYLLACEA Radugin, 1964
+      Vologdinophyllidae RADUGIN, 1964 | | LCAM
+    Family LEIBAELLIDAE Yankauskas, 1965
+      Leibaellidae YANKAU'KA', 1965 [*L. elotlica] | | LCAM
+      Leibaella YANKAUSKAS, 1964 [*L. elotlica] | | LCAM
+      Coscinophylltlm RADUGIN, 1966 [*D. ttncatus] | | LCAM
+      Dubius YANKAUSKAS, 1969 [*D. ttncatus] | | LCAM
+      Ramifer YANKAUSKAS, 1965 [*R. girattts] | | LCAM
+      Cardiophyllum RADUGIN, 1964
+    Family VOLOGDINOPHYLLIDAE Radugin, 1964
+      Vologdinophyllum RADUGIN, 1962
+      Vologdinophillum YANKAUSKAS, 1965
+    Superfamily AKADEMIOPHYLLACEA Radugin, 1964
+      Akademiophyllidae RADUGIN, 1964
+      Pterocyathacea YANKAUSKAS, 1969
+      Manaella YANKAUSKAS, 1964 [*'C. subdimidiatus] | | LCAM
+      Crispus YANKAUSKAS, 1965 [*'C. subdimidiatus] | | LCAM
+      Longaevus YANKAUSKAS, 1965 [*'L. vitalis]
+      Achorocyathidae YANKAUSKAS, 1965 | | LCAM
+      Akademiophyllum RADUGIN, 1964 [*'E. bephylleforme] | | LCAM
+      Erphyllum RADUGIN, 1964 [*'E. bephylleforme] | | CAM
+      Arehaeobullathus YAN- KAUSKAS, 1965 | | CAM
+      Arehaeobullatus VOLOGDIN, 1966 [*'L. cuneatus] | | CAM
+      Lacerathus YANKAUSKAS, 1965 [*'L. cuneatus] | | LCAM
+      Laceratus YANKAUSKAS, 1964 [*'P. glaueus] | | LCAM
+      Pterocyathus YANKAUSKAS, 1965 [*'P. glaueus] | | LCAM
+    Family ACHOROCYATHIDAE Yankauskas, 1965
+    Family AKADEMIOPHYLLIDAE Radugin, 1964
+      Akademiophyllidae RADUGIN, 1964 | | LCAM
+      Pterocyathidae YANKAUSKAS, 1965 [*A. perbellus] | | LCAM
+      Achorocyathus YANKAUSKAS, 1965 [*A. perbellus]
+      Topolinocyathus YANKAUSKAS, 1965 [*T. popovi] | | LCAM
+Class UNCERTAIN Order ARCHAEOPHYLLIDA Okulitch, 1943
+  Archaeophyllina OKULITCH, 1943 [*A. edelsteini] | | LCAM
+  Archaeophylloidea RADUGIN, 1964 [*A. edelsteini] | | LCAM
+    Family ARCHAEOPHYLLIDAE Vologdin, 1931
+      Archaeophyllidae VOLOGDIN, 1931 [*A. edelsteini] | | LCAM
+      Archaeophyllum SIMON, 1939 [*A. edelsteini] | | LCAM
+      Butovia VOLOGDIN, 1931 [*B. serrata] | | LCAM
+  Order UNCERTAIN Family MANACYATHIDAE Yankauskas, 1969
+    Manacyathidae YANKAUSKAUS, 1969 [*M. mikroporostlS] | | LCAM
+    Manacyathus YANKAUSKAS, 1969 [*M. mikroporostlS] | | LCAM
+Class RADIOCYATHA Debrenne, H. Termier, & (;. Termier, 1971
+  Radiocyatha DEBRENNE, H. TERMIER, & G. TERMIER, 1971 | | LCAM
+  Hetairacyathina R. BEDFORD & J. BEDFORD, 1937
+  Heterocyathina OKULITCH, 1935
+  Heterocyathidae R. BEDFORD & W. R. BEDFORD, 1934 [*Heterocyatltus minor R. BEDFORD & W]
+  Heterocyathtts R. BEDFORD & W. R. BEDFORD, 1934 [*Heterocyatltus minor R. BEDFORD & W. R. BEDFORD]
+  Heterocyathtts EDWARDS & HAIME, 1848 [*Heterocyatltus minor R. BEDFORD & W. R. BEDFORD]
+  Hetairacyathtts R. BEDFORD & J. BEDFORD, 1937 | | LCAM
+  Heterocyathus R. BEDFORD & W. R. BEDFORD, 1934 | | LCAM
+  Order UNCERTAIN Family MATTHEWCYATHIDAE Okulitch, 1943
+    Matthewcyathidae OKULITCH, 1943 [*Archaeocyathus pavonoides MATTHEW] | | MCAM
+    Family KOROVINELLIDAE Khalfina, 1960
+      Korovinellidae KHALFINA, 1960
+      Altaicyathus VOLOGDIN, 1932 [*A. notabilis] | | LCAM
+    Family UNCERTAIN Atikokania WALCOTT, 1912
+      Atikokania WALCOTT, 1912 [*A. lawsoni] | | LCAM
+      Cambrostroma VLASOV, 1961 [*C. rossicum] | | LCAM
+      Miassocyathus FOMIN, 1963 [*M. lobanovae] | | UCAM
+      Misracyathus VOLOGDIN, 1959 [*M. vindhianus] | | LCAM
+      Orlinocyathus KRASNOPEEVA in VOLOGDIN, 1957 [*0. olgae] | | LCAM
+      Praeactinostroma KHALFINA, 1960 [*Actinostroma vologdini YAWORSKY] | | LCAM
+      Spongiosicyathus ZHURAVLEVA, 1968 [*Dictyocyathus translucidus ZHURAVLEVA]

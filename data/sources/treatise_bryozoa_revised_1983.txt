@@ -1,0 +1,198 @@
+---
+reference: Boardman, R.S., Cheetham, A.H., Blake, D.B., Utgaard, J., Karklins, O.L., Cook, P.L., Sandberg, P.A., Lutaud, G., & Wood, T.S., 1983. Treatise on Invertebrate Paleontology, Part G (Revised), Bryozoa. Geological Society of America and University of Kansas.
+scope:
+  - taxon: Bryozoa (Order Cystoporata, Order Cryptostomata)
+    coverage: comprehensive
+notes: |
+  Covers Order Cystoporata (Suborders Ceramoporina, Fistuliporina) and Order
+  Cryptostomata (Suborders Ptilodictyina, Rhabdomesina). Pages 384-634 extracted.
+  ~136 genus entries. Many pages consist of detailed SEM descriptions with
+  limited systematic content per page.
+---
+
+Order CYSTOPORATA
+Suborder CERAMOPORINA
+Family CERAMOPORIDAE
+  ?Amsassipora YAROSHINSKAYA, 1960 [*A. simplex] | UORD
+  Ceramophylla ULRICH, 1893 | [=Coeloclema ULRICH, NICKLES, & BASSLER, 1900, p
+  Ceramoporella ULRICH, 1882 | SD ULRICH, 1890, p | UORD
+  Crepipora ULRICH, 1882 | SM ULRICH, 1882, p
+  Dnestropora ASTROVA, 1965
+  ?Haplotrypa BASSLER, 1936 | SIL
+  Papillalunaria UTGAARD, 1969 | 00; "Tremon," M | MORD
+Suborder FISTULIPORINA
+Family ANOLOTICHIIDAE
+  Anolotichia ULRICH, 1890 | UORD
+  ?Lamtshinopora ASTROVA, 1965 | . Zoarium encrusting, laminated or massive | LORD
+  Profistulipora ASTROVA, 1965 | . Zoarium encrusting to massive surface smoorh S not radially arranged | MORD
+Family XENOTRYPIDAE
+  Xenotrypa BASSLER, 1952 | 00; Glauconire Ls | MORD
+Family CONSTELLARIIDAE
+  Constellaria DANA, 1846 | UORD
+Family FlSTULIPORIDAE
+  Canutrypa BASSLER, 1952 | UDEV
+  Cheilotrypa ULRICH, 1884 | incorrect subsequent spelling} | UMISS
+  Coelocaulis HALL & SIMPSON, 1887 | 00; New Scotland F | LDEV
+  Diamesopora HALL, 1852 | non ULRICH, NICKLES, & BASSLER, 1900, p | SIL
+  Dybowskielia WAAGEN & WENTZEL, 1886 | nom. subst | PERM
+  Eridopora ULRICH, 1882 | [=Erydopora NIKIFOROVA, 1927, p | UMISS
+  Favicella HALL & SIMPSON, 1887 | . Zoarium encrusting | MDEV
+  Fistuliphragma BASSLER, 1934 | MDEV
+  Fistuliporella SIMPSON, 1897 | aD; Hamilton Gr | MDEV
+  Fistuliporidra SIMPSON, 1897 | aD; Hamilton Gr | MDEV
+  Fistulotrypa BASSLER, 1929 | . Zoarium ramose; monticules flush, center of stereom; peristomes elevated | PERM
+  Metelipora TRIZNA, 1950 | PERM
+  Pinacotrypa ULRICH in MILLER, 1889 | OD; Hamilton Gr | MDEV
+  Selenopora HALL, 1886 | M; M. Dev | MDEV
+  Strotopora ULRICH in MILLER, 1889 | SD ULRICH, 1890, p | MISS
+Family RHINOPORIDAE
+Family BOTRYLLOPORIDAE
+Family ACTINOTRYPIDAE
+  Actinotrypa ULRICH in MILLER, 1889 | OD; Keokuk Gr | MISS
+  Epiactinotrypa KISELEVA, 1973 | . Zoarium encrusting | UPERM
+Family HEXAGONELLIDAE
+  Hexagonella WAAGEN & WENTZEL, 1886 | Productus Ls | PERM
+  Coscinotrypa HALL, 1886 | MDEV
+  Evactinopora MEEK & WORTHEN, 1865 | MISS
+  Evactinostella CROCKFORD, 1957 | aD; 1 | PERM
+  Fistulamina CROCKFORD, 1947 | 28 ["'F
+  Glyptopora ULRICH, 1884 | aD; St | UMISS
+  Meekopora ULRICH in MILLER, 1889
+  Volgia STUCKENBERG, 1905 | OD; U | CARB
+Family CYSTODICTYONIDAE
+  Cystodictya ULRICH, 1882 | MISS
+  Dichotrypa ULRICH in MILLER, 1889 | M; "Warsaw Ls | UMISS
+  Filiramoporina FRY & CUFFEY, 1976 | PERM
+  Lophoclema MOROZOVA, 1955 | CARB
+  Ptilocella SIMPSON, 1897 | OD; Hamilton Gr | MDEV
+  Stictocella SIMPSON, 1897 | OD; Hamilton Gr | MDEV
+  Sulcoretepora D'ORBIGNY, 1849 | [=Arcanopora VINE, 1884, p | CARB
+  Mstaina SHULGA-N ESTERENKO, 1955 | L.Carb | CARB
+  Thamnotrypa HALL & SIMPSON, 1887 | non STEININGER, 1831, p | MDEV
+Family ETHERELLIDAE
+  Etherella CROCKFORD, 1957 | PERM
+Family GONIOCLADIIDAE
+  Goniocladia ETHERIDGE, 1876 | nom. subst | CARB
+  Aetomacladia BRETNALL, 1926 | CARB
+  Goniocladiella NEKHOROSHEV, 1953 | CARB
+  Ramiporidra NIKIFOROVA, 1938 | 00; L | LPERM
+order branches; branch ends fused in some, forming fenestrate zoarium. Mesotheca vertical, protruding as carina on obverse side of branch;
+  Anellina GREGORIO, 1930 | PERM
+  Archaeotrypa FRITZ, 1947 | CAM
+  Cycloidotrypa CHAPMAN, 1920 | CARB
+  Diptheropora DEKONINCK, 1873 | CARB
+  Bolopora LEWIS, 1926
+  Cambroporella KORDE, 1950
+  Coenites EICHWALD, 1829
+  Dianulites EICHWALD, 1829
+  Glossotrypa HALL, 1886
+  Revalotrypa BASSLER, 1952
+  Solenopora DYBOWSKI, 1878
+  Spatiopora ULRICH, 1882
+  Didymopora ULRICH, 1882
+  Pakridictya MANNIL, 1959
+Order CRYPTOSTOMATA
+  Rhinidictyidae ULRICH, 1893
+family Escharidae (not recognized now) of
+family Ptilodictyidae with Ptilodictya as the
+family assignment.
+Suborder PTILODICTYINA
+Family PTILODICTYIDAE
+  Ptilodictya LONSDALE in MURCHISON, 1839 | aD; glacial drift, "encrinite limestone," ?U | DEV
+  Ensipora ASTROVA, 1965 | OD; low | DEV
+  Pteropora EICHWALD, 1860 | UORD
+Family ESCHAROPORIDAE
+  Escharopora HALL, 1847 | MORD
+  Graptodictya ULRICH, 1882 | OD; Waynesville Sh | UORD
+Family INTRAPORIDAE
+  Coscinella HALL, 1887 | MDEV
+Family PHRAGMOPHERIDAE
+Family RHINIDICTYIDAE
+  Stictopora HALL, 1847 | Chazy Gr | MORD
+  Stictopora HALL, 1847
+  Carinodictya ASTROVA, 1965 | . Zoarium branched | MORD
+  Eurydicrya ULRICH in MILLER, 1889 | OD; U | UORD
+  Goniotrypa ULRICH, 1889 | UORD
+  Pachydicrya ULRICH, 1882 | MORD
+  Phyllodictya ULRICH, 1882 | . Zoarium explanate, irregularly lobate locally | MORD
+  Sibiredictya NEKHOROSHEV, 1960 | MORD
+  Trigonodicrya ULRICH, 1893 | aD; Decorah Sh | MORD
+  Astreptodictya KARKLINS, 1969
+Family STICTOPORELLIDAE
+Family VIRGATELLIDAE
+  Virgatella ASTROVA, 1955 | MORD
+  Pseudopachydictya ASTROVA, 1965 | OD; M | MORD
+Family Uncertain
+  Euspilopora ULRICH in MILLER, 1889
+  Taeniodictya ULRICH, 1888
+  Euspilopora ULRICH in MILLER, 1889 | 00; Cedar Valley Ls M Dev Buffalo Iowa USA] | MDEV
+  Ptilotrypa ULRICH in MILLER, 1889 | 00; U | UORD
+Family Un
+  Stictotrypa ULRICH, 1890 | . Zoarium branched | SIL
+  Taeniodictya ULRICH, 1888 | OD; Keokuk Ls | MISS
+Family Unce
+Family Unce
+  Trepocrypropora YANG, 1957 | . Zoarium branched or unbranched and explanate | ORD
+Family Uncertain (p. 527).
+Suborder U
+Suborder Uncertain
+  Heliotrypa ULRICH, 1883 | . Zoarium irregularly explanate and undulating, may selfencrust locally | UMISS
+suborder and, as open tubular structures,
+suborder and generally not of taxonomic
+Suborder RHABDOMESINA
+Family ARTHROSTYLIDAE
+  Arthrosrylus ULRICH, 1882 | pro Arthronema ULRICH, 1882, p | UORD
+  Arthroclema BILLINGS, 1865 | MORD
+  Arthrostyloecia BASSLER, 1952 | . Zoarium dendroid, jointed, branching at ends of segments only | MORD
+  Cuneatopora SIEGFRIED, 1963 | MORD
+  Glauconomella BASSLER, 1952 | . Zoarium pinnate; primary, secondary branches only; jointing unknown | USIL
+  Heminematopora BASSLER, 1952 | MORD
+  Hexites SHULGA-NESTERENKO, 1955 | CARB
+  Nematopora ULRICH, 1888 | SIL
+  Osburnostylus BASSLER, 1952 | MORD
+  Sceptropora ULRICH, 1888 | UORD
+  Ulrichostylus BASSLER, 1952 | 00; 'Decorah Sh | MORD
+Family RHABDOMESIDAE
+  Ascopora TRAUTSCHOLD, 1876 | M; Carb | CARB
+  Mediapora TRIZNA, 1958
+  Nemataxis HALL, 1886 | DEV
+  Nicklesopora BASSLER, 1952 | 00; New Providence Sh | MISS
+  Orthopora HALL, 1886 | SO HALL & SIMPSON, 1887, p | DEV
+  Trematella HALL, 1886 | Onondaga Ls | MDEV
+Family RHOMBOPORIDAE
+  Rhombopora MEEK, 1872 | PENN
+  Klaucena TRIZNA, 1958
+  Megacanrhopora MOORE, 1929 | UPENN
+  Pamirella GORYUNOVA, 1975 | LPERM
+  Primorella ROMANCHUK & KISELEVA, 1968 | UPERM
+  Saffordotaxis BASSLER, 1952 | . Zoarium with jointing unknown; branch diameters 0 | MISS
+Family BACTROPORIDAE
+  Bactropora HALL & SIMPSON, 1887 | aD; nudlowville Sh | MDEV
+Family NIKIFOROVELLIDAE
+  Strebiotrypella NIKIFOROVA, 1948
+Family HYPHASMOPORIDAE
+  Hyphasmopora ETHERIDGE, 1875 | CARB
+  Ogbinopora SHISHOVA, 1965 | . Branch diameters 2 | UPERM
+  Streblotrypa VINE, 1885 | CARB
+Family Un
+Family Uncertain
+  Bacrropora HALL & SIMPSON, 1887
+  Cuneatopora SIEGFRIED, 1963
+  Hyphasmoporidae VINE, 1886
+  Lanopora ROMANCHUK, 1975
+  Nematopora ULRICH, 1888
+  Neorhombopora SHISHOVA, 1964
+  Osbumosrylus BASSLER, 1952
+family uncertain.
+  Rhabdomesidae VINE, 1884
+  Rhabdomeson YOUNG & YOUNG, 1874
+  Rhombopora MEEK, 1872
+  Rhomboporidae SIMPSON, 1897
+  Saffordotaxis BASSLER, 1952
+  Trematella HALL, 1886
+  Tropidopora HALL, 1886
+  Vetofistula ETHERIDGE, 1917
+  Goldjussitrypa BASSLER, 1952
+family Rhinidictyidae (Bryozoa, Cryptostomata).}
+suborder of late Paleozoic bryozoans of the order
+Order Cryptostomata.]

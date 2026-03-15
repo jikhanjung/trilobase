@@ -1,0 +1,319 @@
+---
+reference: Selden, P.A. (ed.), 2015. Treatise on Invertebrate Paleontology, Part E (Revised), Porifera, Volume 5 (Hypercalcified Porifera, continued). University of Kansas Paleontological Institute, liii + 1223 p. (combined with vol. 4)
+scope:
+  - taxon: Stromatoporoidea
+    coverage: comprehensive
+notes: |
+  Covers Paleozoic Stromatoporoidea (Class Stromatoporoidea):
+  Orders Labechiida, Clathrodictyida, Actinostromatida, Stromatoporellida,
+  Syringostromatida, and related groups.
+  Authors: Webby, Kershaw, Nestor, Stearn, Stock, and others. Pages 293-760 extracted.
+---
+
+Class STROMATOPOROIDEA
+  Order LABECHIIDA Kühn, 1927
+    Pseudostylodictyon Ozaki, 1938 [*P. posha­ nense Ozaki, 1938, p. 208, pl. 24,2]
+    Rosenellinella Yavorsky, 1967 [*R. venusta] | | SIL
+    Family LABECHIIDAE Nicholson, 1879
+      Labechia Edwards & Haime, 1851 [*Monticularia conferta Lonsdale, 1839, p. 688, pl. 16,5,5a] | | MORD
+      Labechiella Yabe & Sugiyama, 1930 [*Labechia serotina Nicholson, 1886c, p. 15, pl. 2,3,4] | | ORD
+      Stratodictyon Webby, 1969 [*S. ozakii] | | UORD
+      Stromatocerium Hall, 1847 [*S. rugosum Hall, 1847, pl. 12,2]
+      Cystistroma Etheridge, 1895 [*Labechia(?) (Cystistroma) donnellii Etheridge 1895, p. 134, pl. 14,1–6] | | UORD
+      Platiferostroma Khalfina & Yavorsky, 1973 [*Stromatocerium hybridum Dong, 1964, p. 284 [294] | | UDEV
+      Cystocerium Nestor, 1976 [*C. sincerum Nestor, 1976, p. 42] | | SIL
+      Pleostylostroma Wang, 1982 [*Labechia shini­ ulanense Wang, 1978a, p. 14, pl. 2,1a–b]
+      ?Stromatodictyon Khalfina, 1972 [*S. repen­ tinium Khalfina, 1972, p. 152, pl. C-12, fig. 4-5, M] | | ORD
+      Stylostroma Gorsky, 1938 [*S. crassum] | | UORD
+      Pennastroma Dong, 1964 [*P. yangi] | | UDEV
+    Family AULACERATIDAE Kühn, 1927
+      Aulacera Plummer, 1843 [*A. plummeri Galloway & St. Jean in Galloway, 1957, p. 422]
+      Alleynodictyon Webby, 1971 [*A. nicholsoni Webby, 1971, p. 11] | | UORD
+      Cryptophragmus Raymond, 1914 [*C. anti­ quatus] | | UORD
+      Ludictyon Ozaki, 1938 [*L. vesiculatum Ozaki, 1938, p. 219, pl. 33,3a–c, pl. 34,3] | | MORD
+      Sinodictyon Yabe & Sugiyama, 1930 [*S. colum­ nare] | | MORD
+      Dermatostroma Parks, 1910 [*Stromato­ pora papillata James, 1878, p. 2] | | UORD
+      Stromatodictyon Khalfina, 1972 | | SIL
+      Clathrodictyon Nicholson & Murie, 1878 [*C. vesiculosum] | | UORD
+      Bullulodictyon Yavorsky, 1967 [*B. patokense] | | LDEV
+      Oslodictyon Mori, 1978 [*O. henningsmoeni Mori, 1978, p. 135, holotype, PMO 45420] | | SIL
+      Actinodictyon Parks, 1909 [*A. canadense Parks, 1909, p. 32] | | UORD
+      Neobeatricea Rukhin, 1938 [*Beatricea tenuitextilis Yavorsky, 1929, p. 92] | | UORD
+      Yabeodictyon Mori, 1968 [*Y. balticum Mori, 1968, p. 68] | | SIL
+      Gerronostromaria Nestor, 2011 [*Gerronostroma elegans Yavorsky, 1931, p. 1393]
+      Petridiostroma Stearn, 1992
+      Petrostroma Stearn, 1991 [*Simplexodictyon simplex Nestor, 1966a, p. 25] | | SIL
+      Hammatostroma Stearn, 1961 [*H. albertense Stearn, 1961, p. 940] | | LDEV
+      Intexodictyides Nestor, 2011
+      Intexodictyon Yavorsky, 1963 [*Intexo­dictyon perplexum Yavorsky, 1963, p. 36] | | SIL
+      Anostylostroma Parks, 1936 [*A. hamiltonense Parks, 1936, p. 46] | | MDEV
+      Belemnostroma Stearn, 1990 [*B. hastatum Stearn, 1990, p. 505] | | LDEV
+      Nexililamina Mallett, 1971 [*N. dipcreekensis] | | SIL
+      Atelodictyon Lecompte, 1951 [*A. fallax Lecompte, 1951 in 1951–1952, p. 125]
+      ?Cubodictyon Yang & Dong, 1979 [*C. sinense] | | MDEV
+      Crumplestroma Khalfina, 1972 [*C. laceri­ laminatum] | | SIL
+      Pseudolabechia Yabe & Sugiyama, 1930 [*P. granulata] | | SIL
+      Pachystroma Nicholson & Murie, 1878 [*P. antiqua] | | SIL
+      Plumatalinia Nestor, 1960 [*P. ferax Nestor, 1960, p. 226] | | UORD
+      Actinostromella Boehnke, 1915 [*A. tubu­ lata Boehnke, 1915, p. 163] | | SIL
+      Araneosustroma Lessovaya, 1970 [*A. fistulosum Lessovaya, 1970, p. 81] | | SIL
+      Clathrocoilona Yavorsky, 1931 [*C. abeona] | | LDEV
+      Dendrostroma Lecompte, 1952 [*Idiostroma oculatum Nicholson, 1886a, p. 101] | | LDEV
+      Stictostroma Parks, 1936 [*Stromatopora mammillata Nicholson, 1873, p. 94]
+      Styloporella Khalfina, 1956 [*Stromatoporella (Styloporella) grata Khalfina, 1956, p. 62] | | LDEV
+      Trupetostroma Parks, 1936 [*T. warreni] | | LDEV
+      Hermatoporella Khromykh, 1969 [*Trupetostroma maillieuxi Lecompte, 1952 in 1951–1952, lcified Sponges tidae (p. 794–796). p. 237–239] | | MDEV
+      Synthetostroma Lecompte, 1951 [*S. actinostromoides Lecompte, 1951 in 1951–1952, p. 194] | | MDEV
+      Idiostroma Winchell, 1867 [*Stromatopora caespitosa Winchell, 1866, p. 91] | | SIL
+      Stromatoporidae Winchell, 1867 | | SIL
+      Stromatopora Goldfuss, 1826 [*S. concentrica Goldfuss, 1826, p. 22] | | SIL
+      Climacostroma Yang & Dong, 1979 [*C. guangxiense] | | MDEV
+      Lineastroma Khalfina & Yavorsky, 1973 [*Stromatopora vorkutensis Yavorsky, 1961, p. 39] | | SIL
+      Taleastroma Galloway, 1957 [*Stromatopora cumingsi Galloway & St. Jean, 1957, p. 182] | | LDEV
+      Ferestromatopora Yavorsky, 1955 [*F. krupennikovi] | | LDEV
+      Arctostroma Yavorsky, 1967 [*A. ignotum] | | MDEV
+      ?Zeravshanella Lessovaja, 1986 [*Z. cavernosa] | | SIL
+      Coenostroma Winchell, 1867 [*Stromatopora monticulifera Winchell, 1866, p. 91]
+      Atopostroma Yang & Dong, 1979 [*A. tuntouense] | | LDEV
+      Habrostroma Fagerstrom, 1982 [*Stromatopora proxilaminata Fagerstrom, 1961, p. 8] | | SIL
+      Syringostroma Nicholson, 1875 [*S. densum] | | SIL
+    Family AMPHIPORIDAE Rukhin, 1938
+      Amphipora Schulz, 1883 [*Caunopora ramosa Phillips, 1841, p. 19, SD Stearn, 1997c, p. 839]
+      Euryamphipora Klovan, 1966 [*E. platyformis]
+      Paramphipora Yavorsky, 1955 [*P. mirabilis]
+      Nguyen Hung & Mistiaen, 1997 | | SIL
+      Clavidictyon Sugiyama, 1939 [*C. columnare] | | SIL
+      Eostachyodes Dong & Wang, 1982 [*E. compacta] | | LDEV
+      Paschkoviella Kosareva, 1979 [*P. aequicrassa] | | MDEV
+      Perplexostroma Bogoyavlenskaya, 1981 [*Stromatopora dzvenigorodensis Riabinin, 1953, p. 51] | | SIL
+      Pseudoactinostroma Lessovaja, 1970 [*P. hamidulense Lessovaja, 1970, p. 82] | | MDEV
+      ?Pseudostromatopora Dong, 1991 [*P. yushuensis Dong, 1991, p. 71] | | MDEV
+      Taymyrostroma Khromykh, 2001 [*T. taymyrensis] | | UORD
+      Pulchrilaminidae Webby, 1993
+      Stratodictyon Webby, 1969
+      Pulchrilamina Toomey & Ham, 1967 [*P. spinosa Toomey & Ham, 1967, p. 983, pl. 128,1–4] | | LORD
+      Archaeolynthus Taylor, 1910 [*Monocyathus porosus R. Bedford & W. R. Bedford, 1934, p. 2] | | CAM
+      Kyarocyathus Kruse, 1982 [*K. duplus] | | CAM
+      Palaeoconularia Chudinova, 1959 [*P. prima] | | CAM
+      ?Butakovicyathus Zhuravleva, 1980 [*B. butakovi]
+      Cyathophyllum (Orthocyathus) Merriam, 1974 | | CAM
+      Sajanolynthus Vologdin & Kashina, 1972 [*S. desideratus] | | CAM
+      Globosocyathidae Okuneva, 1969 | | CAM
+      Propriolynthus Okuneva, 1967 [*Archaeolynthus vologdini Yakovlev, 1956, p. 855] | | CAM
+      Melkanicyathus Belyaeva, 1969 [*M. limitatus] | | CAM
+      Dokidocyathus Taylor, 1910 [*D. simplicissimus] | | CAM
+      Subtilocyathus Vologdin, 1960 [*Archaeocyathus subtilis Vologdin, 1932, p. 41] | | CAM
+      Kymbecyathus Debrenne & Kruse, 1986 [*K. avius] | | CAM
+      Dentatocyathus Okuneva, 1972 [*D. maritimus] | | CAM
+      Kisasacyathus Konyushkov, 1972 [*K. microtumulatus] | | CAM
+      Nochoroicyathus Zhuravleva, 1951 [*N. mirabilis] | | CAM
+      Robustocyathellus Konyushkov, 1972 [*R. spinosus] | | CAM
+      Rotundocyathus Vologdin, 1960 [*R. rotaceus] | | CAM
+      Stapicyathus Debrenne, 1964 [*Archaeocyathus stapipora Taylor, 1910, p. 118] | | CAM
+      Deceptioncyathus Gravestock, 1984 [*D. synapticulosus] | | CAM
+      Khirgisocyathus Voronin, 1988 [*K. primus] | | CAM
+      Thalamocyathus Gordon, 1920 [*Archaeocyathus trachealis Taylor, 1910, p. 125] | | CAM
+      Gordonicyathus Zhuravleva, 1959 [*Thalamocyathus gerassimovensis Krasnopeeva, 1955, p. 95] | | CAM
+      Sagacyathus Kruse, 1982 [*S. stonyx] | | CAM
+      Stillicidocyathus Ting, 1937 [*Coscinocyathus aulax Taylor, 1910, p. 139]
+      Svetlanocyathus Missarzhevskiy & Rozanov, 1962 [*S. primus] | | CAM
+      Taylorcyathus Vologdin, 1955 [*Cyclocyathus subtersiensis Vologdin, 1940b, p. 63] | | CAM
+      Afiacyathus Voronin, 1962 [*A. lativallum] | | CAM
+      Gnaltacyathus Kruse, 1982 [*G. nodus] | | CAM
+      Hyptocyathus Kruse, 1978 [*H. licinus] | | CAM
+      Inessocyathus Debrenne, 1964 [*Archaeocyathus spatiosus Bornemann, 1886, p. 59] | | CAM
+      Mackenziecyathus Handfield, 1971 [*M. bukryi] | | CAM
+      Rasetticyathus Debrenne, 1971 [*R. iglesiensis] | | CAM
+      Ussuricyathellus Voronin, 1988 [*U. bellus] | | CAM
+      Sajanocyathidae Vologdin, 1956 [*S. ussovi] | | CAM
+      Kiwicyathus Debrenne & Kruse, 1986 [*K. nix] | | CAM
+      Palmericyathus Handfield, 1971 [*Ethmophyllum lineatum Greggs, 1959, p. 66] | | CAM
+      Robertocyathus Rozanov, 1969 [*R. polaris]
+      Kordecyathidae Missarzhevskiy, 1961 | | CAM
+      Polycyathus Vologdin, 1928 [*Polycyathus heterovallum Vologdin, 1928, p. 36]
+      Milaecyathus Debrenne & Zhuravlev, 2000 [*Ladaecyathus melnikovae Zhuravlev in Voronin & others, 1982, p. 79] | | CAM
+      Vologdinocyathidae Yaroshevich, 1957 | | CAM
+      Vologdinocyathus Yaroshevich, 1957 [*V. erbiensis] | | CAM
+      Gumbycyathus Kruse, 1982 [*G. pythoni] | | CAM
+      Kordecyathus Missarzhevskiy, 1961 [*K. shiveligensis] | | CAM
+      Sanarkophyllum Debrenne & Kruse, 1986 [*Formosocyathus antarcticus Hill, 1964c, p. 616] | | CAM
+      Tegerocyathus Krasnopeeva, 1955 [*Ethmophyllum abakanensis Vologdin, 1940b, p. 69] | | CAM
+      Isiticyathus Korshunov, 1972 [*?Tumulifungia ultra Korshunov in Zhuravleva, Korshunov, & Rozanov, 1969, p. 38]
+      Plicocyathus Vologdin, 1960 [*P. krassnyi] | | CAM
+      Geocyathidae Debrenne, 1964 [*Thalamocyathus botomanensis Zhuravleva in Zhurav­ leva & Zelenov, 1955, p. 71] | | CAM
+      Konjuschkovicyathus Debrenne & Zhuravlev, 2000 [*Jakutocyathus spinosus Konyushkov, 1972, p. 140] | | CAM
+      Sclerocyathus Vologdin, 1960 [*S. scrofulosus] | | CAM
+      Tologoicyathus Voronin, 1988 [*T. ichituinicus] | | CAM
+      Annulofungia Krasnopeeva, 1955 [*Anulocyathus taylori Krasnopeeva, 1937, p. 34] | | CAM
+      Hemithalamocyathus Ting, 1937 [*Archaeocyathus sibiricus Toll, 1899, p. 40] | | CAM
+      Kosticyathus Debrenne & Zhuravlev, 2000 [*Porocyathus sheglovi Konyushkov, 1972, p. 138]
+      Sekwicyathus Handfield, 1971 [*S. nahanniensis] | | CAM
+      Yukonocyathus Handfield, 1971 [*Y. francesi] | | CAM
+      Gloriosocyathus Rozanov, 1969 [*G. permultus] | | CAM
+      Kijacyathus Zhuravleva, 1959 [*K. chomentovskii] | | CAM
+      Aporosocyathus Kruse, 1978 [*A. mucroporus] | | CAM
+      Flexanulus Debrenne, 1975 [*F. oosthuizeni]
+      Protocyathus Ford, 1878 [*P. rarus] | | CAM
+      Qinlingocyathus Yang & Yuan, 2012 [*Q. astomus] | | CAM
+      Carinacyathus Vologdin, 1932 [*C. loculatus] | | CAM
+      Vologdinocyathellus Konyushkov, 1972 [*V. schischlovi] | | CAM
+      Angaricyathus Zhuravleva, 1965 [*A. cyrenovi] | | CAM
+      Aulocricus Debrenne, 1987 [*A. arellani] | | CAM
+      Cordilleracyathus Handfield, 1971 [*C. blussoni] | | CAM
+      Parethmophyllum Debrenne, 1987 [*Ethmophyllum cooperi Okulitch in Cooper & others, 1952, p. 29] | | CAM
+      Clathrithalamus Debrenne & Kruse, 1986 [*C. mawsoni] | | CAM
+      Olgaecyathus Borodina, 1974 [*O. fistulosus] | | CAM
+      Clathricyathellus Borodina, 1974 [*Clathricyathus robustus Vologdin, 1932, p. 53] | | CAM
+      Tercyathellus Borodina, 1974 [*T. capisterium] | | CAM
+      Didymocyathus Debrenne & Rozanov, 1972 [*D. hillae] | | CAM
+      Wrighticyathus Kruse, 1978 [*W. nexus] | | CAM
+      Erismacoscinus Debrenne, 1958 [*E. marocanus] | | CAM
+      Pilodicoscinus Debrenne & Jiang, 1989 [*P. yuani] | | CAM
+      Yhecyathus Belyaeva & Yuan, 1995 [*Y. futchinensis] | | CAM
+      Kotuyicoscinus Sundukov, 1983 [*K. minaevae] | | CAM
+      Crucicyathus Gravestock, 1984 [*C. repandus] | | CAM
+      Agyrekocyathus Konyushkov, 1967 [*A. malovi]
+      Xestecyathus Kruse, 1982 [*X. zigzag] | | CAM
+      Polycoscinidae Debrenne, 1964 [*P. contortus] | | CAM
+      Lunulacyathus Debrenne, 1973 [*Coscinocyathus minimiporus R. Bedford & J. Bedford, 1937, p. 37] | | CAM
+      Veronicacyathus Debrenne, 1973 [*V. frondeus Debrenne, 1973, p. 20]
+      Zonacoscinus Debrenne, 1971 [*Z. tumulosus]
+      Orienticyathus B e ly a e va, 1969 [*O. mamontovi] | | CAM
+      Ethmocoscinus Simon, 1939 [*Coscinocyathus papillipora R. Bedford & W. R. Bedford, 1934, p. 4] | | CAM
+      Geyericoscinus Debrenne & Zhuravlev, 2000 [*Coscinocyathus equiporus Debrenne, 1959b, p. 8] | | CAM
+      Coscinoptycta Broili, 1915
+      Coscinoptycha Taylor, 1910 [*Coscinoptycha convoluta Taylor, 1910, p. 141] | | CAM
+      ?Statanulocyathus Debrenne, 1975 [*S. oosthuizeni] | | CAM
+      Tatijanaecyathidae Korshunov, 1976 [*M. sibiricus] | | CAM
+      Porocoscinus Debrenne, 1964 [*P. flexibilis] | | CAM
+      Geniculicyathus Debrenne, 1960 [*G. varius] | | CAM
+      Mootwingeecyathus Kruse, 1982 [*M. mootwingeensis] | | CAM
+      Hupecyathus Debrenne, 1964 [*H. sphinctoides] | | CAM
+      ?Complicatocyathus Yaroshevich, 1990 [*C. rozanovi] | | CAM
+      Gerbicanicyathus Belyaeva, 1969 [*G. emili] | | CAM
+      Mirandocyathus Belyaeva, 1974 [*M. artus]
+      Polythalamia Debrenne & Wood, 1990 [*P. americana] | | CAM
+      Tylocyathus Vologdin, 1977 [*T. inaequilateralis] | | CAM
+      Acanthopyrgus Handfield, 1967 [*Acanthopyrgus yukonensis Handfield, 1967, p. 209] | | CAM
+      Tubericyathus Vologdin, 1977 [*T. clathratus] | | CAM
+      Coscinocyathus Bornemann, 1884 [*C. dianthus] | | CAM
+      Mawsonicoscinus Debrenne & Kruse, 1986 [*M. sigmoides] | | CAM
+      Calyptocoscinus Debrenne, 1964 [*Coscinocyathus cornucopiae Bornemann, 1884, p. 704] | | CAM
+      Loculicyathida Vologdin, 1961 | | CAM
+      Loculocyathidae Zhuravleva, 1954 | | CAM
+      Loculicyathus Vologdin, 1931 [*L. tolli] | | CAM
+      Mikhnocyathus Maslov, 1957 [*M. zolaensis] | | CAM
+      Neoloculicyathus Voronin, 1974 [*N. primus] | | CAM
+      Sakhacyathus Debrenne & Zhuravlev, 1990 [*Paranacyathus subartus Zhuravleva, 1960b, p. 291] | | CAM
+      Chankacyathus Yakovlev, 1959 [*C. strachovi] | | CAM
+      Anthomorpha Bornemann, 1884 [*A. margarita] | | CAM
+      Tollicyathus Chernysheva, 1960 [*T. ishensis] | | CAM
+      Shiveligocyathus Missarzhevskiy, 1961 [*S. vesiculoides] | | CAM
+      Dictyocyathidae Taylor, 1910 | | CAM
+      Cellicyathus Debrenne & Zhuravlev, 1990 [*Maturocyathus ornatus Fonin, 1985, p. 118] | | CAM
+      Chouberticyathus Debrenne, 1964 [*C. clatratus] | | CAM
+      ?Retilamina Debrenne & James, 1981 [*R. amourensis]
+      Claruscoscinus Handfield, 1971 [*Eucyathus billingsi Vologdin, 1940b, p. 48] | | CAM
+      Fenestrocyathus Handfield, 1971 [*F. complexus] | | CAM
+      Protopharetra Bornemann, 1884 [*P. polymorpha Bornemann, 1886, p. 46] | | CAM
+      Spirocyathella Vologdin, 1939 [*S. kyzlartauensis] | | CAM
+      Archaeocyathus Billings, 1861 [*A. atlanticus Billings, 1861, p. 5] | | CAM
+      Arrythmocricus Debrenne & James, 1981 [*A. kobluki] | | CAM
+      Pycnoidocyathus Taylor, 1910 [*P. synapticulosus]
+      Archaeosycon Taylor, 1910 [*Archaeocyathus billingsi Walcott, 1886, p. 74] | | CAM
+      Agastrocyathus Debrenne, 1964 [*Protopharetra gregaria Debrenne, 1961, p. 21] | | CAM
+      Gabrielsocyathus D e b r e n n e, 1964 [*Metacoscinus gabrielsensis Okulitch, 1955b, p. 61]
+      Metacyathellus Debrenne & Zhuravlev, 1990 [*Metaldetes? caribouensis Handfield, 1971, p. 64] | | CAM
+      Jugalicyathus Gravestock, 1984 [*J. tardus] | | CAM
+      Metaldetes Taylor, 1910 [*M. cylindricus]
+      Changicyathus Debrenne & Zhuravlev, 1990 [*Cambrocyathellus tenuicaulus Zhang & Yuan, 1985, p. 523] | | CAM
+      Naimarkcyathus Wrona & Zhuravlev, 1996 [*N. elenae] | | CAM
+      Warriootacyathus Gravestock, 1984 [*W. wilkawillinensis]
+      Syringocnemidae Taylor, 1910 | | CAM
+      Tuvacnema Debrenne & Zhuravlev, 1990 [*Syringocnema tannuolensis Rodionova in Zhuravleva & others, 1967, p. 106] | | CAM
+      Syringocnemidae Taylor, 1910 | | CAM
+      Syringocnema Taylor, 1910 [*S. favus] | | CAM
+      Pseudosyringocnema Handfield, 1971 [*P. uniporus] | | CAM
+      Kruseicnemididae Debrenne & Zhuravlev, 1990 [*Syringocnema gracilis Gordon, 1920, p. 699] | | CAM
+      Fragilicyathus Belyaeva, 1969 [*F. zhuravlevae] | | CAM
+      Altaicyathus Vologdin, 1932 [*A. notabilis] | | CAM
+      Archaeophyllida Okulitch, 1943 [*A. edelsteini Vologdin, 1931, p. 62]
+      Beticocyathus Simon, 1939 [*B. beticus]
+      Bicyathus Vologdin, 1939 [*B. angustus]
+      Butovia Vologdin, 1931 [*B. serrata]
+      Dendrocyathus Okulitch & Roots, 1947 [*D. unexpectans]
+      Echinocyathus Vologdin, 1960 [*E. bilateralis]
+      Exocyatha Okulitch, 1943 [*E. australis]
+      Gorskinocyathus Vologdin, 1960 [*Archaeocyathus gorskinensis Vologdin, 1940b, p. 60]
+      Labyrinthocyathidae Yaroshevich, 1962
+      Labyrinthocyathus Yaroshevich, 1962 [*L. grandiporosus]
+      Labyrinthomorpha Vologdin, 1931 [*L. tolli]
+      Labyrinthomorphida Vologdin, 1961
+      Labyrinthomorphina Vologdin, 1961
+      Nevadacyathus Okulitch, 1943 [*Archaeocyathus septaporus Okulitch, 1935b, p. 101]
+      Protocyclocyathus Vologdin, 1955 [*Cyclocyathus irregularis Vologdin, 1940b, p. 62]
+      Somphocyathus Taylor, 1910 [*S. coralloides]
+      Squamella Vologdin, 1977 [*S. prima]
+      Tabulacyathus Vologdin, 1932 [*T. taylori]
+      Tannuolacyathidae Debrenne, 1964 [*T. multiplex]
+      Tersia Vologdin, 1931 [*T. filiforma]
+      Turgidocyathus Vologdin, 1960 [*T. ippolitovensis]
+      Vesiculoida Vologdin, 1956
+      Vesiculoidae Vologdin, 1931
+      Turgorocyathus Skorlotova, 2013
+      Angustocyathus Skorlotova, 2013
+      Gonamispongia Korshunov, 1968 [*G. ignorabilis] | | CAM
+      Pterocyathidae Jankauskas, 1965 | | CAM
+      Vologdinophyllum Radugin, 1962 [*V. chachlovi] | | CAM
+      Manaella Jankauskas, 1964 [*M. basaica]
+      Leibaella Jankauskas, 1964 [*L. elovica] | | CAM
+      Dubius Jankauskas, 1969 [*D. uncatus] | | CAM
+      Ramifer Jankauskas, 1969 [*R. giratus] | | CAM
+      Akademiophyllidae Radugin, 1964 | | CAM
+      Akademiophyllum Radugin, 1964 [*A. cornuforme] | | CAM
+      Erphyllum Radugin, 1966 [*E. bephylleforme] | | CAM
+      Striatocyathidae Vologdin & Jankauskas, 1968 | | CAM
+      Striatocyathus Vologdin & Jankauskas, 1968 [*S. murtukensis]
+      Achorocyathus Jankauskas, 1969 [*A. perbellus] | | CAM
+      Rarocyathus Vologdin & Jankauskas, 1968 [*R. tubulosus] | | CAM
+      Proarchaeocyathus Radugin, 1966 [*P. manae] | | CAM
+      Argunicyathus Fonin, 1985
+      Bijacoscinus Krasnopeeva, 1978
+      Coscinophyllina Radugin, 1966
+      Coscinophyllum Radugin, 1966
+      Gamocyathidae Vologdin, 1961
+      Gunnicyathus Han & others, 2008
+      Involucrocyathus Yang & others, 2007
+      Leptosocyathella Rozanov, 1973
+      Mongolocyathus Rozanov, 1973
+      Protophyllum Radugin, 1966
+      Saocyathus Kashina & Jankauskas, 1973
+      Serratocyathus Vologdin, 1960
+      Sheathcyathus Yang & others, 2005
+      Taschtagolia Radugin, 1966
+      Binatocyathus Vologdin, 1963 [*B. obliquoseptatus]
+      Buschmannia Kaever & Richter, 1976 [*B. roeringi]
+      Domophyllum Radugin, 1964
+      Lenaella Korde, 1959 [*L. reticulata] | | CAM
+      Manacyathidae Jankauskas, 1969
+      Manacyathus Jankauskas, 1969 [*M. mikroporosus]
+      Matthewcyathidae Okulitch, 1943
+      Matthewcyathus Okulitch, 1940 [*Archaeocyathus pavonoides Matthew, 1886, p. 29]
+      Pentaphyllum Radugin, 1964 [*S. plasticus]
+      Tanchocyathus Vologdin, 1963 [*T. amgaensis]
+      Trifoliophyllum Radugin, 1966 [*T. mirabile]
+      Trigonophyllum Radugin, 1966 [*T. inexpectum]
+      Tuvinia Krasnopeeva, 1972 [*T. prima]
+      Tuvinidae Krasnopeeva, 1972
+      Yakovlevites Korde, 1979 [*Yakovlevia granulosa Vologdin, 1931, p. 36]
+      Stictostroma Parks, 1936 | | DEV
+      Merliidae Kirkpatrick, 1908 | | LCAM
+      Demospongiae Sollas, 1885
+      Hadromerida Topsent, 1894
+      Poecilosclerida Topsent, 1928 | | MCAM
+      Syringoidea Krasnopeeva, 1953 | | MCAM
+      Ethmophyllidae Okulitch, 1943 | | CAM
+      Coelocyathus Vologdin, 1933
+      Polycyathus Vologdin, 1928 | | LCAM
+      Halichondrida Gray, 1867
+  Order Haplosclerida Topsent, 1928. In J. N. A.
