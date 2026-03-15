@@ -1,0 +1,187 @@
+---
+reference: Williams, A., Carlson, S.J., & Brunton, C.H.C., 2000. Brachiopod classification. In: Williams, A. et al., Treatise on Invertebrate Paleontology, Part H, Brachiopoda Revised, vol. 2. Geological Society of America and University of Kansas Press, pp. 1-29.
+source_pdf: data/pdf/Treatise_Brachiopoda_2000_vol2.pdf
+source_pages: 22-27 (PDF pp.52-57)
+notes: |
+  Suprafamilial classification of Brachiopoda extracted from the "Outline of
+  Suprafamilial Classification and Authorship" section (book p.22-27).
+  This file serves as the reference hierarchy for building brachiobase.
+  Indentation: Phylum(0) > Subphylum(2) > Class(4) > Order(6) > Suborder(8) > Superfamily(10)
+format: TSF-reference
+---
+
+Phylum Brachiopoda Duméril, 1806
+  Subphylum Linguliformea Williams, Carlson & Brunton, 2000
+    Class Lingulata Gorjansky & Popov, 1985
+      Order Lingulida Waagen, 1885
+        Superfamily Linguloidea Menke, 1828
+        Superfamily Discinoidea Gray, 1840
+        Superfamily Acrotheloidea Suter, 1900
+      Order Acrotretida Kuhn, 1949
+        Superfamily Acrotretoidea Suter, 1900
+      Order Siphonotretida Kuhn, 1949
+        Superfamily Siphonotretoidea Kutorga, 1848
+    Class Paterinata Williams, Carlson & Brunton, 2000
+      Order Paterinida Rowell, 1965
+        Superfamily Paterinoidea Schuchert, 1893
+  Subphylum Craniiformea Williams, Carlson & Brunton, 2000
+    Class Craniata Williams, Carlson & Brunton, 2000
+      Order Craniopsida Williams & Popov, 1996
+        Superfamily Craniopsoidea Williams, 1963
+      Order Craniida Waagen, 1885
+        Superfamily Cranioidea Menke, 1828
+      Order Trimerellida Moore & Teichert, 1953
+        Superfamily Trimerelloidea King, 1850
+  Subphylum Rhynchonelliformea Williams, Carlson & Brunton, 2000
+    Class Chileata Popov & Holmer, 2000
+      Order Chileida Popov & Holmer, 2000
+      Order Dictyonellida Hansen, 1999
+        Superfamily Eichwaldioidea Schuchert, 1893
+    Class Obolellata Popov & Holmer, 2000
+      Order Obolellida Rowell, 1965
+        Superfamily Obolelloidea Schuchert, 1900
+        # Uncertain
+      Order Naukatida Popov & Holmer, 2000
+        Superfamily Naukatoidea Popov, 1992
+    Class Kutorginata Popov & Williams, 2000
+      Order Kutorginida Kuhn, 1949
+        Superfamily Kutorginoidea Schuchert, 1893
+        Superfamily Nisusioidea Popov & Williams, 2000
+    Class Strophomenata Williams, Carlson & Brunton, 2000
+      Order Strophomenida Öpik, 1934
+        Superfamily Strophomenoidea King, 1846
+        Superfamily Plectambonitoidea Jones, 1928
+        # Uncertain
+      Order Productida Sarytcheva & Sokolskaya, 1959
+        Suborder Chonetidina Muir-Wood, 1955
+          Superfamily Chonetoidea Bronn, 1862
+        Suborder Productidina Waagen, 1883
+          Superfamily Productoidea Gray, 1840
+          Superfamily Echinoconchoidea Stehli, 1954
+          Superfamily Linoproductoidea Stehli, 1954
+        Suborder Strophalosiidina Schuchert, 1913
+          Superfamily Strophalosioidea Schuchert, 1913
+          Superfamily Aulostegoidea Muir-Wood & Cooper, 1960
+          Superfamily Richthofenioidea Waagen, 1885
+        Suborder Lyttoniidina Williams, Harper & Grant, 2000
+          Superfamily Lyttonioidea Waagen, 1883
+          Superfamily Permianelloidea Williams, Harper & Grant, 2000
+      Order Orthotetida Waagen, 1884
+        Suborder Orthotetidina Waagen, 1884
+          Superfamily Orthotetoidea Waagen, 1884
+          Superfamily Chilidiopsoidea Boucot, 1959
+        Suborder Triplesiidina Moore, 1952
+          Superfamily Triplesioidea Schuchert, 1913
+      Order Billingsellida Schuchert, 1913
+        Suborder Billingsellidina Schuchert, 1913
+          Superfamily Billingselloidea Schuchert, 1893
+        Suborder Clitambonitidina Winchell & Schuchert, 1893
+          Superfamily Clitambonitoidea Winchell & Schuchert, 1893
+          Superfamily Polytoechioidea Öpik, 1934
+    Class Rhynchonellata Williams & Carlson, 2000
+      Order Protorthida Schuchert & Cooper, 1931
+        Superfamily Protorthoidea Schuchert & Cooper, 1931
+        Superfamily Skenidioidea Kozlowski, 1929
+      Order Orthida Schuchert & Cooper, 1932
+        Suborder Orthidina Schuchert & Cooper, 1932
+          Superfamily Orthoidea Woodward, 1852
+          Superfamily Plectorthoidea Schuchert & Cooper, 1931
+        Suborder Dalmanellidina Moore, 1952
+          Superfamily Dalmanelloidea Schuchert, 1913
+          Superfamily Enteletoidea Waagen, 1884
+          # Uncertain
+      Order Pentamerida Schuchert & Cooper, 1931
+        Suborder Syntrophiidina Ulrich & Cooper, 1936
+          Superfamily Porambonitoidea Davidson, 1853
+          Superfamily Camerelloidea Hall & Clarke, 1894
+        Suborder Pentameridina Schuchert & Cooper, 1931
+          Superfamily Pentameroidea McCoy, 1844
+          Superfamily Stricklandioidea Schuchert & Cooper, 1931
+          Superfamily Gypiduloidea Schuchert & Cooper, 1931
+          Superfamily Clorindoidea Rzonsnitzkaja, 1964
+      Order Rhynchonellida Kuhn, 1949
+        Superfamily Ancistrorhynchoidea Schuchert & Cooper, 1931
+        Superfamily Uncinuloidea Rzhonsnitzkaia, 1956
+        Superfamily Camarotoechioidea Schuchert & Cooper, 1931
+        Superfamily Rhynchotetradoidea Ching, 1979
+        Superfamily Lambdarinoidea Buckman, 1918
+        Superfamily Wellerelloidea Licharew, 1956
+        Superfamily Rhynchoporoidea Muir-Wood, 1955
+        Superfamily Dimerelloidea Buckman, 1918
+        Superfamily Stenoscismatoidea Oehlert, 1887
+        Superfamily Rhynchonelloidea Gray, 1848
+        Superfamily Pugnacoidea Rzhonsnitzkaia, 1956
+        Superfamily Norelloidea Manceñido & Owen, 1979
+        Superfamily Hemithiridoidea Rzhonsnitzkaia, 1956
+      Order Atrypida Rzhonsnitzkaia, 1960
+        Suborder Zygospiridina Moore, 1952
+          Superfamily Zygospiroidea Hall, 1862
+        Suborder Atrypidina Moore, 1952
+          Superfamily Atrypoidea Gill, 1871
+          Superfamily Punctatrypoidea Copper, 1996
+        Suborder Lissatrypidina Copper, 1996
+          Superfamily Lissatrypoidea Copper, 1996
+        Suborder Davidsoniidina Copper, 1996
+          Superfamily Davidsonioidea King, 1850
+          Superfamily Palaferelloidea Copper, 1996
+      Order Athyridida Boucot, Johnson & Staton, 1964
+        Suborder Athyrididina Boucot, Johnson & Staton, 1964
+          Superfamily Meristelloidea Waagen, 1883
+          Superfamily Athyridoidea Davidson, 1881
+          Superfamily Nucleospiroidea Davidson, 1881
+          Superfamily Retzielloidea Alvarez, 1996
+        Suborder Retziidina Boucot, Johnson & Staton, 1964
+          Superfamily Retzioidea Waagen, 1883
+          Superfamily Rhynchospirinoidea Schuchert, 1913
+          Superfamily Mongolospiroidea Alvarez & Rong, 2000
+        Suborder Koninckinidina MacKinnon, 2000
+          Superfamily Koninckinoidea Davidson, 1853
+      Order Spiriferida Waagen, 1883
+        Suborder Spiriferidina Waagen, 1883
+          Superfamily Cyrtioidea Frederiks, 1924
+          Superfamily Spinelloidea Johnson, 2000
+          Superfamily Theodossioidea Carter, Johnson & Gourvennec, 2000
+          Superfamily Cyrtospiriferoidea Termier & Termier, 1949
+          Superfamily Ambocoelioidea George, 1931
+          Superfamily Martinioidea Waagen, 1883
+          Superfamily Spiriferoidea King, 1846
+          Superfamily Brachythyridoidea Frederiks, 1926
+          Superfamily Paekelmanelloidea Carter, 2000
+        Suborder Delthyridina Johnson, Gourvennec, Carter & Hou, 2000
+          Superfamily Delthyridoidea Phillips, 1841
+          Superfamily Reticularioidea Waagen, 1883
+      Order Spiriferinida Carter & Johnson, 2000
+        Suborder Cyrtinidina Carter & Johnson, 2000
+          Superfamily Cyrtinoidea Frederiks, 1924
+          Superfamily Suessioidea Carter, 2000
+          Superfamily Spondylospiroidea Carter, 2000
+          Superfamily Pennospiriferinoidea Carter, 2000
+          Superfamily Spiriferinoidea Davidson, 1884
+          Superfamily Syringothyridoidea Frederiks, 1926
+      Order Thecideida Elliott, 1958
+        Suborder Thecideidina Elliott, 1958
+          Superfamily Thecospiroidea Baker, 2000
+          Superfamily Thecideoidea Gray, 1840
+      Order Terebratulida Waagen, 1883
+        Suborder Centronellidina Boucot & Johnson, 2000
+          Superfamily Stringocephaloidea King, 1850
+        Suborder Terebratulidina Waagen, 1883
+          Superfamily Dielasmatoidea Schuchert, 1913
+          Superfamily Cryptonelloidea Thomson, 1926
+          Superfamily Terebratuloidea Gray, 1840
+          Superfamily Loboidothyridoidea Dagys, 1974
+          Superfamily Dyscolioidea Fischer, 1986
+          Superfamily Cancellothyridoidea Thomson, 1926
+        Suborder Terebratellidina MacKinnon, Lee & Baker, 2000
+          Superfamily Zeillerioidea Allan, 1940
+          Superfamily Kingenoidea Elliott, 1954
+          Superfamily Laqueoidea Thomson, 1927
+          Superfamily Megathyridoidea Dall, 1870
+          Superfamily Bouchardioidea Thomson, 1915
+          Superfamily Platidioidea Thomson, 1927
+          Superfamily Terebratelloidea King, 1850
+          Superfamily Kraussinoidea Dall, 1870
+          # Uncertain: Superfamily Gwynioidea Davidson, 1852
+  # Incertae sedis
+  # Superfamily Plicanoplitoidea (taxonomic rank uncertain) Racheboeuf
+  # Superfamily Cadomelloidea (taxonomic rank uncertain) MacKinnon

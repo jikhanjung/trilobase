@@ -21,7 +21,7 @@ from pathlib import Path
 
 from db_path import find_paleocore_db
 
-VERSION = "0.2.2"
+VERSION = "0.2.3"
 
 # ---------------------------------------------------------------------------
 # Source file groups per classification profile
@@ -194,8 +194,8 @@ def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
         name = parts[0].strip()
         authority_str = parts[1].strip() if len(parts) > 1 else ""
 
-        # Normalize ALL CAPS names
-        if rank in ("Family", "Subfamily", "Superfamily", "Suborder") and name == name.upper() and len(name) > 1:
+        # Normalize ALL CAPS names (all ranks — source files use ALLCAPS for ranks)
+        if name == name.upper() and len(name) > 1:
             name = name[0] + name[1:].lower()
 
         # Parse author, year
@@ -408,6 +408,50 @@ def process_source(dst, source_file, ref_id, taxon_index, new_taxa_cache):
 
     counts["taxon"] = len(taxon_index) + len(new_taxa_cache)
     return counts, edges
+
+
+def load_classification_edges(cls_file: Path, conn, taxon_index: dict, new_taxa_cache: dict, ref_id: int):
+    """Pre-load structural hierarchy from brachiopoda_classification.txt.
+
+    Creates edges for all suprafamilial ranks (Phylum through Superfamily) so
+    that Orders/Suborders appearing at the start of volume-boundary source files
+    (with empty parser stack) still get proper parents in the edge cache.
+
+    Returns list of (child_id, parent_id) edges added.
+    """
+    if not cls_file.exists():
+        print(f"  Warning: classification file not found: {cls_file}", file=sys.stderr)
+        return []
+
+    text = cls_file.read_text(encoding="utf-8")
+    _, body = parse_source_header(text)
+    placements = parse_hierarchy_body(body, default_leaf_rank="Genus")
+
+    edges = []
+    placed = set()
+    for p in placements:
+        if not p["name"] or not p["parent_name"]:
+            continue
+        if p["rank"] == "Genus":
+            continue
+        child_id = resolve_taxon(p["name"], p["rank"], conn, taxon_index, new_taxa_cache)
+        if p.get("author") or p.get("year"):
+            conn.execute("""
+                UPDATE taxon SET author = COALESCE(NULLIF(author, ''), ?),
+                                 year = COALESCE(NULLIF(year, ''), ?)
+                WHERE id = ? AND (author IS NULL OR author = '' OR year IS NULL OR year = '')
+            """, (p["author"], p["year"], child_id))
+        parent_id = resolve_taxon(p["parent_name"], p["parent_rank"], conn, taxon_index, new_taxa_cache)
+        conn.execute("""
+            INSERT OR IGNORE INTO assertion
+                (subject_taxon_id, predicate, object_taxon_id,
+                 reference_id, assertion_status, curation_confidence)
+            VALUES (?, 'PLACED_IN', ?, ?, 'asserted', 'high')
+        """, (child_id, parent_id, ref_id))
+        if child_id not in placed:
+            edges.append((child_id, parent_id))
+            placed.add(child_id)
+    return edges
 
 
 # ---------------------------------------------------------------------------
@@ -1392,6 +1436,16 @@ def main():
         all_edges = []
         total_counts = {"PLACED_IN": 0, "SYNONYM_OF": 0, "SPELLING_OF": 0}
         new_taxa_cache = {}
+
+        # Profile 2 (Revised 2000-2006): pre-load suprafamilial classification
+        # so cross-volume boundary Orders/Suborders get correct parents.
+        if pi == 2:
+            cls_file = SOURCES / "brachiopoda_classification.txt"
+            print(f"  Pre-loading classification from {cls_file.name}...")
+            cls_edges = load_classification_edges(cls_file, conn, taxon_index, new_taxa_cache, ref_id)
+            all_edges.extend(cls_edges)
+            conn.commit()
+            print(f"  → {len(cls_edges)} structural edges loaded")
 
         for src_name in profile["sources"]:
             src_path = SOURCES / src_name
