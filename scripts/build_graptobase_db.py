@@ -22,7 +22,7 @@ from pathlib import Path
 
 from db_path import find_paleocore_db
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 # ---------------------------------------------------------------------------
 # Source file groups per classification profile
