@@ -20,13 +20,13 @@ trilobase/
 ├── pytest.ini                        # pytest config (testpaths = tests)
 ├── requirements.txt                  # scoda-engine dependency
 ├── db/                               # Databases (git tracked, versioned filenames)
-│   ├── trilobase-0.3.1.db           # ★ 메인 DB (assertion-centric)
-│   ├── brachiobase-0.2.2.db        # Brachiopod DB (Treatise 1965 & 2000-2006)
-│   ├── graptobase-0.1.0.db         # Graptolite DB (Treatise 1955/1970/2023)
-│   ├── chelicerobase-0.1.0.db      # Chelicerate DB (Treatise 1955, Part P)
-│   ├── ostracobase-0.1.0.db        # Ostracod DB (Treatise 1961, Part Q)
+│   ├── trilobase-0.3.3.db           # ★ 메인 DB (assertion-centric)
+│   ├── brachiobase-0.2.6.db        # Brachiopod DB (Treatise 1965 & 2000-2006)
+│   ├── graptobase-0.1.2.db         # Graptolite DB (Treatise 1955/1970/2023)
+│   ├── chelicerobase-0.1.2.db      # Chelicerate DB (Treatise 1955, Part P)
+│   ├── ostracobase-0.1.2.db        # Ostracod DB (Treatise 1961, Part Q)
 │   ├── trilobase-canonical-0.2.6.db # Legacy canonical DB (보존용)
-│   └── paleocore-0.1.1.db           # PaleoCore reference DB
+│   └── paleocore-0.1.3.db           # PaleoCore reference DB
 ├── dist/                             # Generated artifacts (gitignored)
 │   ├── trilobase-{ver}.scoda        # Trilobase .scoda package
 │   ├── brachiobase-{ver}.scoda     # Brachiobase .scoda package
@@ -60,7 +60,7 @@ trilobase/
 │   └── archive/                     # 레거시 스크립트 보관
 ├── tests/
 │   ├── conftest.py                  # Shared fixtures
-│   └── test_trilobase.py            # Trilobase domain tests (118)
+│   └── test_trilobase.py            # Trilobase domain tests (117)
 ├── vendor/                           # Third-party reference data
 ├── devlog/                           # 작업 기록
 │   ├── YYYYMMDD_NNN_*.md           # 작업 로그
@@ -68,7 +68,9 @@ trilobase/
 │   └── YYYYMMDD_RNN_*.md           # 리뷰(Review) 문서
 └── docs/
     ├── canonical_vs_assertion.md     # 두 DB 구조 비교
-    └── source_data_guide.md          # 소스 데이터 가이드
+    ├── source_data_guide.md          # 소스 데이터 가이드
+    ├── PDF_SOURCE_STATUS.md          # Treatise PDF/TSF/SCODA 현황표
+    └── Taxonomic Source Format Specification v0.1.md  # TSF 사양서
 ```
 
 ## Dependencies
