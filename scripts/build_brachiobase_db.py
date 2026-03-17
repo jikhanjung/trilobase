@@ -21,7 +21,7 @@ from pathlib import Path
 
 from db_path import find_paleocore_db
 
-VERSION = "0.2.5"
+VERSION = "0.2.6"
 
 # ---------------------------------------------------------------------------
 # Source file groups per classification profile
@@ -765,7 +765,7 @@ def _build_queries():
          "    FROM taxon t\n"
          "    JOIN classification_edge_cache e ON e.child_id = t.id AND e.profile_id = COALESCE(:profile_id, 1)\n"
          "    WHERE t.rank = 'Genus'\n"
-         "    AND t.year IS NOT NULL AND CAST(t.year AS INTEGER) <= :timeline_value\n"
+         "    AND (:timeline_value IS NULL OR (t.year IS NOT NULL AND CAST(t.year AS INTEGER) <= :timeline_value))\n"
          "), ancestors AS (\n"
          "    SELECT id AS taxon_id FROM filtered_genera\n"
          "    UNION\n"
@@ -786,7 +786,7 @@ def _build_queries():
          "    FROM taxon t\n"
          "    JOIN classification_edge_cache e ON e.child_id = t.id AND e.profile_id = COALESCE(:profile_id, 1)\n"
          "    WHERE t.rank = 'Genus'\n"
-         "    AND t.year IS NOT NULL AND CAST(t.year AS INTEGER) <= :timeline_value\n"
+         "    AND (:timeline_value IS NULL OR (t.year IS NOT NULL AND CAST(t.year AS INTEGER) <= :timeline_value))\n"
          "), ancestors AS (\n"
          "    SELECT id AS taxon_id FROM filtered_genera\n"
          "    UNION\n"
@@ -832,6 +832,42 @@ def _build_queries():
          "WHERE b.profile_id = :compare_profile_id\n"
          "    AND a.child_id IS NULL",
          '{"profile_id": "integer", "compare_profile_id": "integer"}'),
+
+        ("diversity_by_age", "Genus count per temporal code grouped by a parent rank",
+         "WITH RECURSIVE ancestors AS (\n"
+         "    SELECT e.child_id AS genus_id, e.parent_id AS ancestor_id\n"
+         "    FROM classification_edge_cache e\n"
+         "    JOIN taxon t ON t.id = e.child_id AND t.rank = 'Genus'\n"
+         "    WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
+         "    UNION ALL\n"
+         "    SELECT a.genus_id, e.parent_id\n"
+         "    FROM ancestors a\n"
+         "    JOIN classification_edge_cache e ON e.child_id = a.ancestor_id\n"
+         "    WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
+         "),\n"
+         "genus_group AS (\n"
+         "    SELECT a.genus_id, grp.name AS group_name\n"
+         "    FROM ancestors a\n"
+         "    JOIN taxon grp ON grp.id = a.ancestor_id AND grp.rank = :grouping_rank\n"
+         ")\n"
+         "SELECT tcm.code AS age_label, -tcm.fad_mya AS age_order,\n"
+         "       COALESCE(gg.group_name, 'Unknown') AS group_name,\n"
+         "       COUNT(DISTINCT g.id) AS count\n"
+         "FROM taxon g\n"
+         "JOIN classification_edge_cache ge ON ge.child_id = g.id\n"
+         "  AND ge.profile_id = COALESCE(:profile_id, 1)\n"
+         "JOIN temporal_code_mya tcm ON g.temporal_code = tcm.code\n"
+         "LEFT JOIN genus_group gg ON gg.genus_id = g.id\n"
+         "WHERE g.rank = 'Genus' AND g.is_valid = 1\n"
+         "  AND tcm.code IN ('LCAM','MCAM','UCAM','LORD','MORD','UORD',\n"
+         "                    'LSIL','USIL','LDEV','MDEV','UDEV',\n"
+         "                    'MISS','PENN','LPERM','UPERM',\n"
+         "                    'LTRI','MTRI','UTRI','LJUR','MJUR','UJUR',\n"
+         "                    'LCRET','UCRET','TERT','HOL')\n"
+         "GROUP BY tcm.code, gg.group_name\n"
+         "HAVING count > 0\n"
+         "ORDER BY age_order, count DESC",
+         '{"profile_id": "integer", "grouping_rank": "text"}'),
     ]
 
 
@@ -1087,18 +1123,18 @@ def _build_manifest():
                     },
                 },
             },
-            # === Timeline (compound view) ===
-            "timeline_view": {
+            # === Statistics (compound view) ===
+            "statistics": {
                 "type": "compound",
-                "title": "Timeline",
-                "icon": "bi-clock-history",
+                "title": "Statistics",
+                "icon": "bi-bar-chart-line",
                 "controls": [],
-                "default_sub_view": "timeline",
+                "default_sub_view": "geologic_timeline",
                 "sub_views": {
-                    "timeline": {
-                        "title": "Timeline",
+                    "geologic_timeline": {
+                        "title": "Geologic Timeline",
                         "display": "tree_chart_timeline",
-                        "description": "Taxonomy tree animated over geologic time or publication year",
+                        "description": "Taxonomy tree animated over geologic time",
                         "source_query": "taxonomy_tree_by_geologic",
                         "hierarchy_options": {
                             "id_key": "id",
@@ -1142,6 +1178,46 @@ def _build_manifest():
                                     "source_query_override": "taxonomy_tree_by_geologic",
                                     "edge_query_override": "tree_edges_by_geologic",
                                 },
+                            ],
+                        },
+                    },
+                    "pubyear_timeline": {
+                        "title": "Publication Timeline",
+                        "display": "tree_chart_timeline",
+                        "description": "Taxonomy tree animated over publication year",
+                        "source_query": "taxonomy_tree_by_pubyear",
+                        "hierarchy_options": {
+                            "id_key": "id",
+                            "parent_key": "parent_id",
+                            "label_key": "name",
+                            "rank_key": "rank",
+                        },
+                        "tree_chart_options": {
+                            "default_layout": "radial",
+                            "color_key": "rank",
+                            "leaf_rank": "Genus",
+                            "on_node_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
+                            "rank_radius": {
+                                "_root": 0,
+                                "Phylum": 0.03,
+                                "Subphylum": 0.06,
+                                "Class": 0.10,
+                                "Order": 0.18,
+                                "Suborder": 0.28,
+                                "Superfamily": 0.40,
+                                "Family": 0.54,
+                                "Subfamily": 0.70,
+                                "Genus": 1.0,
+                            },
+                            "edge_query": "tree_edges_by_pubyear",
+                            "edge_params": {"profile_id": "$profile_id"},
+                            "edge_id_key": "child_id",
+                            "edge_parent_key": "parent_id",
+                        },
+                        "timeline_options": {
+                            "param_name": "timeline_value",
+                            "default_step_size": 1,
+                            "axis_modes": [
                                 {
                                     "key": "pubyear",
                                     "label": "Publication Year",
@@ -1153,6 +1229,27 @@ def _build_manifest():
                                     "edge_query_override": "tree_edges_by_pubyear",
                                 },
                             ],
+                        },
+                    },
+                    "bar_chart": {
+                        "title": "Diversity Chart",
+                        "display": "bar_chart",
+                        "icon": "bi-bar-chart-fill",
+                        "description": "Genus diversity by geologic time, grouped by higher taxonomy",
+                        "source_query": "diversity_by_age",
+                        "bar_chart_options": {
+                            "x_key": "age_label",
+                            "x_order_key": "age_order",
+                            "group_key": "group_name",
+                            "value_key": "count",
+                            "grouping_param": "grouping_rank",
+                            "grouping_ranks": [
+                                {"value": "Order", "label": "Order"},
+                                {"value": "Suborder", "label": "Suborder"},
+                                {"value": "Superfamily", "label": "Superfamily"},
+                                {"value": "Family", "label": "Family"},
+                            ],
+                            "default_grouping": "Order",
                         },
                     },
                 },
