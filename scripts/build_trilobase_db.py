@@ -5,8 +5,8 @@ Reads:
   - data/sources/jell_adrain_2002.txt      → genera, families, synonyms (default profile)
   - data/sources/adrain_2011.txt           → suprafamilial hierarchy (default profile)
   - data/sources/treatise_1959.txt         → full hierarchy (treatise1959 profile)
-  - data/sources/treatise_2004_ch4.txt     → Agnostida (treatise2004 profile)
-  - data/sources/treatise_2004_ch5.txt     → Redlichiida (treatise2004 profile)
+  - data/sources/treatise_1997_ch4.txt     → Agnostida (treatise1997 profile)
+  - data/sources/treatise_1997_ch5.txt     → Redlichiida (treatise1997 profile)
 
 Still copies from canonical DB:
   - taxon metadata (formation, location, temporal_code, type_species, etc.)
@@ -40,8 +40,8 @@ DST_DIR = ROOT / "db"
 ADRAIN_2011_BIB_ID = 2131  # bibliography id in canonical DB
 JA2002_REF_ID = None  # set after insert
 TREATISE_1959_REF_ID = None
-TREATISE_2004_CH4_REF_ID = None
-TREATISE_2004_CH5_REF_ID = None
+TREATISE_1997_CH4_REF_ID = None
+TREATISE_1997_CH5_REF_ID = None
 
 
 # ---------------------------------------------------------------------------
@@ -387,7 +387,7 @@ def copy_taxon(src, dst):
 def copy_references(src, dst):
     """Copy bibliography from canonical DB and insert source-specific references."""
     global JA2002_REF_ID, TREATISE_1959_REF_ID
-    global TREATISE_2004_CH4_REF_ID, TREATISE_2004_CH5_REF_ID
+    global TREATISE_1997_CH4_REF_ID, TREATISE_1997_CH5_REF_ID
 
     rows = src.execute("""
         SELECT id, authors, year, year_suffix, title, journal, volume, pages,
@@ -451,37 +451,37 @@ def copy_references(src, dst):
     ))
     TREATISE_1959_REF_ID = cur.lastrowid
 
-    # Insert Treatise 2004 ch4
+    # Insert Treatise 1997 ch4
     cur = dst.execute("""
         INSERT INTO reference (authors, year, title, editors, book_title,
                                reference_type, raw_entry)
         VALUES (?, ?, ?, ?, ?, ?, ?)
     """, (
-        "SHERGOLD, J.H., LAURIE, J.R. & SUN, X.", 2004,
+        "SHERGOLD, J.H., LAURIE, J.R. & SUN, X.", 1997,
         "Classification of the Agnostida",
         "Kaesler, R.L.",
         "Treatise on Invertebrate Paleontology, Part O, Revised, Vol. 1",
         "incollection",
-        "Shergold, J.H., Laurie, J.R. & Sun, X., 2004, Classification of the Agnostida. "
+        "Shergold, J.H., Laurie, J.R. & Sun, X., 1997, Classification of the Agnostida. "
         "In: Kaesler, R.L. (Ed.), Treatise on Invertebrate Paleontology, Part O, Revised, Vol. 1, Ch. 4.",
     ))
-    TREATISE_2004_CH4_REF_ID = cur.lastrowid
+    TREATISE_1997_CH4_REF_ID = cur.lastrowid
 
-    # Insert Treatise 2004 ch5
+    # Insert Treatise 1997 ch5
     cur = dst.execute("""
         INSERT INTO reference (authors, year, title, editors, book_title,
                                reference_type, raw_entry)
         VALUES (?, ?, ?, ?, ?, ?, ?)
     """, (
-        "PALMER, A.R. & REPINA, L.N.", 2004,
+        "PALMER, A.R. & REPINA, L.N.", 1997,
         "Classification of the Redlichiida",
         "Kaesler, R.L.",
         "Treatise on Invertebrate Paleontology, Part O, Revised, Vol. 1",
         "incollection",
-        "Palmer, A.R. & Repina, L.N., 2004, Classification of the Redlichiida. "
+        "Palmer, A.R. & Repina, L.N., 1997, Classification of the Redlichiida. "
         "In: Kaesler, R.L. (Ed.), Treatise on Invertebrate Paleontology, Part O, Revised, Vol. 1, Ch. 5.",
     ))
-    TREATISE_2004_CH5_REF_ID = cur.lastrowid
+    TREATISE_1997_CH5_REF_ID = cur.lastrowid
 
     return len(rows) + 4  # bibliography + 4 source refs
 
@@ -802,7 +802,7 @@ def process_source_treatise(dst, source_file, ref_id,
 # ---------------------------------------------------------------------------
 
 def build_profiles(dst, default_edges, t1959_edges,
-                    t2004_ch4_edges, t2004_ch5_edges):
+                    t1997_ch4_edges, t1997_ch5_edges):
     """Create profiles and edge caches."""
 
     # Profile 1: default (JA2002 + Adrain 2011)
@@ -838,15 +838,15 @@ def build_profiles(dst, default_edges, t1959_edges,
     ).fetchone()[0]
     print(f"   Profile 2 (treatise1959): {actual_1959} edges")
 
-    # Profile 3: treatise2004 (hybrid: treatise1959 base + 2004 replacements)
+    # Profile 3: treatise1997 (hybrid: treatise1959 base + 1997 replacements)
     dst.execute("""
         INSERT INTO classification_profile (name, description, rule_json)
         VALUES (?, ?, ?)
     """, (
-        "treatise2004",
-        "Treatise 1959 base + Treatise 2004 Agnostida (ch4) & Redlichiida (ch5)",
+        "treatise1997",
+        "Treatise 1959 base + Treatise 1997 Agnostida (ch4) & Redlichiida (ch5)",
         json.dumps({
-            "source": ["treatise_1959.txt", "treatise_2004_ch4.txt", "treatise_2004_ch5.txt"],
+            "source": ["treatise_1959.txt", "treatise_1997_ch4.txt", "treatise_1997_ch5.txt"],
             "strategy": "hybrid",
             "scope": [
                 {"taxon": "Agnostida", "coverage": "comprehensive"},
@@ -863,22 +863,22 @@ def build_profiles(dst, default_edges, t1959_edges,
 
     # Build scope sets: which taxa are in the comprehensive scope of ch4/ch5
     scope_taxa = set()
-    for child_id, parent_id in t2004_ch4_edges + t2004_ch5_edges:
+    for child_id, parent_id in t1997_ch4_edges + t1997_ch5_edges:
         scope_taxa.add(child_id)
 
     # Find all taxa in the scope subtrees (Agnostida + Redlichiida)
-    # by looking at the 2004 edges' root taxa
+    # by looking at the 1997 edges' root taxa
     scope_roots = set()
-    ch4_taxa = {c for c, p in t2004_ch4_edges}
-    ch5_taxa = {c for c, p in t2004_ch5_edges}
+    ch4_taxa = {c for c, p in t1997_ch4_edges}
+    ch5_taxa = {c for c, p in t1997_ch5_edges}
     # Root taxa of ch4/ch5 are those that appear as children but whose parents
     # are NOT themselves children in the same set
-    ch4_parents = {p for c, p in t2004_ch4_edges}
-    ch5_parents = {p for c, p in t2004_ch5_edges}
+    ch4_parents = {p for c, p in t1997_ch4_edges}
+    ch5_parents = {p for c, p in t1997_ch5_edges}
     ch4_root_parents = ch4_parents - ch4_taxa  # parents outside the ch4 scope
     ch5_root_parents = ch5_parents - ch5_taxa
 
-    # Replace: delete 1959 edges for taxa in scope, then insert 2004 edges
+    # Replace: delete 1959 edges for taxa in scope, then insert 1997 edges
     # For comprehensive scope: remove all 1959 edges whose child is in the scope
     for child_id in ch4_taxa | ch5_taxa:
         dst.execute("""
@@ -887,7 +887,7 @@ def build_profiles(dst, default_edges, t1959_edges,
         """, (child_id,))
 
     # Also remove 1959-only taxa that were children under the scope subtrees
-    # (comprehensive removal: taxa in 1959 under Agnostida/Redlichiida but not in 2004)
+    # (comprehensive removal: taxa in 1959 under Agnostida/Redlichiida but not in 1997)
     # We need to find the Agnostida and Redlichiida taxon IDs
     agnostida_id = dst.execute(
         "SELECT id FROM taxon WHERE name = 'Agnostida' AND rank = 'Order'"
@@ -904,14 +904,14 @@ def build_profiles(dst, default_edges, t1959_edges,
         _remove_comprehensive_scope(dst, 3, redlichiida_id[0],
                                     ch5_taxa | {redlichiida_id[0]})
 
-    # Insert 2004 edges
+    # Insert 1997 edges
     dst.executemany("""
         INSERT OR IGNORE INTO classification_edge_cache (profile_id, child_id, parent_id)
         VALUES (3, ?, ?)
-    """, t2004_ch4_edges + t2004_ch5_edges)
+    """, t1997_ch4_edges + t1997_ch5_edges)
 
     # Handle Eodiscida → Eodiscina reorganization
-    # In 1959 Eodiscida was an Order; in 2004 it might be a Suborder
+    # In 1959 Eodiscida was an Order; in 1997 it might be a Suborder
     eodiscida = dst.execute(
         "SELECT id FROM taxon WHERE name = 'Eodiscida'"
     ).fetchone()
@@ -919,9 +919,9 @@ def build_profiles(dst, default_edges, t1959_edges,
         "SELECT id FROM taxon WHERE name = 'Eodiscina'"
     ).fetchone()
     if eodiscida and eodiscina:
-        # Move Eodiscida children to Eodiscina if Eodiscina exists in 2004
-        eodiscina_in_2004 = eodiscina[0] in ch4_taxa
-        if eodiscina_in_2004:
+        # Move Eodiscida children to Eodiscina if Eodiscina exists in 1997
+        eodiscina_in_1997 = eodiscina[0] in ch4_taxa
+        if eodiscina_in_1997:
             # Move any remaining Eodiscida children to Eodiscina
             dst.execute("""
                 UPDATE classification_edge_cache
@@ -944,15 +944,15 @@ def build_profiles(dst, default_edges, t1959_edges,
             VALUES (3, ?, ?)
         """, (agnostida_id[0], trilobita_id[0]))
 
-    actual_2004 = dst.execute(
+    actual_1997 = dst.execute(
         "SELECT COUNT(*) FROM classification_edge_cache WHERE profile_id = 3"
     ).fetchone()[0]
-    print(f"   Profile 3 (treatise2004): {actual_2004} edges")
+    print(f"   Profile 3 (treatise1997): {actual_1997} edges")
 
     return {
         "default": len(default_edges),
         "treatise1959": actual_1959,
-        "treatise2004": actual_2004,
+        "treatise1997": actual_1997,
     }
 
 
@@ -2810,9 +2810,9 @@ def create_scoda_metadata(dst, version):
          "Part O, Arthropoda 1, Trilobita.",
          "Treatise 1959 classification profile", 1959, None),
         (4, "supplementary",
-         "Kaesler, R.L. (Ed.), 2004, Treatise on Invertebrate Paleontology, "
+         "Kaesler, R.L. (Ed.), 1997, Treatise on Invertebrate Paleontology, "
          "Part O, Revised, Vol. 1.",
-         "Treatise 2004 classification profile (Agnostida + Redlichiida)", 2004, None),
+         "Treatise 1997 classification profile (Agnostida + Redlichiida)", 1997, None),
         (5, "build",
          "Trilobase assertion-centric pipeline (2026). Script: build_trilobase_db.py",
          "Source-driven build from data/sources/*.txt (R04 extended format)", 2026, None),
@@ -2891,7 +2891,7 @@ def generate_hub_manifest(db_path, version):
             "Jell, P.A., and Adrain, J.M., 2002, Available Generic Names for Trilobites",
             "Adrain, J.M., 2011, Class Trilobita Walch, 1771",
             "Moore, R.C. (Ed.), 1959, Treatise on Invertebrate Paleontology, Part O",
-            "Kaesler, R.L. (Ed.), 2004, Treatise on Invertebrate Paleontology, Part O, Revised",
+            "Kaesler, R.L. (Ed.), 1997, Treatise on Invertebrate Paleontology, Part O, Revised",
         ],
         "filename": db_path.name,
         "sha256": _sha256_file(db_path),
@@ -2927,7 +2927,7 @@ def main():
     # Verify source files exist
     required = [
         "jell_adrain_2002.txt", "adrain_2011.txt", "treatise_1959.txt",
-        "treatise_2004_ch4.txt", "treatise_2004_ch5.txt",
+        "treatise_1997_ch4.txt", "treatise_1997_ch5.txt",
     ]
     for f in required:
         if not (SOURCES / f).exists():
@@ -2964,8 +2964,8 @@ def main():
     print(f"   → {n_ref} reference records")
     print(f"     JA2002 ref_id={JA2002_REF_ID}")
     print(f"     Treatise 1959 ref_id={TREATISE_1959_REF_ID}")
-    print(f"     Treatise 2004 ch4 ref_id={TREATISE_2004_CH4_REF_ID}")
-    print(f"     Treatise 2004 ch5 ref_id={TREATISE_2004_CH5_REF_ID}")
+    print(f"     Treatise 1997 ch4 ref_id={TREATISE_1997_CH4_REF_ID}")
+    print(f"     Treatise 1997 ch5 ref_id={TREATISE_1997_CH5_REF_ID}")
 
     # 4. Build taxon index
     print("4. Building taxon index...")
@@ -3003,19 +3003,19 @@ def main():
     dst.commit()
     print(f"   → {len(t1959_edges)} edges")
 
-    print("   Processing Treatise 2004 ch4 (Agnostida)...")
-    t2004_ch4_edges = process_source_treatise(
-        dst, SOURCES / "treatise_2004_ch4.txt", TREATISE_2004_CH4_REF_ID,
+    print("   Processing Treatise 1997 ch4 (Agnostida)...")
+    t1997_ch4_edges = process_source_treatise(
+        dst, SOURCES / "treatise_1997_ch4.txt", TREATISE_1997_CH4_REF_ID,
         taxon_index, name_index, new_taxa_cache)
     dst.commit()
-    print(f"   → {len(t2004_ch4_edges)} edges")
+    print(f"   → {len(t1997_ch4_edges)} edges")
 
-    print("   Processing Treatise 2004 ch5 (Redlichiida)...")
-    t2004_ch5_edges = process_source_treatise(
-        dst, SOURCES / "treatise_2004_ch5.txt", TREATISE_2004_CH5_REF_ID,
+    print("   Processing Treatise 1997 ch5 (Redlichiida)...")
+    t1997_ch5_edges = process_source_treatise(
+        dst, SOURCES / "treatise_1997_ch5.txt", TREATISE_1997_CH5_REF_ID,
         taxon_index, name_index, new_taxa_cache)
     dst.commit()
-    print(f"   → {len(t2004_ch5_edges)} edges")
+    print(f"   → {len(t1997_ch5_edges)} edges")
 
     # 7. New taxa summary
     if new_taxa_cache:
@@ -3024,7 +3024,7 @@ def main():
     # 8. Build profiles
     print("\n7. Building classification profiles...")
     profile_counts = build_profiles(dst, default_edges, t1959_edges,
-                                    t2004_ch4_edges, t2004_ch5_edges)
+                                    t1997_ch4_edges, t1997_ch5_edges)
     dst.commit()
 
     # 9. Junction tables

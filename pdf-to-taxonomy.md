@@ -70,7 +70,7 @@ Order ORDERNAME Author, Year
 If needed, read one or more of these for format examples:
 - `data/sources/jell_adrain_2002.txt` — Genus-level with type species, formations, temporal codes
 - `data/sources/adrain_2011.txt` — Suprafamilial classification (Order → Family)
-- `data/sources/treatise_2004_ch4.txt` — Mixed ranks with subfamilies
+- `data/sources/treatise_1997_ch4.txt` — Mixed ranks with subfamilies
 
 ### Step 6: Output the result
 

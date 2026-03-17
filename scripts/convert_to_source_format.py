@@ -3,8 +3,8 @@
 
 Generates data/sources/*.txt from existing data files:
   - treatise_1959.txt   ← data/treatise_1959_taxonomy.txt + header
-  - treatise_2004_ch4.txt ← data/treatise_ch4_taxonomy.json → hierarchy text
-  - treatise_2004_ch5.txt ← data/treatise_ch5_taxonomy.json → hierarchy text
+  - treatise_1997_ch4.txt ← data/treatise_ch4_taxonomy.json → hierarchy text
+  - treatise_1997_ch5.txt ← data/treatise_ch5_taxonomy.json → hierarchy text
   - adrain_2011.txt     ← data/adrain2011.txt + header + cleanup
   - jell_adrain_2002.txt ← data/trilobite_genus_list.txt → family-grouped hierarchy
 
@@ -67,7 +67,7 @@ scope:
 
 
 # ---------------------------------------------------------------------------
-# 2. Treatise 2004 (ch4 + ch5)
+# 2. Treatise 1997 (ch4 + ch5)
 # ---------------------------------------------------------------------------
 
 RANK_INDENT = {
@@ -125,34 +125,34 @@ def json_to_hierarchy(node, depth=0):
     return lines
 
 
-def convert_treatise_2004_ch4():
-    print("2a. Treatise 2004 ch4 (Agnostida)...")
+def convert_treatise_1997_ch4():
+    print("2a. Treatise 1997 ch4 (Agnostida)...")
     src = DATA / "treatise_ch4_taxonomy.json"
     data = json.loads(src.read_text(encoding="utf-8"))
 
     header = """\
-reference: Shergold, J.H., Laurie, J.R. & Sun, X., 2004. Classification of the Agnostida. In: Kaesler, R.L. (Ed.), Treatise on Invertebrate Paleontology, Part O, Revised, Vol. 1, Ch. 4
+reference: Shergold, J.H., Laurie, J.R. & Sun, X., 1997. Classification of the Agnostida. In: Kaesler, R.L. (Ed.), Treatise on Invertebrate Paleontology, Part O, Revised, Vol. 1, Ch. 4
 scope:
   - taxon: Agnostida
     coverage: comprehensive
 """
     lines = json_to_hierarchy(data["taxonomy"])
-    write_file(OUT / "treatise_2004_ch4.txt", header, "\n".join(lines) + "\n")
+    write_file(OUT / "treatise_1997_ch4.txt", header, "\n".join(lines) + "\n")
 
 
-def convert_treatise_2004_ch5():
-    print("2b. Treatise 2004 ch5 (Redlichiida)...")
+def convert_treatise_1997_ch5():
+    print("2b. Treatise 1997 ch5 (Redlichiida)...")
     src = DATA / "treatise_ch5_taxonomy.json"
     data = json.loads(src.read_text(encoding="utf-8"))
 
     header = """\
-reference: Palmer, A.R. & Repina, L.N., 2004. Classification of the Redlichiida. In: Kaesler, R.L. (Ed.), Treatise on Invertebrate Paleontology, Part O, Revised, Vol. 1, Ch. 5
+reference: Palmer, A.R. & Repina, L.N., 1997. Classification of the Redlichiida. In: Kaesler, R.L. (Ed.), Treatise on Invertebrate Paleontology, Part O, Revised, Vol. 1, Ch. 5
 scope:
   - taxon: Redlichiida
     coverage: comprehensive
 """
     lines = json_to_hierarchy(data["taxonomy"])
-    write_file(OUT / "treatise_2004_ch5.txt", header, "\n".join(lines) + "\n")
+    write_file(OUT / "treatise_1997_ch5.txt", header, "\n".join(lines) + "\n")
 
 
 # ---------------------------------------------------------------------------
@@ -504,8 +504,8 @@ notes: |
 def main():
     print("=== Converting to extended source format (R04) ===\n")
     convert_treatise_1959()
-    convert_treatise_2004_ch4()
-    convert_treatise_2004_ch5()
+    convert_treatise_1997_ch4()
+    convert_treatise_1997_ch5()
     convert_adrain_2011()
     convert_jell_adrain_2002()
     print("\nDone.")

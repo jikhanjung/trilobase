@@ -15,8 +15,8 @@
 | `adrain_2011.txt` | Adrain (2011) | 목(Order)~과(Family) 계층 |
 | `jell_adrain_2002.txt` | Jell & Adrain (2002) | 속(Genus) 목록 + 동의어 |
 | `treatise_1959.txt` | Treatise (1959) | 전체 분류 체계 |
-| `treatise_2004_ch4.txt` | Treatise (2004) ch.4 | Agnostida 개정 |
-| `treatise_2004_ch5.txt` | Treatise (2004) ch.5 | Redlichiida 개정 |
+| `treatise_1997_ch4.txt` | Treatise (1997) ch.4 | Agnostida 개정 |
+| `treatise_1997_ch5.txt` | Treatise (1997) ch.5 | Redlichiida 개정 |
 
 ---
 
@@ -39,11 +39,11 @@ notes: |
 ---
 ```
 
-**실제 예시** (`treatise_2004_ch5.txt`):
+**실제 예시** (`treatise_1997_ch5.txt`):
 
 ```yaml
 ---
-reference: Palmer, A.R. & Repina, L.N., 2004. Classification of the Redlichiida.
+reference: Palmer, A.R. & Repina, L.N., 1997. Classification of the Redlichiida.
   In: Kaesler, R.L. (Ed.), Treatise on Invertebrate Paleontology,
   Part O, Revised, Vol. 1, Ch. 5
 scope:
@@ -63,7 +63,7 @@ scope:
 - **`comprehensive`**: 해당 분류군 아래 전체를 다룸. 여기에 안 나온 분류군은 "이 논문에서 제외됨"으로 처리됩니다.
 - **`sparse`**: 일부만 다룸. 안 나온 분류군이 있어도 제외로 처리하지 않습니다.
 
-예를 들어 Treatise 2004 ch.5가 Redlichiida를 `comprehensive`로 다루면, 1959년 Treatise에는 있었지만 2004년판에 빠진 속은 "제거된 것"으로 간주합니다.
+예를 들어 Treatise 1997 ch.5가 Redlichiida를 `comprehensive`로 다루면, 1959년 Treatise에는 있었지만 1997년판에 빠진 속은 "제거된 것"으로 간주합니다.
 
 ### 2. 본문
 

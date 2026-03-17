@@ -45,7 +45,7 @@ Redlichioidea  →  parent_id = Redlichiina
 |--------|------|------|
 | Jell & Adrain 2002 + Adrain 2011 | 기본 분류 체계 (현대적 관점) | 5,113개 관계 |
 | Treatise 1959 | 1959년 Treatise의 분류 체계 | 1,772개 관계 |
-| Treatise 2004 | 2004년 Treatise 개정판 반영 | 2,045개 관계 |
+| Treatise 1997 | 1997년 Treatise 개정판 반영 | 2,045개 관계 |
 
 프로필을 전환하면 **같은 데이터를 다른 분류 체계로 볼 수 있습니다**.
 

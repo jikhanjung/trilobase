@@ -156,8 +156,8 @@ KU 아카이브 (https://journals.ku.edu/InvertebratePaleo/issue/archive) 기준
 | PDF 파일 | Source 파일 | 줄수 | 속 수 | 비고 |
 |----------|-------------|-----:|------:|------|
 | (PDF 없음) | treatise_1959.txt | 1,789 | — | trilobase 빌드에 사용 |
-| (PDF 없음) | treatise_2004_ch4.txt | 204 | — | trilobase 빌드에 사용 |
-| (PDF 없음) | treatise_2004_ch5.txt | 232 | — | trilobase 빌드에 사용 |
+| (PDF 없음) | treatise_1997_ch4.txt | 204 | — | trilobase 빌드에 사용 |
+| (PDF 없음) | treatise_1997_ch5.txt | 232 | — | trilobase 빌드에 사용 |
 
 ### Part P — Arthropoda 2 (Chelicerata)
 

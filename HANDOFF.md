@@ -22,8 +22,8 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | taxon | 5,627 |
 | reference | 2,135 |
 | assertion | 8,382 (PLACED_IN 7,305 + SYNONYM_OF 1,075 + SPELLING_OF 2) |
-| classification_edge_cache | 8,930 (default 5,113 / treatise1959 1,772 / treatise2004 2,045) |
-| classification_profile | 3 (default, treatise1959, treatise2004) |
+| classification_edge_cache | 8,930 (default 5,113 / treatise1959 1,772 / treatise1997 2,045) |
+| classification_profile | 3 (default, treatise1959, treatise1997) |
 | genus_formations | 4,503 |
 | genus_locations | 4,849 |
 | taxon_reference | 4,173 |
@@ -42,8 +42,8 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | taxon | 5,627 | All taxa (Class~Genus + Subfamily + placeholders) |
 | assertion | 8,382 | PLACED_IN 7,305 + SYNONYM_OF 1,075 + SPELLING_OF 2 |
 | reference | 2,135 | Bibliography + JA2002 + Treatise ch4/ch5 |
-| classification_profile | 3 | default, treatise1959, treatise2004 |
-| classification_edge_cache | 8,930 | default 5,113 / treatise1959 1,772 / treatise2004 2,045 |
+| classification_profile | 3 | default, treatise1959, treatise1997 |
+| classification_edge_cache | 8,930 | default 5,113 / treatise1959 1,772 / treatise1997 2,045 |
 | genus_formations | 4,503 | Genus-Formation many-to-many |
 | genus_locations | 4,849 | Genus-Country many-to-many |
 | taxon_reference | 4,173 | Taxon↔Reference FK links |
@@ -93,13 +93,13 @@ python scripts/build_paleocore_scoda.py       # → dist/paleocore-0.1.3.scoda
 - P74: assertion-centric 모델 구현 (taxon/assertion/reference/classification_profile)
 - P76: Radial Tree 뷰
 - P77: Versioned DB filename (`{name}-{version}.db`)
-- P78: Treatise 2004 Import (Agnostida + Redlichiida)
+- P78: Treatise 1997 Import (Agnostida + Redlichiida)
 - P79: Profile-Based Taxonomy Tree + Profile Selector UI
 - P80: Manifest-Driven CRUD (Admin 모드에서 웹 UI CRUD)
 
-### Treatise 1959/2004 Import ✅
+### Treatise 1959/1997 Import ✅
 - 1959 Treatise Part O: 8 orders, 13 suborders, 33 superfamilies, 142 families, 128 subfamilies, 1,014 genera
-- 2004 Treatise: Agnostida + Redlichiida 분류 교체
+- 1997 Treatise: Agnostida + Redlichiida 분류 교체
 - TXT → JSON 파이프라인 (`parse_treatise_txt.py`)
 
 ### Profile Comparison (R02) ✅
@@ -407,7 +407,7 @@ assertion (
 reference (id, authors, year, year_suffix, title, journal, volume, pages,
            publisher, city, editors, book_title, reference_type, raw_entry)
 
--- classification_profile: 3 records (default, treatise1959, treatise2004)
+-- classification_profile: 3 records (default, treatise1959, treatise1997)
 classification_profile (id, name, description, created_at)
 
 -- classification_edge_cache: 8,930 records

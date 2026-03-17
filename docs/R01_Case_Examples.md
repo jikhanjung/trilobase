@@ -65,7 +65,7 @@
 |---------|------|---------|-------------|
 | default | Jell & Adrain 2002 + Adrain 2011 | 5,113 | 5,113 |
 | treatise1959 | Treatise Part O (Moore Ed.) | 1,772 | 1,772 |
-| treatise2004 | Treatise 개정 (Agnostida + Redlichiida) | 2,045 | 2,045 |
+| treatise1997 | Treatise 개정 (Agnostida + Redlichiida) | 2,045 | 2,045 |
 
 ### 2.2 Profile 간 Taxa 교차
 

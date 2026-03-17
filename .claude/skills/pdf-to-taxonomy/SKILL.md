@@ -198,8 +198,8 @@ For the full TSF specification, see `docs/Taxonomic Source Format Specification 
 If needed, read one or more of these for format examples:
 - `data/sources/jell_adrain_2002.txt` — Trilobita: genus-level with type species, formations, temporal codes
 - `data/sources/adrain_2011.txt` — Trilobita: suprafamilial classification (Order → Family)
-- `data/sources/treatise_2004_ch4.txt` — Trilobita: mixed ranks with subfamilies
-- `data/sources/treatise_2004_ch5.txt` — Trilobita: mixed ranks with subfamilies (continued)
+- `data/sources/treatise_1997_ch4.txt` — Trilobita: mixed ranks with subfamilies
+- `data/sources/treatise_1997_ch5.txt` — Trilobita: mixed ranks with subfamilies (continued)
 - `data/sources/treatise_brachiopoda_1965_vol1.txt` — Brachiopoda: Treatise style, older Paleozoic
 - `data/sources/treatise_graptolite_2023.txt` — Graptolita: modern Treatise style
 - `data/sources/treatise_chelicerata_1955.txt` — Chelicerata: mixed rank hierarchy
