@@ -43,50 +43,50 @@
     },
     {
       "node_id": "node:metazoa",
-      "package_id": "graptolithina",
-      "root_taxon": {"name": "Graptolithina", "rank": "Class"},
-      "binding_type": "subtree",
-      "source": "Treatise Part V (1955/1970/2023)",
-      "priority": 11
-    },
-    {
-      "node_id": "node:bryozoa",
       "package_id": "bryozoa",
       "root_taxon": {"name": "Bryozoa", "rank": "Phylum"},
       "binding_type": "subtree",
       "source": "Treatise Part G (1953, 1983)",
-      "priority": 1
+      "priority": 11
     },
     {
-      "node_id": "node:cnidaria",
-      "package_id": "coelenterata",
-      "root_taxon": {"name": "Protomedusae", "rank": "Class"},
-      "binding_type": "package",
-      "source": "Treatise Part F (1956)",
-      "priority": 1
+      "node_id": "node:metazoa",
+      "package_id": "graptolithina",
+      "root_taxon": {"name": "Graptolithina", "rank": "Class"},
+      "binding_type": "subtree",
+      "source": "Treatise Part V (1955/1970/2023)",
+      "priority": 12
     },
     {
-      "node_id": "node:echinodermata",
-      "package_id": "echinodermata",
-      "root_taxon": {"name": "Cystoidea", "rank": "Class"},
-      "binding_type": "package",
-      "source": "Treatise Parts S (1967), T (2011), U (1966)",
-      "priority": 1
-    },
-    {
-      "node_id": "node:mollusca",
-      "package_id": "mollusca",
-      "root_taxon": {"name": "Cephalopoda", "rank": "Class"},
-      "binding_type": "package",
-      "source": "Treatise Parts I (1960), K (1964), L (1957/1996), N (1969-1971)",
-      "priority": 1
-    },
-    {
-      "node_id": "node:porifera",
+      "node_id": "node:metazoa",
       "package_id": "porifera",
       "root_taxon": {"name": "Porifera", "rank": "Phylum"},
       "binding_type": "subtree",
       "source": "Treatise Part E (1955, 1972-2015)",
+      "priority": 13
+    },
+    {
+      "node_id": "node:metazoa",
+      "package_id": "coelenterata",
+      "root_taxon": {"name": "Coelenterata", "rank": "Phylum"},
+      "binding_type": "subtree",
+      "source": "Treatise Part F (1956)",
+      "priority": 1
+    },
+    {
+      "node_id": "node:metazoa",
+      "package_id": "echinodermata",
+      "root_taxon": {"name": "Echinodermata", "rank": "Phylum"},
+      "binding_type": "subtree",
+      "source": "Treatise Parts S (1967), T (2011), U (1966)",
+      "priority": 1
+    },
+    {
+      "node_id": "node:metazoa",
+      "package_id": "mollusca",
+      "root_taxon": {"name": "Mollusca", "rank": "Phylum"},
+      "binding_type": "subtree",
+      "source": "Treatise Parts I (1960), K (1964), L (1957/1996), N (1969-1971)",
       "priority": 1
     }
   ]

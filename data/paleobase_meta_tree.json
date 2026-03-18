@@ -2,12 +2,6 @@
   "schema_version": "1.0",
   "nodes": [
     {"id": "node:metazoa",       "label": "Metazoa",       "rank": "kingdom"},
-
-    {"id": "node:arthropoda",    "label": "Arthropoda",    "rank": "phylum",  "parent": "node:metazoa"},
-    {"id": "node:bryozoa",       "label": "Bryozoa",       "rank": "phylum",  "parent": "node:metazoa"},
-    {"id": "node:cnidaria",      "label": "Cnidaria",      "rank": "phylum",  "parent": "node:metazoa"},
-    {"id": "node:echinodermata", "label": "Echinodermata", "rank": "phylum",  "parent": "node:metazoa"},
-    {"id": "node:mollusca",      "label": "Mollusca",      "rank": "phylum",  "parent": "node:metazoa"},
-    {"id": "node:porifera",      "label": "Porifera",      "rank": "phylum",  "parent": "node:metazoa"}
+    {"id": "node:arthropoda",    "label": "Arthropoda",    "rank": "phylum",  "parent": "node:metazoa"}
   ]
 }

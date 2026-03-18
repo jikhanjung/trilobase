@@ -1302,6 +1302,57 @@ def main():
         """, all_edges)
         conn.commit()
 
+        # Add Phylum Coelenterata as root and bridge orphan top-level taxa
+        phylum_row = conn.execute(
+            "SELECT id FROM taxon WHERE name = 'Coelenterata' AND rank = 'Phylum'"
+        ).fetchone()
+        if not phylum_row:
+            cur.execute("""
+                INSERT INTO taxon (name, rank, is_valid, notes)
+                VALUES ('Coelenterata', 'Phylum', 1, 'Root phylum added for meta-package integration')
+            """)
+            phylum_id = cur.lastrowid
+            taxon_index[("Coelenterata", "Phylum")] = phylum_id
+            print(f"  Created Phylum Coelenterata (id={phylum_id})")
+        else:
+            phylum_id = phylum_row[0]
+
+        # Find orphan roots (taxa in edge_cache with no parent) and bridge to Phylum
+        orphans = conn.execute(f"""
+            SELECT DISTINCT e.child_id FROM classification_edge_cache e
+            WHERE e.profile_id = {profile_id}
+            AND e.child_id NOT IN (
+                SELECT e2.child_id FROM classification_edge_cache e2
+                WHERE e2.profile_id = {profile_id} AND e2.parent_id IS NOT NULL
+            )
+            AND e.child_id != {phylum_id}
+        """).fetchall()
+        # Also find taxa that are parents but never children (true roots)
+        roots = conn.execute(f"""
+            SELECT DISTINCT e.parent_id FROM classification_edge_cache e
+            WHERE e.profile_id = {profile_id} AND e.parent_id IS NOT NULL
+            AND e.parent_id NOT IN (
+                SELECT e2.child_id FROM classification_edge_cache e2
+                WHERE e2.profile_id = {profile_id}
+            )
+        """).fetchall()
+        root_ids = set(r[0] for r in roots)
+        for row in orphans:
+            root_ids.add(row[0])
+        root_ids.discard(phylum_id)
+
+        for root_id in root_ids:
+            cur.execute(f"""
+                INSERT OR IGNORE INTO classification_edge_cache (profile_id, child_id, parent_id)
+                VALUES ({profile_id}, ?, ?)
+            """, (root_id, phylum_id))
+        # Add phylum itself (no parent)
+        cur.execute(f"""
+            INSERT OR IGNORE INTO classification_edge_cache (profile_id, child_id, parent_id)
+            VALUES ({profile_id}, ?, NULL)
+        """, (phylum_id,))
+        conn.commit()
+
         edge_count = conn.execute(
             "SELECT COUNT(*) FROM classification_edge_cache WHERE profile_id = ?",
             (profile_id,)
