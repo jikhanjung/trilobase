@@ -21,15 +21,21 @@ ROOT = os.path.join(os.path.dirname(__file__), '..')
 DATA_DIR = os.path.join(ROOT, 'data')
 DIST_DIR = os.path.join(ROOT, 'dist')
 
-VERSION = "0.1.1"
+VERSION = "0.2.0"
 
 DEPENDENCIES = [
-    {"name": "paleocore",     "alias": "pc",  "version": ">=0.1.3,<0.2.0", "required": True},
-    {"name": "trilobita",     "alias": "tri", "version": ">=0.3.0,<0.4.0", "required": True},
-    {"name": "brachiopoda",   "alias": "bra", "version": ">=0.2.0,<0.3.0", "required": True},
-    {"name": "graptolithina", "alias": "gra", "version": ">=0.1.0,<0.2.0", "required": True},
-    {"name": "chelicerata",   "alias": "che", "version": ">=0.1.0,<0.2.0", "required": True},
-    {"name": "ostracoda",     "alias": "ost", "version": ">=0.1.0,<0.2.0", "required": True},
+    {"name": "paleocore",      "alias": "pc",  "version": ">=0.1.3,<0.2.0", "required": True},
+    {"name": "trilobita",      "alias": "tri", "version": ">=0.3.0,<0.4.0", "required": True},
+    {"name": "brachiopoda",    "alias": "bra", "version": ">=0.2.0,<0.3.0", "required": True},
+    {"name": "graptolithina",  "alias": "gra", "version": ">=0.1.0,<0.2.0", "required": True},
+    {"name": "chelicerata",    "alias": "che", "version": ">=0.1.0,<0.2.0", "required": True},
+    {"name": "ostracoda",      "alias": "ost", "version": ">=0.1.0,<0.2.0", "required": True},
+    {"name": "bryozoa",        "alias": "bry", "version": ">=0.1.0,<0.2.0", "required": True},
+    {"name": "coelenterata",   "alias": "coe", "version": ">=0.1.0,<0.2.0", "required": True},
+    {"name": "hexapoda",       "alias": "hex", "version": ">=0.1.0,<0.2.0", "required": True},
+    {"name": "porifera",       "alias": "por", "version": ">=0.1.0,<0.2.0", "required": True},
+    {"name": "echinodermata",  "alias": "ech", "version": ">=0.1.0,<0.2.0", "required": True},
+    {"name": "mollusca",       "alias": "mol", "version": ">=0.1.0,<0.2.0", "required": True},
 ]
 
 
