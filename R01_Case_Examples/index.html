@@ -1,0 +1,2148 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A trilobite genus-level taxonomic database built from Jell & Adrain (2002)">
+      
+      
+        <meta name="author" content="Jikhan Jung">
+      
+      
+        <link rel="canonical" href="https://jikhanjung.github.io/trilobase/R01_Case_Examples/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../ko/R01_Case_Examples/" hreflang="ko">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Trilobase 논문 보강 사례 모음 - Trilobase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#trilobase" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Trilobase" class="md-header__button md-logo" aria-label="Trilobase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Trilobase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Trilobase 논문 보강 사례 모음
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../ko/R01_Case_Examples/" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jikhanjung/trilobase" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jikhanjung/trilobase
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../database/schema/" class="md-tabs__link">
+          
+  
+  
+  Database
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../architecture/scoda-package/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api/mcp-tools/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../project/changelog/" class="md-tabs__link">
+          
+  
+  
+  Project
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Trilobase" class="md-nav__button md-logo" aria-label="Trilobase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Trilobase
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jikhanjung/trilobase" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jikhanjung/trilobase
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Database
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/queries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Queries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/paleocore-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PaleoCore Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/scoda-package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCODA Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/scoda-registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCODA Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/scoda-registry-detailed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registry Detail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/mcp-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/changelog-paleocore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PaleoCore Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/handoff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handoff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/devlog-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev Log Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-assertion-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Assertion Model 핵심 예시
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Assertion Model 핵심 예시">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-olenellus-3-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Olenellus: 동일 속, 3개 시대, 3개 다른 배치
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 유명 삼엽충 속들의 분류 이동 패턴
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-assertion-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Assertion Status의 다양성
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-classification-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Classification Profile 비교
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Classification Profile 비교">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-3-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 3개 Profile 규모
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-profile-taxa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Profile 간 Taxa 교차
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-higher-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Higher-Level 재배치 사례
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Higher-Level 재배치 사례">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-ordersuborder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (a) Order/Suborder 수준 재편
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-superfamily" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (b) Superfamily 이름 변경 (명명법 규약 반영)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-genus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (c) Genus 수준 재배치
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-synonym" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Synonym 관계 네트워크
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Synonym 관계 네트워크">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-synonym-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Synonym Type 분포
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-sao-barrande-1846-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Sao BARRANDE, 1846: 9개 동의어 네트워크
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-top-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 다수 동의어를 가진 속 Top 5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-preoccupied-name-replacement-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Preoccupied Name → Replacement Name 사례
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-scoda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. SCODA 기술 스펙
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. SCODA 기술 스펙">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-artifact_metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 artifact_metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-ui_manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 ui_manifest 구조 (발췌)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-named-sql-queries-46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Named SQL Queries (46개)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 전체 DB 통계 요약
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 논문 반영 권고
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 논문 반영 권고">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Figure 후보
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 후보
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        본문 반영 포인트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="trilobase">Trilobase 논문 보강 사례 모음<a class="headerlink" href="#trilobase" title="Permanent link">&para;</a></h1>
+<p><strong>Date</strong>: 2026-03-12
+<strong>Purpose</strong>: R01 Review에서 지적된 "구체적 데이터/예시 부족" 해소를 위한 실제 DB 사례</p>
+<hr />
+<h2 id="1-assertion-model">1. Assertion Model 핵심 예시<a class="headerlink" href="#1-assertion-model" title="Permanent link">&para;</a></h2>
+<h3 id="11-olenellus-3-3">1.1 <em>Olenellus</em>: 동일 속, 3개 시대, 3개 다른 배치<a class="headerlink" href="#11-olenellus-3-3" title="Permanent link">&para;</a></h3>
+<p><em>Olenellus</em> BILLINGS, 1861은 대표적인 Lower Cambrian 삼엽충 속으로, 세 문헌에서 서로 다른 분류 위치에 배치되었다.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Subject</th>
+<th>Predicate</th>
+<th>Object</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Olenellus</em></td>
+<td>PLACED_IN</td>
+<td>Olenellinae</td>
+<td>Moore (Ed.), 1959</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Olenellus</em></td>
+<td>PLACED_IN</td>
+<td>Olenellidae</td>
+<td>Jell &amp; Adrain, 2002</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Olenellus</em></td>
+<td>PLACED_IN</td>
+<td>Olenellinae</td>
+<td>Palmer &amp; Repina, 2004</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>1959 Treatise는 subfamily Olenellinae에 배치</li>
+<li>Jell &amp; Adrain (2002)는 subfamily를 사용하지 않고 family Olenellidae에 직접 배치</li>
+<li>2004 Treatise 개정판은 다시 Olenellinae로 복귀</li>
+</ul>
+<p><strong>논문 활용</strong>: "Which placement is correct?"가 아니라 "all three are recorded assertions" — 이것이 assertion model의 핵심.</p>
+<h3 id="12">1.2 유명 삼엽충 속들의 분류 이동 패턴<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Genus</th>
+<th>1959 Treatise</th>
+<th>Jell &amp; Adrain 2002</th>
+<th>2004 Treatise</th>
+<th>변화 유형</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Agnostus</em></td>
+<td>Agnostidae</td>
+<td>Agnostidae</td>
+<td>Agnostinae</td>
+<td>family → subfamily</td>
+</tr>
+<tr>
+<td><em>Paradoxides</em></td>
+<td>Paradoxidinae</td>
+<td>Paradoxididae</td>
+<td>Paradoxididae</td>
+<td>subfamily → family</td>
+</tr>
+<tr>
+<td><em>Phacops</em></td>
+<td>Phacopinae</td>
+<td>Phacopidae</td>
+<td>—</td>
+<td>subfamily → family</td>
+</tr>
+<tr>
+<td><em>Calymene</em></td>
+<td>Calymeninae</td>
+<td>Calymenidae</td>
+<td>—</td>
+<td>subfamily → family</td>
+</tr>
+<tr>
+<td><em>Dalmanites</em></td>
+<td>Dalmanitinae</td>
+<td>Dalmanitidae</td>
+<td>—</td>
+<td>subfamily → family</td>
+</tr>
+<tr>
+<td><em>Illaenus</em></td>
+<td>Illaeninae</td>
+<td>Illaenidae</td>
+<td>—</td>
+<td>subfamily → family</td>
+</tr>
+<tr>
+<td><em>Proetus</em></td>
+<td>Proetinae</td>
+<td>Proetidae</td>
+<td>—</td>
+<td>subfamily → family</td>
+</tr>
+<tr>
+<td><em>Asaphus</em></td>
+<td>Asaphinae</td>
+<td>Asaphidae</td>
+<td>—</td>
+<td>subfamily → family</td>
+</tr>
+<tr>
+<td><em>Sao</em></td>
+<td>Saoinae</td>
+<td><strong>Solenopleuridae</strong></td>
+<td>—</td>
+<td><strong>과 자체가 변경</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>패턴</strong>: 1959 Treatise는 subfamily 수준까지 세분화한 반면, Jell &amp; Adrain (2002)는 대부분 family 수준에서 배치. <em>Sao</em>의 경우는 과(Family) 자체가 달라지는 더 큰 변화를 보여준다.</p>
+<h3 id="13-assertion-status">1.3 Assertion Status의 다양성<a class="headerlink" href="#13-assertion-status" title="Permanent link">&para;</a></h3>
+<p>단순한 "배치(asserted)" 외에도, 분류학적 불확실성을 assertion level에서 표현한다:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>건수</th>
+<th>의미</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>asserted</td>
+<td>8,255</td>
+<td>확정적 배치</td>
+<td><em>Olenellus</em> → Olenellidae</td>
+</tr>
+<tr>
+<td>questionable</td>
+<td>127</td>
+<td>잠정적 배치 (?FAMILY)</td>
+<td><em>Atopiaspis</em> → ?Alokistocaridae</td>
+</tr>
+</tbody>
+</table>
+<p><strong>구체적 questionable 사례:</strong>
+- <em>Atopiaspis</em> → ?Alokistocaridae
+- <em>Avalonia</em> → ?Atopidae
+- <em>Miraculaspis</em> → ?Condylopygidae</p>
+<p>→ 기존 DB에서는 "belongs to" 또는 "does not belong to"의 이진 관계만 가능하지만, assertion model에서는 <code>questionable</code> status로 원문의 불확실성을 보존.</p>
+<hr />
+<h2 id="2-classification-profile">2. Classification Profile 비교<a class="headerlink" href="#2-classification-profile" title="Permanent link">&para;</a></h2>
+<h3 id="21-3-profile">2.1 3개 Profile 규모<a class="headerlink" href="#21-3-profile" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>설명</th>
+<th>Edge 수</th>
+<th>포함 Taxa 수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>default</td>
+<td>Jell &amp; Adrain 2002 + Adrain 2011</td>
+<td>5,113</td>
+<td>5,113</td>
+</tr>
+<tr>
+<td>treatise1959</td>
+<td>Treatise Part O (Moore Ed.)</td>
+<td>1,772</td>
+<td>1,772</td>
+</tr>
+<tr>
+<td>treatise1997</td>
+<td>Treatise 개정 (Agnostida + Redlichiida)</td>
+<td>2,045</td>
+<td>2,045</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-profile-taxa">2.2 Profile 간 Taxa 교차<a class="headerlink" href="#22-profile-taxa" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>범주</th>
+<th>건수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>default에만 존재</td>
+<td>3,593</td>
+</tr>
+<tr>
+<td>treatise1959에만 존재</td>
+<td>252</td>
+</tr>
+<tr>
+<td>양쪽 공통</td>
+<td>1,520</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>3,593 default-only</strong>: 1959년 이후 신규 기재되었거나 JA2002에서 새로 인정된 taxa</li>
+<li><strong>252 treatise1959-only</strong>: 1959년 체계에서만 사용된 higher taxa (superfamily 등) 중 이후 폐기/재편된 것들</li>
+</ul>
+<h3 id="23-higher-level">2.3 Higher-Level 재배치 사례<a class="headerlink" href="#23-higher-level" title="Permanent link">&para;</a></h3>
+<p>Profile 간 차이는 주로 <strong>family 이상 상위 분류군</strong> 수준에서 발생한다:</p>
+<h4 id="a-ordersuborder">(a) Order/Suborder 수준 재편<a class="headerlink" href="#a-ordersuborder" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Taxon</th>
+<th>Rank</th>
+<th>default (JA2002)</th>
+<th>treatise1959</th>
+<th>변화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Illaenina</td>
+<td>Suborder</td>
+<td>Corynexochida</td>
+<td>PTYCHOPARIIDA</td>
+<td><strong>다른 Order로 이동</strong></td>
+</tr>
+<tr>
+<td>Eodiscidae</td>
+<td>Family</td>
+<td>Eodiscida</td>
+<td>Eodiscina</td>
+<td>order ↔ suborder</td>
+</tr>
+<tr>
+<td>Corynexochidae</td>
+<td>Family</td>
+<td>Corynexochina</td>
+<td>Corynexochida</td>
+<td>suborder ↔ order</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Illaenina 사례</strong>: 1959 Treatise에서는 Ptychopariida에 속했으나, 현대 분류(JA2002)에서는 Corynexochida로 이동. 그 하위 family들(Illaenidae, Styginidae 등)과 25개 genus가 함께 이동.</p>
+<h4 id="b-superfamily">(b) Superfamily 이름 변경 (명명법 규약 반영)<a class="headerlink" href="#b-superfamily" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Taxon</th>
+<th>default (JA2002)</th>
+<th>treatise1959</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agraulidae</td>
+<td>Ellipsocephaloidea</td>
+<td>Solenopleuracea</td>
+</tr>
+<tr>
+<td>Phacopidae</td>
+<td>Phacopoidea</td>
+<td>Phacopacea</td>
+</tr>
+<tr>
+<td>Dalmanitidae</td>
+<td>Dalmanitoidea</td>
+<td>Dalmanitacea</td>
+</tr>
+<tr>
+<td>Abadiellidae</td>
+<td>Redlichioidea</td>
+<td>Redlichiacea</td>
+</tr>
+</tbody>
+</table>
+<p>→ <code>-oidea</code> (현대 표준) vs <code>-acea</code> (1959 관례) — ICZN 명명법 규약 변경을 반영.</p>
+<h4 id="c-genus">(c) Genus 수준 재배치<a class="headerlink" href="#c-genus" title="Permanent link">&para;</a></h4>
+<p>Illaenina 산하 genus들의 family 배치도 profile에 따라 다르다:</p>
+<table>
+<thead>
+<tr>
+<th>Genus</th>
+<th>default (JA2002)</th>
+<th>treatise1959</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Illaenus</em></td>
+<td>Illaenidae</td>
+<td>Illaeninae</td>
+</tr>
+<tr>
+<td><em>Dysplanus</em></td>
+<td>Illaenidae</td>
+<td>Bumastinae</td>
+</tr>
+<tr>
+<td><em>Stenopareia</em></td>
+<td>Illaenidae</td>
+<td>Illaeninae</td>
+</tr>
+<tr>
+<td><em>Thaleops</em></td>
+<td>Styginidae</td>
+<td>Illaeninae</td>
+</tr>
+<tr>
+<td><em>Panderia</em></td>
+<td>Panderiidae</td>
+<td>Illaeninae</td>
+</tr>
+<tr>
+<td><em>Cekovia</em></td>
+<td>Styginidae</td>
+<td>Illaeninae</td>
+</tr>
+</tbody>
+</table>
+<p>→ 1959년에는 Illaeninae(아과) 하나에 뭉쳐 있던 속들이, JA2002에서는 Illaenidae, Styginidae, Panderiidae 등 여러 과로 분산 배치.</p>
+<hr />
+<h2 id="3-synonym">3. Synonym 관계 네트워크<a class="headerlink" href="#3-synonym" title="Permanent link">&para;</a></h2>
+<h3 id="31-synonym-type">3.1 Synonym Type 분포<a class="headerlink" href="#31-synonym-type" title="Permanent link">&para;</a></h3>
+<p>Trilobase DB에는 1,075개의 SYNONYM_OF assertion이 있으며, 다음과 같이 분류된다:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>건수</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>j.s.s. (junior subjective synonym)</td>
+<td>725</td>
+<td>주관적 동의어 — 저자의 판단에 따라 동일 taxon으로 간주</td>
+</tr>
+<tr>
+<td>preocc. (preoccupied)</td>
+<td>145</td>
+<td>선점된 이름 — 다른 분류군에 이미 사용됨</td>
+</tr>
+<tr>
+<td>replacement</td>
+<td>125</td>
+<td>대체 이름 — preoccupied name을 대체</td>
+</tr>
+<tr>
+<td>j.o.s. (junior objective synonym)</td>
+<td>53</td>
+<td>객관적 동의어 — 같은 type specimen에 기반</td>
+</tr>
+<tr>
+<td>suppressed</td>
+<td>9</td>
+<td>ICZN에 의해 공식 억제</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-sao-barrande-1846-9">3.2 <em>Sao</em> BARRANDE, 1846: 9개 동의어 네트워크<a class="headerlink" href="#32-sao-barrande-1846-9" title="Permanent link">&para;</a></h3>
+<p>Cambrian 삼엽충 <em>Sao</em>는 가장 많은 동의어를 가진 속 중 하나이다:</p>
+<table>
+<thead>
+<tr>
+<th>Junior Synonym</th>
+<th>Author</th>
+<th>Year</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Monadina</em></td>
+<td>BARRANDE</td>
+<td>1846</td>
+<td>j.s.s.</td>
+</tr>
+<tr>
+<td><em>Acanthocnemis</em></td>
+<td>HAWLE &amp; CORDA</td>
+<td>1847</td>
+<td>j.s.s.</td>
+</tr>
+<tr>
+<td><em>Crithias</em></td>
+<td>HAWLE &amp; CORDA</td>
+<td>1847</td>
+<td>j.s.s.</td>
+</tr>
+<tr>
+<td><em>Endogramma</em></td>
+<td>HAWLE &amp; CORDA</td>
+<td>1847</td>
+<td>j.s.s.</td>
+</tr>
+<tr>
+<td><em>Enneacnemis</em></td>
+<td>HAWLE &amp; CORDA</td>
+<td>1847</td>
+<td>j.s.s.</td>
+</tr>
+<tr>
+<td><em>Micropyge</em></td>
+<td>HAWLE &amp; CORDA</td>
+<td>1847</td>
+<td>j.s.s.</td>
+</tr>
+<tr>
+<td><em>Selenosema</em></td>
+<td>HAWLE &amp; CORDA</td>
+<td>1847</td>
+<td>j.s.s.</td>
+</tr>
+<tr>
+<td><em>Staurogmus</em></td>
+<td>HAWLE &amp; CORDA</td>
+<td>1847</td>
+<td>j.s.s.</td>
+</tr>
+<tr>
+<td><em>Tetracnemis</em></td>
+<td>HAWLE &amp; CORDA</td>
+<td>1847</td>
+<td>j.s.s.</td>
+</tr>
+</tbody>
+</table>
+<p>→ 모두 HAWLE &amp; CORDA (1847)가 분리 기재한 것을 이후 <em>Sao</em>의 동의어로 통합. 하나의 속에 대해 10개의 이름이 존재하며, 이 관계를 모두 assertion으로 보존.</p>
+<h3 id="33-top-5">3.3 다수 동의어를 가진 속 Top 5<a class="headerlink" href="#33-top-5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Senior Name</th>
+<th>동의어 수</th>
+<th>Junior Synonyms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Sao</em></td>
+<td>9</td>
+<td>Acanthocnemis, Crithias, Endogramma, Enneacnemis, Micropyge, Monadina, Selenosema, Staurogmus, Tetracnemis</td>
+</tr>
+<tr>
+<td><em>Ptychagnostus</em></td>
+<td>8</td>
+<td>Acidusus, Aotagnostus, Aristarius, Canotagnostus, Huarpagnostus, Pentagnostus, Triplagnostus, Zeteagnostus</td>
+</tr>
+<tr>
+<td><em>Proetus</em></td>
+<td>8</td>
+<td>Aeonia, Devonoproetus, Euproetus, Falcatoproetus, Forbesia, Scotoproetus, Trigonaspis (×2)</td>
+</tr>
+<tr>
+<td><em>Tsunyidiscus</em></td>
+<td>6</td>
+<td>Emeidiscus, Guizhoudiscus, Hupeidiscus, Liangshandiscus, Mianxiandiscus, Shizhudiscus</td>
+</tr>
+<tr>
+<td><em>Pseudagnostus</em></td>
+<td>6</td>
+<td>Litagnostus, Plethagnostus, Pseudagnostina, Rhaptagnostus, Sulcatagnostus, Xestagnostus</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-preoccupied-name-replacement-name">3.4 Preoccupied Name → Replacement Name 사례<a class="headerlink" href="#34-preoccupied-name-replacement-name" title="Permanent link">&para;</a></h3>
+<p>이름이 다른 생물 분류군에서 먼저 사용된 경우, 새 이름(replacement name)이 제안된다:</p>
+<table>
+<thead>
+<tr>
+<th>Preoccupied Name</th>
+<th>Author, Year</th>
+<th>Replacement Name</th>
+<th>Author, Year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Amphion</em></td>
+<td>PANDER, 1830</td>
+<td><em>Pliomera</em></td>
+<td>ANGELIN, 1854</td>
+</tr>
+<tr>
+<td><em>Arethusa</em></td>
+<td>BARRANDE, 1846</td>
+<td><em>Arethusina</em></td>
+<td>BARRANDE, 1852</td>
+</tr>
+<tr>
+<td><em>Arges</em></td>
+<td>GOLDFUSS, 1839</td>
+<td><em>Ceratarges</em></td>
+<td>GURICH, 1901</td>
+</tr>
+<tr>
+<td><em>Acheilus</em></td>
+<td>CLARK, 1924</td>
+<td><em>Peracheilus</em></td>
+<td>LUDVIGSEN, 1986</td>
+</tr>
+<tr>
+<td><em>Actinopeltis</em></td>
+<td>POULSEN, 1946</td>
+<td><em>Grinnellaspis</em></td>
+<td>POULSEN, 1948</td>
+</tr>
+<tr>
+<td><em>Anderssonia</em></td>
+<td>SUN, 1924</td>
+<td><em>Anderssonella</em></td>
+<td>KOBAYASHI, 1936</td>
+</tr>
+</tbody>
+</table>
+<p>→ 이 두 이름(preoccupied + replacement)은 각각 별도의 taxon 레코드로 존재하며, <code>preocc.</code> / <code>replacement</code> 타입의 SYNONYM_OF assertion으로 연결.</p>
+<hr />
+<h2 id="4-scoda">4. SCODA 기술 스펙<a class="headerlink" href="#4-scoda" title="Permanent link">&para;</a></h2>
+<h3 id="41-artifact_metadata">4.1 artifact_metadata<a class="headerlink" href="#41-artifact_metadata" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>artifact_id  : trilobita
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>name         : Trilobase
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>version      : 0.3.0
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>schema_version: 1.0
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>license      : CC-BY-4.0
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>description  : Assertion-centric trilobite taxonomy — built from canonical source data
+</code></pre></div>
+<h3 id="42-ui_manifest">4.2 ui_manifest 구조 (발췌)<a class="headerlink" href="#42-ui_manifest" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;default_view&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;taxonomy_tree&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;global_controls&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;select&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;param&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;profile_id&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Profile&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="nt">&quot;source_query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;classification_profiles_selector&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">&quot;views&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">&quot;taxonomy_tree&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hierarchy&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tree&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Taxonomy&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">      </span><span class="nt">&quot;source_query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;taxonomy_tree&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">      </span><span class="nt">&quot;hierarchy_options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="nt">&quot;id_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="nt">&quot;parent_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;parent_id&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">        </span><span class="nt">&quot;label_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">        </span><span class="nt">&quot;rank_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rank&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">        </span><span class="nt">&quot;leaf_rank&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Family&quot;</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="p">}</span>
+</code></pre></div>
+<p>→ UI는 코드가 아닌 <strong>선언적 manifest</strong>로 정의됨. <code>source_query</code>가 named SQL query를 참조하고, <code>global_controls</code>의 profile selector가 모든 뷰에 걸쳐 classification profile을 전환.</p>
+<h3 id="43-named-sql-queries-46">4.3 Named SQL Queries (46개)<a class="headerlink" href="#43-named-sql-queries-46" title="Permanent link">&para;</a></h3>
+<p>DB에 내장된 SQL 쿼리로, 별도 코드 없이 manifest에서 참조:
+- <code>taxonomy_tree</code>: profile 기반 분류 트리
+- <code>family_genera</code>: family별 genus 목록
+- <code>genus_detail</code>: 속 상세 정보
+- <code>genus_synonyms</code>: 동의어 목록
+- <code>genus_bibliography</code>: 참고문헌
+- <code>classification_profiles_selector</code>: profile 목록
+- <code>profile_diff_*</code>: profile 간 비교 쿼리</p>
+<hr />
+<h2 id="5-db">5. 전체 DB 통계 요약<a class="headerlink" href="#5-db" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Taxon 총계</strong></td>
+<td><strong>5,627</strong></td>
+</tr>
+<tr>
+<td>— Class</td>
+<td>1 (Trilobita)</td>
+</tr>
+<tr>
+<td>— Order</td>
+<td>15</td>
+</tr>
+<tr>
+<td>— Suborder</td>
+<td>16</td>
+</tr>
+<tr>
+<td>— Superfamily</td>
+<td>48</td>
+</tr>
+<tr>
+<td>— Family</td>
+<td>245</td>
+</tr>
+<tr>
+<td>— Subfamily</td>
+<td>146</td>
+</tr>
+<tr>
+<td>— Genus</td>
+<td>5,156</td>
+</tr>
+<tr>
+<td>Valid genera</td>
+<td>4,771</td>
+</tr>
+<tr>
+<td>Invalid genera (synonyms etc.)</td>
+<td>856</td>
+</tr>
+<tr>
+<td><strong>Assertion 총계</strong></td>
+<td><strong>8,382</strong></td>
+</tr>
+<tr>
+<td>— PLACED_IN (asserted)</td>
+<td>7,178</td>
+</tr>
+<tr>
+<td>— PLACED_IN (questionable)</td>
+<td>127</td>
+</tr>
+<tr>
+<td>— SYNONYM_OF</td>
+<td>1,075</td>
+</tr>
+<tr>
+<td>— SPELLING_OF</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Reference</strong></td>
+<td><strong>2,135</strong></td>
+</tr>
+<tr>
+<td><strong>Classification Profiles</strong></td>
+<td><strong>3</strong></td>
+</tr>
+<tr>
+<td>genus_formations</td>
+<td>4,503</td>
+</tr>
+<tr>
+<td>genus_locations</td>
+<td>4,849</td>
+</tr>
+<tr>
+<td>ui_queries</td>
+<td>46</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. 논문 반영 권고<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="figure">Figure 후보<a class="headerlink" href="#figure" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Assertion Diagram</strong>: <em>Olenellus</em>의 3개 PLACED_IN assertion을 시각적으로 표현 — "같은 속, 다른 시대, 다른 배치"</li>
+<li><strong>Profile Diff Tree</strong>: Illaenina의 Ptychopariida → Corynexochida 이동을 두 트리로 대비</li>
+<li><strong>Synonym Network</strong>: <em>Sao</em>의 9개 동의어를 방사형 다이어그램으로 표현</li>
+</ol>
+<h3 id="table">Table 후보<a class="headerlink" href="#table" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Table 1</strong>: 유명 삼엽충 속들의 3-source 배치 비교 (Section 1.2)</li>
+<li><strong>Table 2</strong>: Synonym type 분포 (Section 3.1)</li>
+<li><strong>Table 3</strong>: DB 통계 요약 (Section 5)</li>
+</ol>
+<h3 id="_1">본문 반영 포인트<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Section 04 (Assertion Model)</strong>: 1.1의 <em>Olenellus</em> 사례 + 1.3의 assertion_status</li>
+<li><strong>Section 05 (Classification Profiles)</strong>: 2.2–2.3의 profile 교차 분석 + higher-level 재배치</li>
+<li><strong>Section 06 (SCODA)</strong>: 4.1–4.3의 기술 스펙</li>
+<li><strong>Section 07 (Case Study)</strong>: 전체 통계(Section 5) + 3.2의 <em>Sao</em> 동의어 네트워크</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2102 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A trilobite genus-level taxonomic database built from Jell & Adrain (2002)">
+      
+      
+        <meta name="author" content="Jikhan Jung">
+      
+      
+        <link rel="canonical" href="https://jikhanjung.github.io/trilobase/ko/project/handoff/">
+      
+      
+        <link rel="prev" href="../changelog-paleocore/">
+      
+      
+        <link rel="next" href="../history/">
+      
+      
+        
+          <link rel="alternate" href="../../../project/handoff/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="ko">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Handoff - Trilobase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#trilobase-project-handover" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../../" title="Trilobase" class="md-header__button md-logo" aria-label="Trilobase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Trilobase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Handoff
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../project/handoff/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jikhanjung/trilobase" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jikhanjung/trilobase
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../database/schema/" class="md-tabs__link">
+          
+  
+  
+  Database
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/scoda-package/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api/mcp-tools/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../changelog/" class="md-tabs__link">
+          
+  
+  
+  Project
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="Trilobase" class="md-nav__button md-logo" aria-label="Trilobase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Trilobase
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jikhanjung/trilobase" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jikhanjung/trilobase
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Database
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/queries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Queries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/paleocore-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PaleoCore Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/scoda-package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCODA Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/scoda-registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCODA Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/scoda-registry-detailed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registry Detail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/mcp-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog-paleocore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PaleoCore Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handoff
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handoff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structural Improvements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uimanifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI/Manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Issues
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trilobase-this-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trilobase (this repo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoda-engine-separate-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scoda-engine (separate repo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB Schema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DB Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canonical-db-trilobitadb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canonical DB (trilobita.db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlay-db-trilobita_overlaydb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overlay DB (trilobita_overlay.db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB Usage Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devlog-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev Log Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structural Improvements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uimanifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI/Manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Issues
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trilobase-this-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trilobase (this repo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoda-engine-separate-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scoda-engine (separate repo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB Schema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DB Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canonical-db-trilobitadb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canonical DB (trilobita.db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlay-db-trilobita_overlaydb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overlay DB (trilobita_overlay.db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB Usage Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="trilobase-project-handover">Trilobase Project Handover<a class="headerlink" href="#trilobase-project-handover" title="Permanent link">&para;</a></h1>
+<p><strong>Last updated:</strong> 2026-02-25</p>
+<h2 id="project-overview">Project Overview<a class="headerlink" href="#project-overview" title="Permanent link">&para;</a></h2>
+<p>A trilobite taxonomic database project. Genus data extracted from Jell &amp; Adrain (2002) PDF is cleaned, normalized, and distributed as a SCODA package.</p>
+<ul>
+<li><strong>SCODA Engine</strong> (runtime): separate repo at <code>/mnt/d/projects/scoda-engine</code> (<code>pip install -e /mnt/d/projects/scoda-engine[dev]</code>)</li>
+<li><strong>Completed Phase 1~46 details</strong>: see <a href="../history/">HISTORY.md</a></li>
+</ul>
+<h2 id="current-status">Current Status<a class="headerlink" href="#current-status" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phases completed</td>
+<td>1~46 (all done)</td>
+</tr>
+<tr>
+<td>Trilobase version</td>
+<td>0.2.3</td>
+</tr>
+<tr>
+<td>PaleoCore version</td>
+<td>0.1.1</td>
+</tr>
+<tr>
+<td>taxonomic_ranks</td>
+<td>5,341 records (Class~Genus + 2 placeholders + 1 Suborder)</td>
+</tr>
+<tr>
+<td>Valid genera</td>
+<td>4,259 (83.3%)</td>
+</tr>
+<tr>
+<td>Invalid genera</td>
+<td>856 (16.7%)</td>
+</tr>
+<tr>
+<td>Valid genera parent_id NULL</td>
+<td>0 (was 68, all resolved)</td>
+</tr>
+<tr>
+<td>Synonym linkage</td>
+<td>99.9% (1,054/1,055)</td>
+</tr>
+<tr>
+<td>Taxonomic opinions</td>
+<td>84 (PLACED_IN 82 + SPELLING_OF 2)</td>
+</tr>
+<tr>
+<td>Tests</td>
+<td>101 passing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="database-status">Database Status<a class="headerlink" href="#database-status" title="Permanent link">&para;</a></h2>
+<p><strong>Canonical DB (trilobita.db) — read-only, immutable:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Table/View</th>
+<th>Records</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>taxonomic_ranks</td>
+<td>5,341</td>
+<td>Unified taxonomy (Class~Genus) + 2 placeholders + 1 Suborder</td>
+</tr>
+<tr>
+<td>synonyms</td>
+<td>1,055</td>
+<td>Synonym relationships</td>
+</tr>
+<tr>
+<td>genus_formations</td>
+<td>4,853</td>
+<td>Genus-Formation many-to-many</td>
+</tr>
+<tr>
+<td>genus_locations</td>
+<td>4,841</td>
+<td>Genus-Country many-to-many</td>
+</tr>
+<tr>
+<td>bibliography</td>
+<td>2,130</td>
+<td>Literature Cited references</td>
+</tr>
+<tr>
+<td>taxon_bibliography</td>
+<td>4,040</td>
+<td>Taxon↔Bibliography FK links</td>
+</tr>
+<tr>
+<td>taxonomic_opinions</td>
+<td>84</td>
+<td>Taxonomic opinions (PLACED_IN 82 + SPELLING_OF 2)</td>
+</tr>
+<tr>
+<td>taxa (view)</td>
+<td>5,113</td>
+<td>Backward-compatibility view</td>
+</tr>
+<tr>
+<td>artifact_metadata</td>
+<td>7</td>
+<td>SCODA artifact metadata</td>
+</tr>
+<tr>
+<td>provenance</td>
+<td>5</td>
+<td>Data provenance</td>
+</tr>
+<tr>
+<td>schema_descriptions</td>
+<td>112</td>
+<td>Table/column descriptions</td>
+</tr>
+<tr>
+<td>ui_display_intent</td>
+<td>6</td>
+<td>SCODA view type hints</td>
+</tr>
+<tr>
+<td>ui_queries</td>
+<td>37</td>
+<td>Named SQL queries</td>
+</tr>
+<tr>
+<td>ui_manifest</td>
+<td>1</td>
+<td>Declarative view definitions (JSON)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Overlay DB (trilobita_overlay.db) — read/write, user-local data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Records</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>overlay_metadata</td>
+<td>2</td>
+<td>Canonical DB version tracking (canonical_version, created_at)</td>
+</tr>
+<tr>
+<td>user_annotations</td>
+<td>0</td>
+<td>User annotations (Local Overlay)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="next-tasks">Next Tasks<a class="headerlink" href="#next-tasks" title="Permanent link">&para;</a></h2>
+<p><strong>Roadmap:</strong> <code>devlog/20260219_P63_future_roadmap.md</code></p>
+<h3 id="data-quality">Data Quality<a class="headerlink" href="#data-quality" title="Permanent link">&para;</a></h3>
+<ul>
+<li>~~T-3a: Fill temporal_code~~ ✅ (84/85 done; 1 genus has no code in source)</li>
+<li>~~T-3b: ?FAMILY genera~~ ✅ 32건 잠정 배정 완료 (parent_id 연결 + <code>questionable</code> opinion)</li>
+<li><strong>T-3c: Chinese romanization hyphens (~30)</strong> — possible Wade-Giles; <strong>deferred</strong></li>
+</ul>
+<h3 id="structural-improvements">Structural Improvements<a class="headerlink" href="#structural-improvements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>~~T-1: Expand Taxonomic Opinions~~ ✅ 68 Uncertain families 전수 해소</li>
+<li>Agnostina Suborder 추가 (id=5344, Agnostida 산하)</li>
+<li>Agnostida 10개 Family → Agnostina 아래로 재배치 (관례적 배정, opinion 기록)</li>
+<li>FAMILY UNCERTAIN 22건 → Suborder 연결 + <code>incertae_sedis</code> opinion</li>
+<li>INDET 14건 → Trilobita 연결 + <code>indet</code> opinion</li>
+<li>?FAMILY/??FAMILY 32건 → Family 연결 + <code>questionable</code> opinion</li>
+<li>Current: PLACED_IN 82 + SPELLING_OF 2 = <strong>84 opinions</strong></li>
+<li>assertion_status: <code>asserted</code> 13 / <code>incertae_sedis</code> 23 / <code>indet</code> 14 / <code>questionable</code> 32</li>
+<li><strong>T-4: Merge synonyms → taxonomic_opinions</strong> — migrate 1,055 records as SYNONYM_OF opinions</li>
+<li>Few blockers (only 1 senior_taxon_id is NULL)</li>
+<li>Requires updating all queries/UI/tests referencing the synonyms table (<strong>large scope</strong>)</li>
+</ul>
+<h3 id="uimanifest">UI/Manifest<a class="headerlink" href="#uimanifest" title="Permanent link">&para;</a></h3>
+<ul>
+<li>~~genus_detail 쿼리에 synonym JOIN 추가~~ ✅ genus_synonyms 쿼리 + 매니페스트 Synonymy 섹션</li>
+<li>~~tree item 및 genera_table에 is_valid 컬럼 표시~~ ✅ boolean format, Yes/No label</li>
+<li>~~<code>create_scoda.py --with-spa</code> 옵션 추가~~ ✅ <code>--with-spa</code> flag로 구현</li>
+<li>~~<code>label_map</code> 동적 컬럼 label 지원~~ ✅ opinion_type별 동적 헤더 변경</li>
+<li>~~Hub Manifest 자동 생성~~ ✅ <code>.scoda</code> 빌드 시 <code>{id}-{version}.manifest.json</code> 자동 생성</li>
+<li>~~rank_detail Children 버그 수정~~ ✅ linked_table 전환, Genus redirect 지원</li>
+<li>~~ui_queries pc.* prefix 수정~~ ✅ 7개 쿼리 수정, genus_locations country_id 3,750건 데이터 복원</li>
+<li>~~genus_bibliography 쿼리 추가~~ ✅ FK 기반 참고문헌 연결</li>
+</ul>
+<h2 id="open-issues">Open Issues<a class="headerlink" href="#open-issues" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>1 unlinked synonym</strong>: Szechuanella (syn 960) — preocc., not replaced (normal per NOTE 8)</li>
+<li><strong>257 parent_id NULL</strong>: all invalid genera (normal) — valid genera <strong>0건</strong> (전수 해소)</li>
+<li><strong>1 valid genus without temporal_code</strong>: Dignagnostus — no code in source (T-3a complete)</li>
+<li><strong>~30 Chinese romanization hyphens</strong>: possible Wade-Giles notation, deferred (T-3c)</li>
+<li>Taxa without Location/Formation are all invalid taxa (normal)</li>
+</ul>
+<h2 id="cicd">CI/CD<a class="headerlink" href="#cicd" title="Permanent link">&para;</a></h2>
+<p>GitHub Actions workflows in <code>.github/workflows/</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Workflow</th>
+<th>Trigger</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ci.yml</code></td>
+<td>push/PR to main</td>
+<td>pytest 자동 실행</td>
+</tr>
+<tr>
+<td><code>release.yml</code></td>
+<td>tag <code>v*.*.*</code> push</td>
+<td>pytest → .scoda 빌드 → Hub Manifest 생성 → GitHub Release</td>
+</tr>
+<tr>
+<td><code>manual-release.yml</code></td>
+<td>workflow_dispatch</td>
+<td>수동 릴리스 (동일 파이프라인, hub manifest 포함)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>릴리스 방법:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>scripts/bump_version.py<span class="w"> </span>trilobase<span class="w"> </span><span class="m">0</span>.2.3
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>add<span class="w"> </span>-A<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;release: v0.2.3&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git<span class="w"> </span>tag<span class="w"> </span>v0.2.3
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main<span class="w"> </span>--tags
+</code></pre></div></p>
+<p><strong>주의:</strong> scoda-engine 레포가 public이어야 CI에서 clone 가능 (private이면 deploy key/PAT 설정 필요)</p>
+<h2 id="file-structure">File Structure<a class="headerlink" href="#file-structure" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>trilobase/                                 # Domain data, scripts, and tests only
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── .github/workflows/                    # CI/CD (ci.yml, release.yml, manual-release.yml)
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── CLAUDE.md
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── CHANGELOG.md                          # Trilobase package changelog
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├── CHANGELOG_paleocore.md                # PaleoCore package changelog
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├── pytest.ini                             # pytest config (testpaths=tests)
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>├── requirements.txt                       # scoda-engine dependency
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>├── db/                                    # Canonical DBs (git tracked)
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│   ├── trilobita.db                       # Trilobase SQLite DB
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│   └── paleocore.db                       # PaleoCore reference DB
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>├── dist/                                  # Build artifacts (gitignored)
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│   ├── trilobase-{ver}.scoda              # .scoda package (버전 포함 파일명)
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>│   ├── paleocore-{ver}.scoda
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│   ├── *-{ver}.manifest.json              # Hub Manifest (SHA-256, 메타데이터)
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│   └── *_overlay.db                       # Overlay DBs
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>├── data/                                  # Source data files
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│   ├── trilobite_genus_list.txt           # Cleaned genus list (canonical version)
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>│   ├── trilobite_genus_list_original.txt
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>│   ├── trilobite_family_list.txt
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>│   ├── trilobite_nomina_nuda.txt
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│   ├── adrain2011.txt
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>│   ├── mcp_tools_trilobase.json           # MCP tool definitions
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>│   └── *.pdf                              # Reference PDFs
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>├── spa/                                   # Reference Implementation SPA (trilobase-specific)
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>│   └── index.html                        # Single-file SPA (HTML+CSS+JS, 2,915 lines)
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>├── scripts/                               # Domain pipeline scripts
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>│   ├── create_scoda.py                    # trilobita.scoda → dist/ (--with-spa 옵션, hub manifest 자동 생성)
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>│   ├── create_paleocore_scoda.py          # paleocore.scoda → dist/
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>│   ├── create_paleocore.py                # PaleoCore DB → db/
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>│   ├── bump_version.py                    # Version bump script
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>│   ├── add_opinions_schema.py             # Taxonomic opinions migration
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>│   ├── add_spelling_of_opinions.py        # SPELLING_OF opinion type
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>│   ├── restructure_agnostida_opinions.py  # Agnostida order-level opinions
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>│   ├── fill_temporal_codes.py             # temporal_code auto-fill from raw_entry
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>│   ├── link_bibliography.py               # taxon_bibliography link builder
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>│   ├── create_database.py                 # DB creation → db/
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>│   └── ... (normalize, import, etc.)
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>├── tests/
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>│   ├── conftest.py                        # Shared fixtures
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>│   └── test_trilobase.py                  # Trilobase domain tests (101)
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>├── vendor/
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>│   ├── cow/v2024/States2024/statelist2024.csv
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>│   └── ics/gts2020/chart.ttl
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>├── docs/
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>│   ├── HANDOFF.md                         # Current status + remaining tasks (this file)
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>│   ├── HISTORY.md                         # Completed Phase 1~46 detailed records
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>│   └── paleocore_schema.md
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>└── devlog/
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>scoda-engine/                              # Separate repo: /mnt/d/projects/scoda-engine
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>├── pyproject.toml                         # pip install -e &quot;.[dev]&quot;
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>├── scoda_engine/                          # SCODA runtime package
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>│   ├── scoda_package.py, app.py, mcp_server.py, gui.py, serve.py
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>│   ├── templates/, static/
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>├── tests/                                 # Runtime tests (191)
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>├── scripts/                               # build.py, release.py, etc.
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>├── examples/, docs/
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>└── ScodaDesktop.spec
+</code></pre></div>
+<h2 id="test-status">Test Status<a class="headerlink" href="#test-status" title="Permanent link">&para;</a></h2>
+<h3 id="trilobase-this-repo">Trilobase (this repo)<a class="headerlink" href="#trilobase-this-repo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Tests</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tests/test_trilobase.py</code></td>
+<td>101</td>
+<td>✅ Passing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scoda-engine-separate-repo">scoda-engine (separate repo)<a class="headerlink" href="#scoda-engine-separate-repo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Tests</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tests/test_runtime.py</code></td>
+<td>218</td>
+<td>✅ Passing</td>
+</tr>
+<tr>
+<td><code>tests/test_mcp.py</code></td>
+<td>6</td>
+<td>✅ 1 / ⚠ 5 (requires .scoda in CWD)</td>
+</tr>
+<tr>
+<td><code>tests/test_mcp_basic.py</code></td>
+<td>1</td>
+<td>✅ Passing</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How to run:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Trilobase</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>/mnt/d/projects/scoda-engine<span class="o">[</span>dev<span class="o">]</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>pytest<span class="w"> </span>tests/
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># scoda-engine</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">cd</span><span class="w"> </span>/mnt/d/projects/scoda-engine
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>pytest<span class="w"> </span>tests/
+</code></pre></div></p>
+<p><strong>pytest config (<code>pytest.ini</code>):</strong>
+- <code>testpaths = tests</code> — test directory
+- <code>asyncio_mode = auto</code> — auto-detect async tests
+- <code>asyncio_default_fixture_loop_scope = function</code> — isolated event loops</p>
+<h2 id="db-schema">DB Schema<a class="headerlink" href="#db-schema" title="Permanent link">&para;</a></h2>
+<h3 id="canonical-db-trilobitadb">Canonical DB (trilobita.db)<a class="headerlink" href="#canonical-db-trilobitadb" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- taxonomic_ranks: 5,341 records — unified taxonomy (Class~Genus) + 2 placeholders + Agnostina Suborder</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">taxonomic_ranks</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">parent_id</span><span class="p">,</span><span class="w"> </span><span class="n">author</span><span class="p">,</span><span class="w"> </span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">year_suffix</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">genera_count</span><span class="p">,</span><span class="w"> </span><span class="n">notes</span><span class="p">,</span><span class="w"> </span><span class="n">created_at</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="c1">-- Genus-specific fields</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">type_species</span><span class="p">,</span><span class="w"> </span><span class="n">type_species_author</span><span class="p">,</span><span class="w"> </span><span class="n">formation</span><span class="p">,</span><span class="w"> </span><span class="k">location</span><span class="p">,</span><span class="w"> </span><span class="n">family</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">temporal_code</span><span class="p">,</span><span class="w"> </span><span class="n">is_valid</span><span class="p">,</span><span class="w"> </span><span class="n">raw_entry</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1">-- synonyms: 1,055 records — synonym relationships</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="n">synonyms</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">junior_taxon_id</span><span class="p">,</span><span class="w"> </span><span class="n">senior_taxon_name</span><span class="p">,</span><span class="w"> </span><span class="n">senior_taxon_id</span><span class="p">,</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">          </span><span class="n">synonym_type</span><span class="p">,</span><span class="w"> </span><span class="n">fide_author</span><span class="p">,</span><span class="w"> </span><span class="n">fide_year</span><span class="p">,</span><span class="w"> </span><span class="n">notes</span><span class="p">)</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1">-- genus_formations: 4,853 records — Genus-Formation many-to-many</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">genus_formations</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">genus_id</span><span class="p">,</span><span class="w"> </span><span class="n">formation_id</span><span class="p">,</span><span class="w"> </span><span class="n">is_type_locality</span><span class="p">,</span><span class="w"> </span><span class="n">notes</span><span class="p">)</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1">-- genus_locations: 4,841 records — Genus-Country many-to-many</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">genus_locations</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">genus_id</span><span class="p">,</span><span class="w"> </span><span class="n">country_id</span><span class="p">,</span><span class="w"> </span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">is_type_locality</span><span class="p">,</span><span class="w"> </span><span class="n">notes</span><span class="p">)</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1">-- bibliography: 2,130 records — Literature Cited references</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="n">bibliography</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">authors</span><span class="p">,</span><span class="w"> </span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">year_suffix</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">journal</span><span class="p">,</span><span class="w"> </span><span class="n">volume</span><span class="p">,</span><span class="w"> </span><span class="n">pages</span><span class="p">,</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">              </span><span class="n">publisher</span><span class="p">,</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">editors</span><span class="p">,</span><span class="w"> </span><span class="n">book_title</span><span class="p">,</span><span class="w"> </span><span class="n">reference_type</span><span class="p">,</span><span class="w"> </span><span class="n">raw_entry</span><span class="p">)</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="c1">-- taxon_bibliography: 4,040 records — Taxon↔Bibliography FK links</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="n">taxon_bibliography</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">taxon_id</span><span class="p">,</span><span class="w"> </span><span class="n">bibliography_id</span><span class="p">,</span><span class="w"> </span><span class="n">relationship_type</span><span class="p">,</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">                    </span><span class="n">synonym_id</span><span class="p">,</span><span class="w"> </span><span class="n">match_confidence</span><span class="p">,</span><span class="w"> </span><span class="n">match_method</span><span class="p">,</span><span class="w"> </span><span class="n">notes</span><span class="p">,</span><span class="w"> </span><span class="n">created_at</span><span class="p">)</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="c1">-- taxonomic_opinions: 84 records — taxonomic opinions (PLACED_IN 82 + SPELLING_OF 2)</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="n">taxonomic_opinions</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">taxon_id</span><span class="p">,</span><span class="w"> </span><span class="n">opinion_type</span><span class="p">,</span><span class="w"> </span><span class="n">related_taxon_id</span><span class="p">,</span><span class="w"> </span><span class="n">proposed_valid</span><span class="p">,</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">                    </span><span class="n">bibliography_id</span><span class="p">,</span><span class="w"> </span><span class="n">assertion_status</span><span class="p">,</span><span class="w"> </span><span class="n">curation_confidence</span><span class="p">,</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">                    </span><span class="n">is_accepted</span><span class="p">,</span><span class="w"> </span><span class="n">notes</span><span class="p">,</span><span class="w"> </span><span class="n">created_at</span><span class="p">)</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="c1">-- Triggers: trg_deactivate_before_insert, trg_sync_parent_insert,</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="c1">--           trg_deactivate_before_update, trg_sync_parent_update</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="c1">-- taxa: backward-compatibility view</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">taxa</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">taxonomic_ranks</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Genus&#39;</span><span class="p">;</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="c1">-- SCODA-Core tables</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="n">artifact_metadata</span><span class="w"> </span><span class="p">(</span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w">                    </span><span class="c1">-- artifact metadata (key-value)</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="n">provenance</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">source_type</span><span class="p">,</span><span class="w"> </span><span class="n">citation</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w">  </span><span class="c1">-- data provenance</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="n">schema_descriptions</span><span class="w"> </span><span class="p">(</span><span class="k">table_name</span><span class="p">,</span><span class="w"> </span><span class="k">column_name</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="p">)</span><span class="w">      </span><span class="c1">-- schema descriptions</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="c1">-- SCODA UI tables</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="n">ui_display_intent</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">entity</span><span class="p">,</span><span class="w"> </span><span class="n">default_view</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="n">source_query</span><span class="p">,</span><span class="w"> </span><span class="n">priority</span><span class="p">)</span><span class="w">  </span><span class="c1">-- view hints</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="n">ui_queries</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="k">sql</span><span class="p">,</span><span class="w"> </span><span class="n">params_json</span><span class="p">,</span><span class="w"> </span><span class="n">created_at</span><span class="p">)</span><span class="w">                   </span><span class="c1">-- named queries</span>
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="n">ui_manifest</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="n">manifest_json</span><span class="p">,</span><span class="w"> </span><span class="n">created_at</span><span class="p">)</span><span class="w">                         </span><span class="c1">-- declarative view defs (JSON)</span>
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="c1">-- Note: 8 PaleoCore tables were DROPped in Phase 34</span>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="c1">-- countries, formations, geographic_regions, cow_states, country_cow_mapping,</span>
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="c1">-- temporal_ranges, ics_chronostrat, temporal_ics_mapping → paleocore.db (pc.* prefix)</span>
+</code></pre></div>
+<h3 id="overlay-db-trilobita_overlaydb">Overlay DB (trilobita_overlay.db)<a class="headerlink" href="#overlay-db-trilobita_overlaydb" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- overlay_metadata: canonical DB version tracking</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">overlay_metadata</span><span class="w"> </span><span class="p">(</span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w">  </span><span class="c1">-- canonical_version, created_at</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">-- user_annotations: user annotations</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">user_annotations</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">entity_type</span><span class="p">,</span><span class="w"> </span><span class="n">entity_id</span><span class="p">,</span><span class="w"> </span><span class="n">entity_name</span><span class="p">,</span><span class="w">  </span><span class="c1">-- entity_name: cross-release matching</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="n">annotation_type</span><span class="p">,</span><span class="w"> </span><span class="n">content</span><span class="p">,</span><span class="w"> </span><span class="n">author</span><span class="p">,</span><span class="w"> </span><span class="n">created_at</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">)</span>
+</code></pre></div>
+<p><strong>SQLite ATTACH usage (3-DB):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;db/trilobita.db&#39;</span><span class="p">)</span>  <span class="c1"># Canonical DB</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;ATTACH DATABASE &#39;dist/trilobita_overlay.db&#39; AS overlay&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;ATTACH DATABASE &#39;db/paleocore.db&#39; AS pc&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Canonical tables: SELECT * FROM taxonomic_ranks</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># Overlay tables:   SELECT * FROM overlay.user_annotations</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># PaleoCore tables: SELECT * FROM pc.countries</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># Cross-DB JOIN:    SELECT ... FROM genus_locations gl JOIN pc.countries c ON gl.country_id = c.id</span>
+</code></pre></div></p>
+<h2 id="db-usage-examples">DB Usage Examples<a class="headerlink" href="#db-usage-examples" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Basic query (using taxa view)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sqlite3<span class="w"> </span>db/trilobita.db<span class="w"> </span><span class="s2">&quot;SELECT * FROM taxa LIMIT 10;&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Full hierarchy query</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>sqlite3<span class="w"> </span>db/trilobita.db<span class="w"> </span><span class="s2">&quot;SELECT g.name, f.name as family, o.name as &#39;order&#39;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="s2">FROM taxonomic_ranks g</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="s2">LEFT JOIN taxonomic_ranks f ON g.parent_id = f.id</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="s2">LEFT JOIN taxonomic_ranks sf ON f.parent_id = sf.id</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="s2">LEFT JOIN taxonomic_ranks o ON sf.parent_id = o.id</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="s2">WHERE g.rank = &#39;Genus&#39; AND g.is_valid = 1 LIMIT 10;&quot;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1"># Genus formations (using relation table)</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>sqlite3<span class="w"> </span>db/trilobita.db<span class="w"> </span><span class="s2">&quot;SELECT g.name, f.name as formation</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="s2">FROM taxonomic_ranks g</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="s2">JOIN genus_formations gf ON g.id = gf.genus_id</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="s2">JOIN formations f ON gf.formation_id = f.id</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="s2">WHERE g.name = &#39;Paradoxides&#39;;&quot;</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="c1"># Genera by country (using relation table)</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>sqlite3<span class="w"> </span>db/trilobita.db<span class="w"> </span><span class="s2">&quot;SELECT g.name, gl.region</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="s2">FROM taxonomic_ranks g</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="s2">JOIN genus_locations gl ON g.id = gl.genus_id</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="s2">JOIN countries c ON gl.country_id = c.id</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="s2">WHERE c.name = &#39;China&#39; LIMIT 10;&quot;</span>
+</code></pre></div>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>data/trilobite_genus_list.txt</code> is always the canonical text version</li>
+<li><code>db/trilobita.db</code> is the latest database</li>
+<li>Git commit after each Phase completion</li>
+<li>Original PDF reference: Jell &amp; Adrain (2002)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

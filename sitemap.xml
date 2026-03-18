@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/PDF_SOURCE_STATUS/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/PDF_SOURCE_STATUS/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/PDF_SOURCE_STATUS/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/R01_Case_Examples/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/R01_Case_Examples/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/R01_Case_Examples/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/R01_Review/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/R01_Review/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/R01_Review/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/Taxonomic%20Source%20Format%20Specification%20v0.1/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/Taxonomic%20Source%20Format%20Specification%20v0.1/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/Taxonomic%20Source%20Format%20Specification%20v0.1/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/canonical_vs_assertion/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/canonical_vs_assertion/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/canonical_vs_assertion/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/getting-started/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/getting-started/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/getting-started/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/source_data_guide/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/source_data_guide/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/source_data_guide/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/api/mcp-tools/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/api/mcp-tools/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/api/mcp-tools/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/architecture/scoda-package/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/architecture/scoda-package/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/architecture/scoda-package/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/architecture/scoda-registry-detailed/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/architecture/scoda-registry-detailed/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/architecture/scoda-registry-detailed/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/architecture/scoda-registry/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/architecture/scoda-registry/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/architecture/scoda-registry/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/database/paleocore-schema/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/database/paleocore-schema/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/database/paleocore-schema/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/database/queries/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/database/queries/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/database/queries/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/database/schema/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/database/schema/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/database/schema/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/project/changelog-paleocore/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/project/changelog-paleocore/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/project/changelog-paleocore/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/project/changelog/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/project/changelog/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/project/devlog-summary/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/project/devlog-summary/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/project/devlog-summary/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/project/handoff/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/project/handoff/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/project/handoff/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/project/history/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/project/history/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/project/history/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/PDF_SOURCE_STATUS/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/PDF_SOURCE_STATUS/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/PDF_SOURCE_STATUS/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/R01_Case_Examples/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/R01_Case_Examples/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/R01_Case_Examples/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/R01_Review/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/R01_Review/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/R01_Review/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/Taxonomic%20Source%20Format%20Specification%20v0.1/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/Taxonomic%20Source%20Format%20Specification%20v0.1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/Taxonomic%20Source%20Format%20Specification%20v0.1/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/canonical_vs_assertion/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/canonical_vs_assertion/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/canonical_vs_assertion/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/getting-started/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/getting-started/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/getting-started/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/source_data_guide/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/source_data_guide/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/source_data_guide/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/api/mcp-tools/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/api/mcp-tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/api/mcp-tools/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/architecture/scoda-package/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/architecture/scoda-package/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/architecture/scoda-package/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/architecture/scoda-registry-detailed/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/architecture/scoda-registry-detailed/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/architecture/scoda-registry-detailed/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/architecture/scoda-registry/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/architecture/scoda-registry/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/architecture/scoda-registry/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/database/paleocore-schema/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/database/paleocore-schema/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/database/paleocore-schema/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/database/queries/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/database/queries/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/database/queries/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/database/schema/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/database/schema/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/database/schema/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/project/changelog-paleocore/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/project/changelog-paleocore/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/project/changelog-paleocore/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/project/changelog/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/project/changelog/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/project/devlog-summary/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/project/devlog-summary/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/project/devlog-summary/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/project/handoff/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/project/handoff/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/project/handoff/"/>
+    </url>
+    <url>
+        <loc>https://jikhanjung.github.io/trilobase/ko/project/history/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://jikhanjung.github.io/trilobase/ko/project/history/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jikhanjung.github.io/trilobase/project/history/"/>
+    </url>
+</urlset>
