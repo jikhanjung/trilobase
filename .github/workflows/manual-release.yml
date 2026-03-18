@@ -48,6 +48,13 @@ jobs:
           python scripts/build_graptolithina_scoda.py
           python scripts/build_chelicerata_scoda.py
           python scripts/build_ostracoda_scoda.py
+          python scripts/build_bryozoa_scoda.py
+          python scripts/build_coelenterata_scoda.py
+          python scripts/build_hexapoda_scoda.py
+          python scripts/build_porifera_scoda.py
+          python scripts/build_echinodermata_scoda.py
+          python scripts/build_mollusca_scoda.py
+          python scripts/build_paleobase_scoda.py
       - name: List built artifacts
         id: files
         run: |
@@ -68,11 +75,18 @@ jobs:
             ${{ github.event.inputs.release_notes }}
 
             ### Packages
+            - Paleobase — meta-package (unified taxonomy tree)
             - Trilobita — trilobite taxonomy (Jell & Adrain 2002)
             - Brachiopoda — brachiopod taxonomy (Treatise 1965 & 2000-2006)
             - Graptolithina — graptolite taxonomy (Treatise 1955/1970/2023)
             - Chelicerata — chelicerate taxonomy (Treatise 1955)
             - Ostracoda — ostracod taxonomy (Treatise 1961)
+            - Bryozoa — bryozoan taxonomy (Treatise 1953 & 1983)
+            - Coelenterata — coelenterate taxonomy (Treatise 1956)
+            - Hexapoda — hexapod taxonomy (Treatise 1992)
+            - Porifera — poriferan & archaeocyathan taxonomy (Treatise 1955 & 1972-2015)
+            - Echinodermata — echinoderm taxonomy (Treatise 1966-1967 & 2011)
+            - Mollusca — molluscan taxonomy (Treatise 1957-1971 & 1989-1996)
             - PaleoCore — shared reference data
           files: |
             dist/*.scoda
