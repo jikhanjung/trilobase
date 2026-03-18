@@ -1,13 +1,9 @@
 {
   "schema_version": "1.0",
   "nodes": [
-    {"id": "node:life",          "label": "Life",          "rank": "root"},
-    {"id": "node:eukaryota",     "label": "Eukaryota",     "rank": "domain",  "parent": "node:life"},
-    {"id": "node:metazoa",       "label": "Metazoa",       "rank": "kingdom", "parent": "node:eukaryota"},
+    {"id": "node:metazoa",       "label": "Metazoa",       "rank": "kingdom"},
 
     {"id": "node:arthropoda",    "label": "Arthropoda",    "rank": "phylum",  "parent": "node:metazoa"},
-    {"id": "node:brachiopoda",   "label": "Brachiopoda",   "rank": "phylum",  "parent": "node:metazoa"},
-    {"id": "node:hemichordata",  "label": "Hemichordata",  "rank": "phylum",  "parent": "node:metazoa"},
     {"id": "node:bryozoa",       "label": "Bryozoa",       "rank": "phylum",  "parent": "node:metazoa"},
     {"id": "node:cnidaria",      "label": "Cnidaria",      "rank": "phylum",  "parent": "node:metazoa"},
     {"id": "node:echinodermata", "label": "Echinodermata", "rank": "phylum",  "parent": "node:metazoa"},

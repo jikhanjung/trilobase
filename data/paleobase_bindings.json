@@ -4,7 +4,7 @@
     {
       "node_id": "node:arthropoda",
       "package_id": "trilobita",
-      "root_taxon": {"name": "Arthropoda", "rank": "Phylum"},
+      "root_taxon": {"name": "Trilobita", "rank": "Class"},
       "binding_type": "subtree",
       "source": "Treatise Part O (1959/1997) + Jell & Adrain (2002)",
       "priority": 1
@@ -26,20 +26,20 @@
       "priority": 3
     },
     {
-      "node_id": "node:brachiopoda",
+      "node_id": "node:metazoa",
       "package_id": "brachiopoda",
       "root_taxon": {"name": "BRACHIOPODA", "rank": "Phylum"},
       "binding_type": "subtree",
       "source": "Treatise Part H (1965, 2000-2006)",
-      "priority": 1
+      "priority": 10
     },
     {
-      "node_id": "node:hemichordata",
+      "node_id": "node:metazoa",
       "package_id": "graptolithina",
       "root_taxon": {"name": "Graptolithina", "rank": "Class"},
       "binding_type": "subtree",
       "source": "Treatise Part V (1955/1970/2023)",
-      "priority": 1
+      "priority": 11
     }
   ]
 }
