@@ -259,7 +259,7 @@ def insert_artifact_metadata(conn):
     metadata = [
         ('artifact_id', 'paleocore'),
         ('name', 'PaleoCore'),
-        ('version', '0.1.3'),
+        ('version', '0.1.4'),
         ('schema_version', '1.0'),
         ('created_at', str(date.today())),
         ('description',

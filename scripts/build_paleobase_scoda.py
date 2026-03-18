@@ -21,7 +21,7 @@ ROOT = os.path.join(os.path.dirname(__file__), '..')
 DATA_DIR = os.path.join(ROOT, 'data')
 DIST_DIR = os.path.join(ROOT, 'dist')
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 DEPENDENCIES = [
     {"name": "paleocore",     "alias": "pc",  "version": ">=0.1.3,<0.2.0", "required": True},

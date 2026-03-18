@@ -29,7 +29,7 @@ from pathlib import Path
 
 from db_path import find_canonical_db, find_paleocore_db
 
-ASSERTION_VERSION = "0.3.3"
+ASSERTION_VERSION = "0.3.4"
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES = ROOT / "data" / "sources"
