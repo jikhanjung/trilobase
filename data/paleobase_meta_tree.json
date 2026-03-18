@@ -2,6 +2,7 @@
   "schema_version": "1.0",
   "nodes": [
     {"id": "node:metazoa",       "label": "Metazoa",       "rank": "kingdom"},
-    {"id": "node:arthropoda",    "label": "Arthropoda",    "rank": "phylum",  "parent": "node:metazoa"}
+    {"id": "node:arthropoda",    "label": "Arthropoda",    "rank": "phylum",  "parent": "node:metazoa"},
+    {"id": "node:hemichordata",  "label": "Hemichordata",  "rank": "phylum",  "parent": "node:metazoa"}
   ]
 }

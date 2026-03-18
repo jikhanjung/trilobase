@@ -50,7 +50,7 @@
       "priority": 11
     },
     {
-      "node_id": "node:metazoa",
+      "node_id": "node:hemichordata",
       "package_id": "graptolithina",
       "root_taxon": {"name": "Graptolithina", "rank": "Class"},
       "binding_type": "subtree",
