@@ -75,8 +75,8 @@ def parse_source_header(text: str):
 
 
 RANK_KEYWORDS = {"Order", "Suborder", "Superfamily", "Family", "Subfamily"}
-RANK_ORDER = {"Class": 0, "Order": 1, "Suborder": 2, "Superfamily": 3,
-              "Family": 4, "Subfamily": 5, "Genus": 6}
+RANK_ORDER = {"Phylum": 0, "Class": 1, "Order": 2, "Suborder": 3, "Superfamily": 4,
+              "Family": 5, "Subfamily": 6, "Genus": 7}
 
 
 def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
@@ -240,7 +240,7 @@ def create_schema(cur):
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
         rank TEXT NOT NULL
-            CHECK(rank IN ('Class','Order','Suborder','Superfamily','Family','Subfamily','Genus')),
+            CHECK(rank IN ('Phylum','Class','Order','Suborder','Superfamily','Family','Subfamily','Genus')),
         author TEXT,
         year TEXT,
         year_suffix TEXT,
@@ -548,6 +548,10 @@ def process_source_default(dst, taxon_index, name_index, new_taxa_cache):
     default_edges = []  # (child_id, parent_id) for default profile
     placed_children = set()  # track which children already have a default placement
 
+    # --- Phylum Arthropoda (root of trilobita hierarchy) ---
+    arthropoda_id = resolve_taxon(
+        "Arthropoda", "Phylum", dst, taxon_index, name_index, new_taxa_cache)
+
     # --- Adrain 2011: suprafamilial hierarchy ---
     adrain_text = (SOURCES / "adrain_2011.txt").read_text(encoding="utf-8")
     _, adrain_body = parse_source_header(adrain_text)
@@ -556,6 +560,10 @@ def process_source_default(dst, taxon_index, name_index, new_taxa_cache):
     # Resolve Trilobita (Class) as root for Orders
     trilobita_id = resolve_taxon(
         "Trilobita", "Class", dst, taxon_index, name_index, new_taxa_cache)
+
+    # Place Trilobita under Arthropoda
+    default_edges.append((trilobita_id, arthropoda_id))
+    placed_children.add(trilobita_id)
 
     for p in adrain_placements:
         child_id = resolve_taxon(
@@ -764,9 +772,13 @@ def process_source_treatise(dst, source_file, ref_id,
     edges = []
     asserted_children = set()
 
-    # Resolve Trilobita for root-level Orders
+    # Resolve Arthropoda / Trilobita for hierarchy
+    arthropoda_id = resolve_taxon(
+        "Arthropoda", "Phylum", dst, taxon_index, name_index, new_taxa_cache)
     trilobita_id = resolve_taxon(
         "Trilobita", "Class", dst, taxon_index, name_index, new_taxa_cache)
+    edges.append((trilobita_id, arthropoda_id))
+    asserted_children.add(trilobita_id)
 
     for p in placements:
         child_id = resolve_taxon(

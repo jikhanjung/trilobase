@@ -1268,6 +1268,7 @@ def write_scoda_metadata(cur, version, ref_id):
         "version": version,
         "description": "Ostracode genus-level taxonomy from the Treatise (1961)",
         "license": "CC-BY-4.0",
+        "schema_version": "1.0",
         "created_at": now,
     }
     cur.executemany(

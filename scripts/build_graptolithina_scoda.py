@@ -88,7 +88,9 @@ def generate_hub_manifest(scoda_path, db_path):
         "license": meta.get('license', 'CC-BY-4.0'),
         "created_at": datetime.now(timezone.utc).isoformat(),
         "provenance": provenance,
-        "dependencies": {},
+        "dependencies": {
+            "paleocore": ">=0.1.1,<0.2.0"
+        },
         "filename": os.path.basename(scoda_path),
         "sha256": _sha256_scoda(scoda_path),
         "size_bytes": os.path.getsize(scoda_path),
@@ -146,8 +148,16 @@ def main():
         print(f"Package:      {meta.get('artifact_id')} v{meta.get('version')}")
         return
 
-    # No dependencies (no PaleoCore)
-    metadata = {"dependencies": []}
+    metadata = {
+        "dependencies": [{
+            "name": "paleocore",
+            "alias": "pc",
+            "version": ">=0.1.1,<0.2.0",
+            "file": "paleocore.scoda",
+            "required": True,
+            "description": "Shared paleontological infrastructure (geography, stratigraphy)"
+        }],
+    }
 
     result = ScodaPackage.create(db_path, output_path, metadata=metadata)
     size = os.path.getsize(result)

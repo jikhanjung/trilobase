@@ -1438,6 +1438,7 @@ def write_scoda_metadata(cur, version, ref_id):
         "version": version,
         "description": "Graptolite genus-level taxonomy from the Treatise (1955, 1970, 2023)",
         "license": "CC-BY-4.0",
+        "schema_version": "1.0",
         "created_at": now,
     }
     cur.executemany(

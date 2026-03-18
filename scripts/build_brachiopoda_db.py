@@ -1335,6 +1335,7 @@ def write_scoda_metadata(cur, version, ref_id):
         "version": version,
         "description": "Brachiopod genus-level taxonomy from the Treatise (1965 & Revised 2000-2006)",
         "license": "CC-BY-4.0",
+        "schema_version": "1.0",
         "created_at": now,
     }
     cur.executemany(
