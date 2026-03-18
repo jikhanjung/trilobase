@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Trilobase is a paleontological database project focused on trilobite taxonomy. The goal is to clean, normalize, and import trilobite genus data from Jell & Adrain (2002) into a structured database.
+Trilobase is a paleontological database project. Started with trilobite taxonomy (Jell & Adrain 2002), now expanded to 11 invertebrate phyla via Treatise on Invertebrate Paleontology source data.
 
 **Runtime engine** (`scoda-engine`) is in a separate repository at `/mnt/d/projects/scoda-engine`. This repo contains only trilobase domain data, scripts, and tests.
 
@@ -20,20 +20,21 @@ trilobase/
 ├── pytest.ini                        # pytest config (testpaths = tests)
 ├── requirements.txt                  # scoda-engine dependency
 ├── db/                               # Databases (git tracked, versioned filenames)
-│   ├── trilobita-0.3.3.db           # ★ 메인 DB (assertion-centric)
-│   ├── brachiopoda-0.2.6.db        # Brachiopod DB (Treatise 1965 & 2000-2006)
-│   ├── graptolithina-0.1.2.db      # Graptolite DB (Treatise 1955/1970/2023)
-│   ├── chelicerata-0.1.2.db        # Chelicerate DB (Treatise 1955, Part P)
-│   ├── ostracoda-0.1.2.db          # Ostracod DB (Treatise 1961, Part Q)
-│   ├── trilobita-canonical-0.2.6.db # Legacy canonical DB (보존용)
-│   └── paleocore-0.1.3.db           # PaleoCore reference DB
+│   ├── trilobita-0.3.4.db           # ★ 메인 DB (assertion-centric)
+│   ├── brachiopoda-0.2.7.db        # Brachiopod DB (Treatise 1965 & 2000-2006)
+│   ├── graptolithina-0.1.3.db      # Graptolite DB (Treatise 1955/1970/2023)
+│   ├── chelicerata-0.1.3.db        # Chelicerate DB (Treatise 1955, Part P)
+│   ├── ostracoda-0.1.3.db          # Ostracod DB (Treatise 1961, Part Q)
+│   ├── bryozoa-0.1.0.db            # Bryozoa DB (Treatise 1953/1983, Part G)
+│   ├── coelenterata-0.1.0.db       # Coelenterata DB (Treatise 1956, Part F)
+│   ├── hexapoda-0.1.0.db           # Hexapoda DB (Treatise 1992, Part R)
+│   ├── porifera-0.1.0.db           # Porifera DB (Treatise 1955-2015, Part E)
+│   ├── echinodermata-0.1.0.db      # Echinodermata DB (Treatise 1966-2011, Parts S/T/U)
+│   ├── mollusca-0.1.0.db           # Mollusca DB (Treatise 1957-1996, Parts I/K/L/N)
+│   ├── paleocore-0.1.4.db          # PaleoCore reference DB
+│   └── trilobita-canonical-0.2.6.db # Legacy canonical DB (보존용)
 ├── dist/                             # Generated artifacts (gitignored)
-│   ├── trilobita-{ver}.scoda        # Trilobita .scoda package
-│   ├── brachiopoda-{ver}.scoda     # Brachiopoda .scoda package
-│   ├── graptolithina-{ver}.scoda   # Graptolithina .scoda package
-│   ├── chelicerata-{ver}.scoda     # Chelicerata .scoda package
-│   ├── ostracoda-{ver}.scoda       # Ostracoda .scoda package
-│   ├── paleocore-{ver}.scoda        # PaleoCore .scoda package
+│   ├── {package}-{ver}.scoda        # 11 taxonomy + paleocore + paleobase .scoda
 │   └── *_overlay.db                 # Overlay databases
 ├── data/                             # Source data files
 │   ├── sources/                     # ★ taxonomic source files (*.txt)
@@ -42,19 +43,12 @@ trilobase/
 │   ├── adrain2011.txt
 │   └── mcp_tools_trilobase.json     # MCP 도구 정의
 ├── scripts/                          # ★ 활성 빌드 스크립트만
-│   ├── build_trilobita_db.py        # Trilobita DB 빌드 → db/
-│   ├── build_trilobita_scoda.py     # trilobita.scoda → dist/
-│   ├── validate_trilobita_db.py     # DB 검증 (17 checks)
-│   ├── build_brachiopoda_db.py      # Brachiopoda DB 빌드 → db/
-│   ├── build_brachiopoda_scoda.py   # brachiopoda.scoda → dist/
-│   ├── build_graptolithina_db.py    # Graptolithina DB 빌드 → db/
-│   ├── build_graptolithina_scoda.py # graptolithina.scoda → dist/
-│   ├── build_chelicerata_db.py      # Chelicerata DB 빌드 → db/
-│   ├── build_chelicerata_scoda.py   # chelicerata.scoda → dist/
-│   ├── build_ostracoda_db.py        # Ostracoda DB 빌드 → db/
-│   ├── build_ostracoda_scoda.py     # ostracoda.scoda → dist/
+│   ├── build_{taxon}_db.py          # 각 패키지 DB 빌드 → db/ (×11)
+│   ├── build_{taxon}_scoda.py       # 각 패키지 .scoda → dist/ (×11)
 │   ├── build_paleocore_db.py        # PaleoCore DB → db/
 │   ├── build_paleocore_scoda.py     # paleocore.scoda → dist/
+│   ├── build_paleobase_scoda.py     # paleobase.scoda (메타 패키지) → dist/
+│   ├── validate_trilobita_db.py     # DB 검증 (17 checks)
 │   ├── build_all.py                 # 전체 빌드
 │   ├── db_path.py                   # DB 경로 헬퍼
 │   └── archive/                     # 레거시 스크립트 보관
