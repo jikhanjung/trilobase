@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build trilobase DB from data/sources/*.txt (R04 extended format).
+"""Build trilobita DB from data/sources/*.txt (R04 extended format).
 
 Reads:
   - data/sources/jell_adrain_2002.txt      → genera, families, synonyms (default profile)
@@ -14,7 +14,7 @@ Still copies from canonical DB:
   - genus_formations, genus_locations, taxon_reference
 
 Usage:
-    python scripts/build_trilobase_db.py [--version 0.3.0]
+    python scripts/build_trilobita_db.py [--version 0.3.0]
 """
 
 import argparse
@@ -2784,8 +2784,8 @@ def create_scoda_metadata(dst, version):
 
     # artifact_metadata
     cur.executemany("INSERT INTO artifact_metadata VALUES (?,?)", [
-        ("artifact_id", "trilobase"),
-        ("name", "Trilobase"),
+        ("artifact_id", "trilobita"),
+        ("name", "Trilobita"),
         ("version", version),
         ("schema_version", "1.0"),
         ("created_at", datetime.now(timezone.utc).strftime("%Y-%m-%d")),
@@ -2814,7 +2814,7 @@ def create_scoda_metadata(dst, version):
          "Part O, Revised, Vol. 1.",
          "Treatise 1997 classification profile (Agnostida + Redlichiida)", 1997, None),
         (5, "build",
-         "Trilobase assertion-centric pipeline (2026). Script: build_trilobase_db.py",
+         "Trilobita assertion-centric pipeline (2026). Script: build_trilobita_db.py",
          "Source-driven build from data/sources/*.txt (R04 extended format)", 2026, None),
     ])
 
@@ -2881,9 +2881,9 @@ def _sha256_file(path):
 def generate_hub_manifest(db_path, version):
     manifest = {
         "hub_manifest_version": "1.0",
-        "package_id": "trilobase",
+        "package_id": "trilobita",
         "version": version,
-        "title": "Trilobase — assertion-centric trilobite taxonomy",
+        "title": "Trilobita — assertion-centric trilobite taxonomy",
         "description": "Trilobite taxonomy database built from canonical source data",
         "license": "CC-BY-4.0",
         "created_at": datetime.now(timezone.utc).isoformat(),
@@ -2898,7 +2898,7 @@ def generate_hub_manifest(db_path, version):
         "size_bytes": db_path.stat().st_size,
     }
 
-    out_path = db_path.parent / f"trilobase-{version}.manifest.json"
+    out_path = db_path.parent / f"trilobita-{version}.manifest.json"
     with open(out_path, "w") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
         f.write("\n")
@@ -2935,7 +2935,7 @@ def main():
             sys.exit(1)
 
     DST_DIR.mkdir(parents=True, exist_ok=True)
-    dst_db = DST_DIR / f"trilobase-{version}.db"
+    dst_db = DST_DIR / f"trilobita-{version}.db"
     if dst_db.exists():
         dst_db.unlink()
 

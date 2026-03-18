@@ -97,7 +97,7 @@
 
 - **Phase 20 완료**: Overlay DB 분리 (PyInstaller read-only 문제 해결)
   - Canonical DB: 실행 파일 내부 (read-only, 불변)
-  - Overlay DB: 실행 파일 외부 (`trilobase_overlay.db`, read/write)
+  - Overlay DB: 실행 파일 외부 (`trilobita_overlay.db`, read/write)
   - SQLite ATTACH로 이중 DB 연결
   - `overlay_metadata` 테이블: canonical 버전 추적
   - `entity_name` 컬럼 추가: 릴리스 간 annotation 매칭용
@@ -179,8 +179,8 @@
   - `scripts/create_scoda.py`: DB→.scoda 패키징 스크립트 (`--dry-run` 지원)
   - DB 경로 중복 제거: 4개 파일(app.py, mcp_server.py, gui.py, serve.py) → `scoda_package.py` 한 곳
   - PyInstaller exe에서 DB 번들링 제거 (exe 크기 감소)
-  - 배포 구조: `trilobase.exe` + `trilobase_mcp.exe` + `trilobase.scoda` (외부)
-  - 하위 호환: `.scoda` 없으면 `trilobase.db` 직접 사용 (폴백)
+  - 배포 구조: `trilobase.exe` + `trilobase_mcp.exe` + `trilobita.scoda` (외부)
+  - 하위 호환: `.scoda` 없으면 `trilobita.db` 직접 사용 (폴백)
   - 테스트: 111개 (기존 101 + ScodaPackage 10)
 
 - **2026-02-12 countries 데이터 품질 정리**
@@ -253,7 +253,7 @@
   - 정의서: `docs/paleocore_schema.md`
 
 - **Phase 31 완료**: PaleoCore DB 생성 스크립트
-  - `scripts/create_paleocore.py`: trilobase.db → paleocore.db 추출 스크립트
+  - `scripts/create_paleocore.py`: trilobita.db → paleocore.db 추출 스크립트
   - 8개 데이터 테이블 (3,340 레코드) + 6개 SCODA 메타데이터 테이블 (14개 총)
   - `taxa_count` 컬럼 제거 (countries, geographic_regions, formations)
   - SCODA 메타: artifact_metadata 7건, provenance 3건, schema_descriptions 88건, ui 13건
@@ -265,7 +265,7 @@
   - `taxonomic_ranks`에서 레거시 컬럼 삭제 (`country_id`, `formation_id`) — 20→18 컬럼
   - `scoda_package.py`: paleocore.db를 `pc` alias로 ATTACH (자동 탐색)
   - `app.py`: `GET /api/paleocore/status` — cross-DB 검증 엔드포인트
-  - 3개 DB 동시 운영: main(trilobase.db) + overlay + pc(paleocore.db)
+  - 3개 DB 동시 운영: main(trilobita.db) + overlay + pc(paleocore.db)
   - Cross-DB JOIN 정상: genus_locations↔pc.countries, genus_formations↔pc.formations
   - 테스트: 164개 전부 통과
   - devlog: `devlog/20260213_040_phase32_dual_db.md`
@@ -276,13 +276,13 @@
     - ics_chronostrat → pc.ics_chronostrat, temporal_ics_mapping → pc.temporal_ics_mapping
   - `mcp_server.py`: 6개 쿼리에서 PaleoCore 테이블을 `pc.*` prefix로 전환
     - formations → pc.formations, countries → pc.countries
-  - `trilobase.db`: ui_queries의 ics_chronostrat_list SQL 업데이트
+  - `trilobita.db`: ui_queries의 ics_chronostrat_list SQL 업데이트
   - `test_app.py`: test paleocore DB 생성 fixture 추가, 3-tuple 언패킹 전환
   - 테스트: 164개 전부 통과
   - devlog: `devlog/20260213_041_phase33_pc_prefix.md`
 
-- **Phase 34 완료**: trilobase.db에서 PaleoCore 테이블 DROP
-  - trilobase.db에서 8개 PaleoCore 테이블 DROP (3,340 레코드)
+- **Phase 34 완료**: trilobita.db에서 PaleoCore 테이블 DROP
+  - trilobita.db에서 8개 PaleoCore 테이블 DROP (3,340 레코드)
     - country_cow_mapping, cow_states, temporal_ics_mapping, ics_chronostrat
     - geographic_regions, formations, countries, temporal_ranges
   - ui_queries 6개 SQL `pc.*` prefix 업데이트 (genus_formations, genus_locations, formations_list, countries_list, genera_by_country, regions_list)
@@ -295,7 +295,7 @@
 - **Phase 35 완료**: PaleoCore .scoda 패키지 + Dependency 반영
   - `ScodaPackage.create()` 범용화: taxonomic_ranks 하드코딩 제거, 모든 데이터 테이블 합산
   - `scripts/create_paleocore_scoda.py` 신규: paleocore.db → paleocore.scoda (93 KB, 3,340 records)
-  - `scripts/create_scoda.py`: trilobase.scoda manifest에 paleocore dependency 선언
+  - `scripts/create_scoda.py`: trilobita.scoda manifest에 paleocore dependency 선언
   - `scoda_package.py`: paleocore.scoda 우선 탐색 → paleocore.db 폴백
   - `scripts/create_paleocore.py`: 소스 테이블 부재 시 경고 메시지
   - 테스트: 169개 전부 통과 (기존 164 + 신규 5)
@@ -311,7 +311,7 @@
 
 - **Phase 37 완료**: PyInstaller 빌드에 paleocore.scoda 포함
   - `scripts/build.py`: `create_paleocore_scoda_package()` 함수 추가
-  - 빌드 시 `dist/trilobase.scoda` + `dist/paleocore.scoda` 동시 생성
+  - 빌드 시 `dist/trilobita.scoda` + `dist/paleocore.scoda` 동시 생성
   - `paleocore.db` 없으면 skip (에러 아님, trilobase 독립 동작 가능)
   - 배포 안내 메시지에 `paleocore.scoda` 포함
   - devlog: `devlog/20260213_045_phase37_build_paleocore_scoda.md`
@@ -319,7 +319,7 @@
 - **Phase 38 완료**: GUI를 "SCODA Desktop"으로 리브랜딩
   - "Trilobase SCODA Viewer" → "SCODA Desktop" (타이틀, 헤더, 로그)
   - Information 섹션: "Packages:" + PaleoCore dependency 행 표시
-  - 시작 로그: `Loaded: trilobase.scoda` + `└ dependency: paleocore.scoda` 형식
+  - 시작 로그: `Loaded: trilobita.scoda` + `└ dependency: paleocore.scoda` 형식
   - `scoda_package.py`: `get_scoda_info()`에 paleocore_version/name/record_count 추가
   - devlog: `devlog/20260213_046_phase38_scoda_desktop_rebranding.md`
 
@@ -586,7 +586,7 @@
 
 - **A-3: Manifest Schema 정규화 (DB 레벨)**
   - DB의 ui_manifest를 `type: "hierarchy"` + `display` 스키마로 직접 갱신
-  - trilobase.db: taxonomy_tree (tree→hierarchy), chronostratigraphy_table (chart→hierarchy)
+  - trilobita.db: taxonomy_tree (tree→hierarchy), chronostratigraphy_table (chart→hierarchy)
   - paleocore.db: chronostratigraphy_chart (chart→hierarchy)
   - 스크립트/테스트/validator 동기화
   - `normalizeViewDef()`는 외부 패키지 하위 호환용으로 유지

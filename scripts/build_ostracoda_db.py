@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Build chelicerobase DB from Treatise chelicerate source file.
+"""Build ostracoda DB from Treatise Ostracoda source file.
 
 Single classification profile:
-  Profile 1: Treatise 1955 (Part P, Arthropoda 2 — Chelicerata)
+  Profile 1: Treatise 1961 (Part Q, Arthropoda 3 — Ostracoda)
 
 Pure source-driven build (no canonical DB dependency).
 
 Usage:
-    python scripts/build_chelicerobase_db.py [--version 0.1.0]
+    python scripts/build_ostracoda_db.py [--version 0.1.0]
 """
 
 import argparse
@@ -28,21 +28,21 @@ VERSION = "0.1.2"
 
 PROFILES = [
     {
-        "name": "Treatise 1955",
-        "description": "Treatise on Invertebrate Paleontology, Part P, Arthropoda 2 — Chelicerata (1955)",
+        "name": "Treatise 1961",
+        "description": "Treatise on Invertebrate Paleontology, Part Q, Arthropoda 3 — Ostracoda (1961)",
         "sources": [
-            "treatise_chelicerata_1955.txt",
+            "treatise_ostracoda_1961.txt",
         ],
         "reference": {
-            "authors": "STØRMER, L., PETRUNKEVITCH, A. & HEDGPETH, J.W.",
-            "year": 1955,
-            "title": "Treatise on Invertebrate Paleontology, Part P, Arthropoda 2 — Chelicerata",
+            "authors": "MOORE, R.C., SCOTT, H.W. & others",
+            "year": 1961,
+            "title": "Treatise on Invertebrate Paleontology, Part Q, Arthropoda 3 — Crustacea, Ostracoda",
             "publisher": "Geological Society of America & University of Kansas Press",
             "reference_type": "book",
             "raw_entry": (
-                "Størmer, L., Petrunkevitch, A. & Hedgpeth, J.W., 1955. "
-                "Treatise on Invertebrate Paleontology, Part P, Arthropoda 2 — "
-                "Chelicerata. Geological Society of America & University of Kansas Press."
+                "Moore, R.C., Scott, H.W. & others, 1961. "
+                "Treatise on Invertebrate Paleontology, Part Q, Arthropoda 3 — "
+                "Crustacea, Ostracoda. Geological Society of America & University of Kansas Press."
             ),
         },
     },
@@ -82,11 +82,11 @@ def parse_source_header(text: str):
 
 
 RANK_KEYWORDS = {
-    "Phylum", "Subphylum", "Class", "Order", "Suborder",
+    "Phylum", "Subclass", "Class", "Order", "Suborder",
     "Superfamily", "Family", "Subfamily",
 }
 RANK_ORDER = {
-    "Phylum": -2, "Subphylum": -1,
+    "Phylum": -2, "Subclass": -1,
     "Class": 0, "Order": 1, "Suborder": 2, "Superfamily": 3,
     "Family": 4, "Subfamily": 5, "Genus": 6,
 }
@@ -222,7 +222,7 @@ def create_schema(cur):
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
         rank TEXT NOT NULL
-            CHECK(rank IN ('Phylum','Subphylum','Class','Order','Suborder',
+            CHECK(rank IN ('Phylum','Subphylum','Subclass','Class','Order','Suborder',
                            'Superfamily','Family','Subfamily','Genus')),
         author TEXT,
         year TEXT,
@@ -827,7 +827,7 @@ def _build_manifest():
                 "type": "hierarchy",
                 "display": "tree",
                 "title": "Taxonomy",
-                "description": "Chelicerate hierarchical classification (Treatise 1955)",
+                "description": "Ostracode hierarchical classification (Treatise 1955)",
                 "source_query": "taxonomy_tree",
                 "icon": "bi-diagram-3",
                 "hierarchy_options": {
@@ -855,7 +855,7 @@ def _build_manifest():
             "genera_table": {
                 "type": "table",
                 "title": "Genera",
-                "description": "Flat list of all chelicerate genera",
+                "description": "Flat list of all ostracode genera",
                 "source_query": "genera_list",
                 "icon": "bi-table",
                 "columns": [
@@ -907,7 +907,7 @@ def _build_manifest():
                 "type": "hierarchy",
                 "display": "tree_chart",
                 "title": "Tree",
-                "description": "Chelicerate taxonomy tree — radial or rectangular layout",
+                "description": "Ostracode taxonomy tree — radial or rectangular layout",
                 "icon": "bi-diagram-3",
                 "source_query": "radial_tree_nodes",
                 "hierarchy_options": {
@@ -925,7 +925,7 @@ def _build_manifest():
                     "rank_radius": {
                         "_root": 0,
                         "Phylum": 0.03,
-                        "Subphylum": 0.06,
+                        "Subclass": 0.06,
                         "Class": 0.10,
                         "Order": 0.18,
                         "Suborder": 0.28,
@@ -1083,7 +1083,7 @@ def _build_manifest():
                             "rank_radius": {
                                 "_root": 0,
                                 "Phylum": 0.03,
-                                "Subphylum": 0.06,
+                                "Subclass": 0.06,
                                 "Class": 0.10,
                                 "Order": 0.18,
                                 "Suborder": 0.28,
@@ -1133,7 +1133,7 @@ def _build_manifest():
                             "rank_radius": {
                                 "_root": 0,
                                 "Phylum": 0.03,
-                                "Subphylum": 0.06,
+                                "Subclass": 0.06,
                                 "Class": 0.10,
                                 "Order": 0.18,
                                 "Suborder": 0.28,
@@ -1263,10 +1263,10 @@ def write_scoda_metadata(cur, version, ref_id):
         )
     """)
     metadata = {
-        "artifact_id": "chelicerobase",
-        "name": "Chelicerobase",
+        "artifact_id": "ostracoda",
+        "name": "Ostracoda",
         "version": version,
-        "description": "Chelicerate genus-level taxonomy from the Treatise (1955)",
+        "description": "Ostracode genus-level taxonomy from the Treatise (1961)",
         "license": "CC-BY-4.0",
         "created_at": now,
     }
@@ -1290,11 +1290,10 @@ def write_scoda_metadata(cur, version, ref_id):
         VALUES (?, ?, ?)
     """, (
         "publication",
-        "Williams, A., Carlson, S.J., Brunton, C.H.C. & others, 2000. "
-        "Treatise on Invertebrate Paleontology, Part P, Chelicerata,"
-        "Volumes 2 & 3. Geological Society of America & University of Kansas.",
-        "Linguliformea, Craniiformea, and Rhynchonelliformea (part). "
-        "Genus-level classification with type species.",
+        "Moore, R.C., Scott, H.W. & others, 1961. "
+        "Treatise on Invertebrate Paleontology, Part Q, Arthropoda 3 — "
+        "Crustacea, Ostracoda. Geological Society of America & University of Kansas Press.",
+        "Ostracoda genus-level classification with type species.",
     ))
 
     # schema_descriptions
@@ -1307,7 +1306,7 @@ def write_scoda_metadata(cur, version, ref_id):
         )
     """)
     descs = [
-        ("taxon", None, "Chelicerate taxa from Subphylum to Genus"),
+        ("taxon", None, "Ostracode taxa from Subphylum to Genus"),
         ("taxon", "rank", "Taxonomic rank: Phylum, Subphylum, Class, Order, Suborder, Superfamily, Family, Subfamily, Genus"),
         ("assertion", None, "Taxonomic assertions linking taxa"),
         ("assertion", "predicate", "PLACED_IN, SYNONYM_OF, SPELLING_OF, RANK_AS, VALID_AS"),
@@ -1372,7 +1371,7 @@ def write_scoda_metadata(cur, version, ref_id):
     """)
     cur.execute(
         "INSERT INTO ui_manifest (name, description, manifest_json) VALUES ('default', ?, ?)",
-        ("Chelicerobase default UI manifest",
+        ("Ostracoda default UI manifest",
          json.dumps(_build_manifest(), indent=2, ensure_ascii=False)))
 
     # editable_entities
@@ -1390,7 +1389,7 @@ def write_scoda_metadata(cur, version, ref_id):
     """, (json.dumps([
         {"name": "name", "type": "text", "required": True, "label": "Name"},
         {"name": "rank", "type": "select", "required": True, "label": "Rank",
-         "options": ["Phylum", "Subphylum", "Class", "Order", "Suborder",
+         "options": ["Phylum", "Subclass", "Class", "Order", "Suborder",
                      "Superfamily", "Family", "Subfamily", "Genus"]},
         {"name": "author", "type": "text", "label": "Author"},
         {"name": "year", "type": "text", "label": "Year"},
@@ -1405,12 +1404,12 @@ def write_scoda_metadata(cur, version, ref_id):
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description='Build chelicerobase DB from source')
+    parser = argparse.ArgumentParser(description='Build ostracoda DB from source')
     parser.add_argument('--version', default=VERSION, help=f'Version (default: {VERSION})')
     args = parser.parse_args()
 
     version = args.version
-    dst_path = DST_DIR / f"chelicerobase-{version}.db"
+    dst_path = DST_DIR / f"ostracoda-{version}.db"
 
     # Verify all source files exist
     for profile in PROFILES:
@@ -1426,7 +1425,7 @@ def main():
 
     DST_DIR.mkdir(parents=True, exist_ok=True)
 
-    print(f"Building chelicerobase v{version}")
+    print(f"Building ostracoda v{version}")
     print(f"  Output: {dst_path}")
     print(f"  Profiles: {len(PROFILES)}")
 
@@ -1498,8 +1497,8 @@ def main():
         """, all_edges)
         conn.commit()
 
-        # Bridge orphan roots to Subphylum CHELICERATA
-        phylum_id = resolve_taxon("CHELICERATA", "Subphylum", conn, taxon_index, new_taxa_cache)
+        # Bridge orphan roots to Subphylum OSTRACODA
+        phylum_id = resolve_taxon("OSTRACODA", "Subclass", conn, taxon_index, new_taxa_cache)
         taxon_index.update(new_taxa_cache)
         orphan_roots = conn.execute("""
             SELECT DISTINCT e.parent_id, t.name, t.rank
@@ -1520,9 +1519,9 @@ def main():
                 VALUES ({profile_id}, ?, ?)
             """, bridge_edges)
             conn.commit()
-            print(f"  Bridge edges to Subphylum CHELICERATA: {len(bridge_edges)}")
+            print(f"  Bridge edges to Subphylum OSTRACODA: {len(bridge_edges)}")
             for oid, oname, orank in orphan_roots:
-                print(f"    {orank} {oname} -> Subphylum CHELICERATA")
+                print(f"    {orank} {oname} -> Subphylum OSTRACODA")
 
         edge_count = conn.execute(
             "SELECT COUNT(*) FROM classification_edge_cache WHERE profile_id = ?",
@@ -1583,7 +1582,7 @@ def main():
         "SELECT COUNT(*) FROM classification_edge_cache"
     ).fetchone()[0]
 
-    print(f"\n=== Chelicerobase v{version} ===")
+    print(f"\n=== Ostracoda v{version} ===")
     for rank, cnt in rank_counts:
         print(f"  {rank}: {cnt}")
     print(f"  Total taxa: {total_taxa}")

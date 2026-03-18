@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Create a .scoda package from the ostracobase DB.
+"""Create a .scoda package from the ostracoda DB.
 
 Usage:
-  python scripts/build_ostracobase_scoda.py
-  python scripts/build_ostracobase_scoda.py --dry-run
+  python scripts/build_ostracoda_scoda.py
+  python scripts/build_ostracoda_scoda.py --dry-run
 """
 
 import argparse
@@ -23,19 +23,19 @@ ROOT = os.path.join(os.path.dirname(__file__), '..')
 DB_DIR = os.path.join(ROOT, 'db')
 DEFAULT_OUTPUT_DIR = os.path.join(ROOT, 'dist')
 
-_OSTRACOBASE_RE = re.compile(r'^ostracobase-(\d+\.\d+\.\d+)\.db$')
+_OSTRACODA_RE = re.compile(r'^ostracoda-(\d+\.\d+\.\d+)\.db$')
 
 
-def find_ostracobase_db():
-    candidates = glob.glob(os.path.join(DB_DIR, 'ostracobase-*.db'))
+def find_ostracoda_db():
+    candidates = glob.glob(os.path.join(DB_DIR, 'ostracoda-*.db'))
     versioned = []
     for path in candidates:
-        m = _OSTRACOBASE_RE.search(os.path.basename(path))
+        m = _OSTRACODA_RE.search(os.path.basename(path))
         if m:
             parts = tuple(int(x) for x in m.group(1).split('.'))
             versioned.append((parts, path))
     if not versioned:
-        raise FileNotFoundError("No ostracobase-*.db found in db/")
+        raise FileNotFoundError("No ostracoda-*.db found in db/")
     versioned.sort()
     return os.path.abspath(versioned[-1][1])
 
@@ -68,7 +68,7 @@ def _sha256_scoda(path):
 
 def generate_hub_manifest(scoda_path, db_path):
     meta = _read_db_metadata(db_path)
-    package_id = meta.get('artifact_id', 'ostracobase')
+    package_id = meta.get('artifact_id', 'ostracoda')
     version = meta.get('version', '0.0.0')
 
     provenance = []
@@ -106,24 +106,24 @@ def generate_hub_manifest(scoda_path, db_path):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Create a .scoda package from the ostracobase DB')
-    parser.add_argument('--db', default=None, help='Path to ostracobase DB')
+    parser = argparse.ArgumentParser(description='Create a .scoda package from the ostracoda DB')
+    parser.add_argument('--db', default=None, help='Path to ostracoda DB')
     parser.add_argument('--output', default=None, help='Output .scoda file path')
     parser.add_argument('--dry-run', action='store_true', help='Preview without creating')
     args = parser.parse_args()
 
-    db_path = os.path.abspath(args.db) if args.db else find_ostracobase_db()
+    db_path = os.path.abspath(args.db) if args.db else find_ostracoda_db()
     if args.output:
         output_path = os.path.abspath(args.output)
     else:
         version = _read_version(db_path)
         os.makedirs(DEFAULT_OUTPUT_DIR, exist_ok=True)
         output_path = os.path.abspath(
-            os.path.join(DEFAULT_OUTPUT_DIR, f'ostracobase-{version}.scoda'))
+            os.path.join(DEFAULT_OUTPUT_DIR, f'ostracoda-{version}.scoda'))
 
     if not os.path.exists(db_path):
         print(f"Error: Database not found: {db_path}", file=sys.stderr)
-        print("Run 'python scripts/build_ostracobase_db.py' first.", file=sys.stderr)
+        print("Run 'python scripts/build_ostracoda_db.py' first.", file=sys.stderr)
         sys.exit(1)
 
     # Validate

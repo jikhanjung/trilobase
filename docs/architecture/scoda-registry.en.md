@@ -55,9 +55,9 @@ Phase 2 (scaling):
         "size": 12345678
       }
     },
-    "trilobase": {
+    "trilobita": {
       "1.0.0": {
-        "url": "https://example.com/trilobase-1.0.0.scoda",
+        "url": "https://example.com/trilobita-1.0.0.scoda",
         "sha256": "...",
         "size": 9876543
       }
@@ -94,9 +94,9 @@ Runtime performs:
     paleocore/
       0.3.0/
         paleocore-0.3.0.scoda
-    trilobase/
+    trilobita/
       1.0.0/
-        trilobase-1.0.0.scoda
+        trilobita-1.0.0.scoda
 
 Cache key = (package_name, version)
 
@@ -106,7 +106,7 @@ Cache key = (package_name, version)
 
 Runtime may generate a lock file:
 
-trilobase-1.0.0.lock
+trilobita-1.0.0.lock
 
 Containing:
 

@@ -13,7 +13,7 @@ The simplest way to use Trilobase. No Python installation required.
 3. Click **"▶ Start Server"** in the GUI control panel
 4. Your browser opens automatically at `http://localhost:8080`
 
-All data and the web server are bundled in a single file. User annotations are stored separately in `trilobase_overlay.db` and persist across updates.
+All data and the web server are bundled in a single file. User annotations are stored separately in `trilobita_overlay.db` and persist across updates.
 
 ---
 
@@ -37,7 +37,7 @@ pip install -e /path/to/scoda-engine[dev]
 ### Run Web Server
 
 ```bash
-python -m scoda_engine.serve trilobase.scoda
+python -m scoda_engine.serve trilobita.scoda
 ```
 
 Open `http://localhost:8080` in your browser.
@@ -105,7 +105,7 @@ Once connected, you can ask Claude:
 You can also query the database directly with SQLite:
 
 ```bash
-sqlite3 db/trilobase.db "SELECT name, author, year FROM taxonomic_ranks WHERE rank='Genus' AND is_valid=1 LIMIT 10;"
+sqlite3 db/trilobita.db "SELECT name, author, year FROM taxonomic_ranks WHERE rank='Genus' AND is_valid=1 LIMIT 10;"
 ```
 
 For cross-database queries (geographic/stratigraphic data), attach PaleoCore:

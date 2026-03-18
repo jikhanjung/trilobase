@@ -151,7 +151,7 @@ MCP 서버의 배포 형태를 반복적으로 개선. SSE 통합 → 독립 실
 | 039 | 31 | PaleoCore DB 생성 스크립트 (14개 테이블, 3,340 레코드) | `039_paleocore_db_creation.md` |
 | 040 | 32 | Dual-DB 운영 (PaleoCore ATTACH, 3-DB 동시) | `040_phase32_dual_db.md` |
 | 041 | 33 | PaleoCore 쿼리 `pc.*` prefix 전환 | `041_phase33_pc_prefix.md` |
-| 042 | 34 | trilobase.db에서 PaleoCore 테이블 DROP (8개) | `042_phase34_drop_paleocore_tables.md` |
+| 042 | 34 | trilobita.db에서 PaleoCore 테이블 DROP (8개) | `042_phase34_drop_paleocore_tables.md` |
 | 043 | 35 | PaleoCore .scoda 패키지 + Dependency 반영 | `043_phase35_paleocore_scoda.md` |
 | 044 | 36 | 조합 .scoda 배포 테스트 | `044_phase36_combined_scoda_test.md` |
 | 045 | 37 | PyInstaller 빌드에 paleocore.scoda 포함 | `045_phase37_build_paleocore_scoda.md` |

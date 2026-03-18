@@ -20,19 +20,19 @@ trilobase/
 ├── pytest.ini                        # pytest config (testpaths = tests)
 ├── requirements.txt                  # scoda-engine dependency
 ├── db/                               # Databases (git tracked, versioned filenames)
-│   ├── trilobase-0.3.3.db           # ★ 메인 DB (assertion-centric)
-│   ├── brachiobase-0.2.6.db        # Brachiopod DB (Treatise 1965 & 2000-2006)
-│   ├── graptobase-0.1.2.db         # Graptolite DB (Treatise 1955/1970/2023)
-│   ├── chelicerobase-0.1.2.db      # Chelicerate DB (Treatise 1955, Part P)
-│   ├── ostracobase-0.1.2.db        # Ostracod DB (Treatise 1961, Part Q)
-│   ├── trilobase-canonical-0.2.6.db # Legacy canonical DB (보존용)
+│   ├── trilobita-0.3.3.db           # ★ 메인 DB (assertion-centric)
+│   ├── brachiopoda-0.2.6.db        # Brachiopod DB (Treatise 1965 & 2000-2006)
+│   ├── graptolithina-0.1.2.db      # Graptolite DB (Treatise 1955/1970/2023)
+│   ├── chelicerata-0.1.2.db        # Chelicerate DB (Treatise 1955, Part P)
+│   ├── ostracoda-0.1.2.db          # Ostracod DB (Treatise 1961, Part Q)
+│   ├── trilobita-canonical-0.2.6.db # Legacy canonical DB (보존용)
 │   └── paleocore-0.1.3.db           # PaleoCore reference DB
 ├── dist/                             # Generated artifacts (gitignored)
-│   ├── trilobase-{ver}.scoda        # Trilobase .scoda package
-│   ├── brachiobase-{ver}.scoda     # Brachiobase .scoda package
-│   ├── graptobase-{ver}.scoda      # Graptobase .scoda package
-│   ├── chelicerobase-{ver}.scoda   # Chelicerobase .scoda package
-│   ├── ostracobase-{ver}.scoda     # Ostracobase .scoda package
+│   ├── trilobita-{ver}.scoda        # Trilobita .scoda package
+│   ├── brachiopoda-{ver}.scoda     # Brachiopoda .scoda package
+│   ├── graptolithina-{ver}.scoda   # Graptolithina .scoda package
+│   ├── chelicerata-{ver}.scoda     # Chelicerata .scoda package
+│   ├── ostracoda-{ver}.scoda       # Ostracoda .scoda package
 │   ├── paleocore-{ver}.scoda        # PaleoCore .scoda package
 │   └── *_overlay.db                 # Overlay databases
 ├── data/                             # Source data files
@@ -42,17 +42,17 @@ trilobase/
 │   ├── adrain2011.txt
 │   └── mcp_tools_trilobase.json     # MCP 도구 정의
 ├── scripts/                          # ★ 활성 빌드 스크립트만
-│   ├── build_trilobase_db.py        # Trilobase DB 빌드 → db/
-│   ├── build_trilobase_scoda.py     # trilobase.scoda → dist/
-│   ├── validate_trilobase_db.py     # DB 검증 (17 checks)
-│   ├── build_brachiobase_db.py      # Brachiobase DB 빌드 → db/
-│   ├── build_brachiobase_scoda.py   # brachiobase.scoda → dist/
-│   ├── build_graptobase_db.py       # Graptobase DB 빌드 → db/
-│   ├── build_graptobase_scoda.py    # graptobase.scoda → dist/
-│   ├── build_chelicerobase_db.py    # Chelicerobase DB 빌드 → db/
-│   ├── build_chelicerobase_scoda.py # chelicerobase.scoda → dist/
-│   ├── build_ostracobase_db.py      # Ostracobase DB 빌드 → db/
-│   ├── build_ostracobase_scoda.py   # ostracobase.scoda → dist/
+│   ├── build_trilobita_db.py        # Trilobita DB 빌드 → db/
+│   ├── build_trilobita_scoda.py     # trilobita.scoda → dist/
+│   ├── validate_trilobita_db.py     # DB 검증 (17 checks)
+│   ├── build_brachiopoda_db.py      # Brachiopoda DB 빌드 → db/
+│   ├── build_brachiopoda_scoda.py   # brachiopoda.scoda → dist/
+│   ├── build_graptolithina_db.py    # Graptolithina DB 빌드 → db/
+│   ├── build_graptolithina_scoda.py # graptolithina.scoda → dist/
+│   ├── build_chelicerata_db.py      # Chelicerata DB 빌드 → db/
+│   ├── build_chelicerata_scoda.py   # chelicerata.scoda → dist/
+│   ├── build_ostracoda_db.py        # Ostracoda DB 빌드 → db/
+│   ├── build_ostracoda_scoda.py     # ostracoda.scoda → dist/
 │   ├── build_paleocore_db.py        # PaleoCore DB → db/
 │   ├── build_paleocore_scoda.py     # paleocore.scoda → dist/
 │   ├── build_all.py                 # 전체 빌드

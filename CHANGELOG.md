@@ -1,6 +1,6 @@
-# Changelog — Trilobase
+# Changelog — Trilobita
 
-All notable changes to the **trilobase** package will be documented in this file.
+All notable changes to the **trilobita** package will be documented in this file.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html):
@@ -55,7 +55,7 @@ This project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html):
 
 ### Added
 - rank_detail에서 Genus 클릭 시 genus_detail로 자동 redirect (scoda-engine `redirect` 매니페스트 지원)
-- `regions_list` 쿼리를 trilobase ui_queries에 추가 (taxa_count 포함)
+- `regions_list` 쿼리를 trilobita ui_queries에 추가 (taxa_count 포함)
 
 ## [0.2.2] - 2026-02-22
 

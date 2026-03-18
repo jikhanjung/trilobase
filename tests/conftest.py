@@ -59,7 +59,7 @@ def anyio_backend():
 @pytest.fixture
 def test_db(tmp_path):
     """Create temporary test databases (canonical + overlay) with sample data."""
-    canonical_db_path = str(tmp_path / "test_trilobase.db")
+    canonical_db_path = str(tmp_path / "test_trilobita.db")
     overlay_db_path = str(tmp_path / "test_overlay.db")
 
     # Create CANONICAL database
@@ -459,8 +459,8 @@ def test_db(tmp_path):
 
     # SCODA metadata
     cursor.executescript("""
-        INSERT INTO artifact_metadata (key, value) VALUES ('artifact_id', 'trilobase');
-        INSERT INTO artifact_metadata (key, value) VALUES ('name', 'Trilobase');
+        INSERT INTO artifact_metadata (key, value) VALUES ('artifact_id', 'trilobita');
+        INSERT INTO artifact_metadata (key, value) VALUES ('name', 'Trilobita');
         INSERT INTO artifact_metadata (key, value) VALUES ('version', '1.0.0');
         INSERT INTO artifact_metadata (key, value) VALUES ('schema_version', '1.0');
         INSERT INTO artifact_metadata (key, value) VALUES ('description', 'Trilobite genus-level taxonomy database');

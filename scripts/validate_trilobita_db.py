@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""P74 — Trilobase DB validator.
+"""P74 — Trilobita DB validator.
 
-Validates db/trilobase-{version}.db against db/trilobase-canonical-{version}.db:
+Validates db/trilobita-{version}.db against db/trilobita-canonical-{version}.db:
   1. Tree equivalence (parent_id vs v_taxonomic_ranks)
   2. Count verification
   3. CTE tree traversal (all valid genera reachable)
@@ -29,14 +29,14 @@ def _resolve_db(db_arg: str | None) -> Path:
     if db_arg:
         return Path(db_arg)
     candidates = sorted(
-        [p for p in glob.glob(str(DST_DIR / "trilobase-*.db"))
+        [p for p in glob.glob(str(DST_DIR / "trilobita-*.db"))
          if "canonical" not in p and "assertion" not in p],
         key=lambda p: Path(p).stat().st_mtime,
     )
     if candidates:
         return Path(candidates[-1])
     # Fallback to unversioned name (legacy)
-    return DST_DIR / "trilobase.db"
+    return DST_DIR / "trilobita.db"
 
 
 def check(name: str, passed: bool, detail: str = ""):
@@ -54,7 +54,7 @@ def main():
         description="P74 — Assertion-centric test DB validator")
     parser.add_argument(
         "--db", default=None,
-        help="Path to trilobase DB (default: latest db/trilobase-*.db)")
+        help="Path to trilobita DB (default: latest db/trilobita-*.db)")
     args = parser.parse_args()
 
     DST_DB = _resolve_db(args.db)

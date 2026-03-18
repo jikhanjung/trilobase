@@ -28,11 +28,11 @@ jobs:
         run: |
           mkdir -p dist
           python scripts/build_paleocore_scoda.py
-          python scripts/build_trilobase_scoda.py
-          python scripts/build_brachiobase_scoda.py
-          python scripts/build_graptobase_scoda.py
-          python scripts/build_chelicerobase_scoda.py
-          python scripts/build_ostracobase_scoda.py
+          python scripts/build_trilobita_scoda.py
+          python scripts/build_brachiopoda_scoda.py
+          python scripts/build_graptolithina_scoda.py
+          python scripts/build_chelicerata_scoda.py
+          python scripts/build_ostracoda_scoda.py
       - name: Extract version from tag
         id: version
         run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
@@ -46,11 +46,11 @@ jobs:
             See [CHANGELOG.md](CHANGELOG.md) for details.
 
             ### Packages
-            - Trilobase — trilobite taxonomy (Jell & Adrain 2002)
-            - Brachiobase — brachiopod taxonomy (Treatise 1965 & 2000-2006)
-            - Graptobase — graptolite taxonomy (Treatise 1955/1970/2023)
-            - Chelicerobase — chelicerate taxonomy (Treatise 1955)
-            - Ostracobase — ostracod taxonomy (Treatise 1961)
+            - Trilobita — trilobite taxonomy (Jell & Adrain 2002)
+            - Brachiopoda — brachiopod taxonomy (Treatise 1965 & 2000-2006)
+            - Graptolithina — graptolite taxonomy (Treatise 1955/1970/2023)
+            - Chelicerata — chelicerate taxonomy (Treatise 1955)
+            - Ostracoda — ostracod taxonomy (Treatise 1961)
             - PaleoCore — shared reference data
           files: |
             dist/*.scoda

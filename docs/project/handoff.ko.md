@@ -26,7 +26,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 
 ## Database Status
 
-**Canonical DB (trilobase.db) — read-only, immutable:**
+**Canonical DB (trilobita.db) — read-only, immutable:**
 
 | Table/View | Records | Description |
 |------------|---------|-------------|
@@ -45,7 +45,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | ui_queries | 37 | Named SQL queries |
 | ui_manifest | 1 | Declarative view definitions (JSON) |
 
-**Overlay DB (trilobase_overlay.db) — read/write, user-local data:**
+**Overlay DB (trilobita_overlay.db) — read/write, user-local data:**
 
 | Table | Records | Description |
 |-------|---------|-------------|
@@ -126,7 +126,7 @@ trilobase/                                 # Domain data, scripts, and tests onl
 ├── pytest.ini                             # pytest config (testpaths=tests)
 ├── requirements.txt                       # scoda-engine dependency
 ├── db/                                    # Canonical DBs (git tracked)
-│   ├── trilobase.db                       # Trilobase SQLite DB
+│   ├── trilobita.db                       # Trilobase SQLite DB
 │   └── paleocore.db                       # PaleoCore reference DB
 ├── dist/                                  # Build artifacts (gitignored)
 │   ├── trilobase-{ver}.scoda              # .scoda package (버전 포함 파일명)
@@ -144,7 +144,7 @@ trilobase/                                 # Domain data, scripts, and tests onl
 ├── spa/                                   # Reference Implementation SPA (trilobase-specific)
 │   └── index.html                        # Single-file SPA (HTML+CSS+JS, 2,915 lines)
 ├── scripts/                               # Domain pipeline scripts
-│   ├── create_scoda.py                    # trilobase.scoda → dist/ (--with-spa 옵션, hub manifest 자동 생성)
+│   ├── create_scoda.py                    # trilobita.scoda → dist/ (--with-spa 옵션, hub manifest 자동 생성)
 │   ├── create_paleocore_scoda.py          # paleocore.scoda → dist/
 │   ├── create_paleocore.py                # PaleoCore DB → db/
 │   ├── bump_version.py                    # Version bump script
@@ -213,7 +213,7 @@ pytest tests/
 
 ## DB Schema
 
-### Canonical DB (trilobase.db)
+### Canonical DB (trilobita.db)
 
 ```sql
 -- taxonomic_ranks: 5,341 records — unified taxonomy (Class~Genus) + 2 placeholders + Agnostina Suborder
@@ -268,7 +268,7 @@ ui_manifest (name, description, manifest_json, created_at)                      
 -- temporal_ranges, ics_chronostrat, temporal_ics_mapping → paleocore.db (pc.* prefix)
 ```
 
-### Overlay DB (trilobase_overlay.db)
+### Overlay DB (trilobita_overlay.db)
 
 ```sql
 -- overlay_metadata: canonical DB version tracking
@@ -283,8 +283,8 @@ user_annotations (
 
 **SQLite ATTACH usage (3-DB):**
 ```python
-conn = sqlite3.connect('db/trilobase.db')  # Canonical DB
-conn.execute("ATTACH DATABASE 'dist/trilobase_overlay.db' AS overlay")
+conn = sqlite3.connect('db/trilobita.db')  # Canonical DB
+conn.execute("ATTACH DATABASE 'dist/trilobita_overlay.db' AS overlay")
 conn.execute("ATTACH DATABASE 'db/paleocore.db' AS pc")
 
 # Canonical tables: SELECT * FROM taxonomic_ranks
@@ -297,10 +297,10 @@ conn.execute("ATTACH DATABASE 'db/paleocore.db' AS pc")
 
 ```bash
 # Basic query (using taxa view)
-sqlite3 db/trilobase.db "SELECT * FROM taxa LIMIT 10;"
+sqlite3 db/trilobita.db "SELECT * FROM taxa LIMIT 10;"
 
 # Full hierarchy query
-sqlite3 db/trilobase.db "SELECT g.name, f.name as family, o.name as 'order'
+sqlite3 db/trilobita.db "SELECT g.name, f.name as family, o.name as 'order'
 FROM taxonomic_ranks g
 LEFT JOIN taxonomic_ranks f ON g.parent_id = f.id
 LEFT JOIN taxonomic_ranks sf ON f.parent_id = sf.id
@@ -308,14 +308,14 @@ LEFT JOIN taxonomic_ranks o ON sf.parent_id = o.id
 WHERE g.rank = 'Genus' AND g.is_valid = 1 LIMIT 10;"
 
 # Genus formations (using relation table)
-sqlite3 db/trilobase.db "SELECT g.name, f.name as formation
+sqlite3 db/trilobita.db "SELECT g.name, f.name as formation
 FROM taxonomic_ranks g
 JOIN genus_formations gf ON g.id = gf.genus_id
 JOIN formations f ON gf.formation_id = f.id
 WHERE g.name = 'Paradoxides';"
 
 # Genera by country (using relation table)
-sqlite3 db/trilobase.db "SELECT g.name, gl.region
+sqlite3 db/trilobita.db "SELECT g.name, gl.region
 FROM taxonomic_ranks g
 JOIN genus_locations gl ON g.id = gl.genus_id
 JOIN countries c ON gl.country_id = c.id
@@ -325,6 +325,6 @@ WHERE c.name = 'China' LIMIT 10;"
 ## Notes
 
 - `data/trilobite_genus_list.txt` is always the canonical text version
-- `db/trilobase.db` is the latest database
+- `db/trilobita.db` is the latest database
 - Git commit after each Phase completion
 - Original PDF reference: Jell & Adrain (2002)

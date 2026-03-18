@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-"""Build graptobase DB from Treatise graptolite source files.
+"""Build brachiopoda DB from Treatise brachiopod source files.
 
-Three classification profiles:
-  Profile 1: Treatise 1955 (Bulman, 1st ed.)
-  Profile 2: Treatise 1970 (Bulman, 2nd ed.)
-  Profile 3: Treatise 2023 (Maletz, revised)
+Two classification profiles:
+  Profile 1: Treatise 1965 (original) — vol1 + vol2
+  Profile 2: Treatise Revised 2000-2006 — vol2 + vol3 + vol4 + vol5
 
 Pure source-driven build (no canonical DB dependency).
 
 Usage:
-    python scripts/build_graptobase_db.py [--version 0.1.0]
+    python scripts/build_brachiopoda_db.py [--version 0.2.0]
 """
 
 import argparse
@@ -22,7 +21,7 @@ from pathlib import Path
 
 from db_path import find_paleocore_db
 
-VERSION = "0.1.2"
+VERSION = "0.2.6"
 
 # ---------------------------------------------------------------------------
 # Source file groups per classification profile
@@ -30,59 +29,43 @@ VERSION = "0.1.2"
 
 PROFILES = [
     {
-        "name": "Treatise 1955",
-        "description": "Treatise on Invertebrate Paleontology, Part V, Graptolithina (1955)",
+        "name": "Treatise 1965",
+        "description": "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (1965)",
         "sources": [
-            "treatise_graptolite_1955.txt",
+            "treatise_brachiopoda_1965_vol1.txt",
+            "treatise_brachiopoda_1965_vol2.txt",
         ],
         "reference": {
-            "authors": "BULMAN, O.M.B.",
-            "year": 1955,
-            "title": "Graptolithina, with sections on Enteropneusta and Pterobranchia",
+            "authors": "WILLIAMS, A., ROWELL, A.J., MUIR-WOOD, H.M. & others",
+            "year": 1965,
+            "title": "Treatise on Invertebrate Paleontology, Part H, Brachiopoda",
             "publisher": "Geological Society of America & University of Kansas Press",
             "reference_type": "book",
             "raw_entry": (
-                "Bulman, O.M.B., 1955. Graptolithina, with sections on Enteropneusta "
-                "and Pterobranchia. In: Moore, R.C. (Ed.), Treatise on Invertebrate "
-                "Paleontology, Part V."
+                "Williams, A., et al., 1965. Treatise on Invertebrate Paleontology, "
+                "Part H, Brachiopoda, Volumes 1 & 2."
             ),
         },
     },
     {
-        "name": "Treatise 1970",
-        "description": "Treatise on Invertebrate Paleontology, Part V, Graptolithina, 2nd ed. (1970)",
+        "name": "Treatise Revised 2000-2006",
+        "description": "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), 2000-2006",
         "sources": [
-            "treatise_graptolite_1970.txt",
+            "treatise_brachiopoda_2000_vol2.txt",
+            "treatise_brachiopoda_2000_vol3.txt",
+            "treatise_brachiopoda_2002_vol4.txt",
+            "treatise_brachiopoda_2006_vol5.txt",
         ],
         "reference": {
-            "authors": "BULMAN, O.M.B.",
-            "year": 1970,
-            "title": "Graptolithina, with sections on Enteropneusta and Pterobranchia (2nd ed.)",
-            "publisher": "Geological Society of America & University of Kansas Press",
+            "authors": "WILLIAMS, A., CARLSON, S.J., BRUNTON, C.H.C. & others",
+            "year": 2000,
+            "title": "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), Volumes 2-5",
+            "publisher": "Geological Society of America & University of Kansas",
             "reference_type": "book",
             "raw_entry": (
-                "Bulman, O.M.B., 1970. Graptolithina, with sections on Enteropneusta "
-                "and Pterobranchia (2nd ed.). In: Teichert, C. (Ed.), Treatise on "
-                "Invertebrate Paleontology, Part V."
-            ),
-        },
-    },
-    {
-        "name": "Treatise 2023",
-        "description": "Treatise on Invertebrate Paleontology, Part V (Revised), Hemichordata (2023)",
-        "sources": [
-            "treatise_graptolite_2023.txt",
-        ],
-        "reference": {
-            "authors": "MALETZ, J. (Ed.)",
-            "year": 2023,
-            "title": "Hemichordata. In: Treatise on Invertebrate Paleontology, Part V (Revised)",
-            "publisher": "Geological Society of America & University of Kansas Press",
-            "reference_type": "book",
-            "raw_entry": (
-                "Maletz, J. (Ed.), 2023. Hemichordata. In: Selden, P.A. (Ed.), "
-                "Treatise on Invertebrate Paleontology, Part V (Revised), Second "
-                "Edition. Geological Society of America and University of Kansas Press."
+                "Williams, A., Carlson, S.J., Brunton, C.H.C. & others, 2000-2006. "
+                "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), "
+                "Volumes 2-5."
             ),
         },
     },
@@ -94,7 +77,7 @@ DST_DIR = ROOT / "db"
 
 
 # ---------------------------------------------------------------------------
-# Source file parser — extended for graptolite-specific constructs
+# Source file parser (shared logic with trilobase)
 # ---------------------------------------------------------------------------
 
 def parse_source_header(text: str):
@@ -122,80 +105,24 @@ def parse_source_header(text: str):
 
 
 RANK_KEYWORDS = {
-    "Phylum", "Subphylum", "Class", "Subclass",
-    "Order", "Suborder", "Infraorder",
+    "Phylum", "Subphylum", "Class", "Order", "Suborder",
     "Superfamily", "Family", "Subfamily",
 }
 RANK_ORDER = {
     "Phylum": -2, "Subphylum": -1,
-    "Class": 0, "Subclass": 0.5,
-    "Order": 1, "Suborder": 2, "Infraorder": 2.5,
-    "Superfamily": 3, "Family": 4, "Subfamily": 5, "Genus": 6,
+    "Class": 0, "Order": 1, "Suborder": 2, "Superfamily": 3,
+    "Family": 4, "Subfamily": 5, "Genus": 6,
 }
-
-# Lines to skip entirely (informal sections, addenda, etc.)
-_SKIP_RE = re.compile(
-    r'^(?:'
-    r'Section\s+|'
-    r'Group\s+|'
-    r'Stem\s+group\s+|'
-    r'Addendum|'
-    r'Acceptable\s+genera|'
-    r'Genera\s+of\s+dubious|'
-    r'Indeterminate\s+genera|'
-    r'Nomen\s+dubium|'
-    r'Taxa\s+previously|'
-    r'Multiramous\s+forms|'
-    r'Taxa\s+with\s+cladial|'
-    r'Linograptinae\s+with\s+cladia|'
-    r'Streptograptines|'
-    r'Genera\s+unassigned'
-    r')',
-    re.IGNORECASE,
-)
-
-# "X incertae sedis" header — reset stack to taxon X
-_INCERTAE_SEDIS_HDR_RE = re.compile(
-    r'^(\w+)\s+incertae\s+sedis$', re.IGNORECASE
-)
-
-# Multi-order uncertain header (1970)
-_MULTI_UNCERTAIN_RE = re.compile(
-    r'^[\w,\s]+\s*[—–-]\s*Taxonomic\s+Position\s+Uncertain',
-    re.IGNORECASE,
-)
-
-# Unrecognizable genera header
-_UNRECOGNIZABLE_RE = re.compile(r'^Unrecognizable\s+Genera', re.IGNORECASE)
 
 
 def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
-    """Parse hierarchy body into list of placement records.
-
-    Extends the base brachiobase parser with graptolite-specific handling:
-    - Section / Group / Stem group headers → skip
-    - "X incertae sedis" headers → reset stack to X
-    - "Unrecognizable Genera" → reset stack to root, mark invalid
-    - Addendum sections → skip all remaining lines
-    - Subclass / Infraorder ranks
-    """
+    """Parse hierarchy body into list of placement records."""
     placements = []
     stack = []  # [(rank_order, name, rank)]
-    in_addendum = False
-    in_unrecognizable = False
-    # Track known taxon names → (rank_order, rank) for incertae sedis reset
-    known_taxa = {}
 
     for raw_line in body.splitlines():
         stripped = raw_line.strip()
         if not stripped or stripped.startswith("#"):
-            continue
-
-        # Addendum — skip everything after
-        if re.match(r'^Addendum', stripped, re.IGNORECASE):
-            in_addendum = True
-            continue
-        if in_addendum:
             continue
 
         # Synonym lines
@@ -211,9 +138,6 @@ def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
             else:
                 target = syn_text.split()[0] if syn_text else syn_text
                 detail = ""
-            # Check for misspelling marker
-            if "misspelling" in detail.lower():
-                predicate = "SPELLING_OF"
             placements[-1]["synonyms"].append({
                 "predicate": predicate,
                 "target": target,
@@ -221,53 +145,9 @@ def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
             })
             continue
 
-        # Subgenus lines (e.g. "D. (Pseudodictyonema)") — skip
+        # Subgenus lines (e.g. "S. (Strophomena)") — skip
         subgenus_match = re.match(r'^\s+\w+\.\s+\(', stripped)
         if subgenus_match:
-            continue
-
-        # --- Graptolite-specific skip patterns ---
-
-        # Unrecognizable Genera header → reset stack to root
-        if _UNRECOGNIZABLE_RE.match(stripped):
-            # Pop stack to root level
-            while len(stack) > 1:
-                stack.pop()
-            in_unrecognizable = True
-            continue
-
-        # Multi-order uncertain header → reset stack to root
-        if _MULTI_UNCERTAIN_RE.match(stripped):
-            while len(stack) > 1:
-                stack.pop()
-            continue
-
-        # "X incertae sedis" header → reset stack to X
-        m_is = _INCERTAE_SEDIS_HDR_RE.match(stripped)
-        if m_is:
-            target_name = m_is.group(1)
-            # Pop stack back to the target taxon
-            found = False
-            for i in range(len(stack) - 1, -1, -1):
-                if stack[i][1].lower() == target_name.lower():
-                    stack = stack[:i + 1]
-                    found = True
-                    break
-            if not found:
-                # If not found in stack, try known_taxa to determine level
-                if target_name.lower() in known_taxa:
-                    ro, rk = known_taxa[target_name.lower()]
-                    while stack and stack[-1][0] >= ro:
-                        stack.pop()
-                    stack.append((ro, target_name, rk))
-                else:
-                    # Fallback: pop to root
-                    while len(stack) > 1:
-                        stack.pop()
-            continue
-
-        # Skip informal section headers
-        if _SKIP_RE.match(stripped):
             continue
 
         # Status markers
@@ -284,16 +164,13 @@ def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
         if "UNASSIGNED" in line.upper() or "GENERA UNASSIGNED" in line.upper():
             continue
 
-        # "Suborder UNCERTAIN" → create placeholder
-        if re.match(r'^(Suborder|Order)\s+UNCERTAIN$', line, re.IGNORECASE):
-            # Skip this header — children will be placed under parent
-            continue
-
         # Determine rank
         rank = None
-        for kw in sorted(RANK_KEYWORDS, key=len, reverse=True):
+        has_explicit_rank = False
+        for kw in RANK_KEYWORDS:
             if line.startswith(kw + " "):
                 rank = kw
+                has_explicit_rank = True
                 line = line[len(kw):].strip()
                 break
 
@@ -301,23 +178,15 @@ def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
             rank = default_leaf_rank
 
         # Parse name and authority; extract location and temporal_code from | fields
-        # First extract type_species from [*...] before stripping brackets
-        ts_match = re.search(r'\[\*(.+?)\]', line)
-        type_species = ts_match.group(1) if ts_match else ""
-
         clean = re.sub(r'\[.*?\]', '', line).strip()
         pipe_fields = clean.split("|")
         clean = pipe_fields[0].strip()
         location = pipe_fields[1].strip() if len(pipe_fields) > 1 else ""
         temporal_code = pipe_fields[2].strip() if len(pipe_fields) > 2 else ""
         # If only 2 fields, the second might be temporal_code (no location)
-        if len(pipe_fields) == 2 and re.match(r'^[?A-Z]{2,}', pipe_fields[1].strip()):
+        if len(pipe_fields) == 2 and re.match(r'^[A-Z]{2,}', pipe_fields[1].strip()):
             temporal_code = pipe_fields[1].strip()
             location = ""
-
-        # Strip ? prefix from temporal_code for matching
-        if temporal_code.startswith('?'):
-            temporal_code = temporal_code[1:]
 
         parts = clean.split(None, 1)
         if not parts:
@@ -325,13 +194,8 @@ def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
         name = parts[0].strip()
         authority_str = parts[1].strip() if len(parts) > 1 else ""
 
-        # Skip names that look like noise
-        if name in (',', '(', ')'):
-            continue
-
-        # Normalize ALL CAPS names for higher ranks
-        if rank in ("Family", "Subfamily", "Superfamily", "Suborder",
-                     "Infraorder") and name == name.upper() and len(name) > 1:
+        # Normalize ALL CAPS names (all ranks — source files use ALLCAPS for ranks)
+        if name == name.upper() and len(name) > 1:
             name = name[0] + name[1:].lower()
 
         # Parse author, year
@@ -354,10 +218,6 @@ def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
         parent_rank = stack[-1][2] if stack else None
 
         stack.append((cur_order, name, rank))
-        known_taxa[name.lower()] = (cur_order, rank)
-
-        # Mark unrecognizable genera as invalid
-        is_valid = 0 if in_unrecognizable else 1
 
         placements.append({
             "name": name,
@@ -370,8 +230,6 @@ def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
             "synonyms": [],
             "location": location,
             "temporal_code": temporal_code,
-            "type_species": type_species,
-            "is_valid": is_valid,
         })
 
     return placements
@@ -387,8 +245,7 @@ def create_schema(cur):
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
         rank TEXT NOT NULL
-            CHECK(rank IN ('Phylum','Subphylum','Class','Subclass',
-                           'Order','Suborder','Infraorder',
+            CHECK(rank IN ('Phylum','Subphylum','Class','Order','Suborder',
                            'Superfamily','Family','Subfamily','Genus')),
         author TEXT,
         year TEXT,
@@ -510,14 +367,11 @@ def process_source(dst, source_file, ref_id, taxon_index, new_taxa_cache):
             dst.execute("UPDATE taxon SET location = ? WHERE id = ? AND (location IS NULL OR location = '')",
                         (p["location"], child_id))
 
-        # Type species
-        if p.get("type_species"):
-            dst.execute("UPDATE taxon SET type_species = ? WHERE id = ? AND (type_species IS NULL OR type_species = '')",
-                        (p["type_species"], child_id))
-
-        # Mark invalid genera (unrecognizable)
-        if p.get("is_valid") == 0:
-            dst.execute("UPDATE taxon SET is_valid = 0 WHERE id = ?", (child_id,))
+        # Type species from raw entry
+        ts_match = re.search(r'\[\*(.+?)\]', p.get("raw_entry", "") or "")
+        if ts_match:
+            dst.execute("UPDATE taxon SET type_species = ? WHERE id = ? AND type_species IS NULL",
+                        (ts_match.group(1), child_id))
 
         if p["parent_name"] and child_id not in placed_children:
             parent_id = resolve_taxon(
@@ -554,6 +408,50 @@ def process_source(dst, source_file, ref_id, taxon_index, new_taxa_cache):
 
     counts["taxon"] = len(taxon_index) + len(new_taxa_cache)
     return counts, edges
+
+
+def load_classification_edges(cls_file: Path, conn, taxon_index: dict, new_taxa_cache: dict, ref_id: int):
+    """Pre-load structural hierarchy from brachiopoda_classification.txt.
+
+    Creates edges for all suprafamilial ranks (Phylum through Superfamily) so
+    that Orders/Suborders appearing at the start of volume-boundary source files
+    (with empty parser stack) still get proper parents in the edge cache.
+
+    Returns list of (child_id, parent_id) edges added.
+    """
+    if not cls_file.exists():
+        print(f"  Warning: classification file not found: {cls_file}", file=sys.stderr)
+        return []
+
+    text = cls_file.read_text(encoding="utf-8")
+    _, body = parse_source_header(text)
+    placements = parse_hierarchy_body(body, default_leaf_rank="Genus")
+
+    edges = []
+    placed = set()
+    for p in placements:
+        if not p["name"] or not p["parent_name"]:
+            continue
+        if p["rank"] == "Genus":
+            continue
+        child_id = resolve_taxon(p["name"], p["rank"], conn, taxon_index, new_taxa_cache)
+        if p.get("author") or p.get("year"):
+            conn.execute("""
+                UPDATE taxon SET author = COALESCE(NULLIF(author, ''), ?),
+                                 year = COALESCE(NULLIF(year, ''), ?)
+                WHERE id = ? AND (author IS NULL OR author = '' OR year IS NULL OR year = '')
+            """, (p["author"], p["year"], child_id))
+        parent_id = resolve_taxon(p["parent_name"], p["parent_rank"], conn, taxon_index, new_taxa_cache)
+        conn.execute("""
+            INSERT OR IGNORE INTO assertion
+                (subject_taxon_id, predicate, object_taxon_id,
+                 reference_id, assertion_status, curation_confidence)
+            VALUES (?, 'PLACED_IN', ?, ?, 'asserted', 'high')
+        """, (child_id, parent_id, ref_id))
+        if child_id not in placed:
+            edges.append((child_id, parent_id))
+            placed.add(child_id)
+    return edges
 
 
 # ---------------------------------------------------------------------------
@@ -643,7 +541,7 @@ def _build_queries():
          "    JOIN subtree s ON e.parent_id = s.child_id\n"
          "    WHERE e.profile_id = COALESCE(:profile_id, 1)\n"
          ")\n"
-         "SELECT t.id, t.name, t.author, t.year, t.type_species, t.temporal_code, t.is_valid\n"
+         "SELECT t.id, t.name, t.author, t.year, t.type_species, t.location, t.is_valid\n"
          "FROM taxon t JOIN subtree ON subtree.child_id = t.id\n"
          "WHERE t.rank = 'Genus'\n"
          "ORDER BY t.name",
@@ -788,19 +686,18 @@ def _build_queries():
          "ORDER BY diff_status, taxon_rank, taxon_name",
          '{"profile_id": "integer", "compare_profile_id": "integer"}'),
 
+        # --- Profile diff edges (for Diff Tree rendering) ---
         # --- Timeline ---
-        ("timeline_geologic_periods", "Geologic time periods for timeline axis (Mya steps, data-bearing only)",
-         "SELECT tm.fad_mya AS id, tm.code AS name, -tm.fad_mya AS sort_order\n"
-         "FROM temporal_code_mya tm\n"
-         "WHERE tm.code IN ('MCAM','UCAM','LORD','MORD','UORD',\n"
-         "                   'LSIL','USIL','LDEV','MDEV','MISS')\n"
-         "AND EXISTS (\n"
-         "    SELECT 1 FROM taxon t\n"
-         "    WHERE t.rank = 'Genus' AND t.temporal_code IN (\n"
-         "        SELECT tr.code FROM temporal_code_mya tr\n"
-         "        WHERE tr.fad_mya >= tm.fad_mya AND tr.lad_mya <= tm.fad_mya\n"
-         "    )\n"
-         ")\n"
+        ("timeline_geologic_periods", "Geologic time periods for timeline axis (Mya steps)",
+         "SELECT fad_mya AS id, code AS name, -fad_mya AS sort_order\n"
+         "FROM temporal_code_mya\n"
+         "WHERE code IN ('LCAM','MCAM','UCAM','LORD','MORD','UORD',\n"
+         "               'LSIL','USIL','LDEV','MDEV','UDEV',\n"
+         "               'MISS','PENN','LPERM','UPERM',\n"
+         "               'LTRI','MTRI','UTRI','LJUR','MJUR','UJUR',\n"
+         "               'LCRET','UCRET','TERT','HOL')\n"
+         "UNION ALL\n"
+         "SELECT 0.0 AS id, 'Recent' AS name, 0.0 AS sort_order\n"
          "ORDER BY sort_order",
          None),
 
@@ -962,8 +859,11 @@ def _build_queries():
          "JOIN temporal_code_mya tcm ON g.temporal_code = tcm.code\n"
          "LEFT JOIN genus_group gg ON gg.genus_id = g.id\n"
          "WHERE g.rank = 'Genus' AND g.is_valid = 1\n"
-         "  AND tcm.code IN ('MCAM','UCAM','LORD','MORD','UORD',\n"
-         "                    'LSIL','USIL','LDEV','MDEV','MISS')\n"
+         "  AND tcm.code IN ('LCAM','MCAM','UCAM','LORD','MORD','UORD',\n"
+         "                    'LSIL','USIL','LDEV','MDEV','UDEV',\n"
+         "                    'MISS','PENN','LPERM','UPERM',\n"
+         "                    'LTRI','MTRI','UTRI','LJUR','MJUR','UJUR',\n"
+         "                    'LCRET','UCRET','TERT','HOL')\n"
          "GROUP BY tcm.code, gg.group_name\n"
          "HAVING count > 0\n"
          "ORDER BY age_order, count DESC",
@@ -994,7 +894,7 @@ def _build_manifest():
                 "type": "hierarchy",
                 "display": "tree",
                 "title": "Taxonomy",
-                "description": "Graptolite hierarchical classification (Treatise 1955, 1970, 2023)",
+                "description": "Brachiopod hierarchical classification (Treatise 1965 & Revised 2000-2006)",
                 "source_query": "taxonomy_tree",
                 "icon": "bi-diagram-3",
                 "hierarchy_options": {
@@ -1013,7 +913,6 @@ def _build_manifest():
                          "true_label": "Yes", "false_label": "No"},
                         {"key": "author", "label": "Author"},
                         {"key": "year", "label": "Year"},
-                        {"key": "temporal_code", "label": "Range"},
                         {"key": "type_species", "label": "Type Species", "truncate": 40},
                     ],
                     "on_item_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
@@ -1023,14 +922,14 @@ def _build_manifest():
             "genera_table": {
                 "type": "table",
                 "title": "Genera",
-                "description": "Flat list of all graptolite genera",
+                "description": "Flat list of all brachiopod genera",
                 "source_query": "genera_list",
                 "icon": "bi-table",
                 "columns": [
                     {"key": "name", "label": "Genus", "sortable": True, "searchable": True, "italic": True},
                     {"key": "author", "label": "Author", "sortable": True, "searchable": True},
                     {"key": "year", "label": "Year", "sortable": True},
-                    {"key": "temporal_code", "label": "Range", "sortable": True},
+                    {"key": "family", "label": "Family", "sortable": True, "searchable": True},
                     {"key": "is_valid", "label": "Valid", "sortable": True, "type": "boolean",
                      "true_label": "Yes", "false_label": "No"},
                 ],
@@ -1075,7 +974,7 @@ def _build_manifest():
                 "type": "hierarchy",
                 "display": "tree_chart",
                 "title": "Tree",
-                "description": "Graptolite taxonomy tree — radial or rectangular layout",
+                "description": "Brachiopod taxonomy tree — radial or rectangular layout",
                 "icon": "bi-diagram-3",
                 "source_query": "radial_tree_nodes",
                 "hierarchy_options": {
@@ -1092,14 +991,14 @@ def _build_manifest():
                     "on_node_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
                     "rank_radius": {
                         "_root": 0,
-                        "Class": 0.04,
-                        "Subclass": 0.08,
-                        "Order": 0.15,
-                        "Suborder": 0.25,
-                        "Infraorder": 0.35,
-                        "Superfamily": 0.45,
-                        "Family": 0.55,
-                        "Subfamily": 0.72,
+                        "Phylum": 0.03,
+                        "Subphylum": 0.06,
+                        "Class": 0.10,
+                        "Order": 0.18,
+                        "Suborder": 0.28,
+                        "Superfamily": 0.40,
+                        "Family": 0.54,
+                        "Subfamily": 0.70,
                         "Genus": 1.0,
                     },
                 },
@@ -1168,14 +1067,12 @@ def _build_manifest():
                             "source_view": "tree_chart",
                             "rank_radius": {
                                 "_root": 0,
-                                "Class": 0.05,
-                                "Subclass": 0.10,
-                                "Order": 0.18,
-                                "Suborder": 0.28,
-                                "Infraorder": 0.38,
-                                "Superfamily": 0.48,
-                                "Family": 0.58,
-                                "Subfamily": 0.72,
+                                "Class": 0.06,
+                                "Order": 0.14,
+                                "Suborder": 0.24,
+                                "Superfamily": 0.36,
+                                "Family": 0.50,
+                                "Subfamily": 0.66,
                                 "Genus": 1.0,
                             },
                             "diff_mode": {
@@ -1252,14 +1149,14 @@ def _build_manifest():
                             "on_node_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
                             "rank_radius": {
                                 "_root": 0,
-                                "Class": 0.04,
-                                "Subclass": 0.08,
-                                "Order": 0.15,
-                                "Suborder": 0.25,
-                                "Infraorder": 0.35,
-                                "Superfamily": 0.45,
-                                "Family": 0.55,
-                                "Subfamily": 0.72,
+                                "Phylum": 0.03,
+                                "Subphylum": 0.06,
+                                "Class": 0.10,
+                                "Order": 0.18,
+                                "Suborder": 0.28,
+                                "Superfamily": 0.40,
+                                "Family": 0.54,
+                                "Subfamily": 0.70,
                                 "Genus": 1.0,
                             },
                             "edge_query": "tree_edges_by_geologic",
@@ -1302,14 +1199,14 @@ def _build_manifest():
                             "on_node_click": {"detail_view": "taxon_detail_view", "id_key": "id"},
                             "rank_radius": {
                                 "_root": 0,
-                                "Class": 0.04,
-                                "Subclass": 0.08,
-                                "Order": 0.15,
-                                "Suborder": 0.25,
-                                "Infraorder": 0.35,
-                                "Superfamily": 0.45,
-                                "Family": 0.55,
-                                "Subfamily": 0.72,
+                                "Phylum": 0.03,
+                                "Subphylum": 0.06,
+                                "Class": 0.10,
+                                "Order": 0.18,
+                                "Suborder": 0.28,
+                                "Superfamily": 0.40,
+                                "Family": 0.54,
+                                "Subfamily": 0.70,
                                 "Genus": 1.0,
                             },
                             "edge_query": "tree_edges_by_pubyear",
@@ -1433,10 +1330,10 @@ def write_scoda_metadata(cur, version, ref_id):
         )
     """)
     metadata = {
-        "artifact_id": "graptobase",
-        "name": "Graptobase",
+        "artifact_id": "brachiopoda",
+        "name": "Brachiopoda",
         "version": version,
-        "description": "Graptolite genus-level taxonomy from the Treatise (1955, 1970, 2023)",
+        "description": "Brachiopod genus-level taxonomy from the Treatise (1965 & Revised 2000-2006)",
         "license": "CC-BY-4.0",
         "created_at": now,
     }
@@ -1460,10 +1357,11 @@ def write_scoda_metadata(cur, version, ref_id):
         VALUES (?, ?, ?)
     """, (
         "publication",
-        "Bulman, O.M.B., 1955, 1970. Graptolithina. Treatise on Invertebrate "
-        "Paleontology, Part V. Geological Society of America & University of "
-        "Kansas Press. / Maletz, J. (Ed.), 2023. Hemichordata. Part V (Revised).",
-        "Graptolite genus-level classification with type species and temporal ranges.",
+        "Williams, A., Carlson, S.J., Brunton, C.H.C. & others, 2000. "
+        "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), "
+        "Volumes 2 & 3. Geological Society of America & University of Kansas.",
+        "Linguliformea, Craniiformea, and Rhynchonelliformea (part). "
+        "Genus-level classification with type species.",
     ))
 
     # schema_descriptions
@@ -1476,8 +1374,8 @@ def write_scoda_metadata(cur, version, ref_id):
         )
     """)
     descs = [
-        ("taxon", None, "Graptolite taxa from Class/Subclass to Genus"),
-        ("taxon", "rank", "Taxonomic rank: Class, Subclass, Order, Suborder, Infraorder, Superfamily, Family, Subfamily, Genus"),
+        ("taxon", None, "Brachiopod taxa from Phylum to Genus"),
+        ("taxon", "rank", "Taxonomic rank: Phylum, Subphylum, Class, Order, Suborder, Superfamily, Family, Subfamily, Genus"),
         ("assertion", None, "Taxonomic assertions linking taxa"),
         ("assertion", "predicate", "PLACED_IN, SYNONYM_OF, SPELLING_OF, RANK_AS, VALID_AS"),
         ("reference", None, "Literature references"),
@@ -1522,7 +1420,6 @@ def write_scoda_metadata(cur, version, ref_id):
         ("taxon", "author", "text", "Author", 1, 1, 1, None, 3),
         ("taxon", "year", "text", "Year", 1, 0, 1, None, 4),
         ("taxon", "type_species", "text", "Type Species", 0, 0, 1, "italic", 5),
-        ("taxon", "temporal_code", "text", "Range", 1, 0, 1, None, 6),
     ]
     cur.executemany("""
         INSERT INTO ui_display_intent
@@ -1542,7 +1439,7 @@ def write_scoda_metadata(cur, version, ref_id):
     """)
     cur.execute(
         "INSERT INTO ui_manifest (name, description, manifest_json) VALUES ('default', ?, ?)",
-        ("Graptobase default UI manifest",
+        ("Brachiopoda default UI manifest",
          json.dumps(_build_manifest(), indent=2, ensure_ascii=False)))
 
     # editable_entities
@@ -1560,12 +1457,11 @@ def write_scoda_metadata(cur, version, ref_id):
     """, (json.dumps([
         {"name": "name", "type": "text", "required": True, "label": "Name"},
         {"name": "rank", "type": "select", "required": True, "label": "Rank",
-         "options": ["Class", "Subclass", "Order", "Suborder", "Infraorder",
+         "options": ["Phylum", "Subphylum", "Class", "Order", "Suborder",
                      "Superfamily", "Family", "Subfamily", "Genus"]},
         {"name": "author", "type": "text", "label": "Author"},
         {"name": "year", "type": "text", "label": "Year"},
         {"name": "type_species", "type": "text", "label": "Type Species"},
-        {"name": "temporal_code", "type": "text", "label": "Temporal Range"},
         {"name": "notes", "type": "textarea", "label": "Notes"},
         {"name": "is_valid", "type": "boolean", "label": "Valid", "default": True},
     ]),))
@@ -1576,12 +1472,12 @@ def write_scoda_metadata(cur, version, ref_id):
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description='Build graptobase DB from source')
+    parser = argparse.ArgumentParser(description='Build brachiopoda DB from source')
     parser.add_argument('--version', default=VERSION, help=f'Version (default: {VERSION})')
     args = parser.parse_args()
 
     version = args.version
-    dst_path = DST_DIR / f"graptobase-{version}.db"
+    dst_path = DST_DIR / f"brachiopoda-{version}.db"
 
     # Verify all source files exist
     for profile in PROFILES:
@@ -1597,7 +1493,7 @@ def main():
 
     DST_DIR.mkdir(parents=True, exist_ok=True)
 
-    print(f"Building graptobase v{version}")
+    print(f"Building brachiopoda v{version}")
     print(f"  Output: {dst_path}")
     print(f"  Profiles: {len(PROFILES)}")
 
@@ -1638,6 +1534,16 @@ def main():
         total_counts = {"PLACED_IN": 0, "SYNONYM_OF": 0, "SPELLING_OF": 0}
         new_taxa_cache = {}
 
+        # Profile 2 (Revised 2000-2006): pre-load suprafamilial classification
+        # so cross-volume boundary Orders/Suborders get correct parents.
+        if pi == 2:
+            cls_file = SOURCES / "brachiopoda_classification.txt"
+            print(f"  Pre-loading classification from {cls_file.name}...")
+            cls_edges = load_classification_edges(cls_file, conn, taxon_index, new_taxa_cache, ref_id)
+            all_edges.extend(cls_edges)
+            conn.commit()
+            print(f"  → {len(cls_edges)} structural edges loaded")
+
         for src_name in profile["sources"]:
             src_path = SOURCES / src_name
             print(f"  {src_name}...", end=" ", flush=True)
@@ -1669,19 +1575,9 @@ def main():
         """, all_edges)
         conn.commit()
 
-        # Bridge orphan roots to Graptolithina (Class or Subclass)
-        root_id = None
-        for rk in ("Class", "Subclass"):
-            key = ("graptolithina", rk.lower())
-            if key in taxon_index:
-                root_id = taxon_index[key]
-                break
-        if root_id is None:
-            # Create a Class-level Graptolithina as fallback
-            new_taxa_cache_bridge = {}
-            root_id = resolve_taxon("Graptolithina", "Class", conn, taxon_index, new_taxa_cache_bridge)
-            taxon_index.update(new_taxa_cache_bridge)
-
+        # Bridge orphan roots to Phylum BRACHIOPODA
+        phylum_id = resolve_taxon("BRACHIOPODA", "Phylum", conn, taxon_index, new_taxa_cache)
+        taxon_index.update(new_taxa_cache)
         orphan_roots = conn.execute("""
             SELECT DISTINCT e.parent_id, t.name, t.rank
             FROM classification_edge_cache e
@@ -1692,19 +1588,18 @@ def main():
                   SELECT e2.child_id FROM classification_edge_cache e2
                   WHERE e2.profile_id = ?
               )
-        """, (profile_id, root_id, profile_id)).fetchall()
+        """, (profile_id, phylum_id, profile_id)).fetchall()
 
         if orphan_roots:
-            bridge_edges = [(oid, root_id) for oid, _, _ in orphan_roots]
+            bridge_edges = [(oid, phylum_id) for oid, _, _ in orphan_roots]
             cur.executemany(f"""
                 INSERT OR IGNORE INTO classification_edge_cache (profile_id, child_id, parent_id)
                 VALUES ({profile_id}, ?, ?)
             """, bridge_edges)
             conn.commit()
-            root_name = conn.execute("SELECT name FROM taxon WHERE id = ?", (root_id,)).fetchone()[0]
-            print(f"  Bridge edges to {root_name}: {len(bridge_edges)}")
+            print(f"  Bridge edges to Phylum BRACHIOPODA: {len(bridge_edges)}")
             for oid, oname, orank in orphan_roots:
-                print(f"    {orank} {oname} -> {root_name}")
+                print(f"    {orank} {oname} -> Phylum BRACHIOPODA")
 
         edge_count = conn.execute(
             "SELECT COUNT(*) FROM classification_edge_cache WHERE profile_id = ?",
@@ -1731,7 +1626,7 @@ def main():
         FROM pc.temporal_ranges
         WHERE start_mya IS NOT NULL
     """)
-    # Also add any compound codes found in the data (e.g., MCAM-LCARB)
+    # Also add any compound codes found in the data (e.g., LDEV-MDEV)
     compound_codes = conn.execute("""
         SELECT DISTINCT t.temporal_code FROM taxon t
         WHERE t.temporal_code LIKE '%-%'
@@ -1747,7 +1642,7 @@ def main():
     n_tcm = conn.execute("SELECT COUNT(*) FROM temporal_code_mya").fetchone()[0]
     conn.execute("DETACH DATABASE pc")
     conn.commit()
-    print(f"  -> {n_tcm} temporal_code_mya mappings")
+    print(f"  → {n_tcm} temporal_code_mya mappings")
 
     write_scoda_metadata(cur, version, all_ref_ids[0])
     conn.commit()
@@ -1756,18 +1651,16 @@ def main():
     rank_counts = conn.execute(
         "SELECT rank, COUNT(*) FROM taxon GROUP BY rank ORDER BY "
         "CASE rank WHEN 'Phylum' THEN 0 WHEN 'Subphylum' THEN 1 "
-        "WHEN 'Class' THEN 2 WHEN 'Subclass' THEN 3 "
-        "WHEN 'Order' THEN 4 WHEN 'Suborder' THEN 5 "
-        "WHEN 'Infraorder' THEN 6 WHEN 'Superfamily' THEN 7 "
-        "WHEN 'Family' THEN 8 WHEN 'Subfamily' THEN 9 "
-        "WHEN 'Genus' THEN 10 END"
+        "WHEN 'Class' THEN 2 WHEN 'Order' THEN 3 WHEN 'Suborder' THEN 4 "
+        "WHEN 'Superfamily' THEN 5 WHEN 'Family' THEN 6 "
+        "WHEN 'Subfamily' THEN 7 WHEN 'Genus' THEN 8 END"
     ).fetchall()
 
     total_edges = conn.execute(
         "SELECT COUNT(*) FROM classification_edge_cache"
     ).fetchone()[0]
 
-    print(f"\n=== Graptobase v{version} ===")
+    print(f"\n=== Brachiopoda v{version} ===")
     for rank, cnt in rank_counts:
         print(f"  {rank}: {cnt}")
     print(f"  Total taxa: {total_taxa}")

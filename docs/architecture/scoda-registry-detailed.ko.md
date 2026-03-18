@@ -219,7 +219,7 @@ function ensure_all_downloaded(resolved):
 
 ### 4.2 파일명 규칙
 - `<package_name>-<package_version>.lock.json`
-  - 예: `trilobase-1.0.0.lock.json`
+  - 예: `trilobita-1.0.0.lock.json`
 
 ### 4.3 JSON 스키마(정식)
 
@@ -228,7 +228,7 @@ function ensure_all_downloaded(resolved):
   "lock_schema_version": "1.0.0",
   "generated_at": "2026-02-12T00:00:00Z",
   "root": {
-    "name": "trilobase",
+    "name": "trilobita",
     "version": "1.0.0",
     "sha256": "<hex>"
   },

@@ -69,7 +69,7 @@ Given a package name and version constraint (e.g., `>=0.3.0,<0.4.0`):
         paleocore-0.3.0.scoda
     trilobase/
       1.0.0/
-        trilobase-1.0.0.scoda
+        trilobita-1.0.0.scoda
 ```
 
 Cache key = (package_name, version)

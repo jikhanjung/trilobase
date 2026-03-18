@@ -8,7 +8,7 @@
 
 ## 1. 테이블 분류 매핑표
 
-현재 `trilobase.db`의 20개 테이블을 PaleoCore / Trilobase / Both로 분류:
+현재 `trilobita.db`의 20개 테이블을 PaleoCore / Trilobase / Both로 분류:
 
 | # | 현재 테이블 | 레코드 | → 패키지 | 변경사항 |
 |---|---|---|---|---|
@@ -516,7 +516,7 @@ PaleoCore로 이동하므로 Trilobase DB에서 삭제:
 {
   "format": "scoda",
   "format_version": "1.0",
-  "name": "trilobase",
+  "name": "trilobita",
   "version": "2.0.0",
   "dependencies": [
     {"name": "paleocore", "version": ">=0.3.0,<0.4.0"}
@@ -540,7 +540,7 @@ PaleoCore로 이동하므로 Trilobase DB에서 삭제:
 
 ```python
 # Trilobase 앱에서 PaleoCore 데이터 접근
-conn = sqlite3.connect('trilobase.db')
+conn = sqlite3.connect('trilobita.db')
 conn.execute("ATTACH 'paleocore.db' AS pc")
 
 # Cross-package JOIN 예시
@@ -638,7 +638,7 @@ WHERE t.temporal_code IS NOT NULL AND tr.code IS NULL;
 └─────────────────────┼┼┼──────────────┘
    ATTACH AS pc       │││
 ┌─────────────────────┼┼┼──────────────┐
-│         Trilobase (trilobase.db)     │
+│         Trilobase (trilobita.db)     │
 │                     │││              │
 │  taxonomic_ranks ───┘││  (temporal_code → pc.temporal_ranges.code)
 │  synonyms            ││              │
@@ -657,7 +657,7 @@ WHERE t.temporal_code IS NOT NULL AND tr.code IS NULL;
 이 문서는 설계 정의만 다룬다. 실제 구현은 별도 Phase에서 진행:
 
 1. **PaleoCore DB 생성 스크립트** — `scripts/create_paleocore.py`
-   - 현재 `trilobase.db`에서 8개 데이터 테이블 추출
+   - 현재 `trilobita.db`에서 8개 데이터 테이블 추출
    - `taxa_count` 컬럼 제거
    - SCODA 메타데이터 삽입
 

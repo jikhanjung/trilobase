@@ -2,19 +2,19 @@
 
 Trilobase uses a **3-database architecture**:
 
-1. **Canonical DB** (`trilobase.db`) — read-only, immutable taxonomic data
-2. **Overlay DB** (`trilobase_overlay.db`) — read/write user annotations
+1. **Canonical DB** (`trilobita.db`) — read-only, immutable taxonomic data
+2. **Overlay DB** (`trilobita_overlay.db`) — read/write user annotations
 3. **PaleoCore DB** (`paleocore.db`) — shared geographic/stratigraphic reference data
 
 ```python
-conn = sqlite3.connect('db/trilobase.db')
-conn.execute("ATTACH DATABASE 'dist/trilobase_overlay.db' AS overlay")
+conn = sqlite3.connect('db/trilobita.db')
+conn.execute("ATTACH DATABASE 'dist/trilobita_overlay.db' AS overlay")
 conn.execute("ATTACH DATABASE 'db/paleocore.db' AS pc")
 ```
 
 ---
 
-## Canonical DB (trilobase.db)
+## Canonical DB (trilobita.db)
 
 ### taxonomic_ranks
 
@@ -160,7 +160,7 @@ CREATE VIEW taxa AS SELECT ... FROM taxonomic_ranks WHERE rank = 'Genus';
 
 ---
 
-## Overlay DB (trilobase_overlay.db)
+## Overlay DB (trilobita_overlay.db)
 
 ### overlay_metadata
 

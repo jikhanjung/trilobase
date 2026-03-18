@@ -13,11 +13,11 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 
 | Item | Value |
 |------|-------|
-| Trilobase version | **0.3.3** (Statistics view + Order "and" bug fix) |
-| Brachiobase version | **0.2.6** (hierarchy fix + Mesozoic codes + Statistics view) |
-| Graptobase version | **0.1.2** (Mesozoic codes + Statistics view) |
-| Chelicerobase version | **0.1.2** (Mesozoic codes + Statistics view) |
-| Ostracobase version | **0.1.2** (Mesozoic codes + Statistics view) |
+| Trilobita version | **0.3.3** (Statistics view + Order "and" bug fix) |
+| Brachiopoda version | **0.2.6** (hierarchy fix + Mesozoic codes + Statistics view) |
+| Graptolithina version | **0.1.2** (Mesozoic codes + Statistics view) |
+| Chelicerata version | **0.1.2** (Mesozoic codes + Statistics view) |
+| Ostracoda version | **0.1.2** (Mesozoic codes + Statistics view) |
 | PaleoCore version | **0.1.3** (Mesozoic + Cenozoic temporal codes 중앙화) |
 | taxon | 5,627 |
 | reference | 2,135 |
@@ -31,11 +31,11 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | temporal_code_mya | 73 (Paleozoic 32 + Mesozoic 18 + Cenozoic 19 + INDET 1 + 복합 3) |
 | TSF source files | 39 (`data/sources/*.txt`) |
 | Tests | 117 passing |
-| Legacy canonical DB | `trilobase-canonical-0.2.6.db` (보존) |
+| Legacy canonical DB | `trilobita-canonical-0.2.6.db` (보존) |
 
 ## Database Status
 
-**Trilobase DB (trilobase-0.3.3.db) — assertion-centric 통합:**
+**Trilobita DB (trilobita-0.3.3.db) — assertion-centric 통합:**
 
 | Table/View | Records | Description |
 |------------|---------|-------------|
@@ -58,7 +58,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | v_taxonomy_tree (view) | — | edge_cache 기반 트리 뷰 |
 | v_taxonomic_ranks (view) | — | edge_cache 기반 랭크 뷰 |
 
-**Legacy canonical DB**: `trilobase-canonical-0.2.6.db` (기존 taxonomic_ranks 기반, 보존용)
+**Legacy canonical DB**: `trilobita-canonical-0.2.6.db` (기존 taxonomic_ranks 기반, 보존용)
 
 ## Build Pipeline
 
@@ -67,20 +67,20 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 python scripts/build_all.py
 
 # 개별 빌드
-python scripts/build_trilobase_db.py          # → db/trilobase-0.3.3.db
-python scripts/build_brachiobase_db.py        # → db/brachiobase-0.2.6.db
-python scripts/build_graptobase_db.py         # → db/graptobase-0.1.2.db
-python scripts/build_chelicerobase_db.py      # → db/chelicerobase-0.1.2.db
-python scripts/build_ostracobase_db.py        # → db/ostracobase-0.1.2.db
+python scripts/build_trilobita_db.py          # → db/trilobita-0.3.3.db
+python scripts/build_brachiopoda_db.py        # → db/brachiopoda-0.2.6.db
+python scripts/build_graptolithina_db.py      # → db/graptolithina-0.1.2.db
+python scripts/build_chelicerata_db.py        # → db/chelicerata-0.1.2.db
+python scripts/build_ostracoda_db.py          # → db/ostracoda-0.1.2.db
 python scripts/build_paleocore_db.py          # → db/paleocore-0.1.3.db
-python scripts/validate_trilobase_db.py       # → 17/17 검증 통과
+python scripts/validate_trilobita_db.py       # → 17/17 검증 통과
 
 # .scoda 패키지 빌드
-python scripts/build_trilobase_scoda.py       # → dist/trilobase-0.3.3.scoda
-python scripts/build_brachiobase_scoda.py     # → dist/brachiobase-0.2.6.scoda
-python scripts/build_graptobase_scoda.py      # → dist/graptobase-0.1.2.scoda
-python scripts/build_chelicerobase_scoda.py   # → dist/chelicerobase-0.1.2.scoda
-python scripts/build_ostracobase_scoda.py     # → dist/ostracobase-0.1.2.scoda
+python scripts/build_trilobita_scoda.py       # → dist/trilobita-0.3.3.scoda
+python scripts/build_brachiopoda_scoda.py     # → dist/brachiopoda-0.2.6.scoda
+python scripts/build_graptolithina_scoda.py   # → dist/graptolithina-0.1.2.scoda
+python scripts/build_chelicerata_scoda.py     # → dist/chelicerata-0.1.2.scoda
+python scripts/build_ostracoda_scoda.py       # → dist/ostracoda-0.1.2.scoda
 python scripts/build_paleocore_scoda.py       # → dist/paleocore-0.1.3.scoda
 ```
 
@@ -111,11 +111,11 @@ python scripts/build_paleocore_scoda.py       # → dist/paleocore-0.1.3.scoda
 - `data/sources/*.txt` 기반 단일 스크립트 빌드
 - Family 이름 정규화, canonical opinions 임포트, Treatise 직접 파싱
 
-### Trilobase 0.3.0: 이름 통합 ✅
-- `trilobase-assertion` → `trilobase`로 통합, assertion-centric 모델이 메인
+### Trilobita 0.3.0: 이름 통합 ✅
+- `trilobita-assertion` → `trilobita`로 통합, assertion-centric 모델이 메인
 - `is_accepted` 컬럼 제거 → `classification_edge_cache` 기반 뷰로 전환
-- 스크립트 이름 통일 (`build_trilobase_*`, `build_paleocore_*`, `build_all`)
-- `_trilobase_queries.py`를 `build_trilobase_db.py`에 통합
+- 스크립트 이름 통일 (`build_trilobita_*`, `build_paleocore_*`, `build_all`)
+- `_trilobita_queries.py`를 `build_trilobita_db.py`에 통합
 - 60+ 레거시 스크립트 → `scripts/archive/`
 - **상세**: `devlog/20260311_121_trilobase_030_rename_consolidation.md`
 
@@ -190,7 +190,7 @@ python scripts/build_paleocore_scoda.py       # → dist/paleocore-0.1.3.scoda
 - scoda-engine: 축 전환 시 빈 트리 처리 버그 수정
 - **상세**: `devlog/20260314_124_p88_timeline_mya_slider.md`
 
-### Brachiobase v0.2.2: Temporal Code + Timeline ✅
+### Brachiopoda v0.2.2: Temporal Code + Timeline ✅
 
 - PDF에서 vol2 687/704 genus temporal code 자동 추출 (PyMuPDF)
 - 빌드 스크립트: `|` 구분 location/temporal_code 파싱 추가
@@ -198,20 +198,20 @@ python scripts/build_paleocore_scoda.py       # → dist/paleocore-0.1.3.scoda
 - 3,960/4,664 genus (84.9%)에 temporal_code 보유
 - **상세**: `devlog/20260314_125_brachiobase_timeline.md`
 
-### Graptobase v0.1.0: 초기 빌드 ✅
+### Graptolithina v0.1.0: 초기 빌드 ✅
 
 - Treatise Part V (Graptolithina) 3개 에디션 기반 빌드
 - 539 genera, 624 taxa, 3 classification profiles
 - temporal_code_mya 50건, Timeline 기능 포함
 - **상세**: `devlog/20260314_125_graptobase_v010.md`
 
-### Chelicerobase v0.1.0: 초기 빌드 ✅
+### Chelicerata v0.1.0: 초기 빌드 ✅
 
 - Treatise Part P (Chelicerata, 1955) — Merostomata + Arachnida
 - 262 genera, 506 taxa, temporal_code 183 (70%)
 - Timeline 쿼리 포함
 
-### Ostracobase v0.1.0: 초기 빌드 ✅
+### Ostracoda v0.1.0: 초기 빌드 ✅
 
 - Treatise Part Q (Ostracoda, 1961)
 - 782 genera, 926 taxa, temporal_code 504 (64%)
@@ -225,7 +225,7 @@ python scripts/build_paleocore_scoda.py       # → dist/paleocore-0.1.3.scoda
 - `pdf-to-taxonomy` 스킬로 PDF → TSF 자동 추출 파이프라인 구축
 - **상세**: `devlog/20260315_126_tsf_expansion_new_source_files.md`, `devlog/20260316_130_tsf_mass_extraction_echinodermata_and_more.md`
 
-### Brachiobase v0.2.3~v0.2.6 ✅
+### Brachiopoda v0.2.3~v0.2.6 ✅
 
 - **v0.2.3**: Suprafamilial hierarchy fix — orphan Orders 6개를 proper Class 아래로 재배치
 - **v0.2.4**: Mesozoic temporal codes 임시 패치 (33 codes 직접 추가)
@@ -243,8 +243,8 @@ python scripts/build_paleocore_scoda.py       # → dist/paleocore-0.1.3.scoda
 
 ### 전 패키지 Mesozoic Codes + Statistics View 통일 ✅
 
-- ostracobase/chelicerobase/graptobase 0.1.0 → **0.1.2** (Mesozoic codes + Statistics view)
-- trilobase 0.3.1 → **0.3.3** (Order "and" 파싱 버그 수정 + Statistics view)
+- ostracoda/chelicerata/graptolithina 0.1.0 → **0.1.2** (Mesozoic codes + Statistics view)
+- trilobita 0.3.1 → **0.3.3** (Order "and" 파싱 버그 수정 + Statistics view)
 - Statistics compound view: `geologic_timeline` + `pubyear_timeline` + `bar_chart` (diversity_by_age)
 - **버그 수정**: "Order and Family UNCERTAIN" 파싱 시 Order "and" 생성 오류 → ~40 genera 재분류
 - **상세**: `devlog/20260317_131_statistics_compound_view_and_bugfix.md`
@@ -276,10 +276,10 @@ GitHub Actions workflows in `.github/workflows/`:
 
 **릴리스 방법:**
 ```bash
-python scripts/build_trilobase_db.py    # DB 빌드
-python scripts/validate_trilobase_db.py # 검증
-python scripts/build_trilobase_scoda.py # .scoda 패키지 빌드
-git add db/trilobase-0.3.3.db && git commit -m "release: v0.3.3"
+python scripts/build_trilobita_db.py    # DB 빌드
+python scripts/validate_trilobita_db.py # 검증
+python scripts/build_trilobita_scoda.py # .scoda 패키지 빌드
+git add db/trilobita-0.3.3.db && git commit -m "release: v0.3.3"
 git tag v0.3.3
 git push origin main --tags
 ```
@@ -293,21 +293,21 @@ trilobase/                                 # Domain data, scripts, and tests onl
 ├── .github/workflows/                    # CI/CD (ci.yml, release.yml, manual-release.yml, docs.yml)
 ├── CLAUDE.md
 ├── HANDOFF.md                            # Current status + remaining tasks (this file)
-├── CHANGELOG.md                          # Trilobase package changelog
+├── CHANGELOG.md                          # Trilobita package changelog
 ├── CHANGELOG_paleocore.md                # PaleoCore package changelog
 ├── pytest.ini                             # pytest config (testpaths=tests)
 ├── requirements.txt                       # scoda-engine dependency
 ├── db/                                    # Canonical DBs (git tracked, versioned filenames)
-│   ├── trilobase-0.3.3.db                # ★ 현재 메인 DB (assertion-centric)
-│   ├── brachiobase-0.2.6.db             # Brachiopod DB
-│   ├── graptobase-0.1.2.db             # Graptolite DB
-│   ├── chelicerobase-0.1.2.db           # Chelicerate DB
-│   ├── ostracobase-0.1.2.db            # Ostracod DB
+│   ├── trilobita-0.3.3.db                # ★ 현재 메인 DB (assertion-centric)
+│   ├── brachiopoda-0.2.6.db             # Brachiopod DB
+│   ├── graptolithina-0.1.2.db           # Graptolite DB
+│   ├── chelicerata-0.1.2.db             # Chelicerate DB
+│   ├── ostracoda-0.1.2.db               # Ostracod DB
 │   ├── paleocore-0.1.3.db              # PaleoCore reference DB
-│   ├── trilobase-canonical-0.2.6.db      # Legacy canonical DB (보존용)
-│   └── trilobase-assertion-*.db          # 이전 assertion DB 버전들 (보존용)
+│   ├── trilobita-canonical-0.2.6.db      # Legacy canonical DB (보존용)
+│   └── trilobita-assertion-*.db          # 이전 assertion DB 버전들 (보존용)
 ├── dist/                                  # Build artifacts (gitignored)
-│   ├── trilobase-{ver}.scoda             # .scoda package
+│   ├── trilobita-{ver}.scoda             # .scoda package
 │   ├── paleocore-{ver}.scoda
 │   ├── *-{ver}.manifest.json             # Hub Manifest (SHA-256, 메타데이터)
 │   └── *_overlay.db                      # Overlay DBs
@@ -319,14 +319,14 @@ trilobase/                                 # Domain data, scripts, and tests onl
 │   ├── mcp_tools_trilobase.json          # MCP tool definitions
 │   └── *.pdf                             # Reference PDFs
 ├── scripts/                               # ★ 활성 빌드 스크립트만 (60+ 레거시 → archive/)
-│   ├── build_trilobase_db.py             # Trilobase DB 빌드 → db/
-│   ├── build_trilobase_scoda.py          # trilobase.scoda → dist/
-│   ├── validate_trilobase_db.py          # DB 검증 (17 checks)
+│   ├── build_trilobita_db.py             # Trilobita DB 빌드 → db/
+│   ├── build_trilobita_scoda.py          # trilobita.scoda → dist/
+│   ├── validate_trilobita_db.py          # DB 검증 (17 checks)
 │   ├── build_paleocore_db.py             # PaleoCore DB → db/
 │   ├── build_paleocore_scoda.py          # paleocore.scoda → dist/
 │   ├── build_all.py                      # 전체 빌드 (DB + .scoda)
 │   ├── convert_to_source_format.py       # data/sources/*.txt 재생성
-│   ├── db_path.py                        # DB 경로 헬퍼 (find_trilobase_db 등)
+│   ├── db_path.py                        # DB 경로 헬퍼 (find_trilobita_db 등)
 │   └── archive/                          # 레거시 스크립트 보관
 ├── tests/
 │   ├── conftest.py                       # Shared fixtures
@@ -386,7 +386,7 @@ pytest tests/
 
 ## DB Schema
 
-### Trilobase DB (trilobase-0.3.3.db)
+### Trilobita DB (trilobita-0.3.3.db)
 
 ```sql
 -- taxon: 5,627 records — all taxa (Class~Genus + Subfamily + placeholders)
@@ -438,16 +438,16 @@ ui_display_intent, ui_queries (53), ui_manifest (1)
 
 **SQLite ATTACH usage (3-DB):**
 ```python
-conn = sqlite3.connect('db/trilobase-0.3.3.db')
-conn.execute("ATTACH DATABASE 'dist/trilobase_overlay.db' AS overlay")
+conn = sqlite3.connect('db/trilobita-0.3.3.db')
+conn.execute("ATTACH DATABASE 'dist/trilobita_overlay.db' AS overlay")
 conn.execute("ATTACH DATABASE 'db/paleocore-0.1.3.db' AS pc")
 ```
 
 ## Notes
 
 - `data/sources/*.txt`가 assertion DB 빌드의 정규 소스 (현재 39개 파일)
-- `db/trilobase-0.3.3.db`가 현재 메인 DB (`scripts/db_path.py:find_trilobase_db()`로 resolve)
-- `db/trilobase-canonical-0.2.6.db`는 이전 canonical DB (taxonomic_ranks 기반, 보존용)
+- `db/trilobita-0.3.3.db`가 현재 메인 DB (`scripts/db_path.py:find_trilobita_db()`로 resolve)
+- `db/trilobita-canonical-0.2.6.db`는 이전 canonical DB (taxonomic_ranks 기반, 보존용)
 - `temporal_code_mya`는 PaleoCore에서 중앙 관리 → 각 DB 빌드 시 자동 삽입
 - TSF (Taxonomic Source Format) 사양: `docs/Taxonomic Source Format Specification v0.1.md`
 - Treatise PDF 현황: `docs/PDF_SOURCE_STATUS.md`

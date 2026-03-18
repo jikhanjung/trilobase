@@ -62,7 +62,7 @@ Flask 기반 웹 인터페이스를 통해 탐색할 수 있습니다.
 **특징:**
 - Python 설치 불필요
 - 모든 데이터와 웹 서버가 단일 실행 파일에 포함
-- 사용자 주석은 별도 파일(`trilobase_overlay.db`)에 저장되어 영구 보존
+- 사용자 주석은 별도 파일(`trilobita_overlay.db`)에 저장되어 영구 보존
 
 ### Option 2: Python Development Mode
 
@@ -298,7 +298,7 @@ LIMIT 10;
 Trilobase는 **SCODA** 프레임워크의 참조 구현입니다.
 
 SCODA는 데이터를 서비스가 아닌 **자기완결적 지식 객체**로 다루는 접근법입니다.
-`trilobase.db` 파일 하나가 데이터뿐 아니라 자신의 신원(identity), 출처(provenance),
+`trilobita.db` 파일 하나가 데이터뿐 아니라 자신의 신원(identity), 출처(provenance),
 스키마 설명(semantics)을 내장하고 있어, 외부 문서 없이도 스스로를 설명합니다.
 
 ```sql

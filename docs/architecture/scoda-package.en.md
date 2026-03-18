@@ -117,7 +117,7 @@ Without PaleoCore, Trilobase cannot function correctly for:
 
 ```json
 {
-  "name": "trilobase",
+  "name": "trilobita",
   "version": "0.2.1",
   "dependencies": [
     {

@@ -2,19 +2,19 @@
 
 Trilobase는 **3-데이터베이스 아키텍처**를 사용합니다:
 
-1. **정본 DB** (`trilobase.db`) — 읽기 전용, 불변 분류학 데이터
-2. **오버레이 DB** (`trilobase_overlay.db`) — 읽기/쓰기 사용자 주석
+1. **정본 DB** (`trilobita.db`) — 읽기 전용, 불변 분류학 데이터
+2. **오버레이 DB** (`trilobita_overlay.db`) — 읽기/쓰기 사용자 주석
 3. **PaleoCore DB** (`paleocore.db`) — 공유 지리/층서 참조 데이터
 
 ```python
-conn = sqlite3.connect('db/trilobase.db')
-conn.execute("ATTACH DATABASE 'dist/trilobase_overlay.db' AS overlay")
+conn = sqlite3.connect('db/trilobita.db')
+conn.execute("ATTACH DATABASE 'dist/trilobita_overlay.db' AS overlay")
 conn.execute("ATTACH DATABASE 'db/paleocore.db' AS pc")
 ```
 
 ---
 
-## 정본 DB (trilobase.db)
+## 정본 DB (trilobita.db)
 
 ### taxonomic_ranks
 
@@ -160,7 +160,7 @@ CREATE VIEW taxa AS SELECT ... FROM taxonomic_ranks WHERE rank = 'Genus';
 
 ---
 
-## 오버레이 DB (trilobase_overlay.db)
+## 오버레이 DB (trilobita_overlay.db)
 
 ### overlay_metadata
 

@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-"""Create a .scoda package from the trilobase DB.
+"""Create a .scoda package from the chelicerata DB.
 
 Usage:
-  python scripts/build_trilobase_scoda.py
-  python scripts/build_trilobase_scoda.py --dry-run
+  python scripts/build_chelicerata_scoda.py
+  python scripts/build_chelicerata_scoda.py --dry-run
 """
 
 import argparse
+import glob
 import hashlib
 import json
 import os
+import re
 import sqlite3
 import sys
 from datetime import datetime, timezone
@@ -17,11 +19,25 @@ from datetime import datetime, timezone
 from scoda_engine.scoda_package import ScodaPackage, _sha256_file
 from scoda_engine_core import validate_db
 
-from db_path import find_trilobase_db
-
 ROOT = os.path.join(os.path.dirname(__file__), '..')
-DEFAULT_DB = find_trilobase_db()
+DB_DIR = os.path.join(ROOT, 'db')
 DEFAULT_OUTPUT_DIR = os.path.join(ROOT, 'dist')
+
+_CHELICERATA_RE = re.compile(r'^chelicerata-(\d+\.\d+\.\d+)\.db$')
+
+
+def find_chelicerata_db():
+    candidates = glob.glob(os.path.join(DB_DIR, 'chelicerata-*.db'))
+    versioned = []
+    for path in candidates:
+        m = _CHELICERATA_RE.search(os.path.basename(path))
+        if m:
+            parts = tuple(int(x) for x in m.group(1).split('.'))
+            versioned.append((parts, path))
+    if not versioned:
+        raise FileNotFoundError("No chelicerata-*.db found in db/")
+    versioned.sort()
+    return os.path.abspath(versioned[-1][1])
 
 
 def _read_version(db_path):
@@ -52,7 +68,7 @@ def _sha256_scoda(path):
 
 def generate_hub_manifest(scoda_path, db_path):
     meta = _read_db_metadata(db_path)
-    package_id = meta.get('artifact_id', 'trilobase')
+    package_id = meta.get('artifact_id', 'chelicerata')
     version = meta.get('version', '0.0.0')
 
     provenance = []
@@ -72,9 +88,7 @@ def generate_hub_manifest(scoda_path, db_path):
         "license": meta.get('license', 'CC-BY-4.0'),
         "created_at": datetime.now(timezone.utc).isoformat(),
         "provenance": provenance,
-        "dependencies": {
-            "paleocore": ">=0.1.1,<0.2.0"
-        },
+        "dependencies": {},
         "filename": os.path.basename(scoda_path),
         "sha256": _sha256_scoda(scoda_path),
         "size_bytes": os.path.getsize(scoda_path),
@@ -92,114 +106,56 @@ def generate_hub_manifest(scoda_path, db_path):
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description='Create a .scoda package from the assertion-centric test DB')
-    parser.add_argument(
-        '--db', default=DEFAULT_DB,
-        help='Path to assertion DB (default: latest db/trilobase_assertion-*.db)')
-    parser.add_argument(
-        '--output', default=None,
-        help='Output .scoda file path')
-    parser.add_argument(
-        '--dry-run', action='store_true',
-        help='Preview manifest without creating file')
+    parser = argparse.ArgumentParser(description='Create a .scoda package from the chelicerata DB')
+    parser.add_argument('--db', default=None, help='Path to chelicerata DB')
+    parser.add_argument('--output', default=None, help='Output .scoda file path')
+    parser.add_argument('--dry-run', action='store_true', help='Preview without creating')
     args = parser.parse_args()
 
-    db_path = os.path.abspath(args.db)
+    db_path = os.path.abspath(args.db) if args.db else find_chelicerata_db()
     if args.output:
         output_path = os.path.abspath(args.output)
     else:
         version = _read_version(db_path)
+        os.makedirs(DEFAULT_OUTPUT_DIR, exist_ok=True)
         output_path = os.path.abspath(
-            os.path.join(DEFAULT_OUTPUT_DIR, f'trilobase-{version}.scoda'))
+            os.path.join(DEFAULT_OUTPUT_DIR, f'chelicerata-{version}.scoda'))
 
     if not os.path.exists(db_path):
         print(f"Error: Database not found: {db_path}", file=sys.stderr)
-        print("Run 'python scripts/build_trilobase_db.py' first.", file=sys.stderr)
+        print("Run 'python scripts/build_chelicerata_db.py' first.", file=sys.stderr)
         sys.exit(1)
 
-    # Validate manifest
+    # Validate
     errors, warnings = validate_db(db_path)
     for w in warnings:
         print(f"  WARNING: {w}")
     for e in errors:
         print(f"  ERROR: {e}", file=sys.stderr)
     if errors:
-        print(f"\nManifest validation failed: {len(errors)} error(s)", file=sys.stderr)
+        print(f"\nValidation failed: {len(errors)} error(s)", file=sys.stderr)
         sys.exit(1)
-    print(f"Manifest validation: OK ({len(warnings)} warning(s))")
+    print(f"Validation: OK ({len(warnings)} warning(s))")
 
     if args.dry_run:
-        conn = sqlite3.connect(db_path)
-        conn.row_factory = sqlite3.Row
-        cursor = conn.cursor()
-
-        cursor.execute("SELECT key, value FROM artifact_metadata")
-        db_meta = {row['key']: row['value'] for row in cursor.fetchall()}
-
-        scoda_meta_tables = {'artifact_metadata', 'provenance', 'schema_descriptions',
-                             'ui_display_intent', 'ui_queries', 'ui_manifest'}
-        all_tables = cursor.execute(
-            "SELECT name FROM sqlite_master WHERE type='table'"
-        ).fetchall()
-        record_count = 0
-        for (table_name,) in all_tables:
-            if table_name not in scoda_meta_tables and not table_name.startswith('sqlite_'):
-                cnt = cursor.execute(f"SELECT COUNT(*) FROM [{table_name}]").fetchone()[0]
-                record_count += cnt
-        conn.close()
-
-        checksum = _sha256_file(db_path)
-        manifest = {
-            "format": "scoda",
-            "format_version": "1.0",
-            "name": db_meta.get('artifact_id', 'trilobase'),
-            "version": db_meta.get('version', '0.1.0'),
-            "title": db_meta.get('name', '') + ' - ' + db_meta.get('description', ''),
-            "description": db_meta.get('description', ''),
-            "created_at": datetime.now(timezone.utc).isoformat(),
-            "license": db_meta.get('license', 'CC-BY-4.0'),
-            "data_file": "data.db",
-            "record_count": record_count,
-            "data_checksum_sha256": checksum,
-            "dependencies": [{"name": "paleocore", "alias": "pc", "version": ">=0.1.1,<0.2.0"}],
-        }
-
+        meta = _read_db_metadata(db_path)
         print("=== DRY RUN ===")
         print(f"Source DB:    {db_path}")
         print(f"DB size:      {os.path.getsize(db_path):,} bytes")
         print(f"Output:       {output_path}")
-        print()
-        print("manifest.json:")
-        print(json.dumps(manifest, indent=2, ensure_ascii=False))
+        print(f"Package:      {meta.get('artifact_id')} v{meta.get('version')}")
         return
 
-    # PaleoCore dependency for geography/stratigraphy (pc.* tables)
-    metadata = {
-        "dependencies": [{
-            "name": "paleocore",
-            "alias": "pc",
-            "version": ">=0.1.1,<0.2.0",
-            "file": "paleocore.scoda",
-            "required": True,
-            "description": "Shared paleontological infrastructure (geography, stratigraphy)"
-        }]
-    }
+    # No dependencies (no PaleoCore)
+    metadata = {"dependencies": []}
 
-    # Include CHANGELOG if exists
-    extra_assets = {}
-    changelog_path = os.path.join(ROOT, 'CHANGELOG.md')
-    if os.path.isfile(changelog_path):
-        extra_assets['CHANGELOG.md'] = changelog_path
-
-    result = ScodaPackage.create(db_path, output_path, metadata=metadata,
-                                 extra_assets=extra_assets if extra_assets else None)
+    result = ScodaPackage.create(db_path, output_path, metadata=metadata)
     size = os.path.getsize(result)
 
     print(f"Created: {result}")
     print(f"  Size: {size:,} bytes ({size / 1024 / 1024:.1f} MB)")
 
-    # Generate Hub Manifest
+    # Hub Manifest
     generate_hub_manifest(result, db_path)
 
     # Verify

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Create a .scoda package from trilobase.db
+Create a .scoda package from trilobita.db
 
 Usage:
-  python scripts/create_scoda.py              # create trilobase.scoda
+  python scripts/create_scoda.py              # create trilobita.scoda
   python scripts/create_scoda.py --dry-run    # preview manifest without creating file
   python scripts/create_scoda.py --output out.scoda  # custom output path
   python scripts/create_scoda.py --with-spa           # include reference SPA
@@ -20,11 +20,11 @@ from datetime import datetime, timezone
 from scoda_engine.scoda_package import ScodaPackage, _sha256_file
 from scoda_engine_core import validate_db
 
-from db_path import find_trilobase_db
+from db_path import find_trilobita_db
 
-DEFAULT_DB = find_trilobase_db()
+DEFAULT_DB = find_trilobita_db()
 DEFAULT_OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'dist')
-DEFAULT_MCP_TOOLS = os.path.join(os.path.dirname(__file__), '..', 'data', 'mcp_tools_trilobase.json')
+DEFAULT_MCP_TOOLS = os.path.join(os.path.dirname(__file__), '..', 'data', 'mcp_tools_trilobita.json')
 
 
 def _read_version(db_path):
@@ -59,7 +59,7 @@ def _sha256_scoda(path):
 def generate_hub_manifest(scoda_path, db_path):
     """Generate Hub Manifest JSON alongside the .scoda file."""
     meta = _read_db_metadata(db_path)
-    package_id = meta.get('artifact_id', 'trilobase')
+    package_id = meta.get('artifact_id', 'trilobita')
     version = meta.get('version', '0.0.0')
 
     # Read provenance from DB
@@ -75,7 +75,7 @@ def generate_hub_manifest(scoda_path, db_path):
         "hub_manifest_version": "1.0",
         "package_id": package_id,
         "version": version,
-        "title": meta.get('name', 'Trilobase') + ' - ' + meta.get('description', ''),
+        "title": meta.get('name', 'Trilobita') + ' - ' + meta.get('description', ''),
         "description": meta.get('description', ''),
         "license": meta.get('license', 'CC-BY-4.0'),
         "created_at": datetime.now(timezone.utc).isoformat(),
@@ -101,16 +101,16 @@ def generate_hub_manifest(scoda_path, db_path):
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Create a .scoda package from trilobase.db')
+        description='Create a .scoda package from trilobita.db')
     parser.add_argument(
         '--db', default=DEFAULT_DB,
-        help='Path to source SQLite database (default: trilobase.db)')
+        help='Path to source SQLite database (default: trilobita.db)')
     parser.add_argument(
         '--output', default=None,
-        help='Output .scoda file path (default: trilobase-{version}.scoda)')
+        help='Output .scoda file path (default: trilobita-{version}.scoda)')
     parser.add_argument(
         '--mcp-tools', default=DEFAULT_MCP_TOOLS,
-        help='Path to mcp_tools.json (default: data/mcp_tools_trilobase.json)')
+        help='Path to mcp_tools.json (default: data/mcp_tools_trilobita.json)')
     parser.add_argument(
         '--dry-run', action='store_true',
         help='Preview manifest without creating file')
@@ -119,7 +119,7 @@ def main():
         help='Include reference SPA in package (default: excluded)')
     parser.add_argument(
         '--no-assertion', action='store_true',
-        help='Skip building trilobase .scoda package')
+        help='Skip building trilobita .scoda package')
     args = parser.parse_args()
 
     db_path = os.path.abspath(args.db)
@@ -128,7 +128,7 @@ def main():
     else:
         version = _read_version(db_path)
         output_path = os.path.abspath(
-            os.path.join(DEFAULT_OUTPUT_DIR, f'trilobase-{version}.scoda'))
+            os.path.join(DEFAULT_OUTPUT_DIR, f'trilobita-{version}.scoda'))
 
     if not os.path.exists(db_path):
         print(f"Error: Database not found: {db_path}", file=sys.stderr)
@@ -171,9 +171,9 @@ def main():
         manifest = {
             "format": "scoda",
             "format_version": "1.0",
-            "name": db_meta.get('artifact_id', 'trilobase'),
+            "name": db_meta.get('artifact_id', 'trilobita'),
             "version": db_meta.get('version', '0.1.0'),
-            "title": db_meta.get('name', 'Trilobase') + ' - ' + db_meta.get('description', ''),
+            "title": db_meta.get('name', 'Trilobita') + ' - ' + db_meta.get('description', ''),
             "description": db_meta.get('description', ''),
             "created_at": datetime.now(timezone.utc).isoformat(),
             "license": db_meta.get('license', 'CC-BY-4.0'),
@@ -269,35 +269,35 @@ def main():
         else:
             print(f"  MCP tools: none")
 
-    # Build trilobase-assertion .scoda package
+    # Build trilobita-assertion .scoda package
     if not args.no_assertion:
-        if not build_trilobase(dry_run=args.dry_run):
+        if not build_trilobita(dry_run=args.dry_run):
             sys.exit(1)
 
 
-def build_trilobase(dry_run=False):
-    """Build trilobase .scoda package (assertion-centric)."""
+def build_trilobita(dry_run=False):
+    """Build trilobita .scoda package (assertion-centric)."""
     import subprocess
     print(flush=True)
     print("=" * 60, flush=True)
-    print("Building trilobase .scoda ...", flush=True)
+    print("Building trilobita .scoda ...", flush=True)
     print("=" * 60, flush=True)
 
     # Step 1: Rebuild assertion DB (single-script pipeline)
-    db_script = os.path.join(os.path.dirname(__file__), 'build_trilobase_db.py')
+    db_script = os.path.join(os.path.dirname(__file__), 'build_trilobita_db.py')
     result = subprocess.run([sys.executable, db_script], cwd=os.path.join(os.path.dirname(__file__), '..'))
     if result.returncode != 0:
-        print("Error: build_trilobase_db.py failed", file=sys.stderr)
+        print("Error: build_trilobita_db.py failed", file=sys.stderr)
         return False
 
     if dry_run:
         return True
 
     # Step 2: Build .scoda package
-    scoda_script = os.path.join(os.path.dirname(__file__), 'build_trilobase_scoda.py')
+    scoda_script = os.path.join(os.path.dirname(__file__), 'build_trilobita_scoda.py')
     result = subprocess.run([sys.executable, scoda_script], cwd=os.path.join(os.path.dirname(__file__), '..'))
     if result.returncode != 0:
-        print("Error: build_trilobase_scoda.py failed", file=sys.stderr)
+        print("Error: build_trilobita_scoda.py failed", file=sys.stderr)
         return False
 
     return True

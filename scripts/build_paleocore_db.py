@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Create paleocore.db from trilobase.db
+Create paleocore.db from trilobita.db
 
 Extracts 8 data tables (geography, lithostratigraphy, chronostratigraphy)
-from trilobase.db into a standalone PaleoCore database with SCODA metadata.
+from trilobita.db into a standalone PaleoCore database with SCODA metadata.
 
 Usage:
   python scripts/build_paleocore_db.py              # create paleocore.db
@@ -19,9 +19,9 @@ import sys
 from datetime import date, datetime, timezone
 
 
-from db_path import find_trilobase_db
+from db_path import find_trilobita_db
 
-SOURCE_DB = find_trilobase_db()
+SOURCE_DB = find_trilobita_db()
 DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), '..', 'db', 'paleocore.db')
 
 # Tables to extract (order matters for FK dependencies)
@@ -897,7 +897,7 @@ def dry_run(source_db):
               file=sys.stderr)
         for t in missing:
             print(f"  - {t}", file=sys.stderr)
-        print(f"\nPhase 34 dropped PaleoCore tables from trilobase.db.", file=sys.stderr)
+        print(f"\nPhase 34 dropped PaleoCore tables from trilobita.db.", file=sys.stderr)
         print(f"If paleocore.db already exists, use it directly.", file=sys.stderr)
         sys.exit(1)
 
@@ -942,7 +942,7 @@ def check_source_tables(source_db):
 
 
 def create_paleocore(source_db, output_path):
-    """Create paleocore.db from source trilobase.db."""
+    """Create paleocore.db from source trilobita.db."""
     # Check source tables exist
     missing = check_source_tables(source_db)
     if missing:
@@ -950,9 +950,9 @@ def create_paleocore(source_db, output_path):
               file=sys.stderr)
         for t in missing:
             print(f"  - {t}", file=sys.stderr)
-        print(f"\nPhase 34 dropped PaleoCore tables from trilobase.db.", file=sys.stderr)
+        print(f"\nPhase 34 dropped PaleoCore tables from trilobita.db.", file=sys.stderr)
         print(f"If paleocore.db already exists, use it directly.", file=sys.stderr)
-        print(f"To recreate, restore trilobase.db from git or use a backup.", file=sys.stderr)
+        print(f"To recreate, restore trilobita.db from git or use a backup.", file=sys.stderr)
         sys.exit(1)
 
     if os.path.exists(output_path):
@@ -1034,10 +1034,10 @@ def create_paleocore(source_db, output_path):
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Create paleocore.db from trilobase.db')
+        description='Create paleocore.db from trilobita.db')
     parser.add_argument(
         '--source', default=SOURCE_DB,
-        help='Path to source trilobase.db (default: trilobase.db)')
+        help='Path to source trilobita.db (default: trilobita.db)')
     parser.add_argument(
         '--output', default=DEFAULT_OUTPUT,
         help='Output paleocore.db path (default: paleocore.db)')

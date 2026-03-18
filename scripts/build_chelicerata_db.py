@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-"""Build brachiobase DB from Treatise brachiopod source files.
+"""Build chelicerata DB from Treatise chelicerate source file.
 
-Two classification profiles:
-  Profile 1: Treatise 1965 (original) — vol1 + vol2
-  Profile 2: Treatise Revised 2000-2006 — vol2 + vol3 + vol4 + vol5
+Single classification profile:
+  Profile 1: Treatise 1955 (Part P, Arthropoda 2 — Chelicerata)
 
 Pure source-driven build (no canonical DB dependency).
 
 Usage:
-    python scripts/build_brachiobase_db.py [--version 0.2.0]
+    python scripts/build_chelicerata_db.py [--version 0.1.0]
 """
 
 import argparse
@@ -21,7 +20,7 @@ from pathlib import Path
 
 from db_path import find_paleocore_db
 
-VERSION = "0.2.6"
+VERSION = "0.1.2"
 
 # ---------------------------------------------------------------------------
 # Source file groups per classification profile
@@ -29,43 +28,21 @@ VERSION = "0.2.6"
 
 PROFILES = [
     {
-        "name": "Treatise 1965",
-        "description": "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (1965)",
+        "name": "Treatise 1955",
+        "description": "Treatise on Invertebrate Paleontology, Part P, Arthropoda 2 — Chelicerata (1955)",
         "sources": [
-            "treatise_brachiopoda_1965_vol1.txt",
-            "treatise_brachiopoda_1965_vol2.txt",
+            "treatise_chelicerata_1955.txt",
         ],
         "reference": {
-            "authors": "WILLIAMS, A., ROWELL, A.J., MUIR-WOOD, H.M. & others",
-            "year": 1965,
-            "title": "Treatise on Invertebrate Paleontology, Part H, Brachiopoda",
+            "authors": "STØRMER, L., PETRUNKEVITCH, A. & HEDGPETH, J.W.",
+            "year": 1955,
+            "title": "Treatise on Invertebrate Paleontology, Part P, Arthropoda 2 — Chelicerata",
             "publisher": "Geological Society of America & University of Kansas Press",
             "reference_type": "book",
             "raw_entry": (
-                "Williams, A., et al., 1965. Treatise on Invertebrate Paleontology, "
-                "Part H, Brachiopoda, Volumes 1 & 2."
-            ),
-        },
-    },
-    {
-        "name": "Treatise Revised 2000-2006",
-        "description": "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), 2000-2006",
-        "sources": [
-            "treatise_brachiopoda_2000_vol2.txt",
-            "treatise_brachiopoda_2000_vol3.txt",
-            "treatise_brachiopoda_2002_vol4.txt",
-            "treatise_brachiopoda_2006_vol5.txt",
-        ],
-        "reference": {
-            "authors": "WILLIAMS, A., CARLSON, S.J., BRUNTON, C.H.C. & others",
-            "year": 2000,
-            "title": "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), Volumes 2-5",
-            "publisher": "Geological Society of America & University of Kansas",
-            "reference_type": "book",
-            "raw_entry": (
-                "Williams, A., Carlson, S.J., Brunton, C.H.C. & others, 2000-2006. "
-                "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), "
-                "Volumes 2-5."
+                "Størmer, L., Petrunkevitch, A. & Hedgpeth, J.W., 1955. "
+                "Treatise on Invertebrate Paleontology, Part P, Arthropoda 2 — "
+                "Chelicerata. Geological Society of America & University of Kansas Press."
             ),
         },
     },
@@ -194,8 +171,8 @@ def parse_hierarchy_body(body: str, default_leaf_rank="Genus"):
         name = parts[0].strip()
         authority_str = parts[1].strip() if len(parts) > 1 else ""
 
-        # Normalize ALL CAPS names (all ranks — source files use ALLCAPS for ranks)
-        if name == name.upper() and len(name) > 1:
+        # Normalize ALL CAPS names
+        if rank in ("Family", "Subfamily", "Superfamily", "Suborder") and name == name.upper() and len(name) > 1:
             name = name[0] + name[1:].lower()
 
         # Parse author, year
@@ -408,50 +385,6 @@ def process_source(dst, source_file, ref_id, taxon_index, new_taxa_cache):
 
     counts["taxon"] = len(taxon_index) + len(new_taxa_cache)
     return counts, edges
-
-
-def load_classification_edges(cls_file: Path, conn, taxon_index: dict, new_taxa_cache: dict, ref_id: int):
-    """Pre-load structural hierarchy from brachiopoda_classification.txt.
-
-    Creates edges for all suprafamilial ranks (Phylum through Superfamily) so
-    that Orders/Suborders appearing at the start of volume-boundary source files
-    (with empty parser stack) still get proper parents in the edge cache.
-
-    Returns list of (child_id, parent_id) edges added.
-    """
-    if not cls_file.exists():
-        print(f"  Warning: classification file not found: {cls_file}", file=sys.stderr)
-        return []
-
-    text = cls_file.read_text(encoding="utf-8")
-    _, body = parse_source_header(text)
-    placements = parse_hierarchy_body(body, default_leaf_rank="Genus")
-
-    edges = []
-    placed = set()
-    for p in placements:
-        if not p["name"] or not p["parent_name"]:
-            continue
-        if p["rank"] == "Genus":
-            continue
-        child_id = resolve_taxon(p["name"], p["rank"], conn, taxon_index, new_taxa_cache)
-        if p.get("author") or p.get("year"):
-            conn.execute("""
-                UPDATE taxon SET author = COALESCE(NULLIF(author, ''), ?),
-                                 year = COALESCE(NULLIF(year, ''), ?)
-                WHERE id = ? AND (author IS NULL OR author = '' OR year IS NULL OR year = '')
-            """, (p["author"], p["year"], child_id))
-        parent_id = resolve_taxon(p["parent_name"], p["parent_rank"], conn, taxon_index, new_taxa_cache)
-        conn.execute("""
-            INSERT OR IGNORE INTO assertion
-                (subject_taxon_id, predicate, object_taxon_id,
-                 reference_id, assertion_status, curation_confidence)
-            VALUES (?, 'PLACED_IN', ?, ?, 'asserted', 'high')
-        """, (child_id, parent_id, ref_id))
-        if child_id not in placed:
-            edges.append((child_id, parent_id))
-            placed.add(child_id)
-    return edges
 
 
 # ---------------------------------------------------------------------------
@@ -894,7 +827,7 @@ def _build_manifest():
                 "type": "hierarchy",
                 "display": "tree",
                 "title": "Taxonomy",
-                "description": "Brachiopod hierarchical classification (Treatise 1965 & Revised 2000-2006)",
+                "description": "Chelicerate hierarchical classification (Treatise 1955)",
                 "source_query": "taxonomy_tree",
                 "icon": "bi-diagram-3",
                 "hierarchy_options": {
@@ -922,7 +855,7 @@ def _build_manifest():
             "genera_table": {
                 "type": "table",
                 "title": "Genera",
-                "description": "Flat list of all brachiopod genera",
+                "description": "Flat list of all chelicerate genera",
                 "source_query": "genera_list",
                 "icon": "bi-table",
                 "columns": [
@@ -974,7 +907,7 @@ def _build_manifest():
                 "type": "hierarchy",
                 "display": "tree_chart",
                 "title": "Tree",
-                "description": "Brachiopod taxonomy tree — radial or rectangular layout",
+                "description": "Chelicerate taxonomy tree — radial or rectangular layout",
                 "icon": "bi-diagram-3",
                 "source_query": "radial_tree_nodes",
                 "hierarchy_options": {
@@ -1330,10 +1263,10 @@ def write_scoda_metadata(cur, version, ref_id):
         )
     """)
     metadata = {
-        "artifact_id": "brachiobase",
-        "name": "Brachiobase",
+        "artifact_id": "chelicerata",
+        "name": "Chelicerata",
         "version": version,
-        "description": "Brachiopod genus-level taxonomy from the Treatise (1965 & Revised 2000-2006)",
+        "description": "Chelicerate genus-level taxonomy from the Treatise (1955)",
         "license": "CC-BY-4.0",
         "created_at": now,
     }
@@ -1358,7 +1291,7 @@ def write_scoda_metadata(cur, version, ref_id):
     """, (
         "publication",
         "Williams, A., Carlson, S.J., Brunton, C.H.C. & others, 2000. "
-        "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised), "
+        "Treatise on Invertebrate Paleontology, Part P, Chelicerata,"
         "Volumes 2 & 3. Geological Society of America & University of Kansas.",
         "Linguliformea, Craniiformea, and Rhynchonelliformea (part). "
         "Genus-level classification with type species.",
@@ -1374,7 +1307,7 @@ def write_scoda_metadata(cur, version, ref_id):
         )
     """)
     descs = [
-        ("taxon", None, "Brachiopod taxa from Phylum to Genus"),
+        ("taxon", None, "Chelicerate taxa from Subphylum to Genus"),
         ("taxon", "rank", "Taxonomic rank: Phylum, Subphylum, Class, Order, Suborder, Superfamily, Family, Subfamily, Genus"),
         ("assertion", None, "Taxonomic assertions linking taxa"),
         ("assertion", "predicate", "PLACED_IN, SYNONYM_OF, SPELLING_OF, RANK_AS, VALID_AS"),
@@ -1439,7 +1372,7 @@ def write_scoda_metadata(cur, version, ref_id):
     """)
     cur.execute(
         "INSERT INTO ui_manifest (name, description, manifest_json) VALUES ('default', ?, ?)",
-        ("Brachiobase default UI manifest",
+        ("Chelicerata default UI manifest",
          json.dumps(_build_manifest(), indent=2, ensure_ascii=False)))
 
     # editable_entities
@@ -1472,12 +1405,12 @@ def write_scoda_metadata(cur, version, ref_id):
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description='Build brachiobase DB from source')
+    parser = argparse.ArgumentParser(description='Build chelicerata DB from source')
     parser.add_argument('--version', default=VERSION, help=f'Version (default: {VERSION})')
     args = parser.parse_args()
 
     version = args.version
-    dst_path = DST_DIR / f"brachiobase-{version}.db"
+    dst_path = DST_DIR / f"chelicerata-{version}.db"
 
     # Verify all source files exist
     for profile in PROFILES:
@@ -1493,7 +1426,7 @@ def main():
 
     DST_DIR.mkdir(parents=True, exist_ok=True)
 
-    print(f"Building brachiobase v{version}")
+    print(f"Building chelicerata v{version}")
     print(f"  Output: {dst_path}")
     print(f"  Profiles: {len(PROFILES)}")
 
@@ -1534,16 +1467,6 @@ def main():
         total_counts = {"PLACED_IN": 0, "SYNONYM_OF": 0, "SPELLING_OF": 0}
         new_taxa_cache = {}
 
-        # Profile 2 (Revised 2000-2006): pre-load suprafamilial classification
-        # so cross-volume boundary Orders/Suborders get correct parents.
-        if pi == 2:
-            cls_file = SOURCES / "brachiopoda_classification.txt"
-            print(f"  Pre-loading classification from {cls_file.name}...")
-            cls_edges = load_classification_edges(cls_file, conn, taxon_index, new_taxa_cache, ref_id)
-            all_edges.extend(cls_edges)
-            conn.commit()
-            print(f"  → {len(cls_edges)} structural edges loaded")
-
         for src_name in profile["sources"]:
             src_path = SOURCES / src_name
             print(f"  {src_name}...", end=" ", flush=True)
@@ -1575,8 +1498,8 @@ def main():
         """, all_edges)
         conn.commit()
 
-        # Bridge orphan roots to Phylum BRACHIOPODA
-        phylum_id = resolve_taxon("BRACHIOPODA", "Phylum", conn, taxon_index, new_taxa_cache)
+        # Bridge orphan roots to Subphylum CHELICERATA
+        phylum_id = resolve_taxon("CHELICERATA", "Subphylum", conn, taxon_index, new_taxa_cache)
         taxon_index.update(new_taxa_cache)
         orphan_roots = conn.execute("""
             SELECT DISTINCT e.parent_id, t.name, t.rank
@@ -1597,9 +1520,9 @@ def main():
                 VALUES ({profile_id}, ?, ?)
             """, bridge_edges)
             conn.commit()
-            print(f"  Bridge edges to Phylum BRACHIOPODA: {len(bridge_edges)}")
+            print(f"  Bridge edges to Subphylum CHELICERATA: {len(bridge_edges)}")
             for oid, oname, orank in orphan_roots:
-                print(f"    {orank} {oname} -> Phylum BRACHIOPODA")
+                print(f"    {orank} {oname} -> Subphylum CHELICERATA")
 
         edge_count = conn.execute(
             "SELECT COUNT(*) FROM classification_edge_cache WHERE profile_id = ?",
@@ -1660,7 +1583,7 @@ def main():
         "SELECT COUNT(*) FROM classification_edge_cache"
     ).fetchone()[0]
 
-    print(f"\n=== Brachiobase v{version} ===")
+    print(f"\n=== Chelicerata v{version} ===")
     for rank, cnt in rank_counts:
         print(f"  {rank}: {cnt}")
     print(f"  Total taxa: {total_taxa}")

@@ -25,7 +25,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 
 ## Database Tables
 
-### Canonical DB (trilobase.db)
+### Canonical DB (trilobita.db)
 
 | Table/View | Records | Description |
 |------------|---------|-------------|
@@ -44,7 +44,7 @@ A trilobite taxonomic database project. Genus data extracted from Jell & Adrain 
 | ui_queries | 37 | Named SQL queries |
 | ui_manifest | 1 | Declarative view definitions |
 
-### Overlay DB (trilobase_overlay.db)
+### Overlay DB (trilobita_overlay.db)
 
 | Table | Records | Description |
 |-------|---------|-------------|

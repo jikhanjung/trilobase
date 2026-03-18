@@ -13,7 +13,7 @@ import pytest
 
 # Add scripts/ to path for db_path helper
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
-from db_path import find_trilobase_db, find_paleocore_db
+from db_path import find_trilobita_db, find_paleocore_db
 
 import scoda_engine.scoda_package as scoda_package
 from scoda_engine.app import app
@@ -347,10 +347,10 @@ class TestPaleocoreScoda:
             # artifact_metadata, provenance, schema_descriptions excluded
             assert pkg.record_count == 3
 
-    def test_trilobase_scoda_with_dependency(self, test_db, tmp_path):
-        """trilobase.scoda can declare dependency on paleocore."""
+    def test_trilobita_scoda_with_dependency(self, test_db, tmp_path):
+        """trilobita.scoda can declare dependency on paleocore."""
         canonical_db, _, _ = test_db
-        scoda_path = str(tmp_path / "trilobase_dep.scoda")
+        scoda_path = str(tmp_path / "trilobita_dep.scoda")
         dep = {
             "dependencies": [{
                 "name": "paleocore",
@@ -520,7 +520,7 @@ class TestICSChronostrat:
 # --- Combined SCODA Deployment (Phase 36) ---
 
 class TestCombinedScodaDeployment:
-    """Tests for combined trilobase.scoda + paleocore.scoda deployment."""
+    """Tests for combined trilobita.scoda + paleocore.scoda deployment."""
 
     def _add_scoda_metadata_to_paleocore(self, paleocore_db_path):
         """Add SCODA metadata tables to paleocore DB for .scoda packaging."""
@@ -555,7 +555,7 @@ class TestCombinedScodaDeployment:
         canonical_db, overlay_db, paleocore_db = test_db
         self._add_scoda_metadata_to_paleocore(paleocore_db)
 
-        tri_scoda = str(tmp_path / "trilobase.scoda")
+        tri_scoda = str(tmp_path / "trilobita.scoda")
         pc_scoda = str(tmp_path / "paleocore.scoda")
         ScodaPackage.create(canonical_db, tri_scoda)
         ScodaPackage.create(paleocore_db, pc_scoda)
@@ -1162,7 +1162,7 @@ class TestTaxonBibliography:
 class TestGroupAFix:
     """Verify spelling variant handling in 0.3.0 DB."""
 
-    DB_PATH = find_trilobase_db()
+    DB_PATH = find_trilobita_db()
 
     def test_dokimocephalidae_is_placeholder(self):
         """Dokimocephalidae should exist as a placeholder with SPELLING_OF assertion."""
@@ -1225,7 +1225,7 @@ class TestGroupAFix:
 class TestAgnostidaOrder:
     """Verify Agnostida Order in assertion-centric DB (0.3.0)."""
 
-    DB_PATH = find_trilobase_db()
+    DB_PATH = find_trilobita_db()
 
     def test_agnostida_order_exists(self):
         """Agnostida Order should exist, excluded from default profile (no edge_cache entry)."""
@@ -1328,7 +1328,7 @@ class TestAgnostidaOrder:
 class TestSpellingOfOpinions:
     """Verify SPELLING_OF opinion type and placeholder entries for orthographic variants."""
 
-    DB_PATH = find_trilobase_db()
+    DB_PATH = find_trilobita_db()
 
     def test_spelling_of_type_allowed(self, test_db):
         """SPELLING_OF should be accepted by CHECK constraint in test DB."""
@@ -1489,7 +1489,7 @@ class TestSynonymOfOpinions:
 class TestTemporalCodeFill:
     """Verify temporal_code auto-fill from raw_entry for valid genera."""
 
-    DB_PATH = find_trilobase_db()
+    DB_PATH = find_trilobita_db()
 
     def test_only_one_ja2002_genus_missing_temporal_code(self):
         """Among JA2002 genera (with raw_entry), only Dignagnostus should lack temporal_code."""
@@ -1547,7 +1547,7 @@ class TestTemporalCodeFill:
 class TestCountryIdConsistency:
     """T-5: country_id should match the country in taxon.location."""
 
-    DB_PATH = find_trilobase_db()
+    DB_PATH = find_trilobita_db()
     PC_DB_PATH = find_paleocore_db()
 
     def test_country_id_match_rate(self):
